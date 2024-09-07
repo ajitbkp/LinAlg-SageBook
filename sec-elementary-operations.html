@@ -95,6 +95,9 @@ window.MathJax = {
 #def-elementary-row-operations-2-1-2 { counter-set: def-elementary-row-operations-2-1-2 0; }
 #def-elementary-row-operations-2-1-2 > li::marker { content: ""counter(def-elementary-row-operations-2-1-2,decimal)"."; }
 #def-elementary-row-operations-2-1-2 > li { counter-increment: def-elementary-row-operations-2-1-2; }
+#sec-elementary-operations-8-14-1 { counter-set: sec-elementary-operations-8-14-1 0; }
+#sec-elementary-operations-8-14-1 > li::marker { content: ""counter(sec-elementary-operations-8-14-1,decimal)"."; }
+#sec-elementary-operations-8-14-1 > li { counter-increment: sec-elementary-operations-8-14-1; }
 </style>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -156,7 +159,18 @@ window.MathJax = {
 </div></article><article class="definition definition-like" id="def-equivalent-system"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
 </h3>
-<div class="para" id="def-equivalent-system-1-1">A matrix <span class="process-math">\(B\)</span> is said to be <em class="alert">equivalent</em>  or <em class="alert">row equivalent</em> to matrix <span class="process-math">\(A\text{,}\)</span> in notation <span class="process-math">\(B\thicksim A\)</span> , if <span class="process-math">\(B\)</span> can be obtained from <span class="process-math">\(B\)</span>  by performing finite number of elementary row operations.</div></article><div class="para" id="sec-elementary-operations-7">Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.</div></section></div>
+<div class="para" id="def-equivalent-system-1-1">A matrix <span class="process-math">\(B\)</span> is said to be <em class="alert">equivalent</em>  or <em class="alert">row equivalent</em> to matrix <span class="process-math">\(A\text{,}\)</span> in notation <span class="process-math">\(B\thicksim A\)</span> , if <span class="process-math">\(B\)</span> can be obtained from <span class="process-math">\(B\)</span>  by performing finite number of elementary row operations.</div></article><div class="para" id="sec-elementary-operations-7">Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.</div>
+<article class="observation remark-like" id="sec-elementary-operations-8"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix of real numbers. Let the columns of <span class="process-math">\(A\)</span> are <span class="process-math">\(a_1,a_2,\ldots a_n\text{,}\)</span> that is <span class="process-math">\(A=\begin{pmatrix} a_1\amp a_2\amp\cdots a_n\end{pmatrix}\text{.}\)</span> Let the rows of <span class="process-math">\(A\)</span> are given by <span class="process-math">\(R_1, R_2,\ldots, R_n\text{,}\)</span> in particular, <span class="process-math">\(A=\begin{pmatrix} R_1\amp R_2\amp\cdots R_n\end{pmatrix}^T\text{.}\)</span> Let <span class="process-math">\(e_1, e_2, \ldots e_n\)</span> are standard coordinate vectors in <span class="process-math">\(\mathbb{R}^n\)</span> , where <span class="process-math">\(e_i\)</span> is the column matrix (vector) whose <span class="process-math">\(i\)</span>-th entry is 1 and rest are zero. That is <span class="process-math">\(e_i=\begin{pmatrix} 0\\\vdots\\ 1\\\vdots \\0\end{pmatrix}\text{.}\)</span> Then we have the following: <div class="para logical" id="sec-elementary-operations-8-14"><ol class="decimal" id="sec-elementary-operations-8-14-1">
+<li id="sec-elementary-operations-8-14-1-1"><div class="para" id="p-derived-sec-elementary-operations-8-14-1-1">
+<span class="process-math">\(a_j=Ae_j\)</span> for each <span class="process-math">\(j=1,\ldots, n\text{.}\)</span> That is, <span class="process-math">\(j\)</span>-th column can be obtained by multiplying <span class="process-math">\(A\)</span> by <span class="process-math">\(e_j\)</span> on the right.</div></li>
+<li id="sec-elementary-operations-8-14-1-2"><div class="para" id="p-derived-sec-elementary-operations-8-14-1-2">
+<span class="process-math">\(R_i=e_i^TA\)</span> for each <span class="process-math">\(i=1,\ldots, n\text{.}\)</span> That is, <span class="process-math">\(i\)</span>-th row can be obtained by multiplying <span class="process-math">\(A\)</span> by <span class="process-math">\(e_i^T\)</span> on the left.</div></li>
+<li id="sec-elementary-operations-8-14-1-3"><div class="para" id="p-derived-sec-elementary-operations-8-14-1-3">
+<span class="process-math">\(a_{ij}=e_i^TAe_j\)</span> for <span class="process-math">\(1\leq i, j\leq n\text{.}\)</span>
+</div></li>
+</ol></div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chap1-lineq.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
