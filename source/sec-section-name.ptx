@@ -94,4 +94,45 @@
 	
 
 </observation>
+<sage>
+  <input>
+    # Creating a random matrix of integers of size n
+n = 5
+A = random_matrix(ZZ, n,n)
+show(A)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+    ## Identity matrix of size n
+E = identity_matrix(n)
+show(E)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+    ## Extract the i-th columns of E, that is e_i
+i = 1
+A*E[:,1] # Returns the i-th columns of A
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+    E[:,i].T*A # Returns the i-th row of A
+  </input>
+  <output>
+    
+  </output>
+</sage>
 </section>
