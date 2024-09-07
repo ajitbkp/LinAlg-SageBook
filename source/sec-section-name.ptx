@@ -1,8 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-section-name" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Section Title</title>
+<section xml:id="sec-elementary-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Elemetary Operations</title>
 
-  <p> Text of section. </p>
+  <p> 
+    The solution of a system of linear equations is unchanged if the following operations are performed. If, fact this is the basis for solving a system of linear equations.
+  </p>
+<ol>
+    <li> Multiply one of the equations by a nonzero real number.
+      This is equivalent to multiplying one of the rows of the
+      augmented matrix of the system by a non-zero real number.
+    </li>
+    <li> Multiply one of the equations by a real number and add
+      the result to another equation, leaving the original equation
+      unchanged.
+      
+      This is equivalent to multiplying one of the rows of the
+      augmented matrix of the system by a real number and adding it
+      to another row, leaving the original row unchanged.
+    </li>
+      <li>  Interchanging two equations.
+      
+      This is equivalent to interchanging two rows of the augmented
+      matrix of the system.
+    </li>
+      <li>  Bring the equations which are equivalent to <m>0 =0</m> to
+      the bottom row.
+      
+      This is equivalent to moving the zero rows (rows with zero
+      entries) of the augmented matrix to the bottom.
+      </li>
+    </ol>  
+   <note>
+    If an equation of the system after the elementary after reduces to <m> 0 = k</m>,
+    where <m>k \neq 0</m>, then the system has no solution.
+    This is equivalent to if a row of the augmented matrix is
+    composed of zeros except for the last number, then the system
+    has no solution.
+   </note>
 
+   <definition xml:id="def-elementary-row-operations">
+    <title>Elementary row operations</title>
+       
+  <statement>
+    <p>
+  The following operations on a matrix are called <alert>elementary row
+    operations.</alert>
+<ol>	
+  <li> interchange of two rows of a matrix;</li>
+	<li> multiplication of one row by a  non-zero scalar <m> \lambda</m>; </li>
+	<li> adding a scalar <m>\lambda</m> times a row to another row.</li>
+</ol>
+   </p>
+  </statement>
+</definition>
+
+<definition xml:id="def-equivalent-system">
+  <statement>
+    <p>
+      A matrix <m>B</m> is said to be <alert> equivalent</alert>  or <alert> row equivalent</alert> to
+      matrix <m>A</m>, in notation <m>B\thicksim A</m> , if <m>B</m> can be obtained
+      from <m>B</m>  by performing finite number of elementary row
+      operations.
+        </p>
+  </statement>
+</definition>
+<p>
+  Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.
+
+</p>
 </section>
