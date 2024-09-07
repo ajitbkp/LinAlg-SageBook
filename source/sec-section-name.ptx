@@ -67,6 +67,31 @@
 </definition>
 <p>
   Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.
-
 </p>
+<observation>
+  Let <m>A</m> be an <m>n\times n</m> matrix of real numbers. Let the columns of <m>A</m> 
+    are <m>a_1,a_2,\ldots a_n</m>, 
+    that is <m>A=\begin{pmatrix} a_1\amp a_2\amp\cdots a_n\end{pmatrix}</m>. 
+      Let the rows of <m>A</m> are given by <m>R_1, R_2,\ldots, R_n</m>, in particular,  
+        <m>A=\begin{pmatrix} R_1\amp R_2\amp\cdots R_n\end{pmatrix}^T</m>. 
+          Let <m>e_1, e_2, \ldots e_n</m> are standard coordinate vectors in 
+            <m>\mathbb{R}^n</m> , where <m>e_i</m> is the column matrix (vector) whose 
+              <m>i</m>-th entry is 1 and rest are zero. That is 
+                <m>e_i=\begin{pmatrix} 0\\\vdots\\ 1\\\vdots \\0\end{pmatrix}</m>. 
+                  Then we have the following:
+                  <p>
+                    <ol>
+                    <li><m>a_j=Ae_j</m> for each <m>j=1,\ldots, n</m>. That is, <m>j</m>-th 
+                      column can be obtained by multiplying <m>A</m> by <m>e_j</m> on the right. </li>
+
+                      <li>
+                       <m>R_i=e_i^TA</m> for each <m>i=1,\ldots, n</m>. That is, <m>i</m>-th 
+                        row can be obtained by multiplying <m>A</m> by <m>e_i^T</m> on the left. </li>
+	                
+                      <li> <m>a_{ij}=e_i^TAe_j</m> for <m>1\leq i, j\leq n</m>.</li>
+                      </ol>
+                  </p>
+	
+
+</observation>
 </section>
