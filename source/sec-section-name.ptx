@@ -383,6 +383,19 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
 
   </p>
 
+  <p><alert>Sage Exercise:</alert>
+  Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.
+    <m>\begin{pmatrix}2\amp  1\amp 1\amp 1\\1\amp 0\amp 1\amp 1\\1\amp 1\amp -2\amp 1\\1\amp 1\amp 1\amp -1\end{pmatrix}</m>
+  </p>
+
+  <p>
+  <sage>
+<input>
+  # Sage Practice Area
+  A = matrix([[2,1,1,1],[1,0,1,1],[1,1,-2,1],[1,1,1,-1]]);A
+  </input>
+  </sage>
+  </p>
 </subsection>
 
 </section>
