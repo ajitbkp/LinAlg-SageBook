@@ -118,9 +118,10 @@ show(E)
 </sage>
 <sage>
   <input>
-    ## Extract the i-th columns of E, that is e_i
-i = 1
-A*E[:,1] # Returns the i-th columns of A
+    ## Extract the (i+1)-th column of E, that is, e_{i+1}
+    ## Note that index in Python/Sage list start with 0.
+    i = 1
+    A*E[:,i] # Returns the (i+1)-th column of A     
   </input>
   <output>
     
@@ -129,10 +130,57 @@ A*E[:,1] # Returns the i-th columns of A
 
 <sage>
   <input>
-    E[:,i].T*A # Returns the i-th row of A
+    E[:,i].T*A # Returns the (i+1)-th row of A
   </input>
   <output>
     
   </output>
 </sage>
+
+<definition xml:id="def-elementary-row-operation-2">
+  <statement>
+    <p>
+      Let <m>e</m> denote an elementary row operation and <m>e(A)</m>  the result of applying <m>e</m> to a  <m>A</m>.
+      Let <m>E</m> be a matrix obtained by applying <m>e</m> to the identity matrix. That is,  <m>E=e(I)</m>. 
+      Then <m>E</m> is called the elementary matrix
+      corresponding to the elementary row operation <m>e</m>. It is easy to see that an elementary matrix is non singular. (why?)
+    </p>
+  </statement>
+</definition>
+
+<theorem xml:id="thm-elementary-matrix-theorem">
+  <title> Elementary Matrix Theorem</title>
+  <statement>
+    <p>
+      	Let <m>e</m> be an elementary row operation and <m>E</m>, the corresponding <m>m\times m</m> elementary matrix defined by
+	<m>E = e(I_m)</m>. Then, for any <m>m\times n</m> matrix <m>A</m>, <m>e(A) = E\cdot A</m>.
+    </p>
+  </statement>
+</theorem>
+
+<p>
+<example>
+  <ol>
+    <li>
+      <p>
+        Let <m>A=[a_{ij}]</m> be a rectangular matrix of order <m>3\times 4</m>. Let <m>A_1</m> be a matrix obtained by 
+        interchanging 2nd and 3rd rows of <m>A</m>. Then <m>A_1=EA</m> where 
+        <m>E=\begin{pmatrix}1 \amp 0 \amp 0\\0 \amp 0 \amp 1\\0 \amp 1 \amp 0\end{pmatrix}</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Let <m>A_2</m> be the matrix obtained by multiplying 2nd row of <m>A</m> by a scalar <m>\alpha</m>. 
+        Then <m>A_2=EA</m> where <m>E=\begin{pmatrix}1\amp 0 \amp 0\\0 \amp \alpha \amp 0\\0 \amp 0 \amp 1\end{pmatrix}</m>. 
+      </p>
+    </li>
+    <li>
+      <p>
+        Let <m>A_3</m> be the matrix obtained by adding 2 times  2nd row to the 3rd rows of <m>A</m> in place of the 3rd row. 
+        Then <m>A_3=EA</m> where <m>E=\begin{pmatrix}1 \amp 0 \amp 0\\0 \amp 1 \amp 0\\0 \amp 2 \amp 1\end{pmatrix}</m>.
+      </p>
+    </li>
+  </ol>
+</example>
+</p>
 </section>
