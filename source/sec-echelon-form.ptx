@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-echelon-form" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Echelon Forms</title>
+<p>
+    An <m>m \times n</m> matrix <m>A</m> is said to be in <alert>row-echelon form</alert> or <alert>row-echelon matrix</alert> if it satisfies the following three conditions:
+    <ol>
+        <li>
+            <p>
+                All zero rows (consisting entirely of zeros) are at the bottom.        
+            </p>
+        </li>
+        <li>
+            <p>
+                The first nonzero entry from the left in each nonzero row is a 1, called the leading 1 for that row.  
+            </p>
+        </li>
+        <li>
+            <p>
+                Each leading 1 is to the right of all leading 1s in the rows above it. 
+            </p>
+        </li>
+        <response />
+        A row-echelon matrix is said to be in <alert>reduced row-echelon form</alert>  or <alert>reduced row-echelon matrix</alert> if, in addition, it satisfies the following condition: 
+        <li>
+            <p>
+                Each leading 1 is the only nonzero entry in its column.       
+            </p>
+        </li>
+    </ol>
+	
+</p>
+<p>
+<example xml:id="eg-echelon-matrices"><title>Echelon Matrices</title>
+
+
+    Following are examples of echelon matrices:
+    <me> \begin{pmatrix}
+		1 \amp  2 \amp  4 \\
+		0 \amp  1 \amp  -5 \\
+		0 \amp  0 \amp  0
+	\end{pmatrix},
+	\begin{pmatrix}
+		1\amp   3  \amp  6   \amp  8   \amp    0  \\
+		0\amp   0  \amp   1  \amp   9  \amp    1  \\
+		0\amp   0  \amp   0  \amp   1  \amp   -1  \\
+	\end{pmatrix},
+	\begin{pmatrix}
+		1\amp   0  \amp   3  \amp   4    \\
+		0\amp   1  \amp   2  \amp   1    \\
+		0\amp   0  \amp   1  \amp   4   \\
+		0 \amp  0 \amp  0 \amp  1
+	\end{pmatrix}
+    </me>.
+</example>
+</p>
+
+<p>
+    <example xml:id="eg-non-echelon-matrices"><title>Non Echelon Matrices</title>
+    
+    
+        Following are examples of some non echelon matrices:
+        <me> 
+            \begin{pmatrix} 
+                1\amp   3  \amp  6   \amp  8   \amp    0  \\
+                0\amp   0  \amp   1  \amp   9  \amp    1  \\
+                0\amp   1  \amp   0  \amp   1  \amp   -1  \\
+            \end{pmatrix} , \quad 
+            \begin{pmatrix} 
+                0\amp   1  \amp  6   \amp  8   \amp    0  \\
+                0\amp   0  \amp   1  \amp   9  \amp    1  \\
+                0\amp   1  \amp   0  \amp   1  \amp   -1  \\
+            \end{pmatrix} , \quad 
+            \begin{pmatrix}
+                1  \amp  6   \amp  8   \amp    0  \\
+                0  \amp   5  \amp   9  \amp    1  \\
+                0  \amp   0  \amp   1  \amp   -1  \\
+            \end{pmatrix}</me>.
+        
+    </example>
+    </p>
+    <p>
+        Every nonzero <m>m \times n</m> matrix <m>A</m> is row equivalent to a matrix which is a row echelon matrix.
+We employ the following procedures to convert a matrix into a row echelon form:
+<ol>
+    <li>
+        <p>
+            Choose a pivot element from the nonzero entries in the 1st  column. Row containing pivot is called the pivot row.     
+        </p>
+    </li>
+    <li>
+        <p>
+            Interchange rows (if necessary) so that pivot row is the new 1st row.
+        </p>
+    </li>
+    <li>
+        <p>
+            Multiply pivot row by a constant so that the new pivot is 1.
+        </p>
+    </li>
+    <li>
+        <p>
+            Make all subsequent entries in the 1st column 0 by using elementary row operations.
+        </p>
+    </li>
+    <li>
+        <p>
+            Repeat this process with next column.
+        </p>
+    </li>
+</ol>
+    </p>
+</section>

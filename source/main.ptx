@@ -10,11 +10,39 @@
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
-
+ 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+ 
+    <!-- Include chapter 1 -->
+    <xi:include href="./ch1-system-lin-eqns.ptx" />
 
+    <!-- Include chapter 2 -->
+    <xi:include href="./ch2-Rn-Space.ptx" />
 
+    <!-- Include chapter 3 -->
+    <xi:include href="./ch3-LT.ptx" />
+    
+    <!-- Include chapter 4 -->
+    <xi:include href="./ch4-Vector-Space.ptx" />
+
+    <!-- Include chapter 5 -->
+    <xi:include href="./ch5-Eigen.ptx" />
+
+    <!-- Include chapter 6 -->
+    <xi:include href="./ch6-orthogonality.ptx" />
+    
+    <!-- Include chapter 7 -->
+    <xi:include href="./ch7-inner-product.ptx" />
+    
+    <!-- Include chapter 8 -->
+    <xi:include href="./ch8-Least-Square.ptx" />
+    
+    <!-- Include chapter 9 -->
+    <xi:include href="./ch9-SVD.ptx" />
+       
+    <!-- Include chapter 10 -->
+    <xi:include href="./ch10-PCA.ptx" />
+    
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
 

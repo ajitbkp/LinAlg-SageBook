@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-col-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Elementary Column Operations</title>
+<p>
+    Elementary column operations are the column analogue of elementary row operations. Their
+precise properties can be deduced by applying elementary row operations to the transpose of a
+matrix and then transposing the result. In particular, if <m>F</m> is the elementary matrix corresponding to
+the elementary column operation <m>f</m> then <m>f(A) = AF</m>. Note that, because transposition changes the
+order of a product, elementary column operations correspond to post-multiplication by an
+elementary matrix. Two matrices that are related by a sequence of elementary column operations
+are said to be column equivalent and two matrices <m>A</m> and <m>B</m> are column equivalent if and only if there
+exists a non singular matrix <m>Q</m> such that <m> B = AQ</m>.
+</p>
+<exercise>
+  <statement>
+    <p>
+     Use the columns operations to find the inverse of the matrix 
+  <m>\begin{pmatrix}2\amp  1\amp 1\amp 1\\1\amp 0\amp 1\amp 1\\1\amp 1\amp -2\amp 1\\1\amp 1\amp 1\amp -1\end{pmatrix}</m>
+  by appending the <m>4\times 4</m> identity matrix at the bottom and appyling the columns aperation in Sage.   
+    </p>
+  </statement>
+
+</exercise>
+<solution>
+  <p>
+    <sage>
+      <input>
+        A = matrix(QQ,[[2,1,1,1],[1,0,1,1],[1,1,-2,1],[1,1,1,-1]])
+        Aug = A.T.augment(identity_matrix(4),subdivide=True);Aug.T
+        Aug1 = Aug.T
+        Aug1
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+  </p>
+</solution>
+</section>
