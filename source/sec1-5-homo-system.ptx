@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-hom-system" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Homogeneous System of Linear Equations</title>
+    <p>
+     <definition xml:id="def-homo-system">
+        <statement>
+            <p>
+                A system  <m>AX = B</m> of linear equations
+is called <alert> homogeneous</alert> if 
+<m>B = 0</m>. Otherwise it is called a  <alert>  non homogeneous</alert>  system.
+          </p>
+        </statement>
+     </definition>   
+    </p>
+<p>
+    Observe that any homogeneous system <m>AX = 0</m> of linear
+equations has at least one solution, namely the trivial solution (<m>x_i = 0</m>, for all <m>i</m>).  The augmented matrix is
+got from adding one zero column to <m>A</m>. Hence <m>.r(A) =
+r(A^*)</m>.
+</p>
+<theorem xml:id="thm-hom-system1">
+        <statement>
+        <p>
+            A homogeneous system  <m>AX = 0</m> of <m>n</m> equations
+            in the
+            same number of unknowns (<m>n</m> unknowns) has a nontrivial
+            solution if and only if <m>A</m> is singular, that is , if and
+            only if <m>\det(A)=0</m>.      
+        </p>
+    </statement>
+</theorem>
+
+<p>
+    <proof>
+        <p>
+            
+        The given  homogeneous system has a nontrivial
+        solution if and only if it has infinitely many solutions,
+        if and only if <m>r(A)\lt n</m>, the number of variables (<xref ref="thm-nosol-rank"/>).
+        But <m>r(A)\lt n </m>, if and only if <m>A</m> is singular.
+        </p>
+    </proof>
+</p>
+
+<p>
+    <theorem xml:id="thm-hom-system2">
+        <statement>
+            <p>
+                A homogeneous system  <m>AX = 0</m> of <m>m</m> equations
+in <m>n</m> unknowns, where <m>m \lt n</m> has infinitely many nontrivial solutions.
+            </p>
+        </statement>
+    </theorem>
+    
+</p>
+<p>
+    <proof>
+        If <m>m \lt n</m>, then <m>r(A) \lt  n</m> and hence the result follows from thm.~
+        <xref ref="thm-nosol-rank"/>.
+    </proof>
+</p>
+<p>
+    We would
+like to get the connection between solutions of a homogeneous system
+<m>AX = 0</m> and  the solutions of <m>AX = B</m>, <m>B \neq 0</m>. These
+are stated in the following Theorem.
+
+</p>
+<p>
+    <theorem xml:id="thm-hom-system3">
+        <statement>
+            <p>
+                Suppose the non homogeneous system <m>AX
+                = B</m> of linear equations has a solution say <m>X = X_0</m>.
+                All the solutions of this system are of the form
+                <me>X_0 + X_h,</me>
+                where <m>X_h</m> runs through all the solutions of the
+                corresponding homogeneous system <m>AX =0</m>. 
+            </p>
+        </statement>
+    </theorem>
+
+    <p>
+        <proof>
+            <p>
+                Let <m>X_h</m> be a solution of <m>AX=0</m>. Then 
+                <me>A(X_0 + X_h) = AX_0 + A
+                    X_h = B + 0 = B</me>. Hence <m>X_0 +X_h</m> is a solution of <m>AX =
+                    B</m>. 
+                    </p>
+                    <p>  
+                    Suppose <m>Y</m> is a solution of <m>AX = B</m>, i.e. <m>AY = B</m>.
+                    Then <m>A (Y - X_0) = 0</m> and hence <m>Y-X_0</m> is a solution of
+                    <m>AX = 0</m> and <m>Y = X_0+(Y-X_0)=X_0+X_h</m>, where <m>X_h=Y-X_0</m>.
+            </p>
+        </proof>
+    </p>
+    </p>
+    <p> The above theorem can be written equivalently as
+    </p>  
+        <theorem xml:id="thm-hom-system4">
+            <statement>
+                <p>
+                    
+            If <m>(\alpha_1 ,\ldots, \alpha_n)</m> is a solution of a system of linear equations, then
+            the complete solution is given by <m>x_1 = \alpha_1 + y_1 ,\ldots , x_n = \alpha_n + y_n</m> , where
+            <m>(y_1 ,\ldots, y_n)</m> is the general solution of the associated homogeneous system.
+                </p>
+            </statement>
+        </theorem>
+        
+        
+        
+</section>
