@@ -208,6 +208,69 @@ var ptx_lunr_docs = [
   "body": " Solve the system using the Gauss-Jordan elimination method, where      Clearly the solution of the above system is . We can also solve the above system using the 'A.solve_right(b)' command in Sage.     "
 },
 {
+  "id": "sec1-4-matrix-rank",
+  "level": "1",
+  "url": "sec1-4-matrix-rank.html",
+  "type": "Section",
+  "number": "1.4",
+  "title": "Rank of Matrices",
+  "body": " Rank of Matrices     Let be an matrix. Delete any rows and columns of . The resulting matrix is called a sub-matrix of . If , then it is called a square sub-matrix of of order .        The rank of an matrix is the order of the largest square sub-matrix of whose determinant is non-zero. We denote the rank of a matrix by .      Determine the rank of .   We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .       We list the following results without proof.     An matrix is of rank 0 if and only it is a zero matrix.     An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .        Suppose is an $m \\times n$ matrix. The rank of is equal to the number of non-zero rows in an echelon equivalent form of . In other words, the rank of matrix is the number of leading 1's in any row-echelon matrix to which can be carried by row operations.      Let us find the ranl of .     . Hence .     "
+},
+{
+  "id": "def-sub-matrix",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#def-sub-matrix",
+  "type": "Definition",
+  "number": "1.4.1",
+  "title": "",
+  "body": "  Let be an matrix. Delete any rows and columns of . The resulting matrix is called a sub-matrix of . If , then it is called a square sub-matrix of of order .   "
+},
+{
+  "id": "def-matrix-rank",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#def-matrix-rank",
+  "type": "Definition",
+  "number": "1.4.2",
+  "title": "",
+  "body": "  The rank of an matrix is the order of the largest square sub-matrix of whose determinant is non-zero. We denote the rank of a matrix by .   "
+},
+{
+  "id": "sec1-4-matrix-rank-4-1",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#sec1-4-matrix-rank-4-1",
+  "type": "Example",
+  "number": "1.4.3",
+  "title": "",
+  "body": "Determine the rank of .   We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .    "
+},
+{
+  "id": "sec1-4-matrix-rank-5",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#sec1-4-matrix-rank-5",
+  "type": "Observation",
+  "number": "1.4.4",
+  "title": "",
+  "body": " We list the following results without proof.     An matrix is of rank 0 if and only it is a zero matrix.     An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .    "
+},
+{
+  "id": "thm-rank-theorem",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#thm-rank-theorem",
+  "type": "Theorem",
+  "number": "1.4.5",
+  "title": "",
+  "body": "  Suppose is an $m \\times n$ matrix. The rank of is equal to the number of non-zero rows in an echelon equivalent form of . In other words, the rank of matrix is the number of leading 1's in any row-echelon matrix to which can be carried by row operations.   "
+},
+{
+  "id": "sec1-4-matrix-rank-7-1",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#sec1-4-matrix-rank-7-1",
+  "type": "Example",
+  "number": "1.4.6",
+  "title": "",
+  "body": "Let us find the ranl of . "
+},
+{
   "id": "chap2-Rn-Space",
   "level": "1",
   "url": "chap2-Rn-Space.html",
