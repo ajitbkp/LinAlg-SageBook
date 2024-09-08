@@ -334,6 +334,87 @@ var ptx_lunr_docs = [
   "body": " Consider the system of linear equations , where     Clearly but . Hence the system does not have a solution.         "
 },
 {
+  "id": "sec-hom-system",
+  "level": "1",
+  "url": "sec-hom-system.html",
+  "type": "Section",
+  "number": "1.5",
+  "title": "Homogeneous System of Linear Equations",
+  "body": " Homogeneous System of Linear Equations     A system of linear equations is called homogeneous if . Otherwise it is called a non homogeneous system.     Observe that any homogeneous system of linear equations has at least one solution, namely the trivial solution ( , for all ). The augmented matrix is got from adding one zero column to . Hence .    A homogeneous system of equations in the same number of unknowns ( unknowns) has a nontrivial solution if and only if is singular, that is , if and only if .      The given homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if , the number of variables ( ). But , if and only if is singular.       A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.      If , then and hence the result follows from thm.~ .   We would like to get the connection between solutions of a homogeneous system and the solutions of , . These are stated in the following Theorem.     Suppose the non homogeneous system of linear equations has a solution say . All the solutions of this system are of the form where runs through all the solutions of the corresponding homogeneous system .      Let be a solution of . Then . Hence is a solution of .  Suppose is a solution of , i.e. . Then and hence is a solution of and , where .     The above theorem can be written equivalently as    If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.    "
+},
+{
+  "id": "def-homo-system",
+  "level": "2",
+  "url": "sec-hom-system.html#def-homo-system",
+  "type": "Definition",
+  "number": "1.5.1",
+  "title": "",
+  "body": "  A system of linear equations is called homogeneous if . Otherwise it is called a non homogeneous system.   "
+},
+{
+  "id": "thm-hom-system1",
+  "level": "2",
+  "url": "sec-hom-system.html#thm-hom-system1",
+  "type": "Theorem",
+  "number": "1.5.2",
+  "title": "",
+  "body": "  A homogeneous system of equations in the same number of unknowns ( unknowns) has a nontrivial solution if and only if is singular, that is , if and only if .   "
+},
+{
+  "id": "sec-hom-system-5-1",
+  "level": "2",
+  "url": "sec-hom-system.html#sec-hom-system-5-1",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " The given homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if , the number of variables ( ). But , if and only if is singular.  "
+},
+{
+  "id": "thm-hom-system2",
+  "level": "2",
+  "url": "sec-hom-system.html#thm-hom-system2",
+  "type": "Theorem",
+  "number": "1.5.3",
+  "title": "",
+  "body": "  A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.   "
+},
+{
+  "id": "sec-hom-system-7-1",
+  "level": "2",
+  "url": "sec-hom-system.html#sec-hom-system-7-1",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": "If , then and hence the result follows from thm.~ . "
+},
+{
+  "id": "thm-hom-system3",
+  "level": "2",
+  "url": "sec-hom-system.html#thm-hom-system3",
+  "type": "Theorem",
+  "number": "1.5.4",
+  "title": "",
+  "body": "  Suppose the non homogeneous system of linear equations has a solution say . All the solutions of this system are of the form where runs through all the solutions of the corresponding homogeneous system .   "
+},
+{
+  "id": "sec-hom-system-9-2-1",
+  "level": "2",
+  "url": "sec-hom-system.html#sec-hom-system-9-2-1",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Let be a solution of . Then . Hence is a solution of .  Suppose is a solution of , i.e. . Then and hence is a solution of and , where .  "
+},
+{
+  "id": "thm-hom-system4",
+  "level": "2",
+  "url": "sec-hom-system.html#thm-hom-system4",
+  "type": "Theorem",
+  "number": "1.5.5",
+  "title": "",
+  "body": "  If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.   "
+},
+{
   "id": "chap2-Rn-Space",
   "level": "1",
   "url": "chap2-Rn-Space.html",

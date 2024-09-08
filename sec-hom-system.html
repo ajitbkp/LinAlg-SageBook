@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Eigenvalues and Eigenvectors</title>
+<title>Homogeneous System of Linear Equations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -152,7 +152,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chap4-Vector-Space.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="linalg-pretext-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap5-orthogonality.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec1-4-matrix-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap2-Rn-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -162,9 +162,9 @@ window.MathJax = {
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chap1-lineq.html" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Row Operations</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-Matrix-inverse-using-rref" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Matrix Inversion via Elementary Row Operations</span></a></div></li></ul>
@@ -178,13 +178,13 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec1-4-matrix-rank.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Rank of Matrices</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-system.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Homogeneous System of Linear Equations</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-hom-system.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Homogeneous System of Linear Equations</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap2-Rn-Space.html" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap3-LT.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap4-Vector-Space.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a></div></li>
-<li class="toc-item toc-chapter active"><div class="toc-title-box"><a href="chap5-Eigen.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap5-Eigen.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap5-orthogonality.html" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap5-inner-product.html" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap8-Least-Square.html" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a></div></li>
@@ -192,11 +192,62 @@ window.MathJax = {
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap10-PCA.html" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a></div></li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="chap5-Eigen"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">5</span><span class="space"> </span><span class="title">Eigenvalues and Eigenvectors</span>
-</h2></section></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-hom-system"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.5</span><span class="space"> </span><span class="title">Homogeneous System of Linear Equations</span>
+</h2>
+<div class="para" id="sec-hom-system-2"><article class="definition definition-like" id="def-homo-system"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-homo-system-1-1">A system  <span class="process-math">\(AX = B\)</span> of linear equations is called <em class="alert">homogeneous</em> if <span class="process-math">\(B = 0\text{.}\)</span> Otherwise it is called a  <em class="alert">non homogeneous</em>  system.</div></article></div>
+<div class="para" id="sec-hom-system-3">Observe that any homogeneous system <span class="process-math">\(AX = 0\)</span> of linear equations has at least one solution, namely the trivial solution (<span class="process-math">\(x_i = 0\text{,}\)</span> for all <span class="process-math">\(i\)</span>).  The augmented matrix is got from adding one zero column to <span class="process-math">\(A\text{.}\)</span> Hence <span class="process-math">\(.r(A) =
+r(A^*)\text{.}\)</span>
+</div>
+<article class="theorem theorem-like" id="thm-hom-system1"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-hom-system1-1-1">A homogeneous system  <span class="process-math">\(AX = 0\)</span> of <span class="process-math">\(n\)</span> equations in the same number of unknowns (<span class="process-math">\(n\)</span> unknowns) has a nontrivial solution if and only if <span class="process-math">\(A\)</span> is singular, that is , if and only if <span class="process-math">\(\det(A)=0\text{.}\)</span>
+</div></article><div class="para" id="sec-hom-system-5"><details id="sec-hom-system-5-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-hom-system-5-1-1">The given  homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if <span class="process-math">\(r(A)\lt n\text{,}\)</span> the number of variables (<a href="sec1-4-matrix-rank.html#thm-nosol-rank" class="xref" data-knowl="./knowl/xref/thm-nosol-rank.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.8: Number of Solution of a System">Theorem 1.4.8</a>). But <span class="process-math">\(r(A)\lt n \text{,}\)</span> if and only if <span class="process-math">\(A\)</span> is singular.</div></article></details></div>
+<div class="para" id="sec-hom-system-6"><article class="theorem theorem-like" id="thm-hom-system2"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-hom-system2-1-1">A homogeneous system  <span class="process-math">\(AX = 0\)</span> of <span class="process-math">\(m\)</span> equations in <span class="process-math">\(n\)</span> unknowns, where <span class="process-math">\(m \lt n\)</span> has infinitely many nontrivial solutions.</div></article></div>
+<div class="para" id="sec-hom-system-7"><details id="sec-hom-system-7-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content">If <span class="process-math">\(m \lt n\text{,}\)</span> then <span class="process-math">\(r(A) \lt  n\)</span> and hence the result follows from thm.~ <a href="sec1-4-matrix-rank.html#thm-nosol-rank" class="xref" data-knowl="./knowl/xref/thm-nosol-rank.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.8: Number of Solution of a System">Theorem 1.4.8</a>.</article></details></div>
+<div class="para" id="sec-hom-system-8">We would like to get the connection between solutions of a homogeneous system <span class="process-math">\(AX = 0\)</span> and  the solutions of <span class="process-math">\(AX = B\text{,}\)</span> <span class="process-math">\(B \neq 0\text{.}\)</span> These are stated in the following Theorem.</div>
+<div class="para" id="sec-hom-system-9">
+<article class="theorem theorem-like" id="thm-hom-system3"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="thm-hom-system3-1-1">
+<div class="para">Suppose the non homogeneous system <span class="process-math">\(AX
+= B\)</span> of linear equations has a solution say <span class="process-math">\(X = X_0\text{.}\)</span> All the solutions of this system are of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X_0 + X_h,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(X_h\)</span> runs through all the solutions of the corresponding homogeneous system <span class="process-math">\(AX =0\text{.}\)</span>
+</div>
+</div></article> <div class="para" id="sec-hom-system-9-2"><details id="sec-hom-system-9-2-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-hom-system-9-2-1-1">
+<div class="para">Let <span class="process-math">\(X_h\)</span> be a solution of <span class="process-math">\(AX=0\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A(X_0 + X_h) = AX_0 + A
+X_h = B + 0 = B\text{.}
+\end{equation*}
+</div>
+<div class="para">Hence <span class="process-math">\(X_0 +X_h\)</span> is a solution of <span class="process-math">\(AX =
+B\text{.}\)</span>
+</div>
+</div> <div class="para" id="sec-hom-system-9-2-1-2">Suppose <span class="process-math">\(Y\)</span> is a solution of <span class="process-math">\(AX = B\text{,}\)</span> i.e. <span class="process-math">\(AY = B\text{.}\)</span> Then <span class="process-math">\(A (Y - X_0) = 0\)</span> and hence <span class="process-math">\(Y-X_0\)</span> is a solution of <span class="process-math">\(AX = 0\)</span> and <span class="process-math">\(Y = X_0+(Y-X_0)=X_0+X_h\text{,}\)</span> where <span class="process-math">\(X_h=Y-X_0\text{.}\)</span>
+</div></article></details></div>
+</div>
+<div class="para" id="sec-hom-system-10">The above theorem can be written equivalently as</div>
+<article class="theorem theorem-like" id="thm-hom-system4"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-hom-system4-1-1">If <span class="process-math">\((\alpha_1 ,\ldots, \alpha_n)\)</span> is a solution of a system of linear equations, then the complete solution is given by <span class="process-math">\(x_1 = \alpha_1 + y_1 ,\ldots , x_n = \alpha_n + y_n\)</span> , where <span class="process-math">\((y_1 ,\ldots, y_n)\)</span> is the general solution of the associated homogeneous system.</div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="chap4-Vector-Space.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap5-orthogonality.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec1-4-matrix-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap2-Rn-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
