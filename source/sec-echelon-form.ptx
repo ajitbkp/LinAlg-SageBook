@@ -285,16 +285,92 @@ above and work from top to bottom.
             \end{pmatrix}</mrow>
             </md>
         </p>
-        <p>
-            The above augmented matrix represents the following equations:
+        <p> 
+            We can do more step of row elimination to convert the first three columns into identity matrix. 
+            However, the above augmented matrix represents the following equations:
 	<me>
 	x+2y+4z=3;\quad y+z=3/2;\quad z=3/7.
 	</me>
 	Using back substitution, we get  
 <me> x=-6/7, y=15/14, z=3/7</me>.
         </p>
+        </solution>
+ <sage>
+    <input>
+        A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
+b = vector(QQ,[3,0,3])
+Aug = A.augment(b,subdivide=True)
+Aug
+    </input>
+    <output>
+        [1 2 4|3]
+        [1 0 2|0]
+        [2 4 1|3]
+    </output>
+ </sage>
+ <p>
+    <sage>
+        <input>
+            Aug.rref()
+        </input>
+        <output>
+            [    1     0     0| -6/7]
+            [    0     1     0|15/14]
+            [    0     0     1|  3/7]
+        </output>
+    </sage>
+ </p>
+    </example>
+<example>
+    Solve the following system of linear
+    equations.
+<md>
+<mrow>	x+y+z-w \amp    =  1   </mrow>
+<mrow>	y-z+w \amp    =  -1   </mrow>
+<mrow>	3x+6z-6w \amp   =   6   </mrow>
+<mrow>	-y+z-w \amp   =   1   </mrow>
+</md>
+using Gaussian elimination method. Show that this system has infinitely many solutions.
+
+<p>
+    <solution>
+        <p>
+            <sage>
+                <input>
+                    A = matrix(QQ,[[1,1,1,-1],
+              [0,1,-1,1],
+              [2,0,6,-6],
+              [0,-1,1,-1]])
+b = vector(QQ,[1,-1,6,1])
+Aug = A.augment(b,subdivide=True)
+Aug
+                </input>
+                <output>
+                    1  1  1 -1| 1]
+                    [ 0  1 -1  1|-1]
+                    [ 2  0  6 -6| 6]
+                    [ 0 -1  1 -1| 1]
+                </output>
+            </sage>
+        </p>
+        <p>
+            <sage>
+                <input>
+                    Aug.rref()
+                </input>
+                <output>
+                    [ 1  0  0  0| 0]
+                    [ 0  1  0  0| 0]
+                    [ 0  0  1 -1| 1]
+                    [ 0  0  0  0| 0]
+                </output>
+            </sage>
+        </p>
+    Since last row zero, it represents the equation <m>0=0</m>, 
+    in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.
     </solution>
- </example>
+</p>
+</example>
 </subsection>
     
 </section>
