@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -231,10 +243,10 @@ window.MathJax = {
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
 </h3>
 <div class="para" id="thm-rank-theorem-1-1">Suppose <span class="process-math">\(A\)</span> is an $m \times n$ matrix. The rank of  <span class="process-math">\(A\)</span> is equal to the number of non-zero rows  in an echelon equivalent form of   <span class="process-math">\(A\text{.}\)</span>  In other words, the rank of matrix  <span class="process-math">\(A\)</span> is the number of leading 1’s in any row-echelon matrix to which  <span class="process-math">\(A\)</span> can be carried by row operations.</div></article></div>
-<div class="para" id="sec1-4-matrix-rank-7">
-<details id="sec1-4-matrix-rank-7-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="para" id="sec1-4-matrix-rank-7"><details id="sec1-4-matrix-rank-7-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content">Let us find the ranl of <span class="process-math">\(A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}\text{.}\)</span></article></details> <div class="para" id="sec1-4-matrix-rank-7-2"><details id="sec1-4-matrix-rank-7-2-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec1-4-matrix-rank-7-2-1-1">
+</h3></summary><article class="example example-like knowl__content">Let us find the ranl of <span class="process-math">\(A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}\text{.}\)</span></article></details></div>
+<div class="para" id="sec1-4-matrix-rank-8"><details id="sec1-4-matrix-rank-8-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec1-4-matrix-rank-8-1-1">
 <div class="displaymath process-math">
 \begin{equation*}
 A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}\overrightarrow{\text{Row echelon form}}\begin{bmatrix}1 \amp  0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp 0\amp 1\\0\amp 0\amp 0\amp 1\amp -1\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}\text{.}
@@ -243,7 +255,60 @@ A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp
 <div class="para">Hence <span class="process-math">\(r(A)=3\text{.}\)</span>
 </div>
 </div></div></details></div>
-</div></section></div>
+<details id="sec1-4-matrix-rank-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec1-4-matrix-rank-9-1">Consider a matrix <span class="process-math">\(\begin{bmatrix} 1 \amp  1 \amp  2 \amp  a^2\\1 \amp  1-a \amp  2\amp  0 \\2 \amp  2-a \amp  6-a \amp  4\end{bmatrix}\text{.}\)</span> Find the rank of the matrix.</div></article></details><details id="sec1-4-matrix-rank-10" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec1-4-matrix-rank-10-1">
+<div class="para">Let us apply elementary row operations of <span class="process-math">\(A\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="sec1-4-matrix-rank-10-1-2">
+\begin{align*}
+\begin{bmatrix} 1 \amp  1 \amp  2 \amp  a^2\\1 \amp  1-a\amp  2\amp  0 \\2 \amp  2-a \amp  6-a \amp  4\end{bmatrix}
+\amp\xrightarrow{
+\begin{array}{c}
+R_2-R_1   \\  R_3-2R_1   \\
+\end{array}}
+\begin{pmatrix}
+1\amp    2    \amp    2   \amp   a^2   \\
+0\amp   -a    \amp   0   \amp   -a^2   \\
+0\amp   -a   \amp   2-a   \amp    4-2a^2   \\
+\end{pmatrix} \\
+\amp 
+\xrightarrow{
+\begin{array}{c}
+R_3-R_2   \\
+\end{array}}
+\begin{pmatrix}
+1\amp    2    \amp    2   \amp   a^2   \\
+0\amp   -a    \amp   0   \amp   -a^2   \\
+0\amp   0   \amp   2-a   \amp    4-a^2   \\
+\end{pmatrix}\\
+\amp 
+\xrightarrow{
+\begin{array}{c}
+R_3-R_2   \\
+\end{array}}
+\begin{pmatrix}
+1\amp    2    \amp    2   \amp   a^2   \\
+0\amp   1    \amp   0   \amp   a   \\
+0\amp   0   \amp   1   \amp    2+a   \\
+\end{pmatrix} \quad \text{ if } a\neq 0, 2.
+\end{align*}
+</div>
+<div class="para">Clearly the rank of <span class="process-math">\(A\)</span> is 3 if <span class="process-math">\(a\neq 0,  2\text{.}\)</span> If <span class="process-math">\(a=0\)</span> or <span class="process-math">\(a=2\text{,}\)</span> then it is easy to check that rank of <span class="process-math">\(A\)</span> is 2.</div>
+</div> <div class="para" id="sec1-4-matrix-rank-10-2"><div id="sec1-4-matrix-rank-10-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('a') # Declaraing a as symbomic variable.
+A = matrix([[1,1,2,a^2],[1,1-a,2,0],[2,2-a,6-a,4]])
+A1=A.rref()
+show(A1)
+</script></div></div> <div class="para" id="sec1-4-matrix-rank-10-3"><div id="sec1-4-matrix-rank-10-3-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a=0
+A = matrix([[1,1,2,a^2],[1,1-a,2,0],[2,2-a,6-a,4]])
+print(A)
+rank(A)
+</script></div></div> <div class="para" id="sec1-4-matrix-rank-10-4"><div id="sec1-4-matrix-rank-10-4-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a=2
+A = matrix([[1,1,2,a^2],[1,1-a,2,0],[2,2-a,6-a,4]])
+print(A)
+rank(A)
+</script></div></div>
+</div></details></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-echelon-form.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap2-Rn-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
