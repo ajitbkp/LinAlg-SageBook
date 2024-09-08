@@ -386,7 +386,7 @@ x=-6/7, y=15/14, z=3/7\text{.}
 \end{equation*}
 </div>
 </div>
-</div></details> <div id="subsec-Gaussian-Elimination-4-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">        A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
+</div></details> <div id="subsec-Gaussian-Elimination-4-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
 b = vector(QQ,[3,0,3])
 Aug = A.augment(b,subdivide=True)
 Aug
@@ -401,7 +401,7 @@ y-z+w \amp    =  -1   \\
 -y+z-w \amp   =   1   
 \end{align*}
 </div>using Gaussian elimination method. Show that this system has infinitely many solutions. <div class="para" id="subsec-Gaussian-Elimination-5-2"><details id="subsec-Gaussian-Elimination-5-2-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="subsec-Gaussian-Elimination-5-2-1-1"><div id="subsec-Gaussian-Elimination-5-2-1-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">                    A = matrix(QQ,[[1,1,1,-1],
+<div class="para" id="subsec-Gaussian-Elimination-5-2-1-1"><div id="subsec-Gaussian-Elimination-5-2-1-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">            A = matrix(QQ,[[1,1,1,-1],
               [0,1,-1,1],
               [2,0,6,-6],
               [0,-1,1,-1]])
@@ -409,7 +409,23 @@ b = vector(QQ,[1,-1,6,1])
 Aug = A.augment(b,subdivide=True)
 Aug
 </script></div></div> <div class="para" id="subsec-Gaussian-Elimination-5-2-1-2"><div id="subsec-Gaussian-Elimination-5-2-1-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
-</script></div></div> Since last row zero, it represents the equation <span class="process-math">\(0=0\text{,}\)</span> in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.</div></details></div></article></details></section></section></div>
+</script></div></div> Since last row zero, it represents the equation <span class="process-math">\(0=0\text{,}\)</span> in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.</div></details></div></article></details><div class="para" id="subsec-Gaussian-Elimination-6"><details id="subsec-Gaussian-Elimination-6-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content">Solve the following system using the Gaussian elimination method and show that it has no solution.<div class="displaymath process-math" id="subsec-Gaussian-Elimination-6-1-1">
+\begin{align*}
+x+3y \amp   =  1   \\
+2x+y \amp  =  -3   \\
+2x+2y \amp  =   0   
+\end{align*}
+</div></article></details></div>
+<details id="subsec-Gaussian-Elimination-7" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec-Gaussian-Elimination-7-1"><div id="subsec-Gaussian-Elimination-7-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix([[1,3],[2,1],[2,2]])
+b = vector([1,-3,0])
+Aug = A.augment(b, subdivide=True)
+Aug
+</script></div></div> <div class="para" id="subsec-Gaussian-Elimination-7-2"><div id="subsec-Gaussian-Elimination-7-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
+</script></div></div> <div class="para" id="subsec-Gaussian-Elimination-7-3">Since last row represents the equation <span class="process-math">\(0=1\text{,}\)</span> the system has no solution.</div>
+</div></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-col-operations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap2-Rn-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
