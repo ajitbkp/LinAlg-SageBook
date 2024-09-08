@@ -433,6 +433,24 @@ var ptx_lunr_docs = [
   "body": "Let consider 2 equations in three variables. The corresponding homogeneous system is given by . It is easy to see that the set of all solutions of the homogeneous system is , we get which implies . Now substituting in the second equation of , we get . Here we can take as a free variable, hence any solution of~ is of the form which can be written as . Note that is a solution . Thus set of all solution of is of the form  Geometrically, each equation in the non homogeneous system represents a plane and the solution is the line of intersection of the the two planes. Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax.     "
 },
 {
+  "id": "sec1-6-LU",
+  "level": "1",
+  "url": "sec1-6-LU.html",
+  "type": "Section",
+  "number": "1.6",
+  "title": "<span class=\"process-math\">\\(LU\\)<\/span>-Facotorization",
+  "body": " -Facotorization    Let be a square matrix. An -decomposition is a decomposition of the matrix of form where and are lower and upper triangular matrices (of the same size), respectively.    Let where with if is lower triangular and with if is an upper triangular matrix. Equating the entries of the matrices and we get where if and if .  Note that Eqn. gives us equations in unknowns hence it can be solved by taking arbitrary values for any unknowns. One of the simplest choice are     for this method is called Doolittle method      for , this method is called Crout's method     The key to -decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of rows to rows. Let us assume that we need elementary such row operations to transform to an upper triangular matrix . That is, Since elementary matrices are invertible, we can multiply both sides by to get the required -decomposition of . Thus It is very easy to see that is an upper triangular matrix with diagonal entries 1. An invertible matrix admits an -factorization if and only if all its principal minors are non-zero. The factorization is unique if we require that the diagonal of (or ) consist of ones. If the matrix is singular, then an factorization may still exist. In fact, a square matrix of rank has an -factorization if the first principal minors are non-zero.  "
+},
+{
+  "id": "def-LU-factorization",
+  "level": "2",
+  "url": "sec1-6-LU.html#def-LU-factorization",
+  "type": "Definition",
+  "number": "1.6.1",
+  "title": "",
+  "body": "  Let be a square matrix. An -decomposition is a decomposition of the matrix of form where and are lower and upper triangular matrices (of the same size), respectively.   "
+},
+{
   "id": "chap2-Rn-Space",
   "level": "1",
   "url": "chap2-Rn-Space.html",

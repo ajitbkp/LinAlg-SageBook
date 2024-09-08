@@ -145,6 +145,9 @@ sagecell.makeSagecell({
 #thm-nosol-rank-2-1-5 { counter-set: thm-nosol-rank-2-1-5 0; }
 #thm-nosol-rank-2-1-5 > li::marker { content: ""counter(thm-nosol-rank-2-1-5,decimal)"."; }
 #thm-nosol-rank-2-1-5 > li { counter-increment: thm-nosol-rank-2-1-5; }
+#sec1-6-LU-5 { counter-set: sec1-6-LU-5 0; }
+#sec1-6-LU-5 > li::marker { content: ""counter(sec1-6-LU-5,decimal)"."; }
+#sec1-6-LU-5 > li { counter-increment: sec1-6-LU-5; }
 </style>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -164,7 +167,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec1-4-matrix-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap2-Rn-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec1-4-matrix-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec1-6-LU.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -191,6 +194,7 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec1-4-matrix-rank.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Rank of Matrices</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-hom-system.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Homogeneous System of Linear Equations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec1-6-LU.html" class="internal"><span class="codenumber">1.6</span> <span class="title"><span class="process-math">\(LU\)</span>-Facotorization</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap2-Rn-Space.html" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div></li>
@@ -320,7 +324,7 @@ show(plane1+plane2+l1+plane10+plane20+l0,axes=True,frame=False)
 </script></div></div>
 </div></article></details></div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec1-4-matrix-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap2-Rn-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec1-4-matrix-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec1-6-LU.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
