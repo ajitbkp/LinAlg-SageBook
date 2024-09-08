@@ -415,4 +415,54 @@ Aug
 </solution>
 </subsection>
     
+<subsection xml:id="subsec-Gauss-Jordan-Method">
+    <title>Gauss-Jordan elimination method</title>
+    <p>
+    Guass-Jordan method of solving the linear system <m>AX=B</m> is very similar to that of the Gaussian 
+elimination method. In this method we continue the the row elimination till we reduce the 
+row-reduced matrix of <m>A</m> to identity matrix.
+    </p>
+
+    <p>
+        <example> 
+            <p> Solve the system <m>Ax=b</m>  using the Gauss-Jordan elimination method, where
+                       <me> A= \begin{pmatrix} 1\amp 0\amp 5\amp 0\\-1\amp 4\amp 1\amp 0\\3\amp 0\amp 4\amp 1\\-2\amp 1\amp 1\amp 3 \end{pmatrix} \text{ and } 
+                b=\begin{pmatrix}1\\4\\3\\5\end{pmatrix}
+            </me>
+                </p>
+            <p>
+                <sage>
+                    <input>
+                        A = matrix(QQ,[[1,0,5,0],[-1,4,1,0],[3,0,4,1],[-2,1,1,3]])
+                        b = vector(QQ,[1,4,3,5])
+                        Aug = A.augment(b, subdivide=True)
+                        Aug.rref()
+                    </input>
+                    <output>
+                        [      1       0       0       0|  11/34]
+                        [      0       1       0       0|  89/85]
+                        [      0       0       1       0| 23/170]
+                        [      0       0       0       1|253/170]
+                    </output>
+                </sage>
+            </p>
+            <p>
+                Clearly the solution of the above system is 
+                <me>x_1=11/34, x_2 = 89/85, x_3 = 23/170, x_4=253/170</me>.
+                We can also solve the above system using the 'A.solve_right(b)' command in Sage.
+                <p>
+                    <sage>
+                        <input>
+                            A.solve_right(b)
+                        </input>
+                        <output>
+                            (11/34, 89/85, 23/170, 253/170)
+                        </output>
+                    </sage>
+                </p>
+            </p>
+
+        </example>
+    </p>
+</subsection>
 </section>
