@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec1-6-LU" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title><m>LU</m>-Facotorization</title>
+    <definition xml:id="def-LU-factorization">
+        <statement>
+            <p>
+                Let <m>A</m> be a square matrix. An <alert><m>LU</m>-decomposition</alert> is a decomposition of the matrix <m>A</m> of form <m>A = LU</m>
+                where <m>L</m> and <m>U</m> are lower and upper triangular matrices (of the same size), respectively.          
+            </p>
+        </statement>
+    </definition>
+    <p>
+    Let <m>A = LU</m> where <m>L=[\ell_{ij}]</m> with <m>\ell_{ij}=0</m>if <m>i\lt j</m> is lower triangular and <m>U=[u_{ij}]</m> with <m>u_{ij}=0</m> if <m>i\gt j</m> is an upper triangular matrix. 
+    
+    Equating the entries of the matrices <m>A</m> and <m>LU</m> we get 
+    <men xml:id="eqn-LU1">
+                \ell_{i1}u_{1j}+\ell_{i2}u_{2j}+\cdots +\ell_{in}u_{nj} = a_{ij} 
+    </men>
+    where  <m>\ell_{ij}=0</m> if  <m>i\lt j</m> and  <m>u_{ij}=0</m>  if <m>i\gt j</m>. 
+</p>
+
+<p>
+    Note that Eqn.<xref ref="eqn-LU1"/> gives us <m>n^2</m> equations in <m>n(n+1)=n^2+n</m> unknowns hence it can be solved by taking arbitrary values for any <m>n</m> unknowns. One of the simplest choice are
+</p>
+
+<ol>
+<li>
+<p>
+<m>\ell_{ii}=1</m> for <m>1\leq i\leq n</m> this method is called <alert> Doolittle method</alert>
+</p>
+</li>
+<li>
+<p>
+ <m>u_{ii}=1</m> for <m>1\leq i\leq n</m>, this method is called  <alert>Crout's method</alert>
+</p>
+</li>
+</ol>
+<p>
+The key to <m>LU</m>-decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of  rows to rows. Let us assume that we need <m>k</m> elementary such row operations to transform <m>A</m> to an upper triangular matrix <m>U</m>. That is, 
+<me>
+E_kE_{k-1}\ldots E_1 A=U
+</me>
+Since elementary matrices are invertible, we can multiply both sides by <m>(E_kE_{k-1}\ldots E_1)^{-1}</m> to get the required <m>LU</m> -decomposition of <m>A</m>. Thus 
+
+<me>
+A=E^{-1}_1 E^{-1}_2\cdots E^{-1}_kU=LU
+</me>
+It is very easy to see that <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper triangular matrix with diagonal entries 1. 
+
+An invertible matrix admits an <m>LU</m>-factorization if and only if all its principal minors are non-zero. The factorization is unique if we require that the diagonal of <m>L</m> (or <m>U</m>) consist of ones. 
+
+If the matrix is singular, then an <m>LU</m>factorization may still exist. In fact, a square matrix of rank <m>k</m> has an <m>LU</m>-factorization if the first <m>k</m> principal minors are non-zero.
+</p>
+
+</section>
