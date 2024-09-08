@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -124,6 +136,9 @@ window.MathJax = {
 #sec-echelon-form-5-3 { counter-set: sec-echelon-form-5-3 0; }
 #sec-echelon-form-5-3 > li::marker { content: ""counter(sec-echelon-form-5-3,decimal)"."; }
 #sec-echelon-form-5-3 > li { counter-increment: sec-echelon-form-5-3; }
+#alg-gaussian-elimination-2 { counter-set: alg-gaussian-elimination-2 0; }
+#alg-gaussian-elimination-2 > li::marker { content: ""counter(alg-gaussian-elimination-2,decimal)"."; }
+#alg-gaussian-elimination-2 > li { counter-increment: alg-gaussian-elimination-2; }
 </style>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -161,7 +176,10 @@ window.MathJax = {
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-Matrix-inverse-using-rref" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Matrix Inversion via Elementary Row Operations</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-col-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Column Operations</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-echelon-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Echelon Forms</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-echelon-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Echelon Forms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#subsec-Gaussian-Elimination" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Gaussian Elimination Method</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap2-Rn-Space.html" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div></li>
@@ -239,7 +257,136 @@ window.MathJax = {
 <li id="sec-echelon-form-5-3-4"><div class="para" id="sec-echelon-form-5-3-4-1">Make all subsequent entries in the 1st column 0 by using elementary row operations.</div></li>
 <li id="sec-echelon-form-5-3-5"><div class="para" id="sec-echelon-form-5-3-5-1">Repeat this process with next column.</div></li>
 </ol>
-</div></section></div>
+</div>
+<details id="sec-echelon-form-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-echelon-form-6-1">Reduce the matrix <span class="process-math">\(A=\begin{pmatrix}1\amp  2   \amp  4    \\
+1\amp   0  \amp  2    \\
+2\amp    4 \amp   1  
+\end{pmatrix}\)</span>  to row echelon form.</div></article></details><details id="sec-echelon-form-7" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec-echelon-form-7-1">
+<div class="para">
+<span class="process-math">\(\begin{pmatrix}
+1\amp  2   \amp  4    \\
+1\amp   0  \amp  2    \\
+2\amp    4 \amp   1   \\
+\end{pmatrix}
+\xrightarrow{
+\begin{array}{c}
+R_2\to R_2-R_1   \\  R_3\to R_3-2R_1   \\
+\end{array}}
+\begin{pmatrix}
+1\amp    2    \amp    4   \amp    \\
+0\amp   -2    \amp   -2   \amp  \\
+0\amp    0    \amp   -7   \amp  \\
+\end{pmatrix}
+\xrightarrow{\begin{array}{c}  R_1\to\frac{-1}{7}R_1   \\
+R_2\to\frac{-1}{2}R_2   \\
+\end{array}}
+\begin{pmatrix}
+1\amp   2   \amp   4      \\
+0\amp   1   \amp   1   \\
+0\amp   0   \amp   1  
+\end{pmatrix}\)</span> This <span class="process-math">\(\begin{pmatrix}
+1\amp   2   \amp   4      \\
+0\amp   1   \amp   1   \\
+0\amp   0   \amp   1  
+\end{pmatrix}\)</span>  is row-echelon matrix equivalent to <span class="process-math">\(A\)</span> . We can apply elementary row operation and make it to reduced-row-echelon  form.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+1\amp   2   \amp   4      \\
+0\amp   1   \amp   1   \\
+0\amp   0   \amp   1  
+\end{pmatrix}\xrightarrow{
+\begin{array}{c}
+R_2\to R_2-R_3 \\R_1\to R_1-4R_3\\R_1\to R_1-2R_2\\
+\end{array}}
+\begin{pmatrix}
+1\amp   0   \amp   0      \\
+0\amp   1   \amp   0   \\
+0\amp   0   \amp   1  
+\end{pmatrix}
+\end{equation*}
+</div>
+</div></div></details><div class="para" id="sec-echelon-form-8">Sage has inbulit method `A.rref()’ to convert the matrix into reduced row echelon form. You may also try ’A.echelonize()’ and ’A.echelon_form()’ <div id="sec-echelon-form-8-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
+</script></div> <div class="para" id="sec-echelon-form-8-2"><div id="sec-echelon-form-8-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.rref()
+</script></div></div>
+</div>
+<section class="subsection" id="subsec-Gaussian-Elimination"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="space"> </span><span class="title">Gaussian Elimination Method</span>
+</h3>
+<div class="para" id="subsec-Gaussian-Elimination-2">Solving a system of linear equations <span class="process-math">\(AX = B\text{,}\)</span> by reducing the augmented matrix <span class="process-math">\(A^*= [A,B]\)</span> to echelon form by using elementary row operations and then solving the equivalent system by back substitution is called solving by <em class="alert">Gaussian elimination</em> process. Now we state the step involved in the Gaussian elimination process. Only use the row operations stated above and work from top to bottom.</div>
+<article class="algorithm theorem-like" id="alg-gaussian-elimination"><h4 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Gaussian Elimination.</span>
+</h4>
+<ol class="decimal" id="alg-gaussian-elimination-2">
+<li id="alg-gaussian-elimination-2-1"><div class="para" id="alg-gaussian-elimination-2-1-1">Make in each row the first non-zero element (called the main element) eual to 1.</div></li>
+<li id="alg-gaussian-elimination-2-2"><div class="para" id="alg-gaussian-elimination-2-2-1">Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.</div></li>
+<li id="alg-gaussian-elimination-2-3"><div class="para" id="alg-gaussian-elimination-2-3-1">If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.</div></li>
+</ol>
+<div class="para" id="alg-gaussian-elimination-3-1"></div></article><details id="subsec-Gaussian-Elimination-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-Gaussian-Elimination-4-1">
+<div class="para">Solve the following system of linear equations using the Gaussian elimination method.</div>
+<div class="displaymath process-math" id="subsec-Gaussian-Elimination-4-1-1">
+\begin{align*}
+x+2y+4z \amp   = 3 \\
+x+2z   \amp =    0 \\
+2x+4y+z \amp  = 3   
+\end{align*}
+</div>
+</div> <details id="subsec-Gaussian-Elimination-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-Gaussian-Elimination-4-2-1">
+<div class="para">The corresponding augmented matrix is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^* =  [A~|~B]= \begin{pmatrix}
+1\amp  2   \amp  4   \amp   |  \amp  3   \\
+1\amp   0  \amp  2   \amp    |  \amp  0   \\
+2\amp    4 \amp   1  \amp    |  \amp   3  \\
+\end{pmatrix}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec-Gaussian-Elimination-4-2-2"><div class="displaymath process-math" id="subsec-Gaussian-Elimination-4-2-2-1">
+\begin{align*}
+\begin{pmatrix}
+1\amp  2   \amp  4   \amp   |  \amp  3   \\
+1\amp   0  \amp  2   \amp    |  \amp  0   \\
+2\amp    4 \amp   1  \amp    |  \amp   3  \\
+\end{pmatrix} \amp
+\xrightarrow{
+\begin{array}{c}
+R_2-R_1   \\  R_3-2R_1   \\
+\end{array}} 
+\begin{pmatrix}
+1\amp    2    \amp    4   \amp    |  \amp    3   \\
+0\amp   -2    \amp   -2   \amp    |  \amp   -3   \\
+0\amp    0    \amp   -7   \amp    |  \amp   -3   \\
+\end{pmatrix} \\
+\amp \xrightarrow{ \begin{array}{c}  \frac{-1}{7}R_1   \\
+\frac{-1}{2}R_2   \\
+\end{array}}
+\begin{pmatrix}
+1\amp   2   \amp   4   \amp    |  \amp    3   \\
+0\amp   1   \amp   1   \amp    |  \amp   3/2   \\
+0\amp   0   \amp   1   \amp    |  \amp   3/7   \\
+\end{pmatrix}
+\end{align*}
+</div></div> <div class="para logical" id="subsec-Gaussian-Elimination-4-2-3">
+<div class="para">The above augmented matrix represents the following equations:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x+2y+4z=3;\quad y+z=3/2;\quad z=3/7.
+\end{equation*}
+</div>
+<div class="para">Using back substitution, we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x=-6/7, y=15/14, z=3/7\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></article></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-col-operations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap2-Rn-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
