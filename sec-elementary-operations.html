@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Elementary Operations</title>
+<title>Elementary Row Operations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -130,6 +130,12 @@ sagecell.makeSagecell({
 #sec-elementary-operations-15-1-1 { counter-set: sec-elementary-operations-15-1-1 0; }
 #sec-elementary-operations-15-1-1 > li::marker { content: ""counter(sec-elementary-operations-15-1-1,decimal)"."; }
 #sec-elementary-operations-15-1-1 > li { counter-increment: sec-elementary-operations-15-1-1; }
+#sec-echelon-form-2-5 { counter-set: sec-echelon-form-2-5 0; }
+#sec-echelon-form-2-5 > li::marker { content: ""counter(sec-echelon-form-2-5,decimal)"."; }
+#sec-echelon-form-2-5 > li { counter-increment: sec-echelon-form-2-5; }
+#sec-echelon-form-5-3 { counter-set: sec-echelon-form-5-3 0; }
+#sec-echelon-form-5-3 > li::marker { content: ""counter(sec-echelon-form-5-3,decimal)"."; }
+#sec-echelon-form-5-3 > li { counter-increment: sec-echelon-form-5-3; }
 </style>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -149,7 +155,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chap1-lineq.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chap1-lineq.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-col-operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -161,15 +167,28 @@ sagecell.makeSagecell({
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chap1-lineq.html" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a></div>
-<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Operations</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Row Operations</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-Matrix-inverse-using-rref" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Matrix Inversion via Elementary Row Operations</span></a></div></li></ul>
-</li></ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-col-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Column Operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-echelon-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Echelon Forms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap2-Rn-Space.html" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap3-LT.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap4-Vector-Space.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap5-Eigen.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap5-orthogonality.html" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap5-inner-product.html" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap8-Least-Square.html" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap9-SVD.html" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap10-PCA.html" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a></div></li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-elementary-operations"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Elementary Operations</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Elementary Row Operations</span>
 </h2>
 <div class="para" id="sec-elementary-operations-2">The solution of a system of linear equations is unchanged if the following operations are performed. If, fact this is the basis for solving a system of linear equations.</div>
 <ol class="decimal" id="sec-elementary-operations-3">
@@ -342,7 +361,7 @@ A.inverse()
 A = matrix([[2,1,1,1],[1,0,1,1],[1,1,-2,1],[1,1,1,-1]]);A
 </script></div></div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="chap1-lineq.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="chap1-lineq.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-col-operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

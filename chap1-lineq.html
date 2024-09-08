@@ -130,6 +130,12 @@ sagecell.makeSagecell({
 #sec-elementary-operations-15-1-1 { counter-set: sec-elementary-operations-15-1-1 0; }
 #sec-elementary-operations-15-1-1 > li::marker { content: ""counter(sec-elementary-operations-15-1-1,decimal)"."; }
 #sec-elementary-operations-15-1-1 > li { counter-increment: sec-elementary-operations-15-1-1; }
+#sec-echelon-form-2-5 { counter-set: sec-echelon-form-2-5 0; }
+#sec-echelon-form-2-5 > li::marker { content: ""counter(sec-echelon-form-2-5,decimal)"."; }
+#sec-echelon-form-2-5 > li { counter-increment: sec-echelon-form-2-5; }
+#sec-echelon-form-5-3 { counter-set: sec-echelon-form-5-3 0; }
+#sec-echelon-form-5-3 > li::marker { content: ""counter(sec-echelon-form-5-3,decimal)"."; }
+#sec-echelon-form-5-3 > li { counter-increment: sec-echelon-form-5-3; }
 </style>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -161,11 +167,24 @@ sagecell.makeSagecell({
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter active">
 <div class="toc-title-box"><a href="chap1-lineq.html" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Row Operations</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-Matrix-inverse-using-rref" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Matrix Inversion via Elementary Row Operations</span></a></div></li></ul>
-</li></ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-col-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Column Operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-echelon-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Echelon Forms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap2-Rn-Space.html" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap3-LT.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap4-Vector-Space.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap5-Eigen.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap5-orthogonality.html" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap5-inner-product.html" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap8-Least-Square.html" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap9-SVD.html" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap10-PCA.html" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a></div></li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="chap1-lineq"><h2 class="heading">
@@ -238,7 +257,11 @@ x_2 \begin{pmatrix} 3\\2\\-2\\0\end{pmatrix}+
 x_3 \begin{pmatrix} 1\\-1\\0\\2\end{pmatrix}+
 x_4 \begin{pmatrix} 4\\3\\2\\1\end{pmatrix}.
 \end{equation*}
-</div></article></section><nav class="summary-links"><ul><li><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Operations</span></a></li></ul></nav></section></div>
+</div></article></section><nav class="summary-links"><ul>
+<li><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Row Operations</span></a></li>
+<li><a href="sec-col-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Column Operations</span></a></li>
+<li><a href="sec-echelon-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Echelon Forms</span></a></li>
+</ul></nav></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="frontmatter-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-elementary-operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
