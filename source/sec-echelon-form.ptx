@@ -240,7 +240,7 @@ above and work from top to bottom.
     </statement>
  </algorithm>   
 
- <example>
+ <example xml:id="row-echelon-eg1">
     <p>
         Solve the following system of
 		linear equations using the Gaussian elimination method.
@@ -321,7 +321,7 @@ above and work from top to bottom.
     </sage>
  </p>
     </example>
-<example>
+<example xml:id="row-echelon-eg2">
     Solve the following system of linear
     equations.
 <md>

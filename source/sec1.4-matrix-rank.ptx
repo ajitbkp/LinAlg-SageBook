@@ -224,4 +224,187 @@
         
             </solution>
         
+<p>
+    <theorem xml:id="thm-nosol-rank"><title>Number of Solution of a System</title>
+    
+    
+        <statement>
+            <p>
+                Let <m> AX = B</m> be a system of <m>m</m> 	linear
+	equations in <m>n</m> unknowns and <m>A^* = [A~|~B]</m>, the augmented
+	matrix of the system. Then
+<ol>
+    <li>
+        <p>
+            The system has a solution i.e. the system is consistent 
+                if and only if <m>r(A) = r(A^*)</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            If <m>r(A) = r(A^*) </m> and <m>r(A) = r </m> whihc is strictly less than <m>n</m>, then number of                 unknowns, then there are infinite number of solutions and <m>n-r</m> 
+                variables can be chosen freely.
+        </p>
+    </li>
+    <li>
+        <p>
+            If <m>r(A) = r(A^*)</m> and <m>r(A) = n</m>, the number of unknowns, then there is only one (unique) solution for the system.
+        </p>
+    </li>
+</ol>
+</p>
+       </statement>
+    </theorem>
+    
+</p>
+<p>
+    <corollary xml:id="cor-rank1">
+        <statement>
+            <p>
+                Suppose <m>AX = B</m> is a system of <m>m</m> linear
+	equations in <m>n</m> unknowns with <m>m \lt n</m>.  If <m>r(A)\neq r(A^*)</m>, then the system <m>AX=B</m> has no solution.
+            </p>
+        </statement>
+    </corollary>
+</p>
+<p>
+    <corollary xml:id="cor-rank2">
+        <statement>
+            <p>
+                Suppose <m>AX = B</m> is a system of <m>m</m> linear
+                    equations in <m>n</m> unknowns with <m>m \lt n</m>. Then the system either
+                    has no solution or has infinitely many solutions.
+            </p>
+        </statement>
+    </corollary>
+</p>
+<example xml:id="matrix-rank-eg1">
+    Consider the Example~<xref ref="row-echelon-eg1"/>. 
+    <p>
+        <md>
+           <mrow> \begin{pmatrix}
+                1\amp  2   \amp  4   \amp   |  \amp  3   \\
+                1\amp   0  \amp  2   \amp    |  \amp  0   \\
+                2\amp    4 \amp   1  \amp    |  \amp   3  \\
+            \end{pmatrix} \amp
+            \xrightarrow{
+                \begin{array}{c}
+                    RREF
+            \end{array}}
+            \begin{pmatrix}
+                1\amp   2   \amp   4   \amp    |  \amp    3   \\
+                0\amp   1   \amp   1   \amp    |  \amp   3/2   \\
+                0\amp   0   \amp   1   \amp    |  \amp   3/7   \\
+            \end{pmatrix} 
+        </mrow>
+    </md>
+    Thus we have  <m>r(A)=r(A^*)=3</m>,  hence this system has a unique solution.
+    </p>
+</example>
+
+<p>
+    <example xml:id="matrix-rank-eg2">
+        Let us consider the system <m>AX=B</m> where 
+        <m>A=\begin{bmatrix}1 \amp   -2\amp  0\amp  3\\3\amp  2\amp  8\amp  1\\2\amp  3\amp  7\amp  2\\-1\amp  2\amp  0\amp  4\end{bmatrix}\quad  B=\begin{bmatrix}-4\\4\\3\\-3\end{bmatrix}\quad  X=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}.
+        </m>
+        
+        <p>
+            <solution>
+                <p>
+                    
+        
+        <md>
+            <mrow>
+                A^*=\begin{bmatrix}
+                1 \amp   -2\amp  0\amp  3\amp  |\amp  -4\\
+                3\amp  2\amp  8\amp  1\amp  |\amp  4\\2
+                \amp  3\amp  7\amp  2\amp  |\amp  3\\
+                -1\amp  2\amp  0\amp  4\amp  |\amp  -3
+                \end{bmatrix} 
+                \amp
+                \overrightarrow{\text{RREF}}
+                \begin{bmatrix}
+                1 \amp   0\amp  2\amp  0\amp  |\amp  1\\
+                0\amp  1\amp  1\amp  0\amp  |\amp  1\\
+                0\amp  0\amp  0\amp  1\amp  |\amp  -1\\
+                0\amp  0\amp  0\amp  0\amp  |\amp  0
+                \end{bmatrix}
+            </mrow>
+        </md>
+            Clearly <m>r(A)=r(A^*)=3\lt4</m>, hence this system has infinitely many solutions.
+           
+                </p>
+            </solution>
+        </p>
+      
+    </example>
+</p>
+<p>
+    <example xml:id="matrix-rank-eg3">
+        <p> Consider the system of linear equations <m>Ax=b</m>, where
+        <me>\begin{pmatrix}
+		1 \amp  -2 \amp  2 \amp  3 \\
+		3 \amp  2 \amp  -1 \amp  5 \\
+		-2 \amp  0 \amp  3 \amp  4 \\
+		13 \amp  2 \amp  -9 \amp  1
+	\end{pmatrix}, \text{ and } 
+	b= \begin{pmatrix}
+		5 \\ -7 \\ 8 \\ 11
+	\end{pmatrix}
+	</me>
+</p>
+<p>
+    <solution>
+        <me> 
+            \left(\begin{array}{rrrr|r}
+1 \amp  -2 \amp  2 \amp  3 \amp  5 \\
+3 \amp  2 \amp  -1 \amp  5 \amp  -7 \\
+-2 \amp  0 \amp  3 \amp  4 \amp  8 \\
+13 \amp  2 \amp  -9 \amp  1 \amp  11
+\end{array}\right)
+\overrightarrow{\text{RREF}}
+\left(\begin{array}{rrrr|r}
+1 \amp  0 \amp  0 \amp  \frac{10}{7} \amp  0 \\
+0 \amp  1 \amp  0 \amp  \frac{3}{2} \amp  0 \\
+0 \amp  0 \amp  1 \amp  \frac{16}{7} \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  1
+\end{array}\right)
+        </me>
+        Clearly <m>r(A)=3</m> but <m>r(A^*=4</m>. Hence the system does not have a solution.
+        <p>
+            <sage>
+                <input>
+                    A = matrix(QQ,[[1, -2, 2, 3], 
+              [3, 2, -1, 5], 
+               [-2, 0, 3, 4], 
+               [13, 2, -9, 1]])
+b = vector([5,-7,8,11])
+Aug = A.augment(b,subdivide=True)
+Aug
+                </input>
+                <output>
+                    [ 1 -2  2  3| 5]
+[ 3  2 -1  5|-7]
+[-2  0  3  4| 8]
+[13  2 -9  1|11]
+                </output>
+            </sage>
+        </p>
+        <p>
+            <sage>
+                <input>
+                    Aug.rref()
+                </input>
+                <output>
+                    [   1    0    0 10/7|   0]
+                    [   0    1    0  3/2|   0]
+                    [   0    0    1 16/7|   0]
+                    [   0    0    0    0|   1]
+                </output>
+            </sage>
+        </p>
+    </solution>
+</p>
+    </example>
+</p>
 </section>
