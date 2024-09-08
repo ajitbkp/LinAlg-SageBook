@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Solve the following system of linear equations using the Gaussian elimination method.</div>
+<div class="displaymath process-math">
+\begin{align*}
+x+2y+4z \amp   = 3 \\
+x+2z   \amp =    0 \\
+2x+4y+z \amp  = 3   
+\end{align*}
+</div>
+</div> <details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">The corresponding augmented matrix is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^* =  [A~|~B]= \begin{pmatrix}
+1\amp  2   \amp  4   \amp   |  \amp  3   \\
+1\amp   0  \amp  2   \amp    |  \amp  0   \\
+2\amp    4 \amp   1  \amp    |  \amp   3  \\
+\end{pmatrix}
+\end{equation*}
+</div>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\begin{pmatrix}
+1\amp  2   \amp  4   \amp   |  \amp  3   \\
+1\amp   0  \amp  2   \amp    |  \amp  0   \\
+2\amp    4 \amp   1  \amp    |  \amp   3  \\
+\end{pmatrix} \amp
+\xrightarrow{
+\begin{array}{c}
+R_2-R_1   \\  R_3-2R_1   \\
+\end{array}} 
+\begin{pmatrix}
+1\amp    2    \amp    4   \amp    |  \amp    3   \\
+0\amp   -2    \amp   -2   \amp    |  \amp   -3   \\
+0\amp    0    \amp   -7   \amp    |  \amp   -3   \\
+\end{pmatrix} \\
+\amp \xrightarrow{ \begin{array}{c}  \frac{-1}{7}R_1   \\
+\frac{-1}{2}R_2   \\
+\end{array}}
+\begin{pmatrix}
+1\amp   2   \amp   4   \amp    |  \amp    3   \\
+0\amp   1   \amp   1   \amp    |  \amp   3/2   \\
+0\amp   0   \amp   1   \amp    |  \amp   3/7   \\
+\end{pmatrix}
+\end{align*}
+</div></div> <div class="para logical">
+<div class="para">We can do more step of row elimination to convert the first three columns into identity matrix. However, the above augmented matrix represents the following equations:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x+2y+4z=3;\quad y+z=3/2;\quad z=3/7.
+\end{equation*}
+</div>
+<div class="para">Using back substitution, we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x=-6/7, y=15/14, z=3/7\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details> <div id="row-echelon-eg1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
+b = vector(QQ,[3,0,3])
+Aug = A.augment(b,subdivide=True)
+Aug
+</script></div> <div class="para"><div id="row-echelon-eg1-4-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
+</script></div></div></article><span class="incontext"><a class="internal" href="sec-echelon-form.html#row-echelon-eg1">in-context</a></span>
+</body>
+</html>

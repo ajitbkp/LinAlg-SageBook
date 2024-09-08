@@ -142,6 +142,9 @@ sagecell.makeSagecell({
 #sec1-4-matrix-rank-5-2 { counter-set: sec1-4-matrix-rank-5-2 0; }
 #sec1-4-matrix-rank-5-2 > li::marker { content: ""counter(sec1-4-matrix-rank-5-2,decimal)"."; }
 #sec1-4-matrix-rank-5-2 > li { counter-increment: sec1-4-matrix-rank-5-2; }
+#thm-nosol-rank-2-1-5 { counter-set: thm-nosol-rank-2-1-5 0; }
+#thm-nosol-rank-2-1-5 > li::marker { content: ""counter(thm-nosol-rank-2-1-5,decimal)"."; }
+#thm-nosol-rank-2-1-5 > li { counter-increment: thm-nosol-rank-2-1-5; }
 </style>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -331,19 +334,19 @@ R_2\to R_2-R_3 \\R_1\to R_1-4R_3\\R_1\to R_1-2R_2\\
 <li id="alg-gaussian-elimination-2-2"><div class="para" id="alg-gaussian-elimination-2-2-1">Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.</div></li>
 <li id="alg-gaussian-elimination-2-3"><div class="para" id="alg-gaussian-elimination-2-3-1">If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.</div></li>
 </ol>
-<div class="para" id="alg-gaussian-elimination-3-1"></div></article><details id="subsec-Gaussian-Elimination-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="alg-gaussian-elimination-3-1"></div></article><details id="row-echelon-eg1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-Gaussian-Elimination-4-1">
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="row-echelon-eg1-1">
 <div class="para">Solve the following system of linear equations using the Gaussian elimination method.</div>
-<div class="displaymath process-math" id="subsec-Gaussian-Elimination-4-1-1">
+<div class="displaymath process-math" id="row-echelon-eg1-1-1">
 \begin{align*}
 x+2y+4z \amp   = 3 \\
 x+2z   \amp =    0 \\
 2x+4y+z \amp  = 3   
 \end{align*}
 </div>
-</div> <details id="subsec-Gaussian-Elimination-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="subsec-Gaussian-Elimination-4-2-1">
+</div> <details id="row-echelon-eg1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="row-echelon-eg1-2-1">
 <div class="para">The corresponding augmented matrix is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -354,7 +357,7 @@ A^* =  [A~|~B]= \begin{pmatrix}
 \end{pmatrix}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="subsec-Gaussian-Elimination-4-2-2"><div class="displaymath process-math" id="subsec-Gaussian-Elimination-4-2-2-1">
+</div> <div class="para logical" id="row-echelon-eg1-2-2"><div class="displaymath process-math" id="row-echelon-eg1-2-2-1">
 \begin{align*}
 \begin{pmatrix}
 1\amp  2   \amp  4   \amp   |  \amp  3   \\
@@ -379,7 +382,7 @@ R_2-R_1   \\  R_3-2R_1   \\
 0\amp   0   \amp   1   \amp    |  \amp   3/7   \\
 \end{pmatrix}
 \end{align*}
-</div></div> <div class="para logical" id="subsec-Gaussian-Elimination-4-2-3">
+</div></div> <div class="para logical" id="row-echelon-eg1-2-3">
 <div class="para">We can do more step of row elimination to convert the first three columns into identity matrix. However, the above augmented matrix represents the following equations:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -393,29 +396,29 @@ x=-6/7, y=15/14, z=3/7\text{.}
 \end{equation*}
 </div>
 </div>
-</div></details> <div id="subsec-Gaussian-Elimination-4-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
+</div></details> <div id="row-echelon-eg1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
 b = vector(QQ,[3,0,3])
 Aug = A.augment(b,subdivide=True)
 Aug
-</script></div> <div class="para" id="subsec-Gaussian-Elimination-4-4"><div id="subsec-Gaussian-Elimination-4-4-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
-</script></div></div></article></details><details id="subsec-Gaussian-Elimination-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</script></div> <div class="para" id="row-echelon-eg1-4"><div id="row-echelon-eg1-4-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
+</script></div></div></article></details><details id="row-echelon-eg2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content">Solve the following system of linear equations.<div class="displaymath process-math" id="subsec-Gaussian-Elimination-5-1">
+</h4></summary><article class="example example-like knowl__content">Solve the following system of linear equations.<div class="displaymath process-math" id="row-echelon-eg2-1">
 \begin{align*}
 x+y+z-w \amp    =  1   \\
 y-z+w \amp    =  -1   \\
 3x+6z-6w \amp   =   6   \\
 -y+z-w \amp   =   1   
 \end{align*}
-</div>using Gaussian elimination method. Show that this system has infinitely many solutions. <div class="para" id="subsec-Gaussian-Elimination-5-2"><details id="subsec-Gaussian-Elimination-5-2-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="subsec-Gaussian-Elimination-5-2-1-1"><div id="subsec-Gaussian-Elimination-5-2-1-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">            A = matrix(QQ,[[1,1,1,-1],
+</div>using Gaussian elimination method. Show that this system has infinitely many solutions. <div class="para" id="row-echelon-eg2-2"><details id="row-echelon-eg2-2-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="row-echelon-eg2-2-1-1"><div id="row-echelon-eg2-2-1-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">            A = matrix(QQ,[[1,1,1,-1],
               [0,1,-1,1],
               [2,0,6,-6],
               [0,-1,1,-1]])
 b = vector(QQ,[1,-1,6,1])
 Aug = A.augment(b,subdivide=True)
 Aug
-</script></div></div> <div class="para" id="subsec-Gaussian-Elimination-5-2-1-2"><div id="subsec-Gaussian-Elimination-5-2-1-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
+</script></div></div> <div class="para" id="row-echelon-eg2-2-1-2"><div id="row-echelon-eg2-2-1-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
 </script></div></div> Since last row zero, it represents the equation <span class="process-math">\(0=0\text{,}\)</span> in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.</div></details></div></article></details><div class="para" id="subsec-Gaussian-Elimination-6"><details id="subsec-Gaussian-Elimination-6-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content">Solve the following system using the Gaussian elimination method and show that it has no solution.<div class="displaymath process-math" id="subsec-Gaussian-Elimination-6-1-1">

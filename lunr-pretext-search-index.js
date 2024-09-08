@@ -172,18 +172,18 @@ var ptx_lunr_docs = [
   "body": "Gaussian Elimination    Make in each row the first non-zero element (called the main element) eual to 1.    Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.    If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.        "
 },
 {
-  "id": "subsec-Gaussian-Elimination-4",
+  "id": "row-echelon-eg1",
   "level": "2",
-  "url": "sec-echelon-form.html#subsec-Gaussian-Elimination-4",
+  "url": "sec-echelon-form.html#row-echelon-eg1",
   "type": "Example",
   "number": "1.3.5",
   "title": "",
   "body": " Solve the following system of linear equations using the Gaussian elimination method.    The corresponding augmented matrix is      We can do more step of row elimination to convert the first three columns into identity matrix. However, the above augmented matrix represents the following equations: Using back substitution, we get .       "
 },
 {
-  "id": "subsec-Gaussian-Elimination-5",
+  "id": "row-echelon-eg2",
   "level": "2",
-  "url": "sec-echelon-form.html#subsec-Gaussian-Elimination-5",
+  "url": "sec-echelon-form.html#row-echelon-eg2",
   "type": "Example",
   "number": "1.3.6",
   "title": "",
@@ -214,7 +214,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.4",
   "title": "Rank of Matrices",
-  "body": " Rank of Matrices     Let be an matrix. Delete any rows and columns of . The resulting matrix is called a sub-matrix of . If , then it is called a square sub-matrix of of order .        The rank of an matrix is the order of the largest square sub-matrix of whose determinant is non-zero. We denote the rank of a matrix by .      Determine the rank of .   We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .       We list the following results without proof.     An matrix is of rank 0 if and only it is a zero matrix.     An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .        Suppose is an $m \\times n$ matrix. The rank of is equal to the number of non-zero rows in an echelon equivalent form of . In other words, the rank of matrix is the number of leading 1's in any row-echelon matrix to which can be carried by row operations.      Let us find the ranl of .      . Hence .     Consider a matrix . Find the rank of the matrix.    Let us apply elementary row operations of . We have Clearly the rank of is 3 if . If or , then it is easy to check that rank of is 2.            "
+  "body": " Rank of Matrices     Let be an matrix. Delete any rows and columns of . The resulting matrix is called a sub-matrix of . If , then it is called a square sub-matrix of of order .        The rank of an matrix is the order of the largest square sub-matrix of whose determinant is non-zero. We denote the rank of a matrix by .      Determine the rank of .   We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .       We list the following results without proof.     An matrix is of rank 0 if and only it is a zero matrix.     An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .        Suppose is an $m \\times n$ matrix. The rank of is equal to the number of non-zero rows in an echelon equivalent form of . In other words, the rank of matrix is the number of leading 1's in any row-echelon matrix to which can be carried by row operations.      Let us find the ranl of .      . Hence .     Consider a matrix . Find the rank of the matrix.    Let us apply elementary row operations of . We have Clearly the rank of is 3 if . If or , then it is easy to check that rank of is 2.             Number of Solution of a System   Let be a system of linear equations in unknowns and , the augmented matrix of the system. Then   The system has a solution i.e. the system is consistent if and only if .    If and whihc is strictly less than , then number of unknowns, then there are infinite number of solutions and variables can be chosen freely.    If and , the number of unknowns, then there is only one (unique) solution for the system.           Suppose is a system of linear equations in unknowns with . If , then the system has no solution.        Suppose is a system of linear equations in unknowns with . Then the system either has no solution or has infinitely many solutions.     Consider the Example~ .  Thus we have , hence this system has a unique solution.    Let us consider the system where     Clearly , hence this system has infinitely many solutions.        Consider the system of linear equations , where     Clearly but . Hence the system does not have a solution.           "
 },
 {
   "id": "def-sub-matrix",
@@ -278,6 +278,60 @@ var ptx_lunr_docs = [
   "number": "1.4.7",
   "title": "",
   "body": " Consider a matrix . Find the rank of the matrix.  "
+},
+{
+  "id": "thm-nosol-rank",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#thm-nosol-rank",
+  "type": "Theorem",
+  "number": "1.4.8",
+  "title": "Number of Solution of a System.",
+  "body": "Number of Solution of a System   Let be a system of linear equations in unknowns and , the augmented matrix of the system. Then   The system has a solution i.e. the system is consistent if and only if .    If and whihc is strictly less than , then number of unknowns, then there are infinite number of solutions and variables can be chosen freely.    If and , the number of unknowns, then there is only one (unique) solution for the system.      "
+},
+{
+  "id": "cor-rank1",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#cor-rank1",
+  "type": "Corollary",
+  "number": "1.4.9",
+  "title": "",
+  "body": "  Suppose is a system of linear equations in unknowns with . If , then the system has no solution.   "
+},
+{
+  "id": "cor-rank2",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#cor-rank2",
+  "type": "Corollary",
+  "number": "1.4.10",
+  "title": "",
+  "body": "  Suppose is a system of linear equations in unknowns with . Then the system either has no solution or has infinitely many solutions.   "
+},
+{
+  "id": "matrix-rank-eg1",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#matrix-rank-eg1",
+  "type": "Example",
+  "number": "1.4.11",
+  "title": "",
+  "body": "Consider the Example~ .  Thus we have , hence this system has a unique solution.  "
+},
+{
+  "id": "matrix-rank-eg2",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#matrix-rank-eg2",
+  "type": "Example",
+  "number": "1.4.12",
+  "title": "",
+  "body": "Let us consider the system where     Clearly , hence this system has infinitely many solutions.    "
+},
+{
+  "id": "matrix-rank-eg3",
+  "level": "2",
+  "url": "sec1-4-matrix-rank.html#matrix-rank-eg3",
+  "type": "Example",
+  "number": "1.4.13",
+  "title": "",
+  "body": " Consider the system of linear equations , where     Clearly but . Hence the system does not have a solution.         "
 },
 {
   "id": "chap2-Rn-Space",
