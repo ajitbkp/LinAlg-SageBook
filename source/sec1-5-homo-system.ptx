@@ -110,6 +110,57 @@ are stated in the following Theorem.
             </statement>
         </theorem>
         
+        <p>
+            <example>
+                Let us consider one equation in two variables, <m>2x_1+3x_2=5</m>. 
+                The corresponding homogeneous system is <m>2x_1+3x_2=0</m>. It is easy see that 
+                <m>\left\{\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix}:\alpha\in \R\right\}</m> 
+                is set of all solutions of  <m>2x_1+3x_2=0</m>. Let us consider a solution 
+                <m>X_0=\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}</m> of the non homogeneous system 
+                <m>2x_1+3x_2=5</m>.  Let <m>X=\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix}</m> 
+                be any solution of <m>2x_1+3x_2=0</m>. Then it is easy to check that 
+                <m>X_0+X=\begin{pmatrix} \alpha\\\frac{5}{3}-\frac{2}{3}\alpha\end{pmatrix}</m> 
+                is a solution of <m>2x_1+3x_2=5</m>.
+                
+                Alternatively, to solve <m>2x_1+3x_2=5</m>, we can free one of the variable say <m>x_1</m>. That is <m>x_1</m> can take any real value. Let <m>x_1=\alpha</m>,  then <m>x_2=\frac{5}{3}-\frac{2}{3}\alpha</m>. Hence a generic solution of <m>2x_1+3x_2=5</m> is given by <m>\begin{pmatrix}x_1\\x_2\end{pmatrix}=\begin{pmatrix} \alpha\\\frac{5}{3}-\frac{2}{3}\alpha\end{pmatrix}</m>, which can be rewritten as 
+                <m>
+                \begin{pmatrix} \alpha\\\frac{5}{3}-\frac{2}{3}\alpha\end{pmatrix}=\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix}
+                </m>. 
+                Thus all solutions of <m>2x_1+3x_2=5</m> are of the form 
+                <me>
+                \left\{\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix} :\alpha \in \R\right\}.
+                </me>
+            
+            </example>
+        </p>
         
+        <p>
+            <example>
+                Let consider 2 equations in three variables.
+                <men xml:id="eqn-hom-eg1-1">2x_1-x_2-x_3=5; x_1+x_2-2x_3=7 </men>
+                
+                The corresponding homogeneous system is given by 
+                <men xml:id="eqn-hom-eg1-2">	2x_1-x_2-x_3=0; x_1+x_2-2x_3=0	</men>.
+                It is easy to see that the set of all solutions of the homogeneous system <xref ref="eqn-hom-eg1-2"/> is 
+                <me>
+                \begin{bmatrix} x_1\\x_2\\ x_3\end{bmatrix}=\left\{ 
+                \begin{bmatrix} \alpha\\ \alpha\\ \alpha\end{bmatrix}:
+                \alpha\in \R
+                \right\}
+                </me><xref ref="eqn-hom-eg1-1"/>, we get <m>3x_1-3x_3=12</m> which implies <m>x_1=4+x_3</m>. 
+            Now substituting <m>x_1=4+x_3</m> in the second equation of <xref ref="eqn-hom-eg1-1"/>, we get <m>x_2=3+x_3</m>. 
+            Here we can take <m>x_3</m> as a free variable, hence any solution of~<xref ref="eqn-hom-eg1-1"/> is of the form 
+            <me>\begin{bmatrix}4+\alpha\\3+\alpha\\\alpha\end{bmatrix}</me> which can be written as <me>\begin{bmatrix}4\\3\\0\end{bmatrix}+\begin{bmatrix}\alpha\\\alpha\\\alpha\end{bmatrix}</me>. Note that <m>\begin{bmatrix}4\\3\\0\end{bmatrix}</m> is a solution <xref ref="eqn-hom-eg1-1"/>. Thus set of all solution of <xref ref="eqn-hom-eg1-1"/> is of the form 
+                <me>
+                \begin{bmatrix} x_1\\x_2\\ x_3\end{bmatrix}=\left\{ 
+                \begin{bmatrix}4\\3\\0\end{bmatrix}+\begin{bmatrix} \alpha\\ \alpha\\ \alpha\end{bmatrix}:
+                \alpha\in \R
+                \right\}
+                </me>
+                
+                
+                
+            </example>
+        </p>
         
 </section>
