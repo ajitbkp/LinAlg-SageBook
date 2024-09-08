@@ -340,7 +340,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Homogeneous System of Linear Equations",
-  "body": " Homogeneous System of Linear Equations     A system of linear equations is called homogeneous if . Otherwise it is called a non homogeneous system.     Observe that any homogeneous system of linear equations has at least one solution, namely the trivial solution ( , for all ). The augmented matrix is got from adding one zero column to . Hence .    A homogeneous system of equations in the same number of unknowns ( unknowns) has a nontrivial solution if and only if is singular, that is , if and only if .      The given homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if , the number of variables ( ). But , if and only if is singular.       A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.      If , then and hence the result follows from thm.~ .   We would like to get the connection between solutions of a homogeneous system and the solutions of , . These are stated in the following Theorem.     Suppose the non homogeneous system of linear equations has a solution say . All the solutions of this system are of the form where runs through all the solutions of the corresponding homogeneous system .      Let be a solution of . Then . Hence is a solution of .  Suppose is a solution of , i.e. . Then and hence is a solution of and , where .     The above theorem can be written equivalently as    If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.    "
+  "body": " Homogeneous System of Linear Equations     A system of linear equations is called homogeneous if . Otherwise it is called a non homogeneous system.     Observe that any homogeneous system of linear equations has at least one solution, namely the trivial solution ( , for all ). The augmented matrix is got from adding one zero column to . Hence .    A homogeneous system of equations in the same number of unknowns ( unknowns) has a nontrivial solution if and only if is singular, that is , if and only if .      The given homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if , the number of variables ( ). But , if and only if is singular.       A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.      If , then and hence the result follows from thm.~ .   We would like to get the connection between solutions of a homogeneous system and the solutions of , . These are stated in the following Theorem.     Suppose the non homogeneous system of linear equations has a solution say . All the solutions of this system are of the form where runs through all the solutions of the corresponding homogeneous system .      Let be a solution of . Then . Hence is a solution of .  Suppose is a solution of , i.e. . Then and hence is a solution of and , where .     The above theorem can be written equivalently as    If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.     Let us consider one equation in two variables, . The corresponding homogeneous system is . It is easy see that is set of all solutions of . Let us consider a solution of the non homogeneous system . Let be any solution of . Then it is easy to check that is a solution of . Alternatively, to solve , we can free one of the variable say . That is can take any real value. Let , then . Hence a generic solution of is given by , which can be rewritten as . Thus all solutions of are of the form     Let consider 2 equations in three variables. The corresponding homogeneous system is given by . It is easy to see that the set of all solutions of the homogeneous system is , we get which implies . Now substituting in the second equation of , we get . Here we can take as a free variable, hence any solution of~ is of the form which can be written as . Note that is a solution . Thus set of all solution of is of the form    "
 },
 {
   "id": "def-homo-system",
@@ -413,6 +413,24 @@ var ptx_lunr_docs = [
   "number": "1.5.5",
   "title": "",
   "body": "  If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.   "
+},
+{
+  "id": "sec-hom-system-12-1",
+  "level": "2",
+  "url": "sec-hom-system.html#sec-hom-system-12-1",
+  "type": "Example",
+  "number": "1.5.6",
+  "title": "",
+  "body": "Let us consider one equation in two variables, . The corresponding homogeneous system is . It is easy see that is set of all solutions of . Let us consider a solution of the non homogeneous system . Let be any solution of . Then it is easy to check that is a solution of . Alternatively, to solve , we can free one of the variable say . That is can take any real value. Let , then . Hence a generic solution of is given by , which can be rewritten as . Thus all solutions of are of the form  "
+},
+{
+  "id": "sec-hom-system-13-1",
+  "level": "2",
+  "url": "sec-hom-system.html#sec-hom-system-13-1",
+  "type": "Example",
+  "number": "1.5.7",
+  "title": "",
+  "body": "Let consider 2 equations in three variables. The corresponding homogeneous system is given by . It is easy to see that the set of all solutions of the homogeneous system is , we get which implies . Now substituting in the second equation of , we get . Here we can take as a free variable, hence any solution of~ is of the form which can be written as . Note that is a solution . Thus set of all solution of is of the form  "
 },
 {
   "id": "chap2-Rn-Space",
