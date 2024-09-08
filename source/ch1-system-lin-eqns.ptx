@@ -124,5 +124,5 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
   <xi:include href="sec-row-operations.ptx" />
   <xi:include href="sec-col-operations.ptx" />
   <xi:include href="sec-echelon-form.ptx" />
-
+  <xi:include href="sec1.4-matrix-rank.ptx" />
 </chapter>

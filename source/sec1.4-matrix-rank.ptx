@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec1-4-matrix-rank" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Rank of Matrices</title>
+<p>
+   <definition xml:id="def-sub-matrix">
+    <statement>
+        <p>
+            Let <m>A</m> be an <m>m \times n</m> matrix. Delete any <m>m-k</m> rows and
+            <m>n-l</m> columns of <m>A</m>. The resulting matrix is called a <m>k\times  l</m> 
+            sub-matrix  of <m>A</m>. If <m>k = l</m>, then it is called a square
+                sub-matrix of <m>A</m> of order <m>k</m>.
+        </p>
+    </statement>
+
+   </definition>
+</p>
+   <p>
+    <definition xml:id="def-matrix-rank">
+        <statement>
+            <p>
+                The <alert>rank</alert> of an <m>m \times n</m> matrix
+                <m>A</m>  is the order of the largest square sub-matrix of <m>A</m> whose
+                determinant is non-zero. We denote the rank of a matrix <m>A</m> by
+                <m>r(A)</m>.
+            </p>
+        </statement>
+    </definition>
+   </p>
+   <p>
+    <example>
+        Determine the rank of <m>A=
+            \begin{pmatrix}
+                1 \amp  1   \amp  1   \\
+                2 \amp  3  \amp  4   \\
+                4 \amp   5  \amp  6   \\
+            \end{pmatrix}</m>.
+            <p>
+                <solution>
+                    <p>
+                        We can see that <m> \mid A\mid  = 0</m>. Hence
+                        <m>r(A) \leq 2</m>. Now we look for the square sub-matrix of <m>A</m> of
+                        order 2 whose determinant is non-zero. Consider the square
+                        sub-matrix <m>B= 
+                        \begin{pmatrix}
+                            1\amp 1   \\
+                            2\amp 3   \\
+                        \end{pmatrix}</m>,   <m>\mid B\mid = 1</m>. Hence  <m>r(A) = 2</m>.
+                    </p>
+                </solution>
+            </p>
+    </example>
+   </p>
+
+   <observation>
+    <p> 
+        We list the following results without proof. 
+    </p>
+        <ol>
+            <p>
+              <li>
+                        <p>
+                            An <m>m \times n</m> matrix is of rank 0 if and only it is a zero
+		matrix.
+                        </p>
+                    </li>
+                </p>
+                <li>
+                    <p>
+                        An <m>n \times n</m> square matrix <m>A</m> has rank <m>n</m> if and only
+		if <m>|A| \neq 0</m>.
+                    </p>
+                </li>
+                <li>
+                <p>
+                    An <m>n \times n</m> square matrix <m>A</m> has rank  strictly less than <m>n</m> if and only 		if <m>|A| = 0</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    For an <m>m \times n</m> matrix <m>A</m>, rank of <m>A \leq  \min (m, n).</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    The rank of a matrix is not affected if we insert zero column
+		or a zero row (of appropriate size) to it.
+                </p>
+            </li>
+            <li>
+                <p>
+                    If <m>A</m> is an <m>m \times n</m>
+		matrix, then <m>r(A) = r(A^T)</m>, where <m>A^T</m> is the transpose of<m>A</m>.
+                </p>
+            </li>
+        </ol>
+       </observation>
+
+       <p>
+        <theorem xml:id="thm-rank-theorem">
+            <statement>
+                <p>
+                    Suppose <m>A</m> is an $m \times n$ matrix. The
+	rank of  <m>A</m> is equal to the number of non-zero rows  in an
+	echelon equivalent form of   <m>A</m>.  In other words, the rank of matrix  <m>A</m> 
+	is the number of leading 1's in any row-echelon matrix to which  <m>A</m> can be
+	carried by row operations.
+	
+                </p>
+            </statement>
+        </theorem>
+       </p>
+       <p>
+        <example>
+            Let us find the ranl of <m>A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}</m>.
+
+        </example>
+        <p>
+            <solution>
+                <p>
+                    <me>A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}\overrightarrow{\text{Row echelon form}}\begin{bmatrix}1 \amp  0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp 0\amp 1\\0\amp 0\amp 0\amp 1\amp -1\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}</me>. Hence <m>r(A)=3</m>.
+                </p>
+            </solution>
+        </p>
+
+       </p>
+</section>
