@@ -110,4 +110,191 @@ We employ the following procedures to convert a matrix into a row echelon form:
     </li>
 </ol>
     </p>
+
+    <example>
+     <p>
+        Reduce the matrix 
+        <m> A=\begin{pmatrix}1\amp  2   \amp  4    \\
+            1\amp   0  \amp  2    \\
+            2\amp    4 \amp   1  
+            \end{pmatrix}</m>  to row echelon form.
+        </p>
+</example>
+
+<solution>
+    <p>
+       <m>   \begin{pmatrix}
+                    1\amp  2   \amp  4    \\
+                    1\amp   0  \amp  2    \\
+                    2\amp    4 \amp   1   \\
+                \end{pmatrix}
+                \xrightarrow{
+                    \begin{array}{c}
+                        R_2\to R_2-R_1   \\  R_3\to R_3-2R_1   \\
+                \end{array}}
+                \begin{pmatrix}
+                    1\amp    2    \amp    4   \amp    \\
+                    0\amp   -2    \amp   -2   \amp  \\
+                    0\amp    0    \amp   -7   \amp  \\
+                \end{pmatrix}
+                \xrightarrow{\begin{array}{c}  R_1\to\frac{-1}{7}R_1   \\
+                        R_2\to\frac{-1}{2}R_2   \\
+                \end{array}}
+                \begin{pmatrix}
+                    1\amp   2   \amp   4      \\
+                    0\amp   1   \amp   1   \\
+                    0\amp   0   \amp   1  
+                \end{pmatrix}</m> 
+                               
+                This <m> \begin{pmatrix}
+                    1\amp   2   \amp   4      \\
+                    0\amp   1   \amp   1   \\
+                    0\amp   0   \amp   1  
+                \end{pmatrix}</m>  is row-echelon matrix equivalent to <m> A</m> .  
+            We can apply elementary row operation and make it to reduced-row-echelon  form. 
+                <me>
+                \begin{pmatrix}
+                    1\amp   2   \amp   4      \\
+                    0\amp   1   \amp   1   \\
+                    0\amp   0   \amp   1  
+                \end{pmatrix}\xrightarrow{
+                    \begin{array}{c}
+                        R_2\to R_2-R_3 \\R_1\to R_1-4R_3\\R_1\to R_1-2R_2\\
+                \end{array}}
+                \begin{pmatrix}
+                    1\amp   0   \amp   0      \\
+                    0\amp   1   \amp   0   \\
+                    0\amp   0   \amp   1  
+                \end{pmatrix}
+                </me>
+      
+            </p>
+         </solution>
+ <p>
+    Sage has inbulit method `A.rref()' to convert the matrix into reduced row echelon form. 
+    You may also try 'A.echelonize()' and 'A.echelon_form()'
+    
+    <sage>
+        <input>
+            A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
+        </input>
+        <output>
+       
+        </output>
+    </sage>
+    <p>
+        <sage>
+            <input>
+                A.rref()
+            </input>
+            <output>
+                [1 0 0]
+                [0 1 0]
+                [0 0 1]
+        
+            </output>
+        </sage>
+    </p>
+ </p>
+   
+
+<subsection xml:id="subsec-Gaussian-Elimination">
+    <title>Gaussian Elimination Method</title>
+    <p>
+        Solving a system of linear equations <m>AX = B</m>, by reducing the
+augmented matrix <m> A^*= [A,B]</m> to echelon form by using elementary row
+operations
+and then solving the equivalent system by back substitution is
+called solving by <alert>Gaussian elimination</alert> process.
+
+Now we state the step involved in the Gaussian elimination process. Only use the row operations stated
+above and work from top to bottom.
+    </p>
+ <algorithm xml:id="alg-gaussian-elimination"><title>Gaussian Elimination</title>
+ 
+ 
+    <ol>
+        <li>
+            <p>
+                Make in each row the first non-zero element (called the main
+	element) eual to 1.
+            </p>
+        </li>
+        <li>
+            <p>
+                Make all elements under this main element equal to zero.
+	If one row becomes a zero row shift it to the bottom.
+	            </p>
+        </li>
+        <li>
+            <p>
+                If there comes a row composed of zeroes except for the
+	last element, then stop. The system has no solution.
+            </p>
+        </li>
+    </ol>
+    <statement>
+        <p>
+            
+        </p>
+    </statement>
+ </algorithm>   
+
+ <example>
+    <p>
+        Solve the following system of
+		linear equations using the Gaussian elimination method.
+		<md>
+        <mrow> 	x+2y+4z \amp   = 3 </mrow>
+		<mrow>	x+2z   \amp =    0 </mrow>
+		<mrow>	2x+4y+z \amp  = 3   </mrow>
+    </md>
+    </p>
+    <solution>
+        <p>
+            The corresponding augmented matrix is
+	<me>A^* =  [A~|~B]= \begin{pmatrix}
+		1\amp  2   \amp  4   \amp   |  \amp  3   \\
+		1\amp   0  \amp  2   \amp    |  \amp  0   \\
+		2\amp    4 \amp   1  \amp    |  \amp   3  \\
+	\end{pmatrix}</me>
+        </p>
+
+        <p>
+        	<md> <mrow>\begin{pmatrix}
+                1\amp  2   \amp  4   \amp   |  \amp  3   \\
+                1\amp   0  \amp  2   \amp    |  \amp  0   \\
+                2\amp    4 \amp   1  \amp    |  \amp   3  \\
+            \end{pmatrix} \amp
+            \xrightarrow{
+                \begin{array}{c}
+                    R_2-R_1   \\  R_3-2R_1   \\
+            \end{array}} 
+            \begin{pmatrix}
+                1\amp    2    \amp    4   \amp    |  \amp    3   \\
+                0\amp   -2    \amp   -2   \amp    |  \amp   -3   \\
+                0\amp    0    \amp   -7   \amp    |  \amp   -3   \\
+            \end{pmatrix} </mrow>
+            <mrow> \amp \xrightarrow{ \begin{array}{c}  \frac{-1}{7}R_1   \\
+                    \frac{-1}{2}R_2   \\
+            \end{array}}
+            \begin{pmatrix}
+                1\amp   2   \amp   4   \amp    |  \amp    3   \\
+                0\amp   1   \amp   1   \amp    |  \amp   3/2   \\
+                0\amp   0   \amp   1   \amp    |  \amp   3/7   \\
+            \end{pmatrix}</mrow>
+            </md>
+        </p>
+        <p>
+            The above augmented matrix represents the following equations:
+	<me>
+	x+2y+4z=3;\quad y+z=3/2;\quad z=3/7.
+	</me>
+	Using back substitution, we get  
+<me> x=-6/7, y=15/14, z=3/7</me>.
+        </p>
+    </solution>
+ </example>
+</subsection>
+    
 </section>
