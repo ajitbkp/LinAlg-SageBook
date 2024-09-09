@@ -327,6 +327,50 @@ R_2\to R_2-R_3 \\R_1\to R_1-4R_3\\R_1\to R_1-2R_2\\
 </script></div> <div class="para" id="sec-echelon-form-8-2"><div id="sec-echelon-form-8-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.rref()
 </script></div></div>
 </div>
+<div class="para" id="sec-echelon-form-9"><em class="alert">Step by Step method to find RREF of a matrix</em></div>
+<div id="sec-echelon-form-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">#A=matrix(QQ, [[0,-2,1],[6, -0, 3],[4, 1, 8],[14, 10, -8]])
+A=matrix(QQ, [[3,-2,1,2],[6, 0,-1, 3],[4, 1,2, 8]])
+m = A.nrows()
+n = A.ncols()
+print( 'The original matrix is')
+print(A)
+#### Forward Steps
+for k in range(0,m-1):
+        #if A[k,k] == 0:
+        listA = [(abs(A[j,k]),j) for j in range(k,m)]
+        maxv, pivot = max(listA)
+        if(maxv!=abs(A[k,k])):    
+            A[pivot,:],A[k,:]=A[k,:],A[pivot,:]
+            print('We permute rows %d and %d'%(k+1,pivot+1))
+            print(A)
+        ## Making all entries below the pivot zero
+        for i in range(k+1,m):
+            a=A[k,k]
+            if A[i,k] != 0:
+                print( "We add %s times row %d to row %d"%(-A[i,k]/a, k+1, i+1))
+                A=A.with_added_multiple_of_row(i,k,-A[i,k]/a)
+                print(A)
+print('\n ########### End of forward steps ######\n ')
+### Backward Steps
+r =min(m,n)
+
+for k in range(r-1,-1,-1):
+        for i in range(k-1,-1,-1):
+            a=A[k,k]
+            if A[i,k]!=0:
+                print ("We add %s times row %d to the row %d"%(-A[i,k]/a, k+1, i+1))
+                A=A.with_added_multiple_of_row(i,k,-A[i,k]/a)
+                print(A)
+
+print('\n ########### End of backward steps ######\n ')
+## Making leading element 1
+r = min(m,n)
+for i in range(0,r):
+        if A[i,i]!=1:
+            print( 'We divide row %d by %s'%(i+1,A[i,i]))
+            A = A.with_rescaled_row(i,1/A[i,i])
+            print(A)
+</script></div>
 <section class="subsection" id="subsec-Gaussian-Elimination"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="space"> </span><span class="title">Gaussian Elimination Method</span>
 </h3>
