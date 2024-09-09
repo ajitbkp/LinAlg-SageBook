@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec2-0-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction</title>
+<p>
+    We let  <m>\R^n:=\{(x_1,x_2,\ldots,x_n):x_i\in \R, 1\leq i\leq n\}</m>.
+Note that on  <m>\R^n</m>,  we can define  addition and
+scalar multiplication defined as follows: for
+<me>x=(x_1,x_2,\ldots,x_n),y=(y_1,y_2,\ldots,y_n)\in \R^n, \text{ and } \alpha\in\R</me>. 
+<md>
+<mrow>x+y:=\amp (x_1+y_1,x_2+y_2,\ldots,x_n+y_n)</mrow>
+<mrow>\alpha \cdot x:=\amp (\alpha x_1,\alpha x_2,\ldots,\alpha x_n)</mrow>
+</md>
+In the sequel, we will write <m>\alpha\cdot x</m> as <m>\alpha x</m>. 
+An element <m>x\in R^n</m> is called a vector. It written as a column matrix and we also call it
+column vector.
+</p>   
+<p>
+    If <m>A</m> is <m>m\times n</m> matrix then columns of <m>A</m> can be thought of as vectors in <m>\R^m</m>.
+</p>
+
+<proposition xml:id="prop-Rn-properties">
+    <title>Properties addition and multiplication in <m>\R^n</m></title>
+    <statement>
+        <p> 
+            We list the properties of vector addition and scalar multiplication in <m>\R^n</m> which can be easily proved. I encourage the readers to prove them.
+        </p>
+        <p>(i) for all <m>x,y\in \R^n</m>, <m>x+y=y+x</m>. (<alert>Commutative property</alert>)</p>
+        <p>(ii) for all <m>x,y,z\in \R^n</m>, <m>x+(y+z)=(x+y)+z</m>. (<alert>Associative property</alert>)</p>
+    <p>	(iii) The zero vector <m>\overline{0}=(0,0,\ldots,0)</m> has the property, for all <m>x\in \R^n</m>, <m>\overline{0}=x+\overline{0}</m>. This zero vector, we shall denote by 0 and is called the <alert>additive identity</alert>. </p>
+    <p>	(iv) for each <m>x\in R^n</m>, there is a vector <m>x'\in \R^n</m>, such that <m>x+x'=x'+x=\overline{0}</m>. This <m>x'</m> is called the <alert>additive inverse</alert> of <m>x</m>. It is easy to see that <m>x'=-x</m>. </p>
+    <p>	(v) for all <m>\alpha\in \R</m> and <m>x,y \in \R^n</m>, <m>\alpha(x+y)=\alpha x+\alpha y</m>.</p>
+    <p>	(vi) for all <m>\alpha,\beta \in \R</m> and <m>x \in \R^n</m>, <m>(\alpha+\beta) x=\alpha x+\beta y</m>.</p>
+    <p>	(vii) for all <m>\alpha,\beta \in \R</m> and <m>x \in \R^n</m>, <m>(\alpha\beta) x=\alpha (\beta x)y=\beta(\alpha x)</m>. </p>
+    <p>	(viii) for all <m>x\in \R^n</m>, <m>1\cdot x=x</m>.</p>
+     
+    </statement>
+</proposition>
+<p> The set <m>\R^n</m> with addition and scalar multiplication along with the above eight properties is called a <alert>vector space</alert> over <m>\R</m>.
+</p>
+
+<definition xml:id="def-ch2-0-vector-subspace">
+    <title>Vector Subspaces in <m>\R^n</m></title>
+    <statement>
+        <p>
+            A non empty subset <m>V\subset \R^n</m> is called a vector subspace of <m>\R^n</m> if <m>V</m> is closed under vector addition and scalar multiplication. That is, (i) for all <m>x,y\in V, x+y\in V</m> and (ii) for all <m>x \in V, \alpha \in \R</m>, we have  <m>\alpha x\in V</m>.
+        </p>
+    </statement>
+</definition>
+<p>
+    <example>
+        <title>Examples of vector subspaces in <m>\R^n</m></title>
+        <p>(i) <m>\{0\}</m> is a vectors subspace of <m>\R^n</m></p>
+	<p>(ii) Any line passing through origin in <m>\R^2</m> is a subspace of <m>\R^2</m>.</p>
+	<p>(iii) Any line passing through origin in <m>\R^3</m> is a subspace of <m>\R^3</m>.</p>
+	<p>(iv) Any plane passing through origin in <m>\R^3</m> is a subspace of <m>\R^3</m>.</p> 
+        
+        
+    </example>
+</p>
+<p>
+    <example>
+        <title>Solution of homogeneous system as vector subpace</title>
+        <p>
+            Let <m>A</m> be <m>m\times n</m> real matrix. Then <m>S_h=\{x\in \R^n:Ax=0\}</m> is a vector subspace of <m>\R^n</m>. In fact any subspace of <m>\R^n</m> arises in this way.  This subspace is also known as <alert>null spave of <m>A</m>.</alert>
+        </p>
+        <p>
+            <figure xml:id="F-circular-sine-all-16">
+                <caption>The unit circle with <m>16</m> labeled special points.</caption>
+                <image source="images/unit-circle-16-all-labeled" width="80%"/>
+            </figure>
+              
+        </p>
+    </example>
+</p>
+</section>

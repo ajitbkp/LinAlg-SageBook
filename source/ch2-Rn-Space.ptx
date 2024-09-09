@@ -2,4 +2,5 @@
 <chapter xml:id="chap2-Rn-Space" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title><m>\R^n</m> as a Vector Space</title>
   
+  <xi:include href="sec2-0-intro.ptx" />
 </chapter>
