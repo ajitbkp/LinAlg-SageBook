@@ -127,6 +127,7 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
   <xi:include href="sec1.4-matrix-rank.ptx" />
   <xi:include href="sec1-5-homo-system.ptx" />
   <xi:include href="sec1-6-LU-Factorization.ptx" />
-  
+  <xi:include href="ch-1-exer.ptx" />
+
   
 </chapter>

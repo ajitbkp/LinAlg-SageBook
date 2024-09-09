@@ -37,7 +37,7 @@
 </li>
 </ol>
 <p>
-The key to <m>LU</m>-decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of  rows to rows. Let us assume that we need <m>k</m> elementary such row operations to transform <m>A</m> to an upper triangular matrix <m>U</m>. That is, 
+The key to <m>LU</m>-decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of  rows to rows. Also every row which is replaced using the row operation in obtaining row-echelon form may be modified by using row which is above this row. We do not use row interchanges. Let us assume that we need <m>k</m> elementary such row operations to transform <m>A</m> to an upper triangular matrix <m>U</m>. That is, 
 <me>
 E_kE_{k-1}\ldots E_1 A=U
 </me>
@@ -48,9 +48,395 @@ A=E^{-1}_1 E^{-1}_2\cdots E^{-1}_kU=LU
 </me>
 It is very easy to see that <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper triangular matrix with diagonal entries 1. 
 
-An invertible matrix admits an <m>LU</m>-factorization if and only if all its principal minors are non-zero. The factorization is unique if we require that the diagonal of <m>L</m> (or <m>U</m>) consist of ones. 
-
-If the matrix is singular, then an <m>LU</m>factorization may still exist. In fact, a square matrix of rank <m>k</m> has an <m>LU</m>-factorization if the first <m>k</m> principal minors are non-zero.
+<p>
+    We list the following results without proof.
+<ol>
+    <li>
+        <p>
+            An invertible matrix admits an <m>LU</m>-factorization if and only if all its principal minors are non-zero. The factorization is unique if we require that the diagonal of <m>L</m> (or <m>U</m>) consist of ones.   
+        </p>
+    </li> 
+    <li>
+        <p>
+            If the matrix is singular, then an <m>LU</m>factorization may still exist. In fact, a square matrix of rank <m>k</m> has an <m>LU</m>-factorization if the first <m>k</m> principal minors are non-zero.
+   
+        </p>
+    </li>
+</ol>    
 </p>
 
+</p>
+<example xml:id="eg-LU1-nonlu-eg">
+    <title>Non existence of DoLittle <m>LU-</m>factorization</title>  
+    Let <m>A=\begin{pmatrix} 0 \amp 1 \\1 \amp 0\end{pmatrix}</m>>. It is easy to check that $A$ does not have Dolittle <m>LU</m>-decomposition.  
+</example>
+<p>
+ <example xml:id="eg-LU2">
+    Let <m>A=\begin{pmatrix} 1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix}</m>. Find the <m>LU-</m> decomposition of <m>A</m> using Dolittle's method.
+	
+	Let
+	<me>
+	A=\begin{pmatrix}
+		1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7
+	\end{pmatrix}=
+	\begin{pmatrix}
+		1\amp 0\amp 0\\\ell_{21}\amp 1\amp 0\\\ell_{31}\amp \ell_{32}\amp 1 
+	\end{pmatrix}
+	\begin{pmatrix}
+		u_{11}\amp u_{12}\amp u_{13}\\0\amp u_{22}\amp u_{23}\\0\amp 0\amp u_{33}. 
+	\end{pmatrix}
+	</me>
+	Which implies
+	<me>
+	\begin{pmatrix}
+		1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7
+	\end{pmatrix}=
+	\begin{pmatrix}
+		u_{11}\amp u_{12}\amp u_{13}\\\ell_{21}u_{11}\amp \ell_{21}u_{12}+u_{22}\amp \ell_{21}u_{13}+u_{23}\\
+		\ell_{31}u_{11}\amp \ell_{31}u_{12}+\ell_{32}u_{22}\amp \ell_{31}u_{13}+\ell_{32}u_{23}+u_{33} 
+	\end{pmatrix}.
+	</me>
+	Equating the two matrices <m>A</m> and <m>LU</m>  and solving, we get
+	<md>
+		<mrow>u_{11}=1,  u_{12}=-1, u_{13}=5</mrow>
+        <mrow> \ell_{21}u_{11}=2\Rightarrow\ell_{21}=2</mrow>
+        <mrow> \ell_{21}u_{12}+u_{22}=-3\Rightarrow u_{22}=-1 </mrow>
+        <mrow> \ell_{21}u_{13}+u_{23}=1\Rightarrow u_{23}=-9  </mrow>
+        <mrow> \ell_{31}u_{11}=1\Rightarrow\ell_{31}=1 </mrow>
+        <mrow> \ell_{31}u_{12}+\ell_{32}u_{22}=3\Rightarrow \ell_{32}=-4 </mrow>
+        <mrow> \ell_{31}u_{13}+\ell_{32}u_{23}+u_{33}=7\Rightarrow u_{33}=-34 </mrow>
+    </md>
+    Hence
+	<me>A=\begin{pmatrix}
+		1\amp 0\amp 0\\2\amp 1\amp 0\\1\amp -4\amp 1
+	\end{pmatrix}
+	\begin{pmatrix}
+		1\amp -1\amp 5\\0\amp -1\amp -9\\0\amp 0\amp -34     
+	\end{pmatrix}
+	</me>
+ </example>   
+</p>
+
+<p>
+    <example xml:id="eg-LU3">
+        Let <m>A=\begin{pmatrix}1\amp 1\amp 1\\3\amp 1\amp -3\\1\amp -2\amp -5 \end{pmatrix}</m>. Find the LU-decomposition of <m>A</m> using Crout's method.
+	
+        Let
+       <md>
+        <mrow> A=\amp LU=
+            \begin{pmatrix}
+                \ell_{11}\amp 0\amp 0\\\ell_{21}\amp \ell_{22}\amp 0\\\ell_{31}\amp \ell_{32}\amp \ell_{33} 
+            \end{pmatrix}
+            \begin{pmatrix}
+                1\amp u_{12}\amp u_{13}\\0\amp 1\amp u_{23}\\0\amp 0\amp 1
+            \end{pmatrix} </mrow>
+            <mrow> =\amp \begin{pmatrix}
+                \ell_{11}\amp \ell_{11}u_{12}\amp \ell_{11}u_{13}\\
+                \ell_{21}\amp \ell_{21}u_{12}+\ell_{22}\amp \ell_{21}u_{13}+\ell_{22}u_{23}\\
+                \ell_{31}\amp \ell_{31}u_{12}+\ell_{32}\amp \ell_{31}u_{13}+\ell_{32}u_{23}+\ell_{33} 
+            \end{pmatrix} </mrow>
+       </md>
+       
+        Equating the two matrices <m>A</m> and <m>LU</m>  and solving, we get
+        <me>\begin{array}{lll}
+            \ell_{11}=1,\amp u_{12}=1,\amp u_{13}=1\\
+            \ell_{21}=3\amp \ell_{22}=-2\amp u_{23}=3\\
+            \ell_{31}=1\amp \ell_{32}=-3\amp \ell_{33}=3
+        \end{array}
+        </me>
+        Hence
+        <me>
+        A=\begin{pmatrix}1\amp 1\amp 1\\3\amp 1\amp -3\\1\amp -2\amp -5 \end{pmatrix}=\begin{pmatrix}
+            1\amp 0\amp 0\\3\amp -2\amp 0\\1\amp -3\amp 3\end{pmatrix}
+        \begin{pmatrix}
+            1\amp 1\amp 1\\0\amp 1\amp 3\\0\amp 0\amp 1
+        \end{pmatrix}
+        </me>
+    </example>
+</p>
+<subsection xml:id="subsec-solving-system-LU">
+    <title>Solving system of equations using LU factorization</title>
+<p>
+LU-factorization is very useful in solving system of linear equation. Let <m>AX=b</m> represents <m>n </m> equations in <m>n </m> variables and that <m>A=LU </m>  is a LU factorization of <m>A</m>. 
+Then  <m>AX=LUX=b </m> can be written as  <m>LZ=b </m> where <m>UX=Z</m>. Now <m>LZ=b</m> can be solved using forward substitution method and  <m>UX=z</m> can be solved using the 
+backward substitution resulting in solution of the system.
+
+LU-factorization method allows to solve a whole lot of linear equations having same coefficient matrix.
+</p>
+<p>
+    <example xml:id="eg-LU4">
+        Solve the system of equations <m>Ax=b</m> using using Doolittle method,  where 
+        <m>A=\begin{pmatrix} 1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix} </m> and <m>b=\begin{pmatrix} 7\\-6\\5\end{pmatrix}</m>
+     <solution>
+        <p>
+                    
+        From Example <xref ref="eg-LU2"/>, we have  <m>L=\begin{pmatrix}
+            1\amp 0\amp 0\\2\amp 1\amp 0\\1\amp -4\amp 1
+        \end{pmatrix}
+        </m> and <m>U=\begin{pmatrix}
+            1\amp -1\amp 5\\0\amp -1\amp -9\\0\amp 0\amp -34     
+        \end{pmatrix}</m>
+        
+        Let <m>X=\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}</m>,  <m>Z=\begin{pmatrix}z_1\\z_2\\z_3\end{pmatrix}</m>. 
+        <m>AX=B</m> is equivalent to <m>LU=B</m> which can be written as <m>LZ=b</m> where <m>Z=UX</m>.
+        
+        First we solve
+        <me>LZ=b\Longrightarrow \begin{pmatrix}
+            z_1\\2z_1+z_2\\z_1-4z_2+z_3
+        \end{pmatrix}=\begin{pmatrix} 7\\-6\\5\end{pmatrix}
+        </me>
+        Using forward substitution we get, <m>z_1=7, z_2=-20, z_3=-82</m>.
+        Now, we the required solution by solving <m>UX=Z</m>. 
+        <me>
+        UX=Z\Longrightarrow \begin{pmatrix}
+            x_1-x_2+5x_3\\-x_2-9x_3\\-34x_3
+        \end{pmatrix}=\begin{pmatrix} 7\\-20\\-82\end{pmatrix}
+        </me>
+        Now solving using the back substitution we get, <m>x_1=\frac{115}{17}, x_2=\frac{-29}{17}</m> and <m>x_3=\frac{41}{17}</m>.
+        </p>
+     </solution>
+    </example>
+</p>
+<p>
+    <example xml:id="eg-Lu5">
+        Solve the following system of equations using LU-decomposition 
+<me>
+2x+y+3z=-1; 4x+y+7z=5; -6x-2y-12=-2
+</me>
+<p>
+    <solution>
+        <p>
+            The above system is equivalent to <m>AX=B</m> where 
+<me>
+A=\begin{pmatrix}
+	2 \amp  1 \amp  3\\ 4 \amp  1 \amp  7 \\ -6 \amp  -2 \amp  -12
+\end{pmatrix}, \quad 
+X=\begin{pmatrix}
+	x\\y\\z
+\end{pmatrix}
+\quad \text {and } 
+B=\begin{pmatrix}
+	-1\\5\\-2
+\end{pmatrix}
+</me>
+First of all let us decompose <m>A=LU</m> using the elementary row operation.
+<md>
+    <mrow> A=\amp\begin{pmatrix}
+		2 \amp  1 \amp  3\\ 4 \amp  1 \amp  7 \\ -6 \amp  -2 \amp  -12
+	\end{pmatrix} \xrightarrow{R_2\to R_2-2R_1}  
+	\begin{pmatrix}
+		2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ -6 \amp  -2 \amp  -12
+	\end{pmatrix}</mrow>
+    <mrow> \amp =\begin{pmatrix}
+		1 \amp  0 \amp  0\\ -2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1
+	\end{pmatrix}A=E_1A </mrow>
+    <mrow> \amp \xrightarrow{R_3\to R_3+3R_1} 
+        \begin{pmatrix}
+            2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  1 \amp  -3
+        \end{pmatrix} </mrow>
+        <mrow> \amp =\begin{pmatrix}
+            1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 3 \amp  0 \amp  1
+        \end{pmatrix}E_1A=E_2E_1A</mrow>
+        <mrow> \amp \xrightarrow{R_3\to R_2+R_2}
+            \begin{pmatrix}
+                2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2
+            \end{pmatrix}</mrow>
+            <mrow>  = \amp\begin{pmatrix}
+                1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  1 \amp  1
+            \end{pmatrix}E_2E_1A=E_3E_2E_1A</mrow>
+</md>	
+
+	Note that 
+<me>
+E_1=
+\begin{pmatrix}
+	1 \amp  0 \amp  0\\ -2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1
+\end{pmatrix}, 
+E_2=\begin{pmatrix}
+	1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 3 \amp  0 \amp  1
+\end{pmatrix},
+E_3=\begin{pmatrix}
+	1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  1 \amp  1
+\end{pmatrix}
+</me>
+Their inverses are given by
+<me>
+E^{-1}_1=
+\begin{pmatrix}
+	1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1
+\end{pmatrix}, 
+E^{-1}_2=\begin{pmatrix}
+	1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ -3 \amp  0 \amp  1
+\end{pmatrix},
+E^{-1}_3=\begin{pmatrix}
+	1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  -1 \amp  1
+\end{pmatrix}
+</me>
+Thus
+<me>L=E^{-1}_1E^{-1}_2E^{-1}_3=\begin{pmatrix}
+	1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1
+\end{pmatrix} 
+</me> 
+and 
+<me>A=LU=\begin{pmatrix}
+	1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1
+\end{pmatrix} \begin{pmatrix}
+	2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2
+\end{pmatrix}
+</me>
+Now the equation <m>AX=B</m> becomes <m>LUX=B</m>. 
+Let <m>UX=Y=\begin{pmatrix} u\\v\\w\end{pmatrix}</m>. First we solve <m>LY=B</m>. That is 
+<me>
+\begin{pmatrix}
+	1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1
+\end{pmatrix} \begin{pmatrix} u\\v\\w\end{pmatrix}=\begin{pmatrix} -1\\5\\-2\end{pmatrix}
+</me> 
+Solving the above system using the forward substitution we 
+get <m>u=-1, v=7, w=2</m>. Now substituting the in equation <m>UX=Y</m> we get
+<me>
+\begin{pmatrix}
+	2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2
+\end{pmatrix} \begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}-1\\7\\2\end{pmatrix}
+</me>
+Solving the above system by back substitution we get the required solution <m>x=5, y=-8, z=-1</m>. 
+
+        </p>
+    </solution>
+</p>
+    </example>
+</p>
+<p>
+    Now we shall look at under what conditions a matrix admits LU factorization. 
+The following theorem provides a sufficient condition for ensuring that the
+algorithm of factorization <m>A = LU</m> does not break down due to division
+by zero.
+
+If <m>A</m> is a square matrix, then a sub-matrix <m>A^{(k)}</m> of <m>A</m> obtained by
+taking  the first <m>k</m> rows and first <m>k</m> columns of <m>A</m> is called a
+<alert>leading principal minor  of <m>A</m></alert>.
+
+</p>
+<theorem xml:id="thm-LU-thm2">
+    <statement>
+        <p>
+        Let <m>A</m> be <m>n\times n</m> matrix. Suppose that the leading principal
+            minor <m>A^{(k)}</m> for <m>1\leq k\lt n-1</m> are nonsingular. Then <m>A</m> admits
+            <m>LU</m>-factorization. (Note that <m>A</m> itself need not be non singular.) 
+        </p>
+    </statement>
+</theorem>
+Proof of this theorem follows by induction on order of <m>A</m>.
+
+<p>
+    Not every matrix can have LU-factorization. Let us consider 
+	<m>A=\begin{pmatrix}0 \amp  1\\ 1 \amp  0\end{pmatrix}</m>.  Suppose <m>A</m> has 
+	LU-factorization, say <m>L=\begin{pmatrix}1 \amp  0\\ \ell \amp  1\end{pmatrix}</m>
+	and
+	<m>U=\begin{pmatrix}u_1 \amp  u_2\\ 0 \amp  u_3\end{pmatrix}</m>.
+	
+	This implies <m>u_1=0</m> and <m>\ell u_1=1</m>. This is a contradiction. 
+	
+	However, if we interchange the first and second row of <m>A</m>, then it is
+	identity
+	matrix which has LU-factorization with <m>L=U=\begin{pmatrix}1 \amp 0\\ 0 \amp 
+		1\end{pmatrix}</m>.
+</p>
+
+<p>
+    This leads us to a question, under what conditions, <m>LU</m>-factorization
+of a matrix exist. We shall show that even if the matrix <m>A</m> does not
+satisfy the conditions of Theorem <xref ref="thm-LU-thm2"/>, by permuting rows and
+columns it can be transformed into a new matrix <m>\tilde{A}</m> of the same
+size that admits an <m>LU</m>-factorization. Let first show this result for a <m>2\times
+2</m> matrix.
+</p>
+</subsection>
+<p>
+    <example xml:id="eg-LU5">
+        Let <m>A=\begin{pmatrix}a \amp  b\\ c \amp  d\end{pmatrix}</m>. Show that there
+        exists
+        a permutation matrix <m>P</m> of order 2 such that <m>PA</m> admits the
+        <m>LU</m>-factorization.
+        
+        If <m>a\neq 0</m>. Then by Theorem <xref ref="thm-LU-thm2"/>, <m>A</m> admits
+        <m>LU</m>-factorization.
+        
+        Let <m>a=0</m> and <m>c\neq 0</m>. Define <m>P:=\begin{pmatrix}0 \amp  1\\ 1 \amp 
+            0\end{pmatrix}</m>. Then <m>PA=\begin{pmatrix}c \amp  d\\ 0 \amp  b\end{pmatrix}</m>
+        which
+        admits <m>LU</m>-factorization by Theorem <xref ref="thm-LU-thm2"/>. 
+        
+        If <m>a=c=0</m>. Then the result is trivial and we have 
+        <me>
+        A=\begin{pmatrix}0 \amp  b\\ 0 \amp  d\end{pmatrix}=\begin{pmatrix}1 \amp  0\\ 0 \amp 
+            1\end{pmatrix}\begin{pmatrix}0 \amp  b\\ 0 \amp  d\end{pmatrix}.
+        </me>
+    </example>
+</p>
+
+<p>
+    <theorem xml:id="thm-LU-th3">
+        <statement>
+            <p>
+            	permutation matrix <m>P</m>, a unit lower triangular matrix <m>L</m> and an upper
+	triangular matrix <m>U</m> such that <m>PA=LU</m>.    
+            </p>
+        </statement>
+    </theorem>
+</p>
+    <p>
+        The proof of above  theorem gives an algorithm for constructing
+the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
+    </p>
+<remark>
+    If <m>P</m> is a permutation matrix then <m>P^{-1}=P^T</m> is also a permutation matrix.  If <m>PA=LU</m>, then we have <m>A=P^TLU</m>. 
+	Because of this  reason such a factorization is also known as <alert><m>PLU</m> factorization of <m>A</m></alert>.
+</remark>
+
+<subsection xml:id="subsec-lu-sage">
+    <title><m>LU</m>-factorization in Sage</title>
+    <p>
+        Sage has inbulit method 'LU' to find <m>LU</m>-factorization. 
+        Suppose that <m>A</m> is an <m>m\times n</m> matrix, then an LU decomposition in Sage output 
+        is a lower-triangular <m>m\times m</m> matrix <m>L</m> with every diagonal element
+   equal to 1, and an upper-triangular <m>m\times n</m> matrix, <m>U</m> such that
+   the product <m>LU</m>, after a permutation of the rows, is then equal to
+   <m>A</m>.  For the 'plu' format the permutation is returned as an m x
+   m permutation matrix <m>P</m> such that <m>A = PLU</m>.
+<p>
+    Try to explore help document of LU factorization using 'A.LU?' 
+    
+</p>
+    </p>
+    <p>
+        <sage>
+            <input>
+                A=matrix(QQ, [[0,-2,1],[6, -0, 3],[4, 1, 8],[14, 10, -8]])
+                P,L,U = A.LU()
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+    <sage>
+        <input>
+            print(P)
+            print(L)
+            print(U)
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <sage>
+        <input>
+            P*L*U==A
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    </p>
+     
+</subsection>
 </section>
