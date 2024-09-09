@@ -439,7 +439,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.6",
   "title": "<span class=\"process-math\">\\(LU\\)<\/span>-Facotorization",
-  "body": " -Facotorization    Let be a square matrix. An -decomposition is a decomposition of the matrix of form where and are lower and upper triangular matrices (of the same size), respectively.    Let where with if is lower triangular and with if is an upper triangular matrix. Equating the entries of the matrices and we get where if and if .  Note that Eqn. gives us equations in unknowns hence it can be solved by taking arbitrary values for any unknowns. One of the simplest choice are     for this method is called Doolittle method      for , this method is called Crout's method     The key to -decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of rows to rows. Let us assume that we need elementary such row operations to transform to an upper triangular matrix . That is, Since elementary matrices are invertible, we can multiply both sides by to get the required -decomposition of . Thus It is very easy to see that is an upper triangular matrix with diagonal entries 1. An invertible matrix admits an -factorization if and only if all its principal minors are non-zero. The factorization is unique if we require that the diagonal of (or ) consist of ones. If the matrix is singular, then an factorization may still exist. In fact, a square matrix of rank has an -factorization if the first principal minors are non-zero.  "
+  "body": " -Facotorization    Let be a square matrix. An -decomposition is a decomposition of the matrix of form where and are lower and upper triangular matrices (of the same size), respectively.    Let where with if is lower triangular and with if is an upper triangular matrix. Equating the entries of the matrices and we get where if and if .  Note that Eqn. gives us equations in unknowns hence it can be solved by taking arbitrary values for any unknowns. One of the simplest choice are     for this method is called Doolittle method      for , this method is called Crout's method     The key to -decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of rows to rows. Also every row which is replaced using the row operation in obtaining row-echelon form may be modified by using row which is above this row. We do not use row interchanges. Let us assume that we need elementary such row operations to transform to an upper triangular matrix . That is, Since elementary matrices are invertible, we can multiply both sides by to get the required -decomposition of . Thus It is very easy to see that is an upper triangular matrix with diagonal entries 1. We list the following results without proof.   An invertible matrix admits an -factorization if and only if all its principal minors are non-zero. The factorization is unique if we require that the diagonal of (or ) consist of ones.    If the matrix is singular, then an factorization may still exist. In fact, a square matrix of rank has an -factorization if the first principal minors are non-zero.       Non existence of DoLittle factorization Let >. It is easy to check that $A$ does not have Dolittle -decomposition.   Let . Find the decomposition of using Dolittle's method. Let Which implies Equating the two matrices and and solving, we get Hence     Let . Find the LU-decomposition of using Crout's method. Let Equating the two matrices and and solving, we get Hence     Solving system of equations using LU factorization  LU-factorization is very useful in solving system of linear equation. Let represents equations in variables and that is a LU factorization of . Then can be written as where . Now can be solved using forward substitution method and can be solved using the backward substitution resulting in solution of the system. LU-factorization method allows to solve a whole lot of linear equations having same coefficient matrix.   Solve the system of equations using using Doolittle method, where and   From Example , we have and Let , . is equivalent to which can be written as where . First we solve Using forward substitution we get, . Now, we the required solution by solving . Now solving using the back substitution we get, and .      Solve the following system of equations using LU-decomposition    The above system is equivalent to where First of all let us decompose using the elementary row operation. Note that Their inverses are given by Thus and Now the equation becomes . Let . First we solve . That is Solving the above system using the forward substitution we get . Now substituting the in equation we get Solving the above system by back substitution we get the required solution .      Now we shall look at under what conditions a matrix admits LU factorization. The following theorem provides a sufficient condition for ensuring that the algorithm of factorization does not break down due to division by zero. If is a square matrix, then a sub-matrix of obtained by taking the first rows and first columns of is called a leading principal minor of .    Let be matrix. Suppose that the leading principal minor for are nonsingular. Then admits -factorization. (Note that itself need not be non singular.)   Proof of this theorem follows by induction on order of . Not every matrix can have LU-factorization. Let us consider . Suppose has LU-factorization, say and . This implies and . This is a contradiction. However, if we interchange the first and second row of , then it is identity matrix which has LU-factorization with .  This leads us to a question, under what conditions, -factorization of a matrix exist. We shall show that even if the matrix does not satisfy the conditions of Theorem , by permuting rows and columns it can be transformed into a new matrix of the same size that admits an -factorization. Let first show this result for a matrix.    Let . Show that there exists a permutation matrix of order 2 such that admits the -factorization. If . Then by Theorem , admits -factorization. Let and . Define . Then which admits -factorization by Theorem . If . Then the result is trivial and we have       permutation matrix , a unit lower triangular matrix and an upper triangular matrix such that .     The proof of above theorem gives an algorithm for constructing the permutation matrix , and the matrices and .  If is a permutation matrix then is also a permutation matrix. If , then we have . Because of this reason such a factorization is also known as factorization of .   -factorization in Sage  Sage has inbulit method 'LU' to find -factorization. Suppose that is an matrix, then an LU decomposition in Sage output is a lower-triangular matrix with every diagonal element equal to 1, and an upper-triangular matrix, such that the product , after a permutation of the rows, is then equal to . For the 'plu' format the permutation is returned as an m x m permutation matrix such that . Try to explore help document of LU factorization using 'A.LU?'         "
 },
 {
   "id": "def-LU-factorization",
@@ -449,6 +449,96 @@ var ptx_lunr_docs = [
   "number": "1.6.1",
   "title": "",
   "body": "  Let be a square matrix. An -decomposition is a decomposition of the matrix of form where and are lower and upper triangular matrices (of the same size), respectively.   "
+},
+{
+  "id": "eg-LU1-nonlu-eg",
+  "level": "2",
+  "url": "sec1-6-LU.html#eg-LU1-nonlu-eg",
+  "type": "Example",
+  "number": "1.6.2",
+  "title": "Non existence of DoLittle <span class=\"process-math\">\\(LU-\\)<\/span>factorization.",
+  "body": " Non existence of DoLittle factorization Let >. It is easy to check that $A$ does not have Dolittle -decomposition. "
+},
+{
+  "id": "eg-LU2",
+  "level": "2",
+  "url": "sec1-6-LU.html#eg-LU2",
+  "type": "Example",
+  "number": "1.6.3",
+  "title": "",
+  "body": "Let . Find the decomposition of using Dolittle's method. Let Which implies Equating the two matrices and and solving, we get Hence  "
+},
+{
+  "id": "eg-LU3",
+  "level": "2",
+  "url": "sec1-6-LU.html#eg-LU3",
+  "type": "Example",
+  "number": "1.6.4",
+  "title": "",
+  "body": "Let . Find the LU-decomposition of using Crout's method. Let Equating the two matrices and and solving, we get Hence  "
+},
+{
+  "id": "eg-LU4",
+  "level": "2",
+  "url": "sec1-6-LU.html#eg-LU4",
+  "type": "Example",
+  "number": "1.6.5",
+  "title": "",
+  "body": "Solve the system of equations using using Doolittle method, where and   From Example , we have and Let , . is equivalent to which can be written as where . First we solve Using forward substitution we get, . Now, we the required solution by solving . Now solving using the back substitution we get, and .   "
+},
+{
+  "id": "eg-Lu5",
+  "level": "2",
+  "url": "sec1-6-LU.html#eg-Lu5",
+  "type": "Example",
+  "number": "1.6.6",
+  "title": "",
+  "body": "Solve the following system of equations using LU-decomposition    The above system is equivalent to where First of all let us decompose using the elementary row operation. Note that Their inverses are given by Thus and Now the equation becomes . Let . First we solve . That is Solving the above system using the forward substitution we get . Now substituting the in equation we get Solving the above system by back substitution we get the required solution .    "
+},
+{
+  "id": "thm-LU-thm2",
+  "level": "2",
+  "url": "sec1-6-LU.html#thm-LU-thm2",
+  "type": "Theorem",
+  "number": "1.6.7",
+  "title": "",
+  "body": "  Let be matrix. Suppose that the leading principal minor for are nonsingular. Then admits -factorization. (Note that itself need not be non singular.)   "
+},
+{
+  "id": "eg-LU5",
+  "level": "2",
+  "url": "sec1-6-LU.html#eg-LU5",
+  "type": "Example",
+  "number": "1.6.8",
+  "title": "",
+  "body": "Let . Show that there exists a permutation matrix of order 2 such that admits the -factorization. If . Then by Theorem , admits -factorization. Let and . Define . Then which admits -factorization by Theorem . If . Then the result is trivial and we have  "
+},
+{
+  "id": "thm-LU-th3",
+  "level": "2",
+  "url": "sec1-6-LU.html#thm-LU-th3",
+  "type": "Theorem",
+  "number": "1.6.9",
+  "title": "",
+  "body": "  permutation matrix , a unit lower triangular matrix and an upper triangular matrix such that .   "
+},
+{
+  "id": "sec1-6-LU-14",
+  "level": "2",
+  "url": "sec1-6-LU.html#sec1-6-LU-14",
+  "type": "Remark",
+  "number": "1.6.10",
+  "title": "",
+  "body": "If is a permutation matrix then is also a permutation matrix. If , then we have . Because of this reason such a factorization is also known as factorization of . "
+},
+{
+  "id": "ch1-exer",
+  "level": "1",
+  "url": "ch1-exer.html",
+  "type": "Section",
+  "number": "1.7",
+  "title": "Exercises",
+  "body": " Exercises     Reduce the following matrices into row-echelon form.     Find the sequence of row operations that converts the matrix.     Solve the following systems of linear equations by Gaussian elimination method.                                    Find the rank of the following matrices:     Find all values of such that the rank of the matrix is 3.    Find all values of such that the rank of the matrix is 3.    For the following system of equations write the solution in the form of where is a solution of non homogeneous system and is the set of solutions of the corresponding homogeneous system (i)  (ii)   (iii)  (iv)     Balance the following photosynthesis reaction . Here is glucose.    The augmented matrix of a linear system has the form  (a) Determine the values of a, b, and c for which the linear system is consistent.  (b) Determine the values of a, b, and c for which the linear system is inconsistent.  (c) When it is consistent, does the linear system have a unique solution or infinitely many solutions?  (d) Give a specific consistent linear system and find one particular solution.     Solve the following system of equations for and . .    Find a polynomial of the form which passes through the points .    Find the values of and for which the following system is consistent. Also find the complete solution when . .    The following table lists the number of milligrams of vitamin A, vitamin B, vitamin C, and niacin contained in 1 g of four different foods. A dietitian wants to prepare a meal that provides 250 mg of vitamin A, 300 mg of vitamin B, 400 mg of vitamin C, and 70 mg of niacin. Determine how many grams of each food must be included, and describe any limitations on the quantities of each food that can be used     Let be the coefficient matrix of the following homogeneous system of equations in unknowns: Find the reduced row-echelon form of and hence, or otherwise, prove that the solution of the above system is , with arbitrary.    For which rational numbers does the following system have (i) no solutions (ii) exactly one solution (iii) infinitely many solutions? .    If and are solutions of a system of linear equations, prove that is also a solution.    Solve the system using Doolittle method: (i) and  (ii) and .     Solve the system using Crout's method (i) and   (ii) and      "
 },
 {
   "id": "chap2-Rn-Space",

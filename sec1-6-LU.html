@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -136,6 +148,15 @@ window.MathJax = {
 #sec1-6-LU-5 { counter-set: sec1-6-LU-5 0; }
 #sec1-6-LU-5 > li::marker { content: ""counter(sec1-6-LU-5,decimal)"."; }
 #sec1-6-LU-5 > li { counter-increment: sec1-6-LU-5; }
+#sec1-6-LU-6-11-1 { counter-set: sec1-6-LU-6-11-1 0; }
+#sec1-6-LU-6-11-1 > li::marker { content: ""counter(sec1-6-LU-6-11-1,decimal)"."; }
+#sec1-6-LU-6-11-1 > li { counter-increment: sec1-6-LU-6-11-1; }
+#ch1-exer-2-1 { counter-set: ch1-exer-2-1 0; }
+#ch1-exer-2-1 > li::marker { content: ""counter(ch1-exer-2-1,decimal)"."; }
+#ch1-exer-2-1 > li { counter-increment: ch1-exer-2-1; }
+#ch1-exer-2-1-3-1-1 { counter-set: ch1-exer-2-1-3-1-1 0; }
+#ch1-exer-2-1-3-1-1 > li::marker { content: "("counter(ch1-exer-2-1-3-1-1,lower-alpha)")"; }
+#ch1-exer-2-1-3-1-1 > li { counter-increment: ch1-exer-2-1-3-1-1; }
 </style>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -155,7 +176,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-hom-system.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap2-Rn-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-hom-system.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch1-exer.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -182,7 +203,14 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec1-4-matrix-rank.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Rank of Matrices</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-system.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Homogeneous System of Linear Equations</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec1-6-LU.html" class="internal"><span class="codenumber">1.6</span> <span class="title"><span class="process-math">\(LU\)</span>-Facotorization</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec1-6-LU.html" class="internal"><span class="codenumber">1.6</span> <span class="title"><span class="process-math">\(LU\)</span>-Facotorization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec1-6-LU.html#subsec-solving-system-LU" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Solving system of equations using LU factorization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec1-6-LU.html#subsec-lu-sage" class="internal"><span class="codenumber">1.6.2</span> <span class="title"><span class="process-math">\(LU\)</span>-factorization in Sage</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch1-exer.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap2-Rn-Space.html" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div></li>
@@ -222,7 +250,7 @@ window.MathJax = {
 </div></li>
 </ol>
 <div class="para logical" id="sec1-6-LU-6">
-<div class="para">The key to <span class="process-math">\(LU\)</span>-decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of  rows to rows. Let us assume that we need <span class="process-math">\(k\)</span> elementary such row operations to transform <span class="process-math">\(A\)</span> to an upper triangular matrix <span class="process-math">\(U\text{.}\)</span> That is,</div>
+<div class="para">The key to <span class="process-math">\(LU\)</span>-decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of  rows to rows. Also every row which is replaced using the row operation in obtaining row-echelon form may be modified by using row which is above this row. We do not use row interchanges. Let us assume that we need <span class="process-math">\(k\)</span> elementary such row operations to transform <span class="process-math">\(A\)</span> to an upper triangular matrix <span class="process-math">\(U\text{.}\)</span> That is,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 E_kE_{k-1}\ldots E_1 A=U
@@ -234,10 +262,286 @@ E_kE_{k-1}\ldots E_1 A=U
 A=E^{-1}_1 E^{-1}_2\cdots E^{-1}_kU=LU
 \end{equation*}
 </div>
-<div class="para">It is very easy to see that <span class="process-math">\(E^{-1}_1 E^{-1}_2\cdots E^{-1}_k\)</span> is an upper triangular matrix with diagonal entries 1. An invertible matrix admits an <span class="process-math">\(LU\)</span>-factorization if and only if all its principal minors are non-zero. The factorization is unique if we require that the diagonal of <span class="process-math">\(L\)</span> (or <span class="process-math">\(U\)</span>) consist of ones. If the matrix is singular, then an <span class="process-math">\(LU\)</span>factorization may still exist. In fact, a square matrix of rank <span class="process-math">\(k\)</span> has an <span class="process-math">\(LU\)</span>-factorization if the first <span class="process-math">\(k\)</span> principal minors are non-zero.</div>
-</div></section></div>
+<div class="para">It is very easy to see that <span class="process-math">\(E^{-1}_1 E^{-1}_2\cdots E^{-1}_k\)</span> is an upper triangular matrix with diagonal entries 1. <div class="para logical" id="sec1-6-LU-6-11">
+<div class="para">We list the following results without proof.</div>
+<ol class="decimal" id="sec1-6-LU-6-11-1">
+<li id="sec1-6-LU-6-11-1-1"><div class="para" id="sec1-6-LU-6-11-1-1-1">An invertible matrix admits an <span class="process-math">\(LU\)</span>-factorization if and only if all its principal minors are non-zero. The factorization is unique if we require that the diagonal of <span class="process-math">\(L\)</span> (or <span class="process-math">\(U\)</span>) consist of ones.</div></li>
+<li id="sec1-6-LU-6-11-1-2"><div class="para" id="sec1-6-LU-6-11-1-2-1">If the matrix is singular, then an <span class="process-math">\(LU\)</span>factorization may still exist. In fact, a square matrix of rank <span class="process-math">\(k\)</span> has an <span class="process-math">\(LU\)</span>-factorization if the first <span class="process-math">\(k\)</span> principal minors are non-zero.</div></li>
+</ol>
+</div>
+</div>
+</div>
+<details id="eg-LU1-nonlu-eg" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Non existence of DoLittle <span class="process-math">\(LU-\)</span>factorization.</span>
+</h3></summary><article class="example example-like knowl__content"> Let <span class="process-math">\(A=\begin{pmatrix} 0 \amp 1 \\1 \amp 0\end{pmatrix}\)</span>&gt;. It is easy to check that $A$ does not have Dolittle <span class="process-math">\(LU\)</span>-decomposition.</article></details><div class="para" id="sec1-6-LU-8"><details id="eg-LU2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content">Let <span class="process-math">\(A=\begin{pmatrix} 1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix}\text{.}\)</span> Find the <span class="process-math">\(LU-\)</span> decomposition of <span class="process-math">\(A\)</span> using Dolittle’s method. Let<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{pmatrix}
+1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7
+\end{pmatrix}=
+\begin{pmatrix}
+1\amp 0\amp 0\\\ell_{21}\amp 1\amp 0\\\ell_{31}\amp \ell_{32}\amp 1 
+\end{pmatrix}
+\begin{pmatrix}
+u_{11}\amp u_{12}\amp u_{13}\\0\amp u_{22}\amp u_{23}\\0\amp 0\amp u_{33}. 
+\end{pmatrix}
+\end{equation*}
+</div>Which implies<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7
+\end{pmatrix}=
+\begin{pmatrix}
+u_{11}\amp u_{12}\amp u_{13}\\\ell_{21}u_{11}\amp \ell_{21}u_{12}+u_{22}\amp \ell_{21}u_{13}+u_{23}\\
+\ell_{31}u_{11}\amp \ell_{31}u_{12}+\ell_{32}u_{22}\amp \ell_{31}u_{13}+\ell_{32}u_{23}+u_{33} 
+\end{pmatrix}.
+\end{equation*}
+</div>Equating the two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(LU\)</span>  and solving, we get<div class="displaymath process-math" id="eg-LU2-8">
+\begin{gather*}
+u_{11}=1,  u_{12}=-1, u_{13}=5\\
+\ell_{21}u_{11}=2\Rightarrow\ell_{21}=2\\
+\ell_{21}u_{12}+u_{22}=-3\Rightarrow u_{22}=-1 \\
+\ell_{21}u_{13}+u_{23}=1\Rightarrow u_{23}=-9  \\
+\ell_{31}u_{11}=1\Rightarrow\ell_{31}=1 \\
+\ell_{31}u_{12}+\ell_{32}u_{22}=3\Rightarrow \ell_{32}=-4 \\
+\ell_{31}u_{13}+\ell_{32}u_{23}+u_{33}=7\Rightarrow u_{33}=-34 
+\end{gather*}
+</div>Hence<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{pmatrix}
+1\amp 0\amp 0\\2\amp 1\amp 0\\1\amp -4\amp 1
+\end{pmatrix}
+\begin{pmatrix}
+1\amp -1\amp 5\\0\amp -1\amp -9\\0\amp 0\amp -34     
+\end{pmatrix}
+\end{equation*}
+</div></article></details></div>
+<div class="para" id="sec1-6-LU-9"><details id="eg-LU3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 1\amp 1\\3\amp 1\amp -3\\1\amp -2\amp -5 \end{pmatrix}\text{.}\)</span> Find the LU-decomposition of <span class="process-math">\(A\)</span> using Crout’s method. Let<div class="displaymath process-math" id="eg-LU3-3">
+\begin{align*}
+A=\amp LU=
+\begin{pmatrix}
+\ell_{11}\amp 0\amp 0\\\ell_{21}\amp \ell_{22}\amp 0\\\ell_{31}\amp \ell_{32}\amp \ell_{33} 
+\end{pmatrix}
+\begin{pmatrix}
+1\amp u_{12}\amp u_{13}\\0\amp 1\amp u_{23}\\0\amp 0\amp 1
+\end{pmatrix} \\
+=\amp \begin{pmatrix}
+\ell_{11}\amp \ell_{11}u_{12}\amp \ell_{11}u_{13}\\
+\ell_{21}\amp \ell_{21}u_{12}+\ell_{22}\amp \ell_{21}u_{13}+\ell_{22}u_{23}\\
+\ell_{31}\amp \ell_{31}u_{12}+\ell_{32}\amp \ell_{31}u_{13}+\ell_{32}u_{23}+\ell_{33} 
+\end{pmatrix} 
+\end{align*}
+</div>Equating the two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(LU\)</span>  and solving, we get<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{lll}
+\ell_{11}=1,\amp u_{12}=1,\amp u_{13}=1\\
+\ell_{21}=3\amp \ell_{22}=-2\amp u_{23}=3\\
+\ell_{31}=1\amp \ell_{32}=-3\amp \ell_{33}=3
+\end{array}
+\end{equation*}
+</div>Hence<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{pmatrix}1\amp 1\amp 1\\3\amp 1\amp -3\\1\amp -2\amp -5 \end{pmatrix}=\begin{pmatrix}
+1\amp 0\amp 0\\3\amp -2\amp 0\\1\amp -3\amp 3\end{pmatrix}
+\begin{pmatrix}
+1\amp 1\amp 1\\0\amp 1\amp 3\\0\amp 0\amp 1
+\end{pmatrix}
+\end{equation*}
+</div></article></details></div>
+<section class="subsection" id="subsec-solving-system-LU"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.1</span><span class="space"> </span><span class="title">Solving system of equations using LU factorization</span>
+</h3>
+<div class="para" id="subsec-solving-system-LU-2">LU-factorization is very useful in solving system of linear equation. Let <span class="process-math">\(AX=b\)</span> represents <span class="process-math">\(n \)</span> equations in <span class="process-math">\(n \)</span> variables and that <span class="process-math">\(A=LU \)</span>  is a LU factorization of <span class="process-math">\(A\text{.}\)</span> Then  <span class="process-math">\(AX=LUX=b \)</span> can be written as  <span class="process-math">\(LZ=b \)</span> where <span class="process-math">\(UX=Z\text{.}\)</span> Now <span class="process-math">\(LZ=b\)</span> can be solved using forward substitution method and  <span class="process-math">\(UX=z\)</span> can be solved using the backward substitution resulting in solution of the system. LU-factorization method allows to solve a whole lot of linear equations having same coefficient matrix.</div>
+<div class="para" id="subsec-solving-system-LU-3"><details id="eg-LU4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content">Solve the system of equations <span class="process-math">\(Ax=b\)</span> using using Doolittle method,  where <span class="process-math">\(A=\begin{pmatrix} 1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix} \)</span> and <span class="process-math">\(b=\begin{pmatrix} 7\\-6\\5\end{pmatrix}\)</span> <details id="eg-LU4-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg-LU4-4-1">
+<div class="para">From Example <a href="sec1-6-LU.html#eg-LU2" class="xref" data-knowl="./knowl/xref/eg-LU2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.3">Example 1.6.3</a>, we have  <span class="process-math">\(L=\begin{pmatrix}
+1\amp 0\amp 0\\2\amp 1\amp 0\\1\amp -4\amp 1
+\end{pmatrix}\)</span> and <span class="process-math">\(U=\begin{pmatrix}
+1\amp -1\amp 5\\0\amp -1\amp -9\\0\amp 0\amp -34     
+\end{pmatrix}\)</span> Let <span class="process-math">\(X=\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}\text{,}\)</span>  <span class="process-math">\(Z=\begin{pmatrix}z_1\\z_2\\z_3\end{pmatrix}\text{.}\)</span> <span class="process-math">\(AX=B\)</span> is equivalent to <span class="process-math">\(LU=B\)</span> which can be written as <span class="process-math">\(LZ=b\)</span> where <span class="process-math">\(Z=UX\text{.}\)</span> First we solve</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-LU2.html">
+\begin{equation*}
+LZ=b\Longrightarrow \begin{pmatrix}
+z_1\\2z_1+z_2\\z_1-4z_2+z_3
+\end{pmatrix}=\begin{pmatrix} 7\\-6\\5\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">Using forward substitution we get, <span class="process-math">\(z_1=7, z_2=-20, z_3=-82\text{.}\)</span> Now, we the required solution by solving <span class="process-math">\(UX=Z\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-LU2.html">
+\begin{equation*}
+UX=Z\Longrightarrow \begin{pmatrix}
+x_1-x_2+5x_3\\-x_2-9x_3\\-34x_3
+\end{pmatrix}=\begin{pmatrix} 7\\-20\\-82\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">Now solving using the back substitution we get, <span class="process-math">\(x_1=\frac{115}{17}, x_2=\frac{-29}{17}\)</span> and <span class="process-math">\(x_3=\frac{41}{17}\text{.}\)</span>
+</div>
+</div></div></details></article></details></div>
+<div class="para" id="subsec-solving-system-LU-4"><details id="eg-Lu5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.6</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content">Solve the following system of equations using LU-decomposition<div class="displaymath process-math">
+\begin{equation*}
+2x+y+3z=-1; 4x+y+7z=5; -6x-2y-12=-2
+\end{equation*}
+</div>
+<div class="para" id="eg-Lu5-2"><details id="eg-Lu5-2-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg-Lu5-2-1-1">
+<div class="para">The above system is equivalent to <span class="process-math">\(AX=B\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{pmatrix}
+2 \amp  1 \amp  3\\ 4 \amp  1 \amp  7 \\ -6 \amp  -2 \amp  -12
+\end{pmatrix}, \quad 
+X=\begin{pmatrix}
+x\\y\\z
+\end{pmatrix}
+\quad \text {and } 
+B=\begin{pmatrix}
+-1\\5\\-2
+\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">First of all let us decompose <span class="process-math">\(A=LU\)</span> using the elementary row operation.</div>
+<div class="displaymath process-math" id="eg-Lu5-2-1-1-4">
+\begin{align*}
+A=\amp\begin{pmatrix}
+2 \amp  1 \amp  3\\ 4 \amp  1 \amp  7 \\ -6 \amp  -2 \amp  -12
+\end{pmatrix} \xrightarrow{R_2\to R_2-2R_1}  
+\begin{pmatrix}
+2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ -6 \amp  -2 \amp  -12
+\end{pmatrix}\\
+\amp =\begin{pmatrix}
+1 \amp  0 \amp  0\\ -2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1
+\end{pmatrix}A=E_1A \\
+\amp \xrightarrow{R_3\to R_3+3R_1} 
+\begin{pmatrix}
+2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  1 \amp  -3
+\end{pmatrix} \\
+\amp =\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 3 \amp  0 \amp  1
+\end{pmatrix}E_1A=E_2E_1A\\
+\amp \xrightarrow{R_3\to R_2+R_2}
+\begin{pmatrix}
+2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2
+\end{pmatrix}\\
+= \amp\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  1 \amp  1
+\end{pmatrix}E_2E_1A=E_3E_2E_1A
+\end{align*}
+</div>
+<div class="para">Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E_1=
+\begin{pmatrix}
+1 \amp  0 \amp  0\\ -2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1
+\end{pmatrix}, 
+E_2=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 3 \amp  0 \amp  1
+\end{pmatrix},
+E_3=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  1 \amp  1
+\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">Their inverses are given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E^{-1}_1=
+\begin{pmatrix}
+1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1
+\end{pmatrix}, 
+E^{-1}_2=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ -3 \amp  0 \amp  1
+\end{pmatrix},
+E^{-1}_3=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  -1 \amp  1
+\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L=E^{-1}_1E^{-1}_2E^{-1}_3=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1
+\end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=LU=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1
+\end{pmatrix} \begin{pmatrix}
+2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2
+\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">Now the equation <span class="process-math">\(AX=B\)</span> becomes <span class="process-math">\(LUX=B\text{.}\)</span> Let <span class="process-math">\(UX=Y=\begin{pmatrix} u\\v\\w\end{pmatrix}\text{.}\)</span> First we solve <span class="process-math">\(LY=B\text{.}\)</span> That is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1
+\end{pmatrix} \begin{pmatrix} u\\v\\w\end{pmatrix}=\begin{pmatrix} -1\\5\\-2\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">Solving the above system using the forward substitution we get <span class="process-math">\(u=-1, v=7, w=2\text{.}\)</span> Now substituting the in equation <span class="process-math">\(UX=Y\)</span> we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2
+\end{pmatrix} \begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}-1\\7\\2\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">Solving the above system by back substitution we get the required solution <span class="process-math">\(x=5, y=-8, z=-1\text{.}\)</span>
+</div>
+</div></div></details></div></article></details></div>
+<div class="para" id="subsec-solving-system-LU-5">Now we shall look at under what conditions a matrix admits LU factorization. The following theorem provides a sufficient condition for ensuring that the algorithm of factorization <span class="process-math">\(A = LU\)</span> does not break down due to division by zero. If <span class="process-math">\(A\)</span> is a square matrix, then a sub-matrix <span class="process-math">\(A^{(k)}\)</span> of <span class="process-math">\(A\)</span> obtained by taking  the first <span class="process-math">\(k\)</span> rows and first <span class="process-math">\(k\)</span> columns of <span class="process-math">\(A\)</span> is called a <em class="alert">leading principal minor  of <span class="process-math">\(A\)</span></em>.</div>
+<article class="theorem theorem-like" id="thm-LU-thm2"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.6.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-LU-thm2-1-1">Let <span class="process-math">\(A\)</span> be <span class="process-math">\(n\times n\)</span> matrix. Suppose that the leading principal minor <span class="process-math">\(A^{(k)}\)</span> for <span class="process-math">\(1\leq k\lt n-1\)</span> are nonsingular. Then <span class="process-math">\(A\)</span> admits <span class="process-math">\(LU\)</span>-factorization. (Note that <span class="process-math">\(A\)</span> itself need not be non singular.)</div></article><span class="process-math">\(A\text{.}\)</span><div class="para" id="subsec-solving-system-LU-8">Not every matrix can have LU-factorization. Let us consider <span class="process-math">\(A=\begin{pmatrix}0 \amp  1\\ 1 \amp  0\end{pmatrix}\text{.}\)</span>  Suppose <span class="process-math">\(A\)</span> has LU-factorization, say <span class="process-math">\(L=\begin{pmatrix}1 \amp  0\\ \ell \amp  1\end{pmatrix}\)</span> and <span class="process-math">\(U=\begin{pmatrix}u_1 \amp  u_2\\ 0 \amp  u_3\end{pmatrix}\text{.}\)</span> This implies <span class="process-math">\(u_1=0\)</span> and <span class="process-math">\(\ell u_1=1\text{.}\)</span> This is a contradiction. However, if we interchange the first and second row of <span class="process-math">\(A\text{,}\)</span> then it is identity matrix which has LU-factorization with <span class="process-math">\(L=U=\begin{pmatrix}1 \amp 0\\ 0 \amp 
+1\end{pmatrix}\text{.}\)</span>
+</div>
+<div class="para" id="subsec-solving-system-LU-9">This leads us to a question, under what conditions, <span class="process-math">\(LU\)</span>-factorization of a matrix exist. We shall show that even if the matrix <span class="process-math">\(A\)</span> does not satisfy the conditions of Theorem <a href="sec1-6-LU.html#thm-LU-thm2" class="xref" data-knowl="./knowl/xref/thm-LU-thm2.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.7">Theorem 1.6.7</a>, by permuting rows and columns it can be transformed into a new matrix <span class="process-math">\(\tilde{A}\)</span> of the same size that admits an <span class="process-math">\(LU\)</span>-factorization. Let first show this result for a <span class="process-math">\(2\times
+2\)</span> matrix.</div></section><div class="para" id="sec1-6-LU-11"><details id="eg-LU5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content">Let <span class="process-math">\(A=\begin{pmatrix}a \amp  b\\ c \amp  d\end{pmatrix}\text{.}\)</span> Show that there exists a permutation matrix <span class="process-math">\(P\)</span> of order 2 such that <span class="process-math">\(PA\)</span> admits the <span class="process-math">\(LU\)</span>-factorization. If <span class="process-math">\(a\neq 0\text{.}\)</span> Then by Theorem <a href="sec1-6-LU.html#thm-LU-thm2" class="xref" data-knowl="./knowl/xref/thm-LU-thm2.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.7">Theorem 1.6.7</a>, <span class="process-math">\(A\)</span> admits <span class="process-math">\(LU\)</span>-factorization. Let <span class="process-math">\(a=0\)</span> and <span class="process-math">\(c\neq 0\text{.}\)</span> Define <span class="process-math">\(P:=\begin{pmatrix}0 \amp  1\\ 1 \amp 
+0\end{pmatrix}\text{.}\)</span> Then <span class="process-math">\(PA=\begin{pmatrix}c \amp  d\\ 0 \amp  b\end{pmatrix}\)</span> which admits <span class="process-math">\(LU\)</span>-factorization by Theorem <a href="sec1-6-LU.html#thm-LU-thm2" class="xref" data-knowl="./knowl/xref/thm-LU-thm2.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.7">Theorem 1.6.7</a>. If <span class="process-math">\(a=c=0\text{.}\)</span> Then the result is trivial and we have<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-LU-thm2.html ./knowl/xref/thm-LU-thm2.html">
+\begin{equation*}
+A=\begin{pmatrix}0 \amp  b\\ 0 \amp  d\end{pmatrix}=\begin{pmatrix}1 \amp  0\\ 0 \amp 
+1\end{pmatrix}\begin{pmatrix}0 \amp  b\\ 0 \amp  d\end{pmatrix}.
+\end{equation*}
+</div></article></details></div>
+<div class="para" id="sec1-6-LU-12"><article class="theorem theorem-like" id="thm-LU-th3"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.6.9</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-LU-th3-1-1">permutation matrix <span class="process-math">\(P\text{,}\)</span> a unit lower triangular matrix <span class="process-math">\(L\)</span> and an upper triangular matrix <span class="process-math">\(U\)</span> such that <span class="process-math">\(PA=LU\text{.}\)</span>
+</div></article></div>
+<div class="para" id="sec1-6-LU-13">The proof of above  theorem gives an algorithm for constructing the permutation matrix <span class="process-math">\(P\text{,}\)</span> and the matrices <span class="process-math">\(L\)</span> and <span class="process-math">\(U\text{.}\)</span>
+</div>
+<article class="remark remark-like" id="sec1-6-LU-14"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.10</span><span class="period">.</span>
+</h3>If <span class="process-math">\(P\)</span> is a permutation matrix then <span class="process-math">\(P^{-1}=P^T\)</span> is also a permutation matrix.  If <span class="process-math">\(PA=LU\text{,}\)</span> then we have <span class="process-math">\(A=P^TLU\text{.}\)</span> Because of this  reason such a factorization is also known as <em class="alert"><span class="process-math">\(PLU\)</span> factorization of <span class="process-math">\(A\)</span></em>.</article><section class="subsection" id="subsec-lu-sage"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="space"> </span><span class="title"><span class="process-math">\(LU\)</span>-factorization in Sage</span>
+</h3>
+<div class="para" id="subsec-lu-sage-2">Sage has inbulit method ’LU’ to find <span class="process-math">\(LU\)</span>-factorization. Suppose that <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, then an LU decomposition in Sage output is a lower-triangular <span class="process-math">\(m\times m\)</span> matrix <span class="process-math">\(L\)</span> with every diagonal element equal to 1, and an upper-triangular <span class="process-math">\(m\times n\)</span> matrix, <span class="process-math">\(U\)</span> such that the product <span class="process-math">\(LU\text{,}\)</span> after a permutation of the rows, is then equal to <span class="process-math">\(A\text{.}\)</span>  For the ’plu’ format the permutation is returned as an m x m permutation matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(A = PLU\text{.}\)</span> <div class="para" id="subsec-lu-sage-2-12">Try to explore help document of LU factorization using ’A.LU?’</div>
+</div>
+<div class="para" id="subsec-lu-sage-3">
+<div id="subsec-lu-sage-3-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix(QQ, [[0,-2,1],[6, -0, 3],[4, 1, 8],[14, 10, -8]])
+P,L,U = A.LU()
+</script></div> <div id="subsec-lu-sage-3-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(P)
+print(L)
+print(U)
+</script></div> <div id="subsec-lu-sage-3-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">P*L*U==A
+</script></div>
+</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-hom-system.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap2-Rn-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-hom-system.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch1-exer.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

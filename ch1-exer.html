@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Linear Transformations</title>
+<title>Exercises</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -164,7 +164,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chap2-Rn-Space.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="linalg-pretext-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap4-Vector-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec1-6-LU.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap2-Rn-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -174,9 +174,9 @@ window.MathJax = {
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chap1-lineq.html" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Row Operations</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-Matrix-inverse-using-rref" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Matrix Inversion via Elementary Row Operations</span></a></div></li></ul>
@@ -198,11 +198,11 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec1-6-LU.html#subsec-lu-sage" class="internal"><span class="codenumber">1.6.2</span> <span class="title"><span class="process-math">\(LU\)</span>-factorization in Sage</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch1-exer.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="ch1-exer.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap2-Rn-Space.html" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div></li>
-<li class="toc-item toc-chapter active"><div class="toc-title-box"><a href="chap3-LT.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap3-LT.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap4-Vector-Space.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap5-Eigen.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap5-orthogonality.html" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a></div></li>
@@ -212,11 +212,243 @@ window.MathJax = {
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap10-PCA.html" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a></div></li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="chap3-LT"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">3</span><span class="space"> </span><span class="title">Linear Transformations</span>
-</h2></section></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="ch1-exer"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.7</span><span class="space"> </span><span class="title">Exercises</span>
+</h2>
+<div class="para logical" id="ch1-exer-2"><ol class="decimal" id="ch1-exer-2-1">
+<li id="ch1-exer-2-1-1"><div class="para logical" id="ch1-exer-2-1-1-1">
+<div class="para">Reduce the following matrices into row-echelon form.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+1 \amp  2 \amp  3 \amp  4\\
+2 \amp  1 \amp  4 \amp  5\\
+1 \amp  5 \amp  5 \amp  7\\
+8\amp  1 \amp  14 \amp  17
+\end{pmatrix},
+\begin{pmatrix}
+1 \amp  2 \amp  -1 \amp  1\\
+2 \amp  3 \amp  4 \amp  5\\
+1 \amp  4 \amp -13 \amp  -5
+\end{pmatrix},
+\begin{pmatrix}
+2 \amp  3 \amp  1 \amp  0 \amp  4\\
+3 \amp  1 \amp  2 \amp -1\amp 1\\
+4 \amp  -1 \amp  3 \amp -2\amp  -2\\
+5 \amp  4 \amp  3 \amp  -1 \amp  5 
+\end{pmatrix},
+\begin{pmatrix}
+-1 \amp  1 \amp  2\\
+3 \amp  -1 \amp  1\\
+1\amp 3\amp  4
+\end{pmatrix}
+\end{equation*}
+</div>
+</div></li>
+<li id="ch1-exer-2-1-2"><div class="para logical" id="ch1-exer-2-1-2-1">
+<div class="para">Find the sequence of row operations that converts the matrix.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 
+a_1+b_1 \amp  a_2+b_2 \amp  a_3+b_3\\
+a_1+c_1 \amp  a_2+c_2 \amp  a_3+c_3\\
+b_1+c_1 \amp  b_2+c_2 \amp  b_3+c_3
+\end{bmatrix} \text{ to } 
+\begin{bmatrix} 
+a_1\amp  a_2 \amp  a_3\\
+b_1 \amp  b_2 \amp  b_3\\
+c_1 \amp  c_2 \amp  c_3
+\end{bmatrix}
+\end{equation*}
+</div>
+</div></li>
+<li id="ch1-exer-2-1-3"><div class="para logical" id="ch1-exer-2-1-3-1">
+<div class="para">Solve the following systems of linear equations by Gaussian elimination  method.</div>
+<ol class="lower-alpha" id="ch1-exer-2-1-3-1-1">
+<li id="ch1-exer-2-1-3-1-1-1"><div class="para logical" id="ch1-exer-2-1-3-1-1-1-1"><div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccc}
+x+2y+3z \amp  =   \amp  2    \\
+3x+7y+9z\amp  =   \amp    0 \\
+x+4y+z\amp  =   \amp    2 \\
+\end{array}
+\end{equation*}
+</div></div></li>
+<li id="ch1-exer-2-1-3-1-1-2"><div class="para logical" id="ch1-exer-2-1-3-1-1-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccc}
+x-2z\amp  =   \amp  0   \\
+y+3z\amp  =   \amp    0 \\
+4x+y+2z\amp  =   \amp    0 \\
+\end{array}
+\end{equation*}
+</div></div></li>
+<li id="ch1-exer-2-1-3-1-1-3"><div class="para logical" id="ch1-exer-2-1-3-1-1-3-1"><div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccc}
+x+y+2z          \amp   =  \amp    4 \\ x-y+z          \amp   =  \amp   2  \\
+\end{array}
+\end{equation*}
+</div></div></li>
+<li id="ch1-exer-2-1-3-1-1-4"><div class="para logical" id="ch1-exer-2-1-3-1-1-4-1"><div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccc} x+y+2z          \amp   =  \amp    0 \\ x-y+z \amp   =  \amp 
+0  \\
+\end{array}
+\end{equation*}
+</div></div></li>
+<li id="ch1-exer-2-1-3-1-1-5"><div class="para logical" id="ch1-exer-2-1-3-1-1-5-1"><div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccc}
+x+y\amp  =   \amp     -2\\
+2x+3y+z\amp  =   \amp    1 \\
+3x+2y+z\amp  =   \amp     3\\
+\end{array}
+\end{equation*}
+</div></div></li>
+<li id="ch1-exer-2-1-3-1-1-6"><div class="para logical" id="ch1-exer-2-1-3-1-1-6-1"><div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccc}
+x-y+2z          \amp   =  \amp     4\\
+3x+y+z          \amp   =  \amp     -2\\
+2x-3y+3z          \amp   =  \amp     0
+\end{array}
+\end{equation*}
+</div></div></li>
+</ol>
+</div></li>
+<li id="ch1-exer-2-1-4"><div class="para logical" id="ch1-exer-2-1-4-1">
+<div class="para">Find the rank of the following matrices:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{pmatrix}
+1 \amp  2 \amp  3\\2\amp  1 \amp  -1\\1 \amp  -1 \amp  2\\5 \amp  4\amp  -5
+\end{pmatrix},
+B=
+\begin{pmatrix}
+2 \amp  1 \amp  5\amp  -1 \amp \\-1 \amp  2\amp  5\amp  3\\3 \amp  2\amp  9\amp  -1
+\end{pmatrix},
+C=
+\begin{pmatrix}
+1 \amp  1 \amp  1 \\a \amp  b \amp  c\\a^2 \amp  b^2\amp  c^2
+\end{pmatrix}
+\end{equation*}
+</div>
+</div></li>
+<li id="ch1-exer-2-1-5"><div class="para" id="ch1-exer-2-1-5-1">Find all values of <span class="process-math">\(k\)</span> such that the rank of the matrix <span class="process-math">\(\begin{pmatrix}
+k \amp  -1 \amp  0\amp 0 \\0 \amp  k \amp  -1\amp 0\\0\amp  0  \amp  k\amp  -1\\-6 \amp   11\amp  -6 \amp 1
+\end{pmatrix}\)</span> is 3.</div></li>
+<li id="ch1-exer-2-1-6"><div class="para" id="ch1-exer-2-1-6-1">Find all values of <span class="process-math">\(k\)</span> such that the rank of the matrix <span class="process-math">\(\begin{bmatrix} k+3 \amp  1 \amp  -2\\ 3 \amp  -2 \amp  k\\-k \amp  -3 \amp  3
+\end{bmatrix}\)</span> is 3.</div></li>
+<li id="ch1-exer-2-1-7"><div class="para" id="ch1-exer-2-1-7-1">For the following system of equations write the solution in the form of <span class="process-math">\(X_0+S_h\)</span> where <span class="process-math">\(X_0\)</span> is a solution of non homogeneous system and <span class="process-math">\(S_h\)</span> is the set of solutions of the corresponding homogeneous system <div class="para" id="ch1-exer-2-1-7-1-4">(i) <span class="process-math">\(3x-4y=1\)</span>
+</div> <div class="para" id="ch1-exer-2-1-7-1-5">(ii) <span class="process-math">\(-3x + 6 y + -11z =  4;       3x - 4y + 6z  = -3\)</span>
+</div> <div class="para" id="ch1-exer-2-1-7-1-6">(iii) <span class="process-math">\(x+y+z-w   =  1;       3x+6z-6w  =   6;             -y+z-w  =   1 \)</span>
+</div> <div class="para" id="ch1-exer-2-1-7-1-7">(iv) <span class="process-math">\(x+2y+4z   =  3;      2x+4y+z  =   3 \)</span>
+</div>
+</div></li>
+<li id="ch1-exer-2-1-8"><div class="para logical" id="ch1-exer-2-1-8-1">
+<div class="para">Balance the following photosynthesis reaction</div>
+<div class="displaymath process-math">
+\begin{equation*}
+CO_2 + H_2O \to C_6H_{12}O_6 + O_2\text{.}
+\end{equation*}
+</div>
+<div class="para">Here <span class="process-math">\(C_6H_{12}O_6\)</span> is glucose.</div>
+</div></li>
+<li id="ch1-exer-2-1-9"><div class="para logical" id="ch1-exer-2-1-9-1">
+<div class="para">The augmented matrix of a linear system has the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} 1 \amp 2\amp  -1 \amp  a \\
+2 \amp 3\amp  -2 \amp  b\\
+-1 \amp -1\amp  1 \amp  c
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">
+<div class="para" id="ch1-exer-2-1-9-1-2">(a) Determine the values of a, b, and c for which the linear system is consistent.</div> <div class="para" id="ch1-exer-2-1-9-1-3">(b) Determine the values of a, b, and c for which the linear system is inconsistent.</div> <div class="para" id="ch1-exer-2-1-9-1-4">(c) When it is consistent, does the linear system have a unique solution or infinitely many solutions?</div> <div class="para" id="ch1-exer-2-1-9-1-5">(d) Give a specific consistent linear system and find one particular solution.</div>
+</div>
+</div></li>
+<li id="ch1-exer-2-1-10"><div class="para logical" id="ch1-exer-2-1-10-1">
+<div class="para">Solve the following system of equations for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x^2 + xy =y^2 = 1, \quad 
+2x^2 - xy + 3y^2 = 13,\quad x^2 + 3xy + 2y^2 = 0\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="ch1-exer-2-1-11"><div class="para" id="ch1-exer-2-1-11-1">Find a polynomial of the form <span class="process-math">\(y = a_0 +a_1 x+a_2 x^2 +a_3 x^3\)</span> which passes through the points <span class="process-math">\((-3, -2), (-1, 2), (1, 5), (2, 1)\text{.}\)</span>
+</div></li>
+<li id="ch1-exer-2-1-12"><div class="para logical" id="ch1-exer-2-1-12-1">
+<div class="para">Find the values of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> for which the following system is consistent. Also find the complete solution when <span class="process-math">\(a = b = 2\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x+y-z+w = 1;\quad    ax + y + z + w = b;\quad
+3x + 2y +    aw = 1 + a\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="ch1-exer-2-1-13"><div class="para logical" id="ch1-exer-2-1-13-1">
+<div class="para">The  following table lists the number of milligrams of vitamin A, vitamin B, vitamin C, and niacin contained in 1 g of four different foods. A dietitian wants to prepare a meal that provides 250 mg of vitamin A, 300 mg of vitamin B, 400 mg of vitamin C, and 70 mg of niacin. Determine how many grams of each food must be included, and describe any limitations on the quantities of each food that can be used</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccc}
+Nutrients \amp  Group~1 \amp  Group~2 \amp  Group~3 \amp  Group \\
+Vitamin~A \amp  20 \amp  30 \amp  40 \amp  10\\
+Vitamin~B \amp  40 \amp  20 \amp  35 \amp  20\\
+Vitamin~C \amp  50 \amp  40 \amp  10 \amp  30\\
+Niacin 	  \amp  5 \amp  5 \amp  10 \amp  5
+\end{array}
+\end{equation*}
+</div>
+</div></li>
+<li id="ch1-exer-2-1-14"><div class="para logical" id="ch1-exer-2-1-14-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be the coefficient matrix of the following homogeneous system of <span class="process-math">\(n \)</span>  equations in <span class="process-math">\(n\)</span>   unknowns:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccc}
+(1-n)x_1 + x_2 + \cdots + x_n \amp=\amp 0\\
+x_1 + (1- n)x_2 + \cdots + x_n \amp=\amp 0\\
+\vdots\amp\amp \vdots\\
+x_1 + x_2 + \cdots + (1-n)x_n \amp=\amp 0.
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Find the reduced row-echelon form of <span class="process-math">\(A\)</span>   and hence, or otherwise, prove that the solution of the above system is <span class="process-math">\(x_1 = x_2 = \ldots = x_n\)</span>   , with <span class="process-math">\(x_n\)</span>  arbitrary.</div>
+</div></li>
+<li id="ch1-exer-2-1-15"><div class="para logical" id="ch1-exer-2-1-15-1">
+<div class="para">For which rational numbers <span class="process-math">\(a\)</span> does the following system have (i) no solutions (ii) exactly one solution (iii) infinitely many solutions?</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x + 2y-3z = 4;\quad 
+3x-y + 5z = 2;\quad
+4x + y + (a^2-14)z = a + 2\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="ch1-exer-2-1-16"><div class="para logical" id="ch1-exer-2-1-16-1">
+<div class="para">If <span class="process-math">\((\alpha_1 ,\ldots,\alpha_n)\)</span> and <span class="process-math">\((\beta_1 ,\ldots,\beta_n)\)</span> are solutions of a system of linear equations, prove that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+((1-t)\alpha_1+t\beta_1 , \ldots, (1-t)\alpha_n+t\beta_n)
+\end{equation*}
+</div>
+<div class="para">is also a solution.</div>
+</div></li>
+<li id="ch1-exer-2-1-17"><div class="para" id="ch1-exer-2-1-17-1">Solve the system <span class="process-math">\(AX=b\)</span>   using  Doolittle method: <div class="para" id="ch1-exer-2-1-17-1-2">(i)  <span class="process-math">\(A=\begin{pmatrix} 25\amp 5\amp 1\\64\amp 8\amp 1\\144\amp 12\amp 1 \end{pmatrix}\)</span> and <span class="process-math">\(b=\begin{pmatrix}3\\1\\-2\end{pmatrix}\)</span>
+</div> <div class="para" id="ch1-exer-2-1-17-1-3">(ii) <span class="process-math">\(A= \begin{pmatrix}1\amp 1\amp 1\\3\amp 1\amp -3\\1\amp -2\amp -5 \end{pmatrix} \)</span> and <span class="process-math">\(b=\begin{pmatrix}-3\\7\\2\end{pmatrix}\text{.}\)</span>
+</div>
+</div></li>
+<li id="ch1-exer-2-1-18"><div class="para" id="ch1-exer-2-1-18-1">Solve the system <span class="process-math">\(AX=b\)</span> using Crout’s method <div class="para" id="ch1-exer-2-1-18-1-2">(i) <span class="process-math">\(A=\begin{pmatrix} 2\amp -4\amp 3\\4\amp 1\amp -6\\5\amp 8\amp -4 \end{pmatrix}\)</span> and <span class="process-math">\(b=\begin{pmatrix}2\\-1\\5\end{pmatrix}\)</span>
+</div> <div class="para" id="ch1-exer-2-1-18-1-3">(ii) <span class="process-math">\(A= \begin{pmatrix} 1\amp 0\amp 5\amp 0\\-1\amp 4\amp 1\amp 0\\3\amp 0\amp 4\amp 1\\-2\amp 1\amp 1\amp 3 \end{pmatrix}\)</span> and <span class="process-math">\(b=\begin{pmatrix}1\\4\\3\\5\end{pmatrix}\)</span>
+</div>
+</div></li>
+</ol></div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="chap2-Rn-Space.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap4-Vector-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec1-6-LU.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap2-Rn-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
