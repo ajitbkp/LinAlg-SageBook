@@ -163,6 +163,9 @@ sagecell.makeSagecell({
 #sec2-1-matrix-spaces-2-5 { counter-set: sec2-1-matrix-spaces-2-5 0; }
 #sec2-1-matrix-spaces-2-5 > li::marker { content: ""counter(sec2-1-matrix-spaces-2-5,decimal)"."; }
 #sec2-1-matrix-spaces-2-5 > li { counter-increment: sec2-1-matrix-spaces-2-5; }
+#sec-2-2-remrak2-1 { counter-set: sec-2-2-remrak2-1 0; }
+#sec-2-2-remrak2-1 > li::marker { content: ""counter(sec-2-2-remrak2-1,decimal)"."; }
+#sec-2-2-remrak2-1 > li { counter-increment: sec-2-2-remrak2-1; }
 </style>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -182,7 +185,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec2-0-intro.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap2-Rn-Space.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec2-0-intro.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap2-Rn-Space.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-2-2-LI.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -225,6 +228,8 @@ sagecell.makeSagecell({
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec2-0-intro.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec2-1-LinSpan.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Linear Spans</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2-2-LI.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Linear Dependence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2-3-basis-dimension.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Basis and Dimension</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap3-LT.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div></li>
@@ -317,7 +322,7 @@ A.rank()
 <span class="process-math">\({\cal N}(A):=\{x\in R^n:Ax=0\}\text{.}\)</span> It is easy to check that <span class="process-math">\({\cal N}(A)\)</span> is a subspace of <span class="process-math">\(\R^n\)</span> called the <em class="alert">null space</em> of <span class="process-math">\(A\)</span> or <em class="alert">kernel</em> of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="sec2-1-matrix-spaces-2-5-2"><div class="para" id="sec2-1-matrix-spaces-2-5-2-1">
-<span class="process-math">\({\cal R}(A):=\{Ax:x\in \R^n\}\subset \R^m\)</span> is a subspace of <span class="process-math">\(\R^m\text{,}\)</span> called the <em class="alert">image space</em>  or <em class="alert">range spave</em> or <em class="alert">column space</em>of <span class="process-math">\(A\text{.}\)</span> It is easy to see that for <span class="process-math">\(x\in \R^n\text{,}\)</span> <span class="process-math">\(Ax\)</span> is linear combinations of columns of <span class="process-math">\(A\text{.}\)</span> We also denote <span class="process-math">\({\cal R}(A)\)</span> by <span class="process-math">\({\rm row}(A)\text{.}\)</span>
+<span class="process-math">\({\cal R}(A):=\{Ax:x\in \R^n\}\subset \R^m\)</span> is a subspace of <span class="process-math">\(\R^m\text{,}\)</span> called the <em class="alert">image space</em>  or <em class="alert">range space</em> or <em class="alert">column space</em>of <span class="process-math">\(A\text{.}\)</span> It is easy to see that for <span class="process-math">\(x\in \R^n\text{,}\)</span> <span class="process-math">\(Ax\)</span> is linear combinations of columns of <span class="process-math">\(A\text{.}\)</span> We also denote <span class="process-math">\({\cal R}(A)\)</span> by <span class="process-math">\({\rm col}(A)\text{.}\)</span>
 </div></li>
 <li id="sec2-1-matrix-spaces-2-5-3"><div class="para" id="sec2-1-matrix-spaces-2-5-3-1">
 <span class="process-math">\({\cal L}(A):=\{y\in \R^m: A^Ty=0\}\)</span> is a subspace of <span class="process-math">\(\R^m\)</span> called the <em class="alert">left null space</em> of <span class="process-math">\(A\text{.}\)</span>
@@ -327,7 +332,7 @@ A.rank()
 </ol>
 </div> The four subspaces, namely <span class="process-math">\({\cal N}(A)\text{,}\)</span> <span class="process-math">\({\cal col}(A)\text{,}\)</span> <span class="process-math">\({\cal L}(A)\)</span> and <span class="process-math">\({\cal row}(A)\)</span> are called the <em class="alert">fundamental subspaces</em> associated with a matrix <span class="process-math">\(A\text{.}\)</span></article></details></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec2-0-intro.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec2-0-intro.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-2-2-LI.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

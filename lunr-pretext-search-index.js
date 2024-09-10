@@ -592,7 +592,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Linear Spans",
-  "body": " Linear Spans     Let be a non empty subset of vectors in . Then the linear span of , denoted by is a subset of defined as      Note that if means there exist scalars such that .   Let be a subset of vectors in . Then show that is a vector subspace of .   Let , then by definitions there exist scalars such that and there exist another set of scalars such that . Hence The readers should understand what the properties of vector addition and scalar multiplications are used above.  Next, let be a scalar, then . This shows that is a vector subspace of .          If is a non-zero vector in , then is a the line passing through origin and .    Let . Then .    Let , then .    Let , then is the -plane given by the equation .    Let , then .     . Then is a plane passing through the origin and the two points . Can you find the scalars such that is the plane represented by the equation ?    Let . Then .      Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem. We need to show that , that is, and . Let us define for convenience. Clearly by, definition, . To show , we let . We need to find scalars, say such that . As a vector, . It is easy to check that the above system has a unique solution as rank of is 3 (This can be easily verified by Sage). Hence and hence . Hence we have .          Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets    . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range spave or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .    The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix .  "
+  "body": " Linear Spans     Let be a non empty subset of vectors in . Then the linear span of , denoted by is a subset of defined as      Note that if means there exist scalars such that .   Let be a subset of vectors in . Then show that is a vector subspace of .   Let , then by definitions there exist scalars such that and there exist another set of scalars such that . Hence The readers should understand what the properties of vector addition and scalar multiplications are used above.  Next, let be a scalar, then . This shows that is a vector subspace of .          If is a non-zero vector in , then is a the line passing through origin and .    Let . Then .    Let , then .    Let , then is the -plane given by the equation .    Let , then .     . Then is a plane passing through the origin and the two points . Can you find the scalars such that is the plane represented by the equation ?    Let . Then .      Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem. We need to show that , that is, and . Let us define for convenience. Clearly by, definition, . To show , we let . We need to find scalars, say such that . As a vector, . It is easy to check that the above system has a unique solution as rank of is 3 (This can be easily verified by Sage). Hence and hence . Hence we have .          Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets    . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range space or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .    The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix .  "
 },
 {
   "id": "def-sec2-1-linear-span",
@@ -628,7 +628,205 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.2.4",
   "title": "Matrix Spaces.",
-  "body": " Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets    . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range spave or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .    The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix . "
+  "body": " Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets    . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range space or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .    The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix . "
+},
+{
+  "id": "sec-2-2-LI",
+  "level": "1",
+  "url": "sec-2-2-LI.html",
+  "type": "Section",
+  "number": "2.3",
+  "title": "Linear Dependence",
+  "body": " Linear Dependence   Linearly Dependence   A set of vectors is said to be linearly dependent if there exist scalars not all zero such that .     Note that the set in is lindearly dependent as we have . If we have a set which contains a zero vector, then it is linearly dependent. (why?)  What does it mean to say that two vectors are linearly dependent? It mean, there exist scalars, say and not both zero such that . Without loss of generality, let , then we have . Similarly if , then we have . Thus if are linearly dependent then one is scalar multiple of the other. Geometrically, both and are along the same line passing through the origin in .   Suppose , and be three vectors in . We claim that are linearly dependent. In particular, any three vectors in are linearly dependent. Let be scalars such that . We need to solve this equations for . Thsese equation can be written as . The above equations can be written as which is a sustem of 2 linear equations in 3 variables. Hence it has a non-zero solution. In particular, there exist scalars not all zero such that . Hence are linearly dependence. Can you generalize this?      Any vectors in are linearly dependent.        A set of vectors is said to be linearly independent if it is not linearly dependent. That is, if then it implies for any set of scalars .      A set of vectors is linearly dependent if and only if one of the vectors from the set is a linear combination of the remaining vectors. That is, there exists such that .    Let be vectors in such that . Then we have Thus if we want to find such that , it amount to solving the system , where is the column matrix whose columns are and .       A set of vectors in is linearly dependent iff the matrix is of rank strictly less than .    A set of vectors in is linearly independent iff the matrix is of rank .       Check if the following set of vectors are linearly independent or dependent. (i)  (ii) .  (iii) .  (iv)    "
+},
+{
+  "id": "def-sec2-1-LD",
+  "level": "2",
+  "url": "sec-2-2-LI.html#def-sec2-1-LD",
+  "type": "Definition",
+  "number": "2.3.1",
+  "title": "Linearly Dependence.",
+  "body": "Linearly Dependence   A set of vectors is said to be linearly dependent if there exist scalars not all zero such that .   "
+},
+{
+  "id": "sec-2-2-LI-5-1",
+  "level": "2",
+  "url": "sec-2-2-LI.html#sec-2-2-LI-5-1",
+  "type": "Example",
+  "number": "2.3.2",
+  "title": "",
+  "body": "Suppose , and be three vectors in . We claim that are linearly dependent. In particular, any three vectors in are linearly dependent. Let be scalars such that . We need to solve this equations for . Thsese equation can be written as . The above equations can be written as which is a sustem of 2 linear equations in 3 variables. Hence it has a non-zero solution. In particular, there exist scalars not all zero such that . Hence are linearly dependence. Can you generalize this? "
+},
+{
+  "id": "thm-sec2-2-thm2",
+  "level": "2",
+  "url": "sec-2-2-LI.html#thm-sec2-2-thm2",
+  "type": "Theorem",
+  "number": "2.3.3",
+  "title": "",
+  "body": "  Any vectors in are linearly dependent.   "
+},
+{
+  "id": "def-sec2-1-LI",
+  "level": "2",
+  "url": "sec-2-2-LI.html#def-sec2-1-LI",
+  "type": "Definition",
+  "number": "2.3.4",
+  "title": "",
+  "body": "  A set of vectors is said to be linearly independent if it is not linearly dependent. That is, if then it implies for any set of scalars .   "
+},
+{
+  "id": "sec-2-2-LI-8-1",
+  "level": "2",
+  "url": "sec-2-2-LI.html#sec-2-2-LI-8-1",
+  "type": "Problem",
+  "number": "2.3.5",
+  "title": "",
+  "body": "A set of vectors is linearly dependent if and only if one of the vectors from the set is a linear combination of the remaining vectors. That is, there exists such that . "
+},
+{
+  "id": "sec-2-2-remrak1",
+  "level": "2",
+  "url": "sec-2-2-LI.html#sec-2-2-remrak1",
+  "type": "Remark",
+  "number": "2.3.6",
+  "title": "",
+  "body": "Let be vectors in such that . Then we have Thus if we want to find such that , it amount to solving the system , where is the column matrix whose columns are and . "
+},
+{
+  "id": "sec-2-2-remrak2",
+  "level": "2",
+  "url": "sec-2-2-LI.html#sec-2-2-remrak2",
+  "type": "Remark",
+  "number": "2.3.7",
+  "title": "",
+  "body": "   A set of vectors in is linearly dependent iff the matrix is of rank strictly less than .    A set of vectors in is linearly independent iff the matrix is of rank .    "
+},
+{
+  "id": "sec-2-2-LI-11-1",
+  "level": "2",
+  "url": "sec-2-2-LI.html#sec-2-2-LI-11-1",
+  "type": "Problem",
+  "number": "2.3.8",
+  "title": "",
+  "body": "Check if the following set of vectors are linearly independent or dependent. (i)  (ii) .  (iii) .  (iv)  "
+},
+{
+  "id": "sec-2-3-basis-dimension",
+  "level": "1",
+  "url": "sec-2-3-basis-dimension.html",
+  "type": "Section",
+  "number": "2.4",
+  "title": "Basis and Dimension",
+  "body": " Basis and Dimension   Basis   A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of . Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .  Similarly one can define a basis of any subspace of .      It is easy to prove the follwoing theorem which is opent taken as definition in many books.     A set of vectors is called a basis of iff (i) and is linearly independent.       (i) is a basis of called the standard basis of .  (ii) is a basis of .  (iii) is a basis of called the standard basis of .  (iv) is a basis of .    In , we define where component is 1 rest are zeros. Then it is easy to see that is a bais of called the standard basis .    Consider the plane . Note that, here and can be thought of as free variables. Any point , we have Thus spans . It is easy to see that is linearly independent. Hence is a basis of . In fact, any two vectors in which are linearly independent form a basis of .       Any set of linearly independent vectors forms a basis of .       Follows from Theorem .       Let be a basis of a subscape of with elements. Then any set with elements is linearly dependent.       Let be scalars such that Since is a basis of , for each , we have Substituting this in Equation , we get Collecting the coefficients of in the Equation , we get Since is lineary independent, we have  These are homogeneous linear equations in variables . Hence it has a non zero solution. In particular, there exist scalars, not all zero such that . Hence is linearly dependent.     Let be a basis of a subscape of with elements. If is a linearly independet subset in , then .       Let and be two bases of a subscape of . Then and have the same number of elements.       Suppose and . Since is a basis and is linearly independet, by Corollary , . Similarly is a basis and is linearly independet, we have . Hence .   Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.    Let be subspace of . The number of elements in a basis of is called the dimension of .     "
+},
+{
+  "id": "def-sec2-2-LI",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#def-sec2-2-LI",
+  "type": "Definition",
+  "number": "2.4.1",
+  "title": "Basis.",
+  "body": "Basis   A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of . Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .  Similarly one can define a basis of any subspace of .    "
+},
+{
+  "id": "thm-sec2-3-basis-thm1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#thm-sec2-3-basis-thm1",
+  "type": "Theorem",
+  "number": "2.4.2",
+  "title": "",
+  "body": "  A set of vectors is called a basis of iff (i) and is linearly independent.   "
+},
+{
+  "id": "sec-2-3-basis-dimension-5-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-5-1",
+  "type": "Example",
+  "number": "2.4.3",
+  "title": "",
+  "body": " (i) is a basis of called the standard basis of .  (ii) is a basis of .  (iii) is a basis of called the standard basis of .  (iv) is a basis of .  "
+},
+{
+  "id": "sec-2-3-basis-dimension-7-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-7-1",
+  "type": "Example",
+  "number": "2.4.4",
+  "title": "",
+  "body": " Consider the plane . Note that, here and can be thought of as free variables. Any point , we have Thus spans . It is easy to see that is linearly independent. Hence is a basis of . In fact, any two vectors in which are linearly independent form a basis of .  "
+},
+{
+  "id": "thm-sec2-3-thm3",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#thm-sec2-3-thm3",
+  "type": "Theorem",
+  "number": "2.4.5",
+  "title": "",
+  "body": "  Any set of linearly independent vectors forms a basis of .   "
+},
+{
+  "id": "sec-2-3-basis-dimension-9-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-9-1",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Follows from Theorem .  "
+},
+{
+  "id": "thm-sec2-3-thm4",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#thm-sec2-3-thm4",
+  "type": "Theorem",
+  "number": "2.4.6",
+  "title": "",
+  "body": "  Let be a basis of a subscape of with elements. Then any set with elements is linearly dependent.   "
+},
+{
+  "id": "sec-2-3-basis-dimension-11-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-11-1",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Let be scalars such that Since is a basis of , for each , we have Substituting this in Equation , we get Collecting the coefficients of in the Equation , we get Since is lineary independent, we have  These are homogeneous linear equations in variables . Hence it has a non zero solution. In particular, there exist scalars, not all zero such that . Hence is linearly dependent. "
+},
+{
+  "id": "sec2-3-cor1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec2-3-cor1",
+  "type": "Corollary",
+  "number": "2.4.7",
+  "title": "",
+  "body": "  Let be a basis of a subscape of with elements. If is a linearly independet subset in , then .   "
+},
+{
+  "id": "thm-sec2-3-thm5",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#thm-sec2-3-thm5",
+  "type": "Theorem",
+  "number": "2.4.8",
+  "title": "",
+  "body": "  Let and be two bases of a subscape of . Then and have the same number of elements.   "
+},
+{
+  "id": "sec-2-3-basis-dimension-14-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-14-1",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Suppose and . Since is a basis and is linearly independet, by Corollary , . Similarly is a basis and is linearly independet, we have . Hence .  "
+},
+{
+  "id": "def-sec2-3-dimension",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#def-sec2-3-dimension",
+  "type": "Definition",
+  "number": "2.4.9",
+  "title": "",
+  "body": "  Let be subspace of . The number of elements in a basis of is called the dimension of .   "
 },
 {
   "id": "chap3-LT",
