@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:id="chap2-Rn-Space" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title><m>\R^n</m> as a Vector Space</title>
+  <p>
+    In this chapter, define <m>\R^n</m>, the <m>n</m>-dimensional Euclidean space as vector space over <m>\R</m>. 
+    We shall define abstract vector spaces in later chapter. In fact, <m>\R^n</m> can be thought of as model vector spaces and once we understand properties in <m>\R^n</m>, it will be easier to under properties in asbtract vector spaces. 
+      
+  </p>
   
   <xi:include href="sec2-0-intro.ptx" />
 </chapter>
