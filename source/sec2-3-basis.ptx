@@ -150,4 +150,13 @@ Since the number of elements any two bases are same. This leads to the dinition 
     </statement>
   </definition>
 </p>
+<p>
+  <example>
+    <p>(i) <m>\R^n</m> is a <m>n</m>-dimensional vector space over <m>\R</m>.</p>
+<p>(ii) Any plane passing through origin in <m>\R^3</m> is a 2 dimensional subspace.</p>
+<p>(iii) <m>W:=\{(x_1,\ldots,x_n):x_1+\cdots+x_n=0\}</m> is <m>n-1</m> dimensional subspace of <m>\R^n</m>. Write down a basis of <m>W</m>.</p>
+<p>(iv) <m>W=\{(x_1,x_2,x_3,x_4)\in \R^4:x_1=x_3,x_2=x_4\}</m> is a 2-dimensional subspace of <m>\R^4</m>. Write dowm a basis of <m>W</m>.</p>
+
+  </example>
+</p>
 </section>
