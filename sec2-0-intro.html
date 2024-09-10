@@ -145,6 +145,12 @@ window.MathJax = {
 #ch1-exer-2-1-3-1-1 { counter-set: ch1-exer-2-1-3-1-1 0; }
 #ch1-exer-2-1-3-1-1 > li::marker { content: "("counter(ch1-exer-2-1-3-1-1,lower-alpha)")"; }
 #ch1-exer-2-1-3-1-1 > li { counter-increment: ch1-exer-2-1-3-1-1; }
+#sec2-1-LinSpan-5-1-1-1 { counter-set: sec2-1-LinSpan-5-1-1-1 0; }
+#sec2-1-LinSpan-5-1-1-1 > li::marker { content: ""counter(sec2-1-LinSpan-5-1-1-1,decimal)"."; }
+#sec2-1-LinSpan-5-1-1-1 > li { counter-increment: sec2-1-LinSpan-5-1-1-1; }
+#sec2-1-matrix-spaces-2-5 { counter-set: sec2-1-matrix-spaces-2-5 0; }
+#sec2-1-matrix-spaces-2-5 > li::marker { content: ""counter(sec2-1-matrix-spaces-2-5,decimal)"."; }
+#sec2-1-matrix-spaces-2-5 > li { counter-increment: sec2-1-matrix-spaces-2-5; }
 </style>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -164,7 +170,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chap2-Rn-Space.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap2-Rn-Space.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chap2-Rn-Space.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap2-Rn-Space.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec2-1-LinSpan.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -204,7 +210,10 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chap2-Rn-Space.html" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div>
-<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec2-0-intro.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction</span></a></div></li></ul>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec2-0-intro.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec2-1-LinSpan.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Linear Spans</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap3-LT.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap4-Vector-Space.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a></div></li>
@@ -259,10 +268,10 @@ x+y:=\amp (x_1+y_1,x_2+y_2,\ldots,x_n+y_n)\\
 <div class="para" id="sec2-0-intro-8"><details id="sec2-0-intro-8-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Solution of homogeneous system as vector subpace.</span>
 </h3></summary><article class="example example-like knowl__content"> <div class="para" id="sec2-0-intro-8-1-2">Let <span class="process-math">\(A\)</span> be <span class="process-math">\(m\times n\)</span> real matrix. Then <span class="process-math">\(S_h=\{x\in \R^n:Ax=0\}\)</span> is a vector subspace of <span class="process-math">\(\R^n\text{.}\)</span> In fact any subspace of <span class="process-math">\(\R^n\)</span> arises in this way.  This subspace is also known as <em class="alert">null spave of <span class="process-math">\(A\text{.}\)</span></em>
-</div> <div class="para" id="sec2-0-intro-8-1-3"><figure class="figure figure-like" id="F-circular-sine-all-16"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/hon-syst-fig1.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.5<span class="period">.</span></span><span class="space"> </span>The unit circle with <span class="process-math">\(16\)</span> labeled special points.</figcaption></figure></div></article></details></div></section></div>
+</div></article></details></div>
+<div class="para" id="sec2-0-intro-9"></div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="chap2-Rn-Space.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="chap2-Rn-Space.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec2-1-LinSpan.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

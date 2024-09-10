@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Homogeneous System of Linear Equations</title>
+<title>Linear Spans</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -182,7 +182,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec1-4-matrix-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec1-6-LU.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec2-0-intro.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap2-Rn-Space.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -192,9 +192,9 @@ sagecell.makeSagecell({
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="chap1-lineq.html" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Row Operations</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-Matrix-inverse-using-rref" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Matrix Inversion via Elementary Row Operations</span></a></div></li></ul>
@@ -208,7 +208,7 @@ sagecell.makeSagecell({
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec1-4-matrix-rank.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Rank of Matrices</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-hom-system.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Homogeneous System of Linear Equations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-system.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Homogeneous System of Linear Equations</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec1-6-LU.html" class="internal"><span class="codenumber">1.6</span> <span class="title"><span class="process-math">\(LU\)</span>-Facotorization</span></a></div>
 <ul class="structural toc-item-list">
@@ -220,11 +220,11 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="ch1-exer.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chap2-Rn-Space.html" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec2-0-intro.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec2-1-LinSpan.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Linear Spans</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec2-1-LinSpan.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Linear Spans</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap3-LT.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div></li>
@@ -237,123 +237,97 @@ sagecell.makeSagecell({
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap10-PCA.html" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a></div></li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-hom-system"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.5</span><span class="space"> </span><span class="title">Homogeneous System of Linear Equations</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec2-1-LinSpan"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.2</span><span class="space"> </span><span class="title">Linear Spans</span>
 </h2>
-<div class="para" id="sec-hom-system-2"><article class="definition definition-like" id="def-homo-system"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span>
+<div class="para" id="sec2-1-LinSpan-2"><article class="definition definition-like" id="def-sec2-1-linear-span"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="def-homo-system-1-1">A system  <span class="process-math">\(AX = B\)</span> of linear equations is called <em class="alert">homogeneous</em> if <span class="process-math">\(B = 0\text{.}\)</span> Otherwise it is called a  <em class="alert">non homogeneous</em>  system.</div></article></div>
-<div class="para" id="sec-hom-system-3">Observe that any homogeneous system <span class="process-math">\(AX = 0\)</span> of linear equations has at least one solution, namely the trivial solution (<span class="process-math">\(x_i = 0\text{,}\)</span> for all <span class="process-math">\(i\)</span>).  The augmented matrix is got from adding one zero column to <span class="process-math">\(A\text{.}\)</span> Hence <span class="process-math">\(.r(A) =
-r(A^*)\text{.}\)</span>
-</div>
-<article class="theorem theorem-like" id="thm-hom-system1"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
-</h3>
-<div class="para" id="thm-hom-system1-1-1">A homogeneous system  <span class="process-math">\(AX = 0\)</span> of <span class="process-math">\(n\)</span> equations in the same number of unknowns (<span class="process-math">\(n\)</span> unknowns) has a nontrivial solution if and only if <span class="process-math">\(A\)</span> is singular, that is , if and only if <span class="process-math">\(\det(A)=0\text{.}\)</span>
-</div></article><div class="para" id="sec-hom-system-5"><details id="sec-hom-system-5-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-hom-system-5-1-1">The given  homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if <span class="process-math">\(r(A)\lt n\text{,}\)</span> the number of variables (<a href="sec1-4-matrix-rank.html#thm-nosol-rank" class="xref" data-knowl="./knowl/xref/thm-nosol-rank.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.8: Number of Solution of a System">Theorem 1.4.8</a>). But <span class="process-math">\(r(A)\lt n \text{,}\)</span> if and only if <span class="process-math">\(A\)</span> is singular.</div></article></details></div>
-<div class="para" id="sec-hom-system-6"><article class="theorem theorem-like" id="thm-hom-system2"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span>
-</h3>
-<div class="para" id="thm-hom-system2-1-1">A homogeneous system  <span class="process-math">\(AX = 0\)</span> of <span class="process-math">\(m\)</span> equations in <span class="process-math">\(n\)</span> unknowns, where <span class="process-math">\(m \lt n\)</span> has infinitely many nontrivial solutions.</div></article></div>
-<div class="para" id="sec-hom-system-7"><details id="sec-hom-system-7-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content">If <span class="process-math">\(m \lt n\text{,}\)</span> then <span class="process-math">\(r(A) \lt  n\)</span> and hence the result follows from thm.~ <a href="sec1-4-matrix-rank.html#thm-nosol-rank" class="xref" data-knowl="./knowl/xref/thm-nosol-rank.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.8: Number of Solution of a System">Theorem 1.4.8</a>.</article></details></div>
-<div class="para" id="sec-hom-system-8">We would like to get the connection between solutions of a homogeneous system <span class="process-math">\(AX = 0\)</span> and  the solutions of <span class="process-math">\(AX = B\text{,}\)</span> <span class="process-math">\(B \neq 0\text{.}\)</span> These are stated in the following Theorem.</div>
-<div class="para" id="sec-hom-system-9">
-<article class="theorem theorem-like" id="thm-hom-system3"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="thm-hom-system3-1-1">
-<div class="para">Suppose the non homogeneous system <span class="process-math">\(AX
-= B\)</span> of linear equations has a solution say <span class="process-math">\(X = X_0\text{.}\)</span> All the solutions of this system are of the form</div>
+<div class="para logical" id="def-sec2-1-linear-span-1-1">
+<div class="para">Let <span class="process-math">\(S=\{v_1, v_2,\ldots, v_k\}\)</span> be a non empty subset of vectors in <span class="process-math">\(\R^n\text{.}\)</span> Then the linear span of <span class="process-math">\(S\text{,}\)</span> denoted by <span class="process-math">\(L(S)\)</span> is a subset of <span class="process-math">\(\R^n\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
-X_0 + X_h,
+L(S):=\{\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k:\alpha_1,\cdots,\alpha_k\in \R\}.
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(X_h\)</span> runs through all the solutions of the corresponding homogeneous system <span class="process-math">\(AX =0\text{.}\)</span>
+</div></article></div>
+<div class="para" id="sec2-1-LinSpan-3">Note that if <span class="process-math">\(x\in L(S)\)</span> means there exist scalars <span class="process-math">\(\alpha_1,\ldots,\alpha_k \in \R\)</span> such that <span class="process-math">\(x=\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k\text{.}\)</span>
 </div>
-</div></article> <div class="para" id="sec-hom-system-9-2"><details id="sec-hom-system-9-2-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-hom-system-9-2-1-1">
-<div class="para">Let <span class="process-math">\(X_h\)</span> be a solution of <span class="process-math">\(AX=0\text{.}\)</span> Then</div>
+<div class="para" id="sec2-1-LinSpan-4"><details id="sec2-1-eg-linspan-as-vs" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content">Let <span class="process-math">\(S=\{v_1, v_2,\ldots, v_k\}\)</span> be a subset of vectors in <span class="process-math">\(\R^n\text{.}\)</span> Then show that <span class="process-math">\(L(S)\)</span> is a vector subspace of <span class="process-math">\(\R^n\text{.}\)</span> <div class="para" id="sec2-1-eg-linspan-as-vs-5"><details id="sec2-1-eg-linspan-as-vs-5-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec2-1-eg-linspan-as-vs-5-1-1">
+<div class="para">Let <span class="process-math">\(x,y\in L(S)\text{,}\)</span> then by definitions there exist scalars <span class="process-math">\(\alpha_1,\ldots,\alpha_k \in \R\)</span> such that <span class="process-math">\(x=\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k\)</span> and there exist another set of scalars <span class="process-math">\(\beta_1,\ldots,\beta_k \in \R\)</span> such that <span class="process-math">\(y=\beta_1v_1+\beta_2v_2+\cdots+\beta_kv_k\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="sec2-1-eg-linspan-as-vs-5-1-1-6">
+\begin{align*}
+x+y =\amp (\alpha_1v_1+\cdots+\alpha_kv_k)+\beta_1v_1+\cdots+\beta_kv_k\\
+=\amp (\alpha_1+\beta_1)v_1+\cdots (\alpha_k+\beta_k)v_k\in L(S)
+\end{align*}
+</div>
+<div class="para">The readers should understand what the properties of vector addition and scalar multiplications are used above.</div>
+</div> <div class="para logical" id="sec2-1-eg-linspan-as-vs-5-1-2">
+<div class="para">Next, let <span class="process-math">\(\gamma\in \R\)</span> be a scalar, then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A(X_0 + X_h) = AX_0 + A
-X_h = B + 0 = B\text{.}
+\gamma\cdot x=\gamma(\alpha_1v_1+\cdots+\alpha_kv_k)=(\gamma\alpha_1)v_1+\cdots+(\gamma\alpha_k)\in L(S)\text{.}
 \end{equation*}
 </div>
-<div class="para">Hence <span class="process-math">\(X_0 +X_h\)</span> is a solution of <span class="process-math">\(AX =
-B\text{.}\)</span>
+</div> This shows that <span class="process-math">\(L(S)\)</span> is a vector subspace of <span class="process-math">\(\R^n\text{.}\)</span>
+</div></details></div></article></details></div>
+<div class="para" id="sec2-1-LinSpan-5"><details id="sec2-1-LinSpan-5-1" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
+</h3></summary><article class="problem example-like knowl__content"><div class="para logical" id="sec2-1-LinSpan-5-1-1"><ol class="decimal" id="sec2-1-LinSpan-5-1-1-1">
+<li id="sec2-1-LinSpan-5-1-1-1-1"><div class="para" id="sec2-1-LinSpan-5-1-1-1-1-1">If <span class="process-math">\(v\in \R^n\)</span> is a non-zero vector in <span class="process-math">\(\R^n\text{,}\)</span> then <span class="process-math">\(L(\{v_1\})=\{\alpha v:\alpha\in \R\}\)</span> is a the line passing through origin and <span class="process-math">\(v\text{.}\)</span>
+</div></li>
+<li id="sec2-1-LinSpan-5-1-1-1-2"><div class="para" id="sec2-1-LinSpan-5-1-1-1-2-1">Let <span class="process-math">\(S =\{e_1=(1,0),e_2=(0,1)\}\text{.}\)</span> Then <span class="process-math">\(L(S)=\R^2\text{.}\)</span>
+</div></li>
+<li id="sec2-1-LinSpan-5-1-1-1-3"><div class="para" id="sec2-1-LinSpan-5-1-1-1-3-1">Let <span class="process-math">\(S=\{(1,-1),(2,1)\}\text{,}\)</span> then <span class="process-math">\(L(S)=\R^2\text{.}\)</span>
+</div></li>
+<li id="sec2-1-LinSpan-5-1-1-1-4"><div class="para" id="sec2-1-LinSpan-5-1-1-1-4-1">Let <span class="process-math">\(S=\{(1,0,0),(0,1,0)\}\text{,}\)</span> then <span class="process-math">\(L(S)=\{(x,y,0):x,y\in \R\}\)</span> is the <span class="process-math">\(xy\)</span>-plane given by the equation <span class="process-math">\(z=0\text{.}\)</span>
+</div></li>
+<li id="sec2-1-LinSpan-5-1-1-1-5"><div class="para" id="sec2-1-LinSpan-5-1-1-1-5-1">Let <span class="process-math">\(S=\{(1,0,0),(0,1,0),(0,0,1)\}\text{,}\)</span> then <span class="process-math">\(L(S)=\R^3\text{.}\)</span>
+</div></li>
+<li id="sec2-1-LinSpan-5-1-1-1-6"><div class="para" id="sec2-1-LinSpan-5-1-1-1-6-1">
+<span class="process-math">\(S=\{(1,1,-1),(2,-1,3)\}\text{.}\)</span> Then <span class="process-math">\(L(S)\)</span> is a plane passing through the origin and the two points <span class="process-math">\((1,1,-1),(2,-1,3)\text{.}\)</span> Can you find the scalars <span class="process-math">\(a,b,c\)</span> such that <span class="process-math">\(L(S)\)</span> is the plane represented by the equation <span class="process-math">\(ax+by+cz=0\text{?}\)</span>
+</div></li>
+<li id="sec2-1-LinSpan-5-1-1-1-7"><div class="para" id="sec2-1-LinSpan-5-1-1-1-7-1">Let <span class="process-math">\(S=\{(1,1,-1),(1,2,3),(3,2,1)\}\text{.}\)</span> Then <span class="process-math">\(L(S)=\R^3\text{.}\)</span>
+</div></li>
+</ol></div> <details id="sec2-1-LinSpan-5-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="sec2-1-LinSpan-5-1-2-1">Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem. <div class="para logical" id="sec2-1-LinSpan-5-1-2-1-1">
+<div class="para">We need to show that <span class="process-math">\(L(S)=\R^3\text{,}\)</span> that is, <span class="process-math">\(L(S)\subset \R^3\)</span> and <span class="process-math">\(\R^3\subset L(S)\text{.}\)</span> Let us define <span class="process-math">\(v_1:=(1,1,-1),v_2:=(1,2,3),v_3:=(3,2,1)\)</span> for convenience. Clearly by, definition, <span class="process-math">\(L(S)\subset \R^3\text{.}\)</span> To show  <span class="process-math">\(\R^3\subset L(S)\text{,}\)</span> we let <span class="process-math">\((a,b,c)\in \R^3\text{.}\)</span> We need to find scalars, say <span class="process-math">\(x_1,x_2,x_3\in \R\)</span> such that <span class="process-math">\((a,b,c)=x_1v_1+x_2v_2+x_3v_3\text{.}\)</span> As a vector,</div>
+<div class="displaymath process-math" id="sec2-1-LinSpan-5-1-2-1-1-10">
+\begin{align*}
+\begin{pmatrix} a\\b\\c\end{pmatrix} =\amp x_1\begin{pmatrix} 1\\1\\-1\end{pmatrix}+
+x_2\begin{pmatrix} 1\\2\\3\end{pmatrix}+x_2\begin{pmatrix} 3\\2\\1\end{pmatrix}\\
+=\amp \begin{pmatrix} 1 \amp 1 \amp 3\\1 \amp  2 \amp 2\\-1 \amp 3 \amp 1\end{pmatrix}\begin{pmatrix} x_1\\x_2\\x_3\end{pmatrix}=Ax\text{.}
+\end{align*}
 </div>
-</div> <div class="para" id="sec-hom-system-9-2-1-2">Suppose <span class="process-math">\(Y\)</span> is a solution of <span class="process-math">\(AX = B\text{,}\)</span> i.e. <span class="process-math">\(AY = B\text{.}\)</span> Then <span class="process-math">\(A (Y - X_0) = 0\)</span> and hence <span class="process-math">\(Y-X_0\)</span> is a solution of <span class="process-math">\(AX = 0\)</span> and <span class="process-math">\(Y = X_0+(Y-X_0)=X_0+X_h\text{,}\)</span> where <span class="process-math">\(X_h=Y-X_0\text{.}\)</span>
-</div></article></details></div>
-</div>
-<div class="para" id="sec-hom-system-10">The above theorem can be written equivalently as</div>
-<article class="theorem theorem-like" id="thm-hom-system4"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span>
-</h3>
-<div class="para" id="thm-hom-system4-1-1">If <span class="process-math">\((\alpha_1 ,\ldots, \alpha_n)\)</span> is a solution of a system of linear equations, then the complete solution is given by <span class="process-math">\(x_1 = \alpha_1 + y_1 ,\ldots , x_n = \alpha_n + y_n\)</span> , where <span class="process-math">\((y_1 ,\ldots, y_n)\)</span> is the general solution of the associated homogeneous system.</div></article><div class="para" id="sec-hom-system-12"><details id="sec-hom-system-12-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content">Let us consider one equation in two variables, <span class="process-math">\(2x_1+3x_2=5\text{.}\)</span> The corresponding homogeneous system is <span class="process-math">\(2x_1+3x_2=0\text{.}\)</span> It is easy see that <span class="process-math">\(\left\{\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix}:\alpha\in \R\right\}\)</span> is set of all solutions of  <span class="process-math">\(2x_1+3x_2=0\text{.}\)</span> Let us consider a solution <span class="process-math">\(X_0=\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}\)</span> of the non homogeneous system <span class="process-math">\(2x_1+3x_2=5\text{.}\)</span>  Let <span class="process-math">\(X=\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix}\)</span> be any solution of <span class="process-math">\(2x_1+3x_2=0\text{.}\)</span> Then it is easy to check that <span class="process-math">\(X_0+X=\begin{pmatrix} \alpha\\\frac{5}{3}-\frac{2}{3}\alpha\end{pmatrix}\)</span> is a solution of <span class="process-math">\(2x_1+3x_2=5\text{.}\)</span> Alternatively, to solve <span class="process-math">\(2x_1+3x_2=5\text{,}\)</span> we can free one of the variable say <span class="process-math">\(x_1\text{.}\)</span> That is <span class="process-math">\(x_1\)</span> can take any real value. Let <span class="process-math">\(x_1=\alpha\text{,}\)</span>  then <span class="process-math">\(x_2=\frac{5}{3}-\frac{2}{3}\alpha\text{.}\)</span> Hence a generic solution of <span class="process-math">\(2x_1+3x_2=5\)</span> is given by <span class="process-math">\(\begin{pmatrix}x_1\\x_2\end{pmatrix}=\begin{pmatrix} \alpha\\\frac{5}{3}-\frac{2}{3}\alpha\end{pmatrix}\text{,}\)</span> which can be rewritten as <span class="process-math">\(\begin{pmatrix} \alpha\\\frac{5}{3}-\frac{2}{3}\alpha\end{pmatrix}=\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix}
-\text{.}\)</span> Thus all solutions of <span class="process-math">\(2x_1+3x_2=5\)</span> are of the form<div class="displaymath process-math">
-\begin{equation*}
-\left\{\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix} :\alpha \in \R\right\}=\left\{\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\alpha\begin{pmatrix} 1\\-\frac{2}{3}\end{pmatrix} :\alpha \in \R\right\}.
-\end{equation*}
-</div>Notice that tho two lines, <span class="process-math">\(2x_1+3x_2=5\)</span> and <span class="process-math">\(2x_1+3x_2=0\)</span> are parallel to each other. Plot the figure in Sage using the following Sage sybtax. <div class="para" id="sec-hom-system-12-1-23"><div id="sec-hom-system-12-1-23-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('x,y')
-l1 = implicit_plot(2*x+3*y==5,(x,-5,5),(y,-5,5),gridlines='minor')
-l2= implicit_plot(2*x+3*y==0,(x,-5,5),(y,-5,5),color='red',gridlines='minor')
-p1 = point((0,5/3),color='blue',size=20)
-p0 = point((1,-2/3),color='red',size=20)
-t0 =text('$(1,-\\frac{-2}{3})$',(1,-1.5),color='red')
-t1 =text('$(0,-\\frac{5}{3})$',(1,5/3),color='blue')
-show(l1+l2+p0+p1+t0+t1,axes=True,figsize=5)
-</script></div></div></article></details></div>
-<div class="para" id="sec-hom-system-13"><details id="sec-hom-system-13-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content">Let consider 2 equations in three variables.<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-hom-eg1-2.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html" id="eqn-hom-eg1-1">
-\begin{equation}
-2x_1-x_2-x_3=5; x_1+x_2-2x_3=7 \tag{1.5.1}
-\end{equation}
-</div>The corresponding homogeneous system is given by<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-hom-eg1-2.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html" id="eqn-hom-eg1-2">
-\begin{equation}
-2x_1-x_2-x_3=0; x_1+x_2-2x_3=0	\text{.}\tag{1.5.2}
-\end{equation}
-</div>It is easy to see that the set of all solutions of the homogeneous system <a href="sec-hom-system.html#eqn-hom-eg1-2" class="xref" data-knowl="./knowl/xref/eqn-hom-eg1-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.2">(1.5.2)</a> is<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-hom-eg1-2.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html">
-\begin{equation*}
-\begin{bmatrix} x_1\\x_2\\ x_3\end{bmatrix}=\left\{ 
-\begin{bmatrix} \alpha\\ \alpha\\ \alpha\end{bmatrix}:
-\alpha\in \R
-\right\}
-\end{equation*}
-</div>
-<a href="sec-hom-system.html#eqn-hom-eg1-1" class="xref" data-knowl="./knowl/xref/eqn-hom-eg1-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.1">(1.5.1)</a>, we get <span class="process-math">\(3x_1-3x_3=12\)</span> which implies <span class="process-math">\(x_1=4+x_3\text{.}\)</span> Now substituting <span class="process-math">\(x_1=4+x_3\)</span> in the second equation of <a href="sec-hom-system.html#eqn-hom-eg1-1" class="xref" data-knowl="./knowl/xref/eqn-hom-eg1-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.1">(1.5.1)</a>, we get <span class="process-math">\(x_2=3+x_3\text{.}\)</span> Here we can take <span class="process-math">\(x_3\)</span> as a free variable, hence any solution of~<a href="sec-hom-system.html#eqn-hom-eg1-1" class="xref" data-knowl="./knowl/xref/eqn-hom-eg1-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.1">(1.5.1)</a> is of the form<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-hom-eg1-2.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html">
-\begin{equation*}
-\begin{bmatrix}4+\alpha\\3+\alpha\\\alpha\end{bmatrix}
-\end{equation*}
-</div>which can be written as<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-hom-eg1-2.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html">
-\begin{equation*}
-\begin{bmatrix}4\\3\\0\end{bmatrix}+\begin{bmatrix}\alpha\\\alpha\\\alpha\end{bmatrix}\text{.}
-\end{equation*}
-</div>Note that <span class="process-math">\(\begin{bmatrix}4\\3\\0\end{bmatrix}\)</span> is a solution <a href="sec-hom-system.html#eqn-hom-eg1-1" class="xref" data-knowl="./knowl/xref/eqn-hom-eg1-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.1">(1.5.1)</a>. Thus set of all solution of <a href="sec-hom-system.html#eqn-hom-eg1-1" class="xref" data-knowl="./knowl/xref/eqn-hom-eg1-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5.1">(1.5.1)</a> is of the form<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-hom-eg1-2.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html ./knowl/xref/eqn-hom-eg1-1.html">
-\begin{equation*}
-\begin{bmatrix} x_1\\x_2\\ x_3\end{bmatrix}=\left\{ 
-\begin{bmatrix}4\\3\\0\end{bmatrix}+\begin{bmatrix} \alpha\\ \alpha\\ \alpha\end{bmatrix}:
-\alpha\in \R
-\right\}
-\end{equation*}
-</div>
-<div class="para" id="sec-hom-system-13-1-19">Geometrically, each equation in the non homogeneous system represents a plane and the solution is the line of intersection of the the two planes. Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax. <div class="para" id="sec-hom-system-13-1-19-1"><div id="sec-hom-system-13-1-19-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('x,y,z,t')
-eq1 = 2*x-y-z-5
-eq2 = x+y-2*z-7
-plane1 = implicit_plot3d(eq1,(x,-5,5),(y,-5,5),(z,-5,5),opacity=0.4)
-plane2 = implicit_plot3d(eq2,(x,-5,5),(y,-5,5),(z,-5,5),color='red',opacity=0.4)
-l1 = parametric_plot3d([4+t,3+t,t],(t,-5,5),color='black',thikness=15)
-plane10 = implicit_plot3d(eq1+5,(x,-5,5),(y,-5,5),(z,-5,5),opacity=0.4)
-plane20 = implicit_plot3d(eq2+7,(x,-5,5),(y,-5,5),(z,-5,5),color='red',opacity=0.4)
-l0 = parametric_plot3d([t,t,t],(t,-5,5),color='black',thikness=15)
-show(plane1+plane2+l1+plane10+plane20+l0,axes=True,frame=False)
+<div class="para">It is easy to check that the above system has a unique solution as rank of <span class="process-math">\(A\)</span> is 3 (This can be easily verified by Sage). Hence <span class="process-math">\((a,b,c&gt;\in \R^3\)</span> and hence <span class="process-math">\(\R^3\subset L(S)\text{.}\)</span> Hence we have <span class="process-math">\(L(S)=\R^3\text{.}\)</span> <div class="para" id="sec2-1-LinSpan-5-1-2-1-1-15"><div id="sec2-1-LinSpan-5-1-2-1-1-15-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A =matrix(QQ,[[1,1,-1],[1,2,3],[3,2,1]]).T
+print(A)
+A.rank()
 </script></div></div>
-</div></article></details></div></section></div>
+</div>
+</div>
+</div></div></details></article></details></div>
+<details id="sec2-1-matrix-spaces" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix Spaces.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="sec2-1-matrix-spaces-2">
+<div class="para">Let <span class="process-math">\(A\)</span> be a <span class="process-math">\(m\times n\)</span> real matrix. For any vector <span class="process-math">\(x\in \R^n\text{,}\)</span> <span class="process-math">\(Ax\in \R^m\text{.}\)</span> Consider the following subsets</div>
+<ol class="decimal" id="sec2-1-matrix-spaces-2-5">
+<li id="sec2-1-matrix-spaces-2-5-1"><div class="para" id="sec2-1-matrix-spaces-2-5-1-1">
+<span class="process-math">\({\cal N}(A):=\{x\in R^n:Ax=0\}\text{.}\)</span> It is easy to check that <span class="process-math">\({\cal N}(A)\)</span> is a subspace of <span class="process-math">\(\R^n\)</span> called the <em class="alert">null space</em> of <span class="process-math">\(A\)</span> or <em class="alert">kernel</em> of <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+<li id="sec2-1-matrix-spaces-2-5-2"><div class="para" id="sec2-1-matrix-spaces-2-5-2-1">
+<span class="process-math">\({\cal R}(A):=\{Ax:x\in \R^n\}\subset \R^m\)</span> is a subspace of <span class="process-math">\(\R^m\text{,}\)</span> called the <em class="alert">image space</em>  or <em class="alert">range spave</em> or <em class="alert">column space</em>of <span class="process-math">\(A\text{.}\)</span> It is easy to see that for <span class="process-math">\(x\in \R^n\text{,}\)</span> <span class="process-math">\(Ax\)</span> is linear combinations of columns of <span class="process-math">\(A\text{.}\)</span> We also denote <span class="process-math">\({\cal R}(A)\)</span> by <span class="process-math">\({\rm row}(A)\text{.}\)</span>
+</div></li>
+<li id="sec2-1-matrix-spaces-2-5-3"><div class="para" id="sec2-1-matrix-spaces-2-5-3-1">
+<span class="process-math">\({\cal L}(A):=\{y\in \R^m: A^Ty=0\}\)</span> is a subspace of <span class="process-math">\(\R^m\)</span> called the <em class="alert">left null space</em> of <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+<li id="sec2-1-matrix-spaces-2-5-4"><div class="para" id="sec2-1-matrix-spaces-2-5-4-1">Suppose we write rows of <span class="process-math">\(A\)</span> as <span class="process-math">\(r_1,\ldots, r_m\text{.}\)</span> Then each <span class="process-math">\(r_i\)</span> is a vector in <span class="process-math">\(\R^n\text{.}\)</span> Then  linear span of <span class="process-math">\(\{r_1,\ldots, r_m\}\)</span>  is called the <em class="alert">row space</em> of <span class="process-math">\(A\)</span> denoted by <span class="process-math">\({\rm row}(A)\text{.}\)</span> It turns out that <span class="process-math">\({\rm row}(A)\)</span> is a subspace of <span class="process-math">\(\R^n\text{.}\)</span>
+</div></li>
+</ol>
+</div> The four subspaces, namely <span class="process-math">\({\cal N}(A)\text{,}\)</span> <span class="process-math">\({\cal col}(A)\text{,}\)</span> <span class="process-math">\({\cal L}(A)\)</span> and <span class="process-math">\({\cal row}(A)\)</span> are called the <em class="alert">fundamental subspaces</em> associated with a matrix <span class="process-math">\(A\text{.}\)</span></article></details></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec1-4-matrix-rank.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec1-6-LU.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec2-0-intro.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

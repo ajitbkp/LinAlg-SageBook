@@ -547,7 +547,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Introduction",
-  "body": " Introduction  We let . Note that on , we can define addition and scalar multiplication defined as follows: for . In the sequel, we will write as . An element is called a vector. It written as a column matrix and we also call it column vector.  If is matrix then columns of can be thought of as vectors in .   Properties addition and multiplication in   We list the properties of vector addition and scalar multiplication in which can be easily proved. I encourage the readers to prove them.  (i) for all , . ( Commutative property )  (ii) for all , . ( Associative property )  (iii) The zero vector has the property, for all , . This zero vector, we shall denote by 0 and is called the additive identity .  (iv) for each , there is a vector , such that . This is called the additive inverse of . It is easy to see that .  (v) for all and , .  (vi) for all and , .  (vii) for all and , .  (viii) for all , .    The set with addition and scalar multiplication along with the above eight properties is called a vector space over .   Vector Subspaces in   A non empty subset is called a vector subspace of if is closed under vector addition and scalar multiplication. That is, (i) for all and (ii) for all , we have .      Examples of vector subspaces in  (i) is a vectors subspace of  (ii) Any line passing through origin in is a subspace of .  (iii) Any line passing through origin in is a subspace of .  (iv) Any plane passing through origin in is a subspace of .      Solution of homogeneous system as vector subpace  Let be real matrix. Then is a vector subspace of . In fact any subspace of arises in this way. This subspace is also known as null spave of .     The unit circle with labeled special points.       "
+  "body": " Introduction  We let . Note that on , we can define addition and scalar multiplication defined as follows: for . In the sequel, we will write as . An element is called a vector. It written as a column matrix and we also call it column vector.  If is matrix then columns of can be thought of as vectors in .   Properties addition and multiplication in   We list the properties of vector addition and scalar multiplication in which can be easily proved. I encourage the readers to prove them.  (i) for all , . ( Commutative property )  (ii) for all , . ( Associative property )  (iii) The zero vector has the property, for all , . This zero vector, we shall denote by 0 and is called the additive identity .  (iv) for each , there is a vector , such that . This is called the additive inverse of . It is easy to see that .  (v) for all and , .  (vi) for all and , .  (vii) for all and , .  (viii) for all , .    The set with addition and scalar multiplication along with the above eight properties is called a vector space over .   Vector Subspaces in   A non empty subset is called a vector subspace of if is closed under vector addition and scalar multiplication. That is, (i) for all and (ii) for all , we have .      Examples of vector subspaces in  (i) is a vectors subspace of  (ii) Any line passing through origin in is a subspace of .  (iii) Any line passing through origin in is a subspace of .  (iv) Any plane passing through origin in is a subspace of .      Solution of homogeneous system as vector subpace  Let be real matrix. Then is a vector subspace of . In fact any subspace of arises in this way. This subspace is also known as null spave of .       "
 },
 {
   "id": "prop-Rn-properties",
@@ -583,7 +583,52 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.1.4",
   "title": "Solution of homogeneous system as vector subpace.",
-  "body": " Solution of homogeneous system as vector subpace  Let be real matrix. Then is a vector subspace of . In fact any subspace of arises in this way. This subspace is also known as null spave of .     The unit circle with labeled special points.     "
+  "body": " Solution of homogeneous system as vector subpace  Let be real matrix. Then is a vector subspace of . In fact any subspace of arises in this way. This subspace is also known as null spave of .   "
+},
+{
+  "id": "sec2-1-LinSpan",
+  "level": "1",
+  "url": "sec2-1-LinSpan.html",
+  "type": "Section",
+  "number": "2.2",
+  "title": "Linear Spans",
+  "body": " Linear Spans     Let be a non empty subset of vectors in . Then the linear span of , denoted by is a subset of defined as      Note that if means there exist scalars such that .   Let be a subset of vectors in . Then show that is a vector subspace of .   Let , then by definitions there exist scalars such that and there exist another set of scalars such that . Hence The readers should understand what the properties of vector addition and scalar multiplications are used above.  Next, let be a scalar, then . This shows that is a vector subspace of .          If is a non-zero vector in , then is a the line passing through origin and .    Let . Then .    Let , then .    Let , then is the -plane given by the equation .    Let , then .     . Then is a plane passing through the origin and the two points . Can you find the scalars such that is the plane represented by the equation ?    Let . Then .      Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem. We need to show that , that is, and . Let us define for convenience. Clearly by, definition, . To show , we let . We need to find scalars, say such that . As a vector, . It is easy to check that the above system has a unique solution as rank of is 3 (This can be easily verified by Sage). Hence and hence . Hence we have .          Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets    . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range spave or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .    The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix .  "
+},
+{
+  "id": "def-sec2-1-linear-span",
+  "level": "2",
+  "url": "sec2-1-LinSpan.html#def-sec2-1-linear-span",
+  "type": "Definition",
+  "number": "2.2.1",
+  "title": "",
+  "body": "  Let be a non empty subset of vectors in . Then the linear span of , denoted by is a subset of defined as    "
+},
+{
+  "id": "sec2-1-eg-linspan-as-vs",
+  "level": "2",
+  "url": "sec2-1-LinSpan.html#sec2-1-eg-linspan-as-vs",
+  "type": "Example",
+  "number": "2.2.2",
+  "title": "",
+  "body": "Let be a subset of vectors in . Then show that is a vector subspace of .   Let , then by definitions there exist scalars such that and there exist another set of scalars such that . Hence The readers should understand what the properties of vector addition and scalar multiplications are used above.  Next, let be a scalar, then . This shows that is a vector subspace of .   "
+},
+{
+  "id": "sec2-1-LinSpan-5-1",
+  "level": "2",
+  "url": "sec2-1-LinSpan.html#sec2-1-LinSpan-5-1",
+  "type": "Problem",
+  "number": "2.2.3",
+  "title": "",
+  "body": "    If is a non-zero vector in , then is a the line passing through origin and .    Let . Then .    Let , then .    Let , then is the -plane given by the equation .    Let , then .     . Then is a plane passing through the origin and the two points . Can you find the scalars such that is the plane represented by the equation ?    Let . Then .      Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem. We need to show that , that is, and . Let us define for convenience. Clearly by, definition, . To show , we let . We need to find scalars, say such that . As a vector, . It is easy to check that the above system has a unique solution as rank of is 3 (This can be easily verified by Sage). Hence and hence . Hence we have .       "
+},
+{
+  "id": "sec2-1-matrix-spaces",
+  "level": "2",
+  "url": "sec2-1-LinSpan.html#sec2-1-matrix-spaces",
+  "type": "Example",
+  "number": "2.2.4",
+  "title": "Matrix Spaces.",
+  "body": " Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets    . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range spave or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .    The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix . "
 },
 {
   "id": "chap3-LT",
