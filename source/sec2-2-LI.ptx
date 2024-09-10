@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-2-2-LI" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Dependence</title>
+<p>
+<definition xml:id="def-sec2-1-LD"><title>Linearly Dependence</title>
+    <statement>
+        <p>
+            A set of vectors <m>\{v_1,v_2,\ldots, v_k\}\subset \R^n</m> is  said to be linearly dependent if there exist scalars <m>\alpha_1,\alpha_2,\ldots \alpha_k</m> not all zero such that <m>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0</m>.
+        </p>
+    </statement>
+</definition>
+</p>
+<p>
+    Note that the set <m>\{0\}</m> in <m>\R^n</m> is lindearly dependent as we have <m>1\cdot 0=0</m>. 
+    If we have a set <m>\{v_1,\ldots, v_k\}</m> which contains a zero vector, then it is linearly dependent. (why?)   
+</p>
+
+<p> What does it mean to say that two vectors <m>u,v\in \R^n</m> are linearly dependent? It mean, there exist scalars, say <m>\alpha</m> and <m>\beta</m> not both zero such that <m>\alpha u+\beta v=0</m>. Without loss of generality, let <m>\alpha\neq 0</m>, then we have <m>u=-\frac{\beta}{\alpha}v</m>. Similarly if <m>\beta\neq 0</m>, then we have <m>v=-\frac{\alpha}{\beta}u</m>. Thus if <m>u,v\in \R^n</m> are linearly dependent then one is scalar multiple of the other. Geometrically, both <m>u</m> and <m>v</m> are along the same line passing through the origin in <m>\R^n</m>.
+</p>   
+<p>
+    <example>
+        Suppose <m>x=\begin{pmatrix}x_1\\x_2\end{pmatrix}</m>, <m>y=\begin{pmatrix}y_1\\y_2\end{pmatrix}</m> and 
+        <m>z=\begin{pmatrix}z_1\\z_2\end{pmatrix}</m> be three vectors in <m>\R^2</m>. We claim that <m>x,y,z</m> are linearly dependent. 
+        In particular, any three vectors in <m>\R^2</m> are linearly dependent. 
+
+        Let <m>\alpha=\begin{pmatrix}\alpha_1\\\alpha_2\\\alpha_3\end{pmatrix}</m> be scalars such that 
+        <m> \alpha_1 x+\alpha_2 y+\alpha_3 z=0</m>. We need to solve this equations for <m>\alpha_1,\alpha_2,\alpha_3</m>. Thsese equation can be written as 
+        <me>
+           \begin{pmatrix} x_1 \amp y_1\amp z_1\\x_2 \amp y_2\amp z_2\end{pmatrix} \begin{pmatrix}\alpha_1\\\alpha_2\\\alpha_3\end{pmatrix}=
+           \begin{pmatrix} 0\\0\end{pmatrix}</me>. 
+        
+        The above equations can be written as <m>A\alpha=0</m> which is a sustem of 2 linear equations in 3 variables. Hence it has a non-zero solution. In particular, there exist scalars <m>\alpha_1,\alpha_2,\alpha_3</m> not all zero such that <m>\alpha_1 x+\alpha_2 y+\alpha_3 z=0</m>. Hence <m>x,y,z</m> are linearly dependence. 
+
+        Can you generalize this?
+    </example>
+</p>
+
+<p>
+    <theorem xml:id="thm-sec2-2-thm2">
+        <statement>
+            <p>
+            Any <m>n+1</m> vectors in <m>\R^n</m> are linearly dependent.    
+            </p>
+        </statement>
+    </theorem>
+    
+</p>
+<p>
+    <definition xml:id="def-sec2-1-LI">
+        <statement>
+            <p>
+                A set of vectors <m>\{v_1,v_2,\ldots, v_k\}</m> is said to be linearly independent  if it is not linearly dependent. That is, if <m>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0</m> then it implies <m>\alpha_1,\ldots, \alpha_k=0</m> for any set of scalars <m>\alpha_1,\alpha_2,\ldots \alpha_k</m>. 
+            </p>
+        </statement>
+    </definition>
+</p>
+<p>
+    <problem>
+        A set of vectors <m>\{v_1,v_2,\ldots, v_k\}</m> is linearly dependent if and only
+        if one of the vectors from the set is a linear combination of the remaining vectors. That is, there 
+        exists <m>j\in \{1,\ldots,k\}</m> such that 
+        <m>v_j=\sum_{i,i\neq j} \alpha_i v_i</m>.    
+    </problem>
+</p>
+<p>
+    <remark xml:id="sec-2-2-remrak1">
+        Let <m>v,v_1,v_2,\ldots, v_k</m> be vectors in <m>\R^n</m> such that <m>v=\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k</m>. Then we have 
+        <me>
+            \begin{bmatrix} v_1 \amp  v_2 \amp  \cdots \amp  v_k\end{bmatrix} \begin{bmatrix} \alpha_1\\\vdots\\\alpha_k\end{bmatrix}=v.
+            </me>
+            Thus if we want to find <m>\alpha_1,\ldots,\alpha_k</m> such that <m>v=\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k</m>, it amount to solving the system <m>A\alpha =v</m>, where <m>A</m> is the column matrix whose columns are <m>v_1,v_2,\ldots, v_k</m> and <m>\alpha =\begin{bmatrix} \alpha_1\\\vdots\\\alpha_k\end{bmatrix}</m>.
+    </remark>
+</p>
+<p>
+    <remark xml:id="sec-2-2-remrak2">
+        <ol>
+            <li>
+                <p>
+                    A set of vectors <m>v_1,v_2,\ldots, v_k</m> in <m>\R^n</m> is linearly dependent iff the matrix <m>A=\begin{bmatrix} v_1 \amp v_2 \amp \cdots \amp v_k\end{bmatrix}</m> is of rank strictly less than <m>k</m>.
+
+
+                </p>
+            </li>
+            <li>
+                <p>
+                    A set of vectors <m>v_1,v_2,\ldots, v_k</m> in <m>\R^n</m> is linearly independent iff the matrix <m>A=\begin{bmatrix} v_1 \amp v_2 \amp \cdots \amp v_k\end{bmatrix}</m> is of rank <m>k</m>.
+
+                </p>
+            </li>
+        </ol>
+    </remark>
+</p>
+
+<p>
+    <problem>
+        Check if the following set of vectors are linearly independent or dependent.
+<p> (i)  <m>\{(1,0,1,2), (0,1,1,2),(1,1,1,3)\}</m></p>
+<p> (ii) <m>\{(1,0,3),(1,2,4),(1,4,5)\}</m>.</p>
+<p>(iii) <m> \{(1, 0, -2, 5), (2, 1, 0, -1), (1, 1, 2, 1)\}</m>.</p>
+<p> (iv) <m>\{(1, 1, 0, 0), (1, 0, 1, 0), (0, 0, 1, 1),
+(0, 1, 0, 1)\}</m></p>
+
+    </problem>
+</p>
+   </section>

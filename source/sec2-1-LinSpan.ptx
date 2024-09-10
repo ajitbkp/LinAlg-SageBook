@@ -130,7 +130,7 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
     <li>
         <p>
             <m>{\cal R}(A):=\{Ax:x\in \R^n\}\subset \R^m</m> is a subspace of <m>\R^m</m>, called the <alert>image space</alert>  or 
-            <alert>range spave</alert> or <alert>column space </alert>of <m>A</m>. It is easy to see that for <m>x\in \R^n</m>, <m>Ax</m> is linear combinations of columns of <m>A</m>. We also denote <m>{\cal R}(A)</m> by <m>{\rm row}(A)</m>.
+            <alert>range space</alert> or <alert>column space </alert>of <m>A</m>. It is easy to see that for <m>x\in \R^n</m>, <m>Ax</m> is linear combinations of columns of <m>A</m>. We also denote <m>{\cal R}(A)</m> by <m>{\rm col}(A)</m>.
         </p>
     </li>
     <li>

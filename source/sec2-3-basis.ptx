@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-2-3-basis-dimension" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Basis and Dimension</title>
+<p>
+<definition xml:id="def-sec2-2-LI"><title>Basis</title>
+
+
+  <statement>
+    <p>
+      A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}</m> is called a basis of <m>\R^n</m> if every vector <m>v\in \R^n</m> can be  expressed uniquely as  linear combinations of <m>v_1,v_2,\ldots,v_n</m>. 
+	
+      Thus <m>\beta</m> is basis of <m>\R^n</m> if 
+    <p>(i) <m>L(\beta)=\R^n</m>, that every vector <m>v\in \R^n</m> can be expressed as linear combinations of <m>v_1,v_2,\ldots,v_n</m>. </p>
+    <p>	(ii) If <m>v=\alpha_1v_1+\alpha_2v_2+\cdots +\alpha_nv_n</m> and <m>v=\beta_1v_1+\beta_2v_2+\cdots +\beta_nv_n</m>, then <m>\alpha_1=\beta_1, \alpha_2=\beta_2=\cdots,\alpha_n=\beta_n</m>.</p>
+    <p>
+    Similarly one can define a basis of any subspace of <m>\R^n</m>.</p>     
+    </p>
+  </statement>
+</definition>
+</p>
+
+<p>
+  It is easy to prove the follwoing theorem which is opent taken as definition in many books.
+</p>
+<p>
+  <theorem xml:id="thm-sec2-3-basis-thm1">
+    <statement>
+      <p>
+        A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}</m> is called a basis of <m>\R^n</m> iff (i) <m>L(\beta)=\R^n</m>and <m>\beta</m> is linearly independent. 
+    
+      </p>
+    </statement>
+  </theorem> 
+</p>
+<p>
+  <example>
+    <p> (i) <m>\{(1,0),(0,1)\}</m> is a basis of <m>\R^2</m> called the standard basis of <m>\R^2</m>.</p>
+    <p>  (ii) <m>\{(1,-1),(2,1)\}</m> is a basis of <m>\R^2</m>.</p>
+    <p> (iii) <m>\{(1,0,0),(0,1,0),(0,0,1)\}</m> is a basis of <m>\R^3</m> called the standard basis of <m>\R^3</m>. </p>
+    <p> (iv) <m>\{(1,1,-1),(-1,1,1),(1,-1,1)\}</m> is a basis of <m>\R^3</m>. </p>
+      
+  </example>
+</p>
+<p>
+  In <m>\R^n</m>, we define <m> e_i:=(0,\ldots, 1,\ldots,0)</m> where <m>i</m> component is 1 rest are zeros. Then it is easy to see that <m> \{e_1,\ldots, e_n\}</m> is a bais of  <m>\R^n</m> called the <alert>standard basis</alert>.
+</p>
+<p>
+<example>
+  <p>
+    Consider the plane <m>W=\{(x_1,x_2,x_3)\in \R^3:x_1+2x_2-x_3=0\}</m>. Note that, here <m>x_1</m> and <m>x_2</m> can be thought of as free variables. Any point <m>(x_1,x_2,x_3)\in W</m>, we have 
+<me>(x_1,x_2,x_3)=(x_1,x_2,x_1+2x_2)=(\alpha,\beta,\alpha+2\beta)=\alpha(1,0,1)+\beta(0,1,2).</me>
+Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0,1),(0,1,2)\}</m> is linearly independent. Hence <m>\beta =\{(1,0,1),(0,1,2)\}</m> is a basis of <m>W</m>. In fact, any two vectors in <m>W</m> which are linearly independent form a basis of <m>W</m>.
+
+
+  </p>
+</example>
+</p>
+<p>
+  <theorem xml:id="thm-sec2-3-thm3">
+    <statement>
+      <p>
+        Any set of <m>n</m> linearly independent vectors forms a basis of <m>\R^n</m>.
+
+      </p>
+    </statement>
+  </theorem>
+  
+</p>
+<p>
+  <proof>
+    <p>
+      Follows from Theorem <xref ref="thm-sec2-2-thm2"/>.
+    </p>
+  </proof>
+</p>
+
+<p>
+  <theorem xml:id="thm-sec2-3-thm4">
+    <statement>
+      <p>
+     Let <m> \beta=\{v_1,v_2,\ldots,v_k\}</m> be a basis of a subscape <m>W</m>  of <m>\R^n</m> with <m>k</m> elements. Then any set 
+     <m>S=\{v_1,v_2,\ldots, v_{k+1}\}\subset W</m> with <m>k+1</m> elements is linearly dependent.   
+      </p>
+    </statement>
+  </theorem>
+  </p>
+ <p>
+  <proof>
+    <p>
+      Let <m>\alpha_1,\ldots,\alpha_{k+1}</m> be scalars such that
+      <men xml:id="sec2-3-eq1"> \alpha_1 v_1+\alpha_2v_2+\cdots+\alpha_kv_k+\alpha_{k+1}v_{k+1}=0</men>
+      Since <m>\beta</m> is a basis of <m>W</m>, for each <m>i=1,2,\ldots, k+1</m>, we have
+      <me> v_i = \sum_{j=1}^k a_{ij}u_j</me>
+      Substituting this in Equation <xref ref="sec2-3-eq1"/>, we get
+      <men xml:id="sec2-3-eq2">
+        \alpha_1 \left(\sum_{j=1}^k a_{1j}u_j\right)+\cdots+
+        \alpha_{k+1}\left(\sum_{j=1}^k a_{k+1j}u_j\right)=0
+      </men>
+      Collecting the coefficients of <m>u_i's</m> in the Equation <xref ref="sec2-3-eq2"/>, we get
+    <men xml:id="sec2-3-eq3">
+      \left(\sum \alpha_ia_{i1}\right)u_1+\cdots +
+      \left(\sum \alpha_ia_{ik+1}\right)u_{k+1}=0.
+    </men>
+    Since<m>\beta</m> is lineary independent, we have
+    <md>
+      <mrow>\alpha_1 a_{11}+\alpha_2a_{21}+\cdots+\alpha_{k+1}a_{k+11} =\amp 0 </mrow>
+      <mrow>\alpha_1 a_{12}+\alpha_2a_{22}+\cdots+\alpha_{k+1}a_{k+12} =\amp 0 </mrow>
+      <mrow>\vdots  \amp  </mrow>
+      <mrow>\alpha_1 a_{1k}+\alpha_2a_{2k}+\cdots+\alpha_{k+1}a_{k+1k} =\amp 0 </mrow>
+    </md>
+    </p>
+    These are <m>k</m> homogeneous linear equations in <m>k+1</m> variables <m>\alpha_1,\ldots,\alpha_{k+1}</m>. 
+      Hence it has a non zero solution. In particular, there exist scalars,  <m>\alpha_1,\ldots,\alpha_{k+1}</m> not all zero such that <m>\alpha_1 v_1+\alpha_2v_2+\cdots+\alpha_kv_k+\alpha_{k+1}v_{k+1}=0</m>. Hence <m>S</m> is linearly dependent.
+  </proof>
+</p>
+  
+<corollary xml:id="sec2-3-cor1">
+  <statement>
+    <p>
+      Let <m> \beta=\{v_1,v_2,\ldots,v_k\}</m> be a basis of a subscape <m>W</m>  of <m>\R^n</m> with <m>k</m> elements. If <m>S</m> is a linearly independet subset in <m>W</m>, then <m>|S|\leq k</m>. 
+    </p>
+  </statement>
+</corollary>
+<p>
+  <theorem xml:id="thm-sec2-3-thm5">
+    <statement>
+      <p>
+        Let <m>\beta</m> and <m>\gamma</m> be two bases of  a subscape <m>W</m>  of <m>\R^n</m>. Then <m>\beta</m> and <m>\gamma</m> have the same number of elements. 
+      </p>
+    </statement>
+  </theorem>
+  </p>
+  <p>
+  <proof>
+    <p>
+      Suppose <m>|\beta|=r</m> and <m>|\gamma|=s</m>.  Since <m>\beta</m> is a basis and <m>\gamma</m> is linearly independet, by Corollary <xref ref="sec2-3-cor1"/>, <m>s\leq r</m>. Similarly <m>\gamma</m> is a basis and <m>\beta</m> is linearly independet, we have <m>s\leq r</m>. Hence <m>r=s</m>.
+    </p>
+  </proof>
+</p>
+Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.
+
+<p>
+  <definition xml:id="def-sec2-3-dimension">
+    <statement>
+      <p>
+        Let <m>W</m> be subspace of <m>\R^n</m>. The number of elements in a basis of <m>W</m> is called the <alert>dimension</alert> of <m>W</m>. 	
+ 
+      </p>
+    </statement>
+  </definition>
+</p>
+</section>
