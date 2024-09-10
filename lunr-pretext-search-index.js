@@ -541,13 +541,49 @@ var ptx_lunr_docs = [
   "body": " Exercises     Reduce the following matrices into row-echelon form.     Find the sequence of row operations that converts the matrix.     Solve the following systems of linear equations by Gaussian elimination method.                                    Find the rank of the following matrices:     Find all values of such that the rank of the matrix is 3.    Find all values of such that the rank of the matrix is 3.    For the following system of equations write the solution in the form of where is a solution of non homogeneous system and is the set of solutions of the corresponding homogeneous system (i)  (ii)   (iii)  (iv)     Balance the following photosynthesis reaction . Here is glucose.    The augmented matrix of a linear system has the form  (a) Determine the values of a, b, and c for which the linear system is consistent.  (b) Determine the values of a, b, and c for which the linear system is inconsistent.  (c) When it is consistent, does the linear system have a unique solution or infinitely many solutions?  (d) Give a specific consistent linear system and find one particular solution.     Solve the following system of equations for and . .    Find a polynomial of the form which passes through the points .    Find the values of and for which the following system is consistent. Also find the complete solution when . .    The following table lists the number of milligrams of vitamin A, vitamin B, vitamin C, and niacin contained in 1 g of four different foods. A dietitian wants to prepare a meal that provides 250 mg of vitamin A, 300 mg of vitamin B, 400 mg of vitamin C, and 70 mg of niacin. Determine how many grams of each food must be included, and describe any limitations on the quantities of each food that can be used     Let be the coefficient matrix of the following homogeneous system of equations in unknowns: Find the reduced row-echelon form of and hence, or otherwise, prove that the solution of the above system is , with arbitrary.    For which rational numbers does the following system have (i) no solutions (ii) exactly one solution (iii) infinitely many solutions? .    If and are solutions of a system of linear equations, prove that is also a solution.    Solve the system using Doolittle method: (i) and  (ii) and .     Solve the system using Crout's method (i) and   (ii) and      "
 },
 {
-  "id": "chap2-Rn-Space",
+  "id": "sec2-0-intro",
   "level": "1",
-  "url": "chap2-Rn-Space.html",
-  "type": "Chapter",
-  "number": "2",
-  "title": "<span class=\"process-math\">\\(\\R^n\\)<\/span> as a Vector Space",
-  "body": " as a Vector Space  "
+  "url": "sec2-0-intro.html",
+  "type": "Section",
+  "number": "2.1",
+  "title": "Introduction",
+  "body": " Introduction  We let . Note that on , we can define addition and scalar multiplication defined as follows: for . In the sequel, we will write as . An element is called a vector. It written as a column matrix and we also call it column vector.  If is matrix then columns of can be thought of as vectors in .   Properties addition and multiplication in   We list the properties of vector addition and scalar multiplication in which can be easily proved. I encourage the readers to prove them.  (i) for all , . ( Commutative property )  (ii) for all , . ( Associative property )  (iii) The zero vector has the property, for all , . This zero vector, we shall denote by 0 and is called the additive identity .  (iv) for each , there is a vector , such that . This is called the additive inverse of . It is easy to see that .  (v) for all and , .  (vi) for all and , .  (vii) for all and , .  (viii) for all , .    The set with addition and scalar multiplication along with the above eight properties is called a vector space over .   Vector Subspaces in   A non empty subset is called a vector subspace of if is closed under vector addition and scalar multiplication. That is, (i) for all and (ii) for all , we have .      Examples of vector subspaces in  (i) is a vectors subspace of  (ii) Any line passing through origin in is a subspace of .  (iii) Any line passing through origin in is a subspace of .  (iv) Any plane passing through origin in is a subspace of .      Solution of homogeneous system as vector subpace  Let be real matrix. Then is a vector subspace of . In fact any subspace of arises in this way. This subspace is also known as null spave of .     The unit circle with labeled special points.       "
+},
+{
+  "id": "prop-Rn-properties",
+  "level": "2",
+  "url": "sec2-0-intro.html#prop-Rn-properties",
+  "type": "Proposition",
+  "number": "2.1.1",
+  "title": "Properties addition and multiplication in <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Properties addition and multiplication in   We list the properties of vector addition and scalar multiplication in which can be easily proved. I encourage the readers to prove them.  (i) for all , . ( Commutative property )  (ii) for all , . ( Associative property )  (iii) The zero vector has the property, for all , . This zero vector, we shall denote by 0 and is called the additive identity .  (iv) for each , there is a vector , such that . This is called the additive inverse of . It is easy to see that .  (v) for all and , .  (vi) for all and , .  (vii) for all and , .  (viii) for all , .   "
+},
+{
+  "id": "def-ch2-0-vector-subspace",
+  "level": "2",
+  "url": "sec2-0-intro.html#def-ch2-0-vector-subspace",
+  "type": "Definition",
+  "number": "2.1.2",
+  "title": "Vector Subspaces in <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Vector Subspaces in   A non empty subset is called a vector subspace of if is closed under vector addition and scalar multiplication. That is, (i) for all and (ii) for all , we have .   "
+},
+{
+  "id": "sec2-0-intro-7-1",
+  "level": "2",
+  "url": "sec2-0-intro.html#sec2-0-intro-7-1",
+  "type": "Example",
+  "number": "2.1.3",
+  "title": "Examples of vector subspaces in <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Examples of vector subspaces in  (i) is a vectors subspace of  (ii) Any line passing through origin in is a subspace of .  (iii) Any line passing through origin in is a subspace of .  (iv) Any plane passing through origin in is a subspace of .  "
+},
+{
+  "id": "sec2-0-intro-8-1",
+  "level": "2",
+  "url": "sec2-0-intro.html#sec2-0-intro-8-1",
+  "type": "Example",
+  "number": "2.1.4",
+  "title": "Solution of homogeneous system as vector subpace.",
+  "body": " Solution of homogeneous system as vector subpace  Let be real matrix. Then is a vector subspace of . In fact any subspace of arises in this way. This subspace is also known as null spave of .     The unit circle with labeled special points.     "
 },
 {
   "id": "chap3-LT",
