@@ -7,29 +7,30 @@
     <li>
         <p>
             Reduce the following matrices into row-echelon form.
-<me>\begin{pmatrix}
+<md><mrow>\begin{pmatrix}
 	1 \amp  2 \amp  3 \amp  4\\
 	2 \amp  1 \amp  4 \amp  5\\
 	1 \amp  5 \amp  5 \amp  7\\
 	8\amp  1 \amp  14 \amp  17
-\end{pmatrix},
+\end{pmatrix}, \amp
 \begin{pmatrix}
 	1 \amp  2 \amp  -1 \amp  1\\
 	2 \amp  3 \amp  4 \amp  5\\
 	1 \amp  4 \amp -13 \amp  -5
-\end{pmatrix},
+\end{pmatrix}</mrow>
+<mrow>
 \begin{pmatrix}
 	2 \amp  3 \amp  1 \amp  0 \amp  4\\
 	3 \amp  1 \amp  2 \amp -1\amp 1\\
 	4 \amp  -1 \amp  3 \amp -2\amp  -2\\
 	5 \amp  4 \amp  3 \amp  -1 \amp  5 
-\end{pmatrix},
+\end{pmatrix},\amp
 \begin{pmatrix}
 	-1 \amp  1 \amp  2\\
 	3 \amp  -1 \amp  1\\
 	1\amp 3\amp  4
-\end{pmatrix}
-</me>
+\end{pmatrix}</mrow>
+</md>
         </p>
     </li>
     <li>

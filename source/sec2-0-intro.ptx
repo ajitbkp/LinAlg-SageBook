@@ -3,11 +3,6 @@
 <section xml:id="sec2-0-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Introduction</title>
 <p>
-    <p>
-        In this chapter, define <m>\R^n</m>, the <m>n</m>-dimensional Euclidean space as vector space over <m>\R</m>. 
-        We shall define abstract vector spaces in later chapter. In fact, <m>\R^n</m> can be thought of as model vector spaces and once we understand properties in <m>\R^n</m>, it will be easier to under properties in asbtract vector spaces. 
-          
-      </p>
       
     We let  <m>\R^n:=\{(x_1,x_2,\ldots,x_n):x_i\in \R, 1\leq i\leq n\}</m>.
 Note that on  <m>\R^n</m>,  we can define  addition and
@@ -21,6 +16,7 @@ In the sequel, we will write <m>\alpha\cdot x</m> as <m>\alpha x</m>.
 An element <m>x\in R^n</m> is called a vector. It written as a column matrix and we also call it
 column vector.
 </p>   
+
 <p>
     If <m>A</m> is <m>m\times n</m> matrix then columns of <m>A</m> can be thought of as vectors in <m>\R^m</m>.
 </p>
@@ -70,29 +66,10 @@ column vector.
         <p>
             Let <m>A</m> be <m>m\times n</m> real matrix. Then <m>S_h=\{x\in \R^n:Ax=0\}</m> is a vector subspace of <m>\R^n</m>. In fact any subspace of <m>\R^n</m> arises in this way.  This subspace is also known as <alert>null spave of <m>A</m>.</alert>
         </p>
-        <p>
-            <figure xml:id="F-circular-sine-all-16">
-                <caption>The unit circle with <m>16</m> labeled special points.</caption>
-                <image source="images/hon-syst-fig1" width="80%"/>
-            </figure>
-              
-        </p>
+       
     </example>
 </p>
 <p>
-    <figure>
-        <caption>Negative multiple of a curve</caption>
-        <image xml:id="negative-curve" width="65%">
-            <description>Plot of x^4 - 1 and its negative.</description>
-            <sageplot>
-            f(x) = x^4 - 1
-            g(x) = -x^4 + 1
-            up = plot(f, (x, -1.5, 1.5), color='blue', thickness=2)
-            down = plot(g, (x, -1.5, 1.5), color='red', thickness=2)
-            up + down
-            </sageplot>
-        </image>
-    </figure>
-
+    
 </p>
 </section>
