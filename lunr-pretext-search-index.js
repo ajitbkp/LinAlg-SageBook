@@ -718,7 +718,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Basis and Dimension",
-  "body": " Basis and Dimension   Basis   A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of . Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .  Similarly one can define a basis of any subspace of .      It is easy to prove the follwoing theorem which is opent taken as definition in many books.     A set of vectors is called a basis of iff (i) and is linearly independent.       (i) is a basis of called the standard basis of .  (ii) is a basis of .  (iii) is a basis of called the standard basis of .  (iv) is a basis of .    In , we define where component is 1 rest are zeros. Then it is easy to see that is a bais of called the standard basis .    Consider the plane . Note that, here and can be thought of as free variables. Any point , we have Thus spans . It is easy to see that is linearly independent. Hence is a basis of . In fact, any two vectors in which are linearly independent form a basis of .       Any set of linearly independent vectors forms a basis of .       Follows from Theorem .       Let be a basis of a subscape of with elements. Then any set with elements is linearly dependent.       Let be scalars such that Since is a basis of , for each , we have Substituting this in Equation , we get Collecting the coefficients of in the Equation , we get Since is lineary independent, we have  These are homogeneous linear equations in variables . Hence it has a non zero solution. In particular, there exist scalars, not all zero such that . Hence is linearly dependent.     Let be a basis of a subscape of with elements. If is a linearly independet subset in , then .       Let and be two bases of a subscape of . Then and have the same number of elements.       Suppose and . Since is a basis and is linearly independet, by Corollary , . Similarly is a basis and is linearly independet, we have . Hence .   Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.    Let be subspace of . The number of elements in a basis of is called the dimension of .       (i) is a -dimensional vector space over .  (ii) Any plane passing through origin in is a 2 dimensional subspace.  (iii) is dimensional subspace of . Write down a basis of .  (iv) is a 2-dimensional subspace of . Write dowm a basis of .      A cubic plotted by SageMath on   A cubic function on the interval [-3,2]        A graph on five vertices.      A small graph (from Applied Combinatorics by Keller and Trotter)     "
+  "body": " Basis and Dimension   Basis   A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of . Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .  Similarly one can define a basis of any subspace of .      It is easy to prove the follwoing theorem which is opent taken as definition in many books.     A set of vectors is called a basis of iff (i) and is linearly independent.       (i) is a basis of called the standard basis of .  (ii) is a basis of .  (iii) is a basis of called the standard basis of .  (iv) is a basis of .    In , we define where component is 1 rest are zeros. Then it is easy to see that is a bais of called the standard basis .    Consider the plane . Note that, here and can be thought of as free variables. Any point , we have Thus spans . It is easy to see that is linearly independent. Hence is a basis of . In fact, any two vectors in which are linearly independent form a basis of .       Any set of linearly independent vectors forms a basis of .       Follows from Theorem .       Let be a basis of a subscape of with elements. Then any set with elements is linearly dependent.       Let be scalars such that Since is a basis of , for each , we have Substituting this in Equation , we get Collecting the coefficients of in the Equation , we get Since is lineary independent, we have  These are homogeneous linear equations in variables . Hence it has a non zero solution. In particular, there exist scalars, not all zero such that . Hence is linearly dependent.     Let be a basis of a subscape of with elements. If is a linearly independet subset in , then .       Let and be two bases of a subscape of . Then and have the same number of elements.       Suppose and . Since is a basis and is linearly independet, by Corollary , . Similarly is a basis and is linearly independet, we have . Hence .   Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.    Let be subspace of . The number of elements in a basis of is called the dimension of .       (i) is a -dimensional vector space over .  (ii) Any plane passing through origin in is a 2 dimensional subspace.  (iii) is dimensional subspace of . Write down a basis of .  (iv) is a 2-dimensional subspace of . Write dowm a basis of .     "
 },
 {
   "id": "def-sec2-2-LI",
@@ -836,24 +836,6 @@ var ptx_lunr_docs = [
   "number": "2.4.10",
   "title": "",
   "body": " (i) is a -dimensional vector space over .  (ii) Any plane passing through origin in is a 2 dimensional subspace.  (iii) is dimensional subspace of . Write down a basis of .  (iv) is a 2-dimensional subspace of . Write dowm a basis of .  "
-},
-{
-  "id": "fig-sage-cubic",
-  "level": "2",
-  "url": "sec-2-3-basis-dimension.html#fig-sage-cubic",
-  "type": "Figure",
-  "number": "2.4.11",
-  "title": "",
-  "body": " A cubic plotted by SageMath on   A cubic function on the interval [-3,2]    "
-},
-{
-  "id": "fig-graph",
-  "level": "2",
-  "url": "sec-2-3-basis-dimension.html#fig-graph",
-  "type": "Figure",
-  "number": "2.4.12",
-  "title": "",
-  "body": " A small graph (from Applied Combinatorics by Keller and Trotter)   "
 },
 {
   "id": "chap3-LT",
