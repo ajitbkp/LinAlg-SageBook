@@ -365,14 +365,382 @@ Thus <me>
     <theorem xml:id="sec2-3-thm-rank-nullity">
       <statement>
         <p>
-        	Let <m>A </m>be <m>m\times n</m> real matrix. Then 
+        	Let <m>A </m> be <m>m\times n</m> real matrix. Then 
 	<me>{\rm rank}(A)+{\rm nullity}(A)=n</me>.  
         </p>
       </statement>
     </theorem>
     
   </p>
-<!--
+
+
+  <definition xml:id="def-sec2-1-coordinates">
+      
+    <statement>
+      <p>
+        Let <m>\beta =\{v_1,v_2,\ldots, v_n\}</m>be a basis of 
+        <m>\R^n</m>. Let <m>x\in \R^n</m>. 
+        Then we know that there exists unique scalars <m>x_1,\ldots, x_n</m> 
+        such that <m>x=x_1v_1+x_2v_2+\cdots+x_nv_n</m>. Then <m>x_1,\ldots, x_n</m> 
+        are called the <alert>coordinates</alert> of <m>x</m> with respect to the basis 
+        <m>\beta</m>.
+
+      </p>
+    </statement>
+</definition>
+<p>
+  Notice that the order in which basis vectors appear is important. 
+  Suppose <m>\beta'=\{v_2,v_2,v_3\ldots, v_n\}</m>. 
+  Then <m>\beta'</m> is also a basis of <m>\R^n</m>. However the coordinates of 
+  <m>x</m> with respect to the basis <m>\beta'</m> is 
+  <m>x_2,x_1,x_3,\ldots,x_n</m>. This is the reason basis of 
+  <m>\R^n</m> is called an <alert>ordered basis</alert>. By a basis we will always mean 
+  an ordered basis.
+</p>
+
+<p>
+  <alert>How to find the coordinates of a vector w.r.t. a given basis?</alert>
+</p>
+<p>
+Suppose <m>\beta=\{v_1,v_2,\ldots, v_n\}</m> be a basis of <m>\R^n</m> and <m>v\in \R^n</m>. 
+How to find the coordinates of <m>v</m> with respect to <m>\beta</m>? 
+Let <m>v =x_1v_1+x_2v_2+\cdots+x_nv_n</m>. We need to find <m>x_1,\cdots, x_n</m>. Note that 
+<me>
+v = x_1v_1+x_2v_2+\cdots+x_nv_n=
+\begin{bmatrix} v_1\amp  v_2\cdots\amp v_n\end{bmatrix}
+\begin{bmatrix}	x_1\\x_2\\\vdots\\x_n\end{bmatrix}=Ax.
+</me>
+Thus to find <m>x</m>, we need to solve <m>Ax=v</m>, where <m>A</m> is the matrix whose 
+columns are <m>v_1,\ldots, v_n</m>. This can be done using the RREF. Let us illustrate this with few examples.
+
+</p>
+
+<p>
+<example>
+<p> If <m>x=(x_1,\ldots,x_n)\in \R^n</m>. 
+Then <m>x=x_1e_1+x_2e_2+\cdots+x_ne_n</m>. In particular <m>x_1,x_2,\ldots, x_n</m> is the coordinate of 
+<m>x</m> with respect to the standard basis <m>\{e_1,e_2,\ldots,e_n\}</m>.
+</p>
+</example>
+</p>
+
+<p>
+<example>
+<p> Consider a basis <m>\beta=\{(1,-1),(2,1)\}</m>. Find the coordinates of <m>v=(2,3)</m> with respect to <m>\beta</m>.  In order to find the coordinates of <m>v</m> with respect to <m>\beta</m>, we solve the system <m>Ax=b</m> where <m>A=\begin{bmatrix} 1 \amp  2\\-1\amp  1\end{bmatrix}</m> and <m>b = \begin{bmatrix} 2\\3\end{bmatrix}</m>. Using RREF 
+  <me>
+  [A~|~b]\xrightarrow{RREF} \left[\begin{array}{rr|r}
+    1 \amp  0 \amp  -\frac{4}{3} \\
+    0 \amp  1 \amp  \frac{5}{3}
+  \end{array}\right]
+  </me>
+  Hence the coordinates of <m>v</m> w.r.t. <m>\beta</m> is <m>(-4/3,5/3)</m>.
+</p>
+</example>
+</p>
+
+<p>
+<example>
+<p>
+  Find the coordinates of the vector <m>(1,2,3)</m> with respect to a basis\\ <m>\beta=\{(1,-1,1),(1,1,-1),(-1,1,1)\}</m> of <m>\R^3</m>. Using the RREF we have 
+<me>
+\left[\begin{array}{rrr|r}
+1 \amp  1 \amp  -1 \amp  1 \\
+-1 \amp  1 \amp  1 \amp  2 \\
+1 \amp  -1 \amp  1 \amp  3
+\end{array}\right] \xrightarrow{RREF} 
+\left[\begin{array}{rrr|r}
+1 \amp  0 \amp  0 \amp  2 \\
+0 \amp  1 \amp  0 \amp  \frac{3}{2} \\
+0 \amp  0 \amp  1 \amp  \frac{5}{2}
+\end{array}\right]
+</me>
+Hence the coordinates of <m>(1,2,3)</m> with respect the given basis is <m>(2,3/2,5/2)</m>.
+
+</p>
+</example>
+</p>
+
+<p>
+<example>
+<p>
+  Find the coordinates of the vector <m>(1,2,3,4)</m> with respect to a basis <m>\beta=\{(1,-1,1,1),(1,1,-1,1),(1,1,-1,1),(-1,1,1,1)\}</m> of <m>\R^4</m>. Using the RREF we have 
+<me>
+\left[\begin{array}{rrrr|r}
+1 \amp  1 \amp  1 \amp  -1 \amp  1\\
+-1 \amp  1 \amp  1 \amp  1  \amp  2\\
+1 \amp  -1 \amp  1 \amp  1 \amp  3\\
+1 \amp  1 \amp  -1 \amp  1 \amp  4
+\end{array}\right] \xrightarrow{RREF} 
+\left[\begin{array}{rrrr|r}
+1 \amp  0 \amp  0 \amp  0 \amp  \frac{3}{2} \\
+0 \amp  1 \amp  0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  1 \amp  0 \amp  \frac{1}{2} \\
+0 \amp  0 \amp  0 \amp  1 \amp  2
+\end{array}
+\right]
+</me>
+Hence the coordinates of <m>(1,2,3)</m> with respect the given basis is <m>(3/2,1,1/2,2)</m>.
+</p>
+</example>
+</p>
+<subsection xml:id="sec2-3-change-of-basis">
+<title>Change of bases.</title>
+<p>
+Let <m>\beta=\{u_1,u_2\ldots,u_n\}</m> and <m>\gamma=\{v_1,v_2\ldots,v_n\}</m> be two bases of <m>\R^n</m>. Fix a vector <m>x\in \R^n</m>.  Let <m>x_\beta=\begin{bmatrix}c_1\\\vdots \\c_n\end{bmatrix}</m>   and 
+<m>x_\gamma=\begin{bmatrix}d_1\\\vdots \\d_n\end{bmatrix}</m>  be the coordinates of <m>x</m> with respect to 
+<m>\beta</m> and <m>\gamma</m> respectively. Then we have 
+<me>
+x = \begin{bmatrix}u_1\amp \cdots \amp  u_n\end{bmatrix}\begin{bmatrix}c_1\\\vdots \\c_n\end{bmatrix}=Ax_\beta.
+</me>
+
+Similarly 
+<me>
+x = \begin{bmatrix}v_1\amp \cdots \amp  v_n\end{bmatrix}\begin{bmatrix}d_1\\\vdots \\d_n\end{bmatrix}=Bx_\gamma.
+</me>
+Thus we have 
+<me>
+Ax_\beta=Bx_\gamma\implies x_\beta = A^{-1}B x_\gamma \text{ and } x_\gamma = B^{-1}Ax_\beta.
+</me>
+The matrices <m>A^{-1}B</m> and <m>B^{-1}A</m> are called <alert>transition matrices</alert>. We denotes <m>A^{-1}B</m> by <m>[I]_\gamma^\beta</m> and <m>B^{-1}A</m> by <m>[I]_\beta^\gamma</m>. Note that <m>[I]_\beta^\gamma=\left([I]_\gamma^\beta\right)^{-1}.</m>
+
+<p>
+Furthermore, the transition matrix <m>I_\gamma^\beta</m> can be obtained by applying RREF to the 
+<m>[A|B]</m> and extracting the last <m>n</m> columns. Let us illustrate this with an example.
+</p>
+</p>
+
+<p>
+<example>
+<p>
+  Consider 
+<m>\beta = \left\{\left(2,-1,3\right), \left(3,1,2\right), \left(1,1,1\right)\right\}</m>, 
+and  
+<m>\gamma = \left\{\left(1,-1,1\right), \left(1,1,-1\right), \left(-1,1,1\right)\right\}
+</m> be two bases of <m>\R^3</m>.  Consider a vector <m>x=(1,2,3)</m>.  We have 
+<me>
+A = \left(\begin{array}{rrr}
+2 \amp  3 \amp  1 \\
+-1 \amp  1 \amp  1 \\
+3 \amp  2 \amp  1
+\end{array}\right), B = \left(\begin{array}{rrr}
+1 \amp  1 \amp  -1 \\
+-1 \amp  1 \amp  1 \\
+1 \amp  -1 \amp  1
+\end{array}\right)
+</me>
+First we find <m>x_\beta</m> and <m>x_\gamma</m>. 
+<me>
+\left(\begin{array}{rrr|r}
+2 \amp  3 \amp  1 \amp  1 \\
+-1 \amp  1 \amp  1 \amp  2 \\
+3 \amp  2 \amp  1 \amp  3
+\end{array}\right)
+\xrightarrow{RREF}
+\left(\begin{array}{rrr|r}
+1 \amp  0 \amp  0 \amp  \frac{3}{5} \\
+0 \amp  1 \amp  0 \amp  -\frac{7}{5} \\
+0 \amp  0 \amp  1 \amp  4
+\end{array}\right)
+</me>
+<me>\implies x_\beta =\begin{pmatrix} 3/5\\7/5\\4\end{pmatrix}.
+</me>
+Similarly
+<me>
+\left(\begin{array}{rrr|r}
+1 \amp  1 \amp  -1 \amp  1 \\
+-1 \amp  1 \amp  1 \amp  2 \\
+1 \amp  -1 \amp  1 \amp  3
+\end{array}\right)\xrightarrow{RREF}
+\left(\begin{array}{rrr|r}
+1 \amp  0 \amp  0 \amp  2 \\
+0 \amp  1 \amp  0 \amp  \frac{3}{2} \\
+0 \amp  0 \amp  1 \amp  \frac{5}{2}
+\end{array}\right)
+</me>
+<me>\implies x_\gamma =\begin{pmatrix} 2\\3/2\\5/2\end{pmatrix}.
+</me>
+Now to find the transition matrix <m>[I]_\gamma^\beta</m>, we have
+<me>
+[A~|~B]\xrightarrow{RREF} \left(\begin{array}{rrr|rrr}
+1 \amp  0 \amp  0 \amp  \frac{2}{5} \amp  -\frac{4}{5} \amp  \frac{2}{5} \\
+0 \amp  1 \amp  0 \amp  \frac{2}{5} \amp  \frac{6}{5} \amp  -\frac{8}{5} \\
+0 \amp  0 \amp  1 \amp  -1 \amp  -1 \amp  3
+\end{array}\right) 
+</me>
+<me>\implies [I]_\gamma^\beta =
+\left(\begin{array}{rrr}
+\frac{2}{5} \amp  -\frac{4}{5} \amp  \frac{2}{5} \\
+\frac{2}{5} \amp  \frac{6}{5} \amp  -\frac{8}{5} \\
+-1 \amp  -1 \amp  3
+\end{array}\right) 
+</me>
+It is easy to verify that <m>x_\beta = [I]_\gamma^\beta x_\gamma</m>. 
+
+Similarly to find the transition matrix <m>[I]_\beta\gamma</m>, we have
+<me>
+[B~|~A]\xrightarrow{RREF} \left(\begin{array}{rrr|rrr}
+1 \amp  0 \amp  0 \amp  \frac{5}{2} \amp  \frac{5}{2} \amp  1 \\
+0 \amp  1 \amp  0 \amp  \frac{1}{2} \amp  2 \amp  1 \\
+0 \amp  0 \amp  1 \amp  1 \amp  \frac{3}{2} \amp  1
+\end{array}\right)</me>
+<me>
+\implies [I]_\beta^\gamma =\left(\begin{array}{rrr}
+\frac{5}{2} \amp  \frac{5}{2} \amp  1 \\
+\frac{1}{2} \amp  2 \amp  1 \\
+1 \amp  \frac{3}{2} \amp  1
+\end{array}\right)
+</me>
+It is easy to verify that <m>x_\gamma=[I]_\beta^\gamma x_\beta</m>.
+</p>
+</example>
+</p>
+
+
+</subsection>
+<p>
+<problem>
+What are all subspaces of <m>\R^2</m> and <m>\R^3</m>?
+</problem>
+</p>
+
+<p>
+<problem>
+If <m>W</m> is a subspace of <m>\R^n</m>, then it is null space of some matrix.
+</problem>
+</p>
+
+We end this chapter by look at a bigger example. Here we also illustrate RREF gives several informations 
+on a matrix.
+
+<p>
+
+<example>
+<p>
+Consider a set of 7 vectors <m>v_1,\ldots, v_7\in \R^7</m>. 
+
+<me> v_1=\left(\begin{array}{r}
+1 \\
+-1 \\
+2 \\
+0 \\
+3 \\
+2 \\
+1
+\end{array}\right), 
+v_2=\left(\begin{array}{r}
+2 \\
+1 \\
+0 \\
+2 \\
+-3 \\
+0 \\
+1
+\end{array}\right), 
+v_3=\left(\begin{array}{r}
+-1 \\
+-5 \\
+6 \\
+-4 \\
+15 \\
+6 \\
+1
+\end{array}\right), 
+v_4=\left(\begin{array}{r}
+0 \\
+2 \\
+3 \\
+1 \\
+-1 \\
+3 \\
+-1
+\end{array}\right),
+v_5=\left(\begin{array}{r}
+4 \\
+3 \\
+1 \\
+2 \\
+0 \\
+1 \\
+3
+\end{array}\right),</me>
+<me>
+v_6=\left(\begin{array}{r}
+-13 \\
+-30 \\
+4 \\
+-22 \\
+52 \\
+4 \\
+0
+\end{array}\right),
+v_7=\left(\begin{array}{r}
+-2 \\
+-1 \\
+0 \\
+1 \\
+2 \\
+3 \\
+4
+\end{array}\right)
+</me>
+
+Define the matrix <m>A</m> whose columns are <m>v_1,\ldots, v_7</m> and apply RREF to <m>A</m>.
+<me>
+A=\left(\begin{array}{rrrrrrr}
+1 \amp  2 \amp  -1 \amp  0 \amp  4 \amp  -13 \amp  -2 \\
+-1 \amp  1 \amp  -5 \amp  2 \amp  3 \amp  -30 \amp  -1 \\
+2 \amp  0 \amp  6 \amp  3 \amp  1 \amp  4 \amp  0 \\
+0 \amp  2 \amp  -4 \amp  1 \amp  2 \amp  -22 \amp  1 \\
+3 \amp  -3 \amp  15 \amp  -1 \amp  0 \amp  52 \amp  2 \\
+2 \amp  0 \amp  6 \amp  3 \amp  1 \amp  4 \amp  3 \\
+1 \amp  1 \amp  1 \amp  -1 \amp  3 \amp  0 \amp  4
+\end{array}\right)
+</me>
+<me>
+RREF(A)=\left(\begin{array}{rrrrrrr}
+1 \amp  0 \amp  3 \amp  0 \amp  0 \amp  9 \amp  0 \\
+0 \amp  1 \amp  -2 \amp  0 \amp  0 \amp  -7 \amp  0 \\
+0 \amp  0 \amp  0 \amp  1 \amp  0 \amp  -4 \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  1 \amp  -2 \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0
+\end{array}\right)
+</me>
+
+From the RREF of <m>A</m>, we have the following observations:
+
+<p>
+(i) The reduced row-echelon form of <m>A</m> has 5 non zero rows. This means the rank of <m>A</m> is 5. 
+In particular, <m>A</m> is singular.</p> 
+
+<p>(ii) The pivots columns are 1, 2, 4, 5, 7. In particular, <m>\{v_1,v_2,v_4,v_5,v_7\}</m> 
+are linearly independent and forms a basis of the subspace spanned by <m>\{v_1,v_2,v_4,v_5,v_7\}</m>.
+</p>
+
+<p> 
+(iii) The 3rd columns gives <m>v_3</m> as linear combinations of <m>v_1</m> and <m>v_2</m>. 
+In particular, <m>v_3=3v_1-2v_2</m>. Similarly <m>v_6=9v_1-7v_2-4v_4-2v_5</m>.
+</p>
+
+<p>
+(iv) Since rank of <m>A</m> is 5, the nullity of <m>A</m> is 2.
+</p>
+
+<p>
+(v) First five rows of <m>RREF(A)</m> constitute a basis of the row space of <m>A</m>.
+</p>
+
+
+
+
+</p>  
+</example>
+</p>
+
+
+
+  <!--
 <p>
   <figure xml:id="fig-sage-cubic">
     <caption>A cubic plotted by SageMath on
