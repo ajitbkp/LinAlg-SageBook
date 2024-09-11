@@ -159,7 +159,7 @@ Since the number of elements any two bases are same. This leads to the dinition 
 
   </example>
 </p>
-
+<!--
 <p>
   <figure xml:id="fig-sage-cubic">
     <caption>A cubic plotted by SageMath on
@@ -192,4 +192,5 @@ Since the number of elements any two bases are same. This leads to the dinition 
   </figure>
 
 </p>
+-->
 </section>
