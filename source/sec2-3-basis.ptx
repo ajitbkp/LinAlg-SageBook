@@ -159,6 +159,18 @@ Since the number of elements any two bases are same. This leads to the dinition 
 
   </example>
 </p>
+<p>
+  <alert>How to find basis of a subspace?</alert>
+  </p>
+  <p>
+  Suppose  is subspace spanned by a set of <m>k</m> vectors, say, 
+  <m>v_1,\ldots,v_k</m> in <m>\R^n</m>. How to find a basis of <m>W</m>? 
+  Note that <m>\dim{(W)}\leq k</m>. In order to find a basis of <m>W</m>, 
+  we construct a matrix <m>A</m> whose rows are <m>v_1, \ldots, v_k</m>. 
+  Find the reduced-row-echelon form  of <m>A</m>. 
+  Then the non-zero rows in RREF(<m>A</m>) form a basis of <m>W</m>.  
+  </p>
+  
 <!--
 <p>
   <figure xml:id="fig-sage-cubic">
