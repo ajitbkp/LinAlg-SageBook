@@ -1,0 +1,918 @@
+<section>
+  <title>Linear Transformations</title>
+  <introduction>
+    <p>
+      Consider the Cartesian plane <m>\R^2=\left\{\begin{bmatrix}x_1\\x_2 \end{bmatrix} :x_1,x_2\in\R\right\}</m>.
+      Consider the reflection about <m>x</m>-axis in <m>\R^2</m>.
+      This is a map <m>R_f\colon \R^2\to\R^2</m> as
+      <me>
+        R_f\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)=\begin{bmatrix}x_1\\-x_2 \end{bmatrix}
+      </me>.
+      Note that we can write
+      <me>
+        R_f\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)=\begin{bmatrix}x_1\\-x_2 \end{bmatrix} = \begin{bmatrix}1 \amp  0\\0 \amp  -1 \end{bmatrix} (\begin{bmatrix}x_1\\x_2 \end{bmatrix}
+      </me>.
+      Thus the map <m>R_f</m> is obtained as a matrix multiplication by <m>A=\begin{bmatrix}1 \amp  0\\0 \amp  -1 \end{bmatrix}</m>.
+    </p>
+    <p>
+      Similarly consider a map <m>R_\theta</m> as a rotation of a vector by an angle <m>\theta</m> anti-clock wise.
+      Any point <m>x=\begin{bmatrix}x_1\\x_2 \end{bmatrix} \in\R^2</m> can be written as
+      <m>\begin{bmatrix}r\cos\alpha\\r\sin\alpha \end{bmatrix}</m> in polar coordinates.
+      Here <m>r=\sqrt{x_1^2+x_2^2}</m> and <m>\alpha</m> is the angle that vector <m>x</m> makes with positive <m>x</m>-axis.
+      Then
+      <me>
+        R_\theta\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)= \begin{bmatrix}r\cos(\alpha+\theta)\\r\sin(\alpha+\theta) \end{bmatrix}
+      </me>.
+      After Simplification, we have
+      <me>
+        \begin{bmatrix}r\cos(\alpha+\theta)\\r\sin(\alpha+\theta) \end{bmatrix} = \begin{bmatrix}r(\cos \theta \cos\alpha -\sin\theta \sin \alpha) \\ r(\sin\theta\cos\alpha+\cos\theta\sin\alpha) \end{bmatrix} = \begin{bmatrix}\cos \theta \amp  -\sin \theta\\ \cos \theta \amp  \sin \theta \end{bmatrix} \begin{bmatrix}r\cos\alpha\\r\sin\alpha \end{bmatrix}
+      </me>
+    </p>
+    <p>
+      Thus
+      <me>
+        R_\theta\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)= \begin{bmatrix}\cos \theta \amp  -\sin \theta\\ \cos \theta \amp  \sin \theta \end{bmatrix} \begin{bmatrix}x_1\\x_2 \end{bmatrix}
+      </me>.
+    </p>
+    <p>
+      Thus the rotation in the plane can also be given by the matrix multiplication.
+    </p>
+    <p>
+      Suppose <m>A</m> is a <m>m\times n</m> real matrix.
+      Then for a vector <m>x=\begin{bmatrix}x_1\\\vdots \\x_n \end{bmatrix}  \in\R^n</m>,
+      <m>Ax\in \R^m</m>.
+      Thus <m>A</m> can be thought of as a map that takes vector in <m>\R6^n</m> to a vector in <m>\R^m</m>.
+      Let us denote this map as <m>T_A</m>.
+      Thus
+      <me>
+        T_A\colon R^n\to \R^m, \text{ defined by }  T_A(x)=Ax
+      </me>.
+    </p>
+    <p>
+      <m>T_A</m> is called the matrix transformation induced by the matrix <m>A</m>.
+    </p>
+    <p>
+      Note that the matrix transformation <m>T_A</m> has the following properties: (i)
+      <m>T_A(x+y)=A(x+y)=Ax+Ay=T_A(x)+T_A(y)</m> for all <m>x,y\in \R^n</m>.
+    </p>
+    <p>
+      (ii) <m>T_A(\alpha x)=A(\alpha x)=\alpha Ax=\alpha T_A(x)</m> for all
+      <m>\alpha\in \R</m> and <m>x\in \R^n</m>.
+    </p>
+    <p>
+      In particular,
+      <m>T_A</m> preserves vector addition and scalar multiplication.
+      Any such map is called a linear transformation.
+      We have the following definition.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A map <m>T\colon \R^n \to \R^m</m> is called a linear transformation (or linear map)if it satisfies the following properties:
+        </p>
+        <p>
+          (i) <m>T(x+y)=T(x)+T(y)</m> for all <m>x,y\in \R^n</m>.
+        </p>
+        <p>
+          (ii) <m>T(\alpha x)=\alpha T(x)</m> for all
+          <m>\alpha\in \R</m> and <m>x\in \R^n</m>.
+        </p>
+      </statement>
+    </definition>
+    <exercise>
+      <statement>
+        <p>
+          If <m>T\colon \R^n\to \R^m</m> is a linear map, then <m>T(0)=0</m>.
+          That is <m>T</m> takes the zero vector in <m>\R^n</m> to the zero vector in <m>\R^m</m>.
+        </p>
+      </statement>
+    </exercise>
+    <example>
+      <statement>
+        <p>
+          (i) Zero map <m>T\colon \R^n \to \R^m</m> defined by <m>T(x)=0</m> for all <m>x</m> is a linear map.
+        </p>
+        <p>
+          (ii) <m>T(-v)=-T(v)</m> for all
+          <m>v\in \R^n</m>. (iii) The identity map
+          <m>T\colon \R^n \to \R^n</m> given by <m>T(x)=x</m> for all <m>x\in \R^n</m> is a linear map.
+        </p>
+        <p>
+          (iv) The reflection and rotation defined above are linear map from <m>\R^2</m> to <m>\R^2</m>.
+        </p>
+        <p>
+          (v) Any matrix transformation is (vi) Fix a vector <m>a</m> in <m>\R^n</m> and define
+          <m>T_a\colon \R^n\to \R^n</m> as <m>T_a(x)=x+a</m>.
+          Is <m>T_a</m> a linear map?
+          When is this linear? (The map <m>T_a</m> is called translation.)
+        </p>
+        <p>
+          (vii) Let <m>a,b\in \R</m> be two real number.
+          Define <m>T\colon \R^2\to \R</m> as <m>T(x,y)=ax+b</m>.
+          It is easy to check that <m>T</m> is a linear map.
+          Can you generalize this?
+        </p>
+        <p>
+          (viii) Let <m>a_1,\ldots, a_n</m> be <m>n</m> real numbers.
+          Define <m>T\colon \R^n\to \R</m> by
+          <me>
+            T(x_1,\cdots,x_n)=a_1x_1+\cdots+a_nx_n
+          </me>.
+          It is easy to check that <m>T</m> is a linear map.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          What are linear maps from <m>\R</m> to <m>\R</m>?
+        </p>
+        <blockquote>
+          Suppose <m>f\colon \R\to \R</m> is a linear map. We know that  <m>\{1\}</m> is  basis of <m>\R</m>. Then any vector <m>x=x\cdot 1</m>. Therefore, <m>f(x)=f(x\cdot 1)=xf(1)</m>. Thus if we define <m>f(1)=a\in \R</m>. Then
+          <m>f(x)=ax</m>. Thus if <m>f</m> is linear map from <m>\R\to \R</m>. Then there exist a real number <m>a\in \R</m> such that <m>f(x)=ax</m>. Note that in this case <m>a=f(1)</m>.
+        </blockquote>
+      </statement>
+    </exercise>
+  </introduction>
+  <subsection>
+    <title>Linear maps from <m>\R^n</m> to <m>\R^m</m></title>
+    <p>
+      We want to find a linear map from <m>\R^n</m> to <m>\R^m</m>.
+      Suppose <m>T\colon \R^n\to \R^m</m> is a linear map.
+      Then for <m>x\in \R^n</m>, <m>T(x)\in \R^m</m>.
+      In particular, <m>T(x)</m> has <m>m</m> components.
+      Let us write these components as <m>T_1(x),\ldots, T_m(x)</m>.
+      Thus <m>T</m> is given by
+      <me>
+        T(x)=\begin{bmatrix}T_1(x)\\T_2(x)\\\vdots\\T_m(x) \end{bmatrix}
+      </me>.
+    </p>
+    <p>
+      Note that for each <m>i=1,\ldots, m</m>,
+      <m>T_i</m> is a map from <m>\R^n\to \R</m>.
+    </p>
+    <exercise xml:id="linalg-engg-ex29">
+      <statement>
+        <p>
+          Show that <m>T\colon \R^n\to \R^m</m> defined by
+          <m>T(x)=\left(T_1(x),\ldots, T_m(x)\right)</m> is linear map if and only if
+          <m>T_i\colon \R^n\to \R</m> is linear map for each <m>i</m>.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      From Ex.
+      <xref ref="linalg-engg-ex29"></xref>,
+      it follows that in order to know linear map <m>T</m>,
+      it is sufficient to know component <m>T_i\colon \R^n\to \R</m> for each <m>i</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Suppose <m>T\colon \R^n\to \R</m> is a linear map.
+          Consider the standard basis <m>\beta=\{e_1,e_2,\ldots,
+          e_n\}</m>.
+          Then for <m>x\in \R^n</m>, we have <m>x=x_1e_1+x_2e_2+\cdots+x_n e_n</m>.
+          Since <m>T</m> is linear, we have
+          <me>
+            T(x)=T(x_1e_1+x_2e_2+\cdots+x_n e_n)=x_1T(e_2)+x_2T(e_2)+\cdots+x_n T(e_n)
+          </me>.
+        </p>
+        <p>
+          Define <m>T(e_1):=a_1, T(e_2):=a_2,\ldots, T(e_n):=a_n</m>.
+          Then
+          <me>
+            T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n
+          </me>.
+        </p>
+        <p>
+          Thus, if <m>T\colon \R^n\to \R</m> is a linear map,
+          there there exist scalars,
+          <m>a_1,a_2,\ldots,a_n</m> such that <m>T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n</m>.
+          Here we have <m>a_i=T(e_i)</m> for <m>i=1,\ldots,n</m>.
+          It is clear that to know <m>T</m> it is good enough to know <m>T(e_1),\ldots, T(e_n)</m>.
+        </p>
+        <p>
+          What happens if you chose a different basis (other than standard basis)?
+        </p>
+      </statement>
+    </example>
+    <p>
+      Let us come back to the linear map <m>T(x)=\begin{bmatrix}T_1(x)\\T_2(x)\\\vdots\\T_m(x) \end{bmatrix}</m>.
+      Since for each <m>i</m>, <m>T_i</m> is linear, there exist scalars,
+      <m>a_{i1},a_{i2},\ldots,a_{in}\in \R</m> such that <m>T_i(x)=a_{i1}x_1+a_{i2}x_2+\cdots+a_{i_n}x_n</m>.
+      Thus
+      <me>
+        T(x)=\begin{bmatrix}a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n\\ a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n\\\vdots\\ a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n \end{bmatrix} = \begin{bmatrix}a_{11}\amp a_{12}\amp \cdots\amp a_{1n}\\ a_{21}\amp a_{22}\amp \cdots\amp a_{2n}\\ \vdots \amp \vdots\amp \ddots\amp \vdots\\ a_{m1}\amp a_{m2}\amp \cdots\amp a_{mn} \end{bmatrix}  \begin{bmatrix}x_1\\x_2\\\vdots \\x_n \end{bmatrix}
+      </me>.
+    </p>
+    <p>
+      Thus we have shown that any linear map
+      <m>T\colon \R^n\to\R^m</m> is a matrix transformation <m>T_A</m>,
+      where <m>A=[a_{ij}]</m>.
+      Note that the matrix of <m>T</m>
+      <me>
+        A =\begin{bmatrix}a_{11}\amp a_{12}\amp \cdots\amp a_{1n}\\ a_{21}\amp a_{22}\amp \cdots\amp a_{2n}\\ \vdots \amp \vdots\amp \ddots\amp \vdots\\ a_{m1}\amp a_{m2}\amp \cdots\amp a_{mn} \end{bmatrix} = \begin{bmatrix}T_1(e_1)\amp T_1(e_2)\amp \cdots\amp T_1(e_n)\\ T_2(e_1)\amp T_2(e_2)\amp \cdots\amp T_2(e_n)\\ \vdots \amp \vdots\amp \ddots\amp \vdots\\ T_m(e_1)\amp T_m(e_2)\amp \cdots\amp T_m(e_n) \end{bmatrix} =\begin{bmatrix}T(e_1)\amp T(e_2)\amp \cdots \amp  T(e_n) \end{bmatrix}
+      </me>.
+    </p>
+    <p>
+      Notice that the <m>j</m>-th columns of <m>A</m> is the coordinates of the vector <m>T(e_j)</m> with respect to the standard basis <m>\{e_1,\cdots,e_m\}</m> of <m>\R^m</m>.
+      Thus to find the matrix of <m>T</m>,
+      we find the coordinates of <m>T(e_j)</m> with respect to the basis on the codomain and put it in the <m>j</m>-th column.
+    </p>
+    <p>
+      What happens if we change the bases on <m>\R^n</m> and <m>\R^m</m>.
+      In order to see this let us consider an example.
+    </p>
+    <example xml:id="ling-engg-eg31">
+      <statement>
+        <p>
+          Consider a linear map <m>T\colon \R^3\to \R^2</m> defined by <m>T\left(\begin{bmatrix}x_1\\x_2\\x_3 \end{bmatrix} \right)=\begin{bmatrix}2x_1-x_2+x_3\\x_1+x_2-x_3 \end{bmatrix}</m>.
+          It is easy to see that <m>T</m> is a matrix transformation <m>T_A</m> where <m>A=\begin{bmatrix}2 \amp -1 \amp 1\\1 \amp 1\amp -1 \end{bmatrix}</m>.
+          In particular,
+          <m>A</m> is the matrix of <m>T</m> when we consider standard bases on the domain <m>\R^3</m> and codomain <m>\R^2</m>.
+        </p>
+        <p>
+          Let us consider a basis <m>\beta =\{v_1=(1,1,-1),v_2=(1,-1,1),v_3=(-1,1,1)\}</m> of the domain and the standard basis <m>\gamma=\{(1,0),(0,1)\}</m> on the codomain.
+          In order to find the matrix <m>A</m> of <m>T</m>,
+          we find the image of <m>T(v_1)</m> and find its coordinates with respect to the standard basis <m>\gamma</m>.
+          We have <m>T(v1)=(0,3)</m>.
+          Thus the first columns of <m>A</m> is <m>\begin{bmatrix}0\\3 \end{bmatrix}</m>.
+          Similarly <m>T(v_2)=(4,-1)</m> and <m>T(v_3)=(2,-1)</m>.
+          Hence the matrix of <m>A</m> of <m>T</m> with respect to the basis <m>\beta</m> and <m>\gamma</m> is <m>\begin{bmatrix}0\amp 4 \amp 2\\3\amp -1\amp -1 \end{bmatrix}</m>.
+          We denote this matrix as <m>[T]_\beta^\gamma</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Consider the linear transformation defined in the <xref ref="ling-engg-eg31">Example</xref>.
+          Find the matrix of <m>T</m> with respect to a basis
+          <m>\beta =\{v_1=(1,1,-1),v_2=(1,-1,1),v_3=(-1,1,1)\}</m> of <m>\R^3</m> and <m>\gamma=\{w_2=(1,-1),(2,1)\}</m> of <m>\R^2</m>.
+        </p>
+      </statement>
+    </exercise>
+    <example xml:id="ling-engg-eg33">
+      <statement>
+        <p>
+          Consider a linear map <m>T\colon \R^3\to \R^3</m> given by <m>T\left(\begin{bmatrix}x_1\\x_2\\x_3 \end{bmatrix} \right)=\begin{bmatrix}2x_1-x_2+x_3\\x_1+x_2-x_3\\3x_1+2x_3 \end{bmatrix}</m>.
+          Let us find the matrix of <m>T</m> with respect to a basis
+          <m>\beta =\{v_1=(1,1,-1),v_2=(1,-1,1),v_3=(-1,1,1)\}</m> of <m>\R^3</m> on the domain and codomain.
+          Note that columns of <m>[T]_\beta^\beta</m> are the coordinates of
+          <m>T(v_1), T(v_2), T(v_3)</m> with respect to the basis <m>\beta</m>.
+          This can be obtained simultaneously by applying RREF to
+          <m>\begin{bmatrix}v_1 \amp  v_2 \amp  v_3 \amp  T(v_1)\amp  T(v_2)\amp  T(v_3) \end{bmatrix}</m> and taking the last three columns as <m>[T]_\beta^\beta</m>.
+          <md>
+            <mrow>\begin{bmatrix}v_1 \amp  v_2 \amp  v_3 \amp  T(v_1)\amp  T(v_2)\amp  T(v_3) \end{bmatrix} \amp =\amp \left[\begin{array}{rrrrrr} 1 \amp  1 \amp  -1 \amp  0 \amp  4 \amp  -2 \\ 1 \amp  -1 \amp  1 \amp  3 \amp  -1 \amp  -1 \\ -1 \amp  1 \amp  1 \amp  1 \amp  5 \amp  -1 \end{array} \right]</mrow>
+            <mrow>\amp \xrightarrow{RREF}\amp \left[\begin{array}{rrrrrr} 1 \amp  0 \amp  0 \amp  \frac{3}{2} \amp  \frac{3}{2} \amp  -\frac{3}{2} \\ 0 \amp  1 \amp  0 \amp  \frac{1}{2} \amp  \frac{9}{2} \amp  -\frac{3}{2} \\ 0 \amp  0 \amp  1 \amp  2 \amp  2 \amp  -1 \end{array} \right]</mrow>
+          </md>
+        </p>
+        <p>
+          Hence
+          <me>
+            [T]_\beta=\left[\begin{array}{rrr} \frac{3}{2} \amp  \frac{3}{2} \amp  -\frac{3}{2} \\ \frac{1}{2} \amp  \frac{9}{2} \amp  -\frac{3}{2} \\ 2 \amp  2 \amp  -1 \end{array} \right]
+          </me>.
+        </p>
+      </statement>
+    </example>
+    <exercise xml:id="sumoflinearmaps">
+      <statement>
+        <p>
+          Let <m>T,S\colon \R^n\to \R^m</m> be two linear maps.
+          Then show that <m>T+S</m> is a linear map.
+          Furthermore,
+          the matrix of <m>T+S</m> is the sum of matrices of <m>T</m> and <m>S</m>.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      Next we look the composition of linear maps.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Composition of linear transformations</title>
+    <p>
+      Let <m>T\colon \R^n\to \R^m</m> and
+      <m>S\colon R^m\to \R^p</m> be linear transformations.
+      Then <m>S\circ T\colon \R^n\to \R^p</m> defined by <m>(S\circ T)(x)=S(T(x))</m> is a linear map.
+    </p>
+    <p>
+      Suppose <m>T(x)=Ax</m> and <m>S(y)=By</m> are matrices transformations.
+      Then
+      <me>
+        S(T(x))=S(Ax)=B(Ax)=(BA)x
+      </me>.
+      Thus the matrix of <m>S\circ T</m> is <m>BA</m>.
+    </p>
+    <example xml:id="linalg-engg-eg34">
+      <statement>
+        <p>
+          Let <m>T\colon \R^4\to \R^3</m> and <m>S\colon \R^3\to \R^4</m> defined by
+          <me>
+            T\left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix} \right):= \begin{bmatrix}x_{1} + x_{3} + x_{4} \\ x_{1} + x_{2} + 2  x_{3} - x_{4} \\ 2  x_{1} + x_{2} + 3  x_{3} - 2  x_{4} \end{bmatrix} \text{ and } S\left(\begin{bmatrix}y_1\\y_2\\y_3 \end{bmatrix} \right):= \begin{bmatrix}y_{1} + y_{3} \\ y_{1} + 3  y_{2} + 2  y_{3} \\ 2  y_{1} - y_{2} + 3  y_{3} \\ y_{2} - y_{3} \end{bmatrix}
+          </me>
+        </p>
+        <p>
+          Consider a basis
+          <me>
+            \beta = \left\{u_1=\left(1,-3,2,-1\right), u_2=\left(0,1,0,1\right), u_3=\left(-1,2,-1,-1\right), u_4=\left(2,-8,4,-3\right)\right\}
+          </me>
+          of <m>\R^4</m> and a basis
+          <me>
+            \gamma = \left\{v_1=\left(-1,1,1\right), v_2=\left(3,1,3\right), v_3=\left(2,-1,1\right)\right\}
+          </me>
+          of <m>\R^3</m>.
+          Let <m>A=[T]_\beta^\gamma</m>,
+          <m>B=[S]_\gamma^\beta</m> and <m>C=[S\circ T]_\beta^\beta</m>.
+          Then we shall show that <m>C=BA</m>.
+          Note that
+          <me>
+            S\circ T \left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix} \right) := \begin{bmatrix}3  x_{1} + x_{2} + 4  x_{3} - x_{4}\\ 8  x_{1} + 5  x_{2} + 13  x_{3} - 6  x_{4}\\ 7  x_{1} + 2  x_{2} + 9  x_{3} - 3  x_{4}\\ -x_{1} - x_{3} + x_{4} \end{bmatrix}
+          </me>
+        </p>
+        <p>
+          First we find the matrix <m>A</m> using RREF
+          <md>
+            <mrow>\begin{bmatrix}v_1\amp  v_2 \amp  v_3 \amp  T(u_1) \amp  T(u_2) \amp  T(u_3)\amp  T(u_3) \end{bmatrix} \amp =\amp  \left[\begin{array}{rrrrrrr} -1 \amp  3 \amp  2 \amp  2 \amp  1 \amp  -3 \amp  3 \\ 1 \amp  1 \amp  -1 \amp  3 \amp  0 \amp  0 \amp  5 \\ 1 \amp  3 \amp  1 \amp  7 \amp  -1 \amp  -1 \amp  14 \end{array} \right]</mrow>
+            <mrow>\amp \xrightarrow{RREF}\amp \left[\begin{array}{rrrrrrr} 1 \amp  0 \amp  0 \amp  3 \amp  -\frac{3}{2} \amp  \frac{7}{6} \amp  \frac{43}{6} \\ 0 \amp  1 \amp  0 \amp  1 \amp  \frac{1}{2} \amp  -\frac{5}{6} \amp  \frac{7}{6} \\ 0 \amp  0 \amp  1 \amp  1 \amp  -1 \amp  \frac{1}{3} \amp  \frac{10}{3} \end{array} \right]</mrow>
+          </md>
+        </p>
+        <p>
+          Hence <m>A = \left[\begin{array}{rrrr} 3 \amp  -\frac{3}{2} \amp  \frac{7}{6} \amp  \frac{43}{6} \\ 1 \amp  \frac{1}{2} \amp  -\frac{5}{6} \amp  \frac{7}{6} \\ 1 \amp  -1 \amp  \frac{1}{3} \amp  \frac{10}{3} \end{array} \right]</m> Next we find <m>B</m> using RREF
+          <md>
+            <mrow>\begin{bmatrix}u_1\amp u_2\amp u_3\amp u_4\amp S(v_1)\amp S(v_2)\amp S(v_3) \end{bmatrix} \amp =\amp \left[\begin{array}{rrrrrrr} 1 \amp  0 \amp  -1 \amp  2 \amp  0 \amp  6 \amp  3 \\ -3 \amp  1 \amp  2 \amp  -8 \amp  4 \amp  12 \amp  1 \\ 2 \amp  0 \amp  -1 \amp  4 \amp  0 \amp  14 \amp  8 \\ -1 \amp  1 \amp  -1 \amp  -3 \amp  0 \amp  -2 \amp  -2 \end{array} \right]</mrow>
+            <mrow>\amp \xrightarrow{RREF}\amp \left[ \begin{array}{rrrrrrr} 1 \amp  0 \amp  0 \amp  0 \amp  8 \amp  56 \amp  19 \\ 0 \amp  1 \amp  0 \amp  0 \amp  -4 \amp  -16 \amp  -2 \\ 0 \amp  0 \amp  1 \amp  0 \amp  0 \amp  2 \amp  2 \\ 0 \amp  0 \amp  0 \amp  1 \amp  -4 \amp  -24 \amp  -7 \end{array} \right]</mrow>
+          </md>
+        </p>
+        <p>
+          Hence <m>B=\left[ \begin{array}{rrr} 8 \amp  56 \amp  19 \\ -4 \amp  -16 \amp  -2 \\ 0 \amp  2 \amp  2 \\ -4 \amp  -24 \amp  -7 \end{array} \right]</m> Now we find the matrix <m>C</m> of the composition <m>U=S\circ T</m> using RREF
+          <md>
+            <mrow>\begin{bmatrix}u_1\amp  u_2 \amp  u_3 \amp  u_4 \amp  U(u_1) \amp  U(u_2) \amp  U(u_3)\amp  U(u_4) \end{bmatrix}  \amp =\amp \left[\begin{array}{rrrrrrrr} 1 \amp  0 \amp  -1 \amp  2 \amp  9 \amp  0 \amp  -4 \amp  17 \\ -3 \amp  1 \amp  2 \amp  -8 \amp  25 \amp  -1 \amp  -5 \amp  46 \\ 2 \amp  0 \amp  -1 \amp  4 \amp  22 \amp  -1 \amp  -9 \amp  43 \\ -1 \amp  1 \amp  -1 \amp  -3 \amp  -4 \amp  1 \amp  1 \amp  -9 \end{array} \right]</mrow>
+            <mrow>\amp \xrightarrow{RREF}\amp \left[\begin{array}{rrrrrrrr} 1 \amp  0 \amp  0 \amp  0 \amp  99 \amp  -3 \amp  -31 \amp  186 \\ 0 \amp  1 \amp  0 \amp  0 \amp  -30 \amp  0 \amp  8 \amp  -54 \\ 0 \amp  0 \amp  1 \amp  0 \amp  4 \amp  -1 \amp  -1 \amp  9 \\ 0 \amp  0 \amp  0 \amp  1 \amp  -43 \amp  1 \amp  13 \amp  -80 \end{array} \right]</mrow>
+          </md>
+        </p>
+        <p>
+          This <m>C= \left[\begin{array}{rrrr} 99 \amp -3 \amp -31 \amp 186 \\ -30 \amp 0 \amp 8 \amp -54 \\ 4 \amp -1 \amp -1 \amp 9 \\ -43 \amp 1 \amp 13 \amp -80 \end{array} \right]</m>.
+        </p>
+        <p>
+          It is easy to check that <m>C=BA</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Matrix of Change of basis</title>
+    <p>
+      Let <m>\beta=\{u_1,u_2\ldots,u_n\}</m> and
+      <m>\gamma=\{v_1,v_2\ldots,v_n\}</m> be two bases of <m>\R^n</m>.
+      Recall, the the definition of the matrix of change of bases <m>[I]_\beta^\gamma</m>.
+      We obtained <m>[I]_\beta^\gamma</m> by applying RREF to the matrix <m>[B~|A]</m> and extracting the last <m>n</m> columns.
+      This is nothing but the matrix of the identity linear map
+      <m>I\colon \R^n\to \R^n</m> with respect to a basis <m>\beta</m> of the domain and <m>\gamma</m> of the codomain.
+    </p>
+    <p>
+      Now let us consider what happens to the matrix of a linear transformation
+      <m>T\colon \R^n\to \R^m</m> when we change the basis on domain and codoamin.
+      Let <m>\beta=\{u_1,u_2\ldots,u_n\}</m> and
+      <m>\gamma=\{v_1,v_2\ldots,v_m\}</m> be bases of <m>\R^n</m> and <m>\R^m</m> respectively.
+      Let <m>A =[T]_\beta^\gamma</m> be the matrix of <m>T</m> with respect to <m>\beta</m> and <m>\gamma</m>.
+      Let <m>\beta'=\{u_1',u_2'\ldots,u_n'\}</m> and
+      <m>\gamma'=\{v_1',v_2'\ldots,v_m'\}</m> be another bases of <m>\R^n</m> and <m>\R^m</m> respectively.
+      Let <m>B =[T]_{\beta'}^{\gamma'}</m> be the matrix of <m>T</m> with respect to <m>\beta'</m> and <m>\gamma'</m>.
+      How are <m>A</m> and <m>B</m> related?
+      The relation is given by the following commutative diagram.
+    </p>
+    <image source="images/257ae2d8ff1c4bb4a73cd7662397b096a6eb79ef.png"/>
+    <p>
+      From the above commutative diagram, we have
+      <me>
+        \tau A = B\rho \implies B = \tau A \rho^{-1} \text{ or }  A = \tau^{-1}B\rho
+      </me>.
+    </p>
+    <example xml:id="linalg-engg-eg35">
+      <statement>
+        <p>
+          Consider a linear map <m>T\colon \R^4\to \R^3</m> defined in the <xref ref="linalg-engg-eg34">Example</xref>.
+          Consider a basis
+          <me>
+            \beta = \left\{u_1=\left(1,-3,2,-1\right), u_2=\left(0,1,0,1\right), u_3=\left(-1,2,-1,-1\right), u_4=\left(2,-8,4,-3\right)\right\}
+          </me>
+          of <m>\R^4</m> and a basis
+          <me>
+            \gamma = \left\{v_1=\left(-1,1,1\right), v_2=\left(3,1,3\right), v_3=\left(2,-1,1\right)\right\}
+          </me>
+          of <m>\R^3</m>.
+          From <xref ref="linalg-engg-eg34">Example</xref>,
+          <m>A=[T]_\beta^\gamma=\left[\begin{array}{rrrr} 3 \amp  -\frac{3}{2} \amp  \frac{7}{6} \amp  \frac{43}{6} \\ 1 \amp  \frac{1}{2} \amp  -\frac{5}{6} \amp  \frac{7}{6} \\ 1 \amp  -1 \amp  \frac{1}{3} \amp  \frac{10}{3} \end{array} \right]</m>.
+          Let
+          <me>
+            \beta'=\{u_1'=\left(1,1,1,-1\right), u_2'=\left(1,1,-1,1\right), u_3'=\left(1,-1,1,1\right), u_4'=\left(-1,1,1,1\right)\}
+          </me>
+          be another basis of <m>\R^4</m>.
+          Let
+          <me>
+            \gamma'=\{\left(0,1,1\right), \left(1,0,1\right), \left(1,1,0\right)\}
+          </me>
+          be another basis of <m>\R^3</m>.
+          Then the matrix <m>B=[T]_{\beta'}^{\gamma'}=\left[\begin{array}{rrrr} 6 \amp  -2 \amp  0 \amp  0 \\ 2 \amp  0 \amp  2 \amp  0 \\ -1 \amp  1 \amp  1 \amp  1 \end{array} \right]</m>.
+        </p>
+        <p>
+          The matrix of change of basis <m>\rho=[I]_\beta^\{\beta'\}=\left(\begin{array}{rrrr} \frac{1}{4} \amp 0 \amp \frac{1}{4} \amp \frac{1}{4} \\ -\frac{5}{4} \amp \frac{1}{2} \amp \frac{1}{4} \amp -\frac{13}{4} \\ \frac{5}{4} \amp 0 \amp -\frac{5}{4} \amp \frac{11}{4} \\ -\frac{3}{4} \amp \frac{1}{2} \amp \frac{1}{4} \amp -\frac{9}{4} \end{array} \right)</m>.
+        </p>
+        <p>
+          The matrix of change of basis <m>\tau=[I]_\gamma^{\gamma'}=\left(\begin{array}{rrr} \frac{3}{2} \amp \frac{1}{2} \amp -1 \\ -\frac{1}{2} \amp \frac{5}{2} \amp 2 \\ -\frac{1}{2} \amp \frac{1}{2} \amp 0 \end{array} \right)</m>.
+        </p>
+        <p>
+          It is easy to check that <m>B\rho = \tau A</m>.
+        </p>
+      </statement>
+    </example>
+    <p>
+      Let <m>T\colon \R^n\to \R^n</m> be a linear transformation.
+      Let <m>\beta=\{v_1,\ldots,
+      v_n\}</m> be a basis of <m>\R^n</m> and <m>A=[T]_\beta</m>,
+      the matrix of <m>T</m> with respect to <m>\beta</m>.
+      Let <m>\gamma=\{u_1,\ldots,
+      u_n\}</m> be another basis of <m>\R^n</m> and <m>B=[T]_\gamma</m>,
+      the matrix of <m>T</m> with respect to <m>\gamma</m>.
+      Let <m>\rho=[I]_\beta^{\gamma}</m> be matrix of change of basis from <m>\beta</m> to <m>\gamma</m>.
+      Then we have <m>B = \rho^{-1}A\rho</m>.
+      In this case,
+      <m>A</m> and <m>B</m> are said to be similar matrices.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> and <m>B</m> be two real <m>n\times n</m> matrices.
+          Then <m>A</m> and <m>B</m> are called similar if there exits a non singular matrix <m>P</m> such that <m>B=P^{-1}AP</m>.
+        </p>
+      </statement>
+    </definition>
+  </subsection>
+  <subsection>
+    <title>Reflections in <m>\R^2</m></title>
+    <p>
+      Recall that the reflection <m>R_f</m> about the <m>x</m>-axis in <m>\R^2</m> is give by <m>R(x_1,x_2)=(x_1,-x_2)</m>.
+      The matrix of <m>R_f</m> with respect to the standard basis is <m>\begin{bmatrix}1 \amp 0\\0 \amp -1 \end{bmatrix}</m>.
+      Let us look at how to find the reflection about any line <m>y=mx</m> where <m>m=\tan\theta</m>.
+    </p>
+    <example xml:id="linalg-engg-eg36">
+      <statement>
+        <p>
+          Let <m>Q</m> be the reflection in <m>\R^2</m> about the line <m>y=mx</m>,
+          where <m>m=\tan\theta</m>.
+          We wish to find the matrix of <m>Q</m> with respect to the standard basis.
+        </p>
+        <p>
+          Note that <m>Q</m> can be accomplished by first rotating by <m>-\theta</m>,
+          then reflecting about <m>x</m>-axis and then rotating back by <m>\theta</m>.
+          Thus
+          <me>
+            Q=R_\theta\circ R_f\circ R_{-\theta}
+          </me>.
+          Note that <m>R_f, R_\theta</m> and <m>R_{-\theta}</m> are linear map,
+          and hence <m>Q</m> is a linear map.
+        </p>
+        <p>
+          Using the notion of matrix of composition,
+          the matrix of <m>Q</m> is given by
+          <me>
+            \begin{bmatrix}\cos (\theta) \amp  -\sin (\theta) \\\sin(\theta) \amp  \cos(\theta) \end{bmatrix} \begin{bmatrix}1 \amp  0\\0 \amp  -1 \end{bmatrix} \begin{bmatrix}\cos (-\theta) \amp  -\sin (-\theta) \\\sin(-\theta) \amp  \cos(-\theta) \end{bmatrix} =\begin{bmatrix}\cos^2\theta-\sin^2\theta \amp  2\cos\theta\sin\theta\\ 2\cos\theta\sin\theta \amp   \sin^2\theta-\cos^2\theta \end{bmatrix}
+          </me>
+        </p>
+        <p>
+          Since <m>m=\tan\theta</m>,
+          <m>\cos \theta = \frac{1}{\sqrt{1+m^2}}</m> and <m>\sin \theta = \frac{m}{\sqrt{1+m^2}}</m>.
+          Using this the matrix of <m>Q</m> with respect to the standard basis <m>\beta</m> of <m>\R^2</m>
+          <me>
+            [Q]_\beta=Q=\begin{bmatrix}\frac{1-m^2}{1+m^2} \amp  \frac{2m}{1+m^2}\\ \frac{2m}{1+m^2} \amp  \frac{m^2-1}{1+m^2} \end{bmatrix} =\frac{1}{1+m^2}\begin{bmatrix}1-m^2 \amp  2m\\ 2m \amp  m^2-1 \end{bmatrix}
+          </me>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          For the following linear transformation <m>T\colon \R^2\to \R^2</m>.
+          Show that <m>T</m> is induced by a matrix and hence find the matrix.
+        </p>
+        <p>
+          (i) <m>T</m> is reflection about <m>y</m> axis.
+        </p>
+        <p>
+          (ii) <m>T</m> is reflection about the line <m>y=x</m>
+        </p>
+        <p>
+          (iii) <m>T</m> is reflection about the line <m>y=-x</m>
+        </p>
+        <p>
+          (iv) <m>T</m> is a clockwise rotation by an angle <m>\pi/2</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          (i) Let <m>T\colon \R^3\to \R^3</m> be a linear transformation which is reflection about the <m>xy</m> plane.
+          Write <m>T</m> explicitly and hence show that it is induced by a matrix.
+        </p>
+        <p>
+          (ii) Let <m>T\colon \R^3\to \R^3</m> be a linear transformation which is reflection about the <m>yz</m> plane.
+          Write <m>T</m> explicitly and hence show that it is induced by a matrix.
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>Projections in <m>\R^2</m></title>
+    <p>
+      The linear map <m>\pi_1\colon \R^2\to \R^2</m>,
+      given <m>\pi_(x_1,x_2)=x_1</m> is the projection on to <m>x</m>-axis.
+      Similarly, <m>\pi_1\colon \R^2\to \R^2</m>,
+      given <m>\pi_(x_1,x_2)=x_2</m> is the projection on to <m>y</m>-axis.
+      It is easy to check that the matrix of <m>\pi_1</m> with respect to the standard basis is <m>\begin{bmatrix}1 \amp 0 \\0 \amp 0 \end{bmatrix}</m>.
+      Similarly, the matrix of <m>\pi_2</m> with respect to the standard basis is <m>\begin{bmatrix}0 \amp 0 \\0 \amp 1 \end{bmatrix}</m>.
+    </p>
+    <p>
+      We wish to define the projection <m>P</m> onto the line <m>y=mx</m>,
+      where <m>m=\tan\theta</m>.
+    </p>
+    <example xml:id="linalg-engg-eg37">
+      <statement>
+        <p>
+          Let <m>P</m> be the projection in <m>\R^2</m> onto the line <m>y=mx</m>,
+          where <m>m=\tan\theta</m>.
+          We wish to find the matrix of <m>Q</m> with respect to the standard basis.
+        </p>
+        <p>
+          Using a similar procedure, we have
+          <me>
+            P  =R_\theta\circ \pi_1\circ R_{-\theta}
+          </me>
+        </p>
+        <p>
+          Hence the matrix of <m>P</m> is
+          <me>
+            \begin{bmatrix}\cos (\theta) \amp  -\sin (\theta) \\\sin(\theta) \amp  \cos(\theta) \end{bmatrix} \begin{bmatrix}1 \amp  0\\0 \amp  0 \end{bmatrix} \begin{bmatrix}\cos (-\theta) \amp  -\sin (-\theta) \\\sin(-\theta) \amp  \cos(-\theta) \end{bmatrix} =\begin{bmatrix}\cos^2\theta\amp  \cos\theta\sin\theta\\ \cos\theta\sin\theta \amp   \sin^2\theta \end{bmatrix}
+          </me>.
+        </p>
+        <p>
+          After simplification, the matrix of <m>P</m> is
+          <me>
+            P =\frac{1}{1+m^2}\begin{bmatrix}1 \amp  m \\m \amp  m^2 \end{bmatrix}
+          </me>.
+        </p>
+        <p>
+          Write down the matrix of reflection about the line passing through the origin and the point <m>(a,b)</m>,
+          with <m>a\neq 0</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          If <m>P</m> is the projection onto the line <m>y=mx</m>,
+          then show that <m>P^2=P</m>.
+          In particular, <m>P^2=P</m>.
+          Thus the matrix <m>P =\frac{1}{1+m^2}\begin{bmatrix}1 \amp m \\m \amp m^2 \end{bmatrix}</m> is an idempotent matrix.
+        </p>
+        <p>
+          Write down the matrix of reflection onto the line passing through the origin and the point <m>(a,b)</m>,
+          with <m>a\neq 0</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          For the following linear transformations <m>P\colon \R^3\to T^3</m>,
+          show that its is induced by a matrix and find the matrix.
+        </p>
+        <p>
+          (i) <m>P</m> is is projection onto <m>xy</m> plane.
+        </p>
+        <p>
+          (ii) <m>P</m> is is projection onto <m>yz</m> plane.
+        </p>
+      </statement>
+    </exercise>
+    <remark>
+      <p>
+        A linear transformation <m>T\colon \R^n\to \R^m</m> is completely determined once it is defined on a basis.
+        In other words, Let <m>\beta=\{v_1,\ldots,
+        v_n\}</m> be a basis of <m>\R^n</m>.
+        Let <m>w_1,\ldots, w_n</m> be <m>n</m> vectors in <m>\R^m</m>.
+        Then there exists a unique linear transformation unique linear transformation <m>T\colon \R^n\to \R^m</m> such that
+        <m>T(v_i)=w_i</m> for <m>i=1,\ldots, n</m>.
+      </p>
+    </remark>
+    <p>
+      How is <m>T</m> defined, if <m>T(v_i)=w_i</m>?
+      For <m>v\in V</m>, there exist scalars,
+      <m>\alpha_1,\ldots, \alpha_n</m> such that <m>v=\sum \alpha_iv_i</m>.
+      Then <m>T(v)=\sum \alpha T(v_1)=\sum\alpha w_i</m>.
+    </p>
+    <example xml:id="linalg-engg-eg40">
+      <statement>
+        <p>
+          Fix a basis <m>\beta =\{ (1,1,-1),(1,-1,1),(-1,1,1)\}</m> of <m>\R^3</m>.
+          Define a linear map <m>T\colon \R^3\to \R^3</m> such that <m>T(1,1,-1)=(1,1,0), T(1,-1,1)=(1,0,1), T(-1,1,1)=(0,1,1)</m>.
+          Find <m>T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)</m>.
+        </p>
+        <p>
+          We have
+          <me>
+            T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)=T(x_1e_1+x_2e_2+x_3e_3)=x_1T(e_1)+x_2T(e_2)+x_3T(e_3)
+          </me>.
+        </p>
+        <p>
+          Thus in order to find <m>T</m> we need to know how is <m>T</m> defined on the standard basis vector.
+          First we need to find the coordinates of
+          <m>e_1,e_2,e_2</m> with respect to the basis <m>\beta</m> using RREF.
+          <me>
+            \begin{bmatrix}v_1 \amp  v_2 \amp  v_3 \amp | \amp  e_1 \amp  e_2 \amp  e_3 \end{bmatrix} = \left[\begin{array}{rrr|rrr} 1 \amp  1 \amp  -1 \amp  1 \amp  0 \amp  0 \\ 1 \amp  -1 \amp  1 \amp  0 \amp  1 \amp  0 \\ -1 \amp  1 \amp  1 \amp  0 \amp  0 \amp  1 \end{array} \right] \xrightarrow{RREF} \left[\begin{array}{rrr|rrr} 1 \amp  0 \amp  0 \amp  \frac{1}{2} \amp  \frac{1}{2} \amp  0 \\ 0 \amp  1 \amp  0 \amp  \frac{1}{2} \amp  0 \amp  \frac{1}{2} \\ 0 \amp  0 \amp  1 \amp  0 \amp  \frac{1}{2} \amp  \frac{1}{2} \end{array} \right]
+          </me>.
+        </p>
+        <p>
+          We have
+          <me>
+            \begin{aligned} e_1 = 1/2 v_1+1/2v_2 \implies   T(e_1)=1/2 w_1+1/2 w_2=(1, 1/2, 1/2).\\ e_2 = 1/2 v_1+1/2v_3 \implies   T(e_2)=1/2 w_1+1/2 w_3=(1/2, 1, 1/2).\\ e_3 = 1/2 v_2+1/2v_3 \implies T(e_3)=1/2 w_2+1/2 w_3=(1/2, 1/2, 1). \end{aligned}
+          </me>
+          <md>
+            <mrow>T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)\amp =\amp x_1T(e_1)+x_2T(e_2)+x_3T(e_3)</mrow>
+            <mrow>\amp =\amp x_1(1, 1/2, 1/2)+x_2(1/2, 1, 1/2)+x_3(1/2, 1/2, 1)</mrow>
+            <mrow>\amp =\amp  \begin{bmatrix}x_{1} + \frac{1}{2}  x_{2} + \frac{1}{2}  x_{3}\\ \frac{1}{2}  x_{1} + x_{2} + \frac{1}{2}  x_{3}\\ \frac{1}{2}  x_{1} + \frac{1}{2}  x_{2} + x_{3} \end{bmatrix} </mrow>
+          </md>.
+        </p>
+        <p>
+          It is easy to check that <m>T(v_i)=w_i</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Geometry of linear transformations</title>
+    <p>
+      We look at some specific linear transformations from <m>\R^2</m> to <m>R^2</m> and how it transforms the unit square.
+      Readers are encouraged to draw figures.
+      <ol>
+        <li>
+          <p>
+            (<em><m>x</m>-expansion</em>)
+            <me>
+              T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bmatrix} =\begin{bmatrix}a  \amp  0\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+            </me>
+            where <m>a>1</m>.
+            <figure xml:id="fig_x-expansion">
+              <caption><m>x</m>-expansion for <m>a=2</m></caption>
+              <image width="80%" source="images/x-expansion.png"/>
+            </figure>
+            Draw the figure for <m>a=2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            (<em><m>x</m>-compression</em>)
+            <me>
+              T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bmatrix} =\begin{bmatrix}a  \amp  0\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+            </me>
+            where <m>0\lt a\lt 1</m>.
+            Draw the figure for <m>a=1/2</m>.
+            <figure xml:id="fig_x-compression">
+              <caption><m>x</m>-Compression for <m>a=1/2</m></caption>
+              <image width="80%" source="images/x-compression.png"/>
+            </figure>
+          </p>
+        </li>
+        <li>
+          <p>
+            (<em><m>y</m>-expansion</em>)
+            <me>
+              T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bmatrix} =\begin{bmatrix}0  \amp  0\\0 \amp  b \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+            </me>
+            where <m>b>0</m>.
+            Draw the figure for <m>b=2</m>.
+            <figure xml:id="fig_y-expansion">
+              <caption><m>y</m>-expansion for <m>b=2</m></caption>
+              <image width="80%" source="images/y-expansion.png"/>
+            </figure>
+          </p>
+        </li>
+        <li>
+          <p>
+            (<em><m>y</m>-compression</em>)
+            <me>
+              T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bmatrix} =\begin{bmatrix}0  \amp  0\\b \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+            </me>
+            where <m>0\lt b\lt 1</m>.
+            Draw the figure for <m>b=1/4</m>.
+            <figure xml:id="fig_y-compression">
+              <caption><m>y</m>-compression for <m>b=1/2</m></caption>
+              <image width="80%" source="images/y-compression.png"/>
+            </figure>
+          </p>
+        </li>
+        <li>
+          <p>
+            (<em>positive <m>x</m>-shear</em>)
+            <me>
+              T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{bmatrix} =\begin{bmatrix}1  \amp  a\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+            </me>
+            where <m>a>0</m>.
+            Draw the figure for <m>a=1/4</m>.
+            <figure xml:id="fig_x-postive-shear">
+              <caption>Positive <m>x</m>-shear for <m>a=1/4</m></caption>
+              <image width="80%" source="images/x-positive-shear.png"/>
+            </figure>
+          </p>
+        </li>
+        <li>
+          <p>
+            (<em>negative <m>x</m>-shear</em>)
+            <me>
+              T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{bmatrix} =\begin{bmatrix}1  \amp  a\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+            </me>
+            where <m>a\lt 0</m>.
+            Draw the figure for <m>a=-1/4</m>.
+            <figure xml:id="fig_x-negative-shear">
+              <caption>Negative <m>x</m>-shear for <m>a=-1/4</m></caption>
+              <image width="80%" source="images/x-negative-shear.png"/>
+            </figure>
+          </p>
+        </li>
+        <li>
+          <p>
+            (<em>positive <m>y</m>-shear</em>)
+            <me>
+              T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{bmatrix} =\begin{bmatrix}1  \amp  0\\a \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+            </me>
+            where <m>a>0</m>.
+            Draw the figure for <m>a=1/4</m>.
+            <figure xml:id="fig_y-postive-shear">
+              <caption>Positive <m>y</m>-shear for <m>a=1/4</m></caption>
+              <image width="80%" source="images/y-positive-shear.png"/>
+            </figure>
+          </p>
+        </li>
+        <li>
+          <p>
+            (<em>negative <m>y</m>-shear</em>)
+            <me>
+              T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{bmatrix} =\begin{bmatrix}1  \amp  0\\a \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+            </me>
+            where <m>a\lt 0</m>.
+            Draw the figure for <m>a=-1/4</m>.
+            <figure xml:id="fig_y-negative-shear">
+              <caption>Negative <m>y</m>-shear for <m>a=-1/4</m></caption>
+              <image width="80%" source="images/y-negative-shear.png"/>
+            </figure>
+          </p>
+        </li>
+        <li>
+          <p>
+            Fix a positive real number <m>a</m> and define <m>D_a\colon \R^n\to \R^n</m> by <m>D_a(x)=ax</m>.
+            It is a linear map which is induced by the scalar matrix <m>a I_{n}</m>. ( <m>D_a</m> is called a <em>dilation</em>
+            if <m>a>0</m> and a <em>contraction</em>
+            if <m>a\lt 1</m>.) Draw the figure for
+            <m>D_a\colon \R^2\to \R^2</m> with <m>a=2</m> and <m>a=1/2</m>.
+            <figure xml:id="fig_dilation">
+              <caption>Dilations with <m>a=1/4</m> and <m>a=2</m>.</caption>
+              <image width="80%" source="images/dialation.png"/>
+            </figure>
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>a</m> and <m>b</m> be two positive real numbers and <m>A=\begin{bmatrix}a \amp 0 \\0 \amp b \end{bmatrix}</m>.
+            Define <m>T\colon\R^2\to \R^2</m> by <m>T(x)=Ax</m>.
+            Then (i) <m>T</m> is stretching by a factor <m>a</m> along <m>x</m>-axis and by a factor <m>b</m> along <m>y</m>-axis if <m>a,b>1</m> and (ii) <m>T</m> is contraction by a factor <m>a</m> along <m>x</m>-axis followed by a factor <m>b</m> along <m>y</m>-axis if <m>0\lt a,b\lt 1</m>.
+            <figure xml:id="fig_diag-expansion">
+              <caption>Stretching along <m>x</m> by 2 and <m>y</m>-axes by 1.5.</caption>
+              <image width="80%" source="images/diag-expansion.png"/>
+            </figure>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Projection and Reflection in <m>\R^3</m></title>
+    <example xml:id="linalg-engg-eg44">
+      <title>Rotation in $\R^3$</title>
+      <statement>
+        <p>
+          Let <m>R_{z,\theta} \colon \R^3\to \R^3</m> denote the rotation in <m>\R^3</m> about the <m>z</m>-axis through an angle <m>\theta</m> from the positive x=<m>x</m>-axis toward the positive <m>y</m>-axis
+          (that is anticlockwise).
+          Let us find the matrix of this transformation with respect to the standard basis.
+        </p>
+        <p>
+          First of notice that in this case,
+          the <m>z</m>-coordinate of any vector does not change.
+          Thus <m>R_{z,\theta}(e_3)=e^3</m>.
+          What happens to <m>e_1</m> and <m>e_2</m>?
+          They get rotated by an angle <m>\theta</m>.
+          That is <m>R_{z,\theta}(e_1)=\begin{bmatrix}\cos \theta \\\sin\theta\amp  0 \end{bmatrix}</m> and <m>R_{z,\theta}(e_2)=\begin{bmatrix}-\sin \theta \\\cos\theta\amp  0 \end{bmatrix}</m>.
+          Hence the matrix of <m>R_{z,\theta}</m> is
+          <me>
+            R_{z,\theta} =\begin{bmatrix}\cos \theta \amp  -\sin\theta\amp  0\\ \sin\theta \amp  \cos\theta \amp  0\\ 0 \amp  0 \amp  1 \end{bmatrix}
+          </me>
+        </p>
+        <p>
+          Find the matrix of <m>R_{x,\theta}</m> and <m>R_{y,\theta}</m>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="linalg-engg-eg45">
+      <statement>
+        <p>
+          [Projection onto a line in <m>\R^3</m>] Let
+          <m>v=(a,b,c)</m> be a nonzero vector in <m>\R^3</m> and <m>L</m> is the line passing through <m>(a,b,c)</m> and the origin, that is,
+          <m>L=\R_v=\{\alpha v:\alpha\in \R\}</m>.
+          We wish to find the orthogonal projection of any vector <m>u=(x,y,z)\in \R^3</m>.
+          If <m>p</m> is the orthogonal projection of <m>u</m> onto <m>L</m>,
+          then <m>p=tv</m> for some scalar <m>t</m> and <m>u-p</m> is orthogonal to <m>p</m>.
+          Reader is encouraged to draw figure.
+          From this, it is easy to see that <m>t=\frac{v\cdot u}{||v||^2}</m>.
+          Hence
+          <me>
+            p=\frac{ax+by+cz}{a^2+b^2+c^2}\begin{bmatrix}a\\b\\c \end{bmatrix} =\frac{1}{a^2+b^2+c^2} \begin{bmatrix}a^2x+aby+acz\\abx+b^2y+bcz\\acx+bcy+c^2z \end{bmatrix} = \frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ab\amp b^2\amp bc\\ac\amp bc\amp c^2 \end{bmatrix} \begin{bmatrix}x\\y\\z \end{bmatrix}
+          </me>.
+        </p>
+        <p>
+          We denote this projection by <m>P_L</m>.
+          Thus the matrix of <m>P_L</m> is
+          <me>
+            P_L=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ab\amp b^2\amp bc\\ac\amp bc\amp c^2 \end{bmatrix}
+          </me>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="linalg-engg-eg46">
+      <statement>
+        <p>
+          [Reflection about a line in <m>\R^3</m>] Let
+          <m>v=(a,b,c)</m> be a nonzero vector in <m>\R^3</m> and <m>L</m> is the line passing through <m>(a,b,c)</m>.
+          We wish to find the reflection <m>Ref_L(u)</m> of any vector
+          <m>u=(x,y,z)\in \R^3</m> through the line <m>L</m>.
+          Suppose <m>P_L(u)</m> is the orthogonal projection of <m>u</m> onto <m>L</m>.
+          Then <m>P_L(u)</m> is the mid point of <m>u</m> and <m>Ref_L(u)</m>.
+          Hence <m>Ref_L(u)=2P_L(u)-u</m>.
+          By the Ex.
+          <xref ref="sumoflinearmaps"></xref>,
+          the matrix of <m>Ref_L</m> is given by
+          <md>
+            <mrow>Ref_L\amp =\amp \frac{2}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ab\amp b^2\amp bc\\ac\amp bc\amp c^2 \end{bmatrix} -\begin{bmatrix}1\amp 0\amp 0\\0\amp  1\amp  0\\0 \amp  0 \amp 1 \end{bmatrix}</mrow>
+            <mrow>\amp =\amp \frac{2}{a^2+b^2+c^2}\begin{bmatrix}a^2-b^2-c^2\amp 2ab\amp 2ac\\2ab\amp b^2-a^2-c^2\amp 2bc\\2ac\amp 2bc\amp c^2-a^2-b^2 \end{bmatrix}</mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+    <example xml:id="linalg-engg-eg48">
+      <statement>
+        <p>
+          [Projection onto a plane in <m>\R^3</m>] Let <m>\pi</m> be a plane given by the equation <m>ax+by+cz=0</m>.
+          Then the vector <m>n=(a,b,c)</m> is normal to <m>\pi</m>.
+          We wish to find the orthogonal projection of any vector <m>v=(x,y,z)</m> onto <m>\pi</m>.
+        </p>
+        <p>
+          Let <m>P_\pi(v)</m> be denote the projection of <m>v</m> onto <m>\pi</m> and <m>P_n(v)</m>,
+          the projection of <m>v</m> onto to <m>n</m>. (Draw figure) Then
+          <me>
+            P_\pi(v)=v-P_n(v)
+          </me>.
+        </p>
+        <p>
+          Hence the the matrix of <m>P_\pi</m> is given by
+          <md>
+            <mrow>P_\pi\amp =\amp \begin{bmatrix}1\amp 0\amp 0\\0\amp  1\amp  0\\0 \amp  0 \amp 1 \end{bmatrix} -\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ab\amp b^2\amp bc\\ac\amp bc\amp c^2 \end{bmatrix}</mrow>
+            <mrow>\amp =\amp \frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2\amp -ab\amp -ac\\-ab\amp a^2+c^2\amp -bc\\-ac\amp -bc\amp a^2+b^2 \end{bmatrix}</mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+    <example xml:id="linalg-engg-eg49">
+      <statement>
+        <p>
+          [Reflection through a plane in <m>\R^3</m>] Let <m>\pi</m> be a plane given by the equation <m>ax+by+cz=0</m>.
+          Then the vector <m>n=(a,b,c)</m> is normal to <m>\pi</m>.
+          We wish to find the reflection
+          <m>Ref_\pi(v)</m> of any vector <m>v=(x,y,z)</m> through <m>\pi</m>.
+        </p>
+        <p>
+          Suppose <m>P_\pi(v)</m> is the orthogonal projection of <m>v</m> onto <m>\pi</m>.
+          Then it is easy to see that
+          <me>
+            P_M(v)=\frac{1}{2}\left[v+Ref_\pi(v)\right]
+          </me>.
+        </p>
+        <p>
+          Now it is easy to show that the matrix of <m>Ref_\pi</m> is given by
+          <me>
+            Ref_\pi =   \frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2-a^2\amp -2ab\amp -2ac\\-2ab\amp a^2+c^2-b^2\amp -2bc\\-2ac\amp -2bc\amp a^2+b^2-c^2 \end{bmatrix}
+          </me>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>
