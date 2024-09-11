@@ -250,6 +250,128 @@ is a basis of <m>{\rm col}(A)</m>. Notice that <m>\dim{({\rm col}(A))}=\dim{({\r
       </theorem>
       
     </p>
+
+    <p>
+      <example>
+        Consider a matrix <m>A=\left[\begin{array}{rrrrr}
+          1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\
+          -1 \amp  1 \amp  -5 \amp  0 \amp  -2 \\
+          2 \amp  0 \amp  4 \amp  2 \amp  4 \\
+          3 \amp  2 \amp  0 \amp  1 \amp  2 \\
+          1 \amp  -3 \amp  11 \amp  3 \amp  7 \\
+          4 \amp  1 \amp  5 \amp  2 \amp  5
+        \end{array}\right]</m>. Let us find the null space of <m>A</m>. That is,  find a basis of <m>{\cal N}(A)</m>.
+        
+        The null space of <m>A</m> is given by
+       <md>
+        <mrow>{\cal N}(A) =\amp  \{x\in \R^5:Ax=0\}</mrow>
+        <mrow> =\amp  \left\{\begin{bmatrix} x_1\\x_2\\\vdots\\x_5\end{bmatrix}: 
+        \left[\begin{array}{rrrrr}
+          1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\
+          -1 \amp  1 \amp  -5 \amp  0 \amp  -2 \\
+          2 \amp  0 \amp  4 \amp  2 \amp  4 \\
+          3 \amp  2 \amp  0 \amp  1 \amp  2 \\
+          1 \amp  -3 \amp  11 \amp  3 \amp  7 \\
+          4 \amp  1 \amp  5 \amp  2 \amp  5
+        \end{array}\right]\begin{bmatrix} x_1\\x_2\\\vdots\\x_5\end{bmatrix}=\begin{bmatrix} 0\\0\\\vdots\\0\end{bmatrix}
+        \right\}</mrow>
+        <mrow>=\amp \left\{\begin{bmatrix} x_1\\x_2\\\vdots\\x_5\end{bmatrix}: 
+        \left[\begin{array}{rrrrr}
+          1 \amp  0 \amp  2 \amp  0 \amp  1 \\
+          0 \amp  1 \amp  -3 \amp  0 \amp  -1 \\
+          0 \amp  0 \amp  0 \amp  1 \amp  1 \\
+          0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+          0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+          0 \amp  0 \amp  0 \amp  0 \amp  0
+        \end{array}\right]
+        \begin{bmatrix} x_1\\x_2\\\vdots\\x_5\end{bmatrix}=\begin{bmatrix} 0\\0\\\vdots\\0\end{bmatrix}
+        \right\}\quad \text{using RREF}</mrow>
+        <mrow> =\amp 
+        \left\{\begin{bmatrix} x_1\\x_2\\\vdots\\x_5\end{bmatrix}: 
+        x_1+2x_3+x_5=0, x_2-3x_3-x_5=0,x_4+x_5=0
+        \right\}</mrow>
+        <mrow> =\amp 
+        \left\{\begin{bmatrix} \alpha\\\beta\\\alpha+\beta\\2\alpha+\beta\\-2\alpha-\beta\end{bmatrix}:\alpha,\beta\in\R \right\}</mrow>
+        <mrow>  =\amp  
+        \left\{
+        \alpha \begin{bmatrix} 
+          1 \\0\\1\\3\\-3\end{bmatrix}+\beta\begin{bmatrix} 
+          0 \\1\\1\\2\\-2\end{bmatrix}:\alpha,\beta\in\R 
+        \right\}
+        </mrow>
+      </md>
+        Thus <m>\dim{{\cal N}(A)}=2</m> and <m>\delta =\{(1,0,1,3,-3),(0,1,1,2,-2)\}</m> is a basis of <m>{\cal N}(A)</m>. 
+        
+        The <m>\dim{{\cal N}(A)}</m> is called the nullity of <m>A</m>. 
+        Notice that for this matrix <me>{\rm nullity}(A)+{\rm rank}(A)=\text{ number of columns of }A.</me>
+        This is true for any matrix <m>A</m>.
+        
+        
+        
+      </example>
+    </p>
+
+    <p>
+      <example>
+        Consider the matrix <m>A=\left[\begin{array}{rrrrrr}
+          1 \amp  -1 \amp  2 \amp  3 \amp  1 \amp  4 \\
+          2 \amp  1 \amp  0 \amp  2 \amp  -3 \amp  1 \\
+          -4 \amp  -5 \amp  4 \amp  0 \amp  11 \amp  5 \\
+          -1 \amp  0 \amp  2 \amp  1 \amp  3 \amp  2 \\
+          -2 \amp  -2 \amp  4 \amp  2 \amp  7 \amp  5
+        \end{array}\right]</m>. Let us find the image space, <m>{\cal R}(A)</m> of <m>A</m>. 
+
+
+        Let <m>b = \begin{bmatrix} b_1\\b_2\\b_3\\b_4\\b_5\end{bmatrix}\in {\cal R}(A)</m> lies in then there exists <m>x\in\R^6</m> such that <m>Ax=b</m>, In particular <m>Ax=b</m> has a solution. Thus to find a solution we apply the RREF to the augmented matrix <m>[A|b]</m>. It is easy to see that 
+<me>RREF(A)=
+\left[\begin{array}{rrrrrrr}
+	1 \amp  0 \amp  0 \amp  1 \amp  -\frac{5}{4} \amp  \frac{3}{4} \amp  \frac{1}{4} b_{1} + \frac{1}{4} b_{2} - \frac{1}{4} b_{4} \\
+	0 \amp  1 \amp  0 \amp  0 \amp  -\frac{1}{2} \amp  -\frac{1}{2} \amp  -\frac{1}{2} b_{1} + \frac{1}{2} b_{2} + \frac{1}{2} b_{4} \\
+	0 \amp  0 \amp  1 \amp  1 \amp  \frac{7}{8} \amp  \frac{11}{8} \amp  \frac{1}{8} b_{1} + \frac{1}{8} b_{2} + \frac{3}{8} b_{4} \\
+	0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  -2 b_{1} + 3 b_{2} + b_{3} \\
+	0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  -b_{1} + b_{2} - b_{4} + b_{5}
+\end{array}\right]
+</me>
+This means that <m>Ax=b</m> has a solution iff 
+<me>-2 b_{1} + 3 b_{2} + b_{3}=0 \text{ and }-b_{1} + b_{2} - b_{4} + b_{5}=0</me>. Solving these equations, it is easy to see that 
+
+<md>
+  <mrow>
+{\cal R}(A)=\amp \left\{\begin{bmatrix}
+b_1\\b_2\\b_3\\b_4\\b_5
+\end{bmatrix}: -2 b_{1} + 3 b_{2} + b_{3}=0, -b_{1} + b_{2} - b_{4} + b_{5}=0\right\}</mrow>
+<mrow> =\amp  \left\{\begin{bmatrix}
+	b_1\\b_2\\2b_1-3b_2\\b_4\\b_1-b_2+b4
+\end{bmatrix}:b_1,b_2,b_4\in \R\right\}</mrow>
+<mrow> =\amp \left\{b_1\begin{bmatrix}1\\0\\2\\0\\1\end{bmatrix}+
+b_2\begin{bmatrix}0\\1\\-3\\0\\-1\end{bmatrix}+
+b_4\begin{bmatrix}0\\0\\0\\1\\1\end{bmatrix}:b_1,b_2,b_4\in \R\right\}
+</mrow>
+</md>
+Thus <me>
+  \left\{\begin{bmatrix}1\\0\\2\\0\\1\end{bmatrix},
+      \begin{bmatrix}0\\1\\-3\\0\\-1\end{bmatrix},
+      \begin{bmatrix}0\\0\\0\\1\\1\end{bmatrix}
+       \right\}
+       </me>
+       is a basis of <m>{\cal R}(A)</m> which is same as the column space of <m>A</m>.
+  Note that <m>{\cal R}(A)</m> is null space of the matrix  
+  <m>\begin{bmatrix} -2 \amp  3 \amp  1 \amp  0 \amp  0\\-1\amp  1\amp  0 \amp -1 \amp  1 \end{bmatrix}</m>.
+  
+      </example>
+    </p>
+
+  <p>
+    <theorem xml:id="sec2-3-thm-rank-nullity">
+      <statement>
+        <p>
+        	Let <m>A </m>be <m>m\times n</m> real matrix. Then 
+	<me>{\rm rank}(A)+{\rm nullity}(A)=n</me>.  
+        </p>
+      </statement>
+    </theorem>
+    
+  </p>
 <!--
 <p>
   <figure xml:id="fig-sage-cubic">
