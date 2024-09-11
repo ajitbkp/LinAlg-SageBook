@@ -171,6 +171,85 @@ Since the number of elements any two bases are same. This leads to the dinition 
   Then the non-zero rows in RREF(<m>A</m>) form a basis of <m>W</m>.  
   </p>
   
+  <p>
+  <example>
+ <p>         Consider the set of vectors <m>v_1 =\left(1,-1,2,3,1,4\right)</m>, <m>v_2=\left(2,1,0,2,-3,1\right)</m>, <m>v_3=\left(-4,-5,4,0,11,5\right)</m>, <m>v_4=\left(-1,0,2,1,3,2\right)</m> and <m>v_5=\left(-2,-2,4,2,7,5\right)</m>. Let <m>W</m> be the linear span of <m>\{v_1,v_2,v_3,v_4,v_5\}</m>. Let us find a basis and hence the dimension of <m>W</m>. 
+ </p>
+
+    <p>
+            We construct the matrix <m>A</m> whose rows are <m>\{v_1,v_2,v_3,v_4,v_5\}</m> and apply RREF.
+     
+                <me>
+                RREF\left(\left[\begin{array}{rrrrrr}
+                  1 \amp  -1 \amp  2 \amp  3 \amp  1 \amp  4 \\
+                  2 \amp  1 \amp  0 \amp  2 \amp  -3 \amp  1 \\
+                  -4 \amp  -5 \amp  4 \amp  0 \amp  11 \amp  5 \\
+                  -1 \amp  0 \amp  2 \amp  1 \amp  3 \amp  2 \\
+                  -2 \amp  -2 \amp  4 \amp  2 \amp  7 \amp  5
+                \end{array}\right]\right)=\left[\begin{array}{rrrrrr}
+                1 \amp  0 \amp  0 \amp  1 \amp  -\frac{5}{4} \amp  \frac{3}{4} \\
+                0 \amp  1 \amp  0 \amp  0 \amp  -\frac{1}{2} \amp  -\frac{1}{2} \\
+                0 \amp  0 \amp  1 \amp  1 \amp  \frac{7}{8} \amp  \frac{11}{8} \\
+                0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+                0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0
+                \end{array}\right]</me>
+
+           Thus <m>W</m> has a basis consisting of three non zero rows of <m>RREF(A)</m>. That is, 
+              <me>\beta = \left\{\left(1 , 0 , 0 , 1 , -\frac{5}{4} , \frac{3}{4}\right),
+              \left(0 , 1 , 0 , 0 , -\frac{1}{2} , -\frac{1}{2}\right),
+              \left(0 , 0 , 1 , 1 , \frac{7}{8} , \frac{11}{8}\right)\right\}</me> is basis of <m>W</m> and it is a 3 dimensional subspace of <m>\R^6</m>.
+              Note that <m>W</m> is also the row space of <m>A</m>.       
+              
+              <p>
+              Note that each column of <m>A</m> is a vector in <m>\R^5</m>. Let us find the column space of <m>A</m>. Thus to find the <m>{\rm col}(A)</m>, we take the transpose of <m>A</m> and apply the RREF. 
+              </p>
+<me>
+RREF\left(\left[\begin{array}{rrrrr}
+	1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\
+	-1 \amp  1 \amp  -5 \amp  0 \amp  -2 \\
+	2 \amp  0 \amp  4 \amp  2 \amp  4 \\
+	3 \amp  2 \amp  0 \amp  1 \amp  2 \\
+	1 \amp  -3 \amp  11 \amp  3 \amp  7 \\
+	4 \amp  1 \amp  5 \amp  2 \amp  5
+\end{array}\right]\right)=
+\left[\begin{array}{rrrrr}
+	1 \amp  0 \amp  2 \amp  0 \amp  1 \\
+	0 \amp  1 \amp  -3 \amp  0 \amp  -1 \\
+	0 \amp  0 \amp  0 \amp  1 \amp  1 \\
+	0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+	0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+	0 \amp  0 \amp  0 \amp  0 \amp  0
+\end{array}\right]
+</me>
+
+Thus the basis <m>\gamma</m> of  <m>{\rm col}(A)</m> consists of three non-zero rows of <m>RREF(A^T)</m>. Thus 
+<me>
+\gamma=\{(1,0,2,0,1),(0,1,-3,0,-1),(0,0,0,1,1)\}
+</me>
+is a basis of <m>{\rm col}(A)</m>. Notice that <m>\dim{({\rm col}(A))}=\dim{({\rm row}(A))}</m>.
+        </p>
+      </example>
+    </p>
+
+    <p>
+      <definition xml:id="def-row-column-rank">
+        <statement>
+          <p>
+            The <m>\dim{({\rm col}(A))}</m> is called the <alert>column rank</alert> of <m>A</m> and <m>\dim{({\rm row}(A))}</m> is called the <alert>row rank </alert>of <m>A</m>.	    
+          </p>
+        </statement>
+      </definition>
+    </p>
+    <p>
+      <theorem xml:id="thm-row-rank-col-rank">
+        <statement>
+          <p>
+            The row rank and column rank of any matrix are same. This is called the rank of the matrix.
+          </p>
+        </statement>
+      </theorem>
+      
+    </p>
 <!--
 <p>
   <figure xml:id="fig-sage-cubic">
