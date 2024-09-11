@@ -718,7 +718,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Basis and Dimension",
-  "body": " Basis and Dimension   Basis   A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of . Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .  Similarly one can define a basis of any subspace of .      It is easy to prove the follwoing theorem which is opent taken as definition in many books.     A set of vectors is called a basis of iff (i) and is linearly independent.       (i) is a basis of called the standard basis of .  (ii) is a basis of .  (iii) is a basis of called the standard basis of .  (iv) is a basis of .    In , we define where component is 1 rest are zeros. Then it is easy to see that is a bais of called the standard basis .    Consider the plane . Note that, here and can be thought of as free variables. Any point , we have Thus spans . It is easy to see that is linearly independent. Hence is a basis of . In fact, any two vectors in which are linearly independent form a basis of .       Any set of linearly independent vectors forms a basis of .       Follows from Theorem .       Let be a basis of a subscape of with elements. Then any set with elements is linearly dependent.       Let be scalars such that Since is a basis of , for each , we have Substituting this in Equation , we get Collecting the coefficients of in the Equation , we get Since is lineary independent, we have  These are homogeneous linear equations in variables . Hence it has a non zero solution. In particular, there exist scalars, not all zero such that . Hence is linearly dependent.     Let be a basis of a subscape of with elements. If is a linearly independet subset in , then .       Let and be two bases of a subscape of . Then and have the same number of elements.       Suppose and . Since is a basis and is linearly independet, by Corollary , . Similarly is a basis and is linearly independet, we have . Hence .   Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.    Let be subspace of . The number of elements in a basis of is called the dimension of .       (i) is a -dimensional vector space over .  (ii) Any plane passing through origin in is a 2 dimensional subspace.  (iii) is dimensional subspace of . Write down a basis of .  (iv) is a 2-dimensional subspace of . Write dowm a basis of .     How to find basis of a subspace?   Suppose is subspace spanned by a set of vectors, say, in . How to find a basis of ? Note that . In order to find a basis of , we construct a matrix whose rows are . Find the reduced-row-echelon form of . Then the non-zero rows in RREF( ) form a basis of .    Consider the set of vectors , , , and . Let be the linear span of . Let us find a basis and hence the dimension of .  We construct the matrix whose rows are and apply RREF. Thus has a basis consisting of three non zero rows of . That is, is basis of and it is a 3 dimensional subspace of . Note that is also the row space of . Note that each column of is a vector in . Let us find the column space of . Thus to find the , we take the transpose of and apply the RREF.  Thus the basis of consists of three non-zero rows of . Thus is a basis of . Notice that .       The is called the column rank of and is called the row rank of .        The row rank and column rank of any matrix are same. This is called the rank of the matrix.      Consider a matrix . Let us find the null space of . That is, find a basis of . The null space of is given by Thus and is a basis of . The is called the nullity of . Notice that for this matrix This is true for any matrix .    Consider the matrix . Let us find the image space, of . Let lies in then there exists such that , In particular has a solution. Thus to find a solution we apply the RREF to the augmented matrix . It is easy to see that This means that has a solution iff . Solving these equations, it is easy to see that Thus is a basis of which is same as the column space of . Note that is null space of the matrix .      Let be real matrix. Then .      "
+  "body": " Basis and Dimension   Basis   A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of . Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .  Similarly one can define a basis of any subspace of .      It is easy to prove the follwoing theorem which is opent taken as definition in many books.     A set of vectors is called a basis of iff (i) and is linearly independent.       (i) is a basis of called the standard basis of .  (ii) is a basis of .  (iii) is a basis of called the standard basis of .  (iv) is a basis of .    In , we define where component is 1 rest are zeros. Then it is easy to see that is a bais of called the standard basis .    Consider the plane . Note that, here and can be thought of as free variables. Any point , we have Thus spans . It is easy to see that is linearly independent. Hence is a basis of . In fact, any two vectors in which are linearly independent form a basis of .       Any set of linearly independent vectors forms a basis of .       Follows from Theorem .       Let be a basis of a subscape of with elements. Then any set with elements is linearly dependent.       Let be scalars such that Since is a basis of , for each , we have Substituting this in Equation , we get Collecting the coefficients of in the Equation , we get Since is lineary independent, we have  These are homogeneous linear equations in variables . Hence it has a non zero solution. In particular, there exist scalars, not all zero such that . Hence is linearly dependent.     Let be a basis of a subscape of with elements. If is a linearly independet subset in , then .       Let and be two bases of a subscape of . Then and have the same number of elements.       Suppose and . Since is a basis and is linearly independet, by Corollary , . Similarly is a basis and is linearly independet, we have . Hence .   Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.    Let be subspace of . The number of elements in a basis of is called the dimension of .       (i) is a -dimensional vector space over .  (ii) Any plane passing through origin in is a 2 dimensional subspace.  (iii) is dimensional subspace of . Write down a basis of .  (iv) is a 2-dimensional subspace of . Write dowm a basis of .     How to find basis of a subspace?   Suppose is subspace spanned by a set of vectors, say, in . How to find a basis of ? Note that . In order to find a basis of , we construct a matrix whose rows are . Find the reduced-row-echelon form of . Then the non-zero rows in RREF( ) form a basis of .    Consider the set of vectors , , , and . Let be the linear span of . Let us find a basis and hence the dimension of .  We construct the matrix whose rows are and apply RREF. Thus has a basis consisting of three non zero rows of . That is, is basis of and it is a 3 dimensional subspace of . Note that is also the row space of . Note that each column of is a vector in . Let us find the column space of . Thus to find the , we take the transpose of and apply the RREF.  Thus the basis of consists of three non-zero rows of . Thus is a basis of . Notice that .       The is called the column rank of and is called the row rank of .        The row rank and column rank of any matrix are same. This is called the rank of the matrix.      Consider a matrix . Let us find the null space of . That is, find a basis of . The null space of is given by Thus and is a basis of . The is called the nullity of . Notice that for this matrix This is true for any matrix .    Consider the matrix . Let us find the image space, of . Let lies in then there exists such that , In particular has a solution. Thus to find a solution we apply the RREF to the augmented matrix . It is easy to see that This means that has a solution iff . Solving these equations, it is easy to see that Thus is a basis of which is same as the column space of . Note that is null space of the matrix .      Let be real matrix. Then .       Let be a basis of . Let . Then we know that there exists unique scalars such that . Then are called the coordinates of with respect to the basis .    Notice that the order in which basis vectors appear is important. Suppose . Then is also a basis of . However the coordinates of with respect to the basis is . This is the reason basis of is called an ordered basis . By a basis we will always mean an ordered basis.   How to find the coordinates of a vector w.r.t. a given basis?   Suppose be a basis of and . How to find the coordinates of with respect to ? Let . We need to find . Note that Thus to find , we need to solve , where is the matrix whose columns are . This can be done using the RREF. Let us illustrate this with few examples.    If . Then . In particular is the coordinate of with respect to the standard basis .      Consider a basis . Find the coordinates of with respect to . In order to find the coordinates of with respect to , we solve the system where and . Using RREF Hence the coordinates of w.r.t. is .      Find the coordinates of the vector with respect to a basis\\\\ of . Using the RREF we have Hence the coordinates of with respect the given basis is .      Find the coordinates of the vector with respect to a basis of . Using the RREF we have Hence the coordinates of with respect the given basis is .     Change of bases.  Let and be two bases of . Fix a vector . Let and be the coordinates of with respect to and respectively. Then we have Similarly Thus we have The matrices and are called transition matrices . We denotes by and by . Note that  Furthermore, the transition matrix can be obtained by applying RREF to the and extracting the last columns. Let us illustrate this with an example.     Consider , and be two bases of . Consider a vector . We have First we find and .  Similarly  Now to find the transition matrix , we have  It is easy to verify that . Similarly to find the transition matrix , we have  It is easy to verify that .      What are all subspaces of and ?    If is a subspace of , then it is null space of some matrix.  We end this chapter by look at a bigger example. Here we also illustrate RREF gives several informations on a matrix.   Consider a set of 7 vectors .  Define the matrix whose columns are and apply RREF to .  From the RREF of , we have the following observations: (i) The reduced row-echelon form of has 5 non zero rows. This means the rank of is 5. In particular, is singular.  (ii) The pivots columns are 1, 2, 4, 5, 7. In particular, are linearly independent and forms a basis of the subspace spanned by .  (iii) The 3rd columns gives as linear combinations of and . In particular, . Similarly .  (iv) Since rank of is 5, the nullity of is 2.  (v) First five rows of constitute a basis of the row space of .      "
 },
 {
   "id": "def-sec2-2-LI",
@@ -890,6 +890,87 @@ var ptx_lunr_docs = [
   "number": "2.4.16",
   "title": "",
   "body": "  Let be real matrix. Then .   "
+},
+{
+  "id": "def-sec2-1-coordinates",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#def-sec2-1-coordinates",
+  "type": "Definition",
+  "number": "2.4.17",
+  "title": "",
+  "body": "  Let be a basis of . Let . Then we know that there exists unique scalars such that . Then are called the coordinates of with respect to the basis .   "
+},
+{
+  "id": "sec-2-3-basis-dimension-29-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-29-1",
+  "type": "Example",
+  "number": "2.4.18",
+  "title": "",
+  "body": " If . Then . In particular is the coordinate of with respect to the standard basis .  "
+},
+{
+  "id": "sec-2-3-basis-dimension-30-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-30-1",
+  "type": "Example",
+  "number": "2.4.19",
+  "title": "",
+  "body": " Consider a basis . Find the coordinates of with respect to . In order to find the coordinates of with respect to , we solve the system where and . Using RREF Hence the coordinates of w.r.t. is .  "
+},
+{
+  "id": "sec-2-3-basis-dimension-31-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-31-1",
+  "type": "Example",
+  "number": "2.4.20",
+  "title": "",
+  "body": " Find the coordinates of the vector with respect to a basis\\\\ of . Using the RREF we have Hence the coordinates of with respect the given basis is .  "
+},
+{
+  "id": "sec-2-3-basis-dimension-32-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-32-1",
+  "type": "Example",
+  "number": "2.4.21",
+  "title": "",
+  "body": " Find the coordinates of the vector with respect to a basis of . Using the RREF we have Hence the coordinates of with respect the given basis is .  "
+},
+{
+  "id": "sec2-3-change-of-basis-3-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-3-1",
+  "type": "Example",
+  "number": "2.4.22",
+  "title": "",
+  "body": " Consider , and be two bases of . Consider a vector . We have First we find and .  Similarly  Now to find the transition matrix , we have  It is easy to verify that . Similarly to find the transition matrix , we have  It is easy to verify that .  "
+},
+{
+  "id": "sec-2-3-basis-dimension-34-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-34-1",
+  "type": "Problem",
+  "number": "2.4.23",
+  "title": "",
+  "body": "What are all subspaces of and ? "
+},
+{
+  "id": "sec-2-3-basis-dimension-35-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-35-1",
+  "type": "Problem",
+  "number": "2.4.24",
+  "title": "",
+  "body": "If is a subspace of , then it is null space of some matrix. "
+},
+{
+  "id": "sec-2-3-basis-dimension-36-1",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#sec-2-3-basis-dimension-36-1",
+  "type": "Example",
+  "number": "2.4.25",
+  "title": "",
+  "body": " Consider a set of 7 vectors .  Define the matrix whose columns are and apply RREF to .  From the RREF of , we have the following observations: (i) The reduced row-echelon form of has 5 non zero rows. This means the rank of is 5. In particular, is singular.  (ii) The pivots columns are 1, 2, 4, 5, 7. In particular, are linearly independent and forms a basis of the subspace spanned by .  (iii) The 3rd columns gives as linear combinations of and . In particular, . Similarly .  (iv) Since rank of is 5, the nullity of is 2.  (v) First five rows of constitute a basis of the row space of .   "
 },
 {
   "id": "chap3-LT",
