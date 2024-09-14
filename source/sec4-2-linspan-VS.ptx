@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec4-2-linspan-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Linear Span</title>
+    <introduction>
+      <p>
+        
+      
+    <p>
+      We have already defined linear combinations linear span of a set of vectors in <m>\R^n</m>.
+      The same one can defined in any vector space.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space over <m>\R</m>.
+          Let <m>S=\{v_1,\ldots, v_k\}</m> be a set of vectors in <m>V</m>.
+          Then a vector <m>v</m> is called a linear combination of
+          <m>v_1,\ldots,
+          v_k</m> if there exist scalars <m>\alpha_1,\ldots, \alpha_k</m> such that
+          <me>
+            v = \alpha_1 v_1+\cdots+\alpha_kv_k
+          </me>.
+        </p>
+        <p>
+          The set
+          <me>
+            L(S):=\{\alpha_1 v_1+\cdots+\alpha_kv_k:\alpha_1,\ldots,\alpha_k\in \R\}
+          </me>
+          is called the linear span or spanning set of <m>v_1,\ldots, v_k</m>.
+          We know that <m>L(S)</m> is a vector space of <m>V</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      If <m>S</m> is any subset of <m>V</m>
+      (may be infinite),
+      then <m>L(S)</m> is the set of all finite linear combinations of elements from <m>S</m>.
+      In particular,
+      <m>v\in L(S)</m> if there exits <m>k\in \N</m> and scalars
+      <m>\alpha_1,\ldots,\alpha_k\in \R</m> such that <m>v = \alpha_1 v_1+\cdots+\alpha_kv_k</m>.
+    </p>
+    <problem>
+      <statement>
+        <p>
+          For any subset <m>S\subset V</m>,
+          <m>L(S)</m> is a subspace of <m>V</m>.
+        </p>
+      </statement>
+    </problem>
+    <example>
+      <statement>
+        <p>
+          Let <m>v_1=(1,2,-1)</m> and
+          <m>v_2=(3,1,2)</m> and <m>W = \{\alpha_1v_1+\alpha_2v_2:\alpha_1,\alpha_2\in \R\}</m>.
+          What is <m>W</m>?
+          Can identify it geometrically?
+          Yes, it is a plane passing through the origin.
+          That the <m>W</m> can be written as
+          <m>W=\{(x,y,z):ax+by+cz=0\}</m> for some <m>(a,b,c)\neq (0,0,0)</m>?
+          Can you find what are <m>a,b,c</m>.
+        </p>
+        <p>
+          From the concept of dot product,
+          it easy to identify <m>(a,b,c)</m> as a vector which is orthogonal/perpendicular to both <m>v_1</m> and <m>v_2</m>.
+          In particular,
+          we can find <m>(a,b,c)</m> and <m>v_1\times v_2</m>,
+          the cross product of <m>v_1</m> and <m>v_2</m>.
+        </p>
+        <p>
+          Suppose, we do not want to use the above concept to find <m>(a,b,c)</m>,
+          then what do we do?
+        </p>
+        <p>
+          Suppose <m>(x,y,z)\in W</m>, Then there exists scalars <m>\alpha</m> and <m>\beta</m> such that
+          <me>
+            \begin{pmatrix}x\\y\\z \end{pmatrix}  =\alpha \begin{pmatrix}1\\2\\-1 \end{pmatrix} +\beta \begin{pmatrix}3\\1\\2 \end{pmatrix}  = \begin{pmatrix}1 \amp  3\\2 \amp  1 \\-1 \amp  2 \end{pmatrix} \begin{pmatrix}\alpha\\\beta \end{pmatrix}
+          </me>.
+        </p>
+        <p>
+          In particular,
+          <m>W</m> is the image space of <m>\begin{pmatrix}1 \amp 3\\2 \amp 1 \\-1 \amp 2 \end{pmatrix}</m>.
+        </p>
+        <p>
+          We need to find <m>(a,b,c)</m> such that
+          <m>ax+by+cz=0</m> for any <m>(x,y,z)\in W</m>.
+          In particular, we have
+          <me>
+            a(\alpha+2\beta)+b(2\alpha+\beta)+c(-\alpha+2\beta)=0
+          </me>
+          for any <m>\alpha,\beta\in \R</m>.
+          Note that <m>\alpha,\beta</m> is our choice and we can choose conveniently to find <m>a,
+          b, c</m>.
+          It is easy to see that
+          <md>
+            <mrow>a+2b-c \amp  = \amp  0, \text{ for \(\alpha=1,\beta=0\) }</mrow>
+            <mrow>3a+b+2c \amp  = \amp  0, \text{ for \(\alpha=0,\beta=1\) }</mrow>
+          </md>
+        </p>
+        <p>
+          This is same say substituting <m>v_1,v_2</m> in the equation <m>ax=by=cz=0</m>.
+        </p>
+        <p>
+          In particular, we have <m>a,b,c</m> such that
+          <me>
+            \begin{pmatrix}1 \amp  2 \amp  -1\\ 3 \amp  1 \amp  2 \end{pmatrix} \begin{pmatrix}a\\b\\c \end{pmatrix} =0
+          </me>.
+        </p>
+        <p>
+          Thus <m>(a,b,c)</m> is the kernel of
+          <m>B=\begin{pmatrix}1 \amp 2 \amp -1\\ 3 \amp 1 \amp 2 \end{pmatrix}</m> and <m>W</m> is the orthogonal complement of kernel of <m>B</m>.
+        </p>
+        <p>
+          Solving the above equations,
+          we can find <m>a=1,b=-1,c=-1</m> as one of the choices.
+          This implies <m>W</m> is the plane <m>x-y+z=0</m>.
+        </p>
+      </statement>
+    </example>
+    <problem>
+      <statement>
+        <p>
+          Let <m>V=M_2(\R)</m> with usual addition and scalar multiplication
+          <me>
+            S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  1 \\1 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\0 \amp  1 \end{bmatrix} \right\}
+          </me>.
+        </p>
+        <p>
+          Then <m>L(S)</m> is the set of <m>2\times 2</m> symmetric matrices.
+        </p>
+      </statement>
+    </problem>
+    <problem>
+      <statement>
+        <p>
+          Let <m>V=M_2(\R)</m> with usual addition and scalar multiplication
+          <me>
+            S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  1 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\1 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\0 \amp  1 \end{bmatrix} \right\}
+          </me>.
+        </p>
+        <p>
+          Then <m>L(S)=M_2(\R)</m>.
+        </p>
+      </statement>
+    </problem>
+    <problem>
+      <statement>
+        <p>
+          Let <m>S =\{1,x,x^2,\ldots, x^n\}</m>.
+          Then <m>L(S)</m> is the set of all polynomials of degree less than or equals to <m>n</m>.
+        </p>
+      </statement>
+    </problem>
+    <problem>
+      <statement>
+        <p>
+          Let <m>S_1,S_2\subset V</m> such that <m>S_1\subset S_2</m>.
+          Then show that <m>L(S_1)</m> is a subspace of <m>L(S_2)</m>.
+        </p>
+      </statement>
+    </problem>
+    <problem>
+      <statement>
+        <p>
+          Let <m>u,v\in V</m>.
+          Then show that <m>L(\{u,v\})=L(\{u-v,2u+3v\})</m>.
+        </p>
+      </statement>
+    </problem>
+    <definition xml:id="smallest-subspace">
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space and <m>S\subset V</m>.
+          A subspace <m>W</m> of <m>V</m> is called the smallest subspace of <m>V</m> containing <m>S</m> if (i) <m>W</m> is subspace of <m>V</m> with <m>S\subset W</m>,
+          and (ii) if <m>W'</m> is subspace of <m>V</m> with
+          <m>S\subset W'</m>, then <m>W\subset W'</m>.
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <statement>
+        <p>
+          (i) Let <m>v\in V</m>.
+          Then <m>\R v=L(\{v\})</m> is the smallest subspace of <m>V</m> containing <m>v</m>.
+        </p>
+        <p>
+          (ii) Let <m>S=\{v_1,\ldots,v_k\}\subset V</m>.
+          Then <m>L(S)</m> is the smallest subspace of <m>V</m> containing <m>S</m>.
+        </p>
+      </statement>
+    </example>
+    <problem>
+      <statement>
+        <p>
+          Suppose <m>L</m> is a line in the plane?
+          Then what is <m>L(S)</m>?
+        </p>
+      </statement>
+    </problem>
+  </p>
+</introduction>
+  </section>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec6-3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Orthogonal Diagonalizations</title>
+
+  <introduction>
+    <p>
+     
+    </p>
+  </introduction>
+  <p>
+    <theorem xml:id="orthogonal-ex1">
+      <statement>
+        <p>
+          Let <m>P</m> be an <m>n\times n</m> matrix.
+          Then the following are equivalent:
+        </p>
+        <p>
+          (i) <m>P</m> is non-singular and <m>P^{-1}=P^T</m>.
+        </p>
+        <p>
+          (ii) The rows of <m>P</m> are orthonormal vectors in <m>\R^n</m>. (iii) The columns of <m>P</m> are orthonormal vectors in <m>\R^n</m>.
+        </p>
+      </statement>
+    </theorem>
+
+  </p>
+<p>
+    <definition>
+      <statement>
+        <p>
+          A square matrix <m>P</m> is called an orthogonal matrix if it satisfies any one
+          (and hence all)
+          the conditions of Theorem
+          <xref ref="orthogonal-ex1"></xref>.
+        </p>
+      </statement>
+    </definition>
+  </p>
+
+  <p>
+     <example>
+      <statement>
+        <p>
+          (i) The matrix <m>\begin{pmatrix}\cos \theta \amp -\sin\theta\\\sin\theta \amp \cos\theta \end{pmatrix}</m> is an orthogonal matrix.
+        </p>
+        <p>
+          (ii) <m>\left(\begin{array}{rrr} -\frac{1}{3} \, \sqrt{3} \amp \sqrt{\frac{2}{3}} \amp 0 \\ \frac{1}{3} \, \sqrt{3} \amp \frac{1}{2} \, \sqrt{\frac{2}{3}} \amp -\sqrt{\frac{1}{2}} \\ \frac{1}{3} \, \sqrt{3} \amp \frac{1}{2} \, \sqrt{\frac{2}{3}} \amp \sqrt{\frac{1}{2}} \end{array} \right)</m> is an orthogonal matrix.
+        </p>
+      </statement>
+    </example>
+    
+  </p>
+
+  <p>
+    <definition>
+      <statement>
+        <p>
+          An <m>n\times n</m> matrix is called
+          <em>orthogonally diagonalizable </em>
+          if there exists an orthogonal matrix <m>P</m> such that
+          <m>P^{-1}AP</m> is a diagonal matrix.
+        </p>
+      </statement>
+    </definition>
+
+  </p>
+<p>
+  <example>
+      <statement>
+        <p>
+          Let <m>A</m> be a symmetric matrix and <m>\lambda_1</m> and
+          <m>\lambda_2</m> are distinct eigenvalues of <m>A</m>.
+          If <m>v_1</m> and <m>v_2</m> are eigenvectors corresponding to
+          <m>\lambda_1</m> and <m>\lambda_2</m> respectively.
+          Then <m>v_1</m> and <m>v_2</m> are orthogonal.
+        </p>
+      </statement>
+    </example>
+  </p>
+
+  <p>
+    <theorem>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n\times n</m> matrix.
+          Then the following are equivalent.
+        </p>
+        <p>
+          (i) <m>A</m> has an orthonormal set of eigenvectors.
+        </p>
+        <p>
+          (ii) <m>A</m> is orthogonally diagonalizable.
+        </p>
+        <p>
+          (iii) <m>A</m> is symmetric.
+        </p>
+      </statement>
+    </theorem>
+  </p>
+
+  <p>
+    <example>
+      <statement>
+        <p>
+          Consider a matrix <m>A=\left(\begin{array}{rrr} 5 \amp  -2 \amp  -4 \\ -2 \amp  8 \amp  -2 \\ -4 \amp  -2 \amp  5 \end{array} \right)</m>.
+          Clearly <m>A</m> is symmetric and hence it is orthogonally diagonalizable.
+          The characteristic polynomial of <m>A</m> is
+          <me>
+            det(xI-A)=x^3 - 18*x^2 + 81*x=x(x-9)^2
+          </me>.
+        </p>
+        <p>
+          Hence <m>0, 9, 9</m> are eigenvalues of <m>A</m>.
+          Its is easy to find that <m>v_1=(1, 1/2, 1)</m> is an eigenvector corresponding to the eigenvalue 0.
+          <m>v_2=(1, 0, -1), v_2=(0, 1, -1/2)</m> are eigenvectors corresponding to eigenvalue 9.
+          Hence <m>P:=\left(\begin{array}{rrr} 1 \amp  1 \amp  0 \\ \frac{1}{2} \amp  0 \amp  1 \\ 1 \amp  -1 \amp  -\frac{1}{2} \end{array} \right)</m>.
+          Then
+          <me>
+            P^{-1}AP=\left(\begin{array}{rrr} 0 \amp  0 \amp  0 \\ 0 \amp  9 \amp  0 \\ 0 \amp  0 \amp  9 \end{array} \right)
+          </me>.
+        </p>
+      </statement>
+    </example>
+  </p>
+
+  <p>
+    <problem>
+      <statement>
+        <p>
+          For the following matrices find an orthogonal matrix <m>P</m> such that
+          <m>P^{-1}AP</m> is a diagonal matrix.
+          <me>
+            \begin{pmatrix}2 \amp  -1 \\-1 \amp  1 \end{pmatrix} , \begin{pmatrix}1 \amp  0 \amp  -1\\0 \amp  1 \amp  2\\-1 \amp  2 \amp  5 \end{pmatrix}
+          </me>
+        </p>
+      </statement>
+    </problem>
+  </p>
+<p>
+  <theorem>
+      <statement>
+        <p>
+          The following are equivalent for an <m>n\times n</m> matrix <m>A</m>.
+        </p>
+        <p>
+          (i) <m>A</m> is orthogonal
+        </p>
+        <p>
+          (ii) <m>\norm{Ax}=\norm{A}</m> for all <m>x\in \R^n</m>.
+        </p>
+        <p>
+          (iii) <m>\norm{Ax-Ay}=\norm{x-y}</m> for all <m>x,y\in \R^n</m>.
+        </p>
+        <p>
+          (iv) <m>Ax\cdot Ay = (Ay)^TAx=x\cdot y</m>.
+        </p>
+      </statement>
+    </theorem>
+      
+    </p>
+   
+</section>

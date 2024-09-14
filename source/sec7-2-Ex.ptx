@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec7-2-Exer" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Exercise Set</title>
+    <introduction>
+      <p>
+        <alert>Problem set on orthogonality and inner Product </alert>
+      </p>
+    </introduction>
+<p>
+
+<ol>
+  <li>
+    <p>
+      Let <m>\{u_1,\ldots,
+      u_k\}</m> be an orthogonal set of vectors in <m>\R^n</m>.
+      Let <m>u\in \R^n</m> and define
+      <me>
+        u_{k+1}:=u-\frac{u_1\cdot u_{k+1}}{\norm{u_1}^2}u_1-\frac{u_2\cdot u_{k+1}}{\norm{u_2}^2}u_2-\cdots -\frac{u_k\cdot u_{k+1}}{\norm{u_k}^2}u_k
+      </me>,
+      Then  (i) <m>u_i\cdot u_{k+1}=0</m> for all
+      <m>i=1,\ldots,
+      k</m>  (ii) If <m>u\notin span(\{u_1,\ldots, u_k\})</m>,
+      then <m>u_{k+1}\neq 0</m> and
+      <m>\{u_1,\ldots,
+      u_k,u_{k+1}\}</m> is an orthogonal set.
+    </p>
+  </li>
+  <li>
+    <p>
+      If <m>\{u_1,\ldots,
+      u_n\}</m> is orthogonal set then it is linearly independent.
+    </p>
+  </li>
+  <li>
+    <p>
+      Find the coordinates of the vector <m>(2,5,7)</m> with respect to an orthonormal basis <m>\beta'=\left\{\left(\frac{2}{\sqrt{6}},\frac{1}{\sqrt{6}},\frac{1}{\sqrt{6}}\right), \left(\frac{-1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right),\left(0,\frac{-1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)\right\}</m> of <m>\R^3</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say,
+      <m>\{q_1,q_2,q_3\}</m> of <m>\R^3</m> starting with a basis <m>\beta=\{(1,1,1),(-1,1,1),(-1,0,1)\}</m>.
+      Define <m>Q = [q_1~q_2~q_3]</m>,
+      the column matrix whose columns are <m>q_1, q_2, q_3</m>.
+      Show that <m>Q^TQ=I</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say,
+      <m>\{q_1,q_2,q_3, q_3\}</m> of the subspace <m>W\subset \R^4</m> with basis
+      <me>
+        \beta = \{ v_1=(-1,1,1,0),v_2=(-1,0,1,0),v_3=(1,0,0,1)\}
+      </me>.
+      Define <m>Q = [q_1~q_2~q_3]</m>,
+      the column matrix whose columns are <m>q_1, q_2, q_3</m>.
+      Show that <m>Q^TQ=I</m>.
+      Suppose <m>A=[v_1~v_2~v_3]</m>.
+      Find <m>Q^TA</m> and check that it is an upper triangular matrix with positive diagonal matrix.
+      If we write <m>R=Q^TA</m>,
+      then <m>A=QR</m> called the <m>QR</m>-factorization of <m>A</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      The following are equivalent for an <m>n\times n</m> matrix <m>A</m>. (i) <m>A</m> is orthogonal (ii)
+      <m>\norm{Ax}=\norm{A}</m> for all <m>x\in \R^n</m>. (iii)
+      <m>\norm{Ax-Ay}=\norm{x-y}</m> for all <m>x,y\in \R^n</m>. (iv)
+      <m>Ax\cdot Ay = (Ay)^TAx=x\cdot y</m>. {Hint: A matrix <m>P</m> is orthogonal if if it satisfies any one of the above conditions.}
+    </p>
+  </li>
+  <li>
+    <p>
+      For the following matrices find an orthogonal matrix <m>P</m> such that
+      <m>P^{-1}AP</m> is a diagonal matrix.
+      <me>
+        \begin{pmatrix}2 \amp  -1 \\-1 \amp  1 \end{pmatrix} , \begin{pmatrix}1 \amp  0 \amp  -1\\0 \amp  1 \amp  2\\-1 \amp  2 \amp  5 \end{pmatrix}
+      </me>
+    </p>
+  </li>
+  <li>
+    <p>
+      Find the QR-factorization of the following matrices:
+      <me>
+        \begin{bmatrix}2 \amp  1 \\ 1 \amp  11 \end{bmatrix} ,  \begin{bmatrix}1 \amp  -1 \amp  1\\ 2 \amp  0  \amp  1\\2 \amp  1 \amp  -2 \end{bmatrix} , \begin{bmatrix}1 \amp  1 \amp  0 \\-1 \amp  0 1\\0 \amp  1 \amp  1\\1 \amp  -1 \amp  0 \end{bmatrix}
+      </me>
+    </p>
+  </li>
+  <li>
+    <p>
+      Let <m>V</m> be an inner product space.
+      Then for any two vectors <m>, y\in V</m>, show that
+      <me>
+        \norm{x+y}^2=\norm{x}^2+\norm{y}^2+2\inner{x}{y},  \norm{x-y}^2=\norm{x}^2+\norm{y}^2-2\inner{x}{y}
+      </me>
+    </p>
+  </li>
+  <li>
+    <p>
+      If <m>x, y</m> are two vectors in an inner product space <m>V</m> with inner product <m>\langle .\rangle</m>.
+      Then show that
+      <me>
+        \norm{x+y}^2+\norm{x-y}^2=2(\norm{x}^2+\norm{y}^2)
+      </me>.
+      This is called the parallelogram identity.
+      Geometrically, in a parallelogram,
+      the sum of square of the diagonal is 2 the sum of the squares of the side lengths.
+    </p>
+  </li>
+  <li>
+    <p>
+      Let <m>(V, \inner{.}{.})</m> be a real inner product space.
+      Let <m>x_1,x_2\,x_n</m> be <m>n</m> orthogonal vectors in <m>V</m>.
+      Then  show that
+      <me>
+        \norm{x_1+x_2+\cdots+x_n}^2=\norm{x_1}^2+\norm{x_2}^2+\cdots+\norm{x_n}^2
+      </me>.
+      This is an extension of the Pythagoras Theorem.
+    </p>
+  </li>
+  <li>
+    <p>
+      Let <m>\beta=\{u_1,\ldots,
+      u_n\}</m> be an orthogonal basis of an inner product space <m>V</m>.
+      Let <m>v\in V</m> and <m>\theta_1,\ldots, \theta_n</m> between <m>v</m> and <m>u_1,\ldots, u_n</m>,
+      respectively.
+      Then
+      <me>
+        \cos\theta_1^2+\cdots+\cos\theta_n^2=1
+      </me>.
+      Here <m>\cos\theta_i</m> are called the direction cosines of <m>v</m> corresponding to <m>\beta</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Find the orthogonal projection of vector
+      <m>b=\begin{bmatrix}1\\2\\3\\4 \end{bmatrix}</m> onto the subspace spanned by three vectors <m>\left\{\begin{bmatrix}1\\-1\\0\\1 \end{bmatrix} , \begin{bmatrix}0\\1\\1\\-1 \end{bmatrix} , \begin{bmatrix}1\\1\\-1\\0 \end{bmatrix} \right\}</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Consider the standard basis <m>\beta=\{1,x,x^2,x^3\}</m> of
+      <m>{\cal P}_3(\R)</m> with inner product <m>\inner{f}{g}:=\int_0^1 f(x)g(x)\,dx</m>.
+      Find an orthonormal basis starting with <m>\beta</m> using the Gram-Schmidt orthogonalization process.
+      (Hint: replace dot product in the Gram-SChmidt process by the inner product.)
+    </p>
+  </li>
+  <li>
+    <p>
+      Consider the standard basis <m>\beta=\{1-x,1+x,1+x+x^2\}</m> of
+      <m>{\cal P}_3(\R)</m> with inner product <m>\inner{f}{g}:=\int_{-1}^1 f(x)g(x)\,dx</m>.
+      Find an orthonormal basis starting with <m>\beta</m> using the Gram-Schmidt orthogonalization process.
+    </p>
+  </li>
+  <li>
+    <p>
+      (i) Define <m>\inner{u}{v}:=u^TAv</m> where <m>A = \begin{bmatrix}1 \amp 1 \amp 0\\1 \amp 2 \amp 0\\0 \amp 0 \amp 1 \end{bmatrix}</m>.
+      Show that <m>\inner{.}{.}</m> is an inner product on <m>\R^4</m>.
+      Hence show that (ii) Show that
+      <m>\left\{\begin{bmatrix}2 \\-1\\0 \end{bmatrix} , \begin{bmatrix}0 \\1\\1 \end{bmatrix} , \begin{bmatrix}0 \\-1\\2 \end{bmatrix} \right\}</m> is an orthogonal basis of <m>\R^3</m> with respect to this inner product. (iii) Consider a basis <m>\beta=\{(1,1,1),(-1,1,1),(-1,0,1)\}</m> of <m>R^3</m>.
+      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of <m>\R^3</m> with respect to the inner product defined in (i).
+    </p>
+  </li>
+</ol>
+</p>
+
+</section>

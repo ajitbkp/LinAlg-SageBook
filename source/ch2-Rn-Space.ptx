@@ -13,5 +13,6 @@
   <xi:include href="sec2-1-LinSpan.ptx" />
   <xi:include href="sec2-2-LI.ptx" />
   <xi:include href="sec2-3-basis.ptx" />
-  
+
+  <xi:include href="sec2-4-Sage.ptx" />
 </chapter>

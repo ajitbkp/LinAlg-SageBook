@@ -2,4 +2,6 @@
 <chapter xml:id="chap5-inner-product" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Inner Product</title>
   
+  <xi:include href="sec7-0-IP.ptx" />
+  <xi:include href="sec7-2-Ex.ptx" />
 </chapter>

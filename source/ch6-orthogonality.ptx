@@ -2,4 +2,16 @@
 <chapter xml:id="chap5-orthogonality" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Orthogonality</title>
   
+
+  <xi:include href="sec6-0-othogonality.ptx" />
+ 
+  <xi:include href="sec6-1-GramSchmidt.ptx" />
+  <xi:include href="sec6-2.ptx" />
+  <xi:include href="sec6-3.ptx" />
+  <xi:include href="sec6-4.ptx" />
+
+
+
+  <!--<xi:include href="sec6-3-othogonality.ptx" />-->
+
 </chapter>

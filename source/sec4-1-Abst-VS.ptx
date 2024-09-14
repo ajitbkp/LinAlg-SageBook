@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec4-1-abstract-vs" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Vector Subspaces</title>
+        <introduction>
+          <p>
+         
+        <definition>
+          <statement>
+            <p>
+              Let <m>V</m> be a vector space over <m>\R</m> and <m>W</m> a nonempty subset of <m>V</m>.
+              The <m>W</m> is called a subspace of <m>V</m>,
+              if <m>W</m> itself is a vector space under the inherited vector addition and scalar multiplication on <m>V</m>.
+            </p>
+          </statement>
+        </definition>
+        <example>
+          <statement>
+            <p>
+              If <m>V</m> is a vector space over <m>\R</m>,
+              then <m>\{0\}</m> and <m>V</m> are two trivial subspaces of <m>V</m>.
+            </p>
+          </statement>
+        </example>
+        <p>
+          Let <m>V</m> be a vector space over <m>\R</m> and <m>W</m> a nonempty subset of <m>V</m>.
+          Assume that <m>W</m> is closed under addition and scalar multiplication on <m>V</m>.
+          For <m>W</m> to be a subspace of <m>V</m>,
+          we need to show that all the eight properties in definition of vector space must be satisfied for elements in <m>W</m>.
+          Fortunately,
+          our task is simplified as most of these properties are inherited from the vector space <m>V</m>.
+          Let <m>w\in W</m>, the <m>0\cdot w=0\in W</m>.
+          Note that we require <m>W\neq \emptyset</m> for this property.
+          Also for <m>w\in W</m>, <m>(-1)w=-w\in W</m>.
+          Thus <m>W</m> contains the additive identity and additive inverse.
+          Remaining conditions are true as elements in <m>V</m> and hence are also true as elements of <m>W</m>.
+          This show that if <m>W</m> nonempty subset of <m>V</m> which is closed under addition and scalar multiplication,
+          then it is subspace of <m>V</m>.
+        </p>
+        <p>
+          If <m>W</m> itself is a vector space under the addition and scalar multiplication on <m>V</m>,
+          then <m>W</m> is closed under addition and scalar multiplication.
+          Thus we have the following result.
+        </p>
+        <theorem xml:id="thm-subspace1">
+          <statement>
+            <p>
+              Let <m>V</m> be a vector space over <m>\R</m> and <m>W</m> a nonempty subset of <m>V</m>.
+              Then <m>W</m> is a subspace of <m>V</m> if and only if <m>W</m> is closed under addition and scalar multiplication.
+            </p>
+          </statement>
+        </theorem>
+        <p>
+          Thus in order to check that if a nonempty subset <m>W\subset V</m> is a subspace,
+          all we need to check that it is closed under addition and scalar multiplication inherited from <m>V</m>.
+        </p>
+        <example>
+          <statement>
+            <p>
+              Let <m>V=\R^2</m> with usual addition and scalar multiplication.
+            </p>
+            <p>
+              (i) Any line in <m>\R^2</m> passing through the origin is a subspace of <m>\R^2</m>.
+            </p>
+            <p>
+              (ii) The line <m>L=\{(t,1-t)\}</m> is not a subspace of <m>\R^2</m>,
+              as it does not contain the origin.
+            </p>
+            <p>
+              (iii) The <m>W_1=\{(x,y):x\geq 0,y\geq 0\}</m>,
+              the first quadrant is not a subspace as it is not closed under scalar multiplication
+              (why?).
+              However, it is closed under addition.
+            </p>
+            <p>
+              (iv) The <m>W_2=\{(x,y):xy\geq 0\}</m>,
+              the the union of first and third quadrant is not a subspace as it is not closed addition
+              (why?).
+              However it is closed under scalar multiplication.
+            </p>
+            <p>
+              In fact, <m>\{0\}, \R^2</m> and any line passing through origin are only subspaces of <m>\R^2</m>.
+            </p>
+          </statement>
+        </example>
+        <example>
+          <statement>
+            <p>
+              Let <m>V=\R^3</m> with usual addition and scalar multiplication.
+            </p>
+            <p>
+              (i) Any line in <m>\R^3</m> passing through the origin is a subspace of <m>\R^3</m>.
+            </p>
+            <p>
+              (ii) Any plane in <m>\R^3</m> passing through the origin is a subspace of <m>\R^3</m>.
+            </p>
+            <p>
+              (iii) If <m>W</m> is a subspace of <m>\R^3</m>,
+              then <m>W</m> is one of the following:
+              <m>\{0\}</m>, <m>\R^3</m>,
+              a line passing through origin,
+              a plane passing through origin.
+            </p>
+          </statement>
+        </example>
+        <example xml:id="fundamentalsubspaces">
+          <statement>
+            <p>
+              Let <m>A</m> be an <m>m\times n</m> real matrix.
+              Then we have the following subspaces associated to <m>A</m>.
+            </p>
+            <p>
+              (i) <m>{ Null}(A)={\cal N}(A)={ ker}(A)</m> is subspace of <m>\R^n</m>
+            </p>
+            <p>
+              (ii) <m>{Row}(A)</m> is subspace of <m>\R^n</m>
+            </p>
+            <p>
+              (iii) <m>{ Col}(A)={ Im}(A)={\cal R}(A)</m> is subspace of <m>\R^m</m>
+            </p>
+            <p>
+              (iv) <m>{\cal L}(A)={ Null}(A^T)</m> is subspace of <m>\R^m</m>.
+            </p>
+            <p>
+              The above four subspaces are called
+              <em>fundamental subspaces</em> associated to <m>A</m>.
+            </p>
+          </statement>
+        </example>
+        <example xml:id="matrix-subspaces">
+          <statement>
+            <p>
+              Let <m>V = M_n(\R)</m>, the set of all
+              <m>n\times n</m> real matrices with usual matrix addition and scalar multiplication.
+            </p>
+            <p>
+              (i) <m>S=\{A\in M_n(\R): A=A^T\}</m> is a subspace of <m>V</m>.
+            </p>
+            <p>
+              (ii) <m>K=\{A\in M_n(\R): A+A^T=0\}</m> is a subspace of <m>V</m>.
+            </p>
+            <p>
+              (iii) <m>W=\{A\in M_n(\R): { trace}(A)=0\}</m> is a subspace of <m>V</m>.
+            </p>
+            <p>
+              (iv) <m>G_n(\R)</m> is not a subspace of <m>V</m>.
+            </p>
+            <p>
+              (v) <m>\{A\in V: { det}(A)=0\}</m> is not a subspace of <m>V</m>.
+            </p>
+          </statement>
+        </example>
+        <problem>
+          <statement>
+            <p>
+              Fix a matrix <m>P\in M_n(\R)</m>.
+              Define <m>W=\{A\in M_n(\R):AP=PA\}</m>.
+              Show that <m>W</m> is a subspace of <m>M_n(\R)</m>.
+            </p>
+          </statement>
+        </problem>
+        <example>
+          <statement>
+            <p>
+              Let <m>V=\{f\colon \R\to \R\}={\cal F}(\R,\R)</m> set of all functions from
+              <m>\R\to \R</m> with addition and scalar multiplication defined as in <xref ref="eg-function-vs">Example</xref>.
+              Let us look at some of the subspaces of <m>V</m>.
+            </p>
+            <p>
+              (i) <m>B(\R)</m>,
+              the set of all bounded functions from <m>\R</m> to <m>\R</m> is a subspace of <m>V</m>.
+            </p>
+            <p>
+              (ii) <m>{\cal C}(\R)</m>,
+              the set of all continuous functions from <m>\R</m> to <m>\R</m> is a subspace of <m>V</m>.
+            </p>
+            <p>
+              (iii) <m>{\cal D}(\R)</m>,
+              the set of all differentiable functions from <m>\R</m> to <m>\R</m> is a subspace of <m>V</m>.
+            </p>
+            <p>
+              (iv) Fix <m>a\in \R</m> and
+              <m>W=\{f\colon \R\to \R: f(a)=0\}</m> is a subspace of <m>V</m>.
+              (What if we take all functions vanishing at finitely many points.)
+            </p>
+            <p>
+              (iv) <m>W</m> is the set of even functions from
+              <m>\R\to \R</m> is a subspace of <m>V</m>.
+              What about set of odd functions?
+            </p>
+          </statement>
+        </example>
+        <example>
+          <statement>
+            <p>
+              Let <m>V</m> be a vector space over <m>\R</m>.
+              Let <m>W_1</m> and <m>W_2</m> be two subspaces of <m>V</m>.
+              Then
+            </p>
+            <p>
+              (i) <m>W_1\cap W_2</m> is a subspace of <m>V</m>.
+              What about <m>W_1\cup W_2</m>?
+            </p>
+            <p>
+              (ii) <m>W_1+W_2=\{w_1+w_2:w_1\in W_2,w_2\in W_2\}</m> is a subspace of <m>V</m>.
+            </p>
+          </statement>
+        </example>
+        <example>
+          <statement>
+            <p>
+              Let <m>V</m> be a vector space over <m>\R</m>.
+              Let <m>S=\{v_1,\ldots, v_k\}</m> be a subset of <m>V</m>.
+              Then the linear span defined as
+              <me>
+                L(S):=\{\alpha_1 v_1+\cdots+\alpha_kv_k:\alpha_1,\ldots,\alpha_k\in \R\}
+              </me>
+              is a subspace of <m>V</m>.
+            </p>
+          </statement>
+        </example>
+         
+      </p>
+    </introduction>
+  </section>

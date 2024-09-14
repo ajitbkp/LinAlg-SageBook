@@ -19,11 +19,48 @@
   <!-- macros for defining latex math shortcuts. It is good practice -->
   <!-- to define these semantically, so that the macro relates to what-->
   <!-- it defines. -->
-  <macros> \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} </macros>
+  <macros> 
+    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right>}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+\renewcommand{\headrulewidth}{0.5mm}
+\renewcommand{\footrulewidth}{0.5mm}
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+  </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
   <!-- for those in the next element. -->
-  <latex-image-preamble> \usepackage{tikz, pgfplots} \usetikzlibrary{positioning,matrix,arrows} \usetikzlibrary{shapes,decorations,shadows,fadings,patterns} \usetikzlibrary{decorations.markings} </latex-image-preamble>
+  <latex-image-preamble> 
+    \usepackage{tikz, pgfplots} 
+    \usetikzlibrary{positioning,matrix,arrows} 
+    \usetikzlibrary{shapes,decorations,shadows,fadings,patterns} 
+    \usetikzlibrary{decorations.markings} 
+      \usepackage{tikz}
+      \usepackage{tkz-graph}
+      \usepackage{tkz-euclide}
+      \usetikzlibrary{patterns}
+      \usetikzlibrary{positioning}
+      \usetikzlibrary{matrix,arrows}
+      \usetikzlibrary{calc}
+      \usetikzlibrary{shapes}
+      \usetikzlibrary{through,intersections,decorations,shadows,fadings}
+      \usepackage{pgfplots}
+      \usepackage{blkarray, bigstrut}
+      \usepackage{multirow}
+
+      </latex-image-preamble>
+  
+  
 
   <!-- It is possible to rename elements: -->
   <!-- <rename element="assemblage" xml:lang="en-US">Summary</rename> -->

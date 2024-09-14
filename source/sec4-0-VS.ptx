@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec4-1-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction</title>
+
+    <introduction>
+      <p>
+        Recall the properties (eight) of operation addition and scalar multiplication in 
+        <m>\R^n</m>.
+        Any non-empty set with two operations,
+        addition and scalar multiplication satisfying the eight properties is known as vector space.
+        More precisely we have the following definition.
+      </p>
+
+      <definition>
+        <statement>
+          <p>
+            Let <m>V</m> be a nonempty set with two operations
+            <m>+\colon V\times V\to V</m> defined by <m>+(x,y):=x+y</m> and multiplication
+            <m>\cdot \colon \R\times V\to V</m> defined by <m>\cdot(\alpha,x):=\alpha \cdot x</m>.
+            Satisfying the following properties:
+            
+            <ol>
+              <li>
+              <alert>A1:</alert>
+                  for all <m>x,y\in V</m>, <m>x+y=y+x</m>.
+              </li>
+              <li>
+                <alert>A2:</alert>
+                
+                  for all <m>x,y,z\in V</m>, <m>x+(y+z)=(x+y)+z</m>.
+                
+              </li>
+              <li>
+                <alert>A3:</alert>
+                
+                  There exists <m>\overline{0}\in V</m> such that for all <m>x\in V</m>,
+                  <m>\overline{0}=x+\overline{0}</m>.
+                  This <m>\overline{0}</m> is called an additive identity.
+                
+              </li>
+              <li>
+                <alert>A4:</alert>
+                
+                  for each <m>x\in V</m>, there is a vector <m>x'\in V</m>,
+                  such that <m>x+x'=x'+x=\overline{0}</m>.
+                  This <m>x'</m> is called an additive inverse of <m>x</m>.
+                              </li>
+              <li>
+                <alert>S1:</alert>
+                
+                  for all <m>\alpha\in \R</m> and <m>x,y \in V</m>,
+                  <m>\alpha(x+y)=\alpha x+\alpha y</m>.
+                              </li>
+              <li>
+                <alert>S2:</alert>
+                
+                  for all <m>\alpha,\beta \in \R</m> and <m>x \in V</m>,
+                  <m>(\alpha+\beta) x=\alpha x+\beta y</m>.
+                
+              </li>
+              <li>
+                <alert>S3:</alert>
+               
+                  for all <m>\alpha,\beta \in \R</m> and <m>x \in V</m>,
+                  <m>(\alpha\beta) x=\alpha (\beta x)y=\beta(\alpha x)</m>.
+               
+              </li>
+              <li>
+                <alert>S4:</alert>
+               
+                  for all <m>x\in V</m>, <m>1\cdot x=x</m>.
+               
+              </li>
+            </ol>
+          </p>
+          <p>
+            The set <m>V</m> with <m>'+'</m> and <m>'\cdot'</m> is called a vector space over <m>\R</m>.
+            Elements of <m>V</m> are called vectors.
+          </p>
+        </statement>
+      </definition>
+    
+      <example xml:id="eg-Rn-vs">
+        <statement>
+          <p>
+            <m>\R^n</m> with usual addition and scalar multiplication defined in the Section
+            is a vector space over <m>\R</m>.
+          </p>
+        </statement>
+      </example>
+      <example xml:id="eg-matix-vs">
+        <statement>
+          <p>
+            The set <m>M_{mn}(\R)</m>,
+            the set of all <m>m\times n</m> real matrices with usual matrix addition and scalar 
+            multiplication by a real number is a vector space over <m>\R</m>.
+          </p>
+        </statement>
+      </example>
+      <example xml:id="eg-poly-vs">
+        <statement>
+          <p>
+            Fix a natural number <m>n</m>.
+            The set <m>{\cal P}_n(R)</m>,
+            the set of all polynomials of degree less than equal <m>n</m>,
+            with usual polynomial addition and scalar multiplication by a real number is 
+            a vector space over <m>\R</m>.
+          </p>
+        </statement>
+      </example>
+      <example xml:id="eg-ralvaluesfun-vs">
+        <statement>
+          <p>
+            Let <m>V</m> be the set of real-valued functions defined on an interval <m>[a, b]</m>.
+            For all <m>f</m> and <m>g</m> in <m>V</m> and <m>\alpha\in \R</m>,
+            define addition and scalar multiplication, respectively, by
+            <me>
+              (f+g)(x):=f(x)+g(x) \text{ and }  (\alpha f)(x):=\alpha f(x)
+            </me>.
+            <m>V</m> is a vector space over <m>\R</m>.
+          </p>
+        </statement>
+      </example>
+      <example xml:id="eg-complex-vs">
+        <statement>
+          <p>
+            The set of complex numbers <m>\mathbb{C}:=\{a+ib:a,b\in \R\}</m>,
+            where <m>i^2=-1</m>, with addition and multiplication defined as
+            <me>
+              (a_1+ib_1)+(a_2+ib_2):=(a_1+a_2)+i(b_1+b_2),  \alpha (a+ib)=(\alpha a)+i(\alpha b)
+            </me>.
+          </p>
+          <p>
+            The set <m>(\mathbb{C},+,\cdot)</m> is a vector space over <m>\R</m>.
+          </p>
+        </statement>
+      </example>
+      <example xml:id="eg-function-vs">
+        <statement>
+          <p>
+            Let <m>X</m> be any nonempty set and define <m>{\cal F}(X,\R):=\{f\colon X\to \R\}</m>,
+            the set of all functions from <m>X</m> to <m>\R</m>.
+            Define addition and scalar multiplication, respectively, by
+            <me>
+              (f+g)(x):=f(x)+g(x) \text{ and }  (\alpha f)(x):=\alpha f(x)
+            </me>.
+            Then <m>({\cal F}(X,\R),+,\cdot)</m> is a vector space over <m>\R</m>.
+          </p>
+        </statement>
+      </example>
+      <example xml:id="eg-rationals-vs">
+        <statement>
+          <p>
+            (i) The set of rational numbers
+            <m>\mathbb{Q}</m> with usual addition and multiplication is a vector space over <m>\mathbb{Q}</m>.
+            However, <m>Q</m> is not a vector space over <m>\R</m>.
+          </p>
+          <p>
+            (ii) <m>\R</m> is a vector space over <m>\mathbb{Q}</m>.
+          </p>
+        </statement>
+      </example>
+      <example xml:id="eg-bijection-vs">
+        <statement>
+          <p>
+            Let <m>V</m> be a vector space over <m>\R</m> and <m>X</m> is a nonempty set.
+            Let <m>\varphi\colon X\to V</m> be a bijection.
+            We define addition and scalar multiplication on <m>X</m> as follows:
+            <me>
+              \text{ for }  x_1,x_2\in X, x_1+x_2:=\varphi(x_1)+\varphi(x_2) \text{ and for }  \alpha \in \R, x\in X \alpha\cdot x=\alpha\cdot \varphi(x)
+            </me>.
+          </p>
+          <p>
+            It is easy to check that <m>X</m> with above addition and scalar multiplication is a vector space over <m>\R</m>.
+          </p>
+        </statement>
+      </example>
+      <example>
+        <statement>
+          <p>
+            Let <m>V=(0,\infty)</m>.
+            Define addition and scalar multiplication on <m>(0,\infty)</m> as follows:
+            <me>
+              x+y:=xy \text{ and }  \alpha \cdot x:= x^\alpha
+            </me>.
+          </p>
+          <p>
+            Check that <m>(0,\infty)</m> under this addition and scalar multiplication is a vector space over
+             <m>\R</m>.
+            Contrast this example with Example<nbsp/><xref ref="eg-bijection-vs"/>.
+          </p>
+        </statement>
+      </example>
+
+      <example>
+        <statement>
+          <p>
+            Let <m>L=\{(x,y):y-x=1\}=\{(t,1+t):t\in \R\}</m>.
+            Define addition and scalar multiplication on <m>L</m> by
+            <me>
+              (t_1,1+t_1)+(t_2,1+t_2):=(t_1+t_2,1+t_1+t_2),  \alpha (t,1+t):=(\alpha t,1+\alpha t)
+            </me>.
+          </p>
+          <p>
+            Check that <m>L</m> under this addition and scalar multiplication is a vector space over <m>\R</m>.
+            Contrast this example with Example<nbsp/><xref ref="eg-bijection-vs"/>.
+          </p>
+        </statement>
+      </example>
+        
+      
+
+      <example>
+        <statement>
+          <p>
+            Let <m>V=\{\bigstar\}</m> be a singleton set.
+            Define addition and scalar multiplication by
+            <me>
+              \bigstar +\bigstar:=\bigstar \text{ and }  \alpha \cdot \bigstar:= \bigstar , \alpha \in \R
+            </me>.
+          </p>
+          <p>
+            Check that <m>V</m> is a vector space over <m>\R</m> under the addition and scalar multiplication defined above.
+          </p>
+        </statement>
+      </example>
+      <example>
+       
+        
+        <statement>
+          <p>
+            Let <m>V=\R^2</m>.
+            Define addition and scalar multiplication on <m>\R^2</m> as
+            <me>
+              (x_1,x_2)\oplus (y_1,y_2):=(x_1+x_2+1,y_1+y_2+1)</me> and 
+              <me>
+                 \alpha \odot (x_1,x_2):= (\alpha x_1+c-1,\alpha x_2+c-1)
+            </me>.
+          </p>
+          <p>
+            Check that <m>\R^2,\oplus,\odot)</m> is a vector space over <m>\R</m>.
+            Find the bijection <m>\varphi\colon \R^2\to \R^2</m> is used to covert <m>\R^2</m> into a vector space using these operations.
+            Find additive identity and the additive inverse of
+            <m>(x_1,x_2)</m> in <m>\R^2</m> corresponding to <m>\oplus</m>.
+          </p>
+        </statement>
+      </example>
+      <example>
+        <statement>
+          <p>
+            Consider the unit circle <m>S=\{(x_1,x_2):x_1^2+x_2^2=1\}=\{(\cos t,\sin t):t\in \R\}</m>.
+            Define the addition and scalar multiplications by
+            <me>
+              (\cos t,\sin t)+(\cos s,\sin s):=(\cos (t+s),\sin (t+s))
+            </me>
+            and 
+            <me>\alpha \cdot (\cos t,\sin t):= (\cos (\alpha t),\sin (\alpha t))
+            </me>.
+          </p>
+          <p>
+            Show that <m>S</m> is a vector space over <m>\R</m> with respect to the addition and scalar multiplication defined above.
+            Find the additive identity and additive inverse.
+          </p>
+        </statement>
+      </example>
+      <example>
+        <statement>
+          <p>
+            Let <m>GL_n(\R)</m> denote the set of all
+            <m>n\times n</m> non singular real matrices.
+            Define
+            <me>
+              A\oplus B:=AB, \quad \text{and }\alpha\odot A:=\alpha A
+            </me>
+            where <m>AB</m> is the usual matrix multiplication,
+            and <m>\alpha A</m> is the usual scalar multiplication.
+            Show that <m>GL_n(\R)</m> is a vector space over <m>\R</m>.
+          </p>
+        </statement>
+      </example>
+      <p>
+        Next we list the some properties in a vector space <m>V</m> over <m>\R</m>.
+        These properties are easy to prove.
+        Readers are encouraged to prove these properties.
+      </p>
+      <theorem xml:id="thm-vs-prop">
+        <title>Properties</title>
+        <statement>
+          <p>
+            Let <m>V</m> be a vector space over <m>\R</m>.
+            Then we have the following properties:
+          </p>
+          <p>
+            (i) Additive identity in <m>V</m> is unique.
+          </p>
+          <p>
+            (ii) Additive inverse in <m>V</m> is unique.
+          </p>
+          <p>
+            (iii) <m>0\cdot v=0</m> for any <m>v\in V</m>.
+          </p>
+          <p>
+            (iv) <m>(-1)\cdot v=-v</m> for all <m>v\in V</m>.
+          </p>
+          <p>
+            (v) <m>-(-v) =v</m> for all <m>v\in V</m>.
+          </p>
+          <p>
+            (vi) If <m>\alpha \cdot v=0</m> then either <m>\alpha=0</m> or <m>v=0</m>.
+          </p>
+          <p>
+            (vii) If <m>v+u=u</m>, then <m>v=0</m>,
+            called the right cancellation.
+            Similarly, we have left cancellation.
+          </p>
+          <p>
+            (viii) If <m>\alpha v=\beta v</m> and <m>v\neq 0</m>, then <m>\alpha=\beta</m>.
+          </p>
+          <p>
+            (ix ) <m>\alpha v=\alpha u</m> and <m>\alpha\neq 0</m>,
+            then <m>u=v</m>.
+          </p>
+        </statement>
+      </theorem>
+      <p>
+        In view of these, properties, here onward we will write
+        <q>the additive identity</q>
+        and
+        <q>the additive inverse</q>.
+      </p>
+    </introduction>
+  </section>
+
+
+  
+   

@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec10-1-PCA" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Principal Component Analysis</title>
+    
+       
+        <introduction>
+          <p>
+            Large datasets with a large number of features/variables are very common and widespread.
+            Interpreting such a large datasets is very complex task.
+            In order to interpret such datasets one requires a method that reduces the dimension/features drastically,
+            at the same time most of the information in the dateset is preserved.
+            The principal component analysis (PCA) is one of the most widely used dimensionality reduction techniques.
+            The main idea of PCA is to reduce the dimensionality in the datasets while preserving much of the variability as much as possible.
+            It does so by creating a new set of uncorrelated variables that successfully maximize the variance.
+            Finding such new variables also known as principal components reduces the problem to solving an eigenvalue-eigenvector problem.
+          </p>
+          <p>
+            Let us look at the set of points in the plane,
+            (data with two features)
+            in the <xref ref="fig_pca1">figure</xref>.
+            In this case the data has maximum spread or variability along the <m>y</m>-axis.
+            Thus if we project, the points onto the <m>y</m>-axis,
+            the variability in the data can be captured.
+            In particular, we can ignore the <m>x</m>-coordinates.
+            On the other hand if we look at the set of points in the <xref ref="fig_pca2">figure</xref>,
+            maximum spread or variability lies along the <m>x</m>-axis.
+            Thus if we project, the points onto the <m>x</m>-axis,
+            the variability in the data can be captured.
+            In particular, we can ignore the <m>y</m>-coordinates.
+            Thus in these two examples, we are able to reduce the dimension by 1.
+          </p>
+
+          <figure xml:id="fig_pca1">
+            <image width="45%" source="images/PCA-Fig2.PNG"/>
+             <caption>Variability along <m>y</m>-axis</caption>.
+           </figure>
+           <figure xml:id="fig_pca2">
+            <image width="45%" source="images/PCA-Fig2.PNG"/>
+             <caption>ariability along <m>x</m>-axis</caption>
+           </figure>
+          <p>
+            Now suppose we have 12 points as show in the <xref ref="fig_pca3">Figure</xref> again in <m>\R^2</m>,
+            that is having two features/dimensions.
+            The spread of this data seems to be not along <m>x</m>-axis but roughly along the axis as shown in the <xref ref="fig_pca4">Figure</xref>, that is,
+            along the vector <m>u_1</m>.
+            So if we project these points on the line along <m>u_1</m> as shown in the <xref ref="fig_pca4">Figure</xref>,
+            we will have maximum spread or variation of the data.
+            Thus <m>u_1</m> is the new axis along which the data has maximum variation.
+          </p>
+
+          <figure xml:id="fig_pca3">
+            <image width="45%" source="images/PCA-Fig3.PNG"/>
+             <caption>Data with two features.</caption>
+           </figure>
+           <figure xml:id="fig_pca4">
+            <image width="45%" source="images/PCA-Fig4.PNG"/>
+             <caption>Variability along vector <m>u_1</m>. </caption>
+           </figure>
+
+
+          <p>
+            Next if one carefully looks into the data points,
+            one can see that the data also has some dispersion or variation along the line given by the direction <m>u_2</m> as shown in the <xref ref="fig_pca5">Figure</xref>
+            and which is not captured by the line along <m>u_1</m>.
+            In a way, we need to create another axis which is perpendicular to the 1st one.
+          </p>
+          <p>
+            Thus we have two perpendicular coordinate axes or a new coordinates system along which all the variations in the data can be captured.
+            In this case,
+            maximum variation along <m>u_1</m> and second maximum along <m>u_2</m>.
+            Here <m>u_1</m> is called the first principal direction and <m>u_2</m> is called the second principal direction.
+            Thus we can work with new coordinate axes and forget about the original <m>x</m> and <m>y</m>-axes as show in the <xref ref="fig_pca6">Figure</xref>.
+            We can even rotate the new coordinate system that coincides with original
+             <m>x</m> and <m>y</m>-axes.
+          </p>
+          
+          
+          <figure xml:id="fig_pca5">
+            <image width="45%" source="images/PCA-Fig5.PNG"/>
+             <caption>1st and 2nd principal components <m>u_1</m> and <m>u_2</m>.</caption>
+           </figure>
+           <figure xml:id="fig_pca6">
+            <image width="45%" source="images/PCA-Fig6.PNG"/>
+             <caption>1st and 2nd principal components <m>u_1</m> and <m>u_2</m>.</caption>
+           </figure>
+          <p>
+            The above two examples,
+            geometrically explains the essence of PCA. The idea is to project the original high dimensional data to a new coordinate system and choose only first we coordinates axes also called principal components.
+            How many principal component to be taken depends upon how much variation we wish to capture.
+          </p>
+        </introduction>
+        <subsection>
+          <title>Mathematics behind PCA</title>
+          <p>
+            Let us assume that we have a data which has <m>d</m> features and there are <m>n</m> of them.
+            This data can be represented by a
+            <m>n\times d</m> matrix, say <m>X</m>.
+            Thus
+            <me>
+              X = \begin{bmatrix}x_{11} \amp  x_{12} \amp  \cdots \amp  x_{1d}\\ x_{21} \amp  x_{22} \amp  \cdots \amp  x_{2d}\\ \vdots \amp  \vdots \amp  \ddots \amp  \vdots\\ x_{n1} \amp  x_{n2} \amp  \cdots \amp  x_{nd} \end{bmatrix}
+            </me>.
+            Thus each columns of <m>X</m> represents a feature and there are <m>n</m> samples for each feature.
+          </p>
+          <p>
+            Now we are looking for an unit vector <m>u_1</m> and we wish to project the data onto <m>u_1</m> such that the variance of the projected data is maximum.
+          </p>
+          <p>
+            Before we explain that in generality,
+            let us look at what is meaning of projection of data in 2 dimension
+            (that is in <m>\R^2</m>)
+            on an unit vector.
+            Suppose <m>u=(a,b)</m> is an unit vector ad
+            <m>p_1=(x_1,y_1)</m> be a point/vector in <m>\R^2</m>.
+            Then
+            <me>
+              \proj_u(p_1)=\frac{p_1\cdot u}{\norm{u}^2}u=(x_1a+x_2b)u
+            </me>.
+          </p>
+          <p>
+            The length of the projection is <m>p_1x_2+p_2x_2</m>.
+            If we have another point, say <m>p_2 =(x_2,y_2)</m>,
+            then the projection of both these points can be captured as
+            <me>
+              \begin{bmatrix}x_1 \amp  x_2 \\y_1 \amp  y_2 \end{bmatrix}  \begin{bmatrix}a\\b \end{bmatrix}  = Xu
+            </me>.
+          </p>
+          <p>
+            Thus in general the projection of data <m>X</m> which is
+            <m>n\times p</m> matrix onto a unit vector <m>u_1=\begin{bmatrix}u_{11}\amp  u_{12}\amp \cdots \amp  u_{1d} \end{bmatrix} ^T</m> is
+            <me>
+              X = \begin{bmatrix}x_{11} \amp  x_{12} \amp  \cdots \amp  x_{1d}\\ x_{21} \amp  x_{22} \amp  \cdots \amp  x_{2d}\\ \vdots \amp  \vdots \amp  \ddots \amp  \vdots\\ x_{n1} \amp  x_{n2} \amp  \cdots \amp  x_{nd} \end{bmatrix} \begin{bmatrix}u_{11}\\ u_{12}\\\vdots \\u_{1d} \end{bmatrix} =Xu_1
+            </me>.
+          </p>
+          <p>
+            Next we deal with the second issue in PCA, namely, 'variance'. For this we take the centered data <m>X_c =X-\overline{X}</m>,
+            where <m>\overline{X}=\frac{1}{d}\begin{bmatrix}x_{11}+x_{12}+\cdots+x_{1d}\\ x_{21}+x_{22}+\cdots+x_{2d}\\\vdots\\x_{1n}+x_{1n}+\cdots+x_{1n} \end{bmatrix}</m>.
+            The covariance of <m>X</m>, is given
+            <me>
+              S ={ Cov}(X)=\frac{1}{n-1}{X_c}^TX_c
+            </me>.
+          </p>
+          <p>
+            Note that (i) <m>S</m> is symmetric and (ii) Semi-positive definite,
+            all eigenvalues of <m>S</m> are non negative.
+            Also <m>S</m> is orthogonally diagonalizable.
+            In particular, there exists an orthogonal matrix
+            <m>U = \begin{bmatrix}u_1\amp u_2\amp \cdots \amp  u_d \end{bmatrix}</m> such that <m>U^TSU = { diag }(\lambda_1,\cdots,\lambda_p)</m>.
+            What we wanted was to maximize the variance of projection of the data onto unit vector <m>u</m>.
+            That is, we want to find an unit vector <m>u</m> such that the variance of <m>X_cu</m> is maximum.
+            In other words,
+            <md>
+              <mrow>\text{maximize }\amp \frac{1}{n-1}(X_cu)^T{X_cu}=\frac{1}{n-1}u^T(X_c^TX_c)u=u^TSu</mrow>
+              <mrow>\text{subject to } \amp  \norm{u}=1</mrow>
+            </md>.
+          </p>
+          <p>
+            It turns out that the solution of this optimization problem is <m>u</m>,
+            which is the eigenvector of <m>S</m>.
+            Thus the variance of the projected data onto a unit vector is maximum if <m>u</m> happens to be an eigenvector of the covariance matrix <m>S</m>.
+          </p>
+          <p>
+            Note that <m>S</m> is of order
+            <m>d\times d</m> which has <m>d</m> linearly independent eigenvectors.
+            We arrange these eigenvector corresponding to the decreasing eigenvalues.
+            That <m>u_1</m> is the eigenvector corresponding to the largest eigenvector
+            <m>\lambda_1</m> and is called the first principal component.
+            The eigenvector <m>u_2</m> corresponding to the second highest eigenvalue <m>\lambda_2</m>,
+            is called the second principal component.
+            Thus if we project data onto the second principal component that it will have second higher variance.
+            Look at <xref ref="fig_data_pca">Figure</xref>
+            in which the data is plotted along with the principal components.
+            The <xref ref="fig_datapac_proj">Figure</xref>,
+            the data projected on the 1st component of PCA is plotted along with the data.
+          </p>
+          
+          <figure xml:id="fig_data_pca">
+            <caption>Data set with principal components</caption>
+            <image width="45%" source="images/data_pca.png"/>
+           </figure>
+           <figure xml:id="fig_datapac_proj">
+           <image width="45%" source="images/datapca_proj.png"/>
+           <caption>Projection on 1st PCA components</caption>
+          </figure>
+      
+          <p>
+            Next question is how many principal components, we should choose.
+            This depends upon what percentage of variance of the data we wish to capture.
+            Suppose we want to capture 90% variations,
+            the we choose the 1st <m>k</m> components such that
+            <me>
+              \frac{\sum_{i=1}^k \lambda_i}{\sum_{j=1}^d\lambda_j}\geq 0.9
+            </me>.
+          </p>
+          <p>
+            The projected data onto the 1st <m>k</m> principal components is given by
+            <me>
+              \begin{bmatrix}x_{11} \amp  x_{12} \amp  \cdots \amp  x_{1d}\\ x_{21} \amp  x_{22} \amp  \cdots \amp  x_{2d}\\ \vdots \amp  \vdots \amp  \ddots \amp  \vdots\\ x_{n1} \amp  x_{n2} \amp  \cdots \amp  x_{nd} \end{bmatrix} \begin{bmatrix}u_1\amp u_2\amp \cdots \amp  u_k \end{bmatrix} =XV= \begin{bmatrix}z_{11} \amp  z_{12} \amp  \cdots \amp  z_{1k}\\ z_{21} \amp  z_{22} \amp  \cdots \amp  z_{2k}\\ \vdots \amp  \vdots \amp  \ddots \amp  \vdots\\ z_{n1} \amp  z_{n2} \amp  \cdots \amp  z_{nk} \end{bmatrix} =Z
+            </me>
+          </p>
+          <p>
+            Here <m>V</m> is called the loading matrix.
+            The new data or transformed data <m>Z=XV</m>.
+            Once we know the transformed data then we can construct the original data by <m>X=ZV^T</m>.
+          </p>
+          <example>
+            <statement>
+              <p>
+                Consider the following 2 dimensional data.
+              </p>
+              <tabular>
+                  <row>
+                  <cell><m>x_1</m></cell>
+                  <cell>2.5</cell>
+                  <cell>0.5</cell>
+                  <cell>2.2</cell>
+                  <cell>1.9</cell>
+                  <cell>3.0</cell>
+                  <cell>2.3</cell>
+                  <cell>2.0</cell>
+                  <cell>1.0</cell>
+                  <cell>1.5</cell>
+                  <cell>1.1</cell>
+                </row>
+                <row>
+                  <cell><m>x_2</m></cell>
+                  <cell>2.0</cell>
+                  <cell>0.7</cell>
+                  <cell>2.9</cell>
+                  <cell>2.2</cell>
+                  <cell>2.8</cell>
+                  <cell>2.7</cell>
+                  <cell>1.6</cell>
+                  <cell>1.1</cell>
+                  <cell>1.6</cell>
+                  <cell>0.9</cell>
+                </row>
+              </tabular>
+              <p>
+                Find the first and the second principal components of this data set.
+                Explain what percentage of variance os explained by the 1st principal component.
+              </p>
+              <p>
+                The <m>\overline{x_1} =1.8</m> and <m>\overline{x_2}=1.85</m>.
+                The centered data set is
+                <me>
+                  X_c = X - \begin{bmatrix}\overline{x_1}\\\overline{x_2} \end{bmatrix} =\left(\begin{array}{rr} 0.7 \amp  0.15 \\ -1.3 \amp  -1.15\\ 0.4 \amp  1.05\\ 0.1 \amp  0.35 \\ 1.2 \amp  0.95 \\ 0.5\amp  0.85 \\ 0.2 \amp  -0.25\\ -0.8 \amp  -0.75 \\ -0.3 \amp  -0.25 \\ -0.7 \amp  -0.95 \end{array} \right)
+                </me>
+              </p>
+              <p>
+                Next we construct the covariance matrix of <m>X</m>, which is
+                <me>
+                  S = \frac{1}{10-1}X_c^TX_c=\left(\begin{array}{rr} 0.589 \amp  0.546 \\ 0.546 \amp  0.643 \end{array} \right)
+                </me>
+              </p>
+              <p>
+                The eigenvalues of <m>S</m> are eigenvalues
+                <m>\lambda_1 =1.1620</m> and <m>\lambda_2=0.0696</m>.
+                The corresponding eigenvectors are
+                <m>u_1 = \begin{pmatrix}0.6894\\0.7243 \end{pmatrix}</m> and <m>u_2 = \begin{pmatrix}0.7243\\-0.689 \end{pmatrix}</m>.
+              </p>
+              <p>
+                Hence the loading matrix <m>V</m> is given by
+                <me>
+                  V = \left(\begin{array}{rr} 0.6894 \amp  0.7243 \\ 0.7243 \amp  -0.6894 \end{array} \right)
+                </me>.
+                The projected data on the 1st two principal components is
+                <me>
+                  Z = X_cV = \left(\begin{array}{rr} 0.591 \amp  0.404 \\ -1.73 \amp  -0.149 \\ 1.04 \amp  -0.434 \\ 0.322 \amp  -0.169 \\ 1.52 \amp  0.214 \\ 0.960 \amp  -0.224 \\ -0.0432 \amp  0.317 \\ -1.09 \amp  -0.0624 \\ -0.388 \amp  -0.0449 \\ -1.17 \amp  0.148 \end{array} \right)
+                </me>
+              </p>
+              <p>
+                We can recover the original data set by
+                <me>
+                  ZV^T+\left(\begin{array}{rr} 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \end{array} \right)=X
+                </me>
+              </p>
+              <p>
+                The variance explained by the 1st principal component is
+                <me>
+                  \frac{\lambda_1}{\lambda_1+\lambda_2}\approx 0.9435
+                </me>
+              </p>
+              <p>
+                Thus approximately 94.35% variance is captured by the 1st principal component.
+              </p>
+            </statement>
+          </example>
+          <example xml:id="pca-eg2">
+            <statement>
+              <p>
+                Consider the following data in 3-dimension. 
+              </p>
+              <p>
+                <tabular>
+                  <row>
+                <cell><m>x_1</m></cell>
+                    <cell>24</cell>
+                    <cell>8</cell>
+                    <cell>21</cell>
+                    <cell>1</cell>
+                    <cell>9</cell>
+                    <cell>7</cell>
+                    <cell>8</cell>
+                    <cell>10</cell>
+                    <cell>1</cell>
+                    <cell>15</cell>
+                    <cell>4</cell>
+                    <cell>12</cell>
+                  </row>
+                    <row>
+                    <cell><m>x_2</m></cell>
+                    <cell>13</cell>
+                    <cell>3</cell>
+                    <cell>6</cell>
+                    <cell>14</cell>
+                    <cell>3</cell>
+                    <cell>1</cell>
+                    <cell>7</cell>
+                    <cell>16</cell>
+                    <cell>3</cell>
+                    <cell>2</cell>
+                    <cell>6</cell>
+                    <cell>10</cell>
+                  </row>
+                  <row bottom="minor">
+                    <cell><m>x_3</m></cell>
+                    <cell>38</cell>
+                    <cell>17</cell>
+                    <cell>40</cell>
+                    <cell>-9</cell>
+                    <cell>21</cell>
+                    <cell>14</cell>
+                    <cell>11</cell>
+                    <cell>3</cell>
+                    <cell>2</cell>
+                    <cell>30</cell>
+                    <cell>1</cell>
+                    <cell>18</cell>
+                  </row>
+                  <row>
+                <cell><m>x_1</m></cell>
+                     <cell>1</cell>
+                    <cell>7</cell>
+                    <cell>5</cell>
+                    <cell>1</cell>
+                    <cell>21</cell>
+                    <cell>8</cell>
+                    <cell>1</cell>
+                    <cell>15</cell>
+                    <cell>16</cell>
+                    <cell>7</cell>
+                    <cell>14</cell>
+                    <cell>3</cell>
+                    <cell>5</cell>
+                  </row>
+               <row>
+                    <cell><m>x_2</m></cell>
+                    <cell>9</cell>
+                    <cell>3</cell>
+                    <cell>1</cell>
+                    <cell>12</cell>
+                    <cell>9</cell>
+                    <cell>8</cell>
+                    <cell>18</cell>
+                    <cell>8</cell>
+                    <cell>10</cell>
+                    <cell>0</cell>
+                    <cell>2</cell>
+                    <cell>7</cell>
+                    <cell>6</cell>
+                  </row>
+                   <row>
+                    <cell><m>x_3</m></cell>
+                    <cell>-4</cell>
+                    <cell>19</cell>
+                    <cell>13</cell>
+                    <cell>-6</cell>
+                    <cell>34</cell>
+                    <cell>7</cell>
+                    <cell>-18</cell>
+                    <cell>25</cell>
+                    <cell>29</cell>
+                    <cell>17</cell>
+                    <cell>31</cell>
+                    <cell>0</cell>
+                    <cell>7</cell>
+                  </row>
+                    </tabular>
+              </p>
+              
+              <p>
+                 The mean of each feature are <m>\overline{x_1}=8.96, \overline{x_2}=7.081,\overline{x_2}=3.6</m>.
+                We have
+                <me>
+                  X= \left(\begin{array}{rrr} 24 \amp  13 \amp  38 \\ 8 \amp  3 \amp  17 \\\vdots \amp  \vdots \amp  \vdots \\ 5 \amp  6 \amp  7 \end{array} \right), X -\overline{X} = \left(\begin{array}{rrr} 15.04 \amp  5.92 \amp  24.4 \\ -0.96 \amp  -4.08 \amp  3.4 \\\vdots \amp  \vdots \amp \vdots\\ -3.96 \amp  -1.08 \amp  -6.6 \end{array} \right)
+                </me>
+              </p>
+              <p>
+                The covariance matrix of <m>X</m> is given by
+                <md>
+                 <mrow> { Cov}(X)=S=\amp \frac{1}{n-1}(X -\overline{X})^T(X -\overline{X})</mrow>
+                 <mrow> =\amp \left(\begin{array}{rrr} 45.7066 \amp  -0.2466\amp  94.8583 \\ -0.2466 \amp  24.0766 \amp  -29.175 \\ 94.8583\amp  -29.175 \amp  235.9166 \end{array} \right)
+                  </mrow>
+                </md>
+              </p>
+              <p>
+                The eigenvalues of <m>S</m> are <m>\lambda_1=278.02366293, \lambda_2=26.95307696, \lambda_3=0.72326011</m>.
+                The corresponding eigenvectors are
+                <me>
+                  pc_1=\left(\begin{array}{r} 0.3759787 \\ -0.10612 \\ 0.920531 \end{array} \right), pc_2=\left(\begin{array}{r} 0.46959\\ 0.87822 \\ -0.09055 \end{array} \right), pc_3=\left(\begin{array}{r} 0.79882 \\ -0.4663\\ -0.38003 \end{array} \right)
+                </me>.
+              </p>
+              <p>
+                The percentage of variance explained by the first principal component is
+                <me>
+                  \frac{\lambda_1}{\lambda_1+\lambda_2+\lambda_3}\approx 0.9094\approx  90.94%
+                </me>
+              </p>
+              The percentage of variance explained by the first two principal components is
+              <p>
+                <me> \frac{\lambda_1+\lambda_2}{\lambda_1+\lambda_2+\lambda_3}\approx 0.997=99.7%</me> 
+              </p>
+            </statement>
+          </example>
+        </subsection>
+        <subsection>
+          <title>Applications of PCA</title>
+          <p>
+            PC, as mentioned earlier, is a dimensionality reduction techniques.
+            It has numerous applications like,
+            visualization of high dimensional data,
+            facial recognition, computer vision,
+            image compression, determining patterns in a data,
+            data mining, bioinformatics,
+            psychology, analyzing and forecasting stock data,etc.
+          </p>
+          <p>
+            We mention, image compression as one of the applications.
+          </p>
+        </subsection>
+        <subsection>
+          <title>Image compression with PCA</title>
+          <p>
+            Similar to SVD, we can also compress the images using PCA. We take any image,
+            first of all we separate the RBG channels of the images and apply PCA separately to red channel,
+            green channel and blue channel.
+            Next we take first <m>k</m> principal components and project the red,
+            green and blue channel images and then combine the three channels to obtained the transformed image with <m>k</m> principal components.
+          </p>
+          <example>
+            <statement>
+              <p>
+                Consider an image of a Rose as shown in the <xref ref="fig_Rose"></xref> 
+                This image is of sinze <m>600\times 800\times 3</m> array.
+              </p>
+              <figure xml:id="fig_Rose">
+                <caption>Original  Rose Image</caption>
+                <image width="50%" source="images/Rose.png"/>
+              </figure>
+              <p>
+                The red green and blue channel images are shown in the 
+                <xref ref="fig_RoseR">Figures</xref>,
+                <xref ref="fig_RoseG"></xref>,
+                <xref ref="fig_RoseB"></xref>.
+              </p>
+            
+              <figure xml:id="fig_RoseR">
+                <caption>Red Channel</caption>
+                <image width="33%" source="images/RoseR.png"/>
+              </figure>
+              <figure xml:id="fig_RoseG">
+                <caption>Green Channel</caption>
+                <image width="33%" source="images/RoseR.png"/>
+              </figure>
+              <figure xml:id="fig_RoseB">
+                <caption>Blue Channel</caption>
+                <image width="33%" source="images/RoseR.png"/>
+              </figure>
+
+              <p>
+                After applying PCA and taking first 5, 20 and 50 principal 
+                components and combining the three channels together 
+                we get the following approximate images as shown in the
+                 <xref ref="fig_Rose-PCA5">Figures</xref>,
+                <xref ref="fig_Rose-PCA20"></xref>,
+                <xref ref="fig_Rose-PCA50"></xref>, respectively.
+                Each channel is of size <m>600\times 800</m>.
+              </p>
+
+              <figure xml:id="fig_Rose-PCA5">
+                <caption>5 components</caption>
+                <image width="33%" source="images/Rose_PCA5.png"/>
+                </figure>
+                <figure xml:id="fig_Rose-PCA20">
+                    <caption>20 components</caption>
+                    <image width="33%" source="images/Rose_PCA20.png"/>
+                </figure>
+                <figure xml:id="fig_Rose-PCA50">
+                    <caption>50 components</caption>
+                    <image width="33%" source="images/Rose_PCA50.png"/>     
+                </figure>
+               
+              <p>
+                We can see from the image,
+                that 1st 50 components gives a very good approximation to the original image.
+              </p>
+            </statement>
+          </example>
+        </subsection>
+        <subsection>
+          <title>Relation Between SVD and PCA</title>
+          <p>
+            Consider a matrix <m>X</m> of size <m>n\times d</m>.
+            We can apply SVD and PCA on <m>X</m>.
+            Suppose the SVD of <m>X</m> is given by
+            <me>
+              X = U\Sigma V^T
+            </me>.
+            Let <m>U=[u_1~\ldots~ u_n]</m> and <m>V^T=\begin{bmatrix}v_1^T\\v_2^T\\\vdots\\v_d^T \end{bmatrix}</m>.
+            Then
+            <me>
+              X^TX = V\left( \Sigma^T\Sigma\right) V^T
+            </me>.
+          </p>
+          <p>
+            The covariance matrix of <m>X</m> is <m>\frac{1}{n-1}X^TX</m>.
+            This shows that <m>S</m> and <m>X^TX</m> are similar matrices.
+            If <m>\lambda_1,\ldots, \lambda_r</m> are non zero eigenvalues of <m>S</m> and
+            <m>\sigma_1,\ldots, \sigma_r</m> are singular values of <m>X</m>.
+            Then they are related by the following relation
+            <me>
+              \sigma_i^2=(n-1)\lambda_i, i = 1, 2,\ldots, r
+            </me>.
+          </p>
+          <p>
+            The relation <m>X^TX = V\left( \Sigma^T\Sigma\right) V^T</m> shows that right singular vectors are same as principal components.
+            The left singular vectors are given by
+            <me>
+              u_i = \frac{1}{\sqrt{n-1}}Xv_i
+            </me>.
+          </p>
+        </subsection>
+        <subsection>
+          <title>Exercise Set</title>
+          <exercise>
+            <statement>
+              <p>
+                Find the singular values Decomposition of the following matrices.
+              </p>
+              <p>
+                (a) <m>\begin{bmatrix}-2 \amp 2 \\ 1 \amp 1 \end{bmatrix}</m>,(b)
+                <m>\begin{bmatrix}1 \amp 1 \\ 0 \amp 1 \\1 \amp 0 \end{bmatrix}</m>, (c) <m>\begin{bmatrix}-1 \amp 1 \\ -1 \amp 1\\2 \amp -2 \end{bmatrix}</m>, (d)
+                <m>\begin{bmatrix}1 \amp 1 \\ -3 \amp -3 \end{bmatrix}</m>, (e) <m>\begin{bmatrix}1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1\\-1 \amp 1\amp 0 \end{bmatrix}</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                Use SVD to find generalized inverse of the following matrices:
+              </p>
+              <p>
+                (a) <m>\begin{bmatrix}1 \amp 1 \\ -3 \amp -3 \end{bmatrix}</m>, (b)
+                <m>\begin{bmatrix}1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1\\-1 \amp 1\amp 0 \end{bmatrix}</m>, (c) <m>\begin{bmatrix}1 \amp 0 \amp -1\\-1 \amp 0 \amp 1\\0 \amp 1 \amp 0 \end{bmatrix}</m>.
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                Use the generalized inverse from the SVD to find the least square solution of the system of linear equations <m>Ax=b</m> where
+                <me>
+                  \begin{bmatrix}1 \amp  2 \\ -1 \amp  1\\ 2 \amp  1\\ 2 \amp  -1\\1 \amp  1 \end{bmatrix} ,  b=\begin{bmatrix}2 \amp  1 \amp  -2 \amp  1 \amp  3 \end{bmatrix}
+                </me>.
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                Find the principal components of the matrix
+                <me>
+                  \begin{bmatrix}3 \amp  -4 \amp  7 \amp  1 \amp  -4 \amp  -3\\7 \amp  -6 \amp  8 \amp  -1 \amp  -1 \amp  7 \end{bmatrix}
+                </me>
+              </p>
+              <p>
+                What percentage of the variation in the data is explained by the first principal component.
+              </p>
+            </statement>
+          </exercise>
+        </subsection>
+      </section>

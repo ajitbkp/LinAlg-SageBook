@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-xxx" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Geometry of Linear Transformations</title>
+  In this section, we shall look at how some of the standard linear tranformations
+  transform a unit squre in the plane.
+
+  <p>
+    We look at some specific linear transformations from <m>\R^2</m> to <m>R^2</m> and how it transforms the unit square.
+    Readers are encouraged to draw figures.
+    <ol>
+      <li>
+        <p>
+          (<em><m>x</m>-expansion</em>)
+          <me>
+            T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bmatrix} =\begin{bmatrix}a  \amp  0\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+          </me>
+          where <m>a>1</m>.
+          <figure xml:id="fig_x-expansion">
+            <caption><m>x</m>-expansion for <m>a=2</m></caption>
+            <image width="80%" source="images/x-expansion.png"/>
+          </figure>
+          Draw the figure for <m>a=2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          (<em><m>x</m>-compression</em>)
+          <me>
+            T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bmatrix} =\begin{bmatrix}a  \amp  0\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+          </me>
+          where <m>0\lt a\lt 1</m>.
+          Draw the figure for <m>a=1/2</m>.
+          <figure xml:id="fig_x-compression">
+            <caption><m>x</m>-Compression for <m>a=1/2</m></caption>
+            <image width="80%" source="images/x-compression.png"/>
+          </figure>
+        </p>
+      </li>
+      <li>
+        <p>
+          (<em><m>y</m>-expansion</em>)
+          <me>
+            T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bmatrix} =\begin{bmatrix}0  \amp  0\\0 \amp  b \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+          </me>
+          where <m>b>0</m>.
+          Draw the figure for <m>b=2</m>.
+          <figure xml:id="fig_y-expansion">
+            <caption><m>y</m>-expansion for <m>b=2</m></caption>
+            <image width="80%" source="images/y-expansion.png"/>
+          </figure>
+        </p>
+      </li>
+      <li>
+        <p>
+          (<em><m>y</m>-compression</em>)
+          <me>
+            T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bmatrix} =\begin{bmatrix}0  \amp  0\\b \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+          </me>
+          where <m>0\lt b\lt 1</m>.
+          Draw the figure for <m>b=1/4</m>.
+          <figure xml:id="fig_y-compression">
+            <caption><m>y</m>-compression for <m>b=1/2</m></caption>
+            <image width="80%" source="images/y-compression.png"/>
+          </figure>
+        </p>
+      </li>
+      <li>
+        <p>
+          (<em>positive <m>x</m>-shear</em>)
+          <me>
+            T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{bmatrix} =\begin{bmatrix}1  \amp  a\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+          </me>
+          where <m>a>0</m>.
+          Draw the figure for <m>a=1/4</m>.
+          <figure xml:id="fig_x-postive-shear">
+            <caption>Positive <m>x</m>-shear for <m>a=1/4</m></caption>
+            <image width="80%" source="images/x-positive-shear.png"/>
+          </figure>
+        </p>
+      </li>
+      <li>
+        <p>
+          (<em>negative <m>x</m>-shear</em>)
+          <me>
+            T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{bmatrix} =\begin{bmatrix}1  \amp  a\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+          </me>
+          where <m>a\lt 0</m>.
+          Draw the figure for <m>a=-1/4</m>.
+          <figure xml:id="fig_x-negative-shear">
+            <caption>Negative <m>x</m>-shear for <m>a=-1/4</m></caption>
+            <image width="80%" source="images/x-negative-shear.png"/>
+          </figure>
+        </p>
+      </li>
+      <li>
+        <p>
+          (<em>positive <m>y</m>-shear</em>)
+          <me>
+            T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{bmatrix} =\begin{bmatrix}1  \amp  0\\a \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+          </me>
+          where <m>a>0</m>.
+          Draw the figure for <m>a=1/4</m>.
+          <figure xml:id="fig_y-postive-shear">
+            <caption>Positive <m>y</m>-shear for <m>a=1/4</m></caption>
+            <image width="80%" source="images/y-positive-shear.png"/>
+          </figure>
+        </p>
+      </li>
+      <li>
+        <p>
+          (<em>negative <m>y</m>-shear</em>)
+          <me>
+            T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{bmatrix} =\begin{bmatrix}1  \amp  0\\a \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+          </me>
+          where <m>a\lt 0</m>.
+          Draw the figure for <m>a=-1/4</m>.
+          <figure xml:id="fig_y-negative-shear">
+            <caption>Negative <m>y</m>-shear for <m>a=-1/4</m></caption>
+            <image width="80%" source="images/y-negative-shear.png"/>
+          </figure>
+        </p>
+      </li>
+      <li>
+        <p>
+          Fix a positive real number <m>a</m> and define <m>D_a\colon \R^n\to \R^n</m> by <m>D_a(x)=ax</m>.
+          It is a linear map which is induced by the scalar matrix <m>a I_{n}</m>. ( <m>D_a</m> is called a <em>dilation</em>
+          if <m>a>0</m> and a <em>contraction</em>
+          if <m>a\lt 1</m>.) Draw the figure for
+          <m>D_a\colon \R^2\to \R^2</m> with <m>a=2</m> and <m>a=1/2</m>.
+          <figure xml:id="fig_dilation">
+            <caption>Dilations with <m>a=1/4</m> and <m>a=2</m>.</caption>
+            <image width="80%" source="images/dialation.png"/>
+          </figure>
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>a</m> and <m>b</m> be two positive real numbers and <m>A=\begin{bmatrix}a \amp 0 \\0 \amp b \end{bmatrix}</m>.
+          Define <m>T\colon\R^2\to \R^2</m> by <m>T(x)=Ax</m>.
+          Then (i) <m>T</m> is stretching by a factor <m>a</m> along <m>x</m>-axis and by a factor <m>b</m> along <m>y</m>-axis if <m>a,b>1</m> and (ii) <m>T</m> is contraction by a factor <m>a</m> along <m>x</m>-axis followed by a factor <m>b</m> along <m>y</m>-axis if <m>0\lt a,b\lt 1</m>.
+          <figure xml:id="fig_diag-expansion">
+            <caption>Stretching along <m>x</m> by 2 and <m>y</m>-axes by 1.5.</caption>
+            <image width="80%" source="images/diag-expansion.png"/>
+          </figure>
+        </p>
+      </li>
+    </ol>
+  </p>
+
+   </section>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec2-4-Sage" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sage Computations</title>
+<p>
+    In this section, we explain, how Sage can be used to deal with all the concepts 
+    that we have learned in this chapter. We use reduced row echelon form (RREF) as 
+    tool to deal with all the comoutations. 
+</p>
+<alert>Vectors in Sage</alert>
+<p>
+    In keyword 'vector' to define vectors by mentioning the domain from which 
+    entries are taken and giving the entries in a list. We can plot vectors in 
+    2 and 3 dimensions. We can define vectors with entries from rational numbers ('QQ'), 
+    real numbers ('RR'), complex numbers ('CC') and even finite fields 'GF(p^k)' where 
+    <m>p</m>  is a prime number.
+</p>
+<p>
+    <alert>Vectors in <m>\R^2</m></alert>
+    <sage>
+        <input>
+            u = vector([3,-1])
+            v = vector([-1,2])
+            u+v
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+<p>
+    <sage>
+        <input>
+    ## We can mention the domain as QQ, RR, etc
+    u = vector(QQ, [3,-1]) # RR for real and CC for complex entries
+    v = vector(QQ, [-1,2])
+
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+</p>
+    <sage>
+        <input>
+        # Plotting 2d vectors
+        plot(u)+plot(v,color='red')+plot(u+v,color='green')
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+
+    <sage>
+        <input>
+        p1=plot(u)
+        p2 = plot(v,color='red')
+        p3= plot(u+v,color='green')
+        l1 =line([u,u+v],linestyle="--",color='black')
+        l2 = line([v,u+v],linestyle="--",color='black')
+        p1+p2+p3+l1+l2
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+
+    <sage>
+        <input>
+            # Linear combinations
+            a1 = 3
+            a2 = -2
+            w=a1*u+a2*v
+            w
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+</p>
+
+<p>
+    <alert>Vectors in <m>\R^3</m></alert>
+</p>
+
+<sage>
+    <input>
+        u = vector([3,-1,2])
+        v = vector([-1,2,1])
+        w = 2*u-3*v
+        print(w)
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<sage>
+    <input>
+     ## Plotting 3d-vectors
+     plot(u)+plot(v,color='red')+plot(u+v,color='green')   
+    </input>
+    <output>
+        
+    </output>
+</sage>
+</section>

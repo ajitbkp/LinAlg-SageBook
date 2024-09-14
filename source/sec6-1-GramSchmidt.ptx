@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec6-1-GramSchmidt" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Gram-Schmidt Orthogonalization Process</title>
+
+  <introduction>
+    <p>
+     In this section, we look at how to construct an 
+     orthogonal basis from a basis. 
+    </p>
+  </introduction>
+  <p>
+    Let <m>\{v_1,\ldots, v_n\}</m> be a basis of <m>\R^n</m>.
+    Define
+    <md>
+      <mrow>u_1:  =\amp  v_1</mrow>
+      <mrow>u_2:  =\amp  v_2 -\frac{u_2\cdot u_1}{\norm{u_1}^2}u_1</mrow>
+      <mrow>u_3:  =\amp  v_3 -\frac{v_3\cdot u_1}{\norm{u_1}^2}u_1-\frac{v_3\cdot u_2}{\norm{u_2}^2}u_2</mrow>
+      <mrow> \amp  \vdots</mrow>
+      <mrow>u_n:  =\amp  v_n -\frac{v_n\cdot u_1}{\norm{u_1}^2}u_1-\cdots -\frac{v_n\cdot u_{n-1}}{\norm{u_{n-1}}^2}u_{n-1}</mrow>
+    </md>
+  </p>
+  <p>
+    In view of Ex.
+    <xref ref="orth-ex2-1"></xref>,
+    it is easy to see that <m>\{u_1,\ldots,
+    u_n\}</m> is an orthogonal basis of <m>\R^n</m>.
+    Now we normalize <m>u_i's</m>.
+    Define <m>q_i=\frac{u_i}{\norm{u_i}}</m>.
+    Then <m>\{q_1,\cdots, q_n\}</m> is an orthononal basis of <m>\R^n</m>.
+    Note that we could have defined <m>q_i</m> immediately after defining <m>u_i</m>.
+  </p>
+  <p>
+    This process is called the Gram-Schmidt orthogonalization process.
+  </p>
+  <p>
+    Geometrically <m>u_2</m>,
+    constructed by subtracting the orthogonal projection of <m>v_2</m> on to <m>u_1</m>.
+    In order to construct <m>u_3</m>,
+    we take sum of orthogonal projections of <m>v_3</m> onto <m>u-1</m> and <m>u_2</m>,
+    which is the orthogonal projection of the plane spanned by <m>u_1</m> and <m>u_2</m> and subtract this from <m>v_3</m>.
+    Readers are encouraged to draw figures.
+  </p>
+  <example xml:id="gram-schmidt-eg1">
+    <statement>
+      <p>
+        Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of <m>\R^3</m> starting with a basis <m>\{(0,1,1), (1,1,1), (1,-2,2)\}</m>.
+        Let <m>v_1 = (0, 1, 1), v_2=(1, 1, 1), v_3=(1, -2, 2)</m>.
+        Then we have
+        <md>
+          <mrow>u_1: =  (0, 1, 1)</mrow>
+          <mrow>u_2:  = v_2 -\frac{u_2\cdot u_1}{\norm{u_1}^2}u_1=(1, 1, 1)-\frac{2}{2}(0,1,1)=(1,0,0)</mrow>
+          <mrow>u_3:= v_3 -\frac{u_3\cdot u_1}{\norm{u_1}^2}u_1-\frac{u_3\cdot u_2}{\norm{u_2}^2}u_2</mrow>
+          <mrow> =   (1, -2, 2)-\frac{0}{2}(0,1,1)-\frac{1}{1}(1,0,0)=(0,-2,2)</mrow>
+        </md>
+      </p>
+      <p>
+        Thus the orthonormal basis is obtained from the given basis is
+        <me>
+          \left\{q_1 = \left(0, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right), q_2=(1,0,0), q_3 =\left(0,\frac{-1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)\right\}
+        </me>.
+      </p>
+    </statement>
+  </example>
+  <example xml:id="gram-schmidt-eg2">
+    <statement>
+      <p>
+        Consider the matrix <m>A=\left(\begin{array}{rrrr} -1 \amp 1 \amp 0 \amp 1 \\ 1 \amp -1 \amp 0 \amp 1 \\ -1 \amp 0 \amp 2 \amp 1 \end{array} \right)</m>.
+        Find an orthogonal basis of the row space of <m>A</m>.
+        It is easy to check that rank of <m>A</m> is 3.
+        Hence row are linearly independent vectors in <m>\R^4</m>.
+      </p>
+      <p>
+        Let
+        <m>
+          v_1=(-1,1,0,1), v_2 = (1,-1,0,1),   v_3=(-1,0,2,1)
+        </m>.
+        <md><mrow>u_1: = \amp (-1,1,0,1)</mrow>
+          <mrow>u_2: =  \amp v_2 -\frac{u_2\cdot u_1}{\norm{u_1}^2}u_1</mrow>
+           <mrow> =\amp (1,-1,0,1)-\frac{-1}{3}(-1,1,0,1)=(2/3, -2/3, 0, 4/3)</mrow>
+          <mrow>u_3: = \amp  v_3 -\frac{u_3\cdot u_1}{\norm{u_1}^2}u_1-\frac{u_3\cdot u_2}{\norm{u_2}^2}u_2</mrow>
+          <mrow>  = \amp  (-1,0,2,1)-\frac{2}{3}(-1,1,0,1)-\frac{2/3}{9/2}(2/3, -2/3, 0, 4/3)</mrow>
+          <mrow>=\amp (-1/2, -1/2, 2, 0)
+          </mrow>
+        </md>
+      </p>
+      <p>
+        Hence
+        <me>
+          \{(-1, 1, 0, 1) (2/3, -2/3, 0, 4/3) (-1/2, -1/2, 2, 0)\}
+        </me>
+        is an orthogonal basis of the row space of <m>A</m>.
+      </p>
+    </statement>
+  </example>
+  <exercise>
+    <statement>
+      <p>
+        Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of <m>\R^3</m> starting with a basis <m>\beta=\{(1,1,1),(-1,1,1),(-1,0,1)\}</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace <m>W\subset \R^4</m> with basis
+        <me>
+          \beta = \{ (-1,1,1,0),(-1,0,1,0),(1,0,0,1)\}
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  
+</section>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec6-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Orthogonal Complements</title>
+
+  <introduction>
+    <p>
+     
+    </p>
+  </introduction>
+  <definition>
+    <statement>
+      <p>
+        Let <m>U\subset \R^n</m>. Then <m>U^\perp:=\{x\in \R^n: x\cdot u=0, \forall u\in U\}</m> 
+        is called the orthogonal complement of <m>U</m>.
+      </p>
+    </statement>
+  </definition>
+  
+  <exercise>
+    <statement>
+      <p>
+        (i) <m>\{0\}^\perp = \R^n</m>
+      </p>
+      <p>
+        (ii) <m>{\R^n}^{\perp}=\{0\}</m>.
+      </p>
+      <p>
+        (iii) Let <m>U\subset \R^n</m>.
+        Then <m>U^\perp</m> is a subspace of <m>\R^n</m>.
+        Note that <m>U</m> need not be a subspace of <m>\R^n</m>.
+      </p>
+    </statement>
+  </exercise>
+
+  <example>
+    <statement>
+      <p>
+        Let <m>U=span(\{(2,-1,1),(1,2,-1)\})</m>.
+        Then
+        <md>
+          <mrow>U^\perp  =\amp  \{(x_1,x_2,x_3): 2x_1-x_2+x_3=0,x_1+2x_2-x_3=0\}</mrow>
+          <mrow> =\amp null\left(\begin{array}{rrr} 2 \amp  -1 \amp  1 \\ 1 \amp  2 \amp  -1 \end{array} \right)= \{t(1,-3,-5):t\in \R\}</mrow>
+        </md>.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Find the orthogonal complement of <m>span(\{\left(2,\,0,\,1,\,-1\right), \left(1,\,2,\,0,\,-1\right)\})</m>.
+        <md>
+          <mrow>U^\perp  =\amp  \{(x_1,x_2,x_3,x_3): 2x_1+x_3-x_4=0,x_1+2x_2-x_4=0\}</mrow>
+          <mrow> =\amp null\left(\begin{array}{rrrr} 2 \amp  0 \amp  1 \amp  -1 \\ 1 \amp  2 \amp  0 \amp  -1 \end{array} \right)</mrow>
+          <mrow> =\amp  span(\{(1,  0, -1,  1),(0,  1,  2,  2)\})</mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+
+  <definition xml:id="subspace-projection1">
+    <statement>
+      <p>
+        Let <m>U</m> be a subspace of <m>\R^n</m> with and orthogonal basis <m>\{u_1,\ldots,u_k\}</m>.
+        If <m>x\in \R^n</m>, then
+        <men xml:id="proj_onto_subspace">
+          \proj_U(x)=\frac{x\cdot u_1}{\norm{u_1}^2}u_1+\frac{x\cdot u_2}{\norm{u_2}^2}u_2+\cdots + \frac{x\cdot u_k}{\norm{u_k}^2}u_k
+        </men>.
+      </p>
+    </statement>
+  </definition>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>U</m> be a subspace of <m>\R^n</m> and <m>p=\proj_U(x)</m>.
+        Then
+      </p>
+      <p>
+        (i) <m>p\in U</m> and <m>(x-p) \in U^\perp</m>.
+      </p>
+      <p>
+        (ii) <m>p</m> is a vector in <m>U</m>,
+        which is closet to <m>x</m>.
+        That is for all <m>y\in U</m>,
+        <m>\norm{x-p}\leq \norm{x-y}</m>.
+        Note that <m>(x-p)\perp (y-p)</m>.
+        Hence by the Pythagoras theorem,
+        <m>\norm{x-p}^2+\norm{p-y}^2=\norm{x-y}^2</m>.
+        <me>
+          \norm{x-y}^2=\norm{x-p+p-y}^2=\norm{x-p}^2+\norm{y-p}^2\geq \norm{x-p}^2
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  <example>
+    <statement>
+      <p>
+        Consider the plane <m>\pi=\{(x,y,z\in \R^3:3x+y-5z=0\}</m>.
+        It is easy to see that <m>v_1=(2,-1,1),
+        v_2=(1,2,1)</m> lie on the plane <m>\pi</m>.
+        Using the Gram-Schmidt process we can find an orthogonal basis <m>u_1 = (2,-1,1),
+        u_2=(2/3, 13/6, 5/6)</m> on <m>\pi</m>.
+        Let us find the orthogonal projection of <m>v=(1,2,3)</m> onto <m>\pi</m>.
+        The required vector
+        <me>
+          \proj_\pi(v)=\frac{v\cdot u_1}{\norm{u_1}^2}u_1+\frac{v\cdot u_2}{\norm{u_2}^2}u_2=(13/7, 16/7, 11/7)
+        </me>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in <m>\R^n</m>?
+    Let <m>\beta = \{w_1,\ldots, w_k\}</m> be a basis of <m>W</m>.
+    We want to find the vector <m>p</m> which the orthogonal projection of <m>v</m> onto <m>W</m>.
+  </p>
+  <p>
+    Note that <m>p\in W</m>, therefore,
+    there exist scalars <m>x_1,\ldots, x_k</m> such that
+    <me>
+      p=x_1 v_1+\cdots + x_k v_k=Ax
+    </me>
+    where <m>A=[v_1~\cdots ~ v_k]</m> and <m>x=[x_1~\cdots~x_k]^T</m>.
+  </p>
+  <p>
+    It is clear that <m>v-p=v-Ax\in W^T</m>.
+    Hence <m>(v_i)^T(v-Ax)=0</m> for <m>1\leq i\leq k</m>.
+    This is same as
+    <me>
+      A^T(v-Ax)=0 \implies x=(A^TA)^{-1}(A^Tv)
+    </me>.
+  </p>
+  <p>
+    Hence
+    <men xml:id="orth-Proj-W">
+      p=A(A^TA)^{-1}(A^Tv)
+    </men>
+  </p>
+  <p>
+    The matrix <m>Q=A(A^TA)^{-1}A^T</m> is called the
+    <q>projection matrix for the subspace <m>W</m></q>.
+  </p>
+  
+</section>

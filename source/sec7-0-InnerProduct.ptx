@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec7-0-InnerProduct" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Inner Product</title>
+
+<introduction>
+  <p>
+      In the last section,
+      dealt with notion of dot product and geometry in <m>\R^n</m>.
+      The dot product and related notion can be generalized to an arbitrary vector space over <m>\R</m> or <m>\mathbb{C}</m>.
+      All the notions,
+      we have learned in the last section can be generalized over an inner product space.
+    </p>
+
+    <p>
+      Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
+      in particular,
+      dot product can be thought of as a function from
+      <m>\R^n\times \R^n</m> to <m>\R</m> satisfying the following properties:
+      <ol>
+        <li>
+          <p>
+            <m>x \cdot x\geq 0</m> for all <m>x\in \R^n</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x \cdot x= 0</m> if and only if <m>x=0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x \cdot y=y\cdot x</m> for all <m>x,y \in \R^n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x\cdot (y+z) = x\cdot y +x\cdot z</m> for all <m>x,y,z\in \R^n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x\cdots (\alpha y)=\alpha x\cdot y = (\alpha x)\cdot y</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+    </introduction>
+
+      The notion of dot product on <m>\R^n</m> can ve generalized on vector space known as inner product.
+      We have the following definition.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space over <m>\R</m>.
+          An inner product on <m>V</m> is a function that assigns a real number
+          <m>\langle x, y\rangle</m> to every pair <m>x,y</m> of vectors in <m>V</m> satisfying the following properties.
+          <ol>
+            <li>
+              <title>P1</title>
+              <p>
+                <m>\langle x, x\rangle \geq 0</m> for all <m>x \in V</m> and
+                <m>\langle x, x\rangle = 0</m> if and only if <m>x=0</m>.
+              </p>
+            </li>
+            <li>
+              <title>P2</title>
+              <p>
+                <m>\langle x, y\rangle = \langle y, x\rangle</m> for all <m>x,y \in V</m>. (Symmetry)
+              </p>
+            </li>
+            <li>
+              <title>P3</title>
+              <p>
+                <m>\langle x, (y+z)\rangle=\langle x, y\rangle+\langle x, z\rangle</m> for all <m>x,y,z\in V</m>.
+              </p>
+            </li>
+            <li>
+              <title>P4</title>
+              <p>
+                <m>\langle x, (\alpha y)\rangle=\alpha\langle x, y\rangle</m> for all
+                <m>x,y\in V</m> and <m>\alpha \in \R</m>.
+                If <m>V</m> is real vector space with inner product <m>\langle, .\rangle</m>.
+                Then <m>(V, \langle, .\rangle)</m> called in inner product space over <m>\R</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The last two properties make the inner product linear in the second variable.
+      Using the symmetry property,
+      it can also be shown that the inner product is linear in the first variable as well.
+      That is,
+      <me>
+        \langle (x+y,z\rangle=\langle x, z\rangle+\langle y, z\rangle,  (\langle \alpha x) y\rangle=\alpha\langle x, y\rangle
+      </me>
+    </p>
+    <example>
+      <statement>
+        <p>
+          On <m>\R^n</m>, the standard dot product is an inner product.
+          Thus define
+          <me>
+            \langle x,  y\rangle:=x\cdot y
+          </me>
+        </p>
+        <p>
+          This is also called the euclidean inner product on <m>\R^n</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let <m>V=M_n(\R)</m> the set of all
+          <m>n\times n</m> matrices over <m>\R</m>.
+          Define
+          <me>
+            \langle A,  B\rangle:=tr(AB^T)
+          </me>
+        </p>
+        <p>
+          It is easy to show that this is an inner product on <m>M_n(\R)</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n\times n</m> positive definite matrix.
+          On <m>\R^n</m>, define
+          <me>
+            \langle x,  y \rangle := x\cdot Ay = x^TAy
+          </me>
+        </p>
+        <p>
+          Then this is an inner product on <m>\R^n</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let <m>V={\cal C}([0,1])</m> the set of all continuous function from <m>[0,1]</m> to <m>\R</m>.
+          Define
+          <me>
+            \langle f,  g \rangle:=\int_0^1 f(t)g(t)dt
+          </me>.
+        </p>
+        <p>
+          This is an inner product on <m>V</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let <m>p</m> and <m>q</m> be two polynomials in <m>{\cal P}_n(\mathbb{R})</m>.
+          Then define
+          <me>
+            \langle p,q \rangle := p(0)q(0)+p(1)q(1)+\cdots +p(n)q(n)
+          </me>.
+        </p>
+        <p>
+          It is easy to see that <m>\langle p,q \rangle</m> defined inner product on the vector space <m>{\cal P}_n(R)</m>.
+        </p>
+        <p>
+          Here <m>0, 1, 2, \ldots, n</m> are nothing special.
+          Instead, we can use any <m>n+1</m> distinct real numbers,
+          <m>c_0,c_1,\ldots, c_n</m>.
+        </p>
+      </statement>
+    </example>
+    <definition>
+      <statement>
+        <p>
+          Let <m>(V, \langle .\rangle)</m> be a real inner product space.
+          Then norm of any vector <m>x\in V</m> corresponding to the inner product <m>\langle . \rangle</m> is defined as
+          <me>
+            \norm{x}=\sqrt{\langle x, x\rangle}
+          </me>.
+          The distance between twp vectors <m>x</m> and <m>y</m> is defined as
+          <me>
+            d(x,y):=\norm{x-y}
+          </me>.
+        </p>
+      </statement>
+    </definition>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>V</m> be an inner product space.
+          Then for any two vectors <m>, y\in V</m>, show that
+          <me>
+            \norm{x+y}^2=\norm{x}^2+\norm{y}^2+2\inner{x}{y},  \norm{x-y}^2=\norm{x}^2+\norm{y}^2-2\inner{x}{y}
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          If <m>x, y</m> are two vectors in an inner product space <m>V</m> with inner product <m>\langle .\rangle</m>.
+          Then show that
+          <me>
+            \norm{x+y}^2+\norm{x-y}^2=2(\norm{x}^2+\norm{y}^2)
+          </me>.
+        </p>
+        <p>
+          This is called the parallelogram identity.
+          Geometrically, in a parallelogram,
+          the sum of square of the diagonal is 2 the sum of the squares of the side lengths.
+        </p>
+      </statement>
+    </exercise>
+    <theorem>
+      <title>Cauchy-Schwarz Inequality</title>
+      <statement>
+        <p>
+          Let <m>V</m> be an inner product space.
+          The for any two vectors <m>x,y\in V</m>, we have
+          <men xml:id="cauchy-swarch-ineq">
+            |\inner{x}{y}|\leq \norm{x}\norm{y}
+          </men>
+        </p>
+        <p>
+          The equality holds if and only if <m>x</m> and <m>y</m> are linearly dependent.
+        </p>
+      </statement>
+    </theorem>
+    <exercise>
+      <title>Triangle Inequality</title>
+      <statement>
+        <p>
+          Let <m>x</m> and <m>y</m> be two vectors in an inner product space <m>V</m>.
+          Then
+          <md>
+            <mrow>\norm{x+y}^2 \amp =\amp \norm{x+y}^2=\norm{x}^2+\norm{y}^2+2\inner{x}{y}</mrow>
+            <mrow>\amp \leq\amp \norm{x}^2+\norm{y}^2+2|\inner{x}{y}|  \text{ \(a\leq |a|\) }</mrow>
+            <mrow>\amp \leq \amp  \norm{x}^2+\norm{y}^2+2\norm{x}\norm{y}  \text{ by the Cauchy-Schwarz inequality }</mrow>
+            <mrow>\amp =\amp  (\norm{x}+\norm{y})^2</mrow>
+          </md>
+        </p>
+        <p>
+          Hence
+          <md>
+            <mrow xml:id="trangle_ineq" number="yes">\norm{x+y}\leq \norm{x}+\norm{y}</mrow>
+          </md>
+          is called the triangle inequality.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      Let us play with the Cauchy-Schwarz inequality<nbsp/><xref ref="cauchy-swarch-ineq"/>.
+      Suppose <m>x</m> and <m>y</m> are non zero vectors in <m>V</m>, Then
+      <me>
+        |\inner{x}{y}|\leq \norm{x}\norm{y}\Rightarrow \frac{|\inner{x}{y}|}{\norm{x}\norm{y}}\leq 1
+      </me>
+    </p>
+    <p>
+      Hence we have
+      <me>
+        -1\leq \frac{\inner{x}{y}}{\norm{x}\norm{y}}\leq 1
+      </me>.
+    </p>
+    <p>
+      Thus for any two non zero vectors, <m>x</m> and <m>y</m>,
+      <m>\frac{\inner{x}{y}}{\norm{x}\norm{y}}</m> always lies between <m>-1</m> and 1.
+      This allows us to define the angle between two non zero vectors.
+      We assign this number to <m>\cos\theta</m> with
+      <m>\theta\in[-\pi,\pi]</m> called the angle between <m>x</m> and <m>y</m>.
+      Thus, if <m>\theta</m> is the angle between <m>x</m> and <m>y</m>,
+      then we have
+      <me>
+        \cos \theta = \frac{\inner{x}{y}}{\norm{x}\norm{y}}
+      </me>
+    </p>
+    <p>
+      All the notions that we defined for dot product, namely,
+      orthogonality,
+      orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner.
+      All we need to do is,
+      replace the dot product by the given inner product.
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>(V, \inner{.}{.})</m> be a real inner product space.
+          Define (i) orthogonality (ii) orthogonal complement of a subset of <m>V</m>, (iii) Orthogonal projection, (iv) Orthogonal and orthonormal sets (v) Gram-Schmidt orthogonalization process etc.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>x, y</m> be two vectors in an inner product space <m>V</m>.
+          Then show that
+        </p>
+        <p>
+          (i) <m>x</m> and <m>y</m> are orthogonal if and only if
+          <m>\norm{x+y}=\norm{x-y}</m>. (what does it mean geometrically?)
+        </p>
+        <p>
+          (ii) <m>x+y</m> and <m>x-y</m> are orthogonal if and only if <m>\norm{x}=\norm{y}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>C([-\pi,\pi])</m> be the vectors space of set of continuous functions from <m>[-\pi,\pi]</m> to <m>\R</m>.
+          Define the inner product on <m>C([-\pi,\pi])</m> as
+          <me>
+            \inner{f}{g}:=\int_{-\pi}^\pi f(t) g(t)`dt
+          </me>.
+        </p>
+        <p>
+          Show that under this inner product
+          <m>\{1, \sin nx,\cos mx\}</m> is an orthogonal set.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <title>Pythagoras Theorem</title>
+      <statement>
+        <p>
+          Let <m>(V, \inner{.}{.})</m> be a real inner product space.
+          Let <m>x_1,x_2\,x_n</m> be <m>n</m> orthogonal vectors in <m>V</m>.
+          Then
+          <me>
+            \norm{x_1+x_2+\cdots+x_n}^2=\norm{x_1}^2+\norm{x_2}^2+\cdots+\norm{x_n}^2
+          </me>.
+        </p>
+        <p>
+          This is called the Pythagoras theorem.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>\beta=\{u_1,\ldots,
+          u_n\}</m> be an orthogonal basis of an inner product space <m>V</m>.
+          Let <m>v\in V</m> and <m>\theta_1,\ldots, \theta_n</m> between <m>v</m> and <m>u_1,\ldots, u_n</m>,
+          respectively.
+          Then
+          <me>
+            \cos\theta_1^2+\cdots+\cos\theta_n^2=1
+          </me>.
+        </p>
+        <p>
+          Here <m>\cos\theta_i</m> are called the direction cosines of <m>v</m> corresponding to <m>\beta</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>\beta=\{u_1,\ldots,
+          u_n\}</m> be an orthogonal basis of an inner product space <m>V</m>.
+          Let <m>x</m> and <m>y</m> be two vectors such that
+          <m>x=\sum x_i u_i</m> and <m>y=\sum y_i u_i</m>.
+          Then
+          <me>
+            \inner{x}{y}=x_1y_1+x_2y_2+\cdots+x_ny_n
+          </me>
+          and
+          <me>
+            \norm{x}^2=x_1^2+x_2^2+\cdots +x_n^2
+          </me>.
+        </p>
+      </statement>
+    </exercise>
+    <example xml:id="Legendre-poly">
+      <statement>
+        <p>
+          Consider <m>V ={\cal P}_3(\R)</m> with inner product <m>\inner{p}{q}:=\int_{-1}^1 p(x)q(x)\,dx</m>.
+          Use the standard basis <m>\beta =\{v_1,v_2,v_3,v_4\} = \{1,x,x^2,x^3\}</m> to find an orthogonal basis of <m>{\cal P}_3(\R)</m>.
+        </p>
+        <p>
+          First of all notice that <m>\beta</m> is not an orthogonal basis.
+          For <m>\inner{1}{x^2} = \int_{-1}^1 x^2 dx = \frac23</m>.
+          Also note that <m>\inner{v_1}{v_2}=\int_{-1}^1 xdx = 0</m>.
+          <m>\inner{v_2}{v_3}=\int_{-1}^1 x^3dx = 0</m>.
+          <m>\inner{v_1}{v_4}=\int_{-1}^1 x^3 dx = 0</m>. <m>\inner{v_3}{v_4}=\int_{-1}^1 x^5dx = 0</m>.
+        </p>
+        <p>
+          Since <m>v_1</m> and <m>v_2</m> are already orthogonal,
+          we can choose <m>u_1=v_1=1</m> and
+          <m>u_2 = v_2=x</m> in the Gram-Schmidt process.
+          Next
+          <me>
+            u_3 = v_3-\inner{v_3}{u_1}/\norm{u_1}^2u_1-\inner{v_3}{u_2}/\norm{u_2}^2u_2x^2
+          </me>.
+        </p>
+        <p>
+          We have
+          <me>
+            \inner{v_3}{u_1}= \int_{-1}^1 x^2 dx = \frac23, \inner{u_1}{u_1}=\int_{-1}^1 1dx = 2
+          </me>.
+        </p>
+        <p>
+          Hence
+          <me>
+            u_3 = x^2 - \frac{\frac23}{2} \times 1 = x^2-\frac13
+          </me>.
+        </p>
+        <p>
+          Next
+          <md>
+            <mrow>u_4 \amp =\amp  u_4-\inner{v_4}{u_1}/\norm{u_1}^1u_1-\inner{v_4}{u_2}/\norm{u_2}^1u_2-\inner{v_4}{u_3}/\norm{u_3}^1u_3</mrow>
+            <mrow>\amp =\amp  v_4-\inner{v_4}{u_2}/\norm{u_2}^1u_2-\inner{v_4}{u_3}/\norm{u_3}^1u_3</mrow>
+            <mrow>\amp =\amp  x^3-\frac35 x</mrow>
+          </md>.
+        </p>
+        <p>
+          Hence an orthogonal basis is <m>\beta'=\{1,x,x^2-\frac{1}{3}, x^3-\frac35 x \}</m>.
+          These are the first four <em>Legendre polynomials.</em>
+        </p>
+        <p>
+          After normalizing the vectors,
+          we get an orthonormal basis
+          <me>
+            \beta''=\left\{\frac{\sqrt{2}}{2}, \frac{\sqrt{6}}{2}x, \frac{3\sqrt{10}}{4}\left(x^2-\frac13\right), \frac{5\sqrt{14}}{4}\left(x^3-\frac35 x\right)\right\}
+          </me>.
+        </p>
+        <figure xml:id="fig_legendrepoly">
+          <caption>Graph of Legendre polynomials</caption>
+          <image width="50%" source="images/Legendre_poly.png"/>
+        </figure>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Consider the standard basis <m>\beta=\{1,x,x^2,x^3\}</m> of
+          <m>{\cal P}_3(\R)</m> with inner product <m>\inner{f}{g}:=\int_0^1 f(x)g(x)\,dx</m>.
+          Find an orthonormal basis starting with <m>\beta</m> using the Gram-Schmidt orthogonalization process.
+        </p>
+      </statement>
+    </exercise>
+    <example>
+      <statement>
+        <p>
+          Let <m>A=\left(\begin{array}{rrr}2 \amp -1 \amp 0 \\-1 \amp 2 \amp -1 \\0 \amp -1 \amp 2 \end{array} \right)</m>.
+          It is easy to check that <m>A</m> is a symmetric and positive definite matrix. (why?) Define an inner product on
+          <m>\mathbb{R}^3</m> as <m>\inner{u}{v}:=v^TAu</m>.
+        </p>
+        <p>
+          Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors
+          <m>\beta=\{e_1, e_2, e_3\}</m> with respect to the above inner product.
+          <md>
+            <mrow>u_1: \amp =\amp (1,0,0)</mrow>
+            <mrow>u_2: \amp =\amp  e_2-\frac{\inner{u_2\cdot e_2}{u_1}}{\norm{u_1}^2}u_1=(0,1,0)-\frac{-1}{2}(1,0,0)=(1/2,1,0)</mrow>
+            <mrow>u_3: \amp =\amp  e_3 -\frac{\inner{e_3}{u_1}}{\norm{u_1}^2}u_1-\frac{\inner{e_3}{u_1}}{\norm{u_2}^2}u_2</mrow>
+            <mrow>\amp  = \amp  (0,1,0)-\frac{0}{2}(1,0,0)-\frac{-1}{3/2}(1/2,1,0)=(1/3, 2/3, 1)</mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+    <example>
+      <title>Lagrange Interpolating Polynomials</title>
+      <statement>
+        <p>
+          Fix any <m>n+1</m> distinct real numbers,
+          <m>c_0,c_1,\ldots, c_n</m> and define
+          <me>
+            \langle p,q \rangle := p(c_0)q(c_0)+p(c_1)q(c_1)+\cdots +p(c_n)q(c_n)
+          </me>
+          an inner product on <m>{\cal P}_n(\R)</m>.
+        </p>
+        <p>
+          Recall the Lagrange Polynomial defined (Eqn.
+          <xref ref="lagrange-eq1"></xref>).
+          <me>
+            \ell_i(x)=\prod_{j=0,j\neq i}^{n}\frac{x-c_j}{c_i-c_j}
+          </me>.
+        </p>
+        <p>
+          Then
+          <me>
+            \inner{\ell_i}{\ell_j}=\sum_{j=0}^n \ell_i(c_j)\ell_j(c_j)=\delta_{ij}
+          </me>
+        </p>
+        <p>
+          Hence <m>\{\ell_i\}</m> is an orthonormal basis of <m>{\cal P}_n(\R)</m>.
+        </p>
+        <p>
+          Let <m>p(x)\in {\cal P}_n(\R)</m> be any polynomial, then
+          <me>
+            \inner{p}{\ell_k}=p(c_0)\ell_k(c_0)+p(c_1)\ell_k(c_1)+\cdots +p(c_n)\ell_k(c_n)=p(c_k)
+          </me>.
+          Since <m>\{\ell_i\}</m> is an orthonormal basis of <m>{\cal P}_n(\R)</m>, we have
+          <md>
+            <mrow>p(x) \amp =\amp \inner{p(x)}{\ell_0(x)}\ell_0(x)+\inner{p(x)}{\ell_1(x)}\ell_1(x)+\cdots +\inner{p(x)}{\ell_n(x)}\ell_n(x)</mrow>
+            <mrow>\amp =\amp  p(c_0)\ell_0(x)+p(c_1)\ell_1(x)+p(c_2)\ell_2(x)+\cdots +p(c_n)\ell_n(x)</mrow>
+          </md>
+          which is the Lagrange interpolation expansion of <m>p(x)</m>.
+        </p>
+      </statement>
+    </example>
+  <subsection>
+    <title>Projection onto a subspace</title>
+    <p>
+      Let <m>V</m> be an inner product space and <m>W\leq V</m>,
+      a finite dimensional subspace of <m>V</m>.
+      Let <m>\{u_1,\ldots, u_k\}</m> be an orthonormal basis of <m>W</m>.
+      Suppose <m>v\in V</m>.
+      Similar <xref ref="subspace-projection1">definition</xref>,
+      we can define the orthogonal projection of <m>v</m> onto <m>W</m> as
+      <me>
+        \proj_W(v):=  \inner{v}{u_1}u_1+\inner{v}{u_2}u_2+\cdots+\inner{v}{u_k}u_k
+      </me>.
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          Find the orthogonal projection of vector
+          <m>b=\begin{bmatrix}1\\2\\3\\4 \end{bmatrix}</m> onto the subspace spanned by three vectors <m>\left\{\begin{bmatrix}1\\-1\\0\\1 \end{bmatrix} , \begin{bmatrix}0\\1\\1\\-1 \end{bmatrix} , \begin{bmatrix}1\\1\\-1\\0 \end{bmatrix} \right\}</m>.
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>Problem set on orthogonality and inner Product</title>
+    <ol>
+      <li>
+        <p>
+          Let <m>\{u_1,\ldots,
+          u_k\}</m> be an orthogonal set of vectors in <m>\R^n</m>.
+          Let <m>u\in \R^n</m> and define
+          <me>
+            u_{k+1}:=u-\frac{u_1\cdot u_{k+1}}{\norm{u_1}^2}u_1-\frac{u_2\cdot u_{k+1}}{\norm{u_2}^2}u_2-\cdots -\frac{u_k\cdot u_{k+1}}{\norm{u_k}^2}u_k
+          </me>,
+          Then  (i) <m>u_i\cdot u_{k+1}=0</m> for all
+          <m>i=1,\ldots,
+          k</m>  (ii) If <m>u\notin span(\{u_1,\ldots, u_k\})</m>,
+          then <m>u_{k+1}\neq 0</m> and
+          <m>\{u_1,\ldots,
+          u_k,u_{k+1}\}</m> is an orthogonal set.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\{u_1,\ldots,
+          u_n\}</m> is orthogonal set then it is linearly independent.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the coordinates of the vector <m>(2,5,7)</m> with respect to an orthonormal basis <m>\beta'=\left\{\left(\frac{2}{\sqrt{6}},\frac{1}{\sqrt{6}},\frac{1}{\sqrt{6}}\right), \left(\frac{-1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right),\left(0,\frac{-1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)\right\}</m> of <m>\R^3</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say,
+          <m>\{q_1,q_2,q_3\}</m> of <m>\R^3</m> starting with a basis <m>\beta=\{(1,1,1),(-1,1,1),(-1,0,1)\}</m>.
+          Define <m>Q = [q_1~q_2~q_3]</m>,
+          the column matrix whose columns are <m>q_1, q_2, q_3</m>.
+          Show that <m>Q^TQ=I</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say,
+          <m>\{q_1,q_2,q_3, q_3\}</m> of the subspace <m>W\subset \R^4</m> with basis
+          <me>
+            \beta = \{ v_1=(-1,1,1,0),v_2=(-1,0,1,0),v_3=(1,0,0,1)\}
+          </me>.
+          Define <m>Q = [q_1~q_2~q_3]</m>,
+          the column matrix whose columns are <m>q_1, q_2, q_3</m>.
+          Show that <m>Q^TQ=I</m>.
+          Suppose <m>A=[v_1~v_2~v_3]</m>.
+          Find <m>Q^TA</m> and check that it is an upper triangular matrix with positive diagonal matrix.
+          If we write <m>R=Q^TA</m>,
+          then <m>A=QR</m> called the <m>QR</m>-factorization of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The following are equivalent for an <m>n\times n</m> matrix <m>A</m>. (i) <m>A</m> is orthogonal (ii)
+          <m>\norm{Ax}=\norm{A}</m> for all <m>x\in \R^n</m>. (iii)
+          <m>\norm{Ax-Ay}=\norm{x-y}</m> for all <m>x,y\in \R^n</m>. (iv)
+          <m>Ax\cdot Ay = (Ay)^TAx=x\cdot y</m>. {Hint: A matrix <m>P</m> is orthogonal if if it satisfies any one of the above conditions.}
+        </p>
+      </li>
+      <li>
+        <p>
+          For the following matrices find an orthogonal matrix <m>P</m> such that
+          <m>P^{-1}AP</m> is a diagonal matrix.
+          <me>
+            \begin{pmatrix}2 \amp  -1 \\-1 \amp  1 \end{pmatrix} , \begin{pmatrix}1 \amp  0 \amp  -1\\0 \amp  1 \amp  2\\-1 \amp  2 \amp  5 \end{pmatrix}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the QR-factorization of the following matrices:
+          <me>
+            \begin{bmatrix}2 \amp  1 \\ 1 \amp  11 \end{bmatrix} ,  \begin{bmatrix}1 \amp  -1 \amp  1\\ 2 \amp  0  \amp  1\\2 \amp  1 \amp  -2 \end{bmatrix} , \begin{bmatrix}1 \amp  1 \amp  0 \\-1 \amp  0 1\\0 \amp  1 \amp  1\\1 \amp  -1 \amp  0 \end{bmatrix}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>V</m> be an inner product space.
+          Then for any two vectors <m>, y\in V</m>, show that
+          <me>
+            \norm{x+y}^2=\norm{x}^2+\norm{y}^2+2\inner{x}{y},  \norm{x-y}^2=\norm{x}^2+\norm{y}^2-2\inner{x}{y}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>x, y</m> are two vectors in an inner product space <m>V</m> with inner product <m>\langle .\rangle</m>.
+          Then show that
+          <me>
+            \norm{x+y}^2+\norm{x-y}^2=2(\norm{x}^2+\norm{y}^2)
+          </me>.
+          This is called the parallelogram identity.
+          Geometrically, in a parallelogram,
+          the sum of square of the diagonal is 2 the sum of the squares of the side lengths.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>(V, \inner{.}{.})</m> be a real inner product space.
+          Let <m>x_1,x_2\,x_n</m> be <m>n</m> orthogonal vectors in <m>V</m>.
+          Then  show that
+          <me>
+            \norm{x_1+x_2+\cdots+x_n}^2=\norm{x_1}^2+\norm{x_2}^2+\cdots+\norm{x_n}^2
+          </me>.
+          This is an extension of the Pythagoras Theorem.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>\beta=\{u_1,\ldots,
+          u_n\}</m> be an orthogonal basis of an inner product space <m>V</m>.
+          Let <m>v\in V</m> and <m>\theta_1,\ldots, \theta_n</m> between <m>v</m> and <m>u_1,\ldots, u_n</m>,
+          respectively.
+          Then
+          <me>
+            \cos\theta_1^2+\cdots+\cos\theta_n^2=1
+          </me>.
+          Here <m>\cos\theta_i</m> are called the direction cosines of <m>v</m> corresponding to <m>\beta</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the orthogonal projection of vector
+          <m>b=\begin{bmatrix}1\\2\\3\\4 \end{bmatrix}</m> onto the subspace spanned by three vectors <m>\left\{\begin{bmatrix}1\\-1\\0\\1 \end{bmatrix} , \begin{bmatrix}0\\1\\1\\-1 \end{bmatrix} , \begin{bmatrix}1\\1\\-1\\0 \end{bmatrix} \right\}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider the standard basis <m>\beta=\{1,x,x^2,x^3\}</m> of
+          <m>{\cal P}_3(\R)</m> with inner product <m>\inner{f}{g}:=\int_0^1 f(x)g(x)\,dx</m>.
+          Find an orthonormal basis starting with <m>\beta</m> using the Gram-Schmidt orthogonalization process.
+          (Hint: replace dot product in the Gram-SChmidt process by the inner product.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider the standard basis <m>\beta=\{1-x,1+x,1+x+x^2\}</m> of
+          <m>{\cal P}_3(\R)</m> with inner product <m>\inner{f}{g}:=\int_{-1}^1 f(x)g(x)\,dx</m>.
+          Find an orthonormal basis starting with <m>\beta</m> using the Gram-Schmidt orthogonalization process.
+        </p>
+      </li>
+      <li>
+        <p>
+          (i) Define <m>\inner{u}{v}:=u^TAv</m> where <m>A = \begin{bmatrix}1 \amp 1 \amp 0\\1 \amp 2 \amp 0\\0 \amp 0 \amp 1 \end{bmatrix}</m>.
+          Show that <m>\inner{.}{.}</m> is an inner product on <m>\R^4</m>.
+          Hence show that (ii) Show that
+          <m>\left\{\begin{bmatrix}2 \\-1\\0 \end{bmatrix} , \begin{bmatrix}0 \\1\\1 \end{bmatrix} , \begin{bmatrix}0 \\-1\\2 \end{bmatrix} \right\}</m> is an orthogonal basis of <m>\R^3</m> with respect to this inner product. (iii) Consider a basis <m>\beta=\{(1,1,1),(-1,1,1),(-1,0,1)\}</m> of <m>R^3</m>.
+          Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of <m>\R^3</m> with respect to the inner product defined in (i).
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

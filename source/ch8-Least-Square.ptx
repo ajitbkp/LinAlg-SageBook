@@ -2,4 +2,7 @@
 <chapter xml:id="chap8-Least-Square" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Least Square Problems</title>
   
+
+  <xi:include href="sec8-0-LSTSQ.ptx" />
+  
 </chapter>

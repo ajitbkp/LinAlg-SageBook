@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec4-3-LI-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Linear dependence and independence</title>
+        <introduction>
+          <p>
+            
+         
+        <p>
+          Linear dependence and linear independence set of vectors are defined exactly in a same way as we defined in 
+          <m>\R^n</m>. 
+        </p>
+        <definition xml:id="LD-VS">
+          <statement>
+            <p>
+              A set of vectors <m>\{v_1,v_2,\ldots,
+              v_k\}\subset V</m> is said to be linearly dependent if there exists scalars
+              <m>\alpha_1,\alpha_2,\ldots \alpha_k</m> not all zero such that <m>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0</m>.
+            </p>
+            <p>
+              It is easy to see that <m>S=\{v_1,v_2,\ldots,
+              v_k\}\subset V</m> is linearly dependent if there exists
+              <m>i=\{1,\ldots,k\}</m> such that <m>v_i\in L(S\setminus \{v_i\})</m>.
+            </p>
+          </statement>
+        </definition>
+        <definition xml:id="LI-VS">
+          <statement>
+            <p>
+              A set of vectors <m>S=\{v_1,v_2,\ldots,
+              v_k\}\subset V</m> is said to be linearly independent if it is not linearly dependent.
+            </p>
+            <p>
+              Let us understand this notion in order to get a working definition.
+              Let us write the linearly dependent definition using quantifiers.
+            </p>
+            <p>
+              A set <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly dependent if
+              <me>
+                \exists (\alpha_1,\ldots,\alpha_k)\in \R^n\{0\} (\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0)
+              </me>.
+            </p>
+            <p>
+              <m>S</m> is linearly independent is same as negating the above statement.
+              Thus
+            </p>
+            <p>
+              A set <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly independent if
+              <me>
+                \forall(\alpha_1,\ldots,\alpha_k)\in \R^n\{0\}(\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k\neq 0)
+              </me>.
+            </p>
+            <p>
+              The contra positive of the above statement state that A set
+              <m>S=\{v_1,v_2,\ldots,
+              v_k\}\subset V</m> is linearly independent whenever
+              <m>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k\neq 0</m> implies <m>\alpha_1=\cdots=\alpha_k=0</m>.
+            </p>
+          </statement>
+        </definition>
+        <problem>
+          <statement>
+            <p>
+              If <m>0\in S</m>, then <m>S</m> is linearly dependent.
+            </p>
+          </statement>
+        </problem>
+        <problem>
+          <statement>
+            <p>
+              (i) If <m>0\neq v\in V</m>, then <m>\{v\}</m> is linearly independent.
+            </p>
+            <p>
+              (iv) <m>\{u,v\}\subset V</m> is linearly dependent if one is scalar multiple of the other.
+            </p>
+          </statement>
+        </problem>
+        <problem>
+          <statement>
+            <p>
+              (i) Let <m>V={\cal P}_n(\R)</m>.
+              The set <m>\{1,x,x^2,\ldots, x^n\}</m> is linearly independent.
+            </p>
+            <p>
+              (ii) Check if <m>\{1+x+x^2+x^3,x+x^3,x^2+x^3,x^3\}</m> is linearly independent in <m>{\cal P}_3(\R)</m>.
+            </p>
+          </statement>
+        </problem>
+        <problem>
+          <statement>
+            <p>
+              Let <m>A\in M_n({\R})</m> such that <m>A^k=0</m> and <m>A^{k-1}\neq 0</m>.
+              Then show that
+              <me>
+                \{I, A, A^2,\ldots, A^{k-1}\}
+              </me>
+              is linearly independent in <m>M_n(\R)</m>.
+            </p>
+          </statement>
+        </problem>
+        <problem>
+          <statement>
+            <p>
+              Let <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly independent set.
+              Suppose <m>v\in V</m> such that
+              <me>
+                v=\alpha_1 v_1+\cdots \alpha_k v_k=\beta_1 v_1+\cdots \beta_k v_k
+              </me>
+              for scalars, <m>\alpha_i</m>'s and <m>\beta_j</m>'s.
+              Then <m>\alpha_1\beta_1=\cdots=\alpha_k=\beta_k</m>.
+              In other words,
+              every vector in <m>V</m> can be written in a unique way as a linear combination of the elements from <m>S</m>.
+            </p>
+          </statement>
+        </problem>
+        <problem>
+          <statement>
+            <p>
+              Let <m>u,v,w</m> be three vectors in <m>V</m>.
+              Show that <m>\{u,v,w\}</m> is linearly independent if and only if
+              <m>\{u+v,u+w,v+w\}</m> is linearly independent.
+            </p>
+          </statement>
+        </problem>
+      </p>
+    </introduction>
+  
+      </section>
+    

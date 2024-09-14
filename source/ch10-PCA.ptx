@@ -2,4 +2,6 @@
 <chapter xml:id="chap10-PCA" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Principal Component Analysis</title>
   
+  <xi:include href="sec10-1-PCA.ptx" />
+  sec10-1-PCA
 </chapter>

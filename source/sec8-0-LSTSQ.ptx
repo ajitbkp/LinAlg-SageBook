@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec8-0-LSTSQ" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Least Square Problems</title>
+  <introduction>
+    This chapter deals with linear least square problems and it applications. 
+      
+    </introduction>
+    
+          <p>
+          Consider a system of equations <m>Ax=b</m> having <m>m</m> equations in <m>n</m> variables.
+          Suppose <m>m\geq n</m>.
+          Then this system may not have a solution.
+          Then we can look for what is the best approximate solution.
+          If <m>z\in \R^n</m> is a solution of <m>Ax=b</m> then <m>\norm{Az-b}=0</m>.
+          Here <m>\norm{Az-b}</m> is the measure of how far <m>b</m> from <m>Az</m>.
+          The aim is to find the point
+          <m>z \in \R^b</m> such that <m>Az</m> is at the smallest distance from <m>b</m>.
+          Thus if such a <m>z</m> exists then
+          <m>\norm{Az-b}\leq \norm{Ax-b}</m> for all <m>x\in \R^n</m>.
+        </p>
+        <p>
+          The answer to the above question is
+          <q>yes</q>. In order to find this, we consider
+          <me>
+            W={\cal R}(A)=\{Ax:x\in \R^n\}
+          </me>.
+        </p>
+        <p>
+          Note that <m>W</m> is subspace of <m>\R^m</m>.
+          We are looking for <m>z</m> which is at the smallest distance from <m>b</m>,
+          which is nothing but the orthogonal projection of <m>b</m> onto <m>W</m>.
+          Suppose we assume that columns of <m>A</m> are linearly independent.
+          Then <m>W</m> is the column space of.
+          Hence by the Eq.
+          <xref ref="orth-Proj-W"></xref>,
+          orthogonal projection is given by
+          <me>
+            z = A(A^TA)^{-1}A^Tb
+          </me>.
+        </p>
+        <p>
+          Here the vector <m>x^*=(A^TA)^{-1}A^Tb</m> is called the least square approximation (solution) of<m>Ax=b</m>.
+        </p>
+        <p>
+          For the system <m>Ax=b</m>, after multiplying both sides by <m>A^T</m>, we get
+          <me>
+            A^TAx=A^Tb
+          </me>
+          which is called the normal equation.
+          We know that rank of <m>A</m> is equal to rank of <m>A^TA</m>.
+          Hence <m>A^T</m> is invertible if <m>A</m> has linearly independent columns.
+          Also the <m>Ax=b</m> has least square solution if and only if the associated normal equation <m>A^TAx=b</m> has a solution.
+        </p>
+        <p>
+          Note that the least square solution
+          <m>x^*=(A^TA)^{-1}A^Tb</m> is the minimizer of the function <m>f(x)=\norm{Ax-b}^2</m>.
+          This can also be obtained using calculus.
+          <me>
+            f(x) =\norm{Ax-b}^2 = (Ax-b)^T(Ax-b)=x^TA^TAx-2A^Tbx+b^Tb
+          </me>.
+        </p>
+        <p>
+          Hence the gradient <m>\nabla f(x)=2A^TAx-2A^Tb</m>.
+          Hence <m>\nabla f(x)=0</m> implies
+          <me>
+            x^*=(A^TA)^{-1}A^Tb
+          </me>
+          provided <m>A^TA</m> is non singular.
+        </p>
+        <example>
+          <statement>
+            <p>
+              Consider the inner product space
+              <m>{\cal C}[-1,1]</m> equipped with inner product
+              <me>
+                \inner{f}{g}=\int_{-1}^1 f(x)g(x)
+              </me>.
+            </p>
+            <p>
+              Find the polynomial of degree at most 2 which is closest to the function <m>f(x)=|x|</m>.
+              Here we consider the subspace <m>W={\cal P}_2(\R)</m>.
+              We need the find the orthogonal projection of <m>f(x)</m> onto <m>W</m>.
+            </p>
+            <p>
+              From <xref ref="Legendre-poly">Example</xref>, we know that
+              <me>
+                \left\{u_1 = \frac{1}{\sqrt{2}}, u_2 = \frac{\sqrt{6}}{2}x, u_3=\frac{3\sqrt{10}}{4}\left(x^2-\frac13\right)\right\}
+              </me>
+              is an orthonormal basis of <m>W</m>.
+              Hence the orthogonal projection <m>p</m> of <m>f</m> onto <m>W</m> is give by
+              <me>
+                p(x)=\inner{f}{u_1}u_1+\inner{f}{u_2}u_2+\inner{f}{u_2}u_3
+              </me>.
+            </p>
+            <p>
+              After simplification we get <m>p(x)=\frac{3}{16}(5x^2+1)</m>.
+            </p>
+          </statement>
+        </example>
+        <exercise>
+          <statement>
+            <p>
+              Consider the inner product space
+              <m>{\cal C}[-1,1]</m> equipped with inner product
+              <me>
+                \inner{f}{g}=\int_{-1}^1 f(x)g(x)
+              </me>.
+            </p>
+            <p>
+              Find the polynomial of degree at most 2 which is closest to the function <m>f(x)=\sin x</m>.
+            </p>
+          </statement>
+        </exercise>
+        <example>
+          <statement>
+            <p>
+              Consider a system of linear equations <m>Ax=b</m> where
+              <me>
+                A= \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp  1 \\ -2 \amp  3 \end{array} \right),\qquad b = \begin{pmatrix}-1\\3\\5\\1 \end{pmatrix}
+              </me>
+            </p>
+            <p>
+              (a) Find the least square solution of <m>Ax=b</m>.
+            </p>
+            <p>
+              (b) Find the orthogonal projection of <m>b</m> onto the column space <m>W={col}(A)</m>.
+            </p>
+            <p>
+              (c) Write the <m>b</m> as <m>b=w+u</m> where <m>w\in W</m> and <m>u\in W^\perp</m>.
+            </p>
+            <p>
+              <em>Solution:</em> It is easy to see that the columns of <m>A</m> are linearly independent,
+              hence the least square solution exists.
+              We have
+              <me>
+                A^TA = \left(\begin{array}{rr} 10 \amp  -4 \\ -4 \amp  12 \end{array} \right),\text{ and }  A^Tb=\left(\begin{array}{rr}10\\12 \end{array} \right)
+              </me>.
+            </p>
+            <p>
+              Hence the least square solution of <m>Ax=b</m> is the solution of the normal equation
+              <m>A^TAx=A^b</m> which is <m>x^*=\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)</m>.
+              The same can obtained as <m>x^* =(A^TA)^{-1}A^Tb</m>.
+            </p>
+            <p>
+              (b) The orthogonal projection of <m>b</m> onto <m>W</m> is given by
+              <me>
+                w = A(A^TA)^{-1}A^Tb = \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp  1 \\ -2 \amp  3 \end{array} \right)\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)=\left(\begin{array}{r} \frac{1}{13} \\ \frac{41}{13} \\ \frac{62}{13} \\ \frac{18}{13} \end{array} \right)
+              </me>.
+            </p>
+            <p>
+              (b) Since we have found <m>w</m>,
+              <m>u</m> is given by <m>b-w=\left(\begin{array}{r} -\frac{14}{13} \\ -\frac{2}{13} \\ \frac{3}{13} \\ -\frac{5}{13} \end{array} \right)</m>.
+              Hence
+              <me>
+                b = \begin{pmatrix}-1\\3\\5\\1 \end{pmatrix} =w+u=\left(\begin{array}{r} \frac{1}{13} \\ \frac{41}{13} \\ \frac{62}{13} \\ \frac{18}{13} \end{array} \right)+\left(\begin{array}{r} -\frac{14}{13} \\ -\frac{2}{13} \\ \frac{3}{13} \\ -\frac{5}{13} \end{array} \right)
+              </me>.
+            </p>
+          </statement>
+        </example>
+        <exercise>
+          <statement>
+            <p>
+              (i) Find the best approximation
+              (least square solution)
+              of the system of linear equations
+              <me>
+                3x-y = 4,  x+2y=0, 2x+y = 1
+              </me>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              The average number of goals <m>g</m>,
+              per game scored by a football player is related linearly to two factors, (i) the number <m>x_1</m> of years of experience and (ii) the number <m>x_2</m> of goals in the preceding 10 games.
+              Find the linear The data on the following page were collected on four players.
+              Find the linear function <m>y=a_0+a_1x+a_2x_2</m>.
+            </p>
+            <tabular>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+              <row>
+                <cell>goals <m>(g)</m></cell>
+                <cell>0.8</cell>
+                <cell>0.7</cell>
+                <cell>0.6</cell>
+                <cell>0.5</cell>
+              </row>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+              <row>
+                <cell><m>x_1</m></cell>
+                <cell>10</cell>
+                <cell>8</cell>
+                <cell>6</cell>
+                <cell>3</cell>
+              </row>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+              <row>
+                <cell><m>x_2</m></cell>
+                <cell>4</cell>
+                <cell>4</cell>
+                <cell>3</cell>
+                <cell>2</cell>
+              </row>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+            </tabular>
+          </statement>
+        </exercise>
+        <example>
+          <statement>
+            <p>
+              The average annual temperature of Santacruz in Mumbai 
+              recorded from 1991 to 2021 is given in the following table.
+            </p>
+           <p>
+            <tabular>
+                <row bottom="minor">
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                </row>
+                <row>
+                  <cell>Year</cell>
+                  <cell>1990</cell>
+                  <cell>1991</cell>
+                  <cell>1992</cell>
+                  <cell>1993</cell>
+                  <cell>1994</cell>
+                  <cell>1995</cell>
+                  <cell>1996</cell>
+                  <cell>1997</cell>
+                </row>
+                <row>
+                  <cell>Temp</cell>
+                  <cell>27.07</cell>
+                  <cell>26.93</cell>
+                  <cell>27.11</cell>
+                  <cell>27.18</cell>
+                  <cell>26.94</cell>
+                  <cell>27.25</cell>
+                  <cell>27.64</cell>
+                  <cell>27.66</cell>
+                </row>
+                <row bottom="minor">
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                </row>
+                <row>
+                  <cell>Year</cell>
+                  <cell>1998</cell>
+                  <cell>1999</cell>
+                  <cell>2000</cell>
+                  <cell>2001</cell>
+                  <cell>2002</cell>
+                  <cell>2003</cell>
+                  <cell>2004</cell>
+                  <cell>2005</cell>
+                </row>
+                <row>
+                  <cell>Temp</cell>
+                  <cell>27.75</cell>
+                  <cell>27.65</cell>
+                  <cell>27.61</cell>
+                  <cell>27.26</cell>
+                  <cell>27.82</cell>
+                  <cell>27.46</cell>
+                  <cell>27.00</cell>
+                  <cell>27.36</cell>
+                </row>
+                <row bottom="minor">
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                </row>
+                <row>
+                  <cell>Year</cell>
+                  <cell>2006</cell>
+                  <cell>2007</cell>
+                  <cell>2008</cell>
+                  <cell>2009</cell>
+                  <cell>2010</cell>
+                  <cell>2011</cell>
+                  <cell>2012</cell>
+                  <cell>2013</cell>
+                </row>
+                <row>
+                  <cell>Temp</cell>
+                  <cell>27.36</cell>
+                  <cell>28.02</cell>
+                  <cell>27.75</cell>
+                  <cell>28.33</cell>
+                  <cell>28.16</cell>
+                  <cell>27.94</cell>
+                  <cell>27.61</cell>
+                  <cell>27.63</cell>
+                </row>
+                <row bottom="minor">
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                </row>
+                <row>
+                  <cell>Year</cell>
+                  <cell>2014</cell>
+                  <cell>2015</cell>
+                  <cell>2016</cell>
+                  <cell>2017</cell>
+                  <cell>2018</cell>
+                  <cell>2019</cell>
+                  <cell>2020</cell>
+                  <cell>2021</cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                </row>
+                <row>
+                  <cell>Temp</cell>
+                  <cell>28.18</cell>
+                  <cell>28.67</cell>
+                  <cell>28.24</cell>
+                  <cell>28.55</cell>
+                  <cell>28.76</cell>
+                  <cell>28.27</cell>
+                  <cell>28.40</cell>
+                  <cell>28.48</cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                </row>
+                <row bottom="minor">
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                  <cell></cell>
+                      </row>
+              </tabular>
+            </p>
+            
+            <p>
+              Find the equation of the line that best fits these data points.
+            </p>
+            <p>
+              The temperature data is plotted in the <xref ref="fig_mumtempplot">Figure</xref>.
+            </p>
+            <figure xml:id="fig_mumtempplot">
+              <image width="70%" source="images/mum_temp_plot.png"/>
+            </figure>
+            <p>
+              We wish to find the best fit line to the given set of data.
+              Suppose the line is given by <m>y=c+mx</m>,
+              then we wish to find <m>a</m> and <m>b</m> such that the line <m>y=c+mx</m> is best fit.
+              Now what is meaning of "best fit". Suppose we consider the point <m>(x_i,y_i)</m>,
+              if it lies on <m>c+mx</m>,
+              then <m>y=c+mx_i</m>, other wise <m>|(c+mx_i)-y_i|</m> is the error.
+              We need to minimize this error for all the points.
+              That is achieved by minimizing the sum of errors.
+              Which is given by
+              <me>
+                \sum_{i=1}^n [(c+mx_i)-y_i]^2
+              </me>
+              where <m>n</m> is the number of points.
+              Note that the sum of error squares can be written as
+              <me>
+                \sum_{i=1}^n [(c+mx_i)-y_i]^2 = \norm{\begin{bmatrix}1 \amp  x_1 \\1 \amp  x_2 \\\vdots \amp  \vdots \\ 1 \amp x_n \end{bmatrix}  \begin{bmatrix}c\\m \end{bmatrix}  -\begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix} }=\norm{Ax-b}
+              </me>.
+            </p>
+            <p>
+              Here
+              <me>
+                A = \begin{bmatrix}1 \amp  x_1 \\1 \amp  x_2 \\\vdots \amp  \vdots \\ 1 \amp x_n \end{bmatrix}  x= \begin{bmatrix}c\\m \end{bmatrix} ,b = \begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix}
+              </me>
+            </p>
+            <p>
+              Thus finding <m>m,c</m> amount to finding the least square solution of <m>Ax=b</m>,
+              which is given by
+              <me>
+                x^*=\begin{bmatrix}c\\m \end{bmatrix} =(A^TA)^{-1}A^Tb
+              </me>
+            </p>
+            <p>
+              For the given problem, we have
+              <me>
+                A = \begin{bmatrix}1 \amp  1990 \\1 \amp  1991 \\\vdots \amp  \vdots \\ 1 \amp 2021 \end{bmatrix} , b = \begin{bmatrix}27.07\\26.93\\\vdots\\28.48 \end{bmatrix}
+              </me>
+            </p>
+            <p>
+              We have
+              <me>
+                A^T = \left(\begin{array}{rr} 32 \amp  64176 \\ 64176 \amp  128707696 \end{array} \right), A^Tb =\left(\begin{array}{r} 888.050000000000 \\ 1.78111456000000 \times 10^{6} \end{array} \right)
+              </me>
+              <me>
+                (A^TA)^{-1}=\left(\begin{array}{rr} \frac{8044231}{5456} \amp  -\frac{4011}{5456} \\ -\frac{4011}{5456} \amp  \frac{1}{2728} \end{array} \right)
+              </me>.
+            </p>
+            <p>
+              Hence
+              <me>
+                x^*=\begin{bmatrix}c\\m \end{bmatrix} =(A^TA)^{-1}A^Tb = \left(\begin{array}{r} -68.0279710416216 \\ 0.0477584310854127 \end{array} \right)
+              </me>
+            </p>
+            <p>
+              The set of points along with the best fitted line is 
+              shown in the <xref ref="fig_mumtempplot2">Figure</xref>
+            </p>
+            <figure xml:id="fig_mumtempplot2">
+              <image width="70%" source="images/mum_temp_plot2.png"/>
+            </figure>
+          </statement>
+        </example>
+      
+    
+    <subsection>
+        <title>Fitting a polynomial to the data set</title>
+        <p>
+          Suppose we are given a set of <m>n</m>-data points
+          <m>(x_i y_i)</m> and we wish to find the best fit polynomial curve of degree <m>p</m>, say,
+          <m>y=a_0+a_1x+a_2x^2+\cdots +a_px^p</m>, with <m>a_p\neq 0</m>.
+          In this case, the error term for
+          <m>(x_i,y_i)</m> from the the the curve <m>y</m> is <m>|(a_0+a_1x_i+a_2x_i^2+\cdots +a_px_i^p)-y_i|</m>.
+          Thus the sum of the error square is
+          <me>
+            \sum_i^n [(a_0+a_1x_i+a_2x_i^2+\cdots +a_px_i^p)-y_i]^2
+          </me>
+        </p>
+        <p>
+          The sum of error square can be written as
+          <me>
+            \sum_i^n [y_i-(a_0+a_1x_i+a_2x_i^2+\cdots +a_px_i^p)]^2=\norm{Ax-b}^2
+          </me>,
+          where
+          <me>
+            A = \begin{bmatrix}1 \amp  x_1 \amp  x_1^2 \amp  \cdots \amp  x_1^p\\ 1 \amp  x_2 \amp  x_2^2 \amp  \cdots \amp x_2^p\\ \vdots \amp  \vdots \amp  \cdots \amp  \ddots \amp  \vdots\\ 1 \amp  x_n \amp  x_n^2 \amp  \cdots \amp x_n^p \end{bmatrix} ,  b = \begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix} , x = \begin{bmatrix}a_0\\a_1\\a_2\\\vdots\\a_p \end{bmatrix}
+          </me>
+        </p>
+        <p>
+          Thus the least square solution is given by
+          <m>x^* = (A^TA)A^Tb</m> provided columns of <m>A</m> are linearly independent.
+        </p>
+        <example>
+          <statement>
+            <p>
+              Find th best fit cubic <m>y=a_0+a_1x+a_2x^2+a_3x^3</m> to the following set of points
+            </p>
+            <tabular>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+              <row>
+                <cell><m>x_i</m></cell>
+                <cell>-3.0</cell>
+                <cell>-2.8</cell>
+                <cell>-2.5</cell>
+                <cell>-2.2</cell>
+                <cell>-2.0</cell>
+                <cell>-1.8</cell>
+                <cell>-1.5</cell>
+                <cell>-1.2</cell>
+                <cell>-1.0</cell>
+                <cell>-0.75</cell>
+              </row>
+              <row>
+                <cell><m>y_i</m></cell>
+                <cell>1.1</cell>
+                <cell>4.0</cell>
+                <cell>7.3</cell>
+                <cell>7.1</cell>
+                <cell>8.2</cell>
+                <cell>7.8</cell>
+                <cell>9.9</cell>
+                <cell>7.1</cell>
+                <cell>8.8</cell>
+                <cell>6.2</cell>
+              </row>
+              <row bottom="medium">
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+              <row>
+                <cell  ><m>x_i</m></cell>
+                <cell>-0.50</cell>
+                <cell>-0.25</cell>
+                <cell>0.00</cell>
+                <cell>0.25</cell>
+                <cell>0.50</cell>
+                <cell>0.75</cell>
+                <cell>1.0</cell>
+                <cell>1.2</cell>
+                <cell>1.5</cell>
+                <cell>1.8</cell>
+              </row>
+              <row>
+                <cell><m>y_i</m></cell>
+                <cell>7.0</cell>
+                <cell>3.7</cell>
+                <cell>4.7</cell>
+                <cell>3.4</cell>
+                <cell>5.6</cell>
+                <cell>5.8</cell>
+                <cell>5.3</cell>
+                <cell>6.6</cell>
+                <cell>10.</cell>
+                <cell>12.</cell>
+              </row>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+            </tabular>
+            <p>
+              Thus we need to find the least square solution of <m>Ax=b</m>, where
+              <me>
+                A = \left(\begin{array}{rrrr} 1.00 \amp  -3.00 \amp  9.00 \amp  -27.00\\ 1.0 \amp  -2.80 \amp  7.84\amp  -21.952\\ 1.00 \amp  -2.500\amp  6.250 \amp  -15.625\\ \vdots \amp  \vdots\amp  \vdots \amp  \vdots \\ 1.00 \amp  1.80\amp  3.240 \amp  5.832 \end{array} \right),  b = \left(\begin{array}{r} 1.1\\ 4.0 \\ 7.3\\ \vdots\\ 12.0 \end{array} \right)
+              </me>
+            </p>
+            <p>
+              We have
+              <me>
+                A^TA = \left(\begin{array}{rrrr} 20.0 \amp  -12.5\amp  49.54 \amp  -83.225\\ -12.5\amp  49.54\amp  -83.225 \amp  258.986725 \\ 49.54 \amp  -83.225\amp  258.986725 \amp  -596.29625 \\ -83.225 \amp  258.986725\amp  -596.29625 \amp  1731.57619431250 \end{array} \right)
+              </me>
+              <me>
+                A^Tb = \left(\begin{array}{r} 131.6 \\ -62.235 \\ 307.14775 \\ -352.6518375 \end{array} \right)
+              </me>
+            </p>
+            <p>
+              Hence the least square solution
+              <me>
+                x^* = (A^TA)^{-1}A^Tb=\begin{bmatrix}a_0 \\a_1\\a_2\\a_3 \end{bmatrix}  = \begin{bmatrix}4.82641673699866 \\ -1.84149774223300 \\ 1.78790889783526 \\ 0.919436026634361 \end{bmatrix}
+              </me>
+            </p>
+            <p>
+              See the <xref ref="fig_cubic_plot1">Figure</xref>
+              for fitted curve along with the data.
+            </p>
+            <figure xml:id="fig_cubic_plot1"> 
+              <image width="70%" source="images/cubic_plot1.png"/>
+            </figure>
+          </statement>
+        </example>
+        <exercise>
+          <statement>
+            <p>
+              Find the least squares approximating line
+              <m>y = a_0 +a_1x</m> for each of the following sets of data points.
+            </p>
+            <p>
+              (i) <m>(-2, 3), (-1, 1), (0, 0), (1, -2), (2, -4)</m>
+            </p>
+            <p>
+              (ii) <m>(-1, -1), (0, 1), (1, 2), (2, 4), (3, 6)</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              Find the least squares approximating quadratic
+              <m>y=a_0+a_1x+a_2x^2</m> for each of the following sets of data points.
+            </p>
+            <p>
+              (i) <m>. (-2, 1), (0, 0), (3, 2), (4, 3)</m>
+            </p>
+            <p>
+              (ii) The table gives the worldwide cumulative HIV infections in millions.
+            </p>
+            <tabular>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+              <row>
+                <cell>1980</cell>
+                <cell>0.1</cell>
+                <cell>1995</cell>
+                <cell>29.8</cell>
+              </row>
+              <row>
+                <cell>1982</cell>
+                <cell>0.7</cell>
+                <cell>1997</cell>
+                <cell>40.9</cell>
+              </row>
+              <row>
+                <cell>1985</cell>
+                <cell>2.4</cell>
+                <cell>2000</cell>
+                <cell>57.9</cell>
+              </row>
+              <row>
+                <cell>1987</cell>
+                <cell>4.5</cell>
+                <cell>2002</cell>
+                <cell>67.9</cell>
+              </row>
+              <row>
+                <cell>1990</cell>
+                <cell>10</cell>
+                <cell>2005</cell>
+                <cell>82.7</cell>
+              </row>
+              <row>
+                <cell>1992</cell>
+                <cell>16.1</cell>
+                <cell>2008</cell>
+                <cell>100.2</cell>
+              </row>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+            </tabular>
+          </statement>
+        </exercise>
+      </subsection>
+   </section>

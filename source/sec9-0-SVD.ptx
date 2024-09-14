@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec9-0-SVD" xmlns:xi="http://www.w3.org/2001/XInclude">
+  
+    <title>Singular Value Decomposition</title>
+    <introduction>
+      <p>
+        In this section,
+        we deal with one of the most important matrix factorization tools,
+        called the singular value decomposition (SVD).
+        The SVD of a matrix <m>A</m> is closely related to eigen decomposition of the matrix <m>AA^T</m>.
+        One can also think of this as a generalization of diagonalization procedure that allows us to diagonalize any matrix not necessarily square matrix.
+        The SVD is computationally a viable tool for a wide variety of applications.
+        It has applications in image and signal processing,
+        control theory, least square problems,
+        time series analysis, pattern recognition, dimensionality reduction,
+        biomedical engineering and defining a generalized inverse of a matrix and many more.
+        We shall deal with few of these applications.
+      </p>
+    </introduction>
+    <subsection>
+      <title>Singular Value Decomposition Theorem</title>
+      <theorem xml:id="thm_svd1">
+        <title>SVD Theorem</title>
+        <statement>
+          <p>
+            Let <m>A</m> be a real <m>m\times n</m> matrix.
+            Then <m>A</m> can be factorized as
+            <men xml:id="eq_svd1">
+              A=U\sum V^T
+            </men>
+            where <m>U</m> is an <m>m\times m</m> orthogonal matrix,
+            <m>V</m> is an <m>n\times n</m> orthogonal matrix and <m>\sum</m> is a
+            <m>m\times n</m> diagonal matrix given by
+            
+            <me> 
+              \left[\begin{array}{ccc|ccc}
+                \sigma_1   \amp \cdots     \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+                \vdots     \amp  \ddots    \amp \vdots    \amp  \vdots \amp  \ddots \amp  \vdots      \\
+                0          \amp  \cdots    \amp  \sigma_r \amp  0      \amp  \cdots \amp  0    \\
+                \hline
+                0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+                \vdots     \amp  \ddots    \amp  \vdots   \amp  0      \amp \ddots  \amp  \vdots \\
+                0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+              \end{array}\right]_{m\times n}
+              </me>
+            
+            <!--            
+              <md>
+              \sum = \begin{blockarray}{(c@{}c@{}c|c@{}c@{}c)l} \sigma_1\amp \cdots\amp 0\amp \BAmulticolumn{3}{c}{\multirow{3}{*}{$0$}}\amp \multirow{3}{*}{}\\\vdots\amp \ddots\amp \vdots\amp \amp \amp \amp \\ 0\amp \cdots\amp \sigma_r \amp \amp \amp \amp \\ \cline{1-6} \BAmulticolumn{3}{c|}{\multirow{3}{*}{$0$}}\amp \BAmulticolumn{3}{c|}{\multirow{3}{*}{$0$}}\\\amp \amp \amp \amp \amp \\[2mm] \end{blockarray}
+            </md>
+            -->
+
+            whose diagonal entries are non negative and are arranged in a non increasing order.
+          </p>
+          <p>
+            The number of non zero entries in <m>\sum</m> is the rank of <m>A</m>.
+          </p>
+        </statement>
+      </theorem>
+      <p>
+        The decomposition <m>A=U\sum V^T</m> is called a
+        <em>singular value decomposition</em> of <m>A</m>.
+        The diagonals entries <m>\sigma_1,\sigma_2,\ldots, \sigma_r</m> are called
+        <em>singular values</em>
+        of <m>A</m>. (that is why the name singular value decomposition.)
+      </p>
+      <p>
+        Before we prove this theorem,
+        let us play with the equation<nbsp/><xref ref="eq_svd1"/>.
+        We have
+        <me>
+          A^TA  =  \left(V\Sigma^TU\right) \left(U^T\Sigma V^T\right) =V\Sigma^T\Sigma V^T
+        </me>.
+        This implies 
+        <me>
+          V^T(A^TA)V=\Sigma^T\Sigma 
+        </me>. 
+        Hence 
+        <men xml:id="eq_svd2">
+          V^T(A^TA)V =
+          \left[\begin{array}{ccc|ccc}
+          \sigma_1^2   \amp \cdots     \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+          \vdots     \amp  \ddots    \amp \vdots    \amp  \vdots \amp  \ddots \amp  \vdots      \\
+          0          \amp  \cdots    \amp  \sigma_r^2 \amp  0      \amp  \cdots \amp  0    \\
+          \hline
+          0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+          \vdots     \amp  \ddots    \amp  \vdots   \amp  0      \amp \ddots  \amp  \vdots \\
+          0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+        \end{array}\right]_{n\times n}
+         </men>
+        
+       
+      </p>
+      <p>
+        The Eqn.<nbsp/><xref ref="eq_svd2"/> suggests that columns of <m>V</m> are eigenvectors of <m>A^TA</m>,
+        and are called <em>right singular vectors</em>.
+      </p>
+      
+        Similarly
+        <me>
+          AA^T  =   \left(U\Sigma V^T\right) \left(V\Sigma^T U^T\right) =U\Sigma\Sigma^T U^T
+        </me>
+        This implies
+        <men xml:id="eq_svd3">
+          U(A^TA)U^T =
+          \left[\begin{array}{ccc|ccc}
+          \sigma_1^2   \amp \cdots     \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+          \vdots     \amp  \ddots    \amp \vdots    \amp  \vdots \amp  \ddots \amp  \vdots      \\
+          0          \amp  \cdots    \amp  \sigma_r^2 \amp  0      \amp  \cdots \amp  0    \\
+          \hline
+          0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+          \vdots     \amp  \ddots    \amp  \vdots   \amp  0      \amp \ddots  \amp  \vdots \\
+          0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+        \end{array}\right]_{m\times m}
+         </men>
+        
+
+         <p>
+        The Eqn.<nbsp/><xref ref="eq_svd3"/> suggests that columns of <m>U</m> are eigenvectors of <m>AA^T</m>,
+        and are called <em>left singular vectors</em>.
+      </p>
+
+      <p>
+        The notion of right and left eigenvectors suggest a way to construct the matrix <m>V</m> and <m>U</m> 
+        in the SVD decomposition.
+        Let us see what do I mean?
+        Suppose <m>U=[u_1~u_2~\cdots~u_m]</m> and <m>V=[v_1~v_2~\cdots~v_n]</m>.
+        Then we have
+        <me>
+          A^TAv_i=\sigma_i^2 v_i \text{ and }  AA^Tu_i=\sigma_i^2 u_i
+        </me>.
+      </p>
+      <p>
+        Hence
+        <me>
+          A(A^TA v_i) = (AA^T)(Av_i)=A(\sigma_i^2v_i)=\sigma_i^2(Av_i)
+        </me>.
+      </p>
+      <p>
+        Thus suggests, that <m>u_i</m> may be defined as <m>Av_i</m>.
+        However, if <m>u_i=Av_i</m>, then
+        <me>
+          \innprod{u_i}{u_j} = \innprod{Av_i}{Av_j}=\innprod{A^TAv_i}{v_j}=\sigma_i^2\innprod{v_i}{v_j}=\sigma_i^2\delta_{ij}
+        </me>.
+      </p>
+      <p>
+        If we want <m>U</m> to be orthogonal,
+        we may define <m>u_i=\frac{1}{\sigma_i}Av_i</m>.
+      </p>
+      <proof>
+        <p>
+          Note that <m>A^TA</m> is symmetric and <m>\rank{(A)}=\rank{(A^TA)}</m>.
+          Let <m>\rank{(A)}=r</m>.
+          Further
+          <me>
+            \innprod{A^TAx}{x}=\innprod{Ax}{Ax}=\norm{Ax}^2\geq 0, \forall x\in \R^n
+          </me>.
+        </p>
+        <p>
+          Hence <m>A^TA</m> is a symmetric and semi-positive definite matrix.
+          Hence all its eigenvalues are real and non negative.
+          Let <m>\lambda_1, \lambda_2,\ldots,\lambda_r</m> be non zero eigenvalues of <m>A^TA</m> with <m>\lambda_1\geq \lambda_2\geq\cdots\geq\lambda_r</m>.
+          The remaining eigenvalues of <m>A^TA</m> are <m>\lambda_{r+1}=\lambda_{r+2}=\cdots=\lambda_n=0</m>.
+          Let us denote <m>\lambda_i=\sigma_i^2</m> for <m>i=1,\ldots, n</m>.
+          Since <m>A^TA</m> is symmetric matrix, it is diagonalizable.
+          Hence there exists an orthogonal eigenbasis
+          <m>v_1,\ldots,
+          v_n</m> for <m>\R^n</m> of <m>A^TA</m>.
+          Let <m>A^TAv_i=\sigma_i^2v_i</m>.
+          This implies
+          <mdn>
+            <mrow xml:id="eq_svd21" number="yes">v_i^TA^TAv_i=\amp \sigma_i^2 \amp \text{ for }  i=1,2,\ldots, r</mrow>
+            <mrow xml:id="eq_svd31" number="yes">v_i^TA^TAv_i=\amp 0 \amp \text{ for }  i=r+1,\ldots, n</mrow>
+          </mdn>
+        </p>
+        <p>
+          From<nbsp/><xref ref="eq_svd31"/>, we have
+          <me>
+            v_k^TA^TAv_k=\innprod{Av_k}{Av_k}=0   \text{ for }  i=r+1,\ldots,n
+          </me>.
+        </p>
+        <p>
+          This implies,
+          <me>
+            Av_k=0  \text{ for }  i=r+1,\ldots,n
+          </me>.
+        </p>
+        <p>
+          We define
+          <men xml:id="eq_svd4">
+            u_i:=\frac{1}{\sigma_i}Av_i \text{ for }  i=1,2,\ldots, r
+          </men>.
+        </p>
+        <p>
+          We claim that <m>\{u_1,\ldots,
+          u_r\}</m> is an orthonormal set.
+          For
+          <me>
+            \innprod{u_i}{u_j}=u_i^Tu_j=\frac{1}{\sigma_i}(Av_i)^T\frac{1}{\sigma_j}Av_j =\frac{1}{\sigma_i\sigma_j}v_i^TA^TAv_j=\delta_{ij}
+          </me>.
+        </p>
+        <p>
+          Now we complete <m>\{u_1,\ldots,
+          u_r\}</m> to an orthonormal basis <m>\{u_1,\ldots,
+          u_r,u_{r+1},\ldots, u_n\}</m> of <m>\R^n</m>.
+          Define
+          <me>
+            U:=[u_1~\ldots~ u_r~u_{r+1}~\ldots~ u_n] \text{ and } V:=[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n]
+          </me>.
+        </p>
+        <p>
+          We claim that <m>U^TAV=\sum</m> and hence <m>A= U\Sigma V^T</m>.
+          <md>
+            <mrow>U^TAV =\amp  \begin{pmatrix} u_1^T\\\vdots \\ u_r^T\\u_{r+1}^T\\\vdots\\u_n^T\end{pmatrix}
+              A[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n]</mrow>
+            <mrow>=\amp \begin{pmatrix} \frac{1}{\sigma_1}v_1^TA^T\\\vdots\\\frac{1}{\sigma_r}v_r^TA^T\\u_{r+1}^T\\
+              \vdots\\u_n^T\end{pmatrix}A[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n]</mrow>
+            <mrow>=\amp \begin{pmatrix} \frac{1}{\sigma_1}v_1^TA^T\\\vdots\\\frac{1}{\sigma_r}v_r^TA^T\\
+              u_{r+1}^T\\\vdots\\u_n^T\end{pmatrix}[Av_1~\ldots~ Av_r~v_{r+1}~\ldots~ Av_n]</mrow>
+            <mrow> =\amp \diag(\sigma_1,\ldots,\sigma_r,0,\ldots,0)=\sum</mrow>
+          </md>.
+        </p>
+        <p>
+          Hence
+          <me>
+            A=U\sum V^T
+          </me>.
+        </p>
+      </proof>
+      <remark xml:id="rem_svd1">
+        <p>
+          The singular values of a matrix in a SVD are unique,
+          however singular vectors are not unique.
+        </p>
+      </remark>
+      <corollary xml:id="rem_svd2">
+        <statement>
+          <p>
+            Let <m>A=U\Sigma V^T</m> be a SVD of <m>A</m> where
+            <m>U=[u_1~u_2~\cdots~u_m]</m> and <m>V=[v_1~v_2~\cdots~v_n]</m>,
+            <m>\sigma_1,\ldots,  \sigma_r</m> are singular values of <m>A</m>.
+            Then <m>A</m> can also be written as
+            <md>
+              <mrow xml:id="eq_svd9" number="yes">A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ru_rv_r^T</mrow>
+            </md>.
+          </p>
+        </statement>
+      </corollary>
+      <p>
+        The decomposition<nbsp/><xref ref="eq_svd9"/> is called a
+        <em>rank one decomposition of <m>A</m></em>,
+        as rank of each term in<nbsp/><xref ref="eq_svd9"/> is 1. (why?) This is a very useful way of decomposing <m>A</m> as we shall see this later.
+      </p>
+      <exercise xml:id="rank1-matrix">
+        <statement>
+          <p>
+            An <m>n\times n</m> matrix <m>A</m> is rank one matrix if and only if there exist non-zero vectors
+            <m>p,q\in \R^n</m> such that <m>A=pq^T</m>.
+          </p>
+        </statement>
+      </exercise>
+      <exercise xml:id="ex_svd1">
+        <statement>
+          <p>
+            If <m>A</m> is a real symmetric matrix with eigenvalues <m>\lambda_1,\ldots,\lambda_n</m>,
+            then show that singular values of <m>A</m> are <m>|\lambda_1|,\ldots,|\lambda_n|</m>
+          </p>
+        </statement>
+      </exercise>
+      <exercise xml:id="ex_svd2">
+        <statement>
+          <p>
+            A square matrix <m>A</m> is non singular if and only if all singular values of <m>A</m> are non zero.
+          </p>
+        </statement>
+      </exercise>
+      <example xml:id="eg_svd1">
+        <statement>
+          <p>
+            Let us find a singular value decomposition of <m>A= \begin{pmatrix}3 \amp 2 \amp 2 \\ 2 \amp 3 \amp -2 \end{pmatrix}</m>.
+          </p>
+          <p>
+            We have <m>A^TA=\begin{pmatrix}13 \amp  12 \amp  2 \\ 12 \amp  13 \amp  -2 \\ 2 \amp  -2 \amp  8 \end{pmatrix}</m>.
+            The eigenvalues of <m>A^TA</m> are
+            <m>\sigma_1^2=25, \sigma_2^2=9</m> and <m>\sigma_3^2=0</m>.
+            The corresponding eigenvectors with respect to eigenvalues <m>25,9, 0</m> of <m>A^TA</m> are <m>\begin{pmatrix}1\\1\\0 \end{pmatrix}</m>,
+            <m>\begin{pmatrix}1\\-1\\4 \end{pmatrix}</m> and <m>\begin{pmatrix}1\\-1\\-\frac{1}{2} \end{pmatrix}</m> respectively.
+            Hence an orthonormal eigenbasis of <m>A^TA</m> is
+            <me>
+              \{v_1,v_2,v_3\}=\left\{\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2}\\0 \end{pmatrix} , \begin{pmatrix}1/\sqrt{18}\\-1/\sqrt{18}\\4/\sqrt{18} \end{pmatrix} , \begin{pmatrix}2/3\\-2/3\\-1/3 \end{pmatrix} \right\}
+            </me>.
+          </p>
+          <p>
+            We define
+            <me> u_1:=\frac{1}{\sigma_1}Av_1=\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2} \end{pmatrix} \text{ and } 
+              u_2:= \frac{1}{\sigma_2}Av_2=\begin{pmatrix}1/\sqrt{2}\\-1/\sqrt{2} \end{pmatrix}</me>.
+          </p>
+          <p>
+            Thus we have
+            <me>
+              U=\begin{pmatrix}\frac{1}{2} \, \sqrt{2} \amp  \frac{1}{2} \, \sqrt{2} \\ \frac{1}{2} \, \sqrt{2} \amp  -\frac{1}{2} \, \sqrt{2} \end{pmatrix} 
+            </me>
+            <me>  V=\begin{pmatrix}\frac{1}{2} \, \sqrt{2} \amp  \frac{1}{6} \, \sqrt{2} \amp  \frac{2}{3} \\\frac{1}{2} \, \sqrt{2} \amp  -\frac{1}{6} \, \sqrt{2} \amp -\frac{2}{3} \\ 0 \amp  \frac{2}{3} \, \sqrt{2} \amp  -\frac{1}{3} \end{pmatrix}  \text{ and } \sum = \begin{pmatrix}5 \amp  0 \amp  0 \\ 0 \amp  3 \amp  0 \end{pmatrix}
+            </me>.
+          </p>
+          <p>
+            It is easy to check that that <m>UAV^T=\sum</m>.
+          </p>
+        </statement>
+      </example>
+      <exercise>
+        <statement>
+          <p>
+            Verify the equation<nbsp/><xref ref="eq_svd9"/> for <xref ref="eg_svd1">example</xref>.
+            That is,
+            <me>
+              A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T
+            </me>.
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Find a singular value decomposition of <m>A =\begin{pmatrix}1 \amp 1 \amp -1\\1 \amp 1 \amp -1 \end{pmatrix}</m>.
+          </p>
+        </statement>
+      </exercise>
+    </subsection>
+    <subsection>
+      <title>Pseudoinverse using SVD</title>
+      <definition>
+        <statement>
+          <p>
+            If <m>A</m> is a <m>m\times n</m> matrix,
+            then the <em>pseudoinverse</em>
+            of <m>A</m> is matrix <m>X</m> satisfying the following properties:
+            <ol>
+              <li>
+                <p>
+                  <m>AXA=A</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>XAX=X</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(AX)^T=AX</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(XA)^T=XA</m>.
+                </p>
+              </li>
+            </ol>
+          </p>
+          <p>
+            The pseudoinverse of a matrix <m>A</m> is denoted by <m>A^\dagger</m>.
+            Pseudoinverse is also called the
+            <em>generalized inverse</em>
+            or <em>Moore-Penrose pseudoinverse.</em>
+          </p>
+        </statement>
+      </definition>
+      <p>
+        Singular value decomposition provides an effective procedure to find the pseudoinverse of a matrix.
+      </p>
+      <p>
+        Suppose <m>A=U\sum V^T</m> is a SVD of <m>A</m>.
+        Since <m>U</m> and <m>V</m> are orthogonal matrices they are invertible.
+        Thus to define pseudoinverse of <m>A</m>,
+        it is sufficient to define pseudoinverse of the diagonal matrix <m>\sum</m>.
+        It is natural to define the inverse of diagonal matrix by taking reciprocal of the nonzero diagonal entries and taking its transpose.
+        Thus if
+        <me> 
+          \Sigma = \left[\begin{array}{ccc|ccc}
+            \sigma_1   \amp \cdots     \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+            \vdots     \amp  \ddots    \amp \vdots    \amp  \vdots \amp  \ddots \amp  \vdots      \\
+            0          \amp  \cdots    \amp  \sigma_r \amp  0      \amp  \cdots \amp  0    \\
+            \hline
+            0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+            \vdots     \amp  \ddots    \amp  \vdots   \amp  0      \amp \ddots  \amp  \vdots \\
+            0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+          \end{array}\right]_{m\times n}
+          </me>.
+
+          Then 
+          <me> 
+            \Sigma^\dagger = \left[\begin{array}{ccc|ccc}
+              1/\sigma_1   \amp \cdots     \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+              \vdots     \amp  \ddots    \amp \vdots    \amp  \vdots \amp  \ddots \amp  \vdots      \\
+              0          \amp  \cdots    \amp 1/ \sigma_r \amp  0      \amp  \cdots \amp  0    \\
+              \hline
+              0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+              \vdots     \amp  \ddots    \amp  \vdots   \amp  0      \amp \ddots  \amp  \vdots \\
+              0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+            \end{array}\right]_{m\times n}^T
+            </me>.
+        
+      </p>
+      <p>
+        Having defined the generalized inverse of <m>\sum</m>,
+        now it is natural to define
+        <me>
+          A^\dagger:=V{\sum}^\dagger U^T
+        </me>.
+      </p>
+      <example xml:id="eg_svd2">
+        <statement>
+          <p>
+            Find the pseudoinverse of <m>A=\begin{pmatrix}1\amp 1\\1\amp 1\\1\amp -1 \end{pmatrix}</m>.
+          </p>
+          <p>
+            Note that <m>A^TA=\begin{pmatrix}3\amp 1\\1\amp 3 \end{pmatrix}</m>.
+            The eigenvalues of <m>A^TA</m> are <m>\sigma_1^2=4</m> and
+            <m>\sigma_2^2=2</m> with corresponding orthonormal eigenvectors
+            <m>v_1=\begin{pmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}} \end{pmatrix}</m> and <m>v_2=\begin{pmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}} \end{pmatrix}</m> respectively.
+            Now
+            <me>
+              u_1=\frac{1}{\sigma_1}Av_1=\begin{pmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\\0 \end{pmatrix}   \text{ and } u_2=\frac{1}{\sigma_2}Av_2=\begin{pmatrix}0\\0\\1 \end{pmatrix}
+            </me>.
+          </p>
+          <p>
+            Extending <m>u_1,u_2</m> to an orthonormal basis of <m>\R^3</m>,
+            we can select<m>u_3=\begin{pmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\\0 \end{pmatrix}</m>.
+          </p>
+          <p>
+            Thus a SVD is given by
+            <me>
+              A=U\sum V^T= \begin{pmatrix}\frac{1}{\sqrt{2}} \amp 0 \amp \frac{1}{\sqrt{2}}\\ \frac{1}{\sqrt{2}} \amp 0 \amp -\frac{1}{\sqrt{2}}\\ 0 \amp  1 \amp 0 \end{pmatrix} \begin{pmatrix}2\amp 0\\ 0 \amp \sqrt{2}\\ 0\amp 0 \end{pmatrix} \begin{pmatrix}\frac{1}{\sqrt{2}}  \amp \frac{1}{\sqrt{2}}\\ \frac{1}{\sqrt{2}}  \amp -\frac{1}{\sqrt{2}} \end{pmatrix}
+            </me>.
+          </p>
+          <p>
+            Hence
+            <md>
+              <mrow>A^\dagger=\amp V{\sum}^\dagger U^T=
+                \begin{pmatrix} \frac{1}{\sqrt{2}}  \amp \frac{1}{\sqrt{2}}\\
+                \frac{1}{\sqrt{2}}  \amp -\frac{1}{\sqrt{2}} \end{pmatrix} 
+                \begin{pmatrix}1/2\amp 0\amp 0\\0 \amp \frac{1}{\sqrt{2}}\amp 0 \end{pmatrix} 
+                \begin{pmatrix}\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}}\amp 0\\0 \amp  0 \amp 1\\
+                \frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}}\amp  0 \end{pmatrix}</mrow>
+              <mrow>=\amp \begin{pmatrix}1/4\amp 1/4\amp 1/2\\1/4\amp 1/4\amp -1/2 \end{pmatrix}</mrow>
+            </md>.
+          </p>
+        </statement>
+      </example>
+      <exercise xml:id="psedo_ex1">
+        <statement>
+          <p>
+            If <m>A</m> is <m>m\times n</m> matrix with <m>m\geq n</m> and <m>\rank(A)=n</m> then
+            <me>
+              A^\dagger=(A^TA)^{-1}A^T
+            </me>.
+            If <m>m\leq n</m> and <m>\rank(A)=m</m> then
+            <me>
+              A^\dagger =A^T(AA^T)^{-1}
+            </me>.
+          </p>
+          <p>
+            <m>(A^TA)^{-1}A^T</m> is called the
+            <em>left pseudoinnverse</em>
+            of <m>A</m> and <m>A^T(AA^T)^{-1}</m> is called the
+            <em>right pseudoinverse</em> of <m>A</m>.
+          </p>
+        </statement>
+      </exercise>
+      <theorem>
+        <statement>
+          <p>
+            Let <m>Ax = b</m>,
+            be a system of <m>m</m> equations in <m>n</m> variables with <m>m\geq n</m>.
+            Let <m>\rank(A) = n</m>.
+            Then the vector <m>x^*=A^\dagger b</m> minimizes <m>\norm{Ax-b}^2</m> on <m>\R^n</m>,
+            that is the least square solution of <m>Ax=b</m>.
+          </p>
+        </statement>
+      </theorem>
+      <p>
+        
+      </p>
+      
+      <exercise>
+       <ol>
+        <li>
+          <p>
+           If <m>A</m> is square matrix,
+            then show that <m>A^TA</m> and <m>AA^T</m> are similar.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the SVD of a matrix <m>\begin{pmatrix}1 \amp 1 \amp 1 \\2 \amp 2 \amp 2\\3 \amp 1 \amp -1 \end{pmatrix}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the least square solution of the system of equations <m>Ax=b</m> where <m>A =\begin{pmatrix}2 \amp 3 \amp -1\\-2 \amp 1 \amp 4\\3 \amp 1 \amp 3\\ -5 \amp 4 \amp 2\\1 \amp 1 \amp 1 \end{pmatrix}</m> and
+            <m>b= \begin{pmatrix}-10\\7\\15\\8\\9 \end{pmatrix}</m> using generalized inverse.
+          </p>
+        </li>
+        <li>
+          <p>
+          Find the SVD of <m>A = \begin{pmatrix}1 \amp 1 \\2 \amp 2 \\3 \amp 1 \end{pmatrix}</m> using step by step calculations.
+          </p>
+        </li>
+      </ol>
+    
+    </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Use SVD to show that a square matrix <m>A</m> is symmetric (<m>A^T=A</m>) if and only if <m>A^TA=AA^T</m>.
+          </p>
+          <p>
+            Hint: <m>A^TA=AA^T</m> implies right singular vectors of <m>A</m> are same as left singular vectors of <m>A</m> with same singular values.
+            Hence the SVD of <m>A=Q\Sigma P</m> with <m>P=Q</m>.
+            Any matrix of the form <m>P\Sigma P^T</m> is symmetric.
+          </p>
+        </statement>
+      </exercise>
+    </subsection>
+    <subsection>
+      <title>Geometry of SVD</title>
+      <p>
+        In order to see the geometric meaning of the SVD. Let us consider the matrix <m>A=\left(\begin{array}{rr} 4 \amp -2 \\ -2 \amp 3 \end{array} \right)</m>.
+      </p>
+      <p>
+        The singular value decomposition of <m>A=USV^T</m> is given by
+        <me>
+          A=\left(\begin{array}{rr} -0.78820 \amp  0.61541 \\ 0.61541 \amp  0.78820 \end{array} \right)\left(\begin{array}{rr} 5.56150 \amp  0.0 \\ 0.0 \amp  1.4384 \end{array} \right)\left(\begin{array}{rr} -0.78820 \amp  0.61541 \\ 0.61541 \amp  0.78820 \end{array} \right)^T
+        </me>.
+      </p>
+      <p>
+        The geometric meaning of <m>A</m> applied to unit circle along with unit vectors <m>e_1</m> and <m>e_2</m> 
+        is explained in the following figure <xref ref="fig_Unit_Circle-SVD"/>.
+      </p>
+      <!--<image source="images/SVD_Unit_Circle.PNG"/>-->
+      
+      <figure xml:id="fig_Unit_Circle-SVD">
+        <caption>Transformation of unit circle under SVD</caption>
+        <image width="60%" source="images/SVD_Unit_Circle.PNG"/>
+    </figure>
+
+      <example>
+        <statement>
+          <p>
+            Consider a <m>3\times 3</m> matrix <m>A=\begin{pmatrix}2 \amp 3 \amp 1 \\ -1 \amp 2 \amp 1 \\ 0 \amp 2 \amp 3 \end{pmatrix}</m>.
+            The singular values of <m>A</m> are 5.107, 2.2982 and 1.2779.
+          </p>
+          <p>
+            The Figure <xref ref="fig_Unit_Sphere-SVD"/> below explains what happens to a unit sphere and unit vectors under <m>A</m>,
+            obtained using SVD.
+          </p>
+          <figure xml:id="fig_Unit_Sphere-SVD">
+            <caption>Transformation of unit circle under SVD</caption>
+            <image width="60%" source="images/SVD_Unit_Sphere.PNG"/>
+        </figure>
+     
+
+          <!--<image source="images/SVD_Unit_Sphere.PNG"/>-->
+        </statement>
+      </example>
+    </subsection>
+    <subsection>
+      <title>Image Compression using SVD</title>
+      <p>
+        Images stored on a computer is a collection of dots called pixels.
+        The collection of dots/pixels that constitute an image can be stored as a matrix.
+        The color image can be thought of as 3 dimensional array.
+      </p>
+      <p>
+        Using Eqn.
+        <xref ref="eq_svd9"></xref> we can write a matrix as sum of rank one matrices.
+        <me>
+          A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ru_rv_r^T
+        </me>.
+      </p>
+      <p>
+        This property says that <m>\rank{(A)}</m> is equal to the number of singular values of <m>A</m>.
+        Since <m>\sigma_1\gt \sigma_2\get \cdots\gt \sigma_r</m>,
+        the first term has highest impact on <m>A</m> followed by the second term and so on.
+        This propriety allows us to reduce the noise or compress the matrix data by eliminating the small singular values or the higher ranks.
+        This can be used as approximation of a given matrix,
+        in particular we can approximate a matrix by adding only the first few terms of <xref ref="eq_svd9"></xref>.
+      </p>
+      <p>
+        If we let
+        <me>
+          A_k:=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ku_kv_k^T (k\leq r)
+        </me>
+        then the total storage required for <m>A_k</m> is
+        <m>k(m+n+1)</m> which is much less compare to <m>mn</m>.
+      </p>
+      <p>
+        When an image
+        (the corresponding matrix)
+        is transformed using SVD, it is not compressed,
+        but the data take a form in which the first singular value has a more amount of the image information.
+        This allows us to use first few singular values to represent the image almost identical to the original.
+      </p>
+      
+      <p>
+        Look at the Image in <xref ref="fig_Sardar-im1">Fig</xref>.
+        The associates matrix for this image is of size <m>995\times 1770\times 3</m>.
+      
+        <figure xml:id="fig_Sardar-im1">
+            <caption>Orginal  Color Image</caption>
+            <image width="73%" source="images/Sardar_color.png"/>
+        </figure>
+      
+          
+        This image is converted into a gray scale image (See <xref ref="fig_Sardar-im2">Figure</xref>).
+        This size of matrix associated to the gray scale image is <m>995\times 1770</m> with rank 995.
+    
+        <figure xml:id="fig_Sardar-im2">
+            <image width="73%" source="images/Sardar_Gray.png"/>
+            <caption>Original Gray Image</caption>
+            </figure>
+    </p>
+    
+      <p>
+        After applying SVD to the Gray image and using 1st 5, 10, 20,30, 50, 100 terms 
+        respectively of the rank one approximation the approximate images are 
+        plotted in the 
+        <xref ref="fig_Sardar-im5">Figures</xref>,
+        <xref ref="fig_Sardar-im10"></xref>,
+        <xref ref="fig_Sardar-im20"></xref>,
+        <xref ref="fig_Sardar-im50"></xref>,
+        <xref ref="fig_Sardar-im50"></xref>,
+        <xref ref="fig_Sardar-im100"></xref> respectively.
+        
+        <p>
+          <figure xml:id="fig_Sardar-im5">
+            <image width="73%" source="images/Sardar-im5.png"/>
+            <caption>Approximate Image with 5 terms</caption>
+          </figure>
+        </p>
+        
+        <p>
+          <figure xml:id="fig_Sardar-im10">
+            <image width="73%" source="images/Sardar-im10.png"/>
+            <caption>Approximate Image with 10 terms</caption>
+          </figure>
+        </p>
+       
+        <p>
+          <figure xml:id="fig_Sardar-im20">
+            <image width="73%" source="images/Sardar-im20.png"/>
+            <caption>Approximate Image with 20 terms</caption>
+          </figure>
+        </p>
+
+        <p>
+          <figure xml:id="fig_Sardar-im30">
+            <image width="73%" source="images/Sardar-im30.png"/>
+            <caption>Approximate Image with 30 terms</caption>
+          </figure>
+        </p>
+       
+        <p>
+          <figure xml:id="fig_Sardar-im50">
+            <image width="73%" source="images/Sardar-im50.png"/>
+            <caption>Approximate Image with 50 terms</caption>
+          </figure>
+        </p>
+       
+        <p>
+          <figure xml:id="fig_Sardar-im100">
+            <image width="73%" source="images/Sardar-im100.png"/>
+            <caption>Approximate Image with 100 terms</caption>
+          </figure>
+        </p>
+       
+     
+        It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image.
+        Note that the original image has <m>995\times 1770=1761150</m> pixels,
+        where as if we take the 1st 100 terms,
+        then it is of size <m>100(995+1770)=276500</m> which quite small compared to the original size.
+      </p>
+      
+      </subsection>
+</section>

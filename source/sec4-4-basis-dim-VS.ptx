@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec4-5-basis-dim-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title> Basis and dimension</title>
+        <introduction>
+          <p>
+          </p>
+          </introduction>
+      <p>
+        We can defined basis of a vector space similar to basis of subspaces in <m>\R^n</m>.
+      </p>
+      <definition xml:id="def-basis-VS">
+        <statement>
+          <p>
+            Let <m>V</m> be a vector space over <m>\R</m>.
+            A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}\subset V</m> is called a basis of <m>V</m> if every vector
+            <m>v\in \R^n</m> can be expressed uniquely as linear combinations of <m>v_1,v_2,\ldots,v_n</m>.
+          </p>
+          <p>
+            Thus <m>\beta</m> is basis of <m>V</m> if (i) <m>L(\beta)=\R^n</m>,
+            that every vector <m>v\in \R^n</m> can be expressed as linear combinations of <m>v_1,v_2,\ldots,v_n</m>.
+          </p>
+          <p>
+            (ii) If <m>v=\alpha_1v_1+\alpha_2v_2+\cdots +\alpha_nv_n</m> and <m>v=\beta_1v_1+\beta_2v_2+\cdots +\beta_nv_n</m>,
+            then <m>\alpha_1=\beta_1, \alpha_2=\beta_2=\cdots,\alpha_n=\beta_n</m>.
+          </p>
+        </statement>
+      </definition>
+
+      <p>
+        We have already seen several examples of bases in <m>\R^n</m> and some subspaces of <m>\R^n</m>.
+      </p>
+
+      <example>
+        <statement>
+          <p>
+            Let <m>V={\cal P}_n(\R)</m>.
+            The set <m>\{1,x,x^2,\ldots,
+            x^n\}</m> is basis of <m>V</m>,
+            called the standard basis.
+          </p>
+        </statement>
+      </example>
+   
+      <example>
+        <statement>
+          <p>
+            <m>\{1,i\}</m> is a basis of
+            <m>\mathbb{C}</m> as a vector space over <m>\R</m>.
+          </p>
+        </statement>
+      </example>
+   
+   
+      <example>
+        <statement>
+          <me>
+            S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0
+            \end{bmatrix} ,
+            \begin{bmatrix}0 \amp  1 \\0 \amp  0
+            \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\1 \amp  0
+            \end{bmatrix} ,
+            \begin{bmatrix}0 \amp  0 \\0 \amp  1
+            \end{bmatrix} \right\}
+          </me>.
+          <p>
+            is a basis <m>M_2(\R)</m>, called the standard basis.
+          </p>
+        </statement>
+      </example>
+
+   
+      <example>
+        <statement>
+          <p>
+            Any <m>n</m> linearly independent set of vectors forms a basis of <m>\R^n</m>.
+          </p>
+        </statement>
+      </example>
+
+      <p>
+      <theorem xml:id="sec4-4-thm1">
+        <statement>
+          <p>
+            Let <m>V</m> be a vector space over <m>R</m>.
+            Let <m>\beta=\{v_1,\ldots,
+            v_n \}</m> and <m>\gamma=\{u_1,\ldots,
+            u_m\}</m> be two bases of <m>V</m>.
+            Then <m>m=n</m>.
+          </p>
+        </statement>
+      </theorem>
+    </p>
+     
+    
+    <p>
+      <theorem xml:id="sec4-4-thm2">
+        <statement>
+        
+          <p>
+            If a vector space <m>V</m> has a basis of consisting <m>n</m> elements then any set of <m>n + 1</m> vectors is linearly dependent.
+          </p>
+        </statement>
+      </theorem>
+    </p>
+
+
+      <definition xml:id="def-finite-dim-VS">
+        <statement>
+          <p>
+            A vector space <m>V</m> is called
+            <em>finite dimensional</em>
+            if there exists a finite subset <m>S</m> of <m>V</m> such that <m>L(S)</m>.
+          </p>
+          <p>
+            A vector space which is not finite dimensional is called an infinite dimensional.
+          </p>
+        </statement>
+      </definition>
+
+      <definition>
+        <statement>
+          <p>
+            We say a vector space <m>V</m> is of dimension <m>n</m> if it has a basis <m>\beta</m> consisting of <m>n</m> elements.
+          </p>
+        </statement>
+      </definition>
+      <p>
+        What is the dimension of <m>V=\{0\}</m>, the zero space?
+      </p>
+
+      <example>
+        <statement>
+          <p>
+            (i) <m>\R^n</m> is a <m>n</m> dimensional vectors space over <m>\R</m>.
+          </p>
+          <p>
+            (ii) <m>M_n(\R)</m> is a <m>n^2</m>-dimensional vector space over <m>\R</m>.
+          </p>
+          <p>
+            (iii) <m>{\cal P}_n(\R)</m> is <m>(n+1)</m>-dimensional vector space over <m>\R</m>.
+          </p>
+        </statement>
+      </example>
+
+      <example>
+        <statement>
+          <p>
+            Let <m>W</m> be the set of all
+            <m>3\times 3</m> real symmetric matrices.
+            The set
+            <md>
+              <mrow>\beta=\left\{
+                \begin{bmatrix}1 \amp  0 \amp  0 \\0 \amp  0 \amp  0 \amp  \\ 0 \amp  0 \amp  0 \end{bmatrix}, 
+                \begin{bmatrix}0 \amp  0 \amp  0 \\0 \amp  1 \amp  0 \amp  \\ 0 \amp  0 \amp  0 \end{bmatrix}, 
+                \begin{bmatrix}0 \amp  0 \amp  0 \\0 \amp  0 \amp  0 \amp  \\ 0 \amp  0 \amp  1 \end{bmatrix} \right.
+              </mrow>
+              <mrow>   \left. \begin{bmatrix}0 \amp  1 \amp  0 \\1 \amp  0 \amp  0  \\ 0 \amp  0 \amp  0 \end{bmatrix}, 
+              \begin{bmatrix}0 \amp  0 \amp  1 \\0 \amp  0 \amp   0 \\ 1 \amp  0 \amp  0 \end{bmatrix}, 
+              \begin{bmatrix}0 \amp  0 \amp  0 \\0 \amp  0 \amp  1 \amp  \\ 0 \amp  1 \amp  0 \end{bmatrix} \right\}
+              </mrow>
+            </md>
+            is a basis of <m>W</m>.
+            That is <m>W</m> is 6 dimensional vector space over <m>\R</m>.
+            What is dimension of the set of
+            <m>n\times n</m> real symmetric matrices and dimension of <m>n\times n</m>
+            real skew-symmetric matrices?
+          </p>
+        </statement>
+      </example>
+   
+      <exercise xml:id="rqs-dim-skey-symm">
+        <statement>
+        
+            Let <m>W</m> be the set of all
+            <m>3\times 3</m> real skew-symmetric matrices.
+            Find a basis and hence the dimension of <m>W</m>.
+        
+        </statement>
+      </exercise>
+    
+ 
+
+
+  
+  
+
+    <subsection>
+      <title>How to find a basis of a finite dimensional vector space?</title>
+      <p>
+        First let us look at the following result.
+      </p>
+      <exercise xml:id="exer97">
+        <statement>
+          <p>
+            Let <m>\{v_1,\ldots,
+            v_k\}</m> be a linearly independent set of vectors.
+            Suppose <m>v\notin { span}(\{v_1,\ldots, v_k\})</m>.
+            Then <m>\{v,v_1,\ldots, v_k\}</m> is linearly independent.
+          </p>
+        </statement>
+      </exercise>
+   
+     
+    <exercise>
+        <statement>
+          <p>
+            Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
+            Then any linearly independent set
+            <m>S =\{v_1,\ldots,
+            v_k\}</m> can be extended to a basis of <m>V</m>.
+            More precisely, there exists vectors,
+            <m>u_1,\ldots,
+            u_{n-k}</m> where <m>n={ dim}(V)</m> such that
+            <m>\beta=\{v_1,\ldots,
+            v_k,u_1,\ldots, u_{n-k}\}</m> is a basis of <m>V</m>.
+          </p>
+        </statement>
+      </exercise>
+      
+      <p>
+        This exercise give a way to find a basis of a finite dimensional vector space starting with a nonzero vector in <m>V</m>.
+      </p>
+      
+      <example>
+        <statement>
+          <p>
+            Complete the set <m>S=\{v_1=(1, 2, 1, 0),
+            v_2=(2, 2, 1, 0)\}</m> to a basis of <m>\R^4</m>.
+            One way of achieving this to find <m>v_3\notin L(S)</m>.
+            Then Chose <m>v_4\notin L(\{v_3\}\cup S)</m>.
+            Then in view of <xref ref="exer97">Exercise</xref>,
+            <m>\beta=\{v_1,v_2,v_3,v_4\}</m> is linearly independent.
+            Since <m>\dim(\R^4)=4</m>, <m>\beta</m> is a basis of <m>\R^4</m>.
+          </p>
+          <p>
+            Another way to achieve this is to look at the standard basis vectors <m>e_i</m> not in <m>L(S)</m>.
+            In particular, <m>v_3,v_4\in\{e_1,e_2,e_3,e_4\}</m>.
+            In order to find this we can apply RREF to the matrix
+            <m>\begin{bmatrix}v_1\amp  v_2 \amp  e_2 \amp  e_2 \amp  e_3 \amp  e_4 \end{bmatrix}</m> and choose columns corresponding to the pivots.
+            We have
+            <me>
+              \left[\begin{array}{rrrrrr} 1 \amp  2 \amp  1 \amp  0 \amp  0 \amp  0 \\ 2 \amp  2 \amp  0 \amp  1 \amp  0 \amp  0 \\ 1 \amp  1 \amp  0 \amp  0 \amp  1 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  1 \end{array} \right]\xrightarrow{RREF} \left[ \begin{array}{rrrrrr} 1 \amp  0 \amp  -1 \amp  0 \amp  2 \amp  0 \\ 0 \amp  1 \amp  1 \amp  0 \amp  -1 \amp  0 \\ 0 \amp  0 \amp  0 \amp  1 \amp  -2 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  1 \end{array} \right]
+            </me>.
+          </p>
+          <p>
+            Clearly pivot columns are 1,2,4,6, which corresponds to vector <m>v_1,v_2,v_2, v_4</m>.
+            Thus <m>\{v_1,v_2,e_2,e_4\}</m> is an extended basis of <m>\R^4</m>.
+          </p>
+        </statement>
+      </example>
+     
+    
+      <exercise>
+        <statement>
+          <p>
+            Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
+            Suppose <m>S</m> is a finite set such that <m>L(S)=V</m>.
+            Then there exists a subset
+            <m>S'\subset S</m> such that <m>S'</m> is a basis of <m>V</m>.
+          </p>
+        </statement>
+      </exercise>
+
+      <example>
+        <statement>
+          <p>
+            Consider <m>v_1,\ldots, v_8</m> in <m>\R^5</m>, where
+            <me>
+              \begin{split} v_1=(2, -3, 4, -5, -2), v_2=(-6, 9, -12, 15, -6), v_3=(3, -2, 7, -9, 1),\\ v_4=(2, -8, 2, -2, 6),
+               v_5=(-1, 1, 2, 1, -3), v_6=(0, -3, -18, 9, 12), \\
+               v_7=(1, 0, -2, 3, -2), v_8=(2, -1, 1, -9, 7) \end{split}
+            </me>
+          </p>
+          <p>
+            We wish to find a subset of
+            <m>\{v_1,\ldots,
+            v_8\}</m> which is a basis of <m>\R^5</m>.
+            We can achieve this by applying RREF to the column matrix <m>\begin{bmatrix}v_1\amp  v_2\amp \cdots \amp  v_8 \end{bmatrix}</m>.
+            Thus
+            <md>
+              <mrow>\left[\begin{array}{rrrrrrrr} 2 \amp  -6 \amp  3 \amp  2 \amp  -1 \amp  0 \amp  1 \amp  2 \\ 
+                -3 \amp  9 \amp  -2 \amp  -8 \amp  1 \amp  -3 \amp  0 \amp  -1 \\ 
+                4 \amp  -12 \amp  7 \amp  2 \amp  2 \amp  -18 \amp  -2 \amp  1 \\
+                 -5 \amp  15 \amp  -9 \amp  -2 \amp  1 \amp  9 \amp  3 \amp  -9 \\ 
+                 -2 \amp  -6 \amp  1 \amp  6 \amp  -3 \amp  12 \amp  -2 \amp  7 \end{array}\right]</mrow>
+                 <mrow>\xrightarrow{RREF} 
+                 \left[\begin{array}{rrrrrrrr} 
+                  1 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \\ 
+                  0 \amp  1 \amp  0 \amp  -\frac{4}{3} \amp  0 \amp  -\frac{1}{3} \amp  0 \amp  \frac{1}{3} \\ 
+                  0 \amp  0 \amp  1 \amp  -2 \amp  0 \amp  -2 \amp  0 \amp  1 \\ 
+                  0 \amp  0 \amp  0 \amp  0 \amp  1 \amp  -4 \amp  0 \amp  -2 \\ 
+                  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  1 \amp  -1 \end{array} \right]
+                 </mrow>
+            </md>
+          </p>
+          <p>
+            Clearly pivot columns are 1, 2, 3, 5, 7.
+            Hence <m>\{v_1,v_2,v_3,v_5,v_7\}</m> is basis of <m>\R^5</m>.
+          </p>
+        </statement>
+      </example>
+    </subsection>
+
+  
+    <subsection>
+      <title>Lagrange Interpolation</title>
+      <p>
+        Consider the vector space <m>{\cal P}_n(\R)</m>.
+        Fix <m>n+1</m> distinct real numbers <m>c_0,c_1,\ldots, c_n</m>.
+        Define polynomials
+        <men xml:id="lagrange-eq1">
+          \ell_i(x)= \frac{(x-c_0)\cdots (x-c_{i-1})(x-c_{i+1})\cdots(x-c_n)}{(c_i-c_0)\cdots (c_i-c_{i-1})(c_i-c_{i+1})\cdots(c_i-c_n)}
+          </men>.
+        The above equation can be written as 
+        <men xml:id="lagrange-eq1-1"> 
+          \ell_i(x)=\prod_{j=0,j\neq i}^{n}\frac{x-c_j}{c_i-c_j}
+        </men>
+        </p>
+      <p>
+        It is easy to see that <m>\ell_i(c_j)=1</m> if <m>j=i</m> and 0 otherwise.
+        We claim that <m>\{\ell_i\}_{i=0}^n</m> is a linearly independent subset of <m>{\cal P}_n(\R)</m>.
+        For
+        <men xml:id="lagrange-eq2">
+          \alpha_0\ell_0 + \alpha_1\ell_1+\cdots+\alpha_n\ell_n=\sum\alpha_i\ell_i=0
+        </men>.
+      </p>
+      <p>
+        Here the right hand side is the zero polynomial.
+        This implies <m>\sum\alpha_i\ell_i(c_j)=0</m> for all <m>j=0,\ldots, n</m>.
+        Since <m>\sum\alpha_i\ell_i(c_j)=\alpha_j</m>,
+        it implies that <m>\alpha_j=0</m> for all <m>j=0,\ldots, n</m>.
+        Hence the claim.
+      </p>
+      <p>
+        Since <m>{\cal P}_n(\R)</m> is <m>(n+1)</m>-dimensional vector space,
+        the set <m>\{\ell_i\}_{i=0}^n</m> is a basis.
+        Hence every <m>n</m>-th degree polynomial can be expressed uniquely as linear combination of <m>\ell_i</m>.
+        Suppose <m>g</m> is polynomial passing through points
+        <m>\{(x_i,y_i)\}_{i=0}^n</m>, (that is <m>g(x_i)=y_i)</m>) where
+        <m>x_0,\ldots,x_n</m> are <m>n</m> distinct real numbers.
+        This unique polynomial is given by
+        <men xml:id="lagrange-eq3">
+          g(x)=\sum_{i=0}^n \ell_i(x)y_i
+        </men>
+        called the <em>Lagrange interpolation</em>
+        polynomial passing through <m>\{(x_i,y_i)\}_{i=0}^n</m>.
+      </p>
+    </subsection>
+      <p>
+        In the following theorem we mention the equivalent condition for a set to be a basis of a finite dimensional vector space.
+      </p>
+      <definition xml:id="maxLI">
+        <statement>
+          <p>
+            Let <m>V</m> be a vector space.
+            A set of vectors <m>S</m> of <m>V</m> is called a maximal linearly independent set if
+            <m>S\cup \{v\}</m> is linearly dependent for any vector <m>v\in V</m>.
+          </p>
+        </statement>
+      </definition>
+
+      <example>
+        <statement>
+          <p>
+            (i) Any set <m>S</m> with two linearly independent set of vectors in <m>\R^2</m> is a maximal linearly independent set.
+          </p>
+          <p>
+            (ii) Any set <m>S</m> with three linearly independent set of vectors in <m>\R^3</m> is a maximal linearly independent set.
+          </p>
+        </statement>
+      </example>
+
+      <definition xml:id="minimalgenerator">
+        <statement>
+          <p>
+            Let <m>V</m> be a vector space.
+            A set of vectors <m>S</m> of <m>V</m> is called a minimal set of generators if (i) <m>L(S)=V</m> and (ii) for any <m>u\in S</m>,
+            <m>L(S\setminus \{u\})\neq V</m>.
+          </p>
+        </statement>
+      </definition>
+
+      <example>
+        <statement>
+          <p>
+            (i) Any set <m>S</m> with two linearly independent set of vectors in <m>\R^2</m> is a minimal set of generators.
+          </p>
+          <p>
+            (ii) Any set <m>S</m> with three linearly independent set of vectors in <m>\R^3</m> is a minimal set of generators.
+          </p>
+        </statement>
+      </example>
+
+      <theorem xml:id="thm-basis-equiv">
+        <statement>
+          <p>
+            Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
+            Then the following are equivalent.
+            <ol>
+              <li>
+                <p>
+                  <m>\beta=\{v_1,\ldots,v_n\}</m> is a basis of <m>V</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>L(\beta)=V</m> and <m>\beta</m> is linearly independent.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\beta</m> is maximal linearly independent set.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\beta</m> is minimal set of generators.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </theorem>
+    
+
+    <subsection>
+      <title>Dimension Formula</title>
+      <problem>
+        <statement>
+          <p>
+            Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
+            Let <m>W_1</m> and <m>W_2</m> be subspaces of <m>V</m>.
+            Then
+            <me>
+              W_1+W_2:= \{x+y:x\in W_2,y\in W_2\}
+            </me>.
+          </p>
+          <p>
+            It is easy to check that <m>W_1+W_2</m> is a subspace of <m>V</m>.
+            Moreover
+            <md>
+              <mrow xml:id="dimension-formula" number="yes">\dim{(W_1+W_2)}=\dim{(W_1)}+\dim{(W_2)}-\dim{(W_1\cap W_2)}</mrow>
+            </md>
+          </p>
+        </statement>
+      </problem>
+      <example>
+        <statement>
+          <p>
+            Let <m>V=\R^3</m>.
+            Consider subspaces <m>W_1=\{(x_1,x_2,x_3):x_1+x_2+x_3=0\}</m> and <m>W_2=\{(x_1,x_2,x_3):x_1+x_2-x_3=0\}</m>.
+            Clearly <m>W_1</m> and <m>W_2</m> are subspaces of <m>V</m> each of dimension 2.
+            What is <m>W_1\cap W_2</m>?
+            It is the line of intersection of the two planes,
+            <m>x_1+x_2+x_3=0</m> and <m>x_1+x_2-x_3=0</m>.
+            Thus <m>\dim{(W_1\cap W_2)}=1</m>.
+            It is easy to see that
+            <me>
+              W_2\cap W_2=\{\alpha(1,-1,0):\alpha\in\R\}
+            </me>
+          </p>
+          <p>
+            What is <m>W_1+W_2</m>?
+            One can easily show that <m>W_1+W_2=\R^3=V</m>.
+            However by dimension formula
+            <md>
+              <mrow>\dim{(W_1+W_2)}=\amp \dim{(W_1)}+\dim{(W_2)}-\dim{(W_1\cap W_2)}</mrow>
+                <mrow>=\amp 2+2-1=3</mrow>
+            </md>.
+          </p>
+          <p>
+            Since <m>W_1+W_2</m> is a 3 dimensional subspace of <m>\R^3</m>,
+            it is in fact <m>\R^3</m>.
+          </p>
+        </statement>
+      </example>
+    </subsection>
+  
+
+  </section>
+ 

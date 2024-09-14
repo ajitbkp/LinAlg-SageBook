@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec3-1-LT" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction</title>
+  <introduction>
+    <p>
+      Consider the Cartesian plane <m>\R^2=\left\{\begin{bmatrix}x_1\\x_2 \end{bmatrix} :x_1,x_2\in\R\right\}</m>.
+      Consider the reflection about <m>x</m>-axis in <m>\R^2</m>.
+      This is a map <m>R_f\colon \R^2\to\R^2</m> as
+            <me>
+              R_f\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)=\begin{bmatrix}x_1\\-x_2 \end{bmatrix}
+            </me>.
+            Note that we can write
+            <me>
+              R_f\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)=\begin{bmatrix}x_1\\-x_2 \end{bmatrix} = \begin{bmatrix}1 \amp  0\\0 \amp  -1 \end{bmatrix} (\begin{bmatrix}x_1\\x_2 \end{bmatrix}
+            </me>.
+            Thus the map <m>R_f</m> is obtained as a matrix multiplication by <m>A=\begin{bmatrix}1 \amp  0\\0 \amp  -1 \end{bmatrix}</m>.
+          </p>
+          <p>
+            Similarly consider a map <m>R_\theta</m> as a rotation of a vector by an angle <m>\theta</m> anti-clock wise.
+            Any point <m>x=\begin{bmatrix}x_1\\x_2 \end{bmatrix} \in\R^2</m> can be written as
+            <m>\begin{bmatrix}r\cos\alpha\\r\sin\alpha \end{bmatrix}</m> in polar coordinates.
+            Here <m>r=\sqrt{x_1^2+x_2^2}</m> and <m>\alpha</m> is the angle that vector <m>x</m> makes with positive <m>x</m>-axis.
+            Then
+            <me>
+              R_\theta\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)= \begin{bmatrix}r\cos(\alpha+\theta)\\r\sin(\alpha+\theta) \end{bmatrix}
+            </me>.
+            After Simplification, we have
+            <me>
+              \begin{bmatrix}r\cos(\alpha+\theta)\\r\sin(\alpha+\theta) \end{bmatrix} = \begin{bmatrix}r(\cos \theta \cos\alpha -\sin\theta \sin \alpha) \\ r(\sin\theta\cos\alpha+\cos\theta\sin\alpha) \end{bmatrix} = \begin{bmatrix}\cos \theta \amp  -\sin \theta\\ \cos \theta \amp  \sin \theta \end{bmatrix} \begin{bmatrix}r\cos\alpha\\r\sin\alpha \end{bmatrix}
+            </me>
+          </p>
+          <p>
+            Thus
+            <me>
+              R_\theta\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)= \begin{bmatrix}\cos \theta \amp  -\sin \theta\\ \cos \theta \amp  \sin \theta \end{bmatrix} \begin{bmatrix}x_1\\x_2 \end{bmatrix}
+            </me>.
+          </p>
+          <p>
+            Thus the rotation in the plane can also be given by the matrix multiplication.
+          </p>
+          <p>
+            Suppose <m>A</m> is a <m>m\times n</m> real matrix.
+            Then for a vector <m>x=\begin{bmatrix}x_1\\\vdots \\x_n \end{bmatrix}  \in\R^n</m>,
+            <m>Ax\in \R^m</m>.
+            Thus <m>A</m> can be thought of as a map that takes vector in <m>\R^n</m> to a vector in <m>\R^m</m>.
+            Let us denote this map as <m>T_A</m>.
+            Thus
+            <me>
+              T_A\colon R^n\to \R^m, \text{ defined by }  T_A(x)=Ax
+            </me>.
+          </p>
+          <p>
+            <m>T_A</m> is called the matrix transformation induced by the matrix <m>A</m>.
+          </p>
+          <p>
+            Note that the matrix transformation <m>T_A</m> has the following properties: (i)
+            <m>T_A(x+y)=A(x+y)=Ax+Ay=T_A(x)+T_A(y)</m> for all <m>x,y\in \R^n</m>.
+          </p>
+          <p>
+            (ii) <m>T_A(\alpha x)=A(\alpha x)=\alpha Ax=\alpha T_A(x)</m> for all
+            <m>\alpha\in \R</m> and <m>x\in \R^n</m>.
+          </p>
+          <p>
+            In particular,
+            <m>T_A</m> preserves vector addition and scalar multiplication.
+            Any such map is called a linear transformation.
+            We have the following definition.
+          </p>
+          <definition>
+            <statement>
+              <p>
+                A map <m>T\colon \R^n \to \R^m</m> is called a linear transformation (or linear map)if it satisfies the following properties:
+              </p>
+              <p>
+                (i) <m>T(x+y)=T(x)+T(y)</m> for all <m>x,y\in \R^n</m>.
+              </p>
+              <p>
+                (ii) <m>T(\alpha x)=\alpha T(x)</m> for all
+                <m>\alpha\in \R</m> and <m>x\in \R^n</m>.
+              </p>
+            </statement>
+          </definition>
+
+          <problem>
+            <statement>
+              <p>
+               (i) If <m>T\colon \R^n\to \R^m</m> is a linear map, then <m>T(0)=0</m>.
+                That is <m>T</m> takes the zero vector in <m>\R^n</m> to the zero vector in <m>\R^m</m>.
+              </p>
+              <p>
+                (ii) If <m>T\colon \R^n\to \R^m</m> is a linear map, then   
+                <m>T(-v)=-T(v)</m> for all <m>v\in \R^n</m>.             </p>
+            </statement>
+        </problem>
+
+          <example>
+            <statement>
+              <p>
+                (i) Zero map <m>T\colon \R^n \to \R^m</m> defined by <m>T(x)=0</m> for all 
+                <m>x</m> is a linear map.
+              </p>
+              
+              <p> 
+                (ii) The identity map <m>T\colon \R^n \to \R^n</m> given by 
+                <m>T(x)=x</m> for all <m>x\in \R^n</m> is a linear map.
+              </p>
+
+              <p>
+                (iii) The reflection and rotation defined above are linear map 
+                from <m>\R^2</m> to <m>\R^2</m>.
+              </p>
+              
+              <p>
+                (iv) Any matrix transformation given by <m>T_A(x)=Ax</m> 
+              </p>
+                
+              <p>
+                (v) Fix a vector <m>a</m> in <m>\R^n</m> and define
+                <m>T_a\colon \R^n\to \R^n</m> as <m>T_a(x)=x+a</m>.
+                Is <m>T_a</m> a linear map?
+
+                When is this linear? (The map <m>T_a</m> is called translation.)
+              </p>
+
+              <p>
+                (vi) Let <m>a,b\in \R</m> be two real number.
+                Define <m>T\colon \R^2\to \R</m> as <m>T(x,y)=ax+b</m>.
+                It is easy to check that <m>T</m> is a linear map?
+                Can you generalize this?
+              </p>
+             
+              <p>
+                (vii) Let <m>a_1,\ldots, a_n</m> be <m>n</m> real numbers.
+                
+                Define <m>T\colon \R^n\to \R</m> by
+
+                <me>
+                  T(x_1,\cdots,x_n)=a_1x_1+\cdots+a_nx_n
+                </me>.
+                It is easy to check that <m>T</m> is a linear map.
+              </p>
+
+            </statement>
+          </example>
+        
+        <problem>
+            <statement>
+              <p>
+                What are linear maps from <m>\R</m> to <m>\R</m>?
+              </p>
+              <blockquote>
+                Suppose <m>f\colon \R\to \R</m> is a linear map. We know that  <m>\{1\}</m> is  
+                basis of <m>\R</m>. Then any vector <m>x=x\cdot 1</m>. 
+                Therefore, <m>f(x)=f(x\cdot 1)=xf(1)</m>. Thus  if we define <m>f(1)=a\in \R</m>
+                <m>f(x)=ax</m>. If <m>f</m> is linear map from <m>\R\to \R</m>, then there exist a real number 
+                <m>a\in \R</m> such that <m>f(x)=ax</m>. Note that in this case <m>a=f(1)</m>.
+              </blockquote>
+            </statement>
+        </problem>
+        </introduction>
+    </section>

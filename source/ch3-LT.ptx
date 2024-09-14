@@ -2,4 +2,9 @@
 <chapter xml:id="chap3-LT" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Linear Transformations</title>
   
+  <xi:include href="sec3-1-LT.ptx" />
+  <xi:include href="sec3-2-LT.ptx" />
+  <xi:include href="sec3-3-LT.ptx" />
+  <xi:include href="sec3-4-LT.ptx" />
+
 </chapter>
