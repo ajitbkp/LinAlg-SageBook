@@ -102,7 +102,7 @@ window.MathJax = {
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
@@ -398,9 +398,10 @@ window.MathJax = {
 </h3>
 <div class="para" id="sec3-3-LT-3-2">Recall that the reflection <span class="process-math">\(R_f\)</span> about the <span class="process-math">\(x\)</span>-axis in <span class="process-math">\(\R^2\)</span> is give by <span class="process-math">\(R(x_1,x_2)=(x_1,-x_2)\text{.}\)</span> The matrix of <span class="process-math">\(R_f\)</span> with respect to the standard basis is <span class="process-math">\(\begin{bmatrix}1 \amp 0\\0 \amp -1 \end{bmatrix}\text{.}\)</span> Let us look at how to find the reflection about any line <span class="process-math">\(y=mx\)</span> where <span class="process-math">\(m=\tan\theta\text{.}\)</span>
 </div>
-<details id="linalg-engg-eg36" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="linalg-engg-eg36"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="linalg-engg-eg36-1-1">Let <span class="process-math">\(Q\)</span> be the reflection in <span class="process-math">\(\R^2\)</span> about the line <span class="process-math">\(y=mx\text{,}\)</span> where <span class="process-math">\(m=\tan\theta\text{.}\)</span> We wish to find the matrix of <span class="process-math">\(Q\)</span> with respect to the standard basis.</div> <div class="para logical" id="linalg-engg-eg36-1-2">
+</h4>
+<div class="para" id="linalg-engg-eg36-1-1">Let <span class="process-math">\(Q\)</span> be the reflection in <span class="process-math">\(\R^2\)</span> about the line <span class="process-math">\(y=mx\text{,}\)</span> where <span class="process-math">\(m=\tan\theta\text{.}\)</span> We wish to find the matrix of <span class="process-math">\(Q\)</span> with respect to the standard basis.</div> <div class="para logical" id="linalg-engg-eg36-1-2">
 <div class="para">Note that <span class="process-math">\(Q\)</span> can be accomplished by first rotating by <span class="process-math">\(-\theta\text{,}\)</span> then reflecting about <span class="process-math">\(x\)</span>-axis and then rotating back by <span class="process-math">\(\theta\text{.}\)</span> Thus</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -428,23 +429,26 @@ Q=\amp \begin{bmatrix}\cos (\theta) \amp  -\sin (\theta) \\\sin(\theta) \amp  \c
 [Q]_\beta=Q=\begin{bmatrix}\frac{1-m^2}{1+m^2} \amp  \frac{2m}{1+m^2}\\ \frac{2m}{1+m^2} \amp  \frac{m^2-1}{1+m^2} \end{bmatrix} =\frac{1}{1+m^2}\begin{bmatrix}1-m^2 \amp  2m\\ 2m \amp  m^2-1 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></article></details><details id="sec3-3-LT-3-4" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="exercise exercise-like" id="sec3-3-LT-3-4"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec3-3-LT-3-4-1-1">For the following linear transformation <span class="process-math">\(T\colon \R^2\to \R^2\text{.}\)</span> Show that <span class="process-math">\(T\)</span> is induced by a matrix and hence find the matrix.</div> <div class="para" id="sec3-3-LT-3-4-1-2">(i) <span class="process-math">\(T\)</span> is reflection about <span class="process-math">\(y\)</span> axis.</div> <div class="para" id="sec3-3-LT-3-4-1-3">(ii) <span class="process-math">\(T\)</span> is reflection about the line <span class="process-math">\(y=x\)</span>
+</h4>
+<div class="para" id="sec3-3-LT-3-4-1-1">For the following linear transformation <span class="process-math">\(T\colon \R^2\to \R^2\text{.}\)</span> Show that <span class="process-math">\(T\)</span> is induced by a matrix and hence find the matrix.</div> <div class="para" id="sec3-3-LT-3-4-1-2">(i) <span class="process-math">\(T\)</span> is reflection about <span class="process-math">\(y\)</span> axis.</div> <div class="para" id="sec3-3-LT-3-4-1-3">(ii) <span class="process-math">\(T\)</span> is reflection about the line <span class="process-math">\(y=x\)</span>
 </div> <div class="para" id="sec3-3-LT-3-4-1-4">(iii) <span class="process-math">\(T\)</span> is reflection about the line <span class="process-math">\(y=-x\)</span>
 </div> <div class="para" id="sec3-3-LT-3-4-1-5">(iv) <span class="process-math">\(T\)</span> is a clockwise rotation by an angle <span class="process-math">\(\pi/2\text{.}\)</span>
-</div></article></details><details id="sec3-3-LT-3-5" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="exercise exercise-like" id="sec3-3-LT-3-5"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec3-3-LT-3-5-1-1">(i) Let <span class="process-math">\(T\colon \R^3\to \R^3\)</span> be a linear transformation which is reflection about the <span class="process-math">\(xy\)</span> plane. Write <span class="process-math">\(T\)</span> explicitly and hence show that it is induced by a matrix.</div> <div class="para" id="sec3-3-LT-3-5-1-2">(ii) Let <span class="process-math">\(T\colon \R^3\to \R^3\)</span> be a linear transformation which is reflection about the <span class="process-math">\(yz\)</span> plane. Write <span class="process-math">\(T\)</span> explicitly and hence show that it is induced by a matrix.</div></article></details></section><section class="subsection" id="sec3-3-LT-4"><h3 class="heading hide-type">
+</h4>
+<div class="para" id="sec3-3-LT-3-5-1-1">(i) Let <span class="process-math">\(T\colon \R^3\to \R^3\)</span> be a linear transformation which is reflection about the <span class="process-math">\(xy\)</span> plane. Write <span class="process-math">\(T\)</span> explicitly and hence show that it is induced by a matrix.</div> <div class="para" id="sec3-3-LT-3-5-1-2">(ii) Let <span class="process-math">\(T\colon \R^3\to \R^3\)</span> be a linear transformation which is reflection about the <span class="process-math">\(yz\)</span> plane. Write <span class="process-math">\(T\)</span> explicitly and hence show that it is induced by a matrix.</div></article></section><section class="subsection" id="sec3-3-LT-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="space"> </span><span class="title">Projections in <span class="process-math">\(\R^2\)</span></span>
 </h3>
 <div class="para" id="sec3-3-LT-4-2">The linear map <span class="process-math">\(\pi_1\colon \R^2\to \R^2\text{,}\)</span> given <span class="process-math">\(\pi_(x_1,x_2)=x_1\)</span> is the projection on to <span class="process-math">\(x\)</span>-axis. Similarly, <span class="process-math">\(\pi_1\colon \R^2\to \R^2\text{,}\)</span> given <span class="process-math">\(\pi_(x_1,x_2)=x_2\)</span> is the projection on to <span class="process-math">\(y\)</span>-axis. It is easy to check that the matrix of <span class="process-math">\(\pi_1\)</span> with respect to the standard basis is <span class="process-math">\(\begin{bmatrix}1 \amp 0 \\0 \amp 0 \end{bmatrix}\text{.}\)</span> Similarly, the matrix of <span class="process-math">\(\pi_2\)</span> with respect to the standard basis is <span class="process-math">\(\begin{bmatrix}0 \amp 0 \\0 \amp 1 \end{bmatrix}\text{.}\)</span>
 </div>
 <div class="para" id="sec3-3-LT-4-3">We wish to define the projection <span class="process-math">\(P\)</span> onto the line <span class="process-math">\(y=mx\text{,}\)</span> where <span class="process-math">\(m=\tan\theta\text{.}\)</span>
 </div>
-<details id="linalg-engg-eg37" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="linalg-engg-eg37"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="linalg-engg-eg37-1-1">Let <span class="process-math">\(P\)</span> be the projection in <span class="process-math">\(\R^2\)</span> onto the line <span class="process-math">\(y=mx\text{,}\)</span> where <span class="process-math">\(m=\tan\theta\text{.}\)</span> We wish to find the matrix of <span class="process-math">\(Q\)</span> with respect to the standard basis.</div> <div class="para logical" id="linalg-engg-eg37-1-2">
+</h4>
+<div class="para" id="linalg-engg-eg37-1-1">Let <span class="process-math">\(P\)</span> be the projection in <span class="process-math">\(\R^2\)</span> onto the line <span class="process-math">\(y=mx\text{,}\)</span> where <span class="process-math">\(m=\tan\theta\text{.}\)</span> We wish to find the matrix of <span class="process-math">\(Q\)</span> with respect to the standard basis.</div> <div class="para logical" id="linalg-engg-eg37-1-2">
 <div class="para">Using a similar procedure, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -473,17 +477,20 @@ P =\frac{1}{1+m^2}\begin{bmatrix}1 \amp  m \\m \amp  m^2 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 </div> <div class="para" id="linalg-engg-eg37-1-5">Write down the matrix of reflection about the line passing through the origin and the point <span class="process-math">\((a,b)\text{,}\)</span> with <span class="process-math">\(a\neq 0\text{.}\)</span>
-</div></article></details><details id="sec3-3-LT-4-5" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="exercise exercise-like" id="sec3-3-LT-4-5"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec3-3-LT-4-5-1-1">If <span class="process-math">\(P\)</span> is the projection onto the line <span class="process-math">\(y=mx\text{,}\)</span> then show that <span class="process-math">\(P^2=P\text{.}\)</span> In particular, <span class="process-math">\(P^2=P\text{.}\)</span> Thus the matrix <span class="process-math">\(P =\frac{1}{1+m^2}\begin{bmatrix}1 \amp m \\m \amp m^2 \end{bmatrix}\)</span> is an idempotent matrix.</div> <div class="para" id="sec3-3-LT-4-5-1-2">Write down the matrix of reflection onto the line passing through the origin and the point <span class="process-math">\((a,b)\text{,}\)</span> with <span class="process-math">\(a\neq 0\text{.}\)</span>
-</div></article></details><details id="sec3-3-LT-4-6" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4>
+<div class="para" id="sec3-3-LT-4-5-1-1">If <span class="process-math">\(P\)</span> is the projection onto the line <span class="process-math">\(y=mx\text{,}\)</span> then show that <span class="process-math">\(P^2=P\text{.}\)</span> In particular, <span class="process-math">\(P^2=P\text{.}\)</span> Thus the matrix <span class="process-math">\(P =\frac{1}{1+m^2}\begin{bmatrix}1 \amp m \\m \amp m^2 \end{bmatrix}\)</span> is an idempotent matrix.</div> <div class="para" id="sec3-3-LT-4-5-1-2">Write down the matrix of reflection onto the line passing through the origin and the point <span class="process-math">\((a,b)\text{,}\)</span> with <span class="process-math">\(a\neq 0\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="sec3-3-LT-4-6"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="period">.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec3-3-LT-4-6-1-1">For the following linear transformations <span class="process-math">\(P\colon \R^3\to T^3\text{,}\)</span> show that its is induced by a matrix and find the matrix.</div> <div class="para" id="sec3-3-LT-4-6-1-2">(i) <span class="process-math">\(P\)</span> is is projection onto <span class="process-math">\(xy\)</span> plane.</div> <div class="para" id="sec3-3-LT-4-6-1-3">(ii) <span class="process-math">\(P\)</span> is is projection onto <span class="process-math">\(yz\)</span> plane.</div></article></details></section><section class="subsection" id="sec3-3-LT-5"><h3 class="heading hide-type">
+</h4>
+<div class="para" id="sec3-3-LT-4-6-1-1">For the following linear transformations <span class="process-math">\(P\colon \R^3\to T^3\text{,}\)</span> show that its is induced by a matrix and find the matrix.</div> <div class="para" id="sec3-3-LT-4-6-1-2">(i) <span class="process-math">\(P\)</span> is is projection onto <span class="process-math">\(xy\)</span> plane.</div> <div class="para" id="sec3-3-LT-4-6-1-3">(ii) <span class="process-math">\(P\)</span> is is projection onto <span class="process-math">\(yz\)</span> plane.</div></article></section><section class="subsection" id="sec3-3-LT-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="space"> </span><span class="title">Projection and Reflection in <span class="process-math">\(\R^3\)</span></span>
 </h3>
-<details id="linalg-engg-eg44" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="linalg-engg-eg44"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Rotation in <span class="process-math">\(\R^3\)</span>.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="linalg-engg-eg44-2-1">Let <span class="process-math">\(R_{z,\theta} \colon \R^3\to \R^3\)</span> denote the rotation in <span class="process-math">\(\R^3\)</span> about the <span class="process-math">\(z\)</span>-axis through an angle <span class="process-math">\(\theta\)</span> from the positive x=<span class="process-math">\(x\)</span>-axis toward the positive <span class="process-math">\(y\)</span>-axis (that is anticlockwise). Let us find the matrix of this transformation with respect to the standard basis.</div> <div class="para logical" id="linalg-engg-eg44-2-2">
+</h4>
+<div class="para" id="linalg-engg-eg44-2-1">Let <span class="process-math">\(R_{z,\theta} \colon \R^3\to \R^3\)</span> denote the rotation in <span class="process-math">\(\R^3\)</span> about the <span class="process-math">\(z\)</span>-axis through an angle <span class="process-math">\(\theta\)</span> from the positive x=<span class="process-math">\(x\)</span>-axis toward the positive <span class="process-math">\(y\)</span>-axis (that is anticlockwise). Let us find the matrix of this transformation with respect to the standard basis.</div> <div class="para logical" id="linalg-engg-eg44-2-2">
 <div class="para">First of notice that in this case, the <span class="process-math">\(z\)</span>-coordinate of any vector does not change. Thus <span class="process-math">\(R_{z,\theta}(e_3)=e^3\text{.}\)</span> What happens to <span class="process-math">\(e_1\)</span> and <span class="process-math">\(e_2\text{?}\)</span> They get rotated by an angle <span class="process-math">\(\theta\text{.}\)</span> That is <span class="process-math">\(R_{z,\theta}(e_1)=\begin{bmatrix}\cos \theta \\\sin\theta\amp  0 \end{bmatrix}\)</span> and <span class="process-math">\(R_{z,\theta}(e_2)=\begin{bmatrix}-\sin \theta \\\cos\theta\amp  0 \end{bmatrix}\text{.}\)</span> Hence the matrix of <span class="process-math">\(R_{z,\theta}\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -491,9 +498,10 @@ R_{z,\theta} =\begin{bmatrix}\cos \theta \amp  -\sin\theta\amp  0\\ \sin\theta \
 \end{equation*}
 </div>
 </div> <div class="para" id="linalg-engg-eg44-2-3">Find the matrix of <span class="process-math">\(R_{x,\theta}\)</span> and <span class="process-math">\(R_{y,\theta}\text{.}\)</span>
-</div></article></details><details id="linalg-engg-eg45" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="linalg-engg-eg45"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Projection onto a line in <span class="process-math">\(\R^3\)</span>.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="linalg-engg-eg45-2-1">
+</h4>
+<div class="para logical" id="linalg-engg-eg45-2-1">
 <div class="para">Let <span class="process-math">\(v=(a,b,c)\)</span> be a nonzero vector in <span class="process-math">\(\R^3\)</span> and <span class="process-math">\(L\)</span> is the line passing through <span class="process-math">\((a,b,c)\)</span> and the origin, that is, <span class="process-math">\(L=\R_v=\{\alpha v:\alpha\in \R\}\text{.}\)</span> We wish to find the orthogonal projection of any vector <span class="process-math">\(u=(x,y,z)\in \R^3\text{.}\)</span> If <span class="process-math">\(p\)</span> is the orthogonal projection of <span class="process-math">\(u\)</span> onto <span class="process-math">\(L\text{,}\)</span> then <span class="process-math">\(p=tv\)</span> for some scalar <span class="process-math">\(t\)</span> and <span class="process-math">\(u-p\)</span> is orthogonal to <span class="process-math">\(p\text{.}\)</span> Reader is encouraged to draw figure. From this, it is easy to see that <span class="process-math">\(t=\frac{v\cdot u}{||v||^2}\text{.}\)</span> Hence</div>
 <div class="displaymath process-math" id="linalg-engg-eg45-2-1-15">
 \begin{align*}
@@ -510,9 +518,10 @@ ac\amp bc\amp c^2 \end{bmatrix} \begin{bmatrix}x\\y\\z \end{bmatrix}\text{.}
 P_L=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ab\amp b^2\amp bc\\ac\amp bc\amp c^2 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></article></details><details id="linalg-engg-eg46" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="linalg-engg-eg46"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Reflection about a line in <span class="process-math">\(\R^3\)</span>.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="linalg-engg-eg46-2-1">
+</h4>
+<div class="para logical" id="linalg-engg-eg46-2-1">
 <div class="para">Let <span class="process-math">\(v=(a,b,c)\)</span> be a nonzero vector in <span class="process-math">\(\R^3\)</span> and <span class="process-math">\(L\)</span> is the line passing through <span class="process-math">\((a,b,c)\text{.}\)</span> We wish to find the reflection <span class="process-math">\(Ref_L(u)\)</span> of any vector <span class="process-math">\(u=(x,y,z)\in \R^3\)</span> through the line <span class="process-math">\(L\text{.}\)</span> Suppose <span class="process-math">\(P_L(u)\)</span> is the orthogonal projection of <span class="process-math">\(u\)</span> onto <span class="process-math">\(L\text{.}\)</span> Then <span class="process-math">\(P_L(u)\)</span> is the mid point of <span class="process-math">\(u\)</span> and <span class="process-math">\(Ref_L(u)\text{.}\)</span> Hence <span class="process-math">\(Ref_L(u)=2P_L(u)-u\text{.}\)</span> By the Ex. <a href="sec3-2-LT.html#sumoflinearmaps" class="xref" data-knowl="./knowl/xref/sumoflinearmaps.html" data-reveal-label="Reveal" data-close-label="Close" title="Checkpoint 3.2.6">Checkpoint 3.2.6</a>, the matrix of <span class="process-math">\(Ref_L\)</span> is given by</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sumoflinearmaps.html" id="linalg-engg-eg46-2-1-17">
 \begin{align*}
@@ -520,9 +529,10 @@ Ref_L =\amp \frac{2}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ab\amp b^2\am
 =\amp \frac{2}{a^2+b^2+c^2}\begin{bmatrix}a^2-b^2-c^2\amp 2ab\amp 2ac\\2ab\amp b^2-a^2-c^2\amp 2bc\\2ac\amp 2bc\amp c^2-a^2-b^2 \end{bmatrix}
 \end{align*}
 </div>
-</div></article></details><details id="linalg-engg-eg48" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="linalg-engg-eg48"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.10</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="linalg-engg-eg48-1-1">[Projection onto a plane in <span class="process-math">\(\R^3\)</span>] Let <span class="process-math">\(\pi\)</span> be a plane given by the equation <span class="process-math">\(ax+by+cz=0\text{.}\)</span> Then the vector <span class="process-math">\(n=(a,b,c)\)</span> is normal to <span class="process-math">\(\pi\text{.}\)</span> We wish to find the orthogonal projection of any vector <span class="process-math">\(v=(x,y,z)\)</span> onto <span class="process-math">\(\pi\text{.}\)</span>
+</h4>
+<div class="para" id="linalg-engg-eg48-1-1">[Projection onto a plane in <span class="process-math">\(\R^3\)</span>] Let <span class="process-math">\(\pi\)</span> be a plane given by the equation <span class="process-math">\(ax+by+cz=0\text{.}\)</span> Then the vector <span class="process-math">\(n=(a,b,c)\)</span> is normal to <span class="process-math">\(\pi\text{.}\)</span> We wish to find the orthogonal projection of any vector <span class="process-math">\(v=(x,y,z)\)</span> onto <span class="process-math">\(\pi\text{.}\)</span>
 </div> <div class="para logical" id="linalg-engg-eg48-1-2">
 <div class="para">Let <span class="process-math">\(P_\pi(v)\)</span> be denote the projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(\pi\)</span> and <span class="process-math">\(P_n(v)\text{,}\)</span> the projection of <span class="process-math">\(v\)</span> onto to <span class="process-math">\(n\text{.}\)</span> (Draw figure) Then</div>
 <div class="displaymath process-math">
@@ -538,9 +548,10 @@ P_\pi\amp =\amp \begin{bmatrix}1\amp 0\amp 0\\0\amp  1\amp  0\\0 \amp  0 \amp 1 
 \amp =\amp \frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2\amp -ab\amp -ac\\-ab\amp a^2+c^2\amp -bc\\-ac\amp -bc\amp a^2+b^2 \end{bmatrix}
 \end{align*}
 </div>
-</div></article></details><details id="linalg-engg-eg49" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="linalg-engg-eg49"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.11</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="linalg-engg-eg49-1-1">[Reflection through a plane in <span class="process-math">\(\R^3\)</span>] Let <span class="process-math">\(\pi\)</span> be a plane given by the equation <span class="process-math">\(ax+by+cz=0\text{.}\)</span> Then the vector <span class="process-math">\(n=(a,b,c)\)</span> is normal to <span class="process-math">\(\pi\text{.}\)</span> We wish to find the reflection <span class="process-math">\(Ref_\pi(v)\)</span> of any vector <span class="process-math">\(v=(x,y,z)\)</span> through <span class="process-math">\(\pi\text{.}\)</span>
+</h4>
+<div class="para" id="linalg-engg-eg49-1-1">[Reflection through a plane in <span class="process-math">\(\R^3\)</span>] Let <span class="process-math">\(\pi\)</span> be a plane given by the equation <span class="process-math">\(ax+by+cz=0\text{.}\)</span> Then the vector <span class="process-math">\(n=(a,b,c)\)</span> is normal to <span class="process-math">\(\pi\text{.}\)</span> We wish to find the reflection <span class="process-math">\(Ref_\pi(v)\)</span> of any vector <span class="process-math">\(v=(x,y,z)\)</span> through <span class="process-math">\(\pi\text{.}\)</span>
 </div> <div class="para logical" id="linalg-engg-eg49-1-2">
 <div class="para">Suppose <span class="process-math">\(P_\pi(v)\)</span> is the orthogonal projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(\pi\text{.}\)</span> Then it is easy to see that</div>
 <div class="displaymath process-math">
@@ -555,7 +566,7 @@ P_M(v)=\frac{1}{2}\left[v+Ref_\pi(v)\right]\text{.}
 Ref_\pi =   \frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2-a^2\amp -2ab\amp -2ac\\-2ab\amp a^2+c^2-b^2\amp -2bc\\-2ac\amp -2bc\amp a^2+b^2-c^2 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></article></details></section></section></div>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec3-2-LT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-xxx.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

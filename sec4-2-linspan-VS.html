@@ -102,7 +102,7 @@ window.MathJax = {
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
@@ -415,12 +415,14 @@ L(S):=\{\alpha_1 v_1+\cdots+\alpha_kv_k:\alpha_1,\ldots,\alpha_k\in \R\}
 <div class="para">is called the linear span or spanning set of <span class="process-math">\(v_1,\ldots, v_k\text{.}\)</span> We know that <span class="process-math">\(L(S)\)</span> is a vector space of <span class="process-math">\(V\text{.}\)</span>
 </div>
 </div></article> <div class="para" id="sec4-2-linspan-VS-2-1-3">If <span class="process-math">\(S\)</span> is any subset of <span class="process-math">\(V\)</span> (may be infinite), then <span class="process-math">\(L(S)\)</span> is the set of all finite linear combinations of elements from <span class="process-math">\(S\text{.}\)</span> In particular, <span class="process-math">\(v\in L(S)\)</span> if there exits <span class="process-math">\(k\in \N\)</span> and scalars <span class="process-math">\(\alpha_1,\ldots,\alpha_k\in \R\)</span> such that <span class="process-math">\(v = \alpha_1 v_1+\cdots+\alpha_kv_k\text{.}\)</span>
-</div> <details id="sec4-2-linspan-VS-2-1-4" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-4"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
-</h3></summary><article class="problem example-like knowl__content"><div class="para" id="sec4-2-linspan-VS-2-1-4-1-1">For any subset <span class="process-math">\(S\subset V\text{,}\)</span> <span class="process-math">\(L(S)\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
-</div></article></details> <details id="sec4-2-linspan-VS-2-1-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</h3>
+<div class="para" id="sec4-2-linspan-VS-2-1-4-1-1">For any subset <span class="process-math">\(S\subset V\text{,}\)</span> <span class="process-math">\(L(S)\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
+</div></article> <article class="example example-like" id="sec4-2-linspan-VS-2-1-5"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec4-2-linspan-VS-2-1-5-1-1">Let <span class="process-math">\(v_1=(1,2,-1)\)</span> and <span class="process-math">\(v_2=(3,1,2)\)</span> and <span class="process-math">\(W = \{\alpha_1v_1+\alpha_2v_2:\alpha_1,\alpha_2\in \R\}\text{.}\)</span> What is <span class="process-math">\(W\text{?}\)</span> Can identify it geometrically? Yes, it is a plane passing through the origin. That the <span class="process-math">\(W\)</span> can be written as <span class="process-math">\(W=\{(x,y,z):ax+by+cz=0\}\)</span> for some <span class="process-math">\((a,b,c)\neq (0,0,0)\text{?}\)</span> Can you find what are <span class="process-math">\(a,b,c\text{.}\)</span>
+</h3>
+<div class="para" id="sec4-2-linspan-VS-2-1-5-1-1">Let <span class="process-math">\(v_1=(1,2,-1)\)</span> and <span class="process-math">\(v_2=(3,1,2)\)</span> and <span class="process-math">\(W = \{\alpha_1v_1+\alpha_2v_2:\alpha_1,\alpha_2\in \R\}\text{.}\)</span> What is <span class="process-math">\(W\text{?}\)</span> Can identify it geometrically? Yes, it is a plane passing through the origin. That the <span class="process-math">\(W\)</span> can be written as <span class="process-math">\(W=\{(x,y,z):ax+by+cz=0\}\)</span> for some <span class="process-math">\((a,b,c)\neq (0,0,0)\text{?}\)</span> Can you find what are <span class="process-math">\(a,b,c\text{.}\)</span>
 </div> <div class="para" id="sec4-2-linspan-VS-2-1-5-1-2">From the concept of dot product, it easy to identify <span class="process-math">\((a,b,c)\)</span> as a vector which is orthogonal/perpendicular to both <span class="process-math">\(v_1\)</span> and <span class="process-math">\(v_2\text{.}\)</span> In particular, we can find <span class="process-math">\((a,b,c)\)</span> and <span class="process-math">\(v_1\times v_2\text{,}\)</span> the cross product of <span class="process-math">\(v_1\)</span> and <span class="process-math">\(v_2\text{.}\)</span>
 </div> <div class="para" id="sec4-2-linspan-VS-2-1-5-1-3">Suppose, we do not want to use the above concept to find <span class="process-math">\((a,b,c)\text{,}\)</span> then what do we do?</div> <div class="para logical" id="sec4-2-linspan-VS-2-1-5-1-4">
 <div class="para">Suppose <span class="process-math">\((x,y,z)\in W\text{,}\)</span> Then there exists scalars <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\)</span> such that</div>
@@ -455,18 +457,20 @@ a+2b-c \amp  = \amp  0, \text{ for \(\alpha=1,\beta=0\) }\\
 </div>
 </div> <div class="para" id="sec4-2-linspan-VS-2-1-5-1-9">Thus <span class="process-math">\((a,b,c)\)</span> is the kernel of <span class="process-math">\(B=\begin{pmatrix}1 \amp 2 \amp -1\\ 3 \amp 1 \amp 2 \end{pmatrix}\)</span> and <span class="process-math">\(W\)</span> is the orthogonal complement of kernel of <span class="process-math">\(B\text{.}\)</span>
 </div> <div class="para" id="sec4-2-linspan-VS-2-1-5-1-10">Solving the above equations, we can find <span class="process-math">\(a=1,b=-1,c=-1\)</span> as one of the choices. This implies <span class="process-math">\(W\)</span> is the plane <span class="process-math">\(x-y+z=0\text{.}\)</span>
-</div></article></details> <details id="sec4-2-linspan-VS-2-1-6" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-6"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
-</h3></summary><article class="problem example-like knowl__content"><div class="para logical" id="sec4-2-linspan-VS-2-1-6-1-1">
+</h3>
+<div class="para logical" id="sec4-2-linspan-VS-2-1-6-1-1">
 <div class="para">Let <span class="process-math">\(V=M_2(\R)\)</span> with usual addition and scalar multiplication</div>
 <div class="displaymath process-math">
 \begin{equation*}
 S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  1 \\1 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\0 \amp  1 \end{bmatrix} \right\}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec4-2-linspan-VS-2-1-6-1-2">Then <span class="process-math">\(L(S)\)</span> is the set of <span class="process-math">\(2\times 2\)</span> symmetric matrices.</div></article></details> <details id="sec4-2-linspan-VS-2-1-7" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div> <div class="para" id="sec4-2-linspan-VS-2-1-6-1-2">Then <span class="process-math">\(L(S)\)</span> is the set of <span class="process-math">\(2\times 2\)</span> symmetric matrices.</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-7"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.5</span><span class="period">.</span>
-</h3></summary><article class="problem example-like knowl__content"><div class="para logical" id="sec4-2-linspan-VS-2-1-7-1-1">
+</h3>
+<div class="para logical" id="sec4-2-linspan-VS-2-1-7-1-1">
 <div class="para">Let <span class="process-math">\(V=M_2(\R)\)</span> with usual addition and scalar multiplication</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -474,27 +478,32 @@ S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 
 \end{equation*}
 </div>
 </div> <div class="para" id="sec4-2-linspan-VS-2-1-7-1-2">Then <span class="process-math">\(L(S)=M_2(\R)\text{.}\)</span>
-</div></article></details> <details id="sec4-2-linspan-VS-2-1-8" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-8"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span>
-</h3></summary><article class="problem example-like knowl__content"><div class="para" id="sec4-2-linspan-VS-2-1-8-1-1">Let <span class="process-math">\(S =\{1,x,x^2,\ldots, x^n\}\text{.}\)</span> Then <span class="process-math">\(L(S)\)</span> is the set of all polynomials of degree less than or equals to <span class="process-math">\(n\text{.}\)</span>
-</div></article></details> <details id="sec4-2-linspan-VS-2-1-9" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</h3>
+<div class="para" id="sec4-2-linspan-VS-2-1-8-1-1">Let <span class="process-math">\(S =\{1,x,x^2,\ldots, x^n\}\text{.}\)</span> Then <span class="process-math">\(L(S)\)</span> is the set of all polynomials of degree less than or equals to <span class="process-math">\(n\text{.}\)</span>
+</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-9"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span>
-</h3></summary><article class="problem example-like knowl__content"><div class="para" id="sec4-2-linspan-VS-2-1-9-1-1">Let <span class="process-math">\(S_1,S_2\subset V\)</span> such that <span class="process-math">\(S_1\subset S_2\text{.}\)</span> Then show that <span class="process-math">\(L(S_1)\)</span> is a subspace of <span class="process-math">\(L(S_2)\text{.}\)</span>
-</div></article></details> <details id="sec4-2-linspan-VS-2-1-10" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</h3>
+<div class="para" id="sec4-2-linspan-VS-2-1-9-1-1">Let <span class="process-math">\(S_1,S_2\subset V\)</span> such that <span class="process-math">\(S_1\subset S_2\text{.}\)</span> Then show that <span class="process-math">\(L(S_1)\)</span> is a subspace of <span class="process-math">\(L(S_2)\text{.}\)</span>
+</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-10"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.8</span><span class="period">.</span>
-</h3></summary><article class="problem example-like knowl__content"><div class="para" id="sec4-2-linspan-VS-2-1-10-1-1">Let <span class="process-math">\(u,v\in V\text{.}\)</span> Then show that <span class="process-math">\(L(\{u,v\})=L(\{u-v,2u+3v\})\text{.}\)</span>
-</div></article></details> <article class="definition definition-like" id="smallest-subspace"><h3 class="heading">
+</h3>
+<div class="para" id="sec4-2-linspan-VS-2-1-10-1-1">Let <span class="process-math">\(u,v\in V\text{.}\)</span> Then show that <span class="process-math">\(L(\{u,v\})=L(\{u-v,2u+3v\})\text{.}\)</span>
+</div></article> <article class="definition definition-like" id="smallest-subspace"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.9</span><span class="period">.</span>
 </h3>
 <div class="para" id="smallest-subspace-1-1">Let <span class="process-math">\(V\)</span> be a vector space and <span class="process-math">\(S\subset V\text{.}\)</span> A subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(V\)</span> is called the smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\)</span> if (i) <span class="process-math">\(W\)</span> is subspace of <span class="process-math">\(V\)</span> with <span class="process-math">\(S\subset W\text{,}\)</span> and (ii) if <span class="process-math">\(W'\)</span> is subspace of <span class="process-math">\(V\)</span> with <span class="process-math">\(S\subset W'\text{,}\)</span> then <span class="process-math">\(W\subset W'\text{.}\)</span>
-</div></article> <details id="sec4-2-linspan-VS-2-1-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></article> <article class="example example-like" id="sec4-2-linspan-VS-2-1-12"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.10</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec4-2-linspan-VS-2-1-12-1-1">(i) Let <span class="process-math">\(v\in V\text{.}\)</span> Then <span class="process-math">\(\R v=L(\{v\})\)</span> is the smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(v\text{.}\)</span>
+</h3>
+<div class="para" id="sec4-2-linspan-VS-2-1-12-1-1">(i) Let <span class="process-math">\(v\in V\text{.}\)</span> Then <span class="process-math">\(\R v=L(\{v\})\)</span> is the smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(v\text{.}\)</span>
 </div> <div class="para" id="sec4-2-linspan-VS-2-1-12-1-2">(ii) Let <span class="process-math">\(S=\{v_1,\ldots,v_k\}\subset V\text{.}\)</span> Then <span class="process-math">\(L(S)\)</span> is the smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\text{.}\)</span>
-</div></article></details> <details id="sec4-2-linspan-VS-2-1-13" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-13"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.11</span><span class="period">.</span>
-</h3></summary><article class="problem example-like knowl__content"><div class="para" id="sec4-2-linspan-VS-2-1-13-1-1">Suppose <span class="process-math">\(L\)</span> is a line in the plane? Then what is <span class="process-math">\(L(S)\text{?}\)</span>
-</div></article></details>
+</h3>
+<div class="para" id="sec4-2-linspan-VS-2-1-13-1-1">Suppose <span class="process-math">\(L\)</span> is a line in the plane? Then what is <span class="process-math">\(L(S)\text{?}\)</span>
+</div></article>
 </div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec4-1-abstract-vs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec4-3-LI-VS.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

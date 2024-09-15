@@ -114,7 +114,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
@@ -414,9 +414,9 @@ sagecell.makeSagecell({
 <li id="sec-echelon-form-2-5-7"><div class="para" id="sec-echelon-form-2-5-7-1">Each leading 1 is the only nonzero entry in its column.</div></li>
 </ol>
 </div>
-<div class="para" id="sec-echelon-form-3"><details id="eg-echelon-matrices" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="para" id="sec-echelon-form-3"><article class="example example-like" id="eg-echelon-matrices"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Echelon Matrices.</span>
-</h3></summary><article class="example example-like knowl__content"> Following are examples of echelon matrices:<div class="displaymath process-math">
+</h3> Following are examples of echelon matrices:<div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix}
 1 \amp  2 \amp  4 \\
@@ -435,10 +435,10 @@ sagecell.makeSagecell({
 0 \amp  0 \amp  0 \amp  1
 \end{pmatrix}\text{.}
 \end{equation*}
-</div></article></details></div>
-<div class="para" id="sec-echelon-form-4"><details id="eg-non-echelon-matrices" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></article></div>
+<div class="para" id="sec-echelon-form-4"><article class="example example-like" id="eg-non-echelon-matrices"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Non Echelon Matrices.</span>
-</h3></summary><article class="example example-like knowl__content"> Following are examples of some non echelon matrices:<div class="displaymath process-math">
+</h3> Following are examples of some non echelon matrices:<div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix} 
 1\amp   3  \amp  6   \amp  8   \amp    0  \\
@@ -456,7 +456,7 @@ sagecell.makeSagecell({
 0  \amp   0  \amp   1  \amp   -1  \\
 \end{pmatrix}\text{.}
 \end{equation*}
-</div></article></details></div>
+</div></article></div>
 <div class="para logical" id="sec-echelon-form-5">
 <div class="para">Every nonzero <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\)</span> is row equivalent to a matrix which is a row echelon matrix. We employ the following procedures to convert a matrix into a row echelon form:</div>
 <ol class="decimal" id="sec-echelon-form-5-3">
@@ -467,12 +467,13 @@ sagecell.makeSagecell({
 <li id="sec-echelon-form-5-3-5"><div class="para" id="sec-echelon-form-5-3-5-1">Repeat this process with next column.</div></li>
 </ol>
 </div>
-<details id="sec-echelon-form-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<article class="example example-like" id="sec-echelon-form-6"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-echelon-form-6-1">Reduce the matrix <span class="process-math">\(A=\begin{pmatrix}1\amp  2   \amp  4    \\
+</h3>
+<div class="para" id="sec-echelon-form-6-1">Reduce the matrix <span class="process-math">\(A=\begin{pmatrix}1\amp  2   \amp  4    \\
 1\amp   0  \amp  2    \\
 2\amp    4 \amp   1  
-\end{pmatrix}\)</span>  to row echelon form.</div></article></details><details id="sec-echelon-form-7" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec-echelon-form-7-1">
+\end{pmatrix}\)</span>  to row echelon form.</div></article><details id="sec-echelon-form-7" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec-echelon-form-7-1">
 <div class="para">
 <span class="process-math">\(\begin{pmatrix}
 1\amp  2   \amp  4    \\
@@ -577,9 +578,10 @@ for i in range(0,r):
 <li id="alg-gaussian-elimination-2-2"><div class="para" id="alg-gaussian-elimination-2-2-1">Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.</div></li>
 <li id="alg-gaussian-elimination-2-3"><div class="para" id="alg-gaussian-elimination-2-3-1">If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.</div></li>
 </ol>
-<div class="para" id="alg-gaussian-elimination-3-1"></div></article><details id="row-echelon-eg1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="alg-gaussian-elimination-3-1"></div></article><article class="example example-like" id="row-echelon-eg1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="row-echelon-eg1-1">
+</h4>
+<div class="para logical" id="row-echelon-eg1-1">
 <div class="para">Solve the following system of linear equations using the Gaussian elimination method.</div>
 <div class="displaymath process-math" id="row-echelon-eg1-1-1">
 \begin{align*}
@@ -644,9 +646,9 @@ b = vector(QQ,[3,0,3])
 Aug = A.augment(b,subdivide=True)
 Aug
 </script></div> <div class="para" id="row-echelon-eg1-4"><div id="row-echelon-eg1-4-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
-</script></div></div></article></details><details id="row-echelon-eg2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</script></div></div></article><article class="example example-like" id="row-echelon-eg2"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content">Solve the following system of linear equations.<div class="displaymath process-math" id="row-echelon-eg2-1">
+</h4>Solve the following system of linear equations.<div class="displaymath process-math" id="row-echelon-eg2-1">
 \begin{align*}
 x+y+z-w \amp    =  1   \\
 y-z+w \amp    =  -1   \\
@@ -662,15 +664,15 @@ b = vector(QQ,[1,-1,6,1])
 Aug = A.augment(b,subdivide=True)
 Aug
 </script></div></div> <div class="para" id="row-echelon-eg2-2-1-2"><div id="row-echelon-eg2-2-1-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
-</script></div></div> Since last row zero, it represents the equation <span class="process-math">\(0=0\text{,}\)</span> in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.</div></details></div></article></details><div class="para" id="subsec-Gaussian-Elimination-6"><details id="subsec-Gaussian-Elimination-6-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</script></div></div> Since last row zero, it represents the equation <span class="process-math">\(0=0\text{,}\)</span> in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.</div></details></div></article><div class="para" id="subsec-Gaussian-Elimination-6"><article class="example example-like" id="subsec-Gaussian-Elimination-6-1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content">Solve the following system using the Gaussian elimination method and show that it has no solution.<div class="displaymath process-math" id="subsec-Gaussian-Elimination-6-1-1">
+</h4>Solve the following system using the Gaussian elimination method and show that it has no solution.<div class="displaymath process-math" id="subsec-Gaussian-Elimination-6-1-1">
 \begin{align*}
 x+3y \amp   =  1   \\
 2x+y \amp  =  -3   \\
 2x+2y \amp  =   0   
 \end{align*}
-</div></article></details></div>
+</div></article></div>
 <details id="subsec-Gaussian-Elimination-7" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="subsec-Gaussian-Elimination-7-1"><div id="subsec-Gaussian-Elimination-7-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix([[1,3],[2,1],[2,2]])
 b = vector([1,-3,0])
@@ -682,9 +684,10 @@ Aug
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="space"> </span><span class="title">Gauss-Jordan elimination method</span>
 </h3>
 <div class="para" id="subsec-Gauss-Jordan-Method-2">Guass-Jordan method of solving the linear system <span class="process-math">\(AX=B\)</span> is very similar to that of the Gaussian elimination method. In this method we continue the the row elimination till we reduce the row-reduced matrix of <span class="process-math">\(A\)</span> to identity matrix.</div>
-<div class="para" id="subsec-Gauss-Jordan-Method-3"><details id="subsec-Gauss-Jordan-Method-3-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="subsec-Gauss-Jordan-Method-3"><article class="example example-like" id="subsec-Gauss-Jordan-Method-3-1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="subsec-Gauss-Jordan-Method-3-1-1">
+</h4>
+<div class="para logical" id="subsec-Gauss-Jordan-Method-3-1-1">
 <div class="para">Solve the system <span class="process-math">\(Ax=b\)</span>  using the Gauss-Jordan elimination method, where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -706,7 +709,7 @@ x_1=11/34, x_2 = 89/85, x_3 = 23/170, x_4=253/170\text{.}
 <div class="para">We can also solve the above system using the ’A.solve_right(b)’ command in Sage. <div class="para" id="subsec-Gauss-Jordan-Method-3-1-3-2"><div id="subsec-Gauss-Jordan-Method-3-1-3-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.solve_right(b)
 </script></div></div>
 </div>
-</div></article></details></div></section></section></div>
+</div></article></div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-col-operations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec1-4-matrix-rank.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

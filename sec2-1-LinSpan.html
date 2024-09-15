@@ -114,7 +114,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
@@ -418,9 +418,9 @@ L(S):=\{\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k:\alpha_1,\cdots,\alpha_k\in \
 </div></article></div>
 <div class="para" id="sec2-1-LinSpan-3">Note that if <span class="process-math">\(x\in L(S)\)</span> means there exist scalars <span class="process-math">\(\alpha_1,\ldots,\alpha_k \in \R\)</span> such that <span class="process-math">\(x=\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k\text{.}\)</span>
 </div>
-<div class="para" id="sec2-1-LinSpan-4"><details id="sec2-1-eg-linspan-as-vs" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="para" id="sec2-1-LinSpan-4"><article class="example example-like" id="sec2-1-eg-linspan-as-vs"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content">Let <span class="process-math">\(S=\{v_1, v_2,\ldots, v_k\}\)</span> be a subset of vectors in <span class="process-math">\(\R^n\text{.}\)</span> Then show that <span class="process-math">\(L(S)\)</span> is a vector subspace of <span class="process-math">\(\R^n\text{.}\)</span> <div class="para" id="sec2-1-eg-linspan-as-vs-5"><details id="sec2-1-eg-linspan-as-vs-5-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+</h3>Let <span class="process-math">\(S=\{v_1, v_2,\ldots, v_k\}\)</span> be a subset of vectors in <span class="process-math">\(\R^n\text{.}\)</span> Then show that <span class="process-math">\(L(S)\)</span> is a vector subspace of <span class="process-math">\(\R^n\text{.}\)</span> <div class="para" id="sec2-1-eg-linspan-as-vs-5"><details id="sec2-1-eg-linspan-as-vs-5-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="sec2-1-eg-linspan-as-vs-5-1-1">
 <div class="para">Let <span class="process-math">\(x,y\in L(S)\text{,}\)</span> then by definitions there exist scalars <span class="process-math">\(\alpha_1,\ldots,\alpha_k \in \R\)</span> such that <span class="process-math">\(x=\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k\)</span> and there exist another set of scalars <span class="process-math">\(\beta_1,\ldots,\beta_k \in \R\)</span> such that <span class="process-math">\(y=\beta_1v_1+\beta_2v_2+\cdots+\beta_kv_k\text{.}\)</span> Hence</div>
 <div class="displaymath process-math" id="sec2-1-eg-linspan-as-vs-5-1-1-6">
@@ -438,10 +438,11 @@ x+y =\amp (\alpha_1v_1+\cdots+\alpha_kv_k)+\beta_1v_1+\cdots+\beta_kv_k\\
 \end{equation*}
 </div>
 </div> This shows that <span class="process-math">\(L(S)\)</span> is a vector subspace of <span class="process-math">\(\R^n\text{.}\)</span>
-</div></details></div></article></details></div>
-<div class="para" id="sec2-1-LinSpan-5"><details id="sec2-1-LinSpan-5-1" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></details></div></article></div>
+<div class="para" id="sec2-1-LinSpan-5"><article class="problem example-like" id="sec2-1-LinSpan-5-1"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
-</h3></summary><article class="problem example-like knowl__content"><div class="para logical" id="sec2-1-LinSpan-5-1-1"><ol class="decimal" id="sec2-1-LinSpan-5-1-1-1">
+</h3>
+<div class="para logical" id="sec2-1-LinSpan-5-1-1"><ol class="decimal" id="sec2-1-LinSpan-5-1-1-1">
 <li id="sec2-1-LinSpan-5-1-1-1-1"><div class="para" id="sec2-1-LinSpan-5-1-1-1-1-1">If <span class="process-math">\(v\in \R^n\)</span> is a non-zero vector in <span class="process-math">\(\R^n\text{,}\)</span> then <span class="process-math">\(L(\{v_1\})=\{\alpha v:\alpha\in \R\}\)</span> is a the line passing through origin and <span class="process-math">\(v\text{.}\)</span>
 </div></li>
 <li id="sec2-1-LinSpan-5-1-1-1-2"><div class="para" id="sec2-1-LinSpan-5-1-1-1-2-1">Let <span class="process-math">\(S =\{e_1=(1,0),e_2=(0,1)\}\text{.}\)</span> Then <span class="process-math">\(L(S)=\R^2\text{.}\)</span>
@@ -472,10 +473,10 @@ A.rank()
 </script></div></div>
 </div>
 </div>
-</div></div></details></article></details></div>
-<details id="sec2-1-matrix-spaces" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></div></details></article></div>
+<article class="example example-like" id="sec2-1-matrix-spaces"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix Spaces.</span>
-</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="sec2-1-matrix-spaces-2">
+</h3> <div class="para logical" id="sec2-1-matrix-spaces-2">
 <div class="para">Let <span class="process-math">\(A\)</span> be a <span class="process-math">\(m\times n\)</span> real matrix. For any vector <span class="process-math">\(x\in \R^n\text{,}\)</span> <span class="process-math">\(Ax\in \R^m\text{.}\)</span> Consider the following subsets</div>
 <ol class="decimal" id="sec2-1-matrix-spaces-2-5">
 <li id="sec2-1-matrix-spaces-2-5-1"><div class="para" id="sec2-1-matrix-spaces-2-5-1-1">
@@ -490,7 +491,7 @@ A.rank()
 <li id="sec2-1-matrix-spaces-2-5-4"><div class="para" id="sec2-1-matrix-spaces-2-5-4-1">Suppose we write rows of <span class="process-math">\(A\)</span> as <span class="process-math">\(r_1,\ldots, r_m\text{.}\)</span> Then each <span class="process-math">\(r_i\)</span> is a vector in <span class="process-math">\(\R^n\text{.}\)</span> Then  linear span of <span class="process-math">\(\{r_1,\ldots, r_m\}\)</span>  is called the <em class="alert">row space</em> of <span class="process-math">\(A\)</span> denoted by <span class="process-math">\({\rm row}(A)\text{.}\)</span> It turns out that <span class="process-math">\({\rm row}(A)\)</span> is a subspace of <span class="process-math">\(\R^n\text{.}\)</span>
 </div></li>
 </ol>
-</div> The four subspaces, namely <span class="process-math">\({\cal N}(A)\text{,}\)</span> <span class="process-math">\({\cal col}(A)\text{,}\)</span> <span class="process-math">\({\cal L}(A)\)</span> and <span class="process-math">\({\cal row}(A)\)</span> are called the <em class="alert">fundamental subspaces</em> associated with a matrix <span class="process-math">\(A\text{.}\)</span></article></details></section></div>
+</div> The four subspaces, namely <span class="process-math">\({\cal N}(A)\text{,}\)</span> <span class="process-math">\({\cal col}(A)\text{,}\)</span> <span class="process-math">\({\cal L}(A)\)</span> and <span class="process-math">\({\cal row}(A)\)</span> are called the <em class="alert">fundamental subspaces</em> associated with a matrix <span class="process-math">\(A\text{.}\)</span></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec2-0-intro.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-2-2-LI.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

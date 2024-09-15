@@ -114,7 +114,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
@@ -407,9 +407,10 @@ sagecell.makeSagecell({
 </h2>
 <div class="para" id="sec-col-operations-2">Elementary column operations are the column analogue of elementary row operations. Their precise properties can be deduced by applying elementary row operations to the transpose of a matrix and then transposing the result. In particular, if <span class="process-math">\(F\)</span> is the elementary matrix corresponding to the elementary column operation <span class="process-math">\(f\)</span> then <span class="process-math">\(f(A) = AF\text{.}\)</span> Note that, because transposition changes the order of a product, elementary column operations correspond to post-multiplication by an elementary matrix. Two matrices that are related by a sequence of elementary column operations are said to be column equivalent and two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are column equivalent if and only if there exists a non singular matrix <span class="process-math">\(Q\)</span> such that <span class="process-math">\(B = AQ\text{.}\)</span>
 </div>
-<details id="sec-col-operations-3" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<article class="exercise exercise-like" id="sec-col-operations-3"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
-</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec-col-operations-3-1-1">Use the columns operations to find the inverse of the matrix <span class="process-math">\(\begin{pmatrix}2\amp  1\amp 1\amp 1\\1\amp 0\amp 1\amp 1\\1\amp 1\amp -2\amp 1\\1\amp 1\amp 1\amp -1\end{pmatrix}\)</span> by appending the <span class="process-math">\(4\times 4\)</span> identity matrix at the bottom and appyling the columns aperation in Sage.</div></article></details><details id="sec-col-operations-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="sec-col-operations-4-1"><div id="sec-col-operations-4-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ,[[2,1,1,1],[1,0,1,1],[1,1,-2,1],[1,1,1,-1]])
+</h3>
+<div class="para" id="sec-col-operations-3-1-1">Use the columns operations to find the inverse of the matrix <span class="process-math">\(\begin{pmatrix}2\amp  1\amp 1\amp 1\\1\amp 0\amp 1\amp 1\\1\amp 1\amp -2\amp 1\\1\amp 1\amp 1\amp -1\end{pmatrix}\)</span> by appending the <span class="process-math">\(4\times 4\)</span> identity matrix at the bottom and appyling the columns aperation in Sage.</div></article><details id="sec-col-operations-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="sec-col-operations-4-1"><div id="sec-col-operations-4-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ,[[2,1,1,1],[1,0,1,1],[1,1,-2,1],[1,1,1,-1]])
 Aug = A.T.augment(identity_matrix(4),subdivide=True);Aug.T
 Aug1 = Aug.T
 Aug1

@@ -114,7 +114,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
@@ -415,9 +415,9 @@ sagecell.makeSagecell({
 </h3>
 <div class="para" id="def-matrix-rank-1-1">The <em class="alert">rank</em> of an <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\)</span>  is the order of the largest square sub-matrix of <span class="process-math">\(A\)</span> whose determinant is non-zero. We denote the rank of a matrix <span class="process-math">\(A\)</span> by <span class="process-math">\(r(A)\text{.}\)</span>
 </div></article></div>
-<div class="para" id="sec1-4-matrix-rank-4"><details id="sec1-4-matrix-rank-4-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="para" id="sec1-4-matrix-rank-4"><article class="example example-like" id="sec1-4-matrix-rank-4-1"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content">Determine the rank of <span class="process-math">\(A=
+</h3>Determine the rank of <span class="process-math">\(A=
 \begin{pmatrix}
 1 \amp  1   \amp  1   \\
 2 \amp  3  \amp  4   \\
@@ -427,7 +427,7 @@ sagecell.makeSagecell({
 1\amp 1   \\
 2\amp 3   \\
 \end{pmatrix}\text{,}\)</span>   <span class="process-math">\(\mid B\mid = 1\text{.}\)</span> Hence  <span class="process-math">\(r(A) = 2\text{.}\)</span>
-</div></div></details></div></article></details></div>
+</div></div></details></div></article></div>
 <article class="observation remark-like" id="sec1-4-matrix-rank-5"><h3 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span>
 </h3>
@@ -445,9 +445,9 @@ sagecell.makeSagecell({
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
 </h3>
 <div class="para" id="thm-rank-theorem-1-1">Suppose <span class="process-math">\(A\)</span> is an $m \times n$ matrix. The rank of  <span class="process-math">\(A\)</span> is equal to the number of non-zero rows  in an echelon equivalent form of   <span class="process-math">\(A\text{.}\)</span>  In other words, the rank of matrix  <span class="process-math">\(A\)</span> is the number of leading 1’s in any row-echelon matrix to which  <span class="process-math">\(A\)</span> can be carried by row operations.</div></article></div>
-<div class="para" id="sec1-4-matrix-rank-7"><details id="sec1-4-matrix-rank-7-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="para" id="sec1-4-matrix-rank-7"><article class="example example-like" id="sec1-4-matrix-rank-7-1"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content">Let us find the ranl of <span class="process-math">\(A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}\text{.}\)</span></article></details></div>
+</h3>Let us find the ranl of <span class="process-math">\(A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}\text{.}\)</span></article></div>
 <div class="para" id="sec1-4-matrix-rank-8"><details id="sec1-4-matrix-rank-8-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec1-4-matrix-rank-8-1-1">
 <div class="displaymath process-math">
 \begin{equation*}
@@ -457,9 +457,10 @@ A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp
 <div class="para">Hence <span class="process-math">\(r(A)=3\text{.}\)</span>
 </div>
 </div></div></details></div>
-<details id="sec1-4-matrix-rank-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<article class="example example-like" id="sec1-4-matrix-rank-9"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec1-4-matrix-rank-9-1">Consider a matrix <span class="process-math">\(\begin{bmatrix} 1 \amp  1 \amp  2 \amp  a^2\\1 \amp  1-a \amp  2\amp  0 \\2 \amp  2-a \amp  6-a \amp  4\end{bmatrix}\text{.}\)</span> Find the rank of the matrix.</div></article></details><details id="sec1-4-matrix-rank-10" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+</h3>
+<div class="para" id="sec1-4-matrix-rank-9-1">Consider a matrix <span class="process-math">\(\begin{bmatrix} 1 \amp  1 \amp  2 \amp  a^2\\1 \amp  1-a \amp  2\amp  0 \\2 \amp  2-a \amp  6-a \amp  4\end{bmatrix}\text{.}\)</span> Find the rank of the matrix.</div></article><details id="sec1-4-matrix-rank-10" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="sec1-4-matrix-rank-10-1">
 <div class="para">Let us apply elementary row operations of <span class="process-math">\(A\text{.}\)</span> We have</div>
 <div class="displaymath process-math" id="sec1-4-matrix-rank-10-1-2">
@@ -530,9 +531,9 @@ rank(A)
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.4.10</span><span class="period">.</span>
 </h3>
 <div class="para" id="cor-rank2-1-1">Suppose <span class="process-math">\(AX = B\)</span> is a system of <span class="process-math">\(m\)</span> linear equations in <span class="process-math">\(n\)</span> unknowns with <span class="process-math">\(m \lt n\text{.}\)</span> Then the system either has no solution or has infinitely many solutions.</div></article></div>
-<details id="matrix-rank-eg1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<article class="example example-like" id="matrix-rank-eg1"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.11</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content">Consider the Example~<a href="sec-echelon-form.html#row-echelon-eg1" class="xref" data-knowl="./knowl/xref/row-echelon-eg1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.5">Example 1.3.5</a>. <div class="para logical" id="matrix-rank-eg1-2">
+</h3>Consider the Example~<a href="sec-echelon-form.html#row-echelon-eg1" class="xref" data-knowl="./knowl/xref/row-echelon-eg1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.5">Example 1.3.5</a>. <div class="para logical" id="matrix-rank-eg1-2">
 <div class="displaymath process-math" id="matrix-rank-eg1-2-1">
 \begin{align*}
 \begin{pmatrix}
@@ -552,9 +553,9 @@ RREF
 \end{align*}
 </div>
 <div class="para">Thus we have  <span class="process-math">\(r(A)=r(A^*)=3\text{,}\)</span>  hence this system has a unique solution.</div>
-</div></article></details><div class="para" id="sec1-4-matrix-rank-15"><details id="matrix-rank-eg2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></article><div class="para" id="sec1-4-matrix-rank-15"><article class="example example-like" id="matrix-rank-eg2"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.12</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content">Let us consider the system <span class="process-math">\(AX=B\)</span> where <span class="process-math">\(A=\begin{bmatrix}1 \amp   -2\amp  0\amp  3\\3\amp  2\amp  8\amp  1\\2\amp  3\amp  7\amp  2\\-1\amp  2\amp  0\amp  4\end{bmatrix}\quad  B=\begin{bmatrix}-4\\4\\3\\-3\end{bmatrix}\quad  X=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}.\)</span> <div class="para" id="matrix-rank-eg2-3"><details id="matrix-rank-eg2-3-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="matrix-rank-eg2-3-1-1">
+</h3>Let us consider the system <span class="process-math">\(AX=B\)</span> where <span class="process-math">\(A=\begin{bmatrix}1 \amp   -2\amp  0\amp  3\\3\amp  2\amp  8\amp  1\\2\amp  3\amp  7\amp  2\\-1\amp  2\amp  0\amp  4\end{bmatrix}\quad  B=\begin{bmatrix}-4\\4\\3\\-3\end{bmatrix}\quad  X=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}.\)</span> <div class="para" id="matrix-rank-eg2-3"><details id="matrix-rank-eg2-3-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="matrix-rank-eg2-3-1-1">
 <div class="displaymath process-math" id="matrix-rank-eg2-3-1-1-1">
 \begin{align*}
 A^*=\begin{bmatrix}
@@ -574,10 +575,11 @@ A^*=\begin{bmatrix}
 \end{align*}
 </div>
 <div class="para">Clearly <span class="process-math">\(r(A)=r(A^*)=3\lt4\text{,}\)</span> hence this system has infinitely many solutions.</div>
-</div></div></details></div></article></details></div>
-<div class="para" id="sec1-4-matrix-rank-16"><details id="matrix-rank-eg3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></div></details></div></article></div>
+<div class="para" id="sec1-4-matrix-rank-16"><article class="example example-like" id="matrix-rank-eg3"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.13</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="matrix-rank-eg3-1">
+</h3>
+<div class="para logical" id="matrix-rank-eg3-1">
 <div class="para">Consider the system of linear equations <span class="process-math">\(Ax=b\text{,}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -618,7 +620,7 @@ Aug = A.augment(b,subdivide=True)
 Aug
 </script></div></div> <div class="para" id="matrix-rank-eg3-2-1-5"><div id="matrix-rank-eg3-2-1-5-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
 </script></div></div>
-</div></details></div></article></details></div></section></div>
+</div></details></div></article></div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-echelon-form.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-hom-system.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

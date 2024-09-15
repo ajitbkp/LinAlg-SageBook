@@ -102,7 +102,7 @@ window.MathJax = {
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
@@ -399,11 +399,13 @@ window.MathJax = {
 <div class="para" id="sec5-0-eigen-3-1-1">Let <span class="process-math">\(T\)</span> be a linear transformation from <span class="process-math">\(\mathbb{R}^n\to \R^n\text{.}\)</span> A real number (scalar) is called an <em class="emphasis">eigenvalue</em> of <span class="process-math">\(T\)</span> if there exists a non zero vector <span class="process-math">\(v\in \R^n\)</span> (called an<em class="emphasis">eigenvector</em> corresponding to eigenvalue <span class="process-math">\(\lambda\)</span>) if <span class="process-math">\(T(v)=\lambda v\text{.}\)</span> That is, if <span class="process-math">\(T(v)\)</span> is parallel to <span class="process-math">\(v\text{.}\)</span>
 </div> <div class="para" id="sec5-0-eigen-3-1-2">Thus if <span class="process-math">\(T(v)=\lambda v\text{,}\)</span> then <span class="process-math">\({\lambda I-T}(v)=0\text{,}\)</span> where <span class="process-math">\(I\)</span> is identity transformation on <span class="process-math">\(V\text{.}\)</span>
 </div> <div class="para" id="sec5-0-eigen-3-1-3">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> real matrix matrix, then we know that <span class="process-math">\(T_A(x)=Ax\)</span> is a linear transformation induced by <span class="process-math">\(A\text{.}\)</span> We can define eigenvalue of <span class="process-math">\(A\)</span> as eigenvalue of <span class="process-math">\(T_A\text{.}\)</span> In particular, real number is called an <em class="emphasis">eigenvalue</em> of <span class="process-math">\(A\)</span> if there exists a non zero vector <span class="process-math">\(v\in \R^n\)</span> (called an<em class="emphasis">eigenvector</em> corresponding to eigenvalue <span class="process-math">\(\lambda\)</span>) if <span class="process-math">\(Av=\lambda v\text{.}\)</span>
-</div></article><details id="sec5-0-eigen-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></article><article class="example example-like" id="sec5-0-eigen-4"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec5-0-eigen-4-1-1">Let <span class="process-math">\(A=\left(\begin{array}{rr} 1 \amp 2 \\ -1 \amp 4 \end{array} \right)\text{.}\)</span> Consider a vector <span class="process-math">\(u=\begin{pmatrix}1\\1 \end{pmatrix}\text{.}\)</span> Then <span class="process-math">\(Au=\begin{pmatrix}3\\3 \end{pmatrix} =3\begin{pmatrix}1\\1 \end{pmatrix} =3u\text{.}\)</span> Hence <span class="process-math">\(u\)</span> is an eigenvector and <span class="process-math">\(\lambda = 3\)</span> is an eigenvalue.</div> <div class="para" id="sec5-0-eigen-4-1-2">Consider <span class="process-math">\(v=\begin{pmatrix}2\\1 \end{pmatrix}\text{.}\)</span> Then it is easy to check that <span class="process-math">\(Av=\begin{pmatrix}4\\2 \end{pmatrix} =2\begin{pmatrix}2\\1 \end{pmatrix}\text{.}\)</span> Hence <span class="process-math">\(v\)</span> is also an eigenvector and <span class="process-math">\(\lambda = 2\)</span> is an eigenvalue.</div></article></details><details id="sec5-0-eigen-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</h3>
+<div class="para" id="sec5-0-eigen-4-1-1">Let <span class="process-math">\(A=\left(\begin{array}{rr} 1 \amp 2 \\ -1 \amp 4 \end{array} \right)\text{.}\)</span> Consider a vector <span class="process-math">\(u=\begin{pmatrix}1\\1 \end{pmatrix}\text{.}\)</span> Then <span class="process-math">\(Au=\begin{pmatrix}3\\3 \end{pmatrix} =3\begin{pmatrix}1\\1 \end{pmatrix} =3u\text{.}\)</span> Hence <span class="process-math">\(u\)</span> is an eigenvector and <span class="process-math">\(\lambda = 3\)</span> is an eigenvalue.</div> <div class="para" id="sec5-0-eigen-4-1-2">Consider <span class="process-math">\(v=\begin{pmatrix}2\\1 \end{pmatrix}\text{.}\)</span> Then it is easy to check that <span class="process-math">\(Av=\begin{pmatrix}4\\2 \end{pmatrix} =2\begin{pmatrix}2\\1 \end{pmatrix}\text{.}\)</span> Hence <span class="process-math">\(v\)</span> is also an eigenvector and <span class="process-math">\(\lambda = 2\)</span> is an eigenvalue.</div></article><article class="example example-like" id="sec5-0-eigen-5"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec5-0-eigen-5-1-1">Consider the matrix of rotation <span class="process-math">\(R_\theta\)</span> in anti-clock wise by an angle <span class="process-math">\(\theta\neq n\pi\text{.}\)</span> The it is easy to see that <span class="process-math">\(R_\theta\)</span> does not have an eigenvector. Thus not all square matrices have eigenvector.</div></article></details><article class="remark remark-like" id="sec5-0-eigen-6"><h3 class="heading">
+</h3>
+<div class="para" id="sec5-0-eigen-5-1-1">Consider the matrix of rotation <span class="process-math">\(R_\theta\)</span> in anti-clock wise by an angle <span class="process-math">\(\theta\neq n\pi\text{.}\)</span> The it is easy to see that <span class="process-math">\(R_\theta\)</span> does not have an eigenvector. Thus not all square matrices have eigenvector.</div></article><article class="remark remark-like" id="sec5-0-eigen-6"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
 </h3>
 <div class="para" id="sec5-0-eigen-6-1">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> with corresponding eigenvector <span class="process-math">\(v\neq 0\text{.}\)</span> Then any scalar multiple of <span class="process-math">\(v\)</span> is also an eigenvector corresponding to the same eigenvalue <span class="process-math">\(\lambda\text{.}\)</span>
@@ -420,16 +422,19 @@ window.MathJax = {
 \end{align*}
 </div>
 </div>
-<details id="eigen_eg0" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<article class="example example-like" id="eigen_eg0"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="eigen_eg0-1-1">Let <span class="process-math">\(A = \begin{pmatrix}1 \amp 1 \amp 1\\ 1 \amp 1 \amp 1\\1 \amp 1 \amp 1 \end{pmatrix}\text{.}\)</span> What are eigenvalues and eigenvectors of <span class="process-math">\(A\text{?}\)</span>
-</div> <div class="para" id="eigen_eg0-1-2">Note that <span class="process-math">\(Ae_1=Ae_2=Ae_3=e_1+e_2+e_3\text{.}\)</span> This means <span class="process-math">\(A(e_1+e_2+e_3)=3(e_2+e_2+e_3)\text{.}\)</span> Hence <span class="process-math">\(3\)</span> is an eigenvalue and <span class="process-math">\(e_1+e_2+e_3=\begin{pmatrix}1 \\1\\1 \end{pmatrix}\)</span> is an eigenvectors w.r.t. eigenvalue 3.</div> <div class="para" id="eigen_eg0-1-3">Also <span class="process-math">\(A(e_1-e_2)=0\text{.}\)</span> Hence <span class="process-math">\(0\)</span> is an eigenvalue and <span class="process-math">\(e_1-e_2=\begin{pmatrix}1 \\-1\\0 \end{pmatrix}\)</span> is an eigenvectors w.r.t. eigenvalue 0. Also, <span class="process-math">\(e_1-e_3\)</span> and <span class="process-math">\(e_2-e_3\)</span> are also eigenvectors corresponding to the eigenvalue 0.</div> <div class="para" id="eigen_eg0-1-4">Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.</div> <div class="para" id="eigen_eg0-1-5">What will be generalization of this example?</div></article></details><details id="sec5-0-eigen-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</h3>
+<div class="para" id="eigen_eg0-1-1">Let <span class="process-math">\(A = \begin{pmatrix}1 \amp 1 \amp 1\\ 1 \amp 1 \amp 1\\1 \amp 1 \amp 1 \end{pmatrix}\text{.}\)</span> What are eigenvalues and eigenvectors of <span class="process-math">\(A\text{?}\)</span>
+</div> <div class="para" id="eigen_eg0-1-2">Note that <span class="process-math">\(Ae_1=Ae_2=Ae_3=e_1+e_2+e_3\text{.}\)</span> This means <span class="process-math">\(A(e_1+e_2+e_3)=3(e_2+e_2+e_3)\text{.}\)</span> Hence <span class="process-math">\(3\)</span> is an eigenvalue and <span class="process-math">\(e_1+e_2+e_3=\begin{pmatrix}1 \\1\\1 \end{pmatrix}\)</span> is an eigenvectors w.r.t. eigenvalue 3.</div> <div class="para" id="eigen_eg0-1-3">Also <span class="process-math">\(A(e_1-e_2)=0\text{.}\)</span> Hence <span class="process-math">\(0\)</span> is an eigenvalue and <span class="process-math">\(e_1-e_2=\begin{pmatrix}1 \\-1\\0 \end{pmatrix}\)</span> is an eigenvectors w.r.t. eigenvalue 0. Also, <span class="process-math">\(e_1-e_3\)</span> and <span class="process-math">\(e_2-e_3\)</span> are also eigenvectors corresponding to the eigenvalue 0.</div> <div class="para" id="eigen_eg0-1-4">Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.</div> <div class="para" id="eigen_eg0-1-5">What will be generalization of this example?</div></article><article class="example example-like" id="sec5-0-eigen-10"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec5-0-eigen-10-1-1">Let <span class="process-math">\(A = \begin{pmatrix}1 \amp t \amp t\\ t \amp 1 \amp t\\t \amp t \amp 1 \end{pmatrix}\text{.}\)</span> What are eigenvalues and eigenvectors of <span class="process-math">\(A\text{?}\)</span>
+</h3>
+<div class="para" id="sec5-0-eigen-10-1-1">Let <span class="process-math">\(A = \begin{pmatrix}1 \amp t \amp t\\ t \amp 1 \amp t\\t \amp t \amp 1 \end{pmatrix}\text{.}\)</span> What are eigenvalues and eigenvectors of <span class="process-math">\(A\text{?}\)</span>
 </div> <div class="para" id="sec5-0-eigen-10-1-2">The trace of <span class="process-math">\(A\)</span> is 3. The <span class="process-math">\(\det{(A)}=2t^3 - 3t^2 + 1=(2t + 1)(t - 1)^2\text{.}\)</span> Since sum of eigenvalues is 3 and the product of eigenvalues is <span class="process-math">\(\det{(A)}\text{,}\)</span> it is easy to guess that <span class="process-math">\(\lambda_1 =2t+1\text{,}\)</span> <span class="process-math">\(\lambda_2=\lambda_3=1-t\)</span> are eigenvalues of <span class="process-math">\(A\text{.}\)</span>
-</div></article></details><details id="eigen_eg1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></article><article class="example example-like" id="eigen_eg1"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="eigen_eg1-1-1">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\text{.}\)</span> Find eigenvalues and corresponding eigenvector of <span class="process-math">\(A\text{.}\)</span>
+</h3>
+<div class="para" id="eigen_eg1-1-1">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\text{.}\)</span> Find eigenvalues and corresponding eigenvector of <span class="process-math">\(A\text{.}\)</span>
 </div> <div class="para logical" id="eigen_eg1-1-2">
 <div class="para">We have</div>
 <div class="displaymath process-math">
@@ -457,9 +462,10 @@ x_1+2x_2-2x_3=x_1; x_1+x_2+x_3=x_2; x_1+3x_2-x_3=x_3
 </div>
 </div> <div class="para" id="eigen_eg1-1-5">Solving the above system, we get <span class="process-math">\(x_1=-x_2, x_2=x_3\text{.}\)</span> Thus <span class="process-math">\(v=\begin{pmatrix}\alpha\\-\alpha\\-\alpha \end{pmatrix}\)</span> for <span class="process-math">\(\alpha\in \R\)</span> is an eigenvector. In particular, <span class="process-math">\(v=\begin{pmatrix}1\\-1\\-1 \end{pmatrix}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\lambda=1\text{.}\)</span>
 </div> <div class="para" id="eigen_eg1-1-6">Similarly show that <span class="process-math">\(\begin{pmatrix}0\\1\\1 \end{pmatrix}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\lambda=2\)</span> and <span class="process-math">\(\begin{pmatrix}8/7\\-5/7\\1 \end{pmatrix}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\lambda=-2\)</span>
-</div></article></details><details id="sec5-0-eigen-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></article><article class="example example-like" id="sec5-0-eigen-12"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec5-0-eigen-12-1-1">Let <span class="process-math">\(\begin{pmatrix}0\amp 1\\-1\amp 0 \end{pmatrix}\text{.}\)</span> Find eigenvalues and corresponding eigenvector of <span class="process-math">\(A\text{.}\)</span>
+</h3>
+<div class="para" id="sec5-0-eigen-12-1-1">Let <span class="process-math">\(\begin{pmatrix}0\amp 1\\-1\amp 0 \end{pmatrix}\text{.}\)</span> Find eigenvalues and corresponding eigenvector of <span class="process-math">\(A\text{.}\)</span>
 </div> <div class="para" id="sec5-0-eigen-12-1-2">The characteristic equation of <span class="process-math">\(A\)</span> is given by <span class="process-math">\(\det(A-\lambda I)=\begin{vmatrix}-\lambda\amp 1\\-1\amp -\lambda\end{vmatrix}=\lambda^2+1\text{.}\)</span> Hence eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda=\pm i\text{.}\)</span>
 </div> <div class="para logical" id="sec5-0-eigen-12-1-3">
 <div class="para">Let us find eigenvectors with respect to the eigenvalue <span class="process-math">\(\lambda=i\text{.}\)</span> Let <span class="process-math">\(v=\begin{pmatrix}x_1\\x_2 \end{pmatrix}\)</span> be an eigenvector corresponding to <span class="process-math">\(\lambda=i\text{.}\)</span> Then <span class="process-math">\(Av=\lambda v=i v\text{.}\)</span> That is,</div>
@@ -469,7 +475,7 @@ x_1+2x_2-2x_3=x_1; x_1+x_2+x_3=x_2; x_1+3x_2-x_3=x_3
 \end{equation*}
 </div>
 </div> <div class="para" id="sec5-0-eigen-12-1-4">Now it is easy to see that <span class="process-math">\(v=\begin{pmatrix}1\\ i \end{pmatrix}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\lambda=i\text{.}\)</span> Similarly one can show that <span class="process-math">\(v=\begin{pmatrix}1\\ -i \end{pmatrix}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\lambda=-i\text{.}\)</span>
-</div> <div class="para" id="sec5-0-eigen-12-1-5">Note that in the above example, <span class="process-math">\(A\)</span> is a real matrix but its eigenvalues and eigenvectors are complex.</div></article></details><article class="definition definition-like" id="sec5-0-eigen-13"><h3 class="heading">
+</div> <div class="para" id="sec5-0-eigen-12-1-5">Note that in the above example, <span class="process-math">\(A\)</span> is a real matrix but its eigenvalues and eigenvectors are complex.</div></article><article class="definition definition-like" id="sec5-0-eigen-13"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="sec5-0-eigen-13-1-1">
@@ -485,12 +491,14 @@ E_\lambda = \{x\in \R^n: Ax=\lambda x\}
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span>
 </h3>
 <div class="para" id="sec5-0-eigen-14-1">Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if <span class="process-math">\(m\)</span> is the geometric multiplicity of <span class="process-math">\(\lambda\)</span> then <span class="process-math">\(m\leq \dim{(E_\lambda)}\text{.}\)</span>
-</div></article><details id="sec5-0-eigen-15" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</div></article><article class="exercise exercise-like" id="sec5-0-eigen-15"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.11</span><span class="period">.</span>
-</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec5-0-eigen-15-1-1">The geometric multiplicity of an eigenvalue <span class="process-math">\(\lambda\)</span> is the nullity of <span class="process-math">\(A-\lambda I\)</span> which is the dimension of null space of <span class="process-math">\(A-\lambda I\text{.}\)</span>
-</div></article></details><details id="eigen-eg117" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</h3>
+<div class="para" id="sec5-0-eigen-15-1-1">The geometric multiplicity of an eigenvalue <span class="process-math">\(\lambda\)</span> is the nullity of <span class="process-math">\(A-\lambda I\)</span> which is the dimension of null space of <span class="process-math">\(A-\lambda I\text{.}\)</span>
+</div></article><article class="example example-like" id="eigen-eg117"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="eigen-eg117-1-1">
+</h3>
+<div class="para logical" id="eigen-eg117-1-1">
 <div class="para">Consider the matrix <span class="process-math">\(A=\begin{pmatrix}-1\amp  1 \amp  0\\0 \amp  -1 \amp  1\\0 \amp  0 \amp  -1 \end{pmatrix}\text{.}\)</span> It is easy to check that <span class="process-math">\(\det{(xI-A)}=(x+1)^3\text{.}\)</span> That is <span class="process-math">\(A\)</span> has only one eigenvalue of <span class="process-math">\(\lambda =-1\)</span> of geometric multiplicity 3. It is easy to see that <span class="process-math">\(e_3=(0,0,1)\)</span> is an eigenvector corresponding to <span class="process-math">\(\lambda=-1\text{.}\)</span> We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -498,7 +506,7 @@ A -\lambda I = \begin{pmatrix}0\amp  1 \amp  0\\0 \amp   \amp  1\\0 \amp  0 \amp
 \end{equation*}
 </div>
 <div class="para">It is easy to see that nullity of <span class="process-math">\(A -\lambda I\)</span> is 1. Hence the geometric multiplicity of <span class="process-math">\(\lambda\)</span> is 1 where as its algebraic multiplicity is 3.</div>
-</div></article></details><section class="subsection" id="sec5-0-eigen-17"><h3 class="heading hide-type">
+</div></article><section class="subsection" id="sec5-0-eigen-17"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="space"> </span><span class="title">Properties of Eigenvalues and Eigenvectors</span>
 </h3>
 <div class="para logical" id="sec5-0-eigen-17-2">
@@ -523,9 +531,10 @@ A -\lambda I = \begin{pmatrix}0\amp  1 \amp  0\\0 \amp   \amp  1\\0 \amp  0 \amp
 <li id="sec5-0-eigen-17-2-1-10"><div class="para" id="sec5-0-eigen-17-2-1-10-1">If <span class="process-math">\(T\)</span> is a linear transformation from <span class="process-math">\(\R^n\to \R^m\text{.}\)</span> Fix a basis <span class="process-math">\(\beta\)</span> of <span class="process-math">\(\R^n\text{.}\)</span> Let <span class="process-math">\(A=[T]_\beta\)</span> be the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta\text{.}\)</span> Then <span class="process-math">\(A\)</span> and <span class="process-math">\(T\)</span> have the same eigenvalues. Furthermore, eigenvalues of <span class="process-math">\(T\)</span> are independent of the basis.</div></li>
 </ol>
 </div>
-<details id="sec5-0-eigen-17-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="sec5-0-eigen-17-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.13</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec5-0-eigen-17-3-1-1">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\)</span> and <span class="process-math">\(B=A^3-3A+I\text{.}\)</span> Let us find eigenvalues of <span class="process-math">\(B\text{.}\)</span>
+</h4>
+<div class="para" id="sec5-0-eigen-17-3-1-1">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\)</span> and <span class="process-math">\(B=A^3-3A+I\text{.}\)</span> Let us find eigenvalues of <span class="process-math">\(B\text{.}\)</span>
 </div> <div class="para logical" id="sec5-0-eigen-17-3-1-2">
 <div class="para">It is easy to the characteristic polynomial of <span class="process-math">\(A\)</span> is given by <span class="process-math">\(\lambda^3-\lambda^2-4\lambda=4\)</span> and <span class="process-math">\(\lambda=-2, 1, 2\text{.}\)</span> Then eigenvalues of <span class="process-math">\(B\)</span> are given by</div>
 <div class="displaymath process-math">
@@ -533,7 +542,7 @@ A -\lambda I = \begin{pmatrix}0\amp  1 \amp  0\\0 \amp   \amp  1\\0 \amp  0 \amp
 \{(-2)^3-3\times (-2)+1, 1^3-3\times 1+1, 2^3-3\times (2)+1\} =\{-1, -1, 3\}
 \end{equation*}
 </div>
-</div></article></details><article class="theorem theorem-like" id="sec5-0-eigen-17-4"><h4 class="heading">
+</div></article><article class="theorem theorem-like" id="sec5-0-eigen-17-4"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.14</span><span class="period">.</span>
 </h4>
 <ol class="decimal" id="sec5-0-eigen-17-4-1-1">
@@ -559,9 +568,10 @@ A -\lambda I = \begin{pmatrix}0\amp  1 \amp  0\\0 \amp   \amp  1\\0 \amp  0 \amp
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Cayley-Hamilton Theorem.</span>
 </h4>
 <div class="para" id="sec5-0-eigen-17-6-2-1">Every square matrix satisfies its characteristic equation. That is, if <span class="process-math">\(p(x)=0\)</span> is characteristic equation of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(p(A)=0\text{.}\)</span>
-</div></article><details id="sec5-0-eigen-17-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="sec5-0-eigen-17-7"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.16</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec5-0-eigen-17-7-1-1">
+</h4>
+<div class="para logical" id="sec5-0-eigen-17-7-1-1">
 <div class="para">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\text{.}\)</span> From <a href="sec5-0-eigen.html#eigen_eg1" class="xref" data-knowl="./knowl/xref/eigen_eg1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.1.7">Example 5.1.7</a>, the characteristic polynomial of <span class="process-math">\(A\)</span> is given by <span class="process-math">\(p(x)=\det{x I -A}=x^3-x^2-4x+4\text{.}\)</span> We have <span class="process-math">\(A^2=\left(\begin{array}{rrr} 1 \amp  -2 \amp  2 \\ 3 \amp  6 \amp  -2 \\ 3 \amp  2 \amp  2 \end{array} \right)\)</span> and <span class="process-math">\(A^3=\left(\begin{array}{rrr} 1 \amp  6 \amp  -6 \\ 7 \amp  6 \amp  2 \\ 7 \amp  14 \amp  -6 \end{array} \right)\text{.}\)</span> Hence</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eigen_eg1.html" id="sec5-0-eigen-17-7-1-1-7">
 \begin{align*}
@@ -589,44 +599,49 @@ A^4 = A^3+4A^2-4A=\left(\begin{array}{rrr} 1 \amp  -10 \amp  10 \\ 15 \amp  26 \
 \end{equation*}
 </div>
 </div> <div class="para" id="sec5-0-eigen-17-7-1-5">Can you find <span class="process-math">\(A^5\text{?}\)</span>
-</div></article></details><details id="sec5-0-eigen-17-8" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="exercise exercise-like" id="sec5-0-eigen-17-8"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.17</span><span class="period">.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec5-0-eigen-17-8-1-1">(i) Consider the matrix <span class="process-math">\(A = \begin{pmatrix}3 \amp -2 \\-4\amp 3 \end{pmatrix}\text{.}\)</span> Show that <span class="process-math">\(A\)</span> satisfies its characteristics equation. Hence find <span class="process-math">\(A^{-1}, A^3, A^4\text{.}\)</span>
+</h4>
+<div class="para" id="sec5-0-eigen-17-8-1-1">(i) Consider the matrix <span class="process-math">\(A = \begin{pmatrix}3 \amp -2 \\-4\amp 3 \end{pmatrix}\text{.}\)</span> Show that <span class="process-math">\(A\)</span> satisfies its characteristics equation. Hence find <span class="process-math">\(A^{-1}, A^3, A^4\text{.}\)</span>
 </div> <div class="para" id="sec5-0-eigen-17-8-1-2">(i) Consider the matrix <span class="process-math">\(A = \begin{pmatrix}1 \amp 0 \amp 0 \\ -4 \amp -3 \amp 4 \\ -2 \amp -2 \amp 3 \end{pmatrix}\text{.}\)</span> Show that <span class="process-math">\(A\)</span> satisfies its characteristics equation. Hence find <span class="process-math">\(A^{-1}, A^4, A^5\text{.}\)</span>
-</div></article></details><article class="definition definition-like" id="sec5-0-eigen-17-9"><h4 class="heading">
+</div></article><article class="definition definition-like" id="sec5-0-eigen-17-9"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.18</span><span class="period">.</span>
 </h4>
 <div class="para" id="sec5-0-eigen-17-9-1-1">Let <span class="process-math">\(A\)</span> an <span class="process-math">\(n\times n\)</span> and <span class="process-math">\(\lambda_i\)</span> for <span class="process-math">\(1\leq i\leq n\)</span> be eigenvalues of <span class="process-math">\(A\)</span> then the spectral radius of <span class="process-math">\(A\)</span> is define as <span class="process-math">\(\rho(A):=\displaystyle\max_{1\leq i\leq n}\{ |\lambda_i| \}\text{.}\)</span>
-</div></article><details id="sec5-0-eigen-17-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="sec5-0-eigen-17-10"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.19</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec5-0-eigen-17-10-1-1">
+</h4>
+<div class="para logical" id="sec5-0-eigen-17-10-1-1">
 <div class="para">Let <span class="process-math">\(A= \begin{pmatrix}0 \amp  -1\\1 \amp  0 \end{pmatrix}\text{.}\)</span> Then the characteristics polynomial of <span class="process-math">\(A\)</span> is <span class="process-math">\(\det{xI-A}=x^2+1\text{.}\)</span> Hence <span class="process-math">\(x=\{i,-i\}\)</span> are roots of the characteristic polynomial. Hence <span class="process-math">\(i\)</span> and <span class="process-math">\(-i\)</span> are eigenvalues of <span class="process-math">\(A\text{.}\)</span> Hence</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \rho(A) = \max\{|i|,|-i|\}=1\text{.}
 \end{equation*}
 </div>
-</div></article></details><details id="sec5-0-eigen-17-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="sec5-0-eigen-17-11"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.20</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec5-0-eigen-17-11-1-1">
+</h4>
+<div class="para logical" id="sec5-0-eigen-17-11-1-1">
 <div class="para">Consider the matrix <span class="process-math">\(A=\left(\begin{array}{rrr} 4 \amp  -3 \amp  0 \\ 3 \amp  4 \amp  0 \\ 5 \amp  10 \amp  10 \end{array} \right)\text{.}\)</span> Then the characteristics polynomial of <span class="process-math">\(A\)</span> is <span class="process-math">\(\det{xI-A}=x^{3} - 18 x^{2} + 105 x - 250\text{.}\)</span> Which has roots, <span class="process-math">\(10, 3-4i,3+4i\text{.}\)</span> Hence</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \rho(A) = \max\{10,|3-4i|,|3+4i\}=10\text{.}
 \end{equation*}
 </div>
-</div></article></details><details id="sec5-0-eigen-17-12" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="exercise exercise-like" id="sec5-0-eigen-17-12"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.21</span><span class="period">.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec5-0-eigen-17-12-1-1">Find the spectral radius of <span class="process-math">\(\left(\begin{array}{rr} 2 \amp -3 \\ 3 \amp 2 \end{array} \right), \left(\begin{array}{rrr} 2 \amp 3 \amp 1 \\ -3 \amp 2 \amp 2 \\ 0 \amp 0 \amp 2 \end{array} \right)\)</span> and <span class="process-math">\(\left(\begin{array}{rrr} 2 \amp 3 \amp 1 \\ 3 \amp 2 \amp 2 \\ 0 \amp 0 \amp 1 \end{array} \right)\text{.}\)</span>
-</div></article></details></section><section class="subsection" id="sec5-0-eigen-18"><h3 class="heading hide-type">
+</h4>
+<div class="para" id="sec5-0-eigen-17-12-1-1">Find the spectral radius of <span class="process-math">\(\left(\begin{array}{rr} 2 \amp -3 \\ 3 \amp 2 \end{array} \right), \left(\begin{array}{rrr} 2 \amp 3 \amp 1 \\ -3 \amp 2 \amp 2 \\ 0 \amp 0 \amp 2 \end{array} \right)\)</span> and <span class="process-math">\(\left(\begin{array}{rrr} 2 \amp 3 \amp 1 \\ 3 \amp 2 \amp 2 \\ 0 \amp 0 \amp 1 \end{array} \right)\text{.}\)</span>
+</div></article></section><section class="subsection" id="sec5-0-eigen-18"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="space"> </span><span class="title">Positive definite matrix</span>
 </h3>
 <article class="definition definition-like" id="sec5-0-eigen-18-2"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.22</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec5-0-eigen-18-2-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> symmetric matrix. Then <span class="process-math">\(A\)</span> is said to be <em class="emphasis">positive definite</em> if <span class="process-math">\(x^TAx\gt 0\)</span> for all <span class="process-math">\(x\in \R^n\)</span> and <span class="process-math">\(x^TAx=0\)</span> if and only if <span class="process-math">\(x=0\text{.}\)</span> <span class="process-math">\(A\)</span> is called <em class="emphasis">negative definite</em> if <span class="process-math">\(-A\)</span> is positive definite.</div></article><details id="sec5-0-eigen-18-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="sec5-0-eigen-18-2-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> symmetric matrix. Then <span class="process-math">\(A\)</span> is said to be <em class="emphasis">positive definite</em> if <span class="process-math">\(x^TAx\gt 0\)</span> for all <span class="process-math">\(x\in \R^n\)</span> and <span class="process-math">\(x^TAx=0\)</span> if and only if <span class="process-math">\(x=0\text{.}\)</span> <span class="process-math">\(A\)</span> is called <em class="emphasis">negative definite</em> if <span class="process-math">\(-A\)</span> is positive definite.</div></article><article class="example example-like" id="sec5-0-eigen-18-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.23</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec5-0-eigen-18-3-1-1">
+</h4>
+<div class="para logical" id="sec5-0-eigen-18-3-1-1">
 <div class="para">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\\2\amp 5 \end{pmatrix}\text{.}\)</span> Let <span class="process-math">\(x=\begin{pmatrix}x_1\\x_2 \end{pmatrix}\text{.}\)</span> Then</div>
 <div class="displaymath process-math" id="sec5-0-eigen-18-3-1-1-3">
 \begin{align*}
@@ -638,16 +653,17 @@ x^TAx=\amp \begin{pmatrix}x_1\amp x_2 \end{pmatrix}
 =\amp x_1^2+4x_1x_2+5x_2^2=(x_1+2x_2)^2+x_2^2\text{.}
 \end{align*}
 </div>
-</div> <div class="para" id="sec5-0-eigen-18-3-1-2">Clearly <span class="process-math">\(x^TAx&gt;0\)</span> for all non zero vector <span class="process-math">\(x\)</span> and <span class="process-math">\(x^TAx=0\)</span> if and only if <span class="process-math">\(x=0\text{.}\)</span> Hence <span class="process-math">\(A\)</span> is positive definite.</div></article></details><details id="sec5-0-eigen-18-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div> <div class="para" id="sec5-0-eigen-18-3-1-2">Clearly <span class="process-math">\(x^TAx&gt;0\)</span> for all non zero vector <span class="process-math">\(x\)</span> and <span class="process-math">\(x^TAx=0\)</span> if and only if <span class="process-math">\(x=0\text{.}\)</span> Hence <span class="process-math">\(A\)</span> is positive definite.</div></article><article class="example example-like" id="sec5-0-eigen-18-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.24</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec5-0-eigen-18-4-1-1">
+</h4>
+<div class="para logical" id="sec5-0-eigen-18-4-1-1">
 <div class="para">Let <span class="process-math">\(A=\begin{pmatrix}0\amp 1\\1\amp 0 \end{pmatrix}\text{.}\)</span> Let <span class="process-math">\(x=\begin{pmatrix}x_1\\x_2 \end{pmatrix}\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x^TAx=\begin{pmatrix}x_1\amp x_2 \end{pmatrix} \begin{pmatrix}0\amp 1\\1\amp 0 \end{pmatrix} \begin{pmatrix}x_1\\x_2 \end{pmatrix} = \begin{pmatrix}x_1\amp x_2 \end{pmatrix} \begin{pmatrix}x_2\\x_1 \end{pmatrix} =2x_1x_2
 \end{equation*}
 </div>
-</div> <div class="para" id="sec5-0-eigen-18-4-1-2">Thus if <span class="process-math">\(x=\begin{pmatrix}1\\-1 \end{pmatrix}\)</span> then <span class="process-math">\(x^TAx=-2\lt 0\text{.}\)</span> Hence it is not a positive definite. Its easy to see that <span class="process-math">\(A\)</span> is alos not negative definite.</div></article></details><div class="para logical" id="sec5-0-eigen-18-5">
+</div> <div class="para" id="sec5-0-eigen-18-4-1-2">Thus if <span class="process-math">\(x=\begin{pmatrix}1\\-1 \end{pmatrix}\)</span> then <span class="process-math">\(x^TAx=-2\lt 0\text{.}\)</span> Hence it is not a positive definite. Its easy to see that <span class="process-math">\(A\)</span> is alos not negative definite.</div></article><div class="para logical" id="sec5-0-eigen-18-5">
 <div class="para"><em class="emphasis">We have the following facts about positive definite matrices.</em></div>
 <ol class="decimal" id="sec5-0-eigen-18-5-2">
 <li id="sec5-0-eigen-18-5-2-1"><div class="para" id="sec5-0-eigen-18-5-2-1-1">All eigenvalues of a positive definite matrix are real and positive.</div></li>
@@ -655,35 +671,40 @@ x^TAx=\begin{pmatrix}x_1\amp x_2 \end{pmatrix} \begin{pmatrix}0\amp 1\\1\amp 0 \
 <li id="sec5-0-eigen-18-5-2-3"><div class="para" id="sec5-0-eigen-18-5-2-3-1">If <span class="process-math">\(A\)</span> is a real symmetric matrix then <span class="process-math">\(A\)</span> is positive definite if and only if all leading minor of <span class="process-math">\(A\)</span> are positive.</div></li>
 </ol>
 </div>
-<details id="sec5-0-eigen-18-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<article class="example example-like" id="sec5-0-eigen-18-6"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.25</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec5-0-eigen-18-6-1-1">
+</h4>
+<div class="para logical" id="sec5-0-eigen-18-6-1-1">
 <div class="para">Let <span class="process-math">\(A=\begin{pmatrix}2 \amp  1 \amp 1\\1\amp 2\amp 1\\1\amp 1\amp 2 \end{pmatrix}\text{.}\)</span> For any <span class="process-math">\(x=\begin{pmatrix}x_1\\x_2\\x_2 \end{pmatrix} \in \R^2\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x^TAx=x_1^2+x_2^2+x_3^2+(x_1+x_2+x_3)^2
 \end{equation*}
 </div>
-</div> <div class="para" id="sec5-0-eigen-18-6-1-2">Henc e <span class="process-math">\(A\)</span> is positive definite.</div></article></details><details id="sec5-0-eigen-18-7" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div> <div class="para" id="sec5-0-eigen-18-6-1-2">Henc e <span class="process-math">\(A\)</span> is positive definite.</div></article><article class="exercise exercise-like" id="sec5-0-eigen-18-7"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.26</span><span class="period">.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec5-0-eigen-18-7-1-1">Let <span class="process-math">\(A=\begin{pmatrix}2 \amp -1 \amp 0\\-1\amp 2\amp -1\\0\amp -1\amp 2 \end{pmatrix}\text{.}\)</span> Show that <span class="process-math">\(A\)</span> is positive definite using the above results.</div></article></details></section><section class="subsection" id="sec5-0-eigen-19"><h3 class="heading hide-type">
+</h4>
+<div class="para" id="sec5-0-eigen-18-7-1-1">Let <span class="process-math">\(A=\begin{pmatrix}2 \amp -1 \amp 0\\-1\amp 2\amp -1\\0\amp -1\amp 2 \end{pmatrix}\text{.}\)</span> Show that <span class="process-math">\(A\)</span> is positive definite using the above results.</div></article></section><section class="subsection" id="sec5-0-eigen-19"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="space"> </span><span class="title">Diagonalization</span>
 </h3>
 <article class="definition definition-like" id="sec5-0-eigen-19-2"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.27</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec5-0-eigen-19-2-1-1">A matrix <span class="process-math">\(A\)</span> is said to be <em class="emphasis">diagonalizable</em> if there exists a non singular matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(P^{-1}AP\)</span> is a diagonal matrix. That is, <span class="process-math">\(A\)</span> is similar to a diagonal matrix.</div></article><details id="sec5-0-eigen-19-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="sec5-0-eigen-19-2-1-1">A matrix <span class="process-math">\(A\)</span> is said to be <em class="emphasis">diagonalizable</em> if there exists a non singular matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(P^{-1}AP\)</span> is a diagonal matrix. That is, <span class="process-math">\(A\)</span> is similar to a diagonal matrix.</div></article><article class="example example-like" id="sec5-0-eigen-19-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.28</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec5-0-eigen-19-3-1-1">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\)</span> as in <a href="sec5-0-eigen.html#eigen_eg1" class="xref" data-knowl="./knowl/xref/eigen_eg1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.1.7">Example 5.1.7</a>. Define <span class="process-math">\(P=\begin{pmatrix}1\amp 0\amp 8/7\\-1\amp 1\amp -5/7\\-1\amp 1\amp 1 \end{pmatrix}\text{,}\)</span> whose columns are eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+</h4>
+<div class="para" id="sec5-0-eigen-19-3-1-1">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\)</span> as in <a href="sec5-0-eigen.html#eigen_eg1" class="xref" data-knowl="./knowl/xref/eigen_eg1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.1.7">Example 5.1.7</a>. Define <span class="process-math">\(P=\begin{pmatrix}1\amp 0\amp 8/7\\-1\amp 1\amp -5/7\\-1\amp 1\amp 1 \end{pmatrix}\text{,}\)</span> whose columns are eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div> <div class="para" id="sec5-0-eigen-19-3-1-2">Check that <span class="process-math">\(\det(P)=\dfrac{12}{7}\)</span> and <span class="process-math">\(\text{ adj } (P)=\begin{pmatrix}12/7 \amp 8/7 \amp -8/7\\12/7 \amp 15/7\amp -3/7\\0 \amp -1 \amp 1 \end{pmatrix}\text{.}\)</span> Hence <span class="process-math">\(P^{-1}=\begin{pmatrix}1\amp 2/3 \amp -2/3\\1\amp 5/4\amp -1/4\\0\amp -7/4\amp 7/4 \end{pmatrix}\)</span>
 </div> <div class="para" id="sec5-0-eigen-19-3-1-3">Then it is easy to check that <span class="process-math">\(P^{-1}AP=\begin{pmatrix}1\amp 0\amp 0\\0\amp 2\amp 0\\0\amp 0\amp -2 \end{pmatrix}\text{.}\)</span>
 </div> <div class="para" id="sec5-0-eigen-19-3-1-4">In this case we can find any power of <span class="process-math">\(A\)</span> quite easily. For example <span class="process-math">\(A^n=P^{-1}\begin{pmatrix}1\amp 0\amp 0\\0\amp 2^n\amp 0\\0\amp 0\amp (-2)^n \end{pmatrix} P\text{.}\)</span>
-</div></article></details><details id="sec5-0-eigen-19-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="sec5-0-eigen-19-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.29</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec5-0-eigen-19-4-1-1">Let <span class="process-math">\(A=\begin{pmatrix}1 \amp 1\\0 \amp 1 \end{pmatrix}\text{.}\)</span> Then 1 is a repeated eigenvalue of <span class="process-math">\(A\)</span> with eigenvector <span class="process-math">\(\begin{pmatrix}1\\ 0 \end{pmatrix}\text{.}\)</span> It is easuy to see that <span class="process-math">\(A\)</span> is non diagonalizable.</div></article></details><details id="sec5-0-eigen-19-5" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4>
+<div class="para" id="sec5-0-eigen-19-4-1-1">Let <span class="process-math">\(A=\begin{pmatrix}1 \amp 1\\0 \amp 1 \end{pmatrix}\text{.}\)</span> Then 1 is a repeated eigenvalue of <span class="process-math">\(A\)</span> with eigenvector <span class="process-math">\(\begin{pmatrix}1\\ 0 \end{pmatrix}\text{.}\)</span> It is easuy to see that <span class="process-math">\(A\)</span> is non diagonalizable.</div></article><article class="exercise exercise-like" id="sec5-0-eigen-19-5"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.30</span><span class="period">.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec5-0-eigen-19-5-1-1">If <span class="process-math">\(A=[a_{ij}]\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues then <span class="process-math">\(A\)</span> is diagonalizable. In this case, one can define <span class="process-math">\(P\)</span> where columns of <span class="process-math">\(P\)</span> are <span class="process-math">\(n\)</span> eigenvectors of <span class="process-math">\(A\text{.}\)</span>
-</div></article></details><article class="theorem theorem-like" id="thm_diag"><h4 class="heading">
+</h4>
+<div class="para" id="sec5-0-eigen-19-5-1-1">If <span class="process-math">\(A=[a_{ij}]\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues then <span class="process-math">\(A\)</span> is diagonalizable. In this case, one can define <span class="process-math">\(P\)</span> where columns of <span class="process-math">\(P\)</span> are <span class="process-math">\(n\)</span> eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="thm_diag"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.31</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm_diag-1-1">A square matrix <span class="process-math">\(A\)</span> of order <span class="process-math">\(n\)</span> is diagonalizable if and only if <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors.</div></article><details id="sec5-0-eigen-19-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec5-0-eigen-19-7-1">
@@ -718,9 +739,10 @@ AP=[Av_1,Av_2,\ldots,Av_n]=[\lambda_1v_1,\lambda_2v_2,\ldots,\lambda_nv_n]=PD\te
 </div> <div class="para" id="sec5-0-eigen-19-7-5">Hence <span class="process-math">\(P^{-1}AP=D\text{.}\)</span> Note that <span class="process-math">\(P\)</span> has rank <span class="process-math">\(n\text{,}\)</span> which implies <span class="process-math">\(P\)</span> is invertible.</div></article></details><article class="corollary theorem-like" id="sec5-0-eigen-19-8"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.1.32</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec5-0-eigen-19-8-1-1">If <span class="process-math">\(A\)</span> is a square matrix of order <span class="process-math">\(n\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues then <span class="process-math">\(A\)</span> is diagonalizable.</div></article><details id="sec5-0-eigen-19-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="sec5-0-eigen-19-8-1-1">If <span class="process-math">\(A\)</span> is a square matrix of order <span class="process-math">\(n\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues then <span class="process-math">\(A\)</span> is diagonalizable.</div></article><article class="example example-like" id="sec5-0-eigen-19-9"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.33</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec5-0-eigen-19-9-1-1">Let <span class="process-math">\(A\)</span> be a <span class="process-math">\(3\times 3\)</span> real matrix with eigenvalues <span class="process-math">\(\lambda_1=2,\lambda_2=1,\lambda_3=-1\)</span> and corresponding eigenvectors <span class="process-math">\(v_1=\left(1,\,\frac{1}{3},\,-\frac{1}{3}\right),
+</h4>
+<div class="para" id="sec5-0-eigen-19-9-1-1">Let <span class="process-math">\(A\)</span> be a <span class="process-math">\(3\times 3\)</span> real matrix with eigenvalues <span class="process-math">\(\lambda_1=2,\lambda_2=1,\lambda_3=-1\)</span> and corresponding eigenvectors <span class="process-math">\(v_1=\left(1,\,\frac{1}{3},\,-\frac{1}{3}\right),
 v_2=\left(1,\,0,\,-\frac{1}{3}\right),
 v_3=\left(1,\,\frac{1}{2},\,-\frac{1}{2}\right)\)</span> respectively. Then we have <span class="process-math">\(P=[v_1~v_2~v_3]=\left(\begin{array}{rrr} 1 \amp 1 \amp 1 \\ \frac{1}{3} \amp 0 \amp \frac{1}{2} \\ -\frac{1}{3} \amp -\frac{1}{3} \amp -\frac{1}{2} \end{array} \right)\text{.}\)</span> <span class="process-math">\(P^{-1}AP=\left(\begin{array}{rrr} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp -1 \end{array} \right)\text{.}\)</span> Hence <span class="process-math">\(A = P\left(\begin{array}{rrr} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp -1 \end{array} \right)P^{-1}\text{.}\)</span> It is easy to see that <span class="process-math">\(P^{-1}=\left(\begin{array}{rrr} 3 \amp 3 \amp 9 \\ 0 \amp -3 \amp -3 \\ -2 \amp 0 \amp -6 \end{array} \right)\text{.}\)</span>
 </div> <div class="para logical" id="sec5-0-eigen-19-9-1-2">
@@ -738,20 +760,23 @@ A =\amp \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\
 3 \amp  2 \amp  9 \\ -3 \amp  -1 \amp  -8 \end{array} \right)\text{.}
 \end{align*}
 </div>
-</div></article></details><details id="sec5-0-eigen-19-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="sec5-0-eigen-19-10"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.34</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec5-0-eigen-19-10-1-1">Let <span class="process-math">\(A=\begin{pmatrix}-1\amp -1\amp -2\\8\amp -11\amp -8\\-10\amp 11\amp 7 \end{pmatrix}\)</span> and <span class="process-math">\(B=\begin{pmatrix}1\amp -4\amp -4\\8\amp -11\amp -8\\-8\amp 8\amp 5 \end{pmatrix}\text{.}\)</span>
-</div> <div class="para" id="sec5-0-eigen-19-10-1-2">It is easy to check that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have same characteristic polynomial <span class="process-math">\(\lambda^3+5\lambda^2+3\lambda-9=(\lambda-1)(\lambda+3)^2\text{.}\)</span> Also We can show that <span class="process-math">\(A\)</span> has only one linearly independent eigenvectors corresponding to eigenvalue <span class="process-math">\(-3\text{.}\)</span> This implies <span class="process-math">\(A\)</span> has only two eigenvectors and hence <span class="process-math">\(A\)</span> is not diagonalizable.</div> <div class="para" id="sec5-0-eigen-19-10-1-3">Similarly, We can show that <span class="process-math">\(B\)</span> has two linearly independent eigenvectors corresponding to eigenvalue <span class="process-math">\(-3\text{.}\)</span> This implies <span class="process-math">\(B\)</span> has three eigenvectors and hence <span class="process-math">\(B\)</span> is diagonalizable.</div></article></details><div class="para" id="sec5-0-eigen-19-11">We mention another criteria of diagonalizability without proof.</div>
+</h4>
+<div class="para" id="sec5-0-eigen-19-10-1-1">Let <span class="process-math">\(A=\begin{pmatrix}-1\amp -1\amp -2\\8\amp -11\amp -8\\-10\amp 11\amp 7 \end{pmatrix}\)</span> and <span class="process-math">\(B=\begin{pmatrix}1\amp -4\amp -4\\8\amp -11\amp -8\\-8\amp 8\amp 5 \end{pmatrix}\text{.}\)</span>
+</div> <div class="para" id="sec5-0-eigen-19-10-1-2">It is easy to check that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have same characteristic polynomial <span class="process-math">\(\lambda^3+5\lambda^2+3\lambda-9=(\lambda-1)(\lambda+3)^2\text{.}\)</span> Also We can show that <span class="process-math">\(A\)</span> has only one linearly independent eigenvectors corresponding to eigenvalue <span class="process-math">\(-3\text{.}\)</span> This implies <span class="process-math">\(A\)</span> has only two eigenvectors and hence <span class="process-math">\(A\)</span> is not diagonalizable.</div> <div class="para" id="sec5-0-eigen-19-10-1-3">Similarly, We can show that <span class="process-math">\(B\)</span> has two linearly independent eigenvectors corresponding to eigenvalue <span class="process-math">\(-3\text{.}\)</span> This implies <span class="process-math">\(B\)</span> has three eigenvectors and hence <span class="process-math">\(B\)</span> is diagonalizable.</div></article><div class="para" id="sec5-0-eigen-19-11">We mention another criteria of diagonalizability without proof.</div>
 <article class="theorem theorem-like" id="diagonalizable-thm2"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.35</span><span class="period">.</span>
 </h4>
 <div class="para" id="diagonalizable-thm2-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> real matrix with distinct eigenvalues <span class="process-math">\(\lambda_1,\ldots, \lambda_k\)</span> and algebraic multiplicity <span class="process-math">\(m_1,\ldots,
 m_k\)</span> respectively. Then <span class="process-math">\(A\)</span> is diagonalizable if and only if algebraic multiplicity is same as geometric multiplicity for each eigenvalue. That is <span class="process-math">\(m_i=\dim{(E_{\lambda_i})}\)</span> for <span class="process-math">\(i=1,2,\ldots,k\text{.}\)</span>
-</div></article><details id="sec5-0-eigen-19-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="example example-like" id="sec5-0-eigen-19-13"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.36</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec5-0-eigen-19-13-1-1">In view of <a href="sec5-0-eigen.html#diagonalizable-thm2" class="xref" data-knowl="./knowl/xref/diagonalizable-thm2.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.35">theorem 5.1.35</a>, the matrix in the <a href="sec5-0-eigen.html#eigen-eg117" class="xref" data-knowl="./knowl/xref/eigen-eg117.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.1.12">example 5.1.12</a> is not diagonalizable.</div></article></details><details id="sec5-0-eigen-19-14" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4>
+<div class="para" id="sec5-0-eigen-19-13-1-1">In view of <a href="sec5-0-eigen.html#diagonalizable-thm2" class="xref" data-knowl="./knowl/xref/diagonalizable-thm2.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.35">theorem 5.1.35</a>, the matrix in the <a href="sec5-0-eigen.html#eigen-eg117" class="xref" data-knowl="./knowl/xref/eigen-eg117.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.1.12">example 5.1.12</a> is not diagonalizable.</div></article><article class="example example-like" id="sec5-0-eigen-19-14"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.37</span><span class="period">.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec5-0-eigen-19-14-1-1">A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.</div> <div class="tabular-box natural-width"><table class="tabular">
+</h4>
+<div class="para" id="sec5-0-eigen-19-14-1-1">A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -810,12 +835,14 @@ A^n \amp =\amp  \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  
 \end{align*}
 </div>
 </div> <div class="para" id="sec5-0-eigen-19-14-1-12">Suppose we define <span class="process-math">\(\pi = \left(\begin{array}{r} \frac{7}{18}\\ \frac{1}{3} \\ \frac{5}{18} \end{array} \right)\text{.}\)</span> Then it is easy to check that <span class="process-math">\(A\pi=\pi\text{.}\)</span> That is <span class="process-math">\(\pi\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to the eigenvalue 1. This is called the <em class="emphasis">steady state vector.</em>
-</div></article></details><details id="sec5-0-eigen-19-15" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div></article><article class="exercise exercise-like" id="sec5-0-eigen-19-15"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.38</span><span class="period">.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec5-0-eigen-19-15-1-1">Suppose <span class="process-math">\(D\)</span> is a diagonal matrix given by <span class="process-math">\(D= \left(\begin{array}{rrr} 1 \amp 0 \amp 0 \\ 0 \amp 0.3 \amp 0 \\ 0 \amp 0 \amp 0.2 \end{array} \right)\)</span> and <span class="process-math">\(v\in \R^3\text{.}\)</span> What happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(D^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(u_1\)</span> direction.</em>)</div> <div class="para" id="sec5-0-eigen-19-15-1-2">Next let us consider a matrix which is diagonalizable with eigenvectors <span class="process-math">\(u_1, u_2, u_3\)</span> and corresponding eigenvalues <span class="process-math">\(\lambda_1=1, \lambda_2=0.3\)</span> and <span class="process-math">\(\lambda_3=0.2\)</span> respectively. Then what happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(A^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It makes <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> coordinates very small and it sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(x\)</span>-axis.</em>)</div></article></details><details id="sec5-0-eigen-19-16" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4>
+<div class="para" id="sec5-0-eigen-19-15-1-1">Suppose <span class="process-math">\(D\)</span> is a diagonal matrix given by <span class="process-math">\(D= \left(\begin{array}{rrr} 1 \amp 0 \amp 0 \\ 0 \amp 0.3 \amp 0 \\ 0 \amp 0 \amp 0.2 \end{array} \right)\)</span> and <span class="process-math">\(v\in \R^3\text{.}\)</span> What happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(D^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(u_1\)</span> direction.</em>)</div> <div class="para" id="sec5-0-eigen-19-15-1-2">Next let us consider a matrix which is diagonalizable with eigenvectors <span class="process-math">\(u_1, u_2, u_3\)</span> and corresponding eigenvalues <span class="process-math">\(\lambda_1=1, \lambda_2=0.3\)</span> and <span class="process-math">\(\lambda_3=0.2\)</span> respectively. Then what happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(A^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It makes <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> coordinates very small and it sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(x\)</span>-axis.</em>)</div></article><article class="exercise exercise-like" id="sec5-0-eigen-19-16"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.39</span><span class="period">.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec5-0-eigen-19-16-1-1">132 fishes are placed in a box with nine rooms. See <a href="sec5-0-eigen.html#mouse1" class="xref" data-knowl="./knowl/xref/mouse1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.1.40">Figure 5.1.40</a>.</div> <figure class="figure figure-like" id="mouse1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/images/Fish-Tank.PNG" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.40<span class="period">.</span></span><span class="space"> </span>Fish Tank</figcaption></figure> <div class="para" id="sec5-0-eigen-19-16-1-3">Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.</div> <div class="para" id="sec5-0-eigen-19-16-1-4">Find how many fishes can be found in each room in long run.</div> <div class="para" id="sec5-0-eigen-19-16-1-5">Solve this problem using a <span class="process-math">\(3 \times 3\)</span> matrix stochastic matrix.</div></article></details></section><section class="subsection" id="sec-eigen"><h3 class="heading hide-type">
+</h4>
+<div class="para" id="sec5-0-eigen-19-16-1-1">132 fishes are placed in a box with nine rooms. See <a href="sec5-0-eigen.html#mouse1" class="xref" data-knowl="./knowl/xref/mouse1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.1.40">Figure 5.1.40</a>.</div> <figure class="figure figure-like" id="mouse1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/images/Fish-Tank.PNG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.40<span class="period">.</span></span><span class="space"> </span>Fish Tank</figcaption></figure> <div class="para" id="sec5-0-eigen-19-16-1-3">Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.</div> <div class="para" id="sec5-0-eigen-19-16-1-4">Find how many fishes can be found in each room in long run.</div> <div class="para" id="sec5-0-eigen-19-16-1-5">Solve this problem using a <span class="process-math">\(3 \times 3\)</span> matrix stochastic matrix.</div></article></section><section class="subsection" id="sec-eigen"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="space"> </span><span class="title">Exercises on Eigenvalues and Eigenvectors</span>
 </h3>
 <ol class="decimal" id="sec-eigen-2">
