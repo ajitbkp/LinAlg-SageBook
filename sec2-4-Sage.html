@@ -520,8 +520,8 @@ sum([s[1][i]*B[i] for i in range(len(B))])
 </script></div>
 </div></article><article class="example example-like" id="sec2-4-Sage-23"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Linear Span of vectors in Sage.</span>
-</h3> <div class="para" id="sec2-4-Sage-23-2"></div> Sage can generate a linear span of a set of vectors in a vector space using the vector space method .span(). Let us explore this for set of 5 vectors in a vector space V=QQ^4. <div class="para" id="sec2-4-Sage-23-5">
-<div id="sec2-4-Sage-23-5-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V =QQ^5
+</h3> Sage can generate a linear span of a set of vectors in a vector space using the vector space method .span(). Let us explore this for set of 5 vectors in a vector space V=QQ^4. <div class="para" id="sec2-4-Sage-23-4">
+<div id="sec2-4-Sage-23-4-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V =QQ^5
 v1 = vector(QQ,[1,-1,3,2,4])
 v2 = vector(QQ,[-2,1,0,3,-1])
 v3 = vector(QQ,[-5,3,-3,4,-6])
@@ -530,11 +530,11 @@ v5 = vector(QQ,[-13,4,-7,6,-15])
 B = [v1,v2,v3,v4,v5]
 W=V.span(B)
 W
-</script></div> It returns the dimension of the linear span along with a basis as a matrix. We can check if any linear combinations of vectors in B lies in W. <div id="sec2-4-Sage-23-5-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a = [randint(-10,10) for i in range(len(B))]
+</script></div> It returns the dimension of the linear span along with a basis as a matrix. We can check if any linear combinations of vectors in B lies in W. <div id="sec2-4-Sage-23-4-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a = [randint(-10,10) for i in range(len(B))]
 x = sum(a[i]*B[i] for i in range(len(B)))
 x in W
-</script></div> We can also check if W is a subspave of V using the following sage syntaxes. <div id="sec2-4-Sage-23-5-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">W <= V
-</script></div> <div id="sec2-4-Sage-23-5-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">W.is_subspace(V)
+</script></div> We can also check if W is a subspave of V using the following sage syntaxes. <div id="sec2-4-Sage-23-4-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">W <= V
+</script></div> <div id="sec2-4-Sage-23-4-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">W.is_subspace(V)
 </script></div>
 </div></article><article class="example example-like" id="sec2-4-Sage-24"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Using RREF to find a basis of linear span..</span>
@@ -570,16 +570,122 @@ V1
 </script></div> We can also find the same manually using RREF as follows. <div id="sec2-4-Sage-25-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(B).augment(v,subdivide=True)
 </script></div> <div id="sec2-4-Sage-25-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(B).augment(v,subdivide=True).rref()
 </script></div> The same can be achieved using by solving the system <span class="process-math">\(Bx=v\text{.}\)</span> <div id="sec2-4-Sage-25-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(B).inverse()*v
-</script></div></article><article class="example example-like" id="sec2-4-Sage-26"><h3 class="heading">
+</script></div></article><article class="example example-like" id="fundamental-spaces-sage-eg1"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental subscapes of a matrix.</span>
-</h3> <div class="para" id="sec2-4-Sage-26-2">Consider a matrix <span class="process-math">\(A= \left(\begin{array}{rrrrrr}
+</h3> <div class="para" id="fundamental-spaces-sage-eg1-2">Consider a matrix <span class="process-math">\(A= \left(\begin{array}{rrrrrr}
 -351 \amp  -1053 \amp  -1053 \amp  160 \amp  382 \amp  1657 \\
 -32 \amp  -96 \amp  -96 \amp  15 \amp  35 \amp  152 \\
 -36 \amp  -108 \amp  -108 \amp  16 \amp  39 \amp  169 \\
 11 \amp  33 \amp  33 \amp  -5 \amp  -12 \amp  -52 \\
 -11 \amp  -33 \amp  -33 \amp  5 \amp  12 \amp  52
 \end{array}\right)\text{.}\)</span> Find the fundamental subspaces defined in the Example <a href="sec2-1-LinSpan.html#sec2-1-matrix-spaces" class="xref" data-knowl="./knowl/xref/sec2-1-matrix-spaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.4: Matrix Spaces">Example 2.2.4</a>
-</div></article></section></div>
+</div> <details id="fundamental-spaces-sage-eg1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="fundamental-spaces-sage-eg1-3-1">First of all let us find the row space using the method <code class="code-inline tex2jax_ignore">.row_space()</code>. This returns the dimension and the basis matrix of the row space. This we can verify using rref applied to the matrix <span class="process-math">\(A\text{.}\)</span> <div id="fundamental-spaces-sage-eg1-3-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">     A =matrix([[-351, -1053 , -1053 , 160 , 382 , 1657 ], 
+[-32 , -96 , -96 , 15 , 35 , 152 ],
+[-36 , -108 , -108 , 16 , 39 , 169 ],
+[11 , 33 , 33 , -5 , -12 , -52 ],
+[-11 , -33 , -33 , 5 , 12 , 52]])
+A.row_space()
+</script></div> <div id="fundamental-spaces-sage-eg1-3-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.rref()
+</script></div> Clearly the first three row of rref(A) is same as basis matrix obtained uising the inbuilt sage method. <div class="para" id="fundamental-spaces-sage-eg1-3-1-5">Next we find the columns space using the sage method <code class="code-inline tex2jax_ignore">A.column_space()</code> and verify the same using the rref applied to <span class="process-math">\(A^T\text{.}\)</span>
+</div> <div id="fundamental-spaces-sage-eg1-3-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Column space of A
+A.column_space()
+</script></div> <div id="fundamental-spaces-sage-eg1-3-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Finding basis of column space using RREF
+A.T.rref()
+</script></div> Clearly, the 1st three rows of rref(A) are same as basis matrix of <code class="code-inline tex2jax_ignore">A.column_space()</code> <div class="para" id="fundamental-spaces-sage-eg1-3-1-9">The column space of <span class="process-math">\(A\)</span> is also known as image space of <span class="process-math">\(A\text{.}\)</span> Sage has inbuilt method <code class="code-inline tex2jax_ignore">A.image()</code> to find the image space.</div> <div id="fundamental-spaces-sage-eg1-3-1-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.image()
+</script></div> <div class="para" id="fundamental-spaces-sage-eg1-3-1-11">The null space of <span class="process-math">\(A\)</span> also known as kernel of <span class="process-math">\(A\)</span> can be obtained by the sage method <code class="code-inline tex2jax_ignore">A.right_kernel()</code>.</div> <div id="fundamental-spaces-sage-eg1-3-1-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.right_kernel()
+</script></div> Clearly, the kernel is of dimension 3. <div class="para" id="fundamental-spaces-sage-eg1-3-1-13">The left null space can be obtained by the sage method <code class="code-inline tex2jax_ignore">A.left_kernel()</code> or using <code class="code-inline tex2jax_ignore">A.T.right_kernel()</code>.</div> <div id="fundamental-spaces-sage-eg1-3-1-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.left_kernel()
+</script></div> <div id="fundamental-spaces-sage-eg1-3-1-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.T.right_kernel()
+</script></div>
+</div></div></details></article><article class="observation remark-like" id="sec2-4-Sage-27"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.5.8</span><span class="period">.</span>
+</h3>Consider the matrix <span class="process-math">\(A\)</span> defined in the Example <a href="sec2-4-Sage.html#fundamental-spaces-sage-eg1" class="xref" data-knowl="./knowl/xref/fundamental-spaces-sage-eg1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.5.7: Fundamental subscapes of a matrix">Example 2.5.7</a>. Observe the following: <div class="para" id="sec2-4-Sage-27-3">(i) Let <span class="process-math">\(u\)</span> be a random element in <span class="process-math">\(Row(A)\)</span> and <span class="process-math">\(v\)</span> be a random element in <span class="process-math">\(null(A)\text{.}\)</span> Then <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are orthogoal. That is, <span class="process-math">\(u\cdot v=0\text{.}\)</span>
+</div> <div class="para" id="sec2-4-Sage-27-4">(ii) Let <span class="process-math">\(u\)</span> be a random element in <span class="process-math">\(Col(A)\)</span> and <span class="process-math">\(v\)</span> be a random element in <span class="process-math">\(leftnull(A)\text{.}\)</span> Then <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are orthogoal. That is, <span class="process-math">\(u\cdot v=0\text{.}\)</span>
+</div> <details id="sec2-4-Sage-27-5" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="sec2-4-Sage-27-5-1">
+<div id="sec2-4-Sage-27-5-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A =matrix([[-351, -1053 , -1053 , 160 , 382 , 1657 ], 
+[-32 , -96 , -96 , 15 , 35 , 152 ],
+[-36 , -108 , -108 , 16 , 39 , 169 ],
+[11 , 33 , 33 , -5 , -12 , -52 ],
+[-11 , -33 , -33 , 5 , 12 , 52]])
+rowA = A.row_space()
+colA = A.column_space()
+nullA = A.right_kernel()
+leftnullA = A.left_kernel()
+</script></div> <div id="sec2-4-Sage-27-5-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u = rowA.random_element()
+v = nullA.random_element()
+u.dot_product(v)
+</script></div> <div id="sec2-4-Sage-27-5-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u = colA.random_element()
+v = leftnullA.random_element()
+u.dot_product(v)
+</script></div>
+</div></div></details></article><article class="example example-like" id="sec2-4-Sage-28"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Change of coordinates.</span>
+</h3> <div class="para logical" id="sec2-4-Sage-28-2">
+<div class="para">Consider the vector space <span class="process-math">\(V=\mathbb{Q}^4\text{.}\)</span> Defines two subsets</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\beta=\{(-5, 8,  0, 4),(-3, 9, -2, 4),(-1, 4, -1, 2),(-1, 2,  0, 1)\}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma = \{(0,  2, -7,  5),(-1,  2, -1,  4),(1, -3,  5, -7),(1,  1, -8,  3)\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Check that <span class="process-math">\(\beta\)</span> and <span class="process-math">\(\gamma\)</span> are linearly independent hence they form bases of <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(x=(3,5,7,9)\in V\text{.}\)</span> Find the coordinates of <span class="process-math">\(x\)</span> with respect to <span class="process-math">\(\beta\)</span>  and <span class="process-math">\(\gamma\)</span> and denote them by <span class="process-math">\(x_\beta\)</span> and <span class="process-math">\(x_\gamma\)</span> respectively. Find the change of basis matrices <span class="process-math">\([I]_\beta^\gamma\)</span> and <span class="process-math">\([I]_\gamma^\beta\text{.}\)</span> Show that <span class="process-math">\(\left([I]_\beta^\gamma\right)^{-1}=[I]_\gamma^\beta\text{.}\)</span>  Also verify that <span class="process-math">\([I]_\beta^\gamma x_\beta=x_\gamma\)</span> and <span class="process-math">\([I]_\gamma^\beta x_\gamma=x_\beta\text{.}\)</span>
+</div>
+</div> <details id="sec2-4-Sage-28-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec2-4-Sage-28-3-1">
+<div id="sec2-4-Sage-28-3-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4
+b1 = vector(QQ, [-5, 8,  0, 4])
+b2 = vector(QQ, [-3, 9, -2, 4])
+b3 = vector(QQ, [-1, 4, -1, 2])
+b4 = vector(QQ, [-1, 2,  0, 1])
+B = [b1, b2, b3, b4]
+V.are_linearly_dependent(B)
+</script></div> <div id="sec2-4-Sage-28-3-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">c1 = vector(QQ, [ 0,  2, -7,  5])
+c2 = vector(QQ, [-1,  2, -1,  4])
+c3 = vector(QQ, [ 1, -3,  5, -7])
+c4 = vector(QQ, [ 1,  1, -8,  3])
+C = [c1, c2, c3,c4]
+V.are_linearly_dependent(C)
+</script></div> Clearly B and C are linearly indendent and hence they are bases of <span class="process-math">\(V\text{.}\)</span>
+</div> Next we define two subspaces V1 and V2 with B and C as bases respectively and define the vector <span class="process-math">\(x\)</span> in Sage. <div class="para" id="sec2-4-Sage-28-3-3">
+<div id="sec2-4-Sage-28-3-3-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V1 = V.subspace_with_basis(B)
+V2 = V.subspace_with_basis(C)
+x = vector([3,5,7,9])
+</script></div> <div class="para" id="sec2-4-Sage-28-3-3-2">Next we find the coordinates <span class="process-math">\(x_\beta\)</span> and <span class="process-math">\(x_\gamma\text{.}\)</span>
+</div> <div id="sec2-4-Sage-28-3-3-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">xB = V1.coordinates(x);
+print(f'The coordinates of x w.r.t. B is: {xB}')
+xC = V2.coordinates(x);
+print(f'The coordinates of x w.r.t. C is: {xC}')
+</script></div> <div class="para" id="sec2-4-Sage-28-3-3-4">Next we define the change of basis matrix <span class="process-math">\([I]_\beta^\gamma\text{.}\)</span> This can be achieved by taking a matrix <span class="process-math">\(M=[C~|~B]\)</span> applying rref and extracting the last four columns.</div> <div id="sec2-4-Sage-28-3-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Matrix of Change of basis from B to C, that [I]_B^C
+k = len(B)
+M = column_matrix(C+B)
+print(M)
+M1 = M.rref()
+print(M1)
+IBC = M1.submatrix(0,k)
+print(IBC)
+</script></div> One can verify that this is same as <span class="process-math">\(C^{-1}B\text{.}\)</span> <div id="sec2-4-Sage-28-3-3-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(C).inverse()*column_matrix(B)==IBC
+</script></div> <div class="para" id="sec2-4-Sage-28-3-3-8">Next we define the change of basis matrix <span class="process-math">\([I]_\gamma^\beta\text{.}\)</span> This can be achieved by taking a matrix <span class="process-math">\(M=[B~|~C]\)</span> applying rref and extracting the last four columns. One can verify that this is same as <span class="process-math">\(C^{-1}B\text{.}\)</span>
+</div> <div id="sec2-4-Sage-28-3-3-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Matrix of Change of basis from C to B, that [I]_C^B
+k = len(B)
+M = column_matrix(B+C)
+print(M)
+M1 = M.rref()
+print(M1)
+ICB = M1.submatrix(0,k)
+print(ICB)
+</script></div> <div id="sec2-4-Sage-28-3-3-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(B).inverse()*column_matrix(C)==ICB
+</script></div> <div class="para" id="sec2-4-Sage-28-3-3-11">Let us check that <span class="process-math">\(\left([I]_\beta^\gamma\right)^{-1}=[I]_\gamma^\beta\text{.}\)</span>
+</div> <div id="sec2-4-Sage-28-3-3-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">IBC.inverse()==ICB
+</script></div> <div class="para" id="sec2-4-Sage-28-3-3-13">Finally we show that <span class="process-math">\([I]_\beta^\gamma x_\beta=x_\gamma\)</span> and <span class="process-math">\([I]_\gamma^\beta x_\gamma=x_\beta\text{.}\)</span>
+</div> <div id="sec2-4-Sage-28-3-3-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">IBC*vector(xB)==vector(xC)
+ICB*vector(xC)==vector(xB)
+</script></div>
+</div>
+</div></details></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-2-3-basis-dimension.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
