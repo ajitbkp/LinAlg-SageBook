@@ -106,24 +106,24 @@ window.MathJax = {
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
-#sec-elementary-operations-3 { counter-set: sec-elementary-operations-3 0; }
-#sec-elementary-operations-3 > li::marker { content: ""counter(sec-elementary-operations-3,decimal)"."; }
-#sec-elementary-operations-3 > li { counter-increment: sec-elementary-operations-3; }
+#subsec-elmentary-row-operations-3 { counter-set: subsec-elmentary-row-operations-3 0; }
+#subsec-elmentary-row-operations-3 > li::marker { content: ""counter(subsec-elmentary-row-operations-3,decimal)"."; }
+#subsec-elmentary-row-operations-3 > li { counter-increment: subsec-elmentary-row-operations-3; }
 #def-elementary-row-operations-2-1-2 { counter-set: def-elementary-row-operations-2-1-2 0; }
 #def-elementary-row-operations-2-1-2 > li::marker { content: ""counter(def-elementary-row-operations-2-1-2,decimal)"."; }
 #def-elementary-row-operations-2-1-2 > li { counter-increment: def-elementary-row-operations-2-1-2; }
-#sec-elementary-operations-8-14-1 { counter-set: sec-elementary-operations-8-14-1 0; }
-#sec-elementary-operations-8-14-1 > li::marker { content: ""counter(sec-elementary-operations-8-14-1,decimal)"."; }
-#sec-elementary-operations-8-14-1 > li { counter-increment: sec-elementary-operations-8-14-1; }
-#sec-elementary-operations-15-1-1 { counter-set: sec-elementary-operations-15-1-1 0; }
-#sec-elementary-operations-15-1-1 > li::marker { content: ""counter(sec-elementary-operations-15-1-1,decimal)"."; }
-#sec-elementary-operations-15-1-1 > li { counter-increment: sec-elementary-operations-15-1-1; }
+#subsec-elmentary-row-operations-8-14-1 { counter-set: subsec-elmentary-row-operations-8-14-1 0; }
+#subsec-elmentary-row-operations-8-14-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-8-14-1,decimal)"."; }
+#subsec-elmentary-row-operations-8-14-1 > li { counter-increment: subsec-elmentary-row-operations-8-14-1; }
+#subsec-elmentary-row-operations-15-1-1 { counter-set: subsec-elmentary-row-operations-15-1-1 0; }
+#subsec-elmentary-row-operations-15-1-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-15-1-1,decimal)"."; }
+#subsec-elmentary-row-operations-15-1-1 > li { counter-increment: subsec-elmentary-row-operations-15-1-1; }
 #def-echelon-form-5 { counter-set: def-echelon-form-5 0; }
 #def-echelon-form-5 > li::marker { content: ""counter(def-echelon-form-5,decimal)"."; }
 #def-echelon-form-5 > li { counter-increment: def-echelon-form-5; }
-#sec-echelon-form-5-3 { counter-set: sec-echelon-form-5-3 0; }
-#sec-echelon-form-5-3 > li::marker { content: ""counter(sec-echelon-form-5-3,decimal)"."; }
-#sec-echelon-form-5-3 > li { counter-increment: sec-echelon-form-5-3; }
+#sec-row-echelon-5-3 { counter-set: sec-row-echelon-5-3 0; }
+#sec-row-echelon-5-3 > li::marker { content: ""counter(sec-row-echelon-5-3,decimal)"."; }
+#sec-row-echelon-5-3 > li { counter-increment: sec-row-echelon-5-3; }
 #alg-gaussian-elimination-2 { counter-set: alg-gaussian-elimination-2 0; }
 #alg-gaussian-elimination-2 > li::marker { content: ""counter(alg-gaussian-elimination-2,decimal)"."; }
 #alg-gaussian-elimination-2 > li { counter-increment: alg-gaussian-elimination-2; }
@@ -160,9 +160,9 @@ window.MathJax = {
 #sec-xxx-2-3 { counter-set: sec-xxx-2-3 0; }
 #sec-xxx-2-3 > li::marker { content: ""counter(sec-xxx-2-3,decimal)"."; }
 #sec-xxx-2-3 > li { counter-increment: sec-xxx-2-3; }
-#sec4-1-VS-2-2-1-1-6 { counter-set: sec4-1-VS-2-2-1-1-6 0; }
-#sec4-1-VS-2-2-1-1-6 > li::marker { content: ""counter(sec4-1-VS-2-2-1-1-6,decimal)"."; }
-#sec4-1-VS-2-2-1-1-6 > li { counter-increment: sec4-1-VS-2-2-1-1-6; }
+#sec4-1-VS-3-1-1-6 { counter-set: sec4-1-VS-3-1-1-6 0; }
+#sec4-1-VS-3-1-1-6 > li::marker { content: ""counter(sec4-1-VS-3-1-1-6,decimal)"."; }
+#sec4-1-VS-3-1-1-6 > li { counter-increment: sec4-1-VS-3-1-1-6; }
 #thm-basis-equiv-1-1-3 { counter-set: thm-basis-equiv-1-1-3 0; }
 #thm-basis-equiv-1-1-3 > li::marker { content: ""counter(thm-basis-equiv-1-1-3,decimal)"."; }
 #thm-basis-equiv-1-1-3 > li { counter-increment: thm-basis-equiv-1-1-3; }
@@ -230,8 +230,7 @@ window.MathJax = {
 \newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
 \def\rank{{ rank\,}}
 \newcommand{\ds}{\displaystyle}
-\renewcommand{\headrulewidth}{0.5mm}
-\renewcommand{\footrulewidth}{0.5mm}
+
 \def\diag{{ diag\,}}
 \def\proj{{ proj\,}}
 \newcommand{\lt}{&lt;}
@@ -248,14 +247,18 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Row Operations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-Matrix-inverse-using-rref" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Matrix Inversion via Elementary Row Operations</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-elmentary-row-operations" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Elmentary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-Matrix-inverse-using-rref" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Matrix Inversion via Elementary Row Operations</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-col-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Column Operations</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-echelon-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Echelon Forms</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#subsec-Gaussian-Elimination" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Gaussian Elimination Method</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#subsec-Gauss-Jordan-Method" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Gauss-Jordan elimination method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#sec-row-echelon" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Row Echelon Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#subsec-Gaussian-Elimination" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Gaussian Elimination Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#subsec-Gauss-Jordan-Method" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Gauss-Jordan elimination method</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec1-4-matrix-rank.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Rank of Matrices</span></a></div></li>
@@ -316,9 +319,9 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Basis and dimension</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-18" class="internal"><span class="codenumber">4.5.1</span> <span class="title">How to find a basis of a finite dimensional vector space?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-19" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Lagrange Interpolation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-26" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Dimension Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-17" class="internal"><span class="codenumber">4.5.1</span> <span class="title">How to find a basis of a finite dimensional vector space?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-18" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Lagrange Interpolation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-25" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Dimension Formula</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-5-VS-Ex.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Exercise Set</span></a></div></li>
@@ -396,11 +399,11 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec4-2-linspan-VS"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">4.3</span><span class="space"> </span><span class="title">Linear Span</span>
 </h2>
-<section class="introduction" id="sec4-2-linspan-VS-2"><div class="para" id="sec4-2-linspan-VS-2-1">
-<div class="para" id="sec4-2-linspan-VS-2-1-1">We have already defined linear combinations linear span of a set of vectors in <span class="process-math">\(\R^n\text{.}\)</span> The same one can defined in any vector space.</div> <article class="definition definition-like" id="sec4-2-linspan-VS-2-1-2"><h3 class="heading">
+<div class="para" id="sec4-2-linspan-VS-2">
+<div class="para" id="sec4-2-linspan-VS-2-1">We have already defined linear combinations linear span of a set of vectors in <span class="process-math">\(\R^n\text{.}\)</span> The same one can defined in any vector space.</div> <article class="definition definition-like" id="sec4-2-linspan-VS-2-2"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="sec4-2-linspan-VS-2-1-2-1-1">
+<div class="para logical" id="sec4-2-linspan-VS-2-2-1-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space over <span class="process-math">\(\R\text{.}\)</span> Let <span class="process-math">\(S=\{v_1,\ldots, v_k\}\)</span> be a set of vectors in <span class="process-math">\(V\text{.}\)</span> Then a vector <span class="process-math">\(v\)</span> is called a linear combination of <span class="process-math">\(v_1,\ldots,
 v_k\)</span> if there exist scalars <span class="process-math">\(\alpha_1,\ldots, \alpha_k\)</span> such that</div>
 <div class="displaymath process-math">
@@ -408,7 +411,7 @@ v_k\)</span> if there exist scalars <span class="process-math">\(\alpha_1,\ldots
 v = \alpha_1 v_1+\cdots+\alpha_kv_k\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="sec4-2-linspan-VS-2-1-2-1-2">
+</div> <div class="para logical" id="sec4-2-linspan-VS-2-2-1-2">
 <div class="para">The set</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -417,25 +420,25 @@ L(S):=\{\alpha_1 v_1+\cdots+\alpha_kv_k:\alpha_1,\ldots,\alpha_k\in \R\}
 </div>
 <div class="para">is called the linear span or spanning set of <span class="process-math">\(v_1,\ldots, v_k\text{.}\)</span> We know that <span class="process-math">\(L(S)\)</span> is a vector space of <span class="process-math">\(V\text{.}\)</span>
 </div>
-</div></article> <div class="para" id="sec4-2-linspan-VS-2-1-3">If <span class="process-math">\(S\)</span> is any subset of <span class="process-math">\(V\)</span> (may be infinite), then <span class="process-math">\(L(S)\)</span> is the set of all finite linear combinations of elements from <span class="process-math">\(S\text{.}\)</span> In particular, <span class="process-math">\(v\in L(S)\)</span> if there exits <span class="process-math">\(k\in \N\)</span> and scalars <span class="process-math">\(\alpha_1,\ldots,\alpha_k\in \R\)</span> such that <span class="process-math">\(v = \alpha_1 v_1+\cdots+\alpha_kv_k\text{.}\)</span>
-</div> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-4"><h3 class="heading">
+</div></article> <div class="para" id="sec4-2-linspan-VS-2-3">If <span class="process-math">\(S\)</span> is any subset of <span class="process-math">\(V\)</span> (may be infinite), then <span class="process-math">\(L(S)\)</span> is the set of all finite linear combinations of elements from <span class="process-math">\(S\text{.}\)</span> In particular, <span class="process-math">\(v\in L(S)\)</span> if there exits <span class="process-math">\(k\in \N\)</span> and scalars <span class="process-math">\(\alpha_1,\ldots,\alpha_k\in \R\)</span> such that <span class="process-math">\(v = \alpha_1 v_1+\cdots+\alpha_kv_k\text{.}\)</span>
+</div> <article class="problem example-like" id="sec4-2-linspan-VS-2-4"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec4-2-linspan-VS-2-1-4-1-1">For any subset <span class="process-math">\(S\subset V\text{,}\)</span> <span class="process-math">\(L(S)\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
-</div></article> <article class="example example-like" id="sec4-2-linspan-VS-2-1-5"><h3 class="heading">
+<div class="para" id="sec4-2-linspan-VS-2-4-1-1">For any subset <span class="process-math">\(S\subset V\text{,}\)</span> <span class="process-math">\(L(S)\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
+</div></article> <article class="example example-like" id="sec4-2-linspan-VS-2-5"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec4-2-linspan-VS-2-1-5-1-1">Let <span class="process-math">\(v_1=(1,2,-1)\)</span> and <span class="process-math">\(v_2=(3,1,2)\)</span> and <span class="process-math">\(W = \{\alpha_1v_1+\alpha_2v_2:\alpha_1,\alpha_2\in \R\}\text{.}\)</span> What is <span class="process-math">\(W\text{?}\)</span> Can identify it geometrically? Yes, it is a plane passing through the origin. That the <span class="process-math">\(W\)</span> can be written as <span class="process-math">\(W=\{(x,y,z):ax+by+cz=0\}\)</span> for some <span class="process-math">\((a,b,c)\neq (0,0,0)\text{?}\)</span> Can you find what are <span class="process-math">\(a,b,c\text{.}\)</span>
-</div> <div class="para" id="sec4-2-linspan-VS-2-1-5-1-2">From the concept of dot product, it easy to identify <span class="process-math">\((a,b,c)\)</span> as a vector which is orthogonal/perpendicular to both <span class="process-math">\(v_1\)</span> and <span class="process-math">\(v_2\text{.}\)</span> In particular, we can find <span class="process-math">\((a,b,c)\)</span> and <span class="process-math">\(v_1\times v_2\text{,}\)</span> the cross product of <span class="process-math">\(v_1\)</span> and <span class="process-math">\(v_2\text{.}\)</span>
-</div> <div class="para" id="sec4-2-linspan-VS-2-1-5-1-3">Suppose, we do not want to use the above concept to find <span class="process-math">\((a,b,c)\text{,}\)</span> then what do we do?</div> <div class="para logical" id="sec4-2-linspan-VS-2-1-5-1-4">
+<div class="para" id="sec4-2-linspan-VS-2-5-1-1">Let <span class="process-math">\(v_1=(1,2,-1)\)</span> and <span class="process-math">\(v_2=(3,1,2)\)</span> and <span class="process-math">\(W = \{\alpha_1v_1+\alpha_2v_2:\alpha_1,\alpha_2\in \R\}\text{.}\)</span> What is <span class="process-math">\(W\text{?}\)</span> Can identify it geometrically? Yes, it is a plane passing through the origin. That the <span class="process-math">\(W\)</span> can be written as <span class="process-math">\(W=\{(x,y,z):ax+by+cz=0\}\)</span> for some <span class="process-math">\((a,b,c)\neq (0,0,0)\text{?}\)</span> Can you find what are <span class="process-math">\(a,b,c\text{.}\)</span>
+</div> <div class="para" id="sec4-2-linspan-VS-2-5-1-2">From the concept of dot product, it easy to identify <span class="process-math">\((a,b,c)\)</span> as a vector which is orthogonal/perpendicular to both <span class="process-math">\(v_1\)</span> and <span class="process-math">\(v_2\text{.}\)</span> In particular, we can find <span class="process-math">\((a,b,c)\)</span> and <span class="process-math">\(v_1\times v_2\text{,}\)</span> the cross product of <span class="process-math">\(v_1\)</span> and <span class="process-math">\(v_2\text{.}\)</span>
+</div> <div class="para" id="sec4-2-linspan-VS-2-5-1-3">Suppose, we do not want to use the above concept to find <span class="process-math">\((a,b,c)\text{,}\)</span> then what do we do?</div> <div class="para logical" id="sec4-2-linspan-VS-2-5-1-4">
 <div class="para">Suppose <span class="process-math">\((x,y,z)\in W\text{,}\)</span> Then there exists scalars <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix}x\\y\\z \end{pmatrix}  =\alpha \begin{pmatrix}1\\2\\-1 \end{pmatrix} +\beta \begin{pmatrix}3\\1\\2 \end{pmatrix}  = \begin{pmatrix}1 \amp  3\\2 \amp  1 \\-1 \amp  2 \end{pmatrix} \begin{pmatrix}\alpha\\\beta \end{pmatrix}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec4-2-linspan-VS-2-1-5-1-5">In particular, <span class="process-math">\(W\)</span> is the image space of <span class="process-math">\(\begin{pmatrix}1 \amp 3\\2 \amp 1 \\-1 \amp 2 \end{pmatrix}\text{.}\)</span>
-</div> <div class="para logical" id="sec4-2-linspan-VS-2-1-5-1-6">
+</div> <div class="para" id="sec4-2-linspan-VS-2-5-1-5">In particular, <span class="process-math">\(W\)</span> is the image space of <span class="process-math">\(\begin{pmatrix}1 \amp 3\\2 \amp 1 \\-1 \amp 2 \end{pmatrix}\text{.}\)</span>
+</div> <div class="para logical" id="sec4-2-linspan-VS-2-5-1-6">
 <div class="para">We need to find <span class="process-math">\((a,b,c)\)</span> such that <span class="process-math">\(ax+by+cz=0\)</span> for any <span class="process-math">\((x,y,z)\in W\text{.}\)</span> In particular, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -444,70 +447,70 @@ a(\alpha+2\beta)+b(2\alpha+\beta)+c(-\alpha+2\beta)=0
 </div>
 <div class="para">for any <span class="process-math">\(\alpha,\beta\in \R\text{.}\)</span> Note that <span class="process-math">\(\alpha,\beta\)</span> is our choice and we can choose conveniently to find <span class="process-math">\(a,
 b, c\text{.}\)</span> It is easy to see that</div>
-<div class="displaymath process-math" id="sec4-2-linspan-VS-2-1-5-1-6-8">
+<div class="displaymath process-math" id="sec4-2-linspan-VS-2-5-1-6-8">
 \begin{align*}
 a+2b-c \amp  = \amp  0, \text{ for \(\alpha=1,\beta=0\) }\\
 3a+b+2c \amp  = \amp  0, \text{ for \(\alpha=0,\beta=1\) }
 \end{align*}
 </div>
-</div> <div class="para" id="sec4-2-linspan-VS-2-1-5-1-7">This is same say substituting <span class="process-math">\(v_1,v_2\)</span> in the equation <span class="process-math">\(ax=by=cz=0\text{.}\)</span>
-</div> <div class="para logical" id="sec4-2-linspan-VS-2-1-5-1-8">
+</div> <div class="para" id="sec4-2-linspan-VS-2-5-1-7">This is same say substituting <span class="process-math">\(v_1,v_2\)</span> in the equation <span class="process-math">\(ax=by=cz=0\text{.}\)</span>
+</div> <div class="para logical" id="sec4-2-linspan-VS-2-5-1-8">
 <div class="para">In particular, we have <span class="process-math">\(a,b,c\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix}1 \amp  2 \amp  -1\\ 3 \amp  1 \amp  2 \end{pmatrix} \begin{pmatrix}a\\b\\c \end{pmatrix} =0\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec4-2-linspan-VS-2-1-5-1-9">Thus <span class="process-math">\((a,b,c)\)</span> is the kernel of <span class="process-math">\(B=\begin{pmatrix}1 \amp 2 \amp -1\\ 3 \amp 1 \amp 2 \end{pmatrix}\)</span> and <span class="process-math">\(W\)</span> is the orthogonal complement of kernel of <span class="process-math">\(B\text{.}\)</span>
-</div> <div class="para" id="sec4-2-linspan-VS-2-1-5-1-10">Solving the above equations, we can find <span class="process-math">\(a=1,b=-1,c=-1\)</span> as one of the choices. This implies <span class="process-math">\(W\)</span> is the plane <span class="process-math">\(x-y+z=0\text{.}\)</span>
-</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-6"><h3 class="heading">
+</div> <div class="para" id="sec4-2-linspan-VS-2-5-1-9">Thus <span class="process-math">\((a,b,c)\)</span> is the kernel of <span class="process-math">\(B=\begin{pmatrix}1 \amp 2 \amp -1\\ 3 \amp 1 \amp 2 \end{pmatrix}\)</span> and <span class="process-math">\(W\)</span> is the orthogonal complement of kernel of <span class="process-math">\(B\text{.}\)</span>
+</div> <div class="para" id="sec4-2-linspan-VS-2-5-1-10">Solving the above equations, we can find <span class="process-math">\(a=1,b=-1,c=-1\)</span> as one of the choices. This implies <span class="process-math">\(W\)</span> is the plane <span class="process-math">\(x-y+z=0\text{.}\)</span>
+</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-6"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="sec4-2-linspan-VS-2-1-6-1-1">
+<div class="para logical" id="sec4-2-linspan-VS-2-6-1-1">
 <div class="para">Let <span class="process-math">\(V=M_2(\R)\)</span> with usual addition and scalar multiplication</div>
 <div class="displaymath process-math">
 \begin{equation*}
 S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  1 \\1 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\0 \amp  1 \end{bmatrix} \right\}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec4-2-linspan-VS-2-1-6-1-2">Then <span class="process-math">\(L(S)\)</span> is the set of <span class="process-math">\(2\times 2\)</span> symmetric matrices.</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-7"><h3 class="heading">
+</div> <div class="para" id="sec4-2-linspan-VS-2-6-1-2">Then <span class="process-math">\(L(S)\)</span> is the set of <span class="process-math">\(2\times 2\)</span> symmetric matrices.</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-7"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.5</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="sec4-2-linspan-VS-2-1-7-1-1">
+<div class="para logical" id="sec4-2-linspan-VS-2-7-1-1">
 <div class="para">Let <span class="process-math">\(V=M_2(\R)\)</span> with usual addition and scalar multiplication</div>
 <div class="displaymath process-math">
 \begin{equation*}
 S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  1 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\1 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\0 \amp  1 \end{bmatrix} \right\}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec4-2-linspan-VS-2-1-7-1-2">Then <span class="process-math">\(L(S)=M_2(\R)\text{.}\)</span>
-</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-8"><h3 class="heading">
+</div> <div class="para" id="sec4-2-linspan-VS-2-7-1-2">Then <span class="process-math">\(L(S)=M_2(\R)\text{.}\)</span>
+</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-8"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec4-2-linspan-VS-2-1-8-1-1">Let <span class="process-math">\(S =\{1,x,x^2,\ldots, x^n\}\text{.}\)</span> Then <span class="process-math">\(L(S)\)</span> is the set of all polynomials of degree less than or equals to <span class="process-math">\(n\text{.}\)</span>
-</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-9"><h3 class="heading">
+<div class="para" id="sec4-2-linspan-VS-2-8-1-1">Let <span class="process-math">\(S =\{1,x,x^2,\ldots, x^n\}\text{.}\)</span> Then <span class="process-math">\(L(S)\)</span> is the set of all polynomials of degree less than or equals to <span class="process-math">\(n\text{.}\)</span>
+</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-9"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec4-2-linspan-VS-2-1-9-1-1">Let <span class="process-math">\(S_1,S_2\subset V\)</span> such that <span class="process-math">\(S_1\subset S_2\text{.}\)</span> Then show that <span class="process-math">\(L(S_1)\)</span> is a subspace of <span class="process-math">\(L(S_2)\text{.}\)</span>
-</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-10"><h3 class="heading">
+<div class="para" id="sec4-2-linspan-VS-2-9-1-1">Let <span class="process-math">\(S_1,S_2\subset V\)</span> such that <span class="process-math">\(S_1\subset S_2\text{.}\)</span> Then show that <span class="process-math">\(L(S_1)\)</span> is a subspace of <span class="process-math">\(L(S_2)\text{.}\)</span>
+</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-10"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.8</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec4-2-linspan-VS-2-1-10-1-1">Let <span class="process-math">\(u,v\in V\text{.}\)</span> Then show that <span class="process-math">\(L(\{u,v\})=L(\{u-v,2u+3v\})\text{.}\)</span>
+<div class="para" id="sec4-2-linspan-VS-2-10-1-1">Let <span class="process-math">\(u,v\in V\text{.}\)</span> Then show that <span class="process-math">\(L(\{u,v\})=L(\{u-v,2u+3v\})\text{.}\)</span>
 </div></article> <article class="definition definition-like" id="smallest-subspace"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.9</span><span class="period">.</span>
 </h3>
 <div class="para" id="smallest-subspace-1-1">Let <span class="process-math">\(V\)</span> be a vector space and <span class="process-math">\(S\subset V\text{.}\)</span> A subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(V\)</span> is called the smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\)</span> if (i) <span class="process-math">\(W\)</span> is subspace of <span class="process-math">\(V\)</span> with <span class="process-math">\(S\subset W\text{,}\)</span> and (ii) if <span class="process-math">\(W'\)</span> is subspace of <span class="process-math">\(V\)</span> with <span class="process-math">\(S\subset W'\text{,}\)</span> then <span class="process-math">\(W\subset W'\text{.}\)</span>
-</div></article> <article class="example example-like" id="sec4-2-linspan-VS-2-1-12"><h3 class="heading">
+</div></article> <article class="example example-like" id="sec4-2-linspan-VS-2-12"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.10</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec4-2-linspan-VS-2-1-12-1-1">(i) Let <span class="process-math">\(v\in V\text{.}\)</span> Then <span class="process-math">\(\R v=L(\{v\})\)</span> is the smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(v\text{.}\)</span>
-</div> <div class="para" id="sec4-2-linspan-VS-2-1-12-1-2">(ii) Let <span class="process-math">\(S=\{v_1,\ldots,v_k\}\subset V\text{.}\)</span> Then <span class="process-math">\(L(S)\)</span> is the smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\text{.}\)</span>
-</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-1-13"><h3 class="heading">
+<div class="para" id="sec4-2-linspan-VS-2-12-1-1">(i) Let <span class="process-math">\(v\in V\text{.}\)</span> Then <span class="process-math">\(\R v=L(\{v\})\)</span> is the smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(v\text{.}\)</span>
+</div> <div class="para" id="sec4-2-linspan-VS-2-12-1-2">(ii) Let <span class="process-math">\(S=\{v_1,\ldots,v_k\}\subset V\text{.}\)</span> Then <span class="process-math">\(L(S)\)</span> is the smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\text{.}\)</span>
+</div></article> <article class="problem example-like" id="sec4-2-linspan-VS-2-13"><h3 class="heading">
 <span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.11</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec4-2-linspan-VS-2-1-13-1-1">Suppose <span class="process-math">\(L\)</span> is a line in the plane? Then what is <span class="process-math">\(L(S)\text{?}\)</span>
+<div class="para" id="sec4-2-linspan-VS-2-13-1-1">Suppose <span class="process-math">\(L\)</span> is a line in the plane? Then what is <span class="process-math">\(L(S)\text{?}\)</span>
 </div></article>
-</div></section></section></div>
+</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec4-1-abstract-vs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec4-3-LI-VS.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -16,12 +16,12 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Elementary Row Operations",
-  "body": " Elementary Row Operations  The solution of a system of linear equations is unchanged if the following operations are performed. In fact this is the basis for solving a system of linear equations.   Multiply one of the equations by a nonzero real number. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.  Multiply one of the equations by a real number and add the result to another equation, leaving the original equation unchanged. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row, leaving the original row unchanged.  Interchanging two equations. This is equivalent to interchanging two rows of the augmented matrix of the system.  Bring the equations which are equivalent to to the bottom row. This is equivalent to moving the zero rows (rows with zero entries) of the augmented matrix to the bottom.   If an equation of the system after the the avove operations reduces to , where , then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the column, then the system has no solution.   Elementary row operations   The following operations on a matrix are called elementary row operations.   interchange of two rows of a matrix;  multiplication of one row by a non-zero scalar ;  adding a scalar times a row to another row.        A matrix is said to be equivalent or row equivalent to matrix , in notation , if can be obtained from by performing finite number of elementary row operations.    Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.  Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let are standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:   for each . That is, -th column can be obtained by multiplying by on the right.   for each . That is, -th row can be obtained by multiplying by on the left.   for .           Let denote an elementary row operation and the result of applying to a . Let be a matrix obtained by applying to the identity matrix. That is, . Then is called the elementary matrix corresponding to the elementary row operation . It is easy to see that an elementary matrix is non singular. (why?)     Elementary Matrix Theorem   Let be an elementary row operation and , the corresponding elementary matrix defined by . Then, for any matrix , .        Let be a rectangular matrix of order . Let be a matrix obtained by interchanging 2nd and 3rd rows of . Then where .  What is ?    Let be the matrix obtained by multiplying 2nd row of by a scalar . Then where .  What is ?    Let be the matrix obtained by adding 2 times 2nd row to the 3rd rows of in place of the 3rd row. Then where .  What is ?        Two matrices and are row equivalent if and only if there exists a non singular matrix such that .      Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.     Matrix Inversion via Elementary Row Operations  We can use the theorem to find the inverse of a matrix using elementary row operations. If a matrix is non singular and is row equivalent to the identity matrix by a sequence of elementary row operations say , then we have, . This implies . In other words, the sequence of elementary row operations required to turn into also turns into . Thus to find inverse of , we adjoin to on the right to give the augmented matrix , and perform elementary row operations on that successively reduces to the identity matrix and then extract from the right half of the transformed augmented matrix.    Find the inverse of using row operations.           Hence    Let solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.                             Sage can directly find the inverse of a matrix.     Sage Exercise: Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.       "
+  "body": " Elementary Row Operations   In this section, we shall defined elementary row operations which is a backbone of all computations in linear algebra.    Elmentary Row Operations  The solution of a system of linear equations is unchanged if the following operations are performed. In fact this is the basis for solving a system of linear equations.   Multiply one of the equations by a nonzero real number. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.  Multiply one of the equations by a real number and add the result to another equation, leaving the original equation unchanged. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row, leaving the original row unchanged.  Interchanging two equations. This is equivalent to interchanging two rows of the augmented matrix of the system.  Bring the equations which are equivalent to to the bottom row. This is equivalent to moving the zero rows (rows with zero entries) of the augmented matrix to the bottom.   If an equation of the system after the the avove operations reduces to , where , then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the column, then the system has no solution.   Elementary row operations   The following operations on a matrix are called elementary row operations.   interchange of two rows of a matrix;  multiplication of one row by a non-zero scalar ;  adding a scalar times a row to another row.        A matrix is said to be equivalent or row equivalent to matrix , in notation , if can be obtained from by performing finite number of elementary row operations.    Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.  Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let are standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:   for each . That is, -th column can be obtained by multiplying by on the right.   for each . That is, -th row can be obtained by multiplying by on the left.   for .           Let denote an elementary row operation and the result of applying to a . Let be a matrix obtained by applying to the identity matrix. That is, . Then is called the elementary matrix corresponding to the elementary row operation . It is easy to see that an elementary matrix is non singular. (why?)     Elementary Matrix Theorem   Let be an elementary row operation and , the corresponding elementary matrix defined by . Then, for any matrix , .        Let be a rectangular matrix of order . Let be a matrix obtained by interchanging 2nd and 3rd rows of . Then where .  What is ?    Let be the matrix obtained by multiplying 2nd row of by a scalar . Then where .  What is ?    Let be the matrix obtained by adding 2 times 2nd row to the 3rd rows of in place of the 3rd row. Then where .  What is ?        Two matrices and are row equivalent if and only if there exists a non singular matrix such that .      Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.      Matrix Inversion via Elementary Row Operations  We can use the theorem to find the inverse of a matrix using elementary row operations. If a matrix is non singular and is row equivalent to the identity matrix by a sequence of elementary row operations say , then we have, . This implies . In other words, the sequence of elementary row operations required to turn into also turns into . Thus to find inverse of , we adjoin to on the right to give the augmented matrix , and perform elementary row operations on that successively reduces to the identity matrix and then extract from the right half of the transformed augmented matrix.    Find the inverse of using row operations.           Hence    Let solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.                             Sage can directly find the inverse of a matrix.     Sage Exercise: Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.       "
 },
 {
-  "id": "sec-elementary-operations-4",
+  "id": "subsec-elmentary-row-operations-4",
   "level": "2",
-  "url": "sec-elementary-operations.html#sec-elementary-operations-4",
+  "url": "sec-elementary-operations.html#subsec-elmentary-row-operations-4",
   "type": "Note",
   "number": "1.1.1",
   "title": "",
@@ -46,9 +46,9 @@ var ptx_lunr_docs = [
   "body": "  A matrix is said to be equivalent or row equivalent to matrix , in notation , if can be obtained from by performing finite number of elementary row operations.   "
 },
 {
-  "id": "sec-elementary-operations-8",
+  "id": "subsec-elmentary-row-operations-8",
   "level": "2",
-  "url": "sec-elementary-operations.html#sec-elementary-operations-8",
+  "url": "sec-elementary-operations.html#subsec-elmentary-row-operations-8",
   "type": "Observation",
   "number": "1.1.4",
   "title": "",
@@ -73,9 +73,9 @@ var ptx_lunr_docs = [
   "body": " Elementary Matrix Theorem   Let be an elementary row operation and , the corresponding elementary matrix defined by . Then, for any matrix , .   "
 },
 {
-  "id": "sec-elementary-operations-15-1",
+  "id": "subsec-elmentary-row-operations-15-1",
   "level": "2",
-  "url": "sec-elementary-operations.html#sec-elementary-operations-15-1",
+  "url": "sec-elementary-operations.html#subsec-elmentary-row-operations-15-1",
   "type": "Example",
   "number": "1.1.7",
   "title": "",
@@ -91,9 +91,9 @@ var ptx_lunr_docs = [
   "body": "  Two matrices and are row equivalent if and only if there exists a non singular matrix such that .   "
 },
 {
-  "id": "sec-elementary-operations-17-1",
+  "id": "subsec-elmentary-row-operations-17-1",
   "level": "2",
-  "url": "sec-elementary-operations.html#sec-elementary-operations-17-1",
+  "url": "sec-elementary-operations.html#subsec-elmentary-row-operations-17-1",
   "type": "Proof",
   "number": "1",
   "title": "",
@@ -133,7 +133,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Echelon Forms",
-  "body": " Echelon Forms  An matrix is said to be in row-echelon form or row-echelon matrix if it satisfies the following conditions:   All zero rows (consisting entirely of zeros) are at the bottom.    The first nonzero entry from the left in each nonzero row is a 1, called the leading 1 or pivot element for that row. Row containing pivot elements are called the pivot row and the columns containing the pivot element are called the pivot columns.    Each leading 1 is to the right of all leading 1s in the rows above it.  A row-echelon matrix is said to be in reduced row-echelon form or reduced row-echelon matrix if, in addition, it satisfies the following condition:  Each leading 1 is the only nonzero entry in its column.      Echelon Matrices  Following are examples of echelon matrices: .     Non Echelon Matrices  Following are examples of some non echelon matrices: .    Every nonzero matrix is row equivalent to a matrix which is a row echelon matrix. We employ the following procedures to convert a matrix into a row echelon form:   Choose a pivot element from the nonzero entries in the 1st column. Row containing pivot is called the pivot row.    Interchange rows (if necessary) so that pivot row is the new 1st row.    Multiply pivot row by a constant so that the new pivot is 1.    Make all subsequent entries in the 1st column 0 by using elementary row operations.    Repeat this process with next column.      Reduce the matrix to row echelon form.     This is row-echelon matrix equivalent to . We can apply elementary row operation and make it to reduced-row-echelon form.    Sage has inbulit method `A.rref()' to convert the matrix into reduced row echelon form. You may also try 'A.echelonize()' and 'A.echelon_form()'       Step by Step method to find RREF of a matrix     Gaussian Elimination Method  Solving a system of linear equations , by reducing the augmented matrix to echelon form by using elementary row operations and then solving the equivalent system by back substitution is called solving by Gaussian elimination process. Now we state the step involved in the Gaussian elimination process. Only use the row operations stated above and work from top to bottom.  Gaussian Elimination    Make in each row the first non-zero element (called the main element) equal to 1.    Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.    If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.          Solve the following system of linear equations using the Gaussian elimination method.    The corresponding augmented matrix is      We can do more step of row elimination to convert the first three columns into identity matrix. However, the above augmented matrix represents the following equations: Using back substitution, we get .         Solve the following system of linear equations. using Gaussian elimination method. Show that this system has infinitely many solutions.         Since last row zero, it represents the equation , in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.      Solve the following system using the Gaussian elimination method and show that it has no solution.            Since last row represents the equation , the system has no solution.     Gauss-Jordan elimination method  Guass-Jordan method of solving the linear system is very similar to that of the Gaussian elimination method. In this method we continue the the row elimination till we reduce the row-reduced matrix of to identity matrix.    Solve the system using the Gauss-Jordan elimination method, where      Clearly the solution of the above system is . We can also solve the above system using the 'A.solve_right(b)' command in Sage.        "
+  "body": " Echelon Forms   In this section we define the row echelon form of matrices.    Row Echelon Form  An matrix is said to be in row-echelon form or row-echelon matrix if it satisfies the following conditions:   All zero rows (consisting entirely of zeros) are at the bottom.    The first nonzero entry from the left in each nonzero row is a 1, called the leading 1 or pivot element for that row. Row containing pivot elements are called the pivot row and the columns containing the pivot element are called the pivot columns.    Each leading 1 is to the right of all leading 1s in the rows above it.  A row-echelon matrix is said to be in reduced row-echelon form or reduced row-echelon matrix if, in addition, it satisfies the following condition:  Each leading 1 is the only nonzero entry in its column.      Echelon Matrices  Following are examples of echelon matrices: .     Non Echelon Matrices  Following are examples of some non echelon matrices: .    Every nonzero matrix is row equivalent to a matrix which is a row echelon matrix. We employ the following procedures to convert a matrix into a row echelon form:   Choose a pivot element from the nonzero entries in the 1st column. Row containing pivot is called the pivot row.    Interchange rows (if necessary) so that pivot row is the new 1st row.    Multiply pivot row by a constant so that the new pivot is 1.    Make all subsequent entries in the 1st column 0 by using elementary row operations.    Repeat this process with next column.      Reduce the matrix to row echelon form.     This is row-echelon matrix equivalent to . We can apply elementary row operation and make it to reduced-row-echelon form.    Sage has inbulit method `A.rref()' to convert the matrix into reduced row echelon form. You may also try 'A.echelonize()' and 'A.echelon_form()'       Step by Step method to find RREF of a matrix      Gaussian Elimination Method  Solving a system of linear equations , by reducing the augmented matrix to echelon form by using elementary row operations and then solving the equivalent system by back substitution is called solving by Gaussian elimination process. Now we state the step involved in the Gaussian elimination process. Only use the row operations stated above and work from top to bottom.  Gaussian Elimination    Make in each row the first non-zero element (called the main element) equal to 1.    Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.    If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.          Solve the following system of linear equations using the Gaussian elimination method.    The corresponding augmented matrix is      We can do more step of row elimination to convert the first three columns into identity matrix. However, the above augmented matrix represents the following equations: Using back substitution, we get .         Solve the following system of linear equations. using Gaussian elimination method. Show that this system has infinitely many solutions.         Since last row zero, it represents the equation , in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.      Solve the following system using the Gaussian elimination method and show that it has no solution.            Since last row represents the equation , the system has no solution.     Gauss-Jordan elimination method  Guass-Jordan method of solving the linear system is very similar to that of the Gaussian elimination method. In this method we continue the the row elimination till we reduce the row-reduced matrix of to identity matrix.    Solve the system using the Gauss-Jordan elimination method, where      Clearly the solution of the above system is . We can also solve the above system using the 'A.solve_right(b)' command in Sage.        "
 },
 {
   "id": "def-echelon-form",
@@ -163,9 +163,9 @@ var ptx_lunr_docs = [
   "body": "Non Echelon Matrices  Following are examples of some non echelon matrices: .  "
 },
 {
-  "id": "sec-echelon-form-6",
+  "id": "sec-row-echelon-6",
   "level": "2",
-  "url": "sec-echelon-form.html#sec-echelon-form-6",
+  "url": "sec-echelon-form.html#sec-row-echelon-6",
   "type": "Example",
   "number": "1.3.4",
   "title": "",
@@ -1501,12 +1501,12 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.1",
   "title": "Introduction",
-  "body": " Introduction   Recall the properties (eight) of operation addition and scalar multiplication in . Any non-empty set with two operations, addition and scalar multiplication satisfying the eight properties is known as vector space. More precisely we have the following definition.    Let be a nonempty set with two operations defined by and multiplication defined by . Satisfying the following properties:   A1: for all , .   A2: for all , .   A3: There exists such that for all , . This is called an additive identity.   A4: for each , there is a vector , such that . This is called an additive inverse of .   S1: for all and , .   S2: for all and , .   S3: for all and , .   S4: for all , .    The set with and is called a vector space over . Elements of are called vectors.       with usual addition and scalar multiplication defined in the Section is a vector space over .      The set , the set of all real matrices with usual matrix addition and scalar multiplication by a real number is a vector space over .      Fix a natural number . The set , the set of all polynomials of degree less than equal , with usual polynomial addition and scalar multiplication by a real number is a vector space over .      Let be the set of real-valued functions defined on an interval . For all and in and , define addition and scalar multiplication, respectively, by . is a vector space over .      The set of complex numbers , where , with addition and multiplication defined as .  The set is a vector space over .      Let be any nonempty set and define , the set of all functions from to . Define addition and scalar multiplication, respectively, by . Then is a vector space over .      (i) The set of rational numbers with usual addition and multiplication is a vector space over . However, is not a vector space over .  (ii) is a vector space over .      Let be a vector space over and is a nonempty set. Let be a bijection. We define addition and scalar multiplication on as follows: .  It is easy to check that with above addition and scalar multiplication is a vector space over .      Let . Define addition and scalar multiplication on as follows: .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .      Let . Define addition and scalar multiplication on by .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .      Let be a singleton set. Define addition and scalar multiplication by .  Check that is a vector space over under the addition and scalar multiplication defined above.      Let . Define addition and scalar multiplication on as and .  Check that is a vector space over . Find the bijection is used to covert into a vector space using these operations. Find additive identity and the additive inverse of in corresponding to .      Consider the unit circle . Define the addition and scalar multiplications by and .  Show that is a vector space over with respect to the addition and scalar multiplication defined above. Find the additive identity and additive inverse.      Let denote the set of all non singular real matrices. Define where is the usual matrix multiplication, and is the usual scalar multiplication. Show that is a vector space over .    Next we list the some properties in a vector space over . These properties are easy to prove. Readers are encouraged to prove these properties.   Properties   Let be a vector space over . Then we have the following properties:  (i) Additive identity in is unique.  (ii) Additive inverse in is unique.  (iii) for any .  (iv) for all .  (v) for all .  (vi) If then either or .  (vii) If , then , called the right cancellation. Similarly, we have left cancellation.  (viii) If and , then .  (ix ) and , then .    In view of these, properties, here onward we will write the additive identity and the additive inverse .   "
+  "body": " Introduction  Recall the properties (eight) of operation addition and scalar multiplication in . Any non-empty set with two operations, addition and scalar multiplication satisfying the eight properties is known as vector space. More precisely we have the following definition.    Let be a nonempty set with two operations defined by and multiplication defined by . Satisfying the following properties:   A1: for all , .   A2: for all , .   A3: There exists such that for all , . This is called an additive identity.   A4: for each , there is a vector , such that . This is called an additive inverse of .   S1: for all and , .   S2: for all and , .   S3: for all and , .   S4: for all , .    The set with and is called a vector space over . Elements of are called vectors.       with usual addition and scalar multiplication defined in the Section is a vector space over .      The set , the set of all real matrices with usual matrix addition and scalar multiplication by a real number is a vector space over .      Fix a natural number . The set , the set of all polynomials of degree less than equal , with usual polynomial addition and scalar multiplication by a real number is a vector space over .      Let be the set of real-valued functions defined on an interval . For all and in and , define addition and scalar multiplication, respectively, by . is a vector space over .      The set of complex numbers , where , with addition and multiplication defined as .  The set is a vector space over .      Let be any nonempty set and define , the set of all functions from to . Define addition and scalar multiplication, respectively, by . Then is a vector space over .      (i) The set of rational numbers with usual addition and multiplication is a vector space over . However, is not a vector space over .  (ii) is a vector space over .      Let be a vector space over and is a nonempty set. Let be a bijection. We define addition and scalar multiplication on as follows: .  It is easy to check that with above addition and scalar multiplication is a vector space over .      Let . Define addition and scalar multiplication on as follows: .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .      Let . Define addition and scalar multiplication on by .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .      Let be a singleton set. Define addition and scalar multiplication by .  Check that is a vector space over under the addition and scalar multiplication defined above.      Let . Define addition and scalar multiplication on as and .  Check that is a vector space over . Find the bijection is used to covert into a vector space using these operations. Find additive identity and the additive inverse of in corresponding to .      Consider the unit circle . Define the addition and scalar multiplications by and .  Show that is a vector space over with respect to the addition and scalar multiplication defined above. Find the additive identity and additive inverse.      Let denote the set of all non singular real matrices. Define where is the usual matrix multiplication, and is the usual scalar multiplication. Show that is a vector space over .    Next we list the some properties in a vector space over . These properties are easy to prove. Readers are encouraged to prove these properties.   Properties   Let be a vector space over . Then we have the following properties:  (i) Additive identity in is unique.  (ii) Additive inverse in is unique.  (iii) for any .  (iv) for all .  (v) for all .  (vi) If then either or .  (vii) If , then , called the right cancellation. Similarly, we have left cancellation.  (viii) If and , then .  (ix ) and , then .    In view of these, properties, here onward we will write the additive identity and the additive inverse .  "
 },
 {
-  "id": "sec4-1-VS-2-2",
+  "id": "sec4-1-VS-3",
   "level": "2",
-  "url": "sec4-1-VS.html#sec4-1-VS-2-2",
+  "url": "sec4-1-VS.html#sec4-1-VS-3",
   "type": "Definition",
   "number": "4.1.1",
   "title": "",
@@ -1585,54 +1585,54 @@ var ptx_lunr_docs = [
   "body": "  Let be a vector space over and is a nonempty set. Let be a bijection. We define addition and scalar multiplication on as follows: .  It is easy to check that with above addition and scalar multiplication is a vector space over .   "
 },
 {
-  "id": "sec4-1-VS-2-11",
+  "id": "sec4-1-VS-12",
   "level": "2",
-  "url": "sec4-1-VS.html#sec4-1-VS-2-11",
+  "url": "sec4-1-VS.html#sec4-1-VS-12",
   "type": "Example",
   "number": "4.1.10",
   "title": "",
   "body": "  Let . Define addition and scalar multiplication on as follows: .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .   "
 },
 {
-  "id": "sec4-1-VS-2-12",
+  "id": "sec4-1-VS-13",
   "level": "2",
-  "url": "sec4-1-VS.html#sec4-1-VS-2-12",
+  "url": "sec4-1-VS.html#sec4-1-VS-13",
   "type": "Example",
   "number": "4.1.11",
   "title": "",
   "body": "  Let . Define addition and scalar multiplication on by .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .   "
 },
 {
-  "id": "sec4-1-VS-2-13",
+  "id": "sec4-1-VS-14",
   "level": "2",
-  "url": "sec4-1-VS.html#sec4-1-VS-2-13",
+  "url": "sec4-1-VS.html#sec4-1-VS-14",
   "type": "Example",
   "number": "4.1.12",
   "title": "",
   "body": "  Let be a singleton set. Define addition and scalar multiplication by .  Check that is a vector space over under the addition and scalar multiplication defined above.   "
 },
 {
-  "id": "sec4-1-VS-2-14",
+  "id": "sec4-1-VS-15",
   "level": "2",
-  "url": "sec4-1-VS.html#sec4-1-VS-2-14",
+  "url": "sec4-1-VS.html#sec4-1-VS-15",
   "type": "Example",
   "number": "4.1.13",
   "title": "",
   "body": "  Let . Define addition and scalar multiplication on as and .  Check that is a vector space over . Find the bijection is used to covert into a vector space using these operations. Find additive identity and the additive inverse of in corresponding to .   "
 },
 {
-  "id": "sec4-1-VS-2-15",
+  "id": "sec4-1-VS-16",
   "level": "2",
-  "url": "sec4-1-VS.html#sec4-1-VS-2-15",
+  "url": "sec4-1-VS.html#sec4-1-VS-16",
   "type": "Example",
   "number": "4.1.14",
   "title": "",
   "body": "  Consider the unit circle . Define the addition and scalar multiplications by and .  Show that is a vector space over with respect to the addition and scalar multiplication defined above. Find the additive identity and additive inverse.   "
 },
 {
-  "id": "sec4-1-VS-2-16",
+  "id": "sec4-1-VS-17",
   "level": "2",
-  "url": "sec4-1-VS.html#sec4-1-VS-2-16",
+  "url": "sec4-1-VS.html#sec4-1-VS-17",
   "type": "Example",
   "number": "4.1.15",
   "title": "",
@@ -1654,21 +1654,21 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.2",
   "title": "Vector Subspaces",
-  "body": " Vector Subspaces      Let be a vector space over and a nonempty subset of . The is called a subspace of , if itself is a vector space under the inherited vector addition and scalar multiplication on .      If is a vector space over , then and are two trivial subspaces of .    Let be a vector space over and a nonempty subset of . Assume that is closed under addition and scalar multiplication on . For to be a subspace of , we need to show that all the eight properties in definition of vector space must be satisfied for elements in . Fortunately, our task is simplified as most of these properties are inherited from the vector space . Let , the . Note that we require for this property. Also for , . Thus contains the additive identity and additive inverse. Remaining conditions are true as elements in and hence are also true as elements of . This show that if nonempty subset of which is closed under addition and scalar multiplication, then it is subspace of .  If itself is a vector space under the addition and scalar multiplication on , then is closed under addition and scalar multiplication. Thus we have the following result.    Let be a vector space over and a nonempty subset of . Then is a subspace of if and only if is closed under addition and scalar multiplication.    Thus in order to check that if a nonempty subset is a subspace, all we need to check that it is closed under addition and scalar multiplication inherited from .    Let with usual addition and scalar multiplication.  (i) Any line in passing through the origin is a subspace of .  (ii) The line is not a subspace of , as it does not contain the origin.  (iii) The , the first quadrant is not a subspace as it is not closed under scalar multiplication (why?). However, it is closed under addition.  (iv) The , the the union of first and third quadrant is not a subspace as it is not closed addition (why?). However it is closed under scalar multiplication.  In fact, and any line passing through origin are only subspaces of .      Let with usual addition and scalar multiplication.  (i) Any line in passing through the origin is a subspace of .  (ii) Any plane in passing through the origin is a subspace of .  (iii) If is a subspace of , then is one of the following: , , a line passing through origin, a plane passing through origin.      Let be an real matrix. Then we have the following subspaces associated to .  (i) is subspace of   (ii) is subspace of   (iii) is subspace of   (iv) is subspace of .  The above four subspaces are called fundamental subspaces associated to .      Let , the set of all real matrices with usual matrix addition and scalar multiplication.  (i) is a subspace of .  (ii) is a subspace of .  (iii) is a subspace of .  (iv) is not a subspace of .  (v) is not a subspace of .      Fix a matrix . Define . Show that is a subspace of .      Let set of all functions from with addition and scalar multiplication defined as in Example . Let us look at some of the subspaces of .  (i) , the set of all bounded functions from to is a subspace of .  (ii) , the set of all continuous functions from to is a subspace of .  (iii) , the set of all differentiable functions from to is a subspace of .  (iv) Fix and is a subspace of . (What if we take all functions vanishing at finitely many points.)  (iv) is the set of even functions from is a subspace of . What about set of odd functions?      Let be a vector space over . Let and be two subspaces of . Then  (i) is a subspace of . What about ?  (ii) is a subspace of .      Let be a vector space over . Let be a subset of . Then the linear span defined as is a subspace of .      "
+  "body": " Vector Subspaces     Let be a vector space over and a nonempty subset of . The is called a subspace of , if itself is a vector space under the inherited vector addition and scalar multiplication on .      If is a vector space over , then and are two trivial subspaces of .    Let be a vector space over and a nonempty subset of . Assume that is closed under addition and scalar multiplication on . For to be a subspace of , we need to show that all the eight properties in definition of vector space must be satisfied for elements in . Fortunately, our task is simplified as most of these properties are inherited from the vector space . Let , the . Note that we require for this property. Also for , . Thus contains the additive identity and additive inverse. Remaining conditions are true as elements in and hence are also true as elements of . This show that if nonempty subset of which is closed under addition and scalar multiplication, then it is subspace of .  If itself is a vector space under the addition and scalar multiplication on , then is closed under addition and scalar multiplication. Thus we have the following result.    Let be a vector space over and a nonempty subset of . Then is a subspace of if and only if is closed under addition and scalar multiplication.    Thus in order to check that if a nonempty subset is a subspace, all we need to check that it is closed under addition and scalar multiplication inherited from .    Let with usual addition and scalar multiplication.  (i) Any line in passing through the origin is a subspace of .  (ii) The line is not a subspace of , as it does not contain the origin.  (iii) The , the first quadrant is not a subspace as it is not closed under scalar multiplication (why?). However, it is closed under addition.  (iv) The , the the union of first and third quadrant is not a subspace as it is not closed addition (why?). However it is closed under scalar multiplication.  In fact, and any line passing through origin are only subspaces of .      Let with usual addition and scalar multiplication.  (i) Any line in passing through the origin is a subspace of .  (ii) Any plane in passing through the origin is a subspace of .  (iii) If is a subspace of , then is one of the following: , , a line passing through origin, a plane passing through origin.      Let be an real matrix. Then we have the following subspaces associated to .  (i) is subspace of   (ii) is subspace of   (iii) is subspace of   (iv) is subspace of .  The above four subspaces are called fundamental subspaces associated to .      Let , the set of all real matrices with usual matrix addition and scalar multiplication.  (i) is a subspace of .  (ii) is a subspace of .  (iii) is a subspace of .  (iv) is not a subspace of .  (v) is not a subspace of .      Fix a matrix . Define . Show that is a subspace of .      Let set of all functions from with addition and scalar multiplication defined as in Example . Let us look at some of the subspaces of .  (i) , the set of all bounded functions from to is a subspace of .  (ii) , the set of all continuous functions from to is a subspace of .  (iii) , the set of all differentiable functions from to is a subspace of .  (iv) Fix and is a subspace of . (What if we take all functions vanishing at finitely many points.)  (iv) is the set of even functions from is a subspace of . What about set of odd functions?      Let be a vector space over . Let and be two subspaces of . Then  (i) is a subspace of . What about ?  (ii) is a subspace of .      Let be a vector space over . Let be a subset of . Then the linear span defined as is a subspace of .     "
 },
 {
-  "id": "sec4-1-abstract-vs-2-1-1",
+  "id": "sec4-1-abstract-vs-2-1",
   "level": "2",
-  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-1-1",
+  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-1",
   "type": "Definition",
   "number": "4.2.1",
   "title": "",
   "body": "  Let be a vector space over and a nonempty subset of . The is called a subspace of , if itself is a vector space under the inherited vector addition and scalar multiplication on .   "
 },
 {
-  "id": "sec4-1-abstract-vs-2-1-2",
+  "id": "sec4-1-abstract-vs-2-2",
   "level": "2",
-  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-1-2",
+  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-2",
   "type": "Example",
   "number": "4.2.2",
   "title": "",
@@ -1684,18 +1684,18 @@ var ptx_lunr_docs = [
   "body": "  Let be a vector space over and a nonempty subset of . Then is a subspace of if and only if is closed under addition and scalar multiplication.   "
 },
 {
-  "id": "sec4-1-abstract-vs-2-1-7",
+  "id": "sec4-1-abstract-vs-2-7",
   "level": "2",
-  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-1-7",
+  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-7",
   "type": "Example",
   "number": "4.2.4",
   "title": "",
   "body": "  Let with usual addition and scalar multiplication.  (i) Any line in passing through the origin is a subspace of .  (ii) The line is not a subspace of , as it does not contain the origin.  (iii) The , the first quadrant is not a subspace as it is not closed under scalar multiplication (why?). However, it is closed under addition.  (iv) The , the the union of first and third quadrant is not a subspace as it is not closed addition (why?). However it is closed under scalar multiplication.  In fact, and any line passing through origin are only subspaces of .   "
 },
 {
-  "id": "sec4-1-abstract-vs-2-1-8",
+  "id": "sec4-1-abstract-vs-2-8",
   "level": "2",
-  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-1-8",
+  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-8",
   "type": "Example",
   "number": "4.2.5",
   "title": "",
@@ -1720,36 +1720,36 @@ var ptx_lunr_docs = [
   "body": "  Let , the set of all real matrices with usual matrix addition and scalar multiplication.  (i) is a subspace of .  (ii) is a subspace of .  (iii) is a subspace of .  (iv) is not a subspace of .  (v) is not a subspace of .   "
 },
 {
-  "id": "sec4-1-abstract-vs-2-1-11",
+  "id": "sec4-1-abstract-vs-2-11",
   "level": "2",
-  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-1-11",
+  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-11",
   "type": "Problem",
   "number": "4.2.8",
   "title": "",
   "body": "  Fix a matrix . Define . Show that is a subspace of .   "
 },
 {
-  "id": "sec4-1-abstract-vs-2-1-12",
+  "id": "sec4-1-abstract-vs-2-12",
   "level": "2",
-  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-1-12",
+  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-12",
   "type": "Example",
   "number": "4.2.9",
   "title": "",
   "body": "  Let set of all functions from with addition and scalar multiplication defined as in Example . Let us look at some of the subspaces of .  (i) , the set of all bounded functions from to is a subspace of .  (ii) , the set of all continuous functions from to is a subspace of .  (iii) , the set of all differentiable functions from to is a subspace of .  (iv) Fix and is a subspace of . (What if we take all functions vanishing at finitely many points.)  (iv) is the set of even functions from is a subspace of . What about set of odd functions?   "
 },
 {
-  "id": "sec4-1-abstract-vs-2-1-13",
+  "id": "sec4-1-abstract-vs-2-13",
   "level": "2",
-  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-1-13",
+  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-13",
   "type": "Example",
   "number": "4.2.10",
   "title": "",
   "body": "  Let be a vector space over . Let and be two subspaces of . Then  (i) is a subspace of . What about ?  (ii) is a subspace of .   "
 },
 {
-  "id": "sec4-1-abstract-vs-2-1-14",
+  "id": "sec4-1-abstract-vs-2-14",
   "level": "2",
-  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-1-14",
+  "url": "sec4-1-abstract-vs.html#sec4-1-abstract-vs-2-14",
   "type": "Example",
   "number": "4.2.11",
   "title": "",
@@ -1762,75 +1762,75 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.3",
   "title": "Linear Span",
-  "body": " Linear Span    We have already defined linear combinations linear span of a set of vectors in . The same one can defined in any vector space.    Let be a vector space over . Let be a set of vectors in . Then a vector is called a linear combination of if there exist scalars such that .  The set is called the linear span or spanning set of . We know that is a vector space of .    If is any subset of (may be infinite), then is the set of all finite linear combinations of elements from . In particular, if there exits and scalars such that .    For any subset , is a subspace of .      Let and and . What is ? Can identify it geometrically? Yes, it is a plane passing through the origin. That the can be written as for some ? Can you find what are .  From the concept of dot product, it easy to identify as a vector which is orthogonal\/perpendicular to both and . In particular, we can find and , the cross product of and .  Suppose, we do not want to use the above concept to find , then what do we do?  Suppose , Then there exists scalars and such that .  In particular, is the image space of .  We need to find such that for any . In particular, we have for any . Note that is our choice and we can choose conveniently to find . It is easy to see that   This is same say substituting in the equation .  In particular, we have such that .  Thus is the kernel of and is the orthogonal complement of kernel of .  Solving the above equations, we can find as one of the choices. This implies is the plane .      Let with usual addition and scalar multiplication .  Then is the set of symmetric matrices.      Let with usual addition and scalar multiplication .  Then .      Let . Then is the set of all polynomials of degree less than or equals to .      Let such that . Then show that is a subspace of .      Let . Then show that .      Let be a vector space and . A subspace of is called the smallest subspace of containing if (i) is subspace of with , and (ii) if is subspace of with , then .      (i) Let . Then is the smallest subspace of containing .  (ii) Let . Then is the smallest subspace of containing .      Suppose is a line in the plane? Then what is ?      "
+  "body": " Linear Span   We have already defined linear combinations linear span of a set of vectors in . The same one can defined in any vector space.    Let be a vector space over . Let be a set of vectors in . Then a vector is called a linear combination of if there exist scalars such that .  The set is called the linear span or spanning set of . We know that is a vector space of .    If is any subset of (may be infinite), then is the set of all finite linear combinations of elements from . In particular, if there exits and scalars such that .    For any subset , is a subspace of .      Let and and . What is ? Can identify it geometrically? Yes, it is a plane passing through the origin. That the can be written as for some ? Can you find what are .  From the concept of dot product, it easy to identify as a vector which is orthogonal\/perpendicular to both and . In particular, we can find and , the cross product of and .  Suppose, we do not want to use the above concept to find , then what do we do?  Suppose , Then there exists scalars and such that .  In particular, is the image space of .  We need to find such that for any . In particular, we have for any . Note that is our choice and we can choose conveniently to find . It is easy to see that   This is same say substituting in the equation .  In particular, we have such that .  Thus is the kernel of and is the orthogonal complement of kernel of .  Solving the above equations, we can find as one of the choices. This implies is the plane .      Let with usual addition and scalar multiplication .  Then is the set of symmetric matrices.      Let with usual addition and scalar multiplication .  Then .      Let . Then is the set of all polynomials of degree less than or equals to .      Let such that . Then show that is a subspace of .      Let . Then show that .      Let be a vector space and . A subspace of is called the smallest subspace of containing if (i) is subspace of with , and (ii) if is subspace of with , then .      (i) Let . Then is the smallest subspace of containing .  (ii) Let . Then is the smallest subspace of containing .      Suppose is a line in the plane? Then what is ?     "
 },
 {
-  "id": "sec4-2-linspan-VS-2-1-2",
+  "id": "sec4-2-linspan-VS-2-2",
   "level": "2",
-  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-1-2",
+  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-2",
   "type": "Definition",
   "number": "4.3.1",
   "title": "",
   "body": "  Let be a vector space over . Let be a set of vectors in . Then a vector is called a linear combination of if there exist scalars such that .  The set is called the linear span or spanning set of . We know that is a vector space of .   "
 },
 {
-  "id": "sec4-2-linspan-VS-2-1-4",
+  "id": "sec4-2-linspan-VS-2-4",
   "level": "2",
-  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-1-4",
+  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-4",
   "type": "Problem",
   "number": "4.3.2",
   "title": "",
   "body": "  For any subset , is a subspace of .   "
 },
 {
-  "id": "sec4-2-linspan-VS-2-1-5",
+  "id": "sec4-2-linspan-VS-2-5",
   "level": "2",
-  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-1-5",
+  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-5",
   "type": "Example",
   "number": "4.3.3",
   "title": "",
   "body": "  Let and and . What is ? Can identify it geometrically? Yes, it is a plane passing through the origin. That the can be written as for some ? Can you find what are .  From the concept of dot product, it easy to identify as a vector which is orthogonal\/perpendicular to both and . In particular, we can find and , the cross product of and .  Suppose, we do not want to use the above concept to find , then what do we do?  Suppose , Then there exists scalars and such that .  In particular, is the image space of .  We need to find such that for any . In particular, we have for any . Note that is our choice and we can choose conveniently to find . It is easy to see that   This is same say substituting in the equation .  In particular, we have such that .  Thus is the kernel of and is the orthogonal complement of kernel of .  Solving the above equations, we can find as one of the choices. This implies is the plane .   "
 },
 {
-  "id": "sec4-2-linspan-VS-2-1-6",
+  "id": "sec4-2-linspan-VS-2-6",
   "level": "2",
-  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-1-6",
+  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-6",
   "type": "Problem",
   "number": "4.3.4",
   "title": "",
   "body": "  Let with usual addition and scalar multiplication .  Then is the set of symmetric matrices.   "
 },
 {
-  "id": "sec4-2-linspan-VS-2-1-7",
+  "id": "sec4-2-linspan-VS-2-7",
   "level": "2",
-  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-1-7",
+  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-7",
   "type": "Problem",
   "number": "4.3.5",
   "title": "",
   "body": "  Let with usual addition and scalar multiplication .  Then .   "
 },
 {
-  "id": "sec4-2-linspan-VS-2-1-8",
+  "id": "sec4-2-linspan-VS-2-8",
   "level": "2",
-  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-1-8",
+  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-8",
   "type": "Problem",
   "number": "4.3.6",
   "title": "",
   "body": "  Let . Then is the set of all polynomials of degree less than or equals to .   "
 },
 {
-  "id": "sec4-2-linspan-VS-2-1-9",
+  "id": "sec4-2-linspan-VS-2-9",
   "level": "2",
-  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-1-9",
+  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-9",
   "type": "Problem",
   "number": "4.3.7",
   "title": "",
   "body": "  Let such that . Then show that is a subspace of .   "
 },
 {
-  "id": "sec4-2-linspan-VS-2-1-10",
+  "id": "sec4-2-linspan-VS-2-10",
   "level": "2",
-  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-1-10",
+  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-10",
   "type": "Problem",
   "number": "4.3.8",
   "title": "",
@@ -1846,18 +1846,18 @@ var ptx_lunr_docs = [
   "body": "  Let be a vector space and . A subspace of is called the smallest subspace of containing if (i) is subspace of with , and (ii) if is subspace of with , then .   "
 },
 {
-  "id": "sec4-2-linspan-VS-2-1-12",
+  "id": "sec4-2-linspan-VS-2-12",
   "level": "2",
-  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-1-12",
+  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-12",
   "type": "Example",
   "number": "4.3.10",
   "title": "",
   "body": "  (i) Let . Then is the smallest subspace of containing .  (ii) Let . Then is the smallest subspace of containing .   "
 },
 {
-  "id": "sec4-2-linspan-VS-2-1-13",
+  "id": "sec4-2-linspan-VS-2-13",
   "level": "2",
-  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-1-13",
+  "url": "sec4-2-linspan-VS.html#sec4-2-linspan-VS-2-13",
   "type": "Problem",
   "number": "4.3.11",
   "title": "",
@@ -1870,7 +1870,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.4",
   "title": "Linear dependence and independence",
-  "body": " Linear dependence and independence    Linear dependence and linear independence set of vectors are defined exactly in a same way as we defined in .    A set of vectors is said to be linearly dependent if there exists scalars not all zero such that .  It is easy to see that is linearly dependent if there exists such that .      A set of vectors is said to be linearly independent if it is not linearly dependent.  Let us understand this notion in order to get a working definition. Let us write the linearly dependent definition using quantifiers.  A set is linearly dependent if .   is linearly independent is same as negating the above statement. Thus  A set is linearly independent if .  The contra positive of the above statement state that A set is linearly independent whenever implies .      If , then is linearly dependent.      (i) If , then is linearly independent.  (iv) is linearly dependent if one is scalar multiple of the other.      (i) Let . The set is linearly independent.  (ii) Check if is linearly independent in .      Let such that and . Then show that is linearly independent in .      Let is linearly independent set. Suppose such that for scalars, 's and 's. Then . In other words, every vector in can be written in a unique way as a linear combination of the elements from .      Let be three vectors in . Show that is linearly independent if and only if is linearly independent.      "
+  "body": " Linear dependence and independence   Linear dependence and linear independence set of vectors are defined exactly in a same way as we defined in .    A set of vectors is said to be linearly dependent if there exists scalars not all zero such that .  It is easy to see that is linearly dependent if there exists such that .      A set of vectors is said to be linearly independent if it is not linearly dependent.  Let us understand this notion in order to get a working definition. Let us write the linearly dependent definition using quantifiers.  A set is linearly dependent if .   is linearly independent is same as negating the above statement. Thus  A set is linearly independent if .  The contra positive of the above statement state that A set is linearly independent whenever implies .      If , then is linearly dependent.      (i) If , then is linearly independent.  (iv) is linearly dependent if one is scalar multiple of the other.      (i) Let . The set is linearly independent.  (ii) Check if is linearly independent in .      Let such that and . Then show that is linearly independent in .      Let is linearly independent set. Suppose such that for scalars, 's and 's. Then . In other words, every vector in can be written in a unique way as a linear combination of the elements from .      Let be three vectors in . Show that is linearly independent if and only if is linearly independent.     "
 },
 {
   "id": "LD-VS",
@@ -1891,54 +1891,54 @@ var ptx_lunr_docs = [
   "body": "  A set of vectors is said to be linearly independent if it is not linearly dependent.  Let us understand this notion in order to get a working definition. Let us write the linearly dependent definition using quantifiers.  A set is linearly dependent if .   is linearly independent is same as negating the above statement. Thus  A set is linearly independent if .  The contra positive of the above statement state that A set is linearly independent whenever implies .   "
 },
 {
-  "id": "sec4-3-LI-VS-2-1-4",
+  "id": "sec4-3-LI-VS-2-4",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-1-4",
+  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-4",
   "type": "Problem",
   "number": "4.4.3",
   "title": "",
   "body": "  If , then is linearly dependent.   "
 },
 {
-  "id": "sec4-3-LI-VS-2-1-5",
+  "id": "sec4-3-LI-VS-2-5",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-1-5",
+  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-5",
   "type": "Problem",
   "number": "4.4.4",
   "title": "",
   "body": "  (i) If , then is linearly independent.  (iv) is linearly dependent if one is scalar multiple of the other.   "
 },
 {
-  "id": "sec4-3-LI-VS-2-1-6",
+  "id": "sec4-3-LI-VS-2-6",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-1-6",
+  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-6",
   "type": "Problem",
   "number": "4.4.5",
   "title": "",
   "body": "  (i) Let . The set is linearly independent.  (ii) Check if is linearly independent in .   "
 },
 {
-  "id": "sec4-3-LI-VS-2-1-7",
+  "id": "sec4-3-LI-VS-2-7",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-1-7",
+  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-7",
   "type": "Problem",
   "number": "4.4.6",
   "title": "",
   "body": "  Let such that and . Then show that is linearly independent in .   "
 },
 {
-  "id": "sec4-3-LI-VS-2-1-8",
+  "id": "sec4-3-LI-VS-2-8",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-1-8",
+  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-8",
   "type": "Problem",
   "number": "4.4.7",
   "title": "",
   "body": "  Let is linearly independent set. Suppose such that for scalars, 's and 's. Then . In other words, every vector in can be written in a unique way as a linear combination of the elements from .   "
 },
 {
-  "id": "sec4-3-LI-VS-2-1-9",
+  "id": "sec4-3-LI-VS-2-9",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-1-9",
+  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-2-9",
   "type": "Problem",
   "number": "4.4.8",
   "title": "",
@@ -1951,7 +1951,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.5",
   "title": "Basis and dimension",
-  "body": " Basis and dimension      We can defined basis of a vector space similar to basis of subspaces in .    Let be a vector space over . A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of .  Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .    We have already seen several examples of bases in and some subspaces of .    Let . The set is basis of , called the standard basis.       is a basis of as a vector space over .      . is a basis , called the standard basis.      Any linearly independent set of vectors forms a basis of .       Let be a vector space over . Let and be two bases of . Then .        If a vector space has a basis of consisting elements then any set of vectors is linearly dependent.       A vector space is called finite dimensional if there exists a finite subset of such that .  A vector space which is not finite dimensional is called an infinite dimensional.      We say a vector space is of dimension if it has a basis consisting of elements.    What is the dimension of , the zero space?    (i) is a dimensional vectors space over .  (ii) is a -dimensional vector space over .  (iii) is -dimensional vector space over .      Let be the set of all real symmetric matrices. The set is a basis of . That is is 6 dimensional vector space over . What is dimension of the set of real symmetric matrices and dimension of real skew-symmetric matrices?    Let be the set of all real skew-symmetric matrices. Find a basis and hence the dimension of .   How to find a basis of a finite dimensional vector space?  First let us look at the following result.   Let be a linearly independent set of vectors. Suppose . Then is linearly independent.    Let be a finite dimensional vector space over . Then any linearly independent set can be extended to a basis of . More precisely, there exists vectors, where such that is a basis of .   This exercise give a way to find a basis of a finite dimensional vector space starting with a nonzero vector in .    Complete the set to a basis of . One way of achieving this to find . Then Chose . Then in view of Exercise , is linearly independent. Since , is a basis of .  Another way to achieve this is to look at the standard basis vectors not in . In particular, . In order to find this we can apply RREF to the matrix and choose columns corresponding to the pivots. We have .  Clearly pivot columns are 1,2,4,6, which corresponds to vector . Thus is an extended basis of .     Let be a finite dimensional vector space over . Suppose is a finite set such that . Then there exists a subset such that is a basis of .     Consider in , where   We wish to find a subset of which is a basis of . We can achieve this by applying RREF to the column matrix . Thus   Clearly pivot columns are 1, 2, 3, 5, 7. Hence is basis of .      Lagrange Interpolation  Consider the vector space . Fix distinct real numbers . Define polynomials . The above equation can be written as   It is easy to see that if and 0 otherwise. We claim that is a linearly independent subset of . For .  Here the right hand side is the zero polynomial. This implies for all . Since , it implies that for all . Hence the claim.  Since is -dimensional vector space, the set is a basis. Hence every -th degree polynomial can be expressed uniquely as linear combination of . Suppose is polynomial passing through points , (that is ) where are distinct real numbers. This unique polynomial is given by called the Lagrange interpolation polynomial passing through .   In the following theorem we mention the equivalent condition for a set to be a basis of a finite dimensional vector space.    Let be a vector space. A set of vectors of is called a maximal linearly independent set if is linearly dependent for any vector .      (i) Any set with two linearly independent set of vectors in is a maximal linearly independent set.  (ii) Any set with three linearly independent set of vectors in is a maximal linearly independent set.      Let be a vector space. A set of vectors of is called a minimal set of generators if (i) and (ii) for any , .      (i) Any set with two linearly independent set of vectors in is a minimal set of generators.  (ii) Any set with three linearly independent set of vectors in is a minimal set of generators.      Let be a finite dimensional vector space over . Then the following are equivalent.    is a basis of .     and is linearly independent.     is maximal linearly independent set.     is minimal set of generators.        Dimension Formula    Let be a finite dimensional vector space over . Let and be subspaces of . Then .  It is easy to check that is a subspace of . Moreover       Let . Consider subspaces and . Clearly and are subspaces of each of dimension 2. What is ? It is the line of intersection of the two planes, and . Thus . It is easy to see that   What is ? One can easily show that . However by dimension formula .  Since is a 3 dimensional subspace of , it is in fact .     "
+  "body": " Basis and dimension  We can defined basis of a vector space similar to basis of subspaces in .    Let be a vector space over . A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of .  Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .    We have already seen several examples of bases in and some subspaces of .    Let . The set is basis of , called the standard basis.       is a basis of as a vector space over .      . is a basis , called the standard basis.      Any linearly independent set of vectors forms a basis of .       Let be a vector space over . Let and be two bases of . Then .        If a vector space has a basis of consisting elements then any set of vectors is linearly dependent.       A vector space is called finite dimensional if there exists a finite subset of such that .  A vector space which is not finite dimensional is called an infinite dimensional.      We say a vector space is of dimension if it has a basis consisting of elements.    What is the dimension of , the zero space?    (i) is a dimensional vectors space over .  (ii) is a -dimensional vector space over .  (iii) is -dimensional vector space over .      Let be the set of all real symmetric matrices. The set is a basis of . That is is 6 dimensional vector space over . What is dimension of the set of real symmetric matrices and dimension of real skew-symmetric matrices?    Let be the set of all real skew-symmetric matrices. Find a basis and hence the dimension of .   How to find a basis of a finite dimensional vector space?  First let us look at the following result.   Let be a linearly independent set of vectors. Suppose . Then is linearly independent.    Let be a finite dimensional vector space over . Then any linearly independent set can be extended to a basis of . More precisely, there exists vectors, where such that is a basis of .   This exercise give a way to find a basis of a finite dimensional vector space starting with a nonzero vector in .    Complete the set to a basis of . One way of achieving this to find . Then Chose . Then in view of Exercise , is linearly independent. Since , is a basis of .  Another way to achieve this is to look at the standard basis vectors not in . In particular, . In order to find this we can apply RREF to the matrix and choose columns corresponding to the pivots. We have .  Clearly pivot columns are 1,2,4,6, which corresponds to vector . Thus is an extended basis of .     Let be a finite dimensional vector space over . Suppose is a finite set such that . Then there exists a subset such that is a basis of .     Consider in , where   We wish to find a subset of which is a basis of . We can achieve this by applying RREF to the column matrix . Thus   Clearly pivot columns are 1, 2, 3, 5, 7. Hence is basis of .      Lagrange Interpolation  Consider the vector space . Fix distinct real numbers . Define polynomials . The above equation can be written as   It is easy to see that if and 0 otherwise. We claim that is a linearly independent subset of . For .  Here the right hand side is the zero polynomial. This implies for all . Since , it implies that for all . Hence the claim.  Since is -dimensional vector space, the set is a basis. Hence every -th degree polynomial can be expressed uniquely as linear combination of . Suppose is polynomial passing through points , (that is ) where are distinct real numbers. This unique polynomial is given by called the Lagrange interpolation polynomial passing through .   In the following theorem we mention the equivalent condition for a set to be a basis of a finite dimensional vector space.    Let be a vector space. A set of vectors of is called a maximal linearly independent set if is linearly dependent for any vector .      (i) Any set with two linearly independent set of vectors in is a maximal linearly independent set.  (ii) Any set with three linearly independent set of vectors in is a maximal linearly independent set.      Let be a vector space. A set of vectors of is called a minimal set of generators if (i) and (ii) for any , .      (i) Any set with two linearly independent set of vectors in is a minimal set of generators.  (ii) Any set with three linearly independent set of vectors in is a minimal set of generators.      Let be a finite dimensional vector space over . Then the following are equivalent.    is a basis of .     and is linearly independent.     is maximal linearly independent set.     is minimal set of generators.        Dimension Formula    Let be a finite dimensional vector space over . Let and be subspaces of . Then .  It is easy to check that is a subspace of . Moreover       Let . Consider subspaces and . Clearly and are subspaces of each of dimension 2. What is ? It is the line of intersection of the two planes, and . Thus . It is easy to see that   What is ? One can easily show that . However by dimension formula .  Since is a 3 dimensional subspace of , it is in fact .     "
 },
 {
   "id": "def-basis-VS",
@@ -1963,36 +1963,36 @@ var ptx_lunr_docs = [
   "body": "  Let be a vector space over . A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of .  Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .   "
 },
 {
-  "id": "sec4-5-basis-dim-VS-6",
+  "id": "sec4-5-basis-dim-VS-5",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-6",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5",
   "type": "Example",
   "number": "4.5.2",
   "title": "",
   "body": "  Let . The set is basis of , called the standard basis.   "
 },
 {
-  "id": "sec4-5-basis-dim-VS-7",
+  "id": "sec4-5-basis-dim-VS-6",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-7",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-6",
   "type": "Example",
   "number": "4.5.3",
   "title": "",
   "body": "   is a basis of as a vector space over .   "
 },
 {
-  "id": "sec4-5-basis-dim-VS-8",
+  "id": "sec4-5-basis-dim-VS-7",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-8",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-7",
   "type": "Example",
   "number": "4.5.4",
   "title": "",
   "body": "  . is a basis , called the standard basis.   "
 },
 {
-  "id": "sec4-5-basis-dim-VS-9",
+  "id": "sec4-5-basis-dim-VS-8",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-9",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-8",
   "type": "Example",
   "number": "4.5.5",
   "title": "",
@@ -2026,27 +2026,27 @@ var ptx_lunr_docs = [
   "body": "  A vector space is called finite dimensional if there exists a finite subset of such that .  A vector space which is not finite dimensional is called an infinite dimensional.   "
 },
 {
-  "id": "sec4-5-basis-dim-VS-13",
+  "id": "sec4-5-basis-dim-VS-12",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-13",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-12",
   "type": "Definition",
   "number": "4.5.9",
   "title": "",
   "body": "  We say a vector space is of dimension if it has a basis consisting of elements.   "
 },
 {
-  "id": "sec4-5-basis-dim-VS-15",
+  "id": "sec4-5-basis-dim-VS-14",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-15",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-14",
   "type": "Example",
   "number": "4.5.10",
   "title": "",
   "body": "  (i) is a dimensional vectors space over .  (ii) is a -dimensional vector space over .  (iii) is -dimensional vector space over .   "
 },
 {
-  "id": "sec4-5-basis-dim-VS-16",
+  "id": "sec4-5-basis-dim-VS-15",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-16",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-15",
   "type": "Example",
   "number": "4.5.11",
   "title": "",
@@ -2071,36 +2071,36 @@ var ptx_lunr_docs = [
   "body": " Let be a linearly independent set of vectors. Suppose . Then is linearly independent.  "
 },
 {
-  "id": "sec4-5-basis-dim-VS-18-4",
+  "id": "sec4-5-basis-dim-VS-17-4",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-18-4",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-17-4",
   "type": "Checkpoint",
   "number": "4.5.14",
   "title": "",
   "body": " Let be a finite dimensional vector space over . Then any linearly independent set can be extended to a basis of . More precisely, there exists vectors, where such that is a basis of .  "
 },
 {
-  "id": "sec4-5-basis-dim-VS-18-6",
+  "id": "sec4-5-basis-dim-VS-17-6",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-18-6",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-17-6",
   "type": "Example",
   "number": "4.5.15",
   "title": "",
   "body": "  Complete the set to a basis of . One way of achieving this to find . Then Chose . Then in view of Exercise , is linearly independent. Since , is a basis of .  Another way to achieve this is to look at the standard basis vectors not in . In particular, . In order to find this we can apply RREF to the matrix and choose columns corresponding to the pivots. We have .  Clearly pivot columns are 1,2,4,6, which corresponds to vector . Thus is an extended basis of .   "
 },
 {
-  "id": "sec4-5-basis-dim-VS-18-7",
+  "id": "sec4-5-basis-dim-VS-17-7",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-18-7",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-17-7",
   "type": "Checkpoint",
   "number": "4.5.16",
   "title": "",
   "body": " Let be a finite dimensional vector space over . Suppose is a finite set such that . Then there exists a subset such that is a basis of .  "
 },
 {
-  "id": "sec4-5-basis-dim-VS-18-8",
+  "id": "sec4-5-basis-dim-VS-17-8",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-18-8",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-17-8",
   "type": "Example",
   "number": "4.5.17",
   "title": "",
@@ -2116,9 +2116,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a vector space. A set of vectors of is called a maximal linearly independent set if is linearly dependent for any vector .   "
 },
 {
-  "id": "sec4-5-basis-dim-VS-22",
+  "id": "sec4-5-basis-dim-VS-21",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-22",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-21",
   "type": "Example",
   "number": "4.5.19",
   "title": "",
@@ -2134,9 +2134,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a vector space. A set of vectors of is called a minimal set of generators if (i) and (ii) for any , .   "
 },
 {
-  "id": "sec4-5-basis-dim-VS-24",
+  "id": "sec4-5-basis-dim-VS-23",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-24",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-23",
   "type": "Example",
   "number": "4.5.21",
   "title": "",
@@ -2152,18 +2152,18 @@ var ptx_lunr_docs = [
   "body": "  Let be a finite dimensional vector space over . Then the following are equivalent.    is a basis of .     and is linearly independent.     is maximal linearly independent set.     is minimal set of generators.      "
 },
 {
-  "id": "sec4-5-basis-dim-VS-26-2",
+  "id": "sec4-5-basis-dim-VS-25-2",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-26-2",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-25-2",
   "type": "Problem",
   "number": "4.5.23",
   "title": "",
   "body": "  Let be a finite dimensional vector space over . Let and be subspaces of . Then .  It is easy to check that is a subspace of . Moreover    "
 },
 {
-  "id": "sec4-5-basis-dim-VS-26-3",
+  "id": "sec4-5-basis-dim-VS-25-3",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-26-3",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-25-3",
   "type": "Example",
   "number": "4.5.24",
   "title": "",
@@ -2185,7 +2185,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Introduction",
-  "body": " Introduction   In this section, we shall define notion of eigenvalues and eigenvector.     Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .      Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.      Consider the matrix of rotation in anti-clock wise by an angle . The it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvector.     If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .   Let us analyze the notion of eigenvalues and eigenvector. If is a eigenvector corresponding to an eigenvalue . Then . This implies , where is identity matrix. This means that the homogeneous system has a non zero solution, namely . Hence . Notice that is a polynomial (called the characteristic polynomial of ) of degree in . Thus if , then is a root of the the characteristic polynomial . By fundamental theorem of algebra an real matrix can have at most real eigenvalues. The equation is called characteristic equation of .  We can write as . If are roots of the characteristics equation, then one can show that .    Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?      Let . What are eigenvalues and eigenvectors of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .      Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to       Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.      Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the {geometric multiplicity of .}  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .     Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .    The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .     Consider the matrix . It is easy to check that . That is has only one eigenvalue of of geometric multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.     Properties of Eigenvalues and Eigenvectors  We list the following properties (without proof.)    and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.       Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by         Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.       (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.    Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .      Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying bu to the equation, , we get , from this we have .  Can you find ?     (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .     Let an and for be eigenvalues of then the spectral radius of is define as .      Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .      Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .     Find the spectral radius of and .     Positive definite matrix    Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.      Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.      Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is alos not negative definite.     We have the following facts about positive definite matrices.    All eigenvalues of a positive definite matrix are real and positive.    Eigenvalues of a negative definite matrix are real and negative.    If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.       Let . For any , we have   Henc e is positive definite.     Let . Show that is positive definite using the above results.     Diagonalization    A matrix is said to be diagonalizable if there exists a non singular matrix such that is a diagonal matrix. That is, is similar to a diagonal matrix.      Let as in Example . Define , whose columns are eigenvectors of .  Check that and . Hence   Then it is easy to check that .  In this case we can find any power of quite easily. For example .      Let . Then 1 is a repeated eigenvalue of with eigenvector . It is easuy to see that is non diagonalizable.     If has distinct eigenvalues then is diagonalizable. In this case, one can define where columns of are eigenvectors of .     A square matrix of order is diagonalizable if and only if has linearly independent eigenvectors.     Let be diagonalizable, and that there exists a non singular matrix such that   Let us write where is the -th column of . Then Eq. implies This implies   Equivalently for . That is same as saying columns of are eigenvectors of with respect to eigenvalue . This implies has linearly eigenvectors, namely columns of .  Conversely, let have linearly independent eigenvectors and that . Define and . Then .  Hence . Note that has rank , which implies is invertible.     If is a square matrix of order has distinct eigenvalues then is diagonalizable.      Let be a real matrix with eigenvalues and corresponding eigenvectors respectively. Then we have . . Hence . It is easy to see that .  Hence .      Let and .  It is easy to check that and have same characteristic polynomial . Also We can show that has only one linearly independent eigenvectors corresponding to eigenvalue . This implies has only two eigenvectors and hence is not diagonalizable.  Similarly, We can show that has two linearly independent eigenvectors corresponding to eigenvalue . This implies has three eigenvectors and hence is diagonalizable.    We mention another criteria of diagonalizability without proof.    Let be an real matrix with distinct eigenvalues and algebraic multiplicity respectively. Then is diagonalizable if and only if algebraic multiplicity is same as geometric multiplicity for each eigenvalue. That is for .      In view of theorem , the matrix in the example is not diagonalizable.      A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.      Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )    132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.     Exercises on Eigenvalues and Eigenvectors    Find the eigenvalues and corresponding eigenvectors of the following matrices (i)   (ii)      Let . Find the eigenvalues of     Let . Show that satisfies its characteristic equation and hence find . Also find .    Check if the following matrices are positive definite?     Find eigenvalues of and . Can you generalize this?    Find the algebraic and geometric multiplicities of each of the eigenvalues of . Is this matrix diagonalizable?    Consider the matrix . What is ?    Let be a real matrix with eigenvalues and corresponding eigenvectors respectively. Find .    Suppose there are two internet service providers and in a city. At present has 50000 subscriber and has 100000 subscribers. A trend shows that every year 60% of subscriber move to and 40% of move to . After 2 year how many subscribers and will have? What happens in long run?     "
+  "body": " Introduction  In this section, we shall define notion of eigenvalues and eigenvector.    Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .      Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.      Consider the matrix of rotation in anti-clock wise by an angle . The it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvector.     If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .   Let us analyze the notion of eigenvalues and eigenvector. If is a eigenvector corresponding to an eigenvalue . Then . This implies , where is identity matrix. This means that the homogeneous system has a non zero solution, namely . Hence . Notice that is a polynomial (called the characteristic polynomial of ) of degree in . Thus if , then is a root of the the characteristic polynomial . By fundamental theorem of algebra an real matrix can have at most real eigenvalues. The equation is called characteristic equation of .  We can write as . If are roots of the characteristics equation, then one can show that .    Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?      Let . What are eigenvalues and eigenvectors of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .      Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to       Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.      Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the {geometric multiplicity of .}  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .     Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .    The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .     Consider the matrix . It is easy to check that . That is has only one eigenvalue of of geometric multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.     Properties of Eigenvalues and Eigenvectors  We list the following properties (without proof.)    and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.       Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by         Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.       (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.    Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .      Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying bu to the equation, , we get , from this we have .  Can you find ?     (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .     Let an and for be eigenvalues of then the spectral radius of is define as .      Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .      Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .     Find the spectral radius of and .     Positive definite matrix    Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.      Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.      Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is alos not negative definite.     We have the following facts about positive definite matrices.    All eigenvalues of a positive definite matrix are real and positive.    Eigenvalues of a negative definite matrix are real and negative.    If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.       Let . For any , we have   Henc e is positive definite.     Let . Show that is positive definite using the above results.     Diagonalization    A matrix is said to be diagonalizable if there exists a non singular matrix such that is a diagonal matrix. That is, is similar to a diagonal matrix.      Let as in Example . Define , whose columns are eigenvectors of .  Check that and . Hence   Then it is easy to check that .  In this case we can find any power of quite easily. For example .      Let . Then 1 is a repeated eigenvalue of with eigenvector . It is easuy to see that is non diagonalizable.     If has distinct eigenvalues then is diagonalizable. In this case, one can define where columns of are eigenvectors of .     A square matrix of order is diagonalizable if and only if has linearly independent eigenvectors.     Let be diagonalizable, and that there exists a non singular matrix such that   Let us write where is the -th column of . Then Eq. implies This implies   Equivalently for . That is same as saying columns of are eigenvectors of with respect to eigenvalue . This implies has linearly eigenvectors, namely columns of .  Conversely, let have linearly independent eigenvectors and that . Define and . Then .  Hence . Note that has rank , which implies is invertible.     If is a square matrix of order has distinct eigenvalues then is diagonalizable.      Let be a real matrix with eigenvalues and corresponding eigenvectors respectively. Then we have . . Hence . It is easy to see that .  Hence .      Let and .  It is easy to check that and have same characteristic polynomial . Also We can show that has only one linearly independent eigenvectors corresponding to eigenvalue . This implies has only two eigenvectors and hence is not diagonalizable.  Similarly, We can show that has two linearly independent eigenvectors corresponding to eigenvalue . This implies has three eigenvectors and hence is diagonalizable.    We mention another criteria of diagonalizability without proof.    Let be an real matrix with distinct eigenvalues and algebraic multiplicity respectively. Then is diagonalizable if and only if algebraic multiplicity is same as geometric multiplicity for each eigenvalue. That is for .      In view of theorem , the matrix in the example is not diagonalizable.      A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.      Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )    132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.     Exercises on Eigenvalues and Eigenvectors    Find the eigenvalues and corresponding eigenvectors of the following matrices (i)   (ii)      Let . Find the eigenvalues of     Let . Show that satisfies its characteristic equation and hence find . Also find .    Check if the following matrices are positive definite?     Find eigenvalues of and . Can you generalize this?    Find the algebraic and geometric multiplicities of each of the eigenvalues of . Is this matrix diagonalizable?    Consider the matrix . What is ?    Let be a real matrix with eigenvalues and corresponding eigenvectors respectively. Find .    Suppose there are two internet service providers and in a city. At present has 50000 subscriber and has 100000 subscribers. A trend shows that every year 60% of subscriber move to and 40% of move to . After 2 year how many subscribers and will have? What happens in long run?     "
 },
 {
   "id": "sec5-0-eigen-3",
@@ -2626,7 +2626,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.2",
   "title": "Gram-Schmidt Orthogonalization Process",
-  "body": " Gram-Schmidt Orthogonalization Process   In this section, we look at how to construct an orthogonal basis from a basis.   Let be a basis of . Define   In view of Ex. , it is easy to see that is an orthogonal basis of . Now we normalize . Define . Then is an orthononal basis of . Note that we could have defined immediately after defining .  This process is called the Gram-Schmidt orthogonalization process.  Geometrically , constructed by subtracting the orthogonal projection of on to . In order to construct , we take sum of orthogonal projections of onto and , which is the orthogonal projection of the plane spanned by and and subtract this from . Readers are encouraged to draw figures.    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis is obtained from the given basis is .      Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .     Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .   "
+  "body": " Gram-Schmidt Orthogonalization Process  In this section, we look at how to construct an orthogonal basis from a basis.  Let be a basis of . Define   In view of Ex. , it is easy to see that is an orthogonal basis of . Now we normalize . Define . Then is an orthononal basis of . Note that we could have defined immediately after defining .  This process is called the Gram-Schmidt orthogonalization process.  Geometrically , constructed by subtracting the orthogonal projection of on to . In order to construct , we take sum of orthogonal projections of onto and , which is the orthogonal projection of the plane spanned by and and subtract this from . Readers are encouraged to draw figures.    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis is obtained from the given basis is .      Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .     Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .   "
 },
 {
   "id": "gram-schmidt-eg1",
@@ -2671,39 +2671,39 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.3",
   "title": "Orthogonal Complements",
-  "body": " Orthogonal Complements        Let . Then is called the orthogonal complement of .     (i)   (ii) .  (iii) Let . Then is a subspace of . Note that need not be a subspace of .     Let . Then .      Find the orthogonal complement of .       Let be a subspace of with and orthogonal basis . If , then .     Let be a subspace of and . Then  (i) and .  (ii) is a vector in , which is closet to . That is for all , . Note that . Hence by the Pythagoras theorem, . .     Consider the plane . It is easy to see that lie on the plane . Using the Gram-Schmidt process we can find an orthogonal basis on . Let us find the orthogonal projection of onto . The required vector .    How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in ? Let be a basis of . We want to find the vector which the orthogonal projection of onto .  Note that , therefore, there exist scalars such that where and .  It is clear that . Hence for . This is same as .  Hence   The matrix is called the projection matrix for the subspace .  "
+  "body": " Orthogonal Complements    Let . Then is called the orthogonal complement of .     (i)   (ii) .  (iii) Let . Then is a subspace of . Note that need not be a subspace of .     Let . Then .      Find the orthogonal complement of .       Let be a subspace of with and orthogonal basis . If , then .     Let be a subspace of and . Then  (i) and .  (ii) is a vector in , which is closet to . That is for all , . Note that . Hence by the Pythagoras theorem, . .     Consider the plane . It is easy to see that lie on the plane . Using the Gram-Schmidt process we can find an orthogonal basis on . Let us find the orthogonal projection of onto . The required vector .    How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in ? Let be a basis of . We want to find the vector which the orthogonal projection of onto .  Note that , therefore, there exist scalars such that where and .  It is clear that . Hence for . This is same as .  Hence   The matrix is called the projection matrix for the subspace .  "
 },
 {
-  "id": "sec6-2-3",
+  "id": "sec6-2-2",
   "level": "2",
-  "url": "sec6-2.html#sec6-2-3",
+  "url": "sec6-2.html#sec6-2-2",
   "type": "Definition",
   "number": "6.3.1",
   "title": "",
   "body": "  Let . Then is called the orthogonal complement of .   "
 },
 {
-  "id": "sec6-2-4",
+  "id": "sec6-2-3",
   "level": "2",
-  "url": "sec6-2.html#sec6-2-4",
+  "url": "sec6-2.html#sec6-2-3",
   "type": "Checkpoint",
   "number": "6.3.2",
   "title": "",
   "body": " (i)   (ii) .  (iii) Let . Then is a subspace of . Note that need not be a subspace of .  "
 },
 {
-  "id": "sec6-2-5",
+  "id": "sec6-2-4",
   "level": "2",
-  "url": "sec6-2.html#sec6-2-5",
+  "url": "sec6-2.html#sec6-2-4",
   "type": "Example",
   "number": "6.3.3",
   "title": "",
   "body": "  Let . Then .   "
 },
 {
-  "id": "sec6-2-6",
+  "id": "sec6-2-5",
   "level": "2",
-  "url": "sec6-2.html#sec6-2-6",
+  "url": "sec6-2.html#sec6-2-5",
   "type": "Example",
   "number": "6.3.4",
   "title": "",
@@ -2719,18 +2719,18 @@ var ptx_lunr_docs = [
   "body": "  Let be a subspace of with and orthogonal basis . If , then .   "
 },
 {
-  "id": "sec6-2-8",
+  "id": "sec6-2-7",
   "level": "2",
-  "url": "sec6-2.html#sec6-2-8",
+  "url": "sec6-2.html#sec6-2-7",
   "type": "Checkpoint",
   "number": "6.3.6",
   "title": "",
   "body": " Let be a subspace of and . Then  (i) and .  (ii) is a vector in , which is closet to . That is for all , . Note that . Hence by the Pythagoras theorem, . .  "
 },
 {
-  "id": "sec6-2-9",
+  "id": "sec6-2-8",
   "level": "2",
-  "url": "sec6-2.html#sec6-2-9",
+  "url": "sec6-2.html#sec6-2-8",
   "type": "Example",
   "number": "6.3.7",
   "title": "",
@@ -2743,7 +2743,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.4",
   "title": "Orthogonal Diagonalizations",
-  "body": " Orthogonal Diagonalizations         Let be an matrix. Then the following are equivalent:  (i) is non-singular and .  (ii) The rows of are orthonormal vectors in . (iii) The columns of are orthonormal vectors in .        A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .        (i) The matrix is an orthogonal matrix.  (ii) is an orthogonal matrix.        An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.        Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.        Let be an matrix. Then the following are equivalent.  (i) has an orthonormal set of eigenvectors.  (ii) is orthogonally diagonalizable.  (iii) is symmetric.        Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .        For the following matrices find an orthogonal matrix such that is a diagonal matrix.         The following are equivalent for an matrix .  (i) is orthogonal  (ii) for all .  (iii) for all .  (iv) .     "
+  "body": " Orthogonal Diagonalizations     Let be an matrix. Then the following are equivalent:  (i) is non-singular and .  (ii) The rows of are orthonormal vectors in . (iii) The columns of are orthonormal vectors in .        A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .        (i) The matrix is an orthogonal matrix.  (ii) is an orthogonal matrix.        An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.        Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.        Let be an matrix. Then the following are equivalent.  (i) has an orthonormal set of eigenvectors.  (ii) is orthogonally diagonalizable.  (iii) is symmetric.        Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .        For the following matrices find an orthogonal matrix such that is a diagonal matrix.         The following are equivalent for an matrix .  (i) is orthogonal  (ii) for all .  (iii) for all .  (iv) .     "
 },
 {
   "id": "orthogonal-ex1",
@@ -2755,72 +2755,72 @@ var ptx_lunr_docs = [
   "body": "  Let be an matrix. Then the following are equivalent:  (i) is non-singular and .  (ii) The rows of are orthonormal vectors in . (iii) The columns of are orthonormal vectors in .   "
 },
 {
-  "id": "sec6-3-4-1",
+  "id": "sec6-3-3-1",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-4-1",
+  "url": "sec6-3.html#sec6-3-3-1",
   "type": "Definition",
   "number": "6.4.2",
   "title": "",
   "body": "  A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .   "
 },
 {
-  "id": "sec6-3-5-1",
+  "id": "sec6-3-4-1",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-5-1",
+  "url": "sec6-3.html#sec6-3-4-1",
   "type": "Example",
   "number": "6.4.3",
   "title": "",
   "body": "  (i) The matrix is an orthogonal matrix.  (ii) is an orthogonal matrix.   "
 },
 {
-  "id": "sec6-3-6-1",
+  "id": "sec6-3-5-1",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-6-1",
+  "url": "sec6-3.html#sec6-3-5-1",
   "type": "Definition",
   "number": "6.4.4",
   "title": "",
   "body": "  An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.   "
 },
 {
-  "id": "sec6-3-7-1",
+  "id": "sec6-3-6-1",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-7-1",
+  "url": "sec6-3.html#sec6-3-6-1",
   "type": "Example",
   "number": "6.4.5",
   "title": "",
   "body": "  Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.   "
 },
 {
-  "id": "sec6-3-8-1",
+  "id": "sec6-3-7-1",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-8-1",
+  "url": "sec6-3.html#sec6-3-7-1",
   "type": "Theorem",
   "number": "6.4.6",
   "title": "",
   "body": "  Let be an matrix. Then the following are equivalent.  (i) has an orthonormal set of eigenvectors.  (ii) is orthogonally diagonalizable.  (iii) is symmetric.   "
 },
 {
-  "id": "sec6-3-9-1",
+  "id": "sec6-3-8-1",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-9-1",
+  "url": "sec6-3.html#sec6-3-8-1",
   "type": "Example",
   "number": "6.4.7",
   "title": "",
   "body": "  Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .   "
 },
 {
-  "id": "sec6-3-10-1",
+  "id": "sec6-3-9-1",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-10-1",
+  "url": "sec6-3.html#sec6-3-9-1",
   "type": "Problem",
   "number": "6.4.8",
   "title": "",
   "body": "  For the following matrices find an orthogonal matrix such that is a diagonal matrix.    "
 },
 {
-  "id": "sec6-3-11-1",
+  "id": "sec6-3-10-1",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-11-1",
+  "url": "sec6-3.html#sec6-3-10-1",
   "type": "Theorem",
   "number": "6.4.9",
   "title": "",
@@ -2833,12 +2833,12 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.5",
   "title": "QR-Factorization",
-  "body": " QR-Factorization      Let be an matrix whose columns are . Further assume that columns of are linearly independent. Using the Gram-Schmidt orthogonalization process and define . This implies .  Hence .  Thus we have   Thus   Here has orthogonal columns and is upper triangular whose diagonal entries which are positive, hence non-singular. This is what is known as factorization. Thus we have the following result.    Every matrix with linearly independent columns has a factorization, , where columns of are orthonormal and is an upper triangular matrix with positive diagonal entries.      Let . Let us find the factorization of . Note that columns of are vectors in the Example . We have found in this example. Hence . We also have   Hence   Note that once we have , then .      Find the QR-factorization of . It is easy to check that columns of are linearly independent. In fact, columns of are rows of the matrix defined in the Example . From this example, we have    Hence . Also .     If a matrix has independent rows, then we apply factorization to . Thus where is the the invertible lower triangular matrix with positive diagonal entries and and has orthogonal rows.    In case a matrix has linearly independent columns then the factorization is unique. That is, if , then and .      Find the QR-factorization of the following matrices:    "
+  "body": " QR-Factorization  Let be an matrix whose columns are . Further assume that columns of are linearly independent. Using the Gram-Schmidt orthogonalization process and define . This implies .  Hence .  Thus we have   Thus   Here has orthogonal columns and is upper triangular whose diagonal entries which are positive, hence non-singular. This is what is known as factorization. Thus we have the following result.    Every matrix with linearly independent columns has a factorization, , where columns of are orthonormal and is an upper triangular matrix with positive diagonal entries.      Let . Let us find the factorization of . Note that columns of are vectors in the Example . We have found in this example. Hence . We also have   Hence   Note that once we have , then .      Find the QR-factorization of . It is easy to check that columns of are linearly independent. In fact, columns of are rows of the matrix defined in the Example . From this example, we have    Hence . Also .     If a matrix has independent rows, then we apply factorization to . Thus where is the the invertible lower triangular matrix with positive diagonal entries and and has orthogonal rows.    In case a matrix has linearly independent columns then the factorization is unique. That is, if , then and .      Find the QR-factorization of the following matrices:    "
 },
 {
-  "id": "sec6-4-8",
+  "id": "sec6-4-7",
   "level": "2",
-  "url": "sec6-4.html#sec6-4-8",
+  "url": "sec6-4.html#sec6-4-7",
   "type": "Theorem",
   "number": "6.5.1",
   "title": "",
@@ -2854,36 +2854,36 @@ var ptx_lunr_docs = [
   "body": "  Let . Let us find the factorization of . Note that columns of are vectors in the Example . We have found in this example. Hence . We also have   Hence   Note that once we have , then .   "
 },
 {
-  "id": "sec6-4-10",
+  "id": "sec6-4-9",
   "level": "2",
-  "url": "sec6-4.html#sec6-4-10",
+  "url": "sec6-4.html#sec6-4-9",
   "type": "Example",
   "number": "6.5.3",
   "title": "",
   "body": "  Find the QR-factorization of . It is easy to check that columns of are linearly independent. In fact, columns of are rows of the matrix defined in the Example . From this example, we have    Hence . Also .   "
 },
 {
-  "id": "sec6-4-11",
+  "id": "sec6-4-10",
   "level": "2",
-  "url": "sec6-4.html#sec6-4-11",
+  "url": "sec6-4.html#sec6-4-10",
   "type": "Remark",
   "number": "6.5.4",
   "title": "",
   "body": " If a matrix has independent rows, then we apply factorization to . Thus where is the the invertible lower triangular matrix with positive diagonal entries and and has orthogonal rows.  "
 },
 {
-  "id": "sec6-4-12",
+  "id": "sec6-4-11",
   "level": "2",
-  "url": "sec6-4.html#sec6-4-12",
+  "url": "sec6-4.html#sec6-4-11",
   "type": "Remark",
   "number": "6.5.5",
   "title": "",
   "body": " In case a matrix has linearly independent columns then the factorization is unique. That is, if , then and .  "
 },
 {
-  "id": "sec6-4-14",
+  "id": "sec6-4-13",
   "level": "2",
-  "url": "sec6-4.html#sec6-4-14",
+  "url": "sec6-4.html#sec6-4-13",
   "type": "Checkpoint",
   "number": "6.5.6",
   "title": "",
@@ -3103,7 +3103,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.2",
   "title": "Exercise Set",
-  "body": " Exercise Set    Problem set on orthogonality and inner Product       Let be an orthogonal set of vectors in . Let and define , Then (i) for all (ii) If , then and is an orthogonal set.    If is orthogonal set then it is linearly independent.    Find the coordinates of the vector with respect to an orthonormal basis of .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say, of starting with a basis . Define , the column matrix whose columns are . Show that .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say, of the subspace with basis . Define , the column matrix whose columns are . Show that . Suppose . Find and check that it is an upper triangular matrix with positive diagonal matrix. If we write , then called the -factorization of .    The following are equivalent for an matrix . (i) is orthogonal (ii) for all . (iii) for all . (iv) . {Hint: A matrix is orthogonal if if it satisfies any one of the above conditions.}    For the following matrices find an orthogonal matrix such that is a diagonal matrix.     Find the QR-factorization of the following matrices:     Let be an inner product space. Then for any two vectors , show that     If are two vectors in an inner product space with inner product . Then show that . This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonal is 2 the sum of the squares of the side lengths.    Let be a real inner product space. Let be orthogonal vectors in . Then show that . This is an extension of the Pythagoras Theorem.    Let be an orthogonal basis of an inner product space . Let and between and , respectively. Then . Here are called the direction cosines of corresponding to .    Find the orthogonal projection of vector onto the subspace spanned by three vectors .    Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process. (Hint: replace dot product in the Gram-SChmidt process by the inner product.)    Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.    (i) Define where . Show that is an inner product on . Hence show that (ii) Show that is an orthogonal basis of with respect to this inner product. (iii) Consider a basis of . Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of with respect to the inner product defined in (i).     "
+  "body": " Exercise Set   Problem set on orthogonality and inner Product      Let be an orthogonal set of vectors in . Let and define , Then (i) for all (ii) If , then and is an orthogonal set.    If is orthogonal set then it is linearly independent.    Find the coordinates of the vector with respect to an orthonormal basis of .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say, of starting with a basis . Define , the column matrix whose columns are . Show that .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say, of the subspace with basis . Define , the column matrix whose columns are . Show that . Suppose . Find and check that it is an upper triangular matrix with positive diagonal matrix. If we write , then called the -factorization of .    The following are equivalent for an matrix . (i) is orthogonal (ii) for all . (iii) for all . (iv) . {Hint: A matrix is orthogonal if if it satisfies any one of the above conditions.}    For the following matrices find an orthogonal matrix such that is a diagonal matrix.     Find the QR-factorization of the following matrices:     Let be an inner product space. Then for any two vectors , show that     If are two vectors in an inner product space with inner product . Then show that . This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonal is 2 the sum of the squares of the side lengths.    Let be a real inner product space. Let be orthogonal vectors in . Then show that . This is an extension of the Pythagoras Theorem.    Let be an orthogonal basis of an inner product space . Let and between and , respectively. Then . Here are called the direction cosines of corresponding to .    Find the orthogonal projection of vector onto the subspace spanned by three vectors .    Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process. (Hint: replace dot product in the Gram-SChmidt process by the inner product.)    Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.    (i) Define where . Show that is an inner product on . Hence show that (ii) Show that is an orthogonal basis of with respect to this inner product. (iii) Consider a basis of . Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of with respect to the inner product defined in (i).     "
 },
 {
   "id": "sec8-0-LSTSQ",

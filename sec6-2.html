@@ -106,24 +106,24 @@ window.MathJax = {
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
-#sec-elementary-operations-3 { counter-set: sec-elementary-operations-3 0; }
-#sec-elementary-operations-3 > li::marker { content: ""counter(sec-elementary-operations-3,decimal)"."; }
-#sec-elementary-operations-3 > li { counter-increment: sec-elementary-operations-3; }
+#subsec-elmentary-row-operations-3 { counter-set: subsec-elmentary-row-operations-3 0; }
+#subsec-elmentary-row-operations-3 > li::marker { content: ""counter(subsec-elmentary-row-operations-3,decimal)"."; }
+#subsec-elmentary-row-operations-3 > li { counter-increment: subsec-elmentary-row-operations-3; }
 #def-elementary-row-operations-2-1-2 { counter-set: def-elementary-row-operations-2-1-2 0; }
 #def-elementary-row-operations-2-1-2 > li::marker { content: ""counter(def-elementary-row-operations-2-1-2,decimal)"."; }
 #def-elementary-row-operations-2-1-2 > li { counter-increment: def-elementary-row-operations-2-1-2; }
-#sec-elementary-operations-8-14-1 { counter-set: sec-elementary-operations-8-14-1 0; }
-#sec-elementary-operations-8-14-1 > li::marker { content: ""counter(sec-elementary-operations-8-14-1,decimal)"."; }
-#sec-elementary-operations-8-14-1 > li { counter-increment: sec-elementary-operations-8-14-1; }
-#sec-elementary-operations-15-1-1 { counter-set: sec-elementary-operations-15-1-1 0; }
-#sec-elementary-operations-15-1-1 > li::marker { content: ""counter(sec-elementary-operations-15-1-1,decimal)"."; }
-#sec-elementary-operations-15-1-1 > li { counter-increment: sec-elementary-operations-15-1-1; }
+#subsec-elmentary-row-operations-8-14-1 { counter-set: subsec-elmentary-row-operations-8-14-1 0; }
+#subsec-elmentary-row-operations-8-14-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-8-14-1,decimal)"."; }
+#subsec-elmentary-row-operations-8-14-1 > li { counter-increment: subsec-elmentary-row-operations-8-14-1; }
+#subsec-elmentary-row-operations-15-1-1 { counter-set: subsec-elmentary-row-operations-15-1-1 0; }
+#subsec-elmentary-row-operations-15-1-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-15-1-1,decimal)"."; }
+#subsec-elmentary-row-operations-15-1-1 > li { counter-increment: subsec-elmentary-row-operations-15-1-1; }
 #def-echelon-form-5 { counter-set: def-echelon-form-5 0; }
 #def-echelon-form-5 > li::marker { content: ""counter(def-echelon-form-5,decimal)"."; }
 #def-echelon-form-5 > li { counter-increment: def-echelon-form-5; }
-#sec-echelon-form-5-3 { counter-set: sec-echelon-form-5-3 0; }
-#sec-echelon-form-5-3 > li::marker { content: ""counter(sec-echelon-form-5-3,decimal)"."; }
-#sec-echelon-form-5-3 > li { counter-increment: sec-echelon-form-5-3; }
+#sec-row-echelon-5-3 { counter-set: sec-row-echelon-5-3 0; }
+#sec-row-echelon-5-3 > li::marker { content: ""counter(sec-row-echelon-5-3,decimal)"."; }
+#sec-row-echelon-5-3 > li { counter-increment: sec-row-echelon-5-3; }
 #alg-gaussian-elimination-2 { counter-set: alg-gaussian-elimination-2 0; }
 #alg-gaussian-elimination-2 > li::marker { content: ""counter(alg-gaussian-elimination-2,decimal)"."; }
 #alg-gaussian-elimination-2 > li { counter-increment: alg-gaussian-elimination-2; }
@@ -160,9 +160,9 @@ window.MathJax = {
 #sec-xxx-2-3 { counter-set: sec-xxx-2-3 0; }
 #sec-xxx-2-3 > li::marker { content: ""counter(sec-xxx-2-3,decimal)"."; }
 #sec-xxx-2-3 > li { counter-increment: sec-xxx-2-3; }
-#sec4-1-VS-2-2-1-1-6 { counter-set: sec4-1-VS-2-2-1-1-6 0; }
-#sec4-1-VS-2-2-1-1-6 > li::marker { content: ""counter(sec4-1-VS-2-2-1-1-6,decimal)"."; }
-#sec4-1-VS-2-2-1-1-6 > li { counter-increment: sec4-1-VS-2-2-1-1-6; }
+#sec4-1-VS-3-1-1-6 { counter-set: sec4-1-VS-3-1-1-6 0; }
+#sec4-1-VS-3-1-1-6 > li::marker { content: ""counter(sec4-1-VS-3-1-1-6,decimal)"."; }
+#sec4-1-VS-3-1-1-6 > li { counter-increment: sec4-1-VS-3-1-1-6; }
 #thm-basis-equiv-1-1-3 { counter-set: thm-basis-equiv-1-1-3 0; }
 #thm-basis-equiv-1-1-3 > li::marker { content: ""counter(thm-basis-equiv-1-1-3,decimal)"."; }
 #thm-basis-equiv-1-1-3 > li { counter-increment: thm-basis-equiv-1-1-3; }
@@ -230,8 +230,7 @@ window.MathJax = {
 \newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
 \def\rank{{ rank\,}}
 \newcommand{\ds}{\displaystyle}
-\renewcommand{\headrulewidth}{0.5mm}
-\renewcommand{\footrulewidth}{0.5mm}
+
 \def\diag{{ diag\,}}
 \def\proj{{ proj\,}}
 \newcommand{\lt}{&lt;}
@@ -248,14 +247,18 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Row Operations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-Matrix-inverse-using-rref" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Matrix Inversion via Elementary Row Operations</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-elmentary-row-operations" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Elmentary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-Matrix-inverse-using-rref" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Matrix Inversion via Elementary Row Operations</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-col-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Column Operations</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-echelon-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Echelon Forms</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#subsec-Gaussian-Elimination" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Gaussian Elimination Method</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#subsec-Gauss-Jordan-Method" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Gauss-Jordan elimination method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#sec-row-echelon" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Row Echelon Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#subsec-Gaussian-Elimination" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Gaussian Elimination Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#subsec-Gauss-Jordan-Method" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Gauss-Jordan elimination method</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec1-4-matrix-rank.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Rank of Matrices</span></a></div></li>
@@ -316,9 +319,9 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Basis and dimension</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-18" class="internal"><span class="codenumber">4.5.1</span> <span class="title">How to find a basis of a finite dimensional vector space?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-19" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Lagrange Interpolation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-26" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Dimension Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-17" class="internal"><span class="codenumber">4.5.1</span> <span class="title">How to find a basis of a finite dimensional vector space?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-18" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Lagrange Interpolation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-25" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Dimension Formula</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-5-VS-Ex.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Exercise Set</span></a></div></li>
@@ -396,34 +399,34 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec6-2"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">6.3</span><span class="space"> </span><span class="title">Orthogonal Complements</span>
 </h2>
-<section class="introduction" id="sec6-2-2"><div class="para" id="sec6-2-2-1"></div></section><article class="definition definition-like" id="sec6-2-3"><h3 class="heading">
+<article class="definition definition-like" id="sec6-2-2"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec6-2-3-1-1">Let <span class="process-math">\(U\subset \R^n\text{.}\)</span> Then <span class="process-math">\(U^\perp:=\{x\in \R^n: x\cdot u=0, \forall u\in U\}\)</span> is called the orthogonal complement of <span class="process-math">\(U\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="sec6-2-4"><h3 class="heading">
+<div class="para" id="sec6-2-2-1-1">Let <span class="process-math">\(U\subset \R^n\text{.}\)</span> Then <span class="process-math">\(U^\perp:=\{x\in \R^n: x\cdot u=0, \forall u\in U\}\)</span> is called the orthogonal complement of <span class="process-math">\(U\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="sec6-2-3"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec6-2-4-1-1">(i) <span class="process-math">\(\{0\}^\perp = \R^n\)</span>
-</div> <div class="para" id="sec6-2-4-1-2">(ii) <span class="process-math">\({\R^n}^{\perp}=\{0\}\text{.}\)</span>
-</div> <div class="para" id="sec6-2-4-1-3">(iii) Let <span class="process-math">\(U\subset \R^n\text{.}\)</span> Then <span class="process-math">\(U^\perp\)</span> is a subspace of <span class="process-math">\(\R^n\text{.}\)</span> Note that <span class="process-math">\(U\)</span> need not be a subspace of <span class="process-math">\(\R^n\text{.}\)</span>
-</div></article><article class="example example-like" id="sec6-2-5"><h3 class="heading">
+<div class="para" id="sec6-2-3-1-1">(i) <span class="process-math">\(\{0\}^\perp = \R^n\)</span>
+</div> <div class="para" id="sec6-2-3-1-2">(ii) <span class="process-math">\({\R^n}^{\perp}=\{0\}\text{.}\)</span>
+</div> <div class="para" id="sec6-2-3-1-3">(iii) Let <span class="process-math">\(U\subset \R^n\text{.}\)</span> Then <span class="process-math">\(U^\perp\)</span> is a subspace of <span class="process-math">\(\R^n\text{.}\)</span> Note that <span class="process-math">\(U\)</span> need not be a subspace of <span class="process-math">\(\R^n\text{.}\)</span>
+</div></article><article class="example example-like" id="sec6-2-4"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="sec6-2-5-1-1">
+<div class="para logical" id="sec6-2-4-1-1">
 <div class="para">Let <span class="process-math">\(U=span(\{(2,-1,1),(1,2,-1)\})\text{.}\)</span> Then</div>
-<div class="displaymath process-math" id="sec6-2-5-1-1-2">
+<div class="displaymath process-math" id="sec6-2-4-1-1-2">
 \begin{align*}
 U^\perp  =\amp  \{(x_1,x_2,x_3): 2x_1-x_2+x_3=0,x_1+2x_2-x_3=0\}\\
 =\amp null\left(\begin{array}{rrr} 2 \amp  -1 \amp  1 \\ 1 \amp  2 \amp  -1 \end{array} \right)= \{t(1,-3,-5):t\in \R\}\text{.}
 \end{align*}
 </div>
-</div></article><article class="example example-like" id="sec6-2-6"><h3 class="heading">
+</div></article><article class="example example-like" id="sec6-2-5"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="sec6-2-6-1-1">
+<div class="para logical" id="sec6-2-5-1-1">
 <div class="para">Find the orthogonal complement of <span class="process-math">\(span(\{\left(2,\,0,\,1,\,-1\right), \left(1,\,2,\,0,\,-1\right)\})\text{.}\)</span>
 </div>
-<div class="displaymath process-math" id="sec6-2-6-1-1-2">
+<div class="displaymath process-math" id="sec6-2-5-1-1-2">
 \begin{align*}
 U^\perp  =\amp  \{(x_1,x_2,x_3,x_3): 2x_1+x_3-x_4=0,x_1+2x_2-x_4=0\}\\
 =\amp null\left(\begin{array}{rrrr} 2 \amp  0 \amp  1 \amp  -1 \\ 1 \amp  2 \amp  0 \amp  -1 \end{array} \right)\\
@@ -440,11 +443,11 @@ U^\perp  =\amp  \{(x_1,x_2,x_3,x_3): 2x_1+x_3-x_4=0,x_1+2x_2-x_4=0\}\\
 \proj_U(x)=\frac{x\cdot u_1}{\norm{u_1}^2}u_1+\frac{x\cdot u_2}{\norm{u_2}^2}u_2+\cdots + \frac{x\cdot u_k}{\norm{u_k}^2}u_k\text{.}\tag{6.3.1}
 \end{equation}
 </div>
-</div></article><article class="exercise exercise-like" id="sec6-2-8"><h3 class="heading">
+</div></article><article class="exercise exercise-like" id="sec6-2-7"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.6</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec6-2-8-1-1">Let <span class="process-math">\(U\)</span> be a subspace of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(p=\proj_U(x)\text{.}\)</span> Then</div> <div class="para" id="sec6-2-8-1-2">(i) <span class="process-math">\(p\in U\)</span> and <span class="process-math">\((x-p) \in U^\perp\text{.}\)</span>
-</div> <div class="para logical" id="sec6-2-8-1-3">
+<div class="para" id="sec6-2-7-1-1">Let <span class="process-math">\(U\)</span> be a subspace of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(p=\proj_U(x)\text{.}\)</span> Then</div> <div class="para" id="sec6-2-7-1-2">(i) <span class="process-math">\(p\in U\)</span> and <span class="process-math">\((x-p) \in U^\perp\text{.}\)</span>
+</div> <div class="para logical" id="sec6-2-7-1-3">
 <div class="para">(ii) <span class="process-math">\(p\)</span> is a vector in <span class="process-math">\(U\text{,}\)</span> which is closet to <span class="process-math">\(x\text{.}\)</span> That is for all <span class="process-math">\(y\in U\text{,}\)</span> <span class="process-math">\(\norm{x-p}\leq \norm{x-y}\text{.}\)</span> Note that <span class="process-math">\((x-p)\perp (y-p)\text{.}\)</span> Hence by the Pythagoras theorem, <span class="process-math">\(\norm{x-p}^2+\norm{p-y}^2=\norm{x-y}^2\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -452,10 +455,10 @@ U^\perp  =\amp  \{(x_1,x_2,x_3,x_3): 2x_1+x_3-x_4=0,x_1+2x_2-x_4=0\}\\
 \norm{x-y}^2=\norm{x-p+p-y}^2=\norm{x-p}^2+\norm{y-p}^2\geq \norm{x-p}^2\text{.}
 \end{equation*}
 </div>
-</div></article><article class="example example-like" id="sec6-2-9"><h3 class="heading">
+</div></article><article class="example example-like" id="sec6-2-8"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.7</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="sec6-2-9-1-1">
+<div class="para logical" id="sec6-2-8-1-1">
 <div class="para">Consider the plane <span class="process-math">\(\pi=\{(x,y,z\in \R^3:3x+y-5z=0\}\text{.}\)</span> It is easy to see that <span class="process-math">\(v_1=(2,-1,1),
 v_2=(1,2,1)\)</span> lie on the plane <span class="process-math">\(\pi\text{.}\)</span> Using the Gram-Schmidt process we can find an orthogonal basis <span class="process-math">\(u_1 = (2,-1,1),
 u_2=(2/3, 13/6, 5/6)\)</span> on <span class="process-math">\(\pi\text{.}\)</span> Let us find the orthogonal projection of <span class="process-math">\(v=(1,2,3)\)</span> onto <span class="process-math">\(\pi\text{.}\)</span> The required vector</div>
@@ -464,9 +467,9 @@ u_2=(2/3, 13/6, 5/6)\)</span> on <span class="process-math">\(\pi\text{.}\)</spa
 \proj_\pi(v)=\frac{v\cdot u_1}{\norm{u_1}^2}u_1+\frac{v\cdot u_2}{\norm{u_2}^2}u_2=(13/7, 16/7, 11/7)\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para" id="sec6-2-10">How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in <span class="process-math">\(\R^n\text{?}\)</span> Let <span class="process-math">\(\beta = \{w_1,\ldots, w_k\}\)</span> be a basis of <span class="process-math">\(W\text{.}\)</span> We want to find the vector <span class="process-math">\(p\)</span> which the orthogonal projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(W\text{.}\)</span>
+</div></article><div class="para" id="sec6-2-9">How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in <span class="process-math">\(\R^n\text{?}\)</span> Let <span class="process-math">\(\beta = \{w_1,\ldots, w_k\}\)</span> be a basis of <span class="process-math">\(W\text{.}\)</span> We want to find the vector <span class="process-math">\(p\)</span> which the orthogonal projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(W\text{.}\)</span>
 </div>
-<div class="para logical" id="sec6-2-11">
+<div class="para logical" id="sec6-2-10">
 <div class="para">Note that <span class="process-math">\(p\in W\text{,}\)</span> therefore, there exist scalars <span class="process-math">\(x_1,\ldots, x_k\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -476,7 +479,7 @@ p=x_1 v_1+\cdots + x_k v_k=Ax
 <div class="para">where <span class="process-math">\(A=[v_1~\cdots ~ v_k]\)</span> and <span class="process-math">\(x=[x_1~\cdots~x_k]^T\text{.}\)</span>
 </div>
 </div>
-<div class="para logical" id="sec6-2-12">
+<div class="para logical" id="sec6-2-11">
 <div class="para">It is clear that <span class="process-math">\(v-p=v-Ax\in W^T\text{.}\)</span> Hence <span class="process-math">\((v_i)^T(v-Ax)=0\)</span> for <span class="process-math">\(1\leq i\leq k\text{.}\)</span> This is same as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -484,7 +487,7 @@ A^T(v-Ax)=0 \implies x=(A^TA)^{-1}(A^Tv)\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="sec6-2-13">
+<div class="para logical" id="sec6-2-12">
 <div class="para">Hence</div>
 <div class="displaymath process-math" id="orth-Proj-W">
 \begin{equation}
@@ -492,7 +495,7 @@ p=A(A^TA)^{-1}(A^Tv)\tag{6.3.2}
 \end{equation}
 </div>
 </div>
-<div class="para" id="sec6-2-14">The matrix <span class="process-math">\(Q=A(A^TA)^{-1}A^T\)</span> is called the “projection matrix for the subspace <span class="process-math">\(W\)</span>”.</div></section></div>
+<div class="para" id="sec6-2-13">The matrix <span class="process-math">\(Q=A(A^TA)^{-1}A^T\)</span> is called the “projection matrix for the subspace <span class="process-math">\(W\)</span>”.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec6-1-GramSchmidt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec6-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
