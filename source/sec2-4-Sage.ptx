@@ -315,9 +315,6 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
  </example>
  <example>
     <title>Linear Span of vectors in Sage</title>
-    <p>
-        
-    </p>
     Sage can generate a linear span of a set of vectors in a vector space 
     using the vector space method <code>.span()</code>. Let us explore this 
     for set of 5 vectors in a vector space <code>V=QQ^4</code>.
@@ -548,7 +545,7 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
 </sage>
 </example>
 
-<example>
+<example xml:id="fundamental-spaces-sage-eg1">
   <title>Fundamental subscapes of a matrix</title>
   <p>
     Consider a matrix <m> A= \left(\begin{array}{rrrrrr}
@@ -561,5 +558,382 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
         Example <xref ref="sec2-1-matrix-spaces"/> 
   </p>
     
+  <solution>
+    <p>
+        First of all let us find the row space using the method <c>.row_space()</c>. 
+        This returns the dimension and the basis matrix of the row space. This we can 
+        verify using rref applied to the matrix <m>A</m>. 
+        <sage>
+            <input>
+                A =matrix([[-351, -1053 , -1053 , 160 , 382 , 1657 ], 
+           [-32 , -96 , -96 , 15 , 35 , 152 ],
+           [-36 , -108 , -108 , 16 , 39 , 169 ],
+           [11 , 33 , 33 , -5 , -12 , -52 ],
+           [-11 , -33 , -33 , 5 , 12 , 52]])
+           A.row_space()
+            </input>
+            <output>
+                Free module of degree 6 and rank 3 over Integer Ring
+                Echelon basis matrix:
+                [ 1  3  3  0  0 -1]
+                [ 0  0  0  1  0  1]
+                [ 0  0  0  0  1  3]  
+            </output>
+        </sage>
+        <sage>
+            <input>
+                A.rref()
+            </input>
+            <output>
+                [ 1  3  3  0  0 -1]
+                [ 0  0  0  1  0  1]
+                [ 0  0  0  0  1  3]
+                [ 0  0  0  0  0  0]
+                [ 0  0  0  0  0  0]
+            </output>
+        </sage>
+        Clearly the first three row of rref(A) is same as basis matrix obtained uising 
+        the inbuilt sage method.
+
+        <p>
+            Next we find the columns space using the sage method <c>A.column_space()</c> 
+            and verify the same using the rref applied to <m>A^T</m>. 
+        </p>
+        <sage>
+            <input>
+                ## Column space of A
+                A.column_space()
+            </input>
+            <output>
+                Free module of degree 5 and rank 3 over Integer Ring
+                Echelon basis matrix:
+                [ 1  0  0 -1  1]
+                [ 0  1  0  5 -5]
+                [ 0  0  1  5 -5]
+            </output>
+        </sage>
+        <sage>
+            <input>
+                ## Finding basis of column space using RREF
+                A.T.rref()
+            </input>
+            <output>
+                [ 1  0  0 -1  1]
+                [ 0  1  0  5 -5]
+                [ 0  0  1  5 -5]
+                [ 0  0  0  0  0]
+                [ 0  0  0  0  0]
+                [ 0  0  0  0  0]
+            </output>
+        </sage>
+        Clearly, the 1st three rows of rref(A) are same as basis matrix of 
+        <c>A.column_space()</c>
+
+        <p>
+            The column space of <m>A</m> is also known as image space of <m>A</m>. Sage 
+            has inbuilt method <c>A.image()</c> to find the image space.
+        </p>
+        <sage>
+            <input>
+            A.image()  
+            </input>
+            <output>
+                [ 1  0  0 -1  1]
+                [ 0  1  0  5 -5]
+                [ 0  0  1  5 -5]
+                [ 0  0  0  0  0]
+                [ 0  0  0  0  0]
+                [ 0  0  0  0  0]   
+            </output>
+        </sage>
+        <p>
+            The null space of <m>A</m> also known as kernel of <m>A</m> can be obtained 
+            by the sage method <c>A.right_kernel()</c>. 
+        </p>
+        <sage>
+            <input>
+            A.right_kernel()
+            </input>
+            <output>
+                Free module of degree 6 and rank 3 over Integer Ring
+                Echelon basis matrix:
+                [ 1  0  0 -1 -3  1]
+                [ 0  1  0 -3 -9  3]
+                [ 0  0  1 -3 -9  3]
+            </output>
+        </sage>
+        Clearly, the kernel is of dimension 3. 
+        <p>
+            The left null space can be obtained by the sage method <c>A.left_kernel()</c> 
+            or using <c>A.T.right_kernel()</c>.
+        </p>
+        <sage>
+            <input>
+            A.left_kernel()
+            </input>
+            <output>
+                Free module of degree 5 and rank 2 over Integer Ring
+                Echelon basis matrix:
+                [ 1 -5 -5  0 -1]
+                [ 0  0  0  1  1]  
+            </output>
+        </sage>
+        <sage>
+            <input>
+                A.T.right_kernel()
+            </input>
+            <output>
+                Free module of degree 5 and rank 2 over Integer Ring
+                Echelon basis matrix:
+                [ 1 -5 -5  0 -1]
+                [ 0  0  0  1  1]   
+            </output>
+        </sage>
+    </p>
+  </solution>
+</example>
+<observation>
+   Consider the matrix <m>A</m> defined in the Example 
+   <xref ref="fundamental-spaces-sage-eg1"/>. Observe the following:
+   <p>
+    (i) Let <m>u</m> be a random element in <m>Row(A)</m> and <m>v</m> 
+    be a random element in <m>null(A)</m>. Then <m>u</m> and <m>v</m> are 
+    orthogoal. That is, <m>u\cdot v=0</m>.
+   </p>  
+   <p>
+    (ii) Let <m>u</m> be a random element in <m>Col(A)</m> and <m>v</m> 
+    be a random element in <m>leftnull(A)</m>. Then <m>u</m> and <m>v</m> are 
+    orthogoal. That is, <m>u\cdot v=0</m>.
+   </p>
+<solution>
+    <p>
+    <sage>
+        <input>
+        A =matrix([[-351, -1053 , -1053 , 160 , 382 , 1657 ], 
+        [-32 , -96 , -96 , 15 , 35 , 152 ],
+        [-36 , -108 , -108 , 16 , 39 , 169 ],
+        [11 , 33 , 33 , -5 , -12 , -52 ],
+        [-11 , -33 , -33 , 5 , 12 , 52]])
+        rowA = A.row_space()
+        colA = A.column_space()
+        nullA = A.right_kernel()
+        leftnullA = A.left_kernel()
+       
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <sage>
+        <input>
+            u = rowA.random_element()
+            v = nullA.random_element()
+            u.dot_product(v)
+        </input>
+        <output>
+         0   
+        </output>
+    </sage>
+    <sage>
+        <input>
+            u = colA.random_element()
+            v = leftnullA.random_element()
+            u.dot_product(v)
+        </input>
+        <output>
+         0   
+        </output>
+    </sage>
+    </p>
+</solution>
+</observation>
+<example><title>Change of coordinates</title>
+<p>
+ Consider the vector space <m>V=\mathbb{Q}^4</m>. Defines two subsets
+ <me>
+    \beta=\{(-5, 8,  0, 4),(-3, 9, -2, 4),(-1, 4, -1, 2),(-1, 2,  0, 1)\}
+ </me>
+and 
+<me>
+    \gamma = \{(0,  2, -7,  5),(-1,  2, -1,  4),(1, -3,  5, -7),(1,  1, -8,  3)\}
+</me>.
+    Check that <m>\beta</m> and <m>\gamma</m> are linearly independent hence they form 
+    bases of <m>V</m>. Let <m>x=(3,5,7,9)\in V</m>. Find the coordinates of <m>x</m> with 
+    respect to <m>\beta</m>  and <m>\gamma</m> and denote them by <m>x_\beta</m> and 
+    <m>x_\gamma</m> respectively. Find the change of basis matrices <m>[I]_\beta^\gamma</m>
+    and <m>[I]_\gamma^\beta</m>. Show that 
+    <m>\left([I]_\beta^\gamma\right)^{-1}=[I]_\gamma^\beta</m>.  Also verify that
+    <m>[I]_\beta^\gamma x_\beta=x_\gamma</m> and 
+    <m>[I]_\gamma^\beta x_\gamma=x_\beta</m>.
+</p>
+
+ <solution>
+    <p>
+      <sage>
+        <input>
+            V = QQ^4
+            b1 = vector(QQ, [-5, 8,  0, 4])
+            b2 = vector(QQ, [-3, 9, -2, 4])
+            b3 = vector(QQ, [-1, 4, -1, 2])
+            b4 = vector(QQ, [-1, 2,  0, 1])
+            B = [b1, b2, b3, b4]
+            V.are_linearly_dependent(B)
+        </input>
+        <output>
+        False
+        </output>
+      </sage>  
+      <sage>
+        <input>
+            c1 = vector(QQ, [ 0,  2, -7,  5])
+            c2 = vector(QQ, [-1,  2, -1,  4])
+            c3 = vector(QQ, [ 1, -3,  5, -7])
+            c4 = vector(QQ, [ 1,  1, -8,  3])
+            C = [c1, c2, c3,c4]
+            V.are_linearly_dependent(C)
+        </input>
+        <output>
+        False
+        </output>
+      </sage>
+      Clearly B and C are linearly indendent and hence they are bases of <m>V</m>.
+    </p>
+    Next we define two subspaces V1 and V2 with B and C as bases respectively and define 
+    the vector <m>x</m> in Sage.
+    <p>
+        <sage>
+            <input>
+                V1 = V.subspace_with_basis(B)
+                V2 = V.subspace_with_basis(C)
+                x = vector([3,5,7,9])
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+        <p>
+            Next we find the coordinates <m>x_\beta</m> and <m>x_\gamma</m>.
+        </p>
+        <sage>
+            <input>
+                xB = V1.coordinates(x);
+                print(f'The coordinates of x w.r.t. B is: {xB}')
+                xC = V2.coordinates(x);
+                print(f'The coordinates of x w.r.t. C is: {xC}')
+            </input>
+            <output>
+                The coordinates of x w.r.t. B is: [-6, -13, 19, 47]
+                The coordinates of x w.r.t. C is: [-60, 10, -23, 36] 
+            </output>
+        </sage>
+        <p>
+            Next we define the change of basis matrix <m>[I]_\beta^\gamma</m>. 
+            This can be achieved by taking a matrix <m>M=[C~|~B]</m> applying rref and 
+            extracting the last four columns. 
+        </p>
+        <sage>
+            <input>
+                ## Matrix of Change of basis from B to C, that [I]_B^C
+                k = len(B)
+                M = column_matrix(C+B)
+                print(M)
+                M1 = M.rref()
+                print(M1)
+                IBC = M1.submatrix(0,k)
+                print(IBC)   
+            </input>
+            <output>
+                [ 0 -1  1  1 -5 -3 -1 -1]
+                [ 2  2 -3  1  8  9  4  2]
+                [-7 -1  5 -8  0 -2 -1  0]
+                [ 5  4 -7  3  4  4  2  1]
+                [  1   0   0   0  36  25   8   7]
+                [  0   1   0   0  27  34  15   7]
+                [  0   0   1   0  35  35  14   8]
+                [  0   0   0   1 -13  -4   0  -2]
+                [ 36  25   8   7]
+                [ 27  34  15   7]
+                [ 35  35  14   8]
+                [-13  -4   0  -2]    
+            </output>
+        </sage>
+        One can verify that this is same as <m>C^{-1}B</m>.
+        <sage>
+            <input>
+            column_matrix(C).inverse()*column_matrix(B)==IBC  
+            </input>
+            <output>
+              True  
+            </output>
+        </sage>
+        <p>
+            Next we define the change of basis matrix <m>[I]_\gamma^\beta</m>. 
+            This can be achieved by taking a matrix <m>M=[B~|~C]</m> applying rref and 
+            extracting the last four columns. 
+            One can verify that this is same as <m>C^{-1}B</m>.
+        </p>
+        <sage>
+            <input>
+                ## Matrix of Change of basis from C to B, that [I]_C^B
+                k = len(B)
+                M = column_matrix(B+C)
+                print(M)
+                M1 = M.rref()
+                print(M1)
+                ICB = M1.submatrix(0,k)
+                print(ICB)
+            </input>
+            <output>
+                [-5 -3 -1 -1  0 -1  1  1]
+                [ 8  9  4  2  2  2 -3  1]
+                [ 0 -2 -1  0 -7 -1  5 -8]
+                [ 4  4  2  1  5  4 -7  3]
+                [  1   0   0   0  10   4 -10   9]
+                [  0   1   0   0  -8  -6  11  -5]
+                [  0   0   1   0  23  13 -27  18]
+                [  0   0   0   1 -49 -14  43 -49]
+                [ 10   4 -10   9]
+                [ -8  -6  11  -5]
+                [ 23  13 -27  18]
+                [-49 -14  43 -49]   
+            </output>
+        </sage>
+        <sage>
+            <input>
+            column_matrix(B).inverse()*column_matrix(C)==ICB
+            </input>
+            <output>
+            True
+            </output>
+        </sage>
+        <p>
+            Let us check that <m>\left([I]_\beta^\gamma\right)^{-1}=[I]_\gamma^\beta</m>.
+        </p>
+        <sage>
+            <input>
+            IBC.inverse()==ICB
+            </input>
+            <output>
+            True
+            </output>
+        </sage>
+
+        <p>
+            Finally we show that 
+            <m>[I]_\beta^\gamma x_\beta=x_\gamma</m> and 
+            <m>[I]_\gamma^\beta x_\gamma=x_\beta</m>.
+        </p>
+        <sage>
+            <input>
+                IBC*vector(xB)==vector(xC)
+                ICB*vector(xC)==vector(xB)
+            </input>
+            <output>
+            True
+            True
+            </output>
+        </sage>
+    </p>
+ </solution>   
 </example>
 </section>
