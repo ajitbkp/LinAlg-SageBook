@@ -118,9 +118,9 @@ window.MathJax = {
 #sec-elementary-operations-15-1-1 { counter-set: sec-elementary-operations-15-1-1 0; }
 #sec-elementary-operations-15-1-1 > li::marker { content: ""counter(sec-elementary-operations-15-1-1,decimal)"."; }
 #sec-elementary-operations-15-1-1 > li { counter-increment: sec-elementary-operations-15-1-1; }
-#sec-echelon-form-2-5 { counter-set: sec-echelon-form-2-5 0; }
-#sec-echelon-form-2-5 > li::marker { content: ""counter(sec-echelon-form-2-5,decimal)"."; }
-#sec-echelon-form-2-5 > li { counter-increment: sec-echelon-form-2-5; }
+#def-echelon-form-5 { counter-set: def-echelon-form-5 0; }
+#def-echelon-form-5 > li::marker { content: ""counter(def-echelon-form-5,decimal)"."; }
+#def-echelon-form-5 > li { counter-increment: def-echelon-form-5; }
 #sec-echelon-form-5-3 { counter-set: sec-echelon-form-5-3 0; }
 #sec-echelon-form-5-3 > li::marker { content: ""counter(sec-echelon-form-5-3,decimal)"."; }
 #sec-echelon-form-5-3 > li { counter-increment: sec-echelon-form-5-3; }
@@ -145,9 +145,12 @@ window.MathJax = {
 #ch1-exer-2-1-3-1-1 { counter-set: ch1-exer-2-1-3-1-1 0; }
 #ch1-exer-2-1-3-1-1 > li::marker { content: "("counter(ch1-exer-2-1-3-1-1,lower-alpha)")"; }
 #ch1-exer-2-1-3-1-1 > li { counter-increment: ch1-exer-2-1-3-1-1; }
-#sec2-1-LinSpan-5-1-1-1 { counter-set: sec2-1-LinSpan-5-1-1-1 0; }
-#sec2-1-LinSpan-5-1-1-1 > li::marker { content: ""counter(sec2-1-LinSpan-5-1-1-1,decimal)"."; }
-#sec2-1-LinSpan-5-1-1-1 > li { counter-increment: sec2-1-LinSpan-5-1-1-1; }
+#sec2-0-intro-10-2-1-1 { counter-set: sec2-0-intro-10-2-1-1 0; }
+#sec2-0-intro-10-2-1-1 > li::marker { content: ""counter(sec2-0-intro-10-2-1-1,decimal)"."; }
+#sec2-0-intro-10-2-1-1 > li { counter-increment: sec2-0-intro-10-2-1-1; }
+#sec2-1-LinSpan-5-1-2-1 { counter-set: sec2-1-LinSpan-5-1-2-1 0; }
+#sec2-1-LinSpan-5-1-2-1 > li::marker { content: ""counter(sec2-1-LinSpan-5-1-2-1,decimal)"."; }
+#sec2-1-LinSpan-5-1-2-1 > li { counter-increment: sec2-1-LinSpan-5-1-2-1; }
 #sec2-1-matrix-spaces-2-5 { counter-set: sec2-1-matrix-spaces-2-5 0; }
 #sec2-1-matrix-spaces-2-5 > li::marker { content: ""counter(sec2-1-matrix-spaces-2-5,decimal)"."; }
 #sec2-1-matrix-spaces-2-5 > li { counter-increment: sec2-1-matrix-spaces-2-5; }
@@ -530,36 +533,36 @@ Ref_L =\amp \frac{2}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ab\amp b^2\am
 \end{align*}
 </div>
 </div></article><article class="example example-like" id="linalg-engg-eg48"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.10</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Projection onto a plane in <span class="process-math">\(\R^3\)</span>.</span>
 </h4>
-<div class="para" id="linalg-engg-eg48-1-1">[Projection onto a plane in <span class="process-math">\(\R^3\)</span>] Let <span class="process-math">\(\pi\)</span> be a plane given by the equation <span class="process-math">\(ax+by+cz=0\text{.}\)</span> Then the vector <span class="process-math">\(n=(a,b,c)\)</span> is normal to <span class="process-math">\(\pi\text{.}\)</span> We wish to find the orthogonal projection of any vector <span class="process-math">\(v=(x,y,z)\)</span> onto <span class="process-math">\(\pi\text{.}\)</span>
-</div> <div class="para logical" id="linalg-engg-eg48-1-2">
+<div class="para" id="linalg-engg-eg48-2-1">Let <span class="process-math">\(\pi\)</span> be a plane given by the equation <span class="process-math">\(ax+by+cz=0\text{.}\)</span> Then the vector <span class="process-math">\(n=(a,b,c)\)</span> is normal to <span class="process-math">\(\pi\text{.}\)</span> We wish to find the orthogonal projection of any vector <span class="process-math">\(v=(x,y,z)\)</span> onto <span class="process-math">\(\pi\text{.}\)</span>
+</div> <div class="para logical" id="linalg-engg-eg48-2-2">
 <div class="para">Let <span class="process-math">\(P_\pi(v)\)</span> be denote the projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(\pi\)</span> and <span class="process-math">\(P_n(v)\text{,}\)</span> the projection of <span class="process-math">\(v\)</span> onto to <span class="process-math">\(n\text{.}\)</span> (Draw figure) Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P_\pi(v)=v-P_n(v)\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="linalg-engg-eg48-1-3">
+</div> <div class="para logical" id="linalg-engg-eg48-2-3">
 <div class="para">Hence the the matrix of <span class="process-math">\(P_\pi\)</span> is given by</div>
-<div class="displaymath process-math" id="linalg-engg-eg48-1-3-2">
+<div class="displaymath process-math" id="linalg-engg-eg48-2-3-2">
 \begin{align*}
 P_\pi\amp =\amp \begin{bmatrix}1\amp 0\amp 0\\0\amp  1\amp  0\\0 \amp  0 \amp 1 \end{bmatrix} -\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ab\amp b^2\amp bc\\ac\amp bc\amp c^2 \end{bmatrix}\\
 \amp =\amp \frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2\amp -ab\amp -ac\\-ab\amp a^2+c^2\amp -bc\\-ac\amp -bc\amp a^2+b^2 \end{bmatrix}
 \end{align*}
 </div>
 </div></article><article class="example example-like" id="linalg-engg-eg49"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.11</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Reflection through a plane in <span class="process-math">\(\R^3\)</span>.</span>
 </h4>
-<div class="para" id="linalg-engg-eg49-1-1">[Reflection through a plane in <span class="process-math">\(\R^3\)</span>] Let <span class="process-math">\(\pi\)</span> be a plane given by the equation <span class="process-math">\(ax+by+cz=0\text{.}\)</span> Then the vector <span class="process-math">\(n=(a,b,c)\)</span> is normal to <span class="process-math">\(\pi\text{.}\)</span> We wish to find the reflection <span class="process-math">\(Ref_\pi(v)\)</span> of any vector <span class="process-math">\(v=(x,y,z)\)</span> through <span class="process-math">\(\pi\text{.}\)</span>
-</div> <div class="para logical" id="linalg-engg-eg49-1-2">
+<div class="para" id="linalg-engg-eg49-2-1">Let <span class="process-math">\(\pi\)</span> be a plane given by the equation <span class="process-math">\(ax+by+cz=0\text{.}\)</span> Then the vector <span class="process-math">\(n=(a,b,c)\)</span> is normal to <span class="process-math">\(\pi\text{.}\)</span> We wish to find the reflection <span class="process-math">\(Ref_\pi(v)\)</span> of any vector <span class="process-math">\(v=(x,y,z)\)</span> through <span class="process-math">\(\pi\text{.}\)</span>
+</div> <div class="para logical" id="linalg-engg-eg49-2-2">
 <div class="para">Suppose <span class="process-math">\(P_\pi(v)\)</span> is the orthogonal projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(\pi\text{.}\)</span> Then it is easy to see that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P_M(v)=\frac{1}{2}\left[v+Ref_\pi(v)\right]\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="linalg-engg-eg49-1-3">
+</div> <div class="para logical" id="linalg-engg-eg49-2-3">
 <div class="para">Now it is easy to show that the matrix of <span class="process-math">\(Ref_\pi\)</span> is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}

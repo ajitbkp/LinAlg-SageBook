@@ -130,9 +130,9 @@ sagecell.makeSagecell({
 #sec-elementary-operations-15-1-1 { counter-set: sec-elementary-operations-15-1-1 0; }
 #sec-elementary-operations-15-1-1 > li::marker { content: ""counter(sec-elementary-operations-15-1-1,decimal)"."; }
 #sec-elementary-operations-15-1-1 > li { counter-increment: sec-elementary-operations-15-1-1; }
-#sec-echelon-form-2-5 { counter-set: sec-echelon-form-2-5 0; }
-#sec-echelon-form-2-5 > li::marker { content: ""counter(sec-echelon-form-2-5,decimal)"."; }
-#sec-echelon-form-2-5 > li { counter-increment: sec-echelon-form-2-5; }
+#def-echelon-form-5 { counter-set: def-echelon-form-5 0; }
+#def-echelon-form-5 > li::marker { content: ""counter(def-echelon-form-5,decimal)"."; }
+#def-echelon-form-5 > li { counter-increment: def-echelon-form-5; }
 #sec-echelon-form-5-3 { counter-set: sec-echelon-form-5-3 0; }
 #sec-echelon-form-5-3 > li::marker { content: ""counter(sec-echelon-form-5-3,decimal)"."; }
 #sec-echelon-form-5-3 > li { counter-increment: sec-echelon-form-5-3; }
@@ -157,9 +157,12 @@ sagecell.makeSagecell({
 #ch1-exer-2-1-3-1-1 { counter-set: ch1-exer-2-1-3-1-1 0; }
 #ch1-exer-2-1-3-1-1 > li::marker { content: "("counter(ch1-exer-2-1-3-1-1,lower-alpha)")"; }
 #ch1-exer-2-1-3-1-1 > li { counter-increment: ch1-exer-2-1-3-1-1; }
-#sec2-1-LinSpan-5-1-1-1 { counter-set: sec2-1-LinSpan-5-1-1-1 0; }
-#sec2-1-LinSpan-5-1-1-1 > li::marker { content: ""counter(sec2-1-LinSpan-5-1-1-1,decimal)"."; }
-#sec2-1-LinSpan-5-1-1-1 > li { counter-increment: sec2-1-LinSpan-5-1-1-1; }
+#sec2-0-intro-10-2-1-1 { counter-set: sec2-0-intro-10-2-1-1 0; }
+#sec2-0-intro-10-2-1-1 > li::marker { content: ""counter(sec2-0-intro-10-2-1-1,decimal)"."; }
+#sec2-0-intro-10-2-1-1 > li { counter-increment: sec2-0-intro-10-2-1-1; }
+#sec2-1-LinSpan-5-1-2-1 { counter-set: sec2-1-LinSpan-5-1-2-1 0; }
+#sec2-1-LinSpan-5-1-2-1 > li::marker { content: ""counter(sec2-1-LinSpan-5-1-2-1,decimal)"."; }
+#sec2-1-LinSpan-5-1-2-1 > li { counter-increment: sec2-1-LinSpan-5-1-2-1; }
 #sec2-1-matrix-spaces-2-5 { counter-set: sec2-1-matrix-spaces-2-5 0; }
 #sec2-1-matrix-spaces-2-5 > li::marker { content: ""counter(sec2-1-matrix-spaces-2-5,decimal)"."; }
 #sec2-1-matrix-spaces-2-5 > li { counter-increment: sec2-1-matrix-spaces-2-5; }
@@ -405,7 +408,7 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-elementary-operations"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Elementary Row Operations</span>
 </h2>
-<div class="para" id="sec-elementary-operations-2">The solution of a system of linear equations is unchanged if the following operations are performed. If, fact this is the basis for solving a system of linear equations.</div>
+<div class="para" id="sec-elementary-operations-2">The solution of a system of linear equations is unchanged if the following operations are performed. In fact this is the basis for solving a system of linear equations.</div>
 <ol class="decimal" id="sec-elementary-operations-3">
 <li id="sec-elementary-operations-3-1"><div class="para" id="p-derived-sec-elementary-operations-3-1">Multiply one of the equations by a nonzero real number. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.</div></li>
 <li id="sec-elementary-operations-3-2"><div class="para" id="p-derived-sec-elementary-operations-3-2">Multiply one of the equations by a real number and add the result to another equation, leaving the original equation unchanged. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row, leaving the original row unchanged.</div></li>
@@ -414,7 +417,7 @@ sagecell.makeSagecell({
 </ol>
 <article class="note remark-like" id="sec-elementary-operations-4"><h3 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
-</h3>If an equation of the system after the elementary after reduces to <span class="process-math">\(0 = k\text{,}\)</span> where <span class="process-math">\(k \neq 0\text{,}\)</span> then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the last number, then the system has no solution.</article><article class="definition definition-like" id="def-elementary-row-operations"><h3 class="heading">
+</h3>If an equation of the system after the the avove operations reduces to <span class="process-math">\(0 = \alpha\text{,}\)</span> where <span class="process-math">\(\alpha \neq 0\text{,}\)</span> then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the column, then the system has no solution.</article><article class="definition definition-like" id="def-elementary-row-operations"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary row operations.</span>
 </h3> <div class="para logical" id="def-elementary-row-operations-2-1">
 <div class="para">The following operations on a matrix are called <em class="alert">elementary row operations.</em>
@@ -428,10 +431,10 @@ sagecell.makeSagecell({
 </div></article><article class="definition definition-like" id="def-equivalent-system"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
 </h3>
-<div class="para" id="def-equivalent-system-1-1">A matrix <span class="process-math">\(B\)</span> is said to be <em class="alert">equivalent</em>  or <em class="alert">row equivalent</em> to matrix <span class="process-math">\(A\text{,}\)</span> in notation <span class="process-math">\(B\thicksim A\)</span> , if <span class="process-math">\(B\)</span> can be obtained from <span class="process-math">\(B\)</span>  by performing finite number of elementary row operations.</div></article><div class="para" id="sec-elementary-operations-7">Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.</div>
+<div class="para" id="def-equivalent-system-1-1">A matrix <span class="process-math">\(B\)</span> is said to be <em class="alert">equivalent</em>  or <em class="alert">row equivalent</em> to matrix <span class="process-math">\(A\text{,}\)</span> in notation <span class="process-math">\(B\thicksim A\)</span> , if <span class="process-math">\(B\)</span> can be obtained from <span class="process-math">\(A\)</span>  by performing finite number of elementary row operations.</div></article><div class="para" id="sec-elementary-operations-7">Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.</div>
 <article class="observation remark-like" id="sec-elementary-operations-8"><h3 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
-</h3>Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix of real numbers. Let the columns of <span class="process-math">\(A\)</span> are <span class="process-math">\(a_1,a_2,\ldots a_n\text{,}\)</span> that is <span class="process-math">\(A=\begin{pmatrix} a_1\amp a_2\amp\cdots a_n\end{pmatrix}\text{.}\)</span> Let the rows of <span class="process-math">\(A\)</span> are given by <span class="process-math">\(R_1, R_2,\ldots, R_n\text{,}\)</span> in particular, <span class="process-math">\(A=\begin{pmatrix} R_1\amp R_2\amp\cdots R_n\end{pmatrix}^T\text{.}\)</span> Let <span class="process-math">\(e_1, e_2, \ldots e_n\)</span> are standard coordinate vectors in <span class="process-math">\(\mathbb{R}^n\)</span> , where <span class="process-math">\(e_i\)</span> is the column matrix (vector) whose <span class="process-math">\(i\)</span>-th entry is 1 and rest are zero. That is <span class="process-math">\(e_i=\begin{pmatrix} 0\\\vdots\\ 1\\\vdots \\0\end{pmatrix}\text{.}\)</span> Then we have the following: <div class="para logical" id="sec-elementary-operations-8-14"><ol class="decimal" id="sec-elementary-operations-8-14-1">
+</h3>Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix of real numbers. Let the columns of <span class="process-math">\(A\)</span> are <span class="process-math">\(a_1,a_2,\ldots a_n\text{,}\)</span> that is, <span class="process-math">\(A=\begin{bmatrix} a_1\amp a_2\amp\cdots \amp a_n\end{bmatrix}\text{.}\)</span> Let the rows of <span class="process-math">\(A\)</span> are given by <span class="process-math">\(R_1, R_2,\ldots, R_n\text{,}\)</span> in particular, <span class="process-math">\(A=\begin{bmatrix} R_1\amp R_2\amp\cdots \amp R_n\end{bmatrix}^T\text{.}\)</span> Let <span class="process-math">\(e_1, e_2, \ldots e_n\)</span> are standard coordinate vectors in <span class="process-math">\(\mathbb{R}^n\)</span> , where <span class="process-math">\(e_i\)</span> is the column matrix (vector) whose <span class="process-math">\(i\)</span>-th entry is 1 and rest are zero. That is <span class="process-math">\(e_i=\begin{pmatrix} 0\\\vdots\\ 1\\\vdots \\0\end{pmatrix}\text{.}\)</span> Then we have the following: <div class="para logical" id="sec-elementary-operations-8-14"><ol class="decimal" id="sec-elementary-operations-8-14-1">
 <li id="sec-elementary-operations-8-14-1-1"><div class="para" id="p-derived-sec-elementary-operations-8-14-1-1">
 <span class="process-math">\(a_j=Ae_j\)</span> for each <span class="process-math">\(j=1,\ldots, n\text{.}\)</span> That is, <span class="process-math">\(j\)</span>-th column can be obtained by multiplying <span class="process-math">\(A\)</span> by <span class="process-math">\(e_j\)</span> on the right.</div></li>
 <li id="sec-elementary-operations-8-14-1-2"><div class="para" id="p-derived-sec-elementary-operations-8-14-1-2">
@@ -458,7 +461,7 @@ A*E[:,i] # Returns the (i+1)-th column of A
 <article class="definition definition-like" id="def-elementary-row-operation-2"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
 </h3>
-<div class="para" id="def-elementary-row-operation-2-1-1">Let <span class="process-math">\(e\)</span> denote an elementary row operation and <span class="process-math">\(e(A)\)</span>  the result of applying <span class="process-math">\(e\)</span> to a  <span class="process-math">\(A\text{.}\)</span> Let <span class="process-math">\(E\)</span> be a matrix obtained by applying <span class="process-math">\(e\)</span> to the identity matrix. That is,  <span class="process-math">\(E=e(I)\text{.}\)</span> Then <span class="process-math">\(E\)</span> is called the elementary matrix corresponding to the elementary row operation <span class="process-math">\(e\text{.}\)</span> It is easy to see that an elementary matrix is non singular. (why?)</div></article><article class="theorem theorem-like" id="thm-elementary-matrix-theorem"><h3 class="heading">
+<div class="para" id="def-elementary-row-operation-2-1-1">Let <span class="process-math">\(e\)</span> denote an elementary row operation and <span class="process-math">\(e(A)\)</span>  the result of applying <span class="process-math">\(e\)</span> to a  <span class="process-math">\(A\text{.}\)</span> Let <span class="process-math">\(E\)</span> be a matrix obtained by applying <span class="process-math">\(e\)</span> to the identity matrix. That is,  <span class="process-math">\(E=e(I)\text{.}\)</span> Then <span class="process-math">\(E\)</span> is called the <em class="alert">elementary matrix</em> corresponding to the elementary row operation <span class="process-math">\(e\text{.}\)</span> It is easy to see that an elementary matrix is non singular. (why?)</div></article><article class="theorem theorem-like" id="thm-elementary-matrix-theorem"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary Matrix Theorem.</span>
 </h3>
 <div class="para" id="thm-elementary-matrix-theorem-2-1">Let <span class="process-math">\(e\)</span> be an elementary row operation and <span class="process-math">\(E\text{,}\)</span> the corresponding <span class="process-math">\(m\times m\)</span> elementary matrix defined by <span class="process-math">\(E = e(I_m)\text{.}\)</span> Then, for any <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(e(A) = E\cdot A\text{.}\)</span>
@@ -497,7 +500,8 @@ A*E[:,i] # Returns the (i+1)-th column of A
 <div class="para" id="subsec-Matrix-inverse-using-rref-3">
 <article class="example example-like" id="subsec-Matrix-inverse-using-rref-3-1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span>
-</h4>Find the inverse of <span class="process-math">\(A=\begin{pmatrix}1 \amp 0 \amp 2\\2 \amp -1 \amp 3\\4 \amp 1 \amp 8\end{pmatrix}\)</span> using row operations.</article> <details id="subsec-Matrix-inverse-using-rref-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+</h4>
+<div class="para" id="subsec-Matrix-inverse-using-rref-3-1-1">Find the inverse of <span class="process-math">\(A=\begin{pmatrix}1 \amp 0 \amp 2\\2 \amp -1 \amp 3\\4 \amp 1 \amp 8\end{pmatrix}\)</span> using row operations.</div></article> <details id="subsec-Matrix-inverse-using-rref-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="subsec-Matrix-inverse-using-rref-3-2-1">
 <div class="displaymath process-math">
 \begin{equation*}
@@ -543,32 +547,32 @@ A^{-1}=\begin{pmatrix}-11 \amp 2 \amp 2\\-4 \amp 0 \amp 1\\6 \amp -1 \amp -1
 \end{pmatrix}
 \end{equation*}
 </div>
-</div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-3">Let solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations. <div id="subsec-Matrix-inverse-using-rref-3-2-3-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix([[1,0,2],[2,-1,3],[4,1,8]])
+</div>
+</div></details> <div class="para" id="subsec-Matrix-inverse-using-rref-3-3">Let solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations. <div id="subsec-Matrix-inverse-using-rref-3-3-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix([[1,0,2],[2,-1,3],[4,1,8]])
 Aug = A.augment(identity_matrix(3),subdivide=True);
 show(Aug)
-</script></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-3-2"><div id="subsec-Matrix-inverse-using-rref-3-2-3-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We make a copy of Aug to Aug1
+</script></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-3-2"><div id="subsec-Matrix-inverse-using-rref-3-3-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We make a copy of Aug to Aug1
 Aug1 = copy(Aug)
-</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-3-3"><div id="subsec-Matrix-inverse-using-rref-3-2-3-3-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># we add -2 times row 1 to row 2 using the following Sage syntax
+</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-3-3"><div id="subsec-Matrix-inverse-using-rref-3-3-3-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># we add -2 times row 1 to row 2 using the following Sage syntax
 Aug1.add_multiple_of_row(1,0,-2);Aug1
 </script></div></div>
-</div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-4"><div id="subsec-Matrix-inverse-using-rref-3-2-4-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># we add -4 times row 1 to row 3 using the following Sage syntax
+</div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-4"><div id="subsec-Matrix-inverse-using-rref-3-4-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># we add -4 times row 1 to row 3 using the following Sage syntax
 Aug1.add_multiple_of_row(2,0,-4);Aug1
-</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-5"><div id="subsec-Matrix-inverse-using-rref-3-2-5-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We multiply row 2 by -1 using the following Sage syntax
+</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-5"><div id="subsec-Matrix-inverse-using-rref-3-5-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We multiply row 2 by -1 using the following Sage syntax
 Aug1.rescale_row(1,-1);Aug1
-</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-6"><div id="subsec-Matrix-inverse-using-rref-3-2-6-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We add -1 times row 2 to row 3 using the following Sage syntax
+</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-6"><div id="subsec-Matrix-inverse-using-rref-3-6-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We add -1 times row 2 to row 3 using the following Sage syntax
 Aug1.add_multiple_of_row(2,1,-1);Aug1
-</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-7"><div id="subsec-Matrix-inverse-using-rref-3-2-7-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We multiply row 3 by -1 using the following Sage syntax
+</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-7"><div id="subsec-Matrix-inverse-using-rref-3-7-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We multiply row 3 by -1 using the following Sage syntax
 Aug1.rescale_row(2,-1);Aug1
-</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-8"><div id="subsec-Matrix-inverse-using-rref-3-2-8-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We add -1 times row 3 to row 2 using the following Sage syntax  
+</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-8"><div id="subsec-Matrix-inverse-using-rref-3-8-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We add -1 times row 3 to row 2 using the following Sage syntax  
 Aug1.add_multiple_of_row(1,2,-1);Aug1
-</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-9"><div id="subsec-Matrix-inverse-using-rref-3-2-9-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We add -2 times row 3 to row 1 using the following Sage syntax  
+</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-9"><div id="subsec-Matrix-inverse-using-rref-3-9-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We add -2 times row 3 to row 1 using the following Sage syntax  
 Aug1.add_multiple_of_row(0,2,-2);Aug1
-</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-10"><div id="subsec-Matrix-inverse-using-rref-3-2-10-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Finally we extract the submatrix by taking all columns after 4th column 
+</script></div></div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-10"><div id="subsec-Matrix-inverse-using-rref-3-10-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Finally we extract the submatrix by taking all columns after 4th column 
 Aug1.submatrix(0,3)
-</script></div></div> Sage can directly find the inverse of a matrix. <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-11"><div id="subsec-Matrix-inverse-using-rref-3-2-11-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># inverse of A.
+</script></div></div> Sage can directly find the inverse of a matrix. <div class="para" id="subsec-Matrix-inverse-using-rref-3-11"><div id="subsec-Matrix-inverse-using-rref-3-11-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># inverse of A.
 A.inverse()
 </script></div></div>
-</div></details>
 </div>
 <div class="para" id="subsec-Matrix-inverse-using-rref-4">
 <em class="alert">Sage Exercise:</em> Use the Sage to find the inverse of the following matrix using the step by step elementary row operation. <span class="process-math">\(\begin{pmatrix}2\amp  1\amp 1\amp 1\\1\amp 0\amp 1\amp 1\\1\amp 1\amp -2\amp 1\\1\amp 1\amp 1\amp -1\end{pmatrix}\)</span>

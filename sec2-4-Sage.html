@@ -130,9 +130,9 @@ sagecell.makeSagecell({
 #sec-elementary-operations-15-1-1 { counter-set: sec-elementary-operations-15-1-1 0; }
 #sec-elementary-operations-15-1-1 > li::marker { content: ""counter(sec-elementary-operations-15-1-1,decimal)"."; }
 #sec-elementary-operations-15-1-1 > li { counter-increment: sec-elementary-operations-15-1-1; }
-#sec-echelon-form-2-5 { counter-set: sec-echelon-form-2-5 0; }
-#sec-echelon-form-2-5 > li::marker { content: ""counter(sec-echelon-form-2-5,decimal)"."; }
-#sec-echelon-form-2-5 > li { counter-increment: sec-echelon-form-2-5; }
+#def-echelon-form-5 { counter-set: def-echelon-form-5 0; }
+#def-echelon-form-5 > li::marker { content: ""counter(def-echelon-form-5,decimal)"."; }
+#def-echelon-form-5 > li { counter-increment: def-echelon-form-5; }
 #sec-echelon-form-5-3 { counter-set: sec-echelon-form-5-3 0; }
 #sec-echelon-form-5-3 > li::marker { content: ""counter(sec-echelon-form-5-3,decimal)"."; }
 #sec-echelon-form-5-3 > li { counter-increment: sec-echelon-form-5-3; }
@@ -157,9 +157,12 @@ sagecell.makeSagecell({
 #ch1-exer-2-1-3-1-1 { counter-set: ch1-exer-2-1-3-1-1 0; }
 #ch1-exer-2-1-3-1-1 > li::marker { content: "("counter(ch1-exer-2-1-3-1-1,lower-alpha)")"; }
 #ch1-exer-2-1-3-1-1 > li { counter-increment: ch1-exer-2-1-3-1-1; }
-#sec2-1-LinSpan-5-1-1-1 { counter-set: sec2-1-LinSpan-5-1-1-1 0; }
-#sec2-1-LinSpan-5-1-1-1 > li::marker { content: ""counter(sec2-1-LinSpan-5-1-1-1,decimal)"."; }
-#sec2-1-LinSpan-5-1-1-1 > li { counter-increment: sec2-1-LinSpan-5-1-1-1; }
+#sec2-0-intro-10-2-1-1 { counter-set: sec2-0-intro-10-2-1-1 0; }
+#sec2-0-intro-10-2-1-1 > li::marker { content: ""counter(sec2-0-intro-10-2-1-1,decimal)"."; }
+#sec2-0-intro-10-2-1-1 > li { counter-increment: sec2-0-intro-10-2-1-1; }
+#sec2-1-LinSpan-5-1-2-1 { counter-set: sec2-1-LinSpan-5-1-2-1 0; }
+#sec2-1-LinSpan-5-1-2-1 > li::marker { content: ""counter(sec2-1-LinSpan-5-1-2-1,decimal)"."; }
+#sec2-1-LinSpan-5-1-2-1 > li { counter-increment: sec2-1-LinSpan-5-1-2-1; }
 #sec2-1-matrix-spaces-2-5 { counter-set: sec2-1-matrix-spaces-2-5 0; }
 #sec2-1-matrix-spaces-2-5 > li::marker { content: ""counter(sec2-1-matrix-spaces-2-5,decimal)"."; }
 #sec2-1-matrix-spaces-2-5 > li { counter-increment: sec2-1-matrix-spaces-2-5; }
@@ -437,7 +440,146 @@ print(w)
 </script></div>
 <div id="sec2-4-Sage-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Plotting 3d-vectors
 plot(u)+plot(v,color='red')+plot(u+v,color='green')
-</script></div></section></div>
+</script></div>Vector in higher dimension in Sage<div id="sec2-4-Sage-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u = vector([1,-2,3,-4,5,7])
+v = vector([2,1,3,1,-6,5])
+w = vector([-3,0,2,0,5,-6])
+print(2*u-3*v+w)
+</script></div>
+<article class="example example-like" id="sec2-4-Sage-11"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec2-4-Sage-11-1">Genarate five random vectors in <span class="process-math">\(\mathbb{R}^8\)</span> whose entries are random integers between -10 and 10. Also generate 5 random numbers (scalars) whihc are integers between -10 and 10. Find the linear combinations of these vectors with five scalars. <div id="sec2-4-Sage-11-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">n = 8
+v1 = vector([randint(-10,10) for i in range(n)])
+v2 = vector([randint(-10,10) for i in range(n)])
+v3 = vector([randint(-10,10) for i in range(n)])
+v4 = vector([randint(-10,10) for i in range(n)])
+v5 = vector([randint(-10,10) for i in range(n)])
+B = [v1,v2,v3,v4,v5]
+print(B)
+α = [randint(-10,10) for i in range(5)]
+print(α)
+sum([α[i]*B[i] for i in range(5)])
+</script></div>
+</div></article><article class="example example-like" id="sec2-4-Sage-12"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec2-4-Sage-12-1">
+<div class="para" id="sec2-4-Sage-12-1-1">(i) Let us plot the linear span of a single vector <span class="process-math">\((3,2, -1)\)</span> in  <span class="process-math">\(\R^3\)</span> in Sage.</div> <div class="para" id="sec2-4-Sage-12-1-2">Let us also plot the linear span of two vectors <span class="process-math">\((3,2, -1), (-1,1,2)\)</span> in <span class="process-math">\(\R^3\)</span> in Sage.</div> <div class="para" id="sec2-4-Sage-12-1-3">This can be achieved by sage method ’parametric_plot3d’ in sage.</div> <div id="sec2-4-Sage-12-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v = vector([3,2, -1])
+var('s')
+pv = plot(v,color='red',thickness=3)
+linspan = parametric_plot3d(s*v,(s,-2,2),axes=True,frame=False, color='black')
+linspan+pv
+</script></div> <div id="sec2-4-Sage-12-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v1 = vector([3,2, -1])
+v2 = vector([-1,1,2])
+var('s,t')
+pv1 = plot(v1,color='red',thickness=5)
+pv2 = plot(v2,color='green',thickness=5)
+linspan = parametric_plot3d(s*v1+t*v2,(s,-3,3),(t,-3,3),axes=True,frame=False,opacity=0.4)
+linspan+pv1+pv2
+</script></div>
+</div></article><div class="para" id="sec2-4-Sage-13">
+<em class="alert">Generating matrix from vectors:</em> We can generate matrix from a given set of vectors its columns and rows. Let us look at an example.</div>
+<div id="sec2-4-Sage-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v1 = vector([1,-1,2,3])
+v2 = vector([2,1,0,3])
+v3 = vector([-2,2,-1,2])
+A = column_matrix([v1,v2,v3])
+print(A)
+B = column_matrix([v1,v2,v3]).T
+print(B)
+</script></div>Vector Spaces over rational or reals:<div class="para" id="sec2-4-Sage-16"><div id="sec2-4-Sage-16-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = VectorSpace(RR,5);
+print(V)
+V =RR^5 ## Same as VectorSpace(RR,5);
+print(V)
+</script></div></div>
+<div id="sec2-4-Sage-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = VectorSpace(QQ,5);
+print(V)
+V =QQ^5
+print(V)
+</script></div>
+<div class="para" id="sec2-4-Sage-18">In sage a vector space, <span class="process-math">\(V\)</span> has two methods V.random_element()  and V.an_element() that displays a random element and an element (fixed) of <span class="process-math">\(V\text{.}\)</span>
+</div>
+<div id="sec2-4-Sage-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V =QQ^5
+V.random_element()
+</script></div>
+<div id="sec2-4-Sage-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V =QQ^5
+V.an_element()
+</script></div>Linearly dependence and indepndence in Sage<article class="example example-like" id="sec2-4-Sage-22"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec2-4-Sage-22-1">Let us generate some random 5 vectors, <span class="process-math">\(v_1,\ldots, v_5\)</span> in the vector space QQ^5. Sage has a method .are_linearly_dependent() to check if a set of vectors are linearly dependent. Sage also has a method linear_dependence() whihc return emply list in case the set is linearly independent and returns a list of scalars <span class="process-math">\(\alpha_i\)</span> such that <span class="process-math">\(\sum \alpha_i v_i=0\text{.}\)</span> <div id="sec2-4-Sage-22-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V =QQ^5
+v1 = vector(QQ,[1,-1,3,2,4])
+v2 = vector(QQ,[-2,1,0,3,-1])
+v3 = vector(QQ,[-5,3,-3,4,-6])
+v4 = vector(QQ,[3,2,1,2,3])
+v5 = vector(QQ,[-13,4,-7,6,-15])
+B = [v1,v2,v3,v4,v5]
+</script></div> <div id="sec2-4-Sage-22-1-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.are_linearly_dependent(B)
+</script></div> <div id="sec2-4-Sage-22-1-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.linear_dependence(B)
+</script></div> <div class="para" id="sec2-4-Sage-22-1-10">Now we can check if the scalar linear combination of the output shown above with sect of vectors in <span class="process-math">\(B\)</span> is zero.</div> <div id="sec2-4-Sage-22-1-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">s = V.linear_dependence(B)
+sum([s[1][i]*B[i] for i in range(len(B))])
+</script></div>
+</div></article><article class="example example-like" id="sec2-4-Sage-23"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Linear Span of vectors in Sage.</span>
+</h3> <div class="para" id="sec2-4-Sage-23-2"></div> Sage can generate a linear span of a set of vectors in a vector space using the vector space method .span(). Let us explore this for set of 5 vectors in a vector space V=QQ^4. <div class="para" id="sec2-4-Sage-23-5">
+<div id="sec2-4-Sage-23-5-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V =QQ^5
+v1 = vector(QQ,[1,-1,3,2,4])
+v2 = vector(QQ,[-2,1,0,3,-1])
+v3 = vector(QQ,[-5,3,-3,4,-6])
+v4 = vector(QQ,[3,2,1,2,3])
+v5 = vector(QQ,[-13,4,-7,6,-15])
+B = [v1,v2,v3,v4,v5]
+W=V.span(B)
+W
+</script></div> It returns the dimension of the linear span along with a basis as a matrix. We can check if any linear combinations of vectors in B lies in W. <div id="sec2-4-Sage-23-5-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a = [randint(-10,10) for i in range(len(B))]
+x = sum(a[i]*B[i] for i in range(len(B)))
+x in W
+</script></div> We can also check if W is a subspave of V using the following sage syntaxes. <div id="sec2-4-Sage-23-5-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">W <= V
+</script></div> <div id="sec2-4-Sage-23-5-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">W.is_subspace(V)
+</script></div>
+</div></article><article class="example example-like" id="sec2-4-Sage-24"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Using RREF to find a basis of linear span..</span>
+</h3> <div class="para" id="sec2-4-Sage-24-2">Let us use the sage method rref to find a basis of the set of vectors define earlies in Sage.</div> <div id="sec2-4-Sage-24-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V =QQ^5
+v1 = vector(QQ,[1,-1,3,2,4])
+v2 = vector(QQ,[-2,1,0,3,-1])
+v3 = vector(QQ,[-5,3,-3,4,-6])
+v4 = vector(QQ,[3,2,1,2,3])
+v5 = vector(QQ,[-13,4,-7,6,-15])
+B = [v1,v2,v3,v4,v5]
+# We define a matrix whose rows are v1,..., v5
+M = column_matrix(B).T 
+M.rref()
+</script></div> <div class="para" id="sec2-4-Sage-24-4">Clearly the first three rows constitutes a basis of linear span. This is what we obtained using <code class="code-inline tex2jax_ignore">.span()</code>.</div></article><article class="example example-like" id="sec2-4-Sage-25"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinates of a vector w.r.t. a basis.</span>
+</h3> <div class="para" id="sec2-4-Sage-25-2">Consider a set of vectors <span class="process-math">\(B = \{(1,-1,3,2), (-2,1,3,-1), (5,3,1,4),(3,2,1,2)\}\text{.}\)</span>Check if this forms a basis of the vector space <span class="process-math">\(V=\mathbb{Q}^5\text{.}\)</span> Find the coordinates of the vector <span class="process-math">\(v=(5,7,11,-13)\)</span> with respect to this basis.</div> <div id="sec2-4-Sage-25-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4
+# Returns the standard basis 
+V.basis()
+</script></div> We can also print this basis as a matrix using <code class="code-inline tex2jax_ignore">V.basis_matrix()</code> <div id="sec2-4-Sage-25-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.basis_matrix()
+</script></div> Now we define the set of vectors in Sage. <div id="sec2-4-Sage-25-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v1 = vector(QQ,[1,-1,3,2])
+v2 = vector(QQ,[-2,1,3,-1])
+v3 = vector(QQ,[5,3,1,4])
+v4 = vector(QQ,[3,2,1,2])
+B = [v1,v2,v3,v4]
+V.linear_dependence(B)
+</script></div> We can also check the same by finding the rank of the martrix <span class="process-math">\(M\)</span> whose columns and the given vectors. If the rank is 4, then the given set of vectors are linearly independet. <div id="sec2-4-Sage-25-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M = column_matrix(B)
+M.rank()
+</script></div> Since it returns an empty list. The given set of vectors <span class="process-math">\(B\)</span> is linearly independet. We can find the coordinates of the vector using sage method <code class="code-inline tex2jax_ignore">coordinate_vector()</code> or using <code class="code-inline tex2jax_ignore">.coordinates()</code> using  the following codes. For this first we need to create a subspace say V1 with B as a basis using the method <code class="code-inline tex2jax_ignore">V.subspace_with_basis(B)</code> <div id="sec2-4-Sage-25-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v = vector(QQ,[5,7,11,-13])
+V1 = V.subspace_with_basis(B)
+V1
+</script></div> <div id="sec2-4-Sage-25-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V1.coordinate_vector(v)
+</script></div> <div id="sec2-4-Sage-25-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V1.coordinates(v)
+</script></div> We can also find the same manually using RREF as follows. <div id="sec2-4-Sage-25-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(B).augment(v,subdivide=True)
+</script></div> <div id="sec2-4-Sage-25-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(B).augment(v,subdivide=True).rref()
+</script></div> The same can be achieved using by solving the system <span class="process-math">\(Bx=v\text{.}\)</span> <div id="sec2-4-Sage-25-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(B).inverse()*v
+</script></div></article><article class="example example-like" id="sec2-4-Sage-26"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental subscapes of a matrix.</span>
+</h3> <div class="para" id="sec2-4-Sage-26-2">Consider a matrix <span class="process-math">\(A= \left(\begin{array}{rrrrrr}
+-351 \amp  -1053 \amp  -1053 \amp  160 \amp  382 \amp  1657 \\
+-32 \amp  -96 \amp  -96 \amp  15 \amp  35 \amp  152 \\
+-36 \amp  -108 \amp  -108 \amp  16 \amp  39 \amp  169 \\
+11 \amp  33 \amp  33 \amp  -5 \amp  -12 \amp  -52 \\
+-11 \amp  -33 \amp  -33 \amp  5 \amp  12 \amp  52
+\end{array}\right)\text{.}\)</span> Find the fundamental subspaces defined in the Example <a href="sec2-1-LinSpan.html#sec2-1-matrix-spaces" class="xref" data-knowl="./knowl/xref/sec2-1-matrix-spaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.4: Matrix Spaces">Example 2.2.4</a>
+</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-2-3-basis-dimension.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
