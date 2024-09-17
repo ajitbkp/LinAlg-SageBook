@@ -3,7 +3,7 @@
 <section xml:id="sec4-2-linspan-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
 
     <title>Linear Span</title>
-    <introduction>
+    
       <p>
         
       
@@ -199,5 +199,5 @@
       </statement>
     </problem>
   </p>
-</introduction>
+
   </section>

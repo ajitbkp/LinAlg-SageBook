@@ -3,11 +3,11 @@
 <section xml:id="sec6-3-ortho-complements" xmlns:xi="http://www.w3.org/2001/XInclude">
   
   <title>Orthogonal Complements</title>
-  <introduction>
+  
     <p>
       In this section we shall deal with orthogonal complements of a subspaces.
     </p>
-  </introduction>
+ 
   <definition>
     <statement>
       <p>

@@ -32,8 +32,7 @@
 \newcommand{\innprod}[2]{\left\lt #1,#2\right>}
 \def\rank{{ rank\,}}
 \newcommand{\ds}{\displaystyle}
-\renewcommand{\headrulewidth}{0.5mm}
-\renewcommand{\footrulewidth}{0.5mm}
+
 \def\diag{{ diag\,}}
 \def\proj{{ proj\,}}
   </macros>

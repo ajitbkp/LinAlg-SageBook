@@ -2,7 +2,14 @@
 
 <section xml:id="sec-echelon-form" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Echelon Forms</title>
-
+<introduction>
+    <p>
+        In this section we define the row echelon form of matrices.
+    </p>
+</introduction>
+<subsection xml:id="sec-row-echelon">
+    <title>Row Echelon Form</title>
+    
     <definition xml:id="def-echelon-form">
     An <m>m \times n</m> matrix <m>A</m> is said to be in <alert>row-echelon form</alert> 
     or <alert>row-echelon matrix</alert> if it satisfies the following conditions:
@@ -255,6 +262,8 @@ We employ the following procedures to convert a matrix into a row echelon form:
         
     </output>
  </sage>
+
+</subsection>
 
 <subsection xml:id="subsec-Gaussian-Elimination">
     <title>Gaussian Elimination Method</title>

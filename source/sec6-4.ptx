@@ -3,11 +3,7 @@
 <section xml:id="sec6-4" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>QR-Factorization</title>
 
-  <introduction>
-    <p>
-     
-    </p>
-  </introduction>
+ 
 
   <p>
     Let <m>A</m> be an <m>m\times n</m> matrix whose columns are <m>a_1,\ldots, a_n</m>.

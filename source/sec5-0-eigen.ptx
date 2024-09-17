@@ -2,11 +2,11 @@
 
 <section xml:id="sec5-0-eigen" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Introduction</title>
-<introduction>
+
 <p>
    In this section, we shall define notion of eigenvalues and eigenvector.  
 </p>
-</introduction>
+
    
         <definition>
             <statement>

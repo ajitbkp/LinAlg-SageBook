@@ -2,10 +2,7 @@
 
 <section xml:id="sec4-5-basis-dim-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
         <title> Basis and dimension</title>
-        <introduction>
-          <p>
-          </p>
-          </introduction>
+       
       <p>
         We can defined basis of a vector space similar to basis of subspaces in <m>\R^n</m>.
       </p>

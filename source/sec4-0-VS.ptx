@@ -3,7 +3,7 @@
 <section xml:id="sec4-1-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Introduction</title>
 
-    <introduction>
+    
       <p>
         Recall the properties (eight) of operation addition and scalar multiplication in 
         <m>\R^n</m>.
@@ -329,7 +329,7 @@
         and
         <q>the additive inverse</q>.
       </p>
-    </introduction>
+  
   </section>
 
 

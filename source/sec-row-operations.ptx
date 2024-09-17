@@ -2,6 +2,17 @@
 
 <section xml:id="sec-elementary-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Elementary Row Operations</title>
+<introduction>
+  <p>
+    In this section, we shall defined elementary row operations which is a backbone of 
+    all computations in linear algebra.
+  </p>
+
+</introduction>
+
+<subsection xml:id="subsec-elmentary-row-operations">
+  <title>Elmentary Row Operations</title>
+  
 
   <p> 
     The solution of a system of linear equations is unchanged if the following 
@@ -210,6 +221,8 @@ show(E)
     </p>
   </proof>
 </p>
+
+</subsection>
 <subsection xml:id="subsec-Matrix-inverse-using-rref">
   <title>Matrix Inversion via Elementary Row Operations</title>
   <p>

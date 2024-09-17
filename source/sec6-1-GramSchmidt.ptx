@@ -3,12 +3,12 @@
 <section xml:id="sec6-1-GramSchmidt" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Gram-Schmidt Orthogonalization Process</title>
 
-  <introduction>
+  
     <p>
      In this section, we look at how to construct an 
      orthogonal basis from a basis. 
     </p>
-  </introduction>
+ 
   <p>
     Let <m>\{v_1,\ldots, v_n\}</m> be a basis of <m>\R^n</m>.
     Define

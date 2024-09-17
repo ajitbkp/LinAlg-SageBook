@@ -2,7 +2,7 @@
 
 <section xml:id="sec4-1-abstract-vs" xmlns:xi="http://www.w3.org/2001/XInclude">
         <title>Vector Subspaces</title>
-        <introduction>
+      
           <p>
          
         <definition>
@@ -221,5 +221,5 @@
         </example>
          
       </p>
-    </introduction>
+   
   </section>

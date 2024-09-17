@@ -17,6 +17,7 @@
     Note that for each <m>i=1,\ldots, m</m>,
     <m>T_i</m> is a map from <m>\R^n\to \R</m>.
   </p>
+  
   <exercise xml:id="linalg-engg-ex29">
     <statement>
       <p>
