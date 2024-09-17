@@ -685,7 +685,68 @@ print(ICB)
 ICB*vector(xC)==vector(xB)
 </script></div>
 </div>
-</div></details></article></section></div>
+</div></details></article><article class="example example-like" id="sec2-4-Sage-29"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Sum and intersection of subspaces.</span>
+</h3> <div class="para logical" id="sec2-4-Sage-29-2">
+<div class="para">Let <span class="process-math">\(W_1=L(S_1)\)</span> and <span class="process-math">\(W_2=L(S_2)\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_1=\{\left(2,-1,0,3,1,2\right), \left(-1,2,0,-6,-2,-1\right), \left(5,-6,-2,18,3,6\right), \left(-12,18,6,-54,-9,-15\right)\}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_2=\{\left(-1,4,2,-12,-1,-2\right), \left(1,2,-1,3,2,1\right), \left(22,-30,-10,90,15,27\right), \left(19,-24,-5,63,11,22\right), \left(-1,2,0,-1,3,0\right)\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Find the subspaces <span class="process-math">\(W_1\cap W_2\)</span> and <span class="process-math">\(W_1+W_2\text{.}\)</span> <div class="para" id="sec2-4-Sage-29-2-7"><details id="sec2-4-Sage-29-2-7-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec2-4-Sage-29-2-7-1-1">Sage has inbulit method to find sum and intersection of two subspaces. However, shall also see how these can be obtained manually.</div> <div class="para" id="sec2-4-Sage-29-2-7-1-2">First of all we define <span class="process-math">\(W_1=L(S_1)\text{.}\)</span>
+</div> <div id="sec2-4-Sage-29-2-7-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v1 = vector(QQ,[2,-1,0,3,1,2])
+v2 = vector(QQ,[-1, 2, 0, -6, -2,-1])
+v3 = vector(QQ,[5, -6, -2, 18, 3, 6])
+v4 = vector(QQ,[-12, 18, 6, -54, -9, -15])
+W1 = V.span([v1,v2,v3,v4]);W1
+</script></div> This show that <span class="process-math">\(W_1\)</span> is a 3-dimensional subspace of <span class="process-math">\(V\text{.}\)</span> <div class="para" id="sec2-4-Sage-29-2-7-1-6">Next, we define <span class="process-math">\(W_2=L(S_2)\)</span>
+</div> <div id="sec2-4-Sage-29-2-7-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u1 = vector(QQ,[-1, 4, 2, -12, -1, -2])
+u2 = vector(QQ,[1,2,-1,3,2,1])
+u3 = vector(QQ,[22, -30, -10, 90, 15, 27])
+u4 = vector(QQ,[19, -24, -5, 63, 11, 22])
+u5 = vector([-1,2,0,-1,3,0])
+W2 = V.span([u1,u2,u3,u4,u5]);W2
+</script></div> Here <span class="process-math">\(W_2\)</span> is a 4 dimensional subspace of <span class="process-math">\(V\text{.}\)</span> <div class="para" id="sec2-4-Sage-29-2-7-1-10">Now we find <span class="process-math">\(W_1\cap W_2\)</span> using the Sage method <code class="code-inline tex2jax_ignore">W1.intersection(W2)</code>.</div> <div id="sec2-4-Sage-29-2-7-1-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">U = W1.intersection(W2);U
+</script></div> Next we can find <span class="process-math">\(W_1+W_2\)</span> as follows. <div id="sec2-4-Sage-29-2-7-1-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Z = W1+W2;Z
+</script></div> <div class="para logical" id="sec2-4-Sage-29-2-7-1-14">
+<div class="para">From the above computations, it is clear that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dim(W_1+W_2)=\dim(W_1)+\dim(W_2)-\dim(W_1\cap W_2)\text{.}
+\end{equation*}
+</div>
+<div class="para">In fact, this is true in general and we shall prove this later.</div>
+</div> <div class="para" id="sec2-4-Sage-29-2-7-1-15">
+<em class="alert">How to find <span class="process-math">\(W_1+W_2\)</span> manually?</em> <div class="para" id="sec2-4-Sage-29-2-7-1-15-2">This can be obtained as <span class="process-math">\(L(S_1\cup S_2)\text{.}\)</span> Thus we can construct a matrix <span class="process-math">\(M\)</span> whose rows are <span class="process-math">\(S_1\cup S_2\)</span> and apply RREF. Let us see this.</div> <div id="sec2-4-Sage-29-2-7-1-15-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M = column_matrix([v1,v2,v3,v4,u1,u2,u3,u4,u5]).T
+M.rref()
+</script></div> Clearly the first 5 rows of RREF(M) is the basis matrix obtained for <span class="process-math">\(W_1+W_2\text{.}\)</span>
+</div> <div class="para" id="sec2-4-Sage-29-2-7-1-16">Finding <span class="process-math">\(W_1\cap W_2\)</span> manually.</div> <div class="para" id="sec2-4-Sage-29-2-7-1-17">Let <span class="process-math">\(c_1,c_2, c_3\)</span> be a basis of <span class="process-math">\(W_1\)</span>   and <span class="process-math">\(d_1,d_2, d_3,d_4\)</span> be a  basis of <span class="process-math">\(W_2\)</span> obtined above. If  <span class="process-math">\(v\in W_1\cap W_2\text{.}\)</span> Then</div> <div class="para logical" id="sec2-4-Sage-29-2-7-1-18"><div class="displaymath process-math">
+\begin{equation*}
+v=\alpha_1c_1+\alpha_2c_2+\alpha_3c_3=\beta_1d_1+\beta_2d_2+\beta_3d_3+\beta_4 d_4\text{.}
+\end{equation*}
+</div></div> <div class="para" id="sec2-4-Sage-29-2-7-1-19">In particular, <span class="process-math">\(\alpha_1c_1+\alpha_2c_2+\alpha_3c_3-\beta_1d_1-\beta_2d_2-\beta_3d_3-\beta_4 d_4=0\text{.}\)</span>  We can obtain <span class="process-math">\(\alpha_i\)</span>’s and <span class="process-math">\(\beta_i\)</span>’s by solving</div> <div class="para logical" id="sec2-4-Sage-29-2-7-1-20"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} c_1 \amp c_2\amp c_3\amp d_1\amp d_2\amp d_3 \amp d_4\end{bmatrix}
+\begin{pmatrix} \alpha_1 \\ \alpha_2\\ \alpha_3\\ \beta_1\\ \beta_2\\ \beta_3\\\beta_4\end{pmatrix}=0
+\end{equation*}
+</div></div> Thus we can find the null space of <span class="process-math">\(\begin{bmatrix} c_1 \amp c_2\amp c_3\amp d_1\amp d_2\amp d_3 \amp d_4\end{bmatrix}\)</span> and find the vectors in the basis of <span class="process-math">\(W_1\cap W_2\text{.}\)</span> Let see how to do this in Sage. <div id="sec2-4-Sage-29-2-7-1-23" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">P = column_matrix([c[i] for i in range(len(c))]+[d[i] for i in range(len(d))]).T;
+a = P.kernel().basis()
+print(a)
+</script></div> Once we have the basis of <span class="process-math">\(null(P)\text{,}\)</span> we can obained the basis vector in <span class="process-math">\(W_1\cap W_2\)</span> as follows. <div id="sec2-4-Sage-29-2-7-1-26" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f1=sum([a[0][i]*c[i] for i in range(len(c))]) 
+f2=sum([a[1][i]*c[i] for i in range(len(c))]) 
+print(f2)
+print(f1)
+</script></div> Clearly these are the basis vectors for <span class="process-math">\(W_1\cap W_2\)</span> obtained using the inbulit Sage method.</div></details></div>
+</div>
+</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-2-3-basis-dimension.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
