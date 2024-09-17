@@ -68,11 +68,16 @@ It is very easy to see that <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper 
 </p>
 <example xml:id="eg-LU1-nonlu-eg">
     <title>Non existence of DoLittle <m>LU-</m>factorization</title>  
-    Let <m>A=\begin{pmatrix} 0 \amp 1 \\1 \amp 0\end{pmatrix}</m>>. It is easy to check that $A$ does not have Dolittle <m>LU</m>-decomposition.  
+    <p>
+    Let <m>A=\begin{pmatrix} 0 \amp 1 \\1 \amp 0\end{pmatrix}</m>. 
+    It is easy to check that <m>A</m> does not have Doolittle <m>LU</m>-decomposition.  
+    </p>
 </example>
 <p>
  <example xml:id="eg-LU2">
-    Let <m>A=\begin{pmatrix} 1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix}</m>. Find the <m>LU-</m> decomposition of <m>A</m> using Dolittle's method.
+    <p>
+    Let <m>A=\begin{pmatrix} 1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix}</m>. 
+    Find the <m>LU-</m> decomposition of <m>A</m> using Doolittle's method.
 	
 	Let
 	<me>
@@ -114,11 +119,13 @@ It is very easy to see that <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper 
 		1\amp -1\amp 5\\0\amp -1\amp -9\\0\amp 0\amp -34     
 	\end{pmatrix}
 	</me>
+</p>
  </example>   
 </p>
 
 <p>
     <example xml:id="eg-LU3">
+        <p>
         Let <m>A=\begin{pmatrix}1\amp 1\amp 1\\3\amp 1\amp -3\\1\amp -2\amp -5 \end{pmatrix}</m>. Find the LU-decomposition of <m>A</m> using Crout's method.
 	
         Let
@@ -152,6 +159,7 @@ It is very easy to see that <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper 
             1\amp 1\amp 1\\0\amp 1\amp 3\\0\amp 0\amp 1
         \end{pmatrix}
         </me>
+    </p>
     </example>
 </p>
 <subsection xml:id="subsec-solving-system-LU">
@@ -165,6 +173,7 @@ LU-factorization method allows to solve a whole lot of linear equations having s
 </p>
 <p>
     <example xml:id="eg-LU4">
+        <p>
         Solve the system of equations <m>Ax=b</m> using using Doolittle method,  where 
         <m>A=\begin{pmatrix} 1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix} </m> and <m>b=\begin{pmatrix} 7\\-6\\5\end{pmatrix}</m>
      <solution>
@@ -194,17 +203,21 @@ LU-factorization method allows to solve a whole lot of linear equations having s
         </me>
         Now solving using the back substitution we get, <m>x_1=\frac{115}{17}, x_2=\frac{-29}{17}</m> and <m>x_3=\frac{41}{17}</m>.
         </p>
+    
      </solution>
+    </p>
     </example>
 </p>
 <p>
     <example xml:id="eg-Lu5">
+        <p>
         Solve the following system of equations using LU-decomposition 
 <me>
 2x+y+3z=-1; 4x+y+7z=5; -6x-2y-12=-2
 </me>
-<p>
-    <solution>
+</p>
+    
+<solution>
         <p>
             The above system is equivalent to <m>AX=B</m> where 
 <me>
@@ -302,7 +315,7 @@ Solving the above system by back substitution we get the required solution <m>x=
 
         </p>
     </solution>
-</p>
+
     </example>
 </p>
 <p>
@@ -325,8 +338,13 @@ taking  the first <m>k</m> rows and first <m>k</m> columns of <m>A</m> is called
         </p>
     </statement>
 </theorem>
-Proof of this theorem follows by induction on order of <m>A</m>.
 
+<proof>
+    <p>
+        Proof of this theorem follows by induction on order of <m>A</m>.
+
+    </p>
+</proof>
 <p>
     Not every matrix can have LU-factorization. Let us consider 
 	<m>A=\begin{pmatrix}0 \amp  1\\ 1 \amp  0\end{pmatrix}</m>.  Suppose <m>A</m> has 
@@ -353,6 +371,7 @@ size that admits an <m>LU</m>-factorization. Let first show this result for a <m
 </subsection>
 <p>
     <example xml:id="eg-LU5">
+        <p>
         Let <m>A=\begin{pmatrix}a \amp  b\\ c \amp  d\end{pmatrix}</m>. Show that there
         exists
         a permutation matrix <m>P</m> of order 2 such that <m>PA</m> admits the
@@ -371,6 +390,7 @@ size that admits an <m>LU</m>-factorization. Let first show this result for a <m
         A=\begin{pmatrix}0 \amp  b\\ 0 \amp  d\end{pmatrix}=\begin{pmatrix}1 \amp  0\\ 0 \amp 
             1\end{pmatrix}\begin{pmatrix}0 \amp  b\\ 0 \amp  d\end{pmatrix}.
         </me>
+    </p>
     </example>
 </p>
 

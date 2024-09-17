@@ -60,6 +60,14 @@
         It is clear that to know <m>T</m> it is good enough to know <m>T(e_1),\ldots, T(e_n)</m>.
       </p>
       <p>
+        What we have proved is, any linear map <m>T</m> from 
+        <m>\R^n\to \R</m> is given by 
+        <me>
+          T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n
+        </me>
+         where <m>a_i=T(e_i)</m> for <m>1\leq i\leq n</m>.
+      </p>
+      <p>
         What happens if you chose a different basis (other than standard basis)?
       </p>
     </statement>
@@ -86,7 +94,7 @@
     </md>.
   </p>
   <p>
-    Notice that the <m>j</m>-th columns of <m>A</m> is the coordinates of the vector <m>T(e_j)</m> with respect to the standard basis <m>\{e_1,\cdots,e_m\}</m> of <m>\R^m</m>.
+    Notice that the <m>j</m>-th columns of <m>A</m> is the coordinates of the vector <m>T(e_j)</m> with respect to the standard basis <m>\{e_1,\ldots,e_m\}</m> of <m>\R^m</m>.
     Thus to find the matrix of <m>T</m>,
     we find the coordinates of <m>T(e_j)</m> with respect to the basis on the codomain and put it in the <m>j</m>-th column.
   </p>

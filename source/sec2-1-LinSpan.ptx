@@ -20,6 +20,9 @@ L(S):=\{\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k:\alpha_1,\cdots,\alpha_k\in \
 </p>
 <p>
 <example  xml:id="sec2-1-eg-linspan-as-vs">
+    <p>
+        
+    </p>
  Let <m>S=\{v_1, v_2,\ldots, v_k\}</m> be a subset of vectors in <m>\R^n</m>. Then show that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
  <p>
     <solution>
@@ -45,11 +48,15 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
 
 <p>
   <problem>
+  <p>
+    Try to prove the following.
+  </p>
     <p>
         <ol>
             <li>
                 <p>
-                    If <m>v\in \R^n</m> is a non-zero vector in <m>\R^n</m>, then <m>L(\{v_1\})=\{\alpha v:\alpha\in \R\}</m> is a the line passing through origin and <m>v</m>.
+                    If <m>v\in \R^n</m> is a non-zero vector in <m>\R^n</m>, then <m>L(\{v\})=\{\alpha v:\alpha\in \R\}</m> 
+                    is a the line passing through origin and <m>v</m>. We shall denote <m>L(v)</m> by <m>\R v</m>.
 
                 </p>
             </li>

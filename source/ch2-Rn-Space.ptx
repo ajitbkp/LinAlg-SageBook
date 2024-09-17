@@ -4,7 +4,13 @@
   
   <introduction>
       <p>
-        In this chapter, we define <m>\R^n</m>, the <m>n</m>-dimensional Euclidean space as vector space over <m>\R</m>. We shall define abstract vector spaces in later chapter. In fact, <m>\R^n</m> can be thought of as model vector spaces and once we understand properties in <m>\R^n</m>, it will be easier to under properties in asbtract vector spaces. 
+        In this chapter, we define <m>\R^n</m>, the <m>n</m>-dimensional 
+        Euclidean space as vector space over <m>\R</m>. We shall define abstract 
+        vector spaces in later chapter. In fact, <m>\R^n</m> can be thought of as model 
+        vector spaces and once we understand properties in <m>\R^n</m>, 
+        it will be easier to under properties in asbtract vector spaces. Sage is a very nice
+        tool to define vector spaces and deal with all the concepts of vector space. 
+        We shall explore all the concepts in this chapter using Sage in the last section.  
             
       </p>
     </introduction>

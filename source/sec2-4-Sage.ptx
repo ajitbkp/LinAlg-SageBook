@@ -102,4 +102,461 @@
         
     </output>
 </sage>
+<altert> Vector in higher dimension in Sage</altert>
+Vectors in hiher dimensions can be defined in a similar manner, we just need to increase 
+the number of coordinates/components. Let us look at an example.
+
+<sage>
+    <input>
+        u = vector([1,-2,3,-4,5,7])
+        v = vector([2,1,3,1,-6,5])
+        w = vector([-3,0,2,0,5,-6])
+        print(2*u-3*v+w)
+    </input>
+    <output>
+    (-7, -7, -1, -11, 33, -7)
+    </output>
+</sage>
+
+<example>
+    <p>
+        Genarate five random vectors in $\mathbb{R}^8$ whose entries are 
+random integers between -10 and 10. Also generate 5 random numbers (scalars) whihc are 
+integers between -10 and 10. Find the linear combinations of these vectors with five scalars.
+
+<sage>
+    <input>
+        n = 8
+        v1 = vector([randint(-10,10) for i in range(n)])
+        v2 = vector([randint(-10,10) for i in range(n)])
+        v3 = vector([randint(-10,10) for i in range(n)])
+        v4 = vector([randint(-10,10) for i in range(n)])
+        v5 = vector([randint(-10,10) for i in range(n)])
+        B = [v1,v2,v3,v4,v5]
+        print(B)
+        α = [randint(-10,10) for i in range(5)]
+        print(α)
+        sum([α[i]*B[i] for i in range(5)])
+    </input>
+    <output>
+        
+    </output>
+</sage>
+    </p>
+</example>
+
+<example>
+    <p>
+    <p>   (i) Let us plot the linear span of a single vector 
+    <m>(3,2, -1)</m> in  <m>\R^3</m> in Sage. </p>
+<p>
+    Let us also plot the linear span of two vectors <m>(3,2, -1), (-1,1,2)</m> in  
+    <m>\R^3</m> in Sage. </p>
+<p>
+This can be achieved by sage method 'parametric_plot3d' in sage.
+</p>
+
+<sage>
+    <input>
+    v = vector([3,2, -1])
+    var('s')
+    pv = plot(v,color='red',thickness=3)
+    linspan = parametric_plot3d(s*v,(s,-2,2),axes=True,frame=False, color='black')
+    linspan+pv
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<sage>
+    <input>
+        v1 = vector([3,2, -1])
+        v2 = vector([-1,1,2])
+        var('s,t')
+        pv1 = plot(v1,color='red',thickness=5)
+        pv2 = plot(v2,color='green',thickness=5)
+        linspan = parametric_plot3d(s*v1+t*v2,(s,-3,3),(t,-3,3),axes=True,frame=False,opacity=0.4)
+        linspan+pv1+pv2
+    </input>
+    <output>
+        
+    </output>
+</sage>
+</p>
+ </example>
+ <p>
+    
+ <alert>Generating matrix from vectors:</alert> We can generate matrix from 
+ a given set of vectors its columns and rows. Let us look at an example.
+</p>
+
+ <sage>
+    <input>
+        v1 = vector([1,-1,2,3])
+        v2 = vector([2,1,0,3])
+        v3 = vector([-2,2,-1,2])
+        A = column_matrix([v1,v2,v3])
+        print(A)
+        B = column_matrix([v1,v2,v3]).T
+        print(B)
+    </input>
+    <output>
+        
+    </output>
+ </sage>
+
+ <h2> Vector Spaces over rational or reals:</h2>
+ <p>
+    <sage>
+        <input>
+            V = VectorSpace(RR,5);
+            print(V)
+            V =RR^5 ## Same as VectorSpace(RR,5);
+            print(V)
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+ </p>
+ <sage>
+    <input>
+        V = VectorSpace(QQ,5);
+        print(V)
+        V =QQ^5
+        print(V)
+    </input>
+    <output>
+        
+    </output>
+ </sage>
+ <p>
+In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>  and 
+<code>V.an_element()</code> that displays a random element and an element (fixed) of 
+<m>V</m>.
+ </p>
+ <sage>
+    <input>
+        V =QQ^5
+        V.random_element()
+    </input>
+    <output>
+        (1/8, 1/2, -9/2, 12, 2)
+    </output>
+ </sage>
+ <sage>
+    <input>
+        V =QQ^5
+        V.an_element()
+    </input>
+    <output>
+        (1, 0, 0, 0, 0)  
+    </output>
+ </sage>
+
+ <h1>Linearly dependence and indepndence in Sage</h1>
+ <example>
+    <p>
+        Let us generate some random 5 vectors, <m> v_1,\ldots, v_5</m> in 
+        the vector space <code>QQ^5</code>. Sage has a method 
+        <code>.are_linearly_dependent()</code> 
+        to check if a set of vectors are linearly dependent. Sage also has 
+        a method <code>linear_dependence()</code> whihc return emply list in case the set 
+        is linearly independent and returns a list of scalars <m>\alpha_i</m> such that 
+        <m>\sum \alpha_i v_i=0</m>.
+    <sage>
+        <input>
+            V =QQ^5
+            v1 = vector(QQ,[1,-1,3,2,4])
+            v2 = vector(QQ,[-2,1,0,3,-1])
+            v3 = vector(QQ,[-5,3,-3,4,-6])
+            v4 = vector(QQ,[3,2,1,2,3])
+            v5 = vector(QQ,[-13,4,-7,6,-15])
+            B = [v1,v2,v3,v4,v5]
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <sage>
+        <input>
+        V.are_linearly_dependent(B)   
+        </input>
+        <output>
+        True   
+        </output>
+    </sage>
+    <sage>
+        <input>
+        V.linear_dependence(B)  
+        </input>
+        <output>
+            [
+            (1, -2, 0, 1/2, 1/2),
+            (0, 0, 1, -1/2, -1/2)
+            ]    
+        </output>
+    </sage>
+
+    <p>
+        Now we can check if the scalar linear combination of the output 
+        shown above with sect of vectors in <m>B</m> is zero.
+    </p>
+    <sage>
+        <input>
+            s = V.linear_dependence(B)
+            sum([s[1][i]*B[i] for i in range(len(B))])
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    </p>    
+ </example>
+ <example>
+    <title>Linear Span of vectors in Sage</title>
+    Sage can generate a linear span of a set of vectors in a vector space 
+    using the vector space method <code>.span()</code>. Let us explore this 
+    for set of 5 vectors in a vector space <code>V=QQ^4</code>.
+
+    <p>
+        <sage>
+            <input>
+                V =QQ^5
+                v1 = vector(QQ,[1,-1,3,2,4])
+                v2 = vector(QQ,[-2,1,0,3,-1])
+                v3 = vector(QQ,[-5,3,-3,4,-6])
+                v4 = vector(QQ,[3,2,1,2,3])
+                v5 = vector(QQ,[-13,4,-7,6,-15])
+                B = [v1,v2,v3,v4,v5]
+                W=V.span(B)
+                W
+            </input>
+            <output>
+                Vector space of degree 5 and dimension 3 over Rational Field
+                Basis matrix:
+                [     1      0      0 -17/22   6/11]
+                [     0      1      0  16/11   1/11]
+                [     0      0      1  31/22  13/11]   
+            </output>
+        </sage>
+    It returns the dimension of the linear span along with a basis as a matrix.
+    We can check if any linear combinations of vectors in B lies in W.
+
+    <sage>
+        <input>
+            a = [randint(-10,10) for i in range(len(B))]
+            x = sum(a[i]*B[i] for i in range(len(B)))
+            x in W    
+        </input>
+        <output>
+            True   
+        </output>
+    </sage>
+    We can also check if W is a subspave of V using the following sage syntaxes.
+
+    <sage>
+        <input>
+          <![CDATA[W <= V]]>
+        </input>
+        <output>
+            True
+        </output>
+    </sage>
+    <sage>
+        <input>
+            W.is_subspace(V)   
+        </input>
+        <output>
+          True  
+        </output>
+    </sage>
+    </p>
+    
+ </example>
+ <example>
+    <title>Using RREF to find a basis of linear span.</title>
+    <p>
+    
+        Let us use the sage method rref to find a basis of the set of vectors define 
+        earlies in Sage.
+     </p>
+       
+ <sage>
+    <input>
+        V =QQ^5
+        v1 = vector(QQ,[1,-1,3,2,4])
+        v2 = vector(QQ,[-2,1,0,3,-1])
+        v3 = vector(QQ,[-5,3,-3,4,-6])
+        v4 = vector(QQ,[3,2,1,2,3])
+        v5 = vector(QQ,[-13,4,-7,6,-15])
+        B = [v1,v2,v3,v4,v5]
+        # We define a matrix whose rows are v1,..., v5
+        M = column_matrix(B).T 
+        M.rref()
+    </input>
+    <output>
+        [     1      0      0 -17/22   6/11]
+        [     0      1      0  16/11   1/11]
+        [     0      0      1  31/22  13/11]
+        [     0      0      0      0      0]
+        [     0      0      0      0      0]
+          
+    </output>
+ </sage>
+ <p>
+ Clearly the first three rows constitutes a basis of linear span. This is what 
+ we obtained using <c>.span()</c>.
+ </p>
+   
+</example>
+
+<example>
+<title>Coordinates of a vector w.r.t. a basis</title>
+<p>
+    Consider a set of vectors
+<m> B = \{(1,-1,3,2), (-2,1,3,-1), (5,3,1,4),(3,2,1,2)\}</m>.Check if this forms a basis of the vector space <m>V=\mathbb{Q}^5</m>. 
+Find the coordinates of the vector <m>v=(5,7,11,-13)</m> with respect to this basis.
+</p>
+   
+<sage>
+    <input>
+        V = QQ^4
+        # Returns the standard basis 
+        V.basis()   
+    </input>
+    <output>
+        [
+        (1, 0, 0, 0),
+        (0, 1, 0, 0),
+        (0, 0, 1, 0),
+        (0, 0, 0, 1)
+        ]
+    </output>
+</sage>
+We can also print this basis as a matrix using <c>V.basis_matrix()</c>
+
+<sage>
+    <input>
+        V.basis_matrix()
+    </input>
+    <output>
+        [1 0 0 0]
+        [0 1 0 0]
+        [0 0 1 0]
+        [0 0 0 1]  
+    </output>
+</sage>
+Now we define the set of vectors in Sage.
+<sage>
+    <input>
+        v1 = vector(QQ,[1,-1,3,2])
+        v2 = vector(QQ,[-2,1,3,-1])
+        v3 = vector(QQ,[5,3,1,4])
+        v4 = vector(QQ,[3,2,1,2])
+        B = [v1,v2,v3,v4]
+        V.linear_dependence(B)
+    </input>
+    <output>
+        [
+
+        ] 
+    </output>
+</sage>
+We can also check the same by finding the rank of the martrix <m>M</m> whose columns and 
+the given vectors. If the rank is 4, then the given set of vectors are linearly independet.
+<sage>
+    <input>
+        M = column_matrix(B)
+        M.rank()
+    </input>
+    <output>
+        4
+    </output>
+</sage>
+Since it returns an empty list. The given set of vectors <m>B</m> is linearly independet.
+We can find the coordinates of the vector using sage method <c>coordinate_vector()</c> 
+or using <c>.coordinates()</c>
+using  the following codes. For this first we need to create a subspace say V1 with 
+B as a basis using the method <c>V.subspace_with_basis(B)</c>
+
+<sage>
+    <input>
+        v = vector(QQ,[5,7,11,-13])
+        V1 = V.subspace_with_basis(B)
+        V1
+    </input>
+    <output>
+        Vector space of degree 4 and dimension 4 over Rational Field
+        User basis matrix:
+        [ 1 -1  3  2]
+        [-2  1  3 -1]
+        [ 5  3  1  4]
+        [ 3  2  1  2]   
+    </output>
+</sage>
+<sage>
+    <input>
+        V1.coordinate_vector(v)
+    </input>
+    <output>
+        (1/28, -25/14, -663/28, 559/14) 
+    </output>
+</sage>
+<sage>
+    <input>
+        V1.coordinates(v)
+    </input>
+    <output>
+        [1/28, -25/14, -663/28, 559/14]
+    </output>
+</sage>
+We can also find the same manually using RREF as follows.
+<sage>
+    <input>
+        column_matrix(B).augment(v,subdivide=True)
+    </input>
+    <output>
+        [  1  -2   5   3|  5]
+        [ -1   1   3   2|  7]
+        [  3   3   1   1| 11]
+        [  2  -1   4   2|-13]
+    </output>
+</sage>
+<sage>
+    <input>
+        column_matrix(B).augment(v,subdivide=True).rref()
+    </input>
+    <output>
+        [      1       0       0       0|   1/28]
+        [      0       1       0       0| -25/14]
+        [      0       0       1       0|-663/28]
+        [      0       0       0       1| 559/14]
+    </output>
+</sage>
+The same can be achieved using by solving the system <m>Bx=v</m>.
+<sage>
+    <input>
+        column_matrix(B).inverse()*v
+    </input>
+    <output>
+        (1/28, -25/14, -663/28, 559/14)
+    </output>
+</sage>
+</example>
+
+<example>
+  <title>Fundamental subscapes of a matrix.</title>
+  <p>
+    Consider a matrix <m> A= \left(\begin{array}{rrrrrr}
+        -351 \amp  -1053 \amp  -1053 \amp  160 \amp  382 \amp  1657 \\
+        -32 \amp  -96 \amp  -96 \amp  15 \amp  35 \amp  152 \\
+        -36 \amp  -108 \amp  -108 \amp  16 \amp  39 \amp  169 \\
+        11 \amp  33 \amp  33 \amp  -5 \amp  -12 \amp  -52 \\
+        -11 \amp  -33 \amp  -33 \amp  5 \amp  12 \amp  52
+        \end{array}\right)</m>. Find the fundamental subspaces defined in the 
+        Example <xref ref="sec2-1-matrix-spaces"/> 
+  </p>
+    
+</example>
 </section>

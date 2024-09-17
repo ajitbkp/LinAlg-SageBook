@@ -8,7 +8,7 @@
 
   <statement>
     <p>
-      A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}</m> is called a basis of <m>\R^n</m> if every vector <m>v\in \R^n</m> can be  expressed uniquely as  linear combinations of <m>v_1,v_2,\ldots,v_n</m>. 
+      A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}</m> is called a <alert>basis</alert> of <m>\R^n</m> if every vector <m>v\in \R^n</m> can be  expressed uniquely as  linear combinations of <m>v_1,v_2,\ldots,v_n</m>. 
 	
       Thus <m>\beta</m> is basis of <m>\R^n</m> if 
     <p>(i) <m>L(\beta)=\R^n</m>, that every vector <m>v\in \R^n</m> can be expressed as linear combinations of <m>v_1,v_2,\ldots,v_n</m>. </p>
@@ -27,7 +27,8 @@
   <theorem xml:id="thm-sec2-3-basis-thm1">
     <statement>
       <p>
-        A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}</m> is called a basis of <m>\R^n</m> iff (i) <m>L(\beta)=\R^n</m>and <m>\beta</m> is linearly independent. 
+        A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}</m> is called a basis of <m>\R^n</m> iff 
+      (i) <m>L(\beta)=\R^n</m>and <m>\beta</m> is linearly independent. 
     
       </p>
     </statement>
@@ -79,7 +80,7 @@ Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0
   <theorem xml:id="thm-sec2-3-thm4">
     <statement>
       <p>
-     Let <m> \beta=\{v_1,v_2,\ldots,v_k\}</m> be a basis of a subscape <m>W</m>  of <m>\R^n</m> with <m>k</m> elements. Then any set 
+     Let <m> \beta=\{u_1,u_2,\ldots,u_k\}</m> be a basis of a subsapce <m>W</m>  of <m>\R^n</m> with <m>k</m> elements. Then any set 
      <m>S=\{v_1,v_2,\ldots, v_{k+1}\}\subset W</m> with <m>k+1</m> elements is linearly dependent.   
       </p>
     </statement>
@@ -155,13 +156,13 @@ Since the number of elements any two bases are same. This leads to the dinition 
     <p>(i) <m>\R^n</m> is a <m>n</m>-dimensional vector space over <m>\R</m>.</p>
 <p>(ii) Any plane passing through origin in <m>\R^3</m> is a 2 dimensional subspace.</p>
 <p>(iii) <m>W:=\{(x_1,\ldots,x_n):x_1+\cdots+x_n=0\}</m> is <m>n-1</m> dimensional subspace of <m>\R^n</m>. Write down a basis of <m>W</m>.</p>
-<p>(iv) <m>W=\{(x_1,x_2,x_3,x_4)\in \R^4:x_1=x_3,x_2=x_4\}</m> is a 2-dimensional subspace of <m>\R^4</m>. Write dowm a basis of <m>W</m>.</p>
+<p>(iv) <m>W=\{(x_1,x_2,x_3,x_4)\in \R^4:x_1=x_3,x_2=x_4\}</m> is a 2-dimensional subspace of <m>\R^4</m>. Write down a basis of <m>W</m>.</p>
 
   </example>
 </p>
 
 <p>
-  <alert>How to find basis of a subspace?</alert>
+  <alert>How to find basis of a subspace <m>L(S)</m>?</alert>
   </p>
   <p>
   Suppose  <m>W</m> is subspace spanned by a set of <m>k</m> vectors, say, 
@@ -236,7 +237,8 @@ is a basis of <m>{\rm col}(A)</m>. Notice that <m>\dim{({\rm col}(A))}=\dim{({\r
       <definition xml:id="def-row-column-rank">
         <statement>
           <p>
-            The <m>\dim{({\rm col}(A))}</m> is called the <alert>column rank</alert> of <m>A</m> and <m>\dim{({\rm row}(A))}</m> is called the <alert>row rank </alert>of <m>A</m>.	    
+            The <m>\dim{({\rm col}(A))}</m> is called the <alert>column rank</alert> of <m>A</m> and 
+            <m>\dim{({\rm row}(A))}</m> is called the <alert>row rank</alert> of <m>A</m>.	    
           </p>
         </statement>
       </definition>
@@ -253,6 +255,9 @@ is a basis of <m>{\rm col}(A)</m>. Notice that <m>\dim{({\rm col}(A))}=\dim{({\r
     </p>
     <p>
       <example>
+        <p>
+          
+        </p>
         Consider a matrix <m>A=\left[\begin{array}{rrrrr}
           1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\
           -1 \amp  1 \amp  -5 \amp  0 \amp  -2 \\
@@ -314,6 +319,9 @@ is a basis of <m>{\rm col}(A)</m>. Notice that <m>\dim{({\rm col}(A))}=\dim{({\r
     
     <p>
       <example>
+        <p>
+          
+        </p>
         Consider the matrix <m>A=\left[\begin{array}{rrrrrr}
           1 \amp  -1 \amp  2 \amp  3 \amp  1 \amp  4 \\
           2 \amp  1 \amp  0 \amp  2 \amp  -3 \amp  1 \\
@@ -600,13 +608,17 @@ It is easy to verify that <m>x_\gamma=[I]_\beta^\gamma x_\beta</m>.
 
 <p>
 <problem>
-  What are all subspaces of <m>\R^2</m> and <m>\R^3</m>?
+  <p>
+    What are all subspaces of <m>\R^2</m> and <m>\R^3</m>?
+  </p>
 </problem>
 </p>
 
 <p>
 <problem>
-  If <m>W</m> is a subspace of <m>\R^n</m>, then it is null space of some matrix.
+  <p>
+    If <m>W</m> is a subspace of <m>\R^n</m>, then it is null space of some matrix.
+  </p>
 </problem>
 </p>
 

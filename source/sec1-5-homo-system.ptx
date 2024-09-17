@@ -112,6 +112,7 @@ are stated in the following Theorem.
         
         <p>
             <example>
+                <p>
                 Let us consider one equation in two variables, <m>2x_1+3x_2=5</m>. 
                 The corresponding homogeneous system is <m>2x_1+3x_2=0</m>. It is easy see that 
                 <m>\left\{\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix}:\alpha\in \R\right\}</m> 
@@ -148,11 +149,13 @@ are stated in the following Theorem.
                     </output>
                 </sage>
             </p>
+        </p>
             </example>
         </p>
         
         <p>
             <example>
+                <p>
                 Let consider 2 equations in three variables.
                 <men xml:id="eqn-hom-eg1-1">2x_1-x_2-x_3=5; x_1+x_2-2x_3=7 </men>
                 
@@ -201,7 +204,7 @@ are stated in the following Theorem.
                     </p>
 
                 </p>
-                
+            </p>
             </example>
         </p>
         

@@ -5,14 +5,16 @@
   <introduction>
     <p>
       Consider the Cartesian plane <m>\R^2=\left\{\begin{bmatrix}x_1\\x_2 \end{bmatrix} :x_1,x_2\in\R\right\}</m>.
-      Consider the reflection about <m>x</m>-axis in <m>\R^2</m>.
-      This is a map <m>R_f\colon \R^2\to\R^2</m> as
+      The reflection about <m>x</m>-axis in <m>\R^2</m> is given by 
+      <m>R_f\colon \R^2\to\R^2</m> 
             <me>
               R_f\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)=\begin{bmatrix}x_1\\-x_2 \end{bmatrix}
             </me>.
             Note that we can write
             <me>
-              R_f\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)=\begin{bmatrix}x_1\\-x_2 \end{bmatrix} = \begin{bmatrix}1 \amp  0\\0 \amp  -1 \end{bmatrix} (\begin{bmatrix}x_1\\x_2 \end{bmatrix}
+              R_f\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)=
+              \begin{bmatrix}x_1\\-x_2 \end{bmatrix} = 
+              \begin{bmatrix}1 \amp  0\\0 \amp  -1 \end{bmatrix} \begin{bmatrix}x_1\\x_2 \end{bmatrix}
             </me>.
             Thus the map <m>R_f</m> is obtained as a matrix multiplication by <m>A=\begin{bmatrix}1 \amp  0\\0 \amp  -1 \end{bmatrix}</m>.
           </p>
@@ -54,13 +56,14 @@
             <m>T_A</m> is called the matrix transformation induced by the matrix <m>A</m>.
           </p>
           <p>
-            Note that the matrix transformation <m>T_A</m> has the following properties: (i)
-            <m>T_A(x+y)=A(x+y)=Ax+Ay=T_A(x)+T_A(y)</m> for all <m>x,y\in \R^n</m>.
-          </p>
-          <p>
+            Note that the matrix transformation <m>T_A</m> has the following properties: 
+            <p> (i)
+            <m>T_A(x+y)=A(x+y)=Ax+Ay=T_A(x)+T_A(y)</m> for all <m>x,y\in \R^n</m>. </p>
+            <p>
             (ii) <m>T_A(\alpha x)=A(\alpha x)=\alpha Ax=\alpha T_A(x)</m> for all
             <m>\alpha\in \R</m> and <m>x\in \R^n</m>.
           </p>
+        </p>
           <p>
             In particular,
             <m>T_A</m> preserves vector addition and scalar multiplication.
@@ -70,29 +73,30 @@
           <definition>
             <statement>
               <p>
-                A map <m>T\colon \R^n \to \R^m</m> is called a linear transformation (or linear map)if it satisfies the following properties:
+                A map <m>T\colon \R^n \to \R^m</m> is called a 
+                <alert>linear transformation (or linear map)</alert> if it satisfies the following properties:
               </p>
               <p>
-                (i) <m>T(x+y)=T(x)+T(y)</m> for all <m>x,y\in \R^n</m>.
+                (i) for all <m>x,y\in \R^n</m>, <m>T(x+y)=T(x)+T(y)</m>.
               </p>
               <p>
-                (ii) <m>T(\alpha x)=\alpha T(x)</m> for all
-                <m>\alpha\in \R</m> and <m>x\in \R^n</m>.
+                (ii) for all
+                <m>\alpha\in \R</m> and <m>x\in \R^n</m>,  <m>T(\alpha x)=\alpha T(x)</m> .
               </p>
             </statement>
           </definition>
 
-          <problem>
+          <example>
             <statement>
               <p>
                (i) If <m>T\colon \R^n\to \R^m</m> is a linear map, then <m>T(0)=0</m>.
-                That is <m>T</m> takes the zero vector in <m>\R^n</m> to the zero vector in <m>\R^m</m>.
+                That is, <m>T</m> takes the zero vector in <m>\R^n</m> to the zero vector in <m>\R^m</m>.
               </p>
               <p>
                 (ii) If <m>T\colon \R^n\to \R^m</m> is a linear map, then   
                 <m>T(-v)=-T(v)</m> for all <m>v\in \R^n</m>.             </p>
             </statement>
-        </problem>
+          </example>
 
           <example>
             <statement>
@@ -107,12 +111,12 @@
               </p>
 
               <p>
-                (iii) The reflection and rotation defined above are linear map 
+                (iii) The reflection and rotation defined above are linear maps 
                 from <m>\R^2</m> to <m>\R^2</m>.
               </p>
               
               <p>
-                (iv) Any matrix transformation given by <m>T_A(x)=Ax</m> 
+                (iv) Any matrix transformation given by <m>T_A(x)=Ax</m> is a linear map.
               </p>
                 
               <p>
@@ -120,12 +124,12 @@
                 <m>T_a\colon \R^n\to \R^n</m> as <m>T_a(x)=x+a</m>.
                 Is <m>T_a</m> a linear map?
 
-                When is this linear? (The map <m>T_a</m> is called translation.)
+                When is this linear? (The map <m>T_a</m> is called <alert>translation by <m>a</m></alert>.)
               </p>
 
               <p>
-                (vi) Let <m>a,b\in \R</m> be two real number.
-                Define <m>T\colon \R^2\to \R</m> as <m>T(x,y)=ax+b</m>.
+                (vi) Let <m>a,b\in \R</m> be two real numbers.
+                Define <m>T\colon \R^2\to \R</m> as <m>T(x,y)=ax+by</m>.
                 It is easy to check that <m>T</m> is a linear map?
                 Can you generalize this?
               </p>

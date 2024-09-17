@@ -4,7 +4,8 @@
   <title>Elementary Row Operations</title>
 
   <p> 
-    The solution of a system of linear equations is unchanged if the following operations are performed. If, fact this is the basis for solving a system of linear equations.
+    The solution of a system of linear equations is unchanged if the following 
+    operations are performed. In fact this is the basis for solving a system of linear equations.
   </p>
 <ol>
     <li> Multiply one of the equations by a nonzero real number.
@@ -32,10 +33,10 @@
       </li>
     </ol>  
    <note>
-    If an equation of the system after the elementary after reduces to <m> 0 = k</m>,
-    where <m>k \neq 0</m>, then the system has no solution.
+    If an equation of the system after the the avove operations reduces to <m> 0 = \alpha</m>,
+    where <m>\alpha \neq 0</m>, then the system has no solution.
     This is equivalent to if a row of the augmented matrix is
-    composed of zeros except for the last number, then the system
+    composed of zeros except for the column, then the system
     has no solution.
    </note>
 
@@ -60,7 +61,7 @@
     <p>
       A matrix <m>B</m> is said to be <alert> equivalent</alert>  or <alert> row equivalent</alert> to
       matrix <m>A</m>, in notation <m>B\thicksim A</m> , if <m>B</m> can be obtained
-      from <m>B</m>  by performing finite number of elementary row
+      from <m>A</m>  by performing finite number of elementary row
       operations.
         </p>
   </statement>
@@ -71,9 +72,9 @@
 <observation>
   Let <m>A</m> be an <m>n\times n</m> matrix of real numbers. Let the columns of <m>A</m> 
     are <m>a_1,a_2,\ldots a_n</m>, 
-    that is <m>A=\begin{pmatrix} a_1\amp a_2\amp\cdots a_n\end{pmatrix}</m>. 
+    that is, <m>A=\begin{bmatrix} a_1\amp a_2\amp\cdots \amp a_n\end{bmatrix}</m>. 
       Let the rows of <m>A</m> are given by <m>R_1, R_2,\ldots, R_n</m>, in particular,  
-        <m>A=\begin{pmatrix} R_1\amp R_2\amp\cdots R_n\end{pmatrix}^T</m>. 
+        <m>A=\begin{bmatrix} R_1\amp R_2\amp\cdots \amp R_n\end{bmatrix}^T</m>. 
           Let <m>e_1, e_2, \ldots e_n</m> are standard coordinate vectors in 
             <m>\mathbb{R}^n</m> , where <m>e_i</m> is the column matrix (vector) whose 
               <m>i</m>-th entry is 1 and rest are zero. That is 
@@ -142,8 +143,8 @@ show(E)
     <p>
       Let <m>e</m> denote an elementary row operation and <m>e(A)</m>  the result of applying <m>e</m> to a  <m>A</m>.
       Let <m>E</m> be a matrix obtained by applying <m>e</m> to the identity matrix. That is,  <m>E=e(I)</m>. 
-      Then <m>E</m> is called the elementary matrix
-      corresponding to the elementary row operation <m>e</m>. It is easy to see that an elementary matrix is non singular. (why?)
+      Then <m>E</m> is called the <alert>elementary matrix</alert> corresponding to the 
+      elementary row operation <m>e</m>. It is easy to see that an elementary matrix is non singular. (why?)
     </p>
   </statement>
 </definition>
@@ -225,8 +226,11 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
   </p>
   <p>
     <example>
+      <p>
       Find the inverse of <m>A=\begin{pmatrix}1 \amp 0 \amp 2\\2 \amp -1 \amp 3\\4 \amp 1 \amp 8\end{pmatrix}</m> using row operations.
+      </p>
     </example>
+
   <solution>
     <p>
       <me>[A, I]= 
@@ -254,7 +258,10 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
         \end{pmatrix}</me>
         
     </p>
+  </solution>
+
   <p>
+  
     Let solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.
     <sage>
       <input>
@@ -379,8 +386,7 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
             </output>
           </sage>
         </p>
-  </solution>
-
+  
   </p>
 
   <p><alert>Sage Exercise:</alert>

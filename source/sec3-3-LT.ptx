@@ -252,9 +252,11 @@
       </statement>
     </example>
     <example xml:id="linalg-engg-eg48">
+      <title>Projection onto a plane in <m>\R^3</m></title>
+           
       <statement>
         <p>
-          [Projection onto a plane in <m>\R^3</m>] Let <m>\pi</m> be a plane given by the equation <m>ax+by+cz=0</m>.
+       Let <m>\pi</m> be a plane given by the equation <m>ax+by+cz=0</m>.
           Then the vector <m>n=(a,b,c)</m> is normal to <m>\pi</m>.
           We wish to find the orthogonal projection of any vector <m>v=(x,y,z)</m> onto <m>\pi</m>.
         </p>
@@ -275,9 +277,10 @@
       </statement>
     </example>
     <example xml:id="linalg-engg-eg49">
+      <title>Reflection through a plane in <m>\R^3</m></title>
       <statement>
         <p>
-          [Reflection through a plane in <m>\R^3</m>] Let <m>\pi</m> be a plane given by the equation <m>ax+by+cz=0</m>.
+         Let <m>\pi</m> be a plane given by the equation <m>ax+by+cz=0</m>.
           Then the vector <m>n=(a,b,c)</m> is normal to <m>\pi</m>.
           We wish to find the reflection
           <m>Ref_\pi(v)</m> of any vector <m>v=(x,y,z)</m> through <m>\pi</m>.

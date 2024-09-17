@@ -29,12 +29,14 @@
    </p>
    <p>
     <example>
+        <p>
         Determine the rank of <m>A=
             \begin{pmatrix}
                 1 \amp  1   \amp  1   \\
                 2 \amp  3  \amp  4   \\
                 4 \amp   5  \amp  6   \\
             \end{pmatrix}</m>.
+        </p>
             <p>
                 <solution>
                     <p>
@@ -100,7 +102,7 @@
         <theorem xml:id="thm-rank-theorem">
             <statement>
                 <p>
-                    Suppose <m>A</m> is an $m \times n$ matrix. The
+                    Suppose <m>A</m> is an <m>m \times n</m> matrix. The
 	rank of  <m>A</m> is equal to the number of non-zero rows  in an
 	echelon equivalent form of   <m>A</m>.  In other words, the rank of matrix  <m>A</m> 
 	is the number of leading 1's in any row-echelon matrix to which  <m>A</m> can be
@@ -112,8 +114,10 @@
        </p>
        <p>
         <example>
+            <p>
             Let us find the ranl of <m>A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}</m>.
-
+            </p>
+    
         </example>
     </p>
         <p>
@@ -279,8 +283,9 @@
     </corollary>
 </p>
 <example xml:id="matrix-rank-eg1">
+    <p>`
     Consider the Example~<xref ref="row-echelon-eg1"/>. 
-    <p>
+    
         <md>
            <mrow> \begin{pmatrix}
                 1\amp  2   \amp  4   \amp   |  \amp  3   \\
@@ -300,10 +305,12 @@
     </md>
     Thus we have  <m>r(A)=r(A^*)=3</m>,  hence this system has a unique solution.
     </p>
+
 </example>
 
 <p>
     <example xml:id="matrix-rank-eg2">
+        <p>`
         Let us consider the system <m>AX=B</m> where 
         <m>A=\begin{bmatrix}1 \amp   -2\amp  0\amp  3\\3\amp  2\amp  8\amp  1\\2\amp  3\amp  7\amp  2\\-1\amp  2\amp  0\amp  4\end{bmatrix}\quad  B=\begin{bmatrix}-4\\4\\3\\-3\end{bmatrix}\quad  X=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}.
         </m>
@@ -336,7 +343,7 @@
                 </p>
             </solution>
         </p>
-      
+    </p>`
     </example>
 </p>
 <p>

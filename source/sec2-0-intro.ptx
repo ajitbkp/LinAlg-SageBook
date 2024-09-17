@@ -18,7 +18,9 @@ column vector.
 </p>   
 
 <p>
-    If <m>A</m> is <m>m\times n</m> matrix then columns of <m>A</m> can be thought of as vectors in <m>\R^m</m>.
+    If <m>A</m> is <m>m\times n</m> matrix then columns of <m>A</m> can be thought of 
+    as vectors in <m>\R^m</m>. Similarly, each row can be thought of a vector in 
+    <m>\R^n</m> and is called a row vector.
 </p>
 
 <proposition xml:id="prop-Rn-properties">
@@ -29,8 +31,11 @@ column vector.
         </p>
         <p>(i) for all <m>x,y\in \R^n</m>, <m>x+y=y+x</m>. (<alert>Commutative property</alert>)</p>
         <p>(ii) for all <m>x,y,z\in \R^n</m>, <m>x+(y+z)=(x+y)+z</m>. (<alert>Associative property</alert>)</p>
-    <p>	(iii) The zero vector <m>\overline{0}=(0,0,\ldots,0)</m> has the property, for all <m>x\in \R^n</m>, <m>\overline{0}=x+\overline{0}</m>. This zero vector, we shall denote by 0 and is called the <alert>additive identity</alert>. </p>
-    <p>	(iv) for each <m>x\in R^n</m>, there is a vector <m>x'\in \R^n</m>, such that <m>x+x'=x'+x=\overline{0}</m>. This <m>x'</m> is called the <alert>additive inverse</alert> of <m>x</m>. It is easy to see that <m>x'=-x</m>. </p>
+    <p>	(iii) The zero vector <m>\overline{0}=(0,0,\ldots,0)</m> has the property, for all 
+        <m>x\in \R^n</m>, <m>\overline{0}=x+\overline{0}</m>. This zero vector, we shall denote by 
+        0 and is called the <alert>additive identity</alert>. One can show that zero vector is unique.</p>
+    <p>	(iv) for each <m>x\in \R^n</m>, there is a vector <m>x'\in \R^n</m>, such that <m>x+x'=x'+x=\overline{0}</m>. 
+        This <m>x'</m> is called the <alert>additive inverse</alert> of <m>x</m>. It is easy to see that <m>x'=-x</m>. </p>
     <p>	(v) for all <m>\alpha\in \R</m> and <m>x,y \in \R^n</m>, <m>\alpha(x+y)=\alpha x+\alpha y</m>.</p>
     <p>	(vi) for all <m>\alpha,\beta \in \R</m> and <m>x \in \R^n</m>, <m>(\alpha+\beta) x=\alpha x+\beta y</m>.</p>
     <p>	(vii) for all <m>\alpha,\beta \in \R</m> and <m>x \in \R^n</m>, <m>(\alpha\beta) x=\alpha (\beta x)y=\beta(\alpha x)</m>. </p>
@@ -45,10 +50,20 @@ column vector.
     <title>Vector Subspaces in <m>\R^n</m></title>
     <statement>
         <p>
-            A non empty subset <m>V\subset \R^n</m> is called a vector subspace of <m>\R^n</m> if <m>V</m> is closed under vector addition and scalar multiplication. That is, (i) for all <m>x,y\in V, x+y\in V</m> and (ii) for all <m>x \in V, \alpha \in \R</m>, we have  <m>\alpha x\in V</m>.
+            A non empty subset <m>V\subset \R^n</m> is called a vector subspace of <m>\R^n</m> if <m>V</m> 
+            is closed under vector addition and scalar multiplication. That is,
+            <p> (i) for all <m>x,y\in V, x+y\in V</m> and </p>
+            <p> (ii) for all <m>x \in V, \alpha \in \R</m>, we have  <m>\alpha x\in V</m>.
+            </p>
         </p>
     </statement>
 </definition>
+
+<note>
+    Note that sometime in stead of taking <m>V</m> to non-empty, one can insist that 
+<m>V</m> conatins the zero vector. In particular, if <m>V</m> is non-empty and a vector 
+subspace then <m>0\in V</m>.
+</note>
 <p>
     <example>
         <title>Examples of vector subspaces in <m>\R^n</m></title>
@@ -64,12 +79,94 @@ column vector.
     <example>
         <title>Solution of homogeneous system as vector subpace</title>
         <p>
-            Let <m>A</m> be <m>m\times n</m> real matrix. Then <m>S_h=\{x\in \R^n:Ax=0\}</m> is a vector subspace of <m>\R^n</m>. In fact any subspace of <m>\R^n</m> arises in this way.  This subspace is also known as <alert>null spave of <m>A</m>.</alert>
+            Let <m>A</m> be <m>m\times n</m> real matrix. 
+            Then <m>S_h=\{x\in \R^n:Ax=0\}</m> is a vector subspace of <m>\R^n</m>. 
+            In fact any subspace of <m>\R^n</m> arises in this way.  This subspace 
+            is also known as <alert>null space of <m>A</m>.</alert>
         </p>
        
     </example>
 </p>
 <p>
-    
+<definition xml:id="def-sumofsets">
+    <statement>
+        <p>
+        Let <m>\alpha</m> be a real number and <m>S\subset\R^n</m>, then we can define
+        <me>
+            \alpha S:=\{v\in \R^n: \exists x\in S, \text{ with }x =\alpha x\}.
+        </me>
+        If     <m>W_1</m> and <m>W_2</m> be two subsets of <m>\R^n</m>, then we can define 
+        <me>W_1+W_2:=\{x\in \R^n:  \exists w_1\in W_1, w_2\in W_2 \text{ with }x=w_1+w_2\}</me>
+        </p>
+    </statement>
+</definition>
+
+<example>
+    <p>
+        <ol>
+            <li>
+                <p>
+                    If <m>W</m> is a subsapce of <m>\R^n</m> then <m>\alpha W</m> 
+                    is null space if <m>\alpha =0</m>, otherwise it is <m>W</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    If <m>W_1</m> and <m>W_2</m> are <m>x</m>-axis and <m>y</m>-axis in 
+                    the plane then <m>W_1+W_2=\R^2</m>.
+                    <p>
+                        By definition, <m>W_1+W_2\subset \R^2</m>. 
+                        If <m>(x,y)\in \R^2</m>, then <m>(x,y)=(x,0)+(0,y)\in W_1+W_2</m>. 
+                    </p>
+                </p>
+            </li>
+            <li>
+                <p>
+                    Let <m>W_1=\{\alpha (1,-1):\alpha \in \R\}</m> and 
+                    <m>W_2=\{\beta (2,1):\beta\in \R\}</m>. Then <m>W_1+W_2=\R^2</m>.
+
+                    <p>
+                        Again by definition <m>W_1+W_2\subset \R^2</m>. 
+                    Suppose <m>(x,y)\in \R^2</m>.Can we find <m>\alpha,\beta\in \R</m> 
+                    such that <m>(x,y)=\alpha (1,-1)+\beta (2,1)</m>? It is easy to see that
+                    it amount to solving a system of linear equations <m>\alpha+2\beta =x</m> 
+                    and <m>-\alpha+\beta=y</m> for  <m>\alpha</m> and <m>\beta</m> which 
+                    does have a solution.
+                    </p>
+                </p>
+            </li>
+            <li>
+                <p>
+                    Let <m>W_1=\{(x,y,0):x,y\in \R\}</m>,the <m>xy-</m>plane and 
+                    <m>W_2=\{(0,0,z):z\in\R\}</m>, the <m>z</m>-axis. Then <m>W_1+W_2=\R^3</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Let <m>W_1=\{\alpha (1,1,-1):\alpha\in \R\}</m>,the line passining through 
+                    <m>(1,1,-1)</m> and the origin. Let <m>W_2=\{\beta (2,-1,1):\beta\in \R\}</m>,the line passining through 
+                    <m>(2,-1,1)</m> and the origin. Then <m>W_1+W_2</m> is the plane passing through <m>(1,1,-1)</m> and 
+                    <m>(2,-1,1)</m> and the origin. Can you find its equation?
+
+                </p>
+            </li>
+        </ol>
+    </p>
+</example>
+    <example>
+        <p>
+      
+     Let <m>W_1</m> and <m>W_2</m> be two subspaces of <m>\R^n</m>. Can we generate 
+     more subspaces using <m>W_1</m> and <m>W_2</m>? Natural thing to look at are sunsets 
+     <p> (i) <m>W_1\cap W_2</m>, </p> 
+     <p> (ii)  <m>W_1\cup W_2</m> and </p> 
+     <p>  (iii) <m>W_1+W_2</m>. </p>       
+     <p>
+        It is easy to see that (i) and (iii) are subspaces where as (ii) need not 
+        be a subspace. (justify). Under what condition (ii) is a subspace?
+      </p>
+     </p>
+    </example>
 </p>
+
 </section>

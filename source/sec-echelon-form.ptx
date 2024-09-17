@@ -2,8 +2,10 @@
 
 <section xml:id="sec-echelon-form" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Echelon Forms</title>
-<p>
-    An <m>m \times n</m> matrix <m>A</m> is said to be in <alert>row-echelon form</alert> or <alert>row-echelon matrix</alert> if it satisfies the following three conditions:
+
+    <definition xml:id="def-echelon-form">
+    An <m>m \times n</m> matrix <m>A</m> is said to be in <alert>row-echelon form</alert> 
+    or <alert>row-echelon matrix</alert> if it satisfies the following conditions:
     <ol>
         <li>
             <p>
@@ -12,7 +14,10 @@
         </li>
         <li>
             <p>
-                The first nonzero entry from the left in each nonzero row is a 1, called the leading 1 for that row.  
+                The first nonzero entry from the left in each nonzero row is a 1, called 
+                the <alert>leading</alert> 1 or <alert>pivot </alert> element  for that 
+                row. Row containing pivot elements are called the pivot row and the columns
+                containing the pivot element are called the pivot columns.  
             </p>
         </li>
         <li>
@@ -20,19 +25,18 @@
                 Each leading 1 is to the right of all leading 1s in the rows above it. 
             </p>
         </li>
-        <response />
-        A row-echelon matrix is said to be in <alert>reduced row-echelon form</alert>  or <alert>reduced row-echelon matrix</alert> if, in addition, it satisfies the following condition: 
+            A row-echelon matrix is said to be in <alert>reduced row-echelon form</alert>  or <alert>reduced row-echelon matrix</alert> if, in addition, it satisfies the following condition: 
         <li>
             <p>
                 Each leading 1 is the only nonzero entry in its column.       
             </p>
         </li>
     </ol>
-	
-</p>
+</definition>	
+
 <p>
 <example xml:id="eg-echelon-matrices"><title>Echelon Matrices</title>
-
+<p>
 
     Following are examples of echelon matrices:
     <me> \begin{pmatrix}
@@ -52,13 +56,14 @@
 		0 \amp  0 \amp  0 \amp  1
 	\end{pmatrix}
     </me>.
+</p>
 </example>
 </p>
 
 <p>
     <example xml:id="eg-non-echelon-matrices"><title>Non Echelon Matrices</title>
     
-    
+    <p>
         Following are examples of some non echelon matrices:
         <me> 
             \begin{pmatrix} 
@@ -68,7 +73,7 @@
             \end{pmatrix} , \quad 
             \begin{pmatrix} 
                 0\amp   1  \amp  6   \amp  8   \amp    0  \\
-                0\amp   0  \amp   1  \amp   9  \amp    1  \\
+                0\amp   1  \amp   1  \amp   9  \amp    1  \\
                 0\amp   1  \amp   0  \amp   1  \amp   -1  \\
             \end{pmatrix} , \quad 
             \begin{pmatrix}
@@ -76,7 +81,7 @@
                 0  \amp   5  \amp   9  \amp    1  \\
                 0  \amp   0  \amp   1  \amp   -1  \\
             \end{pmatrix}</me>.
-        
+        </p>
     </example>
     </p>
     <p>
@@ -270,7 +275,7 @@ above and work from top to bottom.
         <li>
             <p>
                 Make in each row the first non-zero element (called the main
-	element) eual to 1.
+	element) equal to 1.
             </p>
         </li>
         <li>
@@ -375,6 +380,7 @@ above and work from top to bottom.
  </p>
     </example>
 <example xml:id="row-echelon-eg2">
+    <p>
     Solve the following system of linear
     equations.
 <md>
@@ -384,7 +390,7 @@ above and work from top to bottom.
 <mrow>	-y+z-w \amp   =   1   </mrow>
 </md>
 using Gaussian elimination method. Show that this system has infinitely many solutions.
-
+</p>
 <p>
     <solution>
         <p>
@@ -426,12 +432,14 @@ Aug
 </example>
 <p>
     <example>
+        <p>
         Solve the following system using the Gaussian elimination method and show that it has no solution.
 <md>
 <mrow> 	x+3y \amp   =  1   </mrow>
 <mrow>	2x+y \amp  =  -3   </mrow>
 <mrow>	2x+2y \amp  =   0   </mrow>
 </md>
+</p>
     </example>
 </p>
 <solution>
