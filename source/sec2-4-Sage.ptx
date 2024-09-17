@@ -120,7 +120,7 @@ the number of coordinates/components. Let us look at an example.
 
 <example>
     <p>
-        Genarate five random vectors in $\mathbb{R}^8$ whose entries are 
+        Genarate five random vectors in <m>\mathbb{R}^8</m> whose entries are 
 random integers between -10 and 10. Also generate 5 random numbers (scalars) whihc are 
 integers between -10 and 10. Find the linear combinations of these vectors with five scalars.
 
@@ -315,6 +315,9 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
  </example>
  <example>
     <title>Linear Span of vectors in Sage</title>
+    <p>
+        
+    </p>
     Sage can generate a linear span of a set of vectors in a vector space 
     using the vector space method <code>.span()</code>. Let us explore this 
     for set of 5 vectors in a vector space <code>V=QQ^4</code>.
@@ -546,7 +549,7 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
 </example>
 
 <example>
-  <title>Fundamental subscapes of a matrix.</title>
+  <title>Fundamental subscapes of a matrix</title>
   <p>
     Consider a matrix <m> A= \left(\begin{array}{rrrrrr}
         -351 \amp  -1053 \amp  -1053 \amp  160 \amp  382 \amp  1657 \\
