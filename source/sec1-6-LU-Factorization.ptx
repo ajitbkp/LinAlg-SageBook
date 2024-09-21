@@ -2,6 +2,21 @@
 
 <section xml:id="sec1-6-LU" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title><m>LU</m>-Facotorization</title>
+ <introduction>
+    <p>
+ 
+        In this section we introduce matrix factorization called LU-factorization and its use in solving a 
+        system of linear equations. We shall also explain with examples, how Sage can be use to find LU-factorization of
+        matrices. This section also includes Sage subroutines for LU-factorization. 
+    
+        
+    </p>
+ </introduction>
+  
+  <subsection xml:id="subsec-Doolittle">
+    <title>Dooliitle and Crout's Factorization</title>
+    
+  
     <definition xml:id="def-LU-factorization">
         <statement>
             <p>
@@ -162,6 +177,8 @@ It is very easy to see that <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper 
     </p>
     </example>
 </p>
+</subsection>
+
 <subsection xml:id="subsec-solving-system-LU">
     <title>Solving system of equations using LU factorization</title>
 <p>
@@ -368,7 +385,7 @@ columns it can be transformed into a new matrix <m>\tilde{A}</m> of the same
 size that admits an <m>LU</m>-factorization. Let first show this result for a <m>2\times
 2</m> matrix.
 </p>
-</subsection>
+
 <p>
     <example xml:id="eg-LU5">
         <p>
@@ -412,6 +429,7 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
     If <m>P</m> is a permutation matrix then <m>P^{-1}=P^T</m> is also a permutation matrix.  If <m>PA=LU</m>, then we have <m>A=P^TLU</m>. 
 	Because of this  reason such a factorization is also known as <alert><m>PLU</m> factorization of <m>A</m></alert>.
 </remark>
+</subsection>
 
 <subsection xml:id="subsec-lu-sage">
     <title><m>LU</m>-factorization in Sage</title>

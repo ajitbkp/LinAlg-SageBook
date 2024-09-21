@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec5-2-diagonalization" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Diagonalization</title>
+          <definition>
+            <statement>
+              <p>
+                A matrix <m>A</m> is said to be <em>diagonalizable</em>
+                if there exists a non singular matrix <m>P</m> such that
+                <m>P^{-1}AP</m> is a diagonal matrix.
+                That is, <m>A</m> is similar to a diagonal matrix.
+              </p>
+            </statement>
+          </definition>
+          <example>
+            <statement>
+              <p>
+                Let <m>A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}</m> as in <xref ref="eigen_eg1">Example</xref>.
+                Define <m>P=\begin{pmatrix}1\amp 0\amp 8/7\\-1\amp 1\amp -5/7\\-1\amp 1\amp 1 \end{pmatrix}</m>,
+                whose columns are eigenvectors of <m>A</m>.
+              </p>
+              <p>
+                Check that <m>\det(P)=\dfrac{12}{7}</m> and <m>\text{ adj } (P)=\begin{pmatrix}12/7 \amp 8/7 \amp -8/7\\12/7 \amp 15/7\amp -3/7\\0 \amp -1 \amp 1 \end{pmatrix}</m>.
+                Hence <m>P^{-1}=\begin{pmatrix}1\amp 2/3 \amp -2/3\\1\amp 5/4\amp -1/4\\0\amp -7/4\amp 7/4 \end{pmatrix}</m>
+              </p>
+              <p>
+                Then it is easy to check that <m>P^{-1}AP=\begin{pmatrix}1\amp 0\amp 0\\0\amp 2\amp 0\\0\amp 0\amp -2 \end{pmatrix}</m>.
+              </p>
+              <p>
+                In this case we can find any power of <m>A</m> quite easily.
+                For example <m>A^n=P^{-1}\begin{pmatrix}1\amp 0\amp 0\\0\amp 2^n\amp 0\\0\amp 0\amp (-2)^n \end{pmatrix} P</m>.
+              </p>
+            </statement>
+          </example>
+          <example>
+            <statement>
+              <p>
+                Let <m>A=\begin{pmatrix}1 \amp 1\\0 \amp 1 \end{pmatrix}</m>.
+                Then 1 is a repeated eigenvalue of <m>A</m> with eigenvector <m>\begin{pmatrix}1\\ 0 \end{pmatrix}</m>.
+                It is easuy to see that <m>A</m> is non diagonalizable.
+              </p>
+            </statement>
+          </example>
+          <exercise>
+            <statement>
+              <p>
+                If <m>A=[a_{ij}]</m> has <m>n</m> distinct eigenvalues then <m>A</m> is diagonalizable.
+                In this case,
+                one can define <m>P</m> where columns of <m>P</m> are <m>n</m> eigenvectors of <m>A</m>.
+              </p>
+            </statement>
+          </exercise>
+          <theorem xml:id="thm_diag">
+            <statement>
+              <p>
+                A square matrix <m>A</m> of order <m>n</m> is diagonalizable if and only if <m>A</m> has <m>n</m> linearly independent eigenvectors.
+              </p>
+            </statement>
+          </theorem>
+          <proof>
+            <p>
+              Let <m>A</m> be diagonalizable,
+              and that there exists a non singular matrix <m>P</m> such that
+              <men xml:id="thm_diag_eq1">
+                P^{-1}AP=D=\diag(\lambda_1,\ldots,\lambda_n)
+              </men>
+            </p>
+            <p>
+              Let us write <m>P=[P_1,\ldots,P_n]</m> where <m>P_j</m> is the <m>j</m>-th column of <m>P</m>.
+              Then Eq.
+              <xref ref="thm_diag_eq1"></xref> implies
+              <me>
+                AP=P\diag(\lambda_1,\ldots,\lambda_n) </me> 
+                This implies 
+                <me>[AP_1,AP_2,\ldots,AP_n]=[\lambda_1P_1,\lambda_2P_2,\ldots,\lambda_nP_n]
+              </me>
+            </p>
+            <p>
+              Equivalently <m>AP_i=\lambda_iP_i</m> for <m>1\leq i\leq n</m>.
+              That is same as saying columns of <m>P</m> are eigenvectors of <m>A</m> with respect to eigenvalue <m>\lambda_i</m>.
+              This implies <m>A</m> has <m>n</m> linearly eigenvectors,
+              namely columns of <m>P</m>.
+            </p>
+            <p>
+              Conversely, let <m>A</m> have <m>n</m> linearly independent eigenvectors
+              <m>v_1, \ldots,
+              v_n</m> and that <m>Av_j=\lambda_jv_j</m>.
+              Define <m>P:=[v_1,v_2\ldots,v_n]</m> and <m>D:=\diag(\lambda_1,\ldots,\lambda_n)</m>.
+              Then
+              <me>
+                AP=[Av_1,Av_2,\ldots,Av_n]=[\lambda_1v_1,\lambda_2v_2,\ldots,\lambda_nv_n]=PD
+              </me>.
+            </p>
+            <p>
+              Hence <m>P^{-1}AP=D</m>.
+              Note that <m>P</m> has rank <m>n</m>,
+              which implies <m>P</m> is invertible.
+            </p>
+          </proof>
+          <corollary>
+            <statement>
+              <p>
+                If <m>A</m> is a square matrix of order <m>n</m> has <m>n</m> distinct eigenvalues then <m>A</m> is diagonalizable.
+              </p>
+            </statement>
+          </corollary>
+          <example>
+            <statement>
+              <p>
+                Let <m>A</m> be a <m>3\times 3</m> real matrix with eigenvalues
+                <m>\lambda_1=2,\lambda_2=1,\lambda_3=-1</m> and corresponding eigenvectors <m>v_1=\left(1,\,\frac{1}{3},\,-\frac{1}{3}\right),
+                v_2=\left(1,\,0,\,-\frac{1}{3}\right),
+                v_3=\left(1,\,\frac{1}{2},\,-\frac{1}{2}\right)</m> respectively.
+                Then we have <m>P=[v_1~v_2~v_3]=\left(\begin{array}{rrr} 1 \amp 1 \amp 1 \\ \frac{1}{3} \amp 0 \amp \frac{1}{2} \\ -\frac{1}{3} \amp -\frac{1}{3} \amp -\frac{1}{2} \end{array} \right)</m>.
+                <m>P^{-1}AP=\left(\begin{array}{rrr} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp -1 \end{array} \right)</m>.
+                Hence <m>A = P\left(\begin{array}{rrr} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp -1 \end{array} \right)P^{-1}</m>.
+                It is easy to see that <m>P^{-1}=\left(\begin{array}{rrr} 3 \amp 3 \amp 9 \\ 0 \amp -3 \amp -3 \\ -2 \amp 0 \amp -6 \end{array} \right)</m>.
+              </p>
+              <p>
+                Hence
+                <md>
+                  <mrow>A =\amp \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\
+                   \frac{1}{3} \amp  0 \amp  \frac{1}{2} \\ 
+                   -\frac{1}{3} \amp  -\frac{1}{3} \amp  -\frac{1}{2} \end{array} \right) 
+                   \begin{pmatrix}2\amp  0 \amp  0\\0 \amp  1 \amp  0\\
+                   0 \amp  0 \amp  1 \end{pmatrix} 
+                   \left(\begin{array}{rrr} 3 \amp  3 \amp  9 \\ 
+                   0 \amp  -3 \amp  -3 \\ -2 \amp  0 \amp  -6 \end{array} \right)</mrow>
+                <mrow>=\amp \left(\begin{array}{rrr} 8 \amp  3 \amp  21 \\ 
+                    3 \amp  2 \amp  9 \\ -3 \amp  -1 \amp  -8 \end{array} \right)
+                </mrow>
+                </md>.
+              </p>
+            </statement>
+          </example>
+          <example>
+            <statement>
+              <p>
+                Let <m>A=\begin{pmatrix}-1\amp -1\amp -2\\8\amp -11\amp -8\\-10\amp 11\amp 7 \end{pmatrix}</m> and <m>B=\begin{pmatrix}1\amp -4\amp -4\\8\amp -11\amp -8\\-8\amp 8\amp 5 \end{pmatrix}</m>.
+              </p>
+              <p>
+                It is easy to check that <m>A</m> and <m>B</m> have same characteristic polynomial <m>\lambda^3+5\lambda^2+3\lambda-9=(\lambda-1)(\lambda+3)^2</m>.
+                Also We can show that <m>A</m> has only one linearly independent eigenvectors corresponding to eigenvalue <m>-3</m>.
+                This implies <m>A</m> has only two eigenvectors and hence <m>A</m> is not diagonalizable.
+              </p>
+              <p>
+                Similarly, We can show that <m>B</m> has two linearly independent eigenvectors corresponding to eigenvalue <m>-3</m>.
+                This implies <m>B</m> has three eigenvectors and hence <m>B</m> is diagonalizable.
+              </p>
+            </statement>
+          </example>
+          <p>
+            We mention another criteria of diagonalizability without proof.
+          </p>
+          <theorem xml:id="diagonalizable-thm2">
+            <statement>
+              <p>
+                Let <m>A</m> be an <m>n\times n</m> real matrix with distinct eigenvalues
+                <m>\lambda_1,\ldots, \lambda_k</m> and algebraic multiplicity <m>m_1,\ldots,
+                m_k</m> respectively.
+                Then <m>A</m> is diagonalizable if and only if algebraic multiplicity is same as geometric multiplicity for each eigenvalue.
+                That is <m>m_i=\dim{(E_{\lambda_i})}</m> for <m>i=1,2,\ldots,k</m>.
+              </p>
+            </statement>
+          </theorem>
+          <example>
+            <statement>
+              <p>
+                In view of <xref ref="diagonalizable-thm2">theorem</xref>,
+                the matrix in the <xref ref="eigen-eg117">example</xref> is not diagonalizable.
+              </p>
+            </statement>
+          </example>
+
+        </section>                                                                                                                                                     

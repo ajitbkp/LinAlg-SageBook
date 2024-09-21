@@ -4,7 +4,8 @@
   <title>Echelon Forms</title>
 <introduction>
     <p>
-        In this section we define the row echelon form of matrices.
+        In this section we define the row echelon form of matrices its useful to deal with various concepts related to 
+        matrices. We shall see how Sage can be used to convert any matrix to its row-echelon form.
     </p>
 </introduction>
 <subsection xml:id="sec-row-echelon">

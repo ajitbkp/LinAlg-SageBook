@@ -51,42 +51,39 @@
       The notion of dot product on <m>\R^n</m> can ve generalized on vector space known as inner product.
       We have the following definition.
     </p>
-    <definition>
-      <statement>
-        <p>
+    <definition xml:id="def-inner-prod">
+      <title>Innner Product </title>     
+      <statement>           
           Let <m>V</m> be a vector space over <m>\R</m>.
           An inner product on <m>V</m> is a function that assigns a real number
           <m>\langle x, y\rangle</m> to every pair <m>x,y</m> of vectors in <m>V</m> satisfying the following properties.
           <ol>
             <li>
-              <title>P1</title>
               <p>
-                <m>\langle x, x\rangle \geq 0</m> for all <m>x \in V</m> and
+              for all <m>x\in V</m> <m>\langle x, x\rangle \geq 0</m> for all <m>x \in V</m> and
                 <m>\langle x, x\rangle = 0</m> if and only if <m>x=0</m>.
               </p>
             </li>
             <li>
-              <title>P2</title>
+               <p>
+                for all <m>x,y \in V</m>, <m>\langle x, y\rangle = \langle y, x\rangle</m>. (Symmetry)
+              </p>
+            </li>
+            <li>         
               <p>
-                <m>\langle x, y\rangle = \langle y, x\rangle</m> for all <m>x,y \in V</m>. (Symmetry)
+                for all <m>x,y,z\in V</m>, <m>\langle x, (y+z)\rangle=\langle x, y\rangle+\langle x, z\rangle</m>.
               </p>
             </li>
             <li>
-              <title>P3</title>
               <p>
-                <m>\langle x, (y+z)\rangle=\langle x, y\rangle+\langle x, z\rangle</m> for all <m>x,y,z\in V</m>.
-              </p>
-            </li>
-            <li>
-              <title>P4</title>
-              <p>
-                <m>\langle x, (\alpha y)\rangle=\alpha\langle x, y\rangle</m> for all
-                <m>x,y\in V</m> and <m>\alpha \in \R</m>.
-                If <m>V</m> is real vector space with inner product <m>\langle, .\rangle</m>.
-                Then <m>(V, \langle, .\rangle)</m> called in inner product space over <m>\R</m>.
+                for all <m>x,y\in V</m> and <m>\alpha \in \R</m>,   <m>\langle x, (\alpha y)\rangle=\alpha\langle x, y\rangle</m> \R</m>.
               </p>
             </li>
           </ol>
+          <p>
+          If <m>V</m> is real vector space with inner product <m>\langle . , .\rangle</m>.
+Then <m>(V, \langle, .\rangle)</m> called in inner product space over <m>\R</m>.
+          </p>
         </p>
       </statement>
     </definition>

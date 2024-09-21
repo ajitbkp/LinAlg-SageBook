@@ -2,7 +2,13 @@
 
 <section xml:id="sec3-2-LT" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Linear maps from <m>\R^n</m> to <m>\R^m</m></title>
-  <p>
+  <subsection xml:id="sec3-2-LT-RntoRm">
+    <title>Linear maps from <m>\R^n</m> to <m>\R^m</m></title>
+    
+ 
+  
+  
+    
     We want to find a linear map from <m>\R^n</m> to <m>\R^m</m>.
     Suppose <m>T\colon \R^n\to \R^m</m> is a linear map.
     Then for <m>x\in \R^n</m>, <m>T(x)\in \R^m</m>.
@@ -12,7 +18,7 @@
     <me>
       T(x)=\begin{bmatrix}T_1(x)\\T_2(x)\\\vdots\\T_m(x) \end{bmatrix}
     </me>.
-  </p>
+ 
   <p>
     Note that for each <m>i=1,\ldots, m</m>,
     <m>T_i</m> is a map from <m>\R^n\to \R</m>.
@@ -170,8 +176,9 @@
   <p>
     Next we look the composition of linear maps.
   </p>
+</subsection>
 
-  <subsection>
+  <subsection xml:id="sec3-2-LT-composition" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Composition of linear transformations</title>
     <p>
       Let <m>T\colon \R^n\to \R^m</m> and
@@ -280,7 +287,7 @@
   </subsection>
  
 
-  <subsection>
+  <subsection xml:id="sec3-2-LT-basis-change" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Matrix of Change of basis</title>
     <p>
       Let <m>\beta=\{u_1,u_2\ldots,u_n\}</m> and
@@ -440,10 +447,7 @@
         </p>
       </statement>
     </example>
-
-  </subsection>
-
-  
-
-   </section>
-
+ 
+ 
+   </subsection>
+  </section>

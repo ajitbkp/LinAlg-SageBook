@@ -53,7 +53,8 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
       We have the following definition.
     </p>
 
-    <definition>
+    <definition><title>Inner Product</title>
+    
       <statement>
         <p>
           Let <m>V</m> be a vector space over <m>\R</m>.
@@ -61,34 +62,36 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
           <m>\langle x, y\rangle</m> to every pair <m>x,y</m> of vectors in <m>V</m> satisfying the following properties.
           <ol>
             <li>
-              <title>P1</title>
-              <p>
+            <p>
                 <m>\langle x, x\rangle \geq 0</m> for all <m>x \in V</m> and
                 <m>\langle x, x\rangle = 0</m> if and only if <m>x=0</m>.
               </p>
             </li>
             <li>
-              <title>P2</title>
               <p>
                 <m>\langle x, y\rangle = \langle y, x\rangle</m> for all <m>x,y \in V</m>. (Symmetry)
               </p>
             </li>
             <li>
-              <title>P3</title>
+             
               <p>
                 <m>\langle x, (y+z)\rangle=\langle x, y\rangle+\langle x, z\rangle</m> for all <m>x,y,z\in V</m>.
               </p>
             </li>
             <li>
-              <title>P4</title>
+             
               <p>
                 <m>\langle x, (\alpha y)\rangle=\alpha\langle x, y\rangle</m> for all
                 <m>x,y\in V</m> and <m>\alpha \in \R</m>.
-                If <m>V</m> is real vector space with inner product <m>\langle, .\rangle</m>.
-                Then <m>(V, \langle, .\rangle)</m> called in inner product space over <m>\R</m>.
+                
+                
               </p>
             </li>
           </ol>
+          <p>
+            If <m>V</m> is real vector space with inner product <m>\langle. , .\rangle</m>.
+Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</m>.
+          </p>
         </p>
       </statement>
     </definition>
@@ -101,11 +104,16 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
       it can also be shown that the inner product is linear in the first variable as well.
       That is,
       <me>
-        \langle (x+y,z\rangle=\langle x, z\rangle+\langle y, z\rangle,  (\langle \alpha x) y\rangle=\alpha\langle x, y\rangle
+        \langle (x+y),z\rangle=\langle x, z\rangle+\langle y, z\rangle, \text{ and } \langle (\alpha x) y\rangle=\alpha\langle x, y\rangle
       </me>
+      <p>
+        Next we look at several examples of inner procuct on various vector spaces that we have defined in the last chapter.
+      </p>
+
     </p>
 
-    <example>
+
+    <example xml:id="dot-product-as-IP">
       <statement>
         <p>
           On <m>\R^n</m>, the standard dot product is an inner product.
@@ -115,12 +123,12 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
           </me>
         </p>
         <p>
-          This is also called the euclidean inner product on <m>\R^n</m>.
+          This is also called the Euclidean inner product on <m>\R^n</m>.
         </p>
       </statement>
     </example>
 
-    <example>
+    <example xml:id="inner-product-on-matrixspace">
       <statement>
         <p>
           Let <m>V=M_n(\R)</m> the set of all
@@ -136,10 +144,10 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
       </statement>
     </example>
 
-    <example>
+    <example xml:id="inner-product-by-matrix">
       <statement>
         <p>
-          Let <m>A</m> be an <m>n\times n</m> positive definite matrix.
+          Let <m>A</m> be an <m>n\times n</m> symmetric and positive definite matrix.
           On <m>\R^n</m>, define
           <me>
             \langle x,  y \rangle := x\cdot Ay = x^TAy
@@ -151,7 +159,7 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
       </statement>
     </example>
 
-    <example>
+    <example xml:id="inner-product-C01">
       <statement>
         <p>
           Let <m>V={\cal C}([0,1])</m> the set of all continuous function from <m>[0,1]</m> to <m>\R</m>.
@@ -166,7 +174,7 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
       </statement>
     </example>
 
-    <example>
+    <example xml:id="inner-product-on-polyspace">
       <statement>
         <p>
           Let <m>p</m> and <m>q</m> be two polynomials in <m>{\cal P}_n(\mathbb{R})</m>.
@@ -186,7 +194,7 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
       </statement>
     </example>
 
-    <definition>
+    <definition xml:id="definition-norm">
       <statement>
         <p>
           Let <m>(V, \langle .\rangle)</m> be a real inner product space.
@@ -208,12 +216,22 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
       <statement>
         <p>
           Let <m>V</m> be an inner product space.
-          Then for any two vectors <m>, y\in V</m>, show that
-          <me>
-            \norm{x+y}^2=\norm{x}^2+\norm{y}^2+2\inner{x}{y},  \norm{x-y}^2=\norm{x}^2+\norm{y}^2-2\inner{x}{y}
-          </me>
+          Then for any two vectors <m> x, y\in V</m>, show that
+          <p> 1. 
+          <m>\norm{x+y}^2=\norm{x}^2+\norm{y}^2+2\inner{x}{y}</m>
+          </p>
+          <p> 2. 
+          <m> \norm{x-y}^2=\norm{x}^2+\norm{y}^2-2\inner{x}{y}</m>
+          </p>
         </p>
       </statement>
+      <hint>
+        <p>
+          The proof follows by looking at <m>\langle x+y,x+y \rangle </m>  and 
+          <m>\langle x-y,x-y \rangle </m> and using the properties 
+          of inner product. 
+        </p>
+      </hint>
     </exercise>
 
     <exercise>
@@ -226,9 +244,9 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
           </me>.
         </p>
         <p>
-          This is called the parallelogram identity.
+          This is called the <alert>parallelogram identity.</alert>
           Geometrically, in a parallelogram,
-          the sum of square of the diagonal is 2 the sum of the squares of the side lengths.
+          the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.
         </p>
       </statement>
     </exercise>

@@ -2,7 +2,16 @@
 
 <section xml:id="sec-2-3-basis-dimension" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Basis and Dimension</title>
-<p>
+<introduction>
+  <p>
+    In this section, we define basis of a subspace and also deal with coordinates of 
+    a vector with respect to a basis. 
+  </p>
+</introduction>
+  <subsection xml:id="subsec-basis-intro">
+    <title>Basis</title>
+    
+  <p>
 <definition xml:id="def-sec2-2-LI"><title>Basis</title>
 
 
@@ -139,7 +148,15 @@ Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0
     </p>
   </proof>
 </p>
-Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.
+
+</subsection>
+<subsection xml:id="subsec-dimension-intro">
+  <title>Dimension of Subspaces</title>
+<p>
+  Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.
+
+
+</p>  
 
 <p>
   <definition xml:id="def-sec2-3-dimension">
@@ -491,6 +508,8 @@ Hence the coordinates of <m>(1,2,3)</m> with respect the given basis is <m>(3/2,
     </p>
   </example>
 </p>
+</subsection>
+
 <subsection xml:id="sec2-3-change-of-basis">
   <title>Change of bases.</title>
   <p>
@@ -604,7 +623,7 @@ It is easy to verify that <m>x_\gamma=[I]_\beta^\gamma x_\beta</m>.
 </p>
 
 
-</subsection>
+
 
 <p>
 <problem>
@@ -750,7 +769,7 @@ In particular, <m>A</m> is singular.
 </p>
 </example>
 </p>
-  
+</subsection>
 
 <!--
 <p>

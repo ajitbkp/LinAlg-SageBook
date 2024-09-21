@@ -2,7 +2,13 @@
 <chapter xml:id="chap5-Eigen" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Eigenvalues and Eigenvectors</title>
   
-  <xi:include href="sec5-0-eigen.ptx" />
+ <!-- <xi:include href="sec5-0-eigen.ptx" /> -->
+
+
+ <xi:include href="sec5-1-eigen-intro.ptx" /> 
+<xi:include href="sec5-2-diagonalization.ptx" />  
+ <xi:include href="sec5-3-Applications.ptx" />
+<xi:include href="sec5-4-Eigen-Exer.ptx" /> 
 
 </chapter>
 

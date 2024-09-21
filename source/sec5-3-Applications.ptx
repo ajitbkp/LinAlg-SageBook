@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec5-3-eigen-Appl" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>
+Applications of Eigenvalues and Eigenvectors
+</title>  
+
+<example>
+  <statement>
+    <p>
+      A travel company has a fleet of 6000 cars for renting.
+      A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.
+    </p>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Depots</cell>
+        <cell>A</cell>
+        <cell>B</cell>
+        <cell>C</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>A</cell>
+        <cell>0.3</cell>
+        <cell>0.4</cell>
+        <cell>0.5</cell>
+      </row>
+      <row>
+        <cell>B</cell>
+        <cell>0.3</cell>
+        <cell>0.4</cell>
+        <cell>0.3</cell>
+      </row>
+      <row>
+        <cell>C</cell>
+        <cell>0.4</cell>
+        <cell>0.2</cell>
+        <cell>0.2</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+    <p>
+      Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday.
+      How should the company distribute these cars at various locations in order to serve the customers smoothly.
+    </p>
+    <p>
+      Let the initial distributions of cars at three location be denoted by the vector <m>X = \begin{bmatrix}20000\\2000\\2000 \end{bmatrix}</m>.
+      The proportion of cars that are returned to various locations can be represented by the matrix <m>P = \begin{bmatrix}0.3 \amp 0.4 \amp 0.5\\ 0.3 \amp 0.4 \amp 0.3 \\ 0.4 \amp 0.2 \amp 0.2 \end{bmatrix}</m>,
+      which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )
+    </p>
+    <p>
+      Number of cars at location <m>A</m> after one day is <m>0.3\times 2000 +0.4\times 2000+0.5\times 2000</m>
+    </p>
+    <p>
+      Number of cars at location <m>A</m> after one day is <m>0.3\times 2000 +0.4\times 2000+0.3\times 2000</m>
+    </p>
+    <p>
+      Number of cars at location <m>A</m> after one day is <m>0.4\times 2000 +0.2\times 2000+0.2\times 2000</m>
+    </p>
+    <p>
+      It is easy to see that distribution of cars after day one is <m>PX</m>.
+    </p>
+    <p>
+      Similarly after day two it is <m>P(PX)=P^2X</m>.
+      Thus on Thursday the car distribution at various location is given by <m>P^3X=\begin{bmatrix}2336\\ 2000.\\ 1664.0 \end{bmatrix}</m>.
+    </p>
+    <p>
+      After say 100 days the car distribution at various location is given by <m>P^{50}X\approx=\begin{bmatrix}2333.33\\2000.\\1666.67 \end{bmatrix}</m>.
+      In fact after <m>n</m> large <m>P^nX</m> is constant which is approximately <m>\begin{bmatrix}2333.33\\2000.\\1666.67 \end{bmatrix}</m>.
+      Thus in long run car distribution is <m>\begin{bmatrix}2333\\2000\\1667 \end{bmatrix}</m>.
+    </p>
+    <p>
+      The higher power of <m>P</m> can be obtained by diagonalizing <m>P</m>.
+      In this can eigenvalues of <m>P</m> are
+      <m>1, 1/10, -1/5</m> and the corresponding eigenvectors are <m>\begin{bmatrix}1 \\6/7\\5/7 \end{bmatrix} , \begin{bmatrix}1 \\-3\\2 \end{bmatrix} , \begin{bmatrix}1 \\0\\-1 \end{bmatrix}</m>.
+      Let us define <m>D= \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  \frac{1}{10} \amp  0 \\ 0 \amp  0 \amp  -\frac{1}{5} \end{array} \right)</m> and <m>Q=\left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right)</m>.
+      Then <m>QDQ^{-1}=A</m>.
+      Hence <m>A^n = QD^nQ^{-1}</m>.
+      Here <m>Q^{-1} =\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right)</m>.
+      Hence
+      <md>
+        <mrow>A^n \amp =\amp  \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  \left(\frac{1}{10}\right)^n \amp  0 \\ 0 \amp  0 \amp  \left(-\frac{1}{5}\right)^n \end{array} \right)\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right)</mrow>
+        <mrow>\amp  =\amp \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \end{array} \right)\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right) \text{ for large \(n\) }</mrow>
+        <mrow>\amp =\amp  \left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{3} \amp  \frac{1}{3} \amp  \frac{1}{3} \\ \frac{5}{18} \amp  \frac{5}{18} \amp  \frac{5}{18} \end{array} \right)</mrow>
+      </md>
+    </p>
+    <p>
+      Suppose we define <m>\pi = \left(\begin{array}{r} \frac{7}{18}\\ \frac{1}{3} \\ \frac{5}{18} \end{array} \right)</m>.
+      Then it is easy to check that <m>A\pi=\pi</m>.
+      That is <m>\pi</m> is an eigenvector of <m>A</m> corresponding to the eigenvalue 1.
+      This is called the <em>steady state vector.</em>
+    </p>
+  </statement>
+</example>
+<exercise>
+  <statement>
+    <p>
+      Suppose <m>D</m> is a diagonal matrix given by
+      <m>D= \left(\begin{array}{rrr} 1 \amp 0 \amp 0 \\ 0 \amp 0.3 \amp 0 \\ 0 \amp 0 \amp 0.2 \end{array} \right)</m> and <m>v\in \R^3</m>.
+      What happens to the vector <m>v</m> geometrically when we do <m>D^nv</m> for large <m>n</m>? (<em>It sucks vector <m>v</m> into <m>u_1</m> direction.</em>)
+    </p>
+    <p>
+      Next let us consider a matrix which is diagonalizable with eigenvectors
+      <m>u_1, u_2, u_3</m> and corresponding eigenvalues
+      <m>\lambda_1=1, \lambda_2=0.3</m> and <m>\lambda_3=0.2</m> respectively.
+      Then what happens to the vector <m>v</m> geometrically when we do <m>A^nv</m> for large <m>n</m>? (<em>It makes <m>y</m> and <m>z</m> coordinates very small and it sucks vector <m>v</m> into <m>x</m>-axis.</em>)
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      132 fishes are placed in a box with nine rooms.
+      See <xref ref="mouse1">Figure</xref>.
+    </p>
+  
+    <figure xml:id="mouse1">
+      <caption>Fish Tank</caption>
+      <image width="40%" source="images/Fish-Tank.PNG"/>
+    </figure>
+    <p>
+      Assume that, at regular intervals of time,
+      it is equally likely that fishes will decide to go through any door in the room or stay in the room.
+    </p>
+    <p>
+      Find how many fishes can be found in each room in long run.
+    </p>
+    <p>
+      Solve this problem using a
+      <m>3 \times 3</m> matrix stochastic matrix.
+    </p>
+  </statement>
+</exercise>
+</section>
