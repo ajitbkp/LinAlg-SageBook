@@ -115,16 +115,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "Elementary Column Operations",
-  "body": " Elementary Column Operations  Elementary column operations are the column analogue of elementary row operations. Their precise properties can be deduced by applying elementary row operations to the transpose of a matrix and then transposing the result. In particular, if is the elementary matrix corresponding to the elementary column operation then . Note that, because transposition changes the order of a product, elementary column operations correspond to post-multiplication by an elementary matrix. Two matrices that are related by a sequence of elementary column operations are said to be column equivalent and two matrices and are column equivalent if and only if there exists a non singular matrix such that .   Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.        "
+  "body": " Elementary Column Operations  Elementary column operations are the column analogue of elementary row operations. Their precise properties can be deduced by applying elementary row operations to the transpose of a matrix and then transposing the result. In particular, if is the elementary matrix corresponding to the elementary column operation then . Note that, because transposition changes the order of a product, elementary column operations correspond to post-multiplication by an elementary matrix. Two matrices that are related by a sequence of elementary column operations are said to be column equivalent and two matrices and are column equivalent if and only if there exists a non singular matrix such that .   Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.         "
 },
 {
-  "id": "sec-col-operations-3",
+  "id": "1-2-1",
   "level": "2",
-  "url": "sec-col-operations.html#sec-col-operations-3",
+  "url": "sec-col-operations.html#1-2-1",
   "type": "Checkpoint",
   "number": "1.2.1",
   "title": "",
-  "body": " Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.  "
+  "body": " Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.        "
 },
 {
   "id": "sec-echelon-form",
@@ -1033,7 +1033,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.5",
   "title": "Sage Computations",
-  "body": " Sage Computations  In this section, we explain, how Sage can be used to deal with all the concepts that we have learned in this chapter. We use reduced row echelon form (RREF) as tool to deal with all the comoutations.  Vectors in Sage  In keyword 'vector' to define vectors by mentioning the domain from which entries are taken and giving the entries in a list. We can plot vectors in 2 and 3 dimensions. We can define vectors with entries from rational numbers ('QQ'), real numbers ('RR'), complex numbers ('CC') and even finite fields 'GF(p^k)' where is a prime number.   Vectors in           Vectors in     Vector in higher dimension in Sage Vectors in hiher dimensions can be defined in a similar manner, we just need to increase the number of coordinates\/components. Let us look at an example.   Genarate five random vectors in whose entries are random integers between -10 and 10. Also generate 5 random numbers (scalars) whihc are integers between -10 and 10. Find the linear combinations of these vectors with five scalars.      (i) Let us plot the linear span of a single vector in in Sage.  Let us also plot the linear span of two vectors in in Sage.  This can be achieved by sage method 'parametric_plot3d' in sage.       Generating matrix from vectors: We can generate matrix from a given set of vectors its columns and rows. Let us look at an example.   Vector Spaces over rational or reals:      In sage a vector space, has two methods V.random_element() and V.an_element() that displays a random element and an element (fixed) of .    Linearly dependence and indepndence in Sage   Let us generate some random 5 vectors, in the vector space QQ^5 . Sage has a method .are_linearly_dependent() to check if a set of vectors are linearly dependent. Sage also has a method linear_dependence() whihc return emply list in case the set is linearly independent and returns a list of scalars such that .    Now we can check if the scalar linear combination of the output shown above with sect of vectors in is zero.      Linear Span of vectors in Sage Sage can generate a linear span of a set of vectors in a vector space using the vector space method .span() . Let us explore this for set of 5 vectors in a vector space V=QQ^4 .  It returns the dimension of the linear span along with a basis as a matrix. We can check if any linear combinations of vectors in B lies in W. We can also check if W is a subspave of V using the following sage syntaxes.      Using RREF to find a basis of linear span.  Let us use the sage method rref to find a basis of the set of vectors define earlies in Sage.   Clearly the first three rows constitutes a basis of linear span. This is what we obtained using .span() .    Coordinates of a vector w.r.t. a basis  Consider a set of vectors .Check if this forms a basis of the vector space . Find the coordinates of the vector with respect to this basis.  We can also print this basis as a matrix using V.basis_matrix()  Now we define the set of vectors in Sage. We can also check the same by finding the rank of the martrix whose columns and the given vectors. If the rank is 4, then the given set of vectors are linearly independet. Since it returns an empty list. The given set of vectors is linearly independet. We can find the coordinates of the vector using sage method coordinate_vector() or using .coordinates() using the following codes. For this first we need to create a subspace say V1 with B as a basis using the method V.subspace_with_basis(B)    We can also find the same manually using RREF as follows.  The same can be achieved using by solving the system .    Fundamental subscapes of a matrix  Consider a matrix . Find the fundamental subspaces defined in the Example    First of all let us find the row space using the method .row_space() . This returns the dimension and the basis matrix of the row space. This we can verify using rref applied to the matrix .  Clearly the first three row of rref(A) is same as basis matrix obtained uising the inbuilt sage method. Next we find the columns space using the sage method A.column_space() and verify the same using the rref applied to .   Clearly, the 1st three rows of rref(A) are same as basis matrix of A.column_space()  The column space of is also known as image space of . Sage has inbuilt method A.image() to find the image space.   The null space of also known as kernel of can be obtained by the sage method A.right_kernel() .  Clearly, the kernel is of dimension 3. The left null space can be obtained by the sage method A.left_kernel() or using A.T.right_kernel() .       Consider the matrix defined in the Example . Observe the following: (i) Let be a random element in and be a random element in . Then and are orthogoal. That is, .  (ii) Let be a random element in and be a random element in . Then and are orthogoal. That is, .          Change of coordinates  Consider the vector space . Defines two subsets and . Check that and are linearly independent hence they form bases of . Let . Find the coordinates of with respect to and and denote them by and respectively. Find the change of basis matrices and . Show that . Also verify that and .     Clearly B and C are linearly indendent and hence they are bases of . Next we define two subspaces V1 and V2 with B and C as bases respectively and define the vector in Sage.   Next we find the coordinates and .   Next we define the change of basis matrix . This can be achieved by taking a matrix applying rref and extracting the last four columns.  One can verify that this is same as .  Next we define the change of basis matrix . This can be achieved by taking a matrix applying rref and extracting the last four columns. One can verify that this is same as .    Let us check that .   Finally we show that and .       Sum and intersection of subspaces  Let and where and . Find the subspaces and .   Sage has inbulit method to find sum and intersection of two subspaces. However, shall also see how these can be obtained manually.  First of all we define .  This show that is a 3-dimensional subspace of . Next, we define   Here is a 4 dimensional subspace of . Now we find using the Sage method W1.intersection(W2) .  Next we can find as follows.  From the above computations, it is clear that . In fact, this is true in general and we shall prove this later.   How to find manually?  This can be obtained as . Thus we can construct a matrix whose rows are and apply RREF. Let us see this.  Clearly the first 5 rows of RREF(M) is the basis matrix obtained for .  Finding manually.  Let be a basis of    and be a  basis of obtined above. If  . Then  .  In particular, .  We can obtain 's and 's by solving  Thus we can find the null space of and find the vectors in the basis of . Let see how to do this in Sage. Once we have the basis of , we can obained the basis vector in as follows. Clearly these are the basis vectors for obtained using the inbulit Sage method.     "
+  "body": " Sage Computations  In this section, we explain, how Sage can be used to deal with all the concepts that we have learned in this chapter. We use reduced row echelon form (RREF) as tool to deal with all the comoutations.  Vectors in Sage  In keyword 'vector' to define vectors by mentioning the domain from which entries are taken and giving the entries in a list. We can plot vectors in 2 and 3 dimensions. We can define vectors with entries from rational numbers ('QQ'), real numbers ('RR'), complex numbers ('CC') and even finite fields 'GF(p^k)' where is a prime number.   Vectors in           Vectors in     Vector in higher dimension in Sage Vectors in hiher dimensions can be defined in a similar manner, we just need to increase the number of coordinates\/components. Let us look at an example.   Genarate five random vectors in whose entries are random integers between -10 and 10. Also generate 5 random numbers (scalars) whihc are integers between -10 and 10. Find the linear combinations of these vectors with five scalars.      (i) Let us plot the linear span of a single vector in in Sage.  Let us also plot the linear span of two vectors in in Sage.  This can be achieved by sage method 'parametric_plot3d' in sage.       Generating matrix from vectors: We can generate matrix from a given set of vectors its columns and rows. Let us look at an example.   Vector Spaces over rational or reals:      In sage a vector space, has two methods V.random_element() and V.an_element() that displays a random element and an element (fixed) of .    Linearly dependence and indepndence in Sage   Let us generate some random 5 vectors, in the vector space QQ^5 . Sage has a method .are_linearly_dependent() to check if a set of vectors are linearly dependent. Sage also has a method linear_dependence() whihc return emply list in case the set is linearly independent and returns a list of scalars such that .    Now we can check if the scalar linear combination of the output shown above with sect of vectors in is zero.      Linear Span of vectors in Sage Sage can generate a linear span of a set of vectors in a vector space using the vector space method .span() . Let us explore this for set of 5 vectors in a vector space V=QQ^4 .  It returns the dimension of the linear span along with a basis as a matrix. We can check if any linear combinations of vectors in B lies in W. We can also check if W is a subspave of V using the following sage syntaxes.      Using RREF to find a basis of linear span.  Let us use the sage method rref to find a basis of the set of vectors define earlies in Sage.   Clearly the first three rows constitutes a basis of linear span. This is what we obtained using .span() .    Coordinates of a vector w.r.t. a basis  Consider a set of vectors .Check if this forms a basis of the vector space . Find the coordinates of the vector with respect to this basis.  We can also print this basis as a matrix using V.basis_matrix()  Now we define the set of vectors in Sage. We can also check the same by finding the rank of the martrix whose columns and the given vectors. If the rank is 4, then the given set of vectors are linearly independet. Since it returns an empty list. The given set of vectors is linearly independet. We can find the coordinates of the vector using sage method coordinate_vector() or using .coordinates() using the following codes. For this first we need to create a subspace say V1 with B as a basis using the method V.subspace_with_basis(B)    We can also find the same manually using RREF as follows.  The same can be achieved using by solving the system .    Fundamental subscapes of a matrix  Consider a matrix . Find the fundamental subspaces defined in the Example    First of all let us find the row space using the method .row_space() . This returns the dimension and the basis matrix of the row space. This we can verify using rref applied to the matrix .  Clearly the first three row of rref(A) is same as basis matrix obtained uising the inbuilt sage method. Next we find the columns space using the sage method A.column_space() and verify the same using the rref applied to .   Clearly, the 1st three rows of rref(A) are same as basis matrix of A.column_space()  The column space of is also known as image space of . Sage has inbuilt method A.image() to find the image space.   The null space of also known as kernel of can be obtained by the sage method A.right_kernel() .  Clearly, the kernel is of dimension 3. The left null space can be obtained by the sage method A.left_kernel() or using A.T.right_kernel() .       Consider the matrix defined in the Example . Observe the following: (i) Let be a random element in and be a random element in . Then and are orthogoal. That is, .  (ii) Let be a random element in and be a random element in . Then and are orthogoal. That is, .          Change of coordinates  Consider the vector space . Defines two subsets and . Check that and are linearly independent hence they form bases of . Let . Find the coordinates of with respect to and and denote them by and respectively. Find the change of basis matrices and . Show that . Also verify that and .     Clearly B and C are linearly indendent and hence they are bases of . Next we define two subspaces V1 and V2 with B and C as bases respectively and define the vector in Sage.   Next we find the coordinates and .   Next we define the change of basis matrix . This can be achieved by taking a matrix applying rref and extracting the last four columns.  One can verify that this is same as .  Next we define the change of basis matrix . This can be achieved by taking a matrix applying rref and extracting the last four columns. One can verify that this is same as .    Let us check that .   Finally we show that and .       Sum and intersection of subspaces  Let , , and . Let . Let , , , and . Let . Find the subspaces and .    Sage has inbulit method to find sum and intersection of two subspaces. However, shall also see how these can be obtained manually.  First of all we define .  This show that is a 3-dimensional subspace of . Next, we define   Here is a 4 dimensional subspace of . Now we find using the Sage method W1.intersection(W2) .  Next we can find as follows.  From the above computations, it is clear that . In fact, this is true in general and we shall prove this later.   How to find manually?  This can be obtained as . Thus we can construct a matrix whose rows are and apply RREF. Let us see this.  Clearly the first 5 rows of RREF(M) is the basis matrix obtained for .  Finding manually.  Let be a basis of    and be a  basis of obtined above. If  . Then  .  In particular, .  We can obtain 's and 's by solving   Thus we can find the null space of and find the vectors in the basis of . Let see how to do this in Sage. Once we have the basis of , we can obained the basis vector in as follows. Clearly these are the basis vectors for obtained using the inbulit Sage method.     "
 },
 {
   "id": "sec2-4-Sage-11",
@@ -1123,7 +1123,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.5.10",
   "title": "Sum and intersection of subspaces.",
-  "body": " Sum and intersection of subspaces  Let and where and . Find the subspaces and .   Sage has inbulit method to find sum and intersection of two subspaces. However, shall also see how these can be obtained manually.  First of all we define .  This show that is a 3-dimensional subspace of . Next, we define   Here is a 4 dimensional subspace of . Now we find using the Sage method W1.intersection(W2) .  Next we can find as follows.  From the above computations, it is clear that . In fact, this is true in general and we shall prove this later.   How to find manually?  This can be obtained as . Thus we can construct a matrix whose rows are and apply RREF. Let us see this.  Clearly the first 5 rows of RREF(M) is the basis matrix obtained for .  Finding manually.  Let be a basis of    and be a  basis of obtined above. If  . Then  .  In particular, .  We can obtain 's and 's by solving  Thus we can find the null space of and find the vectors in the basis of . Let see how to do this in Sage. Once we have the basis of , we can obained the basis vector in as follows. Clearly these are the basis vectors for obtained using the inbulit Sage method.    "
+  "body": " Sum and intersection of subspaces  Let , , and . Let . Let , , , and . Let . Find the subspaces and .    Sage has inbulit method to find sum and intersection of two subspaces. However, shall also see how these can be obtained manually.  First of all we define .  This show that is a 3-dimensional subspace of . Next, we define   Here is a 4 dimensional subspace of . Now we find using the Sage method W1.intersection(W2) .  Next we can find as follows.  From the above computations, it is clear that . In fact, this is true in general and we shall prove this later.   How to find manually?  This can be obtained as . Thus we can construct a matrix whose rows are and apply RREF. Let us see this.  Clearly the first 5 rows of RREF(M) is the basis matrix obtained for .  Finding manually.  Let be a basis of    and be a  basis of obtined above. If  . Then  .  In particular, .  We can obtain 's and 's by solving   Thus we can find the null space of and find the vectors in the basis of . Let see how to do this in Sage. Once we have the basis of , we can obained the basis vector in as follows. Clearly these are the basis vectors for obtained using the inbulit Sage method.    "
 },
 {
   "id": "sec3-1-LT",
@@ -1177,7 +1177,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Linear maps from <span class=\"process-math\">\\(\\R^n\\)<\/span> to <span class=\"process-math\">\\(\\R^m\\)<\/span>",
-  "body": " Linear maps from to   Linear maps from to We want to find a linear map from to . Suppose is a linear map. Then for , . In particular, has components. Let us write these components as . Thus is given by . Note that for each , is a map from .   Show that defined by is linear map if and only if is linear map for each .   From Ex. , it follows that in order to know linear map , it is sufficient to know component for each .    Suppose is a linear map. Consider the standard basis . Then for , we have . Since is linear, we have .  Define . Then .  Thus, if is a linear map, there there exist scalars, such that . Here we have for . It is clear that to know it is good enough to know .  What we have proved is, any linear map from is given by where for .  What happens if you chose a different basis (other than standard basis)?    Let us come back to the linear map . Since for each , is linear, there exist scalars, such that . Thus .  Thus we have shown that any linear map is a matrix transformation , where . Note that the matrix of  .  Notice that the -th columns of is the coordinates of the vector with respect to the standard basis of . Thus to find the matrix of , we find the coordinates of with respect to the basis on the codomain and put it in the -th column.  What happens if we change the bases on and . In order to see this let us consider an example.    Consider a linear map defined by . It is easy to see that is a matrix transformation where . In particular, is the matrix of when we consider standard bases on the domain and codomain .  Let us consider a basis of the domain and the standard basis on the codomain. In order to find the matrix of , we find the image of and find its coordinates with respect to the standard basis . We have . Thus the first columns of is . Similarly and . Hence the matrix of of with respect to the basis and is . We denote this matrix as .     Consider the linear transformation defined in the Example . Find the matrix of with respect to a basis of and of .     Consider a linear map given by . Let us find the matrix of with respect to a basis of on the domain and codomain. Note that columns of are the coordinates of with respect to the basis . This can be obtained simultaneously by applying RREF to and taking the last three columns as .   Hence .     Let be two linear maps. Then show that is a linear map. Furthermore, the matrix of is the sum of matrices of and .   Next we look the composition of linear maps.    Composition of linear transformations  Let and be linear transformations. Then defined by is a linear map.  Suppose and are matrices transformations. Then . Thus the matrix of is .    Let and defined by and   Let and define a basis of . We take a basis of . Let , and . Then we shall show that . Note that .  First we find the matrix using RREF   Hence . Next we find using RREF   Hence . It is easy to check that . Now we find the matrix of the composition using RREF    This .  Hence we have .      Matrix of Change of basis  Let and be two bases of . Recall, the the definition of the matrix of change of bases . We obtained by applying RREF to the matrix and extracting the last columns. This is nothing but the matrix of the identity linear map with respect to a basis of the domain and of the codomain.  Now let us consider what happens to the matrix of a linear transformation when we change the basis on domain and codoamin. Let and be bases of and respectively. Let be the matrix of with respect to and . Let and be another bases of and respectively. Let be the matrix of with respect to and . How are and related? The relation is given by the following commutative diagram.   Commutative Diagram    From the above commutative diagram, we have .    Consider a linear map defined in the Example . Consider a basis where of and a basis of . From Example , . Let where be another basis of . Let be another basis of . Then the matrix .  The matrix of change of basis .  The matrix of change of basis .  It is easy to check that .    Let be a linear transformation. Let be a basis of and , the matrix of with respect to . Let be another basis of and , the matrix of with respect to . Let be matrix of change of basis from to . Then we have . In this case, and are said to be similar matrices.    Let and be two real matrices. Then and are called similar if there exits a non singular matrix such that .     A linear transformation is completely determined once it is defined on a basis. In other words, Let be a basis of . Let be vectors in . Then there exists a unique linear transformation such that for .   How is defined, if ? For , there exist scalars, such that . Then .    Fix a basis of . Define a linear map such that . Find .  We have .  Thus in order to find we need to know how is defined on the standard basis vector. First we need to find the coordinates of with respect to the basis using RREF. .  We have  .  It is easy to check that .     "
+  "body": " Linear maps from to   Linear maps from to We want to find a linear map from to . Suppose is a linear map. Then for , . In particular, has components. Let us write these components as . Thus is given by . Note that for each , is a map from .   Show that defined by is linear map if and only if is linear map for each .   From Ex. , it follows that in order to know linear map , it is sufficient to know component for each .    Suppose is a linear map. Consider the standard basis . Then for , we have . Since is linear, we have .  Define . Then .  Thus, if is a linear map, there there exist scalars, such that . Here we have for . It is clear that to know it is good enough to know .  What we have proved is, any linear map from is given by where for .  What happens if you chose a different basis (other than standard basis)?    Let us come back to the linear map . Since for each , is linear, there exist scalars, such that . Thus .  Thus we have shown that any linear map is a matrix transformation , where . Note that the matrix of  .  Notice that the -th columns of is the coordinates of the vector with respect to the standard basis of . Thus to find the matrix of , we find the coordinates of with respect to the basis on the codomain and put it in the -th column.  What happens if we change the bases on and . In order to see this let us consider an example.    Consider a linear map defined by . It is easy to see that is a matrix transformation where . In particular, is the matrix of when we consider standard bases on the domain and codomain .  Let us consider a basis of the domain and the standard basis on the codomain. In order to find the matrix of , we find the image of and find its coordinates with respect to the standard basis . We have . Thus the first columns of is . Similarly and . Hence the matrix of of with respect to the basis and is . We denote this matrix as .     Consider the linear transformation defined in the Example . Find the matrix of with respect to a basis of and of .     Consider a linear map given by . Let us find the matrix of with respect to a basis of on the domain and codomain. Note that columns of are the coordinates of with respect to the basis . This can be obtained simultaneously by applying RREF to and taking the last three columns as .   Hence .     Let be two linear maps. Then show that is a linear map. Furthermore, the matrix of is the sum of matrices of and .   Next we look the composition of linear maps.    Composition of linear transformations  Let and be linear transformations. Then defined by is a linear map.  Suppose and are matrices transformations. Then . Thus the matrix of is .    Let and defined by and   Let and define a basis of . We take a basis of . Let , and . Then we shall show that . Note that .  First we find the matrix using RREF   Hence . Next we find using RREF   Hence . It is easy to check that . Now we find the matrix of the composition using RREF    This .  Hence we have .      Matrix of Change of basis  Let and be two bases of . Recall, the the definition of the matrix of change of bases . We obtained by applying RREF to the matrix and extracting the last columns. This is nothing but the matrix of the identity linear map with respect to a basis of the domain and of the codomain.  Now let us consider what happens to the matrix of a linear transformation when we change the basis on domain and codoamin. Let and be bases of and respectively. Let be the matrix of with respect to and . Let and be another bases of and respectively. Let be the matrix of with respect to and . How are and related? The relation is given by the following commutative diagram.   Commutative Diagram    From the above commutative diagram, we have .    Consider a linear map defined in the Example . Consider a basis where of and a basis of . From Example , . Let where be another basis of . Let be another basis of . Then the matrix .  The matrix of change of basis .  The matrix of change of basis .  It is easy to check that .    Let be a linear transformation. Let be a basis of and , the matrix of with respect to . Let be another basis of and , the matrix of with respect to . Let be matrix of change of basis from to . Then we have . In this case, and are said to be similar matrices.    Let and be two real matrices. Then and are called similar if there exists a non singular matrix such that .     A linear transformation is completely determined once it is defined on a basis. In other words, Let be a basis of . Let be vectors in . Then there exists a unique linear transformation such that for .   How is defined, if ? For , there exist scalars, such that . Then .    Fix a basis of . Define a linear map such that . Find .  We have .  Thus in order to find we need to know how is defined on the standard basis vector. First we need to find the coordinates of with respect to the basis using RREF. .  We have  .  It is easy to check that .     "
 },
 {
   "id": "linalg-engg-ex29",
@@ -1207,9 +1207,9 @@ var ptx_lunr_docs = [
   "body": "  Consider a linear map defined by . It is easy to see that is a matrix transformation where . In particular, is the matrix of when we consider standard bases on the domain and codomain .  Let us consider a basis of the domain and the standard basis on the codomain. In order to find the matrix of , we find the image of and find its coordinates with respect to the standard basis . We have . Thus the first columns of is . Similarly and . Hence the matrix of of with respect to the basis and is . We denote this matrix as .   "
 },
 {
-  "id": "sec3-2-LT-RntoRm-21",
+  "id": "3-2-4",
   "level": "2",
-  "url": "sec3-2-LT.html#sec3-2-LT-RntoRm-21",
+  "url": "sec3-2-LT.html#3-2-4",
   "type": "Checkpoint",
   "number": "3.2.4",
   "title": "",
@@ -1267,7 +1267,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "3.2.10",
   "title": "",
-  "body": "  Let and be two real matrices. Then and are called similar if there exits a non singular matrix such that .   "
+  "body": "  Let and be two real matrices. Then and are called similar if there exists a non singular matrix such that .   "
 },
 {
   "id": "sec3-2-LT-basis-change-9",
@@ -1306,18 +1306,18 @@ var ptx_lunr_docs = [
   "body": "  Let be the reflection in about the line , where . We wish to find the matrix of with respect to the standard basis.  Note that can be accomplished by first rotating by , then reflecting about -axis and then rotating back by . Thus . Note that and are linear map, and hence is a linear map.  Using the notion of matrix of composition, the matrix of is given by   Since , and . Using this the matrix of with respect to the standard basis of  .   "
 },
 {
-  "id": "sec3-3-LT-3-4",
+  "id": "3-3-2",
   "level": "2",
-  "url": "sec3-3-LT.html#sec3-3-LT-3-4",
+  "url": "sec3-3-LT.html#3-3-2",
   "type": "Checkpoint",
   "number": "3.3.2",
   "title": "",
   "body": " For the following linear transformation . Show that is induced by a matrix and hence find the matrix.  (i) is reflection about axis.  (ii) is reflection about the line   (iii) is reflection about the line   (iv) is a clockwise rotation by an angle .  "
 },
 {
-  "id": "sec3-3-LT-3-5",
+  "id": "3-3-3",
   "level": "2",
-  "url": "sec3-3-LT.html#sec3-3-LT-3-5",
+  "url": "sec3-3-LT.html#3-3-3",
   "type": "Checkpoint",
   "number": "3.3.3",
   "title": "",
@@ -1333,18 +1333,18 @@ var ptx_lunr_docs = [
   "body": "  Let be the projection in onto the line , where . We wish to find the matrix of with respect to the standard basis.  Using a similar procedure, we have   Hence the matrix of is .  After simplification, the matrix of is .  Write down the matrix of reflection about the line passing through the origin and the point , with .   "
 },
 {
-  "id": "sec3-3-LT-4-5",
+  "id": "3-3-5",
   "level": "2",
-  "url": "sec3-3-LT.html#sec3-3-LT-4-5",
+  "url": "sec3-3-LT.html#3-3-5",
   "type": "Checkpoint",
   "number": "3.3.5",
   "title": "",
   "body": " If is the projection onto the line , then show that . In particular, . Thus the matrix is an idempotent matrix.  Write down the matrix of reflection onto the line passing through the origin and the point , with .  "
 },
 {
-  "id": "sec3-3-LT-4-6",
+  "id": "3-3-6",
   "level": "2",
-  "url": "sec3-3-LT.html#sec3-3-LT-4-6",
+  "url": "sec3-3-LT.html#3-3-6",
   "type": "Checkpoint",
   "number": "3.3.6",
   "title": "",
@@ -1396,18 +1396,18 @@ var ptx_lunr_docs = [
   "body": " Reflection through a plane in   Let be a plane given by the equation . Then the vector is normal to . We wish to find the reflection of any vector through .  Suppose is the orthogonal projection of onto . Then it is easy to see that .  Now it is easy to show that the matrix of is given by .   "
 },
 {
-  "id": "sec-xxx",
+  "id": "sec-LT-Geom",
   "level": "1",
-  "url": "sec-xxx.html",
+  "url": "sec-LT-Geom.html",
   "type": "Section",
   "number": "3.4",
   "title": "Geometry of Linear Transformations",
-  "body": " Geometry of Linear Transformations In this section, we shall look at how some of the standard linear tranformations transform a unit squre in the plane. We look at some specific linear transformations from to and how it transforms the unit square. Readers are encouraged to draw figures.   ( -expansion ) where .  -expansion for   Draw the figure for .    ( -compression ) where . Draw the figure for .  -Compression for       ( -expansion ) where . Draw the figure for .  -expansion for       ( -compression ) where . Draw the figure for .  -compression for       ( positive -shear ) where . Draw the figure for .  Positive -shear for       ( negative -shear ) where . Draw the figure for .  Negative -shear for       ( positive -shear ) where . Draw the figure for .  Positive -shear for       ( negative -shear ) where . Draw the figure for .  Negative -shear for       Fix a positive real number and define by . It is a linear map which is induced by the scalar matrix . ( is called a dilation if and a contraction if .) Draw the figure for with and .  Dilations with and .       Let and be two positive real numbers and . Define by . Then (i) is stretching by a factor along -axis and by a factor along -axis if and (ii) is contraction by a factor along -axis followed by a factor along -axis if .  Stretching along by 2 and -axes by 1.5.        "
+  "body": " Geometry of Linear Transformations In this section, we shall look at how some of the standard linear tranformations transform a unit squre in the plane. We look at some specific linear transformations from to and how it transforms the unit square. Readers are encouraged to draw figures.   ( -expansion ) where .  -expansion for   Draw the figure for .    ( -compression ) where . Draw the figure for .  -Compression for       ( -expansion ) where . Draw the figure for .  -expansion for       ( -compression ) where . Draw the figure for .  -compression for       ( positive -shear ) where . Draw the figure for .  Positive -shear for       ( negative -shear ) where . Draw the figure for .  Negative -shear for       ( positive -shear ) where . Draw the figure for .  Positive -shear for       ( negative -shear ) where . Draw the figure for .  Negative -shear for       Fix a positive real number and define by . It is a linear map which is induced by the scalar matrix . ( is called a dilation if and a contraction if .) Draw the figure for with and .  Dilations with and .       Let and be two positive real numbers and . Define by . Then (i) is stretching by a factor along -axis and by a factor along -axis if and (ii) is contraction by a factor along -axis followed by a factor along -axis if .  Stretching along by 2 and -axes by 1.5.        In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.   "
 },
 {
   "id": "fig_x-expansion",
   "level": "2",
-  "url": "sec-xxx.html#fig_x-expansion",
+  "url": "sec-LT-Geom.html#fig_x-expansion",
   "type": "Figure",
   "number": "3.4.1",
   "title": "",
@@ -1416,7 +1416,7 @@ var ptx_lunr_docs = [
 {
   "id": "fig_x-compression",
   "level": "2",
-  "url": "sec-xxx.html#fig_x-compression",
+  "url": "sec-LT-Geom.html#fig_x-compression",
   "type": "Figure",
   "number": "3.4.2",
   "title": "",
@@ -1425,7 +1425,7 @@ var ptx_lunr_docs = [
 {
   "id": "fig_y-expansion",
   "level": "2",
-  "url": "sec-xxx.html#fig_y-expansion",
+  "url": "sec-LT-Geom.html#fig_y-expansion",
   "type": "Figure",
   "number": "3.4.3",
   "title": "",
@@ -1434,7 +1434,7 @@ var ptx_lunr_docs = [
 {
   "id": "fig_y-compression",
   "level": "2",
-  "url": "sec-xxx.html#fig_y-compression",
+  "url": "sec-LT-Geom.html#fig_y-compression",
   "type": "Figure",
   "number": "3.4.4",
   "title": "",
@@ -1443,7 +1443,7 @@ var ptx_lunr_docs = [
 {
   "id": "fig_x-postive-shear",
   "level": "2",
-  "url": "sec-xxx.html#fig_x-postive-shear",
+  "url": "sec-LT-Geom.html#fig_x-postive-shear",
   "type": "Figure",
   "number": "3.4.5",
   "title": "",
@@ -1452,7 +1452,7 @@ var ptx_lunr_docs = [
 {
   "id": "fig_x-negative-shear",
   "level": "2",
-  "url": "sec-xxx.html#fig_x-negative-shear",
+  "url": "sec-LT-Geom.html#fig_x-negative-shear",
   "type": "Figure",
   "number": "3.4.6",
   "title": "",
@@ -1461,7 +1461,7 @@ var ptx_lunr_docs = [
 {
   "id": "fig_y-postive-shear",
   "level": "2",
-  "url": "sec-xxx.html#fig_y-postive-shear",
+  "url": "sec-LT-Geom.html#fig_y-postive-shear",
   "type": "Figure",
   "number": "3.4.7",
   "title": "",
@@ -1470,7 +1470,7 @@ var ptx_lunr_docs = [
 {
   "id": "fig_y-negative-shear",
   "level": "2",
-  "url": "sec-xxx.html#fig_y-negative-shear",
+  "url": "sec-LT-Geom.html#fig_y-negative-shear",
   "type": "Figure",
   "number": "3.4.8",
   "title": "",
@@ -1479,7 +1479,7 @@ var ptx_lunr_docs = [
 {
   "id": "fig_dilation",
   "level": "2",
-  "url": "sec-xxx.html#fig_dilation",
+  "url": "sec-LT-Geom.html#fig_dilation",
   "type": "Figure",
   "number": "3.4.9",
   "title": "",
@@ -1488,11 +1488,56 @@ var ptx_lunr_docs = [
 {
   "id": "fig_diag-expansion",
   "level": "2",
-  "url": "sec-xxx.html#fig_diag-expansion",
+  "url": "sec-LT-Geom.html#fig_diag-expansion",
   "type": "Figure",
   "number": "3.4.10",
   "title": "",
   "body": " Stretching along by 2 and -axes by 1.5.   "
+},
+{
+  "id": "sec-LT-Geom-3",
+  "level": "2",
+  "url": "sec-LT-Geom.html#sec-LT-Geom-3",
+  "type": "Example",
+  "number": "3.4.11",
+  "title": "",
+  "body": "In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.  "
+},
+{
+  "id": "sec-sec3-5-LT-Sage",
+  "level": "1",
+  "url": "sec-sec3-5-LT-Sage.html",
+  "type": "Section",
+  "number": "3.5",
+  "title": "Sage Computations",
+  "body": " Sage Computations   In this section we explain how Sage can be used to explore linear transformations and deal with various concepts related to linear transformations that we have learned in this chapter. Sage has a construction linear_transformation() to define a linear transformation. We can define a linear transformation in Sage using the following four different ways.    linear_transformation(A, side='left') defines a linear transformation as a matrix transformation defined by the matrix . Domain and the codomain and the base space are inferred by the dimension of the matrix and base ring (the ring from on matrix is defined). Side is the keyword that can be taken as 'left' or 'right', the default value is 'left'.     linear_transformation(D, C, A, side='left') , this is same as before, however, here domain is taken as and codomain is taken as .     linear_transformation(D, C, f) , in this case is the function that is defined on on a basis element of the domain and it produces the elements of the codomain. The linear tranformation is the unique linear transformation that is extended linearly on the domain .     linear_transformation(D, C, images) , where 'images' is a list or a touple of vectors of the codmain, whihc is equal to the size of the basis. Each element of th basis is mapped to the corresponding element of the image.        Linear transformaation defined by a matrix.  Let us define a linear tarnsformatrion defined by a matrix over a rational numbers.  Clearly, here is the matrix tranformatrion defined from to . We can find, the domain, codmain, parent, images, kernel, that is null space etc using the dot methods. Let us explore some of them.   This returns a basis matrix of the image along with the dimension of the image space.  We can find image of any vector using the following Sage syntax.  If we take a vector in the range space of , we can find a representative of the . Note that the same linear transformation, we can also define as follows.    Define a matrix and define a linear transformation by . Now define two vectors and . Check that lie in the image space of . Let and . Show that are linearly independent in . Can you generalize this result and prove the same?     Let us define a linear transformation given by and explore this in Sage.         Next we find the matrix of with respect to a bases on the domain and a basis on the codomain.  Now we define a subspace of with B as a basis and a subspace of with C as a basis. After that we rectrict T on to on its domain and on its codomain. We call this restriction as . The matrix of is the matrix of with respect to on domain and on codmain, that is .  Note that the matrix can also be obtained by defining a column matrix whose columns are , then applying RREF and extracting the last four columns.     The image of can also be obtained by using RREF of the matrix whose rows are vectors . Note that the first three rows of this is sage as what we get using T.image() .   Reshufle the basis elements. Let us see what happens to the matrix of a linear transformation when we reshuffle the elemnts of a basis on domain and codomain. Let us find the matrix of the abobe linear transformation with resepect the basis of the domain and of the codomain. Here we have interchanged 2nd and 3rd basis elements of . You may also explore with other interchanges.   Clearly in this case 2nd and 3rd columns of are interchanged.   Clearly in this case 2nd and 3rd rows of are interchanged.    "
+},
+{
+  "id": "sec-sec3-5-LT-Sage-3",
+  "level": "2",
+  "url": "sec-sec3-5-LT-Sage.html#sec-sec3-5-LT-Sage-3",
+  "type": "Example",
+  "number": "3.5.1",
+  "title": "Linear transformaation defined by a matrix..",
+  "body": " Linear transformaation defined by a matrix.  Let us define a linear tarnsformatrion defined by a matrix over a rational numbers.  Clearly, here is the matrix tranformatrion defined from to . We can find, the domain, codmain, parent, images, kernel, that is null space etc using the dot methods. Let us explore some of them.   This returns a basis matrix of the image along with the dimension of the image space.  We can find image of any vector using the following Sage syntax.  If we take a vector in the range space of , we can find a representative of the . Note that the same linear transformation, we can also define as follows.  "
+},
+{
+  "id": "sec-sec3-5-LT-Sage-4",
+  "level": "2",
+  "url": "sec-sec3-5-LT-Sage.html#sec-sec3-5-LT-Sage-4",
+  "type": "Problem",
+  "number": "3.5.2",
+  "title": "",
+  "body": " Define a matrix and define a linear transformation by . Now define two vectors and . Check that lie in the image space of . Let and . Show that are linearly independent in . Can you generalize this result and prove the same?   "
+},
+{
+  "id": "sec-sec3-5-LT-Sage-5",
+  "level": "2",
+  "url": "sec-sec3-5-LT-Sage.html#sec-sec3-5-LT-Sage-5",
+  "type": "Example",
+  "number": "3.5.3",
+  "title": "",
+  "body": " Let us define a linear transformation given by and explore this in Sage.         Next we find the matrix of with respect to a bases on the domain and a basis on the codomain.  Now we define a subspace of with B as a basis and a subspace of with C as a basis. After that we rectrict T on to on its domain and on its codomain. We call this restriction as . The matrix of is the matrix of with respect to on domain and on codmain, that is .  Note that the matrix can also be obtained by defining a column matrix whose columns are , then applying RREF and extracting the last four columns.     The image of can also be obtained by using RREF of the matrix whose rows are vectors . Note that the first three rows of this is sage as what we get using T.image() .   Reshufle the basis elements. Let us see what happens to the matrix of a linear transformation when we reshuffle the elemnts of a basis on domain and codomain. Let us find the matrix of the abobe linear transformation with resepect the basis of the domain and of the codomain. Here we have interchanged 2nd and 3rd basis elements of . You may also explore with other interchanges.   Clearly in this case 2nd and 3rd columns of are interchanged.   Clearly in this case 2nd and 3rd rows of are interchanged.   "
 },
 {
   "id": "sec4-1-VS",
@@ -2071,9 +2116,9 @@ var ptx_lunr_docs = [
   "body": " Let be a linearly independent set of vectors. Suppose . Then is linearly independent.  "
 },
 {
-  "id": "sec4-5-basis-dim-VS-3-4",
+  "id": "4-5-13",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-3-4",
+  "url": "sec4-5-basis-dim-VS.html#4-5-13",
   "type": "Checkpoint",
   "number": "4.5.14",
   "title": "",
@@ -2089,9 +2134,9 @@ var ptx_lunr_docs = [
   "body": "  Complete the set to a basis of . One way of achieving this to find . Then Chose . Then in view of Exercise , is linearly independent. Since , is a basis of .  Another way to achieve this is to look at the standard basis vectors not in . In particular, . In order to find this we can apply RREF to the matrix and choose columns corresponding to the pivots. We have .  Clearly pivot columns are 1,2,4,6, which corresponds to vector . Thus is an extended basis of .   "
 },
 {
-  "id": "sec4-5-basis-dim-VS-3-7",
+  "id": "4-5-16",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-3-7",
+  "url": "sec4-5-basis-dim-VS.html#4-5-16",
   "type": "Checkpoint",
   "number": "4.5.16",
   "title": "",
@@ -2179,45 +2224,45 @@ var ptx_lunr_docs = [
   "body": " Exercise Set    Check if the following set of vectors are linearly independent or dependent. (i)   (ii) .  (iii) .  (iv) . (v)      Show that (i) is a basis of .  (ii) is a basis of .  (iii) is a basis of .  (iv) Show that any vectors in are linearly independent. State the result clearly that is used.     Consider the plane . Find a basis of and hence find the dimension of .    Find the dimensions of the following subspaces. (i) and (ii) .    Consider bases and of . Let . Find the coordinates and of with respect to and respectively. Also find the matrix of change of basis . Hence show that .    Consider bases and of . Let . Find the coordinates and of with respect to and respectively. Also find the matrix of change of basis . Hence show that .    Consider a linear map defined by . Let us consider a basis of the domain and the standard basis on the codomain. Find the matrix of with respect to the basis and .    Let and defined by and Find the composition . Find th matrix of , of and of with respect to the standard bases. Show that .    Let be two linear maps. Then show that is a linear map. Furthermore, the matrix of is the sum of matrices of and .    For the following linear transformation . Show that is induced by a matrix and hence find the matrix. (i) is reflection about axis. (ii) is reflection about the line (iii) is reflection about the line (iv) is a clockwise rotation by an angle .    (i) Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix. (ii) Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.    Let is a set of all real symmetric matrices and , the set of all real skew-symmetric matrices. Then what is ? Justify your answer.    "
 },
 {
-  "id": "sec5-0-eigen",
+  "id": "sec5-1-eigen-intro",
   "level": "1",
-  "url": "sec5-0-eigen.html",
+  "url": "sec5-1-eigen-intro.html",
   "type": "Section",
   "number": "5.1",
   "title": "Eigenvalues and Eigenvectors",
   "body": " Eigenvalues and Eigenvectors   In this section we define the notion of eigenvalues and eigenvectors and look at some of its properties.     Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .      Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.      Consider the matrix of rotation in anti-clock wise by an angle . The it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvector.     If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .   Let us analyze the notion of eigenvalues and eigenvector. If is a eigenvector corresponding to an eigenvalue . Then . This implies , where is identity matrix. This means that the homogeneous system has a non zero solution, namely . Hence . Notice that is a polynomial (called the characteristic polynomial of ) of degree in . Thus if , then is a root of the the characteristic polynomial . By fundamental theorem of algebra an real matrix can have at most real eigenvalues. The equation is called characteristic equation of .  We can write as . If are roots of the characteristics equation, then one can show that .    Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?      Let . What are eigenvalues and eigenvectors of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .      Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to       Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.      Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the {geometric multiplicity of .}  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .     Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .    The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .     Consider the matrix . It is easy to check that . That is has only one eigenvalue of of geometric multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.     Properties of Eigenvalues and Eigenvectors   We list the following properties (without proof.)    and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.         Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by         Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.       (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.    Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .      Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying bu to the equation, , we get , from this we have .  Can you find ?     (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .     Let an and for be eigenvalues of then the spectral radius of is define as .      Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .      Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .     Find the spectral radius of and .   Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.      Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.      Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is alos not negative definite.     We have the following facts about positive definite matrices.    All eigenvalues of a positive definite matrix are real and positive.    Eigenvalues of a negative definite matrix are real and negative.    If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.       Let . For any , we have   Henc e is positive definite.     Let . Show that is positive definite using the above results.   "
 },
 {
-  "id": "sec5-0-eigen-3",
+  "id": "sec5-1-eigen-intro-3",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-3",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-3",
   "type": "Definition",
   "number": "5.1.1",
   "title": "",
   "body": "  Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .   "
 },
 {
-  "id": "sec5-0-eigen-4",
+  "id": "sec5-1-eigen-intro-4",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-4",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-4",
   "type": "Example",
   "number": "5.1.2",
   "title": "",
   "body": "  Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.   "
 },
 {
-  "id": "sec5-0-eigen-5",
+  "id": "sec5-1-eigen-intro-5",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-5",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-5",
   "type": "Example",
   "number": "5.1.3",
   "title": "",
   "body": "  Consider the matrix of rotation in anti-clock wise by an angle . The it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvector.   "
 },
 {
-  "id": "sec5-0-eigen-6",
+  "id": "sec5-1-eigen-intro-6",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-6",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-6",
   "type": "Remark",
   "number": "5.1.4",
   "title": "",
@@ -2226,16 +2271,16 @@ var ptx_lunr_docs = [
 {
   "id": "eigen_eg0",
   "level": "2",
-  "url": "sec5-0-eigen.html#eigen_eg0",
+  "url": "sec5-1-eigen-intro.html#eigen_eg0",
   "type": "Example",
   "number": "5.1.5",
   "title": "",
   "body": "  Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?   "
 },
 {
-  "id": "sec5-0-eigen-10",
+  "id": "sec5-1-eigen-intro-10",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-10",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-10",
   "type": "Example",
   "number": "5.1.6",
   "title": "",
@@ -2244,43 +2289,43 @@ var ptx_lunr_docs = [
 {
   "id": "eigen_eg1",
   "level": "2",
-  "url": "sec5-0-eigen.html#eigen_eg1",
+  "url": "sec5-1-eigen-intro.html#eigen_eg1",
   "type": "Example",
   "number": "5.1.7",
   "title": "",
   "body": "  Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to    "
 },
 {
-  "id": "sec5-0-eigen-12",
+  "id": "sec5-1-eigen-intro-12",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-12",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-12",
   "type": "Example",
   "number": "5.1.8",
   "title": "",
   "body": "  Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.   "
 },
 {
-  "id": "sec5-0-eigen-13",
+  "id": "sec5-1-eigen-intro-13",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-13",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-13",
   "type": "Definition",
   "number": "5.1.9",
   "title": "",
   "body": "  Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the {geometric multiplicity of .}  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .   "
 },
 {
-  "id": "sec5-0-eigen-14",
+  "id": "sec5-1-eigen-intro-14",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-14",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-14",
   "type": "Remark",
   "number": "5.1.10",
   "title": "",
   "body": " Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .  "
 },
 {
-  "id": "sec5-0-eigen-15",
+  "id": "5-1-11",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-15",
+  "url": "sec5-1-eigen-intro.html#5-1-11",
   "type": "Checkpoint",
   "number": "5.1.11",
   "title": "",
@@ -2289,7 +2334,7 @@ var ptx_lunr_docs = [
 {
   "id": "eigen-eg117",
   "level": "2",
-  "url": "sec5-0-eigen.html#eigen-eg117",
+  "url": "sec5-1-eigen-intro.html#eigen-eg117",
   "type": "Example",
   "number": "5.1.12",
   "title": "",
@@ -2298,142 +2343,142 @@ var ptx_lunr_docs = [
 {
   "id": "eigen-properties",
   "level": "2",
-  "url": "sec5-0-eigen.html#eigen-properties",
+  "url": "sec5-1-eigen-intro.html#eigen-properties",
   "type": "Theorem",
   "number": "5.1.13",
   "title": "Properties of Eigenvalues and Eigenvectors.",
   "body": " Properties of Eigenvalues and Eigenvectors   We list the following properties (without proof.)    and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.      "
 },
 {
-  "id": "sec5-0-eigen-18",
+  "id": "sec5-1-eigen-intro-18",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-18",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-18",
   "type": "Example",
   "number": "5.1.14",
   "title": "",
   "body": "  Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by    "
 },
 {
-  "id": "sec5-0-eigen-19",
+  "id": "sec5-1-eigen-intro-19",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-19",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-19",
   "type": "Theorem",
   "number": "5.1.15",
   "title": "",
   "body": "    Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.     "
 },
 {
-  "id": "sec5-0-eigen-20",
+  "id": "sec5-1-eigen-intro-20",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-20",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-20",
   "type": "Proof",
   "number": "5.1.1",
   "title": "",
   "body": " (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.  "
 },
 {
-  "id": "sec5-0-eigen-21",
+  "id": "sec5-1-eigen-intro-21",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-21",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-21",
   "type": "Theorem",
   "number": "5.1.16",
   "title": "Cayley-Hamilton Theorem.",
   "body": " Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .   "
 },
 {
-  "id": "sec5-0-eigen-22",
+  "id": "sec5-1-eigen-intro-22",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-22",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-22",
   "type": "Example",
   "number": "5.1.17",
   "title": "",
   "body": "  Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying bu to the equation, , we get , from this we have .  Can you find ?   "
 },
 {
-  "id": "sec5-0-eigen-23",
+  "id": "5-1-18",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-23",
+  "url": "sec5-1-eigen-intro.html#5-1-18",
   "type": "Checkpoint",
   "number": "5.1.18",
   "title": "",
   "body": " (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  "
 },
 {
-  "id": "sec5-0-eigen-24",
+  "id": "sec5-1-eigen-intro-24",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-24",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-24",
   "type": "Definition",
   "number": "5.1.19",
   "title": "",
   "body": "  Let an and for be eigenvalues of then the spectral radius of is define as .   "
 },
 {
-  "id": "sec5-0-eigen-25",
+  "id": "sec5-1-eigen-intro-25",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-25",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-25",
   "type": "Example",
   "number": "5.1.20",
   "title": "",
   "body": "  Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .   "
 },
 {
-  "id": "sec5-0-eigen-26",
+  "id": "sec5-1-eigen-intro-26",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-26",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-26",
   "type": "Example",
   "number": "5.1.21",
   "title": "",
   "body": "  Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .   "
 },
 {
-  "id": "sec5-0-eigen-27",
+  "id": "5-1-22",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-27",
+  "url": "sec5-1-eigen-intro.html#5-1-22",
   "type": "Checkpoint",
   "number": "5.1.22",
   "title": "",
   "body": " Find the spectral radius of and .  "
 },
 {
-  "id": "sec5-0-eigen-28",
+  "id": "sec5-1-eigen-intro-28",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-28",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-28",
   "type": "Definition",
   "number": "5.1.23",
   "title": "Positive definite matrix.",
   "body": "Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.   "
 },
 {
-  "id": "sec5-0-eigen-29",
+  "id": "sec5-1-eigen-intro-29",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-29",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-29",
   "type": "Example",
   "number": "5.1.24",
   "title": "",
   "body": "  Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.   "
 },
 {
-  "id": "sec5-0-eigen-30",
+  "id": "sec5-1-eigen-intro-30",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-30",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-30",
   "type": "Example",
   "number": "5.1.25",
   "title": "",
   "body": "  Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is alos not negative definite.   "
 },
 {
-  "id": "sec5-0-eigen-32",
+  "id": "sec5-1-eigen-intro-32",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-32",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-32",
   "type": "Example",
   "number": "5.1.26",
   "title": "",
   "body": "  Let . For any , we have   Henc e is positive definite.   "
 },
 {
-  "id": "sec5-0-eigen-33",
+  "id": "5-1-23",
   "level": "2",
-  "url": "sec5-0-eigen.html#sec5-0-eigen-33",
+  "url": "sec5-1-eigen-intro.html#5-1-23",
   "type": "Checkpoint",
   "number": "5.1.27",
   "title": "",
@@ -2476,9 +2521,9 @@ var ptx_lunr_docs = [
   "body": "  Let . Then 1 is a repeated eigenvalue of with eigenvector . It is easuy to see that is non diagonalizable.   "
 },
 {
-  "id": "sec5-2-diagonalization-5",
+  "id": "5-2-4",
   "level": "2",
-  "url": "sec5-2-diagonalization.html#sec5-2-diagonalization-5",
+  "url": "sec5-2-diagonalization.html#5-2-4",
   "type": "Checkpoint",
   "number": "5.2.4",
   "title": "",
@@ -2566,18 +2611,18 @@ var ptx_lunr_docs = [
   "body": "  A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.    "
 },
 {
-  "id": "sec5-3-eigen-Appl-3",
+  "id": "5-3-2",
   "level": "2",
-  "url": "sec5-3-eigen-Appl.html#sec5-3-eigen-Appl-3",
+  "url": "sec5-3-eigen-Appl.html#5-3-2",
   "type": "Checkpoint",
   "number": "5.3.2",
   "title": "",
   "body": " Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )  "
 },
 {
-  "id": "sec5-3-eigen-Appl-4",
+  "id": "5-3-3",
   "level": "2",
-  "url": "sec5-3-eigen-Appl.html#sec5-3-eigen-Appl-4",
+  "url": "sec5-3-eigen-Appl.html#5-3-3",
   "type": "Checkpoint",
   "number": "5.3.3",
   "title": "",
@@ -2599,7 +2644,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.1",
   "title": "Orthogonality",
-  "body": " Orthogonality   In this chapter we deal with orthogonality of vectors and various properties. Recall, that if is linearly independent subset of and , then is linearly independent subset of .      A set of vectors is called orthogonal if     If , then .   Let be an orthogonal set of vectors in . Let and define ,  Then  (i) for all   (ii) If , then and is an orthogonal set.    If is orthogonal set then it is linearly independent.     A basis is called an orthogonal basis if is an orthogonal set in . In addition if for all , then is called an orthonormal basis.       The standard basis is an orthogonal basis of .     is an orthonormal basis of .     is an orthogonal basis of . However, it is not an orthonormal basis.     is an orthonormal basis of .      What is an advantage of having an orthonormal basis?  Let be an orthonormal basis of . Let . Then there exists scalars such that . Then is is easy to check that for all . This is advantage of having an orthonormal basis.   (i) Find the coordinates of a vector with respect to an orthonormal basis of .  (ii) Find the coordinates of the vector with respect to an orthonormal basis of .   Next we deal with to find an orthonormal basis of or any subspace of .   "
+  "body": " Orthogonality   In this chapter we deal with orthogonality of vectors and various properties. Recall, that if is linearly independent subset of and , then is linearly independent subset of .      A set of vectors is called orthogonal if     If , then .   Let be an orthogonal set of vectors in . Let and define ,  Then  (i) for all   (ii) If , then and is an orthogonal set.    If is orthogonal set then it is linearly independent.     A basis is called an orthogonal basis if is an orthogonal set in . In addition if for all , then is called an orthonormal basis.       The standard basis is an orthogonal basis of .     is an orthonormal basis of .     is an orthogonal basis of . However, it is not an orthonormal basis.     is an orthonormal basis of .      What is an advantage of having an orthonormal basis?  Let be an orthonormal basis of . Let . Then there exists scalars such that . Then is is easy to check that for all . This is advantage of having an orthonormal basis.   (i) Find the coordinates of a vector with respect to an orthonormal basis of .  (ii) Find the coordinates of the vector with respect to an orthonormal basis of .   Next we deal with to find an orthonormal basis of or any subspace of .  "
 },
 {
   "id": "sec6-0-orthogonality-3",
@@ -2647,9 +2692,9 @@ var ptx_lunr_docs = [
   "body": "   The standard basis is an orthogonal basis of .     is an orthonormal basis of .     is an orthogonal basis of . However, it is not an orthonormal basis.     is an orthonormal basis of .    "
 },
 {
-  "id": "sec6-0-orthogonality-9-3",
+  "id": "sec6-0-orthogonality-11",
   "level": "2",
-  "url": "sec6-0-orthogonality.html#sec6-0-orthogonality-9-3",
+  "url": "sec6-0-orthogonality.html#sec6-0-orthogonality-11",
   "type": "Checkpoint",
   "number": "6.1.6",
   "title": "",
@@ -2932,7 +2977,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.1",
   "title": "Inner Product",
-  "body": " Inner Product   In the last section, dealt with notion of dot product and geometry in . The dot product and related notion can be generalized to an arbitrary vector space over or . All the notions, we have learned in the last section can be generalized over an inner product space.   Note that the dot product of two vectors in is a scalar, in particular, dot product can be thought of as a function from satisfying the following properties:    for all      if and only if .     for all .     for all .     .     The notion of dot product on can ve generalized on vector space known as inner product. We have the following definition.  Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in satisfying the following properties.    for all and if and only if .     for all . (Symmetry)     for all .     for all and .    If is real vector space with inner product . Then called in inner product space over .     The last two properties make the inner product linear in the second variable. Using the symmetry property, it can also be shown that the inner product is linear in the first variable as well. That is,  Next we look at several examples of inner procuct on various vector spaces that we have defined in the last chapter.     On , the standard dot product is an inner product. Thus define   This is also called the Euclidean inner product on .      Let the set of all matrices over . Define   It is easy to show that this is an inner product on .      Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on .      Let the set of all continuous function from to . Define .  This is an inner product on .      Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .      Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .     Let be an inner product space. Then for any two vectors , show that 1.   2.     The proof follows by looking at and and using the properties of inner product.    If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonal is 2 the sum of the squares of the side lengths.    Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.     Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.    Let us play with the Cauchy-Schwarz inequality . Suppose and are non zero vectors in , Then   Hence we have .  Thus for any two non zero vectors, and , always lies between and 1. This allows us to define the angle between two non zero vectors. We assign this number to with called the angle between and . Thus, if is the angle between and , then we have   All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.   Let be a real inner product space. Define (i) orthogonality (ii) orthogonal complement of a subset of , (iii) Orthogonal projection, (iv) Orthogonal and orthonormal sets (v) Gram-Schmidt orthogonalization process etc.    Let be two vectors in an inner product space . Then show that  (i) and are orthogonal if and only if . (what does it mean geometrically?)  (ii) and are orthogonal if and only if .    Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.   Pythagoras Theorem  Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.    Let be an orthogonal basis of an inner product space . Let and between and , respectively. Then .  Here are called the direction cosines of corresponding to .    Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .    Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials       Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.     Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.      Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .     Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar definition , we can define the orthogonal projection of onto as .   Find the orthogonal projection of vector onto the subspace spanned by three vectors .    "
+  "body": " Inner Product  In the last section we dealt with notion of dot product and geometry in . The dot product and related notion can be generalized to an arbitrary vector space over or . All the notions, we have learned in the last section can be generalized over an inner product space.  Note that the dot product of two vectors in is a scalar, in particular, dot product can be thought of as a function from satisfying the following properties:    for all .     if and only if .     for all .     for all .     .     The notion of dot product on can ve generalized on vector space known as inner product. We have the following definition.  Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in satisfying the following properties.    for all and if and only if .     for all . (Symmetry)     for all .     for all and .    If is real vector space with inner product . Then called in inner product space over .     The last two properties make the inner product linear in the second variable. Using the symmetry property, it can also be shown that the inner product is linear in the first variable as well. That is,  Next we look at several examples of inner procuct on various vector spaces that we have defined in .     On , the standard dot product is an inner product. Thus define   This is also called the Euclidean inner product on .      Let , the set of all matrices over . Define   It is easy to show that this is an inner product on .  Note that this inner product can be thought of as the standard dot product on . The elements of the matrix can be thought of as a vector in . Then . Work with matrices and then try to prove this for matrices.      Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on .      Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)      Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .     mean that has roots, which is not possible unless by the fundamental theorem of algebra.      Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .     Let be an inner product space. Then for any two vectors , show that 1.   2.     The proof follows by looking at and and using the properties of inner product.    If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.   Proof follows from .    Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.     Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.    Let us play with the Cauchy-Schwarz inequality . Suppose and are non zero vectors in , Then   Hence we have .  Thus for any two non zero vectors, and , always lies between and 1. This allows us to define the angle between two non zero vectors. We assign this number to with called the angle between and . Thus, if is the angle between and , then we have   All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.   Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:   for all , and if and only if .    for all and , .    for all , .         Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.    The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them.   Let be a real inner product space. Define (i) orthogonality of two vectors and in , (ii) orthogonal complement of a subset of , (iii) Orthogonal projection of a vector onto a non-zero vector , (iv) orthogonal set and orthonormal sets in and (v) Gram-Schmidt orthogonalization process.    Let be two vectors in an inner product space . Then show that  (i) and are orthogonal if and only if . (what does it mean geometrically?)  (ii) and are orthogonal if and only if .    Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.   Pythagoras Theorem  Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.    Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .    Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .    Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials       Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.     Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.      Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .     Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .    Find the orthogonal projection of vector onto the subspace spanned by three vectors .   "
 },
 {
   "id": "sec7-0-InnerProduct-5",
@@ -2959,7 +3004,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "7.1.3",
   "title": "",
-  "body": "  Let the set of all matrices over . Define   It is easy to show that this is an inner product on .   "
+  "body": "  Let , the set of all matrices over . Define   It is easy to show that this is an inner product on .  Note that this inner product can be thought of as the standard dot product on . The elements of the matrix can be thought of as a vector in . Then . Work with matrices and then try to prove this for matrices.   "
 },
 {
   "id": "inner-product-by-matrix",
@@ -2977,7 +3022,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "7.1.5",
   "title": "",
-  "body": "  Let the set of all continuous function from to . Define .  This is an inner product on .   "
+  "body": "  Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)   "
 },
 {
   "id": "inner-product-on-polyspace",
@@ -2986,7 +3031,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "7.1.6",
   "title": "",
-  "body": "  Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .   "
+  "body": "  Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .     mean that has roots, which is not possible unless by the fundamental theorem of algebra.   "
 },
 {
   "id": "definition-norm",
@@ -2998,22 +3043,22 @@ var ptx_lunr_docs = [
   "body": "  Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .   "
 },
 {
-  "id": "sec7-0-InnerProduct-13",
+  "id": "7-1-8",
   "level": "2",
-  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-13",
+  "url": "sec7-0-InnerProduct.html#7-1-8",
   "type": "Checkpoint",
   "number": "7.1.8",
   "title": "",
   "body": " Let be an inner product space. Then for any two vectors , show that 1.   2.     The proof follows by looking at and and using the properties of inner product.  "
 },
 {
-  "id": "sec7-0-InnerProduct-14",
+  "id": "7-1-9",
   "level": "2",
-  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-14",
+  "url": "sec7-0-InnerProduct.html#7-1-9",
   "type": "Checkpoint",
   "number": "7.1.9",
   "title": "",
-  "body": " If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonal is 2 the sum of the squares of the side lengths.  "
+  "body": " If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.   Proof follows from .  "
 },
 {
   "id": "sec7-0-InnerProduct-15",
@@ -3034,56 +3079,83 @@ var ptx_lunr_docs = [
   "body": " Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.   "
 },
 {
-  "id": "sec7-0-InnerProduct-21",
+  "id": "thm-norm-properties",
   "level": "2",
-  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-21",
-  "type": "Checkpoint",
+  "url": "sec7-0-InnerProduct.html#thm-norm-properties",
+  "type": "Theorem",
   "number": "7.1.12",
-  "title": "",
-  "body": " Let be a real inner product space. Define (i) orthogonality (ii) orthogonal complement of a subset of , (iii) Orthogonal projection, (iv) Orthogonal and orthonormal sets (v) Gram-Schmidt orthogonalization process etc.  "
+  "title": "Properties of Norm.",
+  "body": " Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:   for all , and if and only if .    for all and , .    for all , .      "
 },
 {
-  "id": "sec7-0-InnerProduct-22",
+  "id": "def-normed-lin-space",
   "level": "2",
-  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-22",
-  "type": "Checkpoint",
+  "url": "sec7-0-InnerProduct.html#def-normed-lin-space",
+  "type": "Definition",
   "number": "7.1.13",
   "title": "",
-  "body": " Let be two vectors in an inner product space . Then show that  (i) and are orthogonal if and only if . (what does it mean geometrically?)  (ii) and are orthogonal if and only if .  "
+  "body": "  Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.   "
 },
 {
   "id": "sec7-0-InnerProduct-23",
   "level": "2",
   "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-23",
-  "type": "Checkpoint",
+  "type": "Note",
   "number": "7.1.14",
+  "title": "",
+  "body": "The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them. "
+},
+{
+  "id": "7-1-10",
+  "level": "2",
+  "url": "sec7-0-InnerProduct.html#7-1-10",
+  "type": "Checkpoint",
+  "number": "7.1.15",
+  "title": "",
+  "body": " Let be a real inner product space. Define (i) orthogonality of two vectors and in , (ii) orthogonal complement of a subset of , (iii) Orthogonal projection of a vector onto a non-zero vector , (iv) orthogonal set and orthonormal sets in and (v) Gram-Schmidt orthogonalization process.  "
+},
+{
+  "id": "7-1-11",
+  "level": "2",
+  "url": "sec7-0-InnerProduct.html#7-1-11",
+  "type": "Checkpoint",
+  "number": "7.1.16",
+  "title": "",
+  "body": " Let be two vectors in an inner product space . Then show that  (i) and are orthogonal if and only if . (what does it mean geometrically?)  (ii) and are orthogonal if and only if .  "
+},
+{
+  "id": "7-1-12",
+  "level": "2",
+  "url": "sec7-0-InnerProduct.html#7-1-12",
+  "type": "Checkpoint",
+  "number": "7.1.17",
   "title": "",
   "body": " Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.  "
 },
 {
-  "id": "sec7-0-InnerProduct-24",
+  "id": "7-1-13",
   "level": "2",
-  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-24",
+  "url": "sec7-0-InnerProduct.html#7-1-13",
   "type": "Checkpoint",
-  "number": "7.1.15",
+  "number": "7.1.18",
   "title": "Pythagoras Theorem.",
   "body": "Pythagoras Theorem  Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.  "
 },
 {
-  "id": "sec7-0-InnerProduct-25",
+  "id": "7-1-14",
   "level": "2",
-  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-25",
+  "url": "sec7-0-InnerProduct.html#7-1-14",
   "type": "Checkpoint",
-  "number": "7.1.16",
+  "number": "7.1.19",
   "title": "",
-  "body": " Let be an orthogonal basis of an inner product space . Let and between and , respectively. Then .  Here are called the direction cosines of corresponding to .  "
+  "body": " Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .  "
 },
 {
-  "id": "sec7-0-InnerProduct-26",
+  "id": "7-1-15",
   "level": "2",
-  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-26",
+  "url": "sec7-0-InnerProduct.html#7-1-15",
   "type": "Checkpoint",
-  "number": "7.1.17",
+  "number": "7.1.20",
   "title": "",
   "body": " Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .  "
 },
@@ -3092,43 +3164,52 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-0-InnerProduct.html#Legendre-poly",
   "type": "Example",
-  "number": "7.1.18",
+  "number": "7.1.21",
   "title": "Legendre Polynomials.",
-  "body": " Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials     "
+  "body": " Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials     "
 },
 {
-  "id": "sec7-0-InnerProduct-28",
+  "id": "7-1-16",
   "level": "2",
-  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-28",
+  "url": "sec7-0-InnerProduct.html#7-1-16",
   "type": "Checkpoint",
-  "number": "7.1.20",
+  "number": "7.1.23",
   "title": "",
   "body": " Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.  "
 },
 {
-  "id": "sec7-0-InnerProduct-29",
+  "id": "sec7-0-InnerProduct-32",
   "level": "2",
-  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-29",
+  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-32",
   "type": "Example",
-  "number": "7.1.21",
+  "number": "7.1.24",
   "title": "",
   "body": "  Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.    "
 },
 {
-  "id": "sec7-0-InnerProduct-30",
+  "id": "sec7-0-InnerProduct-33",
   "level": "2",
-  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-30",
+  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-33",
   "type": "Example",
-  "number": "7.1.22",
+  "number": "7.1.25",
   "title": "Lagrange Interpolating Polynomials.",
   "body": " Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .   "
 },
 {
-  "id": "sec7-0-InnerProduct-31-3",
+  "id": "sec7-0-InnerProduct-34",
   "level": "2",
-  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-31-3",
+  "url": "sec7-0-InnerProduct.html#sec7-0-InnerProduct-34",
+  "type": "Definition",
+  "number": "7.1.26",
+  "title": "Projection onto a subspace.",
+  "body": " Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .  "
+},
+{
+  "id": "7-1-17",
+  "level": "2",
+  "url": "sec7-0-InnerProduct.html#7-1-17",
   "type": "Checkpoint",
-  "number": "7.1.23",
+  "number": "7.1.27",
   "title": "",
   "body": " Find the orthogonal projection of vector onto the subspace spanned by three vectors .  "
 },
@@ -3147,85 +3228,85 @@ var ptx_lunr_docs = [
   "url": "sec8-0-LSTSQ.html",
   "type": "Section",
   "number": "8.1",
-  "title": "Linear Least Square Problems",
-  "body": " Linear Least Square Problems  This chapter deals with linear least square problems and it applications.  Consider a system of equations having equations in variables. Suppose . Then this system may not have a solution. Then we can look for what is the best approximate solution. If is a solution of then . Here is the measure of how far from . The aim is to find the point such that is at the smallest distance from . Thus if such a exists then for all .  The answer to the above question is yes . In order to find this, we consider .  Note that is subspace of . We are looking for which is at the smallest distance from , which is nothing but the orthogonal projection of onto . Suppose we assume that columns of are linearly independent. Then is the column space of. Hence by the Eq. , orthogonal projection is given by .  Here the vector is called the least square approximation (solution) of .  For the system , after multiplying both sides by , we get which is called the normal equation. We know that rank of is equal to rank of . Hence is invertible if has linearly independent columns. Also the has least square solution if and only if the associated normal equation has a solution.  Note that the least square solution is the minimizer of the function . This can also be obtained using calculus. .  Hence the gradient . Hence implies provided is non singular.    Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function . Here we consider the subspace . We need the find the orthogonal projection of onto .  From Example , we know that is an orthonormal basis of . Hence the orthogonal projection of onto is give by .  After simplification we get .     Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function .     Consider a system of linear equations where   (a) Find the least square solution of .  (b) Find the orthogonal projection of onto the column space .  (c) Write the as where and .   Solution: It is easy to see that the columns of are linearly independent, hence the least square solution exists. We have .  Hence the least square solution of is the solution of the normal equation which is . The same can obtained as .  (b) The orthogonal projection of onto is given by .  (b) Since we have found , is given by . Hence .     (i) Find the best approximation (least square solution) of the system of linear equations     The average number of goals , per game scored by a football player is related linearly to two factors, (i) the number of years of experience and (ii) the number of goals in the preceding 10 games. Find the linear The data on the following page were collected on four players. Find the linear function .           goals  0.8  0.7  0.6  0.5            10  8  6  3            4  4  3  2              The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.                Year  1990  1991  1992  1993  1994  1995  1996  1997    Temp  27.07  26.93  27.11  27.18  26.94  27.25  27.64  27.66               Year  1998  1999  2000  2001  2002  2003  2004  2005    Temp  27.75  27.65  27.61  27.26  27.82  27.46  27.00  27.36               Year  2006  2007  2008  2009  2010  2011  2012  2013    Temp  27.36  28.02  27.75  28.33  28.16  27.94  27.61  27.63               Year  2014  2015  2016  2017  2018  2019  2020  2021          Temp  28.18  28.67  28.24  28.55  28.76  28.27  28.40  28.48                      Find the equation of the line that best fits these data points.  The temperature data is plotted in the Figure .     We wish to find the best fit line to the given set of data. Suppose the line is given by , then we wish to find and such that the line is best fit. Now what is meaning of \"best fit\". Suppose we consider the point , if it lies on , then , other wise is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by where is the number of points. Note that the sum of error squares can be written as .  Here   Thus finding amount to finding the least square solution of , which is given by   For the given problem, we have   We have  .  Hence   The set of points along with the best fitted line is shown in the Figure         Fitting a polynomial to the data set  Suppose we are given a set of -data points and we wish to find the best fit polynomial curve of degree , say, , with . In this case, the error term for from the the the curve is . Thus the sum of the error square is   The sum of error square can be written as , where   Thus the least square solution is given by provided columns of are linearly independent.    Find th best fit cubic to the following set of points                  -3.0  -2.8  -2.5  -2.2  -2.0  -1.8  -1.5  -1.2  -1.0  -0.75     1.1  4.0  7.3  7.1  8.2  7.8  9.9  7.1  8.8  6.2                  -0.50  -0.25  0.00  0.25  0.50  0.75  1.0  1.2  1.5  1.8     7.0  3.7  4.7  3.4  5.6  5.8  5.3  6.6  10.  12.                 Thus we need to find the least square solution of , where   We have    Hence the least square solution   See the Figure for fitted curve along with the data.        Find the least squares approximating line for each of the following sets of data points.  (i)   (ii)     Find the least squares approximating quadratic for each of the following sets of data points.  (i)   (ii) The table gives the worldwide cumulative HIV infections in millions.          1980  0.1  1995  29.8    1982  0.7  1997  40.9    1985  2.4  2000  57.9    1987  4.5  2002  67.9    1990  10  2005  82.7    1992  16.1  2008  100.2            "
+  "title": "Least Square Problems",
+  "body": " Least Square Problems  This chapter deals with linear least square problems and it applications.   Linear Least Square Problems  Consider a system of equations having equations in variables. Suppose . Then this system may not have a solution. Then we can look for what is the best approximate solution. If is a solution of then . Here is the measure of how far from . The aim is to find the point such that is at the smallest distance from . Thus if such a exists then for all .  The answer to the above question is yes . In order to find this, we consider .  Note that is subspace of . We are looking for which is at the smallest distance from , which is nothing but the orthogonal projection of onto . Suppose we assume that columns of are linearly independent. Then is the column space of. Hence by the Eq. , orthogonal projection is given by .  Here the vector is called the least square approximation (solution) of .  For the system , after multiplying both sides by , we get which is called the normal equation. We know that rank of is equal to rank of . Hence is invertible if has linearly independent columns. Also the has least square solution if and only if the associated normal equation has a solution.  Note that the least square solution is the minimizer of the function . This can also be obtained using calculus. .  Hence the gradient . Hence implies provided is non singular.    Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function . Here we consider the subspace . We need the find the orthogonal projection of onto .  From Example , we know that is an orthonormal basis of . Hence the orthogonal projection of onto is give by .  After simplification we get .     Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function .     Consider a system of linear equations where   (a) Find the least square solution of .  (b) Find the orthogonal projection of onto the column space .  (c) Write the as where and .   Solution: It is easy to see that the columns of are linearly independent, hence the least square solution exists. We have .  Hence the least square solution of is the solution of the normal equation which is . The same can obtained as .  (b) The orthogonal projection of onto is given by .  (b) Since we have found , is given by . Hence .     (i) Find the best approximation (least square solution) of the system of linear equations     The average number of goals , per game scored by a football player is related linearly to two factors, (i) the number of years of experience and (ii) the number of goals in the preceding 10 games. Find the linear The data on the following page were collected on four players. Find the linear function .           goals  0.8  0.7  0.6  0.5            10  8  6  3            4  4  3  2              The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.                Year  1990  1991  1992  1993  1994  1995  1996  1997    Temp  27.07  26.93  27.11  27.18  26.94  27.25  27.64  27.66               Year  1998  1999  2000  2001  2002  2003  2004  2005    Temp  27.75  27.65  27.61  27.26  27.82  27.46  27.00  27.36               Year  2006  2007  2008  2009  2010  2011  2012  2013    Temp  27.36  28.02  27.75  28.33  28.16  27.94  27.61  27.63               Year  2014  2015  2016  2017  2018  2019  2020  2021          Temp  28.18  28.67  28.24  28.55  28.76  28.27  28.40  28.48                      Find the equation of the line that best fits these data points.  The temperature data is plotted in the Figure .     We wish to find the best fit line to the given set of data. Suppose the line is given by , then we wish to find and such that the line is best fit. Now what is meaning of \"best fit\". Suppose we consider the point , if it lies on , then , other wise is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by where is the number of points. Note that the sum of error squares can be written as .  Here   Thus finding amount to finding the least square solution of , which is given by   For the given problem, we have   We have  .  Hence   The set of points along with the best fitted line is shown in the Figure          Fitting a polynomial to the data set  Suppose we are given a set of -data points and we wish to find the best fit polynomial curve of degree , say, , with . In this case, the error term for from the the the curve is . Thus the sum of the error square is   The sum of error square can be written as , where   Thus the least square solution is given by provided columns of are linearly independent.    Find th best fit cubic to the following set of points                  -3.0  -2.8  -2.5  -2.2  -2.0  -1.8  -1.5  -1.2  -1.0  -0.75     1.1  4.0  7.3  7.1  8.2  7.8  9.9  7.1  8.8  6.2                  -0.50  -0.25  0.00  0.25  0.50  0.75  1.0  1.2  1.5  1.8     7.0  3.7  4.7  3.4  5.6  5.8  5.3  6.6  10.  12.                 Thus we need to find the least square solution of , where   We have    Hence the least square solution   See the Figure for fitted curve along with the data.        Find the least squares approximating line for each of the following sets of data points.  (i)   (ii)     Find the least squares approximating quadratic for each of the following sets of data points.  (i)   (ii) The table gives the worldwide cumulative HIV infections in millions.          1980  0.1  1995  29.8    1982  0.7  1997  40.9    1985  2.4  2000  57.9    1987  4.5  2002  67.9    1990  10  2005  82.7    1992  16.1  2008  100.2             Weighted Least Square Problems   "
 },
 {
-  "id": "sec8-0-LSTSQ-10",
+  "id": "sec-linear-lstsq-9",
   "level": "2",
-  "url": "sec8-0-LSTSQ.html#sec8-0-LSTSQ-10",
+  "url": "sec8-0-LSTSQ.html#sec-linear-lstsq-9",
   "type": "Example",
   "number": "8.1.1",
   "title": "",
   "body": "  Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function . Here we consider the subspace . We need the find the orthogonal projection of onto .  From Example , we know that is an orthonormal basis of . Hence the orthogonal projection of onto is give by .  After simplification we get .   "
 },
 {
-  "id": "sec8-0-LSTSQ-11",
+  "id": "8-1-2",
   "level": "2",
-  "url": "sec8-0-LSTSQ.html#sec8-0-LSTSQ-11",
+  "url": "sec8-0-LSTSQ.html#8-1-2",
   "type": "Checkpoint",
   "number": "8.1.2",
   "title": "",
   "body": " Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function .  "
 },
 {
-  "id": "sec8-0-LSTSQ-12",
+  "id": "sec-linear-lstsq-11",
   "level": "2",
-  "url": "sec8-0-LSTSQ.html#sec8-0-LSTSQ-12",
+  "url": "sec8-0-LSTSQ.html#sec-linear-lstsq-11",
   "type": "Example",
   "number": "8.1.3",
   "title": "",
   "body": "  Consider a system of linear equations where   (a) Find the least square solution of .  (b) Find the orthogonal projection of onto the column space .  (c) Write the as where and .   Solution: It is easy to see that the columns of are linearly independent, hence the least square solution exists. We have .  Hence the least square solution of is the solution of the normal equation which is . The same can obtained as .  (b) The orthogonal projection of onto is given by .  (b) Since we have found , is given by . Hence .   "
 },
 {
-  "id": "sec8-0-LSTSQ-13",
+  "id": "8-1-3",
   "level": "2",
-  "url": "sec8-0-LSTSQ.html#sec8-0-LSTSQ-13",
+  "url": "sec8-0-LSTSQ.html#8-1-3",
   "type": "Checkpoint",
   "number": "8.1.4",
   "title": "",
   "body": " (i) Find the best approximation (least square solution) of the system of linear equations   "
 },
 {
-  "id": "sec8-0-LSTSQ-14",
+  "id": "8-1-4",
   "level": "2",
-  "url": "sec8-0-LSTSQ.html#sec8-0-LSTSQ-14",
+  "url": "sec8-0-LSTSQ.html#8-1-4",
   "type": "Checkpoint",
   "number": "8.1.5",
   "title": "",
   "body": " The average number of goals , per game scored by a football player is related linearly to two factors, (i) the number of years of experience and (ii) the number of goals in the preceding 10 games. Find the linear The data on the following page were collected on four players. Find the linear function .           goals  0.8  0.7  0.6  0.5            10  8  6  3            4  4  3  2           "
 },
 {
-  "id": "sec8-0-LSTSQ-15",
+  "id": "sec-linear-lstsq-14",
   "level": "2",
-  "url": "sec8-0-LSTSQ.html#sec8-0-LSTSQ-15",
+  "url": "sec8-0-LSTSQ.html#sec-linear-lstsq-14",
   "type": "Example",
   "number": "8.1.6",
   "title": "",
   "body": "  The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.                Year  1990  1991  1992  1993  1994  1995  1996  1997    Temp  27.07  26.93  27.11  27.18  26.94  27.25  27.64  27.66               Year  1998  1999  2000  2001  2002  2003  2004  2005    Temp  27.75  27.65  27.61  27.26  27.82  27.46  27.00  27.36               Year  2006  2007  2008  2009  2010  2011  2012  2013    Temp  27.36  28.02  27.75  28.33  28.16  27.94  27.61  27.63               Year  2014  2015  2016  2017  2018  2019  2020  2021          Temp  28.18  28.67  28.24  28.55  28.76  28.27  28.40  28.48                      Find the equation of the line that best fits these data points.  The temperature data is plotted in the Figure .     We wish to find the best fit line to the given set of data. Suppose the line is given by , then we wish to find and such that the line is best fit. Now what is meaning of \"best fit\". Suppose we consider the point , if it lies on , then , other wise is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by where is the number of points. Note that the sum of error squares can be written as .  Here   Thus finding amount to finding the least square solution of , which is given by   For the given problem, we have   We have  .  Hence   The set of points along with the best fitted line is shown in the Figure       "
 },
 {
-  "id": "sec8-0-LSTSQ-16-5",
+  "id": "sec8-0-LSTSQ-4-5",
   "level": "2",
-  "url": "sec8-0-LSTSQ.html#sec8-0-LSTSQ-16-5",
+  "url": "sec8-0-LSTSQ.html#sec8-0-LSTSQ-4-5",
   "type": "Example",
   "number": "8.1.9",
   "title": "",
   "body": "  Find th best fit cubic to the following set of points                  -3.0  -2.8  -2.5  -2.2  -2.0  -1.8  -1.5  -1.2  -1.0  -0.75     1.1  4.0  7.3  7.1  8.2  7.8  9.9  7.1  8.8  6.2                  -0.50  -0.25  0.00  0.25  0.50  0.75  1.0  1.2  1.5  1.8     7.0  3.7  4.7  3.4  5.6  5.8  5.3  6.6  10.  12.                 Thus we need to find the least square solution of , where   We have    Hence the least square solution   See the Figure for fitted curve along with the data.      "
 },
 {
-  "id": "sec8-0-LSTSQ-16-6",
+  "id": "8-1-5",
   "level": "2",
-  "url": "sec8-0-LSTSQ.html#sec8-0-LSTSQ-16-6",
+  "url": "sec8-0-LSTSQ.html#8-1-5",
   "type": "Checkpoint",
   "number": "8.1.11",
   "title": "",
   "body": " Find the least squares approximating line for each of the following sets of data points.  (i)   (ii)   "
 },
 {
-  "id": "sec8-0-LSTSQ-16-7",
+  "id": "8-1-6",
   "level": "2",
-  "url": "sec8-0-LSTSQ.html#sec8-0-LSTSQ-16-7",
+  "url": "sec8-0-LSTSQ.html#8-1-6",
   "type": "Checkpoint",
   "number": "8.1.12",
   "title": "",
@@ -3313,18 +3394,18 @@ var ptx_lunr_docs = [
   "body": "  Let us find a singular value decomposition of .  We have . The eigenvalues of are and . The corresponding eigenvectors with respect to eigenvalues of are , and respectively. Hence an orthonormal eigenbasis of is .  We define .  Thus we have  .  It is easy to check that that .   "
 },
 {
-  "id": "sec9-0-SVD-3-21",
+  "id": "9-1-8",
   "level": "2",
-  "url": "sec9-0-SVD.html#sec9-0-SVD-3-21",
+  "url": "sec9-0-SVD.html#9-1-8",
   "type": "Checkpoint",
   "number": "9.1.8",
   "title": "",
   "body": " Verify the equation for example . That is, .  "
 },
 {
-  "id": "sec9-0-SVD-3-22",
+  "id": "9-1-9",
   "level": "2",
-  "url": "sec9-0-SVD.html#sec9-0-SVD-3-22",
+  "url": "sec9-0-SVD.html#9-1-9",
   "type": "Checkpoint",
   "number": "9.1.9",
   "title": "",
@@ -3367,18 +3448,18 @@ var ptx_lunr_docs = [
   "body": "  Let , be a system of equations in variables with . Let . Then the vector minimizes on , that is the least square solution of .   "
 },
 {
-  "id": "sec9-0-SVD-4-10",
+  "id": "9-1-14",
   "level": "2",
-  "url": "sec9-0-SVD.html#sec9-0-SVD-4-10",
+  "url": "sec9-0-SVD.html#9-1-14",
   "type": "Checkpoint",
   "number": "9.1.14",
   "title": "",
   "body": "  If is square matrix, then show that and are similar.    Find the SVD of a matrix .    Find the least square solution of the system of equations where and using generalized inverse.    Find the SVD of using step by step calculations.   "
 },
 {
-  "id": "sec9-0-SVD-4-11",
+  "id": "9-1-15",
   "level": "2",
-  "url": "sec9-0-SVD.html#sec9-0-SVD-4-11",
+  "url": "sec9-0-SVD.html#9-1-15",
   "type": "Checkpoint",
   "number": "9.1.15",
   "title": "",
@@ -3583,36 +3664,36 @@ var ptx_lunr_docs = [
   "body": "  Consider an image of a Rose as shown in the This image is of sinze array.   Original Rose Image    The red green and blue channel images are shown in the Figures , , .   Red Channel     Green Channel     Blue Channel    After applying PCA and taking first 5, 20 and 50 principal components and combining the three channels together we get the following approximate images as shown in the Figures , , , respectively. Each channel is of size .   5 components     20 components     50 components    We can see from the image, that 1st 50 components gives a very good approximation to the original image.   "
 },
 {
-  "id": "sec10-1-PCA-7-2",
+  "id": "10-1-19",
   "level": "2",
-  "url": "sec10-1-PCA.html#sec10-1-PCA-7-2",
+  "url": "sec10-1-PCA.html#10-1-19",
   "type": "Checkpoint",
   "number": "10.1.19",
   "title": "",
   "body": " Find the singular values Decomposition of the following matrices.  (a) ,(b) , (c) , (d) , (e)   "
 },
 {
-  "id": "sec10-1-PCA-7-3",
+  "id": "10-1-20",
   "level": "2",
-  "url": "sec10-1-PCA.html#sec10-1-PCA-7-3",
+  "url": "sec10-1-PCA.html#10-1-20",
   "type": "Checkpoint",
   "number": "10.1.20",
   "title": "",
   "body": " Use SVD to find generalized inverse of the following matrices:  (a) , (b) , (c) .  "
 },
 {
-  "id": "sec10-1-PCA-7-4",
+  "id": "10-1-21",
   "level": "2",
-  "url": "sec10-1-PCA.html#sec10-1-PCA-7-4",
+  "url": "sec10-1-PCA.html#10-1-21",
   "type": "Checkpoint",
   "number": "10.1.21",
   "title": "",
   "body": " Use the generalized inverse from the SVD to find the least square solution of the system of linear equations where .  "
 },
 {
-  "id": "sec10-1-PCA-7-5",
+  "id": "10-1-22",
   "level": "2",
-  "url": "sec10-1-PCA.html#sec10-1-PCA-7-5",
+  "url": "sec10-1-PCA.html#10-1-22",
   "type": "Checkpoint",
   "number": "10.1.22",
   "title": "",
