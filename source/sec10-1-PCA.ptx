@@ -543,7 +543,7 @@
         </subsection>
         <subsection>
           <title>Exercise Set</title>
-          <exercise>
+          <exercise xml:id="10-1-19">
             <statement>
               <p>
                 Find the singular values Decomposition of the following matrices.
@@ -555,7 +555,7 @@
               </p>
             </statement>
           </exercise>
-          <exercise>
+          <exercise xml:id="10-1-20">
             <statement>
               <p>
                 Use SVD to find generalized inverse of the following matrices:
@@ -566,7 +566,7 @@
               </p>
             </statement>
           </exercise>
-          <exercise>
+          <exercise xml:id="10-1-21">
             <statement>
               <p>
                 Use the generalized inverse from the SVD to find the least square solution of the system of linear equations <m>Ax=b</m> where
@@ -576,7 +576,7 @@
               </p>
             </statement>
           </exercise>
-          <exercise>
+          <exercise xml:id="10-1-22">
             <statement>
               <p>
                 Find the principal components of the matrix

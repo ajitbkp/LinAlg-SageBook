@@ -940,12 +940,16 @@ and
 <example>
     <title>Sum and intersection of subspaces</title>
     <p>
-        Let <m>W_1=L(S_1)</m> and <m>W_2=L(S_2)</m> where
-        <me> S_1=\{\left(2,-1,0,3,1,2\right), \left(-1,2,0,-6,-2,-1\right), \left(5,-6,-2,18,3,6\right), \left(-12,18,6,-54,-9,-15\right)\}</me>
-and
-<me>S_2=\{\left(-1,4,2,-12,-1,-2\right), \left(1,2,-1,3,2,1\right), \left(22,-30,-10,90,15,27\right), \left(19,-24,-5,63,11,22\right), \left(-1,2,0,-1,3,0\right)\}</me>.
+        Let <m>u_1=\left(2,-1,0,3,1,2\right)</m>, <m> u_2=\left(-1,2,0,-6,-2,-1\right)</m>,
+        <m>u_3=\left(5,-6,-2,18,3,6\right)</m> and <m> u_4=\left(-12,18,6,-54,-9,-15\right)</m>.
+        Let <m>W_1=L(\{u_1,u_2,u_3,u_4\})</m>. 
+        
+        Let <m>v_1=\left(-1,4,2,-12,-1,-2\right)</m>, <m>v_2=\left(1,2,-1,3,2,1\right)</m>, 
+        <m> v_3=\left(22,-30,-10,90,15,27\right)</m>, <m> v_4=\left(19,-24,-5,63,11,22\right)</m> and 
+        <m> v_5=\left(-1,2,0,-1,3,0\right)</m>. Let  <m>W_2=L(\{v_1,v_2,v_3,v_4,v_5\})</m>. 
+        <p>
 Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
-
+        </p>
 <p>
     <solution>
         <p>
@@ -1069,7 +1073,8 @@ Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
 <p><me> v=\alpha_1c_1+\alpha_2c_2+\alpha_3c_3=\beta_1d_1+\beta_2d_2+\beta_3d_3+\beta_4 d_4</me>.</p>
 <p>In particular, <m>\alpha_1c_1+\alpha_2c_2+\alpha_3c_3-\beta_1d_1-\beta_2d_2-\beta_3d_3-\beta_4 d_4=0</m>.  We can obtain <m>\alpha_i</m>'s and <m>\beta_i</m>'s by solving</p>
 <p><me>\begin{bmatrix} c_1 \amp c_2\amp c_3\amp d_1\amp d_2\amp d_3 \amp d_4\end{bmatrix}
-    \begin{pmatrix} \alpha_1 \\ \alpha_2\\ \alpha_3\\ \beta_1\\ \beta_2\\ \beta_3\\\beta_4\end{pmatrix}=0</me><strong><br /></strong></p>
+    \begin{pmatrix} \alpha_1 \\ \alpha_2\\ \alpha_3\\ \beta_1\\ \beta_2\\ \beta_3\\\beta_4\end{pmatrix}=0</me><strong>
+        </strong></p>
 
     Thus we can find the null space of <m>\begin{bmatrix} c_1 \amp c_2\amp c_3\amp d_1\amp d_2\amp d_3 \amp d_4\end{bmatrix}</m>
     and find the vectors in the basis of <m>W_1\cap W_2</m>. Let see how to 

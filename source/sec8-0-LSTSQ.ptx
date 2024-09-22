@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec8-0-LSTSQ" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Linear Least Square Problems</title>
+  <title>Least Square Problems</title>
   <introduction>
     This chapter deals with linear least square problems and it applications. 
       
     </introduction>
+    
+    <subsection xml:id="sec-linear-lstsq">
+      <title>Linear Least Square Problems</title>
+      
     
           <p>
           Consider a system of equations <m>Ax=b</m> having <m>m</m> equations in <m>n</m> variables.
@@ -98,7 +102,7 @@
             </p>
           </statement>
         </example>
-        <exercise>
+        <exercise xml:id="8-1-2">
           <statement>
             <p>
               Consider the inner product space
@@ -158,7 +162,7 @@
             </p>
           </statement>
         </example>
-        <exercise>
+        <exercise xml:id="8-1-3">
           <statement>
             <p>
               (i) Find the best approximation
@@ -170,7 +174,8 @@
             </p>
           </statement>
         </exercise>
-        <exercise>
+
+        <exercise xml:id="8-1-4">
           <statement>
             <p>
               The average number of goals <m>g</m>,
@@ -231,6 +236,7 @@
             </tabular>
           </statement>
         </exercise>
+
         <example>
           <statement>
             <p>
@@ -469,7 +475,7 @@
           </statement>
         </example>
       
-    
+      </subsection>
     <subsection>
         <title>Fitting a polynomial to the data set</title>
         <p>
@@ -625,7 +631,7 @@
             </figure>
           </statement>
         </example>
-        <exercise>
+        <exercise  xml:id="8-1-5">
           <statement>
             <p>
               Find the least squares approximating line
@@ -639,7 +645,8 @@
             </p>
           </statement>
         </exercise>
-        <exercise>
+
+        <exercise  xml:id="8-1-6">
           <statement>
             <p>
               Find the least squares approximating quadratic
@@ -704,4 +711,11 @@
           </statement>
         </exercise>
       </subsection>
-   </section>
+
+      <subsection xml:id="sec-weigheted-lstsq">
+        <title>Weighted Least Square Problems</title>
+        
+      </subsection>
+
+
+    </section>

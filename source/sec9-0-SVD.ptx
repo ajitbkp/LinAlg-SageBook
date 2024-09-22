@@ -309,7 +309,7 @@
           </p>
         </statement>
       </example>
-      <exercise>
+      <exercise  xml:id="9-1-8">
         <statement>
           <p>
             Verify the equation<nbsp/><xref ref="eq_svd9"/> for <xref ref="eg_svd1">example</xref>.
@@ -320,7 +320,7 @@
           </p>
         </statement>
       </exercise>
-      <exercise>
+      <exercise xml:id="9-1-9">
         <statement>
           <p>
             Find a singular value decomposition of <m>A =\begin{pmatrix}1 \amp 1 \amp -1\\1 \amp 1 \amp -1 \end{pmatrix}</m>.
@@ -484,7 +484,7 @@
         
       </p>
       
-      <exercise>
+      <exercise xml:id="9-1-14">
        <ol>
         <li>
           <p>
@@ -512,7 +512,7 @@
     
     </exercise>
 
-      <exercise>
+      <exercise xml:id="9-1-15">
         <statement>
           <p>
             Use SVD to show that a square matrix <m>A</m> is symmetric (<m>A^T=A</m>) if and only if <m>A^TA=AA^T</m>.

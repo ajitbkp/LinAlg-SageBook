@@ -3,15 +3,14 @@
 <section xml:id="sec7-0-InnerProduct" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Inner Product</title>
 
-<introduction>
+
   <p>
-      In the last section,
-      dealt with notion of dot product and geometry in <m>\R^n</m>.
-      The dot product and related notion can be generalized to an arbitrary vector space over <m>\R</m> or <m>\mathbb{C}</m>.
+      In the last section we  dealt with notion of dot product and geometry in <m>\R^n</m>.
+      The dot product and related notion can be generalized to an arbitrary vector space over 
+      <m>\R</m> or <m>\mathbb{C}</m>.
       All the notions,
       we have learned in the last section can be generalized over an inner product space.
     </p>
-</introduction>
 
 <p>
 Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
@@ -22,7 +21,7 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
       <ol>
         <li>
           <p>
-            <m>x \cdot x\geq 0</m> for all <m>x\in \R^n</m>
+            <m>x \cdot x\geq 0</m> for all <m>x\in \R^n</m>.
           </p>
         </li>
         <li>
@@ -107,7 +106,7 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
         \langle (x+y),z\rangle=\langle x, z\rangle+\langle y, z\rangle, \text{ and } \langle (\alpha x) y\rangle=\alpha\langle x, y\rangle
       </me>
       <p>
-        Next we look at several examples of inner procuct on various vector spaces that we have defined in the last chapter.
+        Next we look at several examples of inner procuct on various vector spaces that we have defined in <xref ref="chap4-Vector-Space"/>.
       </p>
 
     </p>
@@ -131,7 +130,7 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
     <example xml:id="inner-product-on-matrixspace">
       <statement>
         <p>
-          Let <m>V=M_n(\R)</m> the set of all
+          Let <m>V=M_n(\R)</m>, the set of all
           <m>n\times n</m> matrices over <m>\R</m>.
           Define
           <me>
@@ -140,6 +139,14 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
         </p>
         <p>
           It is easy to show that this is an inner product on <m>M_n(\R)</m>.
+        </p>
+        <p>
+          Note that this inner product can be thought of as the standard dot product on <m>\R^{n^2}</m>. 
+          The elements of the matrix <m>A</m> can be thought of as a vector in <m>\R^{n^2}</m>. Then 
+          <me>
+            tr(AB^T) =\sum\sum a_{ij}b_{ij}\quad \quad  \text{ why?}
+          </me>.
+          Work with  <m>2\times 2</m> matrices and then try to prove this for <m>n\times n</m> matrices.
         </p>
       </statement>
     </example>
@@ -154,7 +161,8 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
           </me>
         </p>
         <p>
-          Then this is an inner product on <m>\R^n</m>.
+          Then this is an inner product on <m>\R^n</m>. 
+         
         </p>
       </statement>
     </example>
@@ -169,7 +177,7 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
           </me>.
         </p>
         <p>
-          This is an inner product on <m>V</m>.
+          This is an inner product on <m>V</m>.  (You may need real analysis to conclude that <m>\int_0^1 f(t)f(t)dt=</m> then <m>f=0</m>.)
         </p>
       </statement>
     </example>
@@ -192,7 +200,13 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
           <m>c_0,c_1,\ldots, c_n</m>.
         </p>
       </statement>
-    </example>
+      <hint>
+        <p>
+        <m>\langle p,p \rangle =</m> mean that <m>p</m> has  <m>n+1</m> roots, which is not possible unless 
+        <m>p=0</m> by the fundamental theorem of algebra.
+        </p>
+      </hint>
+       </example>
 
     <definition xml:id="definition-norm">
       <statement>
@@ -212,7 +226,7 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
 
 
 
-    <exercise>
+    <exercise xml:id="7-1-8">
       <statement>
         <p>
           Let <m>V</m> be an inner product space.
@@ -234,7 +248,7 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
       </hint>
     </exercise>
 
-    <exercise>
+    <exercise xml:id="7-1-9">
       <statement>
         <p>
           If <m>x, y</m> are two vectors in an inner product space <m>V</m> with inner product <m>\langle .\rangle</m>.
@@ -249,6 +263,11 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
           the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.
         </p>
       </statement>
+      <hint>
+        <p>
+          Proof follows from <xref ref="7-1-8"/>.
+        </p>
+      </hint>
     </exercise>
 
     <theorem>
@@ -323,18 +342,58 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
       All we need to do is,
       replace the dot product by the given inner product.
     </p>
-
-
-    <exercise>
+<theorem xml:id="thm-norm-properties"> <title>Properties of Norm</title>
+  <statement>
+    <p>
+      Let <m>(V,\langle ., .\rangle)</m> be an innepr product space. The norm defined as <xref ref="definition-norm"/> has the following properties:
+      <ol>
+        <li>
+          <p>
+            for all <m>x\in V</m>, <m>\norm{x}\geq 0</m> and <m>\norm{x}= 0</m> if and only if <m>x=0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            for all <m>\alpha \in \R</m> and <m>x\in V</m>, <m>\norm{\alpha x}=|\alpha|\norm{x}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            for all <m>x,y \in V</m>, <m>\norm{x+y}\leq \norm{x}+\norm{y}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+<definition xml:id="def-normed-lin-space">
+  <statement>
+    <p>
+      Any vector space <m>V</m> over <m>\R</m> with a function <m>\norm{.} : V \to \R</m> which satisfies all the 
+      properties mentioned in <xref ref="thm-norm-properties"/> is called a <alert>normed linear space.</alert>. Thus 
+      any inner product space is also a normed linear space.
+         
+    </p>
+  </statement>
+</definition>
+    <note>
+  The concepts such as orthogonality, orthogonal projection, orthogonal complement of 
+any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we 
+defined and dealt with in the previuos chapter with respect to the dot product on <m>\R^n</m> can be 
+defined on an inner product space. All we need to do is to replace the dot product by the corresponding 
+inner product.  We encourage  readers to define each one of them. 
+</note>
+    <exercise xml:id="7-1-10">
       <statement>
         <p>
           Let <m>(V, \inner{.}{.})</m> be a real inner product space.
-          Define (i) orthogonality (ii) orthogonal complement of a subset of <m>V</m>, (iii) Orthogonal projection, (iv) Orthogonal and orthonormal sets (v) Gram-Schmidt orthogonalization process etc.
+          Define (i) orthogonality of two vectors <m>x</m>  and <m>y</m> in <m>V</m>, (ii) orthogonal complement of a subset <m>U</m> of <m>V</m>, (iii) Orthogonal projection of a vector <m>v</m> onto a non-zero 
+          vector <m>u</m>, (iv) orthogonal set and orthonormal sets in <m>V</m> and  (v) Gram-Schmidt orthogonalization process.
         </p>
       </statement>
     </exercise>
 
-    <exercise>
+    <exercise xml:id="7-1-11">
       <statement>
         <p>
           Let <m>x, y</m> be two vectors in an inner product space <m>V</m>.
@@ -350,7 +409,7 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
       </statement>
     </exercise>
 
-    <exercise>
+    <exercise xml:id="7-1-12">
       <statement>
         <p>
           Let <m>C([-\pi,\pi])</m> be the vectors space of set of continuous functions from <m>[-\pi,\pi]</m> to <m>\R</m>.
@@ -366,7 +425,7 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
       </statement>
     </exercise>
 
-    <exercise>
+    <exercise xml:id="7-1-13">
       <title>Pythagoras Theorem</title>
       <statement>
         <p>
@@ -383,13 +442,12 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
       </statement>
     </exercise>
 
-    <exercise>
+    <exercise xml:id="7-1-14">
       <statement>
         <p>
           Let <m>\beta=\{u_1,\ldots,
           u_n\}</m> be an orthogonal basis of an inner product space <m>V</m>.
-          Let <m>v\in V</m> and <m>\theta_1,\ldots, \theta_n</m> between <m>v</m> and <m>u_1,\ldots, u_n</m>,
-          respectively.
+          Let <m>v\in V</m> and <m>\theta_1,\ldots, \theta_n</m> be the angle between <m>v</m> and <m>u_1,\ldots, u_n</m>,  respectively.
           Then
           <me>
             \cos\theta_1^2+\cdots+\cos\theta_n^2=1
@@ -401,7 +459,7 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
       </statement>
     </exercise>
 
-    <exercise>
+    <exercise xml:id="7-1-15">
       <statement>
         <p>
           Let <m>\beta=\{u_1,\ldots,
@@ -429,7 +487,8 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
         </p>
         <p>
           First of all notice that <m>\beta</m> is not an orthogonal basis.
-          For <m>\inner{1}{x^2} = \int_{-1}^1 x^2 dx = \frac23</m>.
+          For <m>\inner{v_1}{v_3}=\inner{1}{x^2} = \int_{-1}^1 x^2 dx = \frac23</m>,
+          <m>\inner{v_2}{v_4}=\int_{-1}^1 x^4 dx = \frac25</m>.
           Also note that <m>\inner{v_1}{v_2}=\int_{-1}^1 xdx = 0</m>.
           <m>\inner{v_2}{v_3}=\int_{-1}^1 x^3dx = 0</m>.
           <m>\inner{v_1}{v_4}=\int_{-1}^1 x^3 dx = 0</m>. <m>\inner{v_3}{v_4}=\int_{-1}^1 x^5dx = 0</m>.
@@ -474,14 +533,14 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
             \beta''=\left\{\frac{\sqrt{2}}{2}, \frac{\sqrt{6}}{2}x, \frac{3\sqrt{10}}{4}\left(x^2-\frac13\right), \frac{5\sqrt{14}}{4}\left(x^3-\frac35 x\right)\right\}
           </me>.
         </p>
-        <figure xml:id="fig_legendrepoly">
-          <caption>Graph of Legendre polynomials</caption>
+        <figure xml:id="fig_legendrepoly" halign="center">
+          <caption halign="center">Graph of Legendre polynomials</caption>
           <image width="50%" source="images/Legendre_poly.png"/>
         </figure>
       </statement>
     </example>
 
-    <exercise>
+    <exercise xml:id="7-1-16">
       <statement>
         <p>
           Consider the standard basis <m>\beta=\{1,x,x^2,x^3\}</m> of
@@ -502,10 +561,10 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
           Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors
           <m>\beta=\{e_1, e_2, e_3\}</m> with respect to the above inner product.
           <md>
-            <mrow>u_1: \amp =\amp (1,0,0)</mrow>
-            <mrow>u_2: \amp =\amp  e_2-\frac{\inner{u_2\cdot e_2}{u_1}}{\norm{u_1}^2}u_1=(0,1,0)-\frac{-1}{2}(1,0,0)=(1/2,1,0)</mrow>
-            <mrow>u_3: \amp =\amp  e_3 -\frac{\inner{e_3}{u_1}}{\norm{u_1}^2}u_1-\frac{\inner{e_3}{u_1}}{\norm{u_2}^2}u_2</mrow>
-            <mrow>\amp  = \amp  (0,1,0)-\frac{0}{2}(1,0,0)-\frac{-1}{3/2}(1/2,1,0)=(1/3, 2/3, 1)</mrow>
+            <mrow>u_1:  =\amp (1,0,0)</mrow>
+            <mrow>u_2: =\amp  e_2-\frac{\inner{u_2\cdot e_2}{u_1}}{\norm{u_1}^2}u_1=(0,1,0)-\frac{-1}{2}(1,0,0)=(1/2,1,0)</mrow>
+            <mrow>u_3: =\amp  e_3 -\frac{\inner{e_3}{u_1}}{\norm{u_1}^2}u_1-\frac{\inner{e_3}{u_1}}{\norm{u_2}^2}u_2</mrow>
+            <mrow> = \amp  (0,0,1)-\frac{0}{2}(1,0,0)-\frac{-1}{3/2}(1/2,1,0)=(1/3, 2/3, 1)</mrow>
           </md>
         </p>
       </statement>
@@ -553,20 +612,22 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
       </statement>
     </example>
 
-  <subsection>
+  <definition>
     <title>Projection onto a subspace</title>
     <p>
       Let <m>V</m> be an inner product space and <m>W\leq V</m>,
       a finite dimensional subspace of <m>V</m>.
       Let <m>\{u_1,\ldots, u_k\}</m> be an orthonormal basis of <m>W</m>.
       Suppose <m>v\in V</m>.
-      Similar <xref ref="subspace-projection1">definition</xref>,
+      Similar to <xref ref="subspace-projection1">definition</xref>,
       we can define the orthogonal projection of <m>v</m> onto <m>W</m> as
       <me>
         \proj_W(v):=  \inner{v}{u_1}u_1+\inner{v}{u_2}u_2+\cdots+\inner{v}{u_k}u_k
       </me>.
     </p>
-    <exercise>
+    </definition>
+
+    <exercise xml:id="7-1-17">
       <statement>
         <p>
           Find the orthogonal projection of vector
@@ -574,6 +635,6 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
         </p>
       </statement>
     </exercise>
-  </subsection>
+ 
 
 </section>

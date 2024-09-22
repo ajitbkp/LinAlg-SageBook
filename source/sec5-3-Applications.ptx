@@ -107,7 +107,7 @@ Applications of Eigenvalues and Eigenvectors
     </p>
   </statement>
 </example>
-<exercise>
+<exercise xml:id="5-3-2">
   <statement>
     <p>
       Suppose <m>D</m> is a diagonal matrix given by
@@ -122,7 +122,7 @@ Applications of Eigenvalues and Eigenvectors
     </p>
   </statement>
 </exercise>
-<exercise>
+<exercise xml:id="5-3-3">
   <statement>
     <p>
       132 fishes are placed in a box with nine rooms.

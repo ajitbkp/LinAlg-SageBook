@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec5-0-eigen" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec5-1-eigen-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Eigenvalues and Eigenvectors</title>
 <introduction>
   <p>
@@ -250,7 +250,7 @@
               That is, if <m>m</m> is the geometric multiplicity of <m>\lambda</m> then <m>m\leq \dim{(E_\lambda)}</m>.
             </p>
           </remark>
-          <exercise>
+          <exercise xml:id="5-1-11">
             <statement>
               <p>
                 The geometric multiplicity of an eigenvalue <m>\lambda</m> is the nullity of
@@ -479,7 +479,7 @@
               </p>
             </statement>
           </example>
-          <exercise>
+          <exercise xml:id="5-1-18">
             <statement>
               <p>
                 (i) Consider the matrix <m>A = \begin{pmatrix}3 \amp -2 \\-4\amp 3 \end{pmatrix}</m>.
@@ -528,7 +528,7 @@
               </p>
             </statement>
           </example>
-          <exercise>
+          <exercise xml:id="5-1-22">
             <statement>
               <p>
                 Find the spectral radius of
@@ -622,7 +622,7 @@
               </p>
             </statement>
           </example>
-          <exercise>
+          <exercise xml:id="5-1-23">
             <statement>
               <p>
                 Let <m>A=\begin{pmatrix}2 \amp -1 \amp 0\\-1\amp 2\amp -1\\0\amp -1\amp 2 \end{pmatrix}</m>.

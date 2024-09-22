@@ -202,7 +202,7 @@
       </exercise>
    
      
-    <exercise>
+    <exercise xml:id="4-5-13">
         <statement>
           <p>
             Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
@@ -251,7 +251,7 @@
       </example>
      
     
-      <exercise>
+      <exercise xml:id="4-5-16">
         <statement>
           <p>
             Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.

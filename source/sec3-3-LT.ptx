@@ -55,7 +55,7 @@
         </p>
       </statement>
     </example>
-    <exercise>
+    <exercise xml:id="3-3-2">
       <statement>
         <p>
           For the following linear transformation <m>T\colon \R^2\to \R^2</m>.
@@ -75,7 +75,7 @@
         </p>
       </statement>
     </exercise>
-    <exercise>
+    <exercise xml:id="3-3-3"> 
       <statement>
         <p>
           (i) Let <m>T\colon \R^3\to \R^3</m> be a linear transformation which is reflection about the <m>xy</m> plane.
@@ -141,12 +141,12 @@
         </p>
       </statement>
     </example>
-    <exercise>
+    <exercise xml:id="3-3-5">
       <statement>
         <p>
           If <m>P</m> is the projection onto the line <m>y=mx</m>,
           then show that <m>P^2=P</m>.
-          In particular, <m>P^2=P</m>.
+          In particular, <m>P^{-1}=P</m>.
           Thus the matrix <m>P =\frac{1}{1+m^2}\begin{bmatrix}1 \amp m \\m \amp m^2 \end{bmatrix}</m> is an idempotent matrix.
         </p>
         <p>
@@ -155,7 +155,7 @@
         </p>
       </statement>
     </exercise>
-    <exercise>
+    <exercise xml:id="3-3-6">
       <statement>
         <p>
           For the following linear transformations <m>P\colon \R^3\to T^3</m>,

@@ -6,5 +6,7 @@
   <xi:include href="sec3-2-LT.ptx" />
   <xi:include href="sec3-3-LT.ptx" />
   <xi:include href="sec3-4-LT.ptx" />
+  <xi:include href="sec3-5-LT-Sage.ptx" />
+
 
 </chapter>

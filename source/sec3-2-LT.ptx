@@ -121,7 +121,7 @@
         Let us consider a basis <m>\beta =\{v_1=(1,1,-1),v_2=(1,-1,1),v_3=(-1,1,1)\}</m> of the domain and the standard basis <m>\gamma=\{(1,0),(0,1)\}</m> on the codomain.
         In order to find the matrix <m>A</m> of <m>T</m>,
         we find the image of <m>T(v_1)</m> and find its coordinates with respect to the standard basis <m>\gamma</m>.
-        We have <m>T(v1)=(0,3)</m>.
+        We have <m>T(v_1)=(0,3)</m>.
         Thus the first columns of <m>A</m> is <m>\begin{bmatrix}0\\3 \end{bmatrix}</m>.
         Similarly <m>T(v_2)=(4,-1)</m> and <m>T(v_3)=(2,-1)</m>.
         Hence the matrix of <m>A</m> of <m>T</m> with respect to the basis <m>\beta</m> and <m>\gamma</m> is <m>\begin{bmatrix}0\amp 4 \amp 2\\3\amp -1\amp -1 \end{bmatrix}</m>.
@@ -129,7 +129,7 @@
       </p>
     </statement>
   </example>
-  <exercise>
+  <exercise xml:id="3-2-4">
     <statement>
       <p>
         Consider the linear transformation defined in the <xref ref="ling-engg-eg31">Example</xref>.
@@ -379,7 +379,7 @@
       <statement>
         <p>
           Let <m>A</m> and <m>B</m> be two real <m>n\times n</m> matrices.
-          Then <m>A</m> and <m>B</m> are called similar if there exits a non singular matrix <m>P</m> such that <m>B=P^{-1}AP</m>.
+          Then <m>A</m> and <m>B</m> are called similar if there exists a non singular matrix <m>P</m> such that <m>B=P^{-1}AP</m>.
         </p>
       </statement>
     </definition>
