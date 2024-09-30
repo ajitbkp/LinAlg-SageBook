@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-xxx" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>XXXXXXX</title>
+
+  <!-- Intrduction is required only when the section has subsections -->
+  <introduction>
+    <p>
+        
+    </p>
+  </introduction>
+
+  <p>
+    Text 1
+    Text 2
+  </p>
+
+  <!-- Definition -->
+  <definition xml:id="def-">
+    <title> </title>
+    
+    
+    <statement>
+        <p>
+            
+        </p>
+    </statement>
+  </definition>
+
+  <!-- Theorem -->
+  <theorem xml:id="thm-">
+    <title></title>
+    
+    
+    <statement>
+        <p>
+            
+        </p>
+    </statement>
+  </theorem>
+  
+  <!-- Proof should be outside the theorem environment -->
+  <proof>
+    <p>
+        
+    </p>
+  </proof>
+
+  <!-- Example -->
+  <example xml:id="eg-">
+  <title> </title>
+  <p>
+    
+  </p>
+
+<!-- Solution should be inside <example> </example> environment -->
+  <solution>
+    <p>
+        
+    </p>
+  </solution>
+</example>
+
+<reading-questions xml:id="rqs-">
+   
+</reading-questions>
+
+
+<exercise xml:id="exer-">
+    <title> </title>
+    <p>
+        
+    </p>
+    
+<solution>
+    <p>
+        
+    </p>
+</solution>
+</exercise>
+
+<exercises xml:id="exercises-">
+    <exercise>
+
+        <solution>
+            <p>
+                
+            </p>
+        </solution>
+    </exercise>
+</exercises>
+
+<!-- Numbered list-->
+<ol>
+    <li>
+        <p>
+            
+        </p>
+    </li>
+    <li>
+        <p>
+            
+        </p>
+    </li>
+</ol>
+
+<!-- Bulleted list-->
+<ul>
+    <li>
+        <p>
+            
+        </p>
+    </li>
+    <li>
+        <p>
+            
+        </p>
+    </li>
+</ul>
+
+</section>
+
+<!-- Subsection without numbers-->

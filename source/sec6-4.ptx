@@ -25,12 +25,14 @@
       <mrow>\amp =a_k-(a_k\cdot q_1)q_1-(a_k\cdot q_2)q_2+\cdots - (a_k\cdot q_{k-1})q_{k-1}</mrow>
     </md>.
   </p>
+
   <p>
     Hence
     <me>
       a_k = (a_k\cdot q_1)q_1+(a_k\cdot q_2)q_2+\cdots + (a_k\cdot q_{k-1})q_{k-1}+\norm{u_k}q_k, k=1,2,\ldots, n
     </me>.
   </p>
+
   <p>
     Thus we have
     <md>
@@ -41,6 +43,7 @@
       <mrow>\vdots \vdots</mrow>
     </md>
   </p>
+
   <p>
     Thus
     <md>
@@ -53,12 +56,14 @@
       <mrow>\amp =QR</mrow>
     </md>
   </p>
+
   <p>
     Here <m>Q</m> has orthogonal columns and <m>R</m> is upper triangular whose diagonal entries which are positive,
     hence non-singular.
     This is what is known as <m>QR</m> factorization.
     Thus we have the following result.
   </p>
+
   <theorem>
     <statement>
       <p>
@@ -68,6 +73,7 @@
       </p>
     </statement>
   </theorem>
+
   <example xml:id="QR-eg1">
     <statement>
       <p>
@@ -96,6 +102,7 @@
       </p>
     </statement>
   </example>
+
   <example>
     <statement>
       <p>
@@ -125,6 +132,7 @@
       </p>
     </statement>
   </example>
+
   <remark>
     <p>
       If a matrix <m>A</m> has independent rows,
@@ -136,6 +144,7 @@
       where <m>L</m> is the the invertible lower triangular matrix with positive diagonal entries and and <m>P</m> has orthogonal rows.
     </p>
   </remark>
+
   <remark>
     <p>
       In case a matrix <m>A</m> has linearly independent columns then the <m>QR</m> factorization is unique.
@@ -143,9 +152,8 @@
       then <m>Q_1=Q_2</m> and <m>R_1=R_2</m>.
     </p>
   </remark>
-<p>
+
   
-</p>
   <exercise>
     <statement>
       <p>

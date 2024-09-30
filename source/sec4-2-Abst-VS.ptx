@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec4-1-abstract-vs" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec4-2-Abst-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
         <title>Vector Subspaces</title>
       
-          <p>
          
-        <definition>
+        <definition xml:id="def-vector-subspace">
+          <title>Vector subspace</title>  
           <statement>
             <p>
               Let <m>V</m> be a vector space over <m>\R</m> and <m>W</m> a nonempty subset of <m>V</m>.
@@ -14,6 +14,7 @@
             </p>
           </statement>
         </definition>
+
         <example>
           <statement>
             <p>
@@ -22,6 +23,7 @@
             </p>
           </statement>
         </example>
+
         <p>
           Let <m>V</m> be a vector space over <m>\R</m> and <m>W</m> a nonempty subset of <m>V</m>.
           Assume that <m>W</m> is closed under addition and scalar multiplication on <m>V</m>.
@@ -37,11 +39,13 @@
           This show that if <m>W</m> nonempty subset of <m>V</m> which is closed under addition and scalar multiplication,
           then it is subspace of <m>V</m>.
         </p>
+
         <p>
           If <m>W</m> itself is a vector space under the addition and scalar multiplication on <m>V</m>,
           then <m>W</m> is closed under addition and scalar multiplication.
           Thus we have the following result.
         </p>
+
         <theorem xml:id="thm-subspace1">
           <statement>
             <p>
@@ -50,10 +54,12 @@
             </p>
           </statement>
         </theorem>
+
         <p>
           Thus in order to check that if a nonempty subset <m>W\subset V</m> is a subspace,
           all we need to check that it is closed under addition and scalar multiplication inherited from <m>V</m>.
         </p>
+
         <example>
           <statement>
             <p>
@@ -83,6 +89,7 @@
             </p>
           </statement>
         </example>
+
         <example>
           <statement>
             <p>
@@ -103,6 +110,7 @@
             </p>
           </statement>
         </example>
+
         <example xml:id="fundamentalsubspaces">
           <statement>
             <p>
@@ -127,6 +135,7 @@
             </p>
           </statement>
         </example>
+
         <example xml:id="matrix-subspaces">
           <statement>
             <p>
@@ -150,6 +159,7 @@
             </p>
           </statement>
         </example>
+
         <problem>
           <statement>
             <p>
@@ -159,6 +169,7 @@
             </p>
           </statement>
         </problem>
+
         <example>
           <statement>
             <p>
@@ -190,6 +201,7 @@
             </p>
           </statement>
         </example>
+
         <example>
           <statement>
             <p>
@@ -206,6 +218,7 @@
             </p>
           </statement>
         </example>
+
         <example>
           <statement>
             <p>
@@ -220,6 +233,5 @@
           </statement>
         </example>
          
-      </p>
    
   </section>

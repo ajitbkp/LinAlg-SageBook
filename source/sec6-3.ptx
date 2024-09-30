@@ -5,7 +5,7 @@
 
  
   
-  <p>
+  
     <theorem xml:id="orthogonal-ex1">
       <statement>
         <p>
@@ -21,21 +21,20 @@
       </statement>
     </theorem>
 
-  </p>
-<p>
-    <definition>
+  
+
+    <definition xml:id="def-orthogonal-matrix">
       <statement>
         <p>
           A square matrix <m>P</m> is called an orthogonal matrix if it satisfies any one
-          (and hence all)
-          the conditions of Theorem
+          (and hence all)           the conditions of Theorem
           <xref ref="orthogonal-ex1"></xref>.
         </p>
       </statement>
     </definition>
-  </p>
+  
 
-  <p>
+
      <example>
       <statement>
         <p>
@@ -47,10 +46,10 @@
       </statement>
     </example>
     
-  </p>
+  
 
-  <p>
-    <definition>
+  
+    <definition xml:id="def-orthogonally-diagonalizable">
       <statement>
         <p>
           An <m>n\times n</m> matrix is called
@@ -61,8 +60,7 @@
       </statement>
     </definition>
 
-  </p>
-<p>
+  
   <example>
       <statement>
         <p>
@@ -74,9 +72,9 @@
         </p>
       </statement>
     </example>
-  </p>
+  
 
-  <p>
+  
     <theorem>
       <statement>
         <p>
@@ -94,9 +92,9 @@
         </p>
       </statement>
     </theorem>
-  </p>
+  
 
-  <p>
+
     <example>
       <statement>
         <p>
@@ -119,9 +117,9 @@
         </p>
       </statement>
     </example>
-  </p>
+  
 
-  <p>
+
     <problem>
       <statement>
         <p>
@@ -133,8 +131,7 @@
         </p>
       </statement>
     </problem>
-  </p>
-<p>
+
   <theorem>
       <statement>
         <p>
@@ -155,6 +152,6 @@
       </statement>
     </theorem>
       
-    </p>
+  
    
 </section>

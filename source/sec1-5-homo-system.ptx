@@ -29,9 +29,7 @@ r(A^*)</m>.
             only if <m>\det(A)=0</m>.      
         </p>
     </statement>
-</theorem>
 
-<p>
     <proof>
         <p>
             
@@ -41,9 +39,8 @@ r(A^*)</m>.
         But <m>r(A)\lt n </m>, if and only if <m>A</m> is singular.
         </p>
     </proof>
-</p>
+</theorem>
 
-<p>
     <theorem xml:id="thm-hom-system2">
         <statement>
             <p>
@@ -51,24 +48,22 @@ r(A^*)</m>.
 in <m>n</m> unknowns, where <m>m \lt n</m> has infinitely many nontrivial solutions.
             </p>
         </statement>
-    </theorem>
     
-</p>
-<p>
     <proof>
         If <m>m \lt n</m>, then <m>r(A) \lt  n</m> and hence the result follows from thm.~
         <xref ref="thm-nosol-rank"/>.
     </proof>
-</p>
+
+</theorem>
+
 <p>
     We would
 like to get the connection between solutions of a homogeneous system
 <m>AX = 0</m> and  the solutions of <m>AX = B</m>, <m>B \neq 0</m>. These
 are stated in the following Theorem.
-
 </p>
-<p>
-    <theorem xml:id="thm-hom-system3">
+
+<theorem xml:id="thm-hom-system3">
         <statement>
             <p>
                 Suppose the non homogeneous system <m>AX
@@ -79,9 +74,7 @@ are stated in the following Theorem.
                 corresponding homogeneous system <m>AX =0</m>. 
             </p>
         </statement>
-    </theorem>
 
-    <p>
         <proof>
             <p>
                 Let <m>X_h</m> be a solution of <m>AX=0</m>. Then 
@@ -95,10 +88,12 @@ are stated in the following Theorem.
                     <m>AX = 0</m> and <m>Y = X_0+(Y-X_0)=X_0+X_h</m>, where <m>X_h=Y-X_0</m>.
             </p>
         </proof>
-    </p>
-    </p>
-    <p> The above theorem can be written equivalently as
+    </theorem>
+
+    <p> 
+        The above theorem can be written equivalently as
     </p>  
+
         <theorem xml:id="thm-hom-system4">
             <statement>
                 <p>
@@ -110,7 +105,7 @@ are stated in the following Theorem.
             </statement>
         </theorem>
         
-        <p>
+        
             <example>
                 <p>
                 Let us consider one equation in two variables, <m>2x_1+3x_2=5</m>. 
@@ -151,9 +146,9 @@ are stated in the following Theorem.
             </p>
         </p>
             </example>
-        </p>
+    
         
-        <p>
+    
             <example>
                 <p>
                 Let consider 2 equations in three variables.
@@ -206,6 +201,6 @@ are stated in the following Theorem.
                 </p>
             </p>
             </example>
-        </p>
+    
         
 </section>

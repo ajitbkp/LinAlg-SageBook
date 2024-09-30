@@ -9,7 +9,9 @@
              <p>
         We can defined basis of a vector space similar to basis of subspaces in <m>\R^n</m>.
       </p>
+
       <definition xml:id="def-basis-VS">
+        <title>Basis of a vector space</title>      
         <statement>
           <p>
             Let <m>V</m> be a vector space over <m>\R</m>.
@@ -78,7 +80,7 @@
         </statement>
       </example>
 
-      <p>
+    
       <theorem xml:id="sec4-4-thm1">
         <statement>
           <p>
@@ -90,55 +92,62 @@
           </p>
         </statement>
       </theorem>
-    </p>
+    
      
     
-    <p>
+    
       <theorem xml:id="sec4-4-thm2">
         <statement>
         
           <p>
-            If a vector space <m>V</m> has a basis of consisting <m>n</m> elements then any set of <m>n + 1</m> vectors is linearly dependent.
+            If a vector space <m>V</m> has a basis consisting of <m>n</m> elements then any set of <m>n + 1</m> vectors is linearly dependent.
           </p>
         </statement>
       </theorem>
-    </p>
+    
 
 
       <definition xml:id="def-finite-dim-VS">
+        <title>Finite Dimensional Vector Space</title>       
         <statement>
           <p>
             A vector space <m>V</m> is called
             <em>finite dimensional</em>
-            if there exists a finite subset <m>S</m> of <m>V</m> such that <m>L(S)</m>.
+            if there exists a finite subset <m>S</m> of <m>V</m> such that <m>L(S)=V</m>.
           </p>
           <p>
-            A vector space which is not finite dimensional is called an infinite dimensional.
+            A vector space which is not finite dimensional is called an <em>infinite dimensional</em>.
           </p>
         </statement>
       </definition>
 
-      <definition>
+      <definition xml:id="def-dimension-VS">
         <statement>
           <p>
             We say a vector space <m>V</m> is of dimension <m>n</m> if it has a basis <m>\beta</m> consisting of <m>n</m> elements.
           </p>
         </statement>
       </definition>
-      <p>
-        What is the dimension of <m>V=\{0\}</m>, the zero space?
-      </p>
 
+      
+      <exercise>
+        <statement>
+          <p>
+            What is the dimension of <m>V=\{0\}</m>, the zero space?
+          </p>
+        </statement>
+      </exercise>
+      
       <example>
         <statement>
           <p>
             (i) <m>\R^n</m> is a <m>n</m> dimensional vectors space over <m>\R</m>.
           </p>
           <p>
-            (ii) <m>M_n(\R)</m> is a <m>n^2</m>-dimensional vector space over <m>\R</m>.
+            (ii) <m>M_n(\R)</m>, the set of all <m>n\times n</m> matrices pver <m>\R</m> is a <m>n^2</m>-dimensional vector space over <m>\R</m>.
           </p>
           <p>
-            (iii) <m>{\cal P}_n(\R)</m> is <m>(n+1)</m>-dimensional vector space over <m>\R</m>.
+            (iii) <m>{\cal P}_n(\R)</m>, the set of all polynomials of degree less than or equal to <m>n</m> over <m>\R</m> is <m>(n+1)</m>-dimensional vector space over <m>\R</m>.
           </p>
         </statement>
       </example>
@@ -161,7 +170,7 @@
               </mrow>
             </md>
             is a basis of <m>W</m>.
-            That is <m>W</m> is 6 dimensional vector space over <m>\R</m>.
+            That is, <m>W</m> is 6 dimensional vector space over <m>\R</m>.
             What is dimension of the set of
             <m>n\times n</m> real symmetric matrices and dimension of <m>n\times n</m>
             real skew-symmetric matrices?
@@ -171,24 +180,20 @@
    
       <exercise xml:id="rqs-dim-skey-symm">
         <statement>
-        
-            Let <m>W</m> be the set of all
+          Let <m>W</m> be the set of all
             <m>3\times 3</m> real skew-symmetric matrices.
             Find a basis and hence the dimension of <m>W</m>.
-        
-        </statement>
+         </statement>
       </exercise>
     
  
-
-
-  
+ 
   </subsection>
 
     <subsection>
       <title>How to find a basis of a finite dimensional vector space?</title>
       <p>
-        First let us look at the following result.
+        First let us look at the following results.
       </p>
       <exercise xml:id="exer97">
         <statement>
@@ -209,7 +214,7 @@
             Then any linearly independent set
             <m>S =\{v_1,\ldots,
             v_k\}</m> can be extended to a basis of <m>V</m>.
-            More precisely, there exists vectors,
+            More precisely, there exist vectors,
             <m>u_1,\ldots,
             u_{n-k}</m> where <m>n={ dim}(V)</m> such that
             <m>\beta=\{v_1,\ldots,
@@ -219,7 +224,7 @@
       </exercise>
       
       <p>
-        This exercise give a way to find a basis of a finite dimensional vector space starting with a nonzero vector in <m>V</m>.
+        These two  exercises give a way to find a basis of a finite dimensional vector space starting with a nonzero vector in <m>V</m>.
       </p>
       
       <example>
@@ -237,14 +242,14 @@
             Another way to achieve this is to look at the standard basis vectors <m>e_i</m> not in <m>L(S)</m>.
             In particular, <m>v_3,v_4\in\{e_1,e_2,e_3,e_4\}</m>.
             In order to find this we can apply RREF to the matrix
-            <m>\begin{bmatrix}v_1\amp  v_2 \amp  e_2 \amp  e_2 \amp  e_3 \amp  e_4 \end{bmatrix}</m> and choose columns corresponding to the pivots.
+            <m>\begin{bmatrix}v_1\amp  v_2 \amp  e_1 \amp  e_2 \amp  e_3 \amp  e_4 \end{bmatrix}</m> and choose columns corresponding to the pivots.
             We have
             <me>
               \left[\begin{array}{rrrrrr} 1 \amp  2 \amp  1 \amp  0 \amp  0 \amp  0 \\ 2 \amp  2 \amp  0 \amp  1 \amp  0 \amp  0 \\ 1 \amp  1 \amp  0 \amp  0 \amp  1 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  1 \end{array} \right]\xrightarrow{RREF} \left[ \begin{array}{rrrrrr} 1 \amp  0 \amp  -1 \amp  0 \amp  2 \amp  0 \\ 0 \amp  1 \amp  1 \amp  0 \amp  -1 \amp  0 \\ 0 \amp  0 \amp  0 \amp  1 \amp  -2 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  1 \end{array} \right]
             </me>.
           </p>
           <p>
-            Clearly pivot columns are 1,2,4,6, which corresponds to vector <m>v_1,v_2,v_2, v_4</m>.
+            Clearly pivot columns are 1,2,4,6, which corresponds to vector <m>v_1,v_2,e_2, e_4</m>.
             Thus <m>\{v_1,v_2,e_2,e_4\}</m> is an extended basis of <m>\R^4</m>.
           </p>
         </statement>
@@ -301,9 +306,7 @@
         </statement>
       </example>
 
-      <p>
-        In the following theorem we mention the equivalent condition for a set to be a basis of a finite dimensional vector space.
-      </p>
+     
       <definition xml:id="maxLI">
         <statement>
           <p>
@@ -345,7 +348,9 @@
           </p>
         </statement>
       </example>
-
+      <p>
+        In the following theorem we mention the equivalent condition for a set to be a basis of a finite dimensional vector space.
+      </p>
       <theorem xml:id="thm-basis-equiv">
         <statement>
           <p>

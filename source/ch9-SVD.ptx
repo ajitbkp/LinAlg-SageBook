@@ -2,5 +2,5 @@
 <chapter xml:id="chap9-SVD" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Singular Value Decomposition</title>
   
-  <xi:include href="sec9-0-SVD.ptx" />
+  <xi:include href="sec9-1-SVD.ptx" />
 </chapter>

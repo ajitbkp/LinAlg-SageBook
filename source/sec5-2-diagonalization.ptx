@@ -2,7 +2,8 @@
 
 <section xml:id="sec5-2-diagonalization" xmlns:xi="http://www.w3.org/2001/XInclude">
         <title>Diagonalization</title>
-          <definition>
+      
+        <definition xml:id="def-diagonalizability">
             <statement>
               <p>
                 A matrix <m>A</m> is said to be <em>diagonalizable</em>
@@ -12,6 +13,8 @@
               </p>
             </statement>
           </definition>
+
+
           <example>
             <statement>
               <p>
@@ -32,6 +35,7 @@
               </p>
             </statement>
           </example>
+
           <example>
             <statement>
               <p>
@@ -41,6 +45,7 @@
               </p>
             </statement>
           </example>
+
           <exercise xml:id="5-2-4">
             <statement>
               <p>
@@ -50,6 +55,7 @@
               </p>
             </statement>
           </exercise>
+
           <theorem xml:id="thm_diag">
             <statement>
               <p>
@@ -57,6 +63,7 @@
               </p>
             </statement>
           </theorem>
+
           <proof>
             <p>
               Let <m>A</m> be diagonalizable,
@@ -97,6 +104,7 @@
               which implies <m>P</m> is invertible.
             </p>
           </proof>
+
           <corollary>
             <statement>
               <p>
@@ -104,6 +112,7 @@
               </p>
             </statement>
           </corollary>
+
           <example>
             <statement>
               <p>
@@ -116,6 +125,7 @@
                 Hence <m>A = P\left(\begin{array}{rrr} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp -1 \end{array} \right)P^{-1}</m>.
                 It is easy to see that <m>P^{-1}=\left(\begin{array}{rrr} 3 \amp 3 \amp 9 \\ 0 \amp -3 \amp -3 \\ -2 \amp 0 \amp -6 \end{array} \right)</m>.
               </p>
+             
               <p>
                 Hence
                 <md>
@@ -133,6 +143,7 @@
               </p>
             </statement>
           </example>
+
           <example>
             <statement>
               <p>
@@ -149,9 +160,11 @@
               </p>
             </statement>
           </example>
+
           <p>
             We mention another criteria of diagonalizability without proof.
           </p>
+
           <theorem xml:id="diagonalizable-thm2">
             <statement>
               <p>
@@ -163,6 +176,7 @@
               </p>
             </statement>
           </theorem>
+
           <example>
             <statement>
               <p>
@@ -172,4 +186,5 @@
             </statement>
           </example>
 
-        </section>                                                                                                                                                     
+        
+        </section>                                                                                                                                                    

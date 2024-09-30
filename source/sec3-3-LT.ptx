@@ -4,18 +4,19 @@
   <title>Reflections and Projections</title>
 <introduction>
     <p>
-        In this section, we shall look at reflections and rotations in <m>\R^2</m> and 
-        <m>\R^3</m> as linear maps. We shall also find their matrices.
+        In this section, we shall look at reflections and rotations in <m>\R^2</m> 
+        <m>\R^3</m> as linear maps. We shall also find their matrices explicitley.
      </p>
 </introduction>
 
-  <subsection>
+  <subsection xml:id="reflection-R2">
     <title>Reflections in <m>\R^2</m></title>
     <p>
       Recall that the reflection <m>R_f</m> about the <m>x</m>-axis in <m>\R^2</m> is give by <m>R(x_1,x_2)=(x_1,-x_2)</m>.
       The matrix of <m>R_f</m> with respect to the standard basis is <m>\begin{bmatrix}1 \amp 0\\0 \amp -1 \end{bmatrix}</m>.
       Let us look at how to find the reflection about any line <m>y=mx</m> where <m>m=\tan\theta</m>.
     </p>
+
     <example xml:id="linalg-engg-eg36">
       <statement>
         <p>
@@ -23,6 +24,7 @@
           where <m>m=\tan\theta</m>.
           We wish to find the matrix of <m>Q</m> with respect to the standard basis.
         </p>
+    
         <p>
           Note that <m>Q</m> can be accomplished by first rotating by <m>-\theta</m>,
           then reflecting about <m>x</m>-axis and then rotating back by <m>\theta</m>.
@@ -33,6 +35,7 @@
           Note that <m>R_f, R_\theta</m> and <m>R_{-\theta}</m> are linear map,
           and hence <m>Q</m> is a linear map.
         </p>
+    
         <p>
           Using the notion of matrix of composition,
           the matrix of <m>Q</m> is given by
@@ -45,6 +48,7 @@
                 2\cos\theta\sin\theta \amp   \sin^2\theta-\cos^2\theta \end{bmatrix}</mrow>
           </md>
         </p>
+    
         <p>
           Since <m>m=\tan\theta</m>,
           <m>\cos \theta = \frac{1}{\sqrt{1+m^2}}</m> and <m>\sin \theta = \frac{m}{\sqrt{1+m^2}}</m>.
@@ -55,26 +59,32 @@
         </p>
       </statement>
     </example>
+    
     <exercise xml:id="3-3-2">
       <statement>
         <p>
           For the following linear transformation <m>T\colon \R^2\to \R^2</m>.
           Show that <m>T</m> is induced by a matrix and hence find the matrix.
         </p>
+    
         <p>
           (i) <m>T</m> is reflection about <m>y</m> axis.
         </p>
+    
         <p>
           (ii) <m>T</m> is reflection about the line <m>y=x</m>
         </p>
+    
         <p>
           (iii) <m>T</m> is reflection about the line <m>y=-x</m>
         </p>
+    
         <p>
           (iv) <m>T</m> is a clockwise rotation by an angle <m>\pi/2</m>.
         </p>
       </statement>
     </exercise>
+    
     <exercise xml:id="3-3-3"> 
       <statement>
         <p>
@@ -89,7 +99,7 @@
     </exercise>
   </subsection>
 
-  <subsection>
+  <subsection xml:id="projection-R2">
     <title>Projections in <m>\R^2</m></title>
     <p>
       The linear map <m>\pi_1\colon \R^2\to \R^2</m>,
@@ -99,10 +109,12 @@
       It is easy to check that the matrix of <m>\pi_1</m> with respect to the standard basis is <m>\begin{bmatrix}1 \amp 0 \\0 \amp 0 \end{bmatrix}</m>.
       Similarly, the matrix of <m>\pi_2</m> with respect to the standard basis is <m>\begin{bmatrix}0 \amp 0 \\0 \amp 1 \end{bmatrix}</m>.
     </p>
+
     <p>
       We wish to define the projection <m>P</m> onto the line <m>y=mx</m>,
       where <m>m=\tan\theta</m>.
     </p>
+    
     <example xml:id="linalg-engg-eg37">
       <statement>
         <p>
@@ -110,12 +122,14 @@
           where <m>m=\tan\theta</m>.
           We wish to find the matrix of <m>Q</m> with respect to the standard basis.
         </p>
+    
         <p>
           Using a similar procedure, we have
           <me>
             P  =R_\theta\circ \pi_1\circ R_{-\theta}
           </me>
         </p>
+    
         <p>
           Hence the matrix of <m>P</m> is
           <md>
@@ -129,6 +143,7 @@
               \cos\theta\sin\theta \amp   \sin^2\theta \end{bmatrix}</mrow>
           </md>.
         </p>
+    
         <p>
           After simplification, the matrix of <m>P</m> is
           <me>
@@ -141,6 +156,7 @@
         </p>
       </statement>
     </example>
+    
     <exercise xml:id="3-3-5">
       <statement>
         <p>
@@ -155,6 +171,7 @@
         </p>
       </statement>
     </exercise>
+    
     <exercise xml:id="3-3-6">
       <statement>
         <p>
@@ -172,8 +189,9 @@
    
   </subsection>
   
-  <subsection>
+  <subsection xml:id="Proj-Refl-R3">
     <title>Projection and Reflection in <m>\R^3</m></title>
+    
     <example xml:id="linalg-engg-eg44">
       <title>Rotation in <m>\R^3</m></title>
       <statement>
@@ -182,6 +200,7 @@
           (that is anticlockwise).
           Let us find the matrix of this transformation with respect to the standard basis.
         </p>
+    
         <p>
           First of notice that in this case,
           the <m>z</m>-coordinate of any vector does not change.
@@ -194,15 +213,15 @@
             R_{z,\theta} =\begin{bmatrix}\cos \theta \amp  -\sin\theta\amp  0\\ \sin\theta \amp  \cos\theta \amp  0\\ 0 \amp  0 \amp  1 \end{bmatrix}
           </me>
         </p>
+    
         <p>
           Find the matrix of <m>R_{x,\theta}</m> and <m>R_{y,\theta}</m>.
         </p>
       </statement>
     </example>
+    
     <example xml:id="linalg-engg-eg45">
       <title>Projection onto a line in <m>\R^3</m></title>
-      
-      
       <statement>
         <p>
          Let
@@ -221,6 +240,7 @@
               ac\amp bc\amp c^2 \end{bmatrix} \begin{bmatrix}x\\y\\z \end{bmatrix}</mrow>
           </md>.
         </p>
+    
         <p>
           We denote this projection by <m>P_L</m>.
           Thus the matrix of <m>P_L</m> is
@@ -230,8 +250,8 @@
         </p>
       </statement>
     </example>
+    
     <example xml:id="linalg-engg-eg46"><title>Reflection about a line in <m>\R^3</m></title>
-       
       <statement>
         <p>
          Let
@@ -251,15 +271,16 @@
         </p>
       </statement>
     </example>
+    
     <example xml:id="linalg-engg-eg48">
       <title>Projection onto a plane in <m>\R^3</m></title>
-           
       <statement>
         <p>
        Let <m>\pi</m> be a plane given by the equation <m>ax+by+cz=0</m>.
           Then the vector <m>n=(a,b,c)</m> is normal to <m>\pi</m>.
           We wish to find the orthogonal projection of any vector <m>v=(x,y,z)</m> onto <m>\pi</m>.
         </p>
+    
         <p>
           Let <m>P_\pi(v)</m> be denote the projection of <m>v</m> onto <m>\pi</m> and <m>P_n(v)</m>,
           the projection of <m>v</m> onto to <m>n</m>. (Draw figure) Then
@@ -267,6 +288,7 @@
             P_\pi(v)=v-P_n(v)
           </me>.
         </p>
+    
         <p>
           Hence the the matrix of <m>P_\pi</m> is given by
           <md>
@@ -276,6 +298,7 @@
         </p>
       </statement>
     </example>
+    
     <example xml:id="linalg-engg-eg49">
       <title>Reflection through a plane in <m>\R^3</m></title>
       <statement>
@@ -285,6 +308,7 @@
           We wish to find the reflection
           <m>Ref_\pi(v)</m> of any vector <m>v=(x,y,z)</m> through <m>\pi</m>.
         </p>
+    
         <p>
           Suppose <m>P_\pi(v)</m> is the orthogonal projection of <m>v</m> onto <m>\pi</m>.
           Then it is easy to see that
@@ -292,6 +316,7 @@
             P_M(v)=\frac{1}{2}\left[v+Ref_\pi(v)\right]
           </me>.
         </p>
+    
         <p>
           Now it is easy to show that the matrix of <m>Ref_\pi</m> is given by
           <me>
@@ -302,4 +327,4 @@
     </example>
   </subsection>
 
-   </section>
+</section>

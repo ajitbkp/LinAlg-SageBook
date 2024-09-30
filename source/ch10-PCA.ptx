@@ -3,5 +3,5 @@
   <title>Principal Component Analysis</title>
   
   <xi:include href="sec10-1-PCA.ptx" />
-  sec10-1-PCA
+  <xi:include href="sec10-2-PCA.ptx" />
 </chapter>

@@ -12,6 +12,7 @@ elementary matrix. Two matrices that are related by a sequence of elementary col
 are said to be column equivalent and two matrices <m>A</m> and <m>B</m> are column equivalent if and only if there
 exists a non singular matrix <m>Q</m> such that <m> B = AQ</m>.
 </p>
+
 <exercise xml:id="1-2-1">
   <statement>
     <p>
@@ -39,4 +40,5 @@ exists a non singular matrix <m>Q</m> such that <m> B = AQ</m>.
 </solution>
 </p>
 </exercise>
+
 </section>

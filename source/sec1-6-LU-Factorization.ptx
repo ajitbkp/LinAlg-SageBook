@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec1-6-LU" xmlns:xi="http://www.w3.org/2001/XInclude">
+
   <title><m>LU</m>-Facotorization</title>
  <introduction>
     <p>
@@ -51,6 +52,7 @@
 </p>
 </li>
 </ol>
+
 <p>
 The key to <m>LU</m>-decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of  rows to rows. Also every row which is replaced using the row operation in obtaining row-echelon form may be modified by using row which is above this row. We do not use row interchanges. Let us assume that we need <m>k</m> elementary such row operations to transform <m>A</m> to an upper triangular matrix <m>U</m>. That is, 
 <me>
@@ -62,9 +64,11 @@ Since elementary matrices are invertible, we can multiply both sides by <m>(E_kE
 A=E^{-1}_1 E^{-1}_2\cdots E^{-1}_kU=LU
 </me>
 It is very easy to see that <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper triangular matrix with diagonal entries 1. 
+</p>
 
 <p>
     We list the following results without proof.
+</p>
 <ol>
     <li>
         <p>
@@ -78,9 +82,7 @@ It is very easy to see that <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper 
         </p>
     </li>
 </ol>    
-</p>
 
-</p>
 <example xml:id="eg-LU1-nonlu-eg">
     <title>Non existence of DoLittle <m>LU-</m>factorization</title>  
     <p>
@@ -88,7 +90,7 @@ It is very easy to see that <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper 
     It is easy to check that <m>A</m> does not have Doolittle <m>LU</m>-decomposition.  
     </p>
 </example>
-<p>
+
  <example xml:id="eg-LU2">
     <p>
     Let <m>A=\begin{pmatrix} 1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix}</m>. 
@@ -136,9 +138,8 @@ It is very easy to see that <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper 
 	</me>
 </p>
  </example>   
-</p>
 
-<p>
+
     <example xml:id="eg-LU3">
         <p>
         Let <m>A=\begin{pmatrix}1\amp 1\amp 1\\3\amp 1\amp -3\\1\amp -2\amp -5 \end{pmatrix}</m>. Find the LU-decomposition of <m>A</m> using Crout's method.
@@ -176,7 +177,7 @@ It is very easy to see that <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper 
         </me>
     </p>
     </example>
-</p>
+
 </subsection>
 
 <subsection xml:id="subsec-solving-system-LU">
@@ -188,11 +189,14 @@ backward substitution resulting in solution of the system.
 
 LU-factorization method allows to solve a whole lot of linear equations having same coefficient matrix.
 </p>
-<p>
+
     <example xml:id="eg-LU4">
         <p>
         Solve the system of equations <m>Ax=b</m> using using Doolittle method,  where 
         <m>A=\begin{pmatrix} 1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix} </m> and <m>b=\begin{pmatrix} 7\\-6\\5\end{pmatrix}</m>
+        </p>
+            
+    
      <solution>
         <p>
                     
@@ -222,10 +226,10 @@ LU-factorization method allows to solve a whole lot of linear equations having s
         </p>
     
      </solution>
-    </p>
+
     </example>
-</p>
-<p>
+
+
     <example xml:id="eg-Lu5">
         <p>
         Solve the following system of equations using LU-decomposition 
@@ -334,7 +338,7 @@ Solving the above system by back substitution we get the required solution <m>x=
     </solution>
 
     </example>
-</p>
+
 <p>
     Now we shall look at under what conditions a matrix admits LU factorization. 
 The following theorem provides a sufficient condition for ensuring that the
@@ -344,8 +348,8 @@ by zero.
 If <m>A</m> is a square matrix, then a sub-matrix <m>A^{(k)}</m> of <m>A</m> obtained by
 taking  the first <m>k</m> rows and first <m>k</m> columns of <m>A</m> is called a
 <alert>leading principal minor  of <m>A</m></alert>.
-
 </p>
+
 <theorem xml:id="thm-LU-thm2">
     <statement>
         <p>
@@ -362,6 +366,7 @@ taking  the first <m>k</m> rows and first <m>k</m> columns of <m>A</m> is called
 
     </p>
 </proof>
+
 <p>
     Not every matrix can have LU-factorization. Let us consider 
 	<m>A=\begin{pmatrix}0 \amp  1\\ 1 \amp  0\end{pmatrix}</m>.  Suppose <m>A</m> has 
@@ -386,7 +391,6 @@ size that admits an <m>LU</m>-factorization. Let first show this result for a <m
 2</m> matrix.
 </p>
 
-<p>
     <example xml:id="eg-LU5">
         <p>
         Let <m>A=\begin{pmatrix}a \amp  b\\ c \amp  d\end{pmatrix}</m>. Show that there
@@ -409,9 +413,8 @@ size that admits an <m>LU</m>-factorization. Let first show this result for a <m
         </me>
     </p>
     </example>
-</p>
 
-<p>
+
     <theorem xml:id="thm-LU-th3">
         <statement>
             <p>
@@ -420,11 +423,12 @@ size that admits an <m>LU</m>-factorization. Let first show this result for a <m
             </p>
         </statement>
     </theorem>
-</p>
+
     <p>
         The proof of above  theorem gives an algorithm for constructing
 the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
     </p>
+
 <remark>
     If <m>P</m> is a permutation matrix then <m>P^{-1}=P^T</m> is also a permutation matrix.  If <m>PA=LU</m>, then we have <m>A=P^TLU</m>. 
 	Because of this  reason such a factorization is also known as <alert><m>PLU</m> factorization of <m>A</m></alert>.
@@ -441,12 +445,13 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
    the product <m>LU</m>, after a permutation of the rows, is then equal to
    <m>A</m>.  For the 'plu' format the permutation is returned as an m x
    m permutation matrix <m>P</m> such that <m>A = PLU</m>.
+</p>
+
 <p>
     Try to explore help document of LU factorization using 'A.LU?' 
-    
 </p>
-    </p>
-    <p>
+ 
+
         <sage>
             <input>
                 A=matrix(QQ, [[0,-2,1],[6, -0, 3],[4, 1, 8],[14, 10, -8]])
@@ -456,7 +461,8 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
                 
             </output>
         </sage>
-    <sage>
+
+        <sage>
         <input>
             print(P)
             print(L)
@@ -466,6 +472,7 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
             
         </output>
     </sage>
+
     <sage>
         <input>
             P*L*U==A
@@ -474,12 +481,13 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
             
         </output>
     </sage>
-    </p>
      
 </subsection>
+
+
 <subsection xml:id="subsec-">
     <title>User defined functions for DooLitlte and Crout's Methods </title>
-  <p>
+
     <sage>
         <input>
             def dolittle_LU(A,ring):
@@ -500,6 +508,7 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
             
         </output>
     </sage>
+
     <sage>
         <input>
         mat = matrix([[3,-2,1,4],[1,7,7,6],[9,6,3,2],[7,5,9,10]])
@@ -511,9 +520,10 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
             
         </output>
     </sage>
-  </p>
+
   <p> <alert>Crout's Method function in Sage</alert>
   </p>
+
   <sage>
     <input>
     def crout_LU(A,ring):
@@ -535,6 +545,7 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
         
     </output>
   </sage>
+
   <sage>
     <input>
     mat = matrix([[3,-2,1,4],[1,7,7,6],[9,6,3,2],[7,5,9,10]])
@@ -546,6 +557,7 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
         
     </output>
   </sage>
+
   <sage>
     <input>
     def pivot_matrix(M):
@@ -563,6 +575,7 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
         
     </output>
   </sage>
+
   <sage>
     <input>
     A = matrix([[1 , 0 , 1 , 1],[4 , 1 , 3 , 2], [-2 , -2 , -1 , 0],[4 , 2 , 2 , 1]])
@@ -572,6 +585,7 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
         
     </output>
   </sage>
+
   <sage>
     <input>
     def PLU(A,ring):
@@ -583,6 +597,7 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
         
     </output>
   </sage>
+
   <sage>
     <input>
     A = matrix([[1,0,1,1],[4,1,3,2], [-2,-2,-1,0],[4,2,2,1]])
@@ -592,5 +607,6 @@ the permutation matrix <m>P</m>, and the matrices <m>L</m> and <m>U</m>.
         
     </output>
   </sage>
+  
 </subsection>
 </section>

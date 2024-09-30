@@ -2,20 +2,21 @@
 
 <section xml:id="sec1-4-matrix-rank" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Rank of Matrices</title>
-<p>
+
    <definition xml:id="def-sub-matrix">
     <statement>
-        <p>
+     <p>
             Let <m>A</m> be an <m>m \times n</m> matrix. Delete any <m>m-k</m> rows and
             <m>n-l</m> columns of <m>A</m>. The resulting matrix is called a <m>k\times  l</m> 
             sub-matrix  of <m>A</m>. If <m>k = l</m>, then it is called a square
                 sub-matrix of <m>A</m> of order <m>k</m>.
-        </p>
+     </p>
     </statement>
 
+
    </definition>
-</p>
-   <p>
+
+
     <definition xml:id="def-matrix-rank">
         <statement>
             <p>
@@ -26,8 +27,8 @@
             </p>
         </statement>
     </definition>
-   </p>
-   <p>
+   
+   
     <example>
         <p>
         Determine the rank of <m>A=
@@ -52,7 +53,7 @@
                 </solution>
             </p>
     </example>
-   </p>
+
 
    <observation>
     <p> 
@@ -98,7 +99,7 @@
         </ol>
        </observation>
 
-       <p>
+ 
         <theorem xml:id="thm-rank-theorem">
             <statement>
                 <p>
@@ -111,30 +112,29 @@
                 </p>
             </statement>
         </theorem>
-       </p>
-       <p>
+
+ 
         <example>
             <p>
             Let us find the ranl of <m>A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}</m>.
             </p>
     
-        </example>
-    </p>
-        <p>
+    
+    
             <solution>
                 <p>
                     <me>A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}\overrightarrow{\text{Row echelon form}}\begin{bmatrix}1 \amp  0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp 0\amp 1\\0\amp 0\amp 0\amp 1\amp -1\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}</me>. Hence <m>r(A)=3</m>.
                 </p>
             </solution>
-        </p>
        
-    
+       
+    </example>
+  
        <example>
         <p>   
         Consider a matrix <m>\begin{bmatrix} 1 \amp  1 \amp  2 \amp  a^2\\1 \amp  1-a \amp  2\amp  0 \\2 \amp  2-a \amp  6-a \amp  4\end{bmatrix}</m>. Find the rank of the matrix. 
         </p>    
-    </example>
-        
+  
 
             <solution>
                 <p>
@@ -179,7 +179,7 @@
                       
                 </p>
 
-                <p>
+         
                     <sage>
                         <input>
                             var('a') # Declaraing a as symbomic variable.
@@ -191,8 +191,8 @@
                             
                         </output>
                     </sage>
-                </p>   
-                <p>
+        
+         
                     <sage>
                         <input>
                         a=0
@@ -207,9 +207,9 @@
                             2
                         </output>
                     </sage>
-                </p>
+        
             
-               <p>
+          
                 <sage>
                     <input>
                         a=2
@@ -224,11 +224,11 @@
                         2
                     </output>
                 </sage>
-               </p>
-        
+         
             </solution>
-        
-<p>
+        </example>
+             
+
     <theorem xml:id="thm-nosol-rank"><title>Number of Solution of a System</title>
     
     
@@ -260,8 +260,8 @@
        </statement>
     </theorem>
     
-</p>
-<p>
+
+
     <corollary xml:id="cor-rank1">
         <statement>
             <p>
@@ -270,8 +270,8 @@
             </p>
         </statement>
     </corollary>
-</p>
-<p>
+
+
     <corollary xml:id="cor-rank2">
         <statement>
             <p>
@@ -281,7 +281,7 @@
             </p>
         </statement>
     </corollary>
-</p>
+
 <example xml:id="matrix-rank-eg1">
     <p>`
     Consider the Example~<xref ref="row-echelon-eg1"/>. 
@@ -308,14 +308,14 @@
 
 </example>
 
-<p>
+
     <example xml:id="matrix-rank-eg2">
         <p>`
         Let us consider the system <m>AX=B</m> where 
         <m>A=\begin{bmatrix}1 \amp   -2\amp  0\amp  3\\3\amp  2\amp  8\amp  1\\2\amp  3\amp  7\amp  2\\-1\amp  2\amp  0\amp  4\end{bmatrix}\quad  B=\begin{bmatrix}-4\\4\\3\\-3\end{bmatrix}\quad  X=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}.
         </m>
         
-        <p>
+   
             <solution>
                 <p>
                     
@@ -343,10 +343,10 @@
                 </p>
             </solution>
         </p>
-    </p>`
+  
     </example>
-</p>
-<p>
+
+
     <example xml:id="matrix-rank-eg3">
         <p> Consider the system of linear equations <m>Ax=b</m>, where
         <me>\begin{pmatrix}
@@ -360,7 +360,7 @@
 	\end{pmatrix}
 	</me>
 </p>
-<p>
+
     <solution>
         <me> 
             \left(\begin{array}{rrrr|r}
@@ -377,8 +377,9 @@
 0 \amp  0 \amp  0 \amp  0 \amp  1
 \end{array}\right)
         </me>
-        Clearly <m>r(A)=3</m> but <m>r(A^*=4</m>. Hence the system does not have a solution.
         <p>
+        Clearly <m>r(A)=3</m> but <m>r(A^*=4</m>. Hence the system does not have a solution.
+        </p>
             <sage>
                 <input>
                     A = matrix(QQ,[[1, -2, 2, 3], 
@@ -396,8 +397,7 @@ Aug
 [13  2 -9  1|11]
                 </output>
             </sage>
-        </p>
-        <p>
+       
             <sage>
                 <input>
                     Aug.rref()
@@ -409,9 +409,9 @@ Aug
                     [   0    0    0    0|   1]
                 </output>
             </sage>
-        </p>
+       
     </solution>
-</p>
+
     </example>
-</p>
+
 </section>

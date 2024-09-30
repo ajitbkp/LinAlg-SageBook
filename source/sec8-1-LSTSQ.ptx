@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec8-0-LSTSQ" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec8-1-LSTSQ" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Least Square Problems</title>
   <introduction>
-    This chapter deals with linear least square problems and it applications. 
-      
+    <p>
+    This chapter deals with linear least square problems and its applications. 
+    </p>
     </introduction>
     
     <subsection xml:id="sec-linear-lstsq">
       <title>Linear Least Square Problems</title>
-      
-    
+        
           <p>
           Consider a system of equations <m>Ax=b</m> having <m>m</m> equations in <m>n</m> variables.
           Suppose <m>m\geq n</m>.
@@ -23,6 +23,7 @@
           Thus if such a <m>z</m> exists then
           <m>\norm{Az-b}\leq \norm{Ax-b}</m> for all <m>x\in \R^n</m>.
         </p>
+
         <p>
           The answer to the above question is
           <q>yes</q>. In order to find this, we consider
@@ -30,6 +31,7 @@
             W={\cal R}(A)=\{Ax:x\in \R^n\}
           </me>.
         </p>
+        
         <p>
           Note that <m>W</m> is subspace of <m>\R^m</m>.
           We are looking for <m>z</m> which is at the smallest distance from <m>b</m>,
@@ -46,6 +48,7 @@
         <p>
           Here the vector <m>x^*=(A^TA)^{-1}A^Tb</m> is called the least square approximation (solution) of<m>Ax=b</m>.
         </p>
+
         <p>
           For the system <m>Ax=b</m>, after multiplying both sides by <m>A^T</m>, we get
           <me>
@@ -56,6 +59,7 @@
           Hence <m>A^T</m> is invertible if <m>A</m> has linearly independent columns.
           Also the <m>Ax=b</m> has least square solution if and only if the associated normal equation <m>A^TAx=b</m> has a solution.
         </p>
+
         <p>
           Note that the least square solution
           <m>x^*=(A^TA)^{-1}A^Tb</m> is the minimizer of the function <m>f(x)=\norm{Ax-b}^2</m>.
@@ -64,6 +68,7 @@
             f(x) =\norm{Ax-b}^2 = (Ax-b)^T(Ax-b)=x^TA^TAx-2A^Tbx+b^Tb
           </me>.
         </p>
+
         <p>
           Hence the gradient <m>\nabla f(x)=2A^TAx-2A^Tb</m>.
           Hence <m>\nabla f(x)=0</m> implies
@@ -72,6 +77,7 @@
           </me>
           provided <m>A^TA</m> is non singular.
         </p>
+
         <example>
           <statement>
             <p>
@@ -81,11 +87,13 @@
                 \inner{f}{g}=\int_{-1}^1 f(x)g(x)
               </me>.
             </p>
+
             <p>
               Find the polynomial of degree at most 2 which is closest to the function <m>f(x)=|x|</m>.
               Here we consider the subspace <m>W={\cal P}_2(\R)</m>.
               We need the find the orthogonal projection of <m>f(x)</m> onto <m>W</m>.
             </p>
+
             <p>
               From <xref ref="Legendre-poly">Example</xref>, we know that
               <me>
@@ -97,12 +105,15 @@
                 p(x)=\inner{f}{u_1}u_1+\inner{f}{u_2}u_2+\inner{f}{u_2}u_3
               </me>.
             </p>
+
             <p>
               After simplification we get <m>p(x)=\frac{3}{16}(5x^2+1)</m>.
             </p>
           </statement>
         </example>
-        <exercise xml:id="8-1-2">
+
+
+        <exercise xml:id="exer-8-1-2">
           <statement>
             <p>
               Consider the inner product space
@@ -111,11 +122,14 @@
                 \inner{f}{g}=\int_{-1}^1 f(x)g(x)
               </me>.
             </p>
+
             <p>
               Find the polynomial of degree at most 2 which is closest to the function <m>f(x)=\sin x</m>.
             </p>
           </statement>
         </exercise>
+
+
         <example>
           <statement>
             <p>
@@ -124,15 +138,19 @@
                 A= \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp  1 \\ -2 \amp  3 \end{array} \right),\qquad b = \begin{pmatrix}-1\\3\\5\\1 \end{pmatrix}
               </me>
             </p>
+            
             <p>
               (a) Find the least square solution of <m>Ax=b</m>.
             </p>
+
             <p>
               (b) Find the orthogonal projection of <m>b</m> onto the column space <m>W={col}(A)</m>.
             </p>
+
             <p>
               (c) Write the <m>b</m> as <m>b=w+u</m> where <m>w\in W</m> and <m>u\in W^\perp</m>.
             </p>
+
             <p>
               <em>Solution:</em> It is easy to see that the columns of <m>A</m> are linearly independent,
               hence the least square solution exists.
@@ -141,17 +159,20 @@
                 A^TA = \left(\begin{array}{rr} 10 \amp  -4 \\ -4 \amp  12 \end{array} \right),\text{ and }  A^Tb=\left(\begin{array}{rr}10\\12 \end{array} \right)
               </me>.
             </p>
+
             <p>
               Hence the least square solution of <m>Ax=b</m> is the solution of the normal equation
               <m>A^TAx=A^b</m> which is <m>x^*=\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)</m>.
               The same can obtained as <m>x^* =(A^TA)^{-1}A^Tb</m>.
             </p>
+
             <p>
               (b) The orthogonal projection of <m>b</m> onto <m>W</m> is given by
               <me>
                 w = A(A^TA)^{-1}A^Tb = \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp  1 \\ -2 \amp  3 \end{array} \right)\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)=\left(\begin{array}{r} \frac{1}{13} \\ \frac{41}{13} \\ \frac{62}{13} \\ \frac{18}{13} \end{array} \right)
               </me>.
             </p>
+
             <p>
               (b) Since we have found <m>w</m>,
               <m>u</m> is given by <m>b-w=\left(\begin{array}{r} -\frac{14}{13} \\ -\frac{2}{13} \\ \frac{3}{13} \\ -\frac{5}{13} \end{array} \right)</m>.
@@ -162,7 +183,9 @@
             </p>
           </statement>
         </example>
-        <exercise xml:id="8-1-3">
+
+
+        <exercise xml:id="exer-8-1-3">
           <statement>
             <p>
               (i) Find the best approximation
@@ -175,7 +198,7 @@
           </statement>
         </exercise>
 
-        <exercise xml:id="8-1-4">
+        <exercise xml:id="exer-8-1-4">
           <statement>
             <p>
               The average number of goals <m>g</m>,
@@ -406,6 +429,7 @@
             <p>
               Find the equation of the line that best fits these data points.
             </p>
+
             <p>
               The temperature data is plotted in the <xref ref="fig_mumtempplot">Figure</xref>.
             </p>
@@ -431,12 +455,14 @@
                 \sum_{i=1}^n [(c+mx_i)-y_i]^2 = \norm{\begin{bmatrix}1 \amp  x_1 \\1 \amp  x_2 \\\vdots \amp  \vdots \\ 1 \amp x_n \end{bmatrix}  \begin{bmatrix}c\\m \end{bmatrix}  -\begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix} }=\norm{Ax-b}
               </me>.
             </p>
+
             <p>
               Here
               <me>
                 A = \begin{bmatrix}1 \amp  x_1 \\1 \amp  x_2 \\\vdots \amp  \vdots \\ 1 \amp x_n \end{bmatrix}  x= \begin{bmatrix}c\\m \end{bmatrix} ,b = \begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix}
               </me>
             </p>
+
             <p>
               Thus finding <m>m,c</m> amount to finding the least square solution of <m>Ax=b</m>,
               which is given by
@@ -444,12 +470,14 @@
                 x^*=\begin{bmatrix}c\\m \end{bmatrix} =(A^TA)^{-1}A^Tb
               </me>
             </p>
+
             <p>
               For the given problem, we have
               <me>
                 A = \begin{bmatrix}1 \amp  1990 \\1 \amp  1991 \\\vdots \amp  \vdots \\ 1 \amp 2021 \end{bmatrix} , b = \begin{bmatrix}27.07\\26.93\\\vdots\\28.48 \end{bmatrix}
               </me>
             </p>
+
             <p>
               We have
               <me>
@@ -459,12 +487,14 @@
                 (A^TA)^{-1}=\left(\begin{array}{rr} \frac{8044231}{5456} \amp  -\frac{4011}{5456} \\ -\frac{4011}{5456} \amp  \frac{1}{2728} \end{array} \right)
               </me>.
             </p>
+
             <p>
               Hence
               <me>
                 x^*=\begin{bmatrix}c\\m \end{bmatrix} =(A^TA)^{-1}A^Tb = \left(\begin{array}{r} -68.0279710416216 \\ 0.0477584310854127 \end{array} \right)
               </me>
             </p>
+
             <p>
               The set of points along with the best fitted line is 
               shown in the <xref ref="fig_mumtempplot2">Figure</xref>
@@ -476,6 +506,7 @@
         </example>
       
       </subsection>
+
     <subsection>
         <title>Fitting a polynomial to the data set</title>
         <p>
@@ -489,6 +520,7 @@
             \sum_i^n [(a_0+a_1x_i+a_2x_i^2+\cdots +a_px_i^p)-y_i]^2
           </me>
         </p>
+
         <p>
           The sum of error square can be written as
           <me>
@@ -499,10 +531,12 @@
             A = \begin{bmatrix}1 \amp  x_1 \amp  x_1^2 \amp  \cdots \amp  x_1^p\\ 1 \amp  x_2 \amp  x_2^2 \amp  \cdots \amp x_2^p\\ \vdots \amp  \vdots \amp  \cdots \amp  \ddots \amp  \vdots\\ 1 \amp  x_n \amp  x_n^2 \amp  \cdots \amp x_n^p \end{bmatrix} ,  b = \begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix} , x = \begin{bmatrix}a_0\\a_1\\a_2\\\vdots\\a_p \end{bmatrix}
           </me>
         </p>
+
         <p>
           Thus the least square solution is given by
           <m>x^* = (A^TA)A^Tb</m> provided columns of <m>A</m> are linearly independent.
         </p>
+
         <example>
           <statement>
             <p>
@@ -601,12 +635,14 @@
                 <cell></cell>
               </row>
             </tabular>
+
             <p>
               Thus we need to find the least square solution of <m>Ax=b</m>, where
               <me>
                 A = \left(\begin{array}{rrrr} 1.00 \amp  -3.00 \amp  9.00 \amp  -27.00\\ 1.0 \amp  -2.80 \amp  7.84\amp  -21.952\\ 1.00 \amp  -2.500\amp  6.250 \amp  -15.625\\ \vdots \amp  \vdots\amp  \vdots \amp  \vdots \\ 1.00 \amp  1.80\amp  3.240 \amp  5.832 \end{array} \right),  b = \left(\begin{array}{r} 1.1\\ 4.0 \\ 7.3\\ \vdots\\ 12.0 \end{array} \right)
               </me>
             </p>
+
             <p>
               We have
               <me>
@@ -616,12 +652,14 @@
                 A^Tb = \left(\begin{array}{r} 131.6 \\ -62.235 \\ 307.14775 \\ -352.6518375 \end{array} \right)
               </me>
             </p>
+
             <p>
               Hence the least square solution
               <me>
                 x^* = (A^TA)^{-1}A^Tb=\begin{bmatrix}a_0 \\a_1\\a_2\\a_3 \end{bmatrix}  = \begin{bmatrix}4.82641673699866 \\ -1.84149774223300 \\ 1.78790889783526 \\ 0.919436026634361 \end{bmatrix}
               </me>
             </p>
+
             <p>
               See the <xref ref="fig_cubic_plot1">Figure</xref>
               for fitted curve along with the data.
@@ -631,7 +669,9 @@
             </figure>
           </statement>
         </example>
-        <exercise  xml:id="8-1-5">
+
+
+        <exercise  xml:id="exer-8-1-5">
           <statement>
             <p>
               Find the least squares approximating line
@@ -646,18 +686,21 @@
           </statement>
         </exercise>
 
-        <exercise  xml:id="8-1-6">
+        <exercise  xml:id="exer-8-1-6">
           <statement>
             <p>
               Find the least squares approximating quadratic
               <m>y=a_0+a_1x+a_2x^2</m> for each of the following sets of data points.
             </p>
+
             <p>
               (i) <m>. (-2, 1), (0, 0), (3, 2), (4, 3)</m>
             </p>
+
             <p>
               (ii) The table gives the worldwide cumulative HIV infections in millions.
             </p>
+
             <tabular>
               <row bottom="minor">
                 <cell></cell>

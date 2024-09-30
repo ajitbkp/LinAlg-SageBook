@@ -29,6 +29,7 @@ column vector.
         <p> 
             We list the properties of vector addition and scalar multiplication in <m>\R^n</m> which can be easily proved. I encourage the readers to prove them.
         </p>
+
         <p>(i) for all <m>x,y\in \R^n</m>, <m>x+y=y+x</m>. (<alert>Commutative property</alert>)</p>
         <p>(ii) for all <m>x,y,z\in \R^n</m>, <m>x+(y+z)=(x+y)+z</m>. (<alert>Associative property</alert>)</p>
     <p>	(iii) The zero vector <m>\overline{0}=(0,0,\ldots,0)</m> has the property, for all 
@@ -43,6 +44,7 @@ column vector.
      
     </statement>
 </proposition>
+
 <p> The set <m>\R^n</m> with addition and scalar multiplication along with the above eight properties is called a <alert>vector space</alert> over <m>\R</m>.
 </p>
 
@@ -64,7 +66,7 @@ column vector.
 <m>V</m> conatins the zero vector. In particular, if <m>V</m> is non-empty and a vector 
 subspace then <m>0\in V</m>.
 </note>
-<p>
+
     <example>
         <title>Examples of vector subspaces in <m>\R^n</m></title>
         <p>(i) <m>\{0\}</m> is a vectors subspace of <m>\R^n</m></p>
@@ -74,8 +76,7 @@ subspace then <m>0\in V</m>.
         
         
     </example>
-</p>
-<p>
+
     <example>
         <title>Solution of homogeneous system as vector subpace</title>
         <p>
@@ -86,8 +87,8 @@ subspace then <m>0\in V</m>.
         </p>
        
     </example>
-</p>
-<p>
+
+
 <definition xml:id="def-sumofsets">
     <statement>
         <p>
@@ -153,10 +154,10 @@ subspace then <m>0\in V</m>.
         </ol>
     </p>
 </example>
+
     <example>
         <p>
-      
-     Let <m>W_1</m> and <m>W_2</m> be two subspaces of <m>\R^n</m>. Can we generate 
+           Let <m>W_1</m> and <m>W_2</m> be two subspaces of <m>\R^n</m>. Can we generate 
      more subspaces using <m>W_1</m> and <m>W_2</m>? Natural thing to look at are sunsets 
      <p> (i) <m>W_1\cap W_2</m>, </p> 
      <p> (ii)  <m>W_1\cup W_2</m> and </p> 
@@ -167,6 +168,5 @@ subspace then <m>0\in V</m>.
       </p>
      </p>
     </example>
-</p>
 
 </section>

@@ -14,7 +14,7 @@
 </p>
 </introduction>
 
-  <definition>
+  <definition xml:id="def-orthogonal-set">
     <statement>
       <p>
         A set of vectors <m>\{v_1,\ldots,
@@ -25,10 +25,12 @@
       </p>
     </statement>
   </definition>
+
   <p>
     If <m>x=(x_1,\ldots, x_n) \in \R^n</m>,
     then <m>\norm{x}^2: =x_1^2+\cdots+x_n^2</m>.
   </p>
+  
   <exercise xml:id="orth-ex2-1">
     <statement>
       <p>
@@ -53,6 +55,7 @@
       </p>
     </statement>
   </exercise>
+
   <exercise>
     <statement>
       <p>
@@ -61,7 +64,8 @@
       </p>
     </statement>
   </exercise>
-  <definition>
+
+  <definition xml:id="def-orthonormal-basis">
     <statement>
       <p>
         A basis <m>\beta =\{u_1,\ldots,
@@ -71,13 +75,14 @@
       </p>
     </statement>
   </definition>
+
   <exercise>
     <statement>
       <ol>
         <li>
           <p>
             The standard basis <m>{\cal E} = \{e_1,\cdots,
-            e_n\}</m> is an orthogonal basis of <m>\R^n</m>.
+            e_n\}</m> is an orthonormal basis of <m>\R^n</m>.
           </p>
         </li>
         <li>
@@ -100,15 +105,17 @@
     </statement>
   </exercise>
 
-
+<p>
   <h2> <alert>What is an advantage of having an orthonormal basis?</alert></h2>
+</p>
+
   <p>
-    Let <m>\beta =\{u_1,\ldots, u_n\}</m> be an orthonormal basis of <m>\R^n</m>.
-    Let <m>x\in \R^n</m>.
-    Then there exists scalars <m>\alpha_1,\ldots, \alpha_n</m> such that <m>x=\alpha_1u_1+\cdots +\alpha_nu_n</m>.
-    Then is is easy to check that <m>\alpha_i = x\cdot u_i</m> for all <m>i</m>.
-    This is advantage of having an orthonormal basis.
+    Let <m>\beta =\{u_1,\ldots, u_n\}</m> be an orthonormal basis of <m>\R^n</m> and <m>x\in \R^n</m>.
+    Then there exist scalars <m>\alpha_1,\ldots, \alpha_n</m> such that <m>x=\alpha_1u_1+\cdots +\alpha_nu_n</m>.
+    Then is is easy to check that <m>\alpha_i = x\cdot u_i</m> for all <m>i</m>. In particular, the scalars <m>\alpha_i</m> can 
+    be explicitly written in terms of <m>u</m> and <m>u_i</m>. This is advantage of having an orthonormal basis.
   </p>
+
   <exercise>
     <statement>
       <p>

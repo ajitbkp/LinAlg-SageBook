@@ -41,11 +41,13 @@ various concepts related to linear transformations that we have learned in this 
 </p>
     </p>
 </introduction>
+
 <example>
  <title>Linear transformaation defined by a matrix.</title>
  <p>
     Let us define a linear tarnsformatrion defined by a matrix <m>A</m> over a rational numbers.
  </p>
+
   <sage>
     <input>
         A = matrix(QQ, [[2, -1,3], [-2,3, 5]])
@@ -61,7 +63,10 @@ various concepts related to linear transformations that we have learned in this 
         Codomain: Vector space of dimension 2 over Rational Field   
     </output>
   </sage>  
+  <p>
   Clearly, here <m>T</m> is the matrix tranformatrion defined from <m>\Q^3</m> to <m>\Q^2</m>. We can find, the domain, codmain, parent, images, kernel, that is null space etc using the dot methods. Let us explore some of them. 
+  </p>
+
 <sage>
     <input>
     T.domain()
@@ -70,6 +75,7 @@ various concepts related to linear transformations that we have learned in this 
         Vector space of dimension 3 over Rational Field
     </output>
 </sage>
+
 <sage>
     <input>
     T.codomain()
@@ -78,6 +84,7 @@ various concepts related to linear transformations that we have learned in this 
         Vector space of dimension 2 over Rational Field
     </output>
 </sage>
+
 <sage>
     <input>
         T.image()
@@ -89,7 +96,9 @@ various concepts related to linear transformations that we have learned in this 
         [0 1]
     </output>
 </sage>
-This returns a basis matrix of the image along with the dimension of the image space.
+
+<p> This returns a basis matrix of the image along with the dimension of the image space.  </p>
+
 <sage>
     <input>
         T.matrix(side='right')
@@ -102,6 +111,7 @@ This returns a basis matrix of the image along with the dimension of the image s
     Note that if we do not use the option side='right', we do not get the correct matrix as the 
     defualt is side='left'
 </sage>
+
 <sage>
     <input>
         T.parent()
@@ -110,7 +120,8 @@ This returns a basis matrix of the image along with the dimension of the image s
         Set of Morphisms (Linear Transformations) from Vector space of dimension 3 over Rational Field to Vector space of dimension 2 over Rational Field
     </output>
 </sage>
-We can find image of any vector using the following Sage syntax.
+<p> We can find image of any vector using the following Sage syntax.  </p>
+
 <sage>
     <input>
         v = vector(QQ,[1,2,3])
@@ -120,6 +131,7 @@ We can find image of any vector using the following Sage syntax.
         (9, 19)
     </output>
 </sage>
+
 <sage>
     <input>
         T.kernel()
@@ -130,7 +142,9 @@ We can find image of any vector using the following Sage syntax.
         [   1  8/7 -2/7]
     </output>
 </sage>
-If we take a vector <m>w</m> in the range space of <m>T</m>, we can find a representative of the <m>T^{-1}(w)</m>.
+
+<p> If we take a vector <m>w</m> in the range space of <m>T</m>, we can find a representative of the <m>T^{-1}(w)</m>.  </p>
+
 <sage>
     <input>
         w = vector(QQ,[2,-10])
@@ -140,7 +154,9 @@ If we take a vector <m>w</m> in the range space of <m>T</m>, we can find a repre
         (-1, -4, 0) 
     </output>
 </sage>
-Note that the same linear transformation, we can also define as follows.
+
+<p> Note that the same linear transformation, we can also define as follows.  </p>
+
 <sage>
     <input>
         T1 = linear_transformation(QQ^3,QQ^2,A,side='right')
@@ -164,6 +180,7 @@ Note that the same linear transformation, we can also define as follows.
     <m>w_1,w_2</m> lie in the image space of <m>T</m>. Let <m>v_1\in T^{-1}(w_1)</m> and <m>v_2\in T^{-1}(w_1)</m>. 
     Show that <m>v_1, v_2</m> are linearly independent in <m>\Q^3</m>.  Can you  generalize this result and prove the 
     same?
+</p>
     <sage>
         <input>
         ## Sage Practice Area
@@ -176,7 +193,6 @@ Note that the same linear transformation, we can also define as follows.
             
         </output>
     </sage>
-</p>
 </problem>
 
 <example>
@@ -190,7 +206,7 @@ Note that the same linear transformation, we can also define as follows.
             x_{1} + 6 \, x_{2} + 16 \, x_{3} - 5 \, x_{4}
             \end{array}\right) 
         </me> and explore this in Sage.
-        <p>
+    </p>
             <sage>
                 <input>
                     V = QQ^4
@@ -214,8 +230,7 @@ Note that the same linear transformation, we can also define as follows.
                     Codomain: Vector space of dimension 4 over Rational Field 
                 </output>
             </sage>
-        </p>
-        <p>
+       
             <sage>
                 <input>
                     print('The image of T is:\n')
@@ -238,8 +253,7 @@ Note that the same linear transformation, we can also define as follows.
                     [ 1 -1  0 -1]  
                 </output>
             </sage>
-        </p>
-        <p>
+       
             <sage>
                 <input>
                     T.matrix(side='right')
@@ -251,9 +265,10 @@ Note that the same linear transformation, we can also define as follows.
                     [  1   6  16  -5]
                 </output>
             </sage>
-        </p>
-        Next we find the matrix of <m>T</m> with respect to a bases <m>\beta</m> on the domain and 
-        a basis <m>\gamma</m> on the codomain. 
+       
+       <p>  Next we find the matrix of <m>T</m> with respect to a bases <m>\beta</m> on the domain and 
+        a basis <m>\gamma</m> on the codomain.  </p>
+
         <sage>
             <input>
                 ## Basis of domain,say, B=[u1,u2,u3,u4]
@@ -271,6 +286,7 @@ Note that the same linear transformation, we can also define as follows.
                 ]
             </output>
         </sage>
+        
         <sage>
             <input>
                 ## Basis of codomain, say,C=[w1,w2,w3,w4]
@@ -288,13 +304,15 @@ Note that the same linear transformation, we can also define as follows.
             ]
             </output>
         </sage>
-        Now we define a subspace <m>V_1</m> of <m>V</m> with B as a basis 
+        
+        <p> Now we define a subspace <m>V_1</m> of <m>V</m> with B as a basis 
         and a subspace <m>W_1</m> of <m>W</m> with C as a basis. After that 
         we rectrict T on to <m> V_1</m> on its domain and <m>W_1</m> on its codomain. 
         We call this restriction as <m>T_1</m>. The matrix of <m>T_1</m> is the matrix of 
         <m>T</m> with respect to <m>\beta</m> on domain and <m>\gamma</m> on codmain, that is 
-        <m>[T]_\beta^\gamma</m>.
-        <p>
+        <m>[T]_\beta^\gamma</m>. 
+    </p>
+
             <sage>
                 <input>
                     V1 = V.subspace_with_basis(B)
@@ -309,10 +327,10 @@ Note that the same linear transformation, we can also define as follows.
                     [  464/175    18/175      -2/5   811/175]  
                 </output>
             </sage>
-            Note that the matrix <m>[T]_\beta^\gamma</m> can also be obtained by
+         <p>    Note that the matrix <m>[T]_\beta^\gamma</m> can also be obtained by
             defining a column matrix whose columns are <m>w_1,w_2,w_3,w_4, T(v_1), T(v_2), T(v_3), T(v_4)</m>, then applying RREF and extracting the last four columns.  
                 </p>
-                <p>
+            
                 <sage>
                     <input>
                         M = column_matrix([w1,w2,w3,w4,T(u1),T(u2),T(u3),T(u4)]).rref()
@@ -326,11 +344,12 @@ Note that the same linear transformation, we can also define as follows.
                         [  464/175    18/175      -2/5   811/175] 
                     </output>
                 </sage>
-                </p>
+        
 
                 <p>
                 The image of <m>T</m> can also be obtained by using RREF  of the matrix whose rows 
-                are vectors <m>T(u1),T(u2),T(u3),T(u4)</m>. 
+                are vectors <m>T(u1),T(u2),T(u3),T(u4)</m>.   </p>
+
                 <sage>
                     <input>
                     column_matrix([T(u1),T(u2),T(u3),T(u4)]).T.rref()
@@ -342,15 +361,18 @@ Note that the same linear transformation, we can also define as follows.
                         [0 0 0 0]
                     </output>
                 </sage>
-                Note that the first three rows of this is sage as what we get using <c>T.image()</c>.
+                
+                <p> Note that the first three rows of this is sage as what we get using <c>T.image()</c>.
                 </p>
+
                 <p>
                     <alert>Reshufle the basis elements.</alert> Let us see what happens to the matrix 
                     of a linear transformation when we reshuffle the elemnts of a basis on domain and codomain.
                     Let us find the matrix of the abobe linear transformation with resepect the basis 
                     <m>\beta_1 =\{u_1,u_3,u_2,u_4\}</m> of the domain and <m>\gamma</m> of the codomain. Here we have interchanged 2nd and 3rd basis elements of <m>\beta</m>.  You may also explore with other interchanges.
                 </p>
-                    <p>
+                
+                
                         <sage>
                             <input>
                                 ## interchanging 2nd and 3rd elements of domain basis
@@ -366,10 +388,10 @@ Note that the same linear transformation, we can also define as follows.
                                 [  464/175      -2/5    18/175   811/175]    
                             </output>
                         </sage>
-                        Clearly in this case 2nd and 3rd columns of <m>[T]_\beta^\gamma</m> are interchanged.
+                        <p> Clearly in this case 2nd and 3rd columns of <m>[T]_\beta^\gamma</m> are interchanged.
                     </p>
             
-                <p>
+            
                     <sage>
                         <input>
                             ## interchanging 2nd and 3rd elements of codomain basis
@@ -385,10 +407,9 @@ Note that the same linear transformation, we can also define as follows.
                             [  464/175    18/175      -2/5   811/175]  
                         </output>
                     </sage>
+                 <p>
                     Clearly in this case 2nd and 3rd rows of <m>[T]_\beta^\gamma</m> are interchanged.
                 </p>
-    
-    </p>
 
 </example>
 

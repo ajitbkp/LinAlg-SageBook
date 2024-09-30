@@ -3,6 +3,6 @@
   <title>Least Square Problems</title>
   
 
-  <xi:include href="sec8-0-LSTSQ.ptx" />
+  <xi:include href="sec8-1-LSTSQ.ptx" />
   
 </chapter>

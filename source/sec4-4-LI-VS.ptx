@@ -3,14 +3,12 @@
 <section xml:id="sec4-3-LI-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
         <title>Linear dependence and independence</title>
      
-          <p>
-            
-         
         <p>
           Linear dependence and linear independence set of vectors are defined exactly in a same way as we defined in 
           <m>\R^n</m>. 
         </p>
         <definition xml:id="LD-VS">
+          <title>Linear Dependence</title>        
           <statement>
             <p>
               A set of vectors <m>\{v_1,v_2,\ldots,
@@ -24,58 +22,78 @@
             </p>
           </statement>
         </definition>
+
         <definition xml:id="LI-VS">
+          <title>Linear Dedependence</title>
           <statement>
             <p>
               A set of vectors <m>S=\{v_1,v_2,\ldots,
               v_k\}\subset V</m> is said to be linearly independent if it is not linearly dependent.
             </p>
+          </statement>
+        </definition>
+
+        <p>
+          Let us understand this notion in order to get a working definition.
+          Let us write the linearly dependent definition using quantifiers.
+        </p>
+        <p>
+          A set <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly dependent if
+          <me>
+            \exists (\alpha_1,\ldots,\alpha_k)\in \R^n\setminus \{0\} (\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0)
+          </me>.
+        </p>
+        <p>
+          <m>S</m> is linearly independent is same as negating the above statement.
+          Thus
+        </p>
+        <p>
+          A set <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly independent if
+          <me>
+            \forall(\alpha_1,\ldots,\alpha_k)\in \R^n\setminus \{0\}(\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k\neq 0)
+          </me>.
+        </p>
+        <p>
+          The contra positive of the above statement state that A set
+          <m>S=\{v_1,v_2,\ldots,
+          v_k\}\subset V</m> is linearly independent whenever
+          <m>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0</m> implies <m>\alpha_1=\cdots=\alpha_k=0</m>.
+        </p>
+
+        <p>
+          Thus we have the following equivalent definition of a linearly independent set. 
+        </p>
+
+        <definition xml:id="def-LI-2">
+          <statement>
             <p>
-              Let us understand this notion in order to get a working definition.
-              Let us write the linearly dependent definition using quantifiers.
-            </p>
-            <p>
-              A set <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly dependent if
-              <me>
-                \exists (\alpha_1,\ldots,\alpha_k)\in \R^n\{0\} (\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0)
-              </me>.
-            </p>
-            <p>
-              <m>S</m> is linearly independent is same as negating the above statement.
-              Thus
-            </p>
-            <p>
-              A set <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly independent if
-              <me>
-                \forall(\alpha_1,\ldots,\alpha_k)\in \R^n\{0\}(\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k\neq 0)
-              </me>.
-            </p>
-            <p>
-              The contra positive of the above statement state that A set
               <m>S=\{v_1,v_2,\ldots,
-              v_k\}\subset V</m> is linearly independent whenever
-              <m>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k\neq 0</m> implies <m>\alpha_1=\cdots=\alpha_k=0</m>.
+                v_k\}\subset V</m> is linearly independent whenever
+                <m>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k= 0</m> implies <m>\alpha_1=\cdots=\alpha_k=0</m>.
             </p>
           </statement>
         </definition>
-        <problem>
+
+        <exercise>
           <statement>
             <p>
               If <m>0\in S</m>, then <m>S</m> is linearly dependent.
             </p>
           </statement>
-        </problem>
-        <problem>
+        </exercise>
+
+        <exercise>
           <statement>
             <p>
               (i) If <m>0\neq v\in V</m>, then <m>\{v\}</m> is linearly independent.
             </p>
             <p>
-              (iv) <m>\{u,v\}\subset V</m> is linearly dependent if one is scalar multiple of the other.
+              (iv) <m>\{u,v\}\subset V</m> is linearly dependent if one of them is scalar multiple of the other.
             </p>
           </statement>
-        </problem>
-        <problem>
+        </exercise>
+
+        <exercise>
           <statement>
             <p>
               (i) Let <m>V={\cal P}_n(\R)</m>.
@@ -85,8 +103,9 @@
               (ii) Check if <m>\{1+x+x^2+x^3,x+x^3,x^2+x^3,x^3\}</m> is linearly independent in <m>{\cal P}_3(\R)</m>.
             </p>
           </statement>
-        </problem>
-        <problem>
+        </exercise>
+
+        <exercise>
           <statement>
             <p>
               Let <m>A\in M_n({\R})</m> such that <m>A^k=0</m> and <m>A^{k-1}\neq 0</m>.
@@ -97,8 +116,9 @@
               is linearly independent in <m>M_n(\R)</m>.
             </p>
           </statement>
-        </problem>
-        <problem>
+        </exercise>
+
+        <exercise>
           <statement>
             <p>
               Let <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly independent set.
@@ -107,13 +127,14 @@
                 v=\alpha_1 v_1+\cdots \alpha_k v_k=\beta_1 v_1+\cdots \beta_k v_k
               </me>
               for scalars, <m>\alpha_i</m>'s and <m>\beta_j</m>'s.
-              Then <m>\alpha_1\beta_1=\cdots=\alpha_k=\beta_k</m>.
+              Then <m>\alpha_1=\beta_1,\cdots=\alpha_k=\beta_k</m>.
               In other words,
               every vector in <m>V</m> can be written in a unique way as a linear combination of the elements from <m>S</m>.
             </p>
           </statement>
-        </problem>
-        <problem>
+        </exercise>
+
+        <exercise>
           <statement>
             <p>
               Let <m>u,v,w</m> be three vectors in <m>V</m>.
@@ -121,9 +142,6 @@
               <m>\{u+v,u+w,v+w\}</m> is linearly independent.
             </p>
           </statement>
-        </problem>
-      </p>
-  
-  
+        </exercise>
       </section>
     

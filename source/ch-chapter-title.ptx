@@ -62,6 +62,7 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
 \end{pmatrix}
 </men>
       </p>
+
     <definition xml:id="def-equivalent-systems">
       <statement>
         <p>
@@ -72,6 +73,7 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
              
         </p>
       </statement>
+
     </definition>
      <p>
       We will define some basic operations by which a system is
@@ -84,6 +86,7 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
         planes) has a common point of intersection.
         
      </p>
+     
      <remark>
       Let  <m>A</m> be <m>n\times n</m> real matrix whose columns are 
       <m> a_1,\ldots, a_n</m> and <m>x=\begin{pmatrix}x_1\amp\cdots \amp x_n\end{pmatrix}^T</m>. 

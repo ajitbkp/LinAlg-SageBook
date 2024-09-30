@@ -95,6 +95,7 @@
     <p>
         Every nonzero <m>m \times n</m> matrix <m>A</m> is row equivalent to a matrix which is a row echelon matrix.
 We employ the following procedures to convert a matrix into a row echelon form:
+    </p> 
 <ol>
     <li>
         <p>
@@ -122,7 +123,7 @@ We employ the following procedures to convert a matrix into a row echelon form:
         </p>
     </li>
 </ol>
-    </p>
+ 
 
     <example>
      <p>
@@ -132,7 +133,7 @@ We employ the following procedures to convert a matrix into a row echelon form:
             2\amp    4 \amp   1  
             \end{pmatrix}</m>  to row echelon form.
         </p>
-</example>
+
 
 <solution>
     <p>
@@ -181,12 +182,11 @@ We employ the following procedures to convert a matrix into a row echelon form:
                 \end{pmatrix}
                 </me>
       
-            </p>
-         </solution>
- <p>
+
+    
     Sage has inbulit method `A.rref()' to convert the matrix into reduced row echelon form. 
     You may also try 'A.echelonize()' and 'A.echelon_form()'
-    
+     
     <sage>
         <input>
             A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
@@ -195,7 +195,7 @@ We employ the following procedures to convert a matrix into a row echelon form:
        
         </output>
     </sage>
-    <p>
+    
         <sage>
             <input>
                 A.rref()
@@ -208,11 +208,14 @@ We employ the following procedures to convert a matrix into a row echelon form:
             </output>
         </sage>
     </p>
- </p>
-   
+
+    </solution>
+
+</example>
+
  <p>
     <alert>Step by Step method to find RREF of a matrix </alert>
- </p>
+ 
  <sage>
     <input>
         #A=matrix(QQ, [[0,-2,1],[6, -0, 3],[4, 1, 8],[14, 10, -8]])
@@ -263,6 +266,7 @@ We employ the following procedures to convert a matrix into a row echelon form:
         
     </output>
  </sage>
+</p>
 
 </subsection>
 
@@ -376,7 +380,7 @@ above and work from top to bottom.
         [2 4 1|3]
     </output>
  </sage>
- <p>
+ 
     <sage>
         <input>
         Aug.rref()
@@ -387,8 +391,9 @@ above and work from top to bottom.
             [    0     0     1|  3/7]
         </output>
     </sage>
- </p>
+ 
     </example>
+
 <example xml:id="row-echelon-eg2">
     <p>
     Solve the following system of linear
@@ -401,9 +406,9 @@ above and work from top to bottom.
 </md>
 using Gaussian elimination method. Show that this system has infinitely many solutions.
 </p>
-<p>
+
     <solution>
-        <p>
+        
             <sage>
                 <input>
             A = matrix(QQ,[[1,1,1,-1],
@@ -421,8 +426,8 @@ Aug
                     [ 0 -1  1 -1| 1]
                 </output>
             </sage>
-        </p>
-        <p>
+        
+        
             <sage>
                 <input>
                     Aug.rref()
@@ -434,13 +439,14 @@ Aug
                     [ 0  0  0  0| 0]
                 </output>
             </sage>
-        </p>
+        
     Since last row zero, it represents the equation <m>0=0</m>, 
     in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.
     </solution>
-</p>
+
 </example>
-<p>
+
+
     <example>
         <p>
         Solve the following system using the Gaussian elimination method and show that it has no solution.
@@ -450,10 +456,9 @@ Aug
 <mrow>	2x+2y \amp  =   0   </mrow>
 </md>
 </p>
-    </example>
-</p>
+ 
 <solution>
-    <p>
+    
         <sage>
             <input>
             A = matrix([[1,3],[2,1],[2,2]])
@@ -467,8 +472,8 @@ Aug
                 [ 2  2| 0]    
             </output>
         </sage>
-    </p>
-    <p>
+    
+    
         <sage>
             <input>
             Aug.rref()
@@ -479,11 +484,14 @@ Aug
                 [0 0|1] 
             </output>
         </sage>
-    </p>
+    
     <p>
         Since last row represents the equation <m>0=1</m>, the system has no solution.
     </p>
 </solution>
+
+</example>
+
 </subsection>
     
 <subsection xml:id="subsec-Gauss-Jordan-Method">
@@ -494,14 +502,19 @@ elimination method. In this method we continue the the row elimination till we r
 row-reduced matrix of <m>A</m> to identity matrix.
     </p>
 
-    <p>
+
         <example> 
             <p> Solve the system <m>Ax=b</m>  using the Gauss-Jordan elimination method, where
                        <me> A= \begin{pmatrix} 1\amp 0\amp 5\amp 0\\-1\amp 4\amp 1\amp 0\\3\amp 0\amp 4\amp 1\\-2\amp 1\amp 1\amp 3 \end{pmatrix} \text{ and } 
                 b=\begin{pmatrix}1\\4\\3\\5\end{pmatrix}
             </me>
                 </p>
-            <p>
+            <solution>
+                <p>
+                    
+         Let us solve this in Sage.
+        </p>
+    
                 <sage>
                     <input>
                         A = matrix(QQ,[[1,0,5,0],[-1,4,1,0],[3,0,4,1],[-2,1,1,3]])
@@ -516,12 +529,12 @@ row-reduced matrix of <m>A</m> to identity matrix.
                         [      0       0       0       1|253/170]
                     </output>
                 </sage>
-            </p>
+            
             <p>
                 Clearly the solution of the above system is 
                 <me>x_1=11/34, x_2 = 89/85, x_3 = 23/170, x_4=253/170</me>.
                 We can also solve the above system using the 'A.solve_right(b)' command in Sage.
-                <p>
+            </p>
                     <sage>
                         <input>
                             A.solve_right(b)
@@ -530,10 +543,10 @@ row-reduced matrix of <m>A</m> to identity matrix.
                             (11/34, 89/85, 23/170, 253/170)
                         </output>
                     </sage>
-                </p>
-            </p>
-
+                
+        
+                </solution>
         </example>
-    </p>
+
 </subsection>
 </section>

@@ -5,10 +5,12 @@
 <introduction>
   <p>
     In this section we define the notion of eigenvalues and eigenvectors and look at some of its properties.
+    It has several real life applications.   We shall deal with some of them in later sections.
   </p>
 </introduction>   
 
-        <definition>
+        <definition xml:id="def-eigenvector"><title>Eigenvalues and Eigenvectors</title>
+               
             <statement>
               <p>
                 Let <m>T</m> be a linear transformation from <m>\mathbb{R}^n\to \R^n</m>.
@@ -30,7 +32,7 @@
                 We can define eigenvalue of <m>A</m> as eigenvalue of <m>T_A</m>.
                 In particular, real number is called an <em>eigenvalue</em>
                 of <m>A</m> if there exists a non zero vector <m>v\in \R^n</m>
-                (called an<em> eigenvector</em>
+                (called an <em> eigenvector</em>
                 corresponding to eigenvalue <m>\lambda</m>)
                 if <m>Av=\lambda v</m>.
               </p>
@@ -51,6 +53,16 @@
                 Hence <m>v</m> is also an eigenvector and <m>\lambda = 2</m> is an eigenvalue.
               </p>
             </statement>
+          </example>
+
+          <example>
+          <statement>
+            <p>
+              If <m>T</m> is an identity transformation from <m>\R^n\to \R^n</m>, then 
+              every nonzero vector is an eigenvector corresponding the the eiegenvalue 1. 
+              The same is true for <m>n\times n </m>  identity matrix.
+            </p>
+          </statement>
           </example>
 
           <example>
@@ -119,7 +131,7 @@
               <p>
                 Also <m>A(e_1-e_2)=0</m>.
                 Hence <m>0</m> is an eigenvalue and
-                <m>e_1-e_2=\begin{pmatrix}1 \\-1\\0 \end{pmatrix}</m> is an eigenvectors w.r.t. eigenvalue 0.
+                <m>e_1-e_2=\begin{pmatrix}1 \\-1\\0 \end{pmatrix}</m> is an eigenvector corresponding to the eigenvalue 0.
                 Also, <m>e_1-e_3</m> and <m>e_2-e_3</m> are also eigenvectors corresponding to the eigenvalue 0.
               </p>
               <p>
@@ -136,7 +148,7 @@
             <statement>
               <p>
                 Let <m>A = \begin{pmatrix}1 \amp t \amp t\\ t \amp 1 \amp t\\t \amp t \amp 1 \end{pmatrix}</m>.
-                What are eigenvalues and eigenvectors of <m>A</m>?
+                What are eigenvalues of <m>A</m>?
               </p>
               <p>
                 The trace of <m>A</m> is 3.
@@ -223,7 +235,7 @@
             </statement>
           </example>
 
-          <definition>
+          <definition xml:id="def-eigenspace"><title>Eigenspace</title>         
             <statement>
               <p>
                 Let <m>A</m> an <m>n\times n</m> real matrix and
@@ -234,10 +246,10 @@
                 </me>
                 the collection of all eigenvectors of <m>A</m> corresponding to <m>\lambda</m> is a subspace of <m>A</m>,
                 called the <em>eigenspace of <m>A</m></em>.
-                The dimension of <m>E_\lambda</m> is called the {geometric multiplicity of <m>A</m>.}
+                The dimension of <m>E_\lambda</m> is called the <em>geometric multiplicity</em> of <m>A</m>.
               </p>
               <p>
-                Let <m>\det{x I -A}=(x-\lambda_1)^{m_1}(x-\lambda_21)^{m_2}\cdots (x-\lambda_k)^{m_k}</m>.
+                Let <m>\det{(x I -A)}=(x-\lambda_1)^{m_1}(x-\lambda_21)^{m_2}\cdots (x-\lambda_k)^{m_k}</m>.
                 Then <m>\lambda_i</m> are eigenvalue of <m>A</m> with multiplicity <m>m_i</m>,
                 called the <em>algebraic multiplicity</em> of <m>\lambda_i</m>.
               </p>
@@ -250,7 +262,8 @@
               That is, if <m>m</m> is the geometric multiplicity of <m>\lambda</m> then <m>m\leq \dim{(E_\lambda)}</m>.
             </p>
           </remark>
-          <exercise xml:id="5-1-11">
+
+          <exercise>
             <statement>
               <p>
                 The geometric multiplicity of an eigenvalue <m>\lambda</m> is the nullity of
@@ -264,12 +277,12 @@
               <p>
                 Consider the matrix <m>A=\begin{pmatrix}-1\amp  1 \amp  0\\0 \amp  -1 \amp  1\\0 \amp  0 \amp  -1 \end{pmatrix}</m>.
                 It is easy to check that <m>\det{(xI-A)}=(x+1)^3</m>.
-                That is <m>A</m> has only one eigenvalue of
+                That is, <m>A</m> has only one eigenvalue of
                 <m>\lambda =-1</m> of geometric multiplicity 3.
                 It is easy to see that <m>e_3=(0,0,1)</m> is an eigenvector corresponding to <m>\lambda=-1</m>.
                 We have
                 <me>
-                  A -\lambda I = \begin{pmatrix}0\amp  1 \amp  0\\0 \amp   \amp  1\\0 \amp  0 \amp  0 \end{pmatrix}
+                  A -\lambda I = \begin{pmatrix}0\amp  1 \amp  0\\0 \amp  0 \amp  1\\0 \amp  0 \amp  0 \end{pmatrix}
                 </me>.
                 It is easy to see that nullity of <m>A -\lambda I</m> is 1.
                 Hence the geometric multiplicity of <m>\lambda</m> is 1 where as its algebraic multiplicity is 3.
@@ -363,7 +376,7 @@
               </p>
               <p>
                 It is easy to the characteristic polynomial of <m>A</m> is given by
-                <m>\lambda^3-\lambda^2-4\lambda=4</m> and <m>\lambda=-2, 1, 2</m>.
+                <m>\lambda^3-\lambda^2-4\lambda+4</m> and <m>\lambda=-2, 1, 2</m>.
                 Then eigenvalues of <m>B</m> are given by
                 <me>
                   \{(-2)^3-3\times (-2)+1, 1^3-3\times 1+1, 2^3-3\times (2)+1\} =\{-1, -1, 3\}
@@ -371,6 +384,12 @@
               </p>
             </statement>
           </example>
+          <p>
+            In genegarl, let <m> f(x)=\alpha_0+\alpha_1 x+\alpha_2 x^2+\cdots+\alpha_kx^k</m> be a 
+            polynomial of degree <m>k</m> and <m>A</m> be an <m>n\times n</m> ral matrix. Then  we can define 
+            <m> f(A)=\alpha_0 I+\alpha_1 A+\alpha_2 A^2+\cdots+\alpha_k A^k</m>. If <m>\lambda</m> is an eigenvalue of 
+            <m>A</m>, theh <m>f(\lambda)</m> is an eigenvalue of <m>f(A)</m>.
+          </p>
           <theorem>
             <statement>
               <ol>
@@ -387,6 +406,7 @@
               </ol>
             </statement>
           </theorem>
+
           <proof>
             <p>
               (a) Let <m>\lambda</m> be an eigenvalues of <m>A</m> and <m>v</m>,
@@ -404,6 +424,7 @@
               <m>\overline{v}^Tv</m> are scalars and that <m>\overline{v}^Tv</m> is a real number.
               Hence the behavior of <m>\lambda</m> is determined by <m>\overline{v}^TAv</m>.
             </p>
+
             <p>
               If <m>A</m> is a herminitan matrix then <m>\overline{A}=A^T</m>,
               also <m>\overline{v}^TAv</m> is scalar,
@@ -421,7 +442,8 @@
               Which show <m>\lambda</m> is either purely imaginary of zero.
             </p>
           </proof>
-          <theorem>
+          
+          <theorem xml:base="thm-Cayley-Hamilton">
             <title>Cayley-Hamilton Theorem</title>
             <statement>
               <p>
@@ -431,6 +453,7 @@
               </p>
             </statement>
           </theorem>
+          
           <example>
             <statement>
               <p>
@@ -467,7 +490,7 @@
               <p>
                 We can also find higher powers of a matrix,
                 using the Cayley-Hamilton theorem.
-                For example multiplying bu <m>A</m> to the equation,
+                For example multiplying by <m>A</m> to the equation,
                 <m>A^3-A^2-4A+4I=0</m>, we get <m>A^4-A^3-4A^2+4A=0</m>,
                 from this we have
                 <me>
@@ -479,7 +502,8 @@
               </p>
             </statement>
           </example>
-          <exercise xml:id="5-1-18">
+
+          <exercise>
             <statement>
               <p>
                 (i) Consider the matrix <m>A = \begin{pmatrix}3 \amp -2 \\-4\amp 3 \end{pmatrix}</m>.
@@ -493,19 +517,23 @@
               </p>
             </statement>
           </exercise>
-          <definition>
+          
+          <definition xml:id="def-spectral-radius">
+            <title>Spectral Radius</title>
+                       
             <statement>
               <p>
                 Let <m>A</m> an <m>n\times n</m> and <m>\lambda_i</m> for
-                <m>1\leq i\leq n</m> be eigenvalues of <m>A</m> then the spectral radius of <m>A</m> is define as <m>\rho(A):=\displaystyle\max_{1\leq i\leq n}\{ |\lambda_i| \}</m>.
+                <m>1\leq i\leq n</m> be eigenvalues of <m>A</m> then the <em>spectral radius</em> of <m>A</m> is define as <m>\rho(A):=\displaystyle\max_{1\leq i\leq n}\{ |\lambda_i| \}</m>.
               </p>
             </statement>
           </definition>
+
           <example>
             <statement>
               <p>
                 Let <m>A= \begin{pmatrix}0 \amp  -1\\1 \amp  0 \end{pmatrix}</m>.
-                Then the characteristics polynomial of <m>A</m> is <m>\det{xI-A}=x^2+1</m>.
+                Then the characteristics polynomial of <m>A</m> is <m>\det{(xI-A)}=x^2+1</m>.
                 Hence <m>x=\{i,-i\}</m> are roots of the characteristic polynomial.
                 Hence <m>i</m> and <m>-i</m> are eigenvalues of <m>A</m>.
                 Hence
@@ -515,6 +543,7 @@
               </p>
             </statement>
           </example>
+
           <example>
             <statement>
               <p>
@@ -528,7 +557,8 @@
               </p>
             </statement>
           </example>
-          <exercise xml:id="5-1-22">
+
+          <exercise>
             <statement>
               <p>
                 Find the spectral radius of
@@ -544,12 +574,13 @@
               <p>
                 Let <m>A</m> be an <m>n\times n</m> symmetric matrix.
                 Then <m>A</m> is said to be <em>positive definite</em>
-                if <m>x^TAx\gt 0</m> for all <m>x\in \R^n</m> and <m>x^TAx=0</m> if and only if <m>x=0</m>.
+                if <m>x^TAx\gt 0</m> for all <m>x\in \R^n\setminus \{0\}</m> and <m>x^TAx=0</m> if and only if <m>x=0</m>.
                 <m>A</m> is called <em>negative definite</em>
                 if <m>-A</m> is positive definite.
               </p>
             </statement>
           </definition>
+
           <example>
             <statement>
               <p>
@@ -571,6 +602,7 @@
               </p>
             </statement>
           </example>
+
           <example>
             <statement>
               <p>
@@ -584,30 +616,41 @@
               <p>
                 Thus if <m>x=\begin{pmatrix}1\\-1 \end{pmatrix}</m> then <m>x^TAx=-2\lt 0</m>.
                 Hence it is not a positive definite.
-                Its easy to see that <m>A</m> is alos not negative definite.
+                Its easy to see that <m>A</m> is also not negative definite.
               </p>
             </statement>
           </example>
-          <p>
-            <em>We have the following facts about positive definite matrices.</em>
-            <ol>
-              <li>
-                <p>
-                  All eigenvalues of a positive definite matrix are real and positive.
-                </p>
-              </li>
-              <li>
-                <p>
-                  Eigenvalues of a negative definite matrix are real and negative.
-                </p>
-              </li>
-              <li>
+          
+          <exercise>
+          <statement>
+            <p>
+              If <m>A</m> is a positive definite matrix then all its eigenvalues are positive.
+            </p>
+          </statement>
+          </exercise>
+
+         
+          <exercise>
+            <statement>
+              <p>
+                If <m>A</m> is a negative definite matrix then all its eigenvalues are negative.
+              </p>
+            </statement>
+            </exercise>
+
+            <p>
+            <em>We have the following facts about positive definite matrices.</em></p>
+
+            <theorem xml:id="thm-sylvyster">
+              <statement>
                 <p>
                   If <m>A</m> is a real symmetric matrix then <m>A</m> is positive definite if and only if all leading minor of <m>A</m> are positive.
                 </p>
-              </li>
-            </ol>
-          </p>
+              </statement>
+            </theorem>
+            
+            
+
           <example>
             <statement>
               <p>
@@ -622,404 +665,15 @@
               </p>
             </statement>
           </example>
-          <exercise xml:id="5-1-23">
+
+          <exercise>
             <statement>
               <p>
                 Let <m>A=\begin{pmatrix}2 \amp -1 \amp 0\\-1\amp 2\amp -1\\0\amp -1\amp 2 \end{pmatrix}</m>.
-                Show that <m>A</m> is positive definite using the above results.
+                Show that <m>A</m> is positive definite.
               </p>
             </statement>
           </exercise>
       
         </section>
-        <!--
-          <title>Diagonalization</title>
-          <definition>
-            <statement>
-              <p>
-                A matrix <m>A</m> is said to be <em>diagonalizable</em>
-                if there exists a non singular matrix <m>P</m> such that
-                <m>P^{-1}AP</m> is a diagonal matrix.
-                That is, <m>A</m> is similar to a diagonal matrix.
-              </p>
-            </statement>
-          </definition>
-          <example>
-            <statement>
-              <p>
-                Let <m>A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}</m> as in <xref ref="eigen_eg1">Example</xref>.
-                Define <m>P=\begin{pmatrix}1\amp 0\amp 8/7\\-1\amp 1\amp -5/7\\-1\amp 1\amp 1 \end{pmatrix}</m>,
-                whose columns are eigenvectors of <m>A</m>.
-              </p>
-              <p>
-                Check that <m>\det(P)=\dfrac{12}{7}</m> and <m>\text{ adj } (P)=\begin{pmatrix}12/7 \amp 8/7 \amp -8/7\\12/7 \amp 15/7\amp -3/7\\0 \amp -1 \amp 1 \end{pmatrix}</m>.
-                Hence <m>P^{-1}=\begin{pmatrix}1\amp 2/3 \amp -2/3\\1\amp 5/4\amp -1/4\\0\amp -7/4\amp 7/4 \end{pmatrix}</m>
-              </p>
-              <p>
-                Then it is easy to check that <m>P^{-1}AP=\begin{pmatrix}1\amp 0\amp 0\\0\amp 2\amp 0\\0\amp 0\amp -2 \end{pmatrix}</m>.
-              </p>
-              <p>
-                In this case we can find any power of <m>A</m> quite easily.
-                For example <m>A^n=P^{-1}\begin{pmatrix}1\amp 0\amp 0\\0\amp 2^n\amp 0\\0\amp 0\amp (-2)^n \end{pmatrix} P</m>.
-              </p>
-            </statement>
-          </example>
-          <example>
-            <statement>
-              <p>
-                Let <m>A=\begin{pmatrix}1 \amp 1\\0 \amp 1 \end{pmatrix}</m>.
-                Then 1 is a repeated eigenvalue of <m>A</m> with eigenvector <m>\begin{pmatrix}1\\ 0 \end{pmatrix}</m>.
-                It is easuy to see that <m>A</m> is non diagonalizable.
-              </p>
-            </statement>
-          </example>
-          <exercise>
-            <statement>
-              <p>
-                If <m>A=[a_{ij}]</m> has <m>n</m> distinct eigenvalues then <m>A</m> is diagonalizable.
-                In this case,
-                one can define <m>P</m> where columns of <m>P</m> are <m>n</m> eigenvectors of <m>A</m>.
-              </p>
-            </statement>
-          </exercise>
-          <theorem xml:id="thm_diag">
-            <statement>
-              <p>
-                A square matrix <m>A</m> of order <m>n</m> is diagonalizable if and only if <m>A</m> has <m>n</m> linearly independent eigenvectors.
-              </p>
-            </statement>
-          </theorem>
-          <proof>
-            <p>
-              Let <m>A</m> be diagonalizable,
-              and that there exists a non singular matrix <m>P</m> such that
-              <men xml:id="thm_diag_eq1">
-                P^{-1}AP=D=\diag(\lambda_1,\ldots,\lambda_n)
-              </men>
-            </p>
-            <p>
-              Let us write <m>P=[P_1,\ldots,P_n]</m> where <m>P_j</m> is the <m>j</m>-th column of <m>P</m>.
-              Then Eq.
-              <xref ref="thm_diag_eq1"></xref> implies
-              <me>
-                AP=P\diag(\lambda_1,\ldots,\lambda_n) </me> 
-                This implies 
-                <me>[AP_1,AP_2,\ldots,AP_n]=[\lambda_1P_1,\lambda_2P_2,\ldots,\lambda_nP_n]
-              </me>
-            </p>
-            <p>
-              Equivalently <m>AP_i=\lambda_iP_i</m> for <m>1\leq i\leq n</m>.
-              That is same as saying columns of <m>P</m> are eigenvectors of <m>A</m> with respect to eigenvalue <m>\lambda_i</m>.
-              This implies <m>A</m> has <m>n</m> linearly eigenvectors,
-              namely columns of <m>P</m>.
-            </p>
-            <p>
-              Conversely, let <m>A</m> have <m>n</m> linearly independent eigenvectors
-              <m>v_1, \ldots,
-              v_n</m> and that <m>Av_j=\lambda_jv_j</m>.
-              Define <m>P:=[v_1,v_2\ldots,v_n]</m> and <m>D:=\diag(\lambda_1,\ldots,\lambda_n)</m>.
-              Then
-              <me>
-                AP=[Av_1,Av_2,\ldots,Av_n]=[\lambda_1v_1,\lambda_2v_2,\ldots,\lambda_nv_n]=PD
-              </me>.
-            </p>
-            <p>
-              Hence <m>P^{-1}AP=D</m>.
-              Note that <m>P</m> has rank <m>n</m>,
-              which implies <m>P</m> is invertible.
-            </p>
-          </proof>
-          <corollary>
-            <statement>
-              <p>
-                If <m>A</m> is a square matrix of order <m>n</m> has <m>n</m> distinct eigenvalues then <m>A</m> is diagonalizable.
-              </p>
-            </statement>
-          </corollary>
-          <example>
-            <statement>
-              <p>
-                Let <m>A</m> be a <m>3\times 3</m> real matrix with eigenvalues
-                <m>\lambda_1=2,\lambda_2=1,\lambda_3=-1</m> and corresponding eigenvectors <m>v_1=\left(1,\,\frac{1}{3},\,-\frac{1}{3}\right),
-                v_2=\left(1,\,0,\,-\frac{1}{3}\right),
-                v_3=\left(1,\,\frac{1}{2},\,-\frac{1}{2}\right)</m> respectively.
-                Then we have <m>P=[v_1~v_2~v_3]=\left(\begin{array}{rrr} 1 \amp 1 \amp 1 \\ \frac{1}{3} \amp 0 \amp \frac{1}{2} \\ -\frac{1}{3} \amp -\frac{1}{3} \amp -\frac{1}{2} \end{array} \right)</m>.
-                <m>P^{-1}AP=\left(\begin{array}{rrr} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp -1 \end{array} \right)</m>.
-                Hence <m>A = P\left(\begin{array}{rrr} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp -1 \end{array} \right)P^{-1}</m>.
-                It is easy to see that <m>P^{-1}=\left(\begin{array}{rrr} 3 \amp 3 \amp 9 \\ 0 \amp -3 \amp -3 \\ -2 \amp 0 \amp -6 \end{array} \right)</m>.
-              </p>
-              <p>
-                Hence
-                <md>
-                  <mrow>A =\amp \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\
-                   \frac{1}{3} \amp  0 \amp  \frac{1}{2} \\ 
-                   -\frac{1}{3} \amp  -\frac{1}{3} \amp  -\frac{1}{2} \end{array} \right) 
-                   \begin{pmatrix}2\amp  0 \amp  0\\0 \amp  1 \amp  0\\
-                   0 \amp  0 \amp  1 \end{pmatrix} 
-                   \left(\begin{array}{rrr} 3 \amp  3 \amp  9 \\ 
-                   0 \amp  -3 \amp  -3 \\ -2 \amp  0 \amp  -6 \end{array} \right)</mrow>
-                <mrow>=\amp \left(\begin{array}{rrr} 8 \amp  3 \amp  21 \\ 
-                    3 \amp  2 \amp  9 \\ -3 \amp  -1 \amp  -8 \end{array} \right)
-                </mrow>
-                </md>.
-              </p>
-            </statement>
-          </example>
-          <example>
-            <statement>
-              <p>
-                Let <m>A=\begin{pmatrix}-1\amp -1\amp -2\\8\amp -11\amp -8\\-10\amp 11\amp 7 \end{pmatrix}</m> and <m>B=\begin{pmatrix}1\amp -4\amp -4\\8\amp -11\amp -8\\-8\amp 8\amp 5 \end{pmatrix}</m>.
-              </p>
-              <p>
-                It is easy to check that <m>A</m> and <m>B</m> have same characteristic polynomial <m>\lambda^3+5\lambda^2+3\lambda-9=(\lambda-1)(\lambda+3)^2</m>.
-                Also We can show that <m>A</m> has only one linearly independent eigenvectors corresponding to eigenvalue <m>-3</m>.
-                This implies <m>A</m> has only two eigenvectors and hence <m>A</m> is not diagonalizable.
-              </p>
-              <p>
-                Similarly, We can show that <m>B</m> has two linearly independent eigenvectors corresponding to eigenvalue <m>-3</m>.
-                This implies <m>B</m> has three eigenvectors and hence <m>B</m> is diagonalizable.
-              </p>
-            </statement>
-          </example>
-          <p>
-            We mention another criteria of diagonalizability without proof.
-          </p>
-          <theorem xml:id="diagonalizable-thm2">
-            <statement>
-              <p>
-                Let <m>A</m> be an <m>n\times n</m> real matrix with distinct eigenvalues
-                <m>\lambda_1,\ldots, \lambda_k</m> and algebraic multiplicity <m>m_1,\ldots,
-                m_k</m> respectively.
-                Then <m>A</m> is diagonalizable if and only if algebraic multiplicity is same as geometric multiplicity for each eigenvalue.
-                That is <m>m_i=\dim{(E_{\lambda_i})}</m> for <m>i=1,2,\ldots,k</m>.
-              </p>
-            </statement>
-          </theorem>
-          <example>
-            <statement>
-              <p>
-                In view of <xref ref="diagonalizable-thm2">theorem</xref>,
-                the matrix in the <xref ref="eigen-eg117">example</xref> is not diagonalizable.
-              </p>
-            </statement>
-          </example>
-          <example>
-            <statement>
-              <p>
-                A travel company has a fleet of 6000 cars for renting.
-                A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.
-              </p>
-              <tabular>
-                <row bottom="minor">
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                </row>
-                <row>
-                  <cell>Depots</cell>
-                  <cell>A</cell>
-                  <cell>B</cell>
-                  <cell>C</cell>
-                </row>
-                <row bottom="minor">
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                </row>
-                <row>
-                  <cell>A</cell>
-                  <cell>0.3</cell>
-                  <cell>0.4</cell>
-                  <cell>0.5</cell>
-                </row>
-                <row>
-                  <cell>B</cell>
-                  <cell>0.3</cell>
-                  <cell>0.4</cell>
-                  <cell>0.3</cell>
-                </row>
-                <row>
-                  <cell>C</cell>
-                  <cell>0.4</cell>
-                  <cell>0.2</cell>
-                  <cell>0.2</cell>
-                </row>
-                <row bottom="minor">
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                </row>
-              </tabular>
-              <p>
-                Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday.
-                How should the company distribute these cars at various locations in order to serve the customers smoothly.
-              </p>
-              <p>
-                Let the initial distributions of cars at three location be denoted by the vector <m>X = \begin{bmatrix}20000\\2000\\2000 \end{bmatrix}</m>.
-                The proportion of cars that are returned to various locations can be represented by the matrix <m>P = \begin{bmatrix}0.3 \amp 0.4 \amp 0.5\\ 0.3 \amp 0.4 \amp 0.3 \\ 0.4 \amp 0.2 \amp 0.2 \end{bmatrix}</m>,
-                which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )
-              </p>
-              <p>
-                Number of cars at location <m>A</m> after one day is <m>0.3\times 2000 +0.4\times 2000+0.5\times 2000</m>
-              </p>
-              <p>
-                Number of cars at location <m>A</m> after one day is <m>0.3\times 2000 +0.4\times 2000+0.3\times 2000</m>
-              </p>
-              <p>
-                Number of cars at location <m>A</m> after one day is <m>0.4\times 2000 +0.2\times 2000+0.2\times 2000</m>
-              </p>
-              <p>
-                It is easy to see that distribution of cars after day one is <m>PX</m>.
-              </p>
-              <p>
-                Similarly after day two it is <m>P(PX)=P^2X</m>.
-                Thus on Thursday the car distribution at various location is given by <m>P^3X=\begin{bmatrix}2336\\ 2000.\\ 1664.0 \end{bmatrix}</m>.
-              </p>
-              <p>
-                After say 100 days the car distribution at various location is given by <m>P^{50}X\approx=\begin{bmatrix}2333.33\\2000.\\1666.67 \end{bmatrix}</m>.
-                In fact after <m>n</m> large <m>P^nX</m> is constant which is approximately <m>\begin{bmatrix}2333.33\\2000.\\1666.67 \end{bmatrix}</m>.
-                Thus in long run car distribution is <m>\begin{bmatrix}2333\\2000\\1667 \end{bmatrix}</m>.
-              </p>
-              <p>
-                The higher power of <m>P</m> can be obtained by diagonalizing <m>P</m>.
-                In this can eigenvalues of <m>P</m> are
-                <m>1, 1/10, -1/5</m> and the corresponding eigenvectors are <m>\begin{bmatrix}1 \\6/7\\5/7 \end{bmatrix} , \begin{bmatrix}1 \\-3\\2 \end{bmatrix} , \begin{bmatrix}1 \\0\\-1 \end{bmatrix}</m>.
-                Let us define <m>D= \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  \frac{1}{10} \amp  0 \\ 0 \amp  0 \amp  -\frac{1}{5} \end{array} \right)</m> and <m>Q=\left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right)</m>.
-                Then <m>QDQ^{-1}=A</m>.
-                Hence <m>A^n = QD^nQ^{-1}</m>.
-                Here <m>Q^{-1} =\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right)</m>.
-                Hence
-                <md>
-                  <mrow>A^n \amp =\amp  \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  \left(\frac{1}{10}\right)^n \amp  0 \\ 0 \amp  0 \amp  \left(-\frac{1}{5}\right)^n \end{array} \right)\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right)</mrow>
-                  <mrow>\amp  =\amp \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \end{array} \right)\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right) \text{ for large \(n\) }</mrow>
-                  <mrow>\amp =\amp  \left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{3} \amp  \frac{1}{3} \amp  \frac{1}{3} \\ \frac{5}{18} \amp  \frac{5}{18} \amp  \frac{5}{18} \end{array} \right)</mrow>
-                </md>
-              </p>
-              <p>
-                Suppose we define <m>\pi = \left(\begin{array}{r} \frac{7}{18}\\ \frac{1}{3} \\ \frac{5}{18} \end{array} \right)</m>.
-                Then it is easy to check that <m>A\pi=\pi</m>.
-                That is <m>\pi</m> is an eigenvector of <m>A</m> corresponding to the eigenvalue 1.
-                This is called the <em>steady state vector.</em>
-              </p>
-            </statement>
-          </example>
-          <exercise>
-            <statement>
-              <p>
-                Suppose <m>D</m> is a diagonal matrix given by
-                <m>D= \left(\begin{array}{rrr} 1 \amp 0 \amp 0 \\ 0 \amp 0.3 \amp 0 \\ 0 \amp 0 \amp 0.2 \end{array} \right)</m> and <m>v\in \R^3</m>.
-                What happens to the vector <m>v</m> geometrically when we do <m>D^nv</m> for large <m>n</m>? (<em>It sucks vector <m>v</m> into <m>u_1</m> direction.</em>)
-              </p>
-              <p>
-                Next let us consider a matrix which is diagonalizable with eigenvectors
-                <m>u_1, u_2, u_3</m> and corresponding eigenvalues
-                <m>\lambda_1=1, \lambda_2=0.3</m> and <m>\lambda_3=0.2</m> respectively.
-                Then what happens to the vector <m>v</m> geometrically when we do <m>A^nv</m> for large <m>n</m>? (<em>It makes <m>y</m> and <m>z</m> coordinates very small and it sucks vector <m>v</m> into <m>x</m>-axis.</em>)
-              </p>
-            </statement>
-          </exercise>
-          <exercise>
-            <statement>
-              <p>
-                132 fishes are placed in a box with nine rooms.
-                See <xref ref="mouse1">Figure</xref>.
-              </p>
-            
-              <figure xml:id="mouse1">
-                <caption>Fish Tank</caption>
-                <image width="40%" source="images/Fish-Tank.PNG"/>
-              </figure>
-              <p>
-                Assume that, at regular intervals of time,
-                it is equally likely that fishes will decide to go through any door in the room or stay in the room.
-              </p>
-              <p>
-                Find how many fishes can be found in each room in long run.
-              </p>
-              <p>
-                Solve this problem using a
-                <m>3 \times 3</m> matrix stochastic matrix.
-              </p>
-            </statement>
-          </exercise>
-        </subsection>
-  
-        <subsection xml:id="sec-eigen">
-            <title>Exercises on Eigenvalues and Eigenvectors</title>
-           
-          <ol>
-            <li>
-                <p>
-                    Find the eigenvalues and corresponding eigenvectors of the following matrices 
-                    <p>
-                    (i) <m>\begin{pmatrix} 2 \amp  0\\0 \amp 3\end{pmatrix}; \begin{pmatrix} 0 \amp  1\\1 \amp 0\end{pmatrix}; \begin{pmatrix} 1 \amp  0\\-1 \amp 0\end{pmatrix}; \begin{pmatrix} 1 \amp  1\\1 \amp 1\end{pmatrix}</m>
-                </p>
-                <p>	(ii) <m>\begin{pmatrix} 1 \amp  0\amp 0\\0\amp 2\amp 1\\2\amp 0\amp 3\end{pmatrix}; \begin{pmatrix}  -3 \amp  -2\amp 1\\-2\amp 0\amp 4\\-6\amp -3\amp 5\end{pmatrix}; 
-                    \begin{pmatrix} -2 \amp  2\amp 2\\2\amp 1\amp -6\\-1\amp -2\amp 0\end{pmatrix};\begin{pmatrix} 2 \amp  2\amp 2\\2\amp 2\amp 2\\2\amp 2\amp 2\end{pmatrix};</m> 
-                </p>  
-                </p>
-            </li>
-            <li>
-                <p>
-                    Let <m>A=\begin{pmatrix} -3 \amp  -2\amp 1\\-2\amp 0\amp 4\\-6\amp -3\amp 5\end{pmatrix}</m>. Find the eigenvalues of <m>3A^3-5A^2+4I</m>
-                </p>
-            </li>
-            <li>
-                <p>
-                    Let <m>A\begin{pmatrix}  -3 \amp  -2\amp 1\\-2\amp 0\amp 4\\-6\amp -3\amp 5\end{pmatrix}</m>. Show that <m>A</m> satisfies 
-                    its characteristic equation and hence find <m>A^{-1}</m>. Also find <m>A^4</m>.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Check if the following matrices are positive definite?
-            <m>A_1=\begin{pmatrix}
-                1\amp  -7 \\-7\amp 3
-            \end{pmatrix};
-            A_2=\begin{pmatrix} 2 \amp  1\amp 3\\1\amp 4\amp -1\\3\amp -1\amp 2\end{pmatrix}; 
-            A_3=\begin{pmatrix} -3 \amp  -2\amp 1\\-2\amp 0\amp 4\\1\amp 4\amp 5\end{pmatrix}
-            </m> 
-                </p>
-            </li>
-            <li>
-                <p>
-                    Find eigenvalues of <m>A_2 = \begin{pmatrix} 0 \amp  1\\1 \amp 0\end{pmatrix}</m> and <m>A_3=\begin{pmatrix} 0 \amp  1\amp 1\\1\amp 0\amp 1\\1\amp 1\amp 0\end{pmatrix}</m>. Can you generalize this? 
-                </p>
-            </li>
-            <li>
-                <p>
-                      
-           Find the algebraic and geometric multiplicities of each of the eigenvalues of 
-           <m>A = \begin{pmatrix} 2 \amp  0 \amp  0 \amp  0\\0 \amp  2 \amp  0 \amp  0\\0 \amp  0 \amp  -1 \amp  1\\0 \amp  0 \amp   \amp  -1\end{pmatrix}</m>. 
-           Is this matrix diagonalizable? 
-                </p>
-            </li>
-            <li>
-                <p>
-                    Consider the matrix <m>A=\left(\begin{array}{rr}
-                        0 \amp  \frac{1}{2} \\
-                        -1 \amp  \frac{3}{2}
-                    \end{array}\right)</m>. What is <m>\displaystyle\lim_{n\to \infty} A^n</m>?
-                </p>
-            </li>
-            <li>
-                <p>
-                    Let <m>A</m> be a  <m>3\times 3</m> real matrix with eigenvalues <m>-1,0,1</m> and corresponding eigenvectors
-        <m>(1, -4, 1), (1, -3, 1), (1, -2, 1/2)</m> respectively. Find <m>A</m>.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Suppose there are two internet service providers <m>A</m> and <m>B</m>  in a city. At present  <m>A</m> has 50000 
-                    subscriber and <m>B</m> has 100000 subscribers. 
-                    A trend shows that every year 60% of <m>A</m> subscriber move to <m>B</m> and 40% of <m>B</m> move to <m>A</m>. After 2 year how many subscribers 
-                    <m>A</m> and <m>B</m> will have? What happens in long run? 
-                </p>
-            </li>
-          </ol>  
-           </subsection>
-   </section>
-   -->
+     

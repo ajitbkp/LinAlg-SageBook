@@ -2,12 +2,12 @@
 <chapter xml:id="chap4-Vector-Space" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Vector Spaces</title>
 
-  <xi:include href="sec4-0-VS.ptx" />
-  <xi:include href="sec4-1-Abst-VS.ptx" />
-  <xi:include href="sec4-2-linspan-VS.ptx" />
-  <xi:include href="sec4-3-LI-VS.ptx" />
-  <xi:include href="sec4-4-basis-dim-VS.ptx" />
-  <xi:include href="sec4-5-VS-Ex.ptx" />
+  <xi:include href="sec4-1-intro-VS.ptx" />
+  <xi:include href="sec4-2-Abst-VS.ptx" />
+  <xi:include href="sec4-3-linspan-VS.ptx" />
+  <xi:include href="sec4-4-LI-VS.ptx" />
+  <xi:include href="sec4-5-basis-dim-VS.ptx" />
+  <xi:include href="sec4-6-VS-Ex.ptx" />
 
 
 </chapter>

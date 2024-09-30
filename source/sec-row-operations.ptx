@@ -18,29 +18,40 @@
     The solution of a system of linear equations is unchanged if the following 
     operations are performed. In fact this is the basis for solving a system of linear equations.
   </p>
+
 <ol>
-    <li> Multiply one of the equations by a nonzero real number.
+    <li> 
+      <p> 
+        Multiply one of the equations by a nonzero real number.
       This is equivalent to multiplying one of the rows of the
       augmented matrix of the system by a non-zero real number.
+      </p>
     </li>
-    <li> Multiply one of the equations by a real number and add
+    <li> 
+      <p>
+        Multiply one of the equations by a real number and add
       the result to another equation, leaving the original equation
       unchanged.
       
       This is equivalent to multiplying one of the rows of the
       augmented matrix of the system by a real number and adding it
       to another row, leaving the original row unchanged.
+      </p>
     </li>
-      <li>  Interchanging two equations.
-      
-      This is equivalent to interchanging two rows of the augmented
+      <li>  
+        <p> Interchanging two equations. This is equivalent to interchanging two rows of the augmented
       matrix of the system.
+        </p>
     </li>
-      <li>  Bring the equations which are equivalent to <m>0 =0</m> to
+      <li>  
+        <p> 
+          Bring the equations which are equivalent to <m>0 =0</m> to
       the bottom row.
       
       This is equivalent to moving the zero rows (rows with zero
       entries) of the augmented matrix to the bottom.
+        </p>
+
       </li>
     </ol>  
    <note>
@@ -53,15 +64,25 @@
 
    <definition xml:id="def-elementary-row-operations">
     <title>Elementary row operations</title>
-       
-  <statement>
+    <statement>
     <p>
   The following operations on a matrix are called <alert>elementary row
     operations.</alert>
 <ol>	
-  <li> interchange of two rows of a matrix;</li>
-	<li> multiplication of one row by a  non-zero scalar <m> \lambda</m>; </li>
-	<li> adding a scalar <m>\lambda</m> times a row to another row.</li>
+  <li> <p>
+    interchange of two rows of a matrix;
+  </p>
+</li>
+	<li> 
+  <p>
+    multiplication of one row by a  non-zero scalar <m> \lambda</m>;
+  </p>  
+  </li>
+	<li> 
+    <p>
+      adding a scalar <m>\lambda</m> times a row to another row.
+    </p>
+  </li>
 </ol>
    </p>
   </statement>
@@ -80,6 +101,7 @@
 <p>
   Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.
 </p>
+
 <observation>
   Let <m>A</m> be an <m>n\times n</m> matrix of real numbers. Let the columns of <m>A</m> 
     are <m>a_1,a_2,\ldots a_n</m>, 
@@ -93,19 +115,29 @@
                   Then we have the following:
                   <p>
                     <ol>
-                    <li><m>a_j=Ae_j</m> for each <m>j=1,\ldots, n</m>. That is, <m>j</m>-th 
-                      column can be obtained by multiplying <m>A</m> by <m>e_j</m> on the right. </li>
+                    <li>
+                    <p> 
+                       <m>a_j=Ae_j</m> for each <m>j=1,\ldots, n</m>. That is, <m>j</m>-th 
+                      column can be obtained by multiplying <m>A</m> by <m>e_j</m> on the right. 
+                    </p>
+                    </li>
 
                       <li>
-                       <m>R_i=e_i^TA</m> for each <m>i=1,\ldots, n</m>. That is, <m>i</m>-th 
-                        row can be obtained by multiplying <m>A</m> by <m>e_i^T</m> on the left. </li>
+                      <p>
+                        <m>R_i=e_i^TA</m> for each <m>i=1,\ldots, n</m>. That is, <m>i</m>-th 
+                        row can be obtained by multiplying <m>A</m> by <m>e_i^T</m> on the left. 
+                      </p>
+                      </li>
 	                
-                      <li> <m>a_{ij}=e_i^TAe_j</m> for <m>1\leq i, j\leq n</m>.</li>
+                      <li> 
+                      <p>  
+                        <m>a_{ij}=e_i^TAe_j</m> for <m>1\leq i, j\leq n</m>.
+                      </p>
+                      </li>
                       </ol>
                   </p>
-	
-
 </observation>
+
 <sage>
   <input>
     # Creating a random matrix of integers of size n
@@ -120,7 +152,7 @@ show(A)
 
 <sage>
   <input>
-    ## Identity matrix of size n
+## Identity matrix of size n
 E = identity_matrix(n)
 show(E)
   </input>
@@ -170,7 +202,7 @@ show(E)
   </statement>
 </theorem>
 
-<p>
+
 <example>
   <ol>
     <li>
@@ -201,7 +233,6 @@ show(E)
     </li>
   </ol>
 </example>
-</p>
 
 <theorem xml:id="thm-matrix-invese-using-rref">
   <statement>
@@ -210,7 +241,6 @@ show(E)
       such that <m>B=PA</m>.
     </p>
   </statement>
-</theorem>
 
 <p>
   <proof>
@@ -221,6 +251,8 @@ show(E)
     </p>
   </proof>
 </p>
+</theorem>
+
 
 </subsection>
 <subsection xml:id="subsec-Matrix-inverse-using-rref">
@@ -237,13 +269,14 @@ Thus to find inverse of <m>A</m>, we   adjoin <m>I</m> to <m>A</m> on the right 
 <m>[A~|~I]</m>, and perform elementary row operations on <m>[A~|~I]</m> that successively reduces <m>A</m>  to
 the identity matrix  and then extract <m>A^{-1}</m> from the right half of the transformed augmented matrix.
   </p>
-  <p>
+
+ 
     <example>
       <p>
       Find the inverse of <m>A=\begin{pmatrix}1 \amp 0 \amp 2\\2 \amp -1 \amp 3\\4 \amp 1 \amp 8\end{pmatrix}</m> using row operations.
       </p>
-    </example>
-
+  
+  
   <solution>
     <p>
       <me>[A, I]= 
@@ -265,17 +298,21 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
           \begin{pmatrix}1\amp 0\amp 1\amp |\amp -11\amp 2\amp 2\\0\amp 1\amp 0\amp |\amp -4\amp 0\amp 1\\0\amp 0\amp 1\amp |\amp 6\amp -1\amp -1\end{pmatrix}
         </me>
     </p>
+    
     <p>
       Hence 
       <me> A^{-1}=\begin{pmatrix}-11 \amp 2 \amp 2\\-4 \amp 0 \amp 1\\6 \amp -1 \amp -1
         \end{pmatrix}</me>
         
     </p>
-  </solution>
+    
+ 
 
   <p>
   
-    Let solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.
+    Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.
+  </p>
+
     <sage>
       <input>
         A = matrix([[1,0,2],[2,-1,3],[4,1,8]])
@@ -286,7 +323,7 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
         
       </output>
     </sage>
-<p>
+
   <sage>
     <input>
       # We make a copy of Aug to Aug1
@@ -296,8 +333,7 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
       
     </output>
   </sage>
-</p>
-      <p>
+
         <sage>
           <input>
             # we add -2 times row 1 to row 2 using the following Sage syntax
@@ -307,9 +343,7 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
             
           </output>
         </sage>
-      </p>
-       </p>
-       <p> 
+    
           <sage>
             <input>
               # we add -4 times row 1 to row 3 using the following Sage syntax
@@ -319,8 +353,7 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
               
             </output>
           </sage>
-        </p>
-        <p>
+     
           <sage>
             <input>
               # We multiply row 2 by -1 using the following Sage syntax
@@ -330,8 +363,7 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
               
             </output>
           </sage>
-        </p>
-        <p>
+       
           <sage>
             <input>
               # We add -1 times row 2 to row 3 using the following Sage syntax
@@ -341,8 +373,7 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
               
             </output>
           </sage>
-        </p>
-        <p>
+     
           <sage>
             <input>
               # We multiply row 3 by -1 using the following Sage syntax
@@ -352,8 +383,7 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
               
             </output>
           </sage>
-        </p>
-        <p>
+      
           <sage>
             <input>
               # We add -1 times row 3 to row 2 using the following Sage syntax  
@@ -363,8 +393,7 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
               
             </output>
           </sage>
-        </p>
-        <p>
+       
           <sage>
             <input>
               # We add -2 times row 3 to row 1 using the following Sage syntax  
@@ -374,9 +403,7 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
               
             </output>
           </sage>
-        </p>
-
-        <p>
+       
           <sage>
             <input>
               # Finally we extract the submatrix by taking all columns after 4th column 
@@ -386,9 +413,9 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
               
             </output>
           </sage>
-        </p>
+     
         Sage can directly find the inverse of a matrix. 
-        <p>
+      
           <sage>
             <input>
               # inverse of A.
@@ -398,23 +425,22 @@ the identity matrix  and then extract <m>A^{-1}</m> from the right half of the t
               
             </output>
           </sage>
-        </p>
-  
-  </p>
+        </solution>
+      </example>
 
   <p><alert>Sage Exercise:</alert>
   Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.
     <m>\begin{pmatrix}2\amp  1\amp 1\amp 1\\1\amp 0\amp 1\amp 1\\1\amp 1\amp -2\amp 1\\1\amp 1\amp 1\amp -1\end{pmatrix}</m>
   </p>
 
-  <p>
+
   <sage>
 <input>
   # Sage Practice Area
   A = matrix([[2,1,1,1],[1,0,1,1],[1,1,-2,1],[1,1,1,-1]]);A
   </input>
   </sage>
-  </p>
+ 
 </subsection>
 
 </section>

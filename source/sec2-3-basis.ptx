@@ -8,13 +8,11 @@
     a vector with respect to a basis. 
   </p>
 </introduction>
+
   <subsection xml:id="subsec-basis-intro">
     <title>Basis</title>
-    
-  <p>
+  
 <definition xml:id="def-sec2-2-LI"><title>Basis</title>
-
-
   <statement>
     <p>
       A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}</m> is called a <alert>basis</alert> of <m>\R^n</m> if every vector <m>v\in \R^n</m> can be  expressed uniquely as  linear combinations of <m>v_1,v_2,\ldots,v_n</m>. 
@@ -27,12 +25,11 @@
     </p>
   </statement>
 </definition>
-</p>
 
 <p>
   It is easy to prove the follwoing theorem which is opent taken as definition in many books.
 </p>
-<p>
+
   <theorem xml:id="thm-sec2-3-basis-thm1">
     <statement>
       <p>
@@ -42,8 +39,7 @@
       </p>
     </statement>
   </theorem> 
-</p>
-<p>
+
   <example>
     <p> (i) <m>\{(1,0),(0,1)\}</m> is a basis of <m>\R^2</m> called the standard basis of <m>\R^2</m>.</p>
     <p>  (ii) <m>\{(1,-1),(2,1)\}</m> is a basis of <m>\R^2</m>.</p>
@@ -51,41 +47,33 @@
     <p> (iv) <m>\{(1,1,-1),(-1,1,1),(1,-1,1)\}</m> is a basis of <m>\R^3</m>. </p>
       
   </example>
-</p>
-<p>
+
+  <p>
   In <m>\R^n</m>, we define <m> e_i:=(0,\ldots, 1,\ldots,0)</m> where <m>i</m> component is 1 rest are zeros. Then it is easy to see that <m> \{e_1,\ldots, e_n\}</m> is a bais of  <m>\R^n</m> called the <alert>standard basis</alert>.
 </p>
-<p>
+
 <example>
   <p>
     Consider the plane <m>W=\{(x_1,x_2,x_3)\in \R^3:x_1+2x_2-x_3=0\}</m>. Note that, here <m>x_1</m> and <m>x_2</m> can be thought of as free variables. Any point <m>(x_1,x_2,x_3)\in W</m>, we have 
 <me>(x_1,x_2,x_3)=(x_1,x_2,x_1+2x_2)=(\alpha,\beta,\alpha+2\beta)=\alpha(1,0,1)+\beta(0,1,2).</me>
 Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0,1),(0,1,2)\}</m> is linearly independent. Hence <m>\beta =\{(1,0,1),(0,1,2)\}</m> is a basis of <m>W</m>. In fact, any two vectors in <m>W</m> which are linearly independent form a basis of <m>W</m>.
-
-
   </p>
 </example>
-</p>
-<p>
-  <theorem xml:id="thm-sec2-3-thm3">
+
+
+<theorem xml:id="thm-sec2-3-thm3">
     <statement>
       <p>
         Any set of <m>n</m> linearly independent vectors forms a basis of <m>\R^n</m>.
-
       </p>
     </statement>
   </theorem>
-  
-</p>
-<p>
-  <proof>
+    <proof>
     <p>
       Follows from Theorem <xref ref="thm-sec2-2-thm2"/>.
     </p>
   </proof>
-</p>
 
-<p>
   <theorem xml:id="thm-sec2-3-thm4">
     <statement>
       <p>
@@ -94,8 +82,7 @@ Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0
       </p>
     </statement>
   </theorem>
-  </p>
- <p>
+
   <proof>
     <p>
       Let <m>\alpha_1,\ldots,\alpha_{k+1}</m> be scalars such that
@@ -123,7 +110,6 @@ Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0
     These are <m>k</m> homogeneous linear equations in <m>k+1</m> variables <m>\alpha_1,\ldots,\alpha_{k+1}</m>. 
       Hence it has a non zero solution. In particular, there exist scalars,  <m>\alpha_1,\ldots,\alpha_{k+1}</m> not all zero such that <m>\alpha_1 v_1+\alpha_2v_2+\cdots+\alpha_kv_k+\alpha_{k+1}v_{k+1}=0</m>. Hence <m>S</m> is linearly dependent.
   </proof>
-</p>
   
 <corollary xml:id="sec2-3-cor1">
   <statement>
@@ -132,33 +118,28 @@ Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0
     </p>
   </statement>
 </corollary>
-<p>
-  <theorem xml:id="thm-sec2-3-thm5">
+
+<theorem xml:id="thm-sec2-3-thm5">
     <statement>
       <p>
         Let <m>\beta</m> and <m>\gamma</m> be two bases of  a subscape <m>W</m>  of <m>\R^n</m>. Then <m>\beta</m> and <m>\gamma</m> have the same number of elements. 
       </p>
     </statement>
   </theorem>
-  </p>
-  <p>
+
   <proof>
     <p>
       Suppose <m>|\beta|=r</m> and <m>|\gamma|=s</m>.  Since <m>\beta</m> is a basis and <m>\gamma</m> is linearly independet, by Corollary <xref ref="sec2-3-cor1"/>, <m>s\leq r</m>. Similarly <m>\gamma</m> is a basis and <m>\beta</m> is linearly independet, we have <m>s\leq r</m>. Hence <m>r=s</m>.
     </p>
   </proof>
-</p>
 
 </subsection>
 <subsection xml:id="subsec-dimension-intro">
   <title>Dimension of Subspaces</title>
 <p>
   Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.
-
-
 </p>  
 
-<p>
   <definition xml:id="def-sec2-3-dimension">
     <statement>
       <p>
@@ -167,8 +148,7 @@ Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0
       </p>
     </statement>
   </definition>
-</p>
-<p>
+
   <example>
     <p>(i) <m>\R^n</m> is a <m>n</m>-dimensional vector space over <m>\R</m>.</p>
 <p>(ii) Any plane passing through origin in <m>\R^3</m> is a 2 dimensional subspace.</p>
@@ -176,11 +156,11 @@ Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0
 <p>(iv) <m>W=\{(x_1,x_2,x_3,x_4)\in \R^4:x_1=x_3,x_2=x_4\}</m> is a 2-dimensional subspace of <m>\R^4</m>. Write down a basis of <m>W</m>.</p>
 
   </example>
-</p>
 
 <p>
   <alert>How to find basis of a subspace <m>L(S)</m>?</alert>
   </p>
+
   <p>
   Suppose  <m>W</m> is subspace spanned by a set of <m>k</m> vectors, say, 
   <m>v_1,\ldots,v_k</m> in <m>\R^n</m>. How to find a basis of <m>W</m>? 
@@ -190,7 +170,6 @@ Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0
   Then the non-zero rows in RREF(<m>A</m>) form a basis of <m>W</m>.  
   </p>
   
-  <p>
   <example>
  <p>         Consider the set of vectors <m>v_1 =\left(1,-1,2,3,1,4\right)</m>, <m>v_2=\left(2,1,0,2,-3,1\right)</m>, <m>v_3=\left(-4,-5,4,0,11,5\right)</m>, <m>v_4=\left(-1,0,2,1,3,2\right)</m> and <m>v_5=\left(-2,-2,4,2,7,5\right)</m>. Let <m>W</m> be the linear span of <m>\{v_1,v_2,v_3,v_4,v_5\}</m>. Let us find a basis and hence the dimension of <m>W</m>. 
  </p>
@@ -248,9 +227,7 @@ Thus the basis <m>\gamma</m> of  <m>{\rm col}(A)</m> consists of three non-zero 
 is a basis of <m>{\rm col}(A)</m>. Notice that <m>\dim{({\rm col}(A))}=\dim{({\rm row}(A))}</m>.
         </p>
       </example>
-    </p>
 
-    <p>
       <definition xml:id="def-row-column-rank">
         <statement>
           <p>
@@ -259,8 +236,7 @@ is a basis of <m>{\rm col}(A)</m>. Notice that <m>\dim{({\rm col}(A))}=\dim{({\r
           </p>
         </statement>
       </definition>
-    </p>
-    <p>
+    
       <theorem xml:id="thm-row-rank-col-rank">
         <statement>
           <p>
@@ -269,12 +245,8 @@ is a basis of <m>{\rm col}(A)</m>. Notice that <m>\dim{({\rm col}(A))}=\dim{({\r
         </statement>
       </theorem>
       
-    </p>
-    <p>
       <example>
         <p>
-          
-        </p>
         Consider a matrix <m>A=\left[\begin{array}{rrrrr}
           1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\
           -1 \amp  1 \amp  -5 \amp  0 \amp  -2 \\
@@ -323,22 +295,17 @@ is a basis of <m>{\rm col}(A)</m>. Notice that <m>\dim{({\rm col}(A))}=\dim{({\r
         </mrow>
       </md>
         Thus <m>\dim{{\cal N}(A)}=2</m> and <m>\delta =\{(1,0,1,3,-3),(0,1,1,2,-2)\}</m> is a basis of <m>{\cal N}(A)</m>. 
-        
+    <p>    
         The <m>\dim{{\cal N}(A)}</m> is called the nullity of <m>A</m>. 
         Notice that for this matrix <me>{\rm nullity}(A)+{\rm rank}(A)=\text{ number of columns of }A.</me>
         This is true for any matrix <m>A</m>.
-        
-        
-        
+    </p> 
+   </p>
       </example>
-    </p>
-
+  
     
-    <p>
       <example>
         <p>
-          
-        </p>
         Consider the matrix <m>A=\left[\begin{array}{rrrrrr}
           1 \amp  -1 \amp  2 \amp  3 \amp  1 \amp  4 \\
           2 \amp  1 \amp  0 \amp  2 \amp  -3 \amp  1 \\
@@ -383,11 +350,10 @@ Thus <me>
        is a basis of <m>{\cal R}(A)</m> which is same as the column space of <m>A</m>.
   Note that <m>{\cal R}(A)</m> is null space of the matrix  
   <m>\begin{bmatrix} -2 \amp  3 \amp  1 \amp  0 \amp  0\\-1\amp  1\amp  0 \amp -1 \amp  1 \end{bmatrix}</m>.
-  
+      </p>
       </example>
-    </p>
     
-    <p>
+
       <theorem xml:id="sec2-3-thm-rank-nullity">
         <statement>
           <p>
@@ -397,11 +363,9 @@ Thus <me>
         </statement>
       </theorem>
       
-    </p>
-
+  
     <definition xml:id="def-sec2-1-coordinates">
-      
-        <statement>
+       <statement>
           <p>
             Let <m>\beta =\{v_1,v_2,\ldots, v_n\}</m>be a basis of 
             <m>\R^n</m>. Let <m>x\in \R^n</m>. 
@@ -409,10 +373,10 @@ Thus <me>
             such that <m>x=x_1v_1+x_2v_2+\cdots+x_nv_n</m>. Then <m>x_1,\ldots, x_n</m> 
             are called the <alert>coordinates</alert> of <m>x</m> with respect to the basis 
             <m>\beta</m>.
-
           </p>
         </statement>
     </definition>
+
     <p>
       Notice that the order in which basis vectors appear is important. 
       Suppose <m>\beta'=\{v_2,v_2,v_3\ldots, v_n\}</m>. 
@@ -437,19 +401,15 @@ v = x_1v_1+x_2v_2+\cdots+x_nv_n=
 </me>
 Thus to find <m>x</m>, we need to solve <m>Ax=v</m>, where <m>A</m> is the matrix whose 
 columns are <m>v_1,\ldots, v_n</m>. This can be done using the RREF. Let us illustrate this with few examples.
-
 </p>
 
-<p>
   <example>
     <p> If <m>x=(x_1,\ldots,x_n)\in \R^n</m>. 
     Then <m>x=x_1e_1+x_2e_2+\cdots+x_ne_n</m>. In particular <m>x_1,x_2,\ldots, x_n</m> is the coordinate of 
     <m>x</m> with respect to the standard basis <m>\{e_1,e_2,\ldots,e_n\}</m>.
     </p>
   </example>
-</p>
 
-<p>
   <example>
     <p> Consider a basis <m>\beta=\{(1,-1),(2,1)\}</m>. Find the coordinates of <m>v=(2,3)</m> with respect to <m>\beta</m>.  In order to find the coordinates of <m>v</m> with respect to <m>\beta</m>, we solve the system <m>Ax=b</m> where <m>A=\begin{bmatrix} 1 \amp  2\\-1\amp  1\end{bmatrix}</m> and <m>b = \begin{bmatrix} 2\\3\end{bmatrix}</m>. Using RREF 
       <me>
@@ -461,9 +421,8 @@ columns are <m>v_1,\ldots, v_n</m>. This can be done using the RREF. Let us illu
       Hence the coordinates of <m>v</m> w.r.t. <m>\beta</m> is <m>(-4/3,5/3)</m>.
     </p>
   </example>
-</p>
 
-<p>
+
   <example>
     <p>
       Find the coordinates of the vector <m>(1,2,3)</m> with respect to a basis\\ <m>\beta=\{(1,-1,1),(1,1,-1),(-1,1,1)\}</m> of <m>\R^3</m>. Using the RREF we have 
@@ -480,12 +439,10 @@ columns are <m>v_1,\ldots, v_n</m>. This can be done using the RREF. Let us illu
 \end{array}\right]
 </me>
 Hence the coordinates of <m>(1,2,3)</m> with respect the given basis is <m>(2,3/2,5/2)</m>.
-
     </p>
   </example>
-</p>
 
-<p>
+
   <example>
     <p>
       Find the coordinates of the vector <m>(1,2,3,4)</m> with respect to a basis <m>\beta=\{(1,-1,1,1),(1,1,-1,1),(1,1,-1,1),(-1,1,1,1)\}</m> of <m>\R^4</m>. Using the RREF we have 
@@ -507,7 +464,7 @@ Hence the coordinates of <m>(1,2,3)</m> with respect the given basis is <m>(2,3/
 Hence the coordinates of <m>(1,2,3)</m> with respect the given basis is <m>(3/2,1,1/2,2)</m>.
     </p>
   </example>
-</p>
+
 </subsection>
 
 <subsection xml:id="sec2-3-change-of-basis">
@@ -519,7 +476,9 @@ Hence the coordinates of <m>(1,2,3)</m> with respect the given basis is <m>(3/2,
 <me>
 x = \begin{bmatrix}u_1\amp \cdots \amp  u_n\end{bmatrix}\begin{bmatrix}c_1\\\vdots \\c_n\end{bmatrix}=Ax_\beta.
 </me>
+</p>
 
+<p>
 Similarly 
 <me>
 x = \begin{bmatrix}v_1\amp \cdots \amp  v_n\end{bmatrix}\begin{bmatrix}d_1\\\vdots \\d_n\end{bmatrix}=Bx_\gamma.
@@ -529,14 +488,13 @@ Thus we have
 Ax_\beta=Bx_\gamma\implies x_\beta = A^{-1}B x_\gamma \text{ and } x_\gamma = B^{-1}Ax_\beta.
 </me>
 The matrices <m>A^{-1}B</m> and <m>B^{-1}A</m> are called <alert>transition matrices</alert>. We denotes <m>A^{-1}B</m> by <m>[I]_\gamma^\beta</m> and <m>B^{-1}A</m> by <m>[I]_\beta^\gamma</m>. Note that <m>[I]_\beta^\gamma=\left([I]_\gamma^\beta\right)^{-1}.</m>
+</p>
 
 <p>
 Furthermore, the transition matrix <m>I_\gamma^\beta</m> can be obtained by applying RREF to the 
 <m>[A|B]</m> and extracting the last <m>n</m> columns. Let us illustrate this with an example.
 </p>
-</p>
 
-<p>
   <example>
     <p>
       Consider 
@@ -620,35 +578,25 @@ Similarly to find the transition matrix <m>[I]_\beta\gamma</m>, we have
 It is easy to verify that <m>x_\gamma=[I]_\beta^\gamma x_\beta</m>.
     </p>
   </example>
-</p>
 
-
-
-
-<p>
 <problem>
   <p>
     What are all subspaces of <m>\R^2</m> and <m>\R^3</m>?
   </p>
 </problem>
-</p>
 
-<p>
 <problem>
   <p>
     If <m>W</m> is a subspace of <m>\R^n</m>, then it is null space of some matrix.
   </p>
 </problem>
-</p>
-
-
+<p>
 We end this chapter by look at a bigger example. Here we also illustrate RREF gives several informations 
 on a matrix.
-
-<p>
+</p>
   
   <example>
-<p>
+  <p>
   Consider a set of 7 vectors <m>v_1,\ldots, v_7\in \R^7</m>. 
 
   <me> v_1=\left(\begin{array}{r}
@@ -768,41 +716,8 @@ In particular, <m>A</m> is singular.
 </p>
 </p>
 </example>
-</p>
+
+
 </subsection>
 
-<!--
-<p>
-  <figure xml:id="fig-sage-cubic">
-    <caption>A cubic plotted by SageMath on
-    <m>[-3,2]</m></caption>
-    <image xml:id="sageplot-cubic" width="50%">
-      <description>A cubic function on the interval
-      [-3,2]</description>
-  
-  <sageplot>
-  f(x) = (x-1)*(x+1)*(x-2)
-  plot(f, (x, -3, 2), color='blue', thickness=3)
-  </sageplot>
-    </image>
-  
-  </figure>
-</p>
-
-<p>
-  <image source="small-graph" width="20%">
-    <description>A graph on five vertices.</description>
-</image>
-</p>
-
-<p>
-  <figure xml:id="fig-graph">
-    <caption>A small graph (from <pubtitle>Applied
-    Combinatorics</pubtitle> by Keller and
-    Trotter)</caption>
-    <image source="small-graph" width="20%"/>
-  </figure>
-
-</p>
--->
 </section>

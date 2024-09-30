@@ -7,7 +7,9 @@
     that we have learned in this chapter. We use reduced row echelon form (RREF) as 
     tool to deal with all the comoutations. 
 </p>
-<alert>Vectors in Sage</alert>
+
+<p><alert>Vectors in Sage</alert></p>
+
 <p>
     In keyword 'vector' to define vectors by mentioning the domain from which 
     entries are taken and giving the entries in a list. We can plot vectors in 
@@ -15,8 +17,9 @@
     real numbers ('RR'), complex numbers ('CC') and even finite fields 'GF(p^k)' where 
     <m>p</m>  is a prime number.
 </p>
-<p>
-    <alert>Vectors in <m>\R^2</m></alert>
+
+<p><alert>Vectors in <m>\R^2</m></alert></p>
+
     <sage>
         <input>
             u = vector([3,-1])
@@ -27,7 +30,7 @@
             
         </output>
     </sage>
-<p>
+
     <sage>
         <input>
     ## We can mention the domain as QQ, RR, etc
@@ -39,7 +42,7 @@
             
         </output>
     </sage>
-</p>
+
     <sage>
         <input>
         # Plotting 2d vectors
@@ -76,11 +79,8 @@
             
         </output>
     </sage>
-</p>
 
-<p>
-    <alert>Vectors in <m>\R^3</m></alert>
-</p>
+<p> <alert>Vectors in <m>\R^3</m></alert></p>
 
 <sage>
     <input>
@@ -93,6 +93,7 @@
         
     </output>
 </sage>
+
 <sage>
     <input>
      ## Plotting 3d-vectors
@@ -102,9 +103,12 @@
         
     </output>
 </sage>
-<altert> Vector in higher dimension in Sage</altert>
+
+<p> <altert> Vector in higher dimension in Sage</altert></p>
+<p>
 Vectors in hiher dimensions can be defined in a similar manner, we just need to increase 
 the number of coordinates/components. Let us look at an example.
+</p> 
 
 <sage>
     <input>
@@ -142,7 +146,8 @@ integers between -10 and 10. Find the linear combinations of these vectors with 
         
     </output>
 </sage>
-    </p>
+
+</p>
 </example>
 
 <example>
@@ -168,6 +173,7 @@ This can be achieved by sage method 'parametric_plot3d' in sage.
         
     </output>
 </sage>
+
 <sage>
     <input>
         v1 = vector([3,2, -1])
@@ -182,11 +188,12 @@ This can be achieved by sage method 'parametric_plot3d' in sage.
         
     </output>
 </sage>
-</p>
- </example>
- <p>
-    
- <alert>Generating matrix from vectors:</alert> We can generate matrix from 
+
+</p> 
+</example>
+
+ <p><alert>Generating matrix from vectors:</alert> </p> 
+ <p> We can generate matrix from 
  a given set of vectors its columns and rows. Let us look at an example.
 </p>
 
@@ -205,8 +212,8 @@ This can be achieved by sage method 'parametric_plot3d' in sage.
     </output>
  </sage>
 
- <h2> Vector Spaces over rational or reals:</h2>
- <p>
+<p>  <h2> Vector Spaces over rational or reals:</h2></p> 
+
     <sage>
         <input>
             V = VectorSpace(RR,5);
@@ -218,7 +225,7 @@ This can be achieved by sage method 'parametric_plot3d' in sage.
             
         </output>
     </sage>
- </p>
+ 
  <sage>
     <input>
         V = VectorSpace(QQ,5);
@@ -230,11 +237,13 @@ This can be achieved by sage method 'parametric_plot3d' in sage.
         
     </output>
  </sage>
+
  <p>
 In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>  and 
 <code>V.an_element()</code> that displays a random element and an element (fixed) of 
 <m>V</m>.
  </p>
+
  <sage>
     <input>
         V =QQ^5
@@ -244,6 +253,7 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
         (1/8, 1/2, -9/2, 12, 2)
     </output>
  </sage>
+
  <sage>
     <input>
         V =QQ^5
@@ -254,7 +264,8 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
     </output>
  </sage>
 
- <h1>Linearly dependence and indepndence in Sage</h1>
+ <p> <h1>Linearly dependence and indepndence in Sage</h1></p> 
+
  <example>
     <p>
         Let us generate some random 5 vectors, <m> v_1,\ldots, v_5</m> in 
@@ -264,6 +275,7 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
         a method <code>linear_dependence()</code> whihc return emply list in case the set 
         is linearly independent and returns a list of scalars <m>\alpha_i</m> such that 
         <m>\sum \alpha_i v_i=0</m>.
+
     <sage>
         <input>
             V =QQ^5
@@ -278,6 +290,7 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
             
         </output>
     </sage>
+
     <sage>
         <input>
         V.are_linearly_dependent(B)   
@@ -286,6 +299,7 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
         True   
         </output>
     </sage>
+
     <sage>
         <input>
         V.linear_dependence(B)  
@@ -302,6 +316,7 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
         Now we can check if the scalar linear combination of the output 
         shown above with sect of vectors in <m>B</m> is zero.
     </p>
+
     <sage>
         <input>
             s = V.linear_dependence(B)
@@ -313,14 +328,15 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
     </sage>
     </p>    
  </example>
+
  <example>
     <title>Linear Span of vectors in Sage</title>
-    Sage can generate a linear span of a set of vectors in a vector space 
+    <p> Sage can generate a linear span of a set of vectors in a vector space 
     using the vector space method <code>.span()</code>. Let us explore this 
     for set of 5 vectors in a vector space <code>V=QQ^4</code>.
-
-    <p>
-        <sage>
+    </p>
+        
+    <sage>
             <input>
                 V =QQ^5
                 v1 = vector(QQ,[1,-1,3,2,4])
@@ -340,8 +356,10 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
                 [     0      0      1  31/22  13/11]   
             </output>
         </sage>
+        <p> 
     It returns the dimension of the linear span along with a basis as a matrix.
     We can check if any linear combinations of vectors in B lies in W.
+        </p> 
 
     <sage>
         <input>
@@ -353,7 +371,8 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
             True   
         </output>
     </sage>
-    We can also check if W is a subspave of V using the following sage syntaxes.
+
+    <p> We can also check if W is a subspave of V using the following sage syntaxes.</p> 
 
     <sage>
         <input>
@@ -371,14 +390,14 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
           True  
         </output>
     </sage>
-    </p>
-    
+       
  </example>
+
+
  <example>
-    <title>Using RREF to find a basis of linear span.</title>
+    <title>Using RREF to find a basis of a linear span</title>
     <p>
-    
-        Let us use the sage method rref to find a basis of the set of vectors define 
+     Let us use the sage method rref to find a basis of the set of vectors define 
         earlies in Sage.
      </p>
        
@@ -404,6 +423,7 @@ In sage a vector space, <m>V</m> has two methods <code>V.random_element()</code>
           
     </output>
  </sage>
+
  <p>
  Clearly the first three rows constitutes a basis of linear span. This is what 
  we obtained using <c>.span()</c>.
@@ -434,7 +454,8 @@ Find the coordinates of the vector <m>v=(5,7,11,-13)</m> with respect to this ba
         ]
     </output>
 </sage>
-We can also print this basis as a matrix using <c>V.basis_matrix()</c>
+<p> 
+We can also print this basis as a matrix using <c>V.basis_matrix()</c> </p>
 
 <sage>
     <input>
@@ -447,7 +468,9 @@ We can also print this basis as a matrix using <c>V.basis_matrix()</c>
         [0 0 0 1]  
     </output>
 </sage>
-Now we define the set of vectors in Sage.
+
+<p> Now we define the set of vectors in Sage. </p> 
+
 <sage>
     <input>
         v1 = vector(QQ,[1,-1,3,2])
@@ -463,8 +486,11 @@ Now we define the set of vectors in Sage.
         ] 
     </output>
 </sage>
+<p> 
 We can also check the same by finding the rank of the martrix <m>M</m> whose columns and 
 the given vectors. If the rank is 4, then the given set of vectors are linearly independet.
+</p> 
+
 <sage>
     <input>
         M = column_matrix(B)
@@ -474,11 +500,14 @@ the given vectors. If the rank is 4, then the given set of vectors are linearly 
         4
     </output>
 </sage>
-Since it returns an empty list. The given set of vectors <m>B</m> is linearly independet.
+
+<p> 
+    Since it returns an empty list. The given set of vectors <m>B</m> is linearly independet.
 We can find the coordinates of the vector using sage method <c>coordinate_vector()</c> 
 or using <c>.coordinates()</c>
 using  the following codes. For this first we need to create a subspace say V1 with 
 B as a basis using the method <c>V.subspace_with_basis(B)</c>
+</p> 
 
 <sage>
     <input>
@@ -495,6 +524,7 @@ B as a basis using the method <c>V.subspace_with_basis(B)</c>
         [ 3  2  1  2]   
     </output>
 </sage>
+
 <sage>
     <input>
         V1.coordinate_vector(v)
@@ -503,6 +533,7 @@ B as a basis using the method <c>V.subspace_with_basis(B)</c>
         (1/28, -25/14, -663/28, 559/14) 
     </output>
 </sage>
+
 <sage>
     <input>
         V1.coordinates(v)
@@ -511,7 +542,9 @@ B as a basis using the method <c>V.subspace_with_basis(B)</c>
         [1/28, -25/14, -663/28, 559/14]
     </output>
 </sage>
-We can also find the same manually using RREF as follows.
+
+<p> We can also find the same manually using RREF as follows. </p> 
+
 <sage>
     <input>
         column_matrix(B).augment(v,subdivide=True)
@@ -534,7 +567,9 @@ We can also find the same manually using RREF as follows.
         [      0       0       0       1| 559/14]
     </output>
 </sage>
-The same can be achieved using by solving the system <m>Bx=v</m>.
+
+<p> The same can be achieved using by solving the system <m>Bx=v</m>.</p> 
+
 <sage>
     <input>
         column_matrix(B).inverse()*v
@@ -580,6 +615,7 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
                 [ 0  0  0  0  1  3]  
             </output>
         </sage>
+
         <sage>
             <input>
                 A.rref()
@@ -592,13 +628,15 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
                 [ 0  0  0  0  0  0]
             </output>
         </sage>
-        Clearly the first three row of rref(A) is same as basis matrix obtained uising 
-        the inbuilt sage method.
+
+<p>        Clearly the first three row of rref(A) is same as basis matrix obtained uising 
+        the inbuilt sage method. </p>
 
         <p>
             Next we find the columns space using the sage method <c>A.column_space()</c> 
             and verify the same using the rref applied to <m>A^T</m>. 
         </p>
+
         <sage>
             <input>
                 ## Column space of A
@@ -612,6 +650,7 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
                 [ 0  0  1  5 -5]
             </output>
         </sage>
+        
         <sage>
             <input>
                 ## Finding basis of column space using RREF
@@ -626,13 +665,15 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
                 [ 0  0  0  0  0]
             </output>
         </sage>
-        Clearly, the 1st three rows of rref(A) are same as basis matrix of 
-        <c>A.column_space()</c>
+        
+        <p> Clearly, the 1st three rows of rref(A) are same as basis matrix of 
+        <c>A.column_space()</c> </p> 
 
         <p>
             The column space of <m>A</m> is also known as image space of <m>A</m>. Sage 
             has inbuilt method <c>A.image()</c> to find the image space.
         </p>
+
         <sage>
             <input>
             A.image()  
@@ -646,10 +687,12 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
                 [ 0  0  0  0  0]   
             </output>
         </sage>
+        
         <p>
             The null space of <m>A</m> also known as kernel of <m>A</m> can be obtained 
             by the sage method <c>A.right_kernel()</c>. 
         </p>
+        
         <sage>
             <input>
             A.right_kernel()
@@ -662,11 +705,13 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
                 [ 0  0  1 -3 -9  3]
             </output>
         </sage>
-        Clearly, the kernel is of dimension 3. 
+        
+        <p> Clearly, the kernel is of dimension 3. </p> 
         <p>
             The left null space can be obtained by the sage method <c>A.left_kernel()</c> 
             or using <c>A.T.right_kernel()</c>.
         </p>
+
         <sage>
             <input>
             A.left_kernel()
@@ -678,6 +723,7 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
                 [ 0  0  0  1  1]  
             </output>
         </sage>
+        
         <sage>
             <input>
                 A.T.right_kernel()
@@ -692,19 +738,26 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
     </p>
   </solution>
 </example>
+
+
 <observation>
+    <p> 
    Consider the matrix <m>A</m> defined in the Example 
    <xref ref="fundamental-spaces-sage-eg1"/>. Observe the following:
+    </p>
+
    <p>
     (i) Let <m>u</m> be a random element in <m>Row(A)</m> and <m>v</m> 
     be a random element in <m>null(A)</m>. Then <m>u</m> and <m>v</m> are 
     orthogoal. That is, <m>u\cdot v=0</m>.
    </p>  
+
    <p>
     (ii) Let <m>u</m> be a random element in <m>Col(A)</m> and <m>v</m> 
     be a random element in <m>leftnull(A)</m>. Then <m>u</m> and <m>v</m> are 
     orthogoal. That is, <m>u\cdot v=0</m>.
    </p>
+
 <solution>
     <p>
     <sage>
@@ -724,6 +777,7 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
             
         </output>
     </sage>
+
     <sage>
         <input>
             u = rowA.random_element()
@@ -734,6 +788,7 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
          0   
         </output>
     </sage>
+
     <sage>
         <input>
             u = colA.random_element()
@@ -746,6 +801,7 @@ The same can be achieved using by solving the system <m>Bx=v</m>.
     </sage>
     </p>
 </solution>
+
 </observation>
 <example><title>Change of coordinates</title>
 <p>
@@ -783,6 +839,7 @@ and
         False
         </output>
       </sage>  
+
       <sage>
         <input>
             c1 = vector(QQ, [ 0,  2, -7,  5])
@@ -796,11 +853,12 @@ and
         False
         </output>
       </sage>
-      Clearly B and C are linearly indendent and hence they are bases of <m>V</m>.
-    </p>
+      <p>  Clearly B and C are linearly indendent and hence they are bases of <m>V</m>.</p> 
+    
+      <p>
     Next we define two subspaces V1 and V2 with B and C as bases respectively and define 
-    the vector <m>x</m> in Sage.
-    <p>
+    the vector <m>x</m> in Sage.</p> 
+
         <sage>
             <input>
                 V1 = V.subspace_with_basis(B)
@@ -811,9 +869,11 @@ and
                 
             </output>
         </sage>
+
         <p>
             Next we find the coordinates <m>x_\beta</m> and <m>x_\gamma</m>.
         </p>
+
         <sage>
             <input>
                 xB = V1.coordinates(x);
@@ -826,11 +886,13 @@ and
                 The coordinates of x w.r.t. C is: [-60, 10, -23, 36] 
             </output>
         </sage>
+
         <p>
             Next we define the change of basis matrix <m>[I]_\beta^\gamma</m>. 
             This can be achieved by taking a matrix <m>M=[C~|~B]</m> applying rref and 
             extracting the last four columns. 
         </p>
+
         <sage>
             <input>
                 ## Matrix of Change of basis from B to C, that [I]_B^C
@@ -857,7 +919,8 @@ and
                 [-13  -4   0  -2]    
             </output>
         </sage>
-        One can verify that this is same as <m>C^{-1}B</m>.
+        <p>         One can verify that this is same as <m>C^{-1}B</m>.</p> 
+
         <sage>
             <input>
             column_matrix(C).inverse()*column_matrix(B)==IBC  
@@ -866,12 +929,14 @@ and
               True  
             </output>
         </sage>
+
         <p>
             Next we define the change of basis matrix <m>[I]_\gamma^\beta</m>. 
             This can be achieved by taking a matrix <m>M=[B~|~C]</m> applying rref and 
             extracting the last four columns. 
             One can verify that this is same as <m>C^{-1}B</m>.
         </p>
+
         <sage>
             <input>
                 ## Matrix of Change of basis from C to B, that [I]_C^B
@@ -898,6 +963,7 @@ and
                 [-49 -14  43 -49]   
             </output>
         </sage>
+
         <sage>
             <input>
             column_matrix(B).inverse()*column_matrix(C)==ICB
@@ -906,9 +972,11 @@ and
             True
             </output>
         </sage>
+
         <p>
             Let us check that <m>\left([I]_\beta^\gamma\right)^{-1}=[I]_\gamma^\beta</m>.
         </p>
+
         <sage>
             <input>
             IBC.inverse()==ICB
@@ -923,6 +991,7 @@ and
             <m>[I]_\beta^\gamma x_\beta=x_\gamma</m> and 
             <m>[I]_\gamma^\beta x_\gamma=x_\beta</m>.
         </p>
+
         <sage>
             <input>
                 IBC*vector(xB)==vector(xC)
@@ -944,24 +1013,29 @@ and
         <m>u_3=\left(5,-6,-2,18,3,6\right)</m> and <m> u_4=\left(-12,18,6,-54,-9,-15\right)</m>.
         Let <m>W_1=L(\{u_1,u_2,u_3,u_4\})</m>. 
         
+    </p> 
+
+    <p> 
         Let <m>v_1=\left(-1,4,2,-12,-1,-2\right)</m>, <m>v_2=\left(1,2,-1,3,2,1\right)</m>, 
         <m> v_3=\left(22,-30,-10,90,15,27\right)</m>, <m> v_4=\left(19,-24,-5,63,11,22\right)</m> and 
         <m> v_5=\left(-1,2,0,-1,3,0\right)</m>. Let  <m>W_2=L(\{v_1,v_2,v_3,v_4,v_5\})</m>. 
+    </p>
+
         <p>
 Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
         </p>
-<p>
+
     <solution>
         <p>
             Sage has inbulit method to find sum and intersection of 
             two subspaces. However, shall also see how these can be
             obtained manually. 
-
-
         </p>
+
         <p>
             First of all we define <m>W_1=L(S_1)</m>.
         </p>
+
         <sage>
             <input>
                 v1 = vector(QQ,[2,-1,0,3,1,2])
@@ -978,7 +1052,11 @@ Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
                 [   0    0    1    0  3/2 -1/2]
             </output>
         </sage>
-        This show that <m>W_1</m> is a 3-dimensional subspace of <m>V</m>. 
+
+        <p>
+        This show that <m>W_1</m> is a 3-dimensional subspace of <m>V</m>.  </p>
+            
+    
         <p>
             Next, we define <m>W_2=L(S_2)</m>
         </p>
@@ -1001,10 +1079,13 @@ Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
                 [       0        0        0        1  233/149   85/149]
             </output>
         </sage>
-        Here <m>W_2</m> is a 4 dimensional subspace of <m>V</m>.
+
+        <p> Here <m>W_2</m> is a 4 dimensional subspace of <m>V</m>.</p> 
+
         <p>
             Now we find <m>W_1\cap W_2</m> using the Sage method <c>W1.intersection(W2)</c>.
         </p>
+    
         <sage>
             <input>
             U = W1.intersection(W2);U  
@@ -1016,7 +1097,9 @@ Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
                 [     0      1  17/29     -3  -7/58 -17/58]
             </output>
         </sage>
-        Next we can find <m>W_1+W_2</m> as follows.
+
+        <p> Next we can find <m>W_1+W_2</m> as follows.</p>
+
         <sage>
             <input>
             Z = W1+W2;Z
@@ -1031,6 +1114,7 @@ Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
                 [     0      0      0      0      1  23/35]
             </output>
         </sage>
+
         <p>
             From the above computations, it is clear that
             <me>
@@ -1038,13 +1122,15 @@ Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
             </me>.
             In fact, this is true in general and we shall prove this later.
         </p>
-        <p>
-            <alert>How to find <m>W_1+W_2</m> manually?</alert>
+
+        <p> <alert>How to find <m>W_1+W_2</m> manually?</alert></p> 
+
             <p>
                 This can be obtained as <m>L(S_1\cup S_2)</m>. Thus we can 
             construct a matrix <m>M</m> whose rows are <m>S_1\cup S_2</m> and apply
             RREF. Let us see this.
             </p>
+
             <sage>
                 <input>
                 M = column_matrix([v1,v2,v3,v4,u1,u2,u3,u4,u5]).T
@@ -1062,23 +1148,29 @@ Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
                     [     0      0      0      0      0      0]
                 </output>
             </sage>
-        Clearly the first 5 rows of RREF(M) is the basis matrix obtained 
-        for <m>W_1+W_2</m>.
-            
+
+       <p>  Clearly the first 5 rows of RREF(M) is the basis matrix obtained 
+        for <m>W_1+W_2</m>.    
         </p>
 
         <p><strong>Finding <m>W_1\cap W_2</m> manually.</strong></p>
+
 <p>Let <m>c_1,c_2, c_3</m> be a basis of <m>W_1</m>   and <m>d_1,d_2, d_3,d_4</m> 
     be a  basis of <m>W_2</m> obtined above. If  <m>v\in W_1\cap W_2</m>. Then</p>
+
 <p><me> v=\alpha_1c_1+\alpha_2c_2+\alpha_3c_3=\beta_1d_1+\beta_2d_2+\beta_3d_3+\beta_4 d_4</me>.</p>
+
 <p>In particular, <m>\alpha_1c_1+\alpha_2c_2+\alpha_3c_3-\beta_1d_1-\beta_2d_2-\beta_3d_3-\beta_4 d_4=0</m>.  We can obtain <m>\alpha_i</m>'s and <m>\beta_i</m>'s by solving</p>
+
 <p><me>\begin{bmatrix} c_1 \amp c_2\amp c_3\amp d_1\amp d_2\amp d_3 \amp d_4\end{bmatrix}
     \begin{pmatrix} \alpha_1 \\ \alpha_2\\ \alpha_3\\ \beta_1\\ \beta_2\\ \beta_3\\\beta_4\end{pmatrix}=0</me><strong>
         </strong></p>
 
-    Thus we can find the null space of <m>\begin{bmatrix} c_1 \amp c_2\amp c_3\amp d_1\amp d_2\amp d_3 \amp d_4\end{bmatrix}</m>
+    <p> Thus we can find the null space of <m>\begin{bmatrix} c_1 \amp c_2\amp c_3\amp d_1\amp d_2\amp d_3 \amp d_4\end{bmatrix}</m>
     and find the vectors in the basis of <m>W_1\cap W_2</m>. Let see how to 
     do this in Sage.
+    </p>
+      
     <sage>
         <input>
             P = column_matrix([c[i] for i in range(len(c))]+[d[i] for i in range(len(d))]).T;
@@ -1092,8 +1184,10 @@ Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
             ]
         </output>
     </sage>
+    <p> 
     Once we have the basis of <m>null(P)</m>, we can obained the basis vector in 
-    <m>W_1\cap W_2</m> as follows.
+    <m>W_1\cap W_2</m> as follows. </p>
+
     <sage>
         <input>
             f1=sum([a[0][i]*c[i] for i in range(len(c))]) 
@@ -1106,11 +1200,9 @@ Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
             (1, 0, 10/29, 0, 15/29, 24/29)
         </output>
     </sage>
-    Clearly these are the basis vectors for <m>W_1\cap W_2</m> obtained using 
-    the inbulit Sage method.
+    <p> Clearly these are the basis vectors for <m>W_1\cap W_2</m> obtained using 
+    the inbulit Sage method.</p> 
     </solution>
-</p>
-    </p>
-    
+
 </example>
 </section>

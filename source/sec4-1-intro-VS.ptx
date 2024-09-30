@@ -2,17 +2,15 @@
 
 <section xml:id="sec4-1-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Introduction</title>
-
-    
       <p>
-        Recall the properties (eight) of operation addition and scalar multiplication in 
-        <m>\R^n</m>.
+        Recall the eight properties (<xref ref="prop-Rn-properties"/>) of operation addition and scalar multiplication in <m>\R^n</m>.
         Any non-empty set with two operations,
         addition and scalar multiplication satisfying the eight properties is known as vector space.
         More precisely we have the following definition.
       </p>
 
-      <definition>
+      <definition xml:base="def-abst-VS">
+        <title>Abstract Vector Space</title> 
         <statement>
           <p>
             Let <m>V</m> be a nonempty set with two operations
@@ -89,6 +87,7 @@
           </p>
         </statement>
       </example>
+
       <example xml:id="eg-matix-vs">
         <statement>
           <p>
@@ -98,6 +97,7 @@
           </p>
         </statement>
       </example>
+
       <example xml:id="eg-poly-vs">
         <statement>
           <p>
@@ -109,6 +109,7 @@
           </p>
         </statement>
       </example>
+
       <example xml:id="eg-ralvaluesfun-vs">
         <statement>
           <p>
@@ -122,6 +123,7 @@
           </p>
         </statement>
       </example>
+
       <example xml:id="eg-complex-vs">
         <statement>
           <p>
@@ -136,6 +138,7 @@
           </p>
         </statement>
       </example>
+
       <example xml:id="eg-function-vs">
         <statement>
           <p>
@@ -149,6 +152,7 @@
           </p>
         </statement>
       </example>
+
       <example xml:id="eg-rationals-vs">
         <statement>
           <p>
@@ -161,21 +165,25 @@
           </p>
         </statement>
       </example>
+
       <example xml:id="eg-bijection-vs">
         <statement>
           <p>
             Let <m>V</m> be a vector space over <m>\R</m> and <m>X</m> is a nonempty set.
             Let <m>\varphi\colon X\to V</m> be a bijection.
             We define addition and scalar multiplication on <m>X</m> as follows:
-            <me>
-              \text{ for }  x_1,x_2\in X, x_1+x_2:=\varphi(x_1)+\varphi(x_2) \text{ and for }  \alpha \in \R, x\in X \alpha\cdot x=\alpha\cdot \varphi(x)
-            </me>.
+            <md>
+              <mrow>\text{ for }  x_1,x_2\in X, x_1+x_2:=\varphi(x_1)+\varphi(x_2) </mrow>
+              <mrow>\text{ and for }  \alpha \in \R, x\in X \alpha\cdot x=\alpha\cdot \varphi(x).</mrow>
+            </md>
           </p>
+
           <p>
             It is easy to check that <m>X</m> with above addition and scalar multiplication is a vector space over <m>\R</m>.
           </p>
         </statement>
       </example>
+
       <example>
         <statement>
           <p>
@@ -225,9 +233,8 @@
           </p>
         </statement>
       </example>
+
       <example>
-       
-        
         <statement>
           <p>
             Let <m>V=\R^2</m>.
@@ -246,6 +253,7 @@
           </p>
         </statement>
       </example>
+
       <example>
         <statement>
           <p>
@@ -264,6 +272,7 @@
           </p>
         </statement>
       </example>
+
       <example>
         <statement>
           <p>
@@ -279,11 +288,13 @@
           </p>
         </statement>
       </example>
+
       <p>
         Next we list the some properties in a vector space <m>V</m> over <m>\R</m>.
         These properties are easy to prove.
         Readers are encouraged to prove these properties.
       </p>
+
       <theorem xml:id="thm-vs-prop">
         <title>Properties</title>
         <statement>
@@ -323,6 +334,7 @@
           </p>
         </statement>
       </theorem>
+
       <p>
         In view of these, properties, here onward we will write
         <q>the additive identity</q>

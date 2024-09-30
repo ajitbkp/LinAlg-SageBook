@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec10-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  
+        <title>Applications of PCA</title>
+        <introduction>
+          <p>
+         
+          PCA, as mentioned earlier, is a dimensionality reduction techniques.
+          It has numerous applications like,
+          visualization of high dimensional data,
+          facial recognition, computer vision,
+          image compression, determining patterns in a data,
+          data mining, bioinformatics,
+          psychology, analyzing and forecasting stock data,etc.
+                    We mention, image compression as one of the applications.
+          
+        </p>
+      </introduction>
+     
+
+      <subsection>
+        <title>Image compression with PCA</title>
+        <p>
+          Similar to SVD, we can also compress the images using PCA. We take any image,
+          first of all we separate the RBG channels of the images and apply PCA separately to red channel,
+          green channel and blue channel.
+          Next we take first <m>k</m> principal components and project the red,
+          green and blue channel images and then combine the three channels to obtained the transformed image with <m>k</m> principal components.
+        </p>
+
+        <example>
+          <statement>
+            <p>
+              Consider an image of a Rose as shown in the <xref ref="fig_Rose"></xref> 
+              This image is of sinze <m>600\times 800\times 3</m> array.
+            </p>
+
+            <figure xml:id="fig_Rose">
+              <caption>Original  Rose Image</caption>
+              <image width="50%" source="images/Rose.png"/>
+            </figure>
+
+            <p>
+              The red green and blue channel images are shown in the 
+              <xref ref="fig_RoseR">Figures</xref>,
+              <xref ref="fig_RoseG"></xref>,
+              <xref ref="fig_RoseB"></xref>.
+            </p>
+          
+            <figure xml:id="fig_RoseR">
+              <caption>Red Channel</caption>
+              <image width="33%" source="images/RoseR.png"/>
+            </figure>
+
+            <figure xml:id="fig_RoseG">
+              <caption>Green Channel</caption>
+              <image width="33%" source="images/RoseR.png"/>
+            </figure>
+
+            <figure xml:id="fig_RoseB">
+              <caption>Blue Channel</caption>
+              <image width="33%" source="images/RoseR.png"/>
+            </figure>
+
+            <p>
+              After applying PCA and taking first 5, 20 and 50 principal 
+              components and combining the three channels together 
+              we get the following approximate images as shown in the
+               <xref ref="fig_Rose-PCA5">Figures</xref>,
+              <xref ref="fig_Rose-PCA20"></xref>,
+              <xref ref="fig_Rose-PCA50"></xref>, respectively.
+              Each channel is of size <m>600\times 800</m>.
+            </p>
+
+            <figure xml:id="fig_Rose-PCA5">
+              <caption>5 components</caption>
+              <image width="33%" source="images/Rose_PCA5.png"/>
+              </figure>
+
+              <figure xml:id="fig_Rose-PCA20">
+                  <caption>20 components</caption>
+                  <image width="33%" source="images/Rose_PCA20.png"/>
+              </figure>
+
+              <figure xml:id="fig_Rose-PCA50">
+                  <caption>50 components</caption>
+                  <image width="33%" source="images/Rose_PCA50.png"/>     
+              </figure>
+             
+            <p>
+              We can see from the image,
+              that 1st 50 components gives a very good approximation to the original image.
+            </p>
+          </statement>
+        </example>
+
+
+      </subsection>
+
+
+      <subsection>
+        <title>Relation Between SVD and PCA</title>
+        <p>
+          Consider a matrix <m>X</m> of size <m>n\times d</m>.
+          We can apply SVD and PCA on <m>X</m>.
+          Suppose the SVD of <m>X</m> is given by
+          <me>
+            X = U\Sigma V^T
+          </me>.
+          Let <m>U=[u_1~\ldots~ u_n]</m> and <m>V^T=\begin{bmatrix}v_1^T\\v_2^T\\\vdots\\v_d^T \end{bmatrix}</m>.
+          Then
+          <me>
+            X^TX = V\left( \Sigma^T\Sigma\right) V^T
+          </me>.
+        </p>
+
+        <p>
+          The covariance matrix of <m>X</m> is <m>\frac{1}{n-1}X^TX</m>.
+          This shows that <m>S</m> and <m>X^TX</m> are similar matrices.
+          If <m>\lambda_1,\ldots, \lambda_r</m> are non zero eigenvalues of <m>S</m> and
+          <m>\sigma_1,\ldots, \sigma_r</m> are singular values of <m>X</m>.
+          Then they are related by the following relation
+          <me>
+            \sigma_i^2=(n-1)\lambda_i, i = 1, 2,\ldots, r
+          </me>.
+        </p>
+
+        <p>
+          The relation <m>X^TX = V\left( \Sigma^T\Sigma\right) V^T</m> shows that right singular vectors are same as principal components.
+          The left singular vectors are given by
+          <me>
+            u_i = \frac{1}{\sqrt{n-1}}Xv_i
+          </me>.
+        </p>
+      </subsection>
+
+
+      <subsection>
+        <title>Exercise Set</title>
+        <exercise xml:id="exer-10-1-19">
+          <statement>
+            <p>
+              Find the singular values Decomposition of the following matrices.
+            </p>
+
+            <p>
+              (a) <m>\begin{bmatrix}-2 \amp 2 \\ 1 \amp 1 \end{bmatrix}</m>,(b)
+              <m>\begin{bmatrix}1 \amp 1 \\ 0 \amp 1 \\1 \amp 0 \end{bmatrix}</m>, (c) <m>\begin{bmatrix}-1 \amp 1 \\ -1 \amp 1\\2 \amp -2 \end{bmatrix}</m>, (d)
+              <m>\begin{bmatrix}1 \amp 1 \\ -3 \amp -3 \end{bmatrix}</m>, (e) <m>\begin{bmatrix}1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1\\-1 \amp 1\amp 0 \end{bmatrix}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise xml:id="exer-10-1-20">
+          <statement>
+            <p>
+              Use SVD to find generalized inverse of the following matrices:
+            </p>
+
+            <p>
+              (a) <m>\begin{bmatrix}1 \amp 1 \\ -3 \amp -3 \end{bmatrix}</m>, (b)
+              <m>\begin{bmatrix}1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1\\-1 \amp 1\amp 0 \end{bmatrix}</m>, (c) <m>\begin{bmatrix}1 \amp 0 \amp -1\\-1 \amp 0 \amp 1\\0 \amp 1 \amp 0 \end{bmatrix}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise xml:id="exer-10-1-21">
+          <statement>
+            <p>
+              Use the generalized inverse from the SVD to find the least square solution of the system of linear equations <m>Ax=b</m> where
+              <me>
+                \begin{bmatrix}1 \amp  2 \\ -1 \amp  1\\ 2 \amp  1\\ 2 \amp  -1\\1 \amp  1 \end{bmatrix} ,  b=\begin{bmatrix}2 \amp  1 \amp  -2 \amp  1 \amp  3 \end{bmatrix}
+              </me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise xml:id="exer-10-1-22">
+          <statement>
+            <p>
+              Find the principal components of the matrix
+              <me>
+                \begin{bmatrix}3 \amp  -4 \amp  7 \amp  1 \amp  -4 \amp  -3\\7 \amp  -6 \amp  8 \amp  -1 \amp  -1 \amp  7 \end{bmatrix}
+              </me>
+            </p>
+            
+            <p>
+              What percentage of the variation in the data is explained by the first principal component.
+            </p>
+          </statement>
+        </exercise>
+      </subsection>
+
+    </section>

@@ -4,7 +4,7 @@
   <title>Orthogonal Complements</title>
 
   
-  <definition>
+  <definition xml:id="def-orthogonal-complement">
     <statement>
       <p>
         Let <m>U\subset \R^n</m>. Then <m>U^\perp:=\{x\in \R^n: x\cdot u=0, \forall u\in U\}</m> 
@@ -41,6 +41,7 @@
       </p>
     </statement>
   </example>
+
   <example>
     <statement>
       <p>
@@ -65,6 +66,7 @@
       </p>
     </statement>
   </definition>
+
   <exercise>
     <statement>
       <p>
@@ -88,6 +90,7 @@
       </p>
     </statement>
   </exercise>
+
   <example>
     <statement>
       <p>
@@ -104,11 +107,13 @@
       </p>
     </statement>
   </example>
+
   <p>
     How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in <m>\R^n</m>?
     Let <m>\beta = \{w_1,\ldots, w_k\}</m> be a basis of <m>W</m>.
     We want to find the vector <m>p</m> which the orthogonal projection of <m>v</m> onto <m>W</m>.
   </p>
+
   <p>
     Note that <m>p\in W</m>, therefore,
     there exist scalars <m>x_1,\ldots, x_k</m> such that
@@ -117,6 +122,7 @@
     </me>
     where <m>A=[v_1~\cdots ~ v_k]</m> and <m>x=[x_1~\cdots~x_k]^T</m>.
   </p>
+
   <p>
     It is clear that <m>v-p=v-Ax\in W^T</m>.
     Hence <m>(v_i)^T(v-Ax)=0</m> for <m>1\leq i\leq k</m>.
@@ -125,6 +131,7 @@
       A^T(v-Ax)=0 \implies x=(A^TA)^{-1}(A^Tv)
     </me>.
   </p>
+  
   <p>
     Hence
     <men xml:id="orth-Proj-W">

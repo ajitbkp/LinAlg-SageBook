@@ -2,7 +2,13 @@
 
 <section xml:id="sec2-1-LinSpan" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Linear Spans</title>
-<p>
+<introduction>
+    <p>
+        In this section we define linear span of a subset of <m>\R^n</m> and look at several example. We also 
+        look at an important class of suspaces associated with a matrix.
+    </p>
+</introduction>
+
     <definition xml:id="def-sec2-1-linear-span">
         <statement>
             <p>
@@ -13,7 +19,7 @@ L(S):=\{\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k:\alpha_1,\cdots,\alpha_k\in \
 </p>
 </statement>
 </definition>
-</p>
+
 <p>
     Note that if <m>x\in L(S)</m> means there exist scalars <m>\alpha_1,\ldots,\alpha_k \in \R</m> such that 
     <m>x=\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k</m>.
@@ -46,12 +52,11 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
 </example>
 </p>  
 
-<p>
-  <problem>
-  <p>
-    Try to prove the following.
-  </p>
-    <p>
+
+  <reading-questions xml:id="rqs-">
+    <p> Try to prove the following.
+    </p>
+
         <ol>
             <li>
                 <p>
@@ -93,7 +98,7 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
                 </p>
             </li>
         </ol>
-    </p>
+<p>
 <solution>
     <p>
         Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem. 
@@ -106,7 +111,7 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
             </md>.
             It is easy to check that the above system has a unique solution as rank of <m>A</m> is 3 (This can be easily verified by Sage). Hence <m>(a,b,c>\in \R^3</m> and hence <m>\R^3\subset L(S)</m>.   
             Hence we have <m>L(S)=\R^3</m>.
-            <p>
+        </p>
                 <sage>
                     <input>
                         A =matrix(QQ,[[1,1,-1],[1,2,3],[3,2,1]]).T
@@ -117,13 +122,15 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
                         
                     </output>
                 </sage>
-            </p>
-        </p>
-    </p>
-</solution>  
-</problem>
 
+        </p>
+
+</solution>  
 </p>
+
+</reading-questions>
+
+
 <example xml:id="sec2-1-matrix-spaces">
 <title>Matrix Spaces</title>
 <p>
@@ -153,7 +160,10 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
 </ol>  
 </p>
     
-The four subspaces, namely <m>{\cal N}(A)</m>, <m>{\cal col}(A)</m>, <m>{\cal L}(A)</m> and <m>{\cal row}(A)</m> are called the 
+<p>
+The four subspaces, namely <m>{\cal N}(A)</m>, <m>{\rm col}(A)</m>, <m>{\cal L}(A)</m> and <m> {\rm row}(A)</m> are called the 
 <alert>fundamental subspaces</alert> associated with a matrix <m>A</m>.
+</p>
+
 </example>
 </section>
