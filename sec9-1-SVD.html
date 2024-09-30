@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Singular Value Decomposition</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#subsec-elmentary-row-operations-3 { counter-set: subsec-elmentary-row-operations-3 0; }
+#subsec-elmentary-row-operations-3 > li::marker { content: ""counter(subsec-elmentary-row-operations-3,decimal)"."; }
+#subsec-elmentary-row-operations-3 > li { counter-increment: subsec-elmentary-row-operations-3; }
+#def-elementary-row-operations-2-1-2 { counter-set: def-elementary-row-operations-2-1-2 0; }
+#def-elementary-row-operations-2-1-2 > li::marker { content: ""counter(def-elementary-row-operations-2-1-2,decimal)"."; }
+#def-elementary-row-operations-2-1-2 > li { counter-increment: def-elementary-row-operations-2-1-2; }
+#subsec-elmentary-row-operations-8-14-1 { counter-set: subsec-elmentary-row-operations-8-14-1 0; }
+#subsec-elmentary-row-operations-8-14-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-8-14-1,decimal)"."; }
+#subsec-elmentary-row-operations-8-14-1 > li { counter-increment: subsec-elmentary-row-operations-8-14-1; }
+#subsec-elmentary-row-operations-15-1 { counter-set: subsec-elmentary-row-operations-15-1 0; }
+#subsec-elmentary-row-operations-15-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-15-1,decimal)"."; }
+#subsec-elmentary-row-operations-15-1 > li { counter-increment: subsec-elmentary-row-operations-15-1; }
+#def-echelon-form-5 { counter-set: def-echelon-form-5 0; }
+#def-echelon-form-5 > li::marker { content: ""counter(def-echelon-form-5,decimal)"."; }
+#def-echelon-form-5 > li { counter-increment: def-echelon-form-5; }
+#sec-row-echelon-6 { counter-set: sec-row-echelon-6 0; }
+#sec-row-echelon-6 > li::marker { content: ""counter(sec-row-echelon-6,decimal)"."; }
+#sec-row-echelon-6 > li { counter-increment: sec-row-echelon-6; }
+#alg-gaussian-elimination-2 { counter-set: alg-gaussian-elimination-2 0; }
+#alg-gaussian-elimination-2 > li::marker { content: ""counter(alg-gaussian-elimination-2,decimal)"."; }
+#alg-gaussian-elimination-2 > li { counter-increment: alg-gaussian-elimination-2; }
+#sec1-4-matrix-rank-5-2 { counter-set: sec1-4-matrix-rank-5-2 0; }
+#sec1-4-matrix-rank-5-2 > li::marker { content: ""counter(sec1-4-matrix-rank-5-2,decimal)"."; }
+#sec1-4-matrix-rank-5-2 > li { counter-increment: sec1-4-matrix-rank-5-2; }
+#thm-nosol-rank-2-1-5 { counter-set: thm-nosol-rank-2-1-5 0; }
+#thm-nosol-rank-2-1-5 > li::marker { content: ""counter(thm-nosol-rank-2-1-5,decimal)"."; }
+#thm-nosol-rank-2-1-5 > li { counter-increment: thm-nosol-rank-2-1-5; }
+#subsec-Doolittle-5 { counter-set: subsec-Doolittle-5 0; }
+#subsec-Doolittle-5 > li::marker { content: ""counter(subsec-Doolittle-5,decimal)"."; }
+#subsec-Doolittle-5 > li { counter-increment: subsec-Doolittle-5; }
+#subsec-Doolittle-8 { counter-set: subsec-Doolittle-8 0; }
+#subsec-Doolittle-8 > li::marker { content: ""counter(subsec-Doolittle-8,decimal)"."; }
+#subsec-Doolittle-8 > li { counter-increment: subsec-Doolittle-8; }
+#ch1-exer-2-1 { counter-set: ch1-exer-2-1 0; }
+#ch1-exer-2-1 > li::marker { content: ""counter(ch1-exer-2-1,decimal)"."; }
+#ch1-exer-2-1 > li { counter-increment: ch1-exer-2-1; }
+#ch1-exer-2-1-3-1-1 { counter-set: ch1-exer-2-1-3-1-1 0; }
+#ch1-exer-2-1-3-1-1 > li::marker { content: "("counter(ch1-exer-2-1-3-1-1,lower-alpha)")"; }
+#ch1-exer-2-1-3-1-1 > li { counter-increment: ch1-exer-2-1-3-1-1; }
+#sec2-0-intro-11-1-1 { counter-set: sec2-0-intro-11-1-1 0; }
+#sec2-0-intro-11-1-1 > li::marker { content: ""counter(sec2-0-intro-11-1-1,decimal)"."; }
+#sec2-0-intro-11-1-1 > li { counter-increment: sec2-0-intro-11-1-1; }
+#rqs--2 { counter-set: rqs--2 0; }
+#rqs--2 > li::marker { content: "("counter(rqs--2,lower-alpha)")"; }
+#rqs--2 > li { counter-increment: rqs--2; }
+#sec2-1-matrix-spaces-2-5 { counter-set: sec2-1-matrix-spaces-2-5 0; }
+#sec2-1-matrix-spaces-2-5 > li::marker { content: ""counter(sec2-1-matrix-spaces-2-5,decimal)"."; }
+#sec2-1-matrix-spaces-2-5 > li { counter-increment: sec2-1-matrix-spaces-2-5; }
+#sec-2-2-remrak2-1 { counter-set: sec-2-2-remrak2-1 0; }
+#sec-2-2-remrak2-1 > li::marker { content: ""counter(sec-2-2-remrak2-1,decimal)"."; }
+#sec-2-2-remrak2-1 > li { counter-increment: sec-2-2-remrak2-1; }
+#sec-sec3-5-LT-Sage-2-1-1-2 { counter-set: sec-sec3-5-LT-Sage-2-1-1-2 0; }
+#sec-sec3-5-LT-Sage-2-1-1-2 > li::marker { content: ""counter(sec-sec3-5-LT-Sage-2-1-1-2,decimal)"."; }
+#sec-sec3-5-LT-Sage-2-1-1-2 > li { counter-increment: sec-sec3-5-LT-Sage-2-1-1-2; }
+#sec4-1-VS-3-2-1-6 { counter-set: sec4-1-VS-3-2-1-6 0; }
+#sec4-1-VS-3-2-1-6 > li::marker { content: ""counter(sec4-1-VS-3-2-1-6,decimal)"."; }
+#sec4-1-VS-3-2-1-6 > li { counter-increment: sec4-1-VS-3-2-1-6; }
+#thm-basis-equiv-1-1-3 { counter-set: thm-basis-equiv-1-1-3 0; }
+#thm-basis-equiv-1-1-3 > li::marker { content: ""counter(thm-basis-equiv-1-1-3,decimal)"."; }
+#thm-basis-equiv-1-1-3 > li { counter-increment: thm-basis-equiv-1-1-3; }
+#sec4-5-VS-Ex-2 { counter-set: sec4-5-VS-Ex-2 0; }
+#sec4-5-VS-Ex-2 > li::marker { content: ""counter(sec4-5-VS-Ex-2,decimal)"."; }
+#sec4-5-VS-Ex-2 > li { counter-increment: sec4-5-VS-Ex-2; }
+#eigen-properties-2-1-1 { counter-set: eigen-properties-2-1-1 0; }
+#eigen-properties-2-1-1 > li::marker { content: ""counter(eigen-properties-2-1-1,decimal)"."; }
+#eigen-properties-2-1-1 > li { counter-increment: eigen-properties-2-1-1; }
+#sec5-1-eigen-intro-21-1-1 { counter-set: sec5-1-eigen-intro-21-1-1 0; }
+#sec5-1-eigen-intro-21-1-1 > li::marker { content: ""counter(sec5-1-eigen-intro-21-1-1,decimal)"."; }
+#sec5-1-eigen-intro-21-1-1 > li { counter-increment: sec5-1-eigen-intro-21-1-1; }
+#sec5-4-eigen-exer-2 { counter-set: sec5-4-eigen-exer-2 0; }
+#sec5-4-eigen-exer-2 > li::marker { content: ""counter(sec5-4-eigen-exer-2,decimal)"."; }
+#sec5-4-eigen-exer-2 > li { counter-increment: sec5-4-eigen-exer-2; }
+#sec6-0-orthogonality-8-1-1 { counter-set: sec6-0-orthogonality-8-1-1 0; }
+#sec6-0-orthogonality-8-1-1 > li::marker { content: ""counter(sec6-0-orthogonality-8-1-1,decimal)"."; }
+#sec6-0-orthogonality-8-1-1 > li { counter-increment: sec6-0-orthogonality-8-1-1; }
+#sec7-1-InnerProduct-3-3 { counter-set: sec7-1-InnerProduct-3-3 0; }
+#sec7-1-InnerProduct-3-3 > li::marker { content: ""counter(sec7-1-InnerProduct-3-3,decimal)"."; }
+#sec7-1-InnerProduct-3-3 > li { counter-increment: sec7-1-InnerProduct-3-3; }
+#def-inner-product-2-1-7 { counter-set: def-inner-product-2-1-7 0; }
+#def-inner-product-2-1-7 > li::marker { content: ""counter(def-inner-product-2-1-7,decimal)"."; }
+#def-inner-product-2-1-7 > li { counter-increment: def-inner-product-2-1-7; }
+#thm-norm-properties-2-1-3 { counter-set: thm-norm-properties-2-1-3 0; }
+#thm-norm-properties-2-1-3 > li::marker { content: ""counter(thm-norm-properties-2-1-3,decimal)"."; }
+#thm-norm-properties-2-1-3 > li { counter-increment: thm-norm-properties-2-1-3; }
+#sec7-2-Exer-3-1 { counter-set: sec7-2-Exer-3-1 0; }
+#sec7-2-Exer-3-1 > li::marker { content: ""counter(sec7-2-Exer-3-1,decimal)"."; }
+#sec7-2-Exer-3-1 > li { counter-increment: sec7-2-Exer-3-1; }
+#def-pseudoinverse-1-1-6 { counter-set: def-pseudoinverse-1-1-6 0; }
+#def-pseudoinverse-1-1-6 > li::marker { content: ""counter(def-pseudoinverse-1-1-6,decimal)"."; }
+#def-pseudoinverse-1-1-6 > li { counter-increment: def-pseudoinverse-1-1-6; }
+#exer-9-1-14-1 { counter-set: exer-9-1-14-1 0; }
+#exer-9-1-14-1 > li::marker { content: ""counter(exer-9-1-14-1,decimal)"."; }
+#exer-9-1-14-1 > li { counter-increment: exer-9-1-14-1; }
+</style>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<p class="byline">Ajit Kumar</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chap9-SVD.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap9-SVD.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap10-PCA.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap1-lineq.html" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Row Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-elmentary-row-operations" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Elmentary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-operations.html#subsec-Matrix-inverse-using-rref" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Matrix Inversion via Elementary Row Operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-col-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Column Operations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-echelon-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Echelon Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#sec-row-echelon" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Row Echelon Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#subsec-Gaussian-Elimination" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Gaussian Elimination Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-echelon-form.html#subsec-Gauss-Jordan-Method" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Gauss-Jordan elimination method</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec1-4-matrix-rank.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Rank of Matrices</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-system.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Homogeneous System of Linear Equations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec1-6-LU.html" class="internal"><span class="codenumber">1.6</span> <span class="title"><span class="process-math">\(LU\)</span>-Facotorization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec1-6-LU.html#subsec-Doolittle" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Dooliitle and Crout’s Factorization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec1-6-LU.html#subsec-solving-system-LU" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Solving system of equations using LU factorization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec1-6-LU.html#subsec-lu-sage" class="internal"><span class="codenumber">1.6.3</span> <span class="title"><span class="process-math">\(LU\)</span>-factorization in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec1-6-LU.html#subsec-" class="internal"><span class="codenumber">1.6.4</span> <span class="title">User defined functions for DooLitlte and Crout’s Methods</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch1-exer.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap2-Rn-Space.html" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec2-0-intro.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec2-1-LinSpan.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Linear Spans</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec2-1-LinSpan.html#rqs-" class="internal"><span class="codenumber">2.2</span> <span class="title">Reading Questions</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2-2-LI.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Linear Dependence</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-3-basis-dimension.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Basis and Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-3-basis-dimension.html#subsec-basis-intro" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-3-basis-dimension.html#subsec-dimension-intro" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Dimension of Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-3-basis-dimension.html#sec2-3-change-of-basis" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Change of bases.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec2-4-Sage.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Sage Computations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap3-LT.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec3-1-LT.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec3-2-LT.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-RntoRm" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-composition" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Composition of linear transformations</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-basis-change" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Matrix of Change of basis</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec3-2-LT.html#rqs-uniqueness-of-LT" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Reading Questions</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec3-3-LT.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Reflections and Projections</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-3-LT.html#reflection-R2" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Reflections in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-3-LT.html#projection-R2" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Projections in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-3-LT.html#Proj-Refl-R3" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Projection and Reflection in <span class="process-math">\(\R^3\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-LT-Geom.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Geometry of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sec3-5-LT-Sage.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Sage Computations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap4-Vector-Space.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-1-VS.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-2-Abst-VS.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Vector Subspaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-3-linspan-VS.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Linear Span</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-3-LI-VS.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Linear dependence and independence</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Basis and dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#subsec-basis-VS" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Basis of a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-3" class="internal"><span class="codenumber">4.5.2</span> <span class="title">How to find a basis of a finite dimensional vector space?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-4" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Lagrange Interpolation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Dimension Formula</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-5-VS-Ex.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Exercise Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap5-Eigen.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-2-diagonalization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Diagonalization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-3-eigen-Appl.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-4-eigen-exer.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises on Eigenvalues and Eigenvectors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap5-orthogonality.html" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-0-orthogonality.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Orthogonality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-1-GramSchmidt.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Gram-Schmidt Orthogonalization Process</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-2.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-3.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Orthogonal Diagonalizations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-4.html" class="internal"><span class="codenumber">6.5</span> <span class="title">QR-Factorization</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap7-inner-product.html" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec7-1-InnerProduct.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Inner Product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec7-2-Exer.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercise Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap8-Least-Square.html" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec8-1-LSTSQ.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Least Square Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec8-1-LSTSQ.html#sec-linear-lstsq" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Linear Least Square Problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec8-1-LSTSQ.html#sec8-1-LSTSQ-4" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Fitting a polynomial to the data set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec8-1-LSTSQ.html#sec-weigheted-lstsq" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Weighted Least Square Problems</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chap9-SVD.html" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a></div>
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec9-1-SVD.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Singular Value Decomposition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec9-1-SVD.html#sec9-1-SVD-3" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Singular Value Decomposition Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec9-1-SVD.html#sec9-1-SVD-4" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Pseudoinverse using SVD</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec9-1-SVD.html#sec9-1-SVD-5" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Geometry of SVD</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec9-1-SVD.html#sec9-1-SVD-6" class="internal"><span class="codenumber">9.1.4</span> <span class="title">Image Compression using SVD</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap10-PCA.html" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec10-1-PCA.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Principal Component Analysis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec10-1-PCA.html#subsec10-1-intro-pca" class="internal"><span class="codenumber">10.1.1</span> <span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec10-1-PCA.html#sec10-1-PCA-4" class="internal"><span class="codenumber">10.1.2</span> <span class="title">Mathematics behind PCA</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec10-2.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Applications of PCA</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec10-2.html#sec10-2-3" class="internal"><span class="codenumber">10.2.1</span> <span class="title">Image compression with PCA</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec10-2.html#sec10-2-4" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Relation Between SVD and PCA</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec10-2.html#sec10-2-5" class="internal"><span class="codenumber">10.2.3</span> <span class="title">Exercise Set</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec9-1-SVD"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">9.1</span><span class="space"> </span><span class="title">Singular Value Decomposition</span>
+</h2>
+<section class="introduction" id="sec9-1-SVD-2"><div class="para" id="sec9-1-SVD-2-1">In this section, we deal with one of the most important matrix factorization tools, called the singular value decomposition (SVD). The SVD of a matrix <span class="process-math">\(A\)</span> is closely related to eigen decomposition of the matrix <span class="process-math">\(AA^T\text{.}\)</span> One can also think of this as a generalization of diagonalization procedure that allows us to diagonalize any matrix not necessarily square matrix. The SVD is computationally a viable tool for a wide variety of applications. It has applications in image and signal processing, control theory, least square problems, time series analysis, pattern recognition, dimensionality reduction, biomedical engineering and defining a generalized inverse of a matrix and many more. We shall deal with few of these applications.</div></section><section class="subsection" id="sec9-1-SVD-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="space"> </span><span class="title">Singular Value Decomposition Theorem</span>
+</h3>
+<article class="theorem theorem-like" id="thm_svd1"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">SVD Theorem.</span>
+</h4>
+<div class="para logical" id="thm_svd1-2-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be a real <span class="process-math">\(m\times n\)</span> matrix. Then <span class="process-math">\(A\)</span> can be factorized as</div>
+<div class="displaymath process-math" id="eq_svd1">
+\begin{equation}
+A=U\sum V^T\tag{9.1.1}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(U\)</span> is an <span class="process-math">\(m\times m\)</span> orthogonal matrix, <span class="process-math">\(V\)</span> is an <span class="process-math">\(n\times n\)</span> orthogonal matrix and <span class="process-math">\(\sum\)</span> is a <span class="process-math">\(m\times n\)</span> diagonal matrix given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{ccc|ccc}
+\sigma_1   \amp \cdots     \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\vdots     \amp  \ddots    \amp \vdots    \amp  \vdots \amp  \ddots \amp  \vdots      \\
+0          \amp  \cdots    \amp  \sigma_r \amp  0      \amp  \cdots \amp  0    \\
+\hline
+0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\vdots     \amp  \ddots    \amp  \vdots   \amp  0      \amp \ddots  \amp  \vdots \\
+0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\end{array}\right]_{m\times n}
+\end{equation*}
+</div>
+<div class="para">whose diagonal entries are non negative and are arranged in a non increasing order.</div>
+</div> <div class="para" id="thm_svd1-2-2">The number of non zero entries in <span class="process-math">\(\sum\)</span> is the rank of <span class="process-math">\(A\text{.}\)</span>
+</div></article><div class="para" id="sec9-1-SVD-3-3">The decomposition <span class="process-math">\(A=U\sum V^T\)</span> is called a <em class="emphasis">singular value decomposition</em> of <span class="process-math">\(A\text{.}\)</span> The diagonals entries <span class="process-math">\(\sigma_1,\sigma_2,\ldots, \sigma_r\)</span> are called <em class="emphasis">singular values</em> of <span class="process-math">\(A\text{.}\)</span> (that is why the name singular value decomposition.)</div>
+<div class="para logical" id="sec9-1-SVD-3-4">
+<div class="para">Before we prove this theorem, let us play with the equation <a href="sec9-1-SVD.html#eq_svd1" class="xref" data-knowl="./knowl/xref/eq_svd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.1">(9.1.1)</a>. We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_svd1.html">
+\begin{equation*}
+A^TA  =  \left(V\Sigma^TU\right) \left(U^T\Sigma V^T\right) =V\Sigma^T\Sigma V^T\text{.}
+\end{equation*}
+</div>
+<div class="para">This implies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_svd1.html">
+\begin{equation*}
+V^T(A^TA)V=\Sigma^T\Sigma \text{.}
+\end{equation*}
+</div>
+<div class="para">Hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_svd1.html" id="eq_svd2">
+\begin{equation}
+V^T(A^TA)V =
+\left[\begin{array}{ccc|ccc}
+\sigma_1^2   \amp \cdots     \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\vdots     \amp  \ddots    \amp \vdots    \amp  \vdots \amp  \ddots \amp  \vdots      \\
+0          \amp  \cdots    \amp  \sigma_r^2 \amp  0      \amp  \cdots \amp  0    \\
+\hline
+0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\vdots     \amp  \ddots    \amp  \vdots   \amp  0      \amp \ddots  \amp  \vdots \\
+0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\end{array}\right]_{n\times n}\tag{9.1.2}
+\end{equation}
+</div>
+</div>
+<div class="para" id="sec9-1-SVD-3-5">The Eqn. <a href="sec9-1-SVD.html#eq_svd2" class="xref" data-knowl="./knowl/xref/eq_svd2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.2">(9.1.2)</a> suggests that columns of <span class="process-math">\(V\)</span> are eigenvectors of <span class="process-math">\(A^TA\text{,}\)</span> and are called <em class="emphasis">right singular vectors</em>.</div>
+<div class="para logical" id="sec9-1-SVD-3-6">
+<div class="para">Similarly,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+AA^T  =   \left(U\Sigma V^T\right) \left(V\Sigma^T U^T\right) =U\Sigma\Sigma^T U^T
+\end{equation*}
+</div>
+<div class="para">This implies</div>
+<div class="displaymath process-math" id="eq_svd3">
+\begin{equation}
+U(A^TA)U^T =
+\left[\begin{array}{ccc|ccc}
+\sigma_1^2   \amp \cdots     \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\vdots     \amp  \ddots    \amp \vdots    \amp  \vdots \amp  \ddots \amp  \vdots      \\
+0          \amp  \cdots    \amp  \sigma_r^2 \amp  0      \amp  \cdots \amp  0    \\
+\hline
+0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\vdots     \amp  \ddots    \amp  \vdots   \amp  0      \amp \ddots  \amp  \vdots \\
+0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\end{array}\right]_{m\times m}\tag{9.1.3}
+\end{equation}
+</div>
+</div>
+<div class="para" id="sec9-1-SVD-3-7">The Eqn. <a href="sec9-1-SVD.html#eq_svd3" class="xref" data-knowl="./knowl/xref/eq_svd3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.3">(9.1.3)</a> suggests that columns of <span class="process-math">\(U\)</span> are eigenvectors of <span class="process-math">\(AA^T\text{,}\)</span> and are called <em class="emphasis">left singular vectors</em>.</div>
+<div class="para logical" id="sec9-1-SVD-3-8">
+<div class="para">The notion of right and left eigenvectors suggest a way to construct the matrix <span class="process-math">\(V\)</span> and <span class="process-math">\(U\)</span> in the SVD decomposition. Let us see what do I mean? Suppose <span class="process-math">\(U=[u_1~u_2~\cdots~u_m]\)</span> and <span class="process-math">\(V=[v_1~v_2~\cdots~v_n]\text{.}\)</span> Then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^TAv_i=\sigma_i^2 v_i \text{ and }  AA^Tu_i=\sigma_i^2 u_i\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec9-1-SVD-3-9">
+<div class="para">Hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A(A^TA v_i) = (AA^T)(Av_i)=A(\sigma_i^2v_i)=\sigma_i^2(Av_i)\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec9-1-SVD-3-10">
+<div class="para">Thus suggests, that <span class="process-math">\(u_i\)</span> may be defined as <span class="process-math">\(Av_i\text{.}\)</span> However, if <span class="process-math">\(u_i=Av_i\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\innprod{u_i}{u_j} = \innprod{Av_i}{Av_j}=\innprod{A^TAv_i}{v_j}=\sigma_i^2\innprod{v_i}{v_j}=\sigma_i^2\delta_{ij}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec9-1-SVD-3-11">If we want <span class="process-math">\(U\)</span> to be orthogonal, we may define <span class="process-math">\(u_i=\frac{1}{\sigma_i}Av_i\text{.}\)</span>
+</div>
+<div class="para" id="sec9-1-SVD-3-12">Let us look at proof of <a href="sec9-1-SVD.html#thm_svd1" class="xref" data-knowl="./knowl/xref/thm_svd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.1: SVD Theorem">Theorem 9.1.1</a>.</div>
+<details id="sec9-1-SVD-3-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec9-1-SVD-3-13-1">
+<div class="para">Note that <span class="process-math">\(A^TA\)</span> is symmetric and <span class="process-math">\(\rank{(A)}=\rank{(A^TA)}\text{.}\)</span> Let <span class="process-math">\(\rank{(A)}=r\text{.}\)</span> Further</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\innprod{A^TAx}{x}=\innprod{Ax}{Ax}=\norm{Ax}^2\geq 0, \forall x\in \R^n\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec9-1-SVD-3-13-2">
+<div class="para">Hence <span class="process-math">\(A^TA\)</span> is a symmetric and semi-positive definite matrix. Hence all its eigenvalues are real and non negative. Let <span class="process-math">\(\lambda_1, \lambda_2,\ldots,\lambda_r\)</span> be non zero eigenvalues of <span class="process-math">\(A^TA\)</span> with <span class="process-math">\(\lambda_1\geq \lambda_2\geq\cdots\geq\lambda_r\text{.}\)</span> The remaining eigenvalues of <span class="process-math">\(A^TA\)</span> are <span class="process-math">\(\lambda_{r+1}=\lambda_{r+2}=\cdots=\lambda_n=0\text{.}\)</span> Let us denote <span class="process-math">\(\lambda_i=\sigma_i^2\)</span> for <span class="process-math">\(i=1,\ldots, n\text{.}\)</span> Since <span class="process-math">\(A^TA\)</span> is symmetric matrix, it is diagonalizable. Hence there exists an orthogonal eigenbasis <span class="process-math">\(v_1,\ldots,
+v_n\)</span> for <span class="process-math">\(\R^n\)</span> of <span class="process-math">\(A^TA\text{.}\)</span> Let <span class="process-math">\(A^TAv_i=\sigma_i^2v_i\text{.}\)</span> This implies</div>
+<div class="displaymath process-math" id="sec9-1-SVD-3-13-2-14">
+\begin{align}
+v_i^TA^TAv_i=\amp \sigma_i^2 \amp \text{ for }  i=1,2,\ldots, r\tag{9.1.4}\\
+v_i^TA^TAv_i=\amp 0 \amp \text{ for }  i=r+1,\ldots, n\tag{9.1.5}
+\end{align}
+</div>
+</div> <div class="para logical" id="sec9-1-SVD-3-13-3">
+<div class="para">From <a href="sec9-1-SVD.html#sec9-1-SVD-3-13-2-14" class="xref" data-knowl="./knowl/xref/eq_svd31.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.5">(9.1.5)</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_svd31.html">
+\begin{equation*}
+v_k^TA^TAv_k=\innprod{Av_k}{Av_k}=0   \text{ for }  i=r+1,\ldots,n\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec9-1-SVD-3-13-4">
+<div class="para">This implies,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Av_k=0  \text{ for }  i=r+1,\ldots,n\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec9-1-SVD-3-13-5">
+<div class="para">We define</div>
+<div class="displaymath process-math" id="eq_svd4">
+\begin{equation}
+u_i:=\frac{1}{\sigma_i}Av_i \text{ for }  i=1,2,\ldots, r\text{.}\tag{9.1.6}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec9-1-SVD-3-13-6">
+<div class="para">We claim that <span class="process-math">\(\{u_1,\ldots,
+u_r\}\)</span> is an orthonormal set. For</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\innprod{u_i}{u_j}=u_i^Tu_j=\frac{1}{\sigma_i}(Av_i)^T\frac{1}{\sigma_j}Av_j =\frac{1}{\sigma_i\sigma_j}v_i^TA^TAv_j=\delta_{ij}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec9-1-SVD-3-13-7">
+<div class="para">Now we complete <span class="process-math">\(\{u_1,\ldots,
+u_r\}\)</span> to an orthonormal basis <span class="process-math">\(\{u_1,\ldots,
+u_r,u_{r+1},\ldots, u_n\}\)</span> of <span class="process-math">\(\R^n\text{.}\)</span> Define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U:=[u_1~\ldots~ u_r~u_{r+1}~\ldots~ u_n] \text{ and } V:=[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n]\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec9-1-SVD-3-13-8">
+<div class="para">We claim that <span class="process-math">\(U^TAV=\sum\)</span> and hence <span class="process-math">\(A= U\Sigma V^T\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="sec9-1-SVD-3-13-8-3">
+\begin{align*}
+U^TAV =\amp  \begin{pmatrix} u_1^T\\\vdots \\ u_r^T\\u_{r+1}^T\\\vdots\\u_n^T\end{pmatrix}
+A[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n]\\
+=\amp \begin{pmatrix} \frac{1}{\sigma_1}v_1^TA^T\\\vdots\\\frac{1}{\sigma_r}v_r^TA^T\\u_{r+1}^T\\
+\vdots\\u_n^T\end{pmatrix}A[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n]\\
+=\amp \begin{pmatrix} \frac{1}{\sigma_1}v_1^TA^T\\\vdots\\\frac{1}{\sigma_r}v_r^TA^T\\
+u_{r+1}^T\\\vdots\\u_n^T\end{pmatrix}[Av_1~\ldots~ Av_r~v_{r+1}~\ldots~ Av_n]\\
+=\amp \diag(\sigma_1,\ldots,\sigma_r,0,\ldots,0)=\sum\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="sec9-1-SVD-3-13-9">
+<div class="para">Hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=U\sum V^T\text{.}
+\end{equation*}
+</div>
+</div></article></details><article class="remark remark-like" id="rem_svd1"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="rem_svd1-1">The singular values of a matrix in a SVD are unique, however singular vectors are not unique.</div></article><article class="corollary theorem-like" id="rem_svd2"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">9.1.3</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="rem_svd2-1-1">
+<div class="para">Let <span class="process-math">\(A=U\Sigma V^T\)</span> be a SVD of <span class="process-math">\(A\)</span> where <span class="process-math">\(U=[u_1~u_2~\cdots~u_m]\)</span> and <span class="process-math">\(V=[v_1~v_2~\cdots~v_n]\text{,}\)</span> <span class="process-math">\(\sigma_1,\ldots,  \sigma_r\)</span> are singular values of <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(A\)</span> can also be written as</div>
+<div class="displaymath process-math" id="rem_svd2-1-1-8">
+\begin{gather}
+A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ru_rv_r^T\text{.}\tag{9.1.7}
+\end{gather}
+</div>
+</div></article><div class="para" id="sec9-1-SVD-3-16">The decomposition <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a> is called a <em class="emphasis">rank one decomposition of <span class="process-math">\(A\)</span></em>, as rank of each term in <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a> is 1. (why?) This is a very useful way of decomposing <span class="process-math">\(A\)</span> as we shall see this later.</div>
+<article class="exercise exercise-like" id="rank1-matrix"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">9.1.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="rank1-matrix-1-1">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is rank one matrix if and only if there exist non-zero vectors <span class="process-math">\(p,q\in \R^n\)</span> such that <span class="process-math">\(A=pq^T\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="ex_svd1"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">9.1.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="ex_svd1-1-1">If <span class="process-math">\(A\)</span> is a real symmetric matrix with eigenvalues <span class="process-math">\(\lambda_1,\ldots,\lambda_n\text{,}\)</span> then show that singular values of <span class="process-math">\(A\)</span> are <span class="process-math">\(|\lambda_1|,\ldots,|\lambda_n|\)</span>
+</div></article><article class="exercise exercise-like" id="ex_svd2"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">9.1.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="ex_svd2-1-1">A square matrix <span class="process-math">\(A\)</span> is non singular if and only if all singular values of <span class="process-math">\(A\)</span> are non zero.</div></article><article class="example example-like" id="eg_svd1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="eg_svd1-1-1">Let us find a singular value decomposition of <span class="process-math">\(A= \begin{pmatrix}3 \amp 2 \amp 2 \\ 2 \amp 3 \amp -2 \end{pmatrix}\text{.}\)</span>
+</div> <div class="para logical" id="eg_svd1-1-2">
+<div class="para">We have <span class="process-math">\(A^TA=\begin{pmatrix}13 \amp  12 \amp  2 \\ 12 \amp  13 \amp  -2 \\ 2 \amp  -2 \amp  8 \end{pmatrix}\text{.}\)</span> The eigenvalues of <span class="process-math">\(A^TA\)</span> are <span class="process-math">\(\sigma_1^2=25, \sigma_2^2=9\)</span> and <span class="process-math">\(\sigma_3^2=0\text{.}\)</span> The corresponding eigenvectors with respect to eigenvalues <span class="process-math">\(25,9, 0\)</span> of <span class="process-math">\(A^TA\)</span> are <span class="process-math">\(\begin{pmatrix}1\\1\\0 \end{pmatrix}\text{,}\)</span> <span class="process-math">\(\begin{pmatrix}1\\-1\\4 \end{pmatrix}\)</span> and <span class="process-math">\(\begin{pmatrix}1\\-1\\-\frac{1}{2} \end{pmatrix}\)</span> respectively. Hence an orthonormal eigenbasis of <span class="process-math">\(A^TA\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{v_1,v_2,v_3\}=\left\{\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2}\\0 \end{pmatrix} , \begin{pmatrix}1/\sqrt{18}\\-1/\sqrt{18}\\4/\sqrt{18} \end{pmatrix} , \begin{pmatrix}2/3\\-2/3\\-1/3 \end{pmatrix} \right\}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="eg_svd1-1-3">
+<div class="para">We define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+u_1:=\frac{1}{\sigma_1}Av_1=\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2} \end{pmatrix} \text{ and } 
+u_2:= \frac{1}{\sigma_2}Av_2=\begin{pmatrix}1/\sqrt{2}\\-1/\sqrt{2} \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="eg_svd1-1-4">
+<div class="para">Thus we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U=\begin{pmatrix}\frac{1}{2} \, \sqrt{2} \amp  \frac{1}{2} \, \sqrt{2} \\ \frac{1}{2} \, \sqrt{2} \amp  -\frac{1}{2} \, \sqrt{2} \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V=\begin{pmatrix}\frac{1}{2} \, \sqrt{2} \amp  \frac{1}{6} \, \sqrt{2} \amp  \frac{2}{3} \\\frac{1}{2} \, \sqrt{2} \amp  -\frac{1}{6} \, \sqrt{2} \amp -\frac{2}{3} \\ 0 \amp  \frac{2}{3} \, \sqrt{2} \amp  -\frac{1}{3} \end{pmatrix}  \text{ and } \sum = \begin{pmatrix}5 \amp  0 \amp  0 \\ 0 \amp  3 \amp  0 \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="eg_svd1-1-5">It is easy to check that that <span class="process-math">\(UAV^T=\sum\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exer-9-1-8"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">9.1.8</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="exer-9-1-8-1-1">
+<div class="para">Verify the equation <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a> for <a href="sec9-1-SVD.html#eg_svd1" class="xref" data-knowl="./knowl/xref/eg_svd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.1.7">example 9.1.7</a>. That is,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_svd9.html ./knowl/xref/eg_svd1.html">
+\begin{equation*}
+A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T\text{.}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="exer-9-1-9"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">9.1.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="exer-9-1-9-1-1">Find a singular value decomposition of <span class="process-math">\(A =\begin{pmatrix}1 \amp 1 \amp -1\\1 \amp 1 \amp -1 \end{pmatrix}\text{.}\)</span>
+</div></article></section><section class="subsection" id="sec9-1-SVD-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="space"> </span><span class="title">Pseudoinverse using SVD</span>
+</h3>
+<article class="definition definition-like" id="def-pseudoinverse"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">9.1.10</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-pseudoinverse-1-1">
+<div class="para">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(m\times n\)</span> matrix, then the <em class="emphasis">pseudoinverse</em> of <span class="process-math">\(A\)</span> is matrix <span class="process-math">\(X\)</span> satisfying the following properties:</div>
+<ol class="decimal" id="def-pseudoinverse-1-1-6">
+<li id="def-pseudoinverse-1-1-6-1"><div class="para" id="def-pseudoinverse-1-1-6-1-1"><span class="process-math">\(\displaystyle AXA=A\)</span></div></li>
+<li id="def-pseudoinverse-1-1-6-2"><div class="para" id="def-pseudoinverse-1-1-6-2-1"><span class="process-math">\(\displaystyle XAX=X\)</span></div></li>
+<li id="def-pseudoinverse-1-1-6-3"><div class="para" id="def-pseudoinverse-1-1-6-3-1"><span class="process-math">\(\displaystyle (AX)^T=AX\)</span></div></li>
+<li id="def-pseudoinverse-1-1-6-4"><div class="para" id="def-pseudoinverse-1-1-6-4-1"><span class="process-math">\((XA)^T=XA\text{.}\)</span></div></li>
+</ol>
+</div> <div class="para" id="def-pseudoinverse-1-2">The pseudoinverse of a matrix <span class="process-math">\(A\)</span> is denoted by <span class="process-math">\(A^\dagger\text{.}\)</span> Pseudoinverse is also called the <em class="emphasis">generalized inverse</em> or <em class="emphasis">Moore-Penrose pseudoinverse.</em>
+</div></article><div class="para" id="sec9-1-SVD-4-3">Singular value decomposition provides an effective procedure to find the pseudoinverse of a matrix.</div>
+<div class="para logical" id="sec9-1-SVD-4-4">
+<div class="para">Suppose <span class="process-math">\(A=U\sum V^T\)</span> is a SVD of <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(U\)</span> and <span class="process-math">\(V\)</span> are orthogonal matrices they are invertible. Thus to define pseudoinverse of <span class="process-math">\(A\text{,}\)</span> it is sufficient to define pseudoinverse of the diagonal matrix <span class="process-math">\(\sum\text{.}\)</span> It is natural to define the inverse of diagonal matrix by taking reciprocal of the nonzero diagonal entries and taking its transpose. Thus if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Sigma = \left[\begin{array}{ccc|ccc}
+\sigma_1   \amp \cdots     \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\vdots     \amp  \ddots    \amp \vdots    \amp  \vdots \amp  \ddots \amp  \vdots      \\
+0          \amp  \cdots    \amp  \sigma_r \amp  0      \amp  \cdots \amp  0    \\
+\hline
+0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\vdots     \amp  \ddots    \amp  \vdots   \amp  0      \amp \ddots  \amp  \vdots \\
+0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\end{array}\right]_{m\times n}\text{.}
+\end{equation*}
+</div>
+<div class="para">Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Sigma^\dagger = \left[\begin{array}{ccc|ccc}
+1/\sigma_1   \amp \cdots     \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\vdots     \amp  \ddots    \amp \vdots    \amp  \vdots \amp  \ddots \amp  \vdots      \\
+0          \amp  \cdots    \amp 1/ \sigma_r \amp  0      \amp  \cdots \amp  0    \\
+\hline
+0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\vdots     \amp  \ddots    \amp  \vdots   \amp  0      \amp \ddots  \amp  \vdots \\
+0          \amp  \cdots    \amp  0        \amp  0      \amp  \cdots \amp  0      \\
+\end{array}\right]_{m\times n}^T\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec9-1-SVD-4-5">
+<div class="para">Having defined the generalized inverse of <span class="process-math">\(\sum\text{,}\)</span> now it is natural to define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^\dagger:=V{\sum}^\dagger U^T\text{.}
+\end{equation*}
+</div>
+</div>
+<article class="example example-like" id="eg_svd2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="eg_svd2-1-1">Find the pseudoinverse of <span class="process-math">\(A=\begin{pmatrix}1\amp 1\\1\amp 1\\1\amp -1 \end{pmatrix}\text{.}\)</span>
+</div> <div class="para logical" id="eg_svd2-1-2">
+<div class="para">Note that <span class="process-math">\(A^TA=\begin{pmatrix}3\amp 1\\1\amp 3 \end{pmatrix}\text{.}\)</span> The eigenvalues of <span class="process-math">\(A^TA\)</span> are <span class="process-math">\(\sigma_1^2=4\)</span> and <span class="process-math">\(\sigma_2^2=2\)</span> with corresponding orthonormal eigenvectors <span class="process-math">\(v_1=\begin{pmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}} \end{pmatrix}\)</span> and <span class="process-math">\(v_2=\begin{pmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}} \end{pmatrix}\)</span> respectively. Now</div>
+<div class="displaymath process-math">
+\begin{equation*}
+u_1=\frac{1}{\sigma_1}Av_1=\begin{pmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\\0 \end{pmatrix}   \text{ and } u_2=\frac{1}{\sigma_2}Av_2=\begin{pmatrix}0\\0\\1 \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="eg_svd2-1-3">Extending <span class="process-math">\(u_1,u_2\)</span> to an orthonormal basis of <span class="process-math">\(\R^3\text{,}\)</span> we can select<span class="process-math">\(u_3=\begin{pmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\\0 \end{pmatrix}\text{.}\)</span>
+</div> <div class="para logical" id="eg_svd2-1-4">
+<div class="para">Thus a SVD is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=U\sum V^T= \begin{pmatrix}\frac{1}{\sqrt{2}} \amp 0 \amp \frac{1}{\sqrt{2}}\\ \frac{1}{\sqrt{2}} \amp 0 \amp -\frac{1}{\sqrt{2}}\\ 0 \amp  1 \amp 0 \end{pmatrix} \begin{pmatrix}2\amp 0\\ 0 \amp \sqrt{2}\\ 0\amp 0 \end{pmatrix} \begin{pmatrix}\frac{1}{\sqrt{2}}  \amp \frac{1}{\sqrt{2}}\\ \frac{1}{\sqrt{2}}  \amp -\frac{1}{\sqrt{2}} \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="eg_svd2-1-5">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="eg_svd2-1-5-1">
+\begin{align*}
+A^\dagger=\amp V{\sum}^\dagger U^T=
+\begin{pmatrix} \frac{1}{\sqrt{2}}  \amp \frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}}  \amp -\frac{1}{\sqrt{2}} \end{pmatrix} 
+\begin{pmatrix}1/2\amp 0\amp 0\\0 \amp \frac{1}{\sqrt{2}}\amp 0 \end{pmatrix} 
+\begin{pmatrix}\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}}\amp 0\\0 \amp  0 \amp 1\\
+\frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}}\amp  0 \end{pmatrix}\\
+=\amp \begin{pmatrix}1/4\amp 1/4\amp 1/2\\1/4\amp 1/4\amp -1/2 \end{pmatrix}\text{.}
+\end{align*}
+</div>
+</div></article><article class="exercise exercise-like" id="psedo_ex1"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">9.1.12</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="psedo_ex1-1-1">
+<div class="para">If <span class="process-math">\(A\)</span> is <span class="process-math">\(m\times n\)</span> matrix with <span class="process-math">\(m\geq n\)</span> and <span class="process-math">\(\rank(A)=n\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^\dagger=(A^TA)^{-1}A^T\text{.}
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(m\leq n\)</span> and <span class="process-math">\(\rank(A)=m\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^\dagger =A^T(AA^T)^{-1}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="psedo_ex1-1-2">
+<span class="process-math">\((A^TA)^{-1}A^T\)</span> is called the <em class="emphasis">left pseudoinnverse</em> of <span class="process-math">\(A\)</span> and <span class="process-math">\(A^T(AA^T)^{-1}\)</span> is called the <em class="emphasis">right pseudoinverse</em> of <span class="process-math">\(A\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="sec9-1-SVD-4-8"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec9-1-SVD-4-8-1-1">Let <span class="process-math">\(Ax = b\text{,}\)</span> be a system of <span class="process-math">\(m\)</span> equations in <span class="process-math">\(n\)</span> variables with <span class="process-math">\(m\geq n\text{.}\)</span> Let <span class="process-math">\(\rank(A) = n\text{.}\)</span> Then the vector <span class="process-math">\(x^*=A^\dagger b\)</span> minimizes <span class="process-math">\(\norm{Ax-b}^2\)</span> on <span class="process-math">\(\R^n\text{,}\)</span> that is the least square solution of <span class="process-math">\(Ax=b\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exer-9-1-14"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">9.1.14</span><span class="period">.</span>
+</h4>
+<ol class="decimal" id="exer-9-1-14-1">
+<li id="exer-9-1-14-1-1"><div class="para" id="exer-9-1-14-1-1-1">If <span class="process-math">\(A\)</span> is square matrix, then show that <span class="process-math">\(A^TA\)</span> and <span class="process-math">\(AA^T\)</span> are similar.</div></li>
+<li id="exer-9-1-14-1-2"><div class="para" id="exer-9-1-14-1-2-1">Find the SVD of a matrix <span class="process-math">\(\begin{pmatrix}1 \amp 1 \amp 1 \\2 \amp 2 \amp 2\\3 \amp 1 \amp -1 \end{pmatrix}\text{.}\)</span>
+</div></li>
+<li id="exer-9-1-14-1-3"><div class="para" id="exer-9-1-14-1-3-1">Find the least square solution of the system of equations <span class="process-math">\(Ax=b\)</span> where <span class="process-math">\(A =\begin{pmatrix}2 \amp 3 \amp -1\\-2 \amp 1 \amp 4\\3 \amp 1 \amp 3\\ -5 \amp 4 \amp 2\\1 \amp 1 \amp 1 \end{pmatrix}\)</span> and <span class="process-math">\(b= \begin{pmatrix}-10\\7\\15\\8\\9 \end{pmatrix}\)</span> using generalized inverse.</div></li>
+<li id="exer-9-1-14-1-4"><div class="para" id="exer-9-1-14-1-4-1">Find the SVD of <span class="process-math">\(A = \begin{pmatrix}1 \amp 1 \\2 \amp 2 \\3 \amp 1 \end{pmatrix}\)</span> using step by step calculations.</div></li>
+</ol></article><article class="exercise exercise-like" id="exer-9-1-15"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">9.1.15</span><span class="period">.</span>
+</h4>
+<div class="para" id="exer-9-1-15-1-1">Use SVD to show that a square matrix <span class="process-math">\(A\)</span> is symmetric (<span class="process-math">\(A^T=A\)</span>) if and only if <span class="process-math">\(A^TA=AA^T\text{.}\)</span>
+</div> <div class="para" id="exer-9-1-15-1-2">Hint: <span class="process-math">\(A^TA=AA^T\)</span> implies right singular vectors of <span class="process-math">\(A\)</span> are same as left singular vectors of <span class="process-math">\(A\)</span> with same singular values. Hence the SVD of <span class="process-math">\(A=Q\Sigma P\)</span> with <span class="process-math">\(P=Q\text{.}\)</span> Any matrix of the form <span class="process-math">\(P\Sigma P^T\)</span> is symmetric.</div></article></section><section class="subsection" id="sec9-1-SVD-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.3</span><span class="space"> </span><span class="title">Geometry of SVD</span>
+</h3>
+<div class="para" id="sec9-1-SVD-5-2">In order to see the geometric meaning of the SVD. Let us consider the matrix <span class="process-math">\(A=\left(\begin{array}{rr} 4 \amp -2 \\ -2 \amp 3 \end{array} \right)\text{.}\)</span>
+</div>
+<div class="para logical" id="sec9-1-SVD-5-3">
+<div class="para">The singular value decomposition of <span class="process-math">\(A=USV^T\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\left(\begin{array}{rr} -0.78820 \amp  0.61541 \\ 0.61541 \amp  0.78820 \end{array} \right)\left(\begin{array}{rr} 5.56150 \amp  0.0 \\ 0.0 \amp  1.4384 \end{array} \right)\left(\begin{array}{rr} -0.78820 \amp  0.61541 \\ 0.61541 \amp  0.78820 \end{array} \right)^T\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec9-1-SVD-5-4">The geometric meaning of <span class="process-math">\(A\)</span> applied to unit circle along with unit vectors <span class="process-math">\(e_1\)</span> and <span class="process-math">\(e_2\)</span> is explained in the following figure <a href="sec9-1-SVD.html#fig_Unit_Circle-SVD" class="xref" data-knowl="./knowl/xref/fig_Unit_Circle-SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.16">Figure 9.1.16</a>.</div>
+<figure class="figure figure-like" id="fig_Unit_Circle-SVD"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/SVD_Unit_Circle.PNG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.16<span class="period">.</span></span><span class="space"> </span>Transformation of unit circle under SVD</figcaption></figure><article class="example example-like" id="sec9-1-SVD-5-6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.17</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec9-1-SVD-5-6-1-1">Consider a <span class="process-math">\(3\times 3\)</span> matrix <span class="process-math">\(A=\begin{pmatrix}2 \amp 3 \amp 1 \\ -1 \amp 2 \amp 1 \\ 0 \amp 2 \amp 3 \end{pmatrix}\text{.}\)</span> The singular values of <span class="process-math">\(A\)</span> are 5.107, 2.2982 and 1.2779.</div> <div class="para" id="sec9-1-SVD-5-6-1-2">The Figure <a href="sec9-1-SVD.html#fig_Unit_Sphere-SVD" class="xref" data-knowl="./knowl/xref/fig_Unit_Sphere-SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.18">Figure 9.1.18</a> below explains what happens to a unit sphere and unit vectors under <span class="process-math">\(A\text{,}\)</span> obtained using SVD.</div> <figure class="figure figure-like" id="fig_Unit_Sphere-SVD"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/SVD_Unit_Sphere.PNG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.18<span class="period">.</span></span><span class="space"> </span>Transformation of unit circle under SVD</figcaption></figure> </article></section><section class="subsection" id="sec9-1-SVD-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.4</span><span class="space"> </span><span class="title">Image Compression using SVD</span>
+</h3>
+<div class="para" id="sec9-1-SVD-6-2">Images stored on a computer is a collection of dots called pixels. The collection of dots/pixels that constitute an image can be stored as a matrix. The color image can be thought of as 3 dimensional array.</div>
+<div class="para logical" id="sec9-1-SVD-6-3">
+<div class="para">Using Eqn. <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a> we can write a matrix as sum of rank one matrices.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_svd9.html">
+\begin{equation*}
+A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ru_rv_r^T\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec9-1-SVD-6-4">This property says that <span class="process-math">\(\rank{(A)}\)</span> is equal to the number of singular values of <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(\sigma_1\gt \sigma_2\gt \cdots\gt \sigma_r\text{,}\)</span> the first term has highest impact on <span class="process-math">\(A\)</span> followed by the second term and so on. This propriety allows us to reduce the noise or compress the matrix data by eliminating the small singular values or the higher ranks. This can be used as approximation of a given matrix, in particular we can approximate a matrix by adding only the first few terms of <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a>.</div>
+<div class="para logical" id="sec9-1-SVD-6-5">
+<div class="para">If we let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_k:=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ku_kv_k^T (k\leq r)
+\end{equation*}
+</div>
+<div class="para">then the total storage required for <span class="process-math">\(A_k\)</span> is <span class="process-math">\(k(m+n+1)\)</span> which is much less compare to <span class="process-math">\(mn\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="sec9-1-SVD-6-6">When an image (the corresponding matrix) is transformed using SVD, it is not compressed, but the data take a form in which the first singular value has a more amount of the image information. This allows us to use first few singular values to represent the image almost identical to the original.</div>
+<div class="para" id="sec9-1-SVD-6-7">Look at the Image in <a href="sec9-1-SVD.html#fig_Sardar-im1" class="xref" data-knowl="./knowl/xref/fig_Sardar-im1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.19">Fig 9.1.19</a>. The associates matrix for this image is of size <span class="process-math">\(995\times 1770\times 3\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="fig_Sardar-im1"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar_color.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.19<span class="period">.</span></span><span class="space"> </span>Orginal  Color Image</figcaption></figure><div class="para" id="sec9-1-SVD-6-9">This image is converted into a gray scale image (See <a href="sec9-1-SVD.html#fig_Sardar-im2" class="xref" data-knowl="./knowl/xref/fig_Sardar-im2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.20">Figure 9.1.20</a>). This size of matrix associated to the gray scale image is <span class="process-math">\(995\times 1770\)</span> with rank 995.</div>
+<figure class="figure figure-like" id="fig_Sardar-im2"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar_Gray.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.20<span class="period">.</span></span><span class="space"> </span>Original Gray Image</figcaption></figure><div class="para" id="sec9-1-SVD-6-11">After applying SVD to the Gray image and using 1st 5, 10, 20,30, 50, 100 terms respectively of the rank one approximation the approximate images are plotted in the <a href="sec9-1-SVD.html#fig_Sardar-im5" class="xref" data-knowl="./knowl/xref/fig_Sardar-im5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.21">Figures 9.1.21</a>, <a href="sec9-1-SVD.html#fig_Sardar-im10" class="xref" data-knowl="./knowl/xref/fig_Sardar-im10.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.22">Figure 9.1.22</a>, <a href="sec9-1-SVD.html#fig_Sardar-im20" class="xref" data-knowl="./knowl/xref/fig_Sardar-im20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.23">Figure 9.1.23</a>, <a href="sec9-1-SVD.html#fig_Sardar-im50" class="xref" data-knowl="./knowl/xref/fig_Sardar-im50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.25">Figure 9.1.25</a>, <a href="sec9-1-SVD.html#fig_Sardar-im50" class="xref" data-knowl="./knowl/xref/fig_Sardar-im50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.25">Figure 9.1.25</a>, <a href="sec9-1-SVD.html#fig_Sardar-im100" class="xref" data-knowl="./knowl/xref/fig_Sardar-im100.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.26">Figure 9.1.26</a> respectively.</div>
+<figure class="figure figure-like" id="fig_Sardar-im5"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im5.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.21<span class="period">.</span></span><span class="space"> </span>Approximate Image with 5 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im10"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im10.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.22<span class="period">.</span></span><span class="space"> </span>Approximate Image with 10 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im20"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im20.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.23<span class="period">.</span></span><span class="space"> </span>Approximate Image with 20 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im30"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im30.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.24<span class="period">.</span></span><span class="space"> </span>Approximate Image with 30 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im50"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im50.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.25<span class="period">.</span></span><span class="space"> </span>Approximate Image with 50 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im100"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im100.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.26<span class="period">.</span></span><span class="space"> </span>Approximate Image with 100 terms</figcaption></figure><div class="para" id="sec9-1-SVD-6-18">It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image. Note that the original image has <span class="process-math">\(995\times 1770=1761150\)</span> pixels, where as if we take the 1st 100 terms, then it is of size <span class="process-math">\(100(995+1770)=276500\)</span> which quite small compared to the original size.</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="chap9-SVD.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap10-PCA.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

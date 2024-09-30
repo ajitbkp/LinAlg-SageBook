@@ -17,15 +17,15 @@
 <div class="para logical">
 <div class="para">Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of <span class="process-math">\(\R^3\)</span> starting with a basis <span class="process-math">\(\{(0,1,1), (1,1,1), (1,-2,2)\}\text{.}\)</span> Let <span class="process-math">\(v_1 = (0, 1, 1), v_2=(1, 1, 1), v_3=(1, -2, 2)\text{.}\)</span> Then we have</div>
 <div class="displaymath process-math">
-\begin{gather*}
-u_1: =  (0, 1, 1)\\
-u_2:  = v_2 -\frac{u_2\cdot u_1}{\norm{u_1}^2}u_1=(1, 1, 1)-\frac{2}{2}(0,1,1)=(1,0,0)\\
-u_3:= v_3 -\frac{u_3\cdot u_1}{\norm{u_1}^2}u_1-\frac{u_3\cdot u_2}{\norm{u_2}^2}u_2\\
-=   (1, -2, 2)-\frac{0}{2}(0,1,1)-\frac{1}{1}(1,0,0)=(0,-2,2)
-\end{gather*}
+\begin{align*}
+u_1: = \amp (0, 1, 1)\\
+u_2:  = \amp v_2 -\frac{u_2\cdot u_1}{\norm{u_1}^2}u_1=(1, 1, 1)-\frac{2}{2}(0,1,1)=(1,0,0)\\
+u_3:= \amp v_3 -\frac{u_3\cdot u_1}{\norm{u_1}^2}u_1-\frac{u_3\cdot u_2}{\norm{u_2}^2}u_2\\
+=  \amp (1, -2, 2)-\frac{0}{2}(0,1,1)-\frac{1}{1}(1,0,0)=(0,-2,2)
+\end{align*}
 </div>
 </div> <div class="para logical">
-<div class="para">Thus the orthonormal basis is obtained from the given basis is</div>
+<div class="para">Thus the orthonormal basis obtained from the given basis is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left\{q_1 = \left(0, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right), q_2=(1,0,0), q_3 =\left(0,\frac{-1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)\right\}\text{.}

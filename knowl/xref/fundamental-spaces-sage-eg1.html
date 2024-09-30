@@ -32,7 +32,7 @@ sagecell.makeSagecell({
 -36 \amp  -108 \amp  -108 \amp  16 \amp  39 \amp  169 \\
 11 \amp  33 \amp  33 \amp  -5 \amp  -12 \amp  -52 \\
 -11 \amp  -33 \amp  -33 \amp  5 \amp  12 \amp  52
-\end{array}\right)\text{.}\)</span> Find the fundamental subspaces defined in the Example <a href="sec2-1-LinSpan.html#sec2-1-matrix-spaces" class="xref" data-knowl="./knowl/xref/sec2-1-matrix-spaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.4: Matrix Spaces">Example 2.2.4</a>
+\end{array}\right)\text{.}\)</span> Find the fundamental subspaces defined in the Example <a href="sec2-1-LinSpan.html#sec2-1-matrix-spaces" class="xref" data-knowl="./knowl/xref/sec2-1-matrix-spaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.3: Matrix Spaces">Example 2.2.3</a>
 </div> <details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para">First of all let us find the row space using the method <code class="code-inline tex2jax_ignore">.row_space()</code>. This returns the dimension and the basis matrix of the row space. This we can verify using rref applied to the matrix <span class="process-math">\(A\text{.}\)</span> <div id="fundamental-spaces-sage-eg1-3-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">     A =matrix([[-351, -1053 , -1053 , 160 , 382 , 1657 ], 
 [-32 , -96 , -96 , 15 , 35 , 152 ],
 [-36 , -108 , -108 , 16 , 39 , 169 ],
@@ -40,15 +40,16 @@ sagecell.makeSagecell({
 [-11 , -33 , -33 , 5 , 12 , 52]])
 A.row_space()
 </script></div> <div id="fundamental-spaces-sage-eg1-3-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.rref()
-</script></div> Clearly the first three row of rref(A) is same as basis matrix obtained uising the inbuilt sage method. <div class="para">Next we find the columns space using the sage method <code class="code-inline tex2jax_ignore">A.column_space()</code> and verify the same using the rref applied to <span class="process-math">\(A^T\text{.}\)</span>
-</div> <div id="fundamental-spaces-sage-eg1-3-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Column space of A
+</script></div> <div class="para">Clearly the first three row of rref(A) is same as basis matrix obtained uising the inbuilt sage method.</div> <div class="para">Next we find the columns space using the sage method <code class="code-inline tex2jax_ignore">A.column_space()</code> and verify the same using the rref applied to <span class="process-math">\(A^T\text{.}\)</span>
+</div> <div id="fundamental-spaces-sage-eg1-3-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Column space of A
 A.column_space()
-</script></div> <div id="fundamental-spaces-sage-eg1-3-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Finding basis of column space using RREF
+</script></div> <div id="fundamental-spaces-sage-eg1-3-1-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Finding basis of column space using RREF
 A.T.rref()
-</script></div> Clearly, the 1st three rows of rref(A) are same as basis matrix of <code class="code-inline tex2jax_ignore">A.column_space()</code> <div class="para">The column space of <span class="process-math">\(A\)</span> is also known as image space of <span class="process-math">\(A\text{.}\)</span> Sage has inbuilt method <code class="code-inline tex2jax_ignore">A.image()</code> to find the image space.</div> <div id="fundamental-spaces-sage-eg1-3-1-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.image()
-</script></div> <div class="para">The null space of <span class="process-math">\(A\)</span> also known as kernel of <span class="process-math">\(A\)</span> can be obtained by the sage method <code class="code-inline tex2jax_ignore">A.right_kernel()</code>.</div> <div id="fundamental-spaces-sage-eg1-3-1-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.right_kernel()
-</script></div> Clearly, the kernel is of dimension 3. <div class="para">The left null space can be obtained by the sage method <code class="code-inline tex2jax_ignore">A.left_kernel()</code> or using <code class="code-inline tex2jax_ignore">A.T.right_kernel()</code>.</div> <div id="fundamental-spaces-sage-eg1-3-1-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.left_kernel()
-</script></div> <div id="fundamental-spaces-sage-eg1-3-1-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.T.right_kernel()
+</script></div> <div class="para">Clearly, the 1st three rows of rref(A) are same as basis matrix of <code class="code-inline tex2jax_ignore">A.column_space()</code>
+</div> <div class="para">The column space of <span class="process-math">\(A\)</span> is also known as image space of <span class="process-math">\(A\text{.}\)</span> Sage has inbuilt method <code class="code-inline tex2jax_ignore">A.image()</code> to find the image space.</div> <div id="fundamental-spaces-sage-eg1-3-1-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.image()
+</script></div> <div class="para">The null space of <span class="process-math">\(A\)</span> also known as kernel of <span class="process-math">\(A\)</span> can be obtained by the sage method <code class="code-inline tex2jax_ignore">A.right_kernel()</code>.</div> <div id="fundamental-spaces-sage-eg1-3-1-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.right_kernel()
+</script></div> <div class="para">Clearly, the kernel is of dimension 3.</div> <div class="para">The left null space can be obtained by the sage method <code class="code-inline tex2jax_ignore">A.left_kernel()</code> or using <code class="code-inline tex2jax_ignore">A.T.right_kernel()</code>.</div> <div id="fundamental-spaces-sage-eg1-3-1-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.left_kernel()
+</script></div> <div id="fundamental-spaces-sage-eg1-3-1-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.T.right_kernel()
 </script></div>
 </div></div></details></article><span class="incontext"><a class="internal" href="sec2-4-Sage.html#fundamental-spaces-sage-eg1">in-context</a></span>
 </body>
