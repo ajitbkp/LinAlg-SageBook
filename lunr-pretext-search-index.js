@@ -10,6 +10,24 @@ var ptx_lunr_docs = [
   "body": "  My Website   copyright  "
 },
 {
+  "id": "frontmatter-3",
+  "level": "1",
+  "url": "frontmatter-3.html",
+  "type": "Author Biography",
+  "number": "",
+  "title": "Author Biography",
+  "body": " Ajit Kumar is a Professor of Mathematics at the Department of Mathematics, Institute of Chemical Technology, Mumbai (INDIA).  His main interests are optimization techniques, machine learning algorithms and mathematical pedagogy. He has done his Ph.D. from University of Mumbai. He has initiated a lot of mathematicians into the use of open source mathematics software.  He has been associated with the Mathematics Training and Talent Search (MTTS) Programme mtts.org.in aimed at mathematics students at undergraduates and postgraduate levels in Universities in India for more than two decades.  "
+},
+{
+  "id": "frontmatter-4",
+  "level": "1",
+  "url": "frontmatter-4.html",
+  "type": "Dedication",
+  "number": "",
+  "title": "Dedication",
+  "body": " To my wife Sadhana, my son Chinmay and daughter Sara.  "
+},
+{
   "id": "sec1-1-elementary-operations",
   "level": "1",
   "url": "sec1-1-elementary-operations.html",
