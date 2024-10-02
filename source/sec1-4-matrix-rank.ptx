@@ -9,11 +9,9 @@
             Let <m>A</m> be an <m>m \times n</m> matrix. Delete any <m>m-k</m> rows and
             <m>n-l</m> columns of <m>A</m>. The resulting matrix is called a <m>k\times  l</m> 
             sub-matrix  of <m>A</m>. If <m>k = l</m>, then it is called a square
-                sub-matrix of <m>A</m> of order <m>k</m>.
+            sub-matrix of <m>A</m> of order <m>k</m>.
      </p>
     </statement>
-
-
    </definition>
 
 
@@ -38,9 +36,9 @@
                 4 \amp   5  \amp  6   \\
             \end{pmatrix}</m>.
         </p>
+        
+        <solution>
             <p>
-                <solution>
-                    <p>
                         We can see that <m> \mid A\mid  = 0</m>. Hence
                         <m>r(A) \leq 2</m>. Now we look for the square sub-matrix of <m>A</m> of
                         order 2 whose determinant is non-zero. Consider the square
@@ -49,9 +47,8 @@
                             1\amp 1   \\
                             2\amp 3   \\
                         \end{pmatrix}</m>,   <m>\mid B\mid = 1</m>. Hence  <m>r(A) = 2</m>.
-                    </p>
-                </solution>
             </p>
+        </solution>
     </example>
 
 
@@ -60,15 +57,13 @@
         We list the following results without proof. 
     </p>
         <ol>
-            <p>
-              <li>
+            <li>
                         <p>
                             An <m>m \times n</m> matrix is of rank 0 if and only it is a zero
 		matrix.
                         </p>
                     </li>
-                </p>
-                <li>
+                  <li>
                     <p>
                         An <m>n \times n</m> square matrix <m>A</m> has rank <m>n</m> if and only
 		if <m>|A| \neq 0</m>.
@@ -313,13 +308,10 @@
         <p>`
         Let us consider the system <m>AX=B</m> where 
         <m>A=\begin{bmatrix}1 \amp   -2\amp  0\amp  3\\3\amp  2\amp  8\amp  1\\2\amp  3\amp  7\amp  2\\-1\amp  2\amp  0\amp  4\end{bmatrix}\quad  B=\begin{bmatrix}-4\\4\\3\\-3\end{bmatrix}\quad  X=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}.
-        </m>
-        
+        </m>    
    
             <solution>
                 <p>
-                    
-        
         <md>
             <mrow>
                 A^*=\begin{bmatrix}
@@ -364,18 +356,18 @@
     <solution>
         <me> 
             \left(\begin{array}{rrrr|r}
-1 \amp  -2 \amp  2 \amp  3 \amp  5 \\
-3 \amp  2 \amp  -1 \amp  5 \amp  -7 \\
--2 \amp  0 \amp  3 \amp  4 \amp  8 \\
-13 \amp  2 \amp  -9 \amp  1 \amp  11
-\end{array}\right)
-\overrightarrow{\text{RREF}}
-\left(\begin{array}{rrrr|r}
-1 \amp  0 \amp  0 \amp  \frac{10}{7} \amp  0 \\
-0 \amp  1 \amp  0 \amp  \frac{3}{2} \amp  0 \\
-0 \amp  0 \amp  1 \amp  \frac{16}{7} \amp  0 \\
-0 \amp  0 \amp  0 \amp  0 \amp  1
-\end{array}\right)
+            1 \amp  -2 \amp  2 \amp  3 \amp  5 \\
+            3 \amp  2 \amp  -1 \amp  5 \amp  -7 \\
+            -2 \amp  0 \amp  3 \amp  4 \amp  8 \\
+            13 \amp  2 \amp  -9 \amp  1 \amp  11
+            \end{array}\right)
+            \overrightarrow{\text{RREF}}
+            \left(\begin{array}{rrrr|r}
+            1 \amp  0 \amp  0 \amp  \frac{10}{7} \amp  0 \\
+            0 \amp  1 \amp  0 \amp  \frac{3}{2} \amp  0 \\
+            0 \amp  0 \amp  1 \amp  \frac{16}{7} \amp  0 \\
+            0 \amp  0 \amp  0 \amp  0 \amp  1
+            \end{array}\right)
         </me>
         <p>
         Clearly <m>r(A)=3</m> but <m>r(A^*=4</m>. Hence the system does not have a solution.

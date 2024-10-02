@@ -157,7 +157,8 @@
       (i) Define <m>\inner{u}{v}:=u^TAv</m> where <m>A = \begin{bmatrix}1 \amp 1 \amp 0\\1 \amp 2 \amp 0\\0 \amp 0 \amp 1 \end{bmatrix}</m>.
       Show that <m>\inner{.}{.}</m> is an inner product on <m>\R^4</m>.
       Hence show that (ii) Show that
-      <m>\left\{\begin{bmatrix}2 \\-1\\0 \end{bmatrix} , \begin{bmatrix}0 \\1\\1 \end{bmatrix} , \begin{bmatrix}0 \\-1\\2 \end{bmatrix} \right\}</m> is an orthogonal basis of <m>\R^3</m> with respect to this inner product. (iii) Consider a basis <m>\beta=\{(1,1,1),(-1,1,1),(-1,0,1)\}</m> of <m>R^3</m>.
+      <me>\left\{\begin{bmatrix}2 \\-1\\0 \end{bmatrix} , \begin{bmatrix}0 \\1\\1 \end{bmatrix} , \begin{bmatrix}0 \\-1\\2 \end{bmatrix} \right\}</me> 
+      is an orthogonal basis of <m>\R^3</m> with respect to this inner product. (iii) Consider a basis <m>\beta=\{(1,1,1),(-1,1,1),(-1,0,1)\}</m> of <m>R^3</m>.
       Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of <m>\R^3</m> with respect to the inner product defined in (i).
     </p>
   </li>

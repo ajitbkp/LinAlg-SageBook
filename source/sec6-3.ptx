@@ -16,7 +16,10 @@
           (i) <m>P</m> is non-singular and <m>P^{-1}=P^T</m>.
         </p>
         <p>
-          (ii) The rows of <m>P</m> are orthonormal vectors in <m>\R^n</m>. (iii) The columns of <m>P</m> are orthonormal vectors in <m>\R^n</m>.
+          (ii) The rows of <m>P</m> are orthonormal vectors in <m>\R^n</m>. 
+        </p>
+        <p>
+        (iii) The columns of <m>P</m> are orthonormal vectors in <m>\R^n</m>.
         </p>
       </statement>
     </theorem>
@@ -137,18 +140,28 @@
         <p>
           The following are equivalent for an <m>n\times n</m> matrix <m>A</m>.
         </p>
-        <p>
-          (i) <m>A</m> is orthogonal
-        </p>
-        <p>
-          (ii) <m>\norm{Ax}=\norm{A}</m> for all <m>x\in \R^n</m>.
-        </p>
-        <p>
-          (iii) <m>\norm{Ax-Ay}=\norm{x-y}</m> for all <m>x,y\in \R^n</m>.
-        </p>
-        <p>
-          (iv) <m>Ax\cdot Ay = (Ay)^TAx=x\cdot y</m>.
-        </p>
+          <ol>
+            <li>
+              <p>
+                <m>A</m> is orthogonal.  
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\norm{Ax}=\norm{A}</m> for all <m>x\in \R^n</m>. 
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\norm{Ax-Ay}=\norm{x-y}</m> for all <m>x,y\in \R^n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>Ax\cdot Ay = (Ay)^TAx=x\cdot y</m>.
+              </p>
+            </li>
+          </ol> 
       </statement>
     </theorem>
       

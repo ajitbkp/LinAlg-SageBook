@@ -140,7 +140,7 @@
   </p>
   <p>
     The matrix <m>Q=A(A^TA)^{-1}A^T</m> is called the
-    <q>projection matrix for the subspace <m>W</m></q>.
+    <em>projection matrix</em> for the subspace <m>W</m>.
   </p>
   
 </section>

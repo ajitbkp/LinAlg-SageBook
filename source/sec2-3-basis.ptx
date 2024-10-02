@@ -68,6 +68,7 @@ Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0
       </p>
     </statement>
   </theorem>
+
     <proof>
     <p>
       Follows from Theorem <xref ref="thm-sec2-2-thm2"/>.
@@ -579,17 +580,22 @@ It is easy to verify that <m>x_\gamma=[I]_\beta^\gamma x_\beta</m>.
     </p>
   </example>
 
-<problem>
-  <p>
-    What are all subspaces of <m>\R^2</m> and <m>\R^3</m>?
-  </p>
-</problem>
+<exercise>
+  <statement>
+    <p>
+      What are all subspaces of <m>\R^2</m> and <m>\R^3</m>?
+    </p>
+  </statement>
+</exercise>
 
-<problem>
-  <p>
-    If <m>W</m> is a subspace of <m>\R^n</m>, then it is null space of some matrix.
-  </p>
-</problem>
+<exercise>
+  <statement>
+    <p>
+        If <m>W</m> is a subspace of <m>\R^n</m>, then it is null space of some matrix.
+    </p>
+  </statement>
+</exercise>
+
 <p>
 We end this chapter by look at a bigger example. Here we also illustrate RREF gives several informations 
 on a matrix.

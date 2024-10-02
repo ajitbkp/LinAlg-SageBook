@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-echelon-form" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec1-3-echelon-form" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Echelon Forms</title>
 <introduction>
     <p>
@@ -322,6 +322,7 @@ above and work from top to bottom.
 		<mrow>	2x+4y+z \amp  = 3   </mrow>
     </md>
     </p>
+    
     <solution>
         <p>
             The corresponding augmented matrix is
@@ -509,6 +510,7 @@ row-reduced matrix of <m>A</m> to identity matrix.
                 b=\begin{pmatrix}1\\4\\3\\5\end{pmatrix}
             </me>
                 </p>
+
             <solution>
                 <p>
                     

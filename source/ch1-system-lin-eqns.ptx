@@ -146,13 +146,13 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
     </introduction>
   
   <!-- include sections -->
-  <xi:include href="sec-row-operations.ptx" />
-  <xi:include href="sec-col-operations.ptx" />
-  <xi:include href="sec-echelon-form.ptx" />
-  <xi:include href="sec1.4-matrix-rank.ptx" />
+  <xi:include href="sec1-1-row-operations.ptx" />
+  <xi:include href="sec1-2-col-operations.ptx" />
+  <xi:include href="sec1-3-echelon-form.ptx" />
+  <xi:include href="sec1-4-matrix-rank.ptx" />
   <xi:include href="sec1-5-homo-system.ptx" />
   <xi:include href="sec1-6-LU-Factorization.ptx" />
-  <xi:include href="ch-1-exer.ptx" />
+  <xi:include href="sec1-7-exer.ptx" />
 
   
 </chapter>

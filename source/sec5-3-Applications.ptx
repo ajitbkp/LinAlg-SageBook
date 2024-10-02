@@ -3,7 +3,839 @@
 <title>
 Applications of Eigenvalues and Eigenvectors
 </title>  
+<introduction>
+  <p>
+    In this section we look at several applications of eigenvalues and eigenvectors. 
+  </p>
+</introduction>
 
+<subsection xml:id="subsec5-3-Fibonacci-Seq">
+  <title>Fibonacci Sequence</title>
+  <p>
+    Originally the Fibonacci sequence appeared in the solution of the following problem posed by 
+	Leonardo of Pisa, popularly known as Fibonacci, in the book <em>Liber Abaci</em> in 1202.
+  </p>
+
+  <p>
+    Consider the following problem.
+  </p>
+
+  <blockquote>
+    <p>
+      A certain man put a pair of rabbits in a places surrounded on all sides by a wall. 
+      How many pairs of rabbits can be produced from that pair in year if it is supposed 
+      that every month each pair  begets a new pair which from second month becomes 
+      productive?    
+    </p>
+  </blockquote>
+  <p>
+    We assume that the number of pairs at the end of the <m>n</m>-th year  is
+denoted by <m>F_n</m>. We start with <m>F_0=0</m> and <m>F_1=1</m>. Note that the 
+number of pair of rabbits in any given month is the number of 
+pairs in the previous month plus those that are hatched  in that 
+month and those are as many as the previous month. This gives gives
+rise to a recurrence relation
+  </p>
+<me>F_{n+1}=F_n+F_{n-1}, \qquad \text{with } F_0=0, F_1=1</me>.
+<p>
+  Let <m>X_{n}=\begin{pmatrix}F_n\\F_{n-1}\end{pmatrix}</m>. Then 
+we have 
+<me>X_{n+1}=\begin{pmatrix}F_{n+1}\\F_{n}\end{pmatrix}=
+  \begin{pmatrix}F_{n}+F_{n-1}\\F_{n}\end{pmatrix}=
+  \begin{pmatrix}1\amp 1\\1 \amp  0\end{pmatrix} \begin{pmatrix}F_{n}\\F_{n-1}\end{pmatrix}.
+</me>
+</p>
+
+
+<p>
+  Let <m>M=\begin{pmatrix}1 \amp 1\\1\amp  0\end{pmatrix}</m>. Then we have 
+
+<me>X_{n+1}=MX_n.</me>
+</p>
+
+<p> This implies 
+<me>X_{n+1}=M^nX_1.</me>
+</p>
+<p> 
+This leads to computation of power of <m>M</m>. Therefore, we can invoke 
+diagonalization of the matrix.
+</p>
+
+<p>
+  Note that <m>M</m> is symmetric matrix with characteristic 
+polynomial <m>\lambda^2-\lambda-1</m>. The eigenvalues of 
+<m>M</m> are <m>\frac{1\pm \sqrt{5}}{2}</m> and the corresponding 
+eigenvectors are <m>\begin{pmatrix}\frac{1\pm \sqrt{5}}{2} \\1\end{pmatrix}</m>. 
+Since <m>M</m> has distinct eigenvalues, <m>M</m>  is diagonalizable and we have
+<me>
+  M=PDP^{-1} \text{ where } 
+P= \begin{pmatrix}
+\frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+\end{pmatrix}
+\text{ and }
+D= \begin{pmatrix}
+\frac{1+\sqrt{5}}{2} \amp  0 \\0 \amp \frac{1-\sqrt{5}}{2}
+\end{pmatrix}.
+</me>
+</p>
+
+<p> 
+  Let <m>\varphi=\frac{1+\sqrt{5}}{2}</m> be one of the above eigenvalue 
+of <m>M</m>,  then <m>1-\varphi=\frac{1-\sqrt{5}}{2}</m>. Also it is easy to check that <m> (1+\frac{1}{\varphi})=\varphi</m>. Now we have 
+<md> 
+  <mrow>X_{n+1}  =\amp  M^nX_1</mrow>
+  <mrow>=\amp  PD^n P^{-1} X_1</mrow>
+  <mrow> =\amp  \begin{pmatrix}
+    \frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+  \end{pmatrix}\begin{pmatrix}
+  \varphi^n \amp  0\\ 0 \amp  (1-\varphi)^n
+  \end{pmatrix} \begin{pmatrix}
+  \frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+  \end{pmatrix}^{-1} \begin{pmatrix}
+  1\\0
+  \end{pmatrix}</mrow>
+  <mrow> =\amp  \begin{pmatrix}
+    \frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+  \end{pmatrix}\begin{pmatrix}
+  \varphi^n \amp  0\\ 0 \amp  (1-\varphi)^n
+  \end{pmatrix} \begin{pmatrix}
+  \frac{1}{\sqrt{5}} \amp  *\\
+  -\frac{1}{\sqrt{5}} \amp  *
+  \end{pmatrix} \begin{pmatrix}
+  1\\0
+  \end{pmatrix}</mrow>
+  <mrow>=\amp  \begin{pmatrix}
+    \frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+  \end{pmatrix}\begin{pmatrix}
+  \varphi^n \amp  0\\ 0 \amp  (1-\varphi)^n
+  \end{pmatrix} \begin{pmatrix}
+  \frac{1}{\sqrt{5}}\\
+  -\frac{1}{\sqrt{5}} 
+  \end{pmatrix} </mrow>
+  <mrow> =\amp  \begin{pmatrix}
+    \frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+  \end{pmatrix} \begin{pmatrix}
+  \frac{\varphi^n}{\sqrt{5}}\\
+  -\frac{(1-\varphi)^n}{\sqrt{5}} \end{pmatrix}</mrow>
+  <mrow>=\amp  \begin{pmatrix}
+    *\\\frac{\varphi^n-(1-\varphi)^n}{\sqrt{5}}
+  \end{pmatrix}</mrow>
+  </md>
+  Thus we have
+<me>
+F_n=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}}.
+</me>
+</p>
+
+<exercise>
+ <statement>
+  <p>
+    Show that 
+    <me>\displaystyle\lim_{n\to \infty}\dfrac{F_{n+1}}{F_n}=\frac{1+\sqrt{5}}{2}=\varphi.
+    </me> 
+  </p>
+<p>   Note that <m>\varphi</m> is called the <em>Golden-Ratio</em> which has many application in nature. 
+  The approximate  value of <m>\varphi \approx 1.618025</m>. 
+</p>
+</statement>
+
+<hint>
+  <p>
+    Let <m>x_n:=\dfrac{F_{n+1}}{F_n}</m>.  Then we have 
+<me>x_n=\frac{F_n+F_{n-1}}{F_n}=1+\frac{F_{n-1}}{F_n}=1+\frac{1}{x_{n-1}}.
+</me>
+Now let us approximate 
+<md>
+<mrow>|x_n-\varphi|  = \amp  \left|\left( 1+\frac{1}{x_{n-1}}\right)-\left( 1+\frac{1}{\varphi}\right)\right|</mrow>
+<mrow>=\amp \left|\frac{1}{x_{n-1}}-\frac{1}{\varphi}\right|</mrow>
+<mrow>\leq \amp  \frac{1}{\varphi}\left|x_{n-1}-\varphi\right| \quad \text{Since $x_{n}\geq 1$.}</mrow>
+<mrow>\leq \amp  \frac{1}{\varphi^{n-1}}\left|x_1-\varphi\right| </mrow>
+</md>
+Since <m>0\lt  \frac{1}{\varphi} \lt 1</m>, we have <m>\frac{1}{\varphi^n}\to 0</m>. This implies, <m>x_n\to \varphi</m>.
+  </p>
+</hint>
+</exercise>
+
+</subsection>
+
+<subsection xml:id="subsec5-3-Predator-Pray">
+  <title>Predator-Pray Model</title>
+  <p>
+    In a certain area,  it is observed that every year the number of 
+rabbits is equal to 4 times the number of rabbits less 2 times numbers of 
+weasels in the previous year.  The number of 
+weasels is equal to the sum of  the number of rabbits  number of 
+weasels in the previous year.  If the initial population of 
+rabbits and weasels were 100 and 10 respectively, then find the number of each 
+species after <m>n</m> years. Let <m>r_n</m> and <m>w_n</m> be the number of rabbits and weasels after <m>n</m> years respectively.
+  </p>
+
+<p> Then, as per data give we have
+<md>
+  <mrow>r_{n+1}=\amp 4r_n-2w_{n}</mrow>
+	<mrow> w_{n+1}=\amp r_n+w_n</mrow>
+</md>
+with <m>r_0=100, w_0=10</m>.
+</p>
+ 
+
+<p>
+  Let <m> X_n=\begin{pmatrix}r_n\\w_n\end{pmatrix}</m> and 
+    <m> A=\begin{pmatrix}4 \amp -2 \\ 1\amp 1 \end{pmatrix}</m>.
+    
+    Then the above system is equivalent to 
+<me> 
+  X_{n+1}=AX_n\quad \text{ with } \quad  X_0=\begin{pmatrix}100\\10\end{pmatrix}
+</me>.
+
+We need to obtain successively 
+<me>X_1=AX_0, X_2=A^2X_0, \ldots, X_n=A^n X_0</me>.
+
+It is easy to check that <m>\lambda_1=2</m> and <m>\lambda_2=3</m> are eigenvalues of <m>A</m> with 
+corresponding eigenvectors <m>v_1=\begin{pmatrix}1\\1\end{pmatrix}</m> and <m>v_1=\begin{pmatrix}2\\1\end{pmatrix}</m> respectively.
+
+We define <m>P = \begin{pmatrix}1 \amp 2\\1 \amp 1\end{pmatrix}</m>. It is easy to see that
+ <m> P^{-1}=\begin{pmatrix}-1 \amp 2\\1 \amp -1\end{pmatrix} </m>. Also <m>D=\begin{pmatrix}2 \amp 0\\0 \amp 3\end{pmatrix}</m>.  Using diagonalization, we have 
+ <me> 
+  A^n=\begin{pmatrix}1 \amp 2\\1 \amp 1\end{pmatrix}
+\begin{pmatrix}2^n \amp 0\\0 \amp 3^n\end{pmatrix}
+\begin{pmatrix}-1 \amp 2\\1 \amp -1\end{pmatrix} =
+\begin{pmatrix}
+-2^n + 2 \cdot 3^n \amp 2 \cdot 2^n - 2 \cdot 3^n \\
+-2^n + 3^n \amp 2\cdot 2^n - 3^n
+\end{pmatrix}.
+ </me>
+
+ Thus 
+<me>X_n=A^nX_0=\begin{pmatrix}180\times 3^n-80\times 2^n \\90\times 3^n-80\times
+2^n\end{pmatrix}</me>.
+
+Hence
+<me>
+r_n=180\times 3^n-80\times 2^n \text{ and } w_n=90\times 3^n-80\times 2^n
+</me> 
+It is easy to check that  
+<me>\lim_{n\to \infty} \frac{r_n}{w_n}=2.
+</me>
+What does this mean?
+</p>
+
+</subsection>
+
+<subsection xml:id="subsec5-3-linear-ode">
+  <title> Solving System of Linear ODE</title>
+  <p>
+    In this subsection, we shall deal with use of theory of eigenvalues and eigenvectors to solve 
+system of linear differential equations. 
+
+Let shall consider a  system of first order linear differential equations with constant coefficients. 
+A general form of such system can be given by 
+<md>
+  <mrow>x_1'=\frac{dx_1}{dt} =  \amp a_{11}x_1+a_{12}x_2+\cdots + a_{1n}x_n</mrow>
+  <mrow>x_2'=\frac{dx_2}{dt}=\amp  a_{21}x_1+a_{22}x_2+\cdots + a_{2n}x_n</mrow>
+    <mrow> \amp \vdots</mrow>
+     <mrow> x_n'=\frac{dx_n}{dt}=\amp  a_{n1}x_1+a_{n2}x_2+\cdots + a_{nn}x_n</mrow>
+</md>
+Here we assume that <m>a_{ij}\in \R</m> are constants. The above system can be written as
+<me>
+x'=\frac{dx}{dt}=Ax
+</me>
+ where <m>A=[a_{ij}]_{n\times n}</m> real matrix and <m>x'=\begin{bmatrix}x_1' \amp x_2'\amp  \cdots  \amp x_n'\end{bmatrix}^T</m> is  column matrix. 
+</p>
+<p>
+ We want to find a solution of the above system, that is a column vector 
+ <m>x =\begin{bmatrix}x_1 \amp x_2\amp  \cdots  \amp x_n\end{bmatrix}^T</m> of <m>n</m> differentiable functions on 
+ some interval <m>[a,b]</m> which satisfies the above system.
+</p>
+
+<p> If <m>S</m> is the set of all solutions of the above system. Then one can show that 
+ <m>S</m> is an <m>n</m>-dimensional vector subspace <m>D[a,b]</m> of the set of differentiable function on 
+ <m>[a,b]</m>. This mean, if <m>x_1, \ldots, x_n</m> are linearly 
+ independent functions which are solutions of the above system. Then any 
+ solution can be written as a linear combination of <m>x_1,\ldots, x_n</m>.
+</p>
+
+<p> In case, we are given <m>n</m> initial conditions, then there exists a unique solution 
+ of the system. 
+   </p>
+<p>
+  In addition, suppose <m>A</m> is diagonalizable, with <m>A=PDP^{-1}</m> where
+ <m>D={\rm diag}(\lambda_1,\ldots,\lambda_n)</m>, the diagonal matrix of 
+ eigenvalues of <m>A</m> and <m>P=\begin{bmatrix}u_1\amp \ldots\amp u_n\end{bmatrix}</m> is matrix of 
+ eigenbasis of <m>A</m>.   
+</p>
+
+<p>
+  We define <m>u=P^{-1}x</m>. Then <m>x=Pu</m> and <m>x'=Pu'</m>. 
+ Now substituting <m>x</m> and <m>x'</m> in the above system, we get
+ <me>
+ Pu'=APu \implies u'=P^{-1}APu=Du.
+ </me>
+ Thus the above system of linear differential equation reduced to 
+ <md>
+  <mrow> u_1'  =\amp \lambda_1 u_1</mrow>
+  <mrow>  u_2'  = \amp \lambda_2 u_2</mrow>
+  <mrow>   \amp \vdots</mrow>
+  <mrow>  u_n'  = \amp  \lambda_n u_n </mrow>
+ </md>
+ In particular, we have <m>u'=Du</m>.
+</p>
+
+<p>
+  A general solution of the above system is given by 
+<me>u_1=c_1e^{\lambda_1 t}, u_2=c_2e^{\lambda_2 t},\ldots, u_n=c_ne^{\lambda_n t}.</me>  
+The above equations can be written in matrix form as follows
+<md>
+  <mrow>u=\begin{bmatrix}u_1\\u_2\\\vdots\\u_2\end{bmatrix} =\amp 
+    \begin{bmatrix}e^{\lambda_1 t} \amp 0 \amp \cdots \amp 0\\
+    0 \amp e^{\lambda_2 t}\amp \cdots \amp 0\\
+    \vdots \amp \vdots \amp \ddots \amp \vdots\\
+    0 \amp 0 \amp \cdots \amp e^{\lambda_n t}
+    \end{bmatrix} \begin{bmatrix}c_1\\c_2\\\vdots\\c_2\end{bmatrix}=e^{tD}c
+  </mrow>
+</md>
+Here <m>e^{tD}</m> is the exponential of the matrix <m>tD</m> and <m>c</m> is the column matrix of 
+constants.
+From this we get a general solution of the original system as 
+<me>
+x_i=\sum_{j=1}^n p_{ij}u_j=\sum_{j=1}^n p_{ij}c_je^{\lambda_j t}
+</me>
+where <m>P=[p_{ij}]</m>.
+</p>
+<p>
+  Thus the solution in matrix form is given by
+  <me>
+    x(t)=Pe^{tD}c.
+  </me>
+  The constant can be obtained when we have initila value problem. 
+</p>
+
+<p>
+  Suppose we want to solve the initial value problem <m>x'(t)=Ax(t)</m> with initial condition <m> x(0)=x_0</m>. Then we have <m>c=P^{-1}x_0</m>. Hence the solution in matrix form is given by
+  <me>
+    x(t)=Pe^{tD}P^{-1}x_0.
+  </me>
+  
+</p>
+
+<p>
+  <alert>Steps to solve system of linear differential equations <m>X'=AX</m>.</alert>
+  <ol>
+    <li>
+      <p>
+     	Find the matrix <m>A</m> corresponding to this linear system and put
+	the equation in matrix form <m>X'=AX</m>.
+	      </p>
+    </li>
+    <li>
+      <p>
+        Find the eigenvalues and corresponding eigenvectors of <m>A</m>. Let
+	<m> \lambda_1, \ldots, \lambda_n</m> be eigenvalues of <m>A</m> with corresponding to eigenvectors
+	<m> v_1, \ldots, v_n</m>  respectively.		
+      </p>
+    </li>
+    <li>
+      <p>
+        The solution is <m>X=c_1e^{\lambda_1t}v_1+\cdots+ +c_n e^{\lambda_nt} v_n</m>.
+      </p>
+    </li>
+  </ol>
+</p>
+<example>
+  <statement>
+    <p>
+      Solve the following system of linear differential equations
+	<md>
+  <mrow>x'=\amp -5x+2y</mrow>
+  <mrow>	y'  = \amp  x-4y</mrow>
+  </md>
+		The above equations is equivalent to 
+		<me> X'=AX \text{ where } X=\begin{pmatrix}x\\y\end{pmatrix}, 
+		A=\begin{pmatrix}-5 \amp 2\\1 \amp  -4\end{pmatrix}.</me> 
+    </p>
+  </statement>
+
+    <solution>
+      <p>
+        It is easy to see that the eigenvalues of <m>A</m> are <m>\lambda_1=-3</m> and <m>\lambda_2=-6</m> 
+        with corresponding eigenvectors <m>v_1=\begin{pmatrix}1\\1\end{pmatrix}</m> and 
+        <m> v_2=\begin{pmatrix}2\\-1\end{pmatrix}</m> respectively. 
+      </p>
+      <p>
+        Hence the solution of the given system is given by
+        <me>
+          X=c_1e^{-3t}\begin{pmatrix}1\\1\end{pmatrix}+c_2e^{-6t}
+\begin{pmatrix}2\\-1\end{pmatrix}=\begin{pmatrix}
+c_1e^{-3t}+2c_2e^{-6t}\\c_1e^{-3t}-c_2e^{-6t}\end{pmatrix}.
+        </me>
+        Hence, the solution is 
+  <me>
+    x(t)=c_1e^{-3t}+2c_2e^{-6t}, y(t)=c_1e^{-3t}-c_2e^{-6t}.
+  </me>
+      </p>
+    </solution>
+  
+</example>
+<exercise>
+  <statement>
+    <p>
+      What will be the solution of <md>
+        <mrow>x'=\amp -5x+2y</mrow>
+        <mrow>	y'  = \amp  x-4y</mrow>
+        </md>
+      with initial conditions <m> x(0)=1, y(0)=-2</m>?
+    </p>
+  </statement>
+</exercise>
+
+<example>
+  <statement>
+    <p>
+      Solve the following system ODE.
+    <me>
+      x'(t)=\begin{pmatrix}
+      1 \amp  1 \amp  4 \\
+      2 \amp  0 \amp  -4 \\
+      -1 \amp  1 \amp  5
+      \end{pmatrix} x(t), \quad x(0)=\begin{pmatrix}
+      7\\-4\\5
+      \end{pmatrix}.
+      </me>
+    </p>
+
+  </statement>
+  <solution>
+    <p>
+      The eigenvalues of the coefficient matrix <m>A</m> are 
+      <me>\lambda_1=1, \lambda_2=2,\lambda_3=3</me>
+      and the corresponding eigenvectors are 
+      <me>
+      v_1=\begin{pmatrix}	0\\4\\-1\end{pmatrix}, 
+      v_2=\begin{pmatrix}	1\\1\\0\end{pmatrix},
+      v_3=\begin{pmatrix}	2\\0\\1\end{pmatrix}.
+      </me>
+    
+      Hence a general solution of 
+      the given system is given by
+      <md>
+      <mrow>x(t) =\amp c_1e^t\begin{pmatrix}	0\\4\\-1\end{pmatrix}+
+      c_2e^{2t}\begin{pmatrix}	1\\1\\0\end{pmatrix}+
+      c_3e^{3t}\begin{pmatrix}	2\\0\\1\end{pmatrix} </mrow>
+      </md>
+    Using the given initial conditions, we get
+    <me>
+    \left(\begin{array}{rrr}
+    0 \amp  1 \amp  1 \\
+    4 \amp  1 \amp  0 \\
+    -1 \amp  0 \amp  1
+    \end{array}\right) \begin{pmatrix}
+    c_1\\c_2\\c_3
+    \end{pmatrix}=\begin{pmatrix}
+    7\\-4\\5
+    \end{pmatrix}.
+    </me>
+    Solving the above equations, yields, <m>c_1=-2, c_2=4,c_3=3</m>. Hence the required
+    solution of the problem is 
+  <me>
+    x(t)=-2e^t\begin{pmatrix}	0\\4\\-1\end{pmatrix}+
+    4e^{2t}\begin{pmatrix}	1\\1\\0\end{pmatrix}+
+    3e^{3t}\begin{pmatrix}	2\\0\\1\end{pmatrix}
+  </me>
+    You may write the each component of the solution.
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Solve the following 2nd order differential equations.
+      Consider the system
+      <md>
+        <mrow> x_1''(t)= \amp x_1'+2x_2'-2x_2</mrow>
+          <mrow> x_2''(t)= \amp  2x_1'+x_2'+x_2-x_1</mrow>
+      </md>
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Substitute <m>x_1'=x_3</m> and <m>x_2'=x_4</m>. Then we have 
+<md>
+	<mrow>x_1'(t)\ =\amp x_3</mrow>
+	<mrow>x_2'(t) =\amp x_4</mrow>
+	<mrow>x_3'(t) =\amp  x_3+2x_4-2x_2</mrow>
+	<mrow>x_4'(t) =\amp  2x_3+x_4+x_2-x_1</mrow>
+</md>
+The above equations can be written as <m>x'(t)=Ax(t)</m> where
+<me>
+x(t)=\begin{pmatrix}
+      x_1(t)\\x_2(t)\\x_3(t)\\x_4(t)
+     \end{pmatrix} \quad \text{and}\quad 
+     A=\begin{pmatrix}
+        0 \amp  0 \amp  1 \amp  0\\
+        0 \amp  0 \amp  0 \amp  1\\
+        0 \amp  -2 \amp  1 \amp  2\\
+        -1 \amp  1 \amp  2 \amp  1
+       \end{pmatrix}.
+</me>
+The eigenvalues of <m>A</m> are <m>\lambda_1=1, \lambda_2=-2, \lambda_3=\frac{3-\sqrt{5}}{2}, 
+\lambda_4=\frac{3+\sqrt{5}}{2}</m> and the corresponding eigenvectors are 
+<me>
+v_1=\begin{pmatrix}
+     1\\ -1\\ 1\\ -1
+    \end{pmatrix}, 
+v_2=\begin{pmatrix}
+     1\\ -1\\ -2\\ 2
+    \end{pmatrix},
+    v_3=\begin{pmatrix}
+     3+\sqrt{5}\\ 1\\ 2 \\ \frac{3-\sqrt{5}}{2}
+    \end{pmatrix}, 
+    v_4=\begin{pmatrix}
+     3-\sqrt{5}\\ 1\\ 2 \\ \frac{3+\sqrt{5}}{2}
+    \end{pmatrix}. 
+</me>
+Thus a general solution is given by
+<me> 
+x(t)=c_1e^{t}\begin{pmatrix}
+     1\\ -1\\ 1\\ -1
+    \end{pmatrix}+c_2e^{-2t}\begin{pmatrix}
+     1\\ -1\\ -2\\ 2
+    \end{pmatrix}+c_3e^{\frac{3-\sqrt{5}}{2}t}\begin{pmatrix}
+     3+\sqrt{5}\\ 1\\ 2 \\ \frac{3-\sqrt{5}}{2}
+    \end{pmatrix}+c_4e^{\frac{3+\sqrt{5}}{2}t}\begin{pmatrix}
+     3-\sqrt{5}\\ 1\\ 2 \\ \frac{3+\sqrt{5}}{2}
+    \end{pmatrix}.
+</me>
+Hence a general solution of the given problem can be obtained by dropping the 
+dummy variables <m>x_3</m> and <m>x_4</m>. It is given by 
+
+<md>
+<mrow>x_1(t) =\amp c_1e^t+c_2e^{-2t}+c_3(3+\sqrt{5})e^{\frac{3-\sqrt{5}}{2}t}+c_4(3-\sqrt{5})e^{\frac{3+\sqrt{5}}{2}t}</mrow>
+<mrow>x_2(t) =\amp -c_1e^t-c_2e^{-2t}+ c_3e^{\frac{3-\sqrt{5}}{2}t}+c_4e^{\frac{3+\sqrt{5}}{2}t} </mrow>
+</md>
+
+    </p>
+  </solution>
+</example>
+
+<p>
+  In the next example, we deal with solving a system <m>x'(t)=Ax(t)</m>, 
+in which the coefficient matrix <m>A</m> has complex eigenvalues. 
+</p>
+
+<example>
+  <statement>
+    <p>
+      Solve the  system of linear homogeneous ODE
+    <md>
+      <mrow>x_1'(t)=\amp x(t)+y(t),\quad x_2'(t)=-x+y.  </mrow>
+    </md>
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      The given system of ODE is 
+    <me>
+      x'(t)=Ax(t), \quad \text{ where } A = \begin{pmatrix} 1 \amp 1\\-1 \amp 1\end{pmatrix}.
+    </me>
+    The eigenvalues of <m>A</m> are <m>\lambda_1=1-i</m> and <m>\lambda_2=1+i,</m> with 
+  eigenvectors <m>v_1=\begin{pmatrix} 1\\ -i \end{pmatrix}</m> and 
+<m> v_2=\begin{pmatrix} 1\\ i \end{pmatrix}</m> respectively.
+    </p>
+<p>
+  Let us  define <m> P:=[v_1~~v_2]=\begin{pmatrix}
+1 \amp  1\\-i \amp i
+\end{pmatrix}</m>. Then it is easy to see that 
+<m>P^{-1}AP=D=\begin{pmatrix}
+1-i \amp  0\\0 \amp  1+i
+\end{pmatrix}</m>.
+</p>
+<p>
+  Hence the solution is given by 
+  <md>
+    <mrow> x(t)=\amp c_1e^{(1-i)t}\begin{pmatrix} 1\\ -i \end{pmatrix}+c_2e^{(1+i)t}\begin{pmatrix} 1\\ i \end{pmatrix}</mrow>
+    <mrow>= \amp c_1e^{t} e^{-it}\begin{pmatrix} 1\\ -i \end{pmatrix}+c_1e^{t} e^{it}\begin{pmatrix} 1\\ i \end{pmatrix}</mrow>
+  </md>
+  Writing <m> e^{it}=\cos t+i\sin t, e^{-it}=\cos t-i\sin t</m> and adjusting the constants, we can write the solution 
+    <me> 
+      x_1(t)=e^t(d_1\cos t +d_2\sin t), x_2(t)=e^{t}(d_1\cos t +d_2\sin t).
+    </me> 
+  
+</p>
+  </solution>
+</example>
+    
+  <remark>
+    <statement>
+      <p>
+        In case the the coeffcient matrix <m>A</m> of the sysstem <m>x'=Ax</m> is not diagonailizable  then one can use 
+        the concept of Jordan canonical form to solve the system. However, we shal not discuss this here.     
+      </p>
+    </statement>
+  </remark>
+</subsection>
+
+
+<subsection xml:id="subsec5-3-Markov-Chains">
+  <title>Markov Chains</title>
+  
+  <p>
+    In this subsection, we look at some  applications of linear algebra in dealing with matrices that 
+arise from probabilistic systems. We consider chance process in which knowledge of previous outcomes influence 
+prediction of future experiments. Such chance process is called a  <em>Markov Chain.</em>
+  </p>
+
+  <p>
+    Let consider the following problem and develop the terminologies and methods to solve  
+this problem.
+  </p>
+<example xml:id="eg-markov1">
+  <statement>
+    <p>
+      Weather of certain area is classified as "fair", "cloudy" and rainy. A fair day is followed by 
+      a fair day 60% of the time, and a cloudy day 25% of time.  A cloudy day is followed by a
+      cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a
+      cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day 
+      are expected to be fair, cloudy and rainy over long period?
+    </p>
+  </statement>
+</example>
+
+<p>
+  In the above example, fair, cloudy and rainy day can be thought of as three states, say state 1, 
+state 2 and state 3 respectively. Each day can be thought of as a generation. 
+Let us denote the data given in the example as following table:
+</p>
+<tabular>
+  <row>
+    <cell></cell>
+    <cell>Fair</cell>
+    <cell>Cloudy</cell>
+    <cell>Rainy</cell>
+  </row>
+  <row>
+    <cell>Fair</cell>
+    <cell>0.60 </cell>
+    <cell>0.25</cell>
+    <cell>0.15	</cell>
+  </row>
+  <row>
+    <cell>Cloudy </cell>
+    <cell>0.40 </cell>
+    <cell>0.35 </cell>
+    <cell>0.25	</cell>
+  </row>
+  <row>
+  <cell>Rainy</cell>
+  <cell>0.35 </cell>
+  <cell>0.40</cell>
+  <cell>0.25	</cell>
+</row>
+</tabular>
+
+<p> Let <m>p_{ij}</m> be the probability of transition from state <m>j</m> to state <m>i</m>. The matrix 
+<m>P=[p_{ij}]</m> is called the <em>transition matrix.</em> 
+</p>
+
+<definition xml:id="def-stochastic-matrix">
+  <statement>
+    <p>
+      A transition matrix of an <m>n</m> stage Markov chain is an <m>n\times n</m>
+      matrix having nonnegative entries such that sum of entries in each column is 1.
+      Such a matrix is called a <em>stochastic matrix.</em>
+    </p>
+  </statement>
+</definition>
+
+<p>
+  The transition matrix for the <xref ref="eg-markov1"/> is given by
+<me> P=
+\begin{pmatrix}
+0.60 \amp  0.40 \amp  0.35		\\
+0.25\amp  0.35 \amp  0.40		\\ 
+0.15 \amp  0.25\amp  0.25	
+\end{pmatrix}
+</me>
+</p>
+
+<p>
+  Note that <m>p_{21}=0.25</m>, is the probability of being a cloudy day after fair day. Similarly 
+<m>p_{1,3}=0.35</m>, represent the probability of being fair day after a rainy day. 
+
+The transition matrix, represents the change of state from present generation to the next generation.
+</p>
+<remark xml:id="Markov-remark1">
+  <statement>
+    <p>      
+  The powers of a transition matrix have the same property of a transition matrix. That is, all 
+	the entries are non negative and sum of entries in any column is 1.
+    </p>
+  </statement>
+</remark>
+
+<remark xml:id="Markov-remark2">
+  <statement>
+    <p>
+      If <m>P</m> is a transition matrix of a Markov chain and if <m>p_{ij}^{(k)}</m> 
+      denotes the <m>ij</m>-th entries of <m>P^k</m>, then <m>p_{ij}^{(k)}</m> is the probability 
+      of moving to state <m>i</m> from state <m>j</m> in <m>k</m> generations or in <m>k</m> time period.
+    </p>
+  </statement>
+</remark>
+
+<p>
+  Let us consider <m>P^5</m> of the transition matrix in the <xref ref="eg-markov1"/>
+<me>
+P^5=       	
+\left(\begin{array}{lll}
+0.4876975  \amp  0.4872025  \amp  0.48709125 \\
+0.31116875 \amp  0.31144125 \amp  0.3115025 \\
+0.20113375 \amp  0.20135625 \amp  0.20140625
+\end{array}\right)
+</me>
+Note that <m>p_{23}^{(5)}=0.3115025</m> is the probability of rainy day becoming cloudy day  
+after 5 days.
+</p>
+
+<p>
+  We  consider an initial probability vector <m>x^{(0)}=\begin{pmatrix} 0.4\\0.3\\0.3\end{pmatrix}</m>.
+This mean current day has 40% chance of being a fair day, 30% chance of being 
+cloudy and 30% of being rainy. 
+</p>
+<p>
+Then <m>x_k=P^kx^{(0)}</m>, denotes the probability vector after $k$ stages. We are interested in long 
+time behavior of the probability vector.  In particular, we want to see if the limit 
+<m> 
+\lim_{n\to \infty} P^nx^{(0)} 
+</m>  exists. 
+</p>
+<p>
+In general, the above limits does not exists, however, in case the transition matrix is regular, then 
+one can show that limit <m>\displaystyle\lim_{n\to \infty} P^nx^{(0)}</m>  exists.
+</p>
+
+<definition xml:id="def-regular-matrix">
+  <statement>
+    <p>
+      A transition matrix <m>P</m> is <em>regular</em> if there exists a natural number <m>k</m> such all the entries of 
+      <m>P^k</m> are positive.       
+    </p>
+  </statement>
+</definition>
+<p>
+  Note that all transition matrix are not regular, for example, identity matrix is a transition matrix 
+but is not regular.
+</p>
+
+<p>
+  It is easy to see that if $P$ is a regular transition matrix matrix such that all the entries of 
+<m>P^m</m> are positive. Then all entries of <m>P^{m+k}</m> are positive for non negative integers <m>k</m>. 
+</p>
+
+<p>
+  Let us assume that <m>P</m> is a transition matrix and that <m>Q=\displaystyle\lim_{n\to \infty} P^n</m> exists. 
+Then we have 
+<me>
+  Q=\displaystyle\lim_{n\to \infty} P^n=P \displaystyle\lim_{n\to \infty} P^{n-1}=PQ.
+</me>
+</p>
+
+<p>
+  Suppose <m>q_1,\ldots, q_n</m> are columns of <m>Q</m>. Then  
+<me>Q=[q_1~q_2~\cdots~ q_n]=P[q_1~q_1~\cdots~ q_n]=[Pq_1~Pq_2~\cdots~ Pq_n].
+</me>
+This means that each column of <m>Q</m> is an eigenvector of <m>P</m> corresponding to eigenvalue 1. 
+Thus we have proved the following result:
+</p>
+
+<theorem xml:id="thm-Markov1">
+  <statement>
+    <p>
+      If <m>P</m> is an <m>n\times n</m> regular transition matrix, then <m>P^n</m> converges to a 
+      matrix, say, <m>Q</m> whose columns are eigenvectors of <m>P</m> corresponding to eigenvalues 1.
+    </p>
+  </statement>
+</theorem>
+<p>
+  In fact one can show the following.
+</p>
+
+<theorem xml:id="thm-Markov2">
+  <statement>
+    <p>
+      If  <m>P</m> is a regular, transition matrix then its eigenvalue 
+      <m>\lambda=1</m> has multiplicity 1 and that there is only one eigenvectors associated 
+      with <m>\lambda=1</m>. This implies that all columns  of  <m>Q</m> are identical. 
+    </p>
+  </statement>
+</theorem>
+<p>
+Now we define a a <em>limiting state distribution vectors or steady state vector</em> 
+of an <m>n</m>-state Markov chain as a vector <m>x^{(\infty)}</m>  as follows:
+<me>
+x^{(\infty)}=\lim_{n\to \infty}x_n=\lim_{n\to \infty}P^nx^{(0)}
+=\left(\lim_{n\to \infty}P^n\right)x^{(0)}=Qx^{(0)}.
+</me>
+Thus we have the following equation.
+  <men xml:id="eqn-Markov-eq1">
+    x^{(\infty)} =Qx^{(0)}.   
+  </men>
+    Note that all columns of <m>Q</m> are identical, say, <m>q_1=\ldots=q_n=q</m>. Let <m>q=(y_1,y_2,\ldots, y_n</m>. Then 
+<md> <mrow> Qx^{(0)}=\amp (y_1(x_1+\cdots+x_n),y_2(x_1+\cdots+x_n),\ldots, y_n(x_1+\cdots+x_n))</mrow>
+  <mrow>=\amp (y_1,\ldots,y_n)=q.</mrow>
+</md> 
+Thus <m>x^{(\infty)}</m> is an eigenvector of <m>P</m> with respect to eigenvalue 1 with sum of its components 1.
+</p>
+<p> 
+The <xref ref="eqn-Markov-eq1"/> gives a way to find the steady state vector.  
+</p>
+
+<p>
+  Let us find the steady state vector of the transition matrix defined in the <xref ref="eg-markov1"/>.
+</p>
+
+<p>  Let <m>x^{(\infty)}=\begin{pmatrix}x\\y\\z\end{pmatrix}</m> be the steady state vector. Then it is an eigenvector 
+	of <pretext />P corresponding to eigenvalue 1. That is <m>Px^{(\infty)}=x^{(\infty)}</m> and also, 
+	<m>x+y+z=1</m>. Thus we get the following set of 
+	equations which we need to solve.
+	<md>
+    <mrow>-0.40x+0.4y+0.35z=\amp 0</mrow>
+      <mrow>0.25x-0.35y+0.40z=\amp 0</mrow>
+        <mrow>0.15x+0.25y-0.75z= \amp 0</mrow>
+          <mrow>x+y+z=\amp 0 </mrow>.
+  </md>
+  </p>
+
+  <p>
+    Solving the avove equations we, get
+	<me>
+	x=0.487421383647799, y=0.311320754716981, z=0.201257861635220.
+  </me>
+  Hence the steady state vector is given by
+  <me>
+    x^{(\infty)}=\begin{pmatrix}0.487421383647799\\ 0.311320754716981\\0.201257861635220\end{pmatrix}.
+  </me>
+  The limiting transition matrix <m>Q </m>is given by 
+  <me>
+    Q=\begin{pmatrix}
+	0.487421383647799 \amp 0.487421383647799 \amp 0.487421383647799\\
+	0.311320754716981 \amp 0.311320754716981\amp 0.311320754716981\\
+	0.201257861635220 \amp 0.201257861635220 \amp 0.201257861635220
+	\end{pmatrix}.
+  </me>
+  Thus in the long run about 48.74% chance of being a fair day, about 31.13% of being cloudy and 
+	about 20.13% chance of being rain day.   
+  </p>
+
+  <remark>
+    <statement>
+      <p>
+        We can use diagonalization of the transition matrix to find the steady state vector.
+      </p>
+    </statement>
+  </remark>
 <example>
   <statement>
     <p>
@@ -102,9 +934,9 @@ Applications of Eigenvalues and Eigenvectors
       Here <m>Q^{-1} =\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right)</m>.
       Hence
       <md>
-        <mrow>A^n \amp =\amp  \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  \left(\frac{1}{10}\right)^n \amp  0 \\ 0 \amp  0 \amp  \left(-\frac{1}{5}\right)^n \end{array} \right)\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right)</mrow>
-        <mrow>\amp  =\amp \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \end{array} \right)\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right) \text{ for large \(n\) }</mrow>
-        <mrow>\amp =\amp  \left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{3} \amp  \frac{1}{3} \amp  \frac{1}{3} \\ \frac{5}{18} \amp  \frac{5}{18} \amp  \frac{5}{18} \end{array} \right)</mrow>
+        <mrow>A^n  =\amp  \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  \left(\frac{1}{10}\right)^n \amp  0 \\ 0 \amp  0 \amp  \left(-\frac{1}{5}\right)^n \end{array} \right)\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right)</mrow>
+        <mrow> =\amp \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \end{array} \right)\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right) \text{ for large \(n\) }</mrow>
+        <mrow> =\amp  \left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{3} \amp  \frac{1}{3} \amp  \frac{1}{3} \\ \frac{5}{18} \amp  \frac{5}{18} \amp  \frac{5}{18} \end{array} \right)</mrow>
       </md>
     </p>
 
@@ -162,4 +994,336 @@ Applications of Eigenvalues and Eigenvectors
   </statement>
 </exercise>
 
+</subsection>
+
+<subsection xml:id="subsec5-3-Google-Search">
+  <title>Google Search Engine</title>
+  <p>
+    Over 900  millions Indian use Internet (as of January 2024) most of them 
+may do Google, a search engine that 
+was designed by Lawrence Page and Sergei Brian in 1998. There are about 200 millions active webpages in the world as on January 2024 and it is growing by 
+seconds. More often than not, google search gives the desired results, users are 
+looking for. Have you ever thought of how does it work? Linear algebra plays an important role 
+in how Google's search algorithm works. Google  ranks pages according to their importance. 
+  </p>
+
+<p> 
+  Success of Google lies behind its PageRank algorithm, which rates the importance of 
+each page on the web and present the user typically most relevant and helpful pages first. PageRank uses 
+link structure of web to determine the importance of webpages. 
+</p>
+
+<p> In this section, we shall explain how Google ranks webpages as a simple application 
+to linear algebra. 
+  </p>
+
+  <p>
+    Whenever an user or web surfer enters a keyword for searching, Google  does three basic things:
+    <ol>
+      <li>
+        <p>
+          Crawl the web and locate all web pages with public access.
+        </p>
+      </li>
+      <li>
+        <p>
+          Index the data from websites it has crawled, 
+	so that it can be searched efficiently for relevant keywords.
+        </p>
+      </li>
+      <li>
+        <p>
+          	Rate the importance of each page in the database.
+        </p>
+      </li>
+    </ol>
+  </p>
+<p>
+  We shall briefly look at how to rank or rate webpages using Google's PageRank algorith. 
+</p>
+  
+<p>
+An Internet network can be represented by a directed graph in which each website is thought of 
+as a node or vertex and links between pages are  edges with arrows. If there is an arrow 
+from note <m>i</m> to <m>j</m>, them it means that there is link to move from webpage <m>i</m> to <m>j</m>. 
+If there is a double arrow between <m>i</m> and <m>j</m>, then there is link from <m>i</m> to <m>j</m> and also 
+from <m>j</m> to <m>i</m>. 
+</p>
+<p>
+To every network with <m>n</m>-webpages, we assign a matrix <m>H=[h_{ij}]_{n\times n}</m>, where 
+represents the probability that surfer  would visit the webpage  <m>i</m> from the webpage <m>j</m>.
+If the webpage <m>j</m> has <m>m_j</m> links to other webpages then <m>h_{ij}=1/m_j</m>. If there is no link 
+from <m>j</m> to <m>i</m>, then <m>h_{ij}=0</m> The matrix <m>H</m> is called the <em>hyper matrix</em> of the
+network. 
+</p>
+
+<example xml:id="eg-google_search1">
+  <statement>
+    <p>
+      Let us consider a network with 5 webpages as shown in <xref ref="Page_Rank_Fig1"/>.
+    </p>
+    <figure xml:id="Page_Rank_Fig1">
+      <image width="45%" source="images/Page_Rank_Fig1.PNG"/>
+       <caption>Network with 5 webpages</caption>
+     </figure>
+     <p>
+      The hyper matrix of the network <xref ref="Page_Rank_Fig1"/> is the following:
+      <me>
+H=\begin{pmatrix}
+0 \amp  0 \amp  \frac{1}{2} \amp  \frac{1}{2} \amp  0\\[1mm]
+\frac{1}{3}  \amp  0 \amp  0 \amp  \frac{1}{2} \amp  0\\[1mm]
+\frac{1}{3}  \amp  0 \amp  0 \amp  0 \amp  0\\[1mm]
+0  \amp  \frac{1}{2} \amp  0 \amp  0 \amp  0\\[1mm]
+\frac{1}{3}  \amp  \frac{1}{2} \amp  \frac{1}{2} \amp  0 \amp  0\\
+\end{pmatrix}.
+      </me>
+     </p>
+     
+     
+     <p>
+      Note that <m>H</m> is a stochastic matrix and sum of each of its 
+      row is 1.
+      </p>
+      
+      <p>
+      If a surfer lands on a page after <m>i</m> steps or clicks, then its probability is 
+      denoted by <m>p_k(j)=p{ij}</m>. 
+      </p>
+      
+      <p>
+      The vector vector 
+      <me>
+      p_i=\begin{pmatrix}
+      p_{i1}\\p_{i2}\\\vdots\\p_{in}\end{pmatrix}
+      </me>   
+      is called the <m>i</m>-th probability vector. Suppose, the surfer start from 
+      the webpage 3, then the initial probability vector is 
+      <me>
+      p_0=\begin{pmatrix}
+      0\\0\\1\\0 \\0 \end{pmatrix}.
+      </me>   
+      We wish to determine the long term behaviour of the surfer. In particular, 
+      we wish to find the probability of a surfer being on page <m>i</m> in 
+      long runs.
+      
+      The vector 
+      <me>p_1=Hp_0=       	
+      \left(\begin{array}{r}
+      \frac{1}{2} \\
+      0 \\
+      0 \\
+      0 \\
+      \frac{1}{2}
+      \end{array}\right)</me>. 
+      Thus if the surfer starts from the webpage 3, then 
+      the on one click, the surfer reach to webpage 1 with probability <m>1/2</m> or 
+      at webpage 5 with probability <m>1/2</m>. We have 
+      <me>
+      p_2=H^2p_0=\left(\begin{array}{r}
+      0 \\
+      \frac{1}{6} \\
+      \frac{1}{6} \\
+      \frac{1}{2} \\
+      \frac{1}{6}
+      \end{array}\right), p_3=H^3p_0=        	
+      \left(\begin{array}{r}
+      \frac{1}{3} \\
+      \frac{1}{4} \\
+      0 \\
+      \frac{1}{4} \\
+      \frac{1}{6}
+      \end{array}\right)
+      </me>
+    <me>
+      p_{20}=\left(\begin{array}{r}
+      0.19048 \\
+      0.22222 \\
+      0.063492 \\
+      0.31746 \\
+      0.20635
+      \end{array}\right), 
+      p_{25}= \left(\begin{array}{r}
+      0.19047 \\
+      0.22222 \\
+      0.063492 \\
+      0.31746 \\
+      0.20635
+      \end{array}\right), \ldots, 
+      p_{50}=\left(\begin{array}{r}
+      0.19047 \\
+      0.22222 \\
+      0.063492 \\
+      0.31746 \\
+      0.20635
+      \end{array}\right)
+       </me>
+       
+       
+      Thus we see that the probability vector seems to converge to a vector
+      <me>
+      \pi=\left(\begin{array}{r}
+      0.19047 \\
+      0.22222 \\
+      0.063492 \\
+      0.31746 \\
+      0.20635
+      \end{array}\right)
+      </me> 
+      which means that, a surfer will visit webpage 1 with probability 0.19047, 
+      webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, 
+      it will get rank 1. Thus this network will be ranked as, <m>[4, 2, 5, 1, 2]</m>. 
+      
+      <p>
+      One can show that the vector <m>\pi</m> is independent of the initial vector <m>p_0</m> for this particular 
+      network.  This is called the  <em>stationary distribution vector.</em> Thus 
+      the stationary distribution vector for any network is <m>\displaystyle \lim_{n\to \infty} H^np_0</m> 
+      if it exists. 
+      </p>
+
+      </p>
+    </statement>
+</example>
+
+<remark>
+  <statement>
+    <p>
+      Finding the stationary distribution vector for network is nothing but 
+      solving a stem of linear equations <m>Hx=x</m>.
+    </p>
+  </statement>
+</remark>
+<p>
+  From the  <xref ref="eg-google_search1"/>, it looks like that we can find the stationary distribution vector
+and hence rank a network after a sufficiently large iterations. However, this is not always true. 
+In case a network has a dangling webpage (<em>a webpage that does not link to any other page</em>), or 
+a trapping loop, then we may not be able to rank webpages.  In case a surfer come across, dangling 
+node or trapping loop,  he can type a new url in the address bar manually. 
+
+The next two examples demonstrate this. 
+</p>
+
+<example xml:id="eg-google_search2">
+  <statement>
+    <p>
+      Let us consider a network with 5 webpages as shown in <xref ref="Page_Rank_Fig2"/>.
+    </p>
+    <figure xml:id="Page_Rank_Fig2">
+      <image width="45%" source="images/Page_Rank_Fig2.PNG"/>
+       <caption>Network with 5 webpages with a dangling node.</caption>
+     </figure>
+  
+    <p>
+      In this network, webpage 3 is dangling as it does not have any outgoing link to any 
+page.  The hyper matrix of associated to this network is given by
+<me>
+H=\begin{pmatrix}
+0 \amp  0 \amp  0 \amp  \frac{1}{3} \amp  0\\[1mm]
+\frac{1}{4}  \amp  0 \amp  0 \amp  \frac{1}{3} \amp  0\\[1mm]
+\frac{1}{4}  \amp  0 \amp  0 \amp  0 \amp  1\\[1mm]
+ \frac{1}{4} \amp  1 \amp   0 \amp  0 \amp  0\\[1mm]
+\frac{1}{4}  \amp  0 \amp  0 \amp  \frac{1}{3} \amp  0\\
+\end{pmatrix}.
+</me>
+Note that the column corresponding to the dangling node is a zero column.  
+If the initial probability vector, 
+<m>p_0=\begin{pmatrix}0\\0\\1\\0 \\0 \end{pmatrix}</m>. Then 
+<me>p_1=Hp_0=       	
+\left(\begin{array}{r}
+0 \\
+\frac{1}{4} \\
+\frac{1}{4} \\
+\frac{1}{4} \\
+\frac{1}{4}
+\end{array}\right)</me>
+ and we have
+ <me>
+p_5=       	
+ \left(\begin{array}{r}
+ 0.0416 \\
+ 0.0503 \\
+ 0.0642 \\
+ 0.0642 \\
+ 0.0503
+ \end{array}\right), p_{10}=       	
+ 	\left(\begin{array}{r}
+ 	0.0068 \\
+ 	0.0094 \\
+ 	0.0158 \\
+ 	0.0158 \\
+ 	0.0094
+ 	\end{array}\right),\ldots, p_{20}=\left(\begin{array}{r}
+ 0.00029 \\
+ 0.00040 \\
+ 0.00065 \\
+ 0.00065 \\
+ 0.00040
+ \end{array}\right).
+ </me>
+ From this it seems that <m>Hp_n</m> approaches to a zero vector. Therefore, we cannot rank the wepages. 
+
+    </p>
+  </statement>
+</example>
+
+<example xml:id="eg-google_search3">
+  <statement>
+    <p>
+      Let us consider a network with 5 web pages as shown in <xref ref="Page_Rank_Fig3"/>. This network 
+      has a trapping loop <m>2\longleftrightarrow 5</m>. In long run for any initial vector, <m>p_0</m>, 
+    we may get <m>p_k=\begin{pmatrix} 0\amp 1/2\amp 0\amp 0\amp 1/2\end{pmatrix}</m>.
+    </p>
+    <figure xml:id="Page_Rank_Fig3">
+      <image width="45%" source="images/Page_Rank_Fig3.PNG"/>
+       <caption>Network with Loop.</caption>
+     </figure>
+    </statement>
+  </example>
+  
+  <p> 
+    Several improvements have been suggested to tackle dangling and trapping loops. 
+  </p>
+  
+   
+  <p>
+    Page Rank inverters, Page and  Bring suggested the a new matrix called the 
+    <em> Google matrix</em> which is defined as follows:
+    <men xml:id="eqn-google-matrix">
+    G  =   \alpha H+(1-\alpha) S.
+    </men>
+    where <m>S</m> is <m>n\times n</m> matrix whose all entries are <m>1/n</m>, <m>\alpha</m> is called the <em>damping factor</em> and <m>0\leq \alpha \leq 1</m>.
+    </p>
+  
+<p>
+  If <m>\alpha=0.9</m>, then it means 90% times the surfer is using the web links
+  and 10% times  typing ulr manually in the address bar. In th original 
+  paper Page and Brin used <m>\alpha=0.85</m> as damping factor.
+  </p>
+  
+    
+    
+    <p>
+    
+    Since any regular stochastic matrix <m>G</m> has a stationary vector, that is there exists a vector vector <m>\pi</m> such that  <m>G\pi=\pi</m>. Thus one can always find
+    a stationary probability vector for a network. 
+    
+    </p>
+  
+    <remark>
+      <statement>
+        <p>
+          The Google matrix <m>G</m> defined in <xref ref="eqn-google-matrix"/> is a stochastic matrix. That is, sum of entries
+      in any column is 1.
+        </p>
+      </statement>
+    </remark>
+    
+    <remark>
+      <statement>
+        <p>
+          The Google matrix <m>G</m> defined in <xref ref="eqn-google-matrix"/> is a regular matrix.      
+        </p>
+      </statement>
+    </remark>
+    
+</subsection>
 </section>

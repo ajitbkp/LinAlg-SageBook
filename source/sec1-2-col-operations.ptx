@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-col-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec1-2-col-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Elementary Column Operations</title>
 <p>
     Elementary column operations are the column analogue of elementary row operations. Their
@@ -13,32 +13,39 @@ are said to be column equivalent and two matrices <m>A</m> and <m>B</m> are colu
 exists a non singular matrix <m>Q</m> such that <m> B = AQ</m>.
 </p>
 
-<exercise xml:id="1-2-1">
+<example xml:id="eg-1-2-1">
   <statement>
     <p>
      Use the columns operations to find the inverse of the matrix 
   <m>\begin{pmatrix}2\amp  1\amp 1\amp 1\\1\amp 0\amp 1\amp 1\\1\amp 1\amp -2\amp 1\\1\amp 1\amp 1\amp -1\end{pmatrix}</m>
   by appending the <m>4\times 4</m> identity matrix at the bottom and appyling the columns aperation in Sage.   
     </p>
-  </statement>
-
+  
 <p>
-<solution>
-  <p>
+  Let us look at how we can achieve this in Sage.
+</p>
+
     <sage>
       <input>
         A = matrix(QQ,[[2,1,1,1],[1,0,1,1],[1,1,-2,1],[1,1,1,-1]])
         Aug = A.T.augment(identity_matrix(4),subdivide=True);Aug.T
         Aug1 = Aug.T
-        Aug1
+        Aug1.rref()
       </input>
       <output>
-        
+        [1 0 0 0]
+        [0 1 0 0]
+        [0 0 1 0]
+        [0 0 0 1]
+        [-------]
+        [0 0 0 0]
+        [0 0 0 0]
+        [0 0 0 0]
+        [0 0 0 0] 
       </output>
     </sage>
-  </p>
-</solution>
-</p>
-</exercise>
+
+</statement>
+</example>
 
 </section>

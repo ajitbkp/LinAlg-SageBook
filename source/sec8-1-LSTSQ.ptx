@@ -388,12 +388,6 @@
                   <cell>2019</cell>
                   <cell>2020</cell>
                   <cell>2021</cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
                 </row>
                 <row>
                   <cell>Temp</cell>
@@ -405,13 +399,7 @@
                   <cell>28.27</cell>
                   <cell>28.40</cell>
                   <cell>28.48</cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                </row>
+                 </row>
                 <row bottom="minor">
                   <cell></cell>
                   <cell></cell>

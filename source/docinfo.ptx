@@ -56,6 +56,7 @@
       \usepackage{pgfplots}
       \usepackage{blkarray, bigstrut}
       \usepackage{multirow}
+      \usepackage{dsfont}
 
       </latex-image-preamble>
   

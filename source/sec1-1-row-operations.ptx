@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-elementary-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec1-1-elementary-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Elementary Row Operations</title>
 <introduction>
   <p>
@@ -241,8 +241,8 @@ show(E)
       such that <m>B=PA</m>.
     </p>
   </statement>
+</theorem>
 
-<p>
   <proof>
     <p>
       Since <m>B</m> is row equivalent to <m>A</m>, there exists <m>k</m> elementary row matrices <m>E_1, \ldots, E_k</m> 
@@ -250,8 +250,7 @@ show(E)
     
     </p>
   </proof>
-</p>
-</theorem>
+
 
 
 </subsection>

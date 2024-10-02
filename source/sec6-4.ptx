@@ -36,19 +36,19 @@
   <p>
     Thus we have
     <md>
-      <mrow>a_1: \amp = \norm{u_1}q_1</mrow>
-      <mrow>a_2: \amp = (a_2\cdot q_1)q_1+\norm{u_2}q_2</mrow>
-      <mrow>\vdots \amp  \vdots</mrow>
-      <mrow>a_k: \amp = (a_k\cdot q_1)q_1+(a_k\cdot q_2)q_2+\cdots + (a_k\cdot q_{k-1})q_{k-1}+\norm{u_k}q_k</mrow>
-      <mrow>\vdots \vdots</mrow>
+      <mrow>a_1: = \amp \norm{u_1}q_1</mrow>
+      <mrow>a_2:  = \amp (a_2\cdot q_1)q_1+\norm{u_2}q_2</mrow>
+      <mrow> \amp  \vdots</mrow>
+      <mrow>a_k: =\amp (a_k\cdot q_1)q_1+(a_k\cdot q_2)q_2+\cdots + (a_k\cdot q_{k-1})q_{k-1}+\norm{u_k}q_k</mrow>
+      <mrow>\amp \vdots</mrow>
     </md>
   </p>
 
   <p>
     Thus
     <md>
-      <mrow>A \amp = [a_1~a_2~a_3~\cdots~a_n]</mrow>
-      <mrow>\amp =  [q_1~q_2~q_3~\cdots~q_n] 
+      <mrow>A \amp = [a_1~~a_2~~a_3~~\cdots~~a_n]</mrow>
+      <mrow>\amp =  [q_1~~q_2~~q_3~~\cdots~~q_n] 
         \begin{bmatrix}\norm{u_1} \amp  a_2\cdot q_1 \amp   a_3\cdot q_1\amp  \cdots \amp  a_n\cdot q_1\\ 
         0\amp   \norm{u_2} \amp  a_3\cdot q_2 \amp   \cdots \amp  a_n\cdot q_2\\
         0\amp 0   \amp  \norm{u_3}\amp   \cdots \amp  a_n\cdot q_3\\ 
@@ -58,7 +58,7 @@
   </p>
 
   <p>
-    Here <m>Q</m> has orthogonal columns and <m>R</m> is upper triangular whose diagonal entries which are positive,
+    Here <m>Q</m> has orthogonal columns and <m>R</m> is upper triangular whose diagonal entries  are positive,
     hence non-singular.
     This is what is known as <m>QR</m> factorization.
     Thus we have the following result.

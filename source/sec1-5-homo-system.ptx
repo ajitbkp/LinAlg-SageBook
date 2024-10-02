@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-hom-system" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec1-5-hom-system" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Homogeneous System of Linear Equations</title>
     <p>
      <definition xml:id="def-homo-system">

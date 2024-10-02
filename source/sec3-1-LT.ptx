@@ -152,11 +152,14 @@
             </statement>
           </example>
         
-        <problem xml:id="linear-maps-from-R-to-R">
+        <example xml:id="linear-maps-from-R-to-R">
             <statement>
               <p>
-                What are linear maps from <m>\R</m> to <m>\R</m>?
+                Let us find all linear maps from <m>\R</m> to <m>\R</m>.
               </p>
+            
+           
+             
               <blockquote>
                 Suppose <m>f\colon \R\to \R</m> is a linear map. We know that  <m>\{1\}</m> is  
                 basis of <m>\R</m>. Then any vector <m>x=x\cdot 1</m>. 
@@ -164,8 +167,9 @@
                 <m>f(x)=ax</m>. If <m>f</m> is linear map from <m>\R\to \R</m>, then there exist a real number 
                 <m>a\in \R</m> such that <m>f(x)=ax</m>. Note that in this case <m>a=f(1)</m>.
               </blockquote>
+                        
             </statement>
-          </problem>
+          </example>
 
         </introduction>
         
