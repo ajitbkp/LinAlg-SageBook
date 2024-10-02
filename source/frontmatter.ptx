@@ -24,10 +24,32 @@
 
     <copyright>
       <year>2020<ndash />2023</year>
-      <holder>You</holder>
+      <holder>Ajit Kumar</holder>
       <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
       </shortlicense>
     </copyright>
   </colophon>
+
+  <biography>
+    <p>Ajit Kumar is a Professor of Mathematics at the Department of Mathematics, Institute of Chemical Technology, Mumbai (INDIA).</p>
+
+    <p>
+        His main interests are optimization techniques, machine learning 
+        algorithms and mathematical pedagogy.  He has done  his Ph.D. from University of Mumbai. He has 
+        initiated a lot of mathematicians into the use of open source mathematics software. 
+      </p>
+      
+      <p>He has been associated with the Mathematics Training and Talent 
+        Search  (MTTS) Programme  <url href="mtts.org.in">mtts.org.in</url> aimed at mathematics students at undergraduates and postgraduate levels in 
+        Universities  in India for more than two decades.</p>
+        
+
+      
+    </biography>
+
+    <dedication>
+      <p>To my wife Sadhana, my son Chinmay and daughter Sara.</p>
+  </dedication>
+
 </frontmatter>
 
