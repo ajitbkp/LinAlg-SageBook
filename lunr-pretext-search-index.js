@@ -10,18 +10,18 @@ var ptx_lunr_docs = [
   "body": "  My Website   copyright  "
 },
 {
-  "id": "sec-elementary-operations",
+  "id": "sec1-1-elementary-operations",
   "level": "1",
-  "url": "sec-elementary-operations.html",
+  "url": "sec1-1-elementary-operations.html",
   "type": "Section",
   "number": "1.1",
   "title": "Elementary Row Operations",
-  "body": " Elementary Row Operations   In this section, we shall defined elementary row operations which is a backbone of all computations in linear algebra.    Elmentary Row Operations  The solution of a system of linear equations is unchanged if the following operations are performed. In fact this is the basis for solving a system of linear equations.    Multiply one of the equations by a nonzero real number. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.    Multiply one of the equations by a real number and add the result to another equation, leaving the original equation unchanged. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row, leaving the original row unchanged.    Interchanging two equations. This is equivalent to interchanging two rows of the augmented matrix of the system.    Bring the equations which are equivalent to to the bottom row. This is equivalent to moving the zero rows (rows with zero entries) of the augmented matrix to the bottom.    If an equation of the system after the the avove operations reduces to , where , then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the column, then the system has no solution.   Elementary row operations   The following operations on a matrix are called elementary row operations.    interchange of two rows of a matrix;    multiplication of one row by a non-zero scalar ;    adding a scalar times a row to another row.         A matrix is said to be equivalent or row equivalent to matrix , in notation , if can be obtained from by performing finite number of elementary row operations.    Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.  Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let are standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:     for each . That is, -th column can be obtained by multiplying by on the right.     for each . That is, -th row can be obtained by multiplying by on the left.     for .            Let denote an elementary row operation and the result of applying to a . Let be a matrix obtained by applying to the identity matrix. That is, . Then is called the elementary matrix corresponding to the elementary row operation . It is easy to see that an elementary matrix is non singular. (why?)     Elementary Matrix Theorem   Let be an elementary row operation and , the corresponding elementary matrix defined by . Then, for any matrix , .       Let be a rectangular matrix of order . Let be a matrix obtained by interchanging 2nd and 3rd rows of . Then where .  What is ?    Let be the matrix obtained by multiplying 2nd row of by a scalar . Then where .  What is ?    Let be the matrix obtained by adding 2 times 2nd row to the 3rd rows of in place of the 3rd row. Then where .  What is ?       Two matrices and are row equivalent if and only if there exists a non singular matrix such that .     Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.       Matrix Inversion via Elementary Row Operations  We can use the theorem to find the inverse of a matrix using elementary row operations. If a matrix is non singular and is row equivalent to the identity matrix by a sequence of elementary row operations say , then we have, . This implies . In other words, the sequence of elementary row operations required to turn into also turns into . Thus to find inverse of , we adjoin to on the right to give the augmented matrix , and perform elementary row operations on that successively reduces to the identity matrix and then extract from the right half of the transformed augmented matrix.   Find the inverse of using row operations.          Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.           Sage can directly find the inverse of a matrix.    Sage Exercise: Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.     "
+  "body": " Elementary Row Operations   In this section, we shall defined elementary row operations which is a backbone of all computations in linear algebra.    Elmentary Row Operations  The solution of a system of linear equations is unchanged if the following operations are performed. In fact this is the basis for solving a system of linear equations.    Multiply one of the equations by a nonzero real number. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.    Multiply one of the equations by a real number and add the result to another equation, leaving the original equation unchanged. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row, leaving the original row unchanged.    Interchanging two equations. This is equivalent to interchanging two rows of the augmented matrix of the system.    Bring the equations which are equivalent to to the bottom row. This is equivalent to moving the zero rows (rows with zero entries) of the augmented matrix to the bottom.    If an equation of the system after the the avove operations reduces to , where , then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the column, then the system has no solution.   Elementary row operations   The following operations on a matrix are called elementary row operations.    interchange of two rows of a matrix;    multiplication of one row by a non-zero scalar ;    adding a scalar times a row to another row.         A matrix is said to be equivalent or row equivalent to matrix , in notation , if can be obtained from by performing finite number of elementary row operations.    Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.  Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let are standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:     for each . That is, -th column can be obtained by multiplying by on the right.     for each . That is, -th row can be obtained by multiplying by on the left.     for .            Let denote an elementary row operation and the result of applying to a . Let be a matrix obtained by applying to the identity matrix. That is, . Then is called the elementary matrix corresponding to the elementary row operation . It is easy to see that an elementary matrix is non singular. (why?)     Elementary Matrix Theorem   Let be an elementary row operation and , the corresponding elementary matrix defined by . Then, for any matrix , .       Let be a rectangular matrix of order . Let be a matrix obtained by interchanging 2nd and 3rd rows of . Then where .  What is ?    Let be the matrix obtained by multiplying 2nd row of by a scalar . Then where .  What is ?    Let be the matrix obtained by adding 2 times 2nd row to the 3rd rows of in place of the 3rd row. Then where .  What is ?       Two matrices and are row equivalent if and only if there exists a non singular matrix such that .     Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.     Matrix Inversion via Elementary Row Operations  We can use the theorem to find the inverse of a matrix using elementary row operations. If a matrix is non singular and is row equivalent to the identity matrix by a sequence of elementary row operations say , then we have, . This implies . In other words, the sequence of elementary row operations required to turn into also turns into . Thus to find inverse of , we adjoin to on the right to give the augmented matrix , and perform elementary row operations on that successively reduces to the identity matrix and then extract from the right half of the transformed augmented matrix.   Find the inverse of using row operations.          Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.           Sage can directly find the inverse of a matrix.    Sage Exercise: Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.     "
 },
 {
   "id": "subsec-elmentary-row-operations-4",
   "level": "2",
-  "url": "sec-elementary-operations.html#subsec-elmentary-row-operations-4",
+  "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-4",
   "type": "Note",
   "number": "1.1.1",
   "title": "",
@@ -30,7 +30,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-elementary-row-operations",
   "level": "2",
-  "url": "sec-elementary-operations.html#def-elementary-row-operations",
+  "url": "sec1-1-elementary-operations.html#def-elementary-row-operations",
   "type": "Definition",
   "number": "1.1.2",
   "title": "Elementary row operations.",
@@ -39,7 +39,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-equivalent-system",
   "level": "2",
-  "url": "sec-elementary-operations.html#def-equivalent-system",
+  "url": "sec1-1-elementary-operations.html#def-equivalent-system",
   "type": "Definition",
   "number": "1.1.3",
   "title": "",
@@ -48,7 +48,7 @@ var ptx_lunr_docs = [
 {
   "id": "subsec-elmentary-row-operations-8",
   "level": "2",
-  "url": "sec-elementary-operations.html#subsec-elmentary-row-operations-8",
+  "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-8",
   "type": "Observation",
   "number": "1.1.4",
   "title": "",
@@ -57,7 +57,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-elementary-row-operation-2",
   "level": "2",
-  "url": "sec-elementary-operations.html#def-elementary-row-operation-2",
+  "url": "sec1-1-elementary-operations.html#def-elementary-row-operation-2",
   "type": "Definition",
   "number": "1.1.5",
   "title": "",
@@ -66,7 +66,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-elementary-matrix-theorem",
   "level": "2",
-  "url": "sec-elementary-operations.html#thm-elementary-matrix-theorem",
+  "url": "sec1-1-elementary-operations.html#thm-elementary-matrix-theorem",
   "type": "Theorem",
   "number": "1.1.6",
   "title": "Elementary Matrix Theorem.",
@@ -75,7 +75,7 @@ var ptx_lunr_docs = [
 {
   "id": "subsec-elmentary-row-operations-15",
   "level": "2",
-  "url": "sec-elementary-operations.html#subsec-elmentary-row-operations-15",
+  "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-15",
   "type": "Example",
   "number": "1.1.7",
   "title": "",
@@ -84,43 +84,52 @@ var ptx_lunr_docs = [
 {
   "id": "thm-matrix-invese-using-rref",
   "level": "2",
-  "url": "sec-elementary-operations.html#thm-matrix-invese-using-rref",
+  "url": "sec1-1-elementary-operations.html#thm-matrix-invese-using-rref",
   "type": "Theorem",
   "number": "1.1.8",
   "title": "",
-  "body": "  Two matrices and are row equivalent if and only if there exists a non singular matrix such that .     Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.    "
+  "body": "  Two matrices and are row equivalent if and only if there exists a non singular matrix such that .   "
+},
+{
+  "id": "subsec-elmentary-row-operations-17",
+  "level": "2",
+  "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-17",
+  "type": "Proof",
+  "number": "1.1.1.1",
+  "title": "",
+  "body": " Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.  "
 },
 {
   "id": "subsec-Matrix-inverse-using-rref-3",
   "level": "2",
-  "url": "sec-elementary-operations.html#subsec-Matrix-inverse-using-rref-3",
+  "url": "sec1-1-elementary-operations.html#subsec-Matrix-inverse-using-rref-3",
   "type": "Example",
   "number": "1.1.9",
   "title": "",
   "body": " Find the inverse of using row operations.          Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.           Sage can directly find the inverse of a matrix.   "
 },
 {
-  "id": "sec-col-operations",
+  "id": "sec1-2-col-operations",
   "level": "1",
-  "url": "sec-col-operations.html",
+  "url": "sec1-2-col-operations.html",
   "type": "Section",
   "number": "1.2",
   "title": "Elementary Column Operations",
-  "body": " Elementary Column Operations  Elementary column operations are the column analogue of elementary row operations. Their precise properties can be deduced by applying elementary row operations to the transpose of a matrix and then transposing the result. In particular, if is the elementary matrix corresponding to the elementary column operation then . Note that, because transposition changes the order of a product, elementary column operations correspond to post-multiplication by an elementary matrix. Two matrices that are related by a sequence of elementary column operations are said to be column equivalent and two matrices and are column equivalent if and only if there exists a non singular matrix such that .   Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.         "
+  "body": " Elementary Column Operations  Elementary column operations are the column analogue of elementary row operations. Their precise properties can be deduced by applying elementary row operations to the transpose of a matrix and then transposing the result. In particular, if is the elementary matrix corresponding to the elementary column operation then . Note that, because transposition changes the order of a product, elementary column operations correspond to post-multiplication by an elementary matrix. Two matrices that are related by a sequence of elementary column operations are said to be column equivalent and two matrices and are column equivalent if and only if there exists a non singular matrix such that .    Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.  Let us look at how we can achieve this in Sage.     "
 },
 {
-  "id": "1-2-1",
+  "id": "eg-1-2-1",
   "level": "2",
-  "url": "sec-col-operations.html#1-2-1",
-  "type": "Checkpoint",
+  "url": "sec1-2-col-operations.html#eg-1-2-1",
+  "type": "Example",
   "number": "1.2.1",
   "title": "",
-  "body": " Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.        "
+  "body": "  Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.  Let us look at how we can achieve this in Sage.    "
 },
 {
-  "id": "sec-echelon-form",
+  "id": "sec1-3-echelon-form",
   "level": "1",
-  "url": "sec-echelon-form.html",
+  "url": "sec1-3-echelon-form.html",
   "type": "Section",
   "number": "1.3",
   "title": "Echelon Forms",
@@ -129,7 +138,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-echelon-form",
   "level": "2",
-  "url": "sec-echelon-form.html#def-echelon-form",
+  "url": "sec1-3-echelon-form.html#def-echelon-form",
   "type": "Definition",
   "number": "1.3.1",
   "title": "",
@@ -138,7 +147,7 @@ var ptx_lunr_docs = [
 {
   "id": "eg-echelon-matrices",
   "level": "2",
-  "url": "sec-echelon-form.html#eg-echelon-matrices",
+  "url": "sec1-3-echelon-form.html#eg-echelon-matrices",
   "type": "Example",
   "number": "1.3.2",
   "title": "Echelon Matrices.",
@@ -147,7 +156,7 @@ var ptx_lunr_docs = [
 {
   "id": "eg-non-echelon-matrices",
   "level": "2",
-  "url": "sec-echelon-form.html#eg-non-echelon-matrices",
+  "url": "sec1-3-echelon-form.html#eg-non-echelon-matrices",
   "type": "Example",
   "number": "1.3.3",
   "title": "Non Echelon Matrices.",
@@ -156,7 +165,7 @@ var ptx_lunr_docs = [
 {
   "id": "sec-row-echelon-7",
   "level": "2",
-  "url": "sec-echelon-form.html#sec-row-echelon-7",
+  "url": "sec1-3-echelon-form.html#sec-row-echelon-7",
   "type": "Example",
   "number": "1.3.4",
   "title": "",
@@ -165,7 +174,7 @@ var ptx_lunr_docs = [
 {
   "id": "alg-gaussian-elimination",
   "level": "2",
-  "url": "sec-echelon-form.html#alg-gaussian-elimination",
+  "url": "sec1-3-echelon-form.html#alg-gaussian-elimination",
   "type": "Algorithm",
   "number": "1.3.5",
   "title": "Gaussian Elimination.",
@@ -174,7 +183,7 @@ var ptx_lunr_docs = [
 {
   "id": "row-echelon-eg1",
   "level": "2",
-  "url": "sec-echelon-form.html#row-echelon-eg1",
+  "url": "sec1-3-echelon-form.html#row-echelon-eg1",
   "type": "Example",
   "number": "1.3.6",
   "title": "",
@@ -183,7 +192,7 @@ var ptx_lunr_docs = [
 {
   "id": "row-echelon-eg2",
   "level": "2",
-  "url": "sec-echelon-form.html#row-echelon-eg2",
+  "url": "sec1-3-echelon-form.html#row-echelon-eg2",
   "type": "Example",
   "number": "1.3.7",
   "title": "",
@@ -192,7 +201,7 @@ var ptx_lunr_docs = [
 {
   "id": "subsec-Gaussian-Elimination-6",
   "level": "2",
-  "url": "sec-echelon-form.html#subsec-Gaussian-Elimination-6",
+  "url": "sec1-3-echelon-form.html#subsec-Gaussian-Elimination-6",
   "type": "Example",
   "number": "1.3.8",
   "title": "",
@@ -201,7 +210,7 @@ var ptx_lunr_docs = [
 {
   "id": "subsec-Gauss-Jordan-Method-3",
   "level": "2",
-  "url": "sec-echelon-form.html#subsec-Gauss-Jordan-Method-3",
+  "url": "sec1-3-echelon-form.html#subsec-Gauss-Jordan-Method-3",
   "type": "Example",
   "number": "1.3.9",
   "title": "",
@@ -214,7 +223,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.4",
   "title": "Rank of Matrices",
-  "body": " Rank of Matrices    Let be an matrix. Delete any rows and columns of . The resulting matrix is called a sub-matrix of . If , then it is called a square sub-matrix of of order .      The rank of an matrix is the order of the largest square sub-matrix of whose determinant is non-zero. We denote the rank of a matrix by .     Determine the rank of .    We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .      We list the following results without proof.     An matrix is of rank 0 if and only it is a zero matrix.     An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .       Suppose is an matrix. The rank of is equal to the number of non-zero rows in an echelon equivalent form of . In other words, the rank of matrix is the number of leading 1's in any row-echelon matrix to which can be carried by row operations.     Let us find the ranl of .    . Hence .     Consider a matrix . Find the rank of the matrix.   Let us apply elementary row operations of . We have Clearly the rank of is 3 if . If or , then it is easy to check that rank of is 2.       Number of Solution of a System   Let be a system of linear equations in unknowns and , the augmented matrix of the system. Then   The system has a solution i.e. the system is consistent if and only if .    If and whihc is strictly less than , then number of unknowns, then there are infinite number of solutions and variables can be chosen freely.    If and , the number of unknowns, then there is only one (unique) solution for the system.         Suppose is a system of linear equations in unknowns with . If , then the system has no solution.      Suppose is a system of linear equations in unknowns with . Then the system either has no solution or has infinitely many solutions.     ` Consider the Example~ . Thus we have , hence this system has a unique solution.    ` Let us consider the system where    Clearly , hence this system has infinitely many solutions.      Consider the system of linear equations , where     Clearly but . Hence the system does not have a solution.      "
+  "body": " Rank of Matrices    Let be an matrix. Delete any rows and columns of . The resulting matrix is called a sub-matrix of . If , then it is called a square sub-matrix of of order .      The rank of an matrix is the order of the largest square sub-matrix of whose determinant is non-zero. We denote the rank of a matrix by .     Determine the rank of .   We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .     We list the following results without proof.    An matrix is of rank 0 if and only it is a zero matrix.    An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .       Suppose is an matrix. The rank of is equal to the number of non-zero rows in an echelon equivalent form of . In other words, the rank of matrix is the number of leading 1's in any row-echelon matrix to which can be carried by row operations.     Let us find the ranl of .    . Hence .     Consider a matrix . Find the rank of the matrix.   Let us apply elementary row operations of . We have Clearly the rank of is 3 if . If or , then it is easy to check that rank of is 2.       Number of Solution of a System   Let be a system of linear equations in unknowns and , the augmented matrix of the system. Then   The system has a solution i.e. the system is consistent if and only if .    If and whihc is strictly less than , then number of unknowns, then there are infinite number of solutions and variables can be chosen freely.    If and , the number of unknowns, then there is only one (unique) solution for the system.         Suppose is a system of linear equations in unknowns with . If , then the system has no solution.      Suppose is a system of linear equations in unknowns with . Then the system either has no solution or has infinitely many solutions.     ` Consider the Example~ . Thus we have , hence this system has a unique solution.    ` Let us consider the system where    Clearly , hence this system has infinitely many solutions.      Consider the system of linear equations , where     Clearly but . Hence the system does not have a solution.      "
 },
 {
   "id": "def-sub-matrix",
@@ -241,7 +250,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.4.3",
   "title": "",
-  "body": " Determine the rank of .    We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .    "
+  "body": " Determine the rank of .   We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .   "
 },
 {
   "id": "sec1-4-matrix-rank-5",
@@ -250,7 +259,7 @@ var ptx_lunr_docs = [
   "type": "Observation",
   "number": "1.4.4",
   "title": "",
-  "body": " We list the following results without proof.     An matrix is of rank 0 if and only it is a zero matrix.     An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .    "
+  "body": " We list the following results without proof.    An matrix is of rank 0 if and only it is a zero matrix.    An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .    "
 },
 {
   "id": "thm-rank-theorem",
@@ -334,9 +343,9 @@ var ptx_lunr_docs = [
   "body": " Consider the system of linear equations , where     Clearly but . Hence the system does not have a solution.     "
 },
 {
-  "id": "sec-hom-system",
+  "id": "sec1-5-hom-system",
   "level": "1",
-  "url": "sec-hom-system.html",
+  "url": "sec1-5-hom-system.html",
   "type": "Section",
   "number": "1.5",
   "title": "Homogeneous System of Linear Equations",
@@ -345,7 +354,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-homo-system",
   "level": "2",
-  "url": "sec-hom-system.html#def-homo-system",
+  "url": "sec1-5-hom-system.html#def-homo-system",
   "type": "Definition",
   "number": "1.5.1",
   "title": "",
@@ -354,7 +363,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-hom-system1",
   "level": "2",
-  "url": "sec-hom-system.html#thm-hom-system1",
+  "url": "sec1-5-hom-system.html#thm-hom-system1",
   "type": "Theorem",
   "number": "1.5.2",
   "title": "",
@@ -363,7 +372,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-hom-system2",
   "level": "2",
-  "url": "sec-hom-system.html#thm-hom-system2",
+  "url": "sec1-5-hom-system.html#thm-hom-system2",
   "type": "Theorem",
   "number": "1.5.3",
   "title": "",
@@ -372,7 +381,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-hom-system3",
   "level": "2",
-  "url": "sec-hom-system.html#thm-hom-system3",
+  "url": "sec1-5-hom-system.html#thm-hom-system3",
   "type": "Theorem",
   "number": "1.5.4",
   "title": "",
@@ -381,25 +390,25 @@ var ptx_lunr_docs = [
 {
   "id": "thm-hom-system4",
   "level": "2",
-  "url": "sec-hom-system.html#thm-hom-system4",
+  "url": "sec1-5-hom-system.html#thm-hom-system4",
   "type": "Theorem",
   "number": "1.5.5",
   "title": "",
   "body": "  If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.   "
 },
 {
-  "id": "sec-hom-system-10",
+  "id": "sec1-5-hom-system-10",
   "level": "2",
-  "url": "sec-hom-system.html#sec-hom-system-10",
+  "url": "sec1-5-hom-system.html#sec1-5-hom-system-10",
   "type": "Example",
   "number": "1.5.6",
   "title": "",
   "body": " Let us consider one equation in two variables, . The corresponding homogeneous system is . It is easy see that is set of all solutions of . Let us consider a solution of the non homogeneous system . Let be any solution of . Then it is easy to check that is a solution of . Alternatively, to solve , we can free one of the variable say . That is can take any real value. Let , then . Hence a generic solution of is given by , which can be rewritten as . Thus all solutions of are of the form Notice that tho two lines, and are parallel to each other. Plot the figure in Sage using the following Sage sybtax.     "
 },
 {
-  "id": "sec-hom-system-11",
+  "id": "sec1-5-hom-system-11",
   "level": "2",
-  "url": "sec-hom-system.html#sec-hom-system-11",
+  "url": "sec1-5-hom-system.html#sec1-5-hom-system-11",
   "type": "Example",
   "number": "1.5.7",
   "title": "",
@@ -514,9 +523,9 @@ var ptx_lunr_docs = [
   "body": "If is a permutation matrix then is also a permutation matrix. If , then we have . Because of this reason such a factorization is also known as factorization of . "
 },
 {
-  "id": "ch1-exer",
+  "id": "sec1-7-exer",
   "level": "1",
-  "url": "ch1-exer.html",
+  "url": "sec1-7-exer.html",
   "type": "Section",
   "number": "1.7",
   "title": "Exercises",
@@ -610,7 +619,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Linear Spans",
-  "body": " Linear Spans   In this section we define linear span of a subset of and look at several example. We also look at an important class of suspaces associated with a matrix.     Let be a non empty subset of vectors in . Then the linear span of , denoted by is a subset of defined as     Note that if means there exist scalars such that .     Let be a subset of vectors in . Then show that is a vector subspace of .   Let , then by definitions there exist scalars such that and there exist another set of scalars such that . Hence The readers should understand what the properties of vector addition and scalar multiplications are used above.  Next, let be a scalar, then . This shows that is a vector subspace of .      Try to prove the following.    If is a non-zero vector in , then is a the line passing through origin and . We shall denote by .    Let . Then .    Let , then .    Let , then is the -plane given by the equation .    Let , then .     . Then is a plane passing through the origin and the two points . Can you find the scalars such that is the plane represented by the equation ?    Let . Then .      Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem. We need to show that , that is, and . Let us define for convenience. Clearly by, definition, . To show , we let . We need to find scalars, say such that . As a vector, . It is easy to check that the above system has a unique solution as rank of is 3 (This can be easily verified by Sage). Hence and hence . Hence we have .        Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets    . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range space or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .     The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix .   "
+  "body": " Linear Spans   In this section we define linear span of a subset of and look at several example. We also look at an important class of suspaces associated with a matrix.     Let be a non empty subset of vectors in . Then the linear span of , denoted by is a subset of defined as     Note that if means there exist scalars such that .   Let be a subset of vectors in . Then show that is a vector subspace of .   Let , then by definitions there exist scalars such that and there exist another set of scalars such that . Hence The readers should understand what the properties of vector addition and scalar multiplications are used above.  Next, let be a scalar, then . This shows that is a vector subspace of .   Try to prove the following.   If is a non-zero vector in , then is a the line passing through origin and . We shall denote by .    Let . Then .    Let , then .    Let , then is the -plane given by the equation .    Let , then .     . Then is a plane passing through the origin and the two points . Can you find the scalars such that is the plane represented by the equation ?    Let . Then .    Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem.  We need to show that , that is, and . Let us define for convenience. Clearly by, definition, . To show , we let . We need to find scalars, say such that . As a vector, . It is easy to check that the above system has a unique solution as rank of is 3 (This can be easily verified by Sage). Hence and hence . Hence we have .     Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets    . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range space or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .     The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix .   "
 },
 {
   "id": "def-sec2-1-linear-span",
@@ -628,14 +637,23 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.2.2",
   "title": "",
-  "body": "  Let be a subset of vectors in . Then show that is a vector subspace of .   Let , then by definitions there exist scalars such that and there exist another set of scalars such that . Hence The readers should understand what the properties of vector addition and scalar multiplications are used above.  Next, let be a scalar, then . This shows that is a vector subspace of .   "
+  "body": " Let be a subset of vectors in . Then show that is a vector subspace of .   Let , then by definitions there exist scalars such that and there exist another set of scalars such that . Hence The readers should understand what the properties of vector addition and scalar multiplications are used above.  Next, let be a scalar, then . This shows that is a vector subspace of .  "
+},
+{
+  "id": "exer-2-1-100",
+  "level": "2",
+  "url": "sec2-1-LinSpan.html#exer-2-1-100",
+  "type": "Checkpoint",
+  "number": "2.2.3",
+  "title": "",
+  "body": "Try to prove the following.   If is a non-zero vector in , then is a the line passing through origin and . We shall denote by .    Let . Then .    Let , then .    Let , then is the -plane given by the equation .    Let , then .     . Then is a plane passing through the origin and the two points . Can you find the scalars such that is the plane represented by the equation ?    Let . Then .    Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem.  We need to show that , that is, and . Let us define for convenience. Clearly by, definition, . To show , we let . We need to find scalars, say such that . As a vector, . It is easy to check that the above system has a unique solution as rank of is 3 (This can be easily verified by Sage). Hence and hence . Hence we have .   "
 },
 {
   "id": "sec2-1-matrix-spaces",
   "level": "2",
   "url": "sec2-1-LinSpan.html#sec2-1-matrix-spaces",
   "type": "Example",
-  "number": "2.2.3",
+  "number": "2.2.4",
   "title": "Matrix Spaces.",
   "body": " Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets    . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range space or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .     The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix .  "
 },
@@ -958,7 +976,7 @@ var ptx_lunr_docs = [
   "id": "sec2-3-change-of-basis-6",
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-6",
-  "type": "Problem",
+  "type": "Checkpoint",
   "number": "2.4.23",
   "title": "",
   "body": " What are all subspaces of and ?  "
@@ -967,7 +985,7 @@ var ptx_lunr_docs = [
   "id": "sec2-3-change-of-basis-7",
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-7",
-  "type": "Problem",
+  "type": "Checkpoint",
   "number": "2.4.24",
   "title": "",
   "body": " If is a subspace of , then it is null space of some matrix.  "
@@ -1087,7 +1105,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Introduction",
-  "body": " Introduction   Consider the Cartesian plane . The reflection about -axis in is given by  . Note that we can write . Thus the map is obtained as a matrix multiplication by .  Similarly consider a map as a rotation of a vector by an angle anti-clock wise. Any point can be written as in polar coordinates. Here and is the angle that vector makes with positive -axis. Then . After Simplification, we have   Thus .  Thus the rotation in the plane can also be given by the matrix multiplication.  Suppose is a real matrix. Then for a vector , . Thus can be thought of as a map that takes vector in to a vector in . Let us denote this map as . Thus .   is called the matrix transformation induced by the matrix .  Note that the matrix transformation has the following properties: (i) for all .  (ii) for all and .   In particular, preserves vector addition and scalar multiplication. Any such map is called a linear transformation. We have the following definition.    A map is called a linear transformation (or linear map) if it satisfies the following properties:  (i) for all , .  (ii) for all and , .     Examples of linear transformation   (i) If is a linear map, then . That is, takes the zero vector in to the zero vector in .  (ii) If is a linear map, then for all .      (i) Zero map defined by for all is a linear map.  (ii) The identity map given by for all is a linear map.  (iii) The reflection and rotation defined above are linear maps from to .  (iv) Any matrix transformation given by is a linear map.  (v) Fix a vector in and define as . Is a linear map? When is this linear? (The map is called translation by .)  (vi) Let be two real numbers. Define as . It is easy to check that is a linear map? Can you generalize this?  (vii) Let be real numbers. Define by . It is easy to check that is a linear map.      What are linear maps from to ?  Suppose is a linear map. We know that is basis of . Then any vector . Therefore, . Thus if we define  . If is linear map from , then there exist a real number such that . Note that in this case .     "
+  "body": " Introduction   Consider the Cartesian plane . The reflection about -axis in is given by  . Note that we can write . Thus the map is obtained as a matrix multiplication by .  Similarly consider a map as a rotation of a vector by an angle anti-clock wise. Any point can be written as in polar coordinates. Here and is the angle that vector makes with positive -axis. Then . After Simplification, we have   Thus .  Thus the rotation in the plane can also be given by the matrix multiplication.  Suppose is a real matrix. Then for a vector , . Thus can be thought of as a map that takes vector in to a vector in . Let us denote this map as . Thus .   is called the matrix transformation induced by the matrix .  Note that the matrix transformation has the following properties: (i) for all .  (ii) for all and .   In particular, preserves vector addition and scalar multiplication. Any such map is called a linear transformation. We have the following definition.    A map is called a linear transformation (or linear map) if it satisfies the following properties:  (i) for all , .  (ii) for all and , .     Examples of linear transformation   (i) If is a linear map, then . That is, takes the zero vector in to the zero vector in .  (ii) If is a linear map, then for all .      (i) Zero map defined by for all is a linear map.  (ii) The identity map given by for all is a linear map.  (iii) The reflection and rotation defined above are linear maps from to .  (iv) Any matrix transformation given by is a linear map.  (v) Fix a vector in and define as . Is a linear map? When is this linear? (The map is called translation by .)  (vi) Let be two real numbers. Define as . It is easy to check that is a linear map? Can you generalize this?  (vii) Let be real numbers. Define by . It is easy to check that is a linear map.      Let us find all linear maps from to .  Suppose is a linear map. We know that is basis of . Then any vector . Therefore, . Thus if we define  . If is linear map from , then there exist a real number such that . Note that in this case .     "
 },
 {
   "id": "def-linear-tarnsformation",
@@ -1120,10 +1138,10 @@ var ptx_lunr_docs = [
   "id": "linear-maps-from-R-to-R",
   "level": "2",
   "url": "sec3-1-LT.html#linear-maps-from-R-to-R",
-  "type": "Problem",
+  "type": "Example",
   "number": "3.1.4",
   "title": "",
-  "body": "  What are linear maps from to ?  Suppose is a linear map. We know that is basis of . Then any vector . Therefore, . Thus if we define  . If is linear map from , then there exist a real number such that . Note that in this case .   "
+  "body": "  Let us find all linear maps from to .  Suppose is a linear map. We know that is basis of . Then any vector . Therefore, . Thus if we define  . If is linear map from , then there exist a real number such that . Note that in this case .   "
 },
 {
   "id": "sec3-2-LT",
@@ -2608,14 +2626,149 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.3",
   "title": "Applications of Eigenvalues and Eigenvectors",
-  "body": " Applications of Eigenvalues and Eigenvectors    A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.      Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )    132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.   "
+  "body": " Applications of Eigenvalues and Eigenvectors   In this section we look at several applications of eigenvalues and eigenvectors.    Fibonacci Sequence  Originally the Fibonacci sequence appeared in the solution of the following problem posed by Leonardo of Pisa, popularly known as Fibonacci, in the book Liber Abaci in 1202.  Consider the following problem.   A certain man put a pair of rabbits in a places surrounded on all sides by a wall. How many pairs of rabbits can be produced from that pair in year if it is supposed that every month each pair begets a new pair which from second month becomes productive?   We assume that the number of pairs at the end of the -th year is denoted by . We start with and . Note that the number of pair of rabbits in any given month is the number of pairs in the previous month plus those that are hatched in that month and those are as many as the previous month. This gives gives rise to a recurrence relation  . Let . Then we have   Let . Then we have   This implies   This leads to computation of power of . Therefore, we can invoke diagonalization of the matrix.  Note that is symmetric matrix with characteristic polynomial . The eigenvalues of are and the corresponding eigenvectors are . Since has distinct eigenvalues, is diagonalizable and we have   Let be one of the above eigenvalue of , then . Also it is easy to check that . Now we have Thus we have    Show that   Note that is called the Golden-Ratio which has many application in nature. The approximate value of .   Let . Then we have Now let us approximate Since , we have . This implies, .     Predator-Pray Model  In a certain area, it is observed that every year the number of rabbits is equal to 4 times the number of rabbits less 2 times numbers of weasels in the previous year. The number of weasels is equal to the sum of the number of rabbits number of weasels in the previous year. If the initial population of rabbits and weasels were 100 and 10 respectively, then find the number of each species after years. Let and be the number of rabbits and weasels after years respectively.  Then, as per data give we have with .  Let and . Then the above system is equivalent to . We need to obtain successively . It is easy to check that and are eigenvalues of with corresponding eigenvectors and respectively. We define . It is easy to see that . Also . Using diagonalization, we have Thus . Hence It is easy to check that What does this mean?    Solving System of Linear ODE  In this subsection, we shall deal with use of theory of eigenvalues and eigenvectors to solve system of linear differential equations. Let shall consider a system of first order linear differential equations with constant coefficients. A general form of such system can be given by Here we assume that are constants. The above system can be written as where real matrix and is column matrix.  We want to find a solution of the above system, that is a column vector of differentiable functions on some interval which satisfies the above system.  If is the set of all solutions of the above system. Then one can show that is an -dimensional vector subspace of the set of differentiable function on . This mean, if are linearly independent functions which are solutions of the above system. Then any solution can be written as a linear combination of .  In case, we are given initial conditions, then there exists a unique solution of the system.  In addition, suppose is diagonalizable, with where , the diagonal matrix of eigenvalues of and is matrix of eigenbasis of .  We define . Then and . Now substituting and in the above system, we get Thus the above system of linear differential equation reduced to In particular, we have .  A general solution of the above system is given by The above equations can be written in matrix form as follows Here is the exponential of the matrix and is the column matrix of constants. From this we get a general solution of the original system as where .  Thus the solution in matrix form is given by The constant can be obtained when we have initila value problem.  Suppose we want to solve the initial value problem with initial condition . Then we have . Hence the solution in matrix form is given by    Steps to solve system of linear differential equations .    Find the matrix corresponding to this linear system and put the equation in matrix form .    Find the eigenvalues and corresponding eigenvectors of . Let be eigenvalues of with corresponding to eigenvectors respectively.    The solution is .       Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is      What will be the solution of with initial conditions ?     Solve the following system ODE.     The eigenvalues of the coefficient matrix are and the corresponding eigenvectors are Hence a general solution of the given system is given by Using the given initial conditions, we get Solving the above equations, yields, . Hence the required solution of the problem is You may write the each component of the solution.      Solve the following 2nd order differential equations. Consider the system     Substitute and . Then we have The above equations can be written as where The eigenvalues of are and the corresponding eigenvectors are Thus a general solution is given by Hence a general solution of the given problem can be obtained by dropping the dummy variables and . It is given by     In the next example, we deal with solving a system , in which the coefficient matrix has complex eigenvalues.    Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by Writing and adjusting the constants, we can write the solution       In case the the coeffcient matrix of the sysstem is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shal not discuss this here.      Markov Chains  In this subsection, we look at some applications of linear algebra in dealing with matrices that arise from probabilistic systems. We consider chance process in which knowledge of previous outcomes influence prediction of future experiments. Such chance process is called a Markov Chain.   Let consider the following problem and develop the terminologies and methods to solve this problem.    Weather of certain area is classified as \"fair\", \"cloudy\" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?    In the above example, fair, cloudy and rainy day can be thought of as three states, say state 1, state 2 and state 3 respectively. Each day can be thought of as a generation. Let us denote the data given in the example as following table:     Fair  Cloudy  Rainy    Fair  0.60  0.25  0.15    Cloudy  0.40  0.35  0.25    Rainy  0.35  0.40  0.25    Let be the probability of transition from state to state . The matrix is called the transition matrix.     A transition matrix of an stage Markov chain is an matrix having nonnegative entries such that sum of entries in each column is 1. Such a matrix is called a stochastic matrix.     The transition matrix for the is given by   Note that , is the probability of being a cloudy day after fair day. Similarly , represent the probability of being fair day after a rainy day. The transition matrix, represents the change of state from present generation to the next generation.    The powers of a transition matrix have the same property of a transition matrix. That is, all the entries are non negative and sum of entries in any column is 1.      If is a transition matrix of a Markov chain and if denotes the -th entries of , then is the probability of moving to state from state in generations or in time period.    Let us consider of the transition matrix in the  Note that is the probability of rainy day becoming cloudy day after 5 days.  We consider an initial probability vector . This mean current day has 40% chance of being a fair day, 30% chance of being cloudy and 30% of being rainy.  Then , denotes the probability vector after $k$ stages. We are interested in long time behavior of the probability vector. In particular, we want to see if the limit exists.  In general, the above limits does not exists, however, in case the transition matrix is regular, then one can show that limit exists.    A transition matrix is regular if there exists a natural number such all the entries of are positive.    Note that all transition matrix are not regular, for example, identity matrix is a transition matrix but is not regular.  It is easy to see that if $P$ is a regular transition matrix matrix such that all the entries of are positive. Then all entries of are positive for non negative integers .  Let us assume that is a transition matrix and that exists. Then we have   Suppose are columns of . Then This means that each column of is an eigenvector of corresponding to eigenvalue 1. Thus we have proved the following result:    If is an regular transition matrix, then converges to a matrix, say, whose columns are eigenvectors of corresponding to eigenvalues 1.    In fact one can show the following.    If is a regular, transition matrix then its eigenvalue has multiplicity 1 and that there is only one eigenvectors associated with . This implies that all columns of are identical.    Now we define a a limiting state distribution vectors or steady state vector of an -state Markov chain as a vector as follows: Thus we have the following equation. Note that all columns of are identical, say, . Let . Then Thus is an eigenvector of with respect to eigenvalue 1 with sum of its components 1.  The gives a way to find the steady state vector.  Let us find the steady state vector of the transition matrix defined in the .  Let be the steady state vector. Then it is an eigenvector of PreTeXt P corresponding to eigenvalue 1. That is and also, . Thus we get the following set of equations which we need to solve.   Solving the avove equations we, get Hence the steady state vector is given by The limiting transition matrix is given by Thus in the long run about 48.74% chance of being a fair day, about 31.13% of being cloudy and about 20.13% chance of being rain day.    We can use diagonalization of the transition matrix to find the steady state vector.      A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.      Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )    132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.     Google Search Engine  Over 900 millions Indian use Internet (as of January 2024) most of them may do Google, a search engine that was designed by Lawrence Page and Sergei Brian in 1998. There are about 200 millions active webpages in the world as on January 2024 and it is growing by seconds. More often than not, google search gives the desired results, users are looking for. Have you ever thought of how does it work? Linear algebra plays an important role in how Google's search algorithm works. Google ranks pages according to their importance.  Success of Google lies behind its PageRank algorithm, which rates the importance of each page on the web and present the user typically most relevant and helpful pages first. PageRank uses link structure of web to determine the importance of webpages.  In this section, we shall explain how Google ranks webpages as a simple application to linear algebra.  Whenever an user or web surfer enters a keyword for searching, Google does three basic things:   Crawl the web and locate all web pages with public access.    Index the data from websites it has crawled, so that it can be searched efficiently for relevant keywords.    Rate the importance of each page in the database.     We shall briefly look at how to rank or rate webpages using Google's PageRank algorith.  An Internet network can be represented by a directed graph in which each website is thought of as a node or vertex and links between pages are edges with arrows. If there is an arrow from note to , them it means that there is link to move from webpage to . If there is a double arrow between and , then there is link from to and also from to .  To every network with -webpages, we assign a matrix , where represents the probability that surfer would visit the webpage from the webpage . If the webpage has links to other webpages then . If there is no link from to , then The matrix is called the hyper matrix of the network.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability . We have  Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, . One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.       Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .    From the , it looks like that we can find the stationary distribution vector and hence rank a network after a sufficiently large iterations. However, this is not always true. In case a network has a dangling webpage ( a webpage that does not link to any other page ), or a trapping loop, then we may not be able to rank webpages. In case a surfer come across, dangling node or trapping loop, he can type a new url in the address bar manually. The next two examples demonstrate this.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.      Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.     Several improvements have been suggested to tackle dangling and trapping loops.  Page Rank inverters, Page and Bring suggested the a new matrix called the Google matrix which is defined as follows: where is matrix whose all entries are , is called the damping factor and .  If , then it means 90% times the surfer is using the web links and 10% times typing ulr manually in the address bar. In th original paper Page and Brin used as damping factor.  Since any regular stochastic matrix has a stationary vector, that is there exists a vector vector such that . Thus one can always find a stationary probability vector for a network.    The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.      The Google matrix defined in is a regular matrix.     "
 },
 {
-  "id": "sec5-3-eigen-Appl-2",
+  "id": "subsec5-3-Fibonacci-Seq-13",
   "level": "2",
-  "url": "sec5-3-eigen-Appl.html#sec5-3-eigen-Appl-2",
-  "type": "Example",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Fibonacci-Seq-13",
+  "type": "Checkpoint",
   "number": "5.3.1",
+  "title": "",
+  "body": " Show that   Note that is called the Golden-Ratio which has many application in nature. The approximate value of .   Let . Then we have Now let us approximate Since , we have . This implies, .  "
+},
+{
+  "id": "subsec5-3-linear-ode-12",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-12",
+  "type": "Example",
+  "number": "5.3.2",
+  "title": "",
+  "body": "  Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is    "
+},
+{
+  "id": "subsec5-3-linear-ode-13",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-13",
+  "type": "Checkpoint",
+  "number": "5.3.3",
+  "title": "",
+  "body": " What will be the solution of with initial conditions ?  "
+},
+{
+  "id": "subsec5-3-linear-ode-14",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-14",
+  "type": "Example",
+  "number": "5.3.4",
+  "title": "",
+  "body": "  Solve the following system ODE.     The eigenvalues of the coefficient matrix are and the corresponding eigenvectors are Hence a general solution of the given system is given by Using the given initial conditions, we get Solving the above equations, yields, . Hence the required solution of the problem is You may write the each component of the solution.   "
+},
+{
+  "id": "subsec5-3-linear-ode-15",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-15",
+  "type": "Example",
+  "number": "5.3.5",
+  "title": "",
+  "body": "  Solve the following 2nd order differential equations. Consider the system     Substitute and . Then we have The above equations can be written as where The eigenvalues of are and the corresponding eigenvectors are Thus a general solution is given by Hence a general solution of the given problem can be obtained by dropping the dummy variables and . It is given by    "
+},
+{
+  "id": "subsec5-3-linear-ode-17",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-17",
+  "type": "Example",
+  "number": "5.3.6",
+  "title": "",
+  "body": "  Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by Writing and adjusting the constants, we can write the solution    "
+},
+{
+  "id": "subsec5-3-linear-ode-18",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-18",
+  "type": "Remark",
+  "number": "5.3.7",
+  "title": "",
+  "body": "  In case the the coeffcient matrix of the sysstem is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shal not discuss this here.   "
+},
+{
+  "id": "eg-markov1",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#eg-markov1",
+  "type": "Example",
+  "number": "5.3.8",
+  "title": "",
+  "body": "  Weather of certain area is classified as \"fair\", \"cloudy\" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?   "
+},
+{
+  "id": "def-stochastic-matrix",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#def-stochastic-matrix",
+  "type": "Definition",
+  "number": "5.3.9",
+  "title": "",
+  "body": "  A transition matrix of an stage Markov chain is an matrix having nonnegative entries such that sum of entries in each column is 1. Such a matrix is called a stochastic matrix.    "
+},
+{
+  "id": "Markov-remark1",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#Markov-remark1",
+  "type": "Remark",
+  "number": "5.3.10",
+  "title": "",
+  "body": "  The powers of a transition matrix have the same property of a transition matrix. That is, all the entries are non negative and sum of entries in any column is 1.   "
+},
+{
+  "id": "Markov-remark2",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#Markov-remark2",
+  "type": "Remark",
+  "number": "5.3.11",
+  "title": "",
+  "body": "  If is a transition matrix of a Markov chain and if denotes the -th entries of , then is the probability of moving to state from state in generations or in time period.   "
+},
+{
+  "id": "def-regular-matrix",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#def-regular-matrix",
+  "type": "Definition",
+  "number": "5.3.12",
+  "title": "",
+  "body": "  A transition matrix is regular if there exists a natural number such all the entries of are positive.   "
+},
+{
+  "id": "thm-Markov1",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#thm-Markov1",
+  "type": "Theorem",
+  "number": "5.3.13",
+  "title": "",
+  "body": "  If is an regular transition matrix, then converges to a matrix, say, whose columns are eigenvectors of corresponding to eigenvalues 1.   "
+},
+{
+  "id": "thm-Markov2",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#thm-Markov2",
+  "type": "Theorem",
+  "number": "5.3.14",
+  "title": "",
+  "body": "  If is a regular, transition matrix then its eigenvalue has multiplicity 1 and that there is only one eigenvectors associated with . This implies that all columns of are identical.   "
+},
+{
+  "id": "subsec5-3-Markov-Chains-30",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-30",
+  "type": "Remark",
+  "number": "5.3.15",
+  "title": "",
+  "body": "  We can use diagonalization of the transition matrix to find the steady state vector.   "
+},
+{
+  "id": "subsec5-3-Markov-Chains-31",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-31",
+  "type": "Example",
+  "number": "5.3.16",
   "title": "",
   "body": "  A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.    "
 },
@@ -2624,7 +2777,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#5-3-2",
   "type": "Checkpoint",
-  "number": "5.3.2",
+  "number": "5.3.17",
   "title": "",
   "body": " Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )  "
 },
@@ -2633,9 +2786,63 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#5-3-3",
   "type": "Checkpoint",
-  "number": "5.3.3",
+  "number": "5.3.18",
   "title": "",
   "body": " 132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.  "
+},
+{
+  "id": "eg-google_search1",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#eg-google_search1",
+  "type": "Example",
+  "number": "5.3.20",
+  "title": "",
+  "body": "  Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability . We have  Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, . One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.    "
+},
+{
+  "id": "subsec5-3-Google-Search-10",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-10",
+  "type": "Remark",
+  "number": "5.3.22",
+  "title": "",
+  "body": "  Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .   "
+},
+{
+  "id": "eg-google_search2",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#eg-google_search2",
+  "type": "Example",
+  "number": "5.3.23",
+  "title": "",
+  "body": "  Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.   "
+},
+{
+  "id": "eg-google_search3",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#eg-google_search3",
+  "type": "Example",
+  "number": "5.3.25",
+  "title": "",
+  "body": "  Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.    "
+},
+{
+  "id": "subsec5-3-Google-Search-18",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-18",
+  "type": "Remark",
+  "number": "5.3.27",
+  "title": "",
+  "body": "  The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.   "
+},
+{
+  "id": "subsec5-3-Google-Search-19",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-19",
+  "type": "Remark",
+  "number": "5.3.28",
+  "title": "",
+  "body": "  The Google matrix defined in is a regular matrix.   "
 },
 {
   "id": "sec5-4-eigen-exer",
@@ -2833,7 +3040,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.4",
   "title": "Orthogonal Diagonalizations",
-  "body": " Orthogonal Diagonalizations    Let be an matrix. Then the following are equivalent:  (i) is non-singular and .  (ii) The rows of are orthonormal vectors in . (iii) The columns of are orthonormal vectors in .      A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .      (i) The matrix is an orthogonal matrix.  (ii) is an orthogonal matrix.      An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.      Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.      Let be an matrix. Then the following are equivalent.  (i) has an orthonormal set of eigenvectors.  (ii) is orthogonally diagonalizable.  (iii) is symmetric.      Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .      For the following matrices find an orthogonal matrix such that is a diagonal matrix.       The following are equivalent for an matrix .  (i) is orthogonal  (ii) for all .  (iii) for all .  (iv) .    "
+  "body": " Orthogonal Diagonalizations    Let be an matrix. Then the following are equivalent:  (i) is non-singular and .  (ii) The rows of are orthonormal vectors in .  (iii) The columns of are orthonormal vectors in .      A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .      (i) The matrix is an orthogonal matrix.  (ii) is an orthogonal matrix.      An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.      Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.      Let be an matrix. Then the following are equivalent.  (i) has an orthonormal set of eigenvectors.  (ii) is orthogonally diagonalizable.  (iii) is symmetric.      Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .      For the following matrices find an orthogonal matrix such that is a diagonal matrix.       The following are equivalent for an matrix .     is orthogonal.     for all .     for all .     .      "
 },
 {
   "id": "orthogonal-ex1",
@@ -2842,7 +3049,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "6.4.1",
   "title": "",
-  "body": "  Let be an matrix. Then the following are equivalent:  (i) is non-singular and .  (ii) The rows of are orthonormal vectors in . (iii) The columns of are orthonormal vectors in .   "
+  "body": "  Let be an matrix. Then the following are equivalent:  (i) is non-singular and .  (ii) The rows of are orthonormal vectors in .  (iii) The columns of are orthonormal vectors in .   "
 },
 {
   "id": "def-orthogonal-matrix",
@@ -2914,7 +3121,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "6.4.9",
   "title": "",
-  "body": "  The following are equivalent for an matrix .  (i) is orthogonal  (ii) for all .  (iii) for all .  (iv) .   "
+  "body": "  The following are equivalent for an matrix .     is orthogonal.     for all .     for all .     .     "
 },
 {
   "id": "sec6-4",
@@ -2923,7 +3130,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.5",
   "title": "QR-Factorization",
-  "body": " QR-Factorization  Let be an matrix whose columns are . Further assume that columns of are linearly independent. Using the Gram-Schmidt orthogonalization process and define . This implies .  Hence .  Thus we have   Thus   Here has orthogonal columns and is upper triangular whose diagonal entries which are positive, hence non-singular. This is what is known as factorization. Thus we have the following result.    Every matrix with linearly independent columns has a factorization, , where columns of are orthonormal and is an upper triangular matrix with positive diagonal entries.      Let . Let us find the factorization of . Note that columns of are vectors in the Example . We have found in this example. Hence . We also have   Hence   Note that once we have , then .      Find the QR-factorization of . It is easy to check that columns of are linearly independent. In fact, columns of are rows of the matrix defined in the Example . From this example, we have    Hence . Also .     If a matrix has independent rows, then we apply factorization to . Thus where is the the invertible lower triangular matrix with positive diagonal entries and and has orthogonal rows.    In case a matrix has linearly independent columns then the factorization is unique. That is, if , then and .    Find the QR-factorization of the following matrices:    "
+  "body": " QR-Factorization  Let be an matrix whose columns are . Further assume that columns of are linearly independent. Using the Gram-Schmidt orthogonalization process and define . This implies .  Hence .  Thus we have   Thus   Here has orthogonal columns and is upper triangular whose diagonal entries are positive, hence non-singular. This is what is known as factorization. Thus we have the following result.    Every matrix with linearly independent columns has a factorization, , where columns of are orthonormal and is an upper triangular matrix with positive diagonal entries.      Let . Let us find the factorization of . Note that columns of are vectors in the Example . We have found in this example. Hence . We also have   Hence   Note that once we have , then .      Find the QR-factorization of . It is easy to check that columns of are linearly independent. In fact, columns of are rows of the matrix defined in the Example . From this example, we have    Hence . Also .     If a matrix has independent rows, then we apply factorization to . Thus where is the the invertible lower triangular matrix with positive diagonal entries and and has orthogonal rows.    In case a matrix has linearly independent columns then the factorization is unique. That is, if , then and .    Find the QR-factorization of the following matrices:    "
 },
 {
   "id": "sec6-4-7",
@@ -3238,7 +3445,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.1",
   "title": "Least Square Problems",
-  "body": " Least Square Problems   This chapter deals with linear least square problems and its applications.    Linear Least Square Problems  Consider a system of equations having equations in variables. Suppose . Then this system may not have a solution. Then we can look for what is the best approximate solution. If is a solution of then . Here is the measure of how far from . The aim is to find the point such that is at the smallest distance from . Thus if such a exists then for all .  The answer to the above question is yes . In order to find this, we consider .  Note that is subspace of . We are looking for which is at the smallest distance from , which is nothing but the orthogonal projection of onto . Suppose we assume that columns of are linearly independent. Then is the column space of. Hence by the Eq. , orthogonal projection is given by .  Here the vector is called the least square approximation (solution) of .  For the system , after multiplying both sides by , we get which is called the normal equation. We know that rank of is equal to rank of . Hence is invertible if has linearly independent columns. Also the has least square solution if and only if the associated normal equation has a solution.  Note that the least square solution is the minimizer of the function . This can also be obtained using calculus. .  Hence the gradient . Hence implies provided is non singular.    Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function . Here we consider the subspace . We need the find the orthogonal projection of onto .  From Example , we know that is an orthonormal basis of . Hence the orthogonal projection of onto is give by .  After simplification we get .     Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function .     Consider a system of linear equations where   (a) Find the least square solution of .  (b) Find the orthogonal projection of onto the column space .  (c) Write the as where and .   Solution: It is easy to see that the columns of are linearly independent, hence the least square solution exists. We have .  Hence the least square solution of is the solution of the normal equation which is . The same can obtained as .  (b) The orthogonal projection of onto is given by .  (b) Since we have found , is given by . Hence .     (i) Find the best approximation (least square solution) of the system of linear equations     The average number of goals , per game scored by a football player is related linearly to two factors, (i) the number of years of experience and (ii) the number of goals in the preceding 10 games. Find the linear The data on the following page were collected on four players. Find the linear function .           goals  0.8  0.7  0.6  0.5            10  8  6  3            4  4  3  2              The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.                Year  1990  1991  1992  1993  1994  1995  1996  1997    Temp  27.07  26.93  27.11  27.18  26.94  27.25  27.64  27.66               Year  1998  1999  2000  2001  2002  2003  2004  2005    Temp  27.75  27.65  27.61  27.26  27.82  27.46  27.00  27.36               Year  2006  2007  2008  2009  2010  2011  2012  2013    Temp  27.36  28.02  27.75  28.33  28.16  27.94  27.61  27.63               Year  2014  2015  2016  2017  2018  2019  2020  2021          Temp  28.18  28.67  28.24  28.55  28.76  28.27  28.40  28.48                      Find the equation of the line that best fits these data points.  The temperature data is plotted in the Figure .     We wish to find the best fit line to the given set of data. Suppose the line is given by , then we wish to find and such that the line is best fit. Now what is meaning of \"best fit\". Suppose we consider the point , if it lies on , then , other wise is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by where is the number of points. Note that the sum of error squares can be written as .  Here   Thus finding amount to finding the least square solution of , which is given by   For the given problem, we have   We have  .  Hence   The set of points along with the best fitted line is shown in the Figure          Fitting a polynomial to the data set  Suppose we are given a set of -data points and we wish to find the best fit polynomial curve of degree , say, , with . In this case, the error term for from the the the curve is . Thus the sum of the error square is   The sum of error square can be written as , where   Thus the least square solution is given by provided columns of are linearly independent.    Find th best fit cubic to the following set of points                  -3.0  -2.8  -2.5  -2.2  -2.0  -1.8  -1.5  -1.2  -1.0  -0.75     1.1  4.0  7.3  7.1  8.2  7.8  9.9  7.1  8.8  6.2                  -0.50  -0.25  0.00  0.25  0.50  0.75  1.0  1.2  1.5  1.8     7.0  3.7  4.7  3.4  5.6  5.8  5.3  6.6  10.  12.                 Thus we need to find the least square solution of , where   We have    Hence the least square solution   See the Figure for fitted curve along with the data.        Find the least squares approximating line for each of the following sets of data points.  (i)   (ii)     Find the least squares approximating quadratic for each of the following sets of data points.  (i)   (ii) The table gives the worldwide cumulative HIV infections in millions.          1980  0.1  1995  29.8    1982  0.7  1997  40.9    1985  2.4  2000  57.9    1987  4.5  2002  67.9    1990  10  2005  82.7    1992  16.1  2008  100.2             Weighted Least Square Problems   "
+  "body": " Least Square Problems   This chapter deals with linear least square problems and its applications.    Linear Least Square Problems  Consider a system of equations having equations in variables. Suppose . Then this system may not have a solution. Then we can look for what is the best approximate solution. If is a solution of then . Here is the measure of how far from . The aim is to find the point such that is at the smallest distance from . Thus if such a exists then for all .  The answer to the above question is yes . In order to find this, we consider .  Note that is subspace of . We are looking for which is at the smallest distance from , which is nothing but the orthogonal projection of onto . Suppose we assume that columns of are linearly independent. Then is the column space of. Hence by the Eq. , orthogonal projection is given by .  Here the vector is called the least square approximation (solution) of .  For the system , after multiplying both sides by , we get which is called the normal equation. We know that rank of is equal to rank of . Hence is invertible if has linearly independent columns. Also the has least square solution if and only if the associated normal equation has a solution.  Note that the least square solution is the minimizer of the function . This can also be obtained using calculus. .  Hence the gradient . Hence implies provided is non singular.    Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function . Here we consider the subspace . We need the find the orthogonal projection of onto .  From Example , we know that is an orthonormal basis of . Hence the orthogonal projection of onto is give by .  After simplification we get .     Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function .     Consider a system of linear equations where   (a) Find the least square solution of .  (b) Find the orthogonal projection of onto the column space .  (c) Write the as where and .   Solution: It is easy to see that the columns of are linearly independent, hence the least square solution exists. We have .  Hence the least square solution of is the solution of the normal equation which is . The same can obtained as .  (b) The orthogonal projection of onto is given by .  (b) Since we have found , is given by . Hence .     (i) Find the best approximation (least square solution) of the system of linear equations     The average number of goals , per game scored by a football player is related linearly to two factors, (i) the number of years of experience and (ii) the number of goals in the preceding 10 games. Find the linear The data on the following page were collected on four players. Find the linear function .           goals  0.8  0.7  0.6  0.5            10  8  6  3            4  4  3  2              The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.                Year  1990  1991  1992  1993  1994  1995  1996  1997    Temp  27.07  26.93  27.11  27.18  26.94  27.25  27.64  27.66               Year  1998  1999  2000  2001  2002  2003  2004  2005    Temp  27.75  27.65  27.61  27.26  27.82  27.46  27.00  27.36               Year  2006  2007  2008  2009  2010  2011  2012  2013    Temp  27.36  28.02  27.75  28.33  28.16  27.94  27.61  27.63               Year  2014  2015  2016  2017  2018  2019  2020  2021    Temp  28.18  28.67  28.24  28.55  28.76  28.27  28.40  28.48                Find the equation of the line that best fits these data points.  The temperature data is plotted in the Figure .     We wish to find the best fit line to the given set of data. Suppose the line is given by , then we wish to find and such that the line is best fit. Now what is meaning of \"best fit\". Suppose we consider the point , if it lies on , then , other wise is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by where is the number of points. Note that the sum of error squares can be written as .  Here   Thus finding amount to finding the least square solution of , which is given by   For the given problem, we have   We have  .  Hence   The set of points along with the best fitted line is shown in the Figure          Fitting a polynomial to the data set  Suppose we are given a set of -data points and we wish to find the best fit polynomial curve of degree , say, , with . In this case, the error term for from the the the curve is . Thus the sum of the error square is   The sum of error square can be written as , where   Thus the least square solution is given by provided columns of are linearly independent.    Find th best fit cubic to the following set of points                  -3.0  -2.8  -2.5  -2.2  -2.0  -1.8  -1.5  -1.2  -1.0  -0.75     1.1  4.0  7.3  7.1  8.2  7.8  9.9  7.1  8.8  6.2                  -0.50  -0.25  0.00  0.25  0.50  0.75  1.0  1.2  1.5  1.8     7.0  3.7  4.7  3.4  5.6  5.8  5.3  6.6  10.  12.                 Thus we need to find the least square solution of , where   We have    Hence the least square solution   See the Figure for fitted curve along with the data.        Find the least squares approximating line for each of the following sets of data points.  (i)   (ii)     Find the least squares approximating quadratic for each of the following sets of data points.  (i)   (ii) The table gives the worldwide cumulative HIV infections in millions.          1980  0.1  1995  29.8    1982  0.7  1997  40.9    1985  2.4  2000  57.9    1987  4.5  2002  67.9    1990  10  2005  82.7    1992  16.1  2008  100.2             Weighted Least Square Problems   "
 },
 {
   "id": "sec-linear-lstsq-9",
@@ -3292,7 +3499,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "8.1.6",
   "title": "",
-  "body": "  The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.                Year  1990  1991  1992  1993  1994  1995  1996  1997    Temp  27.07  26.93  27.11  27.18  26.94  27.25  27.64  27.66               Year  1998  1999  2000  2001  2002  2003  2004  2005    Temp  27.75  27.65  27.61  27.26  27.82  27.46  27.00  27.36               Year  2006  2007  2008  2009  2010  2011  2012  2013    Temp  27.36  28.02  27.75  28.33  28.16  27.94  27.61  27.63               Year  2014  2015  2016  2017  2018  2019  2020  2021          Temp  28.18  28.67  28.24  28.55  28.76  28.27  28.40  28.48                      Find the equation of the line that best fits these data points.  The temperature data is plotted in the Figure .     We wish to find the best fit line to the given set of data. Suppose the line is given by , then we wish to find and such that the line is best fit. Now what is meaning of \"best fit\". Suppose we consider the point , if it lies on , then , other wise is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by where is the number of points. Note that the sum of error squares can be written as .  Here   Thus finding amount to finding the least square solution of , which is given by   For the given problem, we have   We have  .  Hence   The set of points along with the best fitted line is shown in the Figure       "
+  "body": "  The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.                Year  1990  1991  1992  1993  1994  1995  1996  1997    Temp  27.07  26.93  27.11  27.18  26.94  27.25  27.64  27.66               Year  1998  1999  2000  2001  2002  2003  2004  2005    Temp  27.75  27.65  27.61  27.26  27.82  27.46  27.00  27.36               Year  2006  2007  2008  2009  2010  2011  2012  2013    Temp  27.36  28.02  27.75  28.33  28.16  27.94  27.61  27.63               Year  2014  2015  2016  2017  2018  2019  2020  2021    Temp  28.18  28.67  28.24  28.55  28.76  28.27  28.40  28.48                Find the equation of the line that best fits these data points.  The temperature data is plotted in the Figure .     We wish to find the best fit line to the given set of data. Suppose the line is given by , then we wish to find and such that the line is best fit. Now what is meaning of \"best fit\". Suppose we consider the point , if it lies on , then , other wise is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by where is the number of points. Note that the sum of error squares can be written as .  Here   Thus finding amount to finding the least square solution of , which is given by   For the given problem, we have   We have  .  Hence   The set of points along with the best fitted line is shown in the Figure       "
 },
 {
   "id": "sec8-1-LSTSQ-4-5",
@@ -3571,7 +3778,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "10.1",
   "title": "Principal Component Analysis",
-  "body": " Principal Component Analysis   In this chapter, we shall explore the concept of pricipal component analysis (PCA) which is somewhat similar to SVD. We shall look at what is similarity between PCA and SVD along with some applications.    Introduction  Large datasets with a large number of features\/variables are very common and widespread. Interpreting such a large datasets is very complex task. In order to interpret such datasets one requires a method that reduces the dimension\/features drastically, at the same time most of the information in the dateset is preserved. The principal component analysis (PCA) is one of the most widely used dimensionality reduction techniques. The main idea of PCA is to reduce the dimensionality in the datasets while preserving much of the variability as much as possible. It does so by creating a new set of uncorrelated variables that successfully maximize the variance. Finding such new variables also known as principal components reduces the problem to solving an eigenvalue-eigenvector problem.  Let us look at the set of points in the plane, (data with two features) in the figure . In this case the data has maximum spread or variability along the -axis. Thus if we project, the points onto the -axis, the variability in the data can be captured. In particular, we can ignore the -coordinates. On the other hand if we look at the set of points in the figure , maximum spread or variability lies along the -axis. Thus if we project, the points onto the -axis, the variability in the data can be captured. In particular, we can ignore the -coordinates. Thus in these two examples, we are able to reduce the dimension by 1.    Variability along -axis .    ariability along -axis   Now suppose we have 12 points as show in the Figure again in , that is having two features\/dimensions. The spread of this data seems to be not along -axis but roughly along the axis as shown in the Figure , that is, along the vector . So if we project these points on the line along as shown in the Figure , we will have maximum spread or variation of the data. Thus is the new axis along which the data has maximum variation.    Data with two features.     Variability along vector .   Next if one carefully looks into the data points, one can see that the data also has some dispersion or variation along the line given by the direction as shown in the Figure and which is not captured by the line along . In a way, we need to create another axis which is perpendicular to the 1st one.  Thus we have two perpendicular coordinate axes or a new coordinates system along which all the variations in the data can be captured. In this case, maximum variation along and second maximum along . Here is called the first principal direction and is called the second principal direction. Thus we can work with new coordinate axes and forget about the original and -axes as show in the Figure . We can even rotate the new coordinate system that coincides with original and -axes.    1st and 2nd principal components and .     1st and 2nd principal components and .   The above two examples, geometrically explains the essence of PCA. The idea is to project the original high dimensional data to a new coordinate system and choose only first we coordinates axes also called principal components. How many principal component to be taken depends upon how much variation we wish to capture.    Mathematics behind PCA  Let us assume that we have a data which has features and there are of them. This data can be represented by a matrix, say . Thus . Thus each columns of represents a feature and there are samples for each feature.  Now we are looking for an unit vector and we wish to project the data onto such that the variance of the projected data is maximum.  Before we explain that in generality, let us look at what is meaning of projection of data in 2 dimension (that is in ) on an unit vector. Suppose is an unit vector ad be a point\/vector in . Then .  The length of the projection is . If we have another point, say , then the projection of both these points can be captured as .  Thus in general the projection of data which is matrix onto a unit vector is .  Next we deal with the second issue in PCA, namely, 'variance'. For this we take the centered data , where . The covariance of , is given .  Note that (i) is symmetric and (ii) Semi-positive definite, all eigenvalues of are non negative. Also is orthogonally diagonalizable. In particular, there exists an orthogonal matrix such that . What we wanted was to maximize the variance of projection of the data onto unit vector . That is, we want to find an unit vector such that the variance of is maximum. In other words, .  It turns out that the solution of this optimization problem is , which is the eigenvector of . Thus the variance of the projected data onto a unit vector is maximum if happens to be an eigenvector of the covariance matrix .  Note that is of order which has linearly independent eigenvectors. We arrange these eigenvector corresponding to the decreasing eigenvalues. That is the eigenvector corresponding to the largest eigenvector and is called the first principal component. The eigenvector corresponding to the second highest eigenvalue , is called the second principal component. Thus if we project data onto the second principal component that it will have second higher variance. Look at Figure in which the data is plotted along with the principal components. The Figure , the data projected on the 1st component of PCA is plotted along with the data.   Data set with principal components      Projection on 1st PCA components   Next question is how many principal components, we should choose. This depends upon what percentage of variance of the data we wish to capture. Suppose we want to capture 90% variations, the we choose the 1st components such that .  The projected data onto the 1st principal components is given by   Here is called the loading matrix. The new data or transformed data . Once we know the transformed data then we can construct the original data by .    Consider the following 2 dimensional data.     2.5  0.5  2.2  1.9  3.0  2.3  2.0  1.0  1.5  1.1     2.0  0.7  2.9  2.2  2.8  2.7  1.6  1.1  1.6  0.9    Find the first and the second principal components of this data set. Explain what percentage of variance os explained by the 1st principal component.  The and . The centered data set is   Next we construct the covariance matrix of , which is   The eigenvalues of are eigenvalues and . The corresponding eigenvectors are and .  Hence the loading matrix is given by . The projected data on the 1st two principal components is   We can recover the original data set by   The variance explained by the 1st principal component is   Thus approximately 94.35% variance is captured by the 1st principal component.      Consider the following data in 3-dimension.      24  8  21  1  9  7  8  10  1  15  4  12     13  3  6  14  3  1  7  16  3  2  6  10     38  17  40  -9  21  14  11  3  2  30  1  18     1  7  5  1  21  8  1  15  16  7  14  3  5     9  3  1  12  9  8  18  8  10  0  2  7  6     -4  19  13  -6  34  7  -18  25  29  17  31  0  7     The mean of each feature are . We have   The covariance matrix of is given by   The eigenvalues of are . The corresponding eigenvectors are .  The percentage of variance explained by the first principal component is The percentage of variance explained by the first two principal components is      "
+  "body": " Principal Component Analysis   In this chapter, we shall explore the concept of pricipal component analysis (PCA) which is somewhat similar to SVD. We shall look at what is similarity between PCA and SVD along with some applications.    Introduction  Large datasets with a large number of features\/variables are very common and widespread. Interpreting such a large datasets is very complex task. In order to interpret such datasets one requires a method that reduces the dimension\/features drastically, at the same time most of the information in the dateset is preserved. The principal component analysis (PCA) is one of the most widely used dimensionality reduction techniques. The main idea of PCA is to reduce the dimensionality in the datasets while preserving much of the variability as much as possible. It does so by creating a new set of uncorrelated variables that successfully maximize the variance. Finding such new variables also known as principal components reduces the problem to solving an eigenvalue-eigenvector problem.  Let us look at the set of points in the plane, (data with two features) in the figure . In this case the data has maximum spread or variability along the -axis. Thus if we project, the points onto the -axis, the variability in the data can be captured. In particular, we can ignore the -coordinates. On the other hand if we look at the set of points in the figure , maximum spread or variability lies along the -axis. Thus if we project, the points onto the -axis, the variability in the data can be captured. In particular, we can ignore the -coordinates. Thus in these two examples, we are able to reduce the dimension by 1.    Variability along -axis .    ariability along -axis   Now suppose we have 12 points as show in the Figure again in , that is having two features\/dimensions. The spread of this data seems to be not along -axis but roughly along the axis as shown in the Figure , that is, along the vector . So if we project these points on the line along as shown in the Figure , we will have maximum spread or variation of the data. Thus is the new axis along which the data has maximum variation.    Data with two features.     Variability along vector .   Next if one carefully looks into the data points, one can see that the data also has some dispersion or variation along the line given by the direction as shown in the Figure and which is not captured by the line along . In a way, we need to create another axis which is perpendicular to the 1st one.  Thus we have two perpendicular coordinate axes or a new coordinates system along which all the variations in the data can be captured. In this case, maximum variation along and second maximum along . Here is called the first principal direction and is called the second principal direction. Thus we can work with new coordinate axes and forget about the original and -axes as show in the Figure . We can even rotate the new coordinate system that coincides with original and -axes.    1st and 2nd principal components and .     1st and 2nd principal components and .   The above two examples, geometrically explains the essence of PCA. The idea is to project the original high dimensional data to a new coordinate system and choose only first we coordinates axes also called principal components. How many principal component to be taken depends upon how much variation we wish to capture.    Mathematics behind PCA  Let us assume that we have a data which has features and there are of them. This data can be represented by a matrix, say . Thus . Thus each columns of represents a feature and there are samples for each feature.  Now we are looking for an unit vector and we wish to project the data onto such that the variance of the projected data is maximum.  Before we explain that in generality, let us look at what is meaning of projection of data in 2 dimension (that is in ) on an unit vector. Suppose is an unit vector ad be a point\/vector in . Then .  The length of the projection is . If we have another point, say , then the projection of both these points can be captured as .  Thus in general the projection of data which is matrix onto a unit vector is .  Next we deal with the second issue in PCA, namely, 'variance'. For this we take the centered data , where . The covariance of , is given .  Note that (i) is symmetric and (ii) Semi-positive definite, all eigenvalues of are non negative. Also is orthogonally diagonalizable. In particular, there exists an orthogonal matrix such that . What we wanted was to maximize the variance of projection of the data onto unit vector . That is, we want to find an unit vector such that the variance of is maximum. In other words, .  It turns out that the solution of this optimization problem is , which is the eigenvector of . Thus the variance of the projected data onto a unit vector is maximum if happens to be an eigenvector of the covariance matrix .  Note that is of order which has linearly independent eigenvectors. We arrange these eigenvector corresponding to the decreasing eigenvalues. That is the eigenvector corresponding to the largest eigenvector and is called the first principal component. The eigenvector corresponding to the second highest eigenvalue , is called the second principal component. Thus if we project data onto the second principal component that it will have second higher variance. Look at Figure in which the data is plotted along with the principal components. The Figure , the data projected on the 1st component of PCA is plotted along with the data.   Data set with principal components      Projection on 1st PCA components   Next question is how many principal components, we should choose. This depends upon what percentage of variance of the data we wish to capture. Suppose we want to capture 90% variations, the we choose the 1st components such that .  The projected data onto the 1st principal components is given by   Here is called the loading matrix. The new data or transformed data . Once we know the transformed data then we can construct the original data by .    Consider the following 2 dimensional data.       2.5  0.5  2.2  1.9  3.0  2.3  2.0  1.0  1.5  1.1       2.0  0.7  2.9  2.2  2.8  2.7  1.6  1.1  1.6  0.9    Find the first and the second principal components of this data set. Explain what percentage of variance os explained by the 1st principal component.  The and . The centered data set is   Next we construct the covariance matrix of , which is   The eigenvalues of are eigenvalues and . The corresponding eigenvectors are and .  Hence the loading matrix is given by . The projected data on the 1st two principal components is   We can recover the original data set by   The variance explained by the 1st principal component is   Thus approximately 94.35% variance is captured by the 1st principal component.      Consider the following data in 3-dimension.      24  8  21  1  9  7  8  10  1  15  4  12      13  3  6  14  3  1  7  16  3  2  6  10      38  17  40  -9  21  14  11  3  2  30  1  18      1  7  5  1  21  8  1  15  16  7  14  3  5     9  3  1  12  9  8  18  8  10  0  2  7  6     -4  19  13  -6  34  7  -18  25  29  17  31  0  7     The mean of each feature are . We have   The covariance matrix of is given by   The eigenvalues of are . The corresponding eigenvectors are .  The percentage of variance explained by the first principal component is The percentage of variance explained by the first two principal components is      "
 },
 {
   "id": "fig_pca1",
@@ -3652,7 +3859,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "10.1.9",
   "title": "",
-  "body": "  Consider the following 2 dimensional data.     2.5  0.5  2.2  1.9  3.0  2.3  2.0  1.0  1.5  1.1     2.0  0.7  2.9  2.2  2.8  2.7  1.6  1.1  1.6  0.9    Find the first and the second principal components of this data set. Explain what percentage of variance os explained by the 1st principal component.  The and . The centered data set is   Next we construct the covariance matrix of , which is   The eigenvalues of are eigenvalues and . The corresponding eigenvectors are and .  Hence the loading matrix is given by . The projected data on the 1st two principal components is   We can recover the original data set by   The variance explained by the 1st principal component is   Thus approximately 94.35% variance is captured by the 1st principal component.   "
+  "body": "  Consider the following 2 dimensional data.       2.5  0.5  2.2  1.9  3.0  2.3  2.0  1.0  1.5  1.1       2.0  0.7  2.9  2.2  2.8  2.7  1.6  1.1  1.6  0.9    Find the first and the second principal components of this data set. Explain what percentage of variance os explained by the 1st principal component.  The and . The centered data set is   Next we construct the covariance matrix of , which is   The eigenvalues of are eigenvalues and . The corresponding eigenvectors are and .  Hence the loading matrix is given by . The projected data on the 1st two principal components is   We can recover the original data set by   The variance explained by the 1st principal component is   Thus approximately 94.35% variance is captured by the 1st principal component.   "
 },
 {
   "id": "pca-eg2",
@@ -3661,7 +3868,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "10.1.10",
   "title": "",
-  "body": "  Consider the following data in 3-dimension.      24  8  21  1  9  7  8  10  1  15  4  12     13  3  6  14  3  1  7  16  3  2  6  10     38  17  40  -9  21  14  11  3  2  30  1  18     1  7  5  1  21  8  1  15  16  7  14  3  5     9  3  1  12  9  8  18  8  10  0  2  7  6     -4  19  13  -6  34  7  -18  25  29  17  31  0  7     The mean of each feature are . We have   The covariance matrix of is given by   The eigenvalues of are . The corresponding eigenvectors are .  The percentage of variance explained by the first principal component is The percentage of variance explained by the first two principal components is    "
+  "body": "  Consider the following data in 3-dimension.      24  8  21  1  9  7  8  10  1  15  4  12      13  3  6  14  3  1  7  16  3  2  6  10      38  17  40  -9  21  14  11  3  2  30  1  18      1  7  5  1  21  8  1  15  16  7  14  3  5     9  3  1  12  9  8  18  8  10  0  2  7  6     -4  19  13  -6  34  7  -18  25  29  17  31  0  7     The mean of each feature are . We have   The covariance matrix of is given by   The eigenvalues of are . The corresponding eigenvectors are .  The percentage of variance explained by the first principal component is The percentage of variance explained by the first two principal components is    "
 },
 {
   "id": "sec10-2",

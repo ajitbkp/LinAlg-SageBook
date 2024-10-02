@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Principal Component Analysis</title>
+<title>Elementary Row Operations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -227,7 +239,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec9-1-SVD.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="linalg-pretext-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec10-1-PCA.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chap1-lineq.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec1-2-col-operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -251,10 +263,10 @@ window.MathJax = {
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chap1-lineq.html" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec1-1-elementary-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary Row Operations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec1-1-elementary-operations.html#subsec-elmentary-row-operations" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Elmentary Row Operations</span></a></div></li>
@@ -405,7 +417,7 @@ window.MathJax = {
 </ul>
 </li></ul>
 </li>
-<li class="toc-item toc-chapter active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="chap10-PCA.html" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
@@ -427,15 +439,180 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="chap10-PCA"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">10</span><span class="space"> </span><span class="title">Principal Component Analysis</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec1-1-elementary-operations"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Elementary Row Operations</span>
 </h2>
-<nav class="summary-links"><ul>
-<li><a href="sec10-1-PCA.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Principal Component Analysis</span></a></li>
-<li><a href="sec10-2.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Applications of PCA</span></a></li>
-</ul></nav></section></div>
+<section class="introduction" id="sec1-1-elementary-operations-2"><div class="para" id="sec1-1-elementary-operations-2-1">In this section, we shall defined elementary row operations which is a backbone of all computations in linear algebra.</div></section><section class="subsection" id="subsec-elmentary-row-operations"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="space"> </span><span class="title">Elmentary Row Operations</span>
+</h3>
+<div class="para" id="subsec-elmentary-row-operations-2">The solution of a system of linear equations is unchanged if the following operations are performed. In fact this is the basis for solving a system of linear equations.</div>
+<ol class="decimal" id="subsec-elmentary-row-operations-3">
+<li id="subsec-elmentary-row-operations-3-1"><div class="para" id="subsec-elmentary-row-operations-3-1-1">Multiply one of the equations by a nonzero real number. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.</div></li>
+<li id="subsec-elmentary-row-operations-3-2"><div class="para" id="subsec-elmentary-row-operations-3-2-1">Multiply one of the equations by a real number and add the result to another equation, leaving the original equation unchanged. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row, leaving the original row unchanged.</div></li>
+<li id="subsec-elmentary-row-operations-3-3"><div class="para" id="subsec-elmentary-row-operations-3-3-1">Interchanging two equations. This is equivalent to interchanging two rows of the augmented matrix of the system.</div></li>
+<li id="subsec-elmentary-row-operations-3-4"><div class="para" id="subsec-elmentary-row-operations-3-4-1">Bring the equations which are equivalent to <span class="process-math">\(0 =0\)</span> to the bottom row. This is equivalent to moving the zero rows (rows with zero entries) of the augmented matrix to the bottom.</div></li>
+</ol>
+<article class="note remark-like" id="subsec-elmentary-row-operations-4"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h4>If an equation of the system after the the avove operations reduces to <span class="process-math">\(0 = \alpha\text{,}\)</span> where <span class="process-math">\(\alpha \neq 0\text{,}\)</span> then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the column, then the system has no solution.</article><article class="definition definition-like" id="def-elementary-row-operations"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary row operations.</span>
+</h4> <div class="para logical" id="def-elementary-row-operations-2-1">
+<div class="para">The following operations on a matrix are called <em class="alert">elementary row operations.</em>
+</div>
+<ol class="decimal" id="def-elementary-row-operations-2-1-2">
+<li id="def-elementary-row-operations-2-1-2-1"><div class="para" id="def-elementary-row-operations-2-1-2-1-1">interchange of two rows of a matrix;</div></li>
+<li id="def-elementary-row-operations-2-1-2-2"><div class="para" id="def-elementary-row-operations-2-1-2-2-1">multiplication of one row by a  non-zero scalar <span class="process-math">\(\lambda\text{;}\)</span>
+</div></li>
+<li id="def-elementary-row-operations-2-1-2-3"><div class="para" id="def-elementary-row-operations-2-1-2-3-1">adding a scalar <span class="process-math">\(\lambda\)</span> times a row to another row.</div></li>
+</ol>
+</div></article><article class="definition definition-like" id="def-equivalent-system"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-equivalent-system-1-1">A matrix <span class="process-math">\(B\)</span> is said to be <em class="alert">equivalent</em>  or <em class="alert">row equivalent</em> to matrix <span class="process-math">\(A\text{,}\)</span> in notation <span class="process-math">\(B\thicksim A\)</span> , if <span class="process-math">\(B\)</span> can be obtained from <span class="process-math">\(A\)</span>  by performing finite number of elementary row operations.</div></article><div class="para" id="subsec-elmentary-row-operations-7">Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.</div>
+<article class="observation remark-like" id="subsec-elmentary-row-operations-8"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h4>Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix of real numbers. Let the columns of <span class="process-math">\(A\)</span> are <span class="process-math">\(a_1,a_2,\ldots a_n\text{,}\)</span> that is, <span class="process-math">\(A=\begin{bmatrix} a_1\amp a_2\amp\cdots \amp a_n\end{bmatrix}\text{.}\)</span> Let the rows of <span class="process-math">\(A\)</span> are given by <span class="process-math">\(R_1, R_2,\ldots, R_n\text{,}\)</span> in particular, <span class="process-math">\(A=\begin{bmatrix} R_1\amp R_2\amp\cdots \amp R_n\end{bmatrix}^T\text{.}\)</span> Let <span class="process-math">\(e_1, e_2, \ldots e_n\)</span> are standard coordinate vectors in <span class="process-math">\(\mathbb{R}^n\)</span> , where <span class="process-math">\(e_i\)</span> is the column matrix (vector) whose <span class="process-math">\(i\)</span>-th entry is 1 and rest are zero. That is <span class="process-math">\(e_i=\begin{pmatrix} 0\\\vdots\\ 1\\\vdots \\0\end{pmatrix}\text{.}\)</span> Then we have the following: <div class="para logical" id="subsec-elmentary-row-operations-8-14"><ol class="decimal" id="subsec-elmentary-row-operations-8-14-1">
+<li id="subsec-elmentary-row-operations-8-14-1-1"><div class="para" id="subsec-elmentary-row-operations-8-14-1-1-1">
+<span class="process-math">\(a_j=Ae_j\)</span> for each <span class="process-math">\(j=1,\ldots, n\text{.}\)</span> That is, <span class="process-math">\(j\)</span>-th column can be obtained by multiplying <span class="process-math">\(A\)</span> by <span class="process-math">\(e_j\)</span> on the right.</div></li>
+<li id="subsec-elmentary-row-operations-8-14-1-2"><div class="para" id="subsec-elmentary-row-operations-8-14-1-2-1">
+<span class="process-math">\(R_i=e_i^TA\)</span> for each <span class="process-math">\(i=1,\ldots, n\text{.}\)</span> That is, <span class="process-math">\(i\)</span>-th row can be obtained by multiplying <span class="process-math">\(A\)</span> by <span class="process-math">\(e_i^T\)</span> on the left.</div></li>
+<li id="subsec-elmentary-row-operations-8-14-1-3"><div class="para" id="subsec-elmentary-row-operations-8-14-1-3-1">
+<span class="process-math">\(a_{ij}=e_i^TAe_j\)</span> for <span class="process-math">\(1\leq i, j\leq n\text{.}\)</span>
+</div></li>
+</ol></div></article><div id="subsec-elmentary-row-operations-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">    # Creating a random matrix of integers of size n
+n = 5
+A = random_matrix(ZZ, n,n)
+show(A)
+</script></div>
+<div id="subsec-elmentary-row-operations-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Identity matrix of size n
+E = identity_matrix(n)
+show(E)
+</script></div>
+<div id="subsec-elmentary-row-operations-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Extract the (i+1)-th column of E, that is, e_{i+1}
+## Note that index in Python/Sage list start with 0.
+i = 1
+A*E[:,i] # Returns the (i+1)-th column of A
+</script></div>
+<div id="subsec-elmentary-row-operations-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">E[:,i].T*A # Returns the (i+1)-th row of A
+</script></div>
+<article class="definition definition-like" id="def-elementary-row-operation-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-elementary-row-operation-2-1-1">Let <span class="process-math">\(e\)</span> denote an elementary row operation and <span class="process-math">\(e(A)\)</span>  the result of applying <span class="process-math">\(e\)</span> to a  <span class="process-math">\(A\text{.}\)</span> Let <span class="process-math">\(E\)</span> be a matrix obtained by applying <span class="process-math">\(e\)</span> to the identity matrix. That is,  <span class="process-math">\(E=e(I)\text{.}\)</span> Then <span class="process-math">\(E\)</span> is called the <em class="alert">elementary matrix</em> corresponding to the elementary row operation <span class="process-math">\(e\text{.}\)</span> It is easy to see that an elementary matrix is non singular. (why?)</div></article><article class="theorem theorem-like" id="thm-elementary-matrix-theorem"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary Matrix Theorem.</span>
+</h4>
+<div class="para" id="thm-elementary-matrix-theorem-2-1">Let <span class="process-math">\(e\)</span> be an elementary row operation and <span class="process-math">\(E\text{,}\)</span> the corresponding <span class="process-math">\(m\times m\)</span> elementary matrix defined by <span class="process-math">\(E = e(I_m)\text{.}\)</span> Then, for any <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(e(A) = E\cdot A\text{.}\)</span>
+</div></article><article class="example example-like" id="subsec-elmentary-row-operations-15"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span>
+</h4>
+<ol class="decimal" id="subsec-elmentary-row-operations-15-1">
+<li id="subsec-elmentary-row-operations-15-1-1">
+<div class="para" id="subsec-elmentary-row-operations-15-1-1-1">Let <span class="process-math">\(A=[a_{ij}]\)</span> be a rectangular matrix of order <span class="process-math">\(3\times 4\text{.}\)</span> Let <span class="process-math">\(A_1\)</span> be a matrix obtained by interchanging 2nd and 3rd rows of <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(A_1=EA\)</span> where <span class="process-math">\(E=\begin{pmatrix}1 \amp 0 \amp 0\\0 \amp 0 \amp 1\\0 \amp 1 \amp 0\end{pmatrix}\text{.}\)</span>
+</div>
+<div class="para" id="subsec-elmentary-row-operations-15-1-1-2">What is <span class="process-math">\(E^{-1}\text{?}\)</span>
+</div>
+</li>
+<li id="subsec-elmentary-row-operations-15-1-2">
+<div class="para" id="subsec-elmentary-row-operations-15-1-2-1">Let <span class="process-math">\(A_2\)</span> be the matrix obtained by multiplying 2nd row of <span class="process-math">\(A\)</span> by a scalar <span class="process-math">\(\alpha\text{.}\)</span> Then <span class="process-math">\(A_2=EA\)</span> where <span class="process-math">\(E=\begin{pmatrix}1\amp 0 \amp 0\\0 \amp \alpha \amp 0\\0 \amp 0 \amp 1\end{pmatrix}\text{.}\)</span>
+</div>
+<div class="para" id="subsec-elmentary-row-operations-15-1-2-2">What is <span class="process-math">\(E^{-1}\text{?}\)</span>
+</div>
+</li>
+<li id="subsec-elmentary-row-operations-15-1-3">
+<div class="para" id="subsec-elmentary-row-operations-15-1-3-1">Let <span class="process-math">\(A_3\)</span> be the matrix obtained by adding 2 times  2nd row to the 3rd rows of <span class="process-math">\(A\)</span> in place of the 3rd row. Then <span class="process-math">\(A_3=EA\)</span> where <span class="process-math">\(E=\begin{pmatrix}1 \amp 0 \amp 0\\0 \amp 1 \amp 0\\0 \amp 2 \amp 1\end{pmatrix}\text{.}\)</span>
+</div>
+<div class="para" id="subsec-elmentary-row-operations-15-1-3-2">What is <span class="process-math">\(E^{-1}\text{?}\)</span>
+</div>
+</li>
+</ol></article><article class="theorem theorem-like" id="thm-matrix-invese-using-rref"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-matrix-invese-using-rref-1-1">Two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent if and only if there exists a non singular matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(B=PA\text{.}\)</span>
+</div></article><details id="subsec-elmentary-row-operations-17" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-elmentary-row-operations-17-1">Since <span class="process-math">\(B\)</span> is row equivalent to <span class="process-math">\(A\text{,}\)</span> there exists <span class="process-math">\(k\)</span> elementary row matrices <span class="process-math">\(E_1, \ldots, E_k\)</span> such that  write <span class="process-math">\(B=E_k\cdot E_{k-1}\cdots E_1A\text{.}\)</span> Define <span class="process-math">\(P=E_k\cdot E_{k-1}\cdots E_1\text{,}\)</span> which is a non singular.</div></article></details></section><section class="subsection" id="subsec-Matrix-inverse-using-rref"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="space"> </span><span class="title">Matrix Inversion via Elementary Row Operations</span>
+</h3>
+<div class="para" id="subsec-Matrix-inverse-using-rref-2">We can use the  theorem  <a href="sec1-1-elementary-operations.html#thm-matrix-invese-using-rref" class="xref" data-knowl="./knowl/xref/thm-matrix-invese-using-rref.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.8">Theorem 1.1.8</a> to find the inverse of a matrix using elementary row operations. If a matrix <span class="process-math">\(A\)</span> is non singular  and is row equivalent to the identity matrix <span class="process-math">\(I\)</span> by a sequence of elementary row operations say <span class="process-math">\(E_1,\ldots, E_k\text{,}\)</span> then we have, <span class="process-math">\(I=  E_k\cdot E_{k-1}\cdots E_1A\text{.}\)</span>  This  implies <span class="process-math">\(E_k\cdot E_{k-1}\cdots E_1 \times I =A^{-1}\text{.}\)</span> In other words, the sequence of elementary row operations required to turn <span class="process-math">\(A\)</span> into <span class="process-math">\(I\)</span> also turns <span class="process-math">\(I\)</span> into <span class="process-math">\(A^{-1}\)</span> . Thus to find inverse of <span class="process-math">\(A\text{,}\)</span> we   adjoin <span class="process-math">\(I\)</span> to <span class="process-math">\(A\)</span> on the right to give the augmented matrix <span class="process-math">\([A~|~I]\text{,}\)</span> and perform elementary row operations on <span class="process-math">\([A~|~I]\)</span> that successively reduces <span class="process-math">\(A\)</span>  to the identity matrix  and then extract <span class="process-math">\(A^{-1}\)</span> from the right half of the transformed augmented matrix.</div>
+<article class="example example-like" id="subsec-Matrix-inverse-using-rref-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-Matrix-inverse-using-rref-3-1">Find the inverse of <span class="process-math">\(A=\begin{pmatrix}1 \amp 0 \amp 2\\2 \amp -1 \amp 3\\4 \amp 1 \amp 8\end{pmatrix}\)</span> using row operations.</div> <details id="subsec-Matrix-inverse-using-rref-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-Matrix-inverse-using-rref-3-2-1">
+<div class="displaymath process-math">
+\begin{equation*}
+[A, I]= 
+\begin{pmatrix}1\amp 0\amp 2\amp |\amp 1\amp 0\amp 0\\2\amp -1\amp 3\amp 
+|\amp 0\amp 1\amp 0\\4\amp 1\amp 8\amp |\amp 0\amp 0\amp 1\end{pmatrix}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\xrightarrow{ \begin{array}{c}  R_2\to R_2-2R_1 \\ R_3\to R_3-4R_1  
+\end{array}}
+\begin{pmatrix}1\amp 0\amp 2\amp |\amp 1\amp 0\amp 0\\0\amp -1\amp -1\amp 
+|\amp -2\amp 1\amp 0\\0\amp 1\amp 0\amp |\amp -4\amp -0\amp 1\end{pmatrix}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\xrightarrow{ \begin{array}{c}  R_2\to (-1)R_2 \\R_3\to R_3-R_2  \\
+\end{array}}
+\begin{pmatrix}1\amp 0\amp 2\amp |\amp 1\amp 0\amp 0\\0\amp 1\amp 1\amp 
+|\amp 2\amp -11\amp 0\\0\amp 0\amp -1\amp |\amp -6\amp 1\amp 1\end{pmatrix} 
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\xrightarrow{\begin{array}{c}  R_3\to (-1)R_3\end{array}}
+\begin{pmatrix}1\amp 0\amp 2\amp |\amp 1\amp 0\amp 0\\0\amp 1\amp 1\amp 
+|\amp 2\amp -11\amp 0\\0\amp 0\amp 1\amp |\amp 6\amp -11\amp -11\end{pmatrix}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\xrightarrow{ \begin{array}{c}  R_2\to R_2-R_3 \\R_1\to R_1-2R_3\end{array}}
+\begin{pmatrix}1\amp 0\amp 1\amp |\amp -11\amp 2\amp 2\\0\amp 1\amp 0\amp |\amp -4\amp 0\amp 1\\0\amp 0\amp 1\amp |\amp 6\amp -1\amp -1\end{pmatrix}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec-Matrix-inverse-using-rref-3-2-2">
+<div class="para">Hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{-1}=\begin{pmatrix}-11 \amp 2 \amp 2\\-4 \amp 0 \amp 1\\6 \amp -1 \amp -1
+\end{pmatrix}
+\end{equation*}
+</div>
+</div> <div class="para" id="subsec-Matrix-inverse-using-rref-3-2-3">Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.</div> <div id="subsec-Matrix-inverse-using-rref-3-2-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix([[1,0,2],[2,-1,3],[4,1,8]])
+Aug = A.augment(identity_matrix(3),subdivide=True);
+show(Aug)
+</script></div> <div id="subsec-Matrix-inverse-using-rref-3-2-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We make a copy of Aug to Aug1
+Aug1 = copy(Aug)
+</script></div> <div id="subsec-Matrix-inverse-using-rref-3-2-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># we add -2 times row 1 to row 2 using the following Sage syntax
+Aug1.add_multiple_of_row(1,0,-2);Aug1
+</script></div> <div id="subsec-Matrix-inverse-using-rref-3-2-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># we add -4 times row 1 to row 3 using the following Sage syntax
+Aug1.add_multiple_of_row(2,0,-4);Aug1
+</script></div> <div id="subsec-Matrix-inverse-using-rref-3-2-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We multiply row 2 by -1 using the following Sage syntax
+Aug1.rescale_row(1,-1);Aug1
+</script></div> <div id="subsec-Matrix-inverse-using-rref-3-2-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We add -1 times row 2 to row 3 using the following Sage syntax
+Aug1.add_multiple_of_row(2,1,-1);Aug1
+</script></div> <div id="subsec-Matrix-inverse-using-rref-3-2-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We multiply row 3 by -1 using the following Sage syntax
+Aug1.rescale_row(2,-1);Aug1
+</script></div> <div id="subsec-Matrix-inverse-using-rref-3-2-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We add -1 times row 3 to row 2 using the following Sage syntax  
+Aug1.add_multiple_of_row(1,2,-1);Aug1
+</script></div> <div id="subsec-Matrix-inverse-using-rref-3-2-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We add -2 times row 3 to row 1 using the following Sage syntax  
+Aug1.add_multiple_of_row(0,2,-2);Aug1
+</script></div> <div id="subsec-Matrix-inverse-using-rref-3-2-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Finally we extract the submatrix by taking all columns after 4th column 
+Aug1.submatrix(0,3)
+</script></div> Sage can directly find the inverse of a matrix. <div id="subsec-Matrix-inverse-using-rref-3-2-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># inverse of A.
+A.inverse()
+</script></div>
+</div></details></article><div class="para" id="subsec-Matrix-inverse-using-rref-4">
+<em class="alert">Sage Exercise:</em> Use the Sage to find the inverse of the following matrix using the step by step elementary row operation. <span class="process-math">\(\begin{pmatrix}2\amp  1\amp 1\amp 1\\1\amp 0\amp 1\amp 1\\1\amp 1\amp -2\amp 1\\1\amp 1\amp 1\amp -1\end{pmatrix}\)</span>
+</div>
+<div id="subsec-Matrix-inverse-using-rref-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Sage Practice Area
+A = matrix([[2,1,1,1],[1,0,1,1],[1,1,-2,1],[1,1,1,-1]]);A
+</script></div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec9-1-SVD.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec10-1-PCA.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="chap1-lineq.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec1-2-col-operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
