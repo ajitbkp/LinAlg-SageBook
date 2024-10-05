@@ -57,7 +57,7 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
   <exercise xml:id="exer-2-1-100">
     <p> Try to prove the following.
     </p>
-
+    <p>
         <ol>
             <li>
                 <p>
@@ -99,7 +99,7 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
                 </p>
             </li>
         </ol>
-
+    </p>
 <solution>
     <p>
         Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem. 
@@ -134,6 +134,8 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
 <title>Matrix Spaces</title>
 <p>
     Let <m>A</m> be a <m>m\times n</m> real matrix. For any vector <m>x\in \R^n</m>, <m>Ax\in \R^m</m>. Consider the following subsets
+</p>
+<p>
 <ol>
     <li>
         <p>
@@ -163,6 +165,5 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
 The four subspaces, namely <m>{\cal N}(A)</m>, <m>{\rm col}(A)</m>, <m>{\cal L}(A)</m> and <m> {\rm row}(A)</m> are called the 
 <alert>fundamental subspaces</alert> associated with a matrix <m>A</m>.
 </p>
-
 </example>
 </section>

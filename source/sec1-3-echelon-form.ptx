@@ -12,8 +12,12 @@
     <title>Row Echelon Form</title>
     
     <definition xml:id="def-echelon-form">
-    An <m>m \times n</m> matrix <m>A</m> is said to be in <alert>row-echelon form</alert> 
+    <statement>
+        <p>
+        An <m>m \times n</m> matrix <m>A</m> is said to be in <alert>row-echelon form</alert> 
     or <alert>row-echelon matrix</alert> if it satisfies the following conditions:
+        </p>
+        <p>       
     <ol>
         <li>
             <p>
@@ -40,6 +44,9 @@
             </p>
         </li>
     </ol>
+           
+</p>
+</statement>
 </definition>	
 
 <p>
@@ -283,8 +290,8 @@ Now we state the step involved in the Gaussian elimination process. Only use the
 above and work from top to bottom.
     </p>
  <algorithm xml:id="alg-gaussian-elimination"><title>Gaussian Elimination</title>
- 
- 
+    <statement>
+        <p>
     <ol>
         <li>
             <p>
@@ -305,9 +312,6 @@ above and work from top to bottom.
             </p>
         </li>
     </ol>
-    <statement>
-        <p>
-            
         </p>
     </statement>
  </algorithm>   

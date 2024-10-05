@@ -6,11 +6,13 @@
 <introduction>
     <p>
         In this section we explain how Sage can be used to explore linear transformations and deal with 
-various concepts related to linear transformations that we have learned in this chapter.
-
-<p>
-    Sage has a construction <c>linear_transformation()</c> to define a linear transformation. We can define a linear
-    transformation in Sage using the following four different ways.
+        various concepts related to linear transformations that we have learned in this chapter.
+    </p>
+    <p>
+        Sage has a construction <c>linear_transformation()</c> to define a linear transformation. We can define a linear
+        transformation in Sage using the following four different ways.
+    </p>
+    <p>
     <ol>
         <li>
             <p>
@@ -38,7 +40,6 @@ various concepts related to linear transformations that we have learned in this 
              </p>
         </li>
     </ol>
-</p>
     </p>
 </introduction>
 

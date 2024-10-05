@@ -244,8 +244,7 @@ x'=\frac{dx}{dt}=Ax
 </p>
 <p>
  We want to find a solution of the above system, that is a column vector 
- <m>x =\begin{bmatrix}x_1 \amp x_2\amp  \cdots  \amp x_n\end{bmatrix}^T</m> of <m>n</m> differentiable functions on 
- some interval <m>[a,b]</m> which satisfies the above system.
+ <m>x =\begin{bmatrix}x_1 \amp x_2\amp  \cdots  \amp x_n\end{bmatrix}^T</m> of <m>n</m> of differentiable functions on  some interval <m>[a,b]</m> which satisfies the above system.
 </p>
 
 <p> If <m>S</m> is the set of all solutions of the above system. Then one can show that 
@@ -318,8 +317,9 @@ where <m>P=[p_{ij}]</m>.
   
 </p>
 
+<p><alert>Steps to solve system of linear differential equations <m>X'=AX</m>.</alert></p>
+  
 <p>
-  <alert>Steps to solve system of linear differential equations <m>X'=AX</m>.</alert>
   <ol>
     <li>
       <p>
@@ -341,6 +341,7 @@ where <m>P=[p_{ij}]</m>.
     </li>
   </ol>
 </p>
+
 <example>
   <statement>
     <p>
@@ -570,8 +571,7 @@ in which the coefficient matrix <m>A</m> has complex eigenvalues.
   <remark>
     <statement>
       <p>
-        In case the the coeffcient matrix <m>A</m> of the sysstem <m>x'=Ax</m> is not diagonailizable  then one can use 
-        the concept of Jordan canonical form to solve the system. However, we shal not discuss this here.     
+        In case the the coeffcient matrix <m>A</m> of the sysstem <m>x'=Ax</m> is not diagonailizable  then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.     
       </p>
     </statement>
   </remark>
@@ -1016,9 +1016,8 @@ link structure of web to determine the importance of webpages.
 <p> In this section, we shall explain how Google ranks webpages as a simple application 
 to linear algebra. 
   </p>
-
+<p>Whenever an user or web surfer enters a keyword for searching, Google  does three basic things:</p>
   <p>
-    Whenever an user or web surfer enters a keyword for searching, Google  does three basic things:
     <ol>
       <li>
         <p>
@@ -1038,6 +1037,7 @@ to linear algebra.
       </li>
     </ol>
   </p>
+  
 <p>
   We shall briefly look at how to rank or rate webpages using Google's PageRank algorith. 
 </p>

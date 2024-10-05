@@ -56,6 +56,7 @@
     <p> 
         We list the following results without proof. 
     </p>
+    <p>
         <ol>
             <li>
                         <p>
@@ -92,7 +93,9 @@
                 </p>
             </li>
         </ol>
-       </observation>
+       
+    </p>
+</observation>
 
  
         <theorem xml:id="thm-rank-theorem">
@@ -224,34 +227,32 @@
         </example>
              
 
-    <theorem xml:id="thm-nosol-rank"><title>Number of Solution of a System</title>
-    
-    
+    <theorem xml:id="thm-nosol-rank"><title>Number of Solution of a System</title>  
         <statement>
             <p>
-                Let <m> AX = B</m> be a system of <m>m</m> 	linear
-	equations in <m>n</m> unknowns and <m>A^* = [A~|~B]</m>, the augmented
-	matrix of the system. Then
-<ol>
-    <li>
-        <p>
-            The system has a solution i.e. the system is consistent 
-                if and only if <m>r(A) = r(A^*)</m>.
-        </p>
-    </li>
-    <li>
-        <p>
-            If <m>r(A) = r(A^*) </m> and <m>r(A) = r </m> whihc is strictly less than <m>n</m>, then number of                 unknowns, then there are infinite number of solutions and <m>n-r</m> 
-                variables can be chosen freely.
-        </p>
-    </li>
-    <li>
-        <p>
-            If <m>r(A) = r(A^*)</m> and <m>r(A) = n</m>, the number of unknowns, then there is only one (unique) solution for the system.
-        </p>
-    </li>
-</ol>
-</p>
+                Let <m> AX = B</m> be a system of <m>m</m> 	linear equations in <m>n</m> unknowns and <m>A^* = [A~|~B]</m>, the augmented matrix of the system. Then
+            </p>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            The system has a solution i.e. the system is consistent 
+                                if and only if <m>r(A) = r(A^*)</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>r(A) = r(A^*) </m> and <m>r(A) = r </m> whihc is strictly less than <m>n</m>, then number of                 unknowns, then there are infinite number of solutions and <m>n-r</m> 
+                                variables can be chosen freely.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>r(A) = r(A^*)</m> and <m>r(A) = n</m>, the number of unknowns, then there is only one (unique) solution for the system.
+                        </p>
+                    </li>
+                </ol>
+                </p>
        </statement>
     </theorem>
     

@@ -18,7 +18,7 @@
     The solution of a system of linear equations is unchanged if the following 
     operations are performed. In fact this is the basis for solving a system of linear equations.
   </p>
-
+<p>
 <ol>
     <li> 
       <p> 
@@ -54,7 +54,8 @@
 
       </li>
     </ol>  
-   <note>
+  </p>
+    <note>
     If an equation of the system after the the avove operations reduces to <m> 0 = \alpha</m>,
     where <m>\alpha \neq 0</m>, then the system has no solution.
     This is equivalent to if a row of the augmented matrix is
@@ -68,7 +69,9 @@
     <p>
   The following operations on a matrix are called <alert>elementary row
     operations.</alert>
-<ol>	
+  </p>
+<p>
+    <ol>	
   <li> <p>
     interchange of two rows of a matrix;
   </p>
@@ -103,6 +106,7 @@
 </p>
 
 <observation>
+  <p>
   Let <m>A</m> be an <m>n\times n</m> matrix of real numbers. Let the columns of <m>A</m> 
     are <m>a_1,a_2,\ldots a_n</m>, 
     that is, <m>A=\begin{bmatrix} a_1\amp a_2\amp\cdots \amp a_n\end{bmatrix}</m>. 
@@ -113,6 +117,7 @@
               <m>i</m>-th entry is 1 and rest are zero. That is 
                 <m>e_i=\begin{pmatrix} 0\\\vdots\\ 1\\\vdots \\0\end{pmatrix}</m>. 
                   Then we have the following:
+  </p>
                   <p>
                     <ol>
                     <li>
@@ -121,14 +126,12 @@
                       column can be obtained by multiplying <m>A</m> by <m>e_j</m> on the right. 
                     </p>
                     </li>
-
                       <li>
                       <p>
                         <m>R_i=e_i^TA</m> for each <m>i=1,\ldots, n</m>. That is, <m>i</m>-th 
                         row can be obtained by multiplying <m>A</m> by <m>e_i^T</m> on the left. 
                       </p>
-                      </li>
-	                
+                      </li>                
                       <li> 
                       <p>  
                         <m>a_{ij}=e_i^TAe_j</m> for <m>1\leq i, j\leq n</m>.
@@ -204,7 +207,9 @@ show(E)
 
 
 <example>
-  <ol>
+  <statement>
+    <p>
+    <ol>
     <li>
       <p>
         Let <m>A=[a_{ij}]</m> be a rectangular matrix of order <m>3\times 4</m>. Let <m>A_1</m> be a matrix obtained by 
@@ -217,8 +222,6 @@ show(E)
       <p>
         Let <m>A_2</m> be the matrix obtained by multiplying 2nd row of <m>A</m> by a scalar <m>\alpha</m>. 
         Then <m>A_2=EA</m> where <m>E=\begin{pmatrix}1\amp 0 \amp 0\\0 \amp \alpha \amp 0\\0 \amp 0 \amp 1\end{pmatrix}</m>. 
-      </p>
-      <p>
         What is <m>E^{-1}</m>?
       </p>
     </li>
@@ -226,12 +229,13 @@ show(E)
       <p>
         Let <m>A_3</m> be the matrix obtained by adding 2 times  2nd row to the 3rd rows of <m>A</m> in place of the 3rd row. 
         Then <m>A_3=EA</m> where <m>E=\begin{pmatrix}1 \amp 0 \amp 0\\0 \amp 1 \amp 0\\0 \amp 2 \amp 1\end{pmatrix}</m>.
-      </p>
-      <p>
         What is <m>E^{-1}</m>?
       </p>
     </li>
   </ol>
+      
+</p>
+</statement>
 </example>
 
 <theorem xml:id="thm-matrix-invese-using-rref">

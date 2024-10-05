@@ -2,12 +2,11 @@
 
 <section xml:id="sec4-5-VS-Ex" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Exercise Set</title>
- 
+  <p>
     <ol>
       <li>
         <p>
           Check if the following set of vectors are linearly independent or dependent. 
-
           <p>(i) <m>\{(1,0,1,2), (0,1,1,2),(1,1,1,3)\}</m> </p>
           <p> (ii)
           <m>\left\{\begin{bmatrix}1 \amp 0 \\3 \amp 2 \end{bmatrix} , 
@@ -127,6 +126,6 @@
         </p>
       </li>
     </ol>
-  
+  </p>
 
    </section>

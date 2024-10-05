@@ -17,6 +17,8 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
       in particular, dot product can be thought of as a function from
 
       <m>'\cdot' \colon \R^n\times \R^n \to\R</m> satisfying the following properties:
+</p>
+<p>
       <ol>
         <li>
           <p>
@@ -56,7 +58,10 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
         <p>
           Let <m>V</m> be a vector space over <m>\R</m>.
           An inner product on <m>V</m> is a function that assigns a real number
-          <m>\langle x, y\rangle</m> to every pair <m>x,y</m> of vectors in <m>V</m> satisfying the following properties.
+          <m>\langle x, y\rangle</m> to every pair <m>x,y</m> of vectors in <m>V</m> satisfying the following properties. 
+        </p>
+
+          <p>
           <ol>
             <li>
             <p>
@@ -69,27 +74,24 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
                 <m>\langle x, y\rangle = \langle y, x\rangle</m> for all <m>x,y \in V</m>. (Symmetry)
               </p>
             </li>
-            <li>
-             
+            <li>   
               <p>
                 <m>\langle x, (y+z)\rangle=\langle x, y\rangle+\langle x, z\rangle</m> for all <m>x,y,z\in V</m>.
               </p>
             </li>
             <li>
-             
               <p>
                 <m>\langle x, (\alpha y)\rangle=\alpha\langle x, y\rangle</m> for all
-                <m>x,y\in V</m> and <m>\alpha \in \R</m>.
-                
-                
+                <m>x,y\in V</m> and <m>\alpha \in \R</m>.   
               </p>
             </li>
           </ol>
+        </p>
+
           <p>
             If <m>V</m> is real vector space with inner product <m>\langle. , .\rangle</m>.
 Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</m>.
           </p>
-        </p>
       </statement>
     </definition>
 
@@ -353,6 +355,8 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
   <statement>
     <p>
       Let <m>(V,\langle ., .\rangle)</m> be an innepr product space. The norm defined as <xref ref="definition-norm"/> has the following properties:
+    </p>
+    <p>
       <ol>
         <li>
           <p>

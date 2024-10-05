@@ -140,6 +140,7 @@
         <p>
           The following are equivalent for an <m>n\times n</m> matrix <m>A</m>.
         </p>
+        <p>
           <ol>
             <li>
               <p>
@@ -162,6 +163,7 @@
               </p>
             </li>
           </ol> 
+        </p>
       </statement>
     </theorem>
       

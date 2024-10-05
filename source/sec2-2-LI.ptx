@@ -78,19 +78,23 @@
     </remark>
 
     <remark xml:id="sec-2-2-remrak2">
-        <ol>
-            <li>
-                <p>
-                    A set of vectors <m>v_1,v_2,\ldots, v_k</m> in <m>\R^n</m> is linearly dependent iff the matrix <m>A=\begin{bmatrix} v_1 \amp v_2 \amp \cdots \amp v_k\end{bmatrix}</m> is of rank strictly less than <m>k</m>.
-                </p>
-            </li>
-            <li>
-                <p>
-                    A set of vectors <m>v_1,v_2,\ldots, v_k</m> in <m>\R^n</m> is linearly independent iff the matrix <m>A=\begin{bmatrix} v_1 \amp v_2 \amp \cdots \amp v_k\end{bmatrix}</m> is of rank <m>k</m>.
+        <statement>
+            <p>            
+            <ol>
+                <li>
+                    <p>
+                        A set of vectors <m>v_1,v_2,\ldots, v_k</m> in <m>\R^n</m> is linearly dependent iff the matrix <m>A=\begin{bmatrix} v_1 \amp v_2 \amp \cdots \amp v_k\end{bmatrix}</m> is of rank strictly less than <m>k</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        A set of vectors <m>v_1,v_2,\ldots, v_k</m> in <m>\R^n</m> is linearly independent iff the matrix <m>A=\begin{bmatrix} v_1 \amp v_2 \amp \cdots \amp v_k\end{bmatrix}</m> is of rank <m>k</m>.
 
-                </p>
-            </li>
-        </ol>
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
     </remark>
 
 

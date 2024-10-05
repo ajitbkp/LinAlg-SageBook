@@ -17,7 +17,8 @@
             <m>+\colon V\times V\to V</m> defined by <m>+(x,y):=x+y</m> and multiplication
             <m>\cdot \colon \R\times V\to V</m> defined by <m>\cdot(\alpha,x):=\alpha \cdot x</m>.
             Satisfying the following properties:
-            
+          </p>
+          <p>
             <ol>
               <li>
               <alert>A1:</alert>
@@ -25,50 +26,38 @@
               </li>
               <li>
                 <alert>A2:</alert>
-                
-                  for all <m>x,y,z\in V</m>, <m>x+(y+z)=(x+y)+z</m>.
-                
+                  for all <m>x,y,z\in V</m>, <m>x+(y+z)=(x+y)+z</m>.   
               </li>
               <li>
                 <alert>A3:</alert>
-                
                   There exists <m>\overline{0}\in V</m> such that for all <m>x\in V</m>,
                   <m>\overline{0}=x+\overline{0}</m>.
                   This <m>\overline{0}</m> is called an additive identity.
-                
               </li>
               <li>
                 <alert>A4:</alert>
-                
                   for each <m>x\in V</m>, there is a vector <m>x'\in V</m>,
                   such that <m>x+x'=x'+x=\overline{0}</m>.
                   This <m>x'</m> is called an additive inverse of <m>x</m>.
                               </li>
               <li>
                 <alert>S1:</alert>
-                
                   for all <m>\alpha\in \R</m> and <m>x,y \in V</m>,
                   <m>\alpha(x+y)=\alpha x+\alpha y</m>.
                               </li>
               <li>
                 <alert>S2:</alert>
-                
                   for all <m>\alpha,\beta \in \R</m> and <m>x \in V</m>,
                   <m>(\alpha+\beta) x=\alpha x+\beta y</m>.
-                
               </li>
               <li>
                 <alert>S3:</alert>
-               
                   for all <m>\alpha,\beta \in \R</m> and <m>x \in V</m>,
                   <m>(\alpha\beta) x=\alpha (\beta x)y=\beta(\alpha x)</m>.
-               
               </li>
               <li>
                 <alert>S4:</alert>
-               
                   for all <m>x\in V</m>, <m>1\cdot x=x</m>.
-               
               </li>
             </ol>
           </p>

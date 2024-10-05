@@ -289,12 +289,12 @@
               </p>
             </statement>
           </example>
-     
-       <theorem xml:id="eigen-properties">
+     <p>  We list the following properties of eigenvalues and eigenvectors without proof. </p>
+  
+      <theorem xml:id="eigen-properties">
         <title>Properties of Eigenvalues and Eigenvectors</title>
         <statement>
           <p>
-            We list the following properties (without proof.)
             <ol>
               <li>
                 <p>
@@ -390,8 +390,10 @@
             <m> f(A)=\alpha_0 I+\alpha_1 A+\alpha_2 A^2+\cdots+\alpha_k A^k</m>. If <m>\lambda</m> is an eigenvalue of 
             <m>A</m>, theh <m>f(\lambda)</m> is an eigenvalue of <m>f(A)</m>.
           </p>
+
           <theorem>
             <statement>
+              <p>
               <ol>
                 <li>
                   <p>
@@ -404,6 +406,7 @@
                   </p>
                 </li>
               </ol>
+            </p>
             </statement>
           </theorem>
 

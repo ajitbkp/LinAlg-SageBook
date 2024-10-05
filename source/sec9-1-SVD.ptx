@@ -366,6 +366,8 @@
             If <m>A</m> is a <m>m\times n</m> matrix,
             then the <em>pseudoinverse</em>
             of <m>A</m> is matrix <m>X</m> satisfying the following properties:
+          </p>
+          <p>
             <ol>
               <li>
                 <p>
@@ -525,6 +527,7 @@
       
       
       <exercise xml:id="exer-9-1-14">
+        <p>
        <ol>
         <li>
           <p>
@@ -549,7 +552,7 @@
           </p>
         </li>
       </ol>
-    
+    </p>
     </exercise>
 
       <exercise xml:id="exer-9-1-15">
