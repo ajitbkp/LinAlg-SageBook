@@ -1,0 +1,221 @@
+<section>
+  <title>Orthogonality</title>
+  <introduction>
+    <p>
+      Recall, that if <m>S=\{v_1,\ldots,
+      v_k\}</m> is linearly independent subset of <m>\R^n</m> and <m>v_{k+1}\notin span(S)</m>,
+      then <m>S\cup \{v_{k+1}\}=\{v_1,\ldots,
+      v_k,v_{k+1}\}</m> is linearly independent subset of <m>\R^n</m>.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A set of vectors <m>\{v_1,\ldots,
+          v_k\}</m> is called orthogonal if
+          <me>
+            v_i\cdot v_j = \delta_{ij}=\begin{cases}1 \amp  \text{ if \(i=j\) }  \\ 0 \amp \text{ otherwise } \end{cases}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      If <m>x=(x_1,\ldots, x_n) \in \R^n</m>,
+      then <m>\norm{x}^2: =x_1^2+\cdots+x_n^2</m>.
+    </p>
+    <exercise xml:id="orth-ex2">
+      <statement>
+        <p>
+          Let <m>\{u_1,\ldots,
+          u_k\}</m> be an orthogonal set of vectors in <m>\R^n</m>.
+          Let <m>u\in \R^n</m> and define
+          <me>
+            u_{k+1}:=u-\frac{u_1\cdot u_{k+1}}{\norm{u_1}^2}u_1-\frac{u_2\cdot u_{k+1}}{\norm{u_2}^2}u_2-\cdots -\frac{u_k\cdot u_{k+1}}{\norm{u_k}^2}u_k
+          </me>,
+        </p>
+        <p>
+          Then
+        </p>
+        <p>
+          (i) <m>u_i\cdot u_{k+1}=0</m> for all <m>i=1,\ldots, k</m>
+        </p>
+        <p>
+          (ii) If <m>u\notin span(\{u_1,\ldots, u_k\})</m>,
+          then <m>u_{k+1}\neq 0</m> and
+          <m>\{u_1,\ldots,
+          u_k,u_{k+1}\}</m> is an orthogonal set.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          If <m>\{u_1,\ldots,
+          u_n\}</m> is orthogonal set then it is linearly independent.
+        </p>
+      </statement>
+    </exercise>
+    <definition>
+      <statement>
+        <p>
+          A basis <m>\beta =\{u_1,\ldots,
+          u_n\}</m> is called an orthogonal basis if <m>\beta</m> is an orthogonal set in <m>\R^n</m>.
+          In addition if <m>\norm{u_1}=1</m> for all <m>i</m>,
+          then <m>\beta</m> is called an orthonormal basis.
+        </p>
+      </statement>
+    </definition>
+    <exercise>
+      <statement>
+        <ol>
+          <li>
+            <p>
+              The standard basis <m>{\cal E} = \{e_1,\cdots,
+              e_n\}</m> is an orthogonal basis of <m>\R^n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\beta =\left\{\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right), \left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)\right\}</m> is an orthonormal basis of <m>\R^2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\beta=\{(2,1,1), (-1,1,1),(0,-1,1)\}</m> is an orthogonal basis of <m>\R^3</m>.
+              However, it is not an orthonormal basis.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\beta'=\left\{\left(\frac{2}{\sqrt{6}},\frac{1}{\sqrt{6}},\frac{1}{\sqrt{6}}\right), \left(\frac{-1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right),\left(0,\frac{-1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)\right\}</m> is an orthonormal basis of <m>\R^n</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </exercise>
+  </introduction>
+  <subsection>
+    <title>What is an advantage of having an orthonormal basis?</title>
+    <p>
+      Let <m>\beta =\{u_1,\ldots, u_n\}</m> be an orthonormal basis of <m>\R^n</m>.
+      Let <m>x\in \R^n</m>.
+      Then there exists scalars <m>\alpha_1,\ldots, \alpha_n</m> such that <m>x=\alpha_1u_1+\cdots +\alpha_nu_n</m>.
+      Then is is easy to check that <m>\alpha_i = x\cdot u_i</m> for all <m>i</m>.
+      This is advantage of having an orthonormal basis.
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          (i) Find the coordinates of a vector <m>(1,2)</m> with respect to an orthonormal basis <m>\beta =\left\{\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right), \left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)\right\}</m> of <m>\R^2</m>.
+        </p>
+        <p>
+          (ii) Find the coordinates of the vector <m>(2,5,7)</m> with respect to an orthonormal basis <m>\beta'=\left\{\left(\frac{2}{\sqrt{6}},\frac{1}{\sqrt{6}},\frac{1}{\sqrt{6}}\right), \left(\frac{-1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right),\left(0,\frac{-1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)\right\}</m> of <m>\R^3</m>.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      Next we deal with to find an orthonormal basis of <m>\R^n</m> or any subspace of <m>\R^n</m>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Gram-Schmidt Orthogonalization Process</title>
+    <p>
+      Let <m>\{v_1,\ldots, v_n\}</m> be a basis of <m>\R^n</m>.
+      Define
+      <md>
+        <mrow>u_1: \amp =\amp  v_1</mrow>
+        <mrow>u_2: \amp =\amp  v_2 -\frac{u_2\cdot u_1}{\norm{u_1}^2}u_1</mrow>
+        <mrow>u_3: \amp =\amp  v_3 -\frac{v_3\cdot u_1}{\norm{u_1}^2}u_1-\frac{v_3\cdot u_2}{\norm{u_2}^2}u_2</mrow>
+        <mrow>\vdots \amp \amp  \vdots</mrow>
+        <mrow>u_n: \amp =\amp  v_n -\frac{v_n\cdot u_1}{\norm{u_1}^2}u_1-\cdots -\frac{v_n\cdot u_{n-1}}{\norm{u_{n-1}}^2}u_{n-1}</mrow>
+      </md>
+    </p>
+    <p>
+      In view of Ex.
+      <xref ref="orth-ex2"></xref>,
+      it is easy to see that <m>\{u_1,\ldots,
+      u_n\}</m> is an orthogonal basis of <m>\R^n</m>.
+      Now we normalize <m>u_i's</m>.
+      Define <m>q_i=\frac{u_i}{\norm{u_i}}</m>.
+      Then <m>\{q_1,\cdots, q_n\}</m> is an orthononal basis of <m>\R^n</m>.
+      Note that we could have defined <m>q_i</m> immediately after defining <m>u_i</m>.
+    </p>
+    <p>
+      This process is called the Gram-Schmidt orthogonalization process.
+    </p>
+    <p>
+      Geometrically <m>u_2</m>,
+      constructed by subtracting the orthogonal projection of <m>v_2</m> on to <m>u_1</m>.
+      In order to construct <m>u_3</m>,
+      we take sum of orthogonal projections of <m>v_3</m> onto <m>u-1</m> and <m>u_2</m>,
+      which is the orthogonal projection of the plane spanned by <m>u_1</m> and <m>u_2</m> and subtract this from <m>v_3</m>.
+      Readers are encouraged to draw figures.
+    </p>
+    <example xml:id="gram-schmidt-eg1">
+      <statement>
+        <p>
+          Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of <m>\R^3</m> starting with a basis <m>\{(0,1,1), (1,1,1), (1,-2,2)\}</m>.
+          Let <m>v_1 = (0, 1, 1), v_2=(1, 1, 1), v_3=(1, -2, 2)</m>.
+          Then we have
+          <md>
+            <mrow>u_1: \amp =\amp  (0, 1, 1)</mrow>
+            <mrow>u_2: \amp =\amp  v_2 -\frac{u_2\cdot u_1}{\norm{u_1}^2}u_1=(1, 1, 1)-\frac{2}{2}(0,1,1)=(1,0,0)</mrow>
+            <mrow>u_3: \amp =\amp  v_3 -\frac{u_3\cdot u_1}{\norm{u_1}^2}u_1-\frac{u_3\cdot u_2}{\norm{u_2}^2}u_2</mrow>
+            <mrow>\amp  = \amp  (1, -2, 2)-\frac{0}{2}(0,1,1)-\frac{1}{1}(1,0,0)=(0,-2,2)</mrow>
+          </md>
+        </p>
+        <p>
+          Thus the orthonormal basis is obtained from the given basis is
+          <me>
+            \left\{q_1 = \left(0, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right), q_2=(1,0,0), q_3 =\left(0,\frac{-1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)\right\}
+          </me>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="gram-schmidt-eg2">
+      <statement>
+        <p>
+          Consider the matrix <m>A=\left(\begin{array}{rrrr} -1 \amp 1 \amp 0 \amp 1 \\ 1 \amp -1 \amp 0 \amp 1 \\ -1 \amp 0 \amp 2 \amp 1 \end{array} \right)</m>.
+          Find an orthogonal basis of the row space of <m>A</m>.
+          It is easy to check that rank of <m>A</m> is 3.
+          Hence row are linearly independent vectors in <m>\R^4</m>.
+        </p>
+        <p>
+          Let
+          <me>
+            v_1=(-1,1,0,1), v_2 = (1,-1,0,1),   v_3=(-1,0,2,1)
+          </me>.
+          <md>
+            <mrow>u_1: \amp =\amp  (-1,1,0,1)</mrow>
+            <mrow>u_2: \amp =\amp  v_2 -\frac{u_2\cdot u_1}{\norm{u_1}^2}u_1=(1,-1,0,1)-\frac{-1}{3}(-1,1,0,1)=(2/3, -2/3, 0, 4/3)</mrow>
+            <mrow>u_3: \amp =\amp  v_3 -\frac{u_3\cdot u_1}{\norm{u_1}^2}u_1-\frac{u_3\cdot u_2}{\norm{u_2}^2}u_2</mrow>
+            <mrow>\amp  = \amp  (-1,0,2,1)-\frac{2}{3}(-1,1,0,1)-\frac{2/3}{9/2}(2/3, -2/3, 0, 4/3)=(-1/2, -1/2, 2, 0)</mrow>
+          </md>
+        </p>
+        <p>
+          Hence
+          <me>
+            (-1, 1, 0, 1) (2/3, -2/3, 0, 4/3) (-1/2, -1/2, 2, 0)
+          </me>
+          is an orthogonal basis of the row space of <m>A</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of <m>\R^3</m> starting with a basis <m>\beta=\{(1,1,1),(-1,1,1),(-1,0,1)\}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace <m>W\subset \R^4</m> with basis
+          <me>
+            \beta = \{ (-1,1,1,0),(-1,0,1,0),(1,0,0,1)\}
+          </me>.
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+</section>

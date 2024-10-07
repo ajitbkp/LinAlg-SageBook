@@ -1,0 +1,133 @@
+<section>
+  <title>Exercises on  Eigenvalues and Eigenvectors</title>
+  <ol>
+    <li>
+      <p>
+        Find the eigenvalues and corresponding eigenvectors of the following matrices (i)
+        <m>\begin{pmatrix}2 \amp 0\\0 \amp 3 \end{pmatrix} ; \begin{pmatrix}0 \amp 1\\1 \amp 0 \end{pmatrix} ; \begin{pmatrix}1 \amp 0\\-1 \amp 0 \end{pmatrix} ; \begin{pmatrix}1 \amp 1\\1 \amp 1 \end{pmatrix}</m> (ii) <m>\begin{pmatrix}1 \amp 0\amp 0\\0\amp 2\amp 1\\2\amp 0\amp 3 \end{pmatrix} ; \begin{pmatrix}-3 \amp -2\amp 1\\-2\amp 0\amp 4\\-6\amp -3\amp 5 \end{pmatrix} ; \begin{pmatrix}-2 \amp 2\amp 2\\2\amp 1\amp -6\\-1\amp -2\amp 0 \end{pmatrix} ;\begin{pmatrix}2 \amp 2\amp 2\\2\amp 2\amp 2\\2\amp 2\amp 2 \end{pmatrix}</m>;
+      </p>
+    </li>
+    <li>
+      <p>
+        Let <m>A=\begin{pmatrix}-3 \amp -2\amp 1\\-2\amp 0\amp 4\\-6\amp -3\amp 5 \end{pmatrix}</m>.
+        Find the eigenvalues of <m>3A^3-5A^2+4I</m>
+      </p>
+    </li>
+    <li>
+      <p>
+        Let <m>A\begin{pmatrix}-3 \amp -2\amp 1\\-2\amp 0\amp 4\\-6\amp -3\amp 5 \end{pmatrix}</m>.
+        Show that <m>A</m> satisfies its characteristic equation and hence find <m>A^{-1}</m>.
+        Also find <m>A^4</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Check if the following matrices are positive definite?
+        <me>
+          A_1=\begin{pmatrix}1\amp  -7 \\-7\amp 3 \end{pmatrix} ; A_2=\begin{pmatrix}2 \amp  1\amp 3\\1\amp 4\amp -1\\3\amp -1\amp 2 \end{pmatrix} ; A_3=\begin{pmatrix}-3 \amp  -2\amp 1\\-2\amp 0\amp 4\\1\amp 4\amp 5 \end{pmatrix}
+        </me>
+      </p>
+    </li>
+    <li>
+      <p>
+        Find eigenvalues of <m>A_2 = \begin{pmatrix}0 \amp 1\\1 \amp 0 \end{pmatrix}</m> and <m>A_3=\begin{pmatrix}0 \amp 1\amp 1\\1\amp 0\amp 1\\1\amp 1\amp 0 \end{pmatrix}</m>.
+        Can you generalize this?
+      </p>
+    </li>
+    <li>
+      <p>
+        Find the algebraic and geometric multiplicities of each of the eigenvalues of <m>A = \begin{pmatrix}2 \amp 0 \amp 0 \amp 0\\0 \amp 2 \amp 0 \amp 0\\0 \amp 0 \amp -1 \amp 1\\0 \amp 0 \amp \amp -1 \end{pmatrix}</m>.
+        Is this matrix diagonalizable?
+      </p>
+    </li>
+    <li>
+      <p>
+        Consider the matrix <m>A=\left(\begin{array}{rr} 0 \amp \frac{1}{2} \\ -1 \amp \frac{3}{2} \end{array} \right)</m>.
+        What is <m>\displaystyle\lim_{n\to \infty} A^n</m>?
+      </p>
+    </li>
+    <li>
+      <p>
+        Let <m>A</m> be a <m>3\times 3</m> real matrix with eigenvalues <m>-1,0,1</m> and corresponding eigenvectors <m>(1, -4, 1), (1, -3, 1), (1, -2, 1/2)</m> respectively.
+        Find <m>A</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Suppose there are two internet service providers <m>A</m> and <m>B</m> in a city.
+        At present <m>A</m> has 50000 subscriber and <m>B</m> has 100000 subscribers.
+        A trend shows that every year 60% of <m>A</m> subscriber move to <m>B</m> and 40% of <m>B</m> move to <m>A</m>.
+        After 2 year how many subscribers <m>A</m> and <m>B</m> will have?
+        What happens in long run?
+      </p>
+    </li>
+    <li>
+      <p>
+        132 fishes are placed in a box with nine rooms.
+        See <xref ref="mouse2">Figure</xref>.
+        <figure>
+          <image>
+             <latex-image> <![CDATA[\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm] \clip(-1.0,-1.0) rectangle (10.0,10.); \draw [line width=1pt] (0,0)-- (9,0); \draw [line width=1pt] (9,0)-- (9,9); \draw [line width=1pt] (0,9)-- (9,9); \draw [line width=1pt] (0,9)-- (0,0); \draw [line width=1pt] (3,9)-- (3,8); \draw [line width=1pt] (0,6)-- (1,6); \draw [line width=1pt] (3,7)-- (3,5); \draw [line width=1pt] (2,6)-- (4,6); \draw [line width=1pt] (0,3)-- (1,3); \draw [line width=1pt] (3,4)-- (3,2); \draw [line width=1pt] (2,3)-- (4,3); \draw [line width=1pt] (3,1)-- (3,0); \draw [line width=1pt] (6,9)-- (6,8); \draw [line width=1pt] (9,6)-- (8,6); \draw [line width=1pt] (9,3)-- (8,3); \draw [line width=1pt] (6,7)-- (6,5); \draw [line width=1pt] (5,6)-- (7,6); \draw [line width=1pt] (5,3)-- (7,3); \draw [line width=1pt] (6,4)-- (6,2); \draw [line width=1pt] (6,0)-- (6,1); \draw (1.0,8.0) node[anchor=north west] {1}; \draw (4.0,8) node[anchor=north west] {2}; \draw (7,8) node[anchor=north west] {3}; \draw (1,5.0) node[anchor=north west] {4}; \draw (4,5.0) node[anchor=north west] {5}; \draw (7,5.0) node[anchor=north west] {6}; \draw (1,2) node[anchor=north west] {7}; \draw (4,2) node[anchor=north west] {8}; \draw (7,2) node[anchor=north west] {9};\end{tikzpicture}]]> </latex-image>
+          </image>
+        </figure>
+        Assume that, at regular intervals of time,
+        it is equally likely that fishes will decide to go through any door in the room or stay in the room.
+        Find how many fishes can be found in each room in long run.
+        Solve this problem using a
+        <m>3 \times 3</m> matrix stochastic matrix.
+      </p>
+    </li>
+    <li>
+      <p>
+        A travel company has a fleet of 6000 cars for renting.
+        A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>Depots</cell>
+            <cell>A</cell>
+            <cell>B</cell>
+            <cell>C</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>A</cell>
+            <cell>0.3</cell>
+            <cell>0.4</cell>
+            <cell>0.5</cell>
+          </row>
+          <row>
+            <cell>B</cell>
+            <cell>0.3</cell>
+            <cell>0.4</cell>
+            <cell>0.3</cell>
+          </row>
+          <row>
+            <cell>C</cell>
+            <cell>0.4</cell>
+            <cell>0.2</cell>
+            <cell>0.2</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday.
+        How should the company distribute these cars at various locations in order to serve the customers smoothly.
+      </p>
+    </li>
+  </ol>
+</section>

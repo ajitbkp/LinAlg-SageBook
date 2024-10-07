@@ -1,0 +1,1517 @@
+<section>
+  <title>System of linear equations</title>
+  <introduction>
+    <p>
+      A system of linear equations is a finite collection of linear equations.
+    </p>
+    <p>
+      Consider a system of <m>m</m> linear equations
+      <men xml:id="A_Label">
+        \begin{split} a_{11}x_1 + a_{12}x_2+ \ldots + a_{1n} x_n \amp = b_1\\ a_{21}x_1 + a_{22}x_2+ \ldots + a_{2n} x_n \amp =  b_2 \\ \ldots    \ldots  \ldots    \ldots  \ldots  \ldots    \ldots \ldots \amp  \ldots \ldots  \\ a_{m1}x_1 + a_{m2}x_2+ \ldots + a_{mn} x_n \amp  = b_m \end{split}
+      </men>
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A <em> solution</em> of the system of linear <xref ref="A_Label">equation</xref>
+          is an <m>n</m>-tuple of the real numbers
+          <m>(y_1, y_2, \cdots,
+          y_n)</m> such that <m>x_i = y_i</m> for each
+          <m>i = 1, 2, \ldots,
+          n</m> <em>satisfies each of the <m>m</m> equations</em>.
+          The set of all solutions of a system is called the {solution set} of the system,
+          which may be considered as a subset of <m>\R^n=\{(x_1,\ldots,x_n):x_i\in \R\}</m>,
+          the Cartesian product of the set <m>\R</m> of real numbers <m>n</m>-times.
+        </p>
+        <p>
+          If the solution set is nonempty then the system is said to be <em>consistent</em>
+          and otherwise it is said to be <em>inconsistent</em>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The above system of linear <xref ref="A_Label">equations</xref>
+      can be written as a single matrix equation as <m>AX = B</m>, where
+      <men xml:id="B_Label">
+        \begin{split} A=\left[ \begin{array}{llll} a_{11} \amp  a_{12} \amp  \ldots \amp  a_{1n} \\ a_{21} \amp  a_{22} \amp  \ldots \amp  a_{2n} \\ \vdots\amp  \vdots\amp  \vdots\amp \vdots\\ a_{m1} \amp  a_{m2} \amp  \ldots \amp  a_{mn} \end{array}\right],\; X=\left[ \begin{array}{c}x_1\\x_2\\ \vdots\\ x_n \end{array} \right], \; B=\left[ \begin{array}{c}b_1\\b_2\\ \vdots\\ b_m \end{array} \right] \end{split}
+      </men>
+    </p>
+    <p>
+      The matrix <m>A</m> is called the
+      <em>coefficient matrix</em>,
+      <m>B</m> is called the <em>column matrix of constants or known terms</em>
+      and <m>X</m> is called the <em>column matrix of the unknowns.</em>
+    </p>
+    <p>
+      All the essential data of the system can be gathered in one matrix by inserting the column matrix of the constants to the coefficient matrix as <m>n+1</m>-th column.
+      This matrix is called the <em>augmented or enlarged matrix</em> of the system.
+      Once we know the system,
+      we can get the augmented matrix associated with the system and conversely once we know the augmented matrix,
+      we know the system and start calculating the solutions.
+    </p>
+    <p>
+      The augmented matrix of the above system <m>AX=B</m> is given by
+      <me>
+        [A~|~B]= \begin{bmatrix}a_{11} \amp  a_{12}\amp \cdots \amp  a_{1n} \amp  |\amp  b_1\\ a_{21} \amp  a_{22}\amp \cdots \amp  a_{2n} \amp  |\amp  b_2\\ \vdots\amp  \vdots \amp  \ddots \amp  \vdots \amp  \vdots \amp  \vdots\\ a_{m1} \amp  a_{m2}\amp \cdots \amp  a_{mn} \amp  |\amp  b_m \end{bmatrix}
+      </me>
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Two systems of linear equations are called <em>equivalent</em>
+          if and only if they have the same set of solutions.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We will define some basic operations by which a system is transformed into an equivalent system.
+    </p>
+    <p>
+      Geometrically, solving a system of linear equations in two
+      (or three)
+      unknowns is equivalent to determining whether or not a family of lines
+      (or planes)
+      has a common point of intersection.
+    </p>
+    <remark>
+      <p>
+        Let <m>A</m> be <m>n\times n</m> real matrix whose columns are
+        <m>a_1,\ldots,
+        a_n</m> and <m>x=\begin{bmatrix}x_1\amp \cdots \amp  x_n \end{bmatrix} ^T</m>.
+        Then <m>Ax=x_1a_1+x_2a_2+\cdots +a_nx_n</m>.
+        In particular,
+        <m>Ax</m> is a linear combinations of column of <m>A</m>.
+        Thus if <m>\alpha=\begin{bmatrix}\alpha_1\amp \cdots \amp  \alpha_n \end{bmatrix} ^T</m> is a solution of <m>Ax=b</m>,
+        then <m>b</m> is linear combination of columns of <m>A</m>.
+        <me>
+          \begin{bmatrix}2 \amp  3 \amp  1 \amp  4\\ 1 \amp  2 \amp  -1 \amp  3\\ 3 \amp  -2 \amp  0 \amp  2\\ -2 \amp  0 \amp  2 \amp  1 \end{bmatrix}  \begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix} =\begin{bmatrix}2 x_1+ 3x_2 + x_3 + 4x_4\\ x_1 +2x_2 -x_3+ 3x_3\\ 3 x_1 -2 x_2+2x_4\\ -2x_1 +  2x_3 +x_4 \end{bmatrix} = x_1 \begin{bmatrix}2\\1\\3\\-2 \end{bmatrix} + x_2 \begin{bmatrix}3\\2\\-2\\0 \end{bmatrix} + x_3 \begin{bmatrix}1\\-1\\0\\2 \end{bmatrix} + x_4 \begin{bmatrix}4\\3\\2\\1 \end{bmatrix}
+        </me>.
+      </p>
+    </remark>
+  </introduction>
+  <subsection>
+    <title>Elementary operations</title>
+    <p>
+      The solution of a system of linear equations is unchanged if the following operations are performed.
+      If, fact this is the basis for solving a system of linear equations.
+      <ol>
+        <li>
+          <p>
+            Multiply one of the equations by a nonzero real number.
+            This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.
+          </p>
+        </li>
+        <li>
+          <p>
+            Multiply one of the equations by a real number and add the result to another equation,
+            leaving the original equation unchanged.
+            This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row,
+            leaving the original row unchanged.
+          </p>
+        </li>
+        <li>
+          <p>
+            Interchanging two equations.
+            This is equivalent to interchanging two rows of the augmented matrix of the system.
+          </p>
+        </li>
+        <li>
+          <p>
+            Bring the equations which are equivalent to <m>0 =0</m> to the bottom row.
+            This is equivalent to moving the zero rows
+            (rows with zero entries)
+            of the augmented matrix to the bottom.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      <em>Note: </em> If an equation of the system after the elementary after reduces to <m>0 = k</m>,
+      where <m>k \neq 0</m>, then the system has no solution.
+      This is equivalent to if a row of the augmented matrix is composed of zeros except for the last number,
+      then the system has no solution.
+    </p>
+  </subsection>
+  <subsection xml:id="elerow">
+    <title>Elementary row operations</title>
+    <p>
+      The following operations on a matrix are called
+      <em>elementary row operations</em>.
+      <ol>
+        <li>
+          <p>
+            interchange of two rows of a matrix;
+          </p>
+        </li>
+        <li>
+          <p>
+            multiplication of one row by a <em>non-zero scalar</em> <m>\lambda</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            adding a scalar <m>\lambda</m> times a row to another row.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A matrix <m>B</m> is said to be
+          <em>equivalent</em> to matrix <m>B</m>,
+          in notation <m>B \thicksim A</m>,
+          if <m>B</m> can be obtained from <m>A</m> by performing finite number of elementary row operations.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Row operations on a matrix can be obtained by matrix multiplication.
+      Before we see this, let us look at the following observations.
+    </p>
+    <observation>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix of real numbers.
+      Let the columns of <m>A</m> are <m>a_1,a_2,\ldots a_n</m>,
+      that is <m>A=\begin{bmatrix}a_1\amp a_2\amp \cdots a_n \end{bmatrix}</m>.
+      Let the rows of <m>A</m> are given by <m>R_1, R_2,\ldots, R_n</m>,
+      in particular,
+      <m>A=\begin{bmatrix}R_1\amp R_2\amp \cdots R_n \end{bmatrix} ^T</m>.
+      Let <m>e_1, e_2, \ldots e_n</m> are standard coordinate vectors in
+      <m>\mathbb{R}^n</m> , where <m>e_i</m> is the column matrix (vector) whose <m>i</m>-th entry is 1 and rest are zero.
+      That is <m>e_i=\begin{pmatrix}0\\\vdots\\ 1\\\vdots \\0 \end{pmatrix}</m>.
+      Then we have the following:
+    </p>
+    <p>
+      (i) <m>a_j=Ae_j</m> for each <m>j=1,\ldots, n</m>.
+      That is, <m>j</m>-th column can be obtained by multiplying <m>A</m> by <m>e_j</m> on the right.
+    </p>
+    <p>
+      (i) <m>R_i=e_i^TA</m> for each <m>i=1,\ldots, n</m>.
+      That is, <m>i</m>-th row can be obtained by multiplying <m>A</m> by <m>e_i^T</m> on the left.
+    </p>
+    <p>
+      (iii) <m>a_{ij}=e_i^TAe_j</m> for <m>1\leq i, j\leq n</m>.
+    </p>
+    </observation>
+    <definition>
+      <statement>
+        <p>
+          Let <m>e</m> denote an elementary row operation and <m>e(A)</m> the result of applying <m>e</m> to a <m>A</m>.
+          Let <m>E</m> be a matrix obtained by applying <m>e</m> to the identity matrix.
+          That is, <m>E=e(I)</m>.
+          Then <m>E</m> is called the elementary matrix corresponding to the elementary row operation <m>e</m>.
+          It is easy to see that an elementary matrix is non singular.
+        </p>
+      </statement>
+    </definition>
+    <theorem>
+      <title>Elementary Matrix Theorem</title>
+      <statement>
+        <p>
+          Let <m>e</m> be an elementary row operation and <m>E</m>,
+          the corresponding <m>m\times m</m> elementary matrix defined by <m>E = e(I_m)</m>.
+          Then, for any <m>m\times n</m> matrix <m>A</m>, <m>e(A) = E\cdot A</m>.
+        </p>
+      </statement>
+    </theorem>
+    <example>
+      <statement>
+        <p>
+          (i) Let <m>A=[a_{ij}]</m> be a rectangular matrix of order <m>3\times 4</m>.
+          Let <m>A_1</m> be a matrix obtained by interchanging 2nd and 3rd rows of <m>A</m>.
+          Then <m>A_1=EA</m> where <m>E=\begin{pmatrix}1\amp 0\amp 0\\0\amp 0\amp 1\\0\amp 1\amp 0 \end{pmatrix}</m>.
+        </p>
+        <p>
+          (ii) Let <m>A_2</m> be the matrix obtained by multiplying 2nd row of <m>A</m> by a scalar <m>\alpha</m>.
+          Then <m>A_2=EA</m> where <m>E=\begin{pmatrix}1\amp 0\amp 0\\0\amp k\amp 0\\0\amp 0\amp 1 \end{pmatrix}</m>.
+        </p>
+        <p>
+          (iii) Let <m>A_3</m> be the matrix obtained by adding 2 times 2nd row to the 3rd rows of <m>A</m> in place of the 3rd row.
+          Then <m>A_3=EA</m> where <m>E=\begin{pmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 2\amp 1 \end{pmatrix}</m>.
+        </p>
+      </statement>
+    </example>
+    <theorem xml:id="thm_eqv">
+      <statement>
+        <p>
+          Two matrices <m>A</m> and <m>B</m> are row equivalent if and only if there exists a non singular matrix <m>P</m> such that <m>B=PA</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        Since <m>B</m> is row equivalent to <m>A</m>,
+        there exists <m>k</m> elementary row matrices
+        <m>E_1, \ldots, E_k</m> such that write <m>B=E_k\cdot E_{k-1}\cdots E_1A</m>.
+        Define <m>P=E_k\cdot E_{k-1}\cdots E_1</m>, which is a non singular.
+      </p>
+    </proof>
+  </subsection>
+  <subsection>
+    <title>Matrix Inversion via Elementary Row Operations</title>
+    <p>
+      We can use the <xref ref="thm_eqv">theorem</xref>
+      to find the inverse of a matrix using elementary row operations.
+    </p>
+    <p>
+      If a matrix <m>A</m> is non singular and is row equivalent to the identity matrix <m>I</m> by a sequence of elementary row operations say <m>E_1,\ldots, E_k</m>,
+      then we have, <m>I= E_k\cdot E_{k-1}\cdots E_1A</m>.
+      This implies <m>E_k\cdot E_{k-1}\cdots E_1 \times I</m> =<m>A^{-1}</m>.
+      In other words,
+      the sequence of elementary row operations required to turn A into <m>I</m> also turns <m>I</m> into <m>A^{-1}</m> .
+    </p>
+    <p>
+      Thus to find inverse of <m>A</m>,
+      we adjoin <m>I</m> to <m>A</m> on the right to give the augmented matrix <m>[A~|~I]</m>,
+      and perform elementary row operations on <m>[A~|~I]</m> that successively reduces <m>A</m> to the identity matrix and then extract <m>A^{-1}</m> from the right half of the transformed augmented matrix.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Find the inverse of <m>A=\begin{bmatrix}1\amp 0\amp 2\\2\amp -1\amp 3\\4\amp 1\amp 8 \end{bmatrix}</m> using row operations.
+        </p>
+        <p>
+          <em>Solution: </em>
+          <md>
+            <mrow>= \begin{bmatrix}1\amp 0\amp 2\amp |\amp 1\amp 0\amp 0\\2\amp -1\amp 3\amp |\amp 0\amp 1\amp 0\\4\amp 1\amp 8\amp |\amp 0\amp 0\amp 1 \end{bmatrix} \amp \amp \xrightarrow{ \begin{array}{c}  R_2\to R_2-2R_1 \\ R_3\to R_3-4R_1 \end{array} } \begin{bmatrix}1\amp 0\amp 2\amp |\amp 1\amp 0\amp 0\\0\amp -1\amp -1\amp |\amp -2\amp 1\amp 0\\0\amp 1\amp 0\amp |\amp -4\amp -0\amp 1 \end{bmatrix}</mrow>
+            <mrow>[2mm] \amp \amp \xrightarrow{ \begin{array}{c}  R_2\to (-1)R_2 \\R_3\to R_3-R_2 \end{array} } \begin{bmatrix}1\amp 0\amp 2\amp |\amp 1\amp 0\amp 0\\0\amp 1\amp 1\amp |\amp 2\amp -11\amp 0\\0\amp 0\amp -1\amp |\amp -6\amp 1\amp 1 \end{bmatrix}</mrow>
+            <mrow>\amp \amp  \xrightarrow{\begin{array}{c}  R_3\to (-1)R_3 \end{array} } \begin{bmatrix}1\amp 0\amp 2\amp |\amp 1\amp 0\amp 0\\0\amp 1\amp 1\amp |\amp 2\amp -11\amp 0\\0\amp 0\amp 1\amp |\amp 6\amp -11\amp -11 \end{bmatrix}</mrow>
+            <mrow>[2mm]</mrow>
+            <mrow>\amp \amp  \xrightarrow{ \begin{array}{c}  R_2\to R_2-R_3 \\R_1\to R_1-2R_3 \end{array} } \begin{bmatrix}1\amp 0\amp 1\amp |\amp -11\amp 2\amp 2\\0\amp 1\amp 0\amp |\amp -4\amp 0\amp 1\\0\amp 0\amp 1\amp |\amp 6\amp -1\amp -1 \end{bmatrix}</mrow>
+          </md>
+        </p>
+        <p>
+          Hence <m>A^{-1}=\begin{bmatrix}-11\amp 2\amp 2\\-4\amp 0\amp 1\\6\amp -1\amp -1 \end{bmatrix}</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Elementary Column Operations</title>
+    <introduction>
+      <p>
+        Elementary column operations are the column analogue of elementary row operations.
+        Their precise properties can be deduced by applying elementary row operations to the transpose of a matrix and then transposing the result.
+        In particular,
+        if <m>F</m> is the elementary matrix corresponding to the elementary column operation <m>f</m> then <m>f( A ) = A . F</m>.
+        Note that, because transposition changes the order of a product,
+        elementary column operations correspond to post-multiplication by an elementary matrix.
+        Two matrices that are related by a sequence of elementary column operations are said to be column equivalent and two matrices <m>A</m> and <m>B</m> are column equivalent if and only if there exists a non singular matrix <m>Q</m> such that <m>B = A . Q</m>.
+      </p>
+    </introduction>
+    <subsubsection>
+      <title>Row-Echelon Matrices</title>
+      <definition xml:id="echelon">
+        <statement>
+          <p>
+            An <m>m \times n</m> matrix <m>A</m> is said to be in
+            <em>row-echelon form</em>
+            (<em>row-echelon matrix</em>) if it satisfies the following three conditions
+          </p>
+          <p>
+            1. All zero rows
+            (consisting entirely of zeros)
+            are at the bottom.
+          </p>
+          <p>
+            2. The first nonzero entry from the left in each nonzero row is a 1, called the leading 1 for that row.
+          </p>
+          <p>
+            3. Each leading 1 is to the right of all leading 1s in the rows above it.
+          </p>
+          <p>
+            A row-echelon matrix is said to be in
+            <em>reduced row-echelon form</em>
+            (<em>reduced row-echelon matrix</em>) if, in addition,
+            it satisfies the following condition:
+          </p>
+          <p>
+            4. Each leading 1 is the only nonzero entry in its column.
+          </p>
+        </statement>
+      </definition>
+      <example>
+        <statement>
+          <p>
+            {Examples of echelon matrices:}
+            <me>
+              \left[ \begin{array}{rrr} 1 \amp  2 \amp  4 \\ 0 \amp  1 \amp  -5 \\ 0 \amp  0 \amp  0 \end{array} \right], \left[\begin{array}{ccccr} 1\amp   3  \amp  6   \amp  8   \amp    0  \\ 0\amp   0  \amp   1  \amp   9  \amp    1  \\ 0\amp   0  \amp   0  \amp   1  \amp   -1 \end{array}  \right], \left[\begin{array}{cccc} 1\amp   0  \amp   3  \amp   4    \\ 0\amp   1  \amp   2  \amp   1    \\ 0\amp   0  \amp   1  \amp   4   \\ 0 \amp  0 \amp  0 \amp  1 \end{array}  \right]
+            </me>
+          </p>
+        </statement>
+      </example>
+      <example>
+        <statement>
+          <p>
+            The following matrices are not echelon matrix
+            <me>
+              \left[\begin{array}{ccccr} 1\amp   3  \amp  6   \amp  8   \amp    0  \\ 0\amp   0  \amp   1  \amp   9  \amp    1  \\ 0\amp   1  \amp   0  \amp   1  \amp   -1 \end{array}  \right], \left[\begin{array}{ccccr} 0\amp   1  \amp  6   \amp  8   \amp    0  \\ 0\amp   0  \amp   1  \amp   9  \amp    1  \\ 0\amp   1  \amp   0  \amp   1  \amp   -1 \end{array}  \right], \left[\begin{array}{cccr} 1  \amp  6   \amp  8   \amp    0  \\ 0  \amp   5  \amp   9  \amp    1  \\ 0  \amp   0  \amp   1  \amp   -1 \end{array}  \right]
+            </me>
+          </p>
+        </statement>
+      </example>
+      <theorem>
+        <statement>
+          <p>
+            Every nonzero <m>m \times n</m> matrix <m>A</m> is row equivalent to a matrix which is a row echelon matrix.
+          </p>
+        </statement>
+      </theorem>
+      <p>
+        We employ the following procedures to convert a matrix into a row echelon form:
+      </p>
+      <p>
+        (i) Choose a pivot element from the nonzero entries in the 1st column.
+        Row containing pivot is called the pivot row.
+      </p>
+      <p>
+        (ii) Interchange rows
+        (if necessary)
+        so that pivot row is the new 1st row.
+      </p>
+      <p>
+        (iii) Multiply pivot row by a constant so that the new pivot is 1.
+      </p>
+      <p>
+        (iv) Make all subsequent entries in the 1st column 0 by using elementary row operations.
+      </p>
+      <p>
+        (v) Repeat this process with next column.
+      </p>
+      <example>
+        <statement>
+          <p>
+            Reduce the matrix <m>A=\begin{bmatrix}1\amp 2 \amp 4 \\ 1\amp 0 \amp 2 \\ 2\amp 4 \amp 1 \end{bmatrix}</m> to row echelon form.
+          </p>
+          <p>
+            <em>Solution:
+            </em> <m>\left[ \begin{array}{rrrrr} 1\amp 2 \amp 4 \\ 1\amp 0 \amp 2 \\ 2\amp 4 \amp 1 \end{array} \right] \xrightarrow{ \begin{array}{c} R_2\to R_2-R_1 \\ R_3\to R_3-2R_1 \end{array} } \left[ \begin{array}{rrrrr} 1\amp 2 \amp 4 \amp \\ 0\amp -2 \amp -2 \amp \\ 0\amp 0 \amp -7 \amp \end{array} \right] \xrightarrow{ \begin{array}{c} R_1\to\frac{-1}{7}R_1 \\ R_2\to\frac{-1}{2}R_2 \end{array} } \left[ \begin{array}{ccccc} 1\amp 2 \amp 4 \\ 0\amp 1 \amp 1 \\ 0\amp 0 \amp 1 \end{array} \right]</m>
+          </p>
+          <p>
+            This <m>\left[ \begin{array}{ccccc} 1\amp   2   \amp   4      \\ 0\amp   1   \amp   1   \\ 0\amp   0   \amp   1 \end{array} \right]</m> is row-echelon matrix equivalent to <m>A</m>.
+            We can apply elementary row operation and make it to reduced-row-echelon form.
+            <me>
+              \left[ \begin{array}{ccccc} 1\amp   2   \amp   4      \\ 0\amp   1   \amp   1   \\ 0\amp   0   \amp   1 \end{array} \right]\xrightarrow{ \begin{array}{c} R_2\to R_2-R_3 \\R_1\to R_1-4R_3\\R_1\to R_1-2R_2 \end{array} } \left[ \begin{array}{ccccc} 1\amp   0   \amp   0      \\ 0\amp   1   \amp   0   \\ 0\amp   0   \amp   1 \end{array} \right]
+            </me>
+          </p>
+        </statement>
+      </example>
+    </subsubsection>
+  </subsection>
+  <subsection>
+    <title>Gauss Method of Elimination</title>
+    <p>
+      Solving a system of linear equations <m>AX = B</m>,
+      by reducing the augmented matrix
+      <m>A^*= [A,B]</m> to echelon form by using elementary row operations and then solving the equivalent system by back substitution is called solving by
+      <em>Gaussian elimination</em> process.
+    </p>
+    <p>
+      Now we state the method.
+      Only use the row operations stated above and work from top to bottom.
+      <ol>
+        <li>
+          <p>
+            Make in each row the first non-zero element
+            (called the main element)
+            equal to 1.
+          </p>
+        </li>
+        <li>
+          <p>
+            Make all elements under this main element equal to zero.
+          </p>
+        </li>
+        <li>
+          <p>
+            If one row becomes a zero row shift it to the bottom.
+          </p>
+        </li>
+        <li>
+          <p>
+            If there comes a row composed of zeroes except for the last element,
+            then stop.
+            The system has no solution.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <example xml:id="unique">
+      <statement>
+        <p>
+          { Solve the following system of linear equations.
+          <me>
+            \begin{array}{rcr} x+2y+4z\amp    = \amp  3   \\ x+2z\amp    = \amp  0   \\ 2x+4y+z\amp   =  \amp  3 \end{array}
+          </me>
+        </p>
+        <p>
+          <em>Solution: </em> The corresponding augmented matrix is
+          <me>
+            A^* =  [A~|~B]= \left[ \begin{array}{rrrrr} 1\amp  2   \amp  4   \amp   \vline  \amp  3   \\ 1\amp   0  \amp  2   \amp    \vline  \amp  0   \\ 2\amp    4 \amp   1  \amp    \vline  \amp   3 \end{array}  \right]
+          </me>
+        </p>
+        <p>
+          <m>\left[ \begin{array}{rrrrr} 1\amp 2 \amp 4 \amp \vline \amp 3 \\ 1\amp 0 \amp 2 \amp \vline \amp 0 \\ 2\amp 4 \amp 1 \amp \vline \amp 3 \end{array} \right] \xrightarrow{ \begin{array}{c} R_2-R_1 \\ R_3-2R_1 \end{array} } \left[ \begin{array}{rrrrr} 1\amp 2 \amp 4 \amp \vline \amp 3 \\ 0\amp -2 \amp -2 \amp \vline \amp -3 \\ 0\amp 0 \amp -7 \amp \vline \amp -3 \end{array} \right] \xrightarrow{ \begin{array}{c} \frac{-1}{7}R_1 \\ \frac{-1}{2}R_2 \end{array} } \left[ \begin{array}{ccccc} 1\amp 2 \amp 4 \amp \vline \amp 3 \\ 0\amp 1 \amp 1 \amp \vline \amp 3/2 \\ 0\amp 0 \amp 1 \amp \vline \amp 3/7 \end{array} \right]</m>
+        </p>
+        <p>
+          The above augmented matrix represents the following equations:
+          <me>
+            x+2y+4z=3; y+z=3/2; z=3/7
+          </me>.
+        </p>
+        <p>
+          Using back substitution,
+          we get <m>x=-6/7</m>, <m>y=15/14</m>, <m>z=3/7</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise xml:id="many">
+      <statement>
+        <p>
+          { Solve the following system of linear equations.}
+          <me>
+            \begin{array}{rcr} x+y+z-w\amp    = \amp  1   \\ y-z+w\amp    = \amp  -1   \\ 3x+6z-6w\amp   =  \amp  6   \\ -y+z-w\amp   =  \amp  1 \end{array}
+          </me>
+          using Gaussian elimination method.
+          Show that this system has infinitely many solutions.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="nosolution">
+      <statement>
+        <p>
+          { Solve the system and show that it has no solution.
+          <me>
+            \begin{array}{rcr} x+3y\amp    = \amp  1   \\ 2x+y\amp    = \amp  -3   \\ 2x+2y\amp   =  \amp  0 \end{array}
+          </me>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>Gauss-Jordan elimination method</title>
+    <p>
+      Guass-Jordan method of solving the linear system <m>AX=B</m> is very similar to that of the Gaussian elimination method.
+      In this method we continue the the row elimination till we reduce the row-reduced matrix of <m>A</m> to identity matrix.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let us consider the <xref ref="unique">example</xref>.
+          We have already have
+          <me>
+            \left[ \begin{array}{rrrrr} 1\amp  2   \amp  4   \amp   \vline  \amp  3   \\ 1\amp   0  \amp  2   \amp    \vline  \amp  0   \\ 2\amp    4 \amp   1  \amp    \vline  \amp   3 \end{array}  \right] \rightarrow \left[ \begin{array}{ccccc} 1\amp   2   \amp   4   \amp    \vline  \amp    3   \\ 0\amp   1   \amp   1   \amp    \vline  \amp   3/2   \\ 0\amp   0   \amp   1   \amp    \vline  \amp   3/7 \end{array} \right]
+          </me>
+        </p>
+        <p>
+          Now we use further row eliminations
+          <me>
+            \left[ \begin{array}{ccccc} 1\amp   2   \amp   4   \amp    \vline  \amp    3   \\ 0\amp   1   \amp   1   \amp    \vline  \amp   3/2   \\ 0\amp   0   \amp   1   \amp    \vline  \amp   3/7 \end{array} \right] \xrightarrow{ \begin{array}{c}  R_2-R_3   \\ R1-4R_3 \end{array} } \left[ \begin{array}{ccccc} 1\amp   2   \amp   0   \amp    \vline  \amp    9/7   \\ 0\amp   1   \amp   0   \amp    \vline  \amp   15/14   \\ 0\amp   0   \amp   1   \amp    \vline  \amp   3/7 \end{array} \right] \xrightarrow{ \begin{array}{c}  R_1-2R_2   \\ R_1-4R_3 \end{array} } \left[ \begin{array}{ccccc} 1\amp   0   \amp   0   \amp    \vline  \amp    -6/7   \\ 0\amp   1   \amp   0   \amp    \vline  \amp   15/14   \\ 0\amp   0   \amp   1   \amp    \vline  \amp   3/7 \end{array} \right]
+          </me>
+        </p>
+        <p>
+          Thus, we get <m>x=-6/7</m>, <m>y=15/14</m>, <m>z=3/7</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Rank of a matrix</title>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m \times n</m> matrix.
+          Delete any <m>m-k</m> rows and <m>n-l</m> columns of <m>A</m>.
+          The resulting matrix is called a
+          <em><m>k \times l</m> sub-matrix </em> of <m>A</m>.
+          If <m>k = l</m>, then it is called a
+          <em>square sub-matrix of <m>A</m> of order <m>k</m>.</em>
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          The <em>rank</em> of an <m>m \times n</m> matrix <m>A</m> is the order of the largest square sub-matrix of <m>A</m> whose determinant is non-zero.
+          We denote the rank of a matrix <m>A</m> by <m>r(A)</m>.
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <statement>
+        <p>
+          Determine the rank of <m>A= \left[\begin{array}{ccc} 1 \amp 1 \amp 1 \\ 2 \amp 3 \amp 4 \\ 4 \amp 5 \amp 6 \end{array} \right]</m>.
+        </p>
+      </statement>
+    </example>
+    <p>
+      <em>Solution: </em> We can see that <m>\mid A\mid = 0</m>.
+      Hence <m>r(A) \leq 2</m>.
+      Now we look for the square sub-matrix of <m>A</m> of order 2 whose determinant is non-zero.
+      Consider the square sub-matrix
+      <m>B= \left[ \begin{array}{cc} 1\amp 1 \\ 2\amp 3 \end{array} \right]</m>,
+      <m>\mid B\mid = 1</m>.
+      Hence <m>r(A) = 2</m>.
+    </p>
+    <observation xml:id="rank">
+    <p>
+      We list the following results:
+      <ol>
+        <li>
+          <p>
+            An <m>m \times n</m> matrix is of rank 0 if and only it is a zero matrix.
+          </p>
+        </li>
+        <li>
+          <p>
+            An <m>n \times n</m> square matrix <m>A</m> has rank <m>n</m> if and only if <m>|A| \neq 0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            An <m>n \times n</m> square matrix <m>A</m> has rank <m>\lt n</m> if and only if <m>|A| = 0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            For an <m>m \times n</m> matrix <m>A</m>,
+            rank of <m>A \leq \min (m, n)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The rank of a matrix is not affected if we insert zero column or a zero row
+            (of appropriate size)
+            to it.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>A</m> is an <m>m \times n</m> matrix,
+            then <m>r(A) = r(A^T)</m>, where <m>A^T</m> is the transpose of <m>A</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    </observation>
+    <theorem>
+      <statement>
+        <p>
+          Suppose <m>A</m> is an <m>m \times n</m> matrix.
+          The rank of <m>A</m> is equal to the number of non-zero rows in an echelon equivalent form of <m>A</m>.
+          In other words,
+          the rank of matrix<m>A</m> is the number of leading 1s in any row-echelon matrix to which <m>A</m> can be carried by row operations.
+        </p>
+      </statement>
+    </theorem>
+    <example>
+      <statement>
+        <p>
+          Let <m>A=\begin{bmatrix}1 \amp -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3 \end{bmatrix} \overrightarrow{\text{ Row echelon form } }\begin{bmatrix}1 \amp 0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp 0\amp 1\\0\amp 0\amp 0\amp 1\amp -1\\0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}</m>.
+          Hence <m>r(A)=3</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Consider a matrix <m>\begin{bmatrix}1 \amp 1 \amp 2 \amp a^2\\1 \amp 1-a \amp 2\amp 0 \\2 \amp 2-a \amp 6-a \amp 4 \end{bmatrix}</m>.
+          Find the rank of the matrix.
+        </p>
+        <p>
+          Let us apply elementary row operations of <m>A</m>.
+          We have
+          <md>
+            <mrow>\begin{bmatrix}1 \amp  1 \amp  2 \amp  a^2\\1 \amp  1-a\amp  2\amp  0 \\2 \amp  2-a \amp  6-a \amp  4 \end{bmatrix} \amp \xrightarrow{ \begin{array}{c} R_2-R_1   \\  R_3-2R_1 \end{array} }\amp \left[ \begin{array}{rrrrr} 1\amp    2    \amp    2   \amp   a^2   \\ 0\amp   -a    \amp   0   \amp   -a^2   \\ 0\amp   -a   \amp   2-a   \amp    4-2a^2 \end{array} \right]</mrow>
+            <mrow>[3mm] \amp \xrightarrow{ \begin{array}{c} R_3-R_2 \end{array} }\amp \left[ \begin{array}{rrrrr} 1\amp    2    \amp    2   \amp   a^2   \\ 0\amp   -a    \amp   0   \amp   -a^2   \\ 0\amp   0   \amp   2-a   \amp    4-a^2 \end{array} \right]</mrow>
+            <mrow>[3mm] \amp \xrightarrow{ \begin{array}{c} R_3-R_2 \end{array} }\amp \left[ \begin{array}{rrrrr} 1\amp    2    \amp    2   \amp   a^2   \\ 0\amp   1    \amp   0   \amp   a   \\ 0\amp   0   \amp   1   \amp    2+a \end{array} \right]  \text{ if }  a\neq 0, 2</mrow>
+          </md>.
+        </p>
+        <p>
+          Clearly the rank of <m>A</m> is 3 if <m>a\neq 0m 2</m>.
+        </p>
+        <p>
+          If <m>a=0</m> or <m>a=2</m>,
+          then it is easy to check that rank of <m>A</m> is 2.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Number of Solutions of a System</title>
+    <theorem xml:id="numsol">
+      <statement>
+        <p>
+          Let <m>AX = B</m> be a system of <m>m</m> linear equations in <m>n</m> unknowns and <m>A^* = [A~|~B]</m>,
+          the augmented matrix of the system.
+          Then
+          <ol>
+            <li>
+              <p>
+                The system has a solution i.e. the system is consistent if and only if <m>r(A) = r(A^*)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>r(A) = r(A^*)</m> and
+                <m>r(A) = r \lt n</m>, the number of unknowns,
+                then there are infinite number of solutions and <m>n-r</m> variables can be chosen freely.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>r(A) = r(A^*)</m> and
+                <m>r(A) = n</m>, the number of unknowns,
+                then there is only one (unique) solution for the system.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <corollary>
+      <statement>
+        <p>
+          Suppose <m>AX = B</m> is a system of <m>m</m> linear equations in <m>n</m> unknowns with <m>m \lt n</m>.
+          If <m>r(A)\neq r(A^*)</m>, then the system <m>AX=B</m> has no solution.
+        </p>
+      </statement>
+    </corollary>
+    <corollary>
+      <statement>
+        <p>
+          Suppose <m>AX = B</m> is a system of <m>m</m> linear equations in <m>n</m> unknowns with <m>m \lt n</m>.
+          Then the system either has no solution or has infinitely many solutions.
+        </p>
+      </statement>
+    </corollary>
+    <example>
+      <statement>
+        <p>
+          Let us consider the Example.
+          <xref ref="unique"></xref>.
+          Recall that the augmented matrix can be reduced to row-echelon form as
+          <me>
+            \left[ \begin{array}{rrrrr} 1\amp  2   \amp  4   \amp   \vline  \amp  3   \\ 1\amp   0  \amp  2   \amp    \vline  \amp  0   \\ 2\amp    4 \amp   1  \amp    \vline  \amp   3 \end{array}  \right] \xrightarrow{ \begin{array}{c} R_2-R_1   \\  R_3-2R_1 \end{array} } \left[ \begin{array}{rrrrr} 1\amp    2    \amp    4   \amp    \vline  \amp    3   \\ 0\amp   -2    \amp   -2   \amp    \vline  \amp   -3   \\ 0\amp    0    \amp   -7   \amp    \vline  \amp   -3 \end{array} \right] \xrightarrow{ \begin{array}{c}  \frac{-1}{7}R_3   \\ \frac{-1}{2}R_2 \end{array} } \left[ \begin{array}{ccccc} 1\amp   2   \amp   4   \amp    \vline  \amp    3   \\ 0\amp   1   \amp   1   \amp    \vline  \amp   3/2   \\ 0\amp   0   \amp   1   \amp    \vline  \amp   3/7 \end{array} \right]
+          </me>
+        </p>
+        <p>
+          Thus we have <m>r(A)=r(A^*)=3</m>,
+          hence this system has a unique solution.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let us consider the system <m>AX=B</m> where
+          <me>
+            A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\\3\amp 2\amp 8\amp 1\\2\amp 3\amp 7\amp 2\\-1\amp 2\amp 0\amp 4 \end{bmatrix}   B=\begin{bmatrix}-4\\4\\3\\-3 \end{bmatrix}   X=\begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix}
+          </me>.
+        </p>
+        <p>
+          <em>Solution: </em>
+        </p>
+        <p>
+          <m>A^*=\begin{bmatrix}1 \amp -2\amp 0\amp 3\amp |\amp -4\\3\amp 2\amp 8\amp 1\amp |\amp 4\\2\amp 3\amp 7\amp 2\amp |\amp 3\\-1\amp 2\amp 0\amp 4\amp |\amp -3 \end{bmatrix} \overrightarrow{\text{ Row echelon form } }\begin{bmatrix}1 \amp 0\amp 2\amp 0\amp |\amp 1\\0\amp 1\amp 1\amp 0\amp |\amp 1\\0\amp 0\amp 0\amp 1\amp |\amp -1\\0\amp 0\amp 0\amp 0\amp |\amp 0 \end{bmatrix}</m>.
+          Clearly <m>r(A)=r(A^*)=3\lt 4</m>,
+          hence this system has infinitely many solutions.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let us consider the system
+          <me>
+            x+y=1; 2x-y=3;y=3
+          </me>.
+        </p>
+        <p>
+          <em>Solution: </em> We have
+          <me>
+            A^*=\begin{pmatrix}1\amp 1\amp |\amp 1\\2\amp -1\amp |\amp 3\\0\amp 1\amp |\amp 3 \end{pmatrix} ; r(A)=2, r(A^*)=3 \text{ (check?) }
+          </me>.
+        </p>
+        <p>
+          Hence this system has no solution.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Homogeneous system of linear equations</title>
+    <definition>
+      <statement>
+        <p>
+          A system <m>AX = B</m> of linear equations is called
+          <em>homogeneous</em> if <m>B = 0</m>.
+          Otherwise it is called a <em>non homogeneous </em> system.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Observe that any homogeneous system <m>AX = 0</m> of linear equations has at least one solution,
+      namely the trivial solution
+      (<m>x_i = 0</m>, for all <m>i</m>).
+      The augmented matrix is got from adding one zero column to <m>A</m>.
+      Hence <m>r(A) = r(A^*)</m> <xref ref="numsol"/>.
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          A homogeneous system <m>AX = 0</m> of <m>n</m> equations in the same number of unknowns (<m>n</m> unknowns) has a nontrivial solution if and only if <m>A</m> is singular,
+          that is , if and only if <m>\det(A)=0</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        The given homogeneous system has a nontrivial solution if and only if it has infinitely many solutions,
+        if and only if <m>r(A)\lt n</m>,
+        the number of variables <xref ref="numsol"/>.
+        But <m>r(A)\lt n</m>, if and only if <m>A</m> is singular.
+      </p>
+    </proof>
+    <theorem>
+      <statement>
+        <p>
+          A homogeneous system <m>AX = 0</m> of <m>m</m> equations in <m>n</m> unknowns,
+          where <m>m \lt n</m> has infinitely many nontrivial solutions.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        If <m>m \lt n</m>,
+        then <m>r(A) \lt n</m> and hence the result follows from thm.
+        <xref ref="numsol"></xref>.
+      </p>
+    </proof>
+    <p>
+      We would like to get the connection between solutions of a homogeneous system <m>AX = 0</m> and the solutions of <m>AX = B</m>,
+      <m>B \neq 0</m>.
+      These are stated in the following Theorem.
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          Suppose the non homogeneous system <m>AX = B</m> of linear equations has a solution say <m>X = X_0</m>.
+          All the solutions of this system are of the form
+          <me>
+            X_0 + X_k
+          </me>,
+          where <m>X_k</m> runs through all the solutions of the corresponding homogeneous system <m>AX =0</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        Let <m>X_K</m> be a solution of <m>AX=0</m>.
+        Then <m>A(X_0 + X_k) = AX_0 + A X_k = B + 0 = B</m>.
+        Hence <m>X_0 +X_k</m> is a solution of <m>AX = B</m>.
+        Suppose <m>Y</m> is a solution of <m>AX = B</m>, i.e.
+        <m>AY = B</m>.
+        Then <m>A (Y - X_0) = 0</m> and hence <m>Y-X_0</m> is a solution of <m>AX = 0</m> and <m>Y = (Y-X_0) + X_0</m>.
+      </p>
+    </proof>
+    <p>
+      The above theorem can be written equivalently as
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          If <m>(\alpha_1 ,\ldots, \alpha_n)</m> is a solution of a system of linear equations,
+          then the complete solution is given by <m>x_1 = \alpha_1 + y_1 ,\ldots , x_n = \alpha_n + y_n</m> , where
+          <m>(y_1 ,\ldots,
+          y_n)</m> is the general solution of the associated homogeneous system.
+        </p>
+      </statement>
+    </theorem>
+    <example>
+      <statement>
+        <p>
+          Let us consider one equation in two variables, <m>2x_1+3x_2=5</m>.
+          The corresponding homogeneous system is <m>2x_1+3x_2=0</m>.
+          It is easy see that <m>\left\{\begin{bmatrix}\alpha\\-\frac{2}{3}\alpha \end{bmatrix} :\alpha\in \R\right\}</m> is set of all solutions of <m>2x_1+3x_2=0</m>.
+          Let us consider a solution
+          <m>X_0=\begin{bmatrix}0\\\frac{5}{3} \end{bmatrix}</m> of the non homogeneous system <m>2x_1+3x_2=5</m>.
+          Let <m>X=\begin{bmatrix}\alpha\\-\frac{2}{3}\alpha \end{bmatrix}</m> by any solution of <m>2x_1+3x_2=0</m>.
+          Then it is easy to check that
+          <m>X_0+X=\begin{bmatrix}\alpha\\\frac{5}{3}-\frac{2}{3}\alpha \end{bmatrix}</m> is a solution of <m>2x_1+3x_2=5</m>.
+        </p>
+        <p>
+          Alternatively, to solve <m>2x_1+3x_2=5</m>,
+          we can free one of the variable say <m>x_1</m>.
+          That is <m>x_1</m> can take any real value.
+          Let <m>x_1=\alpha</m>, then <m>x_2=\frac{5}{3}-\frac{2}{3}\alpha</m>.
+          Hence a generic solution of
+          <m>2x_1+3x_2=5</m> is given by <m>\begin{bmatrix}x_1\\x_2 \end{bmatrix} =\begin{bmatrix}\alpha\\\frac{5}{3}-\frac{2}{3}\alpha \end{bmatrix}</m>,
+          which can be rewritten as <m>\begin{bmatrix}\alpha\\\frac{5}{3}-\frac{2}{3}\alpha \end{bmatrix} =\begin{bmatrix}0\\\frac{5}{3} \end{bmatrix} +\begin{bmatrix}\alpha\\-\frac{2}{3}\alpha \end{bmatrix}</m>.
+          Thus all solutions of <m>2x_1+3x_2=5</m> are of the form
+          <me>
+            \left\{\begin{bmatrix}0\\\frac{5}{3} \end{bmatrix} +\begin{bmatrix}\alpha\\-\frac{2}{3}\alpha \end{bmatrix}  :\alpha \in \R\right\}
+          </me>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let consider 2 equations in three variables.
+          <md>
+            <mrow xml:id="eg_1_0" number="yes">2x_1-x_2-x_3=5;\amp  \amp x_1+x_2-2x_3=7</mrow>
+          </md>
+        </p>
+        <p>
+          The corresponding homogeneous system is given by
+          <md>
+            <mrow xml:id="eg_1_1" number="yes">2x_1-x_2-x_3=0;\amp  \amp x_1+x_2-2x_3=0</mrow>
+          </md>
+        </p>
+        <p>
+          It is easy to see that the set of all solutions of the homogeneous system<nbsp/><xref ref="eg_1_1"/> is
+          <me>
+            \begin{bmatrix}x_1\\x_2\\ x_3 \end{bmatrix} =\left\{ \begin{bmatrix}\alpha\\ \alpha\\ \alpha \end{bmatrix} : \alpha\in \R \right\}
+          </me>
+        </p>
+        <p>
+          Adding the two equation of the system<nbsp/><xref ref="eg_1_0"/>,
+          we get <m>3x_1-3x_3=12</m> which implies <m>x_1=4+x_3</m>.
+          Now substituting <m>x_1=4+x_3</m> in the second equation of<nbsp/><xref ref="eg_1_0"/>, we get <m>x_2=3+x_3</m>.
+          Here we can take <m>x_3</m> and free variable,
+          hence any solution of<nbsp/><xref ref="eg_1_0"/> is of the form
+          <m>\begin{bmatrix}4+\alpha\\3+\alpha\\\alpha \end{bmatrix}</m> which can be written as <m>\begin{bmatrix}4\\3\\0 \end{bmatrix} +\begin{bmatrix}\alpha\\\alpha\\\alpha \end{bmatrix}</m>.
+          Note that <m>\begin{bmatrix}4\\3\\0 \end{bmatrix}</m> is a solution of<nbsp/><xref ref="eg_1_0"/>.
+          Thus set of all solution of<nbsp/><xref ref="eg_1_0"/> is of the form
+          <me>
+            \begin{bmatrix}x_1\\x_2\\ x_3 \end{bmatrix} =\left\{ \begin{bmatrix}4\\3\\0 \end{bmatrix} +\begin{bmatrix}\alpha\\ \alpha\\ \alpha \end{bmatrix} : \alpha\in \R \right\}
+          </me>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Solution of a linear system using the inverse of the
+    coefficient  matrix</title>
+    <p>
+      Suppose we have a system <m>AX = B</m> of <m>n</m> linear equations in the same number of variables
+      (hence <m>A</m> is an <m>n \times n</m> square matrix).
+      Further assume that <m>A</m> is non singular,
+      that is <m>\det A\neq 0</m>.
+      That is, the inverse of <m>A</m> exists.
+      Multiply the matrix equation <m>AX = B</m> on the left by <m>A^{-1}</m>,
+      we get <m>A^{-1} A X = X = A^{-1} B</m>.
+      Thus the solution is <m>X = A^{-1} B</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Solve the system of equations using matrix inverse method.
+          <me>
+            \begin{array}{rrr} -3x + 6 y -11z \amp = \amp  4 \\ 3x - 4y + 6z \amp  =\amp  -3  \\ 4x -8y + 13z \amp = \amp - 7 \end{array}
+          </me>
+        </p>
+        <p>
+          <em>Solution:
+          </em> The system is equivalent to <m>AX=B</m> where
+          <m>A=\begin{pmatrix}-3\amp 6 \amp -11 \\ 3\amp 4\amp 6 \\ 4\amp -8\amp 13 \end{pmatrix}</m> and <m>B=\begin{pmatrix}4\\-3\\-7 \end{pmatrix}</m>
+        </p>
+        <p>
+          Check that <m>A^{-1}=\frac{1}{50}\begin{pmatrix}100 \amp 10 \amp 80\\ -15 \amp 5 \amp -15\\ -40 \amp 0 \amp -30 \end{pmatrix}</m>.
+        </p>
+        <p>
+          Hence the required solution is <m>X=A^{-1}B=\frac{1}{50}\begin{pmatrix}100 \amp 10 \amp 80\\ -15 \amp 5 \amp -15\\ -40 \amp 0 \amp -30 \end{pmatrix} \begin{pmatrix}4\\-3\\-7 \end{pmatrix} =\begin{pmatrix}\frac{-19}{5}\\\frac{3}{10}\\1 \end{pmatrix}</m>
+        </p>
+      </statement>
+    </example>
+    <definition>
+      <statement>
+        <p>
+          A square matrix <m>A</m> is called an
+          <em>idempotent</em> matrix if <m>A^2=A</m>.
+        </p>
+        <p>
+          A square matrix <m>A</m> is called a <em>nilpotent</em>
+          matrix if there exists a positive integer <m>k</m> such that <m>A^k=0</m>.
+        </p>
+        <p>
+          A square matrix <m>A</m> is called an unipotent matrix if <m>A-I_{n\times n}</m> is nilpotent.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The matrix <m>\begin{bmatrix}2\amp -2\amp -4\\-1\amp 3\amp 4\\1\amp -2\amp -3 \end{bmatrix}</m> is an example of idempotent matrix.
+    </p>
+    <p>
+      Any upper triangular matrix whose all diagonal entries are zero is a nilpotent matrix.
+      The matrix <m>\begin{bmatrix}2\amp 3\amp -5\\2\amp 3\amp -5\\2\amp 3\amp -5 \end{bmatrix}</m> is an example of nilpotent matrix which is not an upper triangular matrix.
+    </p>
+    <p>
+      Any upper triangular matrix is unipotent matrix.
+      <m>A=\left[ \begin{array}{ccc}1\amp 1\amp 0\\ 0\amp 1\amp 0\\ 0\amp 1\amp 1 \end{array} \right]</m> is an example of unipotent matrix.
+    </p>
+  </subsection>
+  <subsection>
+    <title><m>LU</m> Factorization</title>
+    <p>
+      Let A be a square matrix.
+      An <m>LU</m> decomposition is a decomposition of the matrix <m>A</m> of form <m>A = LU</m> where <m>L</m> and <m>U</m> are lower and upper triangular matrices
+      (of the same size),
+      respectively.
+    </p>
+    <p>
+      Let <m>A=LU</m> where <m>L=[\ell_{ij}]</m> with
+      <m>\ell_{ij}=0</m> if <m>i\lt j</m> is lower triangular and <m>U=[u_{ij}]</m> with
+      <m>u_{ij}=0</m> if <m>i>j</m> is an upper triangular matrix.
+    </p>
+    <p>
+      Equating the entries of the matrices <m>A</m> and <m>LU</m> we get
+      <md>
+        <mrow xml:id="LU_eq1" number="yes">\ell_{i1}u_{1j}+\ell_{i2}u_{2j}+\cdots +\ell_{in}u_{nj}\amp =\amp a_{ij} \text{ where }  \ell_{ij}=0 \text{ if  } i\lt j \text{ and } u_{ij}=0 \text{ if }  i>j</mrow>
+      </md>.
+    </p>
+    <p>
+      Note that Eqn.
+      <xref ref="LU_eq1"></xref> gives us <m>n^2</m> equations in <m>n(n+1)</m> unknowns hence it can be solved by taking arbitrary values for any <m>n</m> unknowns.
+      One of the simplest choice are
+    </p>
+    <p>
+      (i) <m>\ell_{ii}=1</m> for
+      <m>1\leq i\leq n</m> this method is called Doolittle method
+    </p>
+    <p>
+      (ii) <m>u_{ii}=1</m> for <m>1\leq i\leq n</m>,
+      this method is called Crout's method
+    </p>
+    <p>
+      The key to LU-decomposition is being able to transform the given matrix into upper triangular using elementary row operation,
+      that involves <em>adding multiples of rows to rows.</em>
+      Let us assume that we need <m>k</m> elementary such row operations to transform <m>A</m> to an upper triangular matrix <m>U</m>.
+      That is
+      <me>
+        E_kE_{k-1}\ldots E_1 A=U
+      </me>
+    </p>
+    <p>
+      Since elementary matrices are invertible,
+      we can multiply both sides by
+      <m>(E_kE_{k-1}\ldots E_1)^{-1}</m> to get the required LU decomposition of <m>A</m>.
+      Thus
+      <me>
+        A=E^{-1}_1 E^{-1}_2\cdots E^{-1}_kU=LU
+      </me>
+    </p>
+    <p>
+      It is very easy to see that
+      <m>E^{-1}_1 E^{-1}_2\cdots E^{-1}_k</m> is an upper triangular matrix with diagonal entries 1.
+    </p>
+    <p>
+      An invertible matrix admits an LU factorization if and only if all its principal minors are non-zero.
+      The factorization is unique if we require that the diagonal of L
+      (or U)
+      consist of ones.
+    </p>
+    <p>
+      If the matrix is singular, then an LU factorization may still exist.
+      In fact, a square matrix of rank k has an LU factorization if the first k principal minors are non-zero.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>A=\begin{pmatrix}0 \amp 1 \\1 \amp 0 \end{pmatrix}</m>.
+          It is easy to check that <m>A</m> does not have Dolittle <m>LU</m>-decomposition.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg_lu1">
+      <statement>
+        <p>
+          Let <m>A=\begin{pmatrix}1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix}</m>.
+          Find the LU decomposition of <m>A</m> using Dolittle's method.
+        </p>
+        <p>
+          Let
+          <me>
+            A=\begin{pmatrix}1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix} = \begin{pmatrix}1\amp 0\amp 0\\\ell_{21}\amp 1\amp 0\\\ell_{31}\amp \ell_{32}\amp 1 \end{pmatrix} \begin{pmatrix}u_{11}\amp u_{12}\amp u_{13}\\0\amp u_{22}\amp u_{23}\\0\amp 0\amp u_{33}. \end{pmatrix}
+          </me>
+        </p>
+        <p>
+          Which implies
+          <me>
+            \begin{pmatrix}1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix} = \begin{pmatrix}u_{11}\amp u_{12}\amp u_{13}\\\ell_{21}u_{11}\amp \ell_{21}u_{12}+u_{22}\amp \ell_{21}u_{13}+u_{23}\\ \ell_{31}u_{11}\amp \ell_{31}u_{12}+\ell_{32}u_{22}\amp \ell_{31}u_{13}+\ell_{32}u_{23}+u_{33} \end{pmatrix}
+          </me>.
+        </p>
+        <p>
+          Equating the two matrices <m>A</m> and <m>LU</m> and solving, we get
+          <me>
+            \begin{array}{lll} u_{11}=1,\amp u_{12}=-1,\amp u_{13}=5\\ \ell_{21}u_{11}=2\Rightarrow\ell_{21}=2,\amp \ell_{21}u_{12}+u_{22}=-3\Rightarrow u_{22}=-1,\amp \ell_{21}u_{13}+u_{23}=1\Rightarrow u_{23}=-9\\ \ell_{31}u_{11}=1\Rightarrow\ell_{31}=1,\amp \ell_{31}u_{12}+\ell_{32}u_{22}=3\Rightarrow \ell_{32}=-4,\amp \ell_{31}u_{13}+\ell_{32}u_{23}+u_{33}=7\Rightarrow u_{33}=-34 \end{array}
+          </me>
+        </p>
+        <p>
+          Hence
+          <me>
+            A=\begin{pmatrix}1\amp 0\amp 0\\2\amp 1\amp 0\\1\amp -4\amp 1 \end{pmatrix} \begin{pmatrix}1\amp -1\amp 5\\0\amp -1\amp -9\\0\amp 0\amp -34 \end{pmatrix}
+          </me>
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg_lu2">
+      <statement>
+        <p>
+          Let <m>A=\begin{pmatrix}1\amp 1\amp 1\\3\amp 1\amp -3\\1\amp -2\amp -5 \end{pmatrix}</m>.
+          Find the LU-decomposition of <m>A</m> using Crout's method.
+        </p>
+        <p>
+          Let
+          <me>
+            A= \begin{pmatrix}\ell_{11}\amp 0\amp 0\\\ell_{21}\amp \ell_{22}\amp 0\\\ell_{31}\amp \ell_{32}\amp \ell_{33} \end{pmatrix} \begin{pmatrix}1\amp u_{12}\amp u_{13}\\0\amp 1\amp u_{23}\\0\amp 0\amp 1 \end{pmatrix} =\begin{pmatrix}\ell_{11}\amp \ell_{11}u_{12}\amp \ell_{11}u_{13}\\ \ell_{21}\amp \ell_{21}u_{12}+\ell_{22}\amp \ell_{21}u_{13}+\ell_{22}u_{23}\\ \ell_{31}\amp \ell_{31}u_{12}+\ell_{32}\amp \ell_{31}u_{13}+\ell_{32}u_{23}+\ell_{33} \end{pmatrix}
+          </me>
+        </p>
+        <p>
+          Equating the two matrices <m>A</m> and <m>LU</m> and solving, we get
+          <me>
+            \begin{array}{lll} \ell_{11}=1,\amp u_{12}=1,\amp u_{13}=1\\ \ell_{21}=3\amp \ell_{22}=-2\amp u_{23}=3\\ \ell_{31}=1\amp \ell_{32}=-3\amp \ell_{33}=3 \end{array}
+          </me>
+        </p>
+        <p>
+          Hence
+          <me>
+            A=\begin{pmatrix}1\amp 1\amp 1\\3\amp 1\amp -3\\1\amp -2\amp -5 \end{pmatrix} =\begin{pmatrix}1\amp 0\amp 0\\3\amp -2\amp 0\\1\amp -3\amp 3 \end{pmatrix} \begin{pmatrix}1\amp 1\amp 1\\0\amp 1\amp 3\\0\amp 0\amp 1 \end{pmatrix}
+          </me>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Solving system of equations using LU factorization</title>
+    <p>
+      LU-factorization is very useful in solving system of linear equation.
+      Let <m>AX=b</m> represents <m>n</m> equations in <m>n</m> variables and that <m>A=LU</m> is a LU factorization of <m>A</m>.
+      Then <m>AX=LUX=b</m> can be written as <m>LZ=b</m> where <m>UX=Z</m>.
+      Now <m>LZ=b</m> can be solved using forward substitution method and <m>UX=z</m> can be solved using the backward substitution resulting in solution of the system.
+    </p>
+    <p>
+      LU-factorization method allows to solve a whole lot of linear equations having same coefficient matrix.
+    </p>
+    <example xml:id="eg_lu3">
+      <statement>
+        <p>
+          Solve the system of equations <m>Ax=b</m> using using Doolittle method,
+          where <m>A=\begin{pmatrix}1\amp -1\amp 5\\2\amp -3\amp 1\\1\amp 3\amp 7 \end{pmatrix}</m> and <m>b=\begin{pmatrix}7\\-6\\5 \end{pmatrix}</m>
+        </p>
+        <p>
+          From <xref ref="eg_lu1">Example</xref>,
+          we have <m>L=\begin{pmatrix}1\amp 0\amp 0\\2\amp 1\amp 0\\1\amp -4\amp 1 \end{pmatrix}</m> and <m>U=\begin{pmatrix}1\amp -1\amp 5\\0\amp -1\amp -9\\0\amp 0\amp -34 \end{pmatrix}</m>
+        </p>
+        <p>
+          Let <m>X=\begin{pmatrix}x_1\\x_2\\x_3 \end{pmatrix}</m>,
+          <m>Z=\begin{pmatrix}z_1\\z_2\\z_3 \end{pmatrix}</m>.
+          <m>AX=B</m> is equivalent to <m>LU=B</m> which can be written as <m>LZ=b</m> where <m>Z=UX</m>.
+        </p>
+        <p>
+          First we solve
+          <me>
+            LZ=b\Longrightarrow \begin{pmatrix}z_1\\2z_1+z_2\\z_1-4z_2+z_3 \end{pmatrix} =\begin{pmatrix}7\\-6\\5 \end{pmatrix}
+          </me>
+        </p>
+        <p>
+          Using forward substitution we get,
+          <m>z_1=7, z_2=-20, z_3=-82</m>.
+          Now, we the required solution by solving <m>UX=Z</m>.
+          <me>
+            UX=Z\Longrightarrow \begin{pmatrix}x_1-x_2+5x_3\\-x_2-9x_3\\-34x_3 \end{pmatrix} =\begin{pmatrix}7\\-20\\-82 \end{pmatrix}
+          </me>
+        </p>
+        <p>
+          Now solving using the back substitution we get,
+          <m>x_1=\frac{115}{17}, x_2=\frac{-29}{17}</m> and <m>x_3=\frac{41}{17}</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Solve the following system of equations using LU-decomposition
+          <me>
+            2x+y+3z=-1; 4x+y+7z=5; -6x-2y-12=-2
+          </me>
+        </p>
+        <p>
+          <em>Solution:
+          </em> The above system is equivalent to <m>AX=B</m> where
+          <me>
+            A=\begin{pmatrix}2 \amp  1 \amp  3\\ 4 \amp  1 \amp  7 \\ -6 \amp  -2 \amp  -12 \end{pmatrix} , X=\begin{pmatrix}x\\y\\z \end{pmatrix} \text {and } B=\begin{pmatrix}-1\\5\\-2 \end{pmatrix}
+          </me>
+        </p>
+        <p>
+          First of all let us decompose <m>A=LU</m> using the elementary row operation.
+          <md>
+            <mrow>A=\begin{pmatrix}2 \amp  1 \amp  3\\ 4 \amp  1 \amp  7 \\ -6 \amp  -2 \amp  -12 \end{pmatrix}  \amp \xrightarrow{R_2\to R_2-2R_1} \amp \begin{pmatrix}2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ -6 \amp  -2 \amp  -12 \end{pmatrix} =\begin{pmatrix}1 \amp  0 \amp  0\\ -2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1 \end{pmatrix} A=E_1A</mrow>
+            <mrow>\amp \xrightarrow{R_3\to R_3+3R_1} \amp \begin{pmatrix}2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  1 \amp  -3 \end{pmatrix} =\begin{pmatrix}1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 3 \amp  0 \amp  1 \end{pmatrix} E_1A=E_2E_1A</mrow>
+            <mrow>\amp \xrightarrow{R_3\to R_2+R_2}\amp \begin{pmatrix}2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2 \end{pmatrix} =\begin{pmatrix}1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  1 \amp  1 \end{pmatrix} E_2E_1A=E_3E_2E_1A</mrow>
+          </md>
+        </p>
+        <p>
+          Note that
+          <me>
+            E_1= \begin{pmatrix}1 \amp  0 \amp  0\\ -2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1 \end{pmatrix} , E_2=\begin{pmatrix}1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 3 \amp  0 \amp  1 \end{pmatrix} \text{ and } E_3=\begin{pmatrix}1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  1 \amp  1 \end{pmatrix}
+          </me>
+        </p>
+        <p>
+          Their inverses are given by
+          <me>
+            E^{-1}_1= \begin{pmatrix}1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1 \end{pmatrix} , E^{-1}_2=\begin{pmatrix}1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ -3 \amp  0 \amp  1 \end{pmatrix} \text{ and } E^{-1}_3=\begin{pmatrix}1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  -1 \amp  1 \end{pmatrix}
+          </me>
+        </p>
+        <p>
+          Thus
+          <me>
+            L=E^{-1}_1E^{-1}_2E^{-1}_3=\begin{pmatrix}1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1 \end{pmatrix} \text{ and }  A=LU=\begin{pmatrix}1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1 \end{pmatrix}  \begin{pmatrix}2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2 \end{pmatrix}
+          </me>
+        </p>
+        <p>
+          Now the equation <m>AX=B</m> becomes <m>LUX=B</m>.
+          Let <m>UX=Y=\begin{pmatrix}u\\v\\w \end{pmatrix}</m>.
+          First we solve <m>LY=B</m>.
+          That is
+          <me>
+            \begin{pmatrix}1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1 \end{pmatrix}  \begin{pmatrix}u\\v\\w \end{pmatrix} =\begin{pmatrix}-1\\5\\-2 \end{pmatrix}
+          </me>
+        </p>
+        <p>
+          Solving the above system using the forward substitution we get <m>u=-1, v=7, w=2</m>.
+          Now substituting the in equation <m>UX=Y</m> we get
+          <me>
+            \begin{pmatrix}2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2 \end{pmatrix}  \begin{pmatrix}x\\y\\z \end{pmatrix} =\begin{pmatrix}-1\\7\\2 \end{pmatrix}
+          </me>
+        </p>
+        <p>
+          Solving the above system by back substitution we get the required solution <m>x=5, y=-8, z=-1</m>.
+        </p>
+      </statement>
+    </example>
+    <p>
+      Problems set on System of Linear EquationsAjit Kumar @ ICT, Mumbai
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          Give examples of unipotent, idempotent and nilpotent matrices.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="exer-echelon1">
+      <statement>
+        <p>
+          Reduce the following matrices into row-echelon form.
+          <me>
+            \begin{pmatrix}1 \amp  2 \amp  3 \amp  4\\ 2 \amp  1 \amp  4 \amp  5\\ 1 \amp  5 \amp  5 \amp  7\\ 8\amp  1 \amp  14 \amp  17 \end{pmatrix} , \begin{pmatrix}1 \amp  2 \amp  -1 \amp  1\\ 2 \amp  3 \amp  4 \amp  5\\ 1 \amp  4 \amp -13 \amp  -5 \end{pmatrix} , \begin{pmatrix}2 \amp  3 \amp  1 \amp  0 \amp  4\\ 3 \amp  1 \amp  2 \amp -1\amp 1\\ 4 \amp  -1 \amp  3 \amp -2\amp  -2\\ 5 \amp  4 \amp  3 \amp  -1 \amp  5 \end{pmatrix} , \begin{pmatrix}-1 \amp  1 \amp  2\\ 3 \amp  -1 \amp  1\\ 1\amp 3\amp  4 \end{pmatrix}
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find the sequence of row operations that converts the matrix
+        </p>
+        <p>
+          <m>\begin{bmatrix}a_1+b_1 \amp a_2+b_2 \amp a_3+b_3\\ a_1+c_1 \amp a_2+c_2 \amp a_3+c_3\\ b_1+c_1 \amp b_2+c_2 \amp b_3+c_3 \end{bmatrix}</m> to <m>\begin{bmatrix}a_1\amp a_2 \amp a_3\\ b_1 \amp b_2 \amp b_3\\ c_1 \amp c_2 \amp c_3 \end{bmatrix}</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Solve the following systems of linear equations by Gaussian elimination method.
+        </p>
+        <p>
+          (i) <m>\begin{array}{ccc} x+2y+3z \amp = \amp 2 \\ 3x+7y+9z\amp = \amp 0 \\ x+4y+z\amp = \amp 2 \end{array}</m>, (ii)
+          <m>\begin{array}{ccc} x-2z\amp = \amp 0 \\ y+3z\amp = \amp 0 \\ 4x+y+2z\amp = \amp 0 \end{array}</m>, (iii) <m>\begin{array}{ccc} x+y+2z \amp = \amp 4 \\ x-y+z \amp = \amp 2 \end{array}</m>
+        </p>
+        <p>
+          (iv) <m>\begin{array}{ccc} x+y+2z \amp = \amp 0 \\ x-y+z \amp = \amp 0 \end{array}</m>, (v)
+          <m>\begin{array}{ccc} x+y\amp = \amp -2\\ 2x+3y+z\amp = \amp 1 \\ 3x+2y+z\amp = \amp 3 \end{array}</m>, (vi) <m>\begin{array}{ccc} x-y+2z \amp = \amp 4\\ 3x+y+z \amp = \amp -2\\ 2x-3y+3z \amp = \amp 0 \end{array}</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find the rank of the following matrices:
+          <me>
+            A=\begin{pmatrix}1 \amp  2 \amp  3\\2\amp  1 \amp  -1\\1 \amp  -1 \amp  2\\5 \amp  4\amp  -5 \end{pmatrix} , B= \begin{pmatrix}2 \amp  1 \amp  5\amp  -1 \amp \\-1 \amp  2\amp  5\amp  3\\3 \amp  2\amp  9\amp  -1 \end{pmatrix} , C= \begin{pmatrix}1 \amp  1 \amp  1 \\a \amp  b \amp  c\\a^2 \amp  b^2\amp  c^2 \end{pmatrix}
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find all values of <m>k</m> such that the rank of the matrix <m>\begin{pmatrix}k \amp -1 \amp 0\amp 0 \\0 \amp k \amp -1\amp 0\\0\amp 0 \amp k\amp -1\\-6 \amp 11\amp -6 \amp 1 \end{pmatrix}</m> is 3.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          For what value of <m>k</m>,
+          <m>\begin{bmatrix}k+3 \amp 1 \amp -2\\ 3 \amp -2 \amp k\\-k \amp -3 \amp 3 \end{bmatrix}</m> has rank 3.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find the rank of the following matrices.
+        </p>
+        <p>
+          (i) <m>\left[\begin{array}{ccrc} 4\amp 1 \amp 2 \amp 1 \\ 0\amp 1 \amp 3 \amp 0 \\ 1 \amp 0 \amp -2 \amp 1 \\ 2 \amp 1 \amp 4 \amp 0 \end{array} \right]</m> Ans: 4; (ii)
+          <m>\left[\begin{array}{crcc} 1\amp 1 \amp 7 \amp 0 \\ 0\amp -2 \amp 9 \amp 1 \\ 1 \amp 4 \amp 5 \amp 1 \\ 3 \amp 5 \amp 17 \amp 2 \end{array} \right]</m> Ans: 2; (iii) <m>\left[\begin{array}{crc} 2 \amp 4 \amp 5 \\ 1 \amp 0 \amp 2 \\ 5 \amp -8 \amp 4 \\ 1 \amp 0 \amp 4 \end{array} \right]</m>.
+          Ans: 3
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>A=\begin{pmatrix}1\amp 2\amp 1\amp -4\\-1\amp -3\amp 1\amp 0\\2\amp 6\amp 2\amp -8 \end{pmatrix}</m>.
+          Show that <m>r(AA^T)=r(A)</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          For the following system of equations write the solution in the form of <m>X_0+S_h</m> where <m>X_0</m> is a solution of non homogeneous system and <m>S_h</m> is the set of solutions of the corresponding homogeneous system
+        </p>
+        <p>
+          (i) <m>3x-4y=1</m>
+        </p>
+        <p>
+          (ii) <m>-3x + 6 y + -11z = 4; 3x - 4y + 6z = -3</m>
+        </p>
+        <p>
+          (iii) <m>x+y+z-w = 1; 3x+6z-6w = 6; -y+z-w = 1</m>
+        </p>
+        <p>
+          (iv) <m>x+2y+4z = 3; 2x+4y+z = 3</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find the inverse of the following matrices
+          (if exists)
+          using adjoint method
+        </p>
+        <p>
+          (i) <m>A=\begin{bmatrix}1 \amp 2 \amp 1 \\ 3 \amp 4 \amp 2 \\ 3 \amp 3 \amp -1 \end{bmatrix}</m> (ii) <m>A = \begin{bmatrix}0 \amp 2 \amp 0 \\ 2 \amp 0 \amp 2 \\ 0 \amp 0 \amp 2 \end{bmatrix}</m> (iii)
+          <m>A = \begin{bmatrix}1 \amp 2 \amp 3 \\ 3 \amp 1 \amp 2 \\ -1 \amp 0 \amp 1 \end{bmatrix}</m> (iv) <m>A = \begin{bmatrix}-1 \amp 1\amp 1 \amp 1 \\ 1 \amp -1\amp 1 \amp 1\\ 1 \amp 1\amp -1 \amp 1\\ 1 \amp 1\amp 1 \amp -1 \end{bmatrix}</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Balance the following photosynthesis reaction
+          <me>
+            CO_2 + H_2O \to C_6H_{12}O_6 + O_2
+          </me>
+        </p>
+        <p>
+          Here <m>C_6H_{12}O_6</m> is glucose.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The augmented matrix of a linear system has the form
+          <me>
+            \begin{bmatrix}1 \amp 2\amp  -1 \amp  a \\ 2 \amp 3\amp  -2 \amp  b\\ -1 \amp -1\amp  1 \amp  c \end{bmatrix}
+          </me>
+        </p>
+        <p>
+          (a) Determine the values of a, b, and c for which the linear system is consistent.
+        </p>
+        <p>
+          (b) Determine the values of a, b, and c for which the linear system is inconsistent.
+        </p>
+        <p>
+          (c) When it is consistent,
+          does the linear system have a unique solution or infinitely many solutions?
+        </p>
+        <p>
+          (d) Give a specific consistent linear system and find one particular solution.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Solve the following system of equations for <m>x</m> and <m>y</m>.
+          <me>
+            x^2 + xy =y^2 = 1, 2x^2 - xy + 3y^2 = 13, x^2 + 3xy + 2y^2 = 0
+          </me>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find a polynomial of the form
+          <m>y = a_0 +a_1 x+a_2 x^2 +a_3 x^3</m> which passes through the points <m>(-3, -2)</m>,
+          <m>(-1, 2)</m>,
+          <m>(1, 5)</m> and <m>(2, 1)</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find the values of <m>a</m> and <m>b</m> for which the following system is consistent.
+          Also find the complete solution when <m>a = b = 2</m>.
+          <me>
+            x+y-z+w = 1;    ax + y + z + w = b; 3x + 2y +    aw = 1 + a
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The following table lists the number of milligrams of vitamin A, vitamin B, vitamin C, and niacin contained in 1 g of four different foods.
+          A dietician wants to prepare a meal that provides 250 mg of vitamin A, 300 mg of vitamin B, 400 mg of vitamin C, and 70 mg of niacin.
+          Determine how many grams of each food must be included,
+          and describe any limitations on the quantities of each food that can be used
+        </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>Nutrients</cell>
+            <cell>Group 1</cell>
+            <cell>Group 2</cell>
+            <cell>Group 3</cell>
+            <cell>Group 4</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>Vitamin A</cell>
+            <cell>20</cell>
+            <cell>30</cell>
+            <cell>40</cell>
+            <cell>10</cell>
+          </row>
+          <row>
+            <cell>Vitamin B</cell>
+            <cell>40</cell>
+            <cell>20</cell>
+            <cell>35</cell>
+            <cell>20</cell>
+          </row>
+          <row>
+            <cell>Vitamin C</cell>
+            <cell>50</cell>
+            <cell>40</cell>
+            <cell>10</cell>
+            <cell>30</cell>
+          </row>
+          <row>
+            <cell>Niacin</cell>
+            <cell>5</cell>
+            <cell>5</cell>
+            <cell>10</cell>
+            <cell>5</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>A</m> be the coefficient matrix of the following homogeneous system of n equations in n unknowns:
+          <md>
+            <mrow>(1-n)x_1 + x_2 + \cdots + x_n \amp =\amp  0</mrow>
+            <mrow>x_1 + (1- n)x_2 + \cdots + x_n \amp =\amp  0</mrow>
+            <mrow>\vdots\amp \amp  \vdots</mrow>
+            <mrow>x_1 + x_2 + \cdots + (1-n)x_n \amp =\amp  0</mrow>
+          </md>.
+        </p>
+        <p>
+          Find the reduced row-echelon form of <m>A</m> and hence,
+          or otherwise,
+          prove that the solution of the above system is
+          <m>x_1 = x_2 = \ldots = x_n</m> , with <m>x_n</m> arbitrary.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          For which rational numbers <m>a</m> does the following system have (i) no solutions (ii) exactly one solution (iii) infinitely many solutions?
+          <me>
+            x + 2y-3z = 4; 3x-y + 5z = 2; 4x + y + (a^2-14)z = a + 2
+          </me>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          If <m>(\alpha_1 ,\ldots,\alpha_n)</m> and
+          <m>(\beta_1 ,\ldots,\beta_n)</m> are solutions of a system of linear equations,
+          prove that
+          <me>
+            ((1-t)\alpha_1+t\beta_1 , \ldots, (1-t)\alpha_n+t\beta_n)
+          </me>.
+          is also a solution.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="LU_exer2">
+      <statement>
+        <p>
+          Solve the system <m>AX=b</m> using Doolittle method:
+        </p>
+        <p>
+          (i) <m>A=\begin{pmatrix}25\amp 5\amp 1\\64\amp 8\amp 1\\144\amp 12\amp 1 \end{pmatrix}</m> and <m>b=\begin{pmatrix}3\\1\\-2 \end{pmatrix}</m> (ii)
+          <m>A= \begin{pmatrix}1\amp 1\amp 1\\3\amp 1\amp -3\\1\amp -2\amp -5 \end{pmatrix}</m> and <m>b=\begin{pmatrix}-3\\7\\2 \end{pmatrix}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Solve the system <m>AX=b</m> using Crout's method
+        </p>
+        <p>
+          (i) <m>A=\begin{pmatrix}2\amp -4\amp 3\\4\amp 1\amp -6\\5\amp 8\amp -4 \end{pmatrix}</m> and <m>b=\begin{pmatrix}2\\-1\\5 \end{pmatrix}</m> (ii)
+          <m>A= \begin{pmatrix}1\amp 0\amp 5\amp 0\\-1\amp 4\amp 1\amp 0\\3\amp 0\amp 4\amp 1\\-2\amp 1\amp 1\amp 3 \end{pmatrix}</m> and <m>b=\begin{pmatrix}1\\4\\3\\5 \end{pmatrix}</m>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+</section>
