@@ -4030,7 +4030,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "10.3",
   "title": "Sage Practice Area",
-  "body": " Sage Practice Area   You may try out Sage codes here to solve excercises.    Sage Practice Area         "
+  "body": " Sage Practice Area   You may try out Sage codes here to solve excercises.    Sage Practice Area               "
 },
 {
   "id": "backmatter-2",
