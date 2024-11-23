@@ -46,7 +46,7 @@
           </me>.
         </p>
         <p>
-          Here the vector <m>x^*=(A^TA)^{-1}A^Tb</m> is called the least square approximation (solution) of<m>Ax=b</m>.
+          Here the vector <m>x^*=(A^TA)^{-1}A^Tb</m> is called the <em>least square approximation (solution)</em> of<m>Ax=b</m>.
         </p>
 
         <p>
@@ -64,17 +64,21 @@
           Note that the least square solution
           <m>x^*=(A^TA)^{-1}A^Tb</m> is the minimizer of the function <m>f(x)=\norm{Ax-b}^2</m>.
           This can also be obtained using calculus.
-          <me>
-            f(x) =\norm{Ax-b}^2 = (Ax-b)^T(Ax-b)=x^TA^TAx-2A^Tbx+b^Tb
-          </me>.
+          <md>
+            <mrow> f(x) \amp = \norm{Ax-b}^2 = (Ax-b)^T(Ax-b)</mrow>
+            <mrow> \amp =  x^TA^TAx-x^TA^Tb-b^TAx+b^Tb</mrow>
+            <mrow> \amp =  x^TA^TAx-2A^Tbx+b^Tb </mrow> 
+          </md>.
         </p>
-
+        <p>
+        The last equiality is due to the fact that, <m>x^TA^Tb=b^TAx</m>.
+        </p>
         <p>
           Hence the gradient <m>\nabla f(x)=2A^TAx-2A^Tb</m>.
           Hence <m>\nabla f(x)=0</m> implies
-          <me>
+          <men xml:id="lst-sq-eqn1">
             x^*=(A^TA)^{-1}A^Tb
-          </me>
+          </men>
           provided <m>A^TA</m> is non singular.
         </p>
 
@@ -184,7 +188,7 @@
           </statement>
         </example>
 
-
+      <exercises xml:id="exercises-LSQ-ex1">
         <exercise xml:id="exer-8-1-3">
           <statement>
             <p>
@@ -204,7 +208,7 @@
               The average number of goals <m>g</m>,
               per game scored by a football player is related linearly to two factors, (i) the number <m>x_1</m> of years of experience and (ii) the number <m>x_2</m> of goals in the preceding 10 games.
               Find the linear The data on the following page were collected on four players.
-              Find the linear function <m>y=a_0+a_1x+a_2x_2</m>.
+              Find the linear function <m>y=a_0+a_1x_1+a_2x_2</m>.
             </p>
             <tabular>
               <row bottom="minor">
@@ -259,6 +263,8 @@
             </tabular>
           </statement>
         </exercise>
+        
+      </exercises>
 
         <example>
           <statement>
@@ -496,7 +502,7 @@
       </subsection>
 
     <subsection>
-        <title>Fitting a polynomial to the data set</title>
+        <title>Fitting polynomials to a data set</title>
         <p>
           Suppose we are given a set of <m>n</m>-data points
           <m>(x_i y_i)</m> and we wish to find the best fit polynomial curve of degree <m>p</m>, say,
@@ -658,8 +664,8 @@
           </statement>
         </example>
 
-
-        <exercise  xml:id="exer-8-1-5">
+        <exercises xml:id="exercises-">
+          <exercise  xml:id="exer-8-1-5">
           <statement>
             <p>
               Find the least squares approximating line
@@ -741,7 +747,9 @@
             </tabular>
           </statement>
         </exercise>
-      </subsection>
+      </exercises>
+
+    </subsection>
 
       <subsection xml:id="sec-weigheted-lstsq">
         <title>Weighted Least Square Problems</title>

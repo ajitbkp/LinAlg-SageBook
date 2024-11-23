@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec10-3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  
+        <title>Sage Practice Area</title>
+        <introduction>
+          <p>
+           You may try out Sage codes here to solve excercises.   
+        </p>
+      </introduction>
+
+      <subsection xml:id="sec-10-3-sage-practice1">
+        <title>Sage Practice Area</title>
+        <sage>
+            <input>
+            
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+
+        <sage>
+            <input>
+                
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+
+        <sage>
+            <input>
+                
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+
+        <sage>
+            <input>
+                
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+
+        <sage>
+            <input>
+                
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+
+        <sage>
+            <input>
+                
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+    </subsection>
+
+    </section>

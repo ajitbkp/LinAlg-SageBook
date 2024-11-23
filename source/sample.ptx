@@ -38,7 +38,7 @@
         </p>
     </statement>
   </theorem>
-  
+  <!-- Proof can be inside theorem-->
   <!-- Proof should be outside the theorem environment -->
   <proof>
     <p>

@@ -5,16 +5,11 @@
         <title>Applications of PCA</title>
         <introduction>
           <p>
-         
-          PCA, as mentioned earlier, is a dimensionality reduction techniques.
-          It has numerous applications like,
-          visualization of high dimensional data,
-          facial recognition, computer vision,
-          image compression, determining patterns in a data,
-          data mining, bioinformatics,
-          psychology, analyzing and forecasting stock data,etc.
-                    We mention, image compression as one of the applications.
-          
+            PCA, as mentioned earlier, is a dimensionality reduction techniques.
+            It has numerous applications like, visualization of high dimensional data,
+            facial recognition, computer vision, image compression, determining patterns in a data,
+            data mining, bioinformatics, psychology, analyzing and forecasting stock data,etc.
+            We mention, image compression as one of the applications.  
         </p>
       </introduction>
      

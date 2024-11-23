@@ -205,6 +205,14 @@ show(E)
   </statement>
 </theorem>
 
+<exercise>
+  <statement>
+    <p>
+      If <m>E</m> is an elemtray matrix (except multiplying identity  matrix by zero), then it is invertible. 
+      Can you see it why?
+    </p>
+  </statement>
+</exercise>
 
 <example>
   <statement>

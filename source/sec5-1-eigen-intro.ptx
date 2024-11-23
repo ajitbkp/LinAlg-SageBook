@@ -59,7 +59,7 @@
           <statement>
             <p>
               If <m>T</m> is an identity transformation from <m>\R^n\to \R^n</m>, then 
-              every nonzero vector is an eigenvector corresponding the the eiegenvalue 1. 
+              every nonzero vector is an eigenvector corresponding the eiegenvalue 1. 
               The same is true for <m>n\times n </m>  identity matrix.
             </p>
           </statement>
@@ -69,10 +69,10 @@
             <statement>
               <p>
                 Consider the matrix of rotation
-                <m>R_\theta</m> in anti-clock wise by an angle <m>\theta\neq n\pi</m>.
-                The it is easy to see that
+                <m>R_\theta</m> in anti-clock wise by an angle <m>\theta\neq n\pi</m> for <m>n\in \Z</m>.
+                Then it is easy to see that
                 <m>R_\theta</m> does not have an eigenvector.
-                Thus not all square matrices have eigenvector.
+                Thus not all square matrices have eigenvectors.
               </p>
             </statement>
           </example>
@@ -107,15 +107,26 @@
           <p>
             We can write <m>\det(A-\lambda I)=0</m> as <m>\det(A-\lambda I)=\lambda^n-c_1\lambda^{n-1}+c_2\lambda^{n-2}-\cdots+(-1)^nc_n=0</m>.
             If <m>\lambda_1,\ldots, \lambda_n</m> are roots of the characteristics equation,
-            then one can show that
-            <md>
-              <mrow>\lambda_1+\cdots+\lambda_n=\amp c_1={ trace(A)}</mrow>
-                <mrow> \lambda_1\lambda_2+\cdots +\lambda_{n-1}\lambda_n= \amp c_2</mrow>
-                <mrow> \vdots \amp  </mrow>
-                <mrow> \lambda_1\lambda_2\cdots\lambda_n=c_n= \amp \det(A)</mrow>
-            </md>.
+            then using the theory of equations one can show that
+            <mdn>
+              <mrow>\lambda_1+\cdots+\lambda_n\amp = c_1={ trace(A)}</mrow>
+                <mrow> \lambda_1\lambda_2+\cdots +\lambda_{n-1}\lambda_n \amp =  c_2</mrow>
+                <mrow  number="no"> \vdots \amp </mrow>
+                <mrow> \lambda_1\lambda_2\cdots\lambda_n \amp = c_n = \det(A)</mrow>
+            </mdn>.
           </p>
-
+          <p>
+            Thus we have the following.
+          </p>
+          <theorem xml:id="thm-sum-produc-eiegn">
+            <statement>
+              <p>
+               Let <m>A</m> be an <m>n\times n</m> real matrix. Then (i) the sum of eigenvalues of <m>A</m> is the 
+               trace of <m>A</m> and (ii) the product of eigenvalues is the determeninat of <m>A</m>.
+              </p>
+            </statement>
+          </theorem>
+          
           <example xml:id="eigen_eg0">
             <statement>
               <p>
@@ -144,7 +155,7 @@
             </statement>
           </example>
 
-          <example>
+          <example xml:id="eigen_eg0b">
             <statement>
               <p>
                 Let <m>A = \begin{pmatrix}1 \amp t \amp t\\ t \amp 1 \amp t\\t \amp t \amp 1 \end{pmatrix}</m>.
@@ -156,6 +167,11 @@
                 Since sum of eigenvalues is 3 and the product of eigenvalues is <m>\det{(A)}</m>,
                 it is easy to guess that <m>\lambda_1 =2t+1</m>,
                 <m>\lambda_2=\lambda_3=1-t</m> are eigenvalues of <m>A</m>.
+              </p>
+              <p>
+                We can adopt a procedure similar to <xref ref="eigen_eg0b"/> to show that 
+                <m>e_1+e_2+e_3</m> is an eigenvector corresponding to the eigenvalue <m>1+2t</m>. Similarly, 
+                <m>e_1-e_2,e_2-e_3, e_1-e_3</m> are eigenvectors corresponding to the eigenvalue <m>1-t</m>.
               </p>
             </statement>
           </example>
@@ -234,6 +250,26 @@
               </p>
             </statement>
           </example>
+
+          <reading-questions xml:id="rqs-eigenspace-subspace">
+            <exercise>
+              <statement>
+                <p>
+                  Let <m>A</m> an <m>n\times n</m> real matrix and
+                  <m>\lambda\in \R</m> be an eigenvalue of <m>A</m>.
+                  Then
+                  <me>
+                    E_\lambda = \{x\in \R^n: Ax=\lambda x\}
+                  </me> is a subspace of <m>\R^n</m>.
+                </p>
+              </statement>
+            </exercise>
+            <exercise>
+              <p>
+                <m>E_\lambda</m> is the kernel of <m>A-\lambda I</m>.
+              </p>
+            </exercise>
+          </reading-questions>
 
           <definition xml:id="def-eigenspace"><title>Eigenspace</title>         
             <statement>
@@ -384,12 +420,7 @@
               </p>
             </statement>
           </example>
-          <p>
-            In genegarl, let <m> f(x)=\alpha_0+\alpha_1 x+\alpha_2 x^2+\cdots+\alpha_kx^k</m> be a 
-            polynomial of degree <m>k</m> and <m>A</m> be an <m>n\times n</m> ral matrix. Then  we can define 
-            <m> f(A)=\alpha_0 I+\alpha_1 A+\alpha_2 A^2+\cdots+\alpha_k A^k</m>. If <m>\lambda</m> is an eigenvalue of 
-            <m>A</m>, theh <m>f(\lambda)</m> is an eigenvalue of <m>f(A)</m>.
-          </p>
+          
 
           <theorem>
             <statement>
@@ -445,6 +476,13 @@
               Which show <m>\lambda</m> is either purely imaginary of zero.
             </p>
           </proof>
+          
+          <p>
+            In genegarl, let <m> f(x)=\alpha_0+\alpha_1 x+\alpha_2 x^2+\cdots+\alpha_kx^k</m> be a 
+            polynomial of degree <m>k</m> and <m>A</m> be an <m>n\times n</m> real matrix. Then  we can define 
+            <m> f(A)=\alpha_0 I+\alpha_1 A+\alpha_2 A^2+\cdots+\alpha_k A^k</m>. If <m>\lambda</m> is an eigenvalue of 
+            <m>A</m>, theh <m>f(\lambda)</m> is an eigenvalue of <m>f(A)</m>.
+          </p>
           
           <theorem xml:base="thm-Cayley-Hamilton">
             <title>Cayley-Hamilton Theorem</title>
@@ -642,9 +680,20 @@
             </exercise>
 
             <p>
-            <em>We have the following facts about positive definite matrices.</em></p>
+            We have the following result about positive definite matrices known as <em>Sylvester's criterion</em>. It allows us to determine if a given matrix in positive definite using the leading principal minors of the matrix.
+          </p>
+          <p>
+           The leading principal minors of a matrix <m>A</m> are <m>{\rm det}(A)</m> and the minors obtained by successively removing the last row and the last columns. That is, the leading principal miniors of a matrix <m>A</m> are
+           <me>
+            \Delta_1 =a_{11}, 
+            \Delta_2 =\begin{vmatrix}a_{11} \amp a_{12}\\a_{21} \amp a_{22}\end{vmatrix}, \Delta_3=
+            \begin{vmatrix}a_{11} \amp a_{12} \amp a_{13}\\a_{21} \amp a_{22} \amp a_{23}\\a_{31} \amp a_{32}\amp a_{33}\end{vmatrix},
+            \cdots, \Delta_n ={\rm det}{(A)}
+           </me>.
+           
+          </p>
 
-            <theorem xml:id="thm-sylvyster">
+            <theorem xml:id="thm-sylvyster"><title>Sylvester's Criterion</title>
               <statement>
                 <p>
                   If <m>A</m> is a real symmetric matrix then <m>A</m> is positive definite if and only if all leading minor of <m>A</m> are positive.
@@ -677,6 +726,8 @@
               </p>
             </statement>
           </exercise>
-      
+      <p>
+        Note that if <m>A</m> is not a symmetric matrix, then the Sylvester's criteria cannot be used to check positive definiteness. For, condider the matrix <m>A=\begin{pmatrix} 1 \amp 0\\-3 \amp 1\end{pmatrix}</m>. It is easy to see that all principal minors of <m>A</m> are positive. For <m>u=\begin{pmatrix}1\\2\end{pmatrix}</m>, <m>u^TAu=-1</m>, however for <m>v=\begin{pmatrix}3\\1\end{pmatrix}</m>, <m>v^TAv=1</m>. 
+      </p>
         </section>
      

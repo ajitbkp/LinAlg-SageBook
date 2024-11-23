@@ -421,7 +421,7 @@ size that admits an <m>LU</m>-factorization. Let first show this result for a <m
     <theorem xml:id="thm-LU-th3">
         <statement>
             <p>
-            	permutation matrix <m>P</m>, a unit lower triangular matrix <m>L</m> and an upper
+            	Given any matrix <m>A</m> there exists a permutation matrix <m>P</m>, a unit lower triangular matrix <m>L</m> and an upper
 	triangular matrix <m>U</m> such that <m>PA=LU</m>.    
             </p>
         </statement>

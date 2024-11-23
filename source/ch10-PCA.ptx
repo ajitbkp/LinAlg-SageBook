@@ -4,4 +4,6 @@
   
   <xi:include href="sec10-1-PCA.ptx" />
   <xi:include href="sec10-2-PCA.ptx" />
+  <xi:include href="sec10-3-Practice.ptx" />
+
 </chapter>

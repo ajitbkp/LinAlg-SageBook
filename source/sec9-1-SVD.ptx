@@ -174,8 +174,10 @@
           Let <m>A^TAv_i=\sigma_i^2v_i</m>.
           This implies
           <mdn>
-            <mrow xml:id="eq_svd21" number="yes">v_i^TA^TAv_i=\amp \sigma_i^2 \amp \text{ for }  i=1,2,\ldots, r</mrow>
-            <mrow xml:id="eq_svd31" number="yes">v_i^TA^TAv_i=\amp 0 \amp \text{ for }  i=r+1,\ldots, n</mrow>
+            <mrow xml:id="eq_svd21" number="yes">
+              v_i^TA^TAv_i=\amp \sigma_i^2 \amp \text{ for }  i=1,2,\ldots, r</mrow>
+            <mrow xml:id="eq_svd31" number="yes">v_i^TA^TAv_i=\amp 0 \amp \text{ for }  i=r+1,\ldots, n
+            </mrow>
           </mdn>
         </p>
 
@@ -215,8 +217,8 @@
           u_r,u_{r+1},\ldots, u_n\}</m> of <m>\R^n</m>.
           Define
           <me>
-            U:=[u_1~\ldots~ u_r~u_{r+1}~\ldots~ u_n] \text{ and } V:=[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n]
-          </me>.
+            U:=[u_1~\ldots~ u_r~u_{r+1}~\ldots~ u_n] \text{ and } V:=[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n].
+          </me>
         </p>
 
         <p>
@@ -268,6 +270,27 @@
         <em>rank one decomposition of <m>A</m></em>,
         as rank of each term in<nbsp/><xref ref="eq_svd9"/> is 1. (why?) This is a very useful way of decomposing <m>A</m> as we shall see this later.
       </p>
+      <reading-questions xml:id="rqs-exer-9-1-15a">
+        <exercise xml:id="exer-9-1-15">
+          <statement>
+            <p>
+              Use SVD to show that a square matrix <m>A</m> is symmetric (<m>A^T=A</m>) if and only if <m>A^TA=AA^T</m>.
+            </p>
+  
+            <hint>
+              <p>
+                         <m>A^TA=AA^T</m> implies right singular vectors of <m>A</m> are same as left singular vectors of <m>A</m> with same singular values.
+              Hence the SVD of <m>A=Q\Sigma P</m> with <m>P=Q</m>.
+              Any matrix of the form <m>P\Sigma P^T</m> is symmetric.
+            </p>
+               
+         
+        </hint>
+          </statement>
+        </exercise>
+
+      </reading-questions>
+     <exercises xml:id="exercises-SVD-exer-set1">
 
       <exercise xml:id="rank1-matrix">
         <statement>
@@ -293,8 +316,10 @@
             A square matrix <m>A</m> is non singular if and only if all singular values of <m>A</m> are non zero.
           </p>
         </statement>
-
       </exercise>
+      
+    </exercises> 
+
       <example xml:id="eg_svd1">
         <statement>
           <p>
@@ -334,7 +359,8 @@
         </statement>
       </example>
 
-
+    <exercises xml:id="exercises-SVD-exer-set2">
+      
       <exercise  xml:id="exer-9-1-8">
         <statement>
           <p>
@@ -355,8 +381,16 @@
           </p>
         </statement>
       </exercise>
-    </subsection>
+      <exercise>
+        <p>
+          Find the SVD of <m>A = \begin{pmatrix}1 \amp 1 \\2 \amp 2 \\3 \amp 1 \end{pmatrix}</m> using step by step calculations.
+          </p>
+      </exercise>
+    </exercises>
+  
+  </subsection>
 
+  
 
     <subsection>
       <title>Pseudoinverse using SVD</title>
@@ -442,9 +476,9 @@
       <p>
         Having defined the generalized inverse of <m>\sum</m>,
         now it is natural to define
-        <me>
+        <men>
           A^\dagger:=V{\sum}^\dagger U^T
-        </me>.
+        </men>.
       </p>
 
       <example xml:id="eg_svd2">
@@ -491,27 +525,39 @@
         </statement>
       </example>
 
-      <exercise xml:id="psedo_ex1">
+      <reading-questions xml:id="rqs-SVD-psedo-exer-set1">
+       <exercise xml:id="psedo_ex1">
         <statement>
           <p>
             If <m>A</m> is <m>m\times n</m> matrix with <m>m\geq n</m> and <m>\rank(A)=n</m> then
             <me>
               A^\dagger=(A^TA)^{-1}A^T
             </me>.
+          </p>
+          <p>
+            <m>(A^TA)^{-1}A^T</m> is called the
+            <em>left pseudoinnverse</em>
+            of <m>A</m>.
+          </p>
+        </statement>
+          </exercise>
+              
+            <exercise xml:id="psedo_ex2">
+              <statement>
+                <p>
             If <m>m\leq n</m> and <m>\rank(A)=m</m> then
             <me>
               A^\dagger =A^T(AA^T)^{-1}
             </me>.
           </p>
-
           <p>
-            <m>(A^TA)^{-1}A^T</m> is called the
-            <em>left pseudoinnverse</em>
-            of <m>A</m> and <m>A^T(AA^T)^{-1}</m> is called the
+           <m>A^T(AA^T)^{-1}</m> is called the
             <em>right pseudoinverse</em> of <m>A</m>.
           </p>
         </statement>
       </exercise>
+        
+    </reading-questions>
 
       <theorem>
         <statement>
@@ -526,55 +572,43 @@
       </theorem>
       
       
-      <exercise xml:id="exer-9-1-14">
-        <p>
-       <ol>
-        <li>
-          <p>
-           If <m>A</m> is square matrix,
-            then show that <m>A^TA</m> and <m>AA^T</m> are similar.
-          </p>
-        </li>
-        <li>
-          <p>
-            Find the SVD of a matrix <m>\begin{pmatrix}1 \amp 1 \amp 1 \\2 \amp 2 \amp 2\\3 \amp 1 \amp -1 \end{pmatrix}</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Find the least square solution of the system of equations <m>Ax=b</m> where <m>A =\begin{pmatrix}2 \amp 3 \amp -1\\-2 \amp 1 \amp 4\\3 \amp 1 \amp 3\\ -5 \amp 4 \amp 2\\1 \amp 1 \amp 1 \end{pmatrix}</m> and
-            <m>b= \begin{pmatrix}-10\\7\\15\\8\\9 \end{pmatrix}</m> using generalized inverse.
-          </p>
-        </li>
-        <li>
-          <p>
-          Find the SVD of <m>A = \begin{pmatrix}1 \amp 1 \\2 \amp 2 \\3 \amp 1 \end{pmatrix}</m> using step by step calculations.
-          </p>
-        </li>
-      </ol>
-    </p>
-    </exercise>
 
-      <exercise xml:id="exer-9-1-15">
-        <statement>
-          <p>
-            Use SVD to show that a square matrix <m>A</m> is symmetric (<m>A^T=A</m>) if and only if <m>A^TA=AA^T</m>.
-          </p>
+      <exercises xml:id="exercises-SVD-exer-set3">
+        <exercise xml:id="exer-9-1-14a">
+          <statement>
+            <p>
+              If <m>A</m> is square matrix,
+              then show that <m>A^TA</m> and <m>AA^T</m> are similar.      
+            </p>
+          </statement>
+          </exercise>
 
-          <p>
-            Hint: <m>A^TA=AA^T</m> implies right singular vectors of <m>A</m> are same as left singular vectors of <m>A</m> with same singular values.
-            Hence the SVD of <m>A=Q\Sigma P</m> with <m>P=Q</m>.
-            Any matrix of the form <m>P\Sigma P^T</m> is symmetric.
-          </p>
-        </statement>
-      </exercise>
+          <exercise xml:id="exer-9-1-14b">
+            <statement>
+              <p>
+                Find the SVD of a matrix <m>\begin{pmatrix}1 \amp 1 \amp 1 \\2 \amp 2 \amp 2\\3 \amp 1 \amp -1 \end{pmatrix}</m>.       
+              </p>
+            </statement>
+          </exercise>
+          <exercise xml:id="exer-9-1-14c">
+            <statement>
+              <p>
+                Find the least square solution of the system of equations <m>Ax=b</m> where <m>A =\begin{pmatrix}2 \amp 3 \amp -1\\-2 \amp 1 \amp 4\\3 \amp 1 \amp 3\\ -5 \amp 4 \amp 2\\1 \amp 1 \amp 1 \end{pmatrix}</m> and
+                <m>b= \begin{pmatrix}-10\\7\\15\\8\\9 \end{pmatrix}</m> using generalized inverse.     
+              </p>
+            </statement>
+          </exercise>   
+  </exercises>
+
+    
     </subsection>
 
 
     <subsection>
       <title>Geometry of SVD</title>
       <p>
-        In order to see the geometric meaning of the SVD. Let us consider the matrix <m>A=\left(\begin{array}{rr} 4 \amp -2 \\ -2 \amp 3 \end{array} \right)</m>.
+      SVD provides effective way to look at how a matrix tranforms and object geometrically. 
+        In order to see the geometric, let us consider the matrix <m>A=\left(\begin{array}{rr} 4 \amp -2 \\ -2 \amp 3 \end{array} \right)</m>.
       </p>
 
       <p>

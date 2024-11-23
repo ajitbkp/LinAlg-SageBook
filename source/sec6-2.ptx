@@ -143,4 +143,18 @@
     <em>projection matrix</em> for the subspace <m>W</m>.
   </p>
   
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>n\times n</m> real matrix.  Recall <m>{\cal R}(A)</m> and <m>{\cal N}(A)</m>, rangeor columns space of <m>A</m> and null or kernel of <m>A</m>. Then show that 
+        (i) <m>{\cal R}(A)^\perp={\cal N}(A^T)</m> and (ii)  <m>{\cal N}(A)^\perp={\cal R}(A^T)</m>.
+      </p>
+      <hint>
+        <p>
+          Let <m>x \in {\cal R}(A)^\perp</m>. Then <m>y^TA^Tx=(Ay)^Tx=0</m> for all <m>y</m>. Hence <m>x\in {\cal N}(A^T)</m>. This implies that, <m>{\cal R}(A)^\perp\subseteq {\cal N}(A^T)</m>. Next 
+          let <m>x\in {\cal N}(A^T)</m> then <m>(Ay)^Tx=y^TA^Tx=0</m> for all <m>y</m>. Hence <m>x\in {\cal R}(A)^\perp</m>. That is, <m>{\cal N}(A^T) \subseteq {\cal R}(A)^\perp</m>.
+        </p>
+      </hint>
+    </statement>
+  </exercise>
 </section>

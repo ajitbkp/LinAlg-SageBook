@@ -45,7 +45,7 @@
                 <p>
                       
            Find the algebraic and geometric multiplicities of each of the eigenvalues of 
-           <m>A = \begin{pmatrix} 2 \amp  0 \amp  0 \amp  0\\0 \amp  2 \amp  0 \amp  0\\0 \amp  0 \amp  -1 \amp  1\\0 \amp  0 \amp   \amp  -1\end{pmatrix}</m>. 
+           <m>A = \begin{pmatrix} 2 \amp  0 \amp  0 \amp  0\\0 \amp  2 \amp  0 \amp  0\\0 \amp  0 \amp  -1 \amp  1\\0 \amp  0 \amp 0  \amp  -1\end{pmatrix}</m>. 
            Is this matrix diagonalizable? 
                 </p>
             </li>
