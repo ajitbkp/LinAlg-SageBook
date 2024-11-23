@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -115,9 +127,9 @@ window.MathJax = {
 #subsec-elmentary-row-operations-8-2-1 { counter-set: subsec-elmentary-row-operations-8-2-1 0; }
 #subsec-elmentary-row-operations-8-2-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-8-2-1,decimal)"."; }
 #subsec-elmentary-row-operations-8-2-1 > li { counter-increment: subsec-elmentary-row-operations-8-2-1; }
-#subsec-elmentary-row-operations-15-1-1-1 { counter-set: subsec-elmentary-row-operations-15-1-1-1 0; }
-#subsec-elmentary-row-operations-15-1-1-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-15-1-1-1,decimal)"."; }
-#subsec-elmentary-row-operations-15-1-1-1 > li { counter-increment: subsec-elmentary-row-operations-15-1-1-1; }
+#subsec-elmentary-row-operations-16-1-1-1 { counter-set: subsec-elmentary-row-operations-16-1-1-1 0; }
+#subsec-elmentary-row-operations-16-1-1-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-16-1-1-1,decimal)"."; }
+#subsec-elmentary-row-operations-16-1-1-1 > li { counter-increment: subsec-elmentary-row-operations-16-1-1-1; }
 #def-echelon-form-1-2-1 { counter-set: def-echelon-form-1-2-1 0; }
 #def-echelon-form-1-2-1 > li::marker { content: ""counter(def-echelon-form-1-2-1,decimal)"."; }
 #def-echelon-form-1-2-1 > li { counter-increment: def-echelon-form-1-2-1; }
@@ -172,9 +184,9 @@ window.MathJax = {
 #eigen-properties-2-1-1 { counter-set: eigen-properties-2-1-1 0; }
 #eigen-properties-2-1-1 > li::marker { content: ""counter(eigen-properties-2-1-1,decimal)"."; }
 #eigen-properties-2-1-1 > li { counter-increment: eigen-properties-2-1-1; }
-#sec5-1-eigen-intro-22-1-1-1 { counter-set: sec5-1-eigen-intro-22-1-1-1 0; }
-#sec5-1-eigen-intro-22-1-1-1 > li::marker { content: ""counter(sec5-1-eigen-intro-22-1-1-1,decimal)"."; }
-#sec5-1-eigen-intro-22-1-1-1 > li { counter-increment: sec5-1-eigen-intro-22-1-1-1; }
+#sec5-1-eigen-intro-24-1-1-1 { counter-set: sec5-1-eigen-intro-24-1-1-1 0; }
+#sec5-1-eigen-intro-24-1-1-1 > li::marker { content: ""counter(sec5-1-eigen-intro-24-1-1-1,decimal)"."; }
+#sec5-1-eigen-intro-24-1-1-1 > li { counter-increment: sec5-1-eigen-intro-24-1-1-1; }
 #subsec5-3-linear-ode-12-1 { counter-set: subsec5-3-linear-ode-12-1 0; }
 #subsec5-3-linear-ode-12-1 > li::marker { content: ""counter(subsec5-3-linear-ode-12-1,decimal)"."; }
 #subsec5-3-linear-ode-12-1 > li { counter-increment: subsec5-3-linear-ode-12-1; }
@@ -205,9 +217,6 @@ window.MathJax = {
 #def-pseudoinverse-1-2-1 { counter-set: def-pseudoinverse-1-2-1 0; }
 #def-pseudoinverse-1-2-1 > li::marker { content: ""counter(def-pseudoinverse-1-2-1,decimal)"."; }
 #def-pseudoinverse-1-2-1 > li { counter-increment: def-pseudoinverse-1-2-1; }
-#exer-9-1-14-1-1 { counter-set: exer-9-1-14-1-1 0; }
-#exer-9-1-14-1-1 > li::marker { content: ""counter(exer-9-1-14-1-1,decimal)"."; }
-#exer-9-1-14-1-1 > li { counter-increment: exer-9-1-14-1-1; }
 </style>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -357,7 +366,10 @@ window.MathJax = {
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="chap5-Eigen.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec5-1-eigen-intro.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-2-diagonalization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Diagonalization</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec5-3-eigen-Appl.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
@@ -394,8 +406,14 @@ window.MathJax = {
 <ul class="structural toc-item-list"><li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec8-1-LSTSQ.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Least Square Problems</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec8-1-LSTSQ.html#sec-linear-lstsq" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Linear Least Square Problems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec8-1-LSTSQ.html#sec8-1-LSTSQ-4" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Fitting a polynomial to the data set</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec8-1-LSTSQ.html#sec-linear-lstsq" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Linear Least Square Problems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec8-1-LSTSQ.html#exercises-LSQ-ex1" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec8-1-LSTSQ.html#sec8-1-LSTSQ-4" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Fitting polynomials to a data set</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec8-1-LSTSQ.html#exercises-" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec8-1-LSTSQ.html#sec-weigheted-lstsq" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Weighted Least Square Problems</span></a></div></li>
 </ul>
 </li></ul>
@@ -405,8 +423,21 @@ window.MathJax = {
 <ul class="structural toc-item-list"><li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec9-1-SVD.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Singular Value Decomposition</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec9-1-SVD.html#sec9-1-SVD-3" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Singular Value Decomposition Theorem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec9-1-SVD.html#sec9-1-SVD-4" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Pseudoinverse using SVD</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec9-1-SVD.html#sec9-1-SVD-3" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Singular Value Decomposition Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec9-1-SVD.html#rqs-exer-9-1-15a" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec9-1-SVD.html#exercises-SVD-exer-set1" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec9-1-SVD.html#exercises-SVD-exer-set2" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec9-1-SVD.html#sec9-1-SVD-4" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Pseudoinverse using SVD</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec9-1-SVD.html#rqs-SVD-psedo-exer-set1" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec9-1-SVD.html#exercises-SVD-exer-set3" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec9-1-SVD.html#sec9-1-SVD-5" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Geometry of SVD</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec9-1-SVD.html#sec9-1-SVD-6" class="internal"><span class="codenumber">9.1.4</span> <span class="title">Image Compression using SVD</span></a></div></li>
 </ul>
@@ -430,6 +461,10 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec10-2.html#sec10-2-5" class="internal"><span class="codenumber">10.2.3</span> <span class="title">Exercise Set</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec10-3.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Sage Practice Area</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec10-3.html#sec-10-3-sage-practice1" class="internal"><span class="codenumber">10.3.1</span> <span class="title">Sage Practice Area</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -440,6 +475,7 @@ window.MathJax = {
 <nav class="summary-links"><ul>
 <li><a href="sec10-1-PCA.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Principal Component Analysis</span></a></li>
 <li><a href="sec10-2.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Applications of PCA</span></a></li>
+<li><a href="sec10-3.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Sage Practice Area</span></a></li>
 </ul></nav></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec9-1-SVD.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec10-1-PCA.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

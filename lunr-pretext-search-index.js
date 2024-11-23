@@ -34,7 +34,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Elementary Row Operations",
-  "body": " Elementary Row Operations   In this section, we shall defined elementary row operations which is a backbone of all computations in linear algebra.    Elmentary Row Operations  The solution of a system of linear equations is unchanged if the following operations are performed. In fact this is the basis for solving a system of linear equations.     Multiply one of the equations by a nonzero real number. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.    Multiply one of the equations by a real number and add the result to another equation, leaving the original equation unchanged. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row, leaving the original row unchanged.    Interchanging two equations. This is equivalent to interchanging two rows of the augmented matrix of the system.    Bring the equations which are equivalent to to the bottom row. This is equivalent to moving the zero rows (rows with zero entries) of the augmented matrix to the bottom.     If an equation of the system after the the avove operations reduces to , where , then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the column, then the system has no solution.   Elementary row operations   The following operations on a matrix are called elementary row operations.      interchange of two rows of a matrix;    multiplication of one row by a non-zero scalar ;    adding a scalar times a row to another row.         A matrix is said to be equivalent or row equivalent to matrix , in notation , if can be obtained from by performing finite number of elementary row operations.    Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.   Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let are standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:      for each . That is, -th column can be obtained by multiplying by on the right.     for each . That is, -th row can be obtained by multiplying by on the left.     for .            Let denote an elementary row operation and the result of applying to a . Let be a matrix obtained by applying to the identity matrix. That is, . Then is called the elementary matrix corresponding to the elementary row operation . It is easy to see that an elementary matrix is non singular. (why?)     Elementary Matrix Theorem   Let be an elementary row operation and , the corresponding elementary matrix defined by . Then, for any matrix , .         Let be a rectangular matrix of order . Let be a matrix obtained by interchanging 2nd and 3rd rows of . Then where .  What is ?    Let be the matrix obtained by multiplying 2nd row of by a scalar . Then where . What is ?    Let be the matrix obtained by adding 2 times 2nd row to the 3rd rows of in place of the 3rd row. Then where . What is ?         Two matrices and are row equivalent if and only if there exists a non singular matrix such that .     Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.     Matrix Inversion via Elementary Row Operations  We can use the theorem to find the inverse of a matrix using elementary row operations. If a matrix is non singular and is row equivalent to the identity matrix by a sequence of elementary row operations say , then we have, . This implies . In other words, the sequence of elementary row operations required to turn into also turns into . Thus to find inverse of , we adjoin to on the right to give the augmented matrix , and perform elementary row operations on that successively reduces to the identity matrix and then extract from the right half of the transformed augmented matrix.   Find the inverse of using row operations.          Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.           Sage can directly find the inverse of a matrix.    Sage Exercise: Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.     "
+  "body": " Elementary Row Operations   In this section, we shall defined elementary row operations which is a backbone of all computations in linear algebra.    Elmentary Row Operations  The solution of a system of linear equations is unchanged if the following operations are performed. In fact this is the basis for solving a system of linear equations.     Multiply one of the equations by a nonzero real number. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.    Multiply one of the equations by a real number and add the result to another equation, leaving the original equation unchanged. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row, leaving the original row unchanged.    Interchanging two equations. This is equivalent to interchanging two rows of the augmented matrix of the system.    Bring the equations which are equivalent to to the bottom row. This is equivalent to moving the zero rows (rows with zero entries) of the augmented matrix to the bottom.     If an equation of the system after the the avove operations reduces to , where , then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the column, then the system has no solution.   Elementary row operations   The following operations on a matrix are called elementary row operations.      interchange of two rows of a matrix;    multiplication of one row by a non-zero scalar ;    adding a scalar times a row to another row.         A matrix is said to be equivalent or row equivalent to matrix , in notation , if can be obtained from by performing finite number of elementary row operations.    Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.   Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let are standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:      for each . That is, -th column can be obtained by multiplying by on the right.     for each . That is, -th row can be obtained by multiplying by on the left.     for .            Let denote an elementary row operation and the result of applying to a . Let be a matrix obtained by applying to the identity matrix. That is, . Then is called the elementary matrix corresponding to the elementary row operation . It is easy to see that an elementary matrix is non singular. (why?)     Elementary Matrix Theorem   Let be an elementary row operation and , the corresponding elementary matrix defined by . Then, for any matrix , .     If is an elemtray matrix (except multiplying identity matrix by zero), then it is invertible. Can you see it why?        Let be a rectangular matrix of order . Let be a matrix obtained by interchanging 2nd and 3rd rows of . Then where .  What is ?    Let be the matrix obtained by multiplying 2nd row of by a scalar . Then where . What is ?    Let be the matrix obtained by adding 2 times 2nd row to the 3rd rows of in place of the 3rd row. Then where . What is ?         Two matrices and are row equivalent if and only if there exists a non singular matrix such that .     Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.     Matrix Inversion via Elementary Row Operations  We can use the theorem to find the inverse of a matrix using elementary row operations. If a matrix is non singular and is row equivalent to the identity matrix by a sequence of elementary row operations say , then we have, . This implies . In other words, the sequence of elementary row operations required to turn into also turns into . Thus to find inverse of , we adjoin to on the right to give the augmented matrix , and perform elementary row operations on that successively reduces to the identity matrix and then extract from the right half of the transformed augmented matrix.   Find the inverse of using row operations.          Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.           Sage can directly find the inverse of a matrix.    Sage Exercise: Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.     "
 },
 {
   "id": "subsec-elmentary-row-operations-4",
@@ -94,8 +94,17 @@ var ptx_lunr_docs = [
   "id": "subsec-elmentary-row-operations-15",
   "level": "2",
   "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-15",
-  "type": "Example",
+  "type": "Checkpoint",
   "number": "1.1.7",
+  "title": "",
+  "body": " If is an elemtray matrix (except multiplying identity matrix by zero), then it is invertible. Can you see it why?  "
+},
+{
+  "id": "subsec-elmentary-row-operations-16",
+  "level": "2",
+  "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-16",
+  "type": "Example",
+  "number": "1.1.8",
   "title": "",
   "body": "     Let be a rectangular matrix of order . Let be a matrix obtained by interchanging 2nd and 3rd rows of . Then where .  What is ?    Let be the matrix obtained by multiplying 2nd row of by a scalar . Then where . What is ?    Let be the matrix obtained by adding 2 times 2nd row to the 3rd rows of in place of the 3rd row. Then where . What is ?      "
 },
@@ -104,14 +113,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#thm-matrix-invese-using-rref",
   "type": "Theorem",
-  "number": "1.1.8",
+  "number": "1.1.9",
   "title": "",
   "body": "  Two matrices and are row equivalent if and only if there exists a non singular matrix such that .   "
 },
 {
-  "id": "subsec-elmentary-row-operations-17",
+  "id": "subsec-elmentary-row-operations-18",
   "level": "2",
-  "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-17",
+  "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-18",
   "type": "Proof",
   "number": "1.1.1.1",
   "title": "",
@@ -122,7 +131,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#subsec-Matrix-inverse-using-rref-3",
   "type": "Example",
-  "number": "1.1.9",
+  "number": "1.1.10",
   "title": "",
   "body": " Find the inverse of using row operations.          Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.           Sage can directly find the inverse of a matrix.   "
 },
@@ -439,7 +448,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.6",
   "title": "<span class=\"process-math\">\\(LU\\)<\/span>-Facotorization",
-  "body": " -Facotorization   In this section we introduce matrix factorization called LU-factorization and its use in solving a system of linear equations. We shall also explain with examples, how Sage can be use to find LU-factorization of matrices. This section also includes Sage subroutines for LU-factorization.    Dooliitle and Crout's Factorization    Let be a square matrix. An -decomposition is a decomposition of the matrix of form where and are lower and upper triangular matrices (of the same size), respectively.    Let where with if is lower triangular and with if is an upper triangular matrix. Equating the entries of the matrices and we get where if and if .  Note that Eqn. gives us equations in unknowns hence it can be solved by taking arbitrary values for any unknowns. One of the simplest choice are      for this method is called Doolittle method      for , this method is called Crout's method      The key to -decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of rows to rows. Also every row which is replaced using the row operation in obtaining row-echelon form may be modified by using row which is above this row. We do not use row interchanges. Let us assume that we need elementary such row operations to transform to an upper triangular matrix . That is, Since elementary matrices are invertible, we can multiply both sides by to get the required -decomposition of . Thus It is very easy to see that is an upper triangular matrix with diagonal entries 1.  We list the following results without proof.     An invertible matrix admits an -factorization if and only if all its principal minors are non-zero. The factorization is unique if we require that the diagonal of (or ) consist of ones.    If the matrix is singular, then an factorization may still exist. In fact, a square matrix of rank has an -factorization if the first principal minors are non-zero.      Non existence of DoLittle factorization  Let . It is easy to check that does not have Doolittle -decomposition.    Let . Find the decomposition of using Doolittle's method. Let Which implies Equating the two matrices and and solving, we get Hence     Let . Find the LU-decomposition of using Crout's method. Let Equating the two matrices and and solving, we get Hence      Solving system of equations using LU factorization  LU-factorization is very useful in solving system of linear equation. Let represents equations in variables and that is a LU factorization of . Then can be written as where . Now can be solved using forward substitution method and can be solved using the backward substitution resulting in solution of the system. LU-factorization method allows to solve a whole lot of linear equations having same coefficient matrix.   Solve the system of equations using using Doolittle method, where and    From Example , we have and Let , . is equivalent to which can be written as where . First we solve Using forward substitution we get, . Now, we the required solution by solving . Now solving using the back substitution we get, and .     Solve the following system of equations using LU-decomposition    The above system is equivalent to where First of all let us decompose using the elementary row operation. Note that Their inverses are given by Thus and Now the equation becomes . Let . First we solve . That is Solving the above system using the forward substitution we get . Now substituting the in equation we get Solving the above system by back substitution we get the required solution .    Now we shall look at under what conditions a matrix admits LU factorization. The following theorem provides a sufficient condition for ensuring that the algorithm of factorization does not break down due to division by zero. If is a square matrix, then a sub-matrix of obtained by taking the first rows and first columns of is called a leading principal minor of .    Let be matrix. Suppose that the leading principal minor for are nonsingular. Then admits -factorization. (Note that itself need not be non singular.)     Proof of this theorem follows by induction on order of .   Not every matrix can have LU-factorization. Let us consider . Suppose has LU-factorization, say and . This implies and . This is a contradiction. However, if we interchange the first and second row of , then it is identity matrix which has LU-factorization with .  This leads us to a question, under what conditions, -factorization of a matrix exist. We shall show that even if the matrix does not satisfy the conditions of Theorem , by permuting rows and columns it can be transformed into a new matrix of the same size that admits an -factorization. Let first show this result for a matrix.   Let . Show that there exists a permutation matrix of order 2 such that admits the -factorization. If . Then by Theorem , admits -factorization. Let and . Define . Then which admits -factorization by Theorem . If . Then the result is trivial and we have      permutation matrix , a unit lower triangular matrix and an upper triangular matrix such that .    The proof of above theorem gives an algorithm for constructing the permutation matrix , and the matrices and .  If is a permutation matrix then is also a permutation matrix. If , then we have . Because of this reason such a factorization is also known as factorization of .    -factorization in Sage  Sage has inbulit method 'LU' to find -factorization. Suppose that is an matrix, then an LU decomposition in Sage output is a lower-triangular matrix with every diagonal element equal to 1, and an upper-triangular matrix, such that the product , after a permutation of the rows, is then equal to . For the 'plu' format the permutation is returned as an m x m permutation matrix such that .  Try to explore help document of LU factorization using 'A.LU?'       User defined functions for DooLitlte and Crout's Methods     Crout's Method function in Sage          "
+  "body": " -Facotorization   In this section we introduce matrix factorization called LU-factorization and its use in solving a system of linear equations. We shall also explain with examples, how Sage can be use to find LU-factorization of matrices. This section also includes Sage subroutines for LU-factorization.    Dooliitle and Crout's Factorization    Let be a square matrix. An -decomposition is a decomposition of the matrix of form where and are lower and upper triangular matrices (of the same size), respectively.    Let where with if is lower triangular and with if is an upper triangular matrix. Equating the entries of the matrices and we get where if and if .  Note that Eqn. gives us equations in unknowns hence it can be solved by taking arbitrary values for any unknowns. One of the simplest choice are      for this method is called Doolittle method      for , this method is called Crout's method      The key to -decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of rows to rows. Also every row which is replaced using the row operation in obtaining row-echelon form may be modified by using row which is above this row. We do not use row interchanges. Let us assume that we need elementary such row operations to transform to an upper triangular matrix . That is, Since elementary matrices are invertible, we can multiply both sides by to get the required -decomposition of . Thus It is very easy to see that is an upper triangular matrix with diagonal entries 1.  We list the following results without proof.     An invertible matrix admits an -factorization if and only if all its principal minors are non-zero. The factorization is unique if we require that the diagonal of (or ) consist of ones.    If the matrix is singular, then an factorization may still exist. In fact, a square matrix of rank has an -factorization if the first principal minors are non-zero.      Non existence of DoLittle factorization  Let . It is easy to check that does not have Doolittle -decomposition.    Let . Find the decomposition of using Doolittle's method. Let Which implies Equating the two matrices and and solving, we get Hence     Let . Find the LU-decomposition of using Crout's method. Let Equating the two matrices and and solving, we get Hence      Solving system of equations using LU factorization  LU-factorization is very useful in solving system of linear equation. Let represents equations in variables and that is a LU factorization of . Then can be written as where . Now can be solved using forward substitution method and can be solved using the backward substitution resulting in solution of the system. LU-factorization method allows to solve a whole lot of linear equations having same coefficient matrix.   Solve the system of equations using using Doolittle method, where and    From Example , we have and Let , . is equivalent to which can be written as where . First we solve Using forward substitution we get, . Now, we the required solution by solving . Now solving using the back substitution we get, and .     Solve the following system of equations using LU-decomposition    The above system is equivalent to where First of all let us decompose using the elementary row operation. Note that Their inverses are given by Thus and Now the equation becomes . Let . First we solve . That is Solving the above system using the forward substitution we get . Now substituting the in equation we get Solving the above system by back substitution we get the required solution .    Now we shall look at under what conditions a matrix admits LU factorization. The following theorem provides a sufficient condition for ensuring that the algorithm of factorization does not break down due to division by zero. If is a square matrix, then a sub-matrix of obtained by taking the first rows and first columns of is called a leading principal minor of .    Let be matrix. Suppose that the leading principal minor for are nonsingular. Then admits -factorization. (Note that itself need not be non singular.)     Proof of this theorem follows by induction on order of .   Not every matrix can have LU-factorization. Let us consider . Suppose has LU-factorization, say and . This implies and . This is a contradiction. However, if we interchange the first and second row of , then it is identity matrix which has LU-factorization with .  This leads us to a question, under what conditions, -factorization of a matrix exist. We shall show that even if the matrix does not satisfy the conditions of Theorem , by permuting rows and columns it can be transformed into a new matrix of the same size that admits an -factorization. Let first show this result for a matrix.   Let . Show that there exists a permutation matrix of order 2 such that admits the -factorization. If . Then by Theorem , admits -factorization. Let and . Define . Then which admits -factorization by Theorem . If . Then the result is trivial and we have      Given any matrix there exists a permutation matrix , a unit lower triangular matrix and an upper triangular matrix such that .    The proof of above theorem gives an algorithm for constructing the permutation matrix , and the matrices and .  If is a permutation matrix then is also a permutation matrix. If , then we have . Because of this reason such a factorization is also known as factorization of .    -factorization in Sage  Sage has inbulit method 'LU' to find -factorization. Suppose that is an matrix, then an LU decomposition in Sage output is a lower-triangular matrix with every diagonal element equal to 1, and an upper-triangular matrix, such that the product , after a permutation of the rows, is then equal to . For the 'plu' format the permutation is returned as an m x m permutation matrix such that .  Try to explore help document of LU factorization using 'A.LU?'       User defined functions for DooLitlte and Crout's Methods     Crout's Method function in Sage          "
 },
 {
   "id": "def-LU-factorization",
@@ -529,7 +538,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.6.9",
   "title": "",
-  "body": "  permutation matrix , a unit lower triangular matrix and an upper triangular matrix such that .   "
+  "body": "  Given any matrix there exists a permutation matrix , a unit lower triangular matrix and an upper triangular matrix such that .   "
 },
 {
   "id": "subsec-solving-system-LU-13",
@@ -2239,7 +2248,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Eigenvalues and Eigenvectors",
-  "body": " Eigenvalues and Eigenvectors   In this section we define the notion of eigenvalues and eigenvectors and look at some of its properties. It has several real life applications. We shall deal with some of them in later sections.   Eigenvalues and Eigenvectors   Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .      Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.      If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the the eiegenvalue 1. The same is true for identity matrix.      Consider the matrix of rotation in anti-clock wise by an angle . The it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvector.     If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .   Let us analyze the notion of eigenvalues and eigenvector. If is a eigenvector corresponding to an eigenvalue . Then . This implies , where is identity matrix. This means that the homogeneous system has a non zero solution, namely . Hence . Notice that is a polynomial (called the characteristic polynomial of ) of degree in . Thus if , then is a root of the the characteristic polynomial . By fundamental theorem of algebra an real matrix can have at most real eigenvalues. The equation is called characteristic equation of .  We can write as . If are roots of the characteristics equation, then one can show that .    Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvector corresponding to the eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?      Let . What are eigenvalues of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .      Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to       Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.    Eigenspace   Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the geometric multiplicity of .  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .     Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .    The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .     Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of geometric multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.    We list the following properties of eigenvalues and eigenvectors without proof.   Properties of Eigenvalues and Eigenvectors       and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.         Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by     In genegarl, let be a polynomial of degree and be an ral matrix. Then we can define . If is an eigenvalue of , theh is an eigenvalue of .       Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.        (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.    Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .      Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by to the equation, , we get , from this we have .  Can you find ?     (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .    Spectral Radius   Let an and for be eigenvalues of then the spectral radius of is define as .      Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .      Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .     Find the spectral radius of and .   Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.      Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.      Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.     If is a positive definite matrix then all its eigenvalues are positive.    If is a negative definite matrix then all its eigenvalues are negative.    We have the following facts about positive definite matrices.    If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.      Let . For any , we have   Henc e is positive definite.     Let . Show that is positive definite.   "
+  "body": " Eigenvalues and Eigenvectors   In this section we define the notion of eigenvalues and eigenvectors and look at some of its properties. It has several real life applications. We shall deal with some of them in later sections.   Eigenvalues and Eigenvectors   Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .      Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.      If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the eiegenvalue 1. The same is true for identity matrix.      Consider the matrix of rotation in anti-clock wise by an angle for . Then it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvectors.     If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .   Let us analyze the notion of eigenvalues and eigenvector. If is a eigenvector corresponding to an eigenvalue . Then . This implies , where is identity matrix. This means that the homogeneous system has a non zero solution, namely . Hence . Notice that is a polynomial (called the characteristic polynomial of ) of degree in . Thus if , then is a root of the the characteristic polynomial . By fundamental theorem of algebra an real matrix can have at most real eigenvalues. The equation is called characteristic equation of .  We can write as . If are roots of the characteristics equation, then using the theory of equations one can show that .  Thus we have the following.    Let be an real matrix. Then (i) the sum of eigenvalues of is the trace of and (ii) the product of eigenvalues is the determeninat of .      Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvector corresponding to the eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?      Let . What are eigenvalues of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .  We can adopt a procedure similar to to show that is an eigenvector corresponding to the eigenvalue . Similarly, are eigenvectors corresponding to the eigenvalue .      Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to       Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.      Let an real matrix and be an eigenvalue of . Then is a subspace of .    is the kernel of .   Eigenspace   Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the geometric multiplicity of .  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .     Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .    The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .     Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of geometric multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.    We list the following properties of eigenvalues and eigenvectors without proof.   Properties of Eigenvalues and Eigenvectors       and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.         Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by          Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.        (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.   In genegarl, let be a polynomial of degree and be an real matrix. Then we can define . If is an eigenvalue of , theh is an eigenvalue of .   Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .      Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by to the equation, , we get , from this we have .  Can you find ?     (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .    Spectral Radius   Let an and for be eigenvalues of then the spectral radius of is define as .      Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .      Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .     Find the spectral radius of and .   Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.      Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.      Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.     If is a positive definite matrix then all its eigenvalues are positive.    If is a negative definite matrix then all its eigenvalues are negative.   We have the following result about positive definite matrices known as Sylvester's criterion . It allows us to determine if a given matrix in positive definite using the leading principal minors of the matrix.  The leading principal minors of a matrix are and the minors obtained by successively removing the last row and the last columns. That is, the leading principal miniors of a matrix are .  Sylvester's Criterion   If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.      Let . For any , we have   Henc e is positive definite.     Let . Show that is positive definite.   Note that if is not a symmetric matrix, then the Sylvester's criteria cannot be used to check positive definiteness. For, condider the matrix . It is easy to see that all principal minors of are positive. For , , however for , .  "
 },
 {
   "id": "def-eigenvector",
@@ -2266,7 +2275,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.1.3",
   "title": "",
-  "body": "  If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the the eiegenvalue 1. The same is true for identity matrix.   "
+  "body": "  If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the eiegenvalue 1. The same is true for identity matrix.   "
 },
 {
   "id": "sec5-1-eigen-intro-6",
@@ -2275,7 +2284,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.1.4",
   "title": "",
-  "body": "  Consider the matrix of rotation in anti-clock wise by an angle . The it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvector.   "
+  "body": "  Consider the matrix of rotation in anti-clock wise by an angle for . Then it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvectors.   "
 },
 {
   "id": "sec5-1-eigen-intro-7",
@@ -2287,65 +2296,92 @@ var ptx_lunr_docs = [
   "body": " If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .  "
 },
 {
+  "id": "thm-sum-produc-eiegn",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#thm-sum-produc-eiegn",
+  "type": "Theorem",
+  "number": "5.1.6",
+  "title": "",
+  "body": "  Let be an real matrix. Then (i) the sum of eigenvalues of is the trace of and (ii) the product of eigenvalues is the determeninat of .   "
+},
+{
   "id": "eigen_eg0",
   "level": "2",
   "url": "sec5-1-eigen-intro.html#eigen_eg0",
   "type": "Example",
-  "number": "5.1.6",
+  "number": "5.1.7",
   "title": "",
   "body": "  Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvector corresponding to the eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?   "
 },
 {
-  "id": "sec5-1-eigen-intro-11",
+  "id": "eigen_eg0b",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-11",
+  "url": "sec5-1-eigen-intro.html#eigen_eg0b",
   "type": "Example",
-  "number": "5.1.7",
+  "number": "5.1.8",
   "title": "",
-  "body": "  Let . What are eigenvalues of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .   "
+  "body": "  Let . What are eigenvalues of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .  We can adopt a procedure similar to to show that is an eigenvector corresponding to the eigenvalue . Similarly, are eigenvectors corresponding to the eigenvalue .   "
 },
 {
   "id": "eigen_eg1",
   "level": "2",
   "url": "sec5-1-eigen-intro.html#eigen_eg1",
   "type": "Example",
-  "number": "5.1.8",
+  "number": "5.1.9",
   "title": "",
   "body": "  Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to    "
 },
 {
-  "id": "sec5-1-eigen-intro-13",
+  "id": "sec5-1-eigen-intro-15",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-13",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-15",
   "type": "Example",
-  "number": "5.1.9",
+  "number": "5.1.10",
   "title": "",
   "body": "  Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.   "
+},
+{
+  "id": "rqs-eigenspace-subspace-1",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#rqs-eigenspace-subspace-1",
+  "type": "Reading Question",
+  "number": "5.1.1",
+  "title": "",
+  "body": " Let an real matrix and be an eigenvalue of . Then is a subspace of .  "
+},
+{
+  "id": "rqs-eigenspace-subspace-2",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#rqs-eigenspace-subspace-2",
+  "type": "Reading Question",
+  "number": "5.1.2",
+  "title": "",
+  "body": " is the kernel of . "
 },
 {
   "id": "def-eigenspace",
   "level": "2",
   "url": "sec5-1-eigen-intro.html#def-eigenspace",
   "type": "Definition",
-  "number": "5.1.10",
+  "number": "5.1.11",
   "title": "Eigenspace.",
   "body": "Eigenspace   Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the geometric multiplicity of .  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .   "
 },
 {
-  "id": "sec5-1-eigen-intro-15",
+  "id": "sec5-1-eigen-intro-18",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-15",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-18",
   "type": "Remark",
-  "number": "5.1.11",
+  "number": "5.1.12",
   "title": "",
   "body": " Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .  "
 },
 {
-  "id": "sec5-1-eigen-intro-16",
+  "id": "sec5-1-eigen-intro-19",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-16",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-19",
   "type": "Checkpoint",
-  "number": "5.1.12",
+  "number": "5.1.13",
   "title": "",
   "body": " The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .  "
 },
@@ -2354,7 +2390,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#eigen-eg117",
   "type": "Example",
-  "number": "5.1.13",
+  "number": "5.1.14",
   "title": "",
   "body": "  Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of geometric multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.   "
 },
@@ -2363,36 +2399,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#eigen-properties",
   "type": "Theorem",
-  "number": "5.1.14",
+  "number": "5.1.15",
   "title": "Properties of Eigenvalues and Eigenvectors.",
   "body": " Properties of Eigenvalues and Eigenvectors       and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.      "
-},
-{
-  "id": "sec5-1-eigen-intro-20",
-  "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-20",
-  "type": "Example",
-  "number": "5.1.15",
-  "title": "",
-  "body": "  Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by    "
-},
-{
-  "id": "sec5-1-eigen-intro-22",
-  "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-22",
-  "type": "Theorem",
-  "number": "5.1.16",
-  "title": "",
-  "body": "     Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.      "
 },
 {
   "id": "sec5-1-eigen-intro-23",
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-23",
-  "type": "Proof",
-  "number": "5.1.1",
+  "type": "Example",
+  "number": "5.1.16",
   "title": "",
-  "body": " (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.  "
+  "body": "  Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by    "
 },
 {
   "id": "sec5-1-eigen-intro-24",
@@ -2400,24 +2418,42 @@ var ptx_lunr_docs = [
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-24",
   "type": "Theorem",
   "number": "5.1.17",
-  "title": "Cayley-Hamilton Theorem.",
-  "body": " Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .   "
+  "title": "",
+  "body": "     Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.      "
 },
 {
   "id": "sec5-1-eigen-intro-25",
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-25",
-  "type": "Example",
+  "type": "Proof",
+  "number": "5.1.1",
+  "title": "",
+  "body": " (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.  "
+},
+{
+  "id": "sec5-1-eigen-intro-27",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-27",
+  "type": "Theorem",
   "number": "5.1.18",
+  "title": "Cayley-Hamilton Theorem.",
+  "body": " Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .   "
+},
+{
+  "id": "sec5-1-eigen-intro-28",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-28",
+  "type": "Example",
+  "number": "5.1.19",
   "title": "",
   "body": "  Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by to the equation, , we get , from this we have .  Can you find ?   "
 },
 {
-  "id": "sec5-1-eigen-intro-26",
+  "id": "sec5-1-eigen-intro-29",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-26",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-29",
   "type": "Checkpoint",
-  "number": "5.1.19",
+  "number": "5.1.20",
   "title": "",
   "body": " (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  "
 },
@@ -2426,79 +2462,79 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#def-spectral-radius",
   "type": "Definition",
-  "number": "5.1.20",
+  "number": "5.1.21",
   "title": "Spectral Radius.",
   "body": " Spectral Radius   Let an and for be eigenvalues of then the spectral radius of is define as .   "
-},
-{
-  "id": "sec5-1-eigen-intro-28",
-  "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-28",
-  "type": "Example",
-  "number": "5.1.21",
-  "title": "",
-  "body": "  Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .   "
-},
-{
-  "id": "sec5-1-eigen-intro-29",
-  "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-29",
-  "type": "Example",
-  "number": "5.1.22",
-  "title": "",
-  "body": "  Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .   "
-},
-{
-  "id": "sec5-1-eigen-intro-30",
-  "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-30",
-  "type": "Checkpoint",
-  "number": "5.1.23",
-  "title": "",
-  "body": " Find the spectral radius of and .  "
 },
 {
   "id": "sec5-1-eigen-intro-31",
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-31",
-  "type": "Definition",
-  "number": "5.1.24",
-  "title": "Positive definite matrix.",
-  "body": "Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.   "
+  "type": "Example",
+  "number": "5.1.22",
+  "title": "",
+  "body": "  Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .   "
 },
 {
   "id": "sec5-1-eigen-intro-32",
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-32",
   "type": "Example",
-  "number": "5.1.25",
+  "number": "5.1.23",
   "title": "",
-  "body": "  Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.   "
+  "body": "  Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .   "
 },
 {
   "id": "sec5-1-eigen-intro-33",
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-33",
-  "type": "Example",
-  "number": "5.1.26",
+  "type": "Checkpoint",
+  "number": "5.1.24",
   "title": "",
-  "body": "  Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.   "
+  "body": " Find the spectral radius of and .  "
 },
 {
   "id": "sec5-1-eigen-intro-34",
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-34",
-  "type": "Checkpoint",
-  "number": "5.1.27",
-  "title": "",
-  "body": " If is a positive definite matrix then all its eigenvalues are positive.  "
+  "type": "Definition",
+  "number": "5.1.25",
+  "title": "Positive definite matrix.",
+  "body": "Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.   "
 },
 {
   "id": "sec5-1-eigen-intro-35",
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-35",
+  "type": "Example",
+  "number": "5.1.26",
+  "title": "",
+  "body": "  Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.   "
+},
+{
+  "id": "sec5-1-eigen-intro-36",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-36",
+  "type": "Example",
+  "number": "5.1.27",
+  "title": "",
+  "body": "  Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.   "
+},
+{
+  "id": "sec5-1-eigen-intro-37",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-37",
   "type": "Checkpoint",
   "number": "5.1.28",
+  "title": "",
+  "body": " If is a positive definite matrix then all its eigenvalues are positive.  "
+},
+{
+  "id": "sec5-1-eigen-intro-38",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-38",
+  "type": "Checkpoint",
+  "number": "5.1.29",
   "title": "",
   "body": " If is a negative definite matrix then all its eigenvalues are negative.  "
 },
@@ -2507,25 +2543,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#thm-sylvyster",
   "type": "Theorem",
-  "number": "5.1.29",
-  "title": "",
-  "body": "  If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.   "
+  "number": "5.1.30",
+  "title": "Sylvester’s Criterion.",
+  "body": "Sylvester's Criterion   If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.   "
 },
 {
-  "id": "sec5-1-eigen-intro-38",
+  "id": "sec5-1-eigen-intro-42",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-38",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-42",
   "type": "Example",
-  "number": "5.1.30",
+  "number": "5.1.31",
   "title": "",
   "body": "  Let . For any , we have   Henc e is positive definite.   "
 },
 {
-  "id": "sec5-1-eigen-intro-39",
+  "id": "sec5-1-eigen-intro-43",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-39",
+  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-43",
   "type": "Checkpoint",
-  "number": "5.1.31",
+  "number": "5.1.32",
   "title": "",
   "body": " Let . Show that is positive definite.  "
 },
@@ -2986,7 +3022,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.3",
   "title": "Orthogonal Complements",
-  "body": " Orthogonal Complements    Let . Then is called the orthogonal complement of .     (i)   (ii) .  (iii) Let . Then is a subspace of . Note that need not be a subspace of .     Let . Then .      Find the orthogonal complement of .       Let be a subspace of with and orthogonal basis . If , then .     Let be a subspace of and . Then  (i) and .  (ii) is a vector in , which is closet to . That is for all , . Note that . Hence by the Pythagoras theorem, . .     Consider the plane . It is easy to see that lie on the plane . Using the Gram-Schmidt process we can find an orthogonal basis on . Let us find the orthogonal projection of onto . The required vector .    How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in ? Let be a basis of . We want to find the vector which the orthogonal projection of onto .  Note that , therefore, there exist scalars such that where and .  It is clear that . Hence for . This is same as .  Hence   The matrix is called the projection matrix for the subspace .  "
+  "body": " Orthogonal Complements    Let . Then is called the orthogonal complement of .     (i)   (ii) .  (iii) Let . Then is a subspace of . Note that need not be a subspace of .     Let . Then .      Find the orthogonal complement of .       Let be a subspace of with and orthogonal basis . If , then .     Let be a subspace of and . Then  (i) and .  (ii) is a vector in , which is closet to . That is for all , . Note that . Hence by the Pythagoras theorem, . .     Consider the plane . It is easy to see that lie on the plane . Using the Gram-Schmidt process we can find an orthogonal basis on . Let us find the orthogonal projection of onto . The required vector .    How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in ? Let be a basis of . We want to find the vector which the orthogonal projection of onto .  Note that , therefore, there exist scalars such that where and .  It is clear that . Hence for . This is same as .  Hence   The matrix is called the projection matrix for the subspace .   Let be an real matrix. Recall and , rangeor columns space of and null or kernel of . Then show that (i) and (ii) .   Let . Then for all . Hence . This implies that, . Next let then for all . Hence . That is, .    "
 },
 {
   "id": "def-orthogonal-complement",
@@ -3050,6 +3086,15 @@ var ptx_lunr_docs = [
   "number": "6.3.7",
   "title": "",
   "body": "  Consider the plane . It is easy to see that lie on the plane . Using the Gram-Schmidt process we can find an orthogonal basis on . Let us find the orthogonal projection of onto . The required vector .   "
+},
+{
+  "id": "sec6-2-14",
+  "level": "2",
+  "url": "sec6-2.html#sec6-2-14",
+  "type": "Checkpoint",
+  "number": "6.3.8",
+  "title": "",
+  "body": " Let be an real matrix. Recall and , rangeor columns space of and null or kernel of . Then show that (i) and (ii) .   Let . Then for all . Hence . This implies that, . Next let then for all . Hence . That is, .   "
 },
 {
   "id": "sec6-3",
@@ -3463,12 +3508,12 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.1",
   "title": "Least Square Problems",
-  "body": " Least Square Problems   This chapter deals with linear least square problems and its applications.    Linear Least Square Problems  Consider a system of equations having equations in variables. Suppose . Then this system may not have a solution. Then we can look for what is the best approximate solution. If is a solution of then . Here is the measure of how far from . The aim is to find the point such that is at the smallest distance from . Thus if such a exists then for all .  The answer to the above question is yes . In order to find this, we consider .  Note that is subspace of . We are looking for which is at the smallest distance from , which is nothing but the orthogonal projection of onto . Suppose we assume that columns of are linearly independent. Then is the column space of. Hence by the Eq. , orthogonal projection is given by .  Here the vector is called the least square approximation (solution) of .  For the system , after multiplying both sides by , we get which is called the normal equation. We know that rank of is equal to rank of . Hence is invertible if has linearly independent columns. Also the has least square solution if and only if the associated normal equation has a solution.  Note that the least square solution is the minimizer of the function . This can also be obtained using calculus. .  Hence the gradient . Hence implies provided is non singular.    Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function . Here we consider the subspace . We need the find the orthogonal projection of onto .  From Example , we know that is an orthonormal basis of . Hence the orthogonal projection of onto is give by .  After simplification we get .     Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function .     Consider a system of linear equations where   (a) Find the least square solution of .  (b) Find the orthogonal projection of onto the column space .  (c) Write the as where and .   Solution: It is easy to see that the columns of are linearly independent, hence the least square solution exists. We have .  Hence the least square solution of is the solution of the normal equation which is . The same can obtained as .  (b) The orthogonal projection of onto is given by .  (b) Since we have found , is given by . Hence .     (i) Find the best approximation (least square solution) of the system of linear equations     The average number of goals , per game scored by a football player is related linearly to two factors, (i) the number of years of experience and (ii) the number of goals in the preceding 10 games. Find the linear The data on the following page were collected on four players. Find the linear function .           goals  0.8  0.7  0.6  0.5            10  8  6  3            4  4  3  2              The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.                Year  1990  1991  1992  1993  1994  1995  1996  1997    Temp  27.07  26.93  27.11  27.18  26.94  27.25  27.64  27.66               Year  1998  1999  2000  2001  2002  2003  2004  2005    Temp  27.75  27.65  27.61  27.26  27.82  27.46  27.00  27.36               Year  2006  2007  2008  2009  2010  2011  2012  2013    Temp  27.36  28.02  27.75  28.33  28.16  27.94  27.61  27.63               Year  2014  2015  2016  2017  2018  2019  2020  2021    Temp  28.18  28.67  28.24  28.55  28.76  28.27  28.40  28.48                Find the equation of the line that best fits these data points.  The temperature data is plotted in the Figure .     We wish to find the best fit line to the given set of data. Suppose the line is given by , then we wish to find and such that the line is best fit. Now what is meaning of \"best fit\". Suppose we consider the point , if it lies on , then , other wise is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by where is the number of points. Note that the sum of error squares can be written as .  Here   Thus finding amount to finding the least square solution of , which is given by   For the given problem, we have   We have  .  Hence   The set of points along with the best fitted line is shown in the Figure          Fitting a polynomial to the data set  Suppose we are given a set of -data points and we wish to find the best fit polynomial curve of degree , say, , with . In this case, the error term for from the the the curve is . Thus the sum of the error square is   The sum of error square can be written as , where   Thus the least square solution is given by provided columns of are linearly independent.    Find th best fit cubic to the following set of points                  -3.0  -2.8  -2.5  -2.2  -2.0  -1.8  -1.5  -1.2  -1.0  -0.75     1.1  4.0  7.3  7.1  8.2  7.8  9.9  7.1  8.8  6.2                  -0.50  -0.25  0.00  0.25  0.50  0.75  1.0  1.2  1.5  1.8     7.0  3.7  4.7  3.4  5.6  5.8  5.3  6.6  10.  12.                 Thus we need to find the least square solution of , where   We have    Hence the least square solution   See the Figure for fitted curve along with the data.        Find the least squares approximating line for each of the following sets of data points.  (i)   (ii)     Find the least squares approximating quadratic for each of the following sets of data points.  (i)   (ii) The table gives the worldwide cumulative HIV infections in millions.          1980  0.1  1995  29.8    1982  0.7  1997  40.9    1985  2.4  2000  57.9    1987  4.5  2002  67.9    1990  10  2005  82.7    1992  16.1  2008  100.2             Weighted Least Square Problems   "
+  "body": " Least Square Problems   This chapter deals with linear least square problems and its applications.    Linear Least Square Problems  Consider a system of equations having equations in variables. Suppose . Then this system may not have a solution. Then we can look for what is the best approximate solution. If is a solution of then . Here is the measure of how far from . The aim is to find the point such that is at the smallest distance from . Thus if such a exists then for all .  The answer to the above question is yes . In order to find this, we consider .  Note that is subspace of . We are looking for which is at the smallest distance from , which is nothing but the orthogonal projection of onto . Suppose we assume that columns of are linearly independent. Then is the column space of. Hence by the Eq. , orthogonal projection is given by .  Here the vector is called the least square approximation (solution) of .  For the system , after multiplying both sides by , we get which is called the normal equation. We know that rank of is equal to rank of . Hence is invertible if has linearly independent columns. Also the has least square solution if and only if the associated normal equation has a solution.  Note that the least square solution is the minimizer of the function . This can also be obtained using calculus. .  The last equiality is due to the fact that, .  Hence the gradient . Hence implies provided is non singular.    Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function . Here we consider the subspace . We need the find the orthogonal projection of onto .  From Example , we know that is an orthonormal basis of . Hence the orthogonal projection of onto is give by .  After simplification we get .     Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function .     Consider a system of linear equations where   (a) Find the least square solution of .  (b) Find the orthogonal projection of onto the column space .  (c) Write the as where and .   Solution: It is easy to see that the columns of are linearly independent, hence the least square solution exists. We have .  Hence the least square solution of is the solution of the normal equation which is . The same can obtained as .  (b) The orthogonal projection of onto is given by .  (b) Since we have found , is given by . Hence .      (i) Find the best approximation (least square solution) of the system of linear equations     The average number of goals , per game scored by a football player is related linearly to two factors, (i) the number of years of experience and (ii) the number of goals in the preceding 10 games. Find the linear The data on the following page were collected on four players. Find the linear function .           goals  0.8  0.7  0.6  0.5            10  8  6  3            4  4  3  2               The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.                Year  1990  1991  1992  1993  1994  1995  1996  1997    Temp  27.07  26.93  27.11  27.18  26.94  27.25  27.64  27.66               Year  1998  1999  2000  2001  2002  2003  2004  2005    Temp  27.75  27.65  27.61  27.26  27.82  27.46  27.00  27.36               Year  2006  2007  2008  2009  2010  2011  2012  2013    Temp  27.36  28.02  27.75  28.33  28.16  27.94  27.61  27.63               Year  2014  2015  2016  2017  2018  2019  2020  2021    Temp  28.18  28.67  28.24  28.55  28.76  28.27  28.40  28.48                Find the equation of the line that best fits these data points.  The temperature data is plotted in the Figure .     We wish to find the best fit line to the given set of data. Suppose the line is given by , then we wish to find and such that the line is best fit. Now what is meaning of \"best fit\". Suppose we consider the point , if it lies on , then , other wise is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by where is the number of points. Note that the sum of error squares can be written as .  Here   Thus finding amount to finding the least square solution of , which is given by   For the given problem, we have   We have  .  Hence   The set of points along with the best fitted line is shown in the Figure          Fitting polynomials to a data set  Suppose we are given a set of -data points and we wish to find the best fit polynomial curve of degree , say, , with . In this case, the error term for from the the the curve is . Thus the sum of the error square is   The sum of error square can be written as , where   Thus the least square solution is given by provided columns of are linearly independent.    Find th best fit cubic to the following set of points                  -3.0  -2.8  -2.5  -2.2  -2.0  -1.8  -1.5  -1.2  -1.0  -0.75     1.1  4.0  7.3  7.1  8.2  7.8  9.9  7.1  8.8  6.2                  -0.50  -0.25  0.00  0.25  0.50  0.75  1.0  1.2  1.5  1.8     7.0  3.7  4.7  3.4  5.6  5.8  5.3  6.6  10.  12.                 Thus we need to find the least square solution of , where   We have    Hence the least square solution   See the Figure for fitted curve along with the data.         Find the least squares approximating line for each of the following sets of data points.  (i)   (ii)     Find the least squares approximating quadratic for each of the following sets of data points.  (i)   (ii) The table gives the worldwide cumulative HIV infections in millions.          1980  0.1  1995  29.8    1982  0.7  1997  40.9    1985  2.4  2000  57.9    1987  4.5  2002  67.9    1990  10  2005  82.7    1992  16.1  2008  100.2              Weighted Least Square Problems   "
 },
 {
-  "id": "sec-linear-lstsq-9",
+  "id": "sec-linear-lstsq-10",
   "level": "2",
-  "url": "sec8-1-LSTSQ.html#sec-linear-lstsq-9",
+  "url": "sec8-1-LSTSQ.html#sec-linear-lstsq-10",
   "type": "Example",
   "number": "8.1.1",
   "title": "",
@@ -3484,9 +3529,9 @@ var ptx_lunr_docs = [
   "body": " Consider the inner product space equipped with inner product .  Find the polynomial of degree at most 2 which is closest to the function .  "
 },
 {
-  "id": "sec-linear-lstsq-11",
+  "id": "sec-linear-lstsq-12",
   "level": "2",
-  "url": "sec8-1-LSTSQ.html#sec-linear-lstsq-11",
+  "url": "sec8-1-LSTSQ.html#sec-linear-lstsq-12",
   "type": "Example",
   "number": "8.1.3",
   "title": "",
@@ -3496,8 +3541,8 @@ var ptx_lunr_docs = [
   "id": "exer-8-1-3",
   "level": "2",
   "url": "sec8-1-LSTSQ.html#exer-8-1-3",
-  "type": "Checkpoint",
-  "number": "8.1.4",
+  "type": "Exercise",
+  "number": "8.1.1.1",
   "title": "",
   "body": " (i) Find the best approximation (least square solution) of the system of linear equations   "
 },
@@ -3505,8 +3550,8 @@ var ptx_lunr_docs = [
   "id": "exer-8-1-4",
   "level": "2",
   "url": "sec8-1-LSTSQ.html#exer-8-1-4",
-  "type": "Checkpoint",
-  "number": "8.1.5",
+  "type": "Exercise",
+  "number": "8.1.1.2",
   "title": "",
   "body": " The average number of goals , per game scored by a football player is related linearly to two factors, (i) the number of years of experience and (ii) the number of goals in the preceding 10 games. Find the linear The data on the following page were collected on four players. Find the linear function .           goals  0.8  0.7  0.6  0.5            10  8  6  3            4  4  3  2           "
 },
@@ -3515,7 +3560,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec8-1-LSTSQ.html#sec-linear-lstsq-14",
   "type": "Example",
-  "number": "8.1.6",
+  "number": "8.1.4",
   "title": "",
   "body": "  The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.                Year  1990  1991  1992  1993  1994  1995  1996  1997    Temp  27.07  26.93  27.11  27.18  26.94  27.25  27.64  27.66               Year  1998  1999  2000  2001  2002  2003  2004  2005    Temp  27.75  27.65  27.61  27.26  27.82  27.46  27.00  27.36               Year  2006  2007  2008  2009  2010  2011  2012  2013    Temp  27.36  28.02  27.75  28.33  28.16  27.94  27.61  27.63               Year  2014  2015  2016  2017  2018  2019  2020  2021    Temp  28.18  28.67  28.24  28.55  28.76  28.27  28.40  28.48                Find the equation of the line that best fits these data points.  The temperature data is plotted in the Figure .     We wish to find the best fit line to the given set of data. Suppose the line is given by , then we wish to find and such that the line is best fit. Now what is meaning of \"best fit\". Suppose we consider the point , if it lies on , then , other wise is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by where is the number of points. Note that the sum of error squares can be written as .  Here   Thus finding amount to finding the least square solution of , which is given by   For the given problem, we have   We have  .  Hence   The set of points along with the best fitted line is shown in the Figure       "
 },
@@ -3524,7 +3569,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec8-1-LSTSQ.html#sec8-1-LSTSQ-4-5",
   "type": "Example",
-  "number": "8.1.9",
+  "number": "8.1.7",
   "title": "",
   "body": "  Find th best fit cubic to the following set of points                  -3.0  -2.8  -2.5  -2.2  -2.0  -1.8  -1.5  -1.2  -1.0  -0.75     1.1  4.0  7.3  7.1  8.2  7.8  9.9  7.1  8.8  6.2                  -0.50  -0.25  0.00  0.25  0.50  0.75  1.0  1.2  1.5  1.8     7.0  3.7  4.7  3.4  5.6  5.8  5.3  6.6  10.  12.                 Thus we need to find the least square solution of , where   We have    Hence the least square solution   See the Figure for fitted curve along with the data.      "
 },
@@ -3532,8 +3577,8 @@ var ptx_lunr_docs = [
   "id": "exer-8-1-5",
   "level": "2",
   "url": "sec8-1-LSTSQ.html#exer-8-1-5",
-  "type": "Checkpoint",
-  "number": "8.1.11",
+  "type": "Exercise",
+  "number": "8.1.2.1",
   "title": "",
   "body": " Find the least squares approximating line for each of the following sets of data points.  (i)   (ii)   "
 },
@@ -3541,8 +3586,8 @@ var ptx_lunr_docs = [
   "id": "exer-8-1-6",
   "level": "2",
   "url": "sec8-1-LSTSQ.html#exer-8-1-6",
-  "type": "Checkpoint",
-  "number": "8.1.12",
+  "type": "Exercise",
+  "number": "8.1.2.2",
   "title": "",
   "body": " Find the least squares approximating quadratic for each of the following sets of data points.  (i)   (ii) The table gives the worldwide cumulative HIV infections in millions.          1980  0.1  1995  29.8    1982  0.7  1997  40.9    1985  2.4  2000  57.9    1987  4.5  2002  67.9    1990  10  2005  82.7    1992  16.1  2008  100.2          "
 },
@@ -3553,7 +3598,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.1",
   "title": "Singular Value Decomposition",
-  "body": " Singular Value Decomposition   In this section, we deal with one of the most important matrix factorization tools, called the singular value decomposition (SVD). The SVD of a matrix is closely related to eigen decomposition of the matrix . One can also think of this as a generalization of diagonalization procedure that allows us to diagonalize any matrix not necessarily square matrix. The SVD is computationally a viable tool for a wide variety of applications. It has applications in image and signal processing, control theory, least square problems, time series analysis, pattern recognition, dimensionality reduction, biomedical engineering and defining a generalized inverse of a matrix and many more. We shall deal with few of these applications.    Singular Value Decomposition Theorem   SVD Theorem   Let be a real matrix. Then can be factorized as where is an orthogonal matrix, is an orthogonal matrix and is a diagonal matrix given by whose diagonal entries are non negative and are arranged in a non increasing order.  The number of non zero entries in is the rank of .    The decomposition is called a singular value decomposition of . The diagonals entries are called singular values of . (that is why the name singular value decomposition.)  Before we prove this theorem, let us play with the equation . We have . This implies . Hence   The Eqn. suggests that columns of are eigenvectors of , and are called right singular vectors .  Similarly, This implies   The Eqn. suggests that columns of are eigenvectors of , and are called left singular vectors .  The notion of right and left eigenvectors suggest a way to construct the matrix and in the SVD decomposition. Let us see what do I mean? Suppose and . Then we have .  Hence .  Thus suggests, that may be defined as . However, if , then .  If we want to be orthogonal, we may define .  Let us look at proof of .   Note that is symmetric and . Let . Further .  Hence is a symmetric and semi-positive definite matrix. Hence all its eigenvalues are real and non negative. Let be non zero eigenvalues of with . The remaining eigenvalues of are . Let us denote for . Since is symmetric matrix, it is diagonalizable. Hence there exists an orthogonal eigenbasis for of . Let . This implies   From , we have .  This implies, .  We define .  We claim that is an orthonormal set. For .  Now we complete to an orthonormal basis of . Define .  We claim that and hence . .  Hence .    The singular values of a matrix in a SVD are unique, however singular vectors are not unique.     Let be a SVD of where and , are singular values of . Then can also be written as .    The decomposition is called a rank one decomposition of , as rank of each term in is 1. (why?) This is a very useful way of decomposing as we shall see this later.   An matrix is rank one matrix if and only if there exist non-zero vectors such that .    If is a real symmetric matrix with eigenvalues , then show that singular values of are     A square matrix is non singular if and only if all singular values of are non zero.     Let us find a singular value decomposition of .  We have . The eigenvalues of are and . The corresponding eigenvectors with respect to eigenvalues of are , and respectively. Hence an orthonormal eigenbasis of is .  We define .  Thus we have  .  It is easy to check that that .     Verify the equation for example . That is, .    Find a singular value decomposition of .     Pseudoinverse using SVD    If is a matrix, then the pseudoinverse of is matrix satisfying the following properties:                     .     The pseudoinverse of a matrix is denoted by . Pseudoinverse is also called the generalized inverse or Moore-Penrose pseudoinverse.     Singular value decomposition provides an effective procedure to find the pseudoinverse of a matrix.  Suppose is a SVD of . Since and are orthogonal matrices they are invertible. Thus to define pseudoinverse of , it is sufficient to define pseudoinverse of the diagonal matrix . It is natural to define the inverse of diagonal matrix by taking reciprocal of the nonzero diagonal entries and taking its transpose. Thus if . Then .  Having defined the generalized inverse of , now it is natural to define .    Find the pseudoinverse of .  Note that . The eigenvalues of are and with corresponding orthonormal eigenvectors and respectively. Now .  Extending to an orthonormal basis of , we can select .  Thus a SVD is given by .  Hence .     If is matrix with and then . If and then .   is called the left pseudoinnverse of and is called the right pseudoinverse of .     Let , be a system of equations in variables with . Let . Then the vector minimizes on , that is the least square solution of .       If is square matrix, then show that and are similar.    Find the SVD of a matrix .    Find the least square solution of the system of equations where and using generalized inverse.    Find the SVD of using step by step calculations.      Use SVD to show that a square matrix is symmetric ( ) if and only if .  Hint: implies right singular vectors of are same as left singular vectors of with same singular values. Hence the SVD of with . Any matrix of the form is symmetric.     Geometry of SVD  In order to see the geometric meaning of the SVD. Let us consider the matrix .  The singular value decomposition of is given by .  The geometric meaning of applied to unit circle along with unit vectors and is explained in the following figure .    Transformation of unit circle under SVD      Consider a matrix . The singular values of are 5.107, 2.2982 and 1.2779.  The Figure below explains what happens to a unit sphere and unit vectors under , obtained using SVD.   Transformation of unit circle under SVD         Image Compression using SVD  Images stored on a computer is a collection of dots called pixels. The collection of dots\/pixels that constitute an image can be stored as a matrix. The color image can be thought of as 3 dimensional array.  Using Eqn. we can write a matrix as sum of rank one matrices. .  This property says that is equal to the number of singular values of . Since , the first term has highest impact on followed by the second term and so on. This propriety allows us to reduce the noise or compress the matrix data by eliminating the small singular values or the higher ranks. This can be used as approximation of a given matrix, in particular we can approximate a matrix by adding only the first few terms of .  If we let then the total storage required for is which is much less compare to .  When an image (the corresponding matrix) is transformed using SVD, it is not compressed, but the data take a form in which the first singular value has a more amount of the image information. This allows us to use first few singular values to represent the image almost identical to the original.  Look at the Image in Fig . The associates matrix for this image is of size .   Orginal Color Image    This image is converted into a gray scale image (See Figure ). This size of matrix associated to the gray scale image is with rank 995.    Original Gray Image   After applying SVD to the Gray image and using 1st 5, 10, 20,30, 50, 100 terms respectively of the rank one approximation the approximate images are plotted in the Figures , , , , , respectively.    Approximate Image with 5 terms     Approximate Image with 10 terms     Approximate Image with 20 terms     Approximate Image with 30 terms     Approximate Image with 50 terms     Approximate Image with 100 terms   It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image. Note that the original image has pixels, where as if we take the 1st 100 terms, then it is of size which quite small compared to the original size.   "
+  "body": " Singular Value Decomposition   In this section, we deal with one of the most important matrix factorization tools, called the singular value decomposition (SVD). The SVD of a matrix is closely related to eigen decomposition of the matrix . One can also think of this as a generalization of diagonalization procedure that allows us to diagonalize any matrix not necessarily square matrix. The SVD is computationally a viable tool for a wide variety of applications. It has applications in image and signal processing, control theory, least square problems, time series analysis, pattern recognition, dimensionality reduction, biomedical engineering and defining a generalized inverse of a matrix and many more. We shall deal with few of these applications.    Singular Value Decomposition Theorem   SVD Theorem   Let be a real matrix. Then can be factorized as where is an orthogonal matrix, is an orthogonal matrix and is a diagonal matrix given by whose diagonal entries are non negative and are arranged in a non increasing order.  The number of non zero entries in is the rank of .    The decomposition is called a singular value decomposition of . The diagonals entries are called singular values of . (that is why the name singular value decomposition.)  Before we prove this theorem, let us play with the equation . We have . This implies . Hence   The Eqn. suggests that columns of are eigenvectors of , and are called right singular vectors .  Similarly, This implies   The Eqn. suggests that columns of are eigenvectors of , and are called left singular vectors .  The notion of right and left eigenvectors suggest a way to construct the matrix and in the SVD decomposition. Let us see what do I mean? Suppose and . Then we have .  Hence .  Thus suggests, that may be defined as . However, if , then .  If we want to be orthogonal, we may define .  Let us look at proof of .   Note that is symmetric and . Let . Further .  Hence is a symmetric and semi-positive definite matrix. Hence all its eigenvalues are real and non negative. Let be non zero eigenvalues of with . The remaining eigenvalues of are . Let us denote for . Since is symmetric matrix, it is diagonalizable. Hence there exists an orthogonal eigenbasis for of . Let . This implies   From , we have .  This implies, .  We define .  We claim that is an orthonormal set. For .  Now we complete to an orthonormal basis of . Define   We claim that and hence . .  Hence .    The singular values of a matrix in a SVD are unique, however singular vectors are not unique.     Let be a SVD of where and , are singular values of . Then can also be written as .    The decomposition is called a rank one decomposition of , as rank of each term in is 1. (why?) This is a very useful way of decomposing as we shall see this later.    Use SVD to show that a square matrix is symmetric ( ) if and only if .    implies right singular vectors of are same as left singular vectors of with same singular values. Hence the SVD of with . Any matrix of the form is symmetric.       An matrix is rank one matrix if and only if there exist non-zero vectors such that .    If is a real symmetric matrix with eigenvalues , then show that singular values of are     A square matrix is non singular if and only if all singular values of are non zero.      Let us find a singular value decomposition of .  We have . The eigenvalues of are and . The corresponding eigenvectors with respect to eigenvalues of are , and respectively. Hence an orthonormal eigenbasis of is .  We define .  Thus we have  .  It is easy to check that that .      Verify the equation for example . That is, .    Find a singular value decomposition of .   Find the SVD of using step by step calculations.     Pseudoinverse using SVD    If is a matrix, then the pseudoinverse of is matrix satisfying the following properties:                     .     The pseudoinverse of a matrix is denoted by . Pseudoinverse is also called the generalized inverse or Moore-Penrose pseudoinverse.     Singular value decomposition provides an effective procedure to find the pseudoinverse of a matrix.  Suppose is a SVD of . Since and are orthogonal matrices they are invertible. Thus to define pseudoinverse of , it is sufficient to define pseudoinverse of the diagonal matrix . It is natural to define the inverse of diagonal matrix by taking reciprocal of the nonzero diagonal entries and taking its transpose. Thus if . Then .  Having defined the generalized inverse of , now it is natural to define .    Find the pseudoinverse of .  Note that . The eigenvalues of are and with corresponding orthonormal eigenvectors and respectively. Now .  Extending to an orthonormal basis of , we can select .  Thus a SVD is given by .  Hence .      If is matrix with and then .   is called the left pseudoinnverse of .    If and then .   is called the right pseudoinverse of .      Let , be a system of equations in variables with . Let . Then the vector minimizes on , that is the least square solution of .      If is square matrix, then show that and are similar.    Find the SVD of a matrix .    Find the least square solution of the system of equations where and using generalized inverse.      Geometry of SVD  SVD provides effective way to look at how a matrix tranforms and object geometrically. In order to see the geometric, let us consider the matrix .  The singular value decomposition of is given by .  The geometric meaning of applied to unit circle along with unit vectors and is explained in the following figure .    Transformation of unit circle under SVD      Consider a matrix . The singular values of are 5.107, 2.2982 and 1.2779.  The Figure below explains what happens to a unit sphere and unit vectors under , obtained using SVD.   Transformation of unit circle under SVD         Image Compression using SVD  Images stored on a computer is a collection of dots called pixels. The collection of dots\/pixels that constitute an image can be stored as a matrix. The color image can be thought of as 3 dimensional array.  Using Eqn. we can write a matrix as sum of rank one matrices. .  This property says that is equal to the number of singular values of . Since , the first term has highest impact on followed by the second term and so on. This propriety allows us to reduce the noise or compress the matrix data by eliminating the small singular values or the higher ranks. This can be used as approximation of a given matrix, in particular we can approximate a matrix by adding only the first few terms of .  If we let then the total storage required for is which is much less compare to .  When an image (the corresponding matrix) is transformed using SVD, it is not compressed, but the data take a form in which the first singular value has a more amount of the image information. This allows us to use first few singular values to represent the image almost identical to the original.  Look at the Image in Fig . The associates matrix for this image is of size .   Orginal Color Image    This image is converted into a gray scale image (See Figure ). This size of matrix associated to the gray scale image is with rank 995.    Original Gray Image   After applying SVD to the Gray image and using 1st 5, 10, 20,30, 50, 100 terms respectively of the rank one approximation the approximate images are plotted in the Figures , , , , , respectively.    Approximate Image with 5 terms     Approximate Image with 10 terms     Approximate Image with 20 terms     Approximate Image with 30 terms     Approximate Image with 50 terms     Approximate Image with 100 terms   It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image. Note that the original image has pixels, where as if we take the 1st 100 terms, then it is of size which quite small compared to the original size.   "
 },
 {
   "id": "thm_svd1",
@@ -3571,7 +3616,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "9.1.1.1",
   "title": "",
-  "body": " Note that is symmetric and . Let . Further .  Hence is a symmetric and semi-positive definite matrix. Hence all its eigenvalues are real and non negative. Let be non zero eigenvalues of with . The remaining eigenvalues of are . Let us denote for . Since is symmetric matrix, it is diagonalizable. Hence there exists an orthogonal eigenbasis for of . Let . This implies   From , we have .  This implies, .  We define .  We claim that is an orthonormal set. For .  Now we complete to an orthonormal basis of . Define .  We claim that and hence . .  Hence .  "
+  "body": " Note that is symmetric and . Let . Further .  Hence is a symmetric and semi-positive definite matrix. Hence all its eigenvalues are real and non negative. Let be non zero eigenvalues of with . The remaining eigenvalues of are . Let us denote for . Since is symmetric matrix, it is diagonalizable. Hence there exists an orthogonal eigenbasis for of . Let . This implies   From , we have .  This implies, .  We define .  We claim that is an orthonormal set. For .  Now we complete to an orthonormal basis of . Define   We claim that and hence . .  Hence .  "
 },
 {
   "id": "rem_svd1",
@@ -3592,11 +3637,20 @@ var ptx_lunr_docs = [
   "body": "  Let be a SVD of where and , are singular values of . Then can also be written as .   "
 },
 {
+  "id": "exer-9-1-15",
+  "level": "2",
+  "url": "sec9-1-SVD.html#exer-9-1-15",
+  "type": "Reading Question",
+  "number": "9.1.1.1",
+  "title": "",
+  "body": " Use SVD to show that a square matrix is symmetric ( ) if and only if .    implies right singular vectors of are same as left singular vectors of with same singular values. Hence the SVD of with . Any matrix of the form is symmetric.   "
+},
+{
   "id": "rank1-matrix",
   "level": "2",
   "url": "sec9-1-SVD.html#rank1-matrix",
-  "type": "Checkpoint",
-  "number": "9.1.4",
+  "type": "Exercise",
+  "number": "9.1.1.1",
   "title": "",
   "body": " An matrix is rank one matrix if and only if there exist non-zero vectors such that .  "
 },
@@ -3604,8 +3658,8 @@ var ptx_lunr_docs = [
   "id": "ex_svd1",
   "level": "2",
   "url": "sec9-1-SVD.html#ex_svd1",
-  "type": "Checkpoint",
-  "number": "9.1.5",
+  "type": "Exercise",
+  "number": "9.1.1.2",
   "title": "",
   "body": " If is a real symmetric matrix with eigenvalues , then show that singular values of are   "
 },
@@ -3613,8 +3667,8 @@ var ptx_lunr_docs = [
   "id": "ex_svd2",
   "level": "2",
   "url": "sec9-1-SVD.html#ex_svd2",
-  "type": "Checkpoint",
-  "number": "9.1.6",
+  "type": "Exercise",
+  "number": "9.1.1.3",
   "title": "",
   "body": " A square matrix is non singular if and only if all singular values of are non zero.  "
 },
@@ -3623,7 +3677,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#eg_svd1",
   "type": "Example",
-  "number": "9.1.7",
+  "number": "9.1.4",
   "title": "",
   "body": "  Let us find a singular value decomposition of .  We have . The eigenvalues of are and . The corresponding eigenvectors with respect to eigenvalues of are , and respectively. Hence an orthonormal eigenbasis of is .  We define .  Thus we have  .  It is easy to check that that .   "
 },
@@ -3631,8 +3685,8 @@ var ptx_lunr_docs = [
   "id": "exer-9-1-8",
   "level": "2",
   "url": "sec9-1-SVD.html#exer-9-1-8",
-  "type": "Checkpoint",
-  "number": "9.1.8",
+  "type": "Exercise",
+  "number": "9.1.1.1",
   "title": "",
   "body": " Verify the equation for example . That is, .  "
 },
@@ -3640,17 +3694,26 @@ var ptx_lunr_docs = [
   "id": "exer-9-1-9",
   "level": "2",
   "url": "sec9-1-SVD.html#exer-9-1-9",
-  "type": "Checkpoint",
-  "number": "9.1.9",
+  "type": "Exercise",
+  "number": "9.1.1.2",
   "title": "",
   "body": " Find a singular value decomposition of .  "
+},
+{
+  "id": "exercises-SVD-exer-set2-3",
+  "level": "2",
+  "url": "sec9-1-SVD.html#exercises-SVD-exer-set2-3",
+  "type": "Exercise",
+  "number": "9.1.1.3",
+  "title": "",
+  "body": "Find the SVD of using step by step calculations. "
 },
 {
   "id": "def-pseudoinverse",
   "level": "2",
   "url": "sec9-1-SVD.html#def-pseudoinverse",
   "type": "Definition",
-  "number": "9.1.10",
+  "number": "9.1.5",
   "title": "",
   "body": "  If is a matrix, then the pseudoinverse of is matrix satisfying the following properties:                     .     The pseudoinverse of a matrix is denoted by . Pseudoinverse is also called the generalized inverse or Moore-Penrose pseudoinverse.    "
 },
@@ -3659,7 +3722,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#eg_svd2",
   "type": "Example",
-  "number": "9.1.11",
+  "number": "9.1.6",
   "title": "",
   "body": "  Find the pseudoinverse of .  Note that . The eigenvalues of are and with corresponding orthonormal eigenvectors and respectively. Now .  Extending to an orthonormal basis of , we can select .  Thus a SVD is given by .  Hence .   "
 },
@@ -3667,44 +3730,62 @@ var ptx_lunr_docs = [
   "id": "psedo_ex1",
   "level": "2",
   "url": "sec9-1-SVD.html#psedo_ex1",
-  "type": "Checkpoint",
-  "number": "9.1.12",
+  "type": "Reading Question",
+  "number": "9.1.2.1",
   "title": "",
-  "body": " If is matrix with and then . If and then .   is called the left pseudoinnverse of and is called the right pseudoinverse of .  "
+  "body": " If is matrix with and then .   is called the left pseudoinnverse of .  "
+},
+{
+  "id": "psedo_ex2",
+  "level": "2",
+  "url": "sec9-1-SVD.html#psedo_ex2",
+  "type": "Reading Question",
+  "number": "9.1.2.2",
+  "title": "",
+  "body": " If and then .   is called the right pseudoinverse of .  "
 },
 {
   "id": "sec9-1-SVD-4-8",
   "level": "2",
   "url": "sec9-1-SVD.html#sec9-1-SVD-4-8",
   "type": "Theorem",
-  "number": "9.1.13",
+  "number": "9.1.7",
   "title": "",
   "body": "  Let , be a system of equations in variables with . Let . Then the vector minimizes on , that is the least square solution of .   "
 },
 {
-  "id": "exer-9-1-14",
+  "id": "exer-9-1-14a",
   "level": "2",
-  "url": "sec9-1-SVD.html#exer-9-1-14",
-  "type": "Checkpoint",
-  "number": "9.1.14",
+  "url": "sec9-1-SVD.html#exer-9-1-14a",
+  "type": "Exercise",
+  "number": "9.1.2.1",
   "title": "",
-  "body": "   If is square matrix, then show that and are similar.    Find the SVD of a matrix .    Find the least square solution of the system of equations where and using generalized inverse.    Find the SVD of using step by step calculations.    "
+  "body": " If is square matrix, then show that and are similar.  "
 },
 {
-  "id": "exer-9-1-15",
+  "id": "exer-9-1-14b",
   "level": "2",
-  "url": "sec9-1-SVD.html#exer-9-1-15",
-  "type": "Checkpoint",
-  "number": "9.1.15",
+  "url": "sec9-1-SVD.html#exer-9-1-14b",
+  "type": "Exercise",
+  "number": "9.1.2.2",
   "title": "",
-  "body": " Use SVD to show that a square matrix is symmetric ( ) if and only if .  Hint: implies right singular vectors of are same as left singular vectors of with same singular values. Hence the SVD of with . Any matrix of the form is symmetric.  "
+  "body": " Find the SVD of a matrix .  "
+},
+{
+  "id": "exer-9-1-14c",
+  "level": "2",
+  "url": "sec9-1-SVD.html#exer-9-1-14c",
+  "type": "Exercise",
+  "number": "9.1.2.3",
+  "title": "",
+  "body": " Find the least square solution of the system of equations where and using generalized inverse.  "
 },
 {
   "id": "fig_Unit_Circle-SVD",
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Unit_Circle-SVD",
   "type": "Figure",
-  "number": "9.1.16",
+  "number": "9.1.8",
   "title": "",
   "body": " Transformation of unit circle under SVD   "
 },
@@ -3713,7 +3794,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#sec9-1-SVD-5-6",
   "type": "Example",
-  "number": "9.1.17",
+  "number": "9.1.9",
   "title": "",
   "body": "  Consider a matrix . The singular values of are 5.107, 2.2982 and 1.2779.  The Figure below explains what happens to a unit sphere and unit vectors under , obtained using SVD.   Transformation of unit circle under SVD      "
 },
@@ -3722,7 +3803,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im1",
   "type": "Figure",
-  "number": "9.1.19",
+  "number": "9.1.11",
   "title": "",
   "body": " Orginal Color Image   "
 },
@@ -3731,7 +3812,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im2",
   "type": "Figure",
-  "number": "9.1.20",
+  "number": "9.1.12",
   "title": "",
   "body": "  Original Gray Image  "
 },
@@ -3740,7 +3821,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im5",
   "type": "Figure",
-  "number": "9.1.21",
+  "number": "9.1.13",
   "title": "",
   "body": "  Approximate Image with 5 terms  "
 },
@@ -3749,7 +3830,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im10",
   "type": "Figure",
-  "number": "9.1.22",
+  "number": "9.1.14",
   "title": "",
   "body": "  Approximate Image with 10 terms  "
 },
@@ -3758,7 +3839,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im20",
   "type": "Figure",
-  "number": "9.1.23",
+  "number": "9.1.15",
   "title": "",
   "body": "  Approximate Image with 20 terms  "
 },
@@ -3767,7 +3848,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im30",
   "type": "Figure",
-  "number": "9.1.24",
+  "number": "9.1.16",
   "title": "",
   "body": "  Approximate Image with 30 terms  "
 },
@@ -3776,7 +3857,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im50",
   "type": "Figure",
-  "number": "9.1.25",
+  "number": "9.1.17",
   "title": "",
   "body": "  Approximate Image with 50 terms  "
 },
@@ -3785,7 +3866,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im100",
   "type": "Figure",
-  "number": "9.1.26",
+  "number": "9.1.18",
   "title": "",
   "body": "  Approximate Image with 100 terms  "
 },
@@ -3941,6 +4022,15 @@ var ptx_lunr_docs = [
   "number": "10.2.12",
   "title": "",
   "body": " Find the principal components of the matrix   What percentage of the variation in the data is explained by the first principal component.  "
+},
+{
+  "id": "sec10-3",
+  "level": "1",
+  "url": "sec10-3.html",
+  "type": "Section",
+  "number": "10.3",
+  "title": "Sage Practice Area",
+  "body": " Sage Practice Area   You may try out Sage codes here to solve excercises.    Sage Practice Area         "
 },
 {
   "id": "backmatter-2",
