@@ -1,0 +1,722 @@
+<section xml:id="sec-Rn-vs">
+  <title><m>\R^n</m> as a vector space</title>
+  <introduction>
+    <p>
+      In the sequel we consider some of the basic concepts required for the course on optimization Techniques.
+    </p>
+    <p>
+      We let <m>\R^n:=\{(x_1,x_2,\ldots,x_n):x_i\in \R, 1\leq i\leq n\}</m>.
+      Note that on <m>\R^n</m> we can define addition and scalar multiplication defined as follows:
+      for <m>x=(x_1,x_2,\ldots,x_n),y=(y_1,y_2,\ldots,y_n)\in \R^n</m> and <m>\alpha\in\R</m>.
+      <md>
+        <mrow>x+y\amp :=\amp (x_1+y_1,x_2+y_2,\ldots,x_n+y_n)</mrow>
+        <mrow>\alpha \cdot x\amp :=\amp (\alpha x_1,\alpha x_2,\ldots,\alpha x_n)</mrow>
+      </md>.
+    </p>
+    <p>
+      In the sequel,
+      we will write <m>\alpha\cdots x</m> as <m>\alpha x</m>.
+      An element <m>x\in R^n</m> is called a vector.
+      It written as a column matrix and we also call it column vector.
+    </p>
+    <p>
+      <em>If <m>A</m> is <m>m\times n</m> matrix then columns of <m>A</m> can be thought of as vectors in <m>\R^m</m>.</em>
+    </p>
+    <exercise xml:id="vector-space-prop">
+      <statement>
+        <p>
+          Show that addition and scalar multiplication satisfy the following properties:
+        </p>
+        <p>
+          (i) for all <m>x,y\in \R^n</m>, <m>x+y=y+x</m>.
+        </p>
+        <p>
+          (ii) for all <m>x,y,z\in \R^n</m>,
+          <m>x+(y+z)=(x+y)+z</m>. (iii) The zero vector <m>\overline{0}=(0,0,\ldots,0)</m> has the property,
+          for all <m>x\in \R^n</m>, <m>\overline{0}=x+\overline{0}</m>.
+          There zero vector we shall denote by 0 and is called the additive identity.
+        </p>
+        <p>
+          (iv) for each <m>x\in R^n</m>,
+          there is a vector <m>x'\in \R^n</m>,
+          such that <m>x+x'=x'+x=\overline{0}</m>.
+          This <m>x'</m> is called the additive inverse of <m>x</m>.
+          It is easy to see that <m>x'=-x</m>.
+        </p>
+        <p>
+          (v) for all <m>\alpha\in \R</m> and <m>x,y \in \R^n</m>,
+          <m>\alpha(x+y)=\alpha x+\alpha y</m>. (vi) for all
+          <m>\alpha,\beta \in \R</m> and <m>x \in \R^n</m>,
+          <m>(\alpha+\beta) x=\alpha x+\beta y</m>. (vii) for all
+          <m>\alpha,\beta \in \R</m> and <m>x \in \R^n</m>,
+          <m>(\alpha\beta) x=\alpha (\beta x)y=\beta(\alpha x)</m>.
+        </p>
+        <p>
+          (viii) for all <m>x\in \R^n</m>, <m>1\cdots x=x</m>.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      The set <m>\R^n</m> with addition and scalar multiplication along with the above eight properties is called a vector space over <m>\R</m>.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A non empty subset <m>V\subset \R^n</m> is called a vector subspace of <m>\R^n</m> if <m>V</m> is closed under vector addition and scalar multiplication.
+          That is, (i) for all <m>x,y\in V, x+y\in V</m> and (ii) for all <m>x \in V, \alpha \in \R</m>,
+          we have <m>\alpha x\in V</m>.
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <statement>
+        <p>
+          (i) <m>\{0\}</m> is a vectors subspace of <m>\R^n</m>
+        </p>
+        <p>
+          (ii) Any line passing through origin in <m>\R^2</m> is a subspace of <m>\R^2</m>.
+        </p>
+        <p>
+          (iii) Any line passing through origin in <m>\R^3</m> is a subspace of <m>\R^3</m>.
+        </p>
+        <p>
+          (iv) Any plane passing through origin in <m>\R^3</m> is a subspace of <m>\R^3</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let <m>S=\{v_1, v_2,\ldots, v_k\}</m> be a subset of vectors in <m>\R^n</m>.
+          Then the linear span of <m>S</m>,
+          denoted by <m>L(S)</m> is a subset of <m>\R^n</m> defined as
+          <me>
+            L(S):=\{\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k:\alpha_1,\cdots,\alpha_k\in \R\}
+          </me>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          (i) Let <m>S=\{v_1, v_2,\ldots,
+          v_k\}</m> be a subset of vectors in <m>\R^n</m> then <m>L(S)</m> is a subspace of <m>\R^n</m>.
+        </p>
+        <p>
+          (i) If <m>v\in \R^n</m> is a non-zero vector in <m>\R^n</m>,
+          then <m>L(\{v_1\})=\{\alpha v:\alpha\in \R\}</m> is a the line passing through origin and <m>v</m>.
+        </p>
+        <p>
+          (ii) Let <m>S =\{e_1=(1,0),e_2=(0,1)\}</m>.
+          Then <m>L(S)=\R^2</m>.
+        </p>
+        <p>
+          (iii) Let <m>S=\{(1,-1),(2,1)\}</m>, then <m>L(S)=\R^2</m>.
+        </p>
+        <p>
+          (iv) Let <m>S=\{(1,0,0),(0,1,0)\}</m>,
+          then <m>L(S)=\{(x,y,0):x,y\in \R\}</m> is the <m>xy</m>-plane given by the equation <m>z=0</m>. (v) Let
+          <m>S=\{(1,0,0),(0,1,0),(0,0,1)\}</m>, then <m>L(S)=\R^3</m>.
+        </p>
+        <p>
+          (vi) Let <m>S=\{(1,1,-1),(1,2,3),(3,2,1)\}</m>.
+          Then <m>L(S)=\R^3</m>.
+        </p>
+      </statement>
+    </exercise>
+    <example>
+      <statement>
+        <p>
+          Let <m>A</m> be a <m>m\times n</m> real matrix.
+          For any vector <m>x\in \R^n</m>, <m>Ax\in \R^m</m>.
+          Consider subsets
+        </p>
+        <p>
+          (i) <m>{\cal N}(A):=\{x\in R^n:Ax=0\}</m>.
+          It is easy to check that <m>{\cal N}(A)</m> is a subspace of <m>\R^n</m> called the null space of <m>A</m>.
+        </p>
+        <p>
+          (ii) <m>{\cal R}(A):=\{Ax:x\in \R^n\}\subset \R^m</m> is a subspace of <m>\R^m</m>,
+          called the Image space of <m>A</m>.
+        </p>
+        <p>
+          (iii) <m>{\cal L}(A):=\{y\in \R^m: A^Ty=0\}</m> is a subspace of <m>\R^m</m> called the left null space of <m>A</m>.
+        </p>
+        <p>
+          (iv) Suppose we write columns of <m>A</m> as <m>a_1,\ldots,
+          a_n</m>, that is,
+          <m>A=\begin{bmatrix}a_1\amp \cdots\amp a_n \end{bmatrix}</m>.
+          Then each <m>a_i</m> is a vector in <m>\R^m</m>.
+          The linear span of columns of <m>A</m>
+          <me>
+            { col}(A)={ span}(\{a_1,\ldots,a_n\})
+          </me>
+          is called the columns space of <m>A</m>.
+          It turns out that <m>{ col}(A)={\cal R}(A)</m>.
+        </p>
+        <p>
+          (v) Suppose we write rows of <m>A</m> as
+          <m>r_1,\ldots,r_m</m> that is <m>A=\begin{bmatrix}r_1\amp \cdots\amp r_m \end{bmatrix} ^T</m>.
+          Then each <m>r_i</m> is a vector in <m>\R^n</m>.
+          The linear span of rows of <m>A</m>,
+          <me>
+            { row}(A):={ span}(\{r_1,\ldots,r_m\})
+          </me>
+          is called the row space of <m>A</m>.
+        </p>
+      </statement>
+    </example>
+    <definition xml:id="LD-LI-Rn">
+      <statement>
+        <p>
+          A set of vectors <m>\{v_1,v_2,\ldots,
+          v_k\}</m> are said to be linearly dependent if there exists scalars
+          <m>\alpha_1,\alpha_2,\ldots \alpha_k</m> not all zero such that <m>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0</m>.
+        </p>
+        <p>
+          A set of vectors <m>\{v_1,v_2,\ldots,
+          v_k\}</m> are said to be linearly independent if it is not linearly dependence.
+          That is, if <m>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0</m> then it implies
+          <m>\alpha_1,\ldots, \alpha_k=0</m> for any set of scalars <m>\alpha_1,\alpha_2,\ldots \alpha_k</m>.
+        </p>
+      </statement>
+    </definition>
+    <exercise>
+      <statement>
+        <p>
+          A set of vectors <m>\{v_1,v_2,\ldots,
+          v_k\}</m> is linearly dependent if and only if one of the vectors from the set is a linear combination of the remaining vectors.
+          That is, there exists <m>j\in \{1,\ldots,k\}</m> such that <m>v_j=\sum_{i,i\neq j} \alpha_i v_i</m>.
+        </p>
+      </statement>
+    </exercise>
+    <remark>
+      <p>
+        Let <m>v, v_1,v_2,\ldots,
+        v_k</m> be vectors in <m>\R^n</m> such that <m>v=\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k</m>.
+        Then we have
+        <me>
+          \begin{bmatrix}v_1 \amp  v_2 \amp  \cdots \amp  v_k \end{bmatrix}  \begin{bmatrix}\alpha_1\\\vdots\\\alpha_k \end{bmatrix} =v
+        </me>.
+      </p>
+      <p>
+        Thus if we want to find <m>\alpha_1,\ldots,\alpha_k</m> such that <m>v=\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k</m>,
+        it amount to solving the system <m>A\alpha =v</m>,
+        where <m>A</m> is the column matrix whose columns are
+        <m>v_1,v_2,\ldots,
+        v_k</m> and <m>\alpha =\begin{bmatrix}\alpha_1\\\vdots\\\alpha_k \end{bmatrix}</m>.
+      </p>
+    </remark>
+    <exercise>
+      <statement>
+        <p>
+          (i) A set of vectors <m>v_1,v_2,\ldots,
+          v_k</m> in <m>\R^n</m> is linearly dependent iff the matrix
+          <m>A=\begin{bmatrix}v_1 \amp v_2 \amp \cdots \amp v_k \end{bmatrix}</m> is of rank strictly less than <m>k</m>.
+        </p>
+        <p>
+          (ii) A set of vectors <m>v_1,v_2,\ldots,
+          v_k</m> in <m>\R^n</m> is linearly independent iff the matrix <m>A=\begin{bmatrix}v_1 \amp v_2 \amp \cdots \amp v_k \end{bmatrix}</m> is of rank <m>k</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Check if the following set of vectors are linearly independent or dependent.
+        </p>
+        <p>
+          (i) <m>\{(1,0,1,2), (0,1,1,2),(1,1,1,3)\}</m>
+        </p>
+        <p>
+          (ii) <m>\left\{\begin{bmatrix}1 \amp 0 \\3 \amp 2 \end{bmatrix} , \begin{bmatrix}-1 \amp 2 \\3 \amp 2 \end{bmatrix} , \begin{bmatrix}5 \amp -6 \\-3 \amp -2 \end{bmatrix} \right\}</m>.
+        </p>
+        <p>
+          (iii) <m>\{(1,0,3),(1,2,4),(1,4,5)\}</m>.
+        </p>
+        <p>
+          (iv) <m>\{(1, 0, -2, 5), (2, 1, 0, -1), (1, 1, 2, 1)\}</m>.
+        </p>
+        <p>
+          (v) <m>\{(1, 1, 0, 0), (1, 0, 1, 0), (0, 0, 1, 1), (0, 1, 0, 1)\}</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Two vectors <m>(a,b)</m> and <m>(c,d)</m> are linearly independent if and only if <m>ad-bc\neq 0</m>.
+        </p>
+      </statement>
+    </exercise>
+    <definition xml:id="def-basis-Rn">
+      <statement>
+        <p>
+          A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}</m> is called a basis of <m>\R^n</m> if every vector
+          <m>v\in \R^n</m> can be expressed uniquely as linear combinations of <m>v_1,v_2,\ldots,v_n</m>.
+        </p>
+        <p>
+          Thus <m>\beta</m> is basis of <m>\R^n</m> if (i) <m>L(\beta)=\R^n</m>,
+          that every vector <m>v\in \R^n</m> can be expressed as linear combinations of <m>v_1,v_2,\ldots,v_n</m>.
+        </p>
+        <p>
+          (ii) If <m>v=\alpha_1v_1+\alpha_2v_2+\cdots +\alpha_nv_n</m> and <m>v=\beta_1v_1+\beta_2v_2+\cdots +\beta_nv_n</m>,
+          then <m>\alpha_1=\beta_1, \alpha_2=\beta_2=\cdots,\alpha_n=\beta_n</m>.
+        </p>
+        <p>
+          Similarly one can define a basis of any subspace of <m>\R^n</m>.
+        </p>
+      </statement>
+    </definition>
+    <theorem>
+      <statement>
+        <p>
+          A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}</m> is called a basis of <m>\R^n</m> iff (i)
+          <m>L(\beta)=\R^n</m> and <m>\beta</m> is linearly independent.
+        </p>
+      </statement>
+    </theorem>
+    <example>
+      <statement>
+        <p>
+          (i) <m>\{(1,0),(0,1)\}</m> is a basis of <m>\R^2</m> called the standard basis of <m>\R^2</m>.
+        </p>
+        <p>
+          (ii) <m>\{(1,-1),(2,1)\}</m> is a basis of <m>\R^2</m>.
+        </p>
+        <p>
+          (iii) <m>\{(1,0,0),(0,1,0),(0,0,1)\}</m> is a basis of <m>\R^3</m> called the standard basis of <m>\R^3</m>.
+        </p>
+        <p>
+          (iv) <m>\{(1,1,-1),(-1,1,1),(1,-1,1)\}</m> is a basis of <m>\R^3</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Consider the plane <m>W=\{(x_1,x_2,x_3)\in \R^3:x_1+2x_2-x_3=0\}</m>.
+          Note that, here <m>x_1</m> and <m>x_2</m> can be though of as free variables.
+          Any point <m>(x_1,x_2,x_3)\in W</m>, we have
+          <me>
+            (x_1,x_2,x_3)=(x_1,x_2,x_1+2x_2)=(\alpha,\beta,\alpha+2\beta)=\alpha(1,0,1)+\beta(0,1,2)
+          </me>.
+          Thus <m>\{(1,0,1),(0,1,2)\}</m> span <m>W</m>.
+          It is easy to see that <m>\{(1,0,1),(0,1,2)\}</m> is linearly independent.
+          Hence <m>\beta =\{(1,0,1),(0,1,2)\}</m> is a basis of <m>W</m>.
+          In fact, any two vectors in <m>W</m> which are linearly independent form a basis of <m>W</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Any set of <m>n</m> linearly independent vectors forms a basis of <m>\R^n</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>\beta</m> and <m>\gamma</m> be two bases of <m>\R^n</m>.
+          Then <m>\beta</m> and <m>\gamma</m> have the same number of elements.
+          The same is true for any two bases of a subspace <m>W</m> of <m>\R^n</m>.
+        </p>
+      </statement>
+    </exercise>
+    <definition>
+      <statement>
+        <p>
+          Let <m>W</m> be subspace of <m>\R^n</m>.
+          The number of elements in a basis of <m>W</m> is called the dimension of <m>W</m>.
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <statement>
+        <p>
+          (i) <m>\R^n</m> is a <m>n</m>-dimensional vector space over <m>\R</m>.
+        </p>
+        <p>
+          (ii) Any plane passing through origin in <m>\R^3</m> is a 2 dimensional subspace.
+        </p>
+        <p>
+          (iii) <m>W:=\{(x_1,\ldots,x_n):x_1+\cdots+x_n=0\}</m> is <m>n-1</m> dimensional subspace of <m>\R^n</m>.
+          Write down a basis of <m>W</m>.
+        </p>
+        <p>
+          (iv) <m>W=\{(x_1,x_2,x_3,x_4)\in \R^4:x_1=x_3,x_2=x_4\}</m> is a 2-dimensional subspace of <m>\R^4</m>.
+        </p>
+      </statement>
+    </example>
+    <p>
+      Suppose <m>W</m> is subspace spanned by a set of <m>k</m> vectors, say,
+      <m>v_1,\ldots,v_k</m> in <m>\R^n</m>.
+      How to find a basis of <m>W</m>?
+      Note that <m>\dim{(W)}\leq k</m>.
+      In order to find a basis of <m>W</m>,
+      we construct a matrix <m>A</m> whose rows are <m>v_1, \ldots, v_k</m>.
+      Find the reduced-row-echelon form <m>RREF(A)</m> of <m>A</m>.
+      Then the non-zero rows in <m>RREF(A)</m> form a basis of <m>W</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Consider the set of vectors <m>v_1 =\left(1,-1,2,3,1,4\right)</m>,
+          <m>v_2=\left(2,1,0,2,-3,1\right)</m>,
+          <m>v_3=\left(-4,-5,4,0,11,5\right)</m>,
+          <m>v_4=\left(-1,0,2,1,3,2\right)</m> and <m>v_5=\left(-2,-2,4,2,7,5\right)</m>.
+          Let <m>W</m> be the linear span of <m>\{v_1,v_2,v_3,v_4,v_5\}</m>.
+          Let us find a basis and hence the dimension of <m>W</m>.
+          We construct the matrix <m>A</m> whose rows are
+          <me>
+            RREF\left(\left[\begin{array}{rrrrrr} 1 \amp  -1 \amp  2 \amp  3 \amp  1 \amp  4 \\ 2 \amp  1 \amp  0 \amp  2 \amp  -3 \amp  1 \\ -4 \amp  -5 \amp  4 \amp  0 \amp  11 \amp  5 \\ -1 \amp  0 \amp  2 \amp  1 \amp  3 \amp  2 \\ -2 \amp  -2 \amp  4 \amp  2 \amp  7 \amp  5 \end{array} \right]\right)=\left[\begin{array}{rrrrrr} 1 \amp  0 \amp  0 \amp  1 \amp  -\frac{5}{4} \amp  \frac{3}{4} \\ 0 \amp  1 \amp  0 \amp  0 \amp  -\frac{1}{2} \amp  -\frac{1}{2} \\ 0 \amp  0 \amp  1 \amp  1 \amp  \frac{7}{8} \amp  \frac{11}{8} \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \end{array} \right]
+          </me>
+        </p>
+        <p>
+          Thus <m>W</m> has a basis consisting of three non zero rows of <m>RREF(A)</m>.
+          Thant is,
+          <me>
+            \beta = \left\{\left(1 , 0 , 0 , 1 , -\frac{5}{4} , \frac{3}{4}\right) \\ \left(0 , 1 , 0 , 0 , -\frac{1}{2} , -\frac{1}{2}\right) \\ \left(0 , 0 , 1 , 1 , \frac{7}{8} , \frac{11}{8}\right)\right\}
+          </me>
+          is basis of <m>W</m> and it is a 3 dimensional subspace of <m>\R^6</m>.
+          Note that <m>W</m> is also the row space of <m>A</m>.
+        </p>
+        <p>
+          Note that each column of <m>A</m> is a vector in <m>\R^5</m>.
+          Let us find the column space of <m>A</m>.
+          Thus to find the <m>{ col}(A)</m>,
+          we take the transpose of <m>A</m> and apply the RREF.
+          <me>
+            RREF\left(\left[\begin{array}{rrrrr} 1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\ -1 \amp  1 \amp  -5 \amp  0 \amp  -2 \\ 2 \amp  0 \amp  4 \amp  2 \amp  4 \\ 3 \amp  2 \amp  0 \amp  1 \amp  2 \\ 1 \amp  -3 \amp  11 \amp  3 \amp  7 \\ 4 \amp  1 \amp  5 \amp  2 \amp  5 \end{array} \right]\right)= \left[\begin{array}{rrrrr} 1 \amp  0 \amp  2 \amp  0 \amp  1 \\ 0 \amp  1 \amp  -3 \amp  0 \amp  -1 \\ 0 \amp  0 \amp  0 \amp  1 \amp  1 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \end{array} \right]
+          </me>
+        </p>
+        <p>
+          Thus the basis <m>\gamma</m> of
+          <m>{ col}(A)</m> consists of three non-zero rows of <m>RREF(A^T)</m>.
+          Thus
+          <me>
+            \gamma=\{(1,0,2,0,1),(0,1,-3,0,-1),(0,0,0,1,1)\}
+          </me>
+          is a basis of <m>{rm col}(A)</m>.
+          Notice that <m>\dim{({ col}(A))}=\dim{({ row}(A))}</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          For any matrix <m>A</m>, <m>\dim{({ col}(A))}=\dim{({ row}(A))}</m>.
+          That is row rank and column rank of a matrix are same and is called the rank of <m>A</m>.
+        </p>
+      </statement>
+    </exercise>
+    <example>
+      <statement>
+        <p>
+          Consider a matrix <m>A=\left[\begin{array}{rrrrr} 1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\ -1 \amp  1 \amp  -5 \amp  0 \amp  -2 \\ 2 \amp  0 \amp  4 \amp  2 \amp  4 \\ 3 \amp  2 \amp  0 \amp  1 \amp  2 \\ 1 \amp  -3 \amp  11 \amp  3 \amp  7 \\ 4 \amp  1 \amp  5 \amp  2 \amp  5 \end{array} \right]</m>.
+          Let us find the null space of <m>A</m>.
+          That is find a basis of <m>{\cal N}(A)</m>.
+          The null space of <m>A</m> is given by
+          <md>
+            <mrow>{\cal N}(A)\amp =\amp  \{x\in \R^5:Ax=0\}</mrow>
+            <mrow>\amp =\amp  \left\{\begin{bmatrix}x_1\\x_2\\\vdots\\x_5 \end{bmatrix} : \left[\begin{array}{rrrrr} 1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\ -1 \amp  1 \amp  -5 \amp  0 \amp  -2 \\ 2 \amp  0 \amp  4 \amp  2 \amp  4 \\ 3 \amp  2 \amp  0 \amp  1 \amp  2 \\ 1 \amp  -3 \amp  11 \amp  3 \amp  7 \\ 4 \amp  1 \amp  5 \amp  2 \amp  5 \end{array} \right]\begin{bmatrix}x_1\\x_2\\\vdots\\x_5 \end{bmatrix} =\begin{bmatrix}0\\0\\\vdots\\0 \end{bmatrix} \right\}</mrow>
+            <mrow>\amp =\amp \left\{\begin{bmatrix}x_1\\x_2\\\vdots\\x_5 \end{bmatrix} : \left[\begin{array}{rrrrr} 1 \amp  0 \amp  2 \amp  0 \amp  1 \\ 0 \amp  1 \amp  -3 \amp  0 \amp  -1 \\ 0 \amp  0 \amp  0 \amp  1 \amp  1 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \end{array} \right] \begin{bmatrix}x_1\\x_2\\\vdots\\x_5 \end{bmatrix} =\begin{bmatrix}0\\0\\\vdots\\0 \end{bmatrix} \right\} \text{ using RREF }</mrow>
+            <mrow>\amp =\amp \left\{\begin{bmatrix}x_1\\x_2\\\vdots\\x_5 \end{bmatrix} : x_1+2x_3+x_5=0, x_2-3x_3-x_5=0,x_4+x_5=0 \right\}</mrow>
+            <mrow>\amp =\amp \left\{\begin{bmatrix}\alpha\\\beta\\\alpha+\beta\\2\alpha+\beta\\-2\alpha-\beta \end{bmatrix} :\alpha,\beta\in\R \right\}</mrow>
+            <mrow>\amp =\amp \left\{ \alpha \begin{bmatrix}1 \\0\\1\\3\\-3 \end{bmatrix} +\beta\begin{bmatrix}0 \\1\\1\\2\\-2 \end{bmatrix} :\alpha,\beta\in\R \right\}</mrow>
+          </md>
+        </p>
+        <p>
+          Thus <m>\dim{{\cal N}(A)}=2</m> and
+          <m>\delta =\{(1,0,1,3,-3),(0,1,1,2,-2)\}</m> is a basis of <m>{\cal N}(A)</m>.
+        </p>
+        <p>
+          The <m>\dim{{\cal N}(A)}</m> is called the nullity of <m>A</m>.
+          Notice that for this matrix
+          <me>
+            { nullity}(A)+{ rank}(A)=\text{ number of columns of } A
+          </me>.
+          This is true for any matrix <m>A</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Consider the matrix <m>A=\left[\begin{array}{rrrrrr} 1 \amp  -1 \amp  2 \amp  3 \amp  1 \amp  4 \\ 2 \amp  1 \amp  0 \amp  2 \amp  -3 \amp  1 \\ -4 \amp  -5 \amp  4 \amp  0 \amp  11 \amp  5 \\ -1 \amp  0 \amp  2 \amp  1 \amp  3 \amp  2 \\ -2 \amp  -2 \amp  4 \amp  2 \amp  7 \amp  5 \end{array} \right]</m>.
+          Let us find the image space, <m>{\cal R}(A)</m> of <m>A</m>.
+          Let <m>b = \begin{bmatrix}b_1\\b_2\\b_3\\b_4\\b_5 \end{bmatrix} \in {\cal R}(A)</m> lies in then there exists
+          <m>x\in\R^6</m> such that <m>Ax=b</m>, In particular <m>Ax=b</m> has a solution.
+          Thus to find a solution we apply the RREF to the augmented matrix <m>[A|b]</m>.
+          It is easy to see that
+          <me>
+            RREF\left(\left[\begin{array}{rrrrrrr} 1 \amp  -1 \amp  2 \amp  3 \amp  1 \amp  4 \amp  b_{1} \\ 2 \amp  1 \amp  0 \amp  2 \amp  -3 \amp  1 \amp  b_{2} \\ -4 \amp  -5 \amp  4 \amp  0 \amp  11 \amp  5 \amp  b_{3} \\ -1 \amp  0 \amp  2 \amp  1 \amp  3 \amp  2 \amp  b_{4} \\ -2 \amp  -2 \amp  4 \amp  2 \amp  7 \amp  5 \amp  b_{5} \end{array} \right]\right)= \left[\begin{array}{rrrrrrr} 1 \amp  0 \amp  0 \amp  1 \amp  -\frac{5}{4} \amp  \frac{3}{4} \amp  \frac{1}{4} b_{1} + \frac{1}{4} b_{2} - \frac{1}{4} b_{4} \\ 0 \amp  1 \amp  0 \amp  0 \amp  -\frac{1}{2} \amp  -\frac{1}{2} \amp  -\frac{1}{2} b_{1} + \frac{1}{2} b_{2} + \frac{1}{2} b_{4} \\ 0 \amp  0 \amp  1 \amp  1 \amp  \frac{7}{8} \amp  \frac{11}{8} \amp  \frac{1}{8} b_{1} + \frac{1}{8} b_{2} + \frac{3}{8} b_{4} \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  -2 b_{1} + 3 b_{2} + b_{3} \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  -b_{1} + b_{2} - b_{4} + b_{5} \end{array} \right]
+          </me>
+        </p>
+        <p>
+          This means that <m>Ax=b</m> has a solution iff
+          <m>-2 b_{1} + 3 b_{2} + b_{3}=0</m> and <m>-b_{1} + b_{2} - b_{4} + b_{5}=0</m>.
+          Solving these equations, it is easy to see that
+          <md>
+            <mrow>{\cal R}(A)\amp =\amp \left\{\begin{bmatrix}b_1\\b_2\\b_3\\b_4\\b_5 \end{bmatrix} : -2 b_{1} + 3 b_{2} + b_{3}=0, -b_{1} + b_{2} - b_{4} + b_{5}=0\right\}</mrow>
+            <mrow>\amp =\amp  \left\{\begin{bmatrix}b_1\\b_2\\2b_1-3b_2\\b_4\\b_1-b_2+b4 \end{bmatrix} :b_1,b_2,b_4\in \R\right\}</mrow>
+            <mrow>\amp =\amp \left\{b_1\begin{bmatrix}1\\0\\2\\0\\1 \end{bmatrix} + b_2\begin{bmatrix}0\\1\\-3\\0\\-1 \end{bmatrix} + b_4\begin{bmatrix}0\\0\\0\\1\\1 \end{bmatrix} :b_1,b_2,b_4\in \R\right\}</mrow>
+          </md>
+        </p>
+        <p>
+          Thus
+          <me>
+            \left\{\begin{bmatrix}1\\0\\2\\0\\1 \end{bmatrix} , \begin{bmatrix}0\\1\\-3\\0\\-1 \end{bmatrix} , \begin{bmatrix}0\\0\\0\\1\\1 \end{bmatrix} \right\}
+          </me>
+          is a basis of <m>{\cal R}(A)</m> which is same as the column space of <m>A</m>.
+          Note that <m>{\cal R}(A)</m> is null space of the matrix <m>\begin{bmatrix}-2 \amp  3 \amp  1 \amp  0 \amp  0\\-1\amp  1\amp  0 \amp -1 \amp  1 \end{bmatrix}</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>A</m> be <m>m\times n</m> real matrix.
+          Then
+          <me>
+            { rank}(A)+{ nullity}(A)=n
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <definition>
+      <statement>
+        <p>
+          Let <m>\beta =\{v_1,v_2,\ldots,
+          v_n\}</m> be a basis of <m>\R^n</m>.
+          Let <m>x\in \R^n</m>.
+          Then we know that there exists unique scalars
+          <m>x_1,\ldots,
+          x_n</m> such that <m>x=x_1v_1+x_2v_2+\cdots+x_nv_n</m>.
+          Then <m>x_1,\ldots,
+          x_n</m> are called the coordinates of <m>x</m> with respect to the basis <m>\beta</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Notice that the order in which basis vectors appear is important.
+      Suppose <m>\beta'=\{v_2,v_2,v_3\ldots, v_n\}</m>.
+      Then <m>\beta'</m> is also a basis of <m>\R^n</m>.
+      However the coordinates of <m>x</m> with respect to the basis <m>\beta'</m> is <m>x_2,x_1,x_3,\ldots,x_n</m>.
+      This is the reason basis of <m>\R^n</m> is called an <em>ordered</em> basis.
+      By a basis we will mean an ordered basis.
+    </p>
+  </introduction>
+  <subsection>
+    <title>How to find the coordinates of a vector with respect to a basis?</title>
+    <p>
+      Suppose <m>\beta=\{v_1,v_2,\ldots,
+      v_n\}</m> be a basis of <m>\R^n</m> and <m>v\in \R^n</m>.
+      How to find the coordinates of <m>v</m> with respect to <m>\beta</m>?
+      Let <m>v =x_1v_1+x_2v_2+\cdots+x_nv_n</m>.
+      We need to find <m>x_1,\cdots, x_n</m>.
+      Note that
+      <me>
+        v = x_1v_1+x_2v_2+\cdots+x_nv_n= \begin{bmatrix}v_1\amp  v_2\cdots\amp v_n \end{bmatrix} \begin{bmatrix}x_1\\x_2\\\vdots\\x_n \end{bmatrix} =Ax
+      </me>.
+    </p>
+    <p>
+      Thus to find <m>x</m>, we need to solve <m>Ax=v</m>,
+      where <m>A</m> is the matrix whose columns are <m>v_1,\ldots, v_n</m>.
+      This can be done using the RREF.
+    </p>
+    <example>
+      <statement>
+        <p>
+          (i) If <m>x=(x_1,\ldots,x_n)\in \R^n</m>.
+          Then <m>x=x_1e_1+x_2e_2+\cdots+x_ne_n</m>.
+          In particular <m>x_1,x_2,\ldots,
+          x_n</m> is the coordinate of <m>x</m> with respect to the standard basis
+          <m>\{e_1,e_2,\ldots,e_n\}</m>. (ii) Consider a basis <m>\beta=\{(1,-1),(2,1)\}</m>.
+          Find the coordinates of <m>v=(2,3)</m> with respect to <m>\beta</m>.
+          In order to find the coordinates of <m>v</m> with respect to <m>\beta</m>,
+          we solve the system <m>Ax=b</m> where
+          <m>A=\begin{bmatrix}1 \amp  2\\-1\amp  1 \end{bmatrix}</m> and <m>b = \begin{bmatrix}2\\3 \end{bmatrix}</m>.
+          Using RREF
+          <me>
+            [A~|~b]\xrightarrow{RREF} \left[\begin{array}{rr|r} 1 \amp  0 \amp  -\frac{4}{3} \\ 0 \amp  1 \amp  \frac{5}{3} \end{array} \right]
+          </me>
+        </p>
+        <p>
+          Hence the coordinates of <m>v</m> w.r.t.
+          <m>\beta</m> is <m>(4/2,5/3)</m>.
+        </p>
+        <p>
+          (iii) Find the coordinates of the vector <m>(1,2,3)</m> with respect to a basis
+        </p>
+        <p>
+          <m>\beta=\{(1,-1,1),(1,1,-1),(-1,1,1)\}</m> of <m>\R^3</m>.
+          Using the RREF we have
+          <me>
+            \left[\begin{array}{rrr|r} 1 \amp  1 \amp  -1 \amp  1 \\ -1 \amp  1 \amp  1 \amp  2 \\ 1 \amp  -1 \amp  1 \amp  3 \end{array} \right] \xrightarrow{RREF} \left[\begin{array}{rrr|r} 1 \amp  0 \amp  0 \amp  2 \\ 0 \amp  1 \amp  0 \amp  \frac{3}{2} \\ 0 \amp  0 \amp  1 \amp  \frac{5}{2} \end{array} \right]
+          </me>
+        </p>
+        <p>
+          Hence the coordinates of <m>(1,2,3)</m> with respect the given basis is <m>(2,3/2,5/2)</m>.
+        </p>
+        <p>
+          (iv) Find the coordinates of the vector
+          <m>(1,2,3,4)</m> with respect to a basis
+        </p>
+        <p>
+          <m>\beta=\{(1,-1,1,1),(1,1,-1,1),(1,1,-1,1),(-1,1,1,1)\}</m> of <m>\R^4</m>.
+          Using the RREF we have
+          <me>
+            \left[\begin{array}{rrrr|r} 1 \amp  1 \amp  1 \amp  -1 \amp  1\\ -1 \amp  1 \amp  1 \amp  1  \amp  2\\ 1 \amp  -1 \amp  1 \amp  1 \amp  3\\ 1 \amp  1 \amp  -1 \amp  1 \amp  4 \end{array} \right] \xrightarrow{RREF} \left[\begin{array}{rrrr|r} 1 \amp  0 \amp  0 \amp  0 \amp  \frac{3}{2} \\ 0 \amp  1 \amp  0 \amp  0 \amp  1 \\ 0 \amp  0 \amp  1 \amp  0 \amp  \frac{1}{2} \\ 0 \amp  0 \amp  0 \amp  1 \amp  2 \end{array} \right]
+          </me>
+        </p>
+        <p>
+          Hence the coordinates of <m>(1,2,3)</m> with respect the given basis is <m>(3/2,1,1/2,2)</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Change of bases</title>
+    <p>
+      Let <m>\beta=\{u_1,u_2\ldots,u_n\}</m> and
+      <m>\gamma=\{v_1,v_2\ldots,v_n\}</m> be two bases of <m>\R^n</m>.
+      Fix a vector <m>x\in \R^n</m>.
+      Let <m>x_\beta=\begin{bmatrix}c_1\\\vdots \\c_n \end{bmatrix}</m> and
+      <m>x_\gamma=\begin{bmatrix}d_1\\\vdots \\d_n \end{bmatrix}</m> be the coordinates of <m>x</m> with respect to <m>\beta</m> and <m>\gamma</m> respectively.
+      Then we have
+      <me>
+        x = \begin{bmatrix}u_1\amp \cdots \amp  u_n \end{bmatrix} \begin{bmatrix}c_1\\\vdots \\c_n \end{bmatrix} =Ax_\beta
+      </me>.
+    </p>
+    <p>
+      Similarly
+      <me>
+        x = \begin{bmatrix}v_1\amp \cdots \amp  v_n \end{bmatrix} \begin{bmatrix}d_1\\\vdots \\d_n \end{bmatrix} =Ax_\gamma
+      </me>.
+    </p>
+    <p>
+      Thus we have
+      <me>
+        Ax_\beta=Bx_\gamma\implies x_\beta = A^{-1}B x_\gamma \text{ and }  x_\gamma = B^{-1}Ax_\beta
+      </me>.
+    </p>
+    <p>
+      The matrices <m>A^{-1}B</m> and <m>B^{-1}A</m> are called transition matrix.
+      We denotes <m>A^{-1}B</m> by
+      <m>[I]_\gamma^\beta</m> and <m>B^{-1}A</m> by <m>[I]_\beta^\gamma</m>.
+      Note that <m>[I]_\beta^\gamma=\left([I]_\gamma^\beta\right)^{-1}</m>.
+    </p>
+    <p>
+      Furthermore, the transition matrix
+      <m>I_\gamma^\beta</m> can be obtained by applying RREF to the <m>[A|B]</m> and extracting the last <m>n</m> columns.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Consider
+          <me>
+            \beta = \left\{\left(2,-1,3\right), \left(3,1,2\right), \left(1,1,1\right)\right\}, \text{ and } \gamma = \left\{\left(1,-1,1\right), \left(1,1,-1\right), \left(-1,1,1\right)\right\}
+          </me>
+          be two bases of <m>\R^3</m>.
+          Consider a vector <m>x=(1,2,3)</m>.
+          We have
+          <me>
+            A = \left(\begin{array}{rrr} 2 \amp  3 \amp  1 \\ -1 \amp  1 \amp  1 \\ 3 \amp  2 \amp  1 \end{array} \right), B = \left(\begin{array}{rrr} 1 \amp  1 \amp  -1 \\ -1 \amp  1 \amp  1 \\ 1 \amp  -1 \amp  1 \end{array} \right)
+          </me>
+        </p>
+        <p>
+          First we find <m>x_beta</m> and <m>x_\gamma</m>.
+          <me>
+            \left(\begin{array}{rrr|r} 2 \amp  3 \amp  1 \amp  1 \\ -1 \amp  1 \amp  1 \amp  2 \\ 3 \amp  2 \amp  1 \amp  3 \end{array} \right)\xrightarrow{RREF}= \left(\begin{array}{rrr|r} 1 \amp  0 \amp  0 \amp  \frac{3}{5} \\ 0 \amp  1 \amp  0 \amp  -\frac{7}{5} \\ 0 \amp  0 \amp  1 \amp  4 \end{array} \right)\implies x_\beta =\begin{pmatrix}3/5\\7/5\\4 \end{pmatrix}
+          </me>.
+        </p>
+        <p>
+          Similarly
+          <me>
+            \left(\begin{array}{rrr|r} 1 \amp  1 \amp  -1 \amp  1 \\ -1 \amp  1 \amp  1 \amp  2 \\ 1 \amp  -1 \amp  1 \amp  3 \end{array} \right)\xrightarrow{RREF} \left(\begin{array}{rrr|r} 1 \amp  0 \amp  0 \amp  2 \\ 0 \amp  1 \amp  0 \amp  \frac{3}{2} \\ 0 \amp  0 \amp  1 \amp  \frac{5}{2} \end{array} \right)\implies x_\gamma =\begin{pmatrix}2\\3/2\\5/2 \end{pmatrix}
+          </me>.
+        </p>
+        <p>
+          Now to find the transition matrix <m>[I]_\gamma^\beta</m>, we have
+          <me>
+            [A~|~B]\xrightarrow{RREF} \left(\begin{array}{rrr|rrr} 1 \amp  0 \amp  0 \amp  \frac{2}{5} \amp  -\frac{4}{5} \amp  \frac{2}{5} \\ 0 \amp  1 \amp  0 \amp  \frac{2}{5} \amp  \frac{6}{5} \amp  -\frac{8}{5} \\ 0 \amp  0 \amp  1 \amp  -1 \amp  -1 \amp  3 \end{array} \right) \implies [I]_\gamma^\beta = \left(\begin{array}{rrr} \frac{2}{5} \amp  -\frac{4}{5} \amp  \frac{2}{5} \\ \frac{2}{5} \amp  \frac{6}{5} \amp  -\frac{8}{5} \\ -1 \amp  -1 \amp  3 \end{array} \right)
+          </me>
+        </p>
+        <p>
+          It is easy to verify that <m>x_\beta = [I]_\gamma^\beta x_\gamma</m>.
+        </p>
+        <p>
+          Similarly to find the transition matrix <m>[I]_\beta\gamma</m>, we have
+          <me>
+            [B~|~A]\xrightarrow{RREF} \left(\begin{array}{rrr|rrr} 1 \amp  0 \amp  0 \amp  \frac{5}{2} \amp  \frac{5}{2} \amp  1 \\ 0 \amp  1 \amp  0 \amp  \frac{1}{2} \amp  2 \amp  1 \\ 0 \amp  0 \amp  1 \amp  1 \amp  \frac{3}{2} \amp  1 \end{array} \right) \implies [I]_\beta^\gamma =\left(\begin{array}{rrr} \frac{5}{2} \amp  \frac{5}{2} \amp  1 \\ \frac{1}{2} \amp  2 \amp  1 \\ 1 \amp  \frac{3}{2} \amp  1 \end{array} \right)
+          </me>
+        </p>
+        <p>
+          It is easy to verify that <m>x_\gamma=[I]_\beta^\gamma x_\beta</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          What are all subspaces of <m>\R^2</m> and <m>\R^3</m>?
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          If <m>W</m> is a subspace of <m>\R^n</m>,
+          then it is null space of some matrix.
+        </p>
+      </statement>
+    </exercise>
+    <example>
+      <statement>
+        <p>
+          Consider a set of 7 vectors <m>v_1,\ldots, v_7\in \R^7</m>.
+          <me>
+            v_1=\left(\begin{array}{r} 1 \\ -1 \\ 2 \\ 0 \\ 3 \\ 2 \\ 1 \end{array} \right), v_2=\left(\begin{array}{r} 2 \\ 1 \\ 0 \\ 2 \\ -3 \\ 0 \\ 1 \end{array} \right), v_3=\left(\begin{array}{r} -1 \\ -5 \\ 6 \\ -4 \\ 15 \\ 6 \\ 1 \end{array} \right), v_4=\left(\begin{array}{r} 0 \\ 2 \\ 3 \\ 1 \\ -1 \\ 3 \\ -1 \end{array} \right), v_5=\left(\begin{array}{r} 4 \\ 3 \\ 1 \\ 2 \\ 0 \\ 1 \\ 3 \end{array} \right)
+          </me>
+          <me>
+            v_6=\left(\begin{array}{r} -13 \\ -30 \\ 4 \\ -22 \\ 52 \\ 4 \\ 0 \end{array} \right), v_7=\left(\begin{array}{r} -2 \\ -1 \\ 0 \\ 1 \\ 2 \\ 3 \\ 4 \end{array} \right)
+          </me>
+        </p>
+        <p>
+          Define the matrix <m>A</m> whose columns are
+          <m>v_1,\ldots,
+          v_7</m> and apply RREF to <m>A</m>.
+          <me>
+            A=\left(\begin{array}{rrrrrrr} 1 \amp  2 \amp  -1 \amp  0 \amp  4 \amp  -13 \amp  -2 \\ -1 \amp  1 \amp  -5 \amp  2 \amp  3 \amp  -30 \amp  -1 \\ 2 \amp  0 \amp  6 \amp  3 \amp  1 \amp  4 \amp  0 \\ 0 \amp  2 \amp  -4 \amp  1 \amp  2 \amp  -22 \amp  1 \\ 3 \amp  -3 \amp  15 \amp  -1 \amp  0 \amp  52 \amp  2 \\ 2 \amp  0 \amp  6 \amp  3 \amp  1 \amp  4 \amp  3 \\ 1 \amp  1 \amp  1 \amp  -1 \amp  3 \amp  0 \amp  4 \end{array} \right)\xrightarrow{RREF}\left(\begin{array}{rrrrrrr} 1 \amp  0 \amp  3 \amp  0 \amp  0 \amp  9 \amp  0 \\ 0 \amp  1 \amp  -2 \amp  0 \amp  0 \amp  -7 \amp  0 \\ 0 \amp  0 \amp  0 \amp  1 \amp  0 \amp  -4 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  1 \amp  -2 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  1 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \end{array} \right)
+          </me>
+        </p>
+        <p>
+          From the RREF of <m>A</m>, we have the following observations:
+        </p>
+        <p>
+          (i) The reduced row-echelon form of <m>A</m> has 5 non zero rows.
+          This means the rank of <m>A</m> is 5.
+          In particular, <m>A</m> is singular.
+        </p>
+        <p>
+          (ii) The pivots columns are 1, 2, 4, 5, 7.
+          In particular,
+          <m>\{v_1,v_2,v_4,v_5,v_7\}</m> are linearly independent and forms a basis of the subspace spanned by <m>\{v_1,v_2,v_4,v_5,v_7\}</m>.
+        </p>
+        <p>
+          (iii) The 3rd columns gives <m>v_3</m> as linear combinations of <m>v_1</m> and <m>v_2</m>.
+          In particular, <m>v_3=3v_1-2v_2</m>.
+          Similarly <m>v_6=9v_1-7v_2-4v_4-2v_5</m>.
+        </p>
+        <p>
+          (iv) Since rank of <m>A</m> is 5, the nullity of <m>A</m> is 2.
+        </p>
+        <p>
+          (v) First five rows of <m>RREF(A)</m> constitute a basis of the row space of <m>A</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>
