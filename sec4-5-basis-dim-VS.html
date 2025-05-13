@@ -224,7 +224,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec4-3-LI-VS.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap4-Vector-Space.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec4-5-VS-Ex.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec4-3-LI-VS.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap4-Vector-Space.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-sec4-5-VS-Sage.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -348,7 +348,8 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Dimension Formula</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-5-VS-Ex.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Exercise Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Sage Computations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-5-VS-Ex.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Exercise Set</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -643,13 +644,13 @@ v_8\}\)</span> which is a basis of <span class="process-math">\(\R^5\text{.}\)</
 <div class="para">Consider the vector space <span class="process-math">\({\cal P}_n(\R)\text{.}\)</span> Fix <span class="process-math">\(n+1\)</span> distinct real numbers <span class="process-math">\(c_0,c_1,\ldots, c_n\text{.}\)</span> Define polynomials</div>
 <div class="displaymath process-math" id="lagrange-eq1">
 \begin{equation}
-\ell_i(x)= \frac{(x-c_0)\cdots (x-c_{i-1})(x-c_{i+1})\cdots(x-c_n)}{(c_i-c_0)\cdots (c_i-c_{i-1})(c_i-c_{i+1})\cdots(c_i-c_n)}\text{.}\tag{4.5.1}
+\ell_i(x)= \frac{(x-c_0)\cdots (x-c_{i-1})(x-c_{i+1})\cdots(x-c_n)}{(c_i-c_0)\cdots (c_i-c_{i-1})(c_i-c_{i+1})\cdots(c_i-c_n)}\tag{4.5.1}
 \end{equation}
 </div>
-<div class="para">The above equation can be written as</div>
+<div class="para">for <span class="process-math">\(i=0,1,\ldots n\text{.}\)</span> The above equation can be written as</div>
 <div class="displaymath process-math" id="lagrange-eq1-1">
 \begin{equation}
-\ell_i(x)=\prod_{j=0,j\neq i}^{n}\frac{x-c_j}{c_i-c_j}\tag{4.5.2}
+\ell_i(x)=\prod_{j=0,j\neq i}^{n}\frac{x-c_j}{c_i-c_j}.\tag{4.5.2}
 \end{equation}
 </div>
 </div>
@@ -712,7 +713,7 @@ W_2\cap W_2=\{\alpha(1,-1,0):\alpha\in\R\}
 </div> <div class="para" id="sec4-5-basis-dim-VS-5-3-1-3">Since <span class="process-math">\(W_1+W_2\)</span> is a 3 dimensional subspace of <span class="process-math">\(\R^3\text{,}\)</span> it is in fact <span class="process-math">\(\R^3\text{.}\)</span>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec4-3-LI-VS.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec4-5-VS-Ex.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec4-3-LI-VS.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-sec4-5-VS-Sage.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
