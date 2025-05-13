@@ -397,10 +397,11 @@
         Define polynomials
         <men xml:id="lagrange-eq1">
           \ell_i(x)= \frac{(x-c_0)\cdots (x-c_{i-1})(x-c_{i+1})\cdots(x-c_n)}{(c_i-c_0)\cdots (c_i-c_{i-1})(c_i-c_{i+1})\cdots(c_i-c_n)}
-          </men>.
+          </men>
+          for <m>i=0,1,\ldots n</m>.
         The above equation can be written as 
         <men xml:id="lagrange-eq1-1"> 
-          \ell_i(x)=\prod_{j=0,j\neq i}^{n}\frac{x-c_j}{c_i-c_j}
+          \ell_i(x)=\prod_{j=0,j\neq i}^{n}\frac{x-c_j}{c_i-c_j}.
         </men>
         </p>
       <p>

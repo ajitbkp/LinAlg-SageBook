@@ -7,6 +7,7 @@
   <xi:include href="sec4-3-linspan-VS.ptx" />
   <xi:include href="sec4-4-LI-VS.ptx" />
   <xi:include href="sec4-5-basis-dim-VS.ptx" />
+ <xi:include href="sec4-5-VS-Sage.ptx" />
   <xi:include href="sec4-6-VS-Ex.ptx" />
 
 
