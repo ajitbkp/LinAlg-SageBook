@@ -360,7 +360,10 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Dimension Formula</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Sage Computations</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Sage Computations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-polynomial-space-sage" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Polynomial Space in Sage</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-5-VS-Ex.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Exercise Set</span></a></div></li>
 </ul>
 </li>
@@ -633,7 +636,7 @@ S.matrix(side='right')
 </div></details><article class="example example-like" id="sec-sec4-5-VS-Sage-34"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">The Dimesnion Formula.</span>
 </h3>
-<div class="para" id="sec-sec4-5-VS-Sage-34-2-1">Let <span class="process-math">\(\text{.}\)</span>  Let  <span class="process-math">\(W_1\)</span> be a subspace spanned by <span class="process-math">\(v_1=(-3, 1, -1, 2), v_2=(1, -1, 11, 3),  v_3=(-5, 1, 9, 7), v_4=(-1, 12, 5, 4)\)</span> and <span class="process-math">\(W_2\)</span> be the subspace spanned by vectors <span class="process-math">\(u_1=(3, -1, 5,  7), u_2 =(21, 11, 10, -13), u_3=(-2, 3, -51, 7), u_4=(-17, -10, -51, 34)\text{.}\)</span> Find bases and dimensions of  subspace <span class="process-math">\(W_1+W_2\)</span> and <span class="process-math">\($W_1\cap W_2\text{.}\)</span>
+<div class="para" id="sec-sec4-5-VS-Sage-34-2-1">Let <span class="process-math">\(\text{.}\)</span>  Let  <span class="process-math">\(W_1\)</span> be a subspace spanned by <span class="process-math">\(v_1=(-3, 1, -1, 2), v_2=(1, -1, 11, 3),  v_3=(-5, 1, 9, 7), v_4=(-1, 12, 5, 4)\)</span> and <span class="process-math">\(W_2\)</span> be the subspace spanned by vectors <span class="process-math">\(u_1=(3, -1, 5,  7), u_2 =(21, 11, 10, -13), u_3=(-2, 3, -51, 7), u_4=(-17, -10, -51, 34)\text{.}\)</span> Find bases and dimensions of  subspace <span class="process-math">\(W_1+W_2\)</span> and <span class="process-math">\(W_1\cap W_2\text{.}\)</span>
 </div></article><details id="sec-sec4-5-VS-Sage-35" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="sec-sec4-5-VS-Sage-35-1">Let us solve the above problem using Sage.</div> <div id="sec-sec4-5-VS-Sage-35-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4 # vector space of dimension 4 over rational field
 v1=vector(QQ,[-3, 1, -1, 2])
@@ -670,7 +673,135 @@ print("The dimension of W1+W2 is {}".format(dimension(W1+W2)))
 print(U.basis_matrix()) # The basis of the intersection of W1 and W2
 </script></div> <div class="para" id="sec-sec4-5-VS-Sage-35-10">Finally, we can verify the dimension formula.</div> <div id="sec-sec4-5-VS-Sage-35-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">dimension(W1+W2)==dimension(W1)+dimension(W2)-dimension(W1.intersection(W2))
 </script></div>
-</div></details></section></div>
+</div></details><section class="subsection" id="subsec-polynomial-space-sage"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="space"> </span><span class="title">Polynomial Space in Sage</span>
+</h3>
+<section class="introduction" id="subsec-polynomial-space-sage-2"><div class="para" id="subsec-polynomial-space-sage-2-1">In this subsection we shall explore, how to work with the polynomial space <span class="process-math">\({\mathcal{P}}_n(\mathbb{R})\)</span> in Sage. The main idea is to consider a polynomial <span class="process-math">\(p(x) =\sum_i^n a_i x^i\)</span> as a vecror <span class="process-math">\(\left(a_0,a_1,\ldots,a_n\right)\in \mathbb{R}^{n+1}.\)</span>
+</div> <div class="para" id="subsec-polynomial-space-sage-2-2">Sage provides ways to extract coefficents of a polynomail.  If <span class="process-math">\(p(x)\)</span> is a polynomial then <code class="code-inline tex2jax_ignore">p(x).coefficients()</code> returns the list of coefficints and the corresponding degree in increasing order of degree.</div></section><div id="subsec-polynomial-space-sage-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p(x) = x^4-5*x^3+2*x-2
+p(x).coefficients() #Return the coefficients of this symbolic expression as a polynomial  in x
+</script></div>
+<div id="subsec-polynomial-space-sage-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p(x) = 6
+p(x).coefficients()
+</script></div>
+<div class="para" id="subsec-polynomial-space-sage-5">There is a way to get only the coeffiencts as well as follows.</div>
+<div id="subsec-polynomial-space-sage-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p(x).coefficients(sparse=False) # returns only the coefficients
+</script></div>
+<div class="para" id="subsec-polynomial-space-sage-7">Note that if <span class="process-math">\(p\)</span> is a polynomial of degree <span class="process-math">\(k\text{,}\)</span> then it can be also thought of as a vector in <span class="process-math">\({\mathcal{P}}_n(\mathbb{R})\)</span> for <span class="process-math">\(m\geq k\text{.}\)</span> In order take care of this, let us create s sage routine as follow.</div>
+<div id="subsec-polynomial-space-sage-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## The following function returns the degress of a polynomial
+def Poly_Coeff(p,n):
+    L = p(x).coefficients()
+    LP=[0]*(n+1)
+    for i in range(len(L)):
+        k = L[i][1]
+        LP[k]=L[i][0]
+    return LP
+</script></div>
+<div id="subsec-polynomial-space-sage-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p(x)=1
+print(Poly_Coeff(p,1))
+p(x) = x^4-5*x^3+2*x-2
+print(Poly_Coeff(p,4))
+print(Poly_Coeff(p,6))
+</script></div>
+<div class="para" id="subsec-polynomial-space-sage-10">Next we write a Sage routine to find the degree of a polynomial.</div>
+<div id="subsec-polynomial-space-sage-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def Poly_Degree(p):
+    L = p(x).coefficients()
+    D = [L[i][1] for i in range(len(L))]
+    return max(D)
+</script></div>
+<div id="subsec-polynomial-space-sage-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">            p(x) = 7
+print(Poly_Degree(p))
+p(x)=9-x^5
+print(Poly_Degree(p))
+</script></div>
+<div class="para" id="subsec-polynomial-space-sage-13">Now we write a Sage routine to check if a set of polynomial is linearly independent or linearly dependent. How do we do this? Suppose <span class="process-math">\(p_1(x), \ldots, p_k(x)\)</span> be polynomials of degrees <span class="process-math">\(n_1, n_2, \ldots, n_k\)</span> respectively. Let <span class="process-math">\(n = \max\{deg(p_i)\} \text{.}\)</span> Then <span class="process-math">\(p_i(x)\in {\mathcal{P}}_n(\mathbb{R})\)</span> for each <span class="process-math">\(i\)</span> and each <span class="process-math">\(p_i\)</span> corresponds to a vector <span class="process-math">\(v_i \in \mathbb{R}^{n+1}\text{.}\)</span> Thus to check linearly dependency of <span class="process-math">\(p_1(x),\ldots, p_k(x)\)</span>     amount to checking linearly dependency of <span class="process-math">\(v_1,\ldots, v_k \in \mathbb{R}^{n+1}\text{.}\)</span>
+</div>
+<div id="subsec-polynomial-space-sage-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def Poly_linear_depend(L):
+    k = len(L)
+    n = max([Poly_Degree(L[i]) for i in range(k)])
+    V = VectorSpace(RR,n+1)
+    B = []
+    for i in range(k):
+       v = vector(Poly_Coeff(L[i],n))
+       B.append(v)
+    M = column_matrix(B)
+    S = V.linear_dependence(B)
+    if(rank(M)==k):
+        print('These polynomials are linearly independent.')
+    else:
+        print('These polynomials are linearly dependent.')
+    return(S)
+</script></div>
+<div id="subsec-polynomial-space-sage-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">            var('x')
+p1(x) = 1+x + 3*x^2
+p2(x) = 1 + 5*x^3 - 2*x^5
+p3(x) = -5 + 3*x^2 + 32*x^4
+p4(x) = x^3-4*x
+p5(x) = x^3 - x^4
+l = [p1, p2,p3, p4, p5]
+Poly_linear_depend(l)
+</script></div>
+<div id="subsec-polynomial-space-sage-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">            var('x')
+p1(x) = 1+x + 3*x^2
+p2(x) = 1 + 5*x^3 - 2*x^5
+p3(x) = -5 + 3*x^2 + 32*x^4
+p4(x) = 5*x^5 + 128*x^4 - 14*x^3 + 18*x^2 + 2*x - 21
+p5(x) = x^3 - x^5
+l = [p1, p2, p3,p4, p5]
+Poly_linear_depend(l)
+</script></div>
+<div class="para" id="subsec-polynomial-space-sage-17">Next we write a Sage routine to find the coordinates of a polynomial with respect to a basis of a polynomial space.</div>
+<div id="subsec-polynomial-space-sage-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def Poly_Coordinates(p,B):
+    k = len(B)
+    n = max([Poly_Degree(B[i]) for i in range(k)])
+    M = []
+    u = vector(Poly_Coeff(p,n))
+    for i in range(k):
+        v = vector(Poly_Coeff(B[i],n))
+        M.append(v)
+    M.append(u)
+    M1 = column_matrix(M)
+    s = M1.rref()[:,k]
+    return s
+</script></div>
+<div id="subsec-polynomial-space-sage-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('x')
+p1(x) = 1+x^3
+p2(x) = x+x^2-x^3
+p3(x) = x^2-3*x^3
+p4(x) = x^3
+p(x)=7-3*x+x^2-6*x^3
+B = [p1,p2,p3,p4]
+Poly_Coordinates(p,B)
+</script></div>
+<div id="subsec-polynomial-space-sage-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('x')
+p1(x) = 1
+p2(x) = x
+p3(x) = x^2
+p4(x) = x^3
+p(x)=7-3*x+x^2-6*x^3
+B = [p1,p2,p3,p4]
+Poly_Coordinates(p,B)
+</script></div>
+<div class="para" id="subsec-polynomial-space-sage-21">Finally let us define a Sage routine to find the linear span of set of polynomials.</div>
+<div id="subsec-polynomial-space-sage-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def Poly_linspan(L, n):
+    c = []
+    k = len(L)
+    for i in range(k):
+        co = Poly_Coeff(L[i],n)
+        c.append(co)
+    B = column_matrix(c).T.rref()
+    dim = B.rank()
+    return (dim, B[:dim,:])
+</script></div>
+<div id="subsec-polynomial-space-sage-23" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">q1(x)=1; q2(x)= x; q3(x)=x^2;q4(x)=x^3
+L = [q1,q2,q3,q4]
+dim,Basis  = Poly_linspan(L,3)
+Basis,dim
+</script></div>
+<div id="subsec-polynomial-space-sage-24" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p1(x)=2; p2(x)= 3*x^2-x; p3(x)=x^3- 2*x;p4(x)=x^3-3*x+3*x^2
+L = [p1,p2,p3,p4]
+dim,Basis = Poly_linspan(L,3)
+print(f'A basis matric of the linear span is\n{Basis}\n\nThe Dimesion of the subspace is {dim} ')
+</script></div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec4-5-basis-dim-VS.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec4-5-VS-Ex.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
