@@ -473,7 +473,7 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="chap1-lineq"><h2 class="heading">
 <span class="type">Chapter</span><span class="space"> </span><span class="codenumber">1</span><span class="space"> </span><span class="title">System of Linear Equations</span>
 </h2>
-<section class="introduction" id="chap1-lineq-2">In this chapter, we shall deal with solutions of system of linear equations. We shall also introduce, row operations and how it helps in solving a system of linear equation. Row operations will be used as one of the tools for solving a system. Let us first define what do we mean by a sytem of linear equations. <article class="definition definition-like" id="def-linear-system"><h2 class="heading">
+<section class="introduction" id="chap1-lineq-2">In this chapter, we shall deal with solutions of system of linear equations. We shall also introduce, row operations and how it helps in solving a system of linear equations. Row operations will be used as one of the tools for solving a system. Let us first define what do we mean by a sytem of linear equations. <article class="definition definition-like" id="def-linear-system"><h2 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.0.1</span><span class="period">.</span>
 </h2>
 <div class="para logical" id="def-linear-system-1-1">
@@ -494,14 +494,20 @@ a_{m1}x_1 + a_{m2}x_2+ \ldots + a_{mn} x_n \amp = \amp b_m\notag
 \sum_{j=1}^n a_{ij}x_j =b_i,\quad 1\leq i\leq m\text{.}\tag{1.0.2}
 \end{equation}
 </div>
-</div></article> Next let us define, what is meaning of a solution and the solution set of the system of linear system of equations <a href="chap1-lineq.html#def-linear-system-1-1-4" class="xref" data-knowl="./knowl/xref/linear-system-eq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.0.1">(1.0.1)</a>. <article class="definition definition-like" id="chap1-lineq-2-3"><h2 class="heading">
+</div></article> Next let us define, what is meaning of a solution and the solution set of the system of linear of equations <a href="chap1-lineq.html#def-linear-system-1-1-4" class="xref" data-knowl="./knowl/xref/linear-system-eq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.0.1">(1.0.1)</a>. <article class="definition definition-like" id="chap1-lineq-2-3"><h2 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.0.2</span><span class="period">.</span>
-</h2>A <em class="alert">solution</em> of the system of linear equation  is an <span class="process-math">\(n\)</span>-tuple of the real numbers <span class="process-math">\((y_1, y_2, \cdots, y_n)\)</span> such that <span class="process-math">\(x_i = y_i\)</span> for each <span class="process-math">\(i = 1, 2, \ldots, n\)</span> satisfies each of the <span class="process-math">\(m\)</span>-equations. The set of all solutions of a system is called the <em class="alert">solution set</em>. It is a subset of <span class="process-math">\(\R^n\text{,}\)</span> the Cartesian product of the set <span class="process-math">\(\R\)</span> of real numbers <span class="process-math">\(n\)</span>-times. If we denote it by <span class="process-math">\(S\subset \R^n\text{,}\)</span> then<div class="displaymath process-math">
+</h2>A <em class="alert">solution</em> of the system of linear equations <a href="chap1-lineq.html#def-linear-system-1-1-4" class="xref" data-knowl="./knowl/xref/linear-system-eq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.0.1">(1.0.1)</a> is an ordered <span class="process-math">\(n\)</span>-tuple of the real numbers <span class="process-math">\((y_1, y_2, \cdots, y_n)\)</span> such that <span class="process-math">\(x_i = y_i\)</span> for each <span class="process-math">\(i = 1, 2, \ldots, n\)</span> satisfies each of the <span class="process-math">\(m\)</span>-equations. The set of all solutions of a system is called the <em class="alert">solution set</em>. It is a subset of <span class="process-math">\(\R^n\text{,}\)</span> the Cartesian product of the set <span class="process-math">\(\R\)</span> of real numbers <span class="process-math">\(n\)</span>-times. If we denote the solution set by <span class="process-math">\(S\subset \R^n\text{,}\)</span> then<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/linear-system-eq1.html">
 \begin{equation*}
 S=\{(x_1,\ldots,x_n)\in \R^n:\sum_{j=1}^n a_{ij}x_j =b_i,\quad 1\leq i\leq m\}\text{.}
 \end{equation*}
 </div>If the solution set is nonempty then the system is said to be <em class="alert">consistent</em> and otherwise it is said to be <em class="alert">inconsistent.</em></article> <div class="para logical" id="chap1-lineq-2-4">
-<div class="para">The above system of linear equation can be written as a single matrix equation as <span class="process-math">\(AX = B\text{,}\)</span> where</div>
+<div class="para">The above system of linear equation can be written as a single matrix equation as</div>
+<div class="displaymath process-math" id="linear-system-eq1-2">
+\begin{equation}
+AX = B\text{,}\tag{1.0.3}
+\end{equation}
+</div>
+<div class="para">where</div>
 <div class="displaymath process-math" id="chap1-lineq-2-4-2">
 \begin{equation}
 A=\begin{pmatrix} a_{11} \amp a_{12} \amp \ldots \amp a_{1n}
@@ -510,7 +516,7 @@ A=\begin{pmatrix} a_{11} \amp a_{12} \amp \ldots \amp a_{1n}
 \end{pmatrix}, 
 X=\begin{pmatrix}x_1\\x_2\\ \vdots\\ x_n \end{pmatrix}, 
 B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
-\end{pmatrix} \tag{1.0.3}
+\end{pmatrix} \tag{1.0.4}
 \end{equation}
 </div>
 </div> <div class="para" id="chap1-lineq-2-5">The matrix <span class="process-math">\(A\)</span> is called the <em class="alert">coefficient matrix</em>, <span class="process-math">\(B\)</span>  is called the <em class="alert">column matrix of constants or known terms</em> and <span class="process-math">\(X\)</span> is called the <em class="alert">column matrix of the unknowns.</em> All the essential data of the system can be gathered in one matrix by inserting the column matrix of the constants to the coefficient matrix as <span class="process-math">\(n+1\)</span>-th column. This matrix is called the <em class="alert">augmented or enlarged matrix</em> of the system. Once we know the system, we can get the augmented matrix associated with the system and conversely once we know the augmented matrix, we know the system and start calculating the solutions.</div> <div class="para logical" id="chap1-lineq-2-6">
@@ -523,13 +529,13 @@ a_{11} \amp a_{12} \amp \cdots \amp a_{1n} \amp | \amp b_1\\
 a_{21} \amp a_{22} \amp \cdots \amp  a_{2n} \amp | \amp b_2\\
 \vdots \amp \vdots \amp \ddots \amp \vdots \amp \vdots \amp \vdots\\
 a_{m1} \amp a_{m2} \amp \cdots \amp a_{mn} \amp | \amp b_m\\
-\end{pmatrix}\tag{1.0.4}
+\end{pmatrix}\tag{1.0.5}
 \end{equation}
 </div>
 </div> <article class="definition definition-like" id="def-equivalent-systems"><h2 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.0.3</span><span class="period">.</span>
 </h2>
-<div class="para" id="def-equivalent-systems-1-1">Two systems of linear equations are called <em class="alert">equivalent</em> if and only if they have the same set of solutions.</div></article> <div class="para" id="chap1-lineq-2-8">We will define some basic operations by which a system is transformed into an equivalent system.</div> <div class="para" id="chap1-lineq-2-9">Geometrically, solving a system of linear equations in two (or three) unknowns is equivalent to determining whether or not a family of lines (or planes) has a common point of intersection.</div> <article class="remark remark-like" id="chap1-lineq-2-10"><h2 class="heading">
+<div class="para" id="def-equivalent-systems-1-1">Two systems of linear equations are called <em class="alert">equivalent</em> if and only if they have the same set of solutions.</div></article> <div class="para" id="chap1-lineq-2-8">We will define some basic operations by which a system is transformed into an equivalent system.</div> <div class="para" id="chap1-lineq-2-9">Geometrically, solving a system of linear equations in two (or three) unknowns/variables is equivalent to determining whether or not a family of lines (or planes) has a common point of intersection.</div> <article class="remark remark-like" id="chap1-lineq-2-10"><h2 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.0.4</span><span class="period">.</span>
 </h2>Let  <span class="process-math">\(A\)</span> be <span class="process-math">\(n\times n\)</span> real matrix whose columns are <span class="process-math">\(a_1,\ldots, a_n\)</span> and <span class="process-math">\(x=\begin{pmatrix}x_1\amp\cdots \amp x_n\end{pmatrix}^T\text{.}\)</span> Then <span class="process-math">\(Ax=x_1a_1+x_2a_2+\cdots +a_nx_n\text{.}\)</span> In particular, <span class="process-math">\(Ax\)</span> is a linear combinations of column of <span class="process-math">\(A\text{.}\)</span> Thus if <span class="process-math">\(\alpha=\begin{pmatrix}\alpha_1\amp\cdots \amp \alpha_n\end{pmatrix}^T\)</span> is a solution of <span class="process-math">\(Ax=b\text{,}\)</span> then <span class="process-math">\(b\)</span> is linear combination of columns of <span class="process-math">\(A\text{.}\)</span> For example,<div class="displaymath process-math">
 \begin{equation*}
