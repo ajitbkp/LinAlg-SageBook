@@ -4,7 +4,7 @@
   <introduction>
     In this chapter, we shall deal with solutions of system of linear equations.
     We shall also introduce, row operations and how it helps in solving a system 
-    of linear equation. Row operations will be used as one of the tools for solving a system.
+    of linear equations. Row operations will be used as one of the tools for solving a system.
     Let us first define what do we mean by a sytem of linear equations.
     <definition xml:id="def-linear-system">
       <statement>
@@ -14,9 +14,9 @@
           <m>n</m>-variables <m>x_1,\ldots, x_n</m>.
          
           <mdn>
-            <mrow number="no">a_{11}x_1 + a_{12}x_2+ \ldots + a_{1n} x_n \amp= \amp b_1</mrow>
-              <mrow number="no">a_{21}x_1 + a_{22}x_2+ \ldots + a_{2n} x_n \amp=  \amp b_2</mrow>
-              <mrow number="yes" xml:id="linear-system-eq1">\vdots  \amp \amp \vdots </mrow>
+            <mrow number = "no">a_{11}x_1 + a_{12}x_2+ \ldots + a_{1n} x_n \amp= \amp b_1</mrow>
+            <mrow number ="no">a_{21}x_1 + a_{22}x_2+ \ldots + a_{2n} x_n \amp=  \amp b_2</mrow>
+             <mrow number="yes" xml:id="linear-system-eq1">\vdots  \amp \amp \vdots </mrow>
               <mrow number ="no"> a_{m-11}x_1 + a_{m-12}x_2+ \ldots + a_{m-1n} x_n \amp = \amp b_{m-1}</mrow>
               <mrow number ="no"> a_{m1}x_1 + a_{m2}x_2+ \ldots + a_{mn} x_n \amp = \amp b_m</mrow>
             </mdn>
@@ -27,30 +27,28 @@
             the summation notation as follows:
             <men xml:id="linear-system-eq1-1">
               \sum_{j=1}^n a_{ij}x_j =b_i,\quad 1\leq i\leq m
-            </men>.
-            
+            </men>.     
         </p>
       </statement>
     </definition>
 
     Next let us define, what is meaning of a solution and the solution set of the 
-    system of linear system of equations <xref ref="linear-system-eq1"/>. 
+    system of linear of equations <xref ref="linear-system-eq1"/>. 
       
       <definition>
-        A <alert>solution</alert> of the system of linear equation  is an <m>n</m>-tuple of 
+        A <alert>solution</alert> of the system of linear equations <xref ref="linear-system-eq1"/> is an ordered <m>n</m>-tuple of 
         the real numbers <m>(y_1, y_2, \cdots, y_n)</m> such that 
         <m>x_i = y_i</m> for each <m>i = 1, 2, \ldots, n</m> satisfies each of the <m>m</m>-equations. 
         The set of all solutions of a system is called the <alert>solution set</alert>.  
         It is a subset of <m>\R^n</m>, the Cartesian product of the set <m>\R</m> of 
-        real numbers <m>n</m>-times. If we denote it by 
+        real numbers <m>n</m>-times. If we denote the solution set by 
         <m>S\subset \R^n</m>, then 
         <me>S=\{(x_1,\ldots,x_n)\in \R^n:\sum_{j=1}^n a_{ij}x_j =b_i,\quad 1\leq i\leq m\}</me>.
-        If the solution set is nonempty then the system is said to be <alert>consistent</alert> and otherwise it is said to be 
-        <alert>inconsistent.</alert>
+        If the solution set is nonempty then the system is said to be <alert>consistent</alert> and otherwise it is said to be <alert>inconsistent.</alert>
       </definition>
       <p>
         The above system of linear equation can be written as a single matrix equation as 
-        <m>AX = B</m>, where
+        <men xml:id="linear-system-eq1-2">AX = B</men>, where
         <men> A=\begin{pmatrix} a_{11} \amp a_{12} \amp \ldots \amp a_{1n}
 	\\ a_{21} \amp a_{22} \amp \ldots \amp a_{2n} \\ \vdots\amp \vdots\amp \vdots\amp
 	\vdots\\ a_{m1} \amp a_{m2} \amp \ldots \amp a_{mn}
@@ -92,20 +90,17 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
         <p>
           Two systems of linear equations are
           called <alert>equivalent</alert> if and only if they have the same set
-          of solutions.
-        
-             
+          of solutions.           
         </p>
       </statement>
     </definition>
      <p>
       We will define some basic operations by which a system is
         transformed into an equivalent system.
-        
      </p>
 
        <p> Geometrically, solving a system of linear equations in two (or three)
-        unknowns is equivalent to determining whether or not a family of lines (or
+        unknowns/variables is equivalent to determining whether or not a family of lines (or
         planes) has a common point of intersection.
         
      </p>

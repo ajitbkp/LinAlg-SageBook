@@ -73,20 +73,23 @@
 <p>
     <ol>	
   <li> <p>
-    interchange of two rows of a matrix;
+    Interchange of two rows of a matrix;
   </p>
 </li>
 	<li> 
   <p>
-    multiplication of one row by a  non-zero scalar <m> \lambda</m>;
+    Multiplication of one row by a  non-zero scalar <m> \lambda</m>;
   </p>  
   </li>
 	<li> 
     <p>
-      adding a scalar <m>\lambda</m> times a row to another row.
+      Adding  any two rows.
     </p>
   </li>
 </ol>
+
+In practice, most often, we combine second and third operations. This is equivalent to multiplying one of the rows by a nonzero real number and adding
+to another row.
    </p>
   </statement>
 </definition>
@@ -112,7 +115,7 @@
     that is, <m>A=\begin{bmatrix} a_1\amp a_2\amp\cdots \amp a_n\end{bmatrix}</m>. 
       Let the rows of <m>A</m> are given by <m>R_1, R_2,\ldots, R_n</m>, in particular,  
         <m>A=\begin{bmatrix} R_1\amp R_2\amp\cdots \amp R_n\end{bmatrix}^T</m>. 
-          Let <m>e_1, e_2, \ldots e_n</m> are standard coordinate vectors in 
+          Let <m>e_1, e_2, \ldots, e_n</m> be standard coordinate vectors in 
             <m>\mathbb{R}^n</m> , where <m>e_i</m> is the column matrix (vector) whose 
               <m>i</m>-th entry is 1 and rest are zero. That is 
                 <m>e_i=\begin{pmatrix} 0\\\vdots\\ 1\\\vdots \\0\end{pmatrix}</m>. 
@@ -229,15 +232,15 @@ show(E)
     <li>
       <p>
         Let <m>A_2</m> be the matrix obtained by multiplying 2nd row of <m>A</m> by a scalar <m>\alpha</m>. 
-        Then <m>A_2=EA</m> where <m>E=\begin{pmatrix}1\amp 0 \amp 0\\0 \amp \alpha \amp 0\\0 \amp 0 \amp 1\end{pmatrix}</m>. 
+        Then <m>A_2=EA</m>, where <m>E=\begin{pmatrix}1\amp 0 \amp 0\\0 \amp \alpha \amp 0\\0 \amp 0 \amp 1\end{pmatrix}</m>. 
         What is <m>E^{-1}</m>?
       </p>
     </li>
     <li>
       <p>
-        Let <m>A_3</m> be the matrix obtained by adding 2 times  2nd row to the 3rd rows of <m>A</m> in place of the 3rd row. 
-        Then <m>A_3=EA</m> where <m>E=\begin{pmatrix}1 \amp 0 \amp 0\\0 \amp 1 \amp 0\\0 \amp 2 \amp 1\end{pmatrix}</m>.
-        What is <m>E^{-1}</m>?
+        Let <m>A_3</m> be the matrix obtained by adding 2 times  the 2nd row to the 3rd rows of <m>A</m> in place of the 3rd row. 
+        Then <m>A_3=EA</m>, where <m>E=\begin{pmatrix}1 \amp 0 \amp 0\\0 \amp 1 \amp 0\\0 \amp 2 \amp 1\end{pmatrix}</m>.
+        What is <m>E^{-1}</m>? It is easy to see that <m>E^{-1}=\begin{pmatrix}1 \amp 0 \amp 0\\0 \amp 1 \amp 0\\0 \amp -2 \amp 1\end{pmatrix}</m> whihc is obtained by adding -2 times the 2nd row to the 3rd rows of <m>A</m>. 
       </p>
     </li>
   </ol>

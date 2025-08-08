@@ -77,7 +77,7 @@
             </li>
             <li>
                 <p>
-                    For an <m>m \times n</m> matrix <m>A</m>, rank of <m>A \leq  \min (m, n).</m>
+                    For an <m>m \times n</m> matrix <m>A</m>, rank of <m>A \leq  \min \{m, n\}.</m>
                 </p>
             </li>
             <li>

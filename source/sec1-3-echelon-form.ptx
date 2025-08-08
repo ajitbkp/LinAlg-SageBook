@@ -4,8 +4,8 @@
   <title>Echelon Forms</title>
 <introduction>
     <p>
-        In this section we define the row echelon form of matrices its useful to deal with various concepts related to 
-        matrices. We shall see how Sage can be used to convert any matrix to its row-echelon form.
+        In this section we define the row echelon form of matrices which is useful to deal with various concepts related to 
+        matrices. We shall also see how Sage can be used to convert any matrix to its row-echelon form.
     </p>
 </introduction>
 <subsection xml:id="sec-row-echelon">
@@ -37,7 +37,7 @@
                 Each leading 1 is to the right of all leading 1s in the rows above it. 
             </p>
         </li>
-            A row-echelon matrix is said to be in <alert>reduced row-echelon form</alert>  or <alert>reduced row-echelon matrix</alert> if, in addition, it satisfies the following condition: 
+            A row-echelon matrix is said to be in <alert>reduced row-echelon form (RREF)</alert>  or <alert>reduced row-echelon matrix</alert> if, in addition, it satisfies the following condition: 
         <li>
             <p>
                 Each leading 1 is the only nonzero entry in its column.       
@@ -281,7 +281,7 @@ We employ the following procedures to convert a matrix into a row echelon form:
     <title>Gaussian Elimination Method</title>
     <p>
         Solving a system of linear equations <m>AX = B</m>, by reducing the
-augmented matrix <m> A^*= [A,B]</m> to echelon form by using elementary row
+augmented matrix <m> A^*= [A~|~B]</m> to echelon form by using elementary row
 operations
 and then solving the equivalent system by back substitution is
 called solving by <alert>Gaussian elimination</alert> process.
