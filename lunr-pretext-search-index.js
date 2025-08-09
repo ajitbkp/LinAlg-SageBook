@@ -1411,7 +1411,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.4",
   "title": "Geometry of Linear Transformations",
-  "body": " Geometry of Linear Transformations  We look at some specific linear transformations from to and how it transforms the unit square. Readers are encouraged to draw figures.   Exmpansion along -axis.    where . (Refer to the )  -expansion for        Compression along -axis.    where . Refer to the for .  -Compression for        Expansion along -axis    where . Refer to for .  -expansion for        Compression along -axis    where . Refer to for .  -compression for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Draw the figure for .  Negative -shear for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Refer to for .  Negative -shear for        Dilation and Contraction   Fix a positive real number and define by . It is a linear map which is induced by the scalar matrix . ( is called a dilation if and a contraction if .) Refer to  with and .  Dilations with and .        Streching   Let and be two positive real numbers and . Define by . Then (i) is stretching by a factor along -axis and by a factor along -axis if and (ii) is contraction by a factor along -axis followed by a factor along -axis if . Refer to for stretching along by 2 and -axes by 1.5.  Stretching along by 2 and -axes by 1.5.       Geometry of linear transformation in  In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.     Image Tranfromation   Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.   Consider a grayscale image of the Taj Mahar in India.   Original Image of Taj Mahal. .   The following Python code read a grayscale image of Taj Mahal in India.    We use the transformation , where is the brightness of the image. Let us take about 20\/% increase in the brightness. On each pixel of the image , we have , where . Here min~255 ensures the brightness values stay within valid pixel range.    We get the following output.   Brightness Transformation applied to Taj Mahal. .   Rotation Transformation  Next we apply rotation by an anngle to this image. Note that the rotation matrix is give by      We get the following output.   Rotation Transformation APplied to Taj Mahal .    "
+  "body": " Geometry of Linear Transformations  We look at some specific linear transformations from to and how it transforms the unit square. Readers are encouraged to draw figures.   Exmpansion along -axis.    where . (Refer to the )  -expansion for        Compression along -axis.    where . Refer to the for .  -Compression for        Expansion along -axis    where . Refer to for .  -expansion for        Compression along -axis    where . Refer to for .  -compression for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Draw the figure for .  Negative -shear for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Refer to for .  Negative -shear for        Dilation and Contraction   Fix a positive real number and define by . It is a linear map which is induced by the scalar matrix . ( is called a dilation if and a contraction if .) Refer to  with and .  Dilations with and .        Streching   Let and be two positive real numbers and . Define by . Then (i) is stretching by a factor along -axis and by a factor along -axis if and (ii) is contraction by a factor along -axis followed by a factor along -axis if . Refer to for stretching along by 2 and -axes by 1.5.  Stretching along by 2 and -axes by 1.5.       Geometry of linear transformation in  In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.     Image Tranfromation   Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.   Consider a grayscale image of the Taj Mahar in India.   Original Image of Taj Mahal. .   The following Python code read a grayscale image of Taj Mahal in India.    We use the transformation , where is the brightness of the image. Let us take about 20\/% increase in the brightness. On each pixel of the image , we have , where . Here min~255 ensures the brightness values stay within valid pixel range.    We get the following output.   Brightness Transformation applied to Taj Mahal. .   Rotation Transformation  Next we apply rotation by an anngle to this image. Note that the rotation matrix is give by      We get the following output.   Rotation Transformation Applied to Taj Mahal. .    "
 },
 {
   "id": "x-expansion",
@@ -1537,7 +1537,7 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "3.4.24",
   "title": "",
-  "body": "  Rotation Transformation APplied to Taj Mahal . "
+  "body": "  Rotation Transformation Applied to Taj Mahal. . "
 },
 {
   "id": "sec-sec3-5-LT-Sage",
@@ -2275,7 +2275,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.6",
   "title": "Sage Computations",
-  "body": " Sage Computations   In this section, we demonstrate how Sage can be utilized to define vector spaces and perform computations involving vectors. We shall explore various concepts related to vector spaces that have been introduced in this chapter. The majority of the computations will be carried out in the vector spaces , and . Additionally, we shall examine certain concepts pertaining to the vector space .  To define a vector space in Sage, one may use QQ^n or VectorSpace(QQ, n) . Similarly, the vector spaces and can be defined using RR^n and CC^n , respectively. Sage provides built-in functions for generating the linear span of a set of vectors, checking their linear dependence, and determining the coordinates of a vector with respect to a given basis. Nevertheless, we will also employ the Reduced Row Echelon Form (RREF) to explore various concepts such as subspaces, linear dependence and independence, and the computation of coordinates.    Vector space   Let us define the vector space and explore the various concepts in Sage. Define 5 vectors , , , and . Find the linear span of . Check of is a linearly independent set.    We can use the following sage commands to define the .   Let explore few methods on the object V . Use can use V.TAB to get the drop down menue of methods.  The following methods returns the base filed (Rational Field in this case).      Try to explore more methods on the object V .  Now let us define vectors in .   Next, let us define the linear span of .   We can check if W is a subspace of V .   Note that a basis of the can be also obtained by applying RREF on the matrix whose rows are vectors, .   Notice that the 1st three rows of the above output consitute the basis of the .  Next let us check whether the set of vecors is linearly dependent using the following Sage syntax.   If the set is linearly indepensent then S = V.linear_dependence(B);S returns an empty list. However, if is linearly dependent then it returs a list of scalars (possibly more than on1), say such that . Let us verift the same.    Repeat the above example on the vector space .     Let be a vector space. Let . Check if is linearly independent. Consider a vector . Find the coordinates of with respect to .     Let us solve this problem in Sage.   Since is an empty list, is a linearly independent set.  Next, we define a subspace with as a basis and then find the coordinates of the vector with respect to .   We can also find the coordinate vector of .  We cal also find the coordinates of using RREF. The last columns of the above output is the coordinate vector.    Let be a vector space. Let and be two bases of . Find the change of basis matrix and the change of basis matrix . Consider a vector . Suppose be the coordinate vector of with respect to the basis and be the coordinate vector of with respect to the basis . Verify that .     Let us solve the above problem in Sage. Note that the matrix can be obtained in many ways. One way, is to find this by writing the matrix of whose columns are the coordinate vectors of each vector in with respect to . Alternatively, we can use RREF on and take the last four columns of the same.     Next we find the change of basis matrix using RREF.     Let us verify that .   The change of basis matrix , can be also otained by finding the matrix of the identity linear transformation and find its matrix with respect to the basis of the domain and on the codomain.     The Dimesnion Formula   Let .  Let  be a subspace spanned by and be the subspace spanned by vectors . Find bases and dimensions of  subspace and .     Let us solve the above problem using Sage.       W1+W2 returns the space .   Intersection of W1 and W2 using the inbuilt sage function intersection   Finally, we can verify the dimension formula.     Polynomial Space in Sage   In this subsection we shall explore, how to work with the polynomial space in Sage. The main idea is to consider a polynomial as a vecror   Sage provides ways to extract coefficents of a polynomail. If is a polynomial then p(x).coefficients() returns the list of coefficints and the corresponding degree in increasing order of degree.     There is a way to get only the coeffiencts as well as follows.   Note that if is a polynomial of degree , then it can be also thought of as a vector in for . In order take care of this, let us create s sage routine as follow.    Next we write a Sage routine to find the degree of a polynomial.    Now we write a Sage routine to check if a set of polynomial is linearly independent or linearly dependent. How do we do this? Suppose be polynomials of degrees respectively. Let . Then for each and each corresponds to a vector . Thus to check linearly dependency of amount to checking linearly dependency of .     Next we write a Sage routine to find the coordinates of a polynomial with respect to a basis of a polynomial space.     Finally let us define a Sage routine to find the linear span of set of polynomials.      "
+  "body": " Sage Computations   In this section, we demonstrate how Sage can be utilized to define vector spaces and perform computations involving vectors. We shall explore various concepts related to vector spaces that have been introduced in this chapter. The majority of the computations will be carried out in the vector spaces , and . Additionally, we shall examine certain concepts pertaining to the vector space .  To define a vector space in Sage, one may use QQ^n or VectorSpace(QQ, n) . Similarly, the vector spaces and can be defined using RR^n and CC^n , respectively. Sage provides built-in functions for generating the linear span of a set of vectors, checking their linear dependence, and determining the coordinates of a vector with respect to a given basis. Nevertheless, we will also employ the Reduced Row Echelon Form (RREF) to explore various concepts such as subspaces, linear dependence and independence, and the computation of coordinates.    Vector space   Let us define the vector space and explore the various concepts in Sage. Define 5 vectors , , , and . Find the linear span of . Check of is a linearly independent set.    We can use the following sage commands to define the .   Let explore few methods on the object V . Use can use V.TAB to get the drop down menue of methods.  The following methods returns the base filed (Rational Field in this case).      Try to explore more methods on the object V .  Now let us define vectors in .   Next, let us define the linear span of .   We can check if W is a subspace of V .   Note that a basis of the can be also obtained by applying RREF on the matrix whose rows are vectors, .   Notice that the 1st three rows of the above output consitute the basis of the .  Next let us check whether the set of vecors is linearly dependent using the following Sage syntax.   If the set is linearly indepensent then S = V.linear_dependence(B);S returns an empty list. However, if is linearly dependent then it returs a list of scalars (possibly more than on1), say such that . Let us verift the same.    Repeat the above example on the vector space .     Let be a vector space. Let . Check if is linearly independent. Consider a vector . Find the coordinates of with respect to .     Let us solve this problem in Sage.   Since is an empty list, is a linearly independent set.  Next, we define a subspace with as a basis and then find the coordinates of the vector with respect to .   We can also find the coordinate vector of .  We cal also find the coordinates of using RREF. The last columns of the above output is the coordinate vector.    Let be a vector space. Let and be two bases of . Find the change of basis matrix and the change of basis matrix . Consider a vector . Suppose be the coordinate vector of with respect to the basis and be the coordinate vector of with respect to the basis . Verify that .     Let us solve the above problem in Sage. Note that the matrix can be obtained in many ways. One way, is to find this by writing the matrix of whose columns are the coordinate vectors of each vector in with respect to . Alternatively, we can use RREF on and take the last four columns of the same.     Next we find the change of basis matrix using RREF.     Let us verify that .   The change of basis matrix , can be also otained by finding the matrix of the identity linear transformation and find its matrix with respect to the basis of the domain and on the codomain.     The Dimesnion Formula   Let .  Let  be a subspace spanned by and be the subspace spanned by vectors . Find bases and dimensions of  subspace and .     Let us solve the above problem using Sage.       W1+W2 returns the space .   Intersection of W1 and W2 using the inbuilt sage function intersection   Finally, we can verify the dimension formula.     Polynomial Space in Sage   In this subsection we shall explore, how to work with the polynomial space in Sage. The main idea is to consider a polynomial as a vecror   Sage provides ways to extract coefficents of a polynomail. If is a polynomial then p(x).coefficients() returns the list of coefficints and the corresponding degree in increasing order of degree.     There is a way to get only the coeffiencts as well as follows.   Note that if is a polynomial of degree , then it can be also thought of as a vector in for . In order take care of this, let us create s sage routine as follow.    Next we write a Sage routine to find the degree of a polynomial.    Now we write a Sage routine to check if a set of polynomial is linearly independent or linearly dependent. How do we do this? Suppose be polynomials of degrees respectively. Let . Then for each and each corresponds to a vector . Thus to check linearly dependency of amount to checking linearly dependency of .     Next we write a Sage routine to find the coordinates of a polynomial with respect to a basis of a polynomial space.     Finally let us define a Sage routine to find the linear span of set of polynomials.      Once we get the basis matrix of the subspace we can write the corresponding polynomials as basis.     Matrix Spaces in Sage   How to we work with matrix space in Sage? Note that if is an real matrix, then we can think of this as a vector in defined by stacking the entries row-by-row (or column-by-column). In particular, the matrix space is ismorphic to via flattening map defined by stacking the entries row-by-row (or column-by-column). Thus if we have apply linear algebra concepts to a set of matrices , this amounts to applying the linear algebra concepts to and taking to the resultant vectors .  Let us first see how to convert a given matrix to to the associated vector and conversely, how to convert a given vector to the associated matrix in sage. We define two Sage rountines.        Check if the set of matrices where  is linearly depedent in .    Clearly the above set of matrices are not linearly independent. In fact,     Write Sage rountines to find coordinates of a matrix with repect to a basis of a matrix space and also the to find the linear span of set of matrices.   "
 },
 {
   "id": "sec4-5-VS-eg1",
@@ -2321,6 +2321,33 @@ var ptx_lunr_docs = [
   "number": "4.6.5",
   "title": "The Dimesnion Formula.",
   "body": " The Dimesnion Formula   Let .  Let  be a subspace spanned by and be the subspace spanned by vectors . Find bases and dimensions of  subspace and .   "
+},
+{
+  "id": "subsec-polynomial-space-sage-25",
+  "level": "2",
+  "url": "sec-sec4-5-VS-Sage.html#subsec-polynomial-space-sage-25",
+  "type": "Remark",
+  "number": "4.6.6",
+  "title": "",
+  "body": " Once we get the basis matrix of the subspace we can write the corresponding polynomials as basis.  "
+},
+{
+  "id": "subsec-matrix-space-4",
+  "level": "2",
+  "url": "sec-sec4-5-VS-Sage.html#subsec-matrix-space-4",
+  "type": "Example",
+  "number": "4.6.7",
+  "title": "",
+  "body": " Check if the set of matrices where  is linearly depedent in .    Clearly the above set of matrices are not linearly independent. In fact,    "
+},
+{
+  "id": "subsec-matrix-space-5",
+  "level": "2",
+  "url": "sec-sec4-5-VS-Sage.html#subsec-matrix-space-5",
+  "type": "Checkpoint",
+  "number": "4.6.8",
+  "title": "",
+  "body": "Write Sage rountines to find coordinates of a matrix with repect to a basis of a matrix space and also the to find the linear span of set of matrices. "
 },
 {
   "id": "sec4-5-VS-Ex",
@@ -2989,11 +3016,83 @@ var ptx_lunr_docs = [
   "body": "  The Google matrix defined in is a regular matrix.   "
 },
 {
+  "id": "sec5-5-Eigen-Sage-exer",
+  "level": "1",
+  "url": "sec5-5-Eigen-Sage-exer.html",
+  "type": "Section",
+  "number": "5.4",
+  "title": "EIgenvalues and Eigenvectors in Sage",
+  "body": " EIgenvalues and Eigenvectors in Sage   In this section, we shall explore computation of eigenvalues and eigenvectors and related concepts in Sage. We shall also look applications of diagonalization in Sage.   Sage can compute eigenvalues and eigenvectors of a matrix and also of linear operator. If is a square marix, then A.eignvalues() returns eigenvalues of the matrix . Simplarly, A.eigenvectors_right() returns the eigenvectors along with the corresponding eigenvalue including the multiplicity of each eigenvalue. Apart from these two coammands, Sage also has A.eigenmatrix_right() which returns diagonal matrix of eigenvalues and the matrix whose columns of eigenvectors. Let us explore some example.   Find the eigenvalues of eigenvectors of .        Sage can also compute eigenvalues and eigenvectors of a symbolic matrix. Let us look at the next example.     Sage can also find the characteristic polynomial of matrix with ease using two matrix method A..charpoly() and A.characteristic_polynomial() Let us look at the next example.   Find the characteristics polynomial of the matrix   We can factorize the characteristic polynomial to find its roots.     Sage can find eigenvalues and eigenvalues of bigsize matriz also. However, the computation is done numerically. Let us look at the next example.   Consider the matrix . Find the characteristics polynomial, eigenvalues and eigenvectors of .   Now let us try to factorize the characteristic polynomial of .   Clearly this polynomial cannot be factorized in the field of rational numbers. However, Sage provide an extended field QQbar in whihc we can find the rots of this polynomial.   These are the eigenvalues that sage can find using A.eigenvalues()    For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and (ii) the product of eigenvalues equals to the determinant.    We can also verify the Cayley-Hamilton thorem for the above matrix.      Consider the matrix . Find the eigenvalues of and verify the Cayley-Hamilton theorem. Also find the sum and product of eigenvalues of and observe that they are the trace and determinant of respectively.    Eigenspaces  Consider a matrix . Find the eigenvalues and eigenvectors of . Also find the eigenspace corresponding to each eigenvalues. Check if the the given matrix is diagonalizable.      This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.  Note that the eigenspace corresponding to the eigenvalue is the and the gemetric multiplicity is the nullity of .   To find the eigenspace with respect to the eigenvalue can be obtained by appplying RREF to the matrix and solving the corresponding system of equations.   Now we can solve the system of equations, to obtaine the eigenspace.   Similarly, we can find the eigenspace with respect to the eigenvalue      Diagonalizability  Consider the same matrix . We shall check the diagonalizability of .    Clearly is diagonalizable. We can also find the matrix of eigenvectors and check if is the diagonal matrix whose diagonal entries are eigenvalues.     "
+},
+{
+  "id": "sec5-5-Eigen-Sage-exer-4",
+  "level": "2",
+  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-4",
+  "type": "Example",
+  "number": "5.4.1",
+  "title": "",
+  "body": " Find the eigenvalues of eigenvectors of .       "
+},
+{
+  "id": "sec5-5-Eigen-Sage-exer-6",
+  "level": "2",
+  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-6",
+  "type": "Example",
+  "number": "5.4.2",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "sec5-5-Eigen-Sage-exer-8",
+  "level": "2",
+  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-8",
+  "type": "Example",
+  "number": "5.4.3",
+  "title": "",
+  "body": " Find the characteristics polynomial of the matrix   We can factorize the characteristic polynomial to find its roots.    "
+},
+{
+  "id": "sec5-5-Eigen-Sage-exer-10",
+  "level": "2",
+  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-10",
+  "type": "Example",
+  "number": "5.4.4",
+  "title": "",
+  "body": " Consider the matrix . Find the characteristics polynomial, eigenvalues and eigenvectors of .   Now let us try to factorize the characteristic polynomial of .   Clearly this polynomial cannot be factorized in the field of rational numbers. However, Sage provide an extended field QQbar in whihc we can find the rots of this polynomial.   These are the eigenvalues that sage can find using A.eigenvalues()    For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and (ii) the product of eigenvalues equals to the determinant.    We can also verify the Cayley-Hamilton thorem for the above matrix.   "
+},
+{
+  "id": "sec5-5-Eigen-Sage-exer-11",
+  "level": "2",
+  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-11",
+  "type": "Activity",
+  "number": "5.4.1",
+  "title": "",
+  "body": "  Consider the matrix . Find the eigenvalues of and verify the Cayley-Hamilton theorem. Also find the sum and product of eigenvalues of and observe that they are the trace and determinant of respectively.   "
+},
+{
+  "id": "sec5-5-Eigen-Sage-exer-12",
+  "level": "2",
+  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-12",
+  "type": "Example",
+  "number": "5.4.5",
+  "title": "Eigenspaces.",
+  "body": "Eigenspaces  Consider a matrix . Find the eigenvalues and eigenvectors of . Also find the eigenspace corresponding to each eigenvalues. Check if the the given matrix is diagonalizable.      This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.  Note that the eigenspace corresponding to the eigenvalue is the and the gemetric multiplicity is the nullity of .   To find the eigenspace with respect to the eigenvalue can be obtained by appplying RREF to the matrix and solving the corresponding system of equations.   Now we can solve the system of equations, to obtaine the eigenspace.   Similarly, we can find the eigenspace with respect to the eigenvalue    "
+},
+{
+  "id": "sec5-5-Eigen-Sage-exer-13",
+  "level": "2",
+  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-13",
+  "type": "Example",
+  "number": "5.4.6",
+  "title": "Diagonalizability.",
+  "body": " Diagonalizability  Consider the same matrix . We shall check the diagonalizability of .    Clearly is diagonalizable. We can also find the matrix of eigenvectors and check if is the diagonal matrix whose diagonal entries are eigenvalues.    "
+},
+{
   "id": "sec5-4-eigen-exer",
   "level": "1",
   "url": "sec5-4-eigen-exer.html",
   "type": "Section",
-  "number": "5.4",
+  "number": "5.5",
   "title": "Exercises on Eigenvalues and Eigenvectors",
   "body": " Exercises on Eigenvalues and Eigenvectors     Find the eigenvalues and corresponding eigenvectors of the following matrices (i)   (ii)      Let . Find the eigenvalues of     Let . Show that satisfies its characteristic equation and hence find . Also find .    Check if the following matrices are positive definite?     Find eigenvalues of and . Can you generalize this?    Find the algebraic and geometric multiplicities of each of the eigenvalues of . Is this matrix diagonalizable?    Consider the matrix . What is ?    Let be a real matrix with eigenvalues and corresponding eigenvectors respectively. Find .    Suppose there are two internet service providers and in a city. At present has 50000 subscriber and has 100000 subscribers. A trend shows that every year 60% of subscriber move to and 40% of move to . After 2 year how many subscribers and will have? What happens in long run?     "
 },
