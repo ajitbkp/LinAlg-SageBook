@@ -641,7 +641,7 @@ img_array = np.array(img)
 <div id="subsec-image-tranfromation-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(img_array.shape)
 print(img_array)
 </script></div>
-<div class="para" id="subsec-image-tranfromation-6">We use the transformation <span class="process-math">\(T(P)=\alpha P\text{,}\)</span> where <span class="process-math">\(\alpha&gt;1\)</span> is the brightness of the image. Let us take <span class="process-math">\(\alpha =1.2\)</span> about 20/% increase in the brightness. On each pixel <span class="process-math">\(p_{ij}\)</span> of the image <span class="process-math">\(P\text{,}\)</span> we have <span class="process-math">\(Q=TP\text{,}\)</span> where <span class="process-math">\(q_{ij}=\min\{\alpha
+<div class="para" id="subsec-image-tranfromation-6">We use the transformation <span class="process-math">\(T(P)=\alpha P\text{,}\)</span> where <span class="process-math">\(\alpha\geq 1\)</span> is the brightness of the image. Let us take <span class="process-math">\(\alpha =1.5\)</span> about 20/% increase in the brightness. On each pixel <span class="process-math">\(p_{ij}\)</span> of the image <span class="process-math">\(P\text{,}\)</span> we have <span class="process-math">\(Q=TP\text{,}\)</span> where <span class="process-math">\(q_{ij}=\min\{\alpha
 p_{pij},255\}\text{.}\)</span> Here min~255 ensures the brightness values stay within valid pixel range.</div>
 <div id="subsec-image-tranfromation-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 3: Define a linear transformation: Brightness scaling
 alpha = 1.5 # scaling factor
