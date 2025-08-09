@@ -340,7 +340,10 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-3-LT.html#Proj-Refl-R3" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Projection and Reflection in <span class="process-math">\(\R^3\)</span></span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-LT-Geom.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Geometry of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-LT-Geom.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Geometry of Linear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LT-Geom.html#subsec-image-tranfromation" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Image Tranfromation</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sec3-5-LT-Sage.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Sage Computations</span></a></div></li>
 </ul>
 </li>
@@ -603,7 +606,83 @@ def linear_transformation(A=matrix(QQ,[[1,1/2],[1,-1]]).transpose(),u=vector(QQ,
     t=text('$u$',u+e)+text('$v$',v+e)+text('$u+v$',u+v+e)
     t=t+text('$Au$',A*u+e,color='red')+text('$Av$',A*v+e,color='red')+text('$A(u+v)$',A*(u+v)+e,color='red')
     show(p1+p2+t,aspect_ratio=1)
-</script></div></article></section></div>
+</script></div></article><section class="subsection" id="subsec-image-tranfromation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="space"> </span><span class="title">Image Tranfromation</span>
+</h3>
+<section class="introduction" id="subsec-image-tranfromation-2"><div class="para" id="subsec-image-tranfromation-2-1">Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.</div></section><div class="para" id="subsec-image-tranfromation-3">Consider a grayscale image of the Taj Mahar in India. <figure class="figure figure-like" id="taj1"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/images/Taj2.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.22<span class="period">.</span></span><span class="space"> </span>Original Image of Taj Mahal.</figcaption></figure>
+</div>
+<div class="para" id="subsec-image-tranfromation-4">The following Python code read a grayscale image of Taj Mahal in India.</div>
+<div id="subsec-image-tranfromation-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+img = Image.open("Taj2.png")
+img_array = np.array(img)
+img_array.shape
+</script></div>
+<div id="subsec-image-tranfromation-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(img_array.shape)
+print(img_array)
+</script></div>
+<div class="para" id="subsec-image-tranfromation-7">We use the transformation <span class="process-math">\(T(P)=\alpha P\text{,}\)</span> where <span class="process-math">\(\alpha&gt;1\)</span> is the brightness of the image. Let us take <span class="process-math">\(\alpha =1.2\)</span> about 20/% increase in the brightness. On each pixel <span class="process-math">\(p_{ij}\)</span> of the image <span class="process-math">\(P\text{,}\)</span> we have <span class="process-math">\(Q=TP\text{,}\)</span> where <span class="process-math">\(q_{ij}=\min\{\alpha p_{pij},255\}\text{.}\)</span> Here min~255 ensures the brightness values stay within valid pixel range.</div>
+<div id="subsec-image-tranfromation-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 3: Define a linear transformation: Brightness scaling
+alpha = 1.2  # scaling factor
+transformed_array = np.clip(alpha * img_array, 0, 255).astype(np.uint8)
+</script></div>
+<div id="subsec-image-tranfromation-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 4: Visual comparison
+plt.figure(figsize=(10,5))
+plt.subplot(1, 2, 1)
+plt.title("Original Grayscale Image")
+plt.imshow(img_array, cmap='gray')
+plt.axis('off')
+plt.subplot(1, 2, 2)
+plt.title(f"Transformed Image (alpha={alpha})")
+plt.imshow(transformed_array, cmap='gray')
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+</script></div>
+<div class="para" id="subsec-image-tranfromation-10">We get the following output. <figure class="figure figure-like" id="scaled_taj"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/Scaled_Taj2.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.23<span class="period">.</span></span><span class="space"> </span>Brightness Transformation applied to Taj Mahal.</figcaption></figure>
+</div>
+<div class="para logical" id="subsec-image-tranfromation-11">
+<div class="para">
+<em class="emphasis">Rotation Transformation</em> <div class="para" id="subsec-image-tranfromation-11-2">Next we apply rotation by an anngle <span class="process-math">\(30^\circ\)</span> to this image. Note that the rotation matrix is give by</div>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R_\theta = \begin{pmatrix} \cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta \end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">
+<div id="subsec-image-tranfromation-11-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">theta = np.radians(30)  # rotate by 30 degrees
+rotation_matrix = np.array([[np.cos(theta), -np.sin(theta)],[np.sin(theta),  np.cos(theta)]])
+</script></div> <div id="subsec-image-tranfromation-11-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">from scipy.ndimage import affine_transform
+</script></div> <div id="subsec-image-tranfromation-11-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 3: Apply rotation (centered on the image)
+center = np.array(img_array.shape) / 2
+inv_rotation = np.linalg.inv(rotation_matrix)
+# Shift so rotation is about image center
+offset = center - inv_rotation @ center
+rotated_array = affine_transform(img_array,
+    inv_rotation,
+    offset=offset,
+    mode='constant',
+    cval=255  # white background)
+</script></div> <div id="subsec-image-tranfromation-11-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 4: Display
+plt.figure(figsize=(10,5))
+plt.subplot(1, 2, 1)
+plt.title("Original Grayscale")
+plt.imshow(img_array, cmap='gray')
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.title("Rotated by 30°")
+plt.imshow(rotated_array, cmap='gray')
+plt.axis('off')
+plt.show()
+</script></div> We get the following output. <figure class="figure figure-like" id="Rotated_taj"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/Rotated_Taj2.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.24<span class="period">.</span></span><span class="space"> </span>Rotation Transformation APplied to Taj Mahal</figcaption></figure>
+</div>
+</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec3-3-LT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-sec3-5-LT-Sage.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -340,7 +340,10 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-3-LT.html#Proj-Refl-R3" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Projection and Reflection in <span class="process-math">\(\R^3\)</span></span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-LT-Geom.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Geometry of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-LT-Geom.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Geometry of Linear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LT-Geom.html#subsec-image-tranfromation" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Image Tranfromation</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sec3-5-LT-Sage.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Sage Computations</span></a></div></li>
 </ul>
 </li>
@@ -794,7 +797,83 @@ x_1=11/34, x_2 = 89/85, x_3 = 23/170, x_4=253/170\text{.}
 <div class="para">We can also solve the above system using the ’A.solve_right(b)’ command in Sage.</div>
 </div> <div id="subsec-Gauss-Jordan-Method-3-2-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.solve_right(b)
 </script></div>
-</div></details></article></section></section></div>
+</div></details></article><article class="example example-like" id="subsec-Gauss-Jordan-Method-4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-Gauss-Jordan-Method-4-1">
+<div class="para">Four well-mixed tanks <span class="process-math">\(T_1, T_2, T_3, T_4\)</span> form a recirculation/mixing network used to produce a sauce.  At steady state, the concentration <span class="process-math">\(c_i\)</span> (in <span class="process-math">\(kg\cdot m^{-3}\)</span>) of a soluble ingredient ( say salt or sugar) in tank <span class="process-math">\(T_i\)</span> satisfies the steady-state mass balance:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(\text{total outflow from tank } T_i \right) c_i
+-\sum_{j\neq i} \left(\text{ flow from tank  to } \right) c_j
+=\text{net external feed of ingredient to tank }.
+\end{equation*}
+</div>
+<div class="para">The system of equations can be written in matrix form as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \mathbf{c} = \mathbf{b},
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = 
+\begin{pmatrix}
+20 \amp -5 \amp -3 \amp 0\\
+-4 \amp 18 \amp -6 \amp -2\\
+0 \amp -3 \amp 15 \amp -4\\
+-2 \amp 0 \amp -5 \amp 17
+\end{pmatrix},
+\quad
+\mathbf{b} = 
+\begin{pmatrix}
+14\\
+20\\
+9\\
+11
+\end{pmatrix},
+\quad
+\mathbf{c} =
+\begin{pmatrix}
+c_1\\
+c_2\\
+c_3\\
+c_4
+\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">For example, the first equation reads: <span class="process-math">\(20c_1 - 5c_2 - 3c_3 = 14\text{,}\)</span> meaning the total outflow coefficient from <span class="process-math">\(T_1\)</span> is 20, the inflows from <span class="process-math">\(T_2\)</span> is 2 and <span class="process-math">\(T_3\)</span> are 5 and 3 respectively, and the net external ingredient feed to <span class="process-math">\(T_1\)</span> is 14 (in consistent units). <details id="subsec-Gauss-Jordan-Method-4-1-13" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-Gauss-Jordan-Method-4-1-13-1">
+<div class="para">
+<div id="subsec-Gauss-Jordan-Method-4-1-13-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ,[[20, -5,-3, 0],[-4,18,-6,-2],[0 , -3, 15, -4],[-2,0,-5,17]])
+b = vector([14,20,9,11])
+Aug = A.augment(b,subdivide=True)
+Aug
+</script></div> <div id="subsec-Gauss-Jordan-Method-4-1-13-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
+</script></div> Hence the solution is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c= \begin{pmatrix}
+c_1 \\
+c_2 \\
+c_3 \\
+c_4 
+\end{pmatrix}=\begin{pmatrix}
+\dfrac{49961}{35780}\\[6pt]
+\dfrac{17838}{8945}\\[6pt]
+\dfrac{2359}{1789}\\[6pt]
+\dfrac{21453}{17890}
+\end{pmatrix}\approx \begin{pmatrix}
+1.396339,\\
+1.994187,\\
+1.318614,\\
+1.199162
+\end{pmatrix}.
+\end{equation*}
+</div>
+</div></div></details>
+</div>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec1-2-col-operations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec1-4-matrix-rank.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
