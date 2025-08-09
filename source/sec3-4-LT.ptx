@@ -223,12 +223,6 @@
         intesity and rotation by an angle to a given image.
       </p>
     </introduction>
-    <p> Consider a grayscale image of the Taj Mahar in India. <figure xml:id="taj1">
-        <image width="45%" source="images/Taj2.png" />
-             <caption>Original Image of Taj Mahal.</caption>
-      . </figure>
-
-    </p>
     <p>
       The following Python code read a grayscale image of Taj Mahal in India.
     </p>
@@ -242,8 +236,11 @@
         import matplotlib.pyplot as plt
         from PIL import Image
         img = Image.open('incrediville-side.jpg')
+        r = 10
+        img = Image.open('incrediville-side.jpg')
+        x,y = img.size
+        img = img.resize((x // r, y // r)).convert("L")
         img_array = np.array(img)
-        img_array.shape
       </input>
       <output>
 
@@ -266,7 +263,7 @@
     <sage>
       <input>
         # Step 3: Define a linear transformation: Brightness scaling
-        alpha = 1.2 # scaling factor
+        alpha = 1.5 # scaling factor
         transformed_array = np.clip(alpha * img_array, 0, 255).astype(np.uint8)
       </input>
       <output>
@@ -293,33 +290,27 @@
 
       </output>
     </sage>
-    <p> We get the following output. <figure xml:id="scaled_taj">
-        <image width="75%" source="images/Scaled_Taj2.png" />
-             <caption>Brightness Transformation
-      applied to Taj Mahal.</caption>. </figure>
-
-    </p>
-
-    <p><em effect="bold">Rotation Transformation</em>  
+    <p>
+      <em effect="bold">Rotation Transformation</em>
 
 
-   <p> Next we apply rotation by an anngle <m>
-      30^\circ</m> to this image. Note that the rotation matrix is give by </p>
-<me>
+      <p> Next we apply rotation by an anngle <m>
+          30^\circ</m> to this image. Note that the rotation matrix is give by </p>
+      <me>
         R_\theta = \begin{pmatrix} \cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta
-      \end{pmatrix}.
+        \end{pmatrix}.
       </me>
-  <sage>
+      <sage>
         <input>
           theta = np.radians(30) # rotate by 30 degrees
-          rotation_matrix = np.array([[np.cos(theta), -np.sin(theta)],[np.sin(theta),
-      np.cos(theta)]])
+          rotation_matrix = np.array([[np.cos(theta),
+          -np.sin(theta)],[np.sin(theta),np.cos(theta)]])
         </input>
         <output>
 
         </output>
-      </sage> 
-  <sage>
+      </sage>
+      <sage>
         <input>
           from scipy.ndimage import affine_transform
         </input>
@@ -327,7 +318,7 @@
 
         </output>
       </sage>
-  <sage>
+      <sage>
         <input>
           # Step 3: Apply rotation (centered on the image)
           center = np.array(img_array.shape) / 2
@@ -338,13 +329,14 @@
           inv_rotation,
           offset=offset,
           mode='constant',
-          cval=255 # white background)
+          cval=255 # white background
+          )
         </input>
         <output>
 
         </output>
       </sage>
-  <sage>
+      <sage>
         <input>
           # Step 4: Display
           plt.figure(figsize=(10,5))
@@ -362,12 +354,7 @@
         <output>
 
         </output>
-      </sage> We get the following output. <figure
-        xml:id="Rotated_taj">
-        <image width="75%" source="images/Rotated_Taj2.png" />
-             <caption>Rotation Transformation
-      Applied to Taj Mahal.</caption>. </figure>
-
+      </sage>
     </p>
 
   </subsection>
