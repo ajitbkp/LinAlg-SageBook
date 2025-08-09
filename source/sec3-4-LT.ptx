@@ -256,9 +256,10 @@
 
       </output>
     </sage>
-    <p> We use the transformation <m>T(P)=\alpha P</m>, where <m>\alpha>1</m> is the brightness of
-      the image. Let us take <m>\alpha =1.2</m> about 20/% increase in the brightness. On each pixel <m>
-      p_{ij}</m> of the image <m>P</m>, we have <m>Q=TP</m>, where <m>q_{ij}=\min\{\alpha
+    <p> We use the transformation <m>T(P)=\alpha P</m>, where <m>\alpha\geq 1</m> is the brightness
+      of the image. Let us take <m>\alpha =1.5</m> about 20/% increase in the brightness. On each
+      pixel <m>
+        p_{ij}</m> of the image <m>P</m>, we have <m>Q=TP</m>, where <m>q_{ij}=\min\{\alpha
       p_{pij},255\}</m>. Here min~255 ensures the brightness values stay within valid pixel range. </p>
     <sage>
       <input>
