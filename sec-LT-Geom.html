@@ -623,11 +623,8 @@ show(p1+p2+t,aspect_ratio=1)
 </script></div></article><section class="subsection" id="subsec-image-tranfromation"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="space"> </span><span class="title">Image Tranfromation</span>
 </h3>
-<section class="introduction" id="subsec-image-tranfromation-2"><div class="para" id="subsec-image-tranfromation-2-1">Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.</div></section><div class="para" id="subsec-image-tranfromation-3">Consider a grayscale image of the Taj Mahar in India. <figure class="figure figure-like" id="taj1"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/images/Taj2.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.22<span class="period">.</span></span><span class="space"> </span>Original Image of Taj Mahal.</figcaption></figure>
-</div>
-<div class="para" id="subsec-image-tranfromation-4">The following Python code read a grayscale image of Taj Mahal in India.</div>
-<div id="subsec-image-tranfromation-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># get the image
+<section class="introduction" id="subsec-image-tranfromation-2"><div class="para" id="subsec-image-tranfromation-2-1">Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.</div></section><div class="para" id="subsec-image-tranfromation-3">The following Python code read a grayscale image of Taj Mahal in India.</div>
+<div id="subsec-image-tranfromation-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># get the image
 import urllib.request
 URL = "https://raw.githubusercontent.com/jephianlin/LA-notebook/main/incrediville-side.jpg"
 urllib.request.urlretrieve(URL, "incrediville-side.jpg")
@@ -635,19 +632,22 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 img = Image.open('incrediville-side.jpg')
+r = 10
+img = Image.open('incrediville-side.jpg')
+x,y = img.size
+img = img.resize((x // r, y // r)).convert("L")
 img_array = np.array(img)
-img_array.shape
 </script></div>
-<div id="subsec-image-tranfromation-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(img_array.shape)
+<div id="subsec-image-tranfromation-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(img_array.shape)
 print(img_array)
 </script></div>
-<div class="para" id="subsec-image-tranfromation-7">We use the transformation <span class="process-math">\(T(P)=\alpha P\text{,}\)</span> where <span class="process-math">\(\alpha&gt;1\)</span> is the brightness of the image. Let us take <span class="process-math">\(\alpha =1.2\)</span> about 20/% increase in the brightness. On each pixel <span class="process-math">\(p_{ij}\)</span> of the image <span class="process-math">\(P\text{,}\)</span> we have <span class="process-math">\(Q=TP\text{,}\)</span> where <span class="process-math">\(q_{ij}=\min\{\alpha
+<div class="para" id="subsec-image-tranfromation-6">We use the transformation <span class="process-math">\(T(P)=\alpha P\text{,}\)</span> where <span class="process-math">\(\alpha&gt;1\)</span> is the brightness of the image. Let us take <span class="process-math">\(\alpha =1.2\)</span> about 20/% increase in the brightness. On each pixel <span class="process-math">\(p_{ij}\)</span> of the image <span class="process-math">\(P\text{,}\)</span> we have <span class="process-math">\(Q=TP\text{,}\)</span> where <span class="process-math">\(q_{ij}=\min\{\alpha
 p_{pij},255\}\text{.}\)</span> Here min~255 ensures the brightness values stay within valid pixel range.</div>
-<div id="subsec-image-tranfromation-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 3: Define a linear transformation: Brightness scaling
-alpha = 1.2 # scaling factor
+<div id="subsec-image-tranfromation-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 3: Define a linear transformation: Brightness scaling
+alpha = 1.5 # scaling factor
 transformed_array = np.clip(alpha * img_array, 0, 255).astype(np.uint8)
 </script></div>
-<div id="subsec-image-tranfromation-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 4: Visual comparison
+<div id="subsec-image-tranfromation-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 4: Visual comparison
 plt.figure(figsize=(10,5))
 plt.subplot(1, 2, 1)
 plt.title("Original Grayscale Image")
@@ -660,12 +660,9 @@ plt.axis('off')
 plt.tight_layout()
 plt.show()
 </script></div>
-<div class="para" id="subsec-image-tranfromation-10">We get the following output. <figure class="figure figure-like" id="scaled_taj"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/Scaled_Taj2.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.23<span class="period">.</span></span><span class="space"> </span>Brightness Transformation applied to Taj Mahal.</figcaption></figure>
-</div>
-<div class="para logical" id="subsec-image-tranfromation-11">
+<div class="para logical" id="subsec-image-tranfromation-9">
 <div class="para">
-<em class="emphasis">Rotation Transformation</em> <div class="para" id="subsec-image-tranfromation-11-2">Next we apply rotation by an anngle <span class="process-math">\(30^\circ\)</span> to this image. Note that the rotation matrix is give by</div>
+<em class="emphasis">Rotation Transformation</em> <div class="para" id="subsec-image-tranfromation-9-2">Next we apply rotation by an anngle <span class="process-math">\(30^\circ\)</span> to this image. Note that the rotation matrix is give by</div>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -674,11 +671,11 @@ R_\theta = \begin{pmatrix} \cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\t
 \end{equation*}
 </div>
 <div class="para">
-<div id="subsec-image-tranfromation-11-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">    theta = np.radians(30) # rotate by 30 degrees
-    rotation_matrix = np.array([[np.cos(theta), -np.sin(theta)],[np.sin(theta),
-np.cos(theta)]])
-</script></div> <div id="subsec-image-tranfromation-11-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">from scipy.ndimage import affine_transform
-</script></div> <div id="subsec-image-tranfromation-11-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 3: Apply rotation (centered on the image)
+<div id="subsec-image-tranfromation-9-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">theta = np.radians(30) # rotate by 30 degrees
+rotation_matrix = np.array([[np.cos(theta),
+-np.sin(theta)],[np.sin(theta),np.cos(theta)]])
+</script></div> <div id="subsec-image-tranfromation-9-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">from scipy.ndimage import affine_transform
+</script></div> <div id="subsec-image-tranfromation-9-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 3: Apply rotation (centered on the image)
 center = np.array(img_array.shape) / 2
 inv_rotation = np.linalg.inv(rotation_matrix)
 # Shift so rotation is about image center
@@ -687,8 +684,9 @@ rotated_array = affine_transform(img_array,
 inv_rotation,
 offset=offset,
 mode='constant',
-cval=255 # white background)
-</script></div> <div id="subsec-image-tranfromation-11-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 4: Display
+cval=255 # white background
+)
+</script></div> <div id="subsec-image-tranfromation-9-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 4: Display
 plt.figure(figsize=(10,5))
 plt.subplot(1, 2, 1)
 plt.title("Original Grayscale")
@@ -700,8 +698,7 @@ plt.title("Rotated by 30°")
 plt.imshow(rotated_array, cmap='gray')
 plt.axis('off')
 plt.show()
-</script></div> We get the following output. <figure class="figure figure-like" id="Rotated_taj"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/Rotated_Taj2.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.24<span class="period">.</span></span><span class="space"> </span>Rotation Transformation Applied to Taj Mahal.</figcaption></figure>
+</script></div>
 </div>
 </div></section></section></div>
 <div class="ptx-content-footer">

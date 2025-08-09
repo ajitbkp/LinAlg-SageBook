@@ -1411,7 +1411,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.4",
   "title": "Geometry of Linear Transformations",
-  "body": " Geometry of Linear Transformations  We look at some specific linear transformations from to and how it transforms the unit square. Readers are encouraged to draw figures.   Exmpansion along -axis.    where . (Refer to the )  -expansion for        Compression along -axis.    where . Refer to the for .  -Compression for        Expansion along -axis    where . Refer to for .  -expansion for        Compression along -axis    where . Refer to for .  -compression for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Draw the figure for .  Negative -shear for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Refer to for .  Negative -shear for        Dilation and Contraction   Fix a positive real number and define by . It is a linear map which is induced by the scalar matrix . ( is called a dilation if and a contraction if .) Refer to  with and .  Dilations with and .        Streching   Let and be two positive real numbers and . Define by . Then (i) is stretching by a factor along -axis and by a factor along -axis if and (ii) is contraction by a factor along -axis followed by a factor along -axis if . Refer to for stretching along by 2 and -axes by 1.5.  Stretching along by 2 and -axes by 1.5.        Geometry of linear transformation in  In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.     Image Tranfromation   Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.   Consider a grayscale image of the Taj Mahar in India.   Original Image of Taj Mahal. .   The following Python code read a grayscale image of Taj Mahal in India.    We use the transformation , where is the brightness of the image. Let us take about 20\/% increase in the brightness. On each pixel of the image , we have , where . Here min~255 ensures the brightness values stay within valid pixel range.    We get the following output.   Brightness Transformation applied to Taj Mahal. .   Rotation Transformation  Next we apply rotation by an anngle to this image. Note that the rotation matrix is give by      We get the following output.   Rotation Transformation Applied to Taj Mahal. .    "
+  "body": " Geometry of Linear Transformations  We look at some specific linear transformations from to and how it transforms the unit square. Readers are encouraged to draw figures.   Exmpansion along -axis.    where . (Refer to the )  -expansion for        Compression along -axis.    where . Refer to the for .  -Compression for        Expansion along -axis    where . Refer to for .  -expansion for        Compression along -axis    where . Refer to for .  -compression for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Draw the figure for .  Negative -shear for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Refer to for .  Negative -shear for        Dilation and Contraction   Fix a positive real number and define by . It is a linear map which is induced by the scalar matrix . ( is called a dilation if and a contraction if .) Refer to  with and .  Dilations with and .        Streching   Let and be two positive real numbers and . Define by . Then (i) is stretching by a factor along -axis and by a factor along -axis if and (ii) is contraction by a factor along -axis followed by a factor along -axis if . Refer to for stretching along by 2 and -axes by 1.5.  Stretching along by 2 and -axes by 1.5.        Geometry of linear transformation in  In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.     Image Tranfromation   Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.   The following Python code read a grayscale image of Taj Mahal in India.    We use the transformation , where is the brightness of the image. Let us take about 20\/% increase in the brightness. On each pixel of the image , we have , where . Here min~255 ensures the brightness values stay within valid pixel range.     Rotation Transformation  Next we apply rotation by an anngle to this image. Note that the rotation matrix is give by         "
 },
 {
   "id": "x-expansion",
@@ -1511,33 +1511,6 @@ var ptx_lunr_docs = [
   "number": "3.4.21",
   "title": "Geometry of linear transformation in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
   "body": " Geometry of linear transformation in  In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.   "
-},
-{
-  "id": "taj1",
-  "level": "2",
-  "url": "sec-LT-Geom.html#taj1",
-  "type": "Figure",
-  "number": "3.4.22",
-  "title": "",
-  "body": "  Original Image of Taj Mahal. . "
-},
-{
-  "id": "scaled_taj",
-  "level": "2",
-  "url": "sec-LT-Geom.html#scaled_taj",
-  "type": "Figure",
-  "number": "3.4.23",
-  "title": "",
-  "body": "  Brightness Transformation applied to Taj Mahal. . "
-},
-{
-  "id": "Rotated_taj",
-  "level": "2",
-  "url": "sec-LT-Geom.html#Rotated_taj",
-  "type": "Figure",
-  "number": "3.4.24",
-  "title": "",
-  "body": "  Rotation Transformation Applied to Taj Mahal. . "
 },
 {
   "id": "sec-sec3-5-LT-Sage",
