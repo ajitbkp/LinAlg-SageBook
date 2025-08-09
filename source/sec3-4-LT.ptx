@@ -2,40 +2,41 @@
 
 <section xml:id="sec-LT-Geom" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Geometry of Linear Transformations</title>
-  <p>
-    We look at some specific linear transformations from <m>\R^2</m> to <m>R^2</m> and how it transforms the unit square. Readers are encouraged to draw figures.
-  </p> 
+  <p> We look at some specific linear transformations from <m>\R^2</m> to <m>R^2</m> and how it
+    transforms the unit square. Readers are encouraged to draw figures. </p>
 
-  <example xml:id="x-expansion"> <title>Exmpansion along <m>x</m>-axis.</title>
+  <example xml:id="x-expansion">
+    <title>Exmpansion along <m>x</m>-axis.</title>
     <statement>
       <p>
         <me>
-          T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bmatrix} =\begin{bmatrix}a  \amp  0\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
+          T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bmatrix}
+        =\begin{bmatrix}a \amp 0\\0 \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>a>1</m>. (Refer to the <xref ref="fig_x-expansion1"/>)
-
-        <figure xml:id="fig_x-expansion1">
+        where <m>a>1</m>. (Refer to the <xref ref="fig_x-expansion1" />) <figure
+          xml:id="fig_x-expansion1">
           <caption><m>x</m>-expansion for <m>a=2</m></caption>
-          <image width="80%" source="images/x-expansion.png"/>
+          <image width="80%" source="images/x-expansion.png" />
         </figure>
       </p>
     </statement>
   </example>
 
-  <example xml:id="x-compression"> <title>Compression along <m>x</m>-axis.</title>
+  <example xml:id="x-compression">
+    <title>Compression along <m>x</m>-axis.</title>
     <statement>
       <p>
         <me>
-            T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bmatrix} =\begin{bmatrix}a  \amp  0\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
-          </me>
-          where <m>0\lt a\lt 1</m>. Refer to the <xref ref="fig_x-compression"/> for <m>a=1/2</m>.
-
-          <figure xml:id="fig_x-compression">
-            <caption><m>x</m>-Compression for <m>a=1/2</m></caption>
-            <image width="80%" source="images/x-compression.png"/>
-          </figure>
-        </p>
-      </statement>
+          T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bmatrix}
+        =\begin{bmatrix}a \amp 0\\0 \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
+        </me>
+        where <m>0\lt a\lt 1</m>. Refer to the <xref ref="fig_x-compression" /> for <m>a=1/2</m>. <figure
+          xml:id="fig_x-compression">
+          <caption><m>x</m>-Compression for <m>a=1/2</m></caption>
+          <image width="80%" source="images/x-compression.png" />
+        </figure>
+      </p>
+    </statement>
   </example>
 
   <example xml:id="y-expansion">
@@ -43,233 +44,233 @@
     <statement>
       <p>
         <me>
-            T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bmatrix} =\begin{bmatrix}0  \amp  0\\0 \amp  b \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
-          </me>
-          where <m>b>0</m>.
-          Refer to <xref ref="fig_y-expansion"/> for <m>b=2</m>.
-
-          <figure xml:id="fig_y-expansion">
-            <caption><m>y</m>-expansion for <m>b=2</m></caption>
-            <image width="80%" source="images/y-expansion.png"/>
-          </figure>
-        </p>
+          T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bmatrix}
+        =\begin{bmatrix}0 \amp 0\\0 \amp b \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
+        </me>
+        where <m>b>0</m>. Refer to <xref ref="fig_y-expansion" /> for <m>b=2</m>. <figure
+          xml:id="fig_y-expansion">
+          <caption><m>y</m>-expansion for <m>b=2</m></caption>
+          <image width="80%" source="images/y-expansion.png" />
+        </figure>
+      </p>
     </statement>
   </example>
 
   <example xml:id="y-compression">
     <title>Compression along <m>y</m>-axis</title>
     <statement>
-        <p>
-          <me>
-            T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bmatrix} =\begin{bmatrix}0  \amp  0\\b \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
-          </me>
-          where <m>0\lt b\lt 1</m>.
-          Refer to <xref ref="fig_y-compression"/> for <m>b=1/2</m>.
-
-          <figure xml:id="fig_y-compression">
-            <caption><m>y</m>-compression for <m>b=1/2</m></caption>
-            <image width="80%" source="images/y-compression.png"/>
-          </figure>
+      <p>
+        <me>
+          T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bmatrix}
+        =\begin{bmatrix}0 \amp 0\\b \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
+        </me>
+        where <m>0\lt b\lt 1</m>. Refer to <xref ref="fig_y-compression" /> for <m>b=1/2</m>. <figure
+          xml:id="fig_y-compression">
+          <caption><m>y</m>-compression for <m>b=1/2</m></caption>
+          <image width="80%" source="images/y-compression.png" />
+        </figure>
       </p>
     </statement>
   </example>
 
   <example xml:id="positive-x-shear">
-    <title>Shear along  positive <m>x</m>-axis</title>
+    <title>Shear along positive <m>x</m>-axis</title>
     <statement>
-  <p>
-    <me>
-      T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{bmatrix} =\begin{bmatrix}1  \amp  a\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
-    </me>
-    where <m>a>0</m>.     Refer to <xref ref="fig_x-postive-shear"/> for <m>a=1/4</m>.
-   
-    <figure xml:id="fig_x-postive-shear">
-      <caption>Positive <m>x</m>-shear for <m>a=1/4</m></caption>
-      <image width="80%" source="images/x-positive-shear.png"/>
-    </figure>
-  </p>
-</statement>
-</example>
-
-
-<example xml:id="negative-x-shear">
-  <title>Shear along  negative <m>x</m>-axis</title>
-  <statement>
-<p>
-    <me>
-      T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{bmatrix} =\begin{bmatrix}1  \amp  a\\0 \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
-    </me>
-    where <m>a\lt 0</m>.
-    Draw the figure for <m>a=-1/4</m>.
-    <figure xml:id="fig_x-negative-shear">
-      <caption>Negative <m>x</m>-shear for <m>a=-1/4</m></caption>
-      <image width="80%" source="images/x-negative-shear.png"/>
-    </figure>
-  </p>
-</statement>
-</example>
-
-<example xml:id="positive-y-shear">
-  <title>Shear along  positive <m>y</m>-axis</title>
-  <statement>
-  <p>
-    <me>
-      T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{bmatrix} =\begin{bmatrix}1  \amp  0\\a \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
-    </me>
-    where <m>a>0</m>.
-    Refer to <xref ref="fig_y-postive-shear"/> for <m>a=1/4</m>.
-
-    <figure xml:id="fig_y-postive-shear">
-      <caption>Positive <m>y</m>-shear for <m>a=1/4</m></caption>
-      <image width="80%" source="images/y-positive-shear.png"/>
-    </figure>
-  </p>
-</statement>
-</example>
-
-
-<example xml:id="negative-y-shear">
-  <title>Shear along  negative <m>y</m>-axis</title>
-  <statement>
-  <p>
-   <me>
-      T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{bmatrix} =\begin{bmatrix}1  \amp  0\\a \amp  1 \end{bmatrix}  \begin{bmatrix}x\\ y \end{bmatrix}
-    </me>
-    where <m>a\lt 0</m>.
-    Refer to <xref ref="fig_y-negative-shear"/> for <m>a=-1/4</m>.
-
-    <figure xml:id="fig_y-negative-shear">
-      <caption>Negative <m>y</m>-shear for <m>a=-1/4</m></caption>
-      <image width="80%" source="images/y-negative-shear.png"/>
-    </figure>
-  </p>
-</statement>
-</example>
-
-<example xml:id="dilation-contraction">
-  <title>Dilation and Contraction</title>
-  <statement>
-  <p>
-    Fix a positive real number <m>a</m> and define <m>D_a\colon \R^n\to \R^n</m> by <m>D_a(x)=ax</m>.
-    It is a linear map which is induced by the scalar matrix <m>a I_{n}</m>. ( <m>D_a</m> is called a <em>dilation</em>
-    if <m>a>0</m> and a <em>contraction</em>
-    if <m>a\lt 1</m>.) Refer to <xref ref="fig_dilation"/>
-    <m>D_a\colon \R^2\to \R^2</m> with <m>a=2</m> and <m>a=1/2</m>.
-    <figure xml:id="fig_dilation">
-      <caption>Dilations with <m>a=1/4</m> and <m>a=2</m>.</caption>
-      <image width="80%" source="images/dialation.png"/>
-    </figure>
-  </p>
-</statement>
-</example>
-
-<example xml:id="streching">
-  <title>Streching</title>
-  <statement>
-  <p>
-    Let <m>a</m> and <m>b</m> be two positive real numbers and <m>A=\begin{bmatrix}a \amp 0 \\0 \amp b \end{bmatrix}</m>.
-    Define <m>T\colon\R^2\to \R^2</m> by <m>T(x)=Ax</m>.
-    Then (i) <m>T</m> is stretching by a factor <m>a</m> along <m>x</m>-axis and by a factor <m>b</m> along <m>y</m>-axis if <m>a,b>1</m> and (ii) <m>T</m> is contraction by a factor <m>a</m> along <m>x</m>-axis followed by a factor <m>b</m> along <m>y</m>-axis if <m>0\lt a,b\lt 1</m>.
-    Refer to <xref ref="fig_diag-expansion"/> for stretching along <m>x</m> by 2 and <m>y</m>-axes by 1.5.
-
-    <figure xml:id="fig_diag-expansion">
-      <caption>Stretching along <m>x</m> by 2 and <m>y</m>-axes by 1.5.</caption>
-      <image width="80%" source="images/diag-expansion.png"/>
-    </figure>
-  </p>
-</statement>
-</example>
-
-  <example xml:id="R2-LT-geom"><title>Geometry of linear transformation in <m>\R^2</m></title>
       <p>
-    In this exampe, we demostrate linear transformation from <m>\R^2</m> to itself using the Sage interatact feature.
-    </p>
-   
-    <sage>
-     <input>
-       @interact 
-       def linear_transformation(A=matrix(QQ,[[1,1/2],[1,-1]]).transpose(),u=vector(QQ,[1,1]),v=vector(QQ,[-1/2,1])): 
-           #u=vector(QQ,[u[0,0],u[0,1]])
-           #v=vector(QQ,[v[0,0],v[0,1]])
-           e=vector(QQ,[1/20,1/10])
-           u1 = A*u
-           v1 = A*v
-           p1=plot(u,color='blue')+plot(v,color='blue')
-           p1=p1+plot(u+v,color='blue')
-           p1=p1+line((u,u+v),linestyle="--",color='blue')
-           p1=p1+line((v,u+v),linestyle="--",color='blue')
-           p2=plot(A*u,color='red')+plot(A*v,color='red')
-           p2=p2+plot(A*(u+v),color='red')
-           p2=p2+line((A*u,A*(u+v)),linestyle="--",color='red')
-           p2=p2+line((A*v,A*(u+v)),linestyle="--",color='red')
-           t=text('$u$',u+e)+text('$v$',v+e)+text('$u+v$',u+v+e)
-           t=t+text('$Au$',A*u+e,color='red')+text('$Av$',A*v+e,color='red')+text('$A(u+v)$',A*(u+v)+e,color='red')
-           show(p1+p2+t,aspect_ratio=1) 
-     </input>
-     <output>
-       
-     </output>
-    </sage> 
-   </example>
+        <me>
+          T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{bmatrix}
+        =\begin{bmatrix}1 \amp a\\0 \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
+        </me>
+        where <m>a>0</m>. Refer to <xref ref="fig_x-postive-shear" /> for <m>a=1/4</m>. <figure
+          xml:id="fig_x-postive-shear">
+          <caption>Positive <m>x</m>-shear for <m>a=1/4</m></caption>
+          <image width="80%" source="images/x-positive-shear.png" />
+        </figure>
+      </p>
+    </statement>
+  </example>
 
-   <subsection xml:id="subsec-image-tranfromation">
+
+  <example xml:id="negative-x-shear">
+    <title>Shear along negative <m>x</m>-axis</title>
+    <statement>
+      <p>
+        <me>
+          T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{bmatrix}
+        =\begin{bmatrix}1 \amp a\\0 \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
+        </me>
+        where <m>a\lt 0</m>. Draw the figure for <m>a=-1/4</m>. <figure
+          xml:id="fig_x-negative-shear">
+          <caption>Negative <m>x</m>-shear for <m>a=-1/4</m></caption>
+          <image width="80%" source="images/x-negative-shear.png" />
+        </figure>
+      </p>
+    </statement>
+  </example>
+
+  <example xml:id="positive-y-shear">
+    <title>Shear along positive <m>y</m>-axis</title>
+    <statement>
+      <p>
+        <me>
+          T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{bmatrix}
+        =\begin{bmatrix}1 \amp 0\\a \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
+        </me>
+        where <m>a>0</m>. Refer to <xref ref="fig_y-postive-shear" /> for <m>a=1/4</m>. <figure
+          xml:id="fig_y-postive-shear">
+          <caption>Positive <m>y</m>-shear for <m>a=1/4</m></caption>
+          <image width="80%" source="images/y-positive-shear.png" />
+        </figure>
+      </p>
+    </statement>
+  </example>
+
+
+  <example xml:id="negative-y-shear">
+    <title>Shear along negative <m>y</m>-axis</title>
+    <statement>
+      <p>
+        <me>
+          T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{bmatrix}
+        =\begin{bmatrix}1 \amp 0\\a \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
+        </me>
+        where <m>a\lt 0</m>. Refer to <xref ref="fig_y-negative-shear" /> for <m>a=-1/4</m>. <figure
+          xml:id="fig_y-negative-shear">
+          <caption>Negative <m>y</m>-shear for <m>a=-1/4</m></caption>
+          <image width="80%" source="images/y-negative-shear.png" />
+        </figure>
+      </p>
+    </statement>
+  </example>
+
+  <example xml:id="dilation-contraction">
+    <title>Dilation and Contraction</title>
+    <statement>
+      <p> Fix a positive real number <m>a</m> and define <m>D_a\colon \R^n\to \R^n</m> by <m>
+        D_a(x)=ax</m>. It is a linear map which is induced by the scalar matrix <m>a I_{n}</m>. ( <m>
+        D_a</m> is called a <em>dilation</em> if <m>a>0</m> and a <em>contraction</em> if <m>a\lt 1</m>.)
+        Refer to <xref ref="fig_dilation" />
+    <m>D_a\colon \R^2\to \R^2</m> with <m>a=2</m> and <m>
+        a=1/2</m>. <figure xml:id="fig_dilation">
+          <caption>Dilations with <m>a=1/4</m> and <m>a=2</m>.</caption>
+          <image width="80%" source="images/dialation.png" />
+        </figure>
+      </p>
+    </statement>
+  </example>
+
+  <example xml:id="streching">
+    <title>Streching</title>
+    <statement>
+      <p> Let <m>a</m> and <m>b</m> be two positive real numbers and <m>A=\begin{bmatrix}a \amp 0
+          \\0 \amp b \end{bmatrix}</m>. Define <m>T\colon\R^2\to \R^2</m> by <m>T(x)=Ax</m>. Then
+        (i) <m>
+          T</m> is stretching by a factor <m>a</m> along <m>x</m>-axis and by a factor <m>b</m>
+        along <m>
+          y</m>-axis if <m>a,b>1</m> and (ii) <m>T</m> is contraction by a factor <m>a</m> along <m>
+        x</m>-axis followed by a factor <m>b</m> along <m>y</m>-axis if <m>0\lt a,b\lt 1</m>. Refer
+        to <xref
+          ref="fig_diag-expansion" /> for stretching along <m>x</m> by 2 and <m>y</m>-axes by 1.5. <figure
+          xml:id="fig_diag-expansion">
+          <caption>Stretching along <m>x</m> by 2 and <m>y</m>-axes by 1.5.</caption>
+          <image width="80%" source="images/diag-expansion.png" />
+        </figure>
+      </p>
+    </statement>
+  </example>
+
+  <example xml:id="R2-LT-geom">
+    <title>Geometry of linear transformation in <m>\R^2</m></title>
+    <p> In this exampe, we demostrate linear transformation from <m>\R^2</m> to itself using the
+      Sage interatact feature. </p>
+
+    <sage>
+      <input>
+        @interact
+        def
+        linear_transformation(A=matrix(QQ,[[1,1/2],[1,-1]]).transpose(),u=vector(QQ,[1,1]),v=vector(QQ,[-1/2,1])):
+        #u=vector(QQ,[u[0,0],u[0,1]])
+        #v=vector(QQ,[v[0,0],v[0,1]])
+        e=vector(QQ,[1/20,1/10])
+        u1 = A*u
+        v1 = A*v
+        p1=plot(u,color='blue')+plot(v,color='blue')
+        p1=p1+plot(u+v,color='blue')
+        p1=p1+line((u,u+v),linestyle="--",color='blue')
+        p1=p1+line((v,u+v),linestyle="--",color='blue')
+        p2=plot(A*u,color='red')+plot(A*v,color='red')
+        p2=p2+plot(A*(u+v),color='red')
+        p2=p2+line((A*u,A*(u+v)),linestyle="--",color='red')
+        p2=p2+line((A*v,A*(u+v)),linestyle="--",color='red')
+        t=text('$u$',u+e)+text('$v$',v+e)+text('$u+v$',u+v+e)
+        t=t+text('$Au$',A*u+e,color='red')+text('$Av$',A*v+e,color='red')+text('$A(u+v)$',A*(u+v)+e,color='red')
+        show(p1+p2+t,aspect_ratio=1)
+      </input>
+      <output>
+
+      </output>
+    </sage>
+  </example>
+
+  <subsection xml:id="subsec-image-tranfromation">
     <title>Image Tranfromation</title>
     <introduction>
       <p>
-      Let us explore, how a linear transformation tranforms a grayscale image. 
-      A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the 
-      intesity and rotation by an angle to a given image.
-    </p>
+        Let us explore, how a linear transformation tranforms a grayscale image.
+        A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the
+        intensity of light at a particular pixel. We will explain two types of transformations,
+        scaling the
+        intesity and rotation by an angle to a given image.
+      </p>
     </introduction>
-  <p>
-    Consider a grayscale image of the Taj Mahar in India.
+    <p> Consider a grayscale image of the Taj Mahar in India. <figure xml:id="taj1">
+        <image width="45%" source="images/Taj2.png" />
+             <caption>Original Image of Taj Mahal.</caption>
+      . </figure>
 
-    <figure xml:id="taj1">
-            <image width="45%" source="images/Taj2.png"/>
-             <caption>Original Image of Taj Mahal.</caption>.
-           </figure>
-          
-  </p>
+    </p>
     <p>
-      The following Python code read a grayscale image of Taj Mahal in India. 
+      The following Python code read a grayscale image of Taj Mahal in India.
     </p>
     <sage>
       <input>
+        # get the image
+        import urllib.request
+        URL = "https://raw.githubusercontent.com/jephianlin/LA-notebook/main/incrediville-side.jpg"
+        urllib.request.urlretrieve(URL, "incrediville-side.jpg")
         import numpy as np
         import matplotlib.pyplot as plt
         from PIL import Image
-        img = Image.open("Taj2.png")
+        img = Image.open('incrediville-side.jpg')
         img_array = np.array(img)
         img_array.shape
       </input>
       <output>
-        
+
       </output>
     </sage>
+
     <sage>
       <input>
         print(img_array.shape)
         print(img_array)
       </input>
       <output>
-        
+
       </output>
     </sage>
-<p>
-  We use the transformation <m>T(P)=\alpha P</m>, where <m>\alpha>1</m> is the brightness of the image.
-Let us take <m>\alpha =1.2</m> about 20/% increase in the brightness.
-
-On each pixel <m>p_{ij}</m> of the image <m>P</m>, we have <m>Q=TP</m>, where
-<m>q_{ij}=\min\{\alpha p_{pij},255\}</m>. Here min~255 ensures the brightness values stay within valid pixel range.
-</p>
+    <p> We use the transformation <m>T(P)=\alpha P</m>, where <m>\alpha>1</m> is the brightness of
+      the image. Let us take <m>\alpha =1.2</m> about 20/% increase in the brightness. On each pixel <m>
+      p_{ij}</m> of the image <m>P</m>, we have <m>Q=TP</m>, where <m>q_{ij}=\min\{\alpha
+      p_{pij},255\}</m>. Here min~255 ensures the brightness values stay within valid pixel range. </p>
     <sage>
       <input>
         # Step 3: Define a linear transformation: Brightness scaling
-        alpha = 1.2  # scaling factor
+        alpha = 1.2 # scaling factor
         transformed_array = np.clip(alpha * img_array, 0, 255).astype(np.uint8)
       </input>
       <output>
-        
+
       </output>
     </sage>
 
@@ -289,88 +290,85 @@ On each pixel <m>p_{ij}</m> of the image <m>P</m>, we have <m>Q=TP</m>, where
         plt.show()
       </input>
       <output>
-        
+
       </output>
     </sage>
-    <p>
-    We get the following output.
-     <figure xml:id="scaled_taj">
-            <image width="75%" source="images/Scaled_Taj2.png"/>
-             <caption>Brightness Transformation applied to Taj Mahal.</caption>.
-           </figure>
-   
+    <p> We get the following output. <figure xml:id="scaled_taj">
+        <image width="75%" source="images/Scaled_Taj2.png" />
+             <caption>Brightness Transformation
+      applied to Taj Mahal.</caption>. </figure>
+
     </p>
 
-  <p><em effect="bold">Rotation Transformation</em>  
+    <p><em effect="bold">Rotation Transformation</em>  
 
 
-   <p>
-     Next we apply rotation by an anngle <m>30^\circ</m> to this image. 
-      Note that the rotation matrix is give by 
-   </p>
+   <p> Next we apply rotation by an anngle <m>
+      30^\circ</m> to this image. Note that the rotation matrix is give by </p>
 <me>
-R_\theta = \begin{pmatrix} \cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta \end{pmatrix}.
-</me>
+        R_\theta = \begin{pmatrix} \cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta
+      \end{pmatrix}.
+      </me>
   <sage>
-    <input>
-      theta = np.radians(30)  # rotate by 30 degrees
-      rotation_matrix = np.array([[np.cos(theta), -np.sin(theta)],[np.sin(theta),  np.cos(theta)]])
-    </input>
-    <output>
-      
-    </output>
-  </sage> 
+        <input>
+          theta = np.radians(30) # rotate by 30 degrees
+          rotation_matrix = np.array([[np.cos(theta), -np.sin(theta)],[np.sin(theta),
+      np.cos(theta)]])
+        </input>
+        <output>
+
+        </output>
+      </sage> 
   <sage>
-    <input>
-      from scipy.ndimage import affine_transform
-    </input>
-    <output>
-      
-    </output>
-  </sage>
+        <input>
+          from scipy.ndimage import affine_transform
+        </input>
+        <output>
+
+        </output>
+      </sage>
   <sage>
-    <input>
-      # Step 3: Apply rotation (centered on the image)
-      center = np.array(img_array.shape) / 2
-      inv_rotation = np.linalg.inv(rotation_matrix)
-      # Shift so rotation is about image center
-      offset = center - inv_rotation @ center
-      rotated_array = affine_transform(img_array,
+        <input>
+          # Step 3: Apply rotation (centered on the image)
+          center = np.array(img_array.shape) / 2
+          inv_rotation = np.linalg.inv(rotation_matrix)
+          # Shift so rotation is about image center
+          offset = center - inv_rotation @ center
+          rotated_array = affine_transform(img_array,
           inv_rotation,
           offset=offset,
           mode='constant',
-          cval=255  # white background)
-    </input>
-    <output>
-      
-    </output>
-  </sage>
+          cval=255 # white background)
+        </input>
+        <output>
+
+        </output>
+      </sage>
   <sage>
-    <input>
-      # Step 4: Display
-      plt.figure(figsize=(10,5))
-      plt.subplot(1, 2, 1)
-      plt.title("Original Grayscale")
-      plt.imshow(img_array, cmap='gray')
-      plt.axis('off')
-      
-      plt.subplot(1, 2, 2)
-      plt.title("Rotated by 30°")
-      plt.imshow(rotated_array, cmap='gray')
-      plt.axis('off')
-      plt.show()
-    </input>
-    <output>
-      
-    </output>
-  </sage>
-  We get the following output.
-     <figure xml:id="Rotated_taj">
-            <image width="75%" source="images/Rotated_Taj2.png"/>
-             <caption>Rotation Transformation Applied to Taj Mahal.</caption>.
-           </figure>
-   
+        <input>
+          # Step 4: Display
+          plt.figure(figsize=(10,5))
+          plt.subplot(1, 2, 1)
+          plt.title("Original Grayscale")
+          plt.imshow(img_array, cmap='gray')
+          plt.axis('off')
+
+          plt.subplot(1, 2, 2)
+          plt.title("Rotated by 30°")
+          plt.imshow(rotated_array, cmap='gray')
+          plt.axis('off')
+          plt.show()
+        </input>
+        <output>
+
+        </output>
+      </sage> We get the following output. <figure
+        xml:id="Rotated_taj">
+        <image width="75%" source="images/Rotated_Taj2.png" />
+             <caption>Rotation Transformation
+      Applied to Taj Mahal.</caption>. </figure>
+
     </p>
 
-   </subsection>
+  </subsection>
 </section>
