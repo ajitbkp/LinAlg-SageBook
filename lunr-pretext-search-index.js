@@ -2791,245 +2791,20 @@ var ptx_lunr_docs = [
   "body": "  In view of theorem , the matrix in the example is not diagonalizable.   "
 },
 {
-  "id": "sec5-3-eigen-Appl",
-  "level": "1",
-  "url": "sec5-3-eigen-Appl.html",
-  "type": "Section",
-  "number": "5.3",
-  "title": "Applications of Eigenvalues and Eigenvectors",
-  "body": " Applications of Eigenvalues and Eigenvectors   In this section we look at several applications of eigenvalues and eigenvectors.    Fibonacci Sequence  Originally the Fibonacci sequence appeared in the solution of the following problem posed by Leonardo of Pisa, popularly known as Fibonacci, in the book Liber Abaci in 1202.  Consider the following problem.   A certain man put a pair of rabbits in a places surrounded on all sides by a wall. How many pairs of rabbits can be produced from that pair in year if it is supposed that every month each pair begets a new pair which from second month becomes productive?   We assume that the number of pairs at the end of the -th year is denoted by . We start with and . Note that the number of pair of rabbits in any given month is the number of pairs in the previous month plus those that are hatched in that month and those are as many as the previous month. This gives gives rise to a recurrence relation  . Let . Then we have   Let . Then we have   This implies   This leads to computation of power of . Therefore, we can invoke diagonalization of the matrix.  Note that is symmetric matrix with characteristic polynomial . The eigenvalues of are and the corresponding eigenvectors are . Since has distinct eigenvalues, is diagonalizable and we have   Let be one of the above eigenvalue of , then . Also it is easy to check that . Now we have Thus we have    Show that   Note that is called the Golden-Ratio which has many application in nature. The approximate value of .   Let . Then we have Now let us approximate Since , we have . This implies, .     Predator-Pray Model  In a certain area, it is observed that every year the number of rabbits is equal to 4 times the number of rabbits less 2 times numbers of weasels in the previous year. The number of weasels is equal to the sum of the number of rabbits number of weasels in the previous year. If the initial population of rabbits and weasels were 100 and 10 respectively, then find the number of each species after years. Let and be the number of rabbits and weasels after years respectively.  Then, as per data give we have with .  Let and . Then the above system is equivalent to . We need to obtain successively . It is easy to check that and are eigenvalues of with corresponding eigenvectors and respectively. We define . It is easy to see that . Also . Using diagonalization, we have Thus . Hence It is easy to check that What does this mean?    Solving System of Linear ODE  In this subsection, we shall deal with use of theory of eigenvalues and eigenvectors to solve system of linear differential equations. Let shall consider a system of first order linear differential equations with constant coefficients. A general form of such system can be given by Here we assume that are constants. The above system can be written as where real matrix and is column matrix.  We want to find a solution of the above system, that is a column vector of of differentiable functions on some interval which satisfies the above system.  If is the set of all solutions of the above system. Then one can show that is an -dimensional vector subspace of the set of differentiable function on . This mean, if are linearly independent functions which are solutions of the above system. Then any solution can be written as a linear combination of .  In case, we are given initial conditions, then there exists a unique solution of the system.  In addition, suppose is diagonalizable, with where , the diagonal matrix of eigenvalues of and is matrix of eigenbasis of .  We define . Then and . Now substituting and in the above system, we get Thus the above system of linear differential equation reduced to In particular, we have .  A general solution of the above system is given by The above equations can be written in matrix form as follows Here is the exponential of the matrix and is the column matrix of constants. From this we get a general solution of the original system as where .  Thus the solution in matrix form is given by The constant can be obtained when we have initila value problem.  Suppose we want to solve the initial value problem with initial condition . Then we have . Hence the solution in matrix form is given by   Steps to solve system of linear differential equations .     Find the matrix corresponding to this linear system and put the equation in matrix form .    Find the eigenvalues and corresponding eigenvectors of . Let be eigenvalues of with corresponding to eigenvectors respectively.    The solution is .       Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is      What will be the solution of with initial conditions ?     Solve the following system ODE.     The eigenvalues of the coefficient matrix are and the corresponding eigenvectors are Hence a general solution of the given system is given by Using the given initial conditions, we get Solving the above equations, yields, . Hence the required solution of the problem is You may write the each component of the solution.      Solve the following 2nd order differential equations. Consider the system     Substitute and . Then we have The above equations can be written as where The eigenvalues of are and the corresponding eigenvectors are Thus a general solution is given by Hence a general solution of the given problem can be obtained by dropping the dummy variables and . It is given by     In the next example, we deal with solving a system , in which the coefficient matrix has complex eigenvalues.    Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by Writing and adjusting the constants, we can write the solution       In case the the coeffcient matrix of the sysstem is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.      Markov Chains  In this subsection, we look at some applications of linear algebra in dealing with matrices that arise from probabilistic systems. We consider chance process in which knowledge of previous outcomes influence prediction of future experiments. Such chance process is called a Markov Chain.   Let consider the following problem and develop the terminologies and methods to solve this problem.    Weather of certain area is classified as \"fair\", \"cloudy\" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?    In the above example, fair, cloudy and rainy day can be thought of as three states, say state 1, state 2 and state 3 respectively. Each day can be thought of as a generation. Let us denote the data given in the example as following table:     Fair  Cloudy  Rainy    Fair  0.60  0.25  0.15    Cloudy  0.40  0.35  0.25    Rainy  0.35  0.40  0.25    Let be the probability of transition from state to state . The matrix is called the transition matrix.     A transition matrix of an stage Markov chain is an matrix having nonnegative entries such that sum of entries in each column is 1. Such a matrix is called a stochastic matrix.     The transition matrix for the is given by   Note that , is the probability of being a cloudy day after fair day. Similarly , represent the probability of being fair day after a rainy day. The transition matrix, represents the change of state from present generation to the next generation.    The powers of a transition matrix have the same property of a transition matrix. That is, all the entries are non negative and sum of entries in any column is 1.      If is a transition matrix of a Markov chain and if denotes the -th entries of , then is the probability of moving to state from state in generations or in time period.    Let us consider of the transition matrix in the  Note that is the probability of rainy day becoming cloudy day after 5 days.  We consider an initial probability vector . This mean current day has 40% chance of being a fair day, 30% chance of being cloudy and 30% of being rainy.  Then , denotes the probability vector after $k$ stages. We are interested in long time behavior of the probability vector. In particular, we want to see if the limit exists.  In general, the above limits does not exists, however, in case the transition matrix is regular, then one can show that limit exists.    A transition matrix is regular if there exists a natural number such all the entries of are positive.    Note that all transition matrix are not regular, for example, identity matrix is a transition matrix but is not regular.  It is easy to see that if $P$ is a regular transition matrix matrix such that all the entries of are positive. Then all entries of are positive for non negative integers .  Let us assume that is a transition matrix and that exists. Then we have   Suppose are columns of . Then This means that each column of is an eigenvector of corresponding to eigenvalue 1. Thus we have proved the following result:    If is an regular transition matrix, then converges to a matrix, say, whose columns are eigenvectors of corresponding to eigenvalues 1.    In fact one can show the following.    If is a regular, transition matrix then its eigenvalue has multiplicity 1 and that there is only one eigenvectors associated with . This implies that all columns of are identical.    Now we define a a limiting state distribution vectors or steady state vector of an -state Markov chain as a vector as follows: Thus we have the following equation. Note that all columns of are identical, say, . Let . Then Thus is an eigenvector of with respect to eigenvalue 1 with sum of its components 1.  The gives a way to find the steady state vector.  Let us find the steady state vector of the transition matrix defined in the .  Let be the steady state vector. Then it is an eigenvector of PreTeXt P corresponding to eigenvalue 1. That is and also, . Thus we get the following set of equations which we need to solve.   Solving the avove equations we, get Hence the steady state vector is given by The limiting transition matrix is given by Thus in the long run about 48.74% chance of being a fair day, about 31.13% of being cloudy and about 20.13% chance of being rain day.    We can use diagonalization of the transition matrix to find the steady state vector.      A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.      Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )    132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.     Google Search Engine  Over 900 millions Indian use Internet (as of January 2024) most of them may do Google, a search engine that was designed by Lawrence Page and Sergei Brian in 1998. There are about 200 millions active webpages in the world as on January 2024 and it is growing by seconds. More often than not, google search gives the desired results, users are looking for. Have you ever thought of how does it work? Linear algebra plays an important role in how Google's search algorithm works. Google ranks pages according to their importance.  Success of Google lies behind its PageRank algorithm, which rates the importance of each page on the web and present the user typically most relevant and helpful pages first. PageRank uses link structure of web to determine the importance of webpages.  In this section, we shall explain how Google ranks webpages as a simple application to linear algebra.  Whenever an user or web surfer enters a keyword for searching, Google does three basic things:     Crawl the web and locate all web pages with public access.    Index the data from websites it has crawled, so that it can be searched efficiently for relevant keywords.    Rate the importance of each page in the database.     We shall briefly look at how to rank or rate webpages using Google's PageRank algorith.  An Internet network can be represented by a directed graph in which each website is thought of as a node or vertex and links between pages are edges with arrows. If there is an arrow from note to , them it means that there is link to move from webpage to . If there is a double arrow between and , then there is link from to and also from to .  To every network with -webpages, we assign a matrix , where represents the probability that surfer would visit the webpage from the webpage . If the webpage has links to other webpages then . If there is no link from to , then The matrix is called the hyper matrix of the network.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability . We have  Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, . One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.       Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .    From the , it looks like that we can find the stationary distribution vector and hence rank a network after a sufficiently large iterations. However, this is not always true. In case a network has a dangling webpage ( a webpage that does not link to any other page ), or a trapping loop, then we may not be able to rank webpages. In case a surfer come across, dangling node or trapping loop, he can type a new url in the address bar manually. The next two examples demonstrate this.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.      Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.     Several improvements have been suggested to tackle dangling and trapping loops.  Page Rank inverters, Page and Bring suggested the a new matrix called the Google matrix which is defined as follows: where is matrix whose all entries are , is called the damping factor and .  If , then it means 90% times the surfer is using the web links and 10% times typing ulr manually in the address bar. In th original paper Page and Brin used as damping factor.  Since any regular stochastic matrix has a stationary vector, that is there exists a vector vector such that . Thus one can always find a stationary probability vector for a network.    The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.      The Google matrix defined in is a regular matrix.     "
-},
-{
-  "id": "subsec5-3-Fibonacci-Seq-13",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-Fibonacci-Seq-13",
-  "type": "Checkpoint",
-  "number": "5.3.1",
-  "title": "",
-  "body": " Show that   Note that is called the Golden-Ratio which has many application in nature. The approximate value of .   Let . Then we have Now let us approximate Since , we have . This implies, .  "
-},
-{
-  "id": "subsec5-3-linear-ode-13",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-13",
-  "type": "Example",
-  "number": "5.3.2",
-  "title": "",
-  "body": "  Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is    "
-},
-{
-  "id": "subsec5-3-linear-ode-14",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-14",
-  "type": "Checkpoint",
-  "number": "5.3.3",
-  "title": "",
-  "body": " What will be the solution of with initial conditions ?  "
-},
-{
-  "id": "subsec5-3-linear-ode-15",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-15",
-  "type": "Example",
-  "number": "5.3.4",
-  "title": "",
-  "body": "  Solve the following system ODE.     The eigenvalues of the coefficient matrix are and the corresponding eigenvectors are Hence a general solution of the given system is given by Using the given initial conditions, we get Solving the above equations, yields, . Hence the required solution of the problem is You may write the each component of the solution.   "
-},
-{
-  "id": "subsec5-3-linear-ode-16",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-16",
-  "type": "Example",
-  "number": "5.3.5",
-  "title": "",
-  "body": "  Solve the following 2nd order differential equations. Consider the system     Substitute and . Then we have The above equations can be written as where The eigenvalues of are and the corresponding eigenvectors are Thus a general solution is given by Hence a general solution of the given problem can be obtained by dropping the dummy variables and . It is given by    "
-},
-{
-  "id": "subsec5-3-linear-ode-18",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-18",
-  "type": "Example",
-  "number": "5.3.6",
-  "title": "",
-  "body": "  Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by Writing and adjusting the constants, we can write the solution    "
-},
-{
-  "id": "subsec5-3-linear-ode-19",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-19",
-  "type": "Remark",
-  "number": "5.3.7",
-  "title": "",
-  "body": "  In case the the coeffcient matrix of the sysstem is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.   "
-},
-{
-  "id": "eg-markov1",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#eg-markov1",
-  "type": "Example",
-  "number": "5.3.8",
-  "title": "",
-  "body": "  Weather of certain area is classified as \"fair\", \"cloudy\" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?   "
-},
-{
-  "id": "def-stochastic-matrix",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#def-stochastic-matrix",
-  "type": "Definition",
-  "number": "5.3.9",
-  "title": "",
-  "body": "  A transition matrix of an stage Markov chain is an matrix having nonnegative entries such that sum of entries in each column is 1. Such a matrix is called a stochastic matrix.    "
-},
-{
-  "id": "Markov-remark1",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#Markov-remark1",
-  "type": "Remark",
-  "number": "5.3.10",
-  "title": "",
-  "body": "  The powers of a transition matrix have the same property of a transition matrix. That is, all the entries are non negative and sum of entries in any column is 1.   "
-},
-{
-  "id": "Markov-remark2",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#Markov-remark2",
-  "type": "Remark",
-  "number": "5.3.11",
-  "title": "",
-  "body": "  If is a transition matrix of a Markov chain and if denotes the -th entries of , then is the probability of moving to state from state in generations or in time period.   "
-},
-{
-  "id": "def-regular-matrix",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#def-regular-matrix",
-  "type": "Definition",
-  "number": "5.3.12",
-  "title": "",
-  "body": "  A transition matrix is regular if there exists a natural number such all the entries of are positive.   "
-},
-{
-  "id": "thm-Markov1",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#thm-Markov1",
-  "type": "Theorem",
-  "number": "5.3.13",
-  "title": "",
-  "body": "  If is an regular transition matrix, then converges to a matrix, say, whose columns are eigenvectors of corresponding to eigenvalues 1.   "
-},
-{
-  "id": "thm-Markov2",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#thm-Markov2",
-  "type": "Theorem",
-  "number": "5.3.14",
-  "title": "",
-  "body": "  If is a regular, transition matrix then its eigenvalue has multiplicity 1 and that there is only one eigenvectors associated with . This implies that all columns of are identical.   "
-},
-{
-  "id": "subsec5-3-Markov-Chains-30",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-30",
-  "type": "Remark",
-  "number": "5.3.15",
-  "title": "",
-  "body": "  We can use diagonalization of the transition matrix to find the steady state vector.   "
-},
-{
-  "id": "subsec5-3-Markov-Chains-31",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-31",
-  "type": "Example",
-  "number": "5.3.16",
-  "title": "",
-  "body": "  A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.    "
-},
-{
-  "id": "5-3-2",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#5-3-2",
-  "type": "Checkpoint",
-  "number": "5.3.17",
-  "title": "",
-  "body": " Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )  "
-},
-{
-  "id": "5-3-3",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#5-3-3",
-  "type": "Checkpoint",
-  "number": "5.3.18",
-  "title": "",
-  "body": " 132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.  "
-},
-{
-  "id": "eg-google_search1",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#eg-google_search1",
-  "type": "Example",
-  "number": "5.3.20",
-  "title": "",
-  "body": "  Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability . We have  Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, . One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.    "
-},
-{
-  "id": "subsec5-3-Google-Search-11",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-11",
-  "type": "Remark",
-  "number": "5.3.22",
-  "title": "",
-  "body": "  Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .   "
-},
-{
-  "id": "eg-google_search2",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#eg-google_search2",
-  "type": "Example",
-  "number": "5.3.23",
-  "title": "",
-  "body": "  Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.   "
-},
-{
-  "id": "eg-google_search3",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#eg-google_search3",
-  "type": "Example",
-  "number": "5.3.25",
-  "title": "",
-  "body": "  Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.    "
-},
-{
-  "id": "subsec5-3-Google-Search-19",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-19",
-  "type": "Remark",
-  "number": "5.3.27",
-  "title": "",
-  "body": "  The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.   "
-},
-{
-  "id": "subsec5-3-Google-Search-20",
-  "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-20",
-  "type": "Remark",
-  "number": "5.3.28",
-  "title": "",
-  "body": "  The Google matrix defined in is a regular matrix.   "
-},
-{
   "id": "sec5-5-Eigen-Sage-exer",
   "level": "1",
   "url": "sec5-5-Eigen-Sage-exer.html",
   "type": "Section",
-  "number": "5.4",
+  "number": "5.3",
   "title": "EIgenvalues and Eigenvectors in Sage",
-  "body": " EIgenvalues and Eigenvectors in Sage   In this section, we shall explore computation of eigenvalues and eigenvectors and related concepts in Sage. We shall also look applications of diagonalization in Sage.   Sage can compute eigenvalues and eigenvectors of a matrix and also of linear operator. If is a square marix, then A.eignvalues() returns eigenvalues of the matrix . Simplarly, A.eigenvectors_right() returns the eigenvectors along with the corresponding eigenvalue including the multiplicity of each eigenvalue. Apart from these two coammands, Sage also has A.eigenmatrix_right() which returns diagonal matrix of eigenvalues and the matrix whose columns of eigenvectors. Let us explore some example.   Find the eigenvalues of eigenvectors of .        Sage can also compute eigenvalues and eigenvectors of a symbolic matrix. Let us look at the next example.     Sage can also find the characteristic polynomial of matrix with ease using two matrix method A..charpoly() and A.characteristic_polynomial() Let us look at the next example.   Find the characteristics polynomial of the matrix   We can factorize the characteristic polynomial to find its roots.     Sage can find eigenvalues and eigenvalues of bigsize matriz also. However, the computation is done numerically. Let us look at the next example.   Consider the matrix . Find the characteristics polynomial, eigenvalues and eigenvectors of .   Now let us try to factorize the characteristic polynomial of .   Clearly this polynomial cannot be factorized in the field of rational numbers. However, Sage provide an extended field QQbar in whihc we can find the rots of this polynomial.   These are the eigenvalues that sage can find using A.eigenvalues()    For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and (ii) the product of eigenvalues equals to the determinant.    We can also verify the Cayley-Hamilton thorem for the above matrix.      Consider the matrix . Find the eigenvalues of and verify the Cayley-Hamilton theorem. Also find the sum and product of eigenvalues of and observe that they are the trace and determinant of respectively.    Eigenspaces  Consider a matrix . Find the eigenvalues and eigenvectors of . Also find the eigenspace corresponding to each eigenvalues. Check if the the given matrix is diagonalizable.      This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.  Note that the eigenspace corresponding to the eigenvalue is the and the gemetric multiplicity is the nullity of .   To find the eigenspace with respect to the eigenvalue can be obtained by appplying RREF to the matrix and solving the corresponding system of equations.   Now we can solve the system of equations, to obtaine the eigenspace.   Similarly, we can find the eigenspace with respect to the eigenvalue      Diagonalizability  Consider the same matrix . We shall check the diagonalizability of .    Clearly is diagonalizable. We can also find the matrix of eigenvectors and check if is the diagonal matrix whose diagonal entries are eigenvalues.     "
+  "body": " EIgenvalues and Eigenvectors in Sage   In this section, we shall explore computation of eigenvalues and eigenvectors and related concepts in Sage. We shall also look applications of diagonalization in Sage.   Sage can compute eigenvalues and eigenvectors of a matrix and also of linear operator. If is a square marix, then A.eignvalues() returns eigenvalues of the matrix . Simplarly, A.eigenvectors_right() returns the eigenvectors along with the corresponding eigenvalue including the multiplicity of each eigenvalue. Apart from these two coammands, Sage also has A.eigenmatrix_right() which returns diagonal matrix of eigenvalues and the matrix whose columns of eigenvectors. Let us explore some example.   Find the eigenvalues of eigenvectors of .        Sage can also compute eigenvalues and eigenvectors of a symbolic matrix. Let us look at the next example.     Sage can also find the characteristic polynomial of matrix with ease using two matrix method A..charpoly() and A.characteristic_polynomial() Let us look at the next example.   Find the characteristics polynomial of the matrix   We can factorize the characteristic polynomial to find its roots.     Sage can find eigenvalues and eigenvalues of bigsize matriz also. However, the computation is done numerically. Let us look at the next example.   Consider the matrix . Find the characteristics polynomial, eigenvalues and eigenvectors of .   Now let us try to factorize the characteristic polynomial of .   Clearly this polynomial cannot be factorized in the field of rational numbers. However, Sage provide an extended field QQbar in whihc we can find the rots of this polynomial.   These are the eigenvalues that sage can find using A.eigenvalues()    For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and (ii) the product of eigenvalues equals to the determinant.    We can also verify the Cayley-Hamilton thorem for the above matrix.      Consider the matrix . Find the eigenvalues of and verify the Cayley-Hamilton theorem. Also find the sum and product of eigenvalues of and observe that they are the trace and determinant of respectively.    Eigenspaces  Consider a matrix . Find the eigenvalues and eigenvectors of . Also find the eigenspace corresponding to each eigenvalues. Check if the the given matrix is diagonalizable.      This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.  Note that the eigenspace corresponding to the eigenvalue is the and the gemetric multiplicity is the nullity of .   To find the eigenspace with respect to the eigenvalue can be obtained by appplying RREF to the matrix and solving the corresponding system of equations.   Now we can solve the system of equations, to obtaine the eigenspace.   Similarly, we can find the eigenspace with respect to the eigenvalue      Diagonalizability  Consider the same matrix . We shall check the diagonalizability of .    Clearly is diagonalizable. We can also find the matrix of eigenvectors and check if is the diagonal matrix whose diagonal entries are eigenvalues.      "
 },
 {
   "id": "sec5-5-Eigen-Sage-exer-4",
   "level": "2",
   "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-4",
   "type": "Example",
-  "number": "5.4.1",
+  "number": "5.3.1",
   "title": "",
   "body": " Find the eigenvalues of eigenvectors of .       "
 },
@@ -3038,7 +2813,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-6",
   "type": "Example",
-  "number": "5.4.2",
+  "number": "5.3.2",
   "title": "",
   "body": "  "
 },
@@ -3047,7 +2822,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-8",
   "type": "Example",
-  "number": "5.4.3",
+  "number": "5.3.3",
   "title": "",
   "body": " Find the characteristics polynomial of the matrix   We can factorize the characteristic polynomial to find its roots.    "
 },
@@ -3056,7 +2831,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-10",
   "type": "Example",
-  "number": "5.4.4",
+  "number": "5.3.4",
   "title": "",
   "body": " Consider the matrix . Find the characteristics polynomial, eigenvalues and eigenvectors of .   Now let us try to factorize the characteristic polynomial of .   Clearly this polynomial cannot be factorized in the field of rational numbers. However, Sage provide an extended field QQbar in whihc we can find the rots of this polynomial.   These are the eigenvalues that sage can find using A.eigenvalues()    For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and (ii) the product of eigenvalues equals to the determinant.    We can also verify the Cayley-Hamilton thorem for the above matrix.   "
 },
@@ -3065,7 +2840,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-11",
   "type": "Activity",
-  "number": "5.4.1",
+  "number": "5.3.1",
   "title": "",
   "body": "  Consider the matrix . Find the eigenvalues of and verify the Cayley-Hamilton theorem. Also find the sum and product of eigenvalues of and observe that they are the trace and determinant of respectively.   "
 },
@@ -3074,7 +2849,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-12",
   "type": "Example",
-  "number": "5.4.5",
+  "number": "5.3.5",
   "title": "Eigenspaces.",
   "body": "Eigenspaces  Consider a matrix . Find the eigenvalues and eigenvectors of . Also find the eigenspace corresponding to each eigenvalues. Check if the the given matrix is diagonalizable.      This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.  Note that the eigenspace corresponding to the eigenvalue is the and the gemetric multiplicity is the nullity of .   To find the eigenspace with respect to the eigenvalue can be obtained by appplying RREF to the matrix and solving the corresponding system of equations.   Now we can solve the system of equations, to obtaine the eigenspace.   Similarly, we can find the eigenspace with respect to the eigenvalue    "
 },
@@ -3083,9 +2858,234 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-13",
   "type": "Example",
-  "number": "5.4.6",
+  "number": "5.3.6",
   "title": "Diagonalizability.",
-  "body": " Diagonalizability  Consider the same matrix . We shall check the diagonalizability of .    Clearly is diagonalizable. We can also find the matrix of eigenvectors and check if is the diagonal matrix whose diagonal entries are eigenvalues.    "
+  "body": " Diagonalizability  Consider the same matrix . We shall check the diagonalizability of .    Clearly is diagonalizable. We can also find the matrix of eigenvectors and check if is the diagonal matrix whose diagonal entries are eigenvalues.     "
+},
+{
+  "id": "sec5-3-eigen-Appl",
+  "level": "1",
+  "url": "sec5-3-eigen-Appl.html",
+  "type": "Section",
+  "number": "5.4",
+  "title": "Applications of Eigenvalues and Eigenvectors",
+  "body": " Applications of Eigenvalues and Eigenvectors   In this section we look at several applications of eigenvalues and eigenvectors.    Fibonacci Sequence  Originally the Fibonacci sequence appeared in the solution of the following problem posed by Leonardo of Pisa, popularly known as Fibonacci, in the book Liber Abaci in 1202.  Consider the following problem.   A certain man put a pair of rabbits in a places surrounded on all sides by a wall. How many pairs of rabbits can be produced from that pair in year if it is supposed that every month each pair begets a new pair which from second month becomes productive?   We assume that the number of pairs at the end of the -th year is denoted by . We start with and . Note that the number of pair of rabbits in any given month is the number of pairs in the previous month plus those that are hatched in that month and those are as many as the previous month. This gives gives rise to a recurrence relation  . Let . Then we have   Let . Then we have   This implies   This leads to computation of power of . Therefore, we can invoke diagonalization of the matrix.  Note that is symmetric matrix with characteristic polynomial . The eigenvalues of are and the corresponding eigenvectors are . Since has distinct eigenvalues, is diagonalizable and we have   Let be one of the above eigenvalue of , then . Also it is easy to check that . Now we have Thus we have    Show that   Note that is called the Golden-Ratio which has many application in nature. The approximate value of .   Let . Then we have Now let us approximate Since , we have . This implies, .      Predator-Pray Model  In a certain area, it is observed that every year the number of rabbits is equal to 4 times the number of rabbits less 2 times numbers of weasels in the previous year. The number of weasels is equal to the sum of the number of rabbits number of weasels in the previous year. If the initial population of rabbits and weasels were 100 and 10 respectively, then find the number of each species after years. Let and be the number of rabbits and weasels after years respectively.  Then, as per data give we have with .  Let and . Then the above system is equivalent to . We need to obtain successively . It is easy to check that and are eigenvalues of with corresponding eigenvectors and respectively. We define . It is easy to see that . Also . Using diagonalization, we have Thus . Hence It is easy to check that What does this mean?    Solving System of Linear ODE  In this subsection, we shall deal with use of theory of eigenvalues and eigenvectors to solve system of linear differential equations. Let shall consider a system of first order linear differential equations with constant coefficients. A general form of such system can be given by Here we assume that are constants. The above system can be written as where real matrix and is column matrix.  We want to find a solution of the above system, that is a column vector of of differentiable functions on some interval which satisfies the above system.  If is the set of all solutions of the above system. Then one can show that is an -dimensional vector subspace of the set of differentiable function on . This mean, if are linearly independent functions which are solutions of the above system. Then any solution can be written as a linear combination of .  In case, we are given initial conditions, then there exists a unique solution of the system.  In addition, suppose is diagonalizable, with where , the diagonal matrix of eigenvalues of and is matrix of eigenbasis of .  We define . Then and . Now substituting and in the above system, we get Thus the above system of linear differential equation reduced to In particular, we have .  A general solution of the above system is given by The above equations can be written in matrix form as follows Here is the exponential of the matrix and is the column matrix of constants. From this we get a general solution of the original system as where .  Thus the solution in matrix form is given by The constant can be obtained when we have initila value problem.  Suppose we want to solve the initial value problem with initial condition . Then we have . Hence the solution in matrix form is given by   Steps to solve system of linear differential equations .     Find the matrix corresponding to this linear system and put the equation in matrix form .    Find the eigenvalues and corresponding eigenvectors of . Let be eigenvalues of with corresponding to eigenvectors respectively.    The solution is .       Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is   Solving using Sage   Sage also has inbuilt function desolve_system to solve a system of linear ODE.      What will be the solution of with initial conditions ?     Solve the following system ODE.     The eigenvalues of the coefficient matrix are and the corresponding eigenvectors are Hence a general solution of the given system is given by Using the given initial conditions, we get Solving the above equations, yields, . Hence the required solution of the problem is You may write the each component of the solution.   Using the inbuilt function dessole_system , we have the following.       Solve the following 2nd order differential equations. Consider the system     Substitute and . Then we have The above equations can be written as where The eigenvalues of are and the corresponding eigenvectors are Thus a general solution is given by Hence a general solution of the given problem can be obtained by dropping the dummy variables and . It is given by     In the next example, we deal with solving a system , in which the coefficient matrix has complex eigenvalues.    Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by Writing and adjusting the constants, we can write the solution       In case the the coeffcient matrix of the sysstem is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.      Markov Chains  In this subsection, we look at some applications of linear algebra in dealing with matrices that arise from probabilistic systems. We consider chance process in which knowledge of previous outcomes influence prediction of future experiments. Such chance process is called a Markov Chain.   Let consider the following problem and develop the terminologies and methods to solve this problem.    Weather of certain area is classified as \"fair\", \"cloudy\" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?    In the above example, fair, cloudy and rainy day can be thought of as three states, say state 1, state 2 and state 3 respectively. Each day can be thought of as a generation. Let us denote the data given in the example as following table:     Fair  Cloudy  Rainy    Fair  0.60  0.25  0.15    Cloudy  0.40  0.35  0.25    Rainy  0.35  0.40  0.25    Let be the probability of transition from state to state . The matrix is called the transition matrix.     A transition matrix of an stage Markov chain is an matrix having nonnegative entries such that sum of entries in each column is 1. Such a matrix is called a stochastic matrix.     The transition matrix for the is given by   Note that , is the probability of being a cloudy day after fair day. Similarly , represent the probability of being fair day after a rainy day. The transition matrix, represents the change of state from present generation to the next generation.    The powers of a transition matrix have the same property of a transition matrix. That is, all the entries are non negative and sum of entries in any column is 1.      If is a transition matrix of a Markov chain and if denotes the -th entries of , then is the probability of moving to state from state in generations or in time period.    Let us consider of the transition matrix in the  Note that is the probability of rainy day becoming cloudy day after 5 days.  We consider an initial probability vector . This mean current day has 40% chance of being a fair day, 30% chance of being cloudy and 30% of being rainy.  Then , denotes the probability vector after $k$ stages. We are interested in long time behavior of the probability vector. In particular, we want to see if the limit exists.  In general, the above limits does not exists, however, in case the transition matrix is regular, then one can show that limit exists.     A transition matrix is regular if there exists a natural number such all the entries of are positive.    Note that all transition matrix are not regular, for example, identity matrix is a transition matrix but is not regular.  It is easy to see that if is a regular transition matrix matrix such that all the entries of are positive. Then all entries of are positive for non negative integers .  Let us assume that is a transition matrix and that exists. Then we have   Suppose are columns of . Then This means that each column of is an eigenvector of corresponding to eigenvalue 1. Thus we have proved the following result:    If is an regular transition matrix, then converges to a matrix, say, whose columns are eigenvectors of corresponding to eigenvalues 1.    In fact one can show the following.    If is a regular, transition matrix then its eigenvalue has multiplicity 1 and that there is only one eigenvectors associated with . This implies that all columns of are identical.    Now we define a a limiting state distribution vectors or steady state vector of an -state Markov chain as a vector as follows: Thus we have the following equation. Note that all columns of are identical, say, . Let . Then Thus is an eigenvector of with respect to eigenvalue 1 with sum of its components 1.  The gives a way to find the steady state vector.  Let us find the steady state vector of the transition matrix defined in the .  Let be the steady state vector. Then it is an eigenvector of PreTeXt P corresponding to eigenvalue 1. That is and also, . Thus we get the following set of equations which we need to solve.   Solving the avove equations we, get Hence the steady state vector is given by The limiting transition matrix is given by Thus in the long run about 48.74% chance of being a fair day, about 31.13% of being cloudy and about 20.13% chance of being rain day.    We can use diagonalization of the transition matrix to find the steady state vector.      A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.      Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )    132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.     Google Search Engine  Over 900 millions Indian use Internet (as of January 2024) most of them may do Google, a search engine that was designed by Lawrence Page and Sergei Brian in 1998. There are about 200 millions active webpages in the world as on January 2024 and it is growing by seconds. More often than not, google search gives the desired results, users are looking for. Have you ever thought of how does it work? Linear algebra plays an important role in how Google's search algorithm works. Google ranks pages according to their importance.  Success of Google lies behind its PageRank algorithm, which rates the importance of each page on the web and present the user typically most relevant and helpful pages first. PageRank uses link structure of web to determine the importance of webpages.  In this section, we shall explain how Google ranks webpages as a simple application to linear algebra.  Whenever an user or web surfer enters a keyword for searching, Google does three basic things:     Crawl the web and locate all web pages with public access.    Index the data from websites it has crawled, so that it can be searched efficiently for relevant keywords.    Rate the importance of each page in the database.     We shall briefly look at how to rank or rate webpages using Google's PageRank algorith.  An Internet network can be represented by a directed graph in which each website is thought of as a node or vertex and links between pages are edges with arrows. If there is an arrow from note to , them it means that there is link to move from webpage to . If there is a double arrow between and , then there is link from to and also from to .  To every network with -webpages, we assign a matrix , where represents the probability that surfer would visit the webpage from the webpage . If the webpage has links to other webpages then . If there is no link from to , then The matrix is called the hyper matrix of the network.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability . We have  Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, . One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.       Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .    From the , it looks like that we can find the stationary distribution vector and hence rank a network after a sufficiently large iterations. However, this is not always true. In case a network has a dangling webpage ( a webpage that does not link to any other page ), or a trapping loop, then we may not be able to rank webpages. In case a surfer come across, dangling node or trapping loop, he can type a new url in the address bar manually. The next two examples demonstrate this.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.      Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.     Several improvements have been suggested to tackle dangling and trapping loops.  Page Rank inverters, Page and Bring suggested the a new matrix called the Google matrix which is defined as follows: where is matrix whose all entries are , is called the damping factor and .  If , then it means 90% times the surfer is using the web links and 10% times typing ulr manually in the address bar. In th original paper Page and Brin used as damping factor.  Since any regular stochastic matrix has a stationary vector, that is there exists a vector vector such that . Thus one can always find a stationary probability vector for a network.    The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.      The Google matrix defined in is a regular matrix.     "
+},
+{
+  "id": "subsec5-3-Fibonacci-Seq-13",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Fibonacci-Seq-13",
+  "type": "Checkpoint",
+  "number": "5.4.1",
+  "title": "",
+  "body": " Show that   Note that is called the Golden-Ratio which has many application in nature. The approximate value of .   Let . Then we have Now let us approximate Since , we have . This implies, .  "
+},
+{
+  "id": "subsec5-3-linear-ode-13",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-13",
+  "type": "Example",
+  "number": "5.4.2",
+  "title": "",
+  "body": "  Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is   Solving using Sage   Sage also has inbuilt function desolve_system to solve a system of linear ODE.    "
+},
+{
+  "id": "subsec5-3-linear-ode-14",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-14",
+  "type": "Checkpoint",
+  "number": "5.4.3",
+  "title": "",
+  "body": " What will be the solution of with initial conditions ?  "
+},
+{
+  "id": "subsec5-3-linear-ode-15",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-15",
+  "type": "Example",
+  "number": "5.4.4",
+  "title": "",
+  "body": "  Solve the following system ODE.     The eigenvalues of the coefficient matrix are and the corresponding eigenvectors are Hence a general solution of the given system is given by Using the given initial conditions, we get Solving the above equations, yields, . Hence the required solution of the problem is You may write the each component of the solution.   Using the inbuilt function dessole_system , we have the following.    "
+},
+{
+  "id": "subsec5-3-linear-ode-16",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-16",
+  "type": "Example",
+  "number": "5.4.5",
+  "title": "",
+  "body": "  Solve the following 2nd order differential equations. Consider the system     Substitute and . Then we have The above equations can be written as where The eigenvalues of are and the corresponding eigenvectors are Thus a general solution is given by Hence a general solution of the given problem can be obtained by dropping the dummy variables and . It is given by    "
+},
+{
+  "id": "subsec5-3-linear-ode-18",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-18",
+  "type": "Example",
+  "number": "5.4.6",
+  "title": "",
+  "body": "  Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by Writing and adjusting the constants, we can write the solution    "
+},
+{
+  "id": "subsec5-3-linear-ode-19",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-19",
+  "type": "Remark",
+  "number": "5.4.7",
+  "title": "",
+  "body": "  In case the the coeffcient matrix of the sysstem is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.   "
+},
+{
+  "id": "eg-markov1",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#eg-markov1",
+  "type": "Example",
+  "number": "5.4.8",
+  "title": "",
+  "body": "  Weather of certain area is classified as \"fair\", \"cloudy\" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?   "
+},
+{
+  "id": "def-stochastic-matrix",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#def-stochastic-matrix",
+  "type": "Definition",
+  "number": "5.4.9",
+  "title": "",
+  "body": "  A transition matrix of an stage Markov chain is an matrix having nonnegative entries such that sum of entries in each column is 1. Such a matrix is called a stochastic matrix.    "
+},
+{
+  "id": "Markov-remark1",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#Markov-remark1",
+  "type": "Remark",
+  "number": "5.4.10",
+  "title": "",
+  "body": "  The powers of a transition matrix have the same property of a transition matrix. That is, all the entries are non negative and sum of entries in any column is 1.   "
+},
+{
+  "id": "Markov-remark2",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#Markov-remark2",
+  "type": "Remark",
+  "number": "5.4.11",
+  "title": "",
+  "body": "  If is a transition matrix of a Markov chain and if denotes the -th entries of , then is the probability of moving to state from state in generations or in time period.   "
+},
+{
+  "id": "def-regular-matrix",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#def-regular-matrix",
+  "type": "Definition",
+  "number": "5.4.12",
+  "title": "",
+  "body": "  A transition matrix is regular if there exists a natural number such all the entries of are positive.   "
+},
+{
+  "id": "thm-Markov1",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#thm-Markov1",
+  "type": "Theorem",
+  "number": "5.4.13",
+  "title": "",
+  "body": "  If is an regular transition matrix, then converges to a matrix, say, whose columns are eigenvectors of corresponding to eigenvalues 1.   "
+},
+{
+  "id": "thm-Markov2",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#thm-Markov2",
+  "type": "Theorem",
+  "number": "5.4.14",
+  "title": "",
+  "body": "  If is a regular, transition matrix then its eigenvalue has multiplicity 1 and that there is only one eigenvectors associated with . This implies that all columns of are identical.   "
+},
+{
+  "id": "subsec5-3-Markov-Chains-31",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-31",
+  "type": "Remark",
+  "number": "5.4.15",
+  "title": "",
+  "body": "  We can use diagonalization of the transition matrix to find the steady state vector.   "
+},
+{
+  "id": "subsec5-3-Markov-Chains-32",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-32",
+  "type": "Example",
+  "number": "5.4.16",
+  "title": "",
+  "body": "  A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.    "
+},
+{
+  "id": "5-3-2",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#5-3-2",
+  "type": "Checkpoint",
+  "number": "5.4.17",
+  "title": "",
+  "body": " Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )  "
+},
+{
+  "id": "5-3-3",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#5-3-3",
+  "type": "Checkpoint",
+  "number": "5.4.18",
+  "title": "",
+  "body": " 132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.  "
+},
+{
+  "id": "eg-google_search1",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#eg-google_search1",
+  "type": "Example",
+  "number": "5.4.20",
+  "title": "",
+  "body": "  Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability . We have  Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, . One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.    "
+},
+{
+  "id": "subsec5-3-Google-Search-11",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-11",
+  "type": "Remark",
+  "number": "5.4.22",
+  "title": "",
+  "body": "  Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .   "
+},
+{
+  "id": "eg-google_search2",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#eg-google_search2",
+  "type": "Example",
+  "number": "5.4.23",
+  "title": "",
+  "body": "  Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.   "
+},
+{
+  "id": "eg-google_search3",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#eg-google_search3",
+  "type": "Example",
+  "number": "5.4.25",
+  "title": "",
+  "body": "  Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.    "
+},
+{
+  "id": "subsec5-3-Google-Search-19",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-19",
+  "type": "Remark",
+  "number": "5.4.27",
+  "title": "",
+  "body": "  The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.   "
+},
+{
+  "id": "subsec5-3-Google-Search-20",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-20",
+  "type": "Remark",
+  "number": "5.4.28",
+  "title": "",
+  "body": "  The Google matrix defined in is a regular matrix.   "
 },
 {
   "id": "sec5-4-eigen-exer",
