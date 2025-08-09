@@ -345,9 +345,10 @@ corresponding to each eigenvalues. Check if the the given matrix is diagonalizab
                 
             </output>
         </sage>
+
         <sage>
             <input>
-              P.inverse()*A*P==D  
+                P.inverse()*A*P==D
             </input>
             <output>
                 
