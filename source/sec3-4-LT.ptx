@@ -212,4 +212,165 @@
     </sage> 
    </example>
 
+   <subsection xml:id="subsec-image-tranfromation">
+    <title>Image Tranfromation</title>
+    <introduction>
+      <p>
+      Let us explore, how a linear transformation tranforms a grayscale image. 
+      A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the 
+      intesity and rotation by an angle to a given image.
+    </p>
+    </introduction>
+  <p>
+    Consider a grayscale image of the Taj Mahar in India.
+
+    <figure xml:id="taj1">
+            <image width="45%" source="images/Taj2.png"/>
+             <caption>Original Image of Taj Mahal.</caption>.
+           </figure>
+          
+  </p>
+    <p>
+      The following Python code read a grayscale image of Taj Mahal in India. 
+    </p>
+    <sage>
+      <input>
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from PIL import Image
+        img = Image.open("Taj2.png")
+        img_array = np.array(img)
+        img_array.shape
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+    <sage>
+      <input>
+        print(img_array.shape)
+        print(img_array)
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+<p>
+  We use the transformation <m>T(P)=\alpha P</m>, where <m>\alpha>1</m> is the brightness of the image.
+Let us take <m>\alpha =1.2</m> about 20/% increase in the brightness.
+
+On each pixel <m>p_{ij}</m> of the image <m>P</m>, we have <m>Q=TP</m>, where
+<m>q_{ij}=\min\{\alpha p_{pij},255\}</m>. Here min~255 ensures the brightness values stay within valid pixel range.
+</p>
+    <sage>
+      <input>
+        # Step 3: Define a linear transformation: Brightness scaling
+        alpha = 1.2  # scaling factor
+        transformed_array = np.clip(alpha * img_array, 0, 255).astype(np.uint8)
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+
+    <sage>
+      <input>
+        # Step 4: Visual comparison
+        plt.figure(figsize=(10,5))
+        plt.subplot(1, 2, 1)
+        plt.title("Original Grayscale Image")
+        plt.imshow(img_array, cmap='gray')
+        plt.axis('off')
+        plt.subplot(1, 2, 2)
+        plt.title(f"Transformed Image (alpha={alpha})")
+        plt.imshow(transformed_array, cmap='gray')
+        plt.axis('off')
+        plt.tight_layout()
+        plt.show()
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+    <p>
+    We get the following output.
+     <figure xml:id="scaled_taj">
+            <image width="75%" source="images/Scaled_Taj2.png"/>
+             <caption>Brightness Transformation applied to Taj Mahal.</caption>.
+           </figure>
+   
+    </p>
+
+  <p><em effect="bold">Rotation Transformation</em>  
+
+
+   <p>
+     Next we apply rotation by an anngle <m>30^\circ</m> to this image. 
+      Note that the rotation matrix is give by 
+   </p>
+<me>
+R_\theta = \begin{pmatrix} \cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta \end{pmatrix}.
+</me>
+  <sage>
+    <input>
+      theta = np.radians(30)  # rotate by 30 degrees
+      rotation_matrix = np.array([[np.cos(theta), -np.sin(theta)],[np.sin(theta),  np.cos(theta)]])
+    </input>
+    <output>
+      
+    </output>
+  </sage> 
+  <sage>
+    <input>
+      from scipy.ndimage import affine_transform
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+  <sage>
+    <input>
+      # Step 3: Apply rotation (centered on the image)
+      center = np.array(img_array.shape) / 2
+      inv_rotation = np.linalg.inv(rotation_matrix)
+      # Shift so rotation is about image center
+      offset = center - inv_rotation @ center
+      rotated_array = affine_transform(img_array,
+          inv_rotation,
+          offset=offset,
+          mode='constant',
+          cval=255  # white background)
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+  <sage>
+    <input>
+      # Step 4: Display
+      plt.figure(figsize=(10,5))
+      plt.subplot(1, 2, 1)
+      plt.title("Original Grayscale")
+      plt.imshow(img_array, cmap='gray')
+      plt.axis('off')
+      
+      plt.subplot(1, 2, 2)
+      plt.title("Rotated by 30°")
+      plt.imshow(rotated_array, cmap='gray')
+      plt.axis('off')
+      plt.show()
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+  We get the following output.
+     <figure xml:id="Rotated_taj">
+            <image width="75%" source="images/Rotated_Taj2.png"/>
+             <caption>Rotation Transformation Applied to Taj Mahal.</caption>.
+           </figure>
+   
+    </p>
+
+   </subsection>
 </section>

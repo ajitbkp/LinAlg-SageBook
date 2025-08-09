@@ -553,6 +553,90 @@ row-reduced matrix of <m>A</m> to identity matrix.
         
                 </solution>
         </example>
-
+<example>
+   <p>
+    Four well-mixed tanks <m>T_1, T_2, T_3, T_4</m> form a recirculation/mixing network used to produce a sauce.  At steady state, the concentration <m>c_i</m> (in <m>kg\cdot m^{-3}</m>) of a soluble ingredient ( say salt or sugar) in tank <m>T_i</m> satisfies the steady-state mass balance:
+<me>
+\left(\text{total outflow from tank } T_i \right) c_i
+-\sum_{j\neq i} \left(\text{ flow from tank <m> T_j </m> to <m> T_i </m>} \right) c_j
+=\text{net external feed of ingredient to tank <m>T_i</m>}.
+</me>
+The system of equations can be written in matrix form as
+<me>
+A \mathbf{c} = \mathbf{b},
+</me>
+where
+<me>
+A = 
+\begin{pmatrix}
+20 \amp -5 \amp -3 \amp 0\\
+-4 \amp 18 \amp -6 \amp -2\\
+0 \amp -3 \amp 15 \amp -4\\
+-2 \amp 0 \amp -5 \amp 17
+\end{pmatrix},
+\quad
+\mathbf{b} = 
+\begin{pmatrix}
+14\\
+20\\
+9\\
+11
+\end{pmatrix},
+\quad
+\mathbf{c} =
+\begin{pmatrix}
+c_1\\
+c_2\\
+c_3\\
+c_4
+\end{pmatrix}.
+</me>
+For example, the first equation reads: <m>20c_1 - 5c_2 - 3c_3 = 14</m>,
+meaning the total outflow coefficient from <m>T_1</m> is 20, the inflows from <m>T_2</m> is 2 and <m>T_3</m> are 5 and 3 respectively, and the net external ingredient feed to <m> T_1</m> is 14 (in consistent units).
+<solution>
+    <p>
+    <sage>
+        <input>
+            A = matrix(QQ,[[20, -5,-3, 0],[-4,18,-6,-2],[0 , -3, 15, -4],[-2,0,-5,17]])
+            b = vector([14,20,9,11])
+            Aug = A.augment(b,subdivide=True)
+            Aug
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <sage>
+        <input>
+            Aug.rref()
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    Hence the solution is 
+    <me>
+        c= \begin{pmatrix}
+c_1 \\
+c_2 \\
+c_3 \\
+c_4 
+\end{pmatrix}=\begin{pmatrix}
+\dfrac{49961}{35780}\\[6pt]
+\dfrac{17838}{8945}\\[6pt]
+\dfrac{2359}{1789}\\[6pt]
+\dfrac{21453}{17890}
+\end{pmatrix}\approx \begin{pmatrix}
+1.396339,\\
+1.994187,\\
+1.318614,\\
+1.199162
+\end{pmatrix}.
+    </me>
+    
+    </p>
+</solution>
+</p>
+</example>
 </subsection>
 </section>
