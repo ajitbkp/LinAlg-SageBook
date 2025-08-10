@@ -153,7 +153,25 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
         </p>
       </statement>
     </example>
-
+<sage>
+  <input>
+  def inpMnR(A,B):
+      return (A*B.T).trace()
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+A = matrix(QQ,[[2,-1,0],[1,4,2],[7,9,2]])
+B = matrix(QQ,[[3,2,1],[1,2,0],[5,3,1]])  
+inpMnR(A,B)
+  </input>
+  <output>
+    
+  </output>
+</sage>
     <example xml:id="inner-product-by-matrix">
       <statement>
         <p>
@@ -169,8 +187,41 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
         </p>
       </statement>
     </example>
+<sage>
+  <input>
+def inner_product_PD(M,u,v):
+    # Check if M is square
+    if M.nrows() != M.ncols():
+        raise ValueError("Matrix must be square.")
+    # Check symmetry
+    if not M.is_symmetric():
+        raise ValueError("Matrix must be symmetric for a real inner product.")
+    eigvals = M.eigenvalues()
+    if not all(e > 0 for e in eigvals):
+        raise ValueError("Matrix is not positive definite.")
+    
+    if len(u) != M.nrows() or len(v) != M.nrows():
+        raise ValueError("Vectors must have same dimension as M.")
+    
+    return (u * M * v)  # Equivalent to u^T M v
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+A=matrix([[2,-1,0],[-1,2,-1],[0,-1,2]])
+e1=vector([1,0,0])
+e2=vector([0,1,0])
+inner_product_PD(A,e1,e2)
 
-    <example xml:id="inner-product-C01">
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<example xml:id="inner-product-C01">
       <statement>
         <p>
           Let <m>V={\cal C}([0,1])</m> the set of all continuous function from <m>[0,1]</m> to <m>\R</m>.
@@ -184,8 +235,47 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
         </p>
       </statement>
     </example>
+<sage>
+  <input>
+## inner product on C[0,1]
+def inp(f,g):
+    return integral(f(x)*g(x),x,0,1)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+f(x)=x+1
+g(x)=x^2
+inp(f,g)
+  </input>
+  <output>
+    
+  </output>
+</sage>
 
-    <example xml:id="inner-product-on-polyspace">
+<sage>
+  <input>
+## Norm on C[0,1] w.r.t. to the above norm
+def fnorm(f,inp):
+    return sqrt(inp(f,f))  
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+g(x)=x^3-3*x+2
+fnorm(g,inp)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<example xml:id="inner-product-on-polyspace">
       <statement>
         <p>
           Let <m>p</m> and <m>q</m> be two polynomials in <m>{\cal P}_n(\mathbb{R})</m>.
@@ -205,15 +295,37 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
           <m>c_0,c_1,\ldots, c_n</m>.
         </p>
       </statement>
-
+<p>
       <hint>
         <p>
         <m>\langle p,p \rangle =</m> mean that <m>p</m> has  <m>n+1</m> roots, which is not possible unless 
         <m>p=0</m> by the fundamental theorem of algebra.
         </p>
-      </hint>
-       </example>
+      </hint> 
+    </p>    
+  </example>
 
+  <sage>
+    <input> 
+def inpPol(f,g,n):
+    a = sum([f(x=i)*g(x=i) for i in range(n+1)])
+    return a
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+
+  <sage>
+    <input>
+f(x) = 3*x^3+4*x^2+2*x+1
+g(x) = -2*x^3+x^2+2*x-1
+inpPol(f,f,3)
+    </input>
+    <output>
+      
+    </output>
+  </sage>
     <definition xml:id="definition-norm">
       <statement>
         <p>
@@ -232,7 +344,7 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
 
 
 
-    <exercise xml:id="7-1-8">
+    <exercise xml:id="inp-7-1-8">
       <statement>
         <p>
           Let <m>V</m> be an inner product space.
@@ -254,7 +366,7 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
       </hint>
     </exercise>
 
-    <exercise xml:id="7-1-9">
+    <exercise xml:id="inp-7-1-9">
       <statement>
         <p>
           If <m>x, y</m> are two vectors in an inner product space <m>V</m> with inner product <m>\langle .\rangle</m>.
@@ -271,7 +383,7 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
       </statement>
       <hint>
         <p>
-          Proof follows from <xref ref="7-1-8"/>.
+          Proof follows from <xref ref="inp-7-1-8"/>.
         </p>
       </hint>
     </exercise>
@@ -396,7 +508,7 @@ defined on an inner product space. All we need to do is to replace the dot produ
 inner product.  We encourage  readers to define each one of them. 
 </note>
 
-    <exercise xml:id="7-1-10">
+    <exercise xml:id="inp-7-1-10">
       <statement>
         <p>
           Let <m>(V, \inner{.}{.})</m> be a real inner product space.
@@ -406,7 +518,7 @@ inner product.  We encourage  readers to define each one of them.
       </statement>
     </exercise>
 
-    <exercise xml:id="7-1-11">
+    <exercise xml:id="inp-7-1-11">
       <statement>
         <p>
           Let <m>x, y</m> be two vectors in an inner product space <m>V</m>.
@@ -422,7 +534,7 @@ inner product.  We encourage  readers to define each one of them.
       </statement>
     </exercise>
 
-    <exercise xml:id="7-1-12">
+    <exercise xml:id="inp-7-1-12">
       <statement>
         <p>
           Let <m>C([-\pi,\pi])</m> be the vectors space of set of continuous functions from <m>[-\pi,\pi]</m> to <m>\R</m>.
@@ -438,7 +550,7 @@ inner product.  We encourage  readers to define each one of them.
       </statement>
     </exercise>
 
-    <exercise xml:id="7-1-13">
+    <exercise xml:id="inp-7-1-13">
       <title>Pythagoras Theorem</title>
       <statement>
         <p>
@@ -455,7 +567,7 @@ inner product.  We encourage  readers to define each one of them.
       </statement>
     </exercise>
 
-    <exercise xml:id="7-1-14">
+    <exercise xml:id="inp-7-1-14">
       <statement>
         <p>
           Let <m>\beta=\{u_1,\ldots,
@@ -472,7 +584,7 @@ inner product.  We encourage  readers to define each one of them.
       </statement>
     </exercise>
 
-    <exercise xml:id="7-1-15">
+    <exercise xml:id="inp-7-1-15">
       <statement>
         <p>
           Let <m>\beta=\{u_1,\ldots,
@@ -553,12 +665,79 @@ inner product.  We encourage  readers to define each one of them.
       </statement>
     </example>
 
-    <exercise xml:id="7-1-16">
+    <sage>
+      <input>
+var('x')
+f1(x) = 1
+f2(x) = x
+f3(x) = x^2
+f4(x) = x^3
+f5(x) = x^4
+B = [f1(x),f2(x),f3(x),f4(x),f5(x)]
+def inp(f,g):
+    return integral(f(x)*g(x),x,-1,1)
+def inp_norm(f):
+    return sqrt(integral(f(x)*f(x),x,-1,1))   
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+<sage>
+  <input>
+g1(x) = f1(x)/inp_norm(f1);g1(x)
+h(x) = f2(x)-inp(f2,g1)*g1(x)
+g2(x) = h(x)/inp_norm(h);g2(x)
+h(x) = f3(x)-inp(f3,g1)*g1(x)-inp(f3,g2)*g2(x)
+g3(x) = h(x)/inp_norm(h);g3(x)
+h(x) = f4(x)-inp(f4,g1)*g1(x)-inp(f4,g2)*g2(x)-inp(f4,g3)*g3(x)
+g4(x) = h(x)/inp_norm(h);g4(x)
+h(x) = f5(x)-inp(f5,g1)*g1(x)-inp(f5,g2)*g2(x)-inp(f5,g3)*g3(x)-inp(f5,g4)*g4(x)
+g5(x) = h(x)/inp_norm(h);g5(x)
+plot(g1(x),(x,-1,1))+plot(g2(x),(x,-1,1),color='red')+\
+plot(g3(x),(x,-1,1),color='green')+plot(g4(x),(x,-1,1),color='pink')
+  </input>
+  <output>
+    
+  </output>
+</sage>
+    <exercise xml:id="inp-7-1-16">
       <statement>
         <p>
           Consider the standard basis <m>\beta=\{1,x,x^2,x^3\}</m> of
           <m>{\cal P}_3(\R)</m> with inner product <m>\inner{f}{g}:=\int_0^1 f(x)g(x)\,dx</m>.
           Find an orthonormal basis starting with <m>\beta</m> using the Gram-Schmidt orthogonalization process.
+        </p>
+        <p>
+          <hint>
+          
+          <sage>
+            <input>
+def inp(f,g):
+    return integral(f(x)*g(x),x,0,2*pi)
+
+def projf(g,f):
+    prgf=inp(g,f)/inp(f,f)*f
+    return prgf
+
+v1(x) = 1
+v2(x) = x
+v3(x) = x^2
+v4(x) = x^3
+f(x) = sin(x)
+u1=v1
+u2=v2-projf(v2,u1)
+u3=v3-projf(v3,u1)-projf(v3,u2)
+u4=v4-projf(v4,u1)-projf(v4,u2)-projf(v4,u3)
+p=f-projf(f,u1)+projf(f,u2)+projf(f,u3)+projf(f,u4)
+show(p(x))
+            </input>
+            <output>
+              
+            </output>
+          </sage>    
+        
+          </hint>
         </p>
       </statement>
     </exercise>
@@ -581,6 +760,29 @@ inner product.  We encourage  readers to define each one of them.
           </md>
         </p>
       </statement>
+
+      <hint>
+<sage>
+  <input>
+A=matrix([[2,-1,0],[-1,2,-1],[0,-1,2]])
+A.is_positive_definite()
+def inpA(u,v):
+    return v.dot_product(A*u)
+e1=vector([1,0,0])
+e2=vector([0,1,0])
+e3=vector([0,0,1])
+u1=e1
+u2=e2-inpA(e2,u1)/inpA(u1,u1)*u1
+u3=e3-inpA(e3,u1)/inpA(u1,u1)*u1-inpA(e3,u2)/inpA(u2,u2)*u2
+q1 = u1/sqrt(inpA(u1,u1))
+q2 = u2/sqrt(inpA(u2,u2))
+q3 = u3/sqrt(inpA(u3,u3))
+print(q1,q2,q3) 
+  </input>
+</sage>
+
+      </hint>
+
     </example>
 
     <example>
@@ -640,7 +842,7 @@ inner product.  We encourage  readers to define each one of them.
     </p>
     </definition>
 
-    <exercise xml:id="7-1-17">
+    <exercise xml:id="inp-7-1-17">
       <statement>
         <p>
           Find the orthogonal projection of vector

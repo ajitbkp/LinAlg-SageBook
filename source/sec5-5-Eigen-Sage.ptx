@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec5-5-Eigen-Sage-exer" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec5-5-Eigen-Sage" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Eigenvalues and Eigenvectors in Sage</title>
     <introduction>
         <p>
@@ -345,6 +345,77 @@
             </sage>
         </solution>
     </example>
-
+<example>
+    <title>Eigenvalues of a linear operator</title>
+    <p>
+   Consider  the linear tranformation <m>T\colon \mathbb{R}^3\to \mathbb{R}^3</m> defined by
+<me> T(x,y,z)=(3x+2z,3y-2z, 2x-2y+z)</me>
+Let us find the eigenvalues of <m>T</m> and also show that the eigenvalues are independent of 
+the basis on the domain
+</p>
+<sage>
+    <input>
+x, y, z = var('x, y, z')
+outputs = [3*x+2*z,3*y-2*z, 2*x-2*y+z]
+T_symbolic(x, y, z)=outputs
+T=linear_transformation(QQ^3, QQ^3, T_symbolic)
+T.eigenvalues()
+    </input>
+    <output>
+        
+    </output>
+</sage>    
+<p>
+    We can also find the characteristics polynomial of <m>T</m>.
+</p>
+<sage>
+    <input>
+cp = T.characteristic_polynomial()
+print(cp)
+print(cp.factor())
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<p>
+    Let us find the matrix <m>A</m> of <m>T</m> with respect to the standard basis of <m>\mathbb{R}^3</m> and find find the eigenvalues of <m>A</m>.
+</p>
+<sage>
+    <input>
+M=T.matrix(side='right')
+M.eigenvalues()
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<p>
+    Now let us find the matrix <m>B</m> of <m>T</m> with respect to a basis 
+    <m>\beta=\{(1,1,0),(-1,1,1),(0,-1,1)\}</m> and find eigenvalues of <m>B</m>.
+</p>
+<sage>
+    <input>
+V=QQ^3
+u1=vector(QQ,[1,1,0])
+u2=vector(QQ,[-1,1,1])
+u3=vector(QQ,[0,-1,1])
+B=[u1,u2,u3]
+BB=[V.random_element() for i in range(3)]
+V1=V.subspace_with_basis(BB)    
+M2=T.restrict_domain(V1).restrict_codomain(V1)
+M2=M2.matrix(side='right')
+eigen2=M2.eigenvalues()
+print(eigen2)
+</input>
+    <output>
+        
+    </output>
+</sage>
+<p> Clearly eigenvalues of <m>T</m>, <m>A</m> and <m>B</m> are same. 
+This is not suprizing as <m>A</m> and <m>B</m> are similar matrices and similar matrices have the same 
+determinant and eigenvalues.
+</p>
+</example>
 
 </section>

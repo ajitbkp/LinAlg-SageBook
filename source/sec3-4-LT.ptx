@@ -230,53 +230,38 @@
     </p>
     <sage>
       <input>
-        # get the image
-        import urllib.request
-        URL = "https://raw.githubusercontent.com/jephianlin/LA-notebook/main/incrediville-side.jpg"
-        # URL = "https://github.com/ajitbkp/LinAlg-SageBook/blob/main/assets/images/Taj2.png"
-        urllib.request.urlretrieve(URL, "incrediville-side.jpg")
-        # urllib.request.urlretrieve(URL, "Taj2.png")
         import numpy as np
-        import matplotlib.pyplot as plt
         from PIL import Image
-        img = Image.open('incrediville-side.jpg')
-        # img = Image.open('Taj2.png')
-        r = 10
-        # img = Image.open('incrediville-side.jpg')
-        x,y = img.size
-        img = img.resize((x // r, y // r)).convert("L")
+        import requests
+        from io import BytesIO
+        import matplotlib.pyplot as plt
+        url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Taj2.png"
+        response = requests.get(url)
+        img = Image.open(BytesIO(response.content))
         img_array = np.array(img)
+        # img.show() # may open in viewer depending on Sage environment
+        img
       </input>
-      <output>
-
-      </output>
-    </sage>
-
-    <sage>
-      <input>
-        print(img_array.shape)
-        print(img_array)
-      </input>
-      <output>
-
-      </output>
     </sage>
     <p> We use the transformation <m>T(P)=\alpha P</m>, where <m>\alpha\geq 1</m> is the brightness
-      of the image. Let us take <m>\alpha =1.5</m> about 20/% increase in the brightness. On each
+      of the image. Let us take <m>\alpha =1.2</m> about 20/% increase in the brightness. On each
       pixel <m>
         p_{ij}</m> of the image <m>P</m>, we have <m>Q=TP</m>, where <m>q_{ij}=\min\{\alpha
       p_{pij},255\}</m>. Here min~255 ensures the brightness values stay within valid pixel range. </p>
+
     <sage>
       <input>
         # Step 3: Define a linear transformation: Brightness scaling
-        alpha = 1.5 # scaling factor
+        alpha = 1.2 # scaling factor
         transformed_array = np.clip(alpha * img_array, 0, 255).astype(np.uint8)
       </input>
       <output>
 
       </output>
     </sage>
-
+    <p>
+      Next we plot the orginal image along with rescaled image.
+    </p>
     <sage>
       <input>
         # Step 4: Visual comparison
@@ -296,72 +281,149 @@
 
       </output>
     </sage>
+
     <p>
       <em effect="bold">Rotation Transformation</em>
-
-
-      <p> Next we apply rotation by an anngle <m>
-          30^\circ</m> to this image. Note that the rotation matrix is give by </p>
-      <me>
-        R_\theta = \begin{pmatrix} \cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta
-        \end{pmatrix}.
-      </me>
-      <sage>
-        <input>
-          theta = np.radians(30) # rotate by 30 degrees
-          rotation_matrix = np.array([[np.cos(theta),
-          -np.sin(theta)],[np.sin(theta),np.cos(theta)]])
-        </input>
-        <output>
-
-        </output>
-      </sage>
-      <sage>
-        <input>
-          from scipy.ndimage import affine_transform
-        </input>
-        <output>
-
-        </output>
-      </sage>
-      <sage>
-        <input>
-          # Step 3: Apply rotation (centered on the image)
-          center = np.array(img_array.shape) / 2
-          inv_rotation = np.linalg.inv(rotation_matrix)
-          # Shift so rotation is about image center
-          offset = center - inv_rotation @ center
-          rotated_array = affine_transform(img_array,
-          inv_rotation,
-          offset=offset,
-          mode='constant',
-          cval=255 # white background
-          )
-        </input>
-        <output>
-
-        </output>
-      </sage>
-      <sage>
-        <input>
-          # Step 4: Display
-          plt.figure(figsize=(10,5))
-          plt.subplot(1, 2, 1)
-          plt.title("Original Grayscale")
-          plt.imshow(img_array, cmap='gray')
-          plt.axis('off')
-
-          plt.subplot(1, 2, 2)
-          plt.title("Rotated by 30°")
-          plt.imshow(rotated_array, cmap='gray')
-          plt.axis('off')
-          plt.show()
-        </input>
-        <output>
-
-        </output>
-      </sage>
     </p>
 
+
+    <p> Next we apply rotation by an anngle <m>
+        30^\circ</m> to this image. Note that the rotation matrix is give by </p>
+    <me>
+      R_\theta = \begin{pmatrix} \cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta
+      \end{pmatrix}.
+    </me>
+    <sage>
+      <input>
+        theta = np.radians(30) # rotate by 30 degrees
+        rotation_matrix = np.array([[np.cos(theta),
+        -np.sin(theta)],[np.sin(theta),np.cos(theta)]])
+      </input>
+      <output>
+
+      </output>
+    </sage>
+    <sage>
+      <input>
+        from scipy.ndimage import affine_transform
+      </input>
+      <output>
+
+      </output>
+    </sage>
+    <sage>
+      <input>
+        # Step 3: Apply rotation (centered on the image)
+        center = np.array(img_array.shape) / 2
+        inv_rotation = np.linalg.inv(rotation_matrix)
+        # Shift so rotation is about image center
+        offset = center - inv_rotation @ center
+        rotated_array = affine_transform(img_array,
+        inv_rotation,
+        offset=offset,
+        mode='constant',
+        cval=255 # white background
+        )
+      </input>
+      <output>
+
+      </output>
+    </sage>
+    <sage>
+      <input>
+        # Step 4: Display
+        plt.figure(figsize=(10,5))
+        plt.subplot(1, 2, 1)
+        plt.title("Original Grayscale")
+        plt.imshow(img_array, cmap='gray')
+        plt.axis('off')
+
+        plt.subplot(1, 2, 2)
+        plt.title("Rotated by 30°")
+        plt.imshow(rotated_array, cmap='gray')
+        plt.axis('off')
+        plt.show()
+      </input>
+      <output>
+
+      </output>
+    </sage>
   </subsection>
+  <example>
+    <title>Applying shear transform to an image </title>
+    <p> Shear in Python is implemented as affine transformation where each point <m>(x, y)</m> of an
+      image is mapped to a new point <m>(x',y')</m> via </p>
+    <me>
+      \begin{pmatrix}
+      x' \\
+      y' \\
+      1
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+      a \amp b \amp c \\
+      d \amp e \amp f \\
+      0 \amp 0 \amp 1
+      \end{pmatrix}
+      \begin{pmatrix}
+      x \\
+      y \\
+      1
+      \end{pmatrix}
+    </me>
+    <p> Hence we get <me>
+        x' = a \cdot x + b \cdot y + c, \quad y' = d \cdot x + e \cdot y + f.
+      </me>
+      For a shear in the <m>x</m>-direction, we wish to shift <m>x</m> proportionally to <m>y</m>
+      while leaving <m>y</m> unchanged. This corresponds to: <me> a = 1, \quad b = k, \quad c = 0,
+      \quad d = 0, \quad e = 1, \quad f = 0</me> where <m>k</m> is the shear factor. Thus, the shear
+      matrix becomes: <me>\begin{bmatrix}
+        1 \amp k \amp 0 \\
+        0 \amp 1 \amp 0 \\
+        0 \amp 0 \amp 1
+        \end{bmatrix}.
+      </me>
+      In Python's Pillow library, the transform method uses parameters <m>(a, b, c, d, e, f)</m>
+      corresponding to the first two rows of the above matrix, that is, <me> (a, b, c, d, e, f) =
+        (1, k, 0, 0, 1, 0).</me>
+    </p>
+
+    <sage>
+      <input>
+        import numpy as np
+        from PIL import Image
+        import requests
+        from io import BytesIO
+        import matplotlib.pyplot as plt
+        url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Taj2.png"
+        response = requests.get(url)
+        img = Image.open(BytesIO(response.content))
+        img_array = np.array(img)
+        # Shear in x-direction
+        shear_factor = 0.5 # Positive = right slant, negative = left slant
+        a, b, c = 1, shear_factor, 0
+        d, e, f = 0, 1, 0
+        width, height = img.size
+        # Apply shear in x-direction
+        sheared_img = img.transform(
+        (width + int(abs(shear_factor) * height), height),
+        Image.AFFINE,(a, b, c, d, e, f),
+        resample=Image.BICUBIC
+        )
+        # Step 4: Display
+        plt.figure(figsize=(10,5))
+        plt.subplot(1, 2, 1)
+        plt.title("Original Grayscale")
+        plt.imshow(img_array, cmap='gray')
+        plt.axis('off')
+
+        plt.subplot(1, 2, 2)
+        plt.title("Sheared Image")
+        plt.imshow(sheared_img, cmap='gray')
+        plt.axis('off')
+        plt.show()
+      </input>
+    </sage>
+
+  </example>
 </section>
