@@ -381,7 +381,7 @@ sagecell.makeSagecell({
 <ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-2-diagonalization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Diagonalization</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage-exer.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec5-3-eigen-Appl.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
 <ul class="structural toc-item-list">
@@ -623,32 +623,25 @@ show(p1+p2+t,aspect_ratio=1)
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="space"> </span><span class="title">Image Tranfromation</span>
 </h3>
 <section class="introduction" id="subsec-image-tranfromation-2"><div class="para" id="subsec-image-tranfromation-2-1">Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.</div></section><div class="para" id="subsec-image-tranfromation-3">The following Python code read a grayscale image of Taj Mahal in India.</div>
-<div id="subsec-image-tranfromation-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># get the image
-import urllib.request
-URL = "https://raw.githubusercontent.com/jephianlin/LA-notebook/main/incrediville-side.jpg"
-# URL = "https://github.com/ajitbkp/LinAlg-SageBook/blob/main/assets/images/Taj2.png"
-urllib.request.urlretrieve(URL, "incrediville-side.jpg")
-# urllib.request.urlretrieve(URL, "Taj2.png")
-import numpy as np
-import matplotlib.pyplot as plt
+<div id="subsec-image-tranfromation-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
 from PIL import Image
-img = Image.open('incrediville-side.jpg')
-# img = Image.open('Taj2.png')
-r = 10
-# img = Image.open('incrediville-side.jpg')
-x,y = img.size
-img = img.resize((x // r, y // r)).convert("L")
+import requests
+from io import BytesIO
+import matplotlib.pyplot as plt
+url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Taj2.png"
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
 img_array = np.array(img)
+# img.show() # may open in viewer depending on Sage environment
+img
 </script></div>
-<div id="subsec-image-tranfromation-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(img_array.shape)
-print(img_array)
-</script></div>
-<div class="para" id="subsec-image-tranfromation-6">We use the transformation <span class="process-math">\(T(P)=\alpha P\text{,}\)</span> where <span class="process-math">\(\alpha\geq 1\)</span> is the brightness of the image. Let us take <span class="process-math">\(\alpha =1.5\)</span> about 20/% increase in the brightness. On each pixel <span class="process-math">\(p_{ij}\)</span> of the image <span class="process-math">\(P\text{,}\)</span> we have <span class="process-math">\(Q=TP\text{,}\)</span> where <span class="process-math">\(q_{ij}=\min\{\alpha
+<div class="para" id="subsec-image-tranfromation-5">We use the transformation <span class="process-math">\(T(P)=\alpha P\text{,}\)</span> where <span class="process-math">\(\alpha\geq 1\)</span> is the brightness of the image. Let us take <span class="process-math">\(\alpha =1.2\)</span> about 20/% increase in the brightness. On each pixel <span class="process-math">\(p_{ij}\)</span> of the image <span class="process-math">\(P\text{,}\)</span> we have <span class="process-math">\(Q=TP\text{,}\)</span> where <span class="process-math">\(q_{ij}=\min\{\alpha
 p_{pij},255\}\text{.}\)</span> Here min~255 ensures the brightness values stay within valid pixel range.</div>
-<div id="subsec-image-tranfromation-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 3: Define a linear transformation: Brightness scaling
-alpha = 1.5 # scaling factor
+<div id="subsec-image-tranfromation-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 3: Define a linear transformation: Brightness scaling
+alpha = 1.2 # scaling factor
 transformed_array = np.clip(alpha * img_array, 0, 255).astype(np.uint8)
 </script></div>
+<div class="para" id="subsec-image-tranfromation-7">Next we plot the orginal image along with rescaled image.</div>
 <div id="subsec-image-tranfromation-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 4: Visual comparison
 plt.figure(figsize=(10,5))
 plt.subplot(1, 2, 1)
@@ -662,22 +655,21 @@ plt.axis('off')
 plt.tight_layout()
 plt.show()
 </script></div>
-<div class="para logical" id="subsec-image-tranfromation-9">
-<div class="para">
-<em class="emphasis">Rotation Transformation</em> <div class="para" id="subsec-image-tranfromation-9-2">Next we apply rotation by an anngle <span class="process-math">\(30^\circ\)</span> to this image. Note that the rotation matrix is give by</div>
-</div>
+<div class="para" id="subsec-image-tranfromation-9"><em class="emphasis">Rotation Transformation</em></div>
+<div class="para" id="subsec-image-tranfromation-10">Next we apply rotation by an anngle <span class="process-math">\(30^\circ\)</span> to this image. Note that the rotation matrix is give by</div>
 <div class="displaymath process-math">
 \begin{equation*}
 R_\theta = \begin{pmatrix} \cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta
 \end{pmatrix}.
 \end{equation*}
 </div>
-<div class="para">
-<div id="subsec-image-tranfromation-9-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">theta = np.radians(30) # rotate by 30 degrees
+<div id="subsec-image-tranfromation-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">theta = np.radians(30) # rotate by 30 degrees
 rotation_matrix = np.array([[np.cos(theta),
 -np.sin(theta)],[np.sin(theta),np.cos(theta)]])
-</script></div> <div id="subsec-image-tranfromation-9-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">from scipy.ndimage import affine_transform
-</script></div> <div id="subsec-image-tranfromation-9-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 3: Apply rotation (centered on the image)
+</script></div>
+<div id="subsec-image-tranfromation-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">from scipy.ndimage import affine_transform
+</script></div>
+<div id="subsec-image-tranfromation-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 3: Apply rotation (centered on the image)
 center = np.array(img_array.shape) / 2
 inv_rotation = np.linalg.inv(rotation_matrix)
 # Shift so rotation is about image center
@@ -688,7 +680,8 @@ offset=offset,
 mode='constant',
 cval=255 # white background
 )
-</script></div> <div id="subsec-image-tranfromation-9-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 4: Display
+</script></div>
+<div id="subsec-image-tranfromation-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Step 4: Display
 plt.figure(figsize=(10,5))
 plt.subplot(1, 2, 1)
 plt.title("Original Grayscale")
@@ -700,9 +693,93 @@ plt.title("Rotated by 30°")
 plt.imshow(rotated_array, cmap='gray')
 plt.axis('off')
 plt.show()
-</script></div>
+</script></div></section><article class="example example-like" id="sec-LT-Geom-15"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.22</span><span class="period">.</span><span class="space"> </span><span class="title">Applying shear transform to an image.</span>
+</h3> <div class="para" id="sec-LT-Geom-15-2">Shear in Python is implemented as affine transformation where each point <span class="process-math">\((x, y)\)</span> of an image is mapped to a new point <span class="process-math">\((x',y')\)</span> via</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}
+x' \\
+y' \\
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+a \amp b \amp c \\
+d \amp e \amp f \\
+0 \amp 0 \amp 1
+\end{pmatrix}
+\begin{pmatrix}
+x \\
+y \\
+1
+\end{pmatrix}
+\end{equation*}
 </div>
-</div></section></section></div>
+<div class="para logical" id="sec-LT-Geom-15-4">
+<div class="para">Hence we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x' = a \cdot x + b \cdot y + c, \quad y' = d \cdot x + e \cdot y + f.
+\end{equation*}
+</div>
+<div class="para">For a shear in the <span class="process-math">\(x\)</span>-direction, we wish to shift <span class="process-math">\(x\)</span> proportionally to <span class="process-math">\(y\)</span> while leaving <span class="process-math">\(y\)</span> unchanged. This corresponds to:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a = 1, \quad b = k, \quad c = 0,
+\quad d = 0, \quad e = 1, \quad f = 0
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(k\)</span> is the shear factor. Thus, the shear matrix becomes:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp k \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">In Python’s Pillow library, the transform method uses parameters <span class="process-math">\((a, b, c, d, e, f)\)</span> corresponding to the first two rows of the above matrix, that is,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a, b, c, d, e, f) =
+(1, k, 0, 0, 1, 0).
+\end{equation*}
+</div>
+</div> <div id="sec-LT-Geom-15-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
+from PIL import Image
+import requests
+from io import BytesIO
+import matplotlib.pyplot as plt
+url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Taj2.png"
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
+img_array = np.array(img)
+# Shear in x-direction
+shear_factor = 0.5 # Positive = right slant, negative = left slant
+a, b, c = 1, shear_factor, 0
+d, e, f = 0, 1, 0
+width, height = img.size
+# Apply shear in x-direction
+sheared_img = img.transform(
+(width + int(abs(shear_factor) * height), height),
+Image.AFFINE,(a, b, c, d, e, f),
+resample=Image.BICUBIC
+)
+# Step 4: Display
+plt.figure(figsize=(10,5))
+plt.subplot(1, 2, 1)
+plt.title("Original Grayscale")
+plt.imshow(img_array, cmap='gray')
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.title("Sheared Image")
+plt.imshow(sheared_img, cmap='gray')
+plt.axis('off')
+plt.show()
+</script></div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec3-3-LT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-sec3-5-LT-Sage.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -369,7 +381,7 @@ window.MathJax = {
 <ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-2-diagonalization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Diagonalization</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage-exer.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec5-3-eigen-Appl.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
 <ul class="structural toc-item-list">
@@ -543,7 +555,14 @@ tr(AB^T) =\sum\sum a_{ij}b_{ij}\quad \quad  \text{ why?}\text{.}
 \end{equation*}
 </div>
 <div class="para">Work with  <span class="process-math">\(2\times 2\)</span> matrices and then try to prove this for <span class="process-math">\(n\times n\)</span> matrices.</div>
-</div></article><article class="example example-like" id="inner-product-by-matrix"><h3 class="heading">
+</div></article><div id="sec7-1-InnerProduct-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def inpMnR(A,B):
+    return (A*B.T).trace()
+</script></div>
+<div id="sec7-1-InnerProduct-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ,[[2,-1,0],[1,4,2],[7,9,2]])
+B = matrix(QQ,[[3,2,1],[1,2,0],[5,3,1]])  
+inpMnR(A,B)
+</script></div>
+<article class="example example-like" id="inner-product-by-matrix"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="inner-product-by-matrix-1-1">
@@ -554,7 +573,28 @@ tr(AB^T) =\sum\sum a_{ij}b_{ij}\quad \quad  \text{ why?}\text{.}
 \end{equation*}
 </div>
 </div> <div class="para" id="inner-product-by-matrix-1-2">Then this is an inner product on <span class="process-math">\(\R^n\text{.}\)</span>
-</div></article><article class="example example-like" id="inner-product-C01"><h3 class="heading">
+</div></article><div id="sec7-1-InnerProduct-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def inner_product_PD(M,u,v):
+    # Check if M is square
+    if M.nrows() != M.ncols():
+        raise ValueError("Matrix must be square.")
+    # Check symmetry
+    if not M.is_symmetric():
+        raise ValueError("Matrix must be symmetric for a real inner product.")
+    eigvals = M.eigenvalues()
+    if not all(e > 0 for e in eigvals):
+        raise ValueError("Matrix is not positive definite.")
+    
+    if len(u) != M.nrows() or len(v) != M.nrows():
+        raise ValueError("Vectors must have same dimension as M.")
+    
+    return (u * M * v)  # Equivalent to u^T M v
+</script></div>
+<div id="sec7-1-InnerProduct-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix([[2,-1,0],[-1,2,-1],[0,-1,2]])
+e1=vector([1,0,0])
+e2=vector([0,1,0])
+inner_product_PD(A,e1,e2)
+</script></div>
+<article class="example example-like" id="inner-product-C01"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="inner-product-C01-1-1">
@@ -564,7 +604,22 @@ tr(AB^T) =\sum\sum a_{ij}b_{ij}\quad \quad  \text{ why?}\text{.}
 \langle f,  g \rangle:=\int_0^1 f(t)g(t)dt\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="inner-product-C01-1-2">This is an inner product on <span class="process-math">\(V\text{.}\)</span>  (You may need real analysis to conclude that <span class="process-math">\(\int_0^1 f(t)f(t)dt=\)</span> then <span class="process-math">\(f=0\text{.}\)</span>)</div></article><article class="example example-like" id="inner-product-on-polyspace"><h3 class="heading">
+</div> <div class="para" id="inner-product-C01-1-2">This is an inner product on <span class="process-math">\(V\text{.}\)</span>  (You may need real analysis to conclude that <span class="process-math">\(\int_0^1 f(t)f(t)dt=\)</span> then <span class="process-math">\(f=0\text{.}\)</span>)</div></article><div id="sec7-1-InnerProduct-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## inner product on C[0,1]
+def inp(f,g):
+    return integral(f(x)*g(x),x,0,1)
+</script></div>
+<div id="sec7-1-InnerProduct-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x)=x+1
+g(x)=x^2
+inp(f,g)
+</script></div>
+<div id="sec7-1-InnerProduct-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Norm on C[0,1] w.r.t. to the above norm
+def fnorm(f,inp):
+    return sqrt(inp(f,f))
+</script></div>
+<div id="sec7-1-InnerProduct-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">g(x)=x^3-3*x+2
+fnorm(g,inp)
+</script></div>
+<article class="example example-like" id="inner-product-on-polyspace"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="inner-product-on-polyspace-1-1">
@@ -576,9 +631,15 @@ tr(AB^T) =\sum\sum a_{ij}b_{ij}\quad \quad  \text{ why?}\text{.}
 </div>
 </div> <div class="para" id="inner-product-on-polyspace-1-2">It is easy to see that <span class="process-math">\(\langle p,q \rangle\)</span> defined inner product on the vector space <span class="process-math">\({\cal P}_n(R)\text{.}\)</span>
 </div> <div class="para" id="inner-product-on-polyspace-1-3">Here <span class="process-math">\(0, 1, 2, \ldots, n\)</span> are nothing special. Instead, we can use any <span class="process-math">\(n+1\)</span> distinct real numbers, <span class="process-math">\(c_0,c_1,\ldots, c_n\text{.}\)</span>
-</div>
-<div class="solutions"><details id="inner-product-on-polyspace-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="inner-product-on-polyspace-2-1">
-<span class="process-math">\(\langle p,p \rangle =\)</span> mean that <span class="process-math">\(p\)</span> has  <span class="process-math">\(n+1\)</span> roots, which is not possible unless <span class="process-math">\(p=0\)</span> by the fundamental theorem of algebra.</div></div></details></div></article><article class="definition definition-like" id="definition-norm"><h3 class="heading">
+</div></article><div id="sec7-1-InnerProduct-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def inpPol(f,g,n):
+    a = sum([f(x=i)*g(x=i) for i in range(n+1)])
+    return a
+</script></div>
+<div id="sec7-1-InnerProduct-23" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x) = 3*x^3+4*x^2+2*x+1
+g(x) = -2*x^3+x^2+2*x-1
+inpPol(f,f,3)
+</script></div>
+<article class="definition definition-like" id="definition-norm"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.7</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="definition-norm-1-1">
@@ -594,25 +655,25 @@ tr(AB^T) =\sum\sum a_{ij}b_{ij}\quad \quad  \text{ why?}\text{.}
 d(x,y):=\norm{x-y}\text{.}
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="7-1-8"><h3 class="heading">
+</div></article><article class="exercise exercise-like" id="inp-7-1-8"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.1.8</span><span class="period">.</span>
 </h3>
-<div class="para" id="7-1-8-1-1">Let <span class="process-math">\(V\)</span> be an inner product space. Then for any two vectors <span class="process-math">\(x, y\in V\text{,}\)</span> show that <div class="para" id="7-1-8-1-1-3">1. <span class="process-math">\(\norm{x+y}^2=\norm{x}^2+\norm{y}^2+2\inner{x}{y}\)</span>
-</div> <div class="para" id="7-1-8-1-1-4">2. <span class="process-math">\(\norm{x-y}^2=\norm{x}^2+\norm{y}^2-2\inner{x}{y}\)</span>
+<div class="para" id="inp-7-1-8-1-1">Let <span class="process-math">\(V\)</span> be an inner product space. Then for any two vectors <span class="process-math">\(x, y\in V\text{,}\)</span> show that <div class="para" id="inp-7-1-8-1-1-3">1. <span class="process-math">\(\norm{x+y}^2=\norm{x}^2+\norm{y}^2+2\inner{x}{y}\)</span>
+</div> <div class="para" id="inp-7-1-8-1-1-4">2. <span class="process-math">\(\norm{x-y}^2=\norm{x}^2+\norm{y}^2-2\inner{x}{y}\)</span>
 </div>
 </div>
-<div class="solutions"><details id="7-1-8-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="7-1-8-2-1">The proof follows by looking at <span class="process-math">\(\langle x+y,x+y \rangle \)</span>  and <span class="process-math">\(\langle x-y,x-y \rangle \)</span> and using the properties of inner product.</div></div></details></div></article><article class="exercise exercise-like" id="7-1-9"><h3 class="heading">
+<div class="solutions"><details id="inp-7-1-8-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="inp-7-1-8-2-1">The proof follows by looking at <span class="process-math">\(\langle x+y,x+y \rangle \)</span>  and <span class="process-math">\(\langle x-y,x-y \rangle \)</span> and using the properties of inner product.</div></div></details></div></article><article class="exercise exercise-like" id="inp-7-1-9"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.1.9</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="7-1-9-1-1">
+<div class="para logical" id="inp-7-1-9-1-1">
 <div class="para">If <span class="process-math">\(x, y\)</span> are two vectors in an inner product space <span class="process-math">\(V\)</span> with inner product <span class="process-math">\(\langle .\rangle\text{.}\)</span> Then show that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \norm{x+y}^2+\norm{x-y}^2=2(\norm{x}^2+\norm{y}^2)\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="7-1-9-1-2">This is called the <em class="alert">parallelogram identity.</em> Geometrically, in a parallelogram, the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.</div>
-<div class="solutions"><details id="7-1-9-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="7-1-9-2-1">Proof follows from <a href="sec7-1-InnerProduct.html#7-1-8" class="xref" data-knowl="./knowl/xref/7-1-8.html" data-reveal-label="Reveal" data-close-label="Close" title="Checkpoint 7.1.8">Checkpoint 7.1.8</a>.</div></div></details></div></article><article class="theorem theorem-like" id="thm-Cauchy-Schwarz-Inequality"><h3 class="heading">
+</div> <div class="para" id="inp-7-1-9-1-2">This is called the <em class="alert">parallelogram identity.</em> Geometrically, in a parallelogram, the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.</div>
+<div class="solutions"><details id="inp-7-1-9-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="inp-7-1-9-2-1">Proof follows from <a href="sec7-1-InnerProduct.html#inp-7-1-8" class="xref" data-knowl="./knowl/xref/inp-7-1-8.html" data-reveal-label="Reveal" data-close-label="Close" title="Checkpoint 7.1.8">Checkpoint 7.1.8</a>.</div></div></details></div></article><article class="theorem theorem-like" id="thm-Cauchy-Schwarz-Inequality"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Schwarz Inequality.</span>
 </h3>
 <div class="para logical" id="thm-Cauchy-Schwarz-Inequality-2-1">
@@ -643,7 +704,7 @@ d(x,y):=\norm{x-y}\text{.}
 \end{gather}
 </div>
 <div class="para">is called the triangle inequality.</div>
-</div></article><div class="para logical" id="sec7-1-InnerProduct-19">
+</div></article><div class="para logical" id="sec7-1-InnerProduct-29">
 <div class="para">Let us play with the Cauchy-Schwarz inequality <a href="sec7-1-InnerProduct.html#cauchy-swarch-ineq" class="xref" data-knowl="./knowl/xref/cauchy-swarch-ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.1.1">(7.1.1)</a>. Suppose <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are non zero vectors in <span class="process-math">\(V\text{,}\)</span> Then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cauchy-swarch-ineq.html">
 \begin{equation*}
@@ -651,7 +712,7 @@ d(x,y):=\norm{x-y}\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="sec7-1-InnerProduct-20">
+<div class="para logical" id="sec7-1-InnerProduct-30">
 <div class="para">Hence we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -659,7 +720,7 @@ d(x,y):=\norm{x-y}\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="sec7-1-InnerProduct-21">
+<div class="para logical" id="sec7-1-InnerProduct-31">
 <div class="para">Thus for any two non zero vectors, <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> <span class="process-math">\(\frac{\inner{x}{y}}{\norm{x}\norm{y}}\)</span> always lies between <span class="process-math">\(-1\)</span> and 1. This allows us to define the angle between two non zero vectors. We assign this number to <span class="process-math">\(\cos\theta\)</span> with <span class="process-math">\(\theta\in[-\pi,\pi]\)</span> called the angle between <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> Thus, if <span class="process-math">\(\theta\)</span> is the angle between <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> then we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -667,7 +728,7 @@ d(x,y):=\norm{x-y}\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="sec7-1-InnerProduct-22">All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.</div>
+<div class="para" id="sec7-1-InnerProduct-32">All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.</div>
 <article class="theorem theorem-like" id="thm-norm-properties"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Norm.</span>
 </h3>
@@ -681,39 +742,39 @@ d(x,y):=\norm{x-y}\text{.}
 </ol></div></article><article class="definition definition-like" id="def-normed-lin-space"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.13</span><span class="period">.</span>
 </h3>
-<div class="para" id="def-normed-lin-space-1-1">Any vector space <span class="process-math">\(V\)</span> over <span class="process-math">\(\R\)</span> with a function <span class="process-math">\(\norm{.} : V \to \R\)</span> which satisfies all the properties mentioned in <a href="sec7-1-InnerProduct.html#thm-norm-properties" class="xref" data-knowl="./knowl/xref/thm-norm-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.12: Properties of Norm">Theorem 7.1.12</a> is called a <em class="alert">normed linear space.</em>. Thus any inner product space is also a normed linear space.</div></article><article class="note remark-like" id="sec7-1-InnerProduct-25"><h3 class="heading">
+<div class="para" id="def-normed-lin-space-1-1">Any vector space <span class="process-math">\(V\)</span> over <span class="process-math">\(\R\)</span> with a function <span class="process-math">\(\norm{.} : V \to \R\)</span> which satisfies all the properties mentioned in <a href="sec7-1-InnerProduct.html#thm-norm-properties" class="xref" data-knowl="./knowl/xref/thm-norm-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.12: Properties of Norm">Theorem 7.1.12</a> is called a <em class="alert">normed linear space.</em>. Thus any inner product space is also a normed linear space.</div></article><article class="note remark-like" id="sec7-1-InnerProduct-35"><h3 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">7.1.14</span><span class="period">.</span>
-</h3>The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on <span class="process-math">\(\R^n\)</span> can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product.  We encourage  readers to define each one of them.</article><article class="exercise exercise-like" id="7-1-10"><h3 class="heading">
+</h3>The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on <span class="process-math">\(\R^n\)</span> can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product.  We encourage  readers to define each one of them.</article><article class="exercise exercise-like" id="inp-7-1-10"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.1.15</span><span class="period">.</span>
 </h3>
-<div class="para" id="7-1-10-1-1">Let <span class="process-math">\((V, \inner{.}{.})\)</span> be a real inner product space. Define (i) orthogonality of two vectors <span class="process-math">\(x\)</span>  and <span class="process-math">\(y\)</span> in <span class="process-math">\(V\text{,}\)</span> (ii) orthogonal complement of a subset <span class="process-math">\(U\)</span> of <span class="process-math">\(V\text{,}\)</span> (iii) Orthogonal projection of a vector <span class="process-math">\(v\)</span> onto a non-zero vector <span class="process-math">\(u\text{,}\)</span> (iv) orthogonal set and orthonormal sets in <span class="process-math">\(V\)</span> and  (v) Gram-Schmidt orthogonalization process.</div></article><article class="exercise exercise-like" id="7-1-11"><h3 class="heading">
+<div class="para" id="inp-7-1-10-1-1">Let <span class="process-math">\((V, \inner{.}{.})\)</span> be a real inner product space. Define (i) orthogonality of two vectors <span class="process-math">\(x\)</span>  and <span class="process-math">\(y\)</span> in <span class="process-math">\(V\text{,}\)</span> (ii) orthogonal complement of a subset <span class="process-math">\(U\)</span> of <span class="process-math">\(V\text{,}\)</span> (iii) Orthogonal projection of a vector <span class="process-math">\(v\)</span> onto a non-zero vector <span class="process-math">\(u\text{,}\)</span> (iv) orthogonal set and orthonormal sets in <span class="process-math">\(V\)</span> and  (v) Gram-Schmidt orthogonalization process.</div></article><article class="exercise exercise-like" id="inp-7-1-11"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.1.16</span><span class="period">.</span>
 </h3>
-<div class="para" id="7-1-11-1-1">Let <span class="process-math">\(x, y\)</span> be two vectors in an inner product space <span class="process-math">\(V\text{.}\)</span> Then show that</div> <div class="para" id="7-1-11-1-2">(i) <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are orthogonal if and only if <span class="process-math">\(\norm{x+y}=\norm{x-y}\text{.}\)</span> (what does it mean geometrically?)</div> <div class="para" id="7-1-11-1-3">(ii) <span class="process-math">\(x+y\)</span> and <span class="process-math">\(x-y\)</span> are orthogonal if and only if <span class="process-math">\(\norm{x}=\norm{y}\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="7-1-12"><h3 class="heading">
+<div class="para" id="inp-7-1-11-1-1">Let <span class="process-math">\(x, y\)</span> be two vectors in an inner product space <span class="process-math">\(V\text{.}\)</span> Then show that</div> <div class="para" id="inp-7-1-11-1-2">(i) <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are orthogonal if and only if <span class="process-math">\(\norm{x+y}=\norm{x-y}\text{.}\)</span> (what does it mean geometrically?)</div> <div class="para" id="inp-7-1-11-1-3">(ii) <span class="process-math">\(x+y\)</span> and <span class="process-math">\(x-y\)</span> are orthogonal if and only if <span class="process-math">\(\norm{x}=\norm{y}\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="inp-7-1-12"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.1.17</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="7-1-12-1-1">
+<div class="para logical" id="inp-7-1-12-1-1">
 <div class="para">Let <span class="process-math">\(C([-\pi,\pi])\)</span> be the vectors space of set of continuous functions from <span class="process-math">\([-\pi,\pi]\)</span> to <span class="process-math">\(\R\text{.}\)</span> Define the inner product on <span class="process-math">\(C([-\pi,\pi])\)</span> as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \inner{f}{g}:=\int_{-\pi}^\pi f(t) g(t)`dt\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="7-1-12-1-2">Show that under this inner product <span class="process-math">\(\{1, \sin nx,\cos mx\}\)</span> is an orthogonal set.</div></article><article class="exercise exercise-like" id="7-1-13"><h3 class="heading">
+</div> <div class="para" id="inp-7-1-12-1-2">Show that under this inner product <span class="process-math">\(\{1, \sin nx,\cos mx\}\)</span> is an orthogonal set.</div></article><article class="exercise exercise-like" id="inp-7-1-13"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">Pythagoras Theorem.</span>
 </h3>
-<div class="para logical" id="7-1-13-2-1">
+<div class="para logical" id="inp-7-1-13-2-1">
 <div class="para">Let <span class="process-math">\((V, \inner{.}{.})\)</span> be a real inner product space. Let <span class="process-math">\(x_1,x_2\,x_n\)</span> be <span class="process-math">\(n\)</span> orthogonal vectors in <span class="process-math">\(V\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \norm{x_1+x_2+\cdots+x_n}^2=\norm{x_1}^2+\norm{x_2}^2+\cdots+\norm{x_n}^2\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="7-1-13-2-2">This is called the Pythagoras theorem.</div></article><article class="exercise exercise-like" id="7-1-14"><h3 class="heading">
+</div> <div class="para" id="inp-7-1-13-2-2">This is called the Pythagoras theorem.</div></article><article class="exercise exercise-like" id="inp-7-1-14"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.1.19</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="7-1-14-1-1">
+<div class="para logical" id="inp-7-1-14-1-1">
 <div class="para">Let <span class="process-math">\(\beta=\{u_1,\ldots,
 u_n\}\)</span> be an orthogonal basis of an inner product space <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(v\in V\)</span> and <span class="process-math">\(\theta_1,\ldots, \theta_n\)</span> be the angle between <span class="process-math">\(v\)</span> and <span class="process-math">\(u_1,\ldots, u_n\text{,}\)</span>  respectively. Then</div>
 <div class="displaymath process-math">
@@ -721,11 +782,11 @@ u_n\}\)</span> be an orthogonal basis of an inner product space <span class="pro
 \cos\theta_1^2+\cdots+\cos\theta_n^2=1\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="7-1-14-1-2">Here <span class="process-math">\(\cos\theta_i\)</span> are called the direction cosines of <span class="process-math">\(v\)</span> corresponding to <span class="process-math">\(\beta\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="7-1-15"><h3 class="heading">
+</div> <div class="para" id="inp-7-1-14-1-2">Here <span class="process-math">\(\cos\theta_i\)</span> are called the direction cosines of <span class="process-math">\(v\)</span> corresponding to <span class="process-math">\(\beta\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="inp-7-1-15"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.1.20</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="7-1-15-1-1">
+<div class="para logical" id="inp-7-1-15-1-1">
 <div class="para">Let <span class="process-math">\(\beta=\{u_1,\ldots,
 u_n\}\)</span> be an orthogonal basis of an inner product space <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> be two vectors such that <span class="process-math">\(x=\sum x_i u_i\)</span> and <span class="process-math">\(y=\sum y_i u_i\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
@@ -783,16 +844,58 @@ u_4 \amp =  u_4-\inner{v_4}{u_1}/\norm{u_1}^1u_1-\inner{v_4}{u_2}/\norm{u_2}^1u_
 \end{equation*}
 </div>
 </div> <figure class="figure figure-like" id="fig_legendrepoly"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/Legendre_poly.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.22<span class="period">.</span></span><span class="space"> </span>Graph of Legendre polynomials</figcaption></figure></article><article class="exercise exercise-like" id="7-1-16"><h3 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.22<span class="period">.</span></span><span class="space"> </span>Graph of Legendre polynomials</figcaption></figure></article><div id="sec7-1-InnerProduct-43" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('x')
+f1(x) = 1
+f2(x) = x
+f3(x) = x^2
+f4(x) = x^3
+f5(x) = x^4
+B = [f1(x),f2(x),f3(x),f4(x),f5(x)]
+def inp(f,g):
+    return integral(f(x)*g(x),x,-1,1)
+def inp_norm(f):
+    return sqrt(integral(f(x)*f(x),x,-1,1))
+</script></div>
+<div id="sec7-1-InnerProduct-44" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">g1(x) = f1(x)/inp_norm(f1);g1(x)
+h(x) = f2(x)-inp(f2,g1)*g1(x)
+g2(x) = h(x)/inp_norm(h);g2(x)
+h(x) = f3(x)-inp(f3,g1)*g1(x)-inp(f3,g2)*g2(x)
+g3(x) = h(x)/inp_norm(h);g3(x)
+h(x) = f4(x)-inp(f4,g1)*g1(x)-inp(f4,g2)*g2(x)-inp(f4,g3)*g3(x)
+g4(x) = h(x)/inp_norm(h);g4(x)
+h(x) = f5(x)-inp(f5,g1)*g1(x)-inp(f5,g2)*g2(x)-inp(f5,g3)*g3(x)-inp(f5,g4)*g4(x)
+g5(x) = h(x)/inp_norm(h);g5(x)
+plot(g1(x),(x,-1,1))+plot(g2(x),(x,-1,1),color='red')+\
+plot(g3(x),(x,-1,1),color='green')+plot(g4(x),(x,-1,1),color='pink')
+</script></div>
+<article class="exercise exercise-like" id="inp-7-1-16"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.1.23</span><span class="period">.</span>
 </h3>
-<div class="para" id="7-1-16-1-1">Consider the standard basis <span class="process-math">\(\beta=\{1,x,x^2,x^3\}\)</span> of <span class="process-math">\({\cal P}_3(\R)\)</span> with inner product <span class="process-math">\(\inner{f}{g}:=\int_0^1 f(x)g(x)\,dx\text{.}\)</span> Find an orthonormal basis starting with <span class="process-math">\(\beta\)</span> using the Gram-Schmidt orthogonalization process.</div></article><article class="example example-like" id="sec7-1-InnerProduct-34"><h3 class="heading">
+<div class="para" id="inp-7-1-16-1-1">Consider the standard basis <span class="process-math">\(\beta=\{1,x,x^2,x^3\}\)</span> of <span class="process-math">\({\cal P}_3(\R)\)</span> with inner product <span class="process-math">\(\inner{f}{g}:=\int_0^1 f(x)g(x)\,dx\text{.}\)</span> Find an orthonormal basis starting with <span class="process-math">\(\beta\)</span> using the Gram-Schmidt orthogonalization process.</div> <div class="para" id="inp-7-1-16-1-2"><details id="inp-7-1-16-1-2-1" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div id="inp-7-1-16-1-2-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def inp(f,g):
+    return integral(f(x)*g(x),x,0,2*pi)
+
+def projf(g,f):
+    prgf=inp(g,f)/inp(f,f)*f
+    return prgf
+
+v1(x) = 1
+v2(x) = x
+v3(x) = x^2
+v4(x) = x^3
+f(x) = sin(x)
+u1=v1
+u2=v2-projf(v2,u1)
+u3=v3-projf(v3,u1)-projf(v3,u2)
+u4=v4-projf(v4,u1)-projf(v4,u2)-projf(v4,u3)
+p=f-projf(f,u1)+projf(f,u2)+projf(f,u3)+projf(f,u4)
+show(p(x))
+</script></div></div></details></div></article><article class="example example-like" id="sec7-1-InnerProduct-46"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.24</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec7-1-InnerProduct-34-1-1">Let <span class="process-math">\(A=\left(\begin{array}{rrr}2 \amp -1 \amp 0 \\-1 \amp 2 \amp -1 \\0 \amp -1 \amp 2 \end{array} \right)\text{.}\)</span> It is easy to check that <span class="process-math">\(A\)</span> is a symmetric and positive definite matrix. (why?) Define an inner product on <span class="process-math">\(\mathbb{R}^3\)</span> as <span class="process-math">\(\inner{u}{v}:=v^TAu\text{.}\)</span>
-</div> <div class="para logical" id="sec7-1-InnerProduct-34-1-2">
+<div class="para" id="sec7-1-InnerProduct-46-1-1">Let <span class="process-math">\(A=\left(\begin{array}{rrr}2 \amp -1 \amp 0 \\-1 \amp 2 \amp -1 \\0 \amp -1 \amp 2 \end{array} \right)\text{.}\)</span> It is easy to check that <span class="process-math">\(A\)</span> is a symmetric and positive definite matrix. (why?) Define an inner product on <span class="process-math">\(\mathbb{R}^3\)</span> as <span class="process-math">\(\inner{u}{v}:=v^TAu\text{.}\)</span>
+</div> <div class="para logical" id="sec7-1-InnerProduct-46-1-2">
 <div class="para">Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors <span class="process-math">\(\beta=\{e_1, e_2, e_3\}\)</span> with respect to the above inner product.</div>
-<div class="displaymath process-math" id="sec7-1-InnerProduct-34-1-2-2">
+<div class="displaymath process-math" id="sec7-1-InnerProduct-46-1-2-2">
 \begin{align*}
 u_1:  =\amp (1,0,0)\\
 u_2: =\amp  e_2-\frac{\inner{u_2\cdot e_2}{u_1}}{\norm{u_1}^2}u_1=(0,1,0)-\frac{-1}{2}(1,0,0)=(1/2,1,0)\\
@@ -800,10 +903,25 @@ u_3: =\amp  e_3 -\frac{\inner{e_3}{u_1}}{\norm{u_1}^2}u_1-\frac{\inner{e_3}{u_1}
 = \amp  (0,0,1)-\frac{0}{2}(1,0,0)-\frac{-1}{3/2}(1/2,1,0)=(1/3, 2/3, 1)
 \end{align*}
 </div>
-</div></article><article class="example example-like" id="sec7-1-InnerProduct-35"><h3 class="heading">
+</div>
+<div class="solutions"><details id="sec7-1-InnerProduct-46-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div id="sec7-1-InnerProduct-46-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix([[2,-1,0],[-1,2,-1],[0,-1,2]])
+A.is_positive_definite()
+def inpA(u,v):
+    return v.dot_product(A*u)
+e1=vector([1,0,0])
+e2=vector([0,1,0])
+e3=vector([0,0,1])
+u1=e1
+u2=e2-inpA(e2,u1)/inpA(u1,u1)*u1
+u3=e3-inpA(e3,u1)/inpA(u1,u1)*u1-inpA(e3,u2)/inpA(u2,u2)*u2
+q1 = u1/sqrt(inpA(u1,u1))
+q2 = u2/sqrt(inpA(u2,u2))
+q3 = u3/sqrt(inpA(u3,u3))
+print(q1,q2,q3)
+</script></div></div></details></div></article><article class="example example-like" id="sec7-1-InnerProduct-47"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Lagrange Interpolating Polynomials.</span>
 </h3>
-<div class="para logical" id="sec7-1-InnerProduct-35-2-1">
+<div class="para logical" id="sec7-1-InnerProduct-47-2-1">
 <div class="para">Fix any <span class="process-math">\(n+1\)</span> distinct real numbers, <span class="process-math">\(c_0,c_1,\ldots, c_n\)</span> and define</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -812,22 +930,22 @@ u_3: =\amp  e_3 -\frac{\inner{e_3}{u_1}}{\norm{u_1}^2}u_1-\frac{\inner{e_3}{u_1}
 </div>
 <div class="para">an inner product on <span class="process-math">\({\cal P}_n(\R)\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="sec7-1-InnerProduct-35-2-2">
+</div> <div class="para logical" id="sec7-1-InnerProduct-47-2-2">
 <div class="para">Recall the Lagrange Polynomial defined (Eqn. <a href="sec4-5-basis-dim-VS.html#lagrange-eq1" class="xref" data-knowl="./knowl/xref/lagrange-eq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.5.1">(4.5.1)</a>).</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lagrange-eq1.html">
 \begin{equation*}
 \ell_i(x)=\prod_{j=0,j\neq i}^{n}\frac{x-c_j}{c_i-c_j}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="sec7-1-InnerProduct-35-2-3">
+</div> <div class="para logical" id="sec7-1-InnerProduct-47-2-3">
 <div class="para">Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \inner{\ell_i}{\ell_j}=\sum_{j=0}^n \ell_i(c_j)\ell_j(c_j)=\delta_{ij}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec7-1-InnerProduct-35-2-4">Hence <span class="process-math">\(\{\ell_i\}\)</span> is an orthonormal basis of <span class="process-math">\({\cal P}_n(\R)\text{.}\)</span>
-</div> <div class="para logical" id="sec7-1-InnerProduct-35-2-5">
+</div> <div class="para" id="sec7-1-InnerProduct-47-2-4">Hence <span class="process-math">\(\{\ell_i\}\)</span> is an orthonormal basis of <span class="process-math">\({\cal P}_n(\R)\text{.}\)</span>
+</div> <div class="para logical" id="sec7-1-InnerProduct-47-2-5">
 <div class="para">Let <span class="process-math">\(p(x)\in {\cal P}_n(\R)\)</span> be any polynomial, then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -835,7 +953,7 @@ u_3: =\amp  e_3 -\frac{\inner{e_3}{u_1}}{\norm{u_1}^2}u_1-\frac{\inner{e_3}{u_1}
 \end{equation*}
 </div>
 <div class="para">Since <span class="process-math">\(\{\ell_i\}\)</span> is an orthonormal basis of <span class="process-math">\({\cal P}_n(\R)\text{,}\)</span> we have</div>
-<div class="displaymath process-math" id="sec7-1-InnerProduct-35-2-5-5">
+<div class="displaymath process-math" id="sec7-1-InnerProduct-47-2-5-5">
 \begin{gather*}
 p(x)  = \inner{p(x)}{\ell_0(x)}\ell_0(x)+\inner{p(x)}{\ell_1(x)}\ell_1(x)+\cdots +\inner{p(x)}{\ell_n(x)}\ell_n(x)\\
 =  p(c_0)\ell_0(x)+p(c_1)\ell_1(x)+p(c_2)\ell_2(x)+\cdots +p(c_n)\ell_n(x)
@@ -843,19 +961,19 @@ p(x)  = \inner{p(x)}{\ell_0(x)}\ell_0(x)+\inner{p(x)}{\ell_1(x)}\ell_1(x)+\cdots
 </div>
 <div class="para">which is the Lagrange interpolation expansion of <span class="process-math">\(p(x)\text{.}\)</span>
 </div>
-</div></article><article class="definition definition-like" id="sec7-1-InnerProduct-36"><h3 class="heading">
+</div></article><article class="definition definition-like" id="sec7-1-InnerProduct-48"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.26</span><span class="period">.</span><span class="space"> </span><span class="title">Projection onto a subspace.</span>
-</h3> <div class="para logical" id="sec7-1-InnerProduct-36-2">
+</h3> <div class="para logical" id="sec7-1-InnerProduct-48-2">
 <div class="para">Let <span class="process-math">\(V\)</span> be an inner product space and <span class="process-math">\(W\leq V\text{,}\)</span> a finite dimensional subspace of <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(\{u_1,\ldots, u_k\}\)</span> be an orthonormal basis of <span class="process-math">\(W\text{.}\)</span> Suppose <span class="process-math">\(v\in V\text{.}\)</span> Similar to <a href="sec6-2.html#subspace-projection1" class="xref" data-knowl="./knowl/xref/subspace-projection1.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.3.5">definition 6.3.5</a>, we can define the orthogonal projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(W\)</span> as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/subspace-projection1.html">
 \begin{equation*}
 \proj_W(v):=  \inner{v}{u_1}u_1+\inner{v}{u_2}u_2+\cdots+\inner{v}{u_k}u_k\text{.}
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="7-1-17"><h3 class="heading">
+</div></article><article class="exercise exercise-like" id="inp-7-1-17"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.1.27</span><span class="period">.</span>
 </h3>
-<div class="para" id="7-1-17-1-1">Find the orthogonal projection of vector <span class="process-math">\(b=\begin{bmatrix}1\\2\\3\\4 \end{bmatrix}\)</span> onto the subspace spanned by three vectors <span class="process-math">\(\left\{\begin{bmatrix}1\\-1\\0\\1 \end{bmatrix} , \begin{bmatrix}0\\1\\1\\-1 \end{bmatrix} , \begin{bmatrix}1\\1\\-1\\0 \end{bmatrix} \right\}\text{.}\)</span>
+<div class="para" id="inp-7-1-17-1-1">Find the orthogonal projection of vector <span class="process-math">\(b=\begin{bmatrix}1\\2\\3\\4 \end{bmatrix}\)</span> onto the subspace spanned by three vectors <span class="process-math">\(\left\{\begin{bmatrix}1\\-1\\0\\1 \end{bmatrix} , \begin{bmatrix}0\\1\\1\\-1 \end{bmatrix} , \begin{bmatrix}1\\1\\-1\\0 \end{bmatrix} \right\}\text{.}\)</span>
 </div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chap7-inner-product.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec7-2-Exer.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

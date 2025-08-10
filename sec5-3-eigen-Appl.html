@@ -236,7 +236,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec5-5-Eigen-Sage-exer.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap5-Eigen.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec5-4-eigen-exer.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec5-5-Eigen-Sage.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap5-Eigen.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec5-4-eigen-exer.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -381,7 +381,7 @@ sagecell.makeSagecell({
 <ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-2-diagonalization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Diagonalization</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage-exer.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec5-3-eigen-Appl.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
 <ul class="structural toc-item-list">
@@ -488,11 +488,12 @@ sagecell.makeSagecell({
 </h3>
 <div class="para" id="subsec5-3-Fibonacci-Seq-2">Originally the Fibonacci sequence appeared in the solution of the following problem posed by Leonardo of Pisa, popularly known as Fibonacci, in the book <em class="emphasis">Liber Abaci</em> in 1202.</div>
 <div class="para" id="subsec5-3-Fibonacci-Seq-3">Consider the following problem.</div>
-<blockquote class="blockquote" id="subsec5-3-Fibonacci-Seq-4"><div class="para" id="subsec5-3-Fibonacci-Seq-4-1">A certain man put a pair of rabbits in a places surrounded on all sides by a wall. How many pairs of rabbits can be produced from that pair in year if it is supposed that every month each pair  begets a new pair which from second month becomes productive?</div></blockquote>
-<div class="para" id="subsec5-3-Fibonacci-Seq-5">We assume that the number of pairs at the end of the <span class="process-math">\(n\)</span>-th year  is denoted by <span class="process-math">\(F_n\text{.}\)</span> We start with <span class="process-math">\(F_0=0\)</span> and <span class="process-math">\(F_1=1\text{.}\)</span> Note that the number of pair of rabbits in any given month is the number of pairs in the previous month plus those that are hatched  in that month and those are as many as the previous month. This gives gives rise to a recurrence relation</div>
+<blockquote class="blockquote" id="subsec5-3-Fibonacci-Seq-4"><div class="para" id="subsec5-3-Fibonacci-Seq-4-1">A certain man put a pair of rabbits in a places surrounded on all sides by a wall. How many pairs of rabbits can be produced from that pair in year if it is supposed that every month each pair begets a new pair which from second month becomes productive?</div></blockquote>
+<div class="para" id="subsec5-3-Fibonacci-Seq-5">We assume that the number of pairs at the end of the <span class="process-math">\(n\)</span>-th year is denoted by <span class="process-math">\(F_n\text{.}\)</span> We start with <span class="process-math">\(F_0=0\)</span> and <span class="process-math">\(F_1=1\text{.}\)</span> Note that the number of pair of rabbits in any given month is the number of pairs in the previous month plus those that are hatched in that month and those are as many as the previous month. This gives gives rise to a recurrence relation</div>
 <div class="displaymath process-math">
 \begin{equation*}
-F_{n+1}=F_n+F_{n-1}, \qquad \text{with } F_0=0, F_1=1\text{.}
+F_{n+1}=F_n+F_{n-1},
+\qquad \text{with } F_0=0, F_1=1\text{.}
 \end{equation*}
 </div>
 <div class="para logical" id="subsec5-3-Fibonacci-Seq-7">
@@ -501,12 +502,12 @@ F_{n+1}=F_n+F_{n-1}, \qquad \text{with } F_0=0, F_1=1\text{.}
 \begin{equation*}
 X_{n+1}=\begin{pmatrix}F_{n+1}\\F_{n}\end{pmatrix}=
 \begin{pmatrix}F_{n}+F_{n-1}\\F_{n}\end{pmatrix}=
-\begin{pmatrix}1\amp 1\\1 \amp  0\end{pmatrix} \begin{pmatrix}F_{n}\\F_{n-1}\end{pmatrix}.
+\begin{pmatrix}1\amp 1\\1 \amp 0\end{pmatrix} \begin{pmatrix}F_{n}\\F_{n-1}\end{pmatrix}.
 \end{equation*}
 </div>
 </div>
 <div class="para logical" id="subsec5-3-Fibonacci-Seq-8">
-<div class="para">Let <span class="process-math">\(M=\begin{pmatrix}1 \amp 1\\1\amp  0\end{pmatrix}\text{.}\)</span> Then we have</div>
+<div class="para">Let <span class="process-math">\(M=\begin{pmatrix}1 \amp 1\\1\amp 0\end{pmatrix}\text{.}\)</span> Then we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 X_{n+1}=MX_n.
@@ -523,59 +524,61 @@ X_{n+1}=M^nX_1.
 </div>
 <div class="para" id="subsec5-3-Fibonacci-Seq-10">This leads to computation of power of <span class="process-math">\(M\text{.}\)</span> Therefore, we can invoke diagonalization of the matrix.</div>
 <div class="para logical" id="subsec5-3-Fibonacci-Seq-11">
-<div class="para">Note that <span class="process-math">\(M\)</span> is symmetric matrix with characteristic polynomial <span class="process-math">\(\lambda^2-\lambda-1\text{.}\)</span> The eigenvalues of <span class="process-math">\(M\)</span> are <span class="process-math">\(\frac{1\pm \sqrt{5}}{2}\)</span> and the corresponding eigenvectors are <span class="process-math">\(\begin{pmatrix}\frac{1\pm \sqrt{5}}{2} \\1\end{pmatrix}\text{.}\)</span> Since <span class="process-math">\(M\)</span> has distinct eigenvalues, <span class="process-math">\(M\)</span>  is diagonalizable and we have</div>
+<div class="para">Note that <span class="process-math">\(M\)</span> is symmetric matrix with characteristic polynomial <span class="process-math">\(\lambda^2-\lambda-1\text{.}\)</span> The eigenvalues of <span class="process-math">\(M\)</span> are <span class="process-math">\(\frac{1\pm
+\sqrt{5}}{2}\)</span> and the corresponding eigenvectors are <span class="process-math">\(\begin{pmatrix}\frac{1\pm
+\sqrt{5}}{2} \\1\end{pmatrix}\text{.}\)</span> Since <span class="process-math">\(M\)</span> has distinct eigenvalues, <span class="process-math">\(M\)</span> is diagonalizable and we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-M=PDP^{-1} \text{ where } 
+M=PDP^{-1} \text{ where }
 P= \begin{pmatrix}
-\frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+\frac{1+\sqrt{5}}{2} \amp \frac{1-\sqrt{5}}{2}\\1 \amp 1
 \end{pmatrix}
 \text{ and }
 D= \begin{pmatrix}
-\frac{1+\sqrt{5}}{2} \amp  0 \\0 \amp \frac{1-\sqrt{5}}{2}
+\frac{1+\sqrt{5}}{2} \amp 0 \\0 \amp \frac{1-\sqrt{5}}{2}
 \end{pmatrix}.
 \end{equation*}
 </div>
 </div>
 <div class="para logical" id="subsec5-3-Fibonacci-Seq-12">
-<div class="para">Let <span class="process-math">\(\varphi=\frac{1+\sqrt{5}}{2}\)</span> be one of the above eigenvalue of <span class="process-math">\(M\text{,}\)</span>  then <span class="process-math">\(1-\varphi=\frac{1-\sqrt{5}}{2}\text{.}\)</span> Also it is easy to check that <span class="process-math">\((1+\frac{1}{\varphi})=\varphi\text{.}\)</span> Now we have</div>
+<div class="para">Let <span class="process-math">\(\varphi=\frac{1+\sqrt{5}}{2}\)</span> be one of the above eigenvalue of <span class="process-math">\(M\text{,}\)</span> then <span class="process-math">\(1-\varphi=\frac{1-\sqrt{5}}{2}\text{.}\)</span> Also it is easy to check that <span class="process-math">\((1+\frac{1}{\varphi})=\varphi\text{.}\)</span> Now we have</div>
 <div class="displaymath process-math" id="subsec5-3-Fibonacci-Seq-12-5">
 \begin{align*}
-X_{n+1}  =\amp  M^nX_1\\
-=\amp  PD^n P^{-1} X_1\\
-=\amp  \begin{pmatrix}
-\frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+X_{n+1} =\amp M^nX_1\\
+=\amp PD^n P^{-1} X_1\\
+=\amp \begin{pmatrix}
+\frac{1+\sqrt{5}}{2} \amp \frac{1-\sqrt{5}}{2}\\1 \amp 1
 \end{pmatrix}\begin{pmatrix}
-\varphi^n \amp  0\\ 0 \amp  (1-\varphi)^n
+\varphi^n \amp 0\\ 0 \amp (1-\varphi)^n
 \end{pmatrix} \begin{pmatrix}
-\frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+\frac{1+\sqrt{5}}{2} \amp \frac{1-\sqrt{5}}{2}\\1 \amp 1
 \end{pmatrix}^{-1} \begin{pmatrix}
 1\\0
 \end{pmatrix}\\
-=\amp  \begin{pmatrix}
-\frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+=\amp \begin{pmatrix}
+\frac{1+\sqrt{5}}{2} \amp \frac{1-\sqrt{5}}{2}\\1 \amp 1
 \end{pmatrix}\begin{pmatrix}
-\varphi^n \amp  0\\ 0 \amp  (1-\varphi)^n
+\varphi^n \amp 0\\ 0 \amp (1-\varphi)^n
 \end{pmatrix} \begin{pmatrix}
-\frac{1}{\sqrt{5}} \amp  *\\
--\frac{1}{\sqrt{5}} \amp  *
+\frac{1}{\sqrt{5}} \amp *\\
+-\frac{1}{\sqrt{5}} \amp *
 \end{pmatrix} \begin{pmatrix}
 1\\0
 \end{pmatrix}\\
-=\amp  \begin{pmatrix}
-\frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+=\amp \begin{pmatrix}
+\frac{1+\sqrt{5}}{2} \amp \frac{1-\sqrt{5}}{2}\\1 \amp 1
 \end{pmatrix}\begin{pmatrix}
-\varphi^n \amp  0\\ 0 \amp  (1-\varphi)^n
+\varphi^n \amp 0\\ 0 \amp (1-\varphi)^n
 \end{pmatrix} \begin{pmatrix}
 \frac{1}{\sqrt{5}}\\
--\frac{1}{\sqrt{5}} 
+-\frac{1}{\sqrt{5}}
 \end{pmatrix} \\
-=\amp  \begin{pmatrix}
-\frac{1+\sqrt{5}}{2} \amp  \frac{1-\sqrt{5}}{2}\\1 \amp  1
+=\amp \begin{pmatrix}
+\frac{1+\sqrt{5}}{2} \amp \frac{1-\sqrt{5}}{2}\\1 \amp 1
 \end{pmatrix} \begin{pmatrix}
 \frac{\varphi^n}{\sqrt{5}}\\
 -\frac{(1-\varphi)^n}{\sqrt{5}} \end{pmatrix}\\
-=\amp  \begin{pmatrix}
+=\amp \begin{pmatrix}
 *\\\frac{\varphi^n-(1-\varphi)^n}{\sqrt{5}}
 \end{pmatrix}
 \end{align*}
@@ -594,13 +597,14 @@ F_n=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}}.
 <div class="para">Show that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\displaystyle\lim_{n\to \infty}\dfrac{F_{n+1}}{F_n}=\frac{1+\sqrt{5}}{2}=\varphi.
+\displaystyle\lim_{n\to
+\infty}\dfrac{F_{n+1}}{F_n}=\frac{1+\sqrt{5}}{2}=\varphi.
 \end{equation*}
 </div>
-</div> <div class="para" id="subsec5-3-Fibonacci-Seq-13-1-2">Note that <span class="process-math">\(\varphi\)</span> is called the <em class="emphasis">Golden-Ratio</em> which has many application in nature. The approximate  value of <span class="process-math">\(\varphi \approx 1.618025\text{.}\)</span>
+</div> <div class="para" id="subsec5-3-Fibonacci-Seq-13-1-2">Note that <span class="process-math">\(\varphi\)</span> is called the <em class="emphasis">Golden-Ratio</em> which has many application in nature. The approximate value of <span class="process-math">\(\varphi \approx 1.618025\text{.}\)</span>
 </div>
 <div class="solutions"><details id="subsec5-3-Fibonacci-Seq-13-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para logical" id="subsec5-3-Fibonacci-Seq-13-2-1">
-<div class="para">Let <span class="process-math">\(x_n:=\dfrac{F_{n+1}}{F_n}\text{.}\)</span>  Then we have</div>
+<div class="para">Let <span class="process-math">\(x_n:=\dfrac{F_{n+1}}{F_n}\text{.}\)</span> Then we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x_n=\frac{F_n+F_{n-1}}{F_n}=1+\frac{F_{n-1}}{F_n}=1+\frac{1}{x_{n-1}}.
@@ -609,20 +613,24 @@ x_n=\frac{F_n+F_{n-1}}{F_n}=1+\frac{F_{n-1}}{F_n}=1+\frac{1}{x_{n-1}}.
 <div class="para">Now let us approximate</div>
 <div class="displaymath process-math" id="subsec5-3-Fibonacci-Seq-13-2-1-3">
 \begin{align*}
-|x_n-\varphi|  = \amp  \left|\left( 1+\frac{1}{x_{n-1}}\right)-\left( 1+\frac{1}{\varphi}\right)\right|\\
+|x_n-\varphi| = \amp \left|\left( 1+\frac{1}{x_{n-1}}\right)-\left(
+1+\frac{1}{\varphi}\right)\right|\\
 =\amp \left|\frac{1}{x_{n-1}}-\frac{1}{\varphi}\right|\\
-\leq \amp  \frac{1}{\varphi}\left|x_{n-1}-\varphi\right| \quad \text{Since $x_{n}\geq 1$.}\\
-\leq \amp  \frac{1}{\varphi^{n-1}}\left|x_1-\varphi\right| 
+\leq \amp \frac{1}{\varphi}\left|x_{n-1}-\varphi\right| \quad \text{Since
+$x_{n}\geq 1$.}\\
+\leq \amp \frac{1}{\varphi^{n-1}}\left|x_1-\varphi\right| 
 \end{align*}
 </div>
-<div class="para">Since <span class="process-math">\(0\lt  \frac{1}{\varphi} \lt 1\text{,}\)</span> we have <span class="process-math">\(\frac{1}{\varphi^n}\to 0\text{.}\)</span> This implies, <span class="process-math">\(x_n\to \varphi\text{.}\)</span>
+<div class="para">Since <span class="process-math">\(0\lt
+\frac{1}{\varphi} \lt 1\text{,}\)</span> we have <span class="process-math">\(\frac{1}{\varphi^n}\to 0\text{.}\)</span> This implies, <span class="process-math">\(x_n\to
+\varphi\text{.}\)</span>
 </div>
 </div></div></details></div></article><div id="subsec5-3-Fibonacci-Seq-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">n=50 # Change the value on n and see what happens.
 fibonacci(n+1)/fibonacci(n).n()
 </script></div></section><section class="subsection" id="subsec5-3-Predator-Pray"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.4.2</span><span class="space"> </span><span class="title">Predator-Pray Model</span>
 </h3>
-<div class="para" id="subsec5-3-Predator-Pray-2">In a certain area,  it is observed that every year the number of rabbits is equal to 4 times the number of rabbits less 2 times numbers of weasels in the previous year.  The number of weasels is equal to the sum of  the number of rabbits  number of weasels in the previous year.  If the initial population of rabbits and weasels were 100 and 10 respectively, then find the number of each species after <span class="process-math">\(n\)</span> years. Let <span class="process-math">\(r_n\)</span> and <span class="process-math">\(w_n\)</span> be the number of rabbits and weasels after <span class="process-math">\(n\)</span> years respectively.</div>
+<div class="para" id="subsec5-3-Predator-Pray-2">In a certain area, it is observed that every year the number of rabbits is equal to 4 times the number of rabbits less 2 times numbers of weasels in the previous year. The number of weasels is equal to the sum of the number of rabbits number of weasels in the previous year. If the initial population of rabbits and weasels were 100 and 10 respectively, then find the number of each species after <span class="process-math">\(n\)</span> years. Let <span class="process-math">\(r_n\)</span> and <span class="process-math">\(w_n\)</span> be the number of rabbits and weasels after <span class="process-math">\(n\)</span> years respectively.</div>
 <div class="para logical" id="subsec5-3-Predator-Pray-3">
 <div class="para">Then, as per data give we have</div>
 <div class="displaymath process-math" id="subsec5-3-Predator-Pray-3-1">
@@ -635,10 +643,11 @@ w_{n+1}=\amp r_n+w_n
 </div>
 </div>
 <div class="para logical" id="subsec5-3-Predator-Pray-4">
-<div class="para">Let <span class="process-math">\(X_n=\begin{pmatrix}r_n\\w_n\end{pmatrix}\)</span> and <span class="process-math">\(A=\begin{pmatrix}4 \amp -2 \\ 1\amp 1 \end{pmatrix}\text{.}\)</span> Then the above system is equivalent to</div>
+<div class="para">Let <span class="process-math">\(X_n=\begin{pmatrix}r_n\\w_n\end{pmatrix}\)</span> and <span class="process-math">\(A=\begin{pmatrix}4 \amp -2 \\
+1\amp 1 \end{pmatrix}\text{.}\)</span> Then the above system is equivalent to</div>
 <div class="displaymath process-math">
 \begin{equation*}
-X_{n+1}=AX_n\quad \text{ with } \quad  X_0=\begin{pmatrix}100\\10\end{pmatrix}\text{.}
+X_{n+1}=AX_n\quad \text{ with } \quad X_0=\begin{pmatrix}100\\10\end{pmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">We need to obtain successively</div>
@@ -647,7 +656,9 @@ X_{n+1}=AX_n\quad \text{ with } \quad  X_0=\begin{pmatrix}100\\10\end{pmatrix}\t
 X_1=AX_0, X_2=A^2X_0, \ldots, X_n=A^n X_0\text{.}
 \end{equation*}
 </div>
-<div class="para">It is easy to check that <span class="process-math">\(\lambda_1=2\)</span> and <span class="process-math">\(\lambda_2=3\)</span> are eigenvalues of <span class="process-math">\(A\)</span> with corresponding eigenvectors <span class="process-math">\(v_1=\begin{pmatrix}1\\1\end{pmatrix}\)</span> and <span class="process-math">\(v_1=\begin{pmatrix}2\\1\end{pmatrix}\)</span> respectively. We define <span class="process-math">\(P = \begin{pmatrix}1 \amp 2\\1 \amp 1\end{pmatrix}\text{.}\)</span> It is easy to see that <span class="process-math">\(P^{-1}=\begin{pmatrix}-1 \amp 2\\1 \amp -1\end{pmatrix} \text{.}\)</span> Also <span class="process-math">\(D=\begin{pmatrix}2 \amp 0\\0 \amp 3\end{pmatrix}\text{.}\)</span>  Using diagonalization, we have</div>
+<div class="para">It is easy to check that <span class="process-math">\(\lambda_1=2\)</span> and <span class="process-math">\(\lambda_2=3\)</span> are eigenvalues of <span class="process-math">\(A\)</span> with corresponding eigenvectors <span class="process-math">\(v_1=\begin{pmatrix}1\\1\end{pmatrix}\)</span> and <span class="process-math">\(v_1=\begin{pmatrix}2\\1\end{pmatrix}\)</span> respectively. We define <span class="process-math">\(P = \begin{pmatrix}1 \amp
+2\\1 \amp 1\end{pmatrix}\text{.}\)</span> It is easy to see that <span class="process-math">\(P^{-1}=\begin{pmatrix}-1 \amp 2\\1
+\amp -1\end{pmatrix} \text{.}\)</span> Also <span class="process-math">\(D=\begin{pmatrix}2 \amp 0\\0 \amp 3\end{pmatrix}\text{.}\)</span> Using diagonalization, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A^n=\begin{pmatrix}1 \amp 2\\1 \amp 1\end{pmatrix}
@@ -683,13 +694,13 @@ r_n=180\times 3^n-80\times 2^n \text{ and } w_n=90\times 3^n-80\times 2^n
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.4.3</span><span class="space"> </span><span class="title">Solving System of Linear ODE</span>
 </h3>
 <div class="para logical" id="subsec5-3-linear-ode-2">
-<div class="para">In this subsection, we shall deal with use of theory of eigenvalues and eigenvectors to solve system of linear differential equations. Let shall consider a  system of first order linear differential equations with constant coefficients. A general form of such system can be given by</div>
+<div class="para">In this subsection, we shall deal with use of theory of eigenvalues and eigenvectors to solve system of linear differential equations. Let shall consider a system of first order linear differential equations with constant coefficients. A general form of such system can be given by</div>
 <div class="displaymath process-math" id="subsec5-3-linear-ode-2-1">
 \begin{align*}
-x_1'=\frac{dx_1}{dt} =  \amp a_{11}x_1+a_{12}x_2+\cdots + a_{1n}x_n\\
-x_2'=\frac{dx_2}{dt}=\amp  a_{21}x_1+a_{22}x_2+\cdots + a_{2n}x_n\\
+x_1'=\frac{dx_1}{dt} = \amp a_{11}x_1+a_{12}x_2+\cdots + a_{1n}x_n\\
+x_2'=\frac{dx_2}{dt}=\amp a_{21}x_1+a_{22}x_2+\cdots + a_{2n}x_n\\
 \amp \vdots\\
-x_n'=\frac{dx_n}{dt}=\amp  a_{n1}x_1+a_{n2}x_2+\cdots + a_{nn}x_n
+x_n'=\frac{dx_n}{dt}=\amp a_{n1}x_1+a_{n2}x_2+\cdots + a_{nn}x_n
 \end{align*}
 </div>
 <div class="para">Here we assume that <span class="process-math">\(a_{ij}\in \R\)</span> are constants. The above system can be written as</div>
@@ -698,13 +709,18 @@ x_n'=\frac{dx_n}{dt}=\amp  a_{n1}x_1+a_{n2}x_2+\cdots + a_{nn}x_n
 x'=\frac{dx}{dt}=Ax
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(A=[a_{ij}]_{n\times n}\)</span> real matrix and <span class="process-math">\(x'=\begin{bmatrix}x_1' \amp x_2'\amp  \cdots  \amp x_n'\end{bmatrix}^T\)</span> is  column matrix.</div>
+<div class="para">where <span class="process-math">\(A=[a_{ij}]_{n\times n}\)</span> real matrix and <span class="process-math">\(x'=\begin{bmatrix}x_1'
+\amp x_2'\amp \cdots \amp x_n'\end{bmatrix}^T\)</span> is column matrix.</div>
 </div>
-<div class="para" id="subsec5-3-linear-ode-3">We want to find a solution of the above system, that is a column vector <span class="process-math">\(x =\begin{bmatrix}x_1 \amp x_2\amp  \cdots  \amp x_n\end{bmatrix}^T\)</span> of <span class="process-math">\(n\)</span> of differentiable functions on  some interval <span class="process-math">\([a,b]\)</span> which satisfies the above system.</div>
-<div class="para" id="subsec5-3-linear-ode-4">If <span class="process-math">\(S\)</span> is the set of all solutions of the above system. Then one can show that <span class="process-math">\(S\)</span> is an <span class="process-math">\(n\)</span>-dimensional vector subspace <span class="process-math">\(D[a,b]\)</span> of the set of differentiable function on <span class="process-math">\([a,b]\text{.}\)</span> This mean, if <span class="process-math">\(x_1, \ldots, x_n\)</span> are linearly independent functions which are solutions of the above system. Then any solution can be written as a linear combination of <span class="process-math">\(x_1,\ldots, x_n\text{.}\)</span>
+<div class="para" id="subsec5-3-linear-ode-3">We want to find a solution of the above system, that is a column vector <span class="process-math">\(x
+=\begin{bmatrix}x_1 \amp x_2\amp \cdots \amp x_n\end{bmatrix}^T\)</span> of <span class="process-math">\(n\)</span> of differentiable functions on some interval <span class="process-math">\([a,b]\)</span> which satisfies the above system.</div>
+<div class="para" id="subsec5-3-linear-ode-4">If <span class="process-math">\(S\)</span> is the set of all solutions of the above system. Then one can show that <span class="process-math">\(S\)</span> is an <span class="process-math">\(n\)</span>-dimensional vector subspace <span class="process-math">\(D[a,b]\)</span> of the set of differentiable function on <span class="process-math">\([a,b]\text{.}\)</span> This mean, if <span class="process-math">\(x_1, \ldots, x_n\)</span> are linearly independent functions which are solutions of the above system. Then any solution can be written as a linear combination of <span class="process-math">\(x_1,\ldots,
+x_n\text{.}\)</span>
 </div>
 <div class="para" id="subsec5-3-linear-ode-5">In case, we are given <span class="process-math">\(n\)</span> initial conditions, then there exists a unique solution of the system.</div>
-<div class="para" id="subsec5-3-linear-ode-6">In addition, suppose <span class="process-math">\(A\)</span> is diagonalizable, with <span class="process-math">\(A=PDP^{-1}\)</span> where <span class="process-math">\(D={\rm diag}(\lambda_1,\ldots,\lambda_n)\text{,}\)</span> the diagonal matrix of eigenvalues of <span class="process-math">\(A\)</span> and <span class="process-math">\(P=\begin{bmatrix}u_1\amp \ldots\amp u_n\end{bmatrix}\)</span> is matrix of eigenbasis of <span class="process-math">\(A\text{.}\)</span>
+<div class="para" id="subsec5-3-linear-ode-6">In addition, suppose <span class="process-math">\(A\)</span> is diagonalizable, with <span class="process-math">\(A=PDP^{-1}\)</span> where <span class="process-math">\(D={\rm
+diag}(\lambda_1,\ldots,\lambda_n)\text{,}\)</span> the diagonal matrix of eigenvalues of <span class="process-math">\(A\)</span> and <span class="process-math">\(P=\begin{bmatrix}u_1\amp
+\ldots\amp u_n\end{bmatrix}\)</span> is matrix of eigenbasis of <span class="process-math">\(A\text{.}\)</span>
 </div>
 <div class="para logical" id="subsec5-3-linear-ode-7">
 <div class="para">We define <span class="process-math">\(u=P^{-1}x\text{.}\)</span> Then <span class="process-math">\(x=Pu\)</span> and <span class="process-math">\(x'=Pu'\text{.}\)</span> Now substituting <span class="process-math">\(x\)</span> and <span class="process-math">\(x'\)</span> in the above system, we get</div>
@@ -716,10 +732,10 @@ Pu'=APu \implies u'=P^{-1}APu=Du.
 <div class="para">Thus the above system of linear differential equation reduced to</div>
 <div class="displaymath process-math" id="subsec5-3-linear-ode-7-7">
 \begin{align*}
-u_1'  =\amp \lambda_1 u_1\\
-u_2'  = \amp \lambda_2 u_2\\
+u_1' =\amp \lambda_1 u_1\\
+u_2' = \amp \lambda_2 u_2\\
 \amp \vdots\\
-u_n'  = \amp  \lambda_n u_n 
+u_n' = \amp \lambda_n u_n 
 \end{align*}
 </div>
 <div class="para">In particular, we have <span class="process-math">\(u'=Du\text{.}\)</span>
@@ -729,13 +745,14 @@ u_n'  = \amp  \lambda_n u_n
 <div class="para">A general solution of the above system is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-u_1=c_1e^{\lambda_1 t}, u_2=c_2e^{\lambda_2 t},\ldots, u_n=c_ne^{\lambda_n t}.
+u_1=c_1e^{\lambda_1 t},
+u_2=c_2e^{\lambda_2 t},\ldots, u_n=c_ne^{\lambda_n t}.
 \end{equation*}
 </div>
 <div class="para">The above equations can be written in matrix form as follows</div>
 <div class="displaymath process-math" id="subsec5-3-linear-ode-8-2">
 \begin{align*}
-u=\begin{bmatrix}u_1\\u_2\\\vdots\\u_2\end{bmatrix} =\amp 
+u=\begin{bmatrix}u_1\\u_2\\\vdots\\u_2\end{bmatrix} =\amp
 \begin{bmatrix}e^{\lambda_1 t} \amp 0 \amp \cdots \amp 0\\
 0 \amp e^{\lambda_2 t}\amp \cdots \amp 0\\
 \vdots \amp \vdots \amp \ddots \amp \vdots\\
@@ -749,8 +766,7 @@ u=\begin{bmatrix}u_1\\u_2\\\vdots\\u_2\end{bmatrix} =\amp
 x_i=\sum_{j=1}^n p_{ij}u_j=\sum_{j=1}^n p_{ij}c_je^{\lambda_j t}
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(P=[p_{ij}]\text{.}\)</span>
-</div>
+<div class="para">where <span class="process-math">\(P=[p_{ij}]\)</span> .</div>
 </div>
 <div class="para logical" id="subsec5-3-linear-ode-9">
 <div class="para">Thus the solution in matrix form is given by</div>
@@ -773,7 +789,8 @@ x(t)=Pe^{tD}P^{-1}x_0.
 <div class="para logical" id="subsec5-3-linear-ode-12"><ol class="decimal" id="subsec5-3-linear-ode-12-1">
 <li id="subsec5-3-linear-ode-12-1-1"><div class="para" id="subsec5-3-linear-ode-12-1-1-1">Find the matrix <span class="process-math">\(A\)</span> corresponding to this linear system and put the equation in matrix form <span class="process-math">\(X'=AX\text{.}\)</span>
 </div></li>
-<li id="subsec5-3-linear-ode-12-1-2"><div class="para" id="subsec5-3-linear-ode-12-1-2-1">Find the eigenvalues and corresponding eigenvectors of <span class="process-math">\(A\text{.}\)</span> Let <span class="process-math">\(\lambda_1, \ldots, \lambda_n\)</span> be eigenvalues of <span class="process-math">\(A\)</span> with corresponding to eigenvectors <span class="process-math">\(v_1, \ldots, v_n\)</span>  respectively.</div></li>
+<li id="subsec5-3-linear-ode-12-1-2"><div class="para" id="subsec5-3-linear-ode-12-1-2-1">Find the eigenvalues and corresponding eigenvectors of <span class="process-math">\(A\text{.}\)</span> Let <span class="process-math">\(\lambda_1,
+\ldots, \lambda_n\)</span> be eigenvalues of <span class="process-math">\(A\)</span> with corresponding to eigenvectors <span class="process-math">\(v_1, \ldots, v_n\)</span> respectively.</div></li>
 <li id="subsec5-3-linear-ode-12-1-3"><div class="para" id="subsec5-3-linear-ode-12-1-3-1">The solution is <span class="process-math">\(X=c_1e^{\lambda_1t}v_1+\cdots+ +c_n e^{\lambda_nt} v_n\text{.}\)</span>
 </div></li>
 </ol></div>
@@ -785,14 +802,14 @@ x(t)=Pe^{tD}P^{-1}x_0.
 <div class="displaymath process-math" id="subsec5-3-linear-ode-13-1-1-1">
 \begin{align*}
 x'=\amp -5x+2y\\
-y'  = \amp  x-4y
+y' = \amp x-4y
 \end{align*}
 </div>
 <div class="para">The above equations is equivalent to</div>
 <div class="displaymath process-math">
 \begin{equation*}
-X'=AX \text{ where } X=\begin{pmatrix}x\\y\end{pmatrix}, 
-A=\begin{pmatrix}-5 \amp 2\\1 \amp  -4\end{pmatrix}.
+X'=AX \text{ where } X=\begin{pmatrix}x\\y\end{pmatrix},
+A=\begin{pmatrix}-5 \amp 2\\1 \amp -4\end{pmatrix}.
 \end{equation*}
 </div>
 </div>
@@ -823,8 +840,8 @@ print(X)
 t= var('t')
 x = function('x')(t)
 y = function('y')(t)
-de1 = diff(x,t)==-5*x +2*y 
-de2 = diff(y,t) == x-4*y 
+de1 = diff(x,t)==-5*x +2*y
+de2 = diff(y,t) == x-4*y
 des = [de1,de2]
 vars = [x,y]
 sol= desolve_system(des, vars,[0,1,-2])
@@ -838,11 +855,10 @@ sol
 <div class="displaymath process-math" id="subsec5-3-linear-ode-14-1-1-1">
 \begin{align*}
 x'=\amp -5x+2y\\
-y'  = \amp  x-4y
+y' = \amp x-4y
 \end{align*}
 </div>
-<div class="para">with initial conditions <span class="process-math">\(x(0)=1, y(0)=-2\text{?}\)</span>
-</div>
+<div class="para">with initial conditions <span class="process-math">\(x(0)=1, y(0)=-2\)</span> ?</div>
 </div></article><article class="example example-like" id="subsec5-3-linear-ode-15"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span>
 </h4>
@@ -851,9 +867,9 @@ y'  = \amp  x-4y
 <div class="displaymath process-math">
 \begin{equation*}
 x'(t)=\begin{pmatrix}
-1 \amp  1 \amp  4 \\
-2 \amp  0 \amp  -4 \\
--1 \amp  1 \amp  5
+1 \amp 1 \amp 4 \\
+2 \amp 0 \amp -4 \\
+-1 \amp 1 \amp 5
 \end{pmatrix} x(t), \quad x(0)=\begin{pmatrix}
 7\\-4\\5
 \end{pmatrix}.
@@ -865,32 +881,33 @@ x'(t)=\begin{pmatrix}
 <div class="para">The eigenvalues of the coefficient matrix <span class="process-math">\(A\)</span> are</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\lambda_1=1, \lambda_2=2,\lambda_3=3
+\lambda_1=1,
+\lambda_2=2,\lambda_3=3
 \end{equation*}
 </div>
 <div class="para">and the corresponding eigenvectors are</div>
 <div class="displaymath process-math">
 \begin{equation*}
-v_1=\begin{pmatrix}	0\\4\\-1\end{pmatrix}, 
-v_2=\begin{pmatrix}	1\\1\\0\end{pmatrix},
-v_3=\begin{pmatrix}	2\\0\\1\end{pmatrix}.
+v_1=\begin{pmatrix} 0\\4\\-1\end{pmatrix},
+v_2=\begin{pmatrix} 1\\1\\0\end{pmatrix},
+v_3=\begin{pmatrix} 2\\0\\1\end{pmatrix}.
 \end{equation*}
 </div>
 <div class="para">Hence a general solution of the given system is given by</div>
 <div class="displaymath process-math" id="subsec5-3-linear-ode-15-2-1-4">
 \begin{align*}
-x(t) =\amp c_1e^t\begin{pmatrix}	0\\4\\-1\end{pmatrix}+
-c_2e^{2t}\begin{pmatrix}	1\\1\\0\end{pmatrix}+
-c_3e^{3t}\begin{pmatrix}	2\\0\\1\end{pmatrix} 
+x(t) =\amp c_1e^t\begin{pmatrix} 0\\4\\-1\end{pmatrix}+
+c_2e^{2t}\begin{pmatrix} 1\\1\\0\end{pmatrix}+
+c_3e^{3t}\begin{pmatrix} 2\\0\\1\end{pmatrix} 
 \end{align*}
 </div>
 <div class="para">Using the given initial conditions, we get</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left(\begin{array}{rrr}
-0 \amp  1 \amp  2 \\
-4 \amp  1 \amp  0 \\
--1 \amp  0 \amp  1
+0 \amp 1 \amp 2 \\
+4 \amp 1 \amp 0 \\
+-1 \amp 0 \amp 1
 \end{array}\right) \begin{pmatrix}
 c_1\\c_2\\c_3
 \end{pmatrix}=\begin{pmatrix}
@@ -901,9 +918,9 @@ c_1\\c_2\\c_3
 <div class="para">Solving the above equations, yields, <span class="process-math">\(c_1=-1/2, c_2=-2,c_3=9/2\text{.}\)</span> Hence the required solution of the problem is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-x(t)=-1/2e^t\begin{pmatrix}	0\\4\\-1\end{pmatrix}+
--2e^{2t}\begin{pmatrix}	1\\1\\0\end{pmatrix}+
-9/2e^{3t}\begin{pmatrix}	2\\0\\1\end{pmatrix}
+x(t)=-1/2e^t\begin{pmatrix} 0\\4\\-1\end{pmatrix}+
+-2e^{2t}\begin{pmatrix} 1\\1\\0\end{pmatrix}+
+9/2e^{3t}\begin{pmatrix} 2\\0\\1\end{pmatrix}
 \end{equation*}
 </div>
 <div class="para">You may write the each component of the solution.</div>
@@ -918,8 +935,8 @@ print(X)
 x = function('x')(t)
 y = function('y')(t)
 z = function('z')(t)
-de1 = diff(x,t)==x + y+4*z 
-de2 = diff(y,t) == 2*x-4*z 
+de1 = diff(x,t)==x + y+4*z
+de2 = diff(y,t) == 2*x-4*z
 de3 = diff(z,t)== -x+y+5*z
 des = [de1,de2,de3]
 vars = [x,y,z]
@@ -934,7 +951,7 @@ sol
 <div class="displaymath process-math" id="subsec5-3-linear-ode-16-1-1-1">
 \begin{align*}
 x_1''(t)= \amp x_1'+2x_2'-2x_2\\
-x_2''(t)= \amp  2x_1'+x_2'+x_2-x_1
+x_2''(t)= \amp 2x_1'+x_2'+x_2-x_1
 \end{align*}
 </div>
 </div>
@@ -944,8 +961,8 @@ x_2''(t)= \amp  2x_1'+x_2'+x_2-x_1
 \begin{align*}
 x_1'(t)\ =\amp x_3\\
 x_2'(t) =\amp x_4\\
-x_3'(t) =\amp  x_3+2x_4-2x_2\\
-x_4'(t) =\amp  2x_3+x_4+x_2-x_1
+x_3'(t) =\amp x_3+2x_4-2x_2\\
+x_4'(t) =\amp 2x_3+x_4+x_2-x_1
 \end{align*}
 </div>
 <div class="para">The above equations can be written as <span class="process-math">\(x'(t)=Ax(t)\)</span> where</div>
@@ -953,31 +970,32 @@ x_4'(t) =\amp  2x_3+x_4+x_2-x_1
 \begin{equation*}
 x(t)=\begin{pmatrix}
 x_1(t)\\x_2(t)\\x_3(t)\\x_4(t)
-\end{pmatrix} \quad \text{and}\quad 
+\end{pmatrix} \quad \text{and}\quad
 A=\begin{pmatrix}
-0 \amp  0 \amp  1 \amp  0\\
-0 \amp  0 \amp  0 \amp  1\\
-0 \amp  -2 \amp  1 \amp  2\\
--1 \amp  1 \amp  2 \amp  1
+0 \amp 0 \amp 1 \amp 0\\
+0 \amp 0 \amp 0 \amp 1\\
+0 \amp -2 \amp 1 \amp 2\\
+-1 \amp 1 \amp 2 \amp 1
 \end{pmatrix}.
 \end{equation*}
 </div>
-<div class="para">The eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda_1=1, \lambda_2=-2, \lambda_3=\frac{3-\sqrt{5}}{2}, 
+<div class="para">The eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda_1=1, \lambda_2=-2,
+\lambda_3=\frac{3-\sqrt{5}}{2},
 \lambda_4=\frac{3+\sqrt{5}}{2}\)</span> and the corresponding eigenvectors are</div>
 <div class="displaymath process-math">
 \begin{equation*}
 v_1=\begin{pmatrix}
 1\\ -1\\ 1\\ -1
-\end{pmatrix}, 
+\end{pmatrix},
 v_2=\begin{pmatrix}
 1\\ -1\\ -2\\ 2
 \end{pmatrix},
 v_3=\begin{pmatrix}
 3+\sqrt{5}\\ 1\\ 2 \\ \frac{3-\sqrt{5}}{2}
-\end{pmatrix}, 
+\end{pmatrix},
 v_4=\begin{pmatrix}
 3-\sqrt{5}\\ 1\\ 2 \\ \frac{3+\sqrt{5}}{2}
-\end{pmatrix}. 
+\end{pmatrix}.
 \end{equation*}
 </div>
 <div class="para">Thus a general solution is given by</div>
@@ -989,8 +1007,10 @@ x(t)=c_1e^{t}v_1+c_2e^{-2t}v_2+c_3e^{\frac{3-\sqrt{5}}{2}t}v_3+c_4e^{\frac{3+\sq
 <div class="para">Hence a general solution of the given problem can be obtained by dropping the dummy variables <span class="process-math">\(x_3\)</span> and <span class="process-math">\(x_4\text{.}\)</span> It is given by</div>
 <div class="displaymath process-math" id="subsec5-3-linear-ode-16-2-1-12">
 \begin{align*}
-x_1(t) =\amp c_1e^t+c_2e^{-2t}+c_3(3+\sqrt{5})e^{\frac{3-\sqrt{5}}{2}t}+c_4(3-\sqrt{5})e^{\frac{3+\sqrt{5}}{2}t}\\
-x_2(t) =\amp -c_1e^t-c_2e^{-2t}+ c_3e^{\frac{3-\sqrt{5}}{2}t}+c_4e^{\frac{3+\sqrt{5}}{2}t} 
+x_1(t) =\amp
+c_1e^t+c_2e^{-2t}+c_3(3+\sqrt{5})e^{\frac{3-\sqrt{5}}{2}t}+c_4(3-\sqrt{5})e^{\frac{3+\sqrt{5}}{2}t}\\
+x_2(t) =\amp -c_1e^t-c_2e^{-2t}+
+c_3e^{\frac{3-\sqrt{5}}{2}t}+c_4e^{\frac{3+\sqrt{5}}{2}t} 
 \end{align*}
 </div>
 </div></div></details></div></article><div class="para" id="subsec5-3-linear-ode-17">In the next example, we deal with solving a system <span class="process-math">\(x'(t)=Ax(t)\text{,}\)</span> in which the coefficient matrix <span class="process-math">\(A\)</span> has complex eigenvalues.</div>
@@ -998,10 +1018,10 @@ x_2(t) =\amp -c_1e^t-c_2e^{-2t}+ c_3e^{\frac{3-\sqrt{5}}{2}t}+c_4e^{\frac{3+\sqr
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.6</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec5-3-linear-ode-18-1-1">
-<div class="para">Solve the  system of linear homogeneous ODE</div>
+<div class="para">Solve the system of linear homogeneous ODE</div>
 <div class="displaymath process-math" id="subsec5-3-linear-ode-18-1-1-1">
 \begin{align*}
-x'(t)=\amp x(t)+y(t),\quad y'(t)=-x+y.  
+x'(t)=\amp x(t)+y(t),\quad y'(t)=-x+y, \text{ with } x(0)=y(0)=1 
 \end{align*}
 </div>
 </div>
@@ -1013,40 +1033,61 @@ x'(t)=\amp x(t)+y(t),\quad y'(t)=-x+y.
 x'(t)=Ax(t), \quad \text{ where } A = \begin{pmatrix} 1 \amp 1\\-1 \amp 1\end{pmatrix}.
 \end{equation*}
 </div>
-<div class="para">The eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda_1=1-i\)</span> and <span class="process-math">\(\lambda_2=1+i,\)</span> with eigenvectors <span class="process-math">\(v_1=\begin{pmatrix} 1\\ -i \end{pmatrix}\)</span> and <span class="process-math">\(v_2=\begin{pmatrix} 1\\ i \end{pmatrix}\)</span> respectively.</div>
-</div> <div class="para" id="subsec5-3-linear-ode-18-2-2">Let us  define <span class="process-math">\(P:=[v_1~~v_2]=\begin{pmatrix}
-1 \amp  1\\-i \amp i
+<div class="para">The eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda_1=1-i\)</span> and <span class="process-math">\(\lambda_2=1+i,\)</span> with eigenvectors <span class="process-math">\(v_1=\begin{pmatrix} 1\\ -i \end{pmatrix}\)</span> and <span class="process-math">\(v_2=\begin{pmatrix}
+1\\ i \end{pmatrix}\)</span> respectively.</div>
+</div> <div class="para" id="subsec5-3-linear-ode-18-2-2">Let us define <span class="process-math">\(P:=[v_1~~v_2]=\begin{pmatrix}
+1 \amp 1\\-i \amp i
 \end{pmatrix}\text{.}\)</span> Then it is easy to see that <span class="process-math">\(P^{-1}AP=D=\begin{pmatrix}
-1-i \amp  0\\0 \amp  1+i
+1-i \amp 0\\0 \amp 1+i
 \end{pmatrix}\text{.}\)</span>
 </div> <div class="para logical" id="subsec5-3-linear-ode-18-2-3">
 <div class="para">Hence the solution is given by</div>
 <div class="displaymath process-math" id="subsec5-3-linear-ode-18-2-3-1">
 \begin{align*}
-x(t)=\amp c_1e^{(1-i)t}\begin{pmatrix} 1\\ -i \end{pmatrix}+c_2e^{(1+i)t}\begin{pmatrix} 1\\ i \end{pmatrix}\\
-= \amp c_1e^{t} e^{-it}\begin{pmatrix} 1\\ -i \end{pmatrix}+c_1e^{t} e^{it}\begin{pmatrix} 1\\ i \end{pmatrix}
+x(t)=\amp c_1e^{(1-i)t}\begin{pmatrix} 1\\ -i
+\end{pmatrix}+c_2e^{(1+i)t}\begin{pmatrix} 1\\ i \end{pmatrix}\\
+= \amp c_1e^{t} e^{-it}\begin{pmatrix} 1\\ -i \end{pmatrix}+c_1e^{t}
+e^{it}\begin{pmatrix} 1\\ i \end{pmatrix}
 \end{align*}
 </div>
-<div class="para">Writing <span class="process-math">\(e^{it}=\cos t+i\sin t, e^{-it}=\cos t-i\sin t\)</span> and adjusting the constants, we can write the solution</div>
+</div> <div class="para logical" id="subsec5-3-linear-ode-18-2-4">
+<div class="para">Writing <span class="process-math">\(e^{it}=\cos
+t+i\sin t, e^{-it}=\cos t-i\sin t\)</span> and adjusting the constants, we can write the solution</div>
 <div class="displaymath process-math">
 \begin{equation*}
-x_1(t)=e^t(d_1\cos t +d_2\sin t), x_2(t)=e^{t}(d_1\cos t +d_2\sin t).
+x_1(t)=e^t(d_1\cos t +d_2\sin t), x_2(t)=e^{t}(d_1\cos t + d_2\sin t).
 \end{equation*}
 </div>
+</div> <div class="para logical" id="subsec5-3-linear-ode-18-2-5">
+<div class="para">After using the initial conditions, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x(t) = (\cos(t) + \sin(t)) e^t, y(t) = (\cos(t) - \sin(t))*e^t
+\end{equation*}
 </div>
+</div> <div class="para" id="subsec5-3-linear-ode-18-2-6">This we can verify using the Sage inbuilt function.</div> <div id="subsec5-3-linear-ode-18-2-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">t= var('t')
+x = function('x')(t)
+y = function('y')(t)
+de1 = diff(x,t)== x+y
+de2 = diff(y,t) ==-x+y
+des = [de1,de2]
+vars = [x,y]
+sol= desolve_system(des, vars,[0,1,1])
+print(sol)
+</script></div>
 </div></details></div></article><article class="remark remark-like" id="subsec5-3-linear-ode-19"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.4.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec5-3-linear-ode-19-1-1">In case the the coeffcient matrix <span class="process-math">\(A\)</span> of the sysstem <span class="process-math">\(x'=Ax\)</span> is not diagonailizable  then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.</div></article></section><section class="subsection" id="subsec5-3-Markov-Chains"><h3 class="heading hide-type">
+<div class="para" id="subsec5-3-linear-ode-19-1-1">In case the the coeffcient matrix <span class="process-math">\(A\)</span> of the sysstem <span class="process-math">\(x'=Ax\)</span> is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.</div></article></section><section class="subsection" id="subsec5-3-Markov-Chains"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="space"> </span><span class="title">Markov Chains</span>
 </h3>
-<div class="para" id="subsec5-3-Markov-Chains-2">In this subsection, we look at some  applications of linear algebra in dealing with matrices that arise from probabilistic systems. We consider chance process in which knowledge of previous outcomes influence prediction of future experiments. Such chance process is called a  <em class="emphasis">Markov Chain.</em>
+<div class="para" id="subsec5-3-Markov-Chains-2">In this subsection, we look at some applications of linear algebra in dealing with matrices that arise from probabilistic systems. We consider chance process in which knowledge of previous outcomes influence prediction of future experiments. Such chance process is called a <em class="emphasis">Markov Chain.</em>
 </div>
 <div class="para" id="subsec5-3-Markov-Chains-3">Let consider the following problem and develop the terminologies and methods to solve this problem.</div>
 <article class="example example-like" id="eg-markov1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="eg-markov1-1-1">Weather of certain area is classified as "fair", "cloudy" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time.  A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?</div></article><div class="para" id="subsec5-3-Markov-Chains-5">In the above example, fair, cloudy and rainy day can be thought of as three states, say state 1, state 2 and state 3 respectively. Each day can be thought of as a generation. Let us denote the data given in the example as following table:</div>
+<div class="para" id="eg-markov1-1-1">Weather of certain area is classified as "fair", "cloudy" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?</div></article><div class="para" id="subsec5-3-Markov-Chains-5">In the above example, fair, cloudy and rainy day can be thought of as three states, say state 1, state 2 and state 3 respectively. Each day can be thought of as a generation. Let us denote the data given in the example as following table:</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -1085,9 +1126,9 @@ x_1(t)=e^t(d_1\cos t +d_2\sin t), x_2(t)=e^{t}(d_1\cos t +d_2\sin t).
 \begin{equation*}
 P=
 \begin{pmatrix}
-0.60 \amp  0.40 \amp  0.35		\\
-0.25\amp  0.35 \amp  0.40		\\ 
-0.15 \amp  0.25\amp  0.25	
+0.60 \amp 0.40 \amp 0.35 \\
+0.25\amp 0.35 \amp 0.40 \\
+0.15 \amp 0.25\amp 0.25
 \end{pmatrix}
 \end{equation*}
 </div>
@@ -1104,20 +1145,21 @@ P=
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-markov1.html">
 \begin{equation*}
-P^5=       	
+P^5=
 \left(\begin{array}{lll}
-0.4876975  \amp  0.4872025  \amp  0.48709125 \\
-0.31116875 \amp  0.31144125 \amp  0.3115025 \\
-0.20113375 \amp  0.20135625 \amp  0.20140625
+0.4876975 \amp 0.4872025 \amp 0.48709125 \\
+0.31116875 \amp 0.31144125 \amp 0.3115025 \\
+0.20113375 \amp 0.20135625 \amp 0.20140625
 \end{array}\right)
 \end{equation*}
 </div>
 <div class="para">Note that <span class="process-math">\(p_{23}^{(5)}=0.3115025\)</span> is the probability of rainy day becoming cloudy day after 5 days.</div>
 </div>
-<div class="para" id="subsec5-3-Markov-Chains-14">We  consider an initial probability vector <span class="process-math">\(x^{(0)}=\begin{pmatrix} 0.4\\0.3\\0.3\end{pmatrix}\text{.}\)</span> This mean current day has 40% chance of being a fair day, 30% chance of being cloudy and 30% of being rainy.</div>
-<div class="para" id="subsec5-3-Markov-Chains-15">Then <span class="process-math">\(x_k=P^kx^{(0)}\text{,}\)</span> denotes the probability vector after $k$ stages. We are interested in long time behavior of the probability vector.  In particular, we want to see if the limit <span class="process-math">\(\lim_{n\to \infty} P^nx^{(0)} \)</span>  exists.</div>
-<div class="para" id="subsec5-3-Markov-Chains-16">In general, the above limits does not exists, however, in case the transition matrix is regular, then one can show that limit <span class="process-math">\(\displaystyle\lim_{n\to \infty} P^nx^{(0)}\)</span>  exists.</div>
-<div id="subsec5-3-Markov-Chains-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">P = matrix([[0.60 ,  0.40 ,  0.35],[0.25,  0.35 ,  0.40],[0.15 ,  0.25,  0.25]])
+<div class="para" id="subsec5-3-Markov-Chains-14">We consider an initial probability vector <span class="process-math">\(x^{(0)}=\begin{pmatrix}
+0.4\\0.3\\0.3\end{pmatrix}\text{.}\)</span> This mean current day has 40% chance of being a fair day, 30% chance of being cloudy and 30% of being rainy.</div>
+<div class="para" id="subsec5-3-Markov-Chains-15">Then <span class="process-math">\(x_k=P^kx^{(0)}\text{,}\)</span> denotes the probability vector after $k$ stages. We are interested in long time behavior of the probability vector. In particular, we want to see if the limit <span class="process-math">\(\lim_{n\to \infty} P^nx^{(0)}\)</span> exists.</div>
+<div class="para" id="subsec5-3-Markov-Chains-16">In general, the above limits does not exists, however, in case the transition matrix is regular, then one can show that limit <span class="process-math">\(\displaystyle\lim_{n\to \infty} P^nx^{(0)}\)</span> exists.</div>
+<div id="subsec5-3-Markov-Chains-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">P = matrix([[0.60 , 0.40 , 0.35],[0.25, 0.35 , 0.40],[0.15 , 0.25, 0.25]])
 x0 = vector([0.4,0.3,0.3])
 P^100*x0
 </script></div>
@@ -1128,7 +1170,8 @@ P^100*x0
 <div class="para" id="subsec5-3-Markov-Chains-20">It is easy to see that if <span class="process-math">\(P\)</span> is a regular transition matrix matrix such that all the entries of <span class="process-math">\(P^m\)</span> are positive. Then all entries of <span class="process-math">\(P^{m+k}\)</span> are positive for non negative integers <span class="process-math">\(k\text{.}\)</span>
 </div>
 <div class="para logical" id="subsec5-3-Markov-Chains-21">
-<div class="para">Let us assume that <span class="process-math">\(P\)</span> is a transition matrix and that <span class="process-math">\(Q=\displaystyle\lim_{n\to \infty} P^n\)</span> exists. Then we have</div>
+<div class="para">Let us assume that <span class="process-math">\(P\)</span> is a transition matrix and that <span class="process-math">\(Q=\displaystyle\lim_{n\to
+\infty} P^n\)</span> exists. Then we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 Q=\displaystyle\lim_{n\to \infty} P^n=P \displaystyle\lim_{n\to \infty} P^{n-1}=PQ.
@@ -1139,7 +1182,8 @@ Q=\displaystyle\lim_{n\to \infty} P^n=P \displaystyle\lim_{n\to \infty} P^{n-1}=
 <div class="para">Suppose <span class="process-math">\(q_1,\ldots, q_n\)</span> are columns of <span class="process-math">\(Q\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-Q=[q_1~q_2~\cdots~ q_n]=P[q_1~q_1~\cdots~ q_n]=[Pq_1~Pq_2~\cdots~ Pq_n].
+Q=[q_1~q_2~\cdots~
+q_n]=P[q_1~q_1~\cdots~ q_n]=[Pq_1~Pq_2~\cdots~ Pq_n].
 \end{equation*}
 </div>
 <div class="para">This means that each column of <span class="process-math">\(Q\)</span> is an eigenvector of <span class="process-math">\(P\)</span> corresponding to eigenvalue 1. Thus we have proved the following result:</div>
@@ -1151,8 +1195,8 @@ Q=[q_1~q_2~\cdots~ q_n]=P[q_1~q_1~\cdots~ q_n]=[Pq_1~Pq_2~\cdots~ Pq_n].
 <article class="theorem theorem-like" id="thm-Markov2"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.14</span><span class="period">.</span>
 </h4>
-<div class="para" id="thm-Markov2-1-1">If  <span class="process-math">\(P\)</span> is a regular, transition matrix then its eigenvalue <span class="process-math">\(\lambda=1\)</span> has multiplicity 1 and that there is only one eigenvectors associated with <span class="process-math">\(\lambda=1\text{.}\)</span> This implies that all columns  of  <span class="process-math">\(Q\)</span> are identical.</div></article><div class="para logical" id="subsec5-3-Markov-Chains-26">
-<div class="para">Now we define a a <em class="emphasis">limiting state distribution vectors or steady state vector</em> of an <span class="process-math">\(n\)</span>-state Markov chain as a vector <span class="process-math">\(x^{(\infty)}\)</span>  as follows:</div>
+<div class="para" id="thm-Markov2-1-1">If <span class="process-math">\(P\)</span> is a regular, transition matrix then its eigenvalue <span class="process-math">\(\lambda=1\)</span> has multiplicity 1 and that there is only one eigenvectors associated with <span class="process-math">\(\lambda=1\text{.}\)</span> This implies that all columns of <span class="process-math">\(Q\)</span> are identical.</div></article><div class="para logical" id="subsec5-3-Markov-Chains-26">
+<div class="para">Now we define a a <em class="emphasis">limiting state distribution vectors or steady state vector</em> of an <span class="process-math">\(n\)</span>-state Markov chain as a vector <span class="process-math">\(x^{(\infty)}\)</span> as follows:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x^{(\infty)}=\lim_{n\to \infty}x_n=\lim_{n\to \infty}P^nx^{(0)}
@@ -1162,7 +1206,7 @@ x^{(\infty)}=\lim_{n\to \infty}x_n=\lim_{n\to \infty}P^nx^{(0)}
 <div class="para">Thus we have the following equation.</div>
 <div class="displaymath process-math" id="eqn-Markov-eq1">
 \begin{equation}
-x^{(\infty)} =Qx^{(0)}.   \tag{5.4.1}
+x^{(\infty)} =Qx^{(0)}.\tag{5.4.1}
 \end{equation}
 </div>
 <div class="para">Note that all columns of <span class="process-math">\(Q\)</span> are identical, say, <span class="process-math">\(q_1=\ldots=q_n=q\text{.}\)</span> Let <span class="process-math">\(q=(y_1,y_2,\ldots, y_n\text{.}\)</span> Then</div>
@@ -1182,7 +1226,8 @@ Qx^{(0)}=\amp (y_1(x_1+\cdots+x_n),y_2(x_1+\cdots+x_n),\ldots, y_n(x_1+\cdots+x_
 \begin{align*}
 -0.40x+0.4y+0.35z=\amp 0\\
 0.25x-0.35y+0.40z=\amp 0\\
-0.15x+0.25y-0.75z= \amp 0\\
+0.15x+0.25y-0.75z=
+\amp 0\\
 x+y+z=\amp 0 
 \end{align*}
 </div>
@@ -1197,7 +1242,8 @@ x=0.487421383647799, y=0.311320754716981, z=0.201257861635220.
 <div class="para">Hence the steady state vector is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-x^{(\infty)}=\begin{pmatrix}0.487421383647799\\ 0.311320754716981\\0.201257861635220\end{pmatrix}.
+x^{(\infty)}=\begin{pmatrix}0.487421383647799\\
+0.311320754716981\\0.201257861635220\end{pmatrix}.
 \end{equation*}
 </div>
 <div class="para">The limiting transition matrix <span class="process-math">\(Q \)</span> is given by</div>
@@ -1261,45 +1307,75 @@ Q=\begin{pmatrix}
 <td class="l m b1 r0 l0 t0 lines"></td>
 <td class="l m b1 r0 l0 t0 lines"></td>
 </tr>
-</table></div> <div class="para" id="subsec5-3-Markov-Chains-32-1-3">Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-4">Let the initial distributions of cars at three location be denoted by the vector <span class="process-math">\(X = \begin{bmatrix}20000\\2000\\2000 \end{bmatrix}\text{.}\)</span> The proportion of cars that are returned to various locations can be represented by the matrix <span class="process-math">\(P = \begin{bmatrix}0.3 \amp 0.4 \amp 0.5\\ 0.3 \amp 0.4 \amp 0.3 \\ 0.4 \amp 0.2 \amp 0.2 \end{bmatrix}\text{,}\)</span> which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-5">Number of cars at location <span class="process-math">\(A\)</span> after one day is <span class="process-math">\(0.3\times 2000 +0.4\times 2000+0.5\times 2000\)</span>
-</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-6">Number of cars at location <span class="process-math">\(A\)</span> after one day is <span class="process-math">\(0.3\times 2000 +0.4\times 2000+0.3\times 2000\)</span>
-</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-7">Number of cars at location <span class="process-math">\(A\)</span> after one day is <span class="process-math">\(0.4\times 2000 +0.2\times 2000+0.2\times 2000\)</span>
+</table></div> <div class="para" id="subsec5-3-Markov-Chains-32-1-3">Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-4">Let the initial distributions of cars at three location be denoted by the vector <span class="process-math">\(X =
+\begin{bmatrix}20000\\2000\\2000 \end{bmatrix}\text{.}\)</span> The proportion of cars that are returned to various locations can be represented by the matrix <span class="process-math">\(P = \begin{bmatrix}0.3
+\amp 0.4 \amp 0.5\\ 0.3 \amp 0.4 \amp 0.3 \\ 0.4 \amp 0.2 \amp 0.2 \end{bmatrix}\text{,}\)</span> which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-5">Number of cars at location <span class="process-math">\(A\)</span> after one day is <span class="process-math">\(0.3\times 2000 +0.4\times
+2000+0.5\times 2000\)</span>
+</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-6">Number of cars at location <span class="process-math">\(A\)</span> after one day is <span class="process-math">\(0.3\times 2000 +0.4\times
+2000+0.3\times 2000\)</span>
+</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-7">Number of cars at location <span class="process-math">\(A\)</span> after one day is <span class="process-math">\(0.4\times 2000 +0.2\times
+2000+0.2\times 2000\)</span>
 </div> <div class="para" id="subsec5-3-Markov-Chains-32-1-8">It is easy to see that distribution of cars after day one is <span class="process-math">\(PX\text{.}\)</span>
-</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-9">Similarly after day two it is <span class="process-math">\(P(PX)=P^2X\text{.}\)</span> Thus on Thursday the car distribution at various location is given by <span class="process-math">\(P^3X=\begin{bmatrix}2336\\ 2000.\\ 1664.0 \end{bmatrix}\text{.}\)</span>
-</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-10">After say 100 days the car distribution at various location is given by <span class="process-math">\(P^{50}X\approx=\begin{bmatrix}2333.33\\2000.\\1666.67 \end{bmatrix}\text{.}\)</span> In fact after <span class="process-math">\(n\)</span> large <span class="process-math">\(P^nX\)</span> is constant which is approximately <span class="process-math">\(\begin{bmatrix}2333.33\\2000.\\1666.67 \end{bmatrix}\text{.}\)</span> Thus in long run car distribution is <span class="process-math">\(\begin{bmatrix}2333\\2000\\1667 \end{bmatrix}\text{.}\)</span>
+</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-9">Similarly after day two it is <span class="process-math">\(P(PX)=P^2X\text{.}\)</span> Thus on Thursday the car distribution at various location is given by <span class="process-math">\(P^3X=\begin{bmatrix}2336\\ 2000.\\ 1664.0 \end{bmatrix}\)</span> .</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-10">After say 100 days the car distribution at various location is given by <span class="process-math">\(P^{50}X\approx=\begin{bmatrix}2333.33\\2000.\\1666.67
+\end{bmatrix}\text{.}\)</span> In fact after <span class="process-math">\(n\)</span> large <span class="process-math">\(P^nX\)</span> is constant which is approximately <span class="process-math">\(\begin{bmatrix}2333.33\\2000.\\1666.67 \end{bmatrix}\text{.}\)</span> Thus in long run car distribution is <span class="process-math">\(\begin{bmatrix}2333\\2000\\1667 \end{bmatrix}\text{.}\)</span>
 </div> <div class="para logical" id="subsec5-3-Markov-Chains-32-1-11">
-<div class="para">The higher power of <span class="process-math">\(P\)</span> can be obtained by diagonalizing <span class="process-math">\(P\text{.}\)</span> In this can eigenvalues of <span class="process-math">\(P\)</span> are <span class="process-math">\(1, 1/10, -1/5\)</span> and the corresponding eigenvectors are <span class="process-math">\(\begin{bmatrix}1 \\6/7\\5/7 \end{bmatrix} , \begin{bmatrix}1 \\-3\\2 \end{bmatrix} , \begin{bmatrix}1 \\0\\-1 \end{bmatrix}\text{.}\)</span> Let us define <span class="process-math">\(D= \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  \frac{1}{10} \amp  0 \\ 0 \amp  0 \amp  -\frac{1}{5} \end{array} \right)\)</span> and <span class="process-math">\(Q=\left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right)\text{.}\)</span> Then <span class="process-math">\(QDQ^{-1}=A\text{.}\)</span> Hence <span class="process-math">\(A^n = QD^nQ^{-1}\text{.}\)</span> Here <span class="process-math">\(Q^{-1} =\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right)\text{.}\)</span> Hence</div>
+<div class="para">The higher power of <span class="process-math">\(P\)</span> can be obtained by diagonalizing <span class="process-math">\(P\text{.}\)</span> In this can eigenvalues of <span class="process-math">\(P\)</span> are <span class="process-math">\(1, 1/10, -1/5\)</span> and the corresponding eigenvectors are <span class="process-math">\(\begin{bmatrix}1
+\\6/7\\5/7 \end{bmatrix} , \begin{bmatrix}1 \\-3\\2 \end{bmatrix} , \begin{bmatrix}1
+\\0\\-1 \end{bmatrix}\text{.}\)</span> Let us define <span class="process-math">\(D= \left(\begin{array}{rrr} 1 \amp 0 \amp 0 \\
+0 \amp \frac{1}{10} \amp 0 \\ 0 \amp 0 \amp -\frac{1}{5} \end{array} \right)\)</span> and <span class="process-math">\(Q=\left(\begin{array}{rrr}
+1 \amp 1 \amp 1 \\ \frac{6}{7} \amp -3 \amp 0 \\ \frac{5}{7} \amp 2 \amp -1 \end{array}
+\right)\text{.}\)</span> Then <span class="process-math">\(QDQ^{-1}=A\text{.}\)</span> Hence <span class="process-math">\(A^n = QD^nQ^{-1}\text{.}\)</span> Here <span class="process-math">\(Q^{-1}
+=\left(\begin{array}{rrr} \frac{7}{18} \amp \frac{7}{18} \amp \frac{7}{18} \\ \frac{1}{9}
+\amp -\frac{2}{9} \amp \frac{1}{9} \\ \frac{1}{2} \amp -\frac{1}{6} \amp -\frac{1}{2}
+\end{array} \right)\text{.}\)</span> Hence</div>
 <div class="displaymath process-math" id="subsec5-3-Markov-Chains-32-1-11-11">
 \begin{align*}
-A^n  =\amp  \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  \left(\frac{1}{10}\right)^n \amp  0 \\ 0 \amp  0 \amp  \left(-\frac{1}{5}\right)^n \end{array} \right)\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right)\\
-=\amp \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \amp  0 \\ \frac{5}{7} \amp  2 \amp  -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \end{array} \right)\left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{9} \amp  -\frac{2}{9} \amp  \frac{1}{9} \\ \frac{1}{2} \amp  -\frac{1}{6} \amp  -\frac{1}{2} \end{array} \right) \text{ for large \(n\) }\\
-=\amp  \left(\begin{array}{rrr} \frac{7}{18} \amp  \frac{7}{18} \amp  \frac{7}{18} \\ \frac{1}{3} \amp  \frac{1}{3} \amp  \frac{1}{3} \\ \frac{5}{18} \amp  \frac{5}{18} \amp  \frac{5}{18} \end{array} \right)
+A^n =\amp \left(\begin{array}{rrr} 1 \amp 1 \amp 1 \\ \frac{6}{7} \amp -3 \amp 0
+\\ \frac{5}{7} \amp 2 \amp -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp 0
+\amp 0
+\\ 0 \amp \left(\frac{1}{10}\right)^n \amp 0 \\ 0 \amp 0 \amp
+\left(-\frac{1}{5}\right)^n
+\end{array} \right)\left(\begin{array}{rrr} \frac{7}{18} \amp \frac{7}{18} \amp
+\frac{7}{18} \\ \frac{1}{9} \amp -\frac{2}{9} \amp \frac{1}{9} \\ \frac{1}{2} \amp
+-\frac{1}{6} \amp -\frac{1}{2} \end{array} \right)\\
+=\amp \left(\begin{array}{rrr} 1 \amp 1 \amp 1 \\ \frac{6}{7} \amp -3 \amp 0 \\
+\frac{5}{7} \amp 2 \amp -1 \end{array} \right) \left(\begin{array}{rrr} 1 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{array} \right)\left(\begin{array}{rrr}
+\frac{7}{18} \amp \frac{7}{18} \amp \frac{7}{18} \\ \frac{1}{9} \amp -\frac{2}{9} \amp
+\frac{1}{9} \\ \frac{1}{2} \amp -\frac{1}{6} \amp -\frac{1}{2} \end{array} \right) \text{
+for large \(n\) }\\
+=\amp \left(\begin{array}{rrr} \frac{7}{18} \amp \frac{7}{18} \amp \frac{7}{18}
+\\ \frac{1}{3} \amp \frac{1}{3} \amp \frac{1}{3} \\ \frac{5}{18} \amp \frac{5}{18}
+\amp
+\frac{5}{18} \end{array} \right)
 \end{align*}
 </div>
-</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-12">Suppose we define <span class="process-math">\(\pi = \left(\begin{array}{r} \frac{7}{18}\\ \frac{1}{3} \\ \frac{5}{18} \end{array} \right)\text{.}\)</span> Then it is easy to check that <span class="process-math">\(A\pi=\pi\text{.}\)</span> That is <span class="process-math">\(\pi\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to the eigenvalue 1. This is called the <em class="emphasis">steady state vector.</em>
-</div></article><article class="exercise exercise-like" id="5-3-2"><h4 class="heading">
+</div> <div class="para" id="subsec5-3-Markov-Chains-32-1-12">Suppose we define <span class="process-math">\(\pi = \left(\begin{array}{r} \frac{7}{18}\\ \frac{1}{3} \\
+\frac{5}{18} \end{array} \right)\text{.}\)</span> Then it is easy to check that <span class="process-math">\(A\pi=\pi\text{.}\)</span> That is <span class="process-math">\(\pi\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to the eigenvalue 1. This is called the <em class="emphasis">steady state vector.</em>
+</div></article><article class="exercise exercise-like" id="subsec5-3-Markov-Chains-33"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.4.17</span><span class="period">.</span>
 </h4>
-<div class="para" id="5-3-2-1-1">Suppose <span class="process-math">\(D\)</span> is a diagonal matrix given by <span class="process-math">\(D= \left(\begin{array}{rrr} 1 \amp 0 \amp 0 \\ 0 \amp 0.3 \amp 0 \\ 0 \amp 0 \amp 0.2 \end{array} \right)\)</span> and <span class="process-math">\(v\in \R^3\text{.}\)</span> What happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(D^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(u_1\)</span> direction.</em>)</div> <div class="para" id="5-3-2-1-2">Next let us consider a matrix which is diagonalizable with eigenvectors <span class="process-math">\(u_1, u_2, u_3\)</span> and corresponding eigenvalues <span class="process-math">\(\lambda_1=1, \lambda_2=0.3\)</span> and <span class="process-math">\(\lambda_3=0.2\)</span> respectively. Then what happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(A^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It makes <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> coordinates very small and it sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(x\)</span>-axis.</em>)</div></article><article class="exercise exercise-like" id="5-3-3"><h4 class="heading">
+<div class="para" id="subsec5-3-Markov-Chains-33-1-1">Suppose <span class="process-math">\(D\)</span> is a diagonal matrix given by <span class="process-math">\(D= \left(\begin{array}{rrr} 1 \amp 0
+\amp 0 \\ 0 \amp 0.3 \amp 0 \\ 0 \amp 0 \amp 0.2 \end{array} \right)\)</span> and <span class="process-math">\(v\in \R^3\text{.}\)</span> What happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(D^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(u_1\)</span> direction.</em>)</div> <div class="para" id="subsec5-3-Markov-Chains-33-1-2">Next let us consider a matrix which is diagonalizable with eigenvectors <span class="process-math">\(u_1, u_2, u_3\)</span> and corresponding eigenvalues <span class="process-math">\(\lambda_1=1, \lambda_2=0.3\)</span> and <span class="process-math">\(\lambda_3=0.2\)</span> respectively. Then what happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(A^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It makes <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> coordinates very small and it sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(x\)</span>-axis.</em>)</div></article><article class="exercise exercise-like" id="subsec5-3-Markov-Chains-34"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.4.18</span><span class="period">.</span>
 </h4>
-<div class="para" id="5-3-3-1-1">132 fishes are placed in a box with nine rooms. See <a href="sec5-3-eigen-Appl.html#mouse1" class="xref" data-knowl="./knowl/xref/mouse1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.4.19">Figure 5.4.19</a>.</div> <figure class="figure figure-like" id="mouse1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/images/Fish-Tank.PNG" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.19<span class="period">.</span></span><span class="space"> </span>Fish Tank</figcaption></figure> <div class="para" id="5-3-3-1-3">Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.</div> <div class="para" id="5-3-3-1-4">Find how many fishes can be found in each room in long run.</div> <div class="para" id="5-3-3-1-5">Solve this problem using a <span class="process-math">\(3 \times 3\)</span> matrix stochastic matrix.</div></article></section><section class="subsection" id="subsec5-3-Google-Search"><h3 class="heading hide-type">
+<div class="para" id="subsec5-3-Markov-Chains-34-1-1">132 fishes are placed in a box with nine rooms. See <a href="sec5-3-eigen-Appl.html#mouse1" class="xref" data-knowl="./knowl/xref/mouse1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.4.19">Figure 5.4.19</a>.</div> <figure class="figure figure-like" id="mouse1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/images/Fish-Tank.PNG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.19<span class="period">.</span></span><span class="space"> </span>Fish Tank</figcaption></figure> <div class="para" id="subsec5-3-Markov-Chains-34-1-3">Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.</div> <div class="para" id="subsec5-3-Markov-Chains-34-1-4">Find how many fishes can be found in each room in long run.</div> <div class="para" id="subsec5-3-Markov-Chains-34-1-5">Solve this problem using a <span class="process-math">\(3 \times 3\)</span> matrix stochastic matrix.</div></article></section><section class="subsection" id="subsec5-3-Google-Search"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.4.5</span><span class="space"> </span><span class="title">Google Search Engine</span>
 </h3>
-<div class="para" id="subsec5-3-Google-Search-2">Over 900  millions Indian use Internet (as of January 2024) most of them may do Google, a search engine that was designed by Lawrence Page and Sergei Brian in 1998. There are about 200 millions active webpages in the world as on January 2024 and it is growing by seconds. More often than not, google search gives the desired results, users are looking for. Have you ever thought of how does it work? Linear algebra plays an important role in how Google’s search algorithm works. Google  ranks pages according to their importance.</div>
+<div class="para" id="subsec5-3-Google-Search-2">Over 900 millions Indian use Internet (as of January 2024) most of them may do Google, a search engine that was designed by Lawrence Page and Sergei Brian in 1998. There are about 200 millions active webpages in the world as on January 2024 and it is growing by seconds. More often than not, google search gives the desired results, users are looking for. Have you ever thought of how does it work? Linear algebra plays an important role in how Google’s search algorithm works. Google ranks pages according to their importance.</div>
 <div class="para" id="subsec5-3-Google-Search-3">Success of Google lies behind its PageRank algorithm, which rates the importance of each page on the web and present the user typically most relevant and helpful pages first. PageRank uses link structure of web to determine the importance of webpages.</div>
 <div class="para" id="subsec5-3-Google-Search-4">In this section, we shall explain how Google ranks webpages as a simple application to linear algebra.</div>
-<div class="para" id="subsec5-3-Google-Search-5">Whenever an user or web surfer enters a keyword for searching, Google  does three basic things:</div>
+<div class="para" id="subsec5-3-Google-Search-5">Whenever an user or web surfer enters a keyword for searching, Google does three basic things:</div>
 <div class="para logical" id="subsec5-3-Google-Search-6"><ol class="decimal" id="subsec5-3-Google-Search-6-1">
 <li id="subsec5-3-Google-Search-6-1-1"><div class="para" id="subsec5-3-Google-Search-6-1-1-1">Crawl the web and locate all web pages with public access.</div></li>
 <li id="subsec5-3-Google-Search-6-1-2"><div class="para" id="subsec5-3-Google-Search-6-1-2-1">Index the data from websites it has crawled, so that it can be searched efficiently for relevant keywords.</div></li>
 <li id="subsec5-3-Google-Search-6-1-3"><div class="para" id="subsec5-3-Google-Search-6-1-3-1">Rate the importance of each page in the database.</div></li>
 </ol></div>
 <div class="para" id="subsec5-3-Google-Search-7">We shall briefly look at how to rank or rate webpages using Google’s PageRank algorith.</div>
-<div class="para" id="subsec5-3-Google-Search-8">An Internet network can be represented by a directed graph in which each website is thought of as a node or vertex and links between pages are  edges with arrows. If there is an arrow from note <span class="process-math">\(i\)</span> to <span class="process-math">\(j\text{,}\)</span> them it means that there is link to move from webpage <span class="process-math">\(i\)</span> to <span class="process-math">\(j\text{.}\)</span> If there is a double arrow between <span class="process-math">\(i\)</span> and <span class="process-math">\(j\text{,}\)</span> then there is link from <span class="process-math">\(i\)</span> to <span class="process-math">\(j\)</span> and also from <span class="process-math">\(j\)</span> to <span class="process-math">\(i\text{.}\)</span>
+<div class="para" id="subsec5-3-Google-Search-8">An Internet network can be represented by a directed graph in which each website is thought of as a node or vertex and links between pages are edges with arrows. If there is an arrow from note <span class="process-math">\(i\)</span> to <span class="process-math">\(j\text{,}\)</span> them it means that there is link to move from webpage <span class="process-math">\(i\)</span> to <span class="process-math">\(j\text{.}\)</span> If there is a double arrow between <span class="process-math">\(i\)</span> and <span class="process-math">\(j\text{,}\)</span> then there is link from <span class="process-math">\(i\)</span> to <span class="process-math">\(j\)</span> and also from <span class="process-math">\(j\)</span> to <span class="process-math">\(i\text{.}\)</span>
 </div>
-<div class="para" id="subsec5-3-Google-Search-9">To every network with <span class="process-math">\(n\)</span>-webpages, we assign a matrix <span class="process-math">\(H=[h_{ij}]_{n\times n}\text{,}\)</span> where represents the probability that surfer  would visit the webpage  <span class="process-math">\(i\)</span> from the webpage <span class="process-math">\(j\text{.}\)</span> If the webpage <span class="process-math">\(j\)</span> has <span class="process-math">\(m_j\)</span> links to other webpages then <span class="process-math">\(h_{ij}=1/m_j\text{.}\)</span> If there is no link from <span class="process-math">\(j\)</span> to <span class="process-math">\(i\text{,}\)</span> then <span class="process-math">\(h_{ij}=0\)</span> The matrix <span class="process-math">\(H\)</span> is called the <em class="emphasis">hyper matrix</em> of the network.</div>
+<div class="para" id="subsec5-3-Google-Search-9">To every network with <span class="process-math">\(n\)</span>-webpages, we assign a matrix <span class="process-math">\(H=[h_{ij}]_{n\times n}\text{,}\)</span> where represents the probability that surfer would visit the webpage <span class="process-math">\(i\)</span> from the webpage <span class="process-math">\(j\text{.}\)</span> If the webpage <span class="process-math">\(j\)</span> has <span class="process-math">\(m_j\)</span> links to other webpages then <span class="process-math">\(h_{ij}=1/m_j\text{.}\)</span> If there is no link from <span class="process-math">\(j\)</span> to <span class="process-math">\(i\text{,}\)</span> then <span class="process-math">\(h_{ij}=0\)</span> The matrix <span class="process-math">\(H\)</span> is called the <em class="emphasis">hyper matrix</em> of the network.</div>
 <article class="example example-like" id="eg-google_search1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.20</span><span class="period">.</span>
 </h4>
@@ -1309,11 +1385,11 @@ A^n  =\amp  \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\ \frac{6}{7} \amp  -3 \
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Page_Rank_Fig1.html">
 \begin{equation*}
 H=\begin{pmatrix}
-0 \amp  0 \amp  \frac{1}{2} \amp  \frac{1}{2} \amp  0\\[1mm]
-\frac{1}{3}  \amp  0 \amp  0 \amp  \frac{1}{2} \amp  0\\[1mm]
-\frac{1}{3}  \amp  0 \amp  0 \amp  0 \amp  0\\[1mm]
-0  \amp  \frac{1}{2} \amp  0 \amp  0 \amp  0\\[1mm]
-\frac{1}{3}  \amp  \frac{1}{2} \amp  \frac{1}{2} \amp  0 \amp  0\\
+0 \amp 0 \amp \frac{1}{2} \amp \frac{1}{2} \amp 0\\[1mm]
+\frac{1}{3} \amp 0 \amp 0 \amp \frac{1}{2} \amp 0\\[1mm]
+\frac{1}{3} \amp 0 \amp 0 \amp 0 \amp 0\\[1mm]
+0 \amp \frac{1}{2} \amp 0 \amp 0 \amp 0\\[1mm]
+\frac{1}{3} \amp \frac{1}{2} \amp \frac{1}{2} \amp 0 \amp 0\\
 \end{pmatrix}.
 \end{equation*}
 </div>
@@ -1336,7 +1412,7 @@ p_0=\begin{pmatrix}
 <div class="para">We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page <span class="process-math">\(i\)</span> in long runs. The vector</div>
 <div class="displaymath process-math">
 \begin{equation*}
-p_1=Hp_0=       	
+p_1=Hp_0=
 \left(\begin{array}{r}
 \frac{1}{2} \\
 0 \\
@@ -1346,7 +1422,10 @@ p_1=Hp_0=
 \end{array}\right)\text{.}
 \end{equation*}
 </div>
-<div class="para">Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability <span class="process-math">\(1/2\)</span> or at webpage 5 with probability <span class="process-math">\(1/2\text{.}\)</span> We have</div>
+<div class="para">Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability <span class="process-math">\(1/2\)</span> or at webpage 5 with probability <span class="process-math">\(1/2\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="eg-google_search1-1-7">
+<div class="para">We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 p_2=H^2p_0=\left(\begin{array}{r}
@@ -1355,7 +1434,7 @@ p_2=H^2p_0=\left(\begin{array}{r}
 \frac{1}{6} \\
 \frac{1}{2} \\
 \frac{1}{6}
-\end{array}\right), p_3=H^3p_0=        	
+\end{array}\right), p_3=H^3p_0=
 \left(\begin{array}{r}
 \frac{1}{3} \\
 \frac{1}{4} \\
@@ -1373,14 +1452,14 @@ p_{20}=\left(\begin{array}{r}
 0.063492 \\
 0.31746 \\
 0.20635
-\end{array}\right), 
+\end{array}\right),
 p_{25}= \left(\begin{array}{r}
 0.19047 \\
 0.22222 \\
 0.063492 \\
 0.31746 \\
 0.20635
-\end{array}\right), \ldots, 
+\end{array}\right), \ldots,
 p_{50}=\left(\begin{array}{r}
 0.19047 \\
 0.22222 \\
@@ -1390,6 +1469,7 @@ p_{50}=\left(\begin{array}{r}
 \end{array}\right)
 \end{equation*}
 </div>
+</div> <div class="para logical" id="eg-google_search1-1-8">
 <div class="para">Thus we see that the probability vector seems to converge to a vector</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1402,34 +1482,53 @@ p_{50}=\left(\begin{array}{r}
 \end{array}\right)
 \end{equation*}
 </div>
-<div class="para">which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, <span class="process-math">\([4, 2, 5, 1, 2]\text{.}\)</span> <div class="para" id="eg-google_search1-1-6-12">One can show that the vector <span class="process-math">\(\pi\)</span> is independent of the initial vector <span class="process-math">\(p_0\)</span> for this particular network.  This is called the  <em class="emphasis">stationary distribution vector.</em> Thus the stationary distribution vector for any network is <span class="process-math">\(\displaystyle \lim_{n\to \infty} H^np_0\)</span> if it exists.</div>
+<div class="para">which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, <span class="process-math">\([4, 2, 5, 1, 2]\text{.}\)</span>
 </div>
-</div></article><article class="remark remark-like" id="subsec5-3-Google-Search-11"><h4 class="heading">
+</div> <div class="para" id="eg-google_search1-1-9">One can show that the vector <span class="process-math">\(\pi\)</span> is independent of the initial vector <span class="process-math">\(p_0\)</span> for this particular network. This is called the <em class="emphasis">stationary distribution vector.</em> Thus the stationary distribution vector for any network is <span class="process-math">\(\displaystyle \lim_{n\to
+\infty} H^np_0\)</span> if it exists.</div></article><article class="remark remark-like" id="subsec5-3-Google-Search-11"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.4.22</span><span class="period">.</span>
 </h4>
 <div class="para" id="subsec5-3-Google-Search-11-1-1">Finding the stationary distribution vector for network is nothing but solving a stem of linear equations <span class="process-math">\(Hx=x\text{.}\)</span>
-</div></article><div class="para" id="subsec5-3-Google-Search-12">From the  <a href="sec5-3-eigen-Appl.html#eg-google_search1" class="xref" data-knowl="./knowl/xref/eg-google_search1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.4.20">Example 5.4.20</a>, it looks like that we can find the stationary distribution vector and hence rank a network after a sufficiently large iterations. However, this is not always true. In case a network has a dangling webpage (<em class="emphasis">a webpage that does not link to any other page</em>), or a trapping loop, then we may not be able to rank webpages.  In case a surfer come across, dangling node or trapping loop,  he can type a new url in the address bar manually. The next two examples demonstrate this.</div>
+</div></article><article class="activity project-like" id="subsec5-3-Google-Search-12"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec5-3-Google-Search-12-1">The above network can be generate in Sage using <code class="code-inline tex2jax_ignore">DiGraph</code>, directed graph method as follows.</div> <div id="subsec5-3-Google-Search-12-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">d={1: [2,3,5], 2: [4,5], 3: [1,5], 4: [1,2], 5: [4]}
+g=DiGraph(d)
+g.show()
+</script></div> <div class="para" id="subsec5-3-Google-Search-12-3">Now let us define the tansition matrix manually.</div> <div id="subsec5-3-Google-Search-12-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">H=matrix([[0,0,1/2,1/2,0],[1/3,0,0,1/2,0],[1/3,0,0,0,0],[0,1/2,0,0,1],[1/3,1/2,1/2,0,0]])
+p=matrix([0,0,1,0,0]).transpose()
+print("The transition matrix is H is given by")
+show(H)
+print("The starting vector is:")
+show(p)
+</script></div> <div class="para" id="subsec5-3-Google-Search-12-5">Now we can find what happens to the initial vector after a large number of iterates (clicks).</div> <div id="subsec5-3-Google-Search-12-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p=matrix([0,0,1,0,0]).transpose()
+n=200 # You may change this.
+for i in range(n):
+    p=H*p.n(digits=5)
+print("After {} iterates, the probabiity vector is:".format(n))
+show(p)
+</script></div></article><div class="para" id="subsec5-3-Google-Search-13">From the <a href="sec5-3-eigen-Appl.html#eg-google_search1" class="xref" data-knowl="./knowl/xref/eg-google_search1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.4.20">Example 5.4.20</a>, it looks like that we can find the stationary distribution vector and hence rank a network after a sufficiently large iterations. However, this is not always true. In case a network has a dangling webpage (<em class="emphasis">a webpage that does not link to any other page</em>), or a trapping loop, then we may not be able to rank webpages. In case a surfer come across, dangling node or trapping loop, he can type a new url in the address bar manually. The next two examples demonstrate this.</div>
 <article class="example example-like" id="eg-google_search2"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.23</span><span class="period">.</span>
 </h4>
 <div class="para" id="eg-google_search2-1-1">Let us consider a network with 5 webpages as shown in <a href="sec5-3-eigen-Appl.html#Page_Rank_Fig2" class="xref" data-knowl="./knowl/xref/Page_Rank_Fig2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.4.24">Figure 5.4.24</a>.</div> <figure class="figure figure-like" id="Page_Rank_Fig2"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/images/Page_Rank_Fig2.PNG" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.24<span class="period">.</span></span><span class="space"> </span>Network with 5 webpages with a dangling node.</figcaption></figure> <div class="para logical" id="eg-google_search2-1-3">
-<div class="para">In this network, webpage 3 is dangling as it does not have any outgoing link to any page.  The hyper matrix of associated to this network is given by</div>
+<div class="para">In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
 H=\begin{pmatrix}
-0 \amp  0 \amp  0 \amp  \frac{1}{3} \amp  0\\[1mm]
-\frac{1}{4}  \amp  0 \amp  0 \amp  \frac{1}{3} \amp  0\\[1mm]
-\frac{1}{4}  \amp  0 \amp  0 \amp  0 \amp  1\\[1mm]
-\frac{1}{4} \amp  1 \amp   0 \amp  0 \amp  0\\[1mm]
-\frac{1}{4}  \amp  0 \amp  0 \amp  \frac{1}{3} \amp  0\\
+0 \amp 0 \amp 0 \amp \frac{1}{3} \amp 0\\[1mm]
+\frac{1}{4} \amp 0 \amp 0 \amp \frac{1}{3} \amp 0\\[1mm]
+\frac{1}{4} \amp 0 \amp 0 \amp 0 \amp 1\\[1mm]
+\frac{1}{4} \amp 1 \amp 0 \amp 0 \amp 0\\[1mm]
+\frac{1}{4} \amp 0 \amp 0 \amp \frac{1}{3} \amp 0\\
 \end{pmatrix}.
 \end{equation*}
 </div>
 <div class="para">Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, <span class="process-math">\(p_0=\begin{pmatrix}0\\0\\1\\0 \\0 \end{pmatrix}\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-p_1=Hp_0=       	
+p_1=Hp_0=
 \left(\begin{array}{r}
 0 \\
 \frac{1}{4} \\
@@ -1442,14 +1541,14 @@ p_1=Hp_0=
 <div class="para">and we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-p_5=       	
+p_5=
 \left(\begin{array}{r}
 0.0416 \\
 0.0503 \\
 0.0642 \\
 0.0642 \\
 0.0503
-\end{array}\right), p_{10}=       	
+\end{array}\right), p_{10}=
 \left(\begin{array}{r}
 0.0068 \\
 0.0094 \\
@@ -1466,33 +1565,120 @@ p_5=
 \end{equation*}
 </div>
 <div class="para">From this it seems that <span class="process-math">\(Hp_n\)</span> approaches to a zero vector. Therefore, we cannot rank the wepages.</div>
-</div></article><article class="example example-like" id="eg-google_search3"><h4 class="heading">
+</div></article><article class="activity project-like" id="subsec5-3-Google-Search-15"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec5-3-Google-Search-15-1">Let us see how to do the previous example in Sage.</div> <div id="subsec5-3-Google-Search-15-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">d={1: [2,3,4,5], 2: [4], 4: [1,2,5], 5: [3]}
+g=DiGraph(d)
+g.show(figsize=5)
+</script></div> <div id="subsec5-3-Google-Search-15-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">H=matrix([[0,0,0,1/3,0],[1/4,0,0,1/3,0],[1/4,0,0,0,1],[1/4,1,0,0,0],[1/4,0,0,1/3,0]])
+p=matrix([1,0,0,0,0]).transpose()
+print("The transition matrix is H is given by")
+print(H)
+print("The starting vector is:")
+print(p)
+p=column_matrix([1,0,0,0,0])
+p=matrix(RR,[1,0,0,0,0]).transpose()
+n=100
+for i in range(n):
+    p=H*p.n(digits=5)
+show(p)
+</script></div></article><article class="example example-like" id="eg-google_search3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.25</span><span class="period">.</span>
 </h4>
-<div class="para" id="eg-google_search3-1-1">Let us consider a network with 5 web pages as shown in <a href="sec5-3-eigen-Appl.html#Page_Rank_Fig3" class="xref" data-knowl="./knowl/xref/Page_Rank_Fig3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.4.26">Figure 5.4.26</a>. This network has a trapping loop <span class="process-math">\(2\longleftrightarrow 5\text{.}\)</span> In long run for any initial vector, <span class="process-math">\(p_0\text{,}\)</span> we may get <span class="process-math">\(p_k=\begin{pmatrix} 0\amp 1/2\amp 0\amp 0\amp 1/2\end{pmatrix}\text{.}\)</span>
+<div class="para" id="eg-google_search3-1-1">Let us consider a network with 5 web pages as shown in <a href="sec5-3-eigen-Appl.html#Page_Rank_Fig3" class="xref" data-knowl="./knowl/xref/Page_Rank_Fig3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.4.26">Figure 5.4.26</a>. This network has a trapping loop <span class="process-math">\(2\longleftrightarrow 5\text{.}\)</span> In long run for any initial vector, <span class="process-math">\(p_0\text{,}\)</span> we may get <span class="process-math">\(p_k=\begin{pmatrix} 0\amp 1/2\amp 0\amp 0\amp
+1/2\end{pmatrix}\text{.}\)</span>
 </div> <figure class="figure figure-like" id="Page_Rank_Fig3"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/images/Page_Rank_Fig3.PNG" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.26<span class="period">.</span></span><span class="space"> </span>Network with Loop.</figcaption></figure></article><div class="para" id="subsec5-3-Google-Search-15">Several improvements have been suggested to tackle dangling and trapping loops.</div>
-<div class="para logical" id="subsec5-3-Google-Search-16">
-<div class="para">Page Rank inverters, Page and  Bring suggested the a new matrix called the <em class="emphasis">Google matrix</em> which is defined as follows:</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.26<span class="period">.</span></span><span class="space"> </span>Network with Loop.</figcaption></figure></article><article class="activity project-like" id="subsec5-3-Google-Search-17"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Sage Code for Loop Network.</span>
+</h4> <div class="para" id="subsec5-3-Google-Search-17-2">Let use the loop network to find what happens to the initial vector in a long run.</div> <div id="subsec5-3-Google-Search-17-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">d={1: [2,3,4,5], 2: [5], 3:[1,2],4: [2,3,5], 5: [2]}
+g=DiGraph(d)
+g.show()
+</script></div> <div class="para" id="subsec5-3-Google-Search-17-4">We can find the transition matrix using <code class="code-inline tex2jax_ignore">.adjacency_matrix()</code> method and taking its transpose.</div> <div id="subsec5-3-Google-Search-17-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p0=matrix([1,0,0,0,0]).transpose()
+HH=g.adjacency_matrix().transpose()
+show(HH)
+H1=[]
+for c in HH.columns():
+    H1.append(c/max(sum(c),1))
+H=column_matrix(H1)
+show(H)
+p=matrix(RR,[0,0,1,0,0]).transpose();p
+n = 500
+H^n*p
+</script></div></article><div class="para" id="subsec5-3-Google-Search-18">Several improvements have been suggested to tackle dangling and trapping loops.</div>
+<div class="para logical" id="subsec5-3-Google-Search-19">
+<div class="para">Page Rank inverters, Page and Bring suggested the a new matrix called the <em class="emphasis">Google matrix</em> which is defined as follows:</div>
 <div class="displaymath process-math" id="eqn-google-matrix">
 \begin{equation}
-G  =   \alpha H+(1-\alpha) S.\tag{5.4.2}
+G = \alpha H+(1-\alpha) S.\tag{5.4.2}
 \end{equation}
 </div>
-<div class="para">where <span class="process-math">\(S\)</span> is <span class="process-math">\(n\times n\)</span> matrix whose all entries are <span class="process-math">\(1/n\text{,}\)</span> <span class="process-math">\(\alpha\)</span> is called the <em class="emphasis">damping factor</em> and <span class="process-math">\(0\leq \alpha \leq 1\text{.}\)</span>
+<div class="para">where <span class="process-math">\(S\)</span> is <span class="process-math">\(n\times n\)</span> matrix whose all entries are <span class="process-math">\(1/n\text{,}\)</span> <span class="process-math">\(\alpha\)</span> is called the <em class="emphasis">damping factor</em> and <span class="process-math">\(0\leq
+\alpha \leq 1\text{.}\)</span>
 </div>
 </div>
-<div class="para" id="subsec5-3-Google-Search-17">If <span class="process-math">\(\alpha=0.9\text{,}\)</span> then it means 90% times the surfer is using the web links and 10% times  typing ulr manually in the address bar. In th original paper Page and Brin used <span class="process-math">\(\alpha=0.85\)</span> as damping factor.</div>
-<div class="para" id="subsec5-3-Google-Search-18">Since any regular stochastic matrix <span class="process-math">\(G\)</span> has a stationary vector, that is there exists a vector vector <span class="process-math">\(\pi\)</span> such that  <span class="process-math">\(G\pi=\pi\text{.}\)</span> Thus one can always find a stationary probability vector for a network.</div>
-<article class="remark remark-like" id="subsec5-3-Google-Search-19"><h4 class="heading">
+<div class="para" id="subsec5-3-Google-Search-20">If <span class="process-math">\(\alpha=0.9\text{,}\)</span> then it means 90% times the surfer is using the web links and 10% times typing ulr manually in the address bar. In th original paper Page and Brin used <span class="process-math">\(\alpha=0.85\)</span> as damping factor.</div>
+<div class="para" id="subsec5-3-Google-Search-21">Since any regular stochastic matrix <span class="process-math">\(G\)</span> has a stationary vector, that is there exists a vector vector <span class="process-math">\(\pi\)</span> such that <span class="process-math">\(G\pi=\pi\text{.}\)</span> Thus one can always find a stationary probability vector for a network.</div>
+<article class="remark remark-like" id="subsec5-3-Google-Search-22"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.4.27</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec5-3-Google-Search-19-1-1">The Google matrix <span class="process-math">\(G\)</span> defined in <a href="sec5-3-eigen-Appl.html#eqn-google-matrix" class="xref" data-knowl="./knowl/xref/eqn-google-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.4.2">(5.4.2)</a> is a stochastic matrix. That is, sum of entries in any column is 1.</div></article><article class="remark remark-like" id="subsec5-3-Google-Search-20"><h4 class="heading">
+<div class="para" id="subsec5-3-Google-Search-22-1-1">The Google matrix <span class="process-math">\(G\)</span> defined in <a href="sec5-3-eigen-Appl.html#eqn-google-matrix" class="xref" data-knowl="./knowl/xref/eqn-google-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.4.2">(5.4.2)</a> is a stochastic matrix. That is, sum of entries in any column is 1.</div></article><article class="remark remark-like" id="subsec5-3-Google-Search-23"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.4.28</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec5-3-Google-Search-20-1-1">The Google matrix <span class="process-math">\(G\)</span> defined in <a href="sec5-3-eigen-Appl.html#eqn-google-matrix" class="xref" data-knowl="./knowl/xref/eqn-google-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.4.2">(5.4.2)</a> is a regular matrix.</div></article></section></section></div>
+<div class="para" id="subsec5-3-Google-Search-23-1-1">The Google matrix <span class="process-math">\(G\)</span> defined in <a href="sec5-3-eigen-Appl.html#eqn-google-matrix" class="xref" data-knowl="./knowl/xref/eqn-google-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.4.2">(5.4.2)</a> is a regular matrix.</div></article><article class="activity project-like" id="subsec5-3-Google-Search-24"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Bigger Example using Google Matrix.</span>
+</h4> <div class="para" id="subsec5-3-Google-Search-24-2">In this example, we shall generate a random network, find the adjacency matrix and use Google matrix to find the page rank.</div> <div id="subsec5-3-Google-Search-24-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">D = digraphs.RandomDirectedGNM(8,40)
+# Generate a random network of 8  websites with 40 connections.
+D.show(figsize=6)
+</script></div> <div id="subsec5-3-Google-Search-24-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Adj=D.adjacency_matrix()
+print(Adj)
+clms=[]
+for c in Adj.columns():
+    clms.append(c/max(sum(c),1))
+A=column_matrix(clms)
+v0=column_matrix([0,1,0,0,0,0,0,0])
+print(A)
+</script></div> <div id="subsec5-3-Google-Search-24-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">n = 100 # Change the iteration number and see what happends.
+A^n*v0.n()
+</script></div></article><article class="activity project-like" id="subsec5-3-Google-Search-25"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Page-Rank Example (all together).</span>
+</h4> <div id="subsec5-3-Google-Search-25-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">          @interact
+def _(n=input_box(10, width=10, label="No of sites"),
+      N=input_box(60, width=10, label="No of links"),
+     i=input_box(1, width=10, label="Stat site"),
+     k=input_box(500, width=10, label="No of cliks"),
+      AdjMat=checkbox(False, label='Adjacency Matrix'),
+      TranMat=checkbox(False, label='Transition Matrix'),
+      GoogleMat=checkbox(False, label='Google Matrix')):
+    D = digraphs.RandomDirectedGNM(n,N)
+    show(D,figsize=6)
+    H=D.adjacency_matrix()
+    H=H.T
+    P=column_matrix([H.columns()[i]/max(sum(H.columns()[i]),1) for i in range(n)])
+    L = [0]*n;L[i-1]=1;v = vector(L);v
+    S=1/n*matrix([[1]*n]*n)
+    alpha=0.85 ## damping factor
+    G = alpha*P+(1-alpha)*S; 
+    pn = G^k*v.n(digits=6)
+    PN = flatten(pn)
+    sorted_nodes = []
+    for i in range(n):
+        sorted_nodes.append([PN[i],i])
+        sorted_nodes.sort(reverse=True)  
+    print('Sorted websites\n')
+    print(table(sorted_nodes))
+    if AdjMat:
+        print('\n Adjacency Matrix is:');
+        print(H)
+    if TranMat:
+        print('\n Transition Matrix is:');
+        print(P)
+    if GoogleMat:
+        print('\n Google Matrix is:');
+        print(G)
+</script></div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec5-5-Eigen-Sage-exer.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec5-4-eigen-exer.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec5-5-Eigen-Sage.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec5-4-eigen-exer.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

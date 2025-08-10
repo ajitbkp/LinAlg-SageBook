@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -369,7 +381,7 @@ window.MathJax = {
 <ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-2-diagonalization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Diagonalization</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage-exer.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec5-3-eigen-Appl.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
 <ul class="structural toc-item-list">
@@ -612,7 +624,44 @@ A^T = (QR)^T=R^TQ^T=LP
 \begin{bmatrix}1 \amp  1 \amp  0 \\-1 \amp  0 \amp 1\\0 \amp  1 \amp  1\\1 \amp  -1 \amp  0 \end{bmatrix}
 \end{equation*}
 </div>
-</div></article></section></div>
+</div></article><article class="activity project-like" id="sec6-4-13"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Sage Routine for QR-factorization.</span>
+</h3> <div id="sec6-4-13-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">    # QR factorization using Classical Gram-Schmidt in Sage
+
+def QR_GS(A):
+    m, n = A.nrows(), A.ncols()
+    Q = Matrix(A.base_ring(), m, n)
+    R = Matrix(A.base_ring(), n, n)
+    
+    for j in range(n):
+        v = A.column(j)
+        for i in range(j):
+            R[i,j] = Q.column(i).dot_product(A.column(j))
+            v = v - R[i,j] * Q.column(i)
+        R[j,j] = v.norm()
+        if R[j,j] == 0:
+            raise ValueError("Matrix has linearly dependent columns")
+        Q.set_column(j, v / R[j,j])
+    return Q, R
+</script></div> <div id="sec6-4-13-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Example usage:
+A = matrix(RR, [
+    [1, 1,  1],
+    [1, 2, -1],
+    [1, -1, 2],
+    [1, 3,  4]
+])
+
+Q, R = QR_GS(A)
+
+print("Matrix A:")
+print(A)
+print("\nMatrix Q (orthonormal columns):")
+print(Q)
+print("\nMatrix R (upper triangular):")
+print(R)
+print("\nCheck Q^T Q = I:\n", (Q.transpose()*Q).apply_map(lambda x:round(x,2)))
+print("Check A = Q*R:", Q*R == A)
+</script></div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec6-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap7-inner-product.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

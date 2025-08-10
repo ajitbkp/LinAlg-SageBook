@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -369,7 +381,7 @@ window.MathJax = {
 <ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-2-diagonalization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Diagonalization</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage-exer.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec5-3-eigen-Appl.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Applications of Eigenvalues and Eigenvectors</span></a></div>
 <ul class="structural toc-item-list">
@@ -474,7 +486,7 @@ window.MathJax = {
 <article class="definition definition-like" id="def-orthogonal-complement"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="def-orthogonal-complement-1-1">Let <span class="process-math">\(U\subset \R^n\text{.}\)</span> Then <span class="process-math">\(U^\perp:=\{x\in \R^n: x\cdot u=0, \forall u\in U\}\)</span> is called the orthogonal complement of <span class="process-math">\(U\text{.}\)</span>
+<div class="para" id="def-orthogonal-complement-1-1">Let <span class="process-math">\(U\subset \R^n\text{.}\)</span> Then <span class="process-math">\(U^\perp:=\{x\in \R^n: x\cdot u=0, \forall u\in U\}\)</span> is called the <em class="emphasis">orthogonal complement</em> of <span class="process-math">\(U\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="sec6-2-3"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span>
 </h3>
@@ -509,11 +521,14 @@ U^\perp  =\amp  \{(x_1,x_2,x_3,x_3): 2x_1+x_3-x_4=0,x_1+2x_2-x_4=0\}\\
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.5</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="subspace-projection1-1-1">
-<div class="para">Let <span class="process-math">\(U\)</span> be a subspace of <span class="process-math">\(\R^n\)</span> with and orthogonal basis <span class="process-math">\(\{u_1,\ldots,u_k\}\text{.}\)</span> If <span class="process-math">\(x\in \R^n\text{,}\)</span> then</div>
+<div class="para">Let <span class="process-math">\(U\)</span> be a subspace of <span class="process-math">\(\R^n\)</span> with an orthogonal basis <span class="process-math">\(\{u_1,\ldots,u_k\}\text{.}\)</span> If <span class="process-math">\(x\in \R^n\text{,}\)</span> then</div>
 <div class="displaymath process-math" id="proj_onto_subspace">
 \begin{equation}
 \proj_U(x)=\frac{x\cdot u_1}{\norm{u_1}^2}u_1+\frac{x\cdot u_2}{\norm{u_2}^2}u_2+\cdots + \frac{x\cdot u_k}{\norm{u_k}^2}u_k\text{.}\tag{6.3.1}
 \end{equation}
+</div>
+<div class="para">
+<span class="process-math">\(\proj_U(x)\)</span> called the <em class="emphasis">orthogononal projection</em> of <span class="process-math">\(x\)</span>  onto <span class="process-math">\(U\text{.}\)</span>
 </div>
 </div></article><article class="exercise exercise-like" id="sec6-2-7"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.6</span><span class="period">.</span>
@@ -539,7 +554,7 @@ u_2=(2/3, 13/6, 5/6)\)</span> on <span class="process-math">\(\pi\text{.}\)</spa
 \proj_\pi(v)=\frac{v\cdot u_1}{\norm{u_1}^2}u_1+\frac{v\cdot u_2}{\norm{u_2}^2}u_2=(13/7, 16/7, 11/7)\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para" id="sec6-2-9">How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in <span class="process-math">\(\R^n\text{?}\)</span> Let <span class="process-math">\(\beta = \{w_1,\ldots, w_k\}\)</span> be a basis of <span class="process-math">\(W\text{.}\)</span> We want to find the vector <span class="process-math">\(p\)</span> which the orthogonal projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(W\text{.}\)</span>
+</div></article><div class="para" id="sec6-2-9">How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in <span class="process-math">\(\R^n\text{?}\)</span> Let <span class="process-math">\(\beta = \{w_1,\ldots, w_k\}\)</span> be a basis of <span class="process-math">\(W\text{.}\)</span> We want to find the vector <span class="process-math">\(p\)</span> which is the orthogonal projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(W\text{.}\)</span>
 </div>
 <div class="para logical" id="sec6-2-10">
 <div class="para">Note that <span class="process-math">\(p\in W\text{,}\)</span> therefore, there exist scalars <span class="process-math">\(x_1,\ldots, x_k\)</span> such that</div>
@@ -552,7 +567,7 @@ p=x_1 v_1+\cdots + x_k v_k=Ax
 </div>
 </div>
 <div class="para logical" id="sec6-2-11">
-<div class="para">It is clear that <span class="process-math">\(v-p=v-Ax\in W^T\text{.}\)</span> Hence <span class="process-math">\((v_i)^T(v-Ax)=0\)</span> for <span class="process-math">\(1\leq i\leq k\text{.}\)</span> This is same as</div>
+<div class="para">It is clear that <span class="process-math">\(v-p=v-Ax\in W^\perp\text{.}\)</span> Hence <span class="process-math">\((v_i)^T(v-Ax)=0\)</span> for <span class="process-math">\(1\leq i\leq k\text{.}\)</span> This is same as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A^T(v-Ax)=0 \implies x=(A^TA)^{-1}(A^Tv)\text{.}
@@ -569,11 +584,73 @@ p=A(A^TA)^{-1}(A^Tv)\tag{6.3.2}
 </div>
 <div class="para" id="sec6-2-13">The matrix <span class="process-math">\(Q=A(A^TA)^{-1}A^T\)</span> is called the <em class="emphasis">projection matrix</em> for the subspace <span class="process-math">\(W\text{.}\)</span>
 </div>
-<article class="exercise exercise-like" id="sec6-2-14"><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.8</span><span class="period">.</span>
+<article class="example example-like" id="sec6-2-14"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.8</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec6-2-14-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> real matrix.  Recall <span class="process-math">\({\cal R}(A)\)</span> and <span class="process-math">\({\cal N}(A)\text{,}\)</span> rangeor columns space of <span class="process-math">\(A\)</span> and null or kernel of <span class="process-math">\(A\text{.}\)</span> Then show that (i) <span class="process-math">\({\cal R}(A)^\perp={\cal N}(A^T)\)</span> and (ii)  <span class="process-math">\({\cal N}(A)^\perp={\cal R}(A^T)\text{.}\)</span>
-</div> <details id="sec6-2-14-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="sec6-2-14-1-2-1">Let <span class="process-math">\(x \in {\cal R}(A)^\perp\text{.}\)</span> Then <span class="process-math">\(y^TA^Tx=(Ay)^Tx=0\)</span> for all <span class="process-math">\(y\text{.}\)</span> Hence <span class="process-math">\(x\in {\cal N}(A^T)\text{.}\)</span> This implies that, <span class="process-math">\({\cal R}(A)^\perp\subseteq {\cal N}(A^T)\text{.}\)</span> Next let <span class="process-math">\(x\in {\cal N}(A^T)\)</span> then <span class="process-math">\((Ay)^Tx=y^TA^Tx=0\)</span> for all <span class="process-math">\(y\text{.}\)</span> Hence <span class="process-math">\(x\in {\cal R}(A)^\perp\text{.}\)</span> That is, <span class="process-math">\({\cal N}(A^T) \subseteq {\cal R}(A)^\perp\text{.}\)</span>
+<div class="para logical" id="sec6-2-14-1">
+<div class="para">Consider a set of vectors</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v_1 = \left(\begin{array}{r}
+-1 \\
+1 \\
+0 \\
+-3 \\
+-3
+\end{array}\right), v_2=\left(\begin{array}{r}
+1 \\
+-5 \\
+3 \\
+-1 \\
+4
+\end{array}\right), v3 = \left(\begin{array}{r}
+-5 \\
+13 \\
+-6 \\
+-7 \\
+-17
+\end{array}\right), v4 = \left(\begin{array}{r}
+-2 \\
+1 \\
+3 \\
+8 \\
+1
+\end{array}\right).
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(W\)</span> be the subspace spanned by <span class="process-math">\(\{v_1,v_2,v_3,v_4\}\)</span> in <span class="process-math">\(\mathbb{R}^5\text{.}\)</span> Find the orthogonal projection of the vector <span class="process-math">\(u = \left(\begin{array}{r}
+1 \\
+3 \\
+5 \\
+7 \\
+11
+\end{array}\right)\)</span> onto <span class="process-math">\(W\)</span> in Sage.</div>
+</div> <details id="sec6-2-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div id="sec6-2-14-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">        v1 = vector(QQ,[-1, 1, 0, -3, -3])
+v2 = vector(QQ,[1, -5, 3, -1, 4])
+v3 = vector(QQ,[-5, 13, -6, -7, -17])
+v4 = vector(QQ,[-2, 1, 3, 8, 1])
+u = vector(QQ,[1,3,5,7,11])
+A = column_matrix([v1,v2,v3,v4])
+p = A.pivots()
+p
+</script></div> <div class="para" id="sec6-2-14-2-2">Since pivots indices are <span class="process-math">\(\{0,1,3\}\text{,}\)</span> <span class="process-math">\(v_1,v_2,v_4\)</span> are linearly independent. We define a matrix <span class="process-math">\(M\)</span> of whose columns are <span class="process-math">\(v_1,v_2,v_4\text{.}\)</span> Then the orthogonal projection of <span class="process-math">\(u\)</span> onto <span class="process-math">\(W\)</span> is <span class="process-math">\(M(M^TM)^{-1}M^Tu\text{.}\)</span>
+</div> <div id="sec6-2-14-2-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = [A.columns()[x] for x in p]
+M = column_matrix(L)
+p = M*(M.T*M).inverse()*M.T*u
+print('The orthogonal projection is:')
+print(p)
+print('The orthogonal projection matrix is:')
+P = M*(M.T*M).inverse()*M.T
+print(P)
+</script></div> <div class="para" id="sec6-2-14-2-4">It is easy to check that <span class="process-math">\(u-p\)</span>  is orgthogonal to <span class="process-math">\(W\text{.}\)</span>
+</div> <div id="sec6-2-14-2-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(v1.dot_product(u-p), v2.dot_product(u-p),v3.dot_product(u-p),v4.dot_product(u-p))
+</script></div>
+</div></details></article><article class="exercise exercise-like" id="sec6-2-15"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.9</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec6-2-15-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> real matrix.  Recall <span class="process-math">\({\cal R}(A)\)</span> and <span class="process-math">\({\cal N}(A)\text{,}\)</span> range or columns space of <span class="process-math">\(A\)</span> and null or kernel of <span class="process-math">\(A\text{.}\)</span> Then show that (i) <span class="process-math">\({\cal R}(A)^\perp={\cal N}(A^T)\)</span> and (ii)  <span class="process-math">\({\cal N}(A)^\perp={\cal R}(A^T)\text{.}\)</span>
+</div> <details id="sec6-2-15-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="sec6-2-15-1-2-1">Let <span class="process-math">\(x \in {\cal R}(A)^\perp\text{.}\)</span> Then <span class="process-math">\(y^TA^Tx=(Ay)^Tx=0\)</span> for all <span class="process-math">\(y\text{.}\)</span> Hence <span class="process-math">\(x\in {\cal N}(A^T)\text{.}\)</span> This implies that, <span class="process-math">\({\cal R}(A)^\perp\subseteq {\cal N}(A^T)\text{.}\)</span> Next let <span class="process-math">\(x\in {\cal N}(A^T)\)</span> then <span class="process-math">\((Ay)^Tx=y^TA^Tx=0\)</span> for all <span class="process-math">\(y\text{.}\)</span> Hence <span class="process-math">\(x\in {\cal R}(A)^\perp\text{.}\)</span> That is, <span class="process-math">\({\cal N}(A^T) \subseteq {\cal R}(A)^\perp\text{.}\)</span>
 </div></div></details></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec6-1-GramSchmidt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec6-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

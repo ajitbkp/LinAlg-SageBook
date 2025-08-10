@@ -9,6 +9,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h3 class="heading">
@@ -33,11 +46,23 @@ u_3: = \amp  v_3 -\frac{u_3\cdot u_1}{\norm{u_1}^2}u_1-\frac{u_3\cdot u_2}{\norm
 <div class="para">Hence</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\{(-1, 1, 0, 1) (2/3, -2/3, 0, 4/3) (-1/2, -1/2, 2, 0)\}
+\{(-1, 1, 0, 1), (2/3, -2/3, 0, 4/3), (-1/2, -1/2, 2, 0)\}
 \end{equation*}
 </div>
 <div class="para">is an orthogonal basis of the row space of <span class="process-math">\(A\text{.}\)</span>
 </div>
-</div></article><span class="incontext"><a class="internal" href="sec6-1-GramSchmidt.html#gram-schmidt-eg2">in-context</a></span>
+</div> <div id="gram-schmidt-eg2-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">          A = matrix([[-1,1,0,1],[1,-1,0,1],[-1,0,2,1]])
+RowSpace = A.row_space()
+print(RowSpace)
+print(RowSpace.basis())
+B = A.rows()
+q1 = B[0]
+q2 = B[1]-B[1].dot_product(q1)/q1.norm()^2*q1
+q3 = B[2]-B[2].dot_product(q1)/q1.norm()^2*q1-B[2].dot_product(q2)/q2.norm()^2*q2
+print(q1,q2,q3)
+</script></div> <div class="para">Sage also has an inbuilt method for Gramm-Schmidt orthogonalization process. For example, <code class="code-inline tex2jax_ignore">A.gram_schmidt()</code> performs Gram-Schmidt orthogonalization on the rows of the matrix, <span class="process-math">\(A\)</span> returning a new matrix and a matrix accomplishing the transformation.</div> <div id="gram-schmidt-eg2-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Q, R= A.gram_schmidt()
+print(Q)
+print(R)
+</script></div> <div class="para">Here <span class="process-math">\(Q\)</span> is the matrix whose rows are nothing but orthogonal vectors obtained by Gram-Schmidt and <span class="process-math">\(R\)</span> is an upper triangular matrix. We shall see meaning of <span class="process-math">\(R\)</span> and how it is obtained in later sections.</div></article><span class="incontext"><a class="internal" href="sec6-1-GramSchmidt.html#gram-schmidt-eg2">in-context</a></span>
 </body>
 </html>

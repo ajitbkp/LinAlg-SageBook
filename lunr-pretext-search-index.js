@@ -1411,7 +1411,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.4",
   "title": "Geometry of Linear Transformations",
-  "body": " Geometry of Linear Transformations   We look at some specific linear transformations from to and how it transforms the unit square. Readers are encouraged to draw figures.    Exmpansion along -axis.    where . (Refer to the )  -expansion for        Compression along -axis.    where . Refer to the for .  -Compression for        Expansion along -axis    where . Refer to for .  -expansion for        Compression along -axis    where . Refer to for .  -compression for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Draw the figure for .  Negative -shear for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Refer to for .  Negative -shear for        Dilation and Contraction   Fix a positive real number and define by . It is a linear map which is induced by the scalar matrix . ( is called a dilation if and a contraction if .) Refer to  with and .  Dilations with and .        Streching   Let and be two positive real numbers and . Define by . Then (i) is stretching by a factor along -axis and by a factor along -axis if and (ii) is contraction by a factor along -axis followed by a factor along -axis if . Refer to for stretching along by 2 and -axes by 1.5.  Stretching along by 2 and -axes by 1.5.        Geometry of linear transformation in  In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.     Image Tranfromation   Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.   The following Python code read a grayscale image of Taj Mahal in India.    We use the transformation , where is the brightness of the image. Let us take about 20\/% increase in the brightness. On each pixel of the image , we have , where . Here min~255 ensures the brightness values stay within valid pixel range.     Rotation Transformation  Next we apply rotation by an anngle to this image. Note that the rotation matrix is give by         "
+  "body": " Geometry of Linear Transformations   We look at some specific linear transformations from to and how it transforms the unit square. Readers are encouraged to draw figures.    Exmpansion along -axis.    where . (Refer to the )  -expansion for        Compression along -axis.    where . Refer to the for .  -Compression for        Expansion along -axis    where . Refer to for .  -expansion for        Compression along -axis    where . Refer to for .  -compression for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Draw the figure for .  Negative -shear for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Refer to for .  Negative -shear for        Dilation and Contraction   Fix a positive real number and define by . It is a linear map which is induced by the scalar matrix . ( is called a dilation if and a contraction if .) Refer to  with and .  Dilations with and .        Streching   Let and be two positive real numbers and . Define by . Then (i) is stretching by a factor along -axis and by a factor along -axis if and (ii) is contraction by a factor along -axis followed by a factor along -axis if . Refer to for stretching along by 2 and -axes by 1.5.  Stretching along by 2 and -axes by 1.5.        Geometry of linear transformation in  In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.     Image Tranfromation   Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.   The following Python code read a grayscale image of Taj Mahal in India.   We use the transformation , where is the brightness of the image. Let us take about 20\/% increase in the brightness. On each pixel of the image , we have , where . Here min~255 ensures the brightness values stay within valid pixel range.   Next we plot the orginal image along with rescaled image.    Rotation Transformation   Next we apply rotation by an anngle to this image. Note that the rotation matrix is give by         Applying shear transform to an image  Shear in Python is implemented as affine transformation where each point of an image is mapped to a new point via   Hence we get For a shear in the -direction, we wish to shift proportionally to while leaving unchanged. This corresponds to: where is the shear factor. Thus, the shear matrix becomes: In Python's Pillow library, the transform method uses parameters corresponding to the first two rows of the above matrix, that is,     "
 },
 {
   "id": "x-expansion",
@@ -1511,6 +1511,15 @@ var ptx_lunr_docs = [
   "number": "3.4.21",
   "title": "Geometry of linear transformation in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
   "body": " Geometry of linear transformation in  In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.   "
+},
+{
+  "id": "sec-LT-Geom-15",
+  "level": "2",
+  "url": "sec-LT-Geom.html#sec-LT-Geom-15",
+  "type": "Example",
+  "number": "3.4.22",
+  "title": "Applying shear transform to an image.",
+  "body": " Applying shear transform to an image  Shear in Python is implemented as affine transformation where each point of an image is mapped to a new point via   Hence we get For a shear in the -direction, we wish to shift proportionally to while leaving unchanged. This corresponds to: where is the shear factor. Thus, the shear matrix becomes: In Python's Pillow library, the transform method uses parameters corresponding to the first two rows of the above matrix, that is,    "
 },
 {
   "id": "sec-sec3-5-LT-Sage",
@@ -2764,76 +2773,85 @@ var ptx_lunr_docs = [
   "body": "  In view of theorem , the matrix in the example is not diagonalizable.   "
 },
 {
-  "id": "sec5-5-Eigen-Sage-exer",
+  "id": "sec5-5-Eigen-Sage",
   "level": "1",
-  "url": "sec5-5-Eigen-Sage-exer.html",
+  "url": "sec5-5-Eigen-Sage.html",
   "type": "Section",
   "number": "5.3",
   "title": "Eigenvalues and Eigenvectors in Sage",
-  "body": " Eigenvalues and Eigenvectors in Sage   In this section, we shall explore computation of eigenvalues and eigenvectors and related concepts in Sage. We shall also look applications of diagonalization in Sage.  Sage can compute eigenvalues and eigenvectors of a matrix and also of linear operator. If is a square marix, then A.eignvalues() returns eigenvalues of the matrix . Simplarly, A.eigenvectors_right() returns the eigenvectors along with the corresponding eigenvalue including the multiplicity of each eigenvalue. Apart from these two coammands, Sage also has A.eigenmatrix_right() which returns diagonal matrix of eigenvalues and the matrix whose columns of eigenvectors. Let us explore some example.    Find the eigenvalues of eigenvectors of .        Sage can also compute eigenvalues and eigenvectors of a symbolic matrix. Let us look at the next example.     Sage can also find the characteristic polynomial of matrix with ease using two matrix method A..charpoly() and A.characteristic_polynomial() Let us look at the next example.   Find the characteristics polynomial of the matrix   We can factorize the characteristic polynomial to find its roots.     Sage can find eigenvalues and eigenvalues of bigsize matriz also. However, the computation is done numerically. Let us look at the next example.   Consider the matrix . Find the characteristics polynomial, eigenvalues and eigenvectors of .   Now let us try to factorize the characteristic polynomial of .   Clearly this polynomial cannot be factorized in the field of rational numbers. However, Sage provide an extended field QQbar in whihc we can find the rots of this polynomial.   These are the eigenvalues that sage can find using A.eigenvalues()    For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and (ii) the product of eigenvalues equals to the determinant.    We can also verify the Cayley-Hamilton thorem for the above matrix.      Consider the matrix . Find the eigenvalues of and verify the Cayley-Hamilton theorem. Also find the sum and product of eigenvalues of and observe that they are the trace and determinant of respectively.     Eigenspaces  Consider a matrix . Find the eigenvalues and eigenvectors of . Also find the eigenspace corresponding to each eigenvalues. Check if the the given matrix is diagonalizable.      This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.  Note that the eigenspace corresponding to the eigenvalue is the and the gemetric multiplicity is the nullity of .   To find the eigenspace with respect to the eigenvalue can be obtained by appplying RREF to the matrix and solving the corresponding system of equations.   Now we can solve the system of equations, to obtaine the eigenspace.   Similarly, we can find the eigenspace with respect to the eigenvalue      Diagonalizability  Consider the same matrix . We shall check the diagonalizability of .    Clearly is diagonalizable. We can also find the matrix of eigenvectors and check if is the diagonal matrix whose diagonal entries are eigenvalues.      "
+  "body": " Eigenvalues and Eigenvectors in Sage   In this section, we shall explore computation of eigenvalues and eigenvectors and related concepts in Sage. We shall also look applications of diagonalization in Sage.  Sage can compute eigenvalues and eigenvectors of a matrix and also of linear operator. If is a square marix, then A.eignvalues() returns eigenvalues of the matrix . Simplarly, A.eigenvectors_right() returns the eigenvectors along with the corresponding eigenvalue including the multiplicity of each eigenvalue. Apart from these two coammands, Sage also has A.eigenmatrix_right() which returns diagonal matrix of eigenvalues and the matrix whose columns of eigenvectors. Let us explore some example.    Find the eigenvalues of eigenvectors of .        Sage can also compute eigenvalues and eigenvectors of a symbolic matrix. Let us look at the next example.     Sage can also find the characteristic polynomial of matrix with ease using two matrix method A..charpoly() and A.characteristic_polynomial() Let us look at the next example.   Find the characteristics polynomial of the matrix   We can factorize the characteristic polynomial to find its roots.     Sage can find eigenvalues and eigenvalues of bigsize matriz also. However, the computation is done numerically. Let us look at the next example.   Consider the matrix . Find the characteristics polynomial, eigenvalues and eigenvectors of .   Now let us try to factorize the characteristic polynomial of .   Clearly this polynomial cannot be factorized in the field of rational numbers. However, Sage provide an extended field QQbar in whihc we can find the rots of this polynomial.   These are the eigenvalues that sage can find using A.eigenvalues()    For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and (ii) the product of eigenvalues equals to the determinant.    We can also verify the Cayley-Hamilton thorem for the above matrix.      Consider the matrix . Find the eigenvalues of and verify the Cayley-Hamilton theorem. Also find the sum and product of eigenvalues of and observe that they are the trace and determinant of respectively.     Eigenspaces  Consider a matrix . Find the eigenvalues and eigenvectors of . Also find the eigenspace corresponding to each eigenvalues. Check if the the given matrix is diagonalizable.      This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.  Note that the eigenspace corresponding to the eigenvalue is the and the gemetric multiplicity is the nullity of .   To find the eigenspace with respect to the eigenvalue can be obtained by appplying RREF to the matrix and solving the corresponding system of equations.   Now we can solve the system of equations, to obtaine the eigenspace.   Similarly, we can find the eigenspace with respect to the eigenvalue      Diagonalizability  Consider the same matrix . We shall check the diagonalizability of .    Clearly is diagonalizable. We can also find the matrix of eigenvectors and check if is the diagonal matrix whose diagonal entries are eigenvalues.       Eigenvalues of a linear operator  Consider  the linear tranformation defined by Let us find the eigenvalues of and also show that the eigenvalues are independent of the basis on the domain   We can also find the characteristics polynomial of .   Let us find the matrix of with respect to the standard basis of and find find the eigenvalues of .   Now let us find the matrix of with respect to a basis and find eigenvalues of .   Clearly eigenvalues of , and are same. This is not suprizing as and are similar matrices and similar matrices have the same determinant and eigenvalues.   "
 },
 {
-  "id": "sec5-5-Eigen-Sage-exer-3",
+  "id": "sec5-5-Eigen-Sage-3",
   "level": "2",
-  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-3",
+  "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-3",
   "type": "Example",
   "number": "5.3.1",
   "title": "",
   "body": " Find the eigenvalues of eigenvectors of .       "
 },
 {
-  "id": "sec5-5-Eigen-Sage-exer-5",
+  "id": "sec5-5-Eigen-Sage-5",
   "level": "2",
-  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-5",
+  "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-5",
   "type": "Example",
   "number": "5.3.2",
   "title": "",
   "body": "  "
 },
 {
-  "id": "sec5-5-Eigen-Sage-exer-7",
+  "id": "sec5-5-Eigen-Sage-7",
   "level": "2",
-  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-7",
+  "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-7",
   "type": "Example",
   "number": "5.3.3",
   "title": "",
   "body": " Find the characteristics polynomial of the matrix   We can factorize the characteristic polynomial to find its roots.    "
 },
 {
-  "id": "sec5-5-Eigen-Sage-exer-9",
+  "id": "sec5-5-Eigen-Sage-9",
   "level": "2",
-  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-9",
+  "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-9",
   "type": "Example",
   "number": "5.3.4",
   "title": "",
   "body": " Consider the matrix . Find the characteristics polynomial, eigenvalues and eigenvectors of .   Now let us try to factorize the characteristic polynomial of .   Clearly this polynomial cannot be factorized in the field of rational numbers. However, Sage provide an extended field QQbar in whihc we can find the rots of this polynomial.   These are the eigenvalues that sage can find using A.eigenvalues()    For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and (ii) the product of eigenvalues equals to the determinant.    We can also verify the Cayley-Hamilton thorem for the above matrix.   "
 },
 {
-  "id": "sec5-5-Eigen-Sage-exer-10",
+  "id": "sec5-5-Eigen-Sage-10",
   "level": "2",
-  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-10",
+  "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-10",
   "type": "Activity",
   "number": "5.3.1",
   "title": "",
   "body": "  Consider the matrix . Find the eigenvalues of and verify the Cayley-Hamilton theorem. Also find the sum and product of eigenvalues of and observe that they are the trace and determinant of respectively.   "
 },
 {
-  "id": "sec5-5-Eigen-Sage-exer-11",
+  "id": "sec5-5-Eigen-Sage-11",
   "level": "2",
-  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-11",
+  "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-11",
   "type": "Example",
   "number": "5.3.5",
   "title": "Eigenspaces.",
   "body": " Eigenspaces  Consider a matrix . Find the eigenvalues and eigenvectors of . Also find the eigenspace corresponding to each eigenvalues. Check if the the given matrix is diagonalizable.      This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.  Note that the eigenspace corresponding to the eigenvalue is the and the gemetric multiplicity is the nullity of .   To find the eigenspace with respect to the eigenvalue can be obtained by appplying RREF to the matrix and solving the corresponding system of equations.   Now we can solve the system of equations, to obtaine the eigenspace.   Similarly, we can find the eigenspace with respect to the eigenvalue    "
 },
 {
-  "id": "sec5-5-Eigen-Sage-exer-12",
+  "id": "sec5-5-Eigen-Sage-12",
   "level": "2",
-  "url": "sec5-5-Eigen-Sage-exer.html#sec5-5-Eigen-Sage-exer-12",
+  "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-12",
   "type": "Example",
   "number": "5.3.6",
   "title": "Diagonalizability.",
   "body": " Diagonalizability  Consider the same matrix . We shall check the diagonalizability of .    Clearly is diagonalizable. We can also find the matrix of eigenvectors and check if is the diagonal matrix whose diagonal entries are eigenvalues.     "
+},
+{
+  "id": "sec5-5-Eigen-Sage-13",
+  "level": "2",
+  "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-13",
+  "type": "Example",
+  "number": "5.3.7",
+  "title": "Eigenvalues of a linear operator.",
+  "body": " Eigenvalues of a linear operator  Consider  the linear tranformation defined by Let us find the eigenvalues of and also show that the eigenvalues are independent of the basis on the domain   We can also find the characteristics polynomial of .   Let us find the matrix of with respect to the standard basis of and find find the eigenvalues of .   Now let us find the matrix of with respect to a basis and find eigenvalues of .   Clearly eigenvalues of , and are same. This is not suprizing as and are similar matrices and similar matrices have the same determinant and eigenvalues.  "
 },
 {
   "id": "sec5-3-eigen-Appl",
@@ -2842,7 +2860,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.4",
   "title": "Applications of Eigenvalues and Eigenvectors",
-  "body": " Applications of Eigenvalues and Eigenvectors   In this section we look at several applications of eigenvalues and eigenvectors.    Fibonacci Sequence  Originally the Fibonacci sequence appeared in the solution of the following problem posed by Leonardo of Pisa, popularly known as Fibonacci, in the book Liber Abaci in 1202.  Consider the following problem.   A certain man put a pair of rabbits in a places surrounded on all sides by a wall. How many pairs of rabbits can be produced from that pair in year if it is supposed that every month each pair begets a new pair which from second month becomes productive?   We assume that the number of pairs at the end of the -th year is denoted by . We start with and . Note that the number of pair of rabbits in any given month is the number of pairs in the previous month plus those that are hatched in that month and those are as many as the previous month. This gives gives rise to a recurrence relation  . Let . Then we have   Let . Then we have   This implies   This leads to computation of power of . Therefore, we can invoke diagonalization of the matrix.  Note that is symmetric matrix with characteristic polynomial . The eigenvalues of are and the corresponding eigenvectors are . Since has distinct eigenvalues, is diagonalizable and we have   Let be one of the above eigenvalue of , then . Also it is easy to check that . Now we have Thus we have    Show that   Note that is called the Golden-Ratio which has many application in nature. The approximate value of .   Let . Then we have Now let us approximate Since , we have . This implies, .      Predator-Pray Model  In a certain area, it is observed that every year the number of rabbits is equal to 4 times the number of rabbits less 2 times numbers of weasels in the previous year. The number of weasels is equal to the sum of the number of rabbits number of weasels in the previous year. If the initial population of rabbits and weasels were 100 and 10 respectively, then find the number of each species after years. Let and be the number of rabbits and weasels after years respectively.  Then, as per data give we have with .  Let and . Then the above system is equivalent to . We need to obtain successively . It is easy to check that and are eigenvalues of with corresponding eigenvectors and respectively. We define . It is easy to see that . Also . Using diagonalization, we have Thus . Hence It is easy to check that What does this mean?    Solving System of Linear ODE  In this subsection, we shall deal with use of theory of eigenvalues and eigenvectors to solve system of linear differential equations. Let shall consider a system of first order linear differential equations with constant coefficients. A general form of such system can be given by Here we assume that are constants. The above system can be written as where real matrix and is column matrix.  We want to find a solution of the above system, that is a column vector of of differentiable functions on some interval which satisfies the above system.  If is the set of all solutions of the above system. Then one can show that is an -dimensional vector subspace of the set of differentiable function on . This mean, if are linearly independent functions which are solutions of the above system. Then any solution can be written as a linear combination of .  In case, we are given initial conditions, then there exists a unique solution of the system.  In addition, suppose is diagonalizable, with where , the diagonal matrix of eigenvalues of and is matrix of eigenbasis of .  We define . Then and . Now substituting and in the above system, we get Thus the above system of linear differential equation reduced to In particular, we have .  A general solution of the above system is given by The above equations can be written in matrix form as follows Here is the exponential of the matrix and is the column matrix of constants. From this we get a general solution of the original system as where .  Thus the solution in matrix form is given by The constant can be obtained when we have initila value problem.  Suppose we want to solve the initial value problem with initial condition . Then we have . Hence the solution in matrix form is given by   Steps to solve system of linear differential equations .     Find the matrix corresponding to this linear system and put the equation in matrix form .    Find the eigenvalues and corresponding eigenvectors of . Let be eigenvalues of with corresponding to eigenvectors respectively.    The solution is .       Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is   Solving using Sage   Sage also has inbuilt function desolve_system to solve a system of linear ODE.      What will be the solution of with initial conditions ?     Solve the following system ODE.     The eigenvalues of the coefficient matrix are and the corresponding eigenvectors are Hence a general solution of the given system is given by Using the given initial conditions, we get Solving the above equations, yields, . Hence the required solution of the problem is You may write the each component of the solution.   Using the inbuilt function dessole_system , we have the following.       Solve the following 2nd order differential equations. Consider the system     Substitute and . Then we have The above equations can be written as where The eigenvalues of are and the corresponding eigenvectors are Thus a general solution is given by Hence a general solution of the given problem can be obtained by dropping the dummy variables and . It is given by     In the next example, we deal with solving a system , in which the coefficient matrix has complex eigenvalues.    Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by Writing and adjusting the constants, we can write the solution       In case the the coeffcient matrix of the sysstem is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.      Markov Chains  In this subsection, we look at some applications of linear algebra in dealing with matrices that arise from probabilistic systems. We consider chance process in which knowledge of previous outcomes influence prediction of future experiments. Such chance process is called a Markov Chain.   Let consider the following problem and develop the terminologies and methods to solve this problem.    Weather of certain area is classified as \"fair\", \"cloudy\" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?    In the above example, fair, cloudy and rainy day can be thought of as three states, say state 1, state 2 and state 3 respectively. Each day can be thought of as a generation. Let us denote the data given in the example as following table:     Fair  Cloudy  Rainy    Fair  0.60  0.25  0.15    Cloudy  0.40  0.35  0.25    Rainy  0.35  0.40  0.25    Let be the probability of transition from state to state . The matrix is called the transition matrix.     A transition matrix of an stage Markov chain is an matrix having nonnegative entries such that sum of entries in each column is 1. Such a matrix is called a stochastic matrix.     The transition matrix for the is given by   Note that , is the probability of being a cloudy day after fair day. Similarly , represent the probability of being fair day after a rainy day. The transition matrix, represents the change of state from present generation to the next generation.    The powers of a transition matrix have the same property of a transition matrix. That is, all the entries are non negative and sum of entries in any column is 1.      If is a transition matrix of a Markov chain and if denotes the -th entries of , then is the probability of moving to state from state in generations or in time period.    Let us consider of the transition matrix in the  Note that is the probability of rainy day becoming cloudy day after 5 days.  We consider an initial probability vector . This mean current day has 40% chance of being a fair day, 30% chance of being cloudy and 30% of being rainy.  Then , denotes the probability vector after $k$ stages. We are interested in long time behavior of the probability vector. In particular, we want to see if the limit exists.  In general, the above limits does not exists, however, in case the transition matrix is regular, then one can show that limit exists.     A transition matrix is regular if there exists a natural number such all the entries of are positive.    Note that all transition matrix are not regular, for example, identity matrix is a transition matrix but is not regular.  It is easy to see that if is a regular transition matrix matrix such that all the entries of are positive. Then all entries of are positive for non negative integers .  Let us assume that is a transition matrix and that exists. Then we have   Suppose are columns of . Then This means that each column of is an eigenvector of corresponding to eigenvalue 1. Thus we have proved the following result:    If is an regular transition matrix, then converges to a matrix, say, whose columns are eigenvectors of corresponding to eigenvalues 1.    In fact one can show the following.    If is a regular, transition matrix then its eigenvalue has multiplicity 1 and that there is only one eigenvectors associated with . This implies that all columns of are identical.    Now we define a a limiting state distribution vectors or steady state vector of an -state Markov chain as a vector as follows: Thus we have the following equation. Note that all columns of are identical, say, . Let . Then Thus is an eigenvector of with respect to eigenvalue 1 with sum of its components 1.  The gives a way to find the steady state vector.  Let us find the steady state vector of the transition matrix defined in the .  Let be the steady state vector. Then it is an eigenvector of PreTeXt P corresponding to eigenvalue 1. That is and also, . Thus we get the following set of equations which we need to solve.   Solving the avove equations we, get Hence the steady state vector is given by The limiting transition matrix is given by Thus in the long run about 48.74% chance of being a fair day, about 31.13% of being cloudy and about 20.13% chance of being rain day.    We can use diagonalization of the transition matrix to find the steady state vector.      A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.      Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )    132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.     Google Search Engine  Over 900 millions Indian use Internet (as of January 2024) most of them may do Google, a search engine that was designed by Lawrence Page and Sergei Brian in 1998. There are about 200 millions active webpages in the world as on January 2024 and it is growing by seconds. More often than not, google search gives the desired results, users are looking for. Have you ever thought of how does it work? Linear algebra plays an important role in how Google's search algorithm works. Google ranks pages according to their importance.  Success of Google lies behind its PageRank algorithm, which rates the importance of each page on the web and present the user typically most relevant and helpful pages first. PageRank uses link structure of web to determine the importance of webpages.  In this section, we shall explain how Google ranks webpages as a simple application to linear algebra.  Whenever an user or web surfer enters a keyword for searching, Google does three basic things:     Crawl the web and locate all web pages with public access.    Index the data from websites it has crawled, so that it can be searched efficiently for relevant keywords.    Rate the importance of each page in the database.     We shall briefly look at how to rank or rate webpages using Google's PageRank algorith.  An Internet network can be represented by a directed graph in which each website is thought of as a node or vertex and links between pages are edges with arrows. If there is an arrow from note to , them it means that there is link to move from webpage to . If there is a double arrow between and , then there is link from to and also from to .  To every network with -webpages, we assign a matrix , where represents the probability that surfer would visit the webpage from the webpage . If the webpage has links to other webpages then . If there is no link from to , then The matrix is called the hyper matrix of the network.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability . We have  Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, . One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.       Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .    From the , it looks like that we can find the stationary distribution vector and hence rank a network after a sufficiently large iterations. However, this is not always true. In case a network has a dangling webpage ( a webpage that does not link to any other page ), or a trapping loop, then we may not be able to rank webpages. In case a surfer come across, dangling node or trapping loop, he can type a new url in the address bar manually. The next two examples demonstrate this.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.      Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.     Several improvements have been suggested to tackle dangling and trapping loops.  Page Rank inverters, Page and Bring suggested the a new matrix called the Google matrix which is defined as follows: where is matrix whose all entries are , is called the damping factor and .  If , then it means 90% times the surfer is using the web links and 10% times typing ulr manually in the address bar. In th original paper Page and Brin used as damping factor.  Since any regular stochastic matrix has a stationary vector, that is there exists a vector vector such that . Thus one can always find a stationary probability vector for a network.    The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.      The Google matrix defined in is a regular matrix.     "
+  "body": " Applications of Eigenvalues and Eigenvectors   In this section we look at several applications of eigenvalues and eigenvectors.    Fibonacci Sequence  Originally the Fibonacci sequence appeared in the solution of the following problem posed by Leonardo of Pisa, popularly known as Fibonacci, in the book Liber Abaci in 1202.  Consider the following problem.   A certain man put a pair of rabbits in a places surrounded on all sides by a wall. How many pairs of rabbits can be produced from that pair in year if it is supposed that every month each pair begets a new pair which from second month becomes productive?   We assume that the number of pairs at the end of the -th year is denoted by . We start with and . Note that the number of pair of rabbits in any given month is the number of pairs in the previous month plus those that are hatched in that month and those are as many as the previous month. This gives gives rise to a recurrence relation  . Let . Then we have   Let . Then we have   This implies   This leads to computation of power of . Therefore, we can invoke diagonalization of the matrix.  Note that is symmetric matrix with characteristic polynomial . The eigenvalues of are and the corresponding eigenvectors are . Since has distinct eigenvalues, is diagonalizable and we have   Let be one of the above eigenvalue of , then . Also it is easy to check that . Now we have Thus we have    Show that   Note that is called the Golden-Ratio which has many application in nature. The approximate value of .   Let . Then we have Now let us approximate Since , we have . This implies, .      Predator-Pray Model  In a certain area, it is observed that every year the number of rabbits is equal to 4 times the number of rabbits less 2 times numbers of weasels in the previous year. The number of weasels is equal to the sum of the number of rabbits number of weasels in the previous year. If the initial population of rabbits and weasels were 100 and 10 respectively, then find the number of each species after years. Let and be the number of rabbits and weasels after years respectively.  Then, as per data give we have with .  Let and . Then the above system is equivalent to . We need to obtain successively . It is easy to check that and are eigenvalues of with corresponding eigenvectors and respectively. We define . It is easy to see that . Also . Using diagonalization, we have Thus . Hence It is easy to check that What does this mean?    Solving System of Linear ODE  In this subsection, we shall deal with use of theory of eigenvalues and eigenvectors to solve system of linear differential equations. Let shall consider a system of first order linear differential equations with constant coefficients. A general form of such system can be given by Here we assume that are constants. The above system can be written as where real matrix and is column matrix.  We want to find a solution of the above system, that is a column vector of of differentiable functions on some interval which satisfies the above system.  If is the set of all solutions of the above system. Then one can show that is an -dimensional vector subspace of the set of differentiable function on . This mean, if are linearly independent functions which are solutions of the above system. Then any solution can be written as a linear combination of .  In case, we are given initial conditions, then there exists a unique solution of the system.  In addition, suppose is diagonalizable, with where , the diagonal matrix of eigenvalues of and is matrix of eigenbasis of .  We define . Then and . Now substituting and in the above system, we get Thus the above system of linear differential equation reduced to In particular, we have .  A general solution of the above system is given by The above equations can be written in matrix form as follows Here is the exponential of the matrix and is the column matrix of constants. From this we get a general solution of the original system as where .  Thus the solution in matrix form is given by The constant can be obtained when we have initila value problem.  Suppose we want to solve the initial value problem with initial condition . Then we have . Hence the solution in matrix form is given by    Steps to solve system of linear differential equations .      Find the matrix corresponding to this linear system and put the equation in matrix form .    Find the eigenvalues and corresponding eigenvectors of . Let be eigenvalues of with corresponding to eigenvectors respectively.    The solution is .       Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is    Solving using Sage    Sage also has inbuilt function desolve_system to solve a system of linear ODE.      What will be the solution of with initial conditions ?     Solve the following system ODE.     The eigenvalues of the coefficient matrix are and the corresponding eigenvectors are Hence a general solution of the given system is given by Using the given initial conditions, we get Solving the above equations, yields, . Hence the required solution of the problem is You may write the each component of the solution.   Using the inbuilt function dessole_system , we have the following.       Solve the following 2nd order differential equations. Consider the system     Substitute and . Then we have The above equations can be written as where The eigenvalues of are and the corresponding eigenvectors are Thus a general solution is given by Hence a general solution of the given problem can be obtained by dropping the dummy variables and . It is given by     In the next example, we deal with solving a system , in which the coefficient matrix has complex eigenvalues.    Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by   Writing and adjusting the constants, we can write the solution   After using the initial conditions, we have   This we can verify using the Sage inbuilt function.       In case the the coeffcient matrix of the sysstem is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.      Markov Chains  In this subsection, we look at some applications of linear algebra in dealing with matrices that arise from probabilistic systems. We consider chance process in which knowledge of previous outcomes influence prediction of future experiments. Such chance process is called a Markov Chain.   Let consider the following problem and develop the terminologies and methods to solve this problem.    Weather of certain area is classified as \"fair\", \"cloudy\" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?    In the above example, fair, cloudy and rainy day can be thought of as three states, say state 1, state 2 and state 3 respectively. Each day can be thought of as a generation. Let us denote the data given in the example as following table:     Fair  Cloudy  Rainy    Fair  0.60  0.25  0.15    Cloudy  0.40  0.35  0.25    Rainy  0.35  0.40  0.25    Let be the probability of transition from state to state . The matrix is called the transition matrix.     A transition matrix of an stage Markov chain is an matrix having nonnegative entries such that sum of entries in each column is 1. Such a matrix is called a stochastic matrix.     The transition matrix for the is given by   Note that , is the probability of being a cloudy day after fair day. Similarly , represent the probability of being fair day after a rainy day. The transition matrix, represents the change of state from present generation to the next generation.    The powers of a transition matrix have the same property of a transition matrix. That is, all the entries are non negative and sum of entries in any column is 1.      If is a transition matrix of a Markov chain and if denotes the -th entries of , then is the probability of moving to state from state in generations or in time period.    Let us consider of the transition matrix in the  Note that is the probability of rainy day becoming cloudy day after 5 days.  We consider an initial probability vector . This mean current day has 40% chance of being a fair day, 30% chance of being cloudy and 30% of being rainy.  Then , denotes the probability vector after $k$ stages. We are interested in long time behavior of the probability vector. In particular, we want to see if the limit exists.  In general, the above limits does not exists, however, in case the transition matrix is regular, then one can show that limit exists.     A transition matrix is regular if there exists a natural number such all the entries of are positive.    Note that all transition matrix are not regular, for example, identity matrix is a transition matrix but is not regular.  It is easy to see that if is a regular transition matrix matrix such that all the entries of are positive. Then all entries of are positive for non negative integers .  Let us assume that is a transition matrix and that exists. Then we have   Suppose are columns of . Then This means that each column of is an eigenvector of corresponding to eigenvalue 1. Thus we have proved the following result:    If is an regular transition matrix, then converges to a matrix, say, whose columns are eigenvectors of corresponding to eigenvalues 1.    In fact one can show the following.    If is a regular, transition matrix then its eigenvalue has multiplicity 1 and that there is only one eigenvectors associated with . This implies that all columns of are identical.    Now we define a a limiting state distribution vectors or steady state vector of an -state Markov chain as a vector as follows: Thus we have the following equation. Note that all columns of are identical, say, . Let . Then Thus is an eigenvector of with respect to eigenvalue 1 with sum of its components 1.  The gives a way to find the steady state vector.  Let us find the steady state vector of the transition matrix defined in the .  Let be the steady state vector. Then it is an eigenvector of PreTeXt P corresponding to eigenvalue 1. That is and also, . Thus we get the following set of equations which we need to solve.   Solving the avove equations we, get Hence the steady state vector is given by The limiting transition matrix is given by Thus in the long run about 48.74% chance of being a fair day, about 31.13% of being cloudy and about 20.13% chance of being rain day.    We can use diagonalization of the transition matrix to find the steady state vector.      A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.      Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )    132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.     Google Search Engine  Over 900 millions Indian use Internet (as of January 2024) most of them may do Google, a search engine that was designed by Lawrence Page and Sergei Brian in 1998. There are about 200 millions active webpages in the world as on January 2024 and it is growing by seconds. More often than not, google search gives the desired results, users are looking for. Have you ever thought of how does it work? Linear algebra plays an important role in how Google's search algorithm works. Google ranks pages according to their importance.  Success of Google lies behind its PageRank algorithm, which rates the importance of each page on the web and present the user typically most relevant and helpful pages first. PageRank uses link structure of web to determine the importance of webpages.  In this section, we shall explain how Google ranks webpages as a simple application to linear algebra.  Whenever an user or web surfer enters a keyword for searching, Google does three basic things:     Crawl the web and locate all web pages with public access.    Index the data from websites it has crawled, so that it can be searched efficiently for relevant keywords.    Rate the importance of each page in the database.     We shall briefly look at how to rank or rate webpages using Google's PageRank algorith.  An Internet network can be represented by a directed graph in which each website is thought of as a node or vertex and links between pages are edges with arrows. If there is an arrow from note to , them it means that there is link to move from webpage to . If there is a double arrow between and , then there is link from to and also from to .  To every network with -webpages, we assign a matrix , where represents the probability that surfer would visit the webpage from the webpage . If the webpage has links to other webpages then . If there is no link from to , then The matrix is called the hyper matrix of the network.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability .  We have    Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, .  One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.      Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .     The above network can be generate in Sage using DiGraph , directed graph method as follows.   Now let us define the tansition matrix manually.   Now we can find what happens to the initial vector after a large number of iterates (clicks).    From the , it looks like that we can find the stationary distribution vector and hence rank a network after a sufficiently large iterations. However, this is not always true. In case a network has a dangling webpage ( a webpage that does not link to any other page ), or a trapping loop, then we may not be able to rank webpages. In case a surfer come across, dangling node or trapping loop, he can type a new url in the address bar manually. The next two examples demonstrate this.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.     Let us see how to do the previous example in Sage.       Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.     Sage Code for Loop Network  Let use the loop network to find what happens to the initial vector in a long run.   We can find the transition matrix using .adjacency_matrix() method and taking its transpose.    Several improvements have been suggested to tackle dangling and trapping loops.  Page Rank inverters, Page and Bring suggested the a new matrix called the Google matrix which is defined as follows: where is matrix whose all entries are , is called the damping factor and .  If , then it means 90% times the surfer is using the web links and 10% times typing ulr manually in the address bar. In th original paper Page and Brin used as damping factor.  Since any regular stochastic matrix has a stationary vector, that is there exists a vector vector such that . Thus one can always find a stationary probability vector for a network.    The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.      The Google matrix defined in is a regular matrix.     Bigger Example using Google Matrix  In this example, we shall generate a random network, find the adjacency matrix and use Google matrix to find the page rank.       Page-Rank Example (all together)     "
 },
 {
   "id": "subsec5-3-Fibonacci-Seq-13",
@@ -2860,7 +2878,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.4.2",
   "title": "",
-  "body": "  Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is   Solving using Sage   Sage also has inbuilt function desolve_system to solve a system of linear ODE.    "
+  "body": "  Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is    Solving using Sage    Sage also has inbuilt function desolve_system to solve a system of linear ODE.    "
 },
 {
   "id": "subsec5-3-linear-ode-14",
@@ -2896,7 +2914,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.4.6",
   "title": "",
-  "body": "  Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by Writing and adjusting the constants, we can write the solution    "
+  "body": "  Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by   Writing and adjusting the constants, we can write the solution   After using the initial conditions, we have   This we can verify using the Sage inbuilt function.    "
 },
 {
   "id": "subsec5-3-linear-ode-19",
@@ -2989,18 +3007,18 @@ var ptx_lunr_docs = [
   "body": "  A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.    "
 },
 {
-  "id": "5-3-2",
+  "id": "subsec5-3-Markov-Chains-33",
   "level": "2",
-  "url": "sec5-3-eigen-Appl.html#5-3-2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-33",
   "type": "Checkpoint",
   "number": "5.4.17",
   "title": "",
   "body": " Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )  "
 },
 {
-  "id": "5-3-3",
+  "id": "subsec5-3-Markov-Chains-34",
   "level": "2",
-  "url": "sec5-3-eigen-Appl.html#5-3-3",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-34",
   "type": "Checkpoint",
   "number": "5.4.18",
   "title": "",
@@ -3013,7 +3031,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.4.20",
   "title": "",
-  "body": "  Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability . We have  Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, . One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.    "
+  "body": "  Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability .  We have    Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, .  One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.   "
 },
 {
   "id": "subsec5-3-Google-Search-11",
@@ -3025,6 +3043,15 @@ var ptx_lunr_docs = [
   "body": "  Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .   "
 },
 {
+  "id": "subsec5-3-Google-Search-12",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-12",
+  "type": "Activity",
+  "number": "5.4.1",
+  "title": "",
+  "body": " The above network can be generate in Sage using DiGraph , directed graph method as follows.   Now let us define the tansition matrix manually.   Now we can find what happens to the initial vector after a large number of iterates (clicks).   "
+},
+{
   "id": "eg-google_search2",
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#eg-google_search2",
@@ -3032,6 +3059,15 @@ var ptx_lunr_docs = [
   "number": "5.4.23",
   "title": "",
   "body": "  Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.   "
+},
+{
+  "id": "subsec5-3-Google-Search-15",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-15",
+  "type": "Activity",
+  "number": "5.4.2",
+  "title": "",
+  "body": " Let us see how to do the previous example in Sage.    "
 },
 {
   "id": "eg-google_search3",
@@ -3043,22 +3079,49 @@ var ptx_lunr_docs = [
   "body": "  Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.    "
 },
 {
-  "id": "subsec5-3-Google-Search-19",
+  "id": "subsec5-3-Google-Search-17",
   "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-19",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-17",
+  "type": "Activity",
+  "number": "5.4.3",
+  "title": "Sage Code for Loop Network.",
+  "body": "Sage Code for Loop Network  Let use the loop network to find what happens to the initial vector in a long run.   We can find the transition matrix using .adjacency_matrix() method and taking its transpose.   "
+},
+{
+  "id": "subsec5-3-Google-Search-22",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-22",
   "type": "Remark",
   "number": "5.4.27",
   "title": "",
   "body": "  The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.   "
 },
 {
-  "id": "subsec5-3-Google-Search-20",
+  "id": "subsec5-3-Google-Search-23",
   "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-20",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-23",
   "type": "Remark",
   "number": "5.4.28",
   "title": "",
   "body": "  The Google matrix defined in is a regular matrix.   "
+},
+{
+  "id": "subsec5-3-Google-Search-24",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-24",
+  "type": "Activity",
+  "number": "5.4.4",
+  "title": "Bigger Example using Google Matrix.",
+  "body": " Bigger Example using Google Matrix  In this example, we shall generate a random network, find the adjacency matrix and use Google matrix to find the page rank.     "
+},
+{
+  "id": "subsec5-3-Google-Search-25",
+  "level": "2",
+  "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-25",
+  "type": "Activity",
+  "number": "5.4.5",
+  "title": "Page-Rank Example (all together).",
+  "body": " Page-Rank Example (all together)   "
 },
 {
   "id": "sec5-4-eigen-exer",
@@ -3076,7 +3139,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.1",
   "title": "Orthogonality",
-  "body": " Orthogonality   In this chapter we deal with orthogonality of vectors and various properties. Recall, that if is linearly independent subset of and , then is linearly independent subset of .      A set of vectors is called orthogonal if     If , then .   Let be an orthogonal set of vectors in . Let and define ,  Then  (i) for all   (ii) If , then and is an orthogonal set.    If is orthogonal set then it is linearly independent.     A basis is called an orthogonal basis if is an orthogonal set in . In addition if for all , then is called an orthonormal basis.        The standard basis is an orthonormal basis of .     is an orthonormal basis of .     is an orthogonal basis of . However, it is not an orthonormal basis.     is an orthonormal basis of .        What is an advantage of having an orthonormal basis?   Let be an orthonormal basis of and . Then there exist scalars such that . Then is is easy to check that for all . In particular, the scalars can be explicitly written in terms of and . This is advantage of having an orthonormal basis.   (i) Find the coordinates of a vector with respect to an orthonormal basis of .  (ii) Find the coordinates of the vector with respect to an orthonormal basis of .   Next we deal with to find an orthonormal basis of or any subspace of .  "
+  "body": " Orthogonality   In this chapter we deal with orthogonality of vectors and various properties.  Recall, that if is linearly independent subset of and , then is linearly independent subset of . (why?)     A set of vectors is called orthogonal if where represents the standard dot product on     If , then .  Show that orthogonal set of vectors are linearly independent.   Let be an orthogonal set of vectors in . Let and define ,  Then  (i) for all   (ii) If , then and is an orthogonal set.     A basis is called an orthogonal basis if is an orthogonal set in . In addition if for all , then is called an orthonormal basis.        The standard basis is an orthonormal basis of .     is an orthonormal basis of .     is an orthogonal basis of . However, it is not an orthonormal basis.     is an orthonormal basis of .        What is an advantage of having an orthonormal basis?   Let be an orthonormal basis of and . Then there exist scalars such that . Then it is easy to check that for all . In particular, the scalars can be explicitly written in terms of and . This is advantage of having an orthonormal basis.   (i) Find the coordinates of a vector with respect to an orthonormal basis of .  (ii) Find the coordinates of the vector with respect to an orthonormal basis of .    Dot Product and Orthogonality in Sage  Sage has a method .dot_product() to find the dot product of two vectors and u.norm() returns the norm of .   Consider a set of vectors Let us check that are orthogonal. Let . Define Let us verify that is orthogonal to .    Can you think of how will you generate an orthogonal basis of starting with a non-zero vector in ?  Next we deal with finding an orthonormal basis of or any subspace of .  "
 },
 {
   "id": "def-orthogonal-set",
@@ -3085,25 +3148,25 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "6.1.1",
   "title": "",
-  "body": "  A set of vectors is called orthogonal if    "
+  "body": "  A set of vectors is called orthogonal if where represents the standard dot product on    "
+},
+{
+  "id": "orth-ex1-0",
+  "level": "2",
+  "url": "sec6-0-orthogonality.html#orth-ex1-0",
+  "type": "Checkpoint",
+  "number": "6.1.2",
+  "title": "",
+  "body": "Show that orthogonal set of vectors are linearly independent. "
 },
 {
   "id": "orth-ex2-1",
   "level": "2",
   "url": "sec6-0-orthogonality.html#orth-ex2-1",
   "type": "Checkpoint",
-  "number": "6.1.2",
-  "title": "",
-  "body": " Let be an orthogonal set of vectors in . Let and define ,  Then  (i) for all   (ii) If , then and is an orthogonal set.  "
-},
-{
-  "id": "sec6-0-orthogonality-6",
-  "level": "2",
-  "url": "sec6-0-orthogonality.html#sec6-0-orthogonality-6",
-  "type": "Checkpoint",
   "number": "6.1.3",
   "title": "",
-  "body": " If is orthogonal set then it is linearly independent.  "
+  "body": " Let be an orthogonal set of vectors in . Let and define ,  Then  (i) for all   (ii) If , then and is an orthogonal set.  "
 },
 {
   "id": "def-orthonormal-basis",
@@ -3133,13 +3196,31 @@ var ptx_lunr_docs = [
   "body": " (i) Find the coordinates of a vector with respect to an orthonormal basis of .  (ii) Find the coordinates of the vector with respect to an orthonormal basis of .  "
 },
 {
+  "id": "sec6-0-orthogonality-12",
+  "level": "2",
+  "url": "sec6-0-orthogonality.html#sec6-0-orthogonality-12",
+  "type": "Activity",
+  "number": "6.1.1",
+  "title": "Dot Product and Orthogonality in Sage.",
+  "body": " Dot Product and Orthogonality in Sage  Sage has a method .dot_product() to find the dot product of two vectors and u.norm() returns the norm of .   Consider a set of vectors Let us check that are orthogonal. Let . Define Let us verify that is orthogonal to .   "
+},
+{
+  "id": "sec6-0-orthogonality-13",
+  "level": "2",
+  "url": "sec6-0-orthogonality.html#sec6-0-orthogonality-13",
+  "type": "Checkpoint",
+  "number": "6.1.7",
+  "title": "",
+  "body": "Can you think of how will you generate an orthogonal basis of starting with a non-zero vector in ? "
+},
+{
   "id": "sec6-1-GramSchmidt",
   "level": "1",
   "url": "sec6-1-GramSchmidt.html",
   "type": "Section",
   "number": "6.2",
   "title": "Gram-Schmidt Orthogonalization Process",
-  "body": " Gram-Schmidt Orthogonalization Process  In this section, we look at how to construct an orthogonal basis of from a basis.  Let be a basis of . Define   In view of Ex. , it is easy to see that is an orthogonal basis of . Now we normalize . Define . Then is an orthononal basis of . Note that we could have defined immediately after defining .  This process is called the Gram-Schmidt orthogonalization process .  Geometrically , constructed by subtracting the orthogonal projection of on to . In order to construct , we take sum of orthogonal projections of onto and , which is the orthogonal projection of the plane spanned by and and subtract this from . Readers are encouraged to draw figures.    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis obtained from the given basis is .      Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .     Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .   "
+  "body": " Gram-Schmidt Orthogonalization Process  In this section, we look at how to construct an orthogonal basis of from a basis.  Let be a basis of . Define   In view of Ex. , it is easy to see that is an orthogonal basis of . Now we normalize . Define . Then is an orthononal basis of . Note that we could have defined immediately after defining .  This process is called the Gram-Schmidt orthogonalization process .  Geometrically , constructed by subtracting the orthogonal projection of on to . In order to construct , we take sum of orthogonal projections of onto and , which is the orthogonal projection of the plane spanned by and and subtract this from . Readers are encouraged to draw figures.    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis obtained from the given basis is .       Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .   Sage also has an inbuilt method for Gramm-Schmidt orthogonalization process. For example, A.gram_schmidt() performs Gram-Schmidt orthogonalization on the rows of the matrix, returning a new matrix and a matrix accomplishing the transformation.   Here is the matrix whose rows are nothing but orthogonal vectors obtained by Gram-Schmidt and is an upper triangular matrix. We shall see meaning of and how it is obtained in later sections.     Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .    Sage Routine for Gram-Schmidt Orthogonalizatio  Let us create a Sage routine to find an orthogonal basis from a set of linearly independent set of vecrors .   Now let us call the above function.   We can check if the set of vectors thus orbtained is orthonormal?    "
 },
 {
   "id": "gram-schmidt-eg1",
@@ -3148,7 +3229,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.2.1",
   "title": "",
-  "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis obtained from the given basis is .   "
+  "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis obtained from the given basis is .    "
 },
 {
   "id": "gram-schmidt-eg2",
@@ -3157,7 +3238,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.2.2",
   "title": "",
-  "body": "  Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .   "
+  "body": "  Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .   Sage also has an inbuilt method for Gramm-Schmidt orthogonalization process. For example, A.gram_schmidt() performs Gram-Schmidt orthogonalization on the rows of the matrix, returning a new matrix and a matrix accomplishing the transformation.   Here is the matrix whose rows are nothing but orthogonal vectors obtained by Gram-Schmidt and is an upper triangular matrix. We shall see meaning of and how it is obtained in later sections.   "
 },
 {
   "id": "sec6-1-GramSchmidt-9",
@@ -3178,13 +3259,22 @@ var ptx_lunr_docs = [
   "body": " Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .  "
 },
 {
+  "id": "sec6-1-GramSchmidt-11",
+  "level": "2",
+  "url": "sec6-1-GramSchmidt.html#sec6-1-GramSchmidt-11",
+  "type": "Activity",
+  "number": "6.2.1",
+  "title": "Sage Routine for Gram-Schmidt Orthogonalizatio.",
+  "body": " Sage Routine for Gram-Schmidt Orthogonalizatio  Let us create a Sage routine to find an orthogonal basis from a set of linearly independent set of vecrors .   Now let us call the above function.   We can check if the set of vectors thus orbtained is orthonormal?   "
+},
+{
   "id": "sec6-2",
   "level": "1",
   "url": "sec6-2.html",
   "type": "Section",
   "number": "6.3",
   "title": "Orthogonal Complements",
-  "body": " Orthogonal Complements    Let . Then is called the orthogonal complement of .     (i)   (ii) .  (iii) Let . Then is a subspace of . Note that need not be a subspace of .     Let . Then .      Find the orthogonal complement of .       Let be a subspace of with and orthogonal basis . If , then .     Let be a subspace of and . Then  (i) and .  (ii) is a vector in , which is closet to . That is for all , . Note that . Hence by the Pythagoras theorem, . .     Consider the plane . It is easy to see that lie on the plane . Using the Gram-Schmidt process we can find an orthogonal basis on . Let us find the orthogonal projection of onto . The required vector .    How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in ? Let be a basis of . We want to find the vector which the orthogonal projection of onto .  Note that , therefore, there exist scalars such that where and .  It is clear that . Hence for . This is same as .  Hence   The matrix is called the projection matrix for the subspace .   Let be an real matrix. Recall and , rangeor columns space of and null or kernel of . Then show that (i) and (ii) .   Let . Then for all . Hence . This implies that, . Next let then for all . Hence . That is, .    "
+  "body": " Orthogonal Complements    Let . Then is called the orthogonal complement of .     (i)   (ii) .  (iii) Let . Then is a subspace of . Note that need not be a subspace of .     Let . Then .      Find the orthogonal complement of .       Let be a subspace of with an orthogonal basis . If , then . called the orthogononal projection of onto .     Let be a subspace of and . Then  (i) and .  (ii) is a vector in , which is closet to . That is for all , . Note that . Hence by the Pythagoras theorem, . .     Consider the plane . It is easy to see that lie on the plane . Using the Gram-Schmidt process we can find an orthogonal basis on . Let us find the orthogonal projection of onto . The required vector .    How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in ? Let be a basis of . We want to find the vector which is the orthogonal projection of onto .  Note that , therefore, there exist scalars such that where and .  It is clear that . Hence for . This is same as .  Hence   The matrix is called the projection matrix for the subspace .   Consider a set of vectors Let be the subspace spanned by in . Find the orthogonal projection of the vector onto in Sage.    Since pivots indices are , are linearly independent. We define a matrix of whose columns are . Then the orthogonal projection of onto is .   It is easy to check that is orgthogonal to .      Let be an real matrix. Recall and , range or columns space of and null or kernel of . Then show that (i) and (ii) .   Let . Then for all . Hence . This implies that, . Next let then for all . Hence . That is, .    "
 },
 {
   "id": "def-orthogonal-complement",
@@ -3229,7 +3319,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "6.3.5",
   "title": "",
-  "body": "  Let be a subspace of with and orthogonal basis . If , then .   "
+  "body": "  Let be a subspace of with an orthogonal basis . If , then . called the orthogononal projection of onto .   "
 },
 {
   "id": "sec6-2-7",
@@ -3253,10 +3343,19 @@ var ptx_lunr_docs = [
   "id": "sec6-2-14",
   "level": "2",
   "url": "sec6-2.html#sec6-2-14",
-  "type": "Checkpoint",
+  "type": "Example",
   "number": "6.3.8",
   "title": "",
-  "body": " Let be an real matrix. Recall and , rangeor columns space of and null or kernel of . Then show that (i) and (ii) .   Let . Then for all . Hence . This implies that, . Next let then for all . Hence . That is, .   "
+  "body": " Consider a set of vectors Let be the subspace spanned by in . Find the orthogonal projection of the vector onto in Sage.    Since pivots indices are , are linearly independent. We define a matrix of whose columns are . Then the orthogonal projection of onto is .   It is easy to check that is orgthogonal to .    "
+},
+{
+  "id": "sec6-2-15",
+  "level": "2",
+  "url": "sec6-2.html#sec6-2-15",
+  "type": "Checkpoint",
+  "number": "6.3.9",
+  "title": "",
+  "body": " Let be an real matrix. Recall and , range or columns space of and null or kernel of . Then show that (i) and (ii) .   Let . Then for all . Hence . This implies that, . Next let then for all . Hence . That is, .   "
 },
 {
   "id": "sec6-3",
@@ -3355,7 +3454,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.5",
   "title": "QR-Factorization",
-  "body": " QR-Factorization  Let be an matrix whose columns are . Further assume that columns of are linearly independent. Using the Gram-Schmidt orthogonalization process and define . This implies .  Hence .  Thus we have   Thus   Here has orthogonal columns and is upper triangular whose diagonal entries are positive, hence non-singular. This is what is known as factorization. Thus we have the following result.    Every matrix with linearly independent columns has a factorization, , where columns of are orthonormal and is an upper triangular matrix with positive diagonal entries.      Let . Let us find the factorization of . Note that columns of are vectors in the Example . We have found in this example. Hence . We also have   Hence   Note that once we have , then .      Find the QR-factorization of . It is easy to check that columns of are linearly independent. In fact, columns of are rows of the matrix defined in the Example . From this example, we have    Hence . Also .     If a matrix has independent rows, then we apply factorization to . Thus where is the the invertible lower triangular matrix with positive diagonal entries and and has orthogonal rows.    In case a matrix has linearly independent columns then the factorization is unique. That is, if , then and .    Find the QR-factorization of the following matrices:    "
+  "body": " QR-Factorization  Let be an matrix whose columns are . Further assume that columns of are linearly independent. Using the Gram-Schmidt orthogonalization process and define . This implies .  Hence .  Thus we have   Thus   Here has orthogonal columns and is upper triangular whose diagonal entries are positive, hence non-singular. This is what is known as factorization. Thus we have the following result.    Every matrix with linearly independent columns has a factorization, , where columns of are orthonormal and is an upper triangular matrix with positive diagonal entries.      Let . Let us find the factorization of . Note that columns of are vectors in the Example . We have found in this example. Hence . We also have   Hence   Note that once we have , then .      Find the QR-factorization of . It is easy to check that columns of are linearly independent. In fact, columns of are rows of the matrix defined in the Example . From this example, we have    Hence . Also .     If a matrix has independent rows, then we apply factorization to . Thus where is the the invertible lower triangular matrix with positive diagonal entries and and has orthogonal rows.    In case a matrix has linearly independent columns then the factorization is unique. That is, if , then and .    Find the QR-factorization of the following matrices:    Sage Routine for QR-factorization     "
 },
 {
   "id": "sec6-4-7",
@@ -3412,13 +3511,22 @@ var ptx_lunr_docs = [
   "body": " Find the QR-factorization of the following matrices:   "
 },
 {
+  "id": "sec6-4-13",
+  "level": "2",
+  "url": "sec6-4.html#sec6-4-13",
+  "type": "Activity",
+  "number": "6.5.1",
+  "title": "Sage Routine for QR-factorization.",
+  "body": "Sage Routine for QR-factorization    "
+},
+{
   "id": "sec7-1-InnerProduct",
   "level": "1",
   "url": "sec7-1-InnerProduct.html",
   "type": "Section",
   "number": "7.1",
   "title": "Inner Product",
-  "body": " Inner Product  In the last section we dealt with notion of dot product and geometry in . The dot product and related notion can be generalized to an arbitrary vector space over or . All the notions, we have learned in the last section can be generalized over an inner product space.  Note that the dot product of two vectors in is a scalar, in particular, dot product can be thought of as a function from satisfying the following properties:      for all .     if and only if .     for all .     for all .     .     The notion of dot product on can ve generalized on vector space known as inner product. We have the following definition.  Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in satisfying the following properties.      for all and if and only if .     for all . (Symmetry)     for all .     for all and .     If is real vector space with inner product . Then called in inner product space over .    The last two properties make the inner product linear in the second variable. Using the symmetry property, it can also be shown that the inner product is linear in the first variable as well. That is,   Next we look at several examples of inner procuct on various vector spaces that we have defined in .    On , the standard dot product is an inner product. Thus define   This is also called the Euclidean inner product on .      Let , the set of all matrices over . Define   It is easy to show that this is an inner product on .  Note that this inner product can be thought of as the standard dot product on . The elements of the matrix can be thought of as a vector in . Then . Work with matrices and then try to prove this for matrices.      Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on .      Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)      Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .     mean that has roots, which is not possible unless by the fundamental theorem of algebra.      Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .     Let be an inner product space. Then for any two vectors , show that 1.   2.     The proof follows by looking at and and using the properties of inner product.    If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.   Proof follows from .    Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.     Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.    Let us play with the Cauchy-Schwarz inequality . Suppose and are non zero vectors in , Then   Hence we have .  Thus for any two non zero vectors, and , always lies between and 1. This allows us to define the angle between two non zero vectors. We assign this number to with called the angle between and . Thus, if is the angle between and , then we have   All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.   Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:     for all , and if and only if .    for all and , .    for all , .         Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.    The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them.   Let be a real inner product space. Define (i) orthogonality of two vectors and in , (ii) orthogonal complement of a subset of , (iii) Orthogonal projection of a vector onto a non-zero vector , (iv) orthogonal set and orthonormal sets in and (v) Gram-Schmidt orthogonalization process.    Let be two vectors in an inner product space . Then show that  (i) and are orthogonal if and only if . (what does it mean geometrically?)  (ii) and are orthogonal if and only if .    Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.   Pythagoras Theorem  Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.    Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .    Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .    Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials       Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.     Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.      Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .     Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .    Find the orthogonal projection of vector onto the subspace spanned by three vectors .   "
+  "body": " Inner Product  In the last section we dealt with notion of dot product and geometry in . The dot product and related notion can be generalized to an arbitrary vector space over or . All the notions, we have learned in the last section can be generalized over an inner product space.  Note that the dot product of two vectors in is a scalar, in particular, dot product can be thought of as a function from satisfying the following properties:      for all .     if and only if .     for all .     for all .     .     The notion of dot product on can ve generalized on vector space known as inner product. We have the following definition.  Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in satisfying the following properties.      for all and if and only if .     for all . (Symmetry)     for all .     for all and .     If is real vector space with inner product . Then called in inner product space over .    The last two properties make the inner product linear in the second variable. Using the symmetry property, it can also be shown that the inner product is linear in the first variable as well. That is,   Next we look at several examples of inner procuct on various vector spaces that we have defined in .    On , the standard dot product is an inner product. Thus define   This is also called the Euclidean inner product on .      Let , the set of all matrices over . Define   It is easy to show that this is an inner product on .  Note that this inner product can be thought of as the standard dot product on . The elements of the matrix can be thought of as a vector in . Then . Work with matrices and then try to prove this for matrices.        Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on .        Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)          Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .      mean that has roots, which is not possible unless by the fundamental theorem of algebra.         Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .     Let be an inner product space. Then for any two vectors , show that 1.   2.     The proof follows by looking at and and using the properties of inner product.    If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.   Proof follows from .    Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.     Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.    Let us play with the Cauchy-Schwarz inequality . Suppose and are non zero vectors in , Then   Hence we have .  Thus for any two non zero vectors, and , always lies between and 1. This allows us to define the angle between two non zero vectors. We assign this number to with called the angle between and . Thus, if is the angle between and , then we have   All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.   Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:     for all , and if and only if .    for all and , .    for all , .         Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.    The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them.   Let be a real inner product space. Define (i) orthogonality of two vectors and in , (ii) orthogonal complement of a subset of , (iii) Orthogonal projection of a vector onto a non-zero vector , (iv) orthogonal set and orthonormal sets in and (v) Gram-Schmidt orthogonalization process.    Let be two vectors in an inner product space . Then show that  (i) and are orthogonal if and only if . (what does it mean geometrically?)  (ii) and are orthogonal if and only if .    Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.   Pythagoras Theorem  Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.    Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .    Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .    Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials         Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.          Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.         Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .     Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .    Find the orthogonal projection of vector onto the subspace spanned by three vectors .   "
 },
 {
   "id": "def-inner-product",
@@ -3472,7 +3580,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "7.1.6",
   "title": "",
-  "body": "  Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .     mean that has roots, which is not possible unless by the fundamental theorem of algebra.   "
+  "body": "  Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .      mean that has roots, which is not possible unless by the fundamental theorem of algebra.    "
 },
 {
   "id": "definition-norm",
@@ -3484,18 +3592,18 @@ var ptx_lunr_docs = [
   "body": "  Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .   "
 },
 {
-  "id": "7-1-8",
+  "id": "inp-7-1-8",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#7-1-8",
+  "url": "sec7-1-InnerProduct.html#inp-7-1-8",
   "type": "Checkpoint",
   "number": "7.1.8",
   "title": "",
   "body": " Let be an inner product space. Then for any two vectors , show that 1.   2.     The proof follows by looking at and and using the properties of inner product.  "
 },
 {
-  "id": "7-1-9",
+  "id": "inp-7-1-9",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#7-1-9",
+  "url": "sec7-1-InnerProduct.html#inp-7-1-9",
   "type": "Checkpoint",
   "number": "7.1.9",
   "title": "",
@@ -3538,63 +3646,63 @@ var ptx_lunr_docs = [
   "body": "  Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.   "
 },
 {
-  "id": "sec7-1-InnerProduct-25",
+  "id": "sec7-1-InnerProduct-35",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-25",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-35",
   "type": "Note",
   "number": "7.1.14",
   "title": "",
   "body": "The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them. "
 },
 {
-  "id": "7-1-10",
+  "id": "inp-7-1-10",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#7-1-10",
+  "url": "sec7-1-InnerProduct.html#inp-7-1-10",
   "type": "Checkpoint",
   "number": "7.1.15",
   "title": "",
   "body": " Let be a real inner product space. Define (i) orthogonality of two vectors and in , (ii) orthogonal complement of a subset of , (iii) Orthogonal projection of a vector onto a non-zero vector , (iv) orthogonal set and orthonormal sets in and (v) Gram-Schmidt orthogonalization process.  "
 },
 {
-  "id": "7-1-11",
+  "id": "inp-7-1-11",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#7-1-11",
+  "url": "sec7-1-InnerProduct.html#inp-7-1-11",
   "type": "Checkpoint",
   "number": "7.1.16",
   "title": "",
   "body": " Let be two vectors in an inner product space . Then show that  (i) and are orthogonal if and only if . (what does it mean geometrically?)  (ii) and are orthogonal if and only if .  "
 },
 {
-  "id": "7-1-12",
+  "id": "inp-7-1-12",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#7-1-12",
+  "url": "sec7-1-InnerProduct.html#inp-7-1-12",
   "type": "Checkpoint",
   "number": "7.1.17",
   "title": "",
   "body": " Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.  "
 },
 {
-  "id": "7-1-13",
+  "id": "inp-7-1-13",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#7-1-13",
+  "url": "sec7-1-InnerProduct.html#inp-7-1-13",
   "type": "Checkpoint",
   "number": "7.1.18",
   "title": "Pythagoras Theorem.",
   "body": "Pythagoras Theorem  Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.  "
 },
 {
-  "id": "7-1-14",
+  "id": "inp-7-1-14",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#7-1-14",
+  "url": "sec7-1-InnerProduct.html#inp-7-1-14",
   "type": "Checkpoint",
   "number": "7.1.19",
   "title": "",
   "body": " Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .  "
 },
 {
-  "id": "7-1-15",
+  "id": "inp-7-1-15",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#7-1-15",
+  "url": "sec7-1-InnerProduct.html#inp-7-1-15",
   "type": "Checkpoint",
   "number": "7.1.20",
   "title": "",
@@ -3610,45 +3718,45 @@ var ptx_lunr_docs = [
   "body": " Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials     "
 },
 {
-  "id": "7-1-16",
+  "id": "inp-7-1-16",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#7-1-16",
+  "url": "sec7-1-InnerProduct.html#inp-7-1-16",
   "type": "Checkpoint",
   "number": "7.1.23",
   "title": "",
-  "body": " Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.  "
+  "body": " Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.       "
 },
 {
-  "id": "sec7-1-InnerProduct-34",
+  "id": "sec7-1-InnerProduct-46",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-34",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-46",
   "type": "Example",
   "number": "7.1.24",
   "title": "",
-  "body": "  Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.    "
+  "body": "  Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.       "
 },
 {
-  "id": "sec7-1-InnerProduct-35",
+  "id": "sec7-1-InnerProduct-47",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-35",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-47",
   "type": "Example",
   "number": "7.1.25",
   "title": "Lagrange Interpolating Polynomials.",
   "body": " Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .   "
 },
 {
-  "id": "sec7-1-InnerProduct-36",
+  "id": "sec7-1-InnerProduct-48",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-36",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-48",
   "type": "Definition",
   "number": "7.1.26",
   "title": "Projection onto a subspace.",
   "body": " Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .  "
 },
 {
-  "id": "7-1-17",
+  "id": "inp-7-1-17",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#7-1-17",
+  "url": "sec7-1-InnerProduct.html#inp-7-1-17",
   "type": "Checkpoint",
   "number": "7.1.27",
   "title": "",

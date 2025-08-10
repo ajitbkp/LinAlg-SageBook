@@ -20,11 +20,11 @@
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Page_Rank_Fig1.html">
 \begin{equation*}
 H=\begin{pmatrix}
-0 \amp  0 \amp  \frac{1}{2} \amp  \frac{1}{2} \amp  0\\[1mm]
-\frac{1}{3}  \amp  0 \amp  0 \amp  \frac{1}{2} \amp  0\\[1mm]
-\frac{1}{3}  \amp  0 \amp  0 \amp  0 \amp  0\\[1mm]
-0  \amp  \frac{1}{2} \amp  0 \amp  0 \amp  0\\[1mm]
-\frac{1}{3}  \amp  \frac{1}{2} \amp  \frac{1}{2} \amp  0 \amp  0\\
+0 \amp 0 \amp \frac{1}{2} \amp \frac{1}{2} \amp 0\\[1mm]
+\frac{1}{3} \amp 0 \amp 0 \amp \frac{1}{2} \amp 0\\[1mm]
+\frac{1}{3} \amp 0 \amp 0 \amp 0 \amp 0\\[1mm]
+0 \amp \frac{1}{2} \amp 0 \amp 0 \amp 0\\[1mm]
+\frac{1}{3} \amp \frac{1}{2} \amp \frac{1}{2} \amp 0 \amp 0\\
 \end{pmatrix}.
 \end{equation*}
 </div>
@@ -47,7 +47,7 @@ p_0=\begin{pmatrix}
 <div class="para">We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page <span class="process-math">\(i\)</span> in long runs. The vector</div>
 <div class="displaymath process-math">
 \begin{equation*}
-p_1=Hp_0=       	
+p_1=Hp_0=
 \left(\begin{array}{r}
 \frac{1}{2} \\
 0 \\
@@ -57,7 +57,10 @@ p_1=Hp_0=
 \end{array}\right)\text{.}
 \end{equation*}
 </div>
-<div class="para">Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability <span class="process-math">\(1/2\)</span> or at webpage 5 with probability <span class="process-math">\(1/2\text{.}\)</span> We have</div>
+<div class="para">Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability <span class="process-math">\(1/2\)</span> or at webpage 5 with probability <span class="process-math">\(1/2\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 p_2=H^2p_0=\left(\begin{array}{r}
@@ -66,7 +69,7 @@ p_2=H^2p_0=\left(\begin{array}{r}
 \frac{1}{6} \\
 \frac{1}{2} \\
 \frac{1}{6}
-\end{array}\right), p_3=H^3p_0=        	
+\end{array}\right), p_3=H^3p_0=
 \left(\begin{array}{r}
 \frac{1}{3} \\
 \frac{1}{4} \\
@@ -84,14 +87,14 @@ p_{20}=\left(\begin{array}{r}
 0.063492 \\
 0.31746 \\
 0.20635
-\end{array}\right), 
+\end{array}\right),
 p_{25}= \left(\begin{array}{r}
 0.19047 \\
 0.22222 \\
 0.063492 \\
 0.31746 \\
 0.20635
-\end{array}\right), \ldots, 
+\end{array}\right), \ldots,
 p_{50}=\left(\begin{array}{r}
 0.19047 \\
 0.22222 \\
@@ -101,6 +104,7 @@ p_{50}=\left(\begin{array}{r}
 \end{array}\right)
 \end{equation*}
 </div>
+</div> <div class="para logical">
 <div class="para">Thus we see that the probability vector seems to converge to a vector</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -113,8 +117,9 @@ p_{50}=\left(\begin{array}{r}
 \end{array}\right)
 \end{equation*}
 </div>
-<div class="para">which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, <span class="process-math">\([4, 2, 5, 1, 2]\text{.}\)</span> <div class="para">One can show that the vector <span class="process-math">\(\pi\)</span> is independent of the initial vector <span class="process-math">\(p_0\)</span> for this particular network.  This is called the  <em class="emphasis">stationary distribution vector.</em> Thus the stationary distribution vector for any network is <span class="process-math">\(\displaystyle \lim_{n\to \infty} H^np_0\)</span> if it exists.</div>
+<div class="para">which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, <span class="process-math">\([4, 2, 5, 1, 2]\text{.}\)</span>
 </div>
-</div></article><span class="incontext"><a class="internal" href="sec5-3-eigen-Appl.html#eg-google_search1">in-context</a></span>
+</div> <div class="para">One can show that the vector <span class="process-math">\(\pi\)</span> is independent of the initial vector <span class="process-math">\(p_0\)</span> for this particular network. This is called the <em class="emphasis">stationary distribution vector.</em> Thus the stationary distribution vector for any network is <span class="process-math">\(\displaystyle \lim_{n\to
+\infty} H^np_0\)</span> if it exists.</div></article><span class="incontext"><a class="internal" href="sec5-3-eigen-Appl.html#eg-google_search1">in-context</a></span>
 </body>
 </html>
