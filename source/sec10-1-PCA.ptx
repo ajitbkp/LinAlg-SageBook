@@ -40,13 +40,13 @@
           </p>
 
           <figure xml:id="fig_pca1">
-            <image width="45%" source="images/PCA-Fig2.PNG"/>
+            <image width="45%" source="images/PCA-Fig1.PNG"/>
              <caption>Variability along <m>y</m>-axis</caption>.
            </figure>
            
            <figure xml:id="fig_pca2">
             <image width="45%" source="images/PCA-Fig2.PNG"/>
-             <caption>ariability along <m>x</m>-axis</caption>
+             <caption>Variability along <m>x</m>-axis</caption>
            </figure>
 
           <p>

@@ -773,6 +773,22 @@ print(s)
       
     </output>
   </sage>
+  <p>
+    Using the inbuilt sage function <c>find_fit</c>, we have
+  </p>
+  <sage>
+    <input>
+## Using Sage inbult function
+var('t,a0,a1,a2,a3')
+model(t) = a0+a1*t+a2*t^2+a3*t^3
+data1 = [(xx[i],yy[i]) for i in range(n)]
+fit = find_fit(data1,model, solution_dict = True)
+print(fit)
+    </input>
+    <output>
+      
+    </output>
+  </sage>
           </statement>
         </example>
 
