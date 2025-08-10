@@ -1,58 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec5-5-Eigen-Sage-exer" xmlns:xi="http://www.w3.org/2001/XInclude">
-             <title>EIgenvalues and Eigenvectors in Sage</title>
-          <introduction>
-            <p>
-                In this section, we shall explore computation of eigenvalues and eigenvectors and related 
-                concepts in Sage. We shall also look applications of diagonalization in Sage. 
-            </p>
-          </introduction>
-          <p>
-            Sage can compute eigenvalues and eigenvectors of a matrix and also of 
-            linear operator. If <m>A</m> is a square marix, then <c>A.eignvalues()</c> returns eigenvalues of 
-            the matrix <m>A</m>. Simplarly, <c>A.eigenvectors_right()</c>  returns the eigenvectors along with 
-            the corresponding eigenvalue including the multiplicity of each eigenvalue.  Apart from these two coammands, Sage also has <c>A.eigenmatrix_right()</c> which returns diagonal matrix of eigenvalues and the matrix whose columns of eigenvectors. Let us explore some example.
-          </p>
-          <example>
-            <p>
-                Find the eigenvalues of eigenvectors of <m>A = \begin{pmatrix}1 \amp 1 \amp 1\\ 1 \amp 1 \amp 1\\1 \amp 1 \amp 1 \end{pmatrix}</m>.
-            </p>
-            <solution>
-                <sage>
-                    <input>
-                     A = matrix([[1,1,1],[1,1,1],[1,1,1]])
-                    A.eigenvalues()       
-                    </input>
-                    <output>
-                        
-                    </output>
-                </sage>
+    <title>Eigenvalues and Eigenvectors in Sage</title>
+    <introduction>
+        <p>
+            In this section, we shall explore computation of eigenvalues and eigenvectors and
+            related
+            concepts in Sage. We shall also look applications of diagonalization in Sage.
+        </p>
 
-                <sage>
-                    <input>
-                        A.eigenvectors_right()
-                    </input>
-                    <output>
-                        
-                    </output>
-                </sage>
+        <p> Sage can compute eigenvalues and eigenvectors of a matrix and also of linear operator.
+            If <m>A</m> is a square marix, then <c>A.eignvalues()</c> returns eigenvalues of the
+            matrix <m>A</m>. Simplarly, <c>A.eigenvectors_right()</c> returns the eigenvectors along
+            with the corresponding eigenvalue including the multiplicity of each eigenvalue. Apart
+            from these two coammands, Sage also has <c>A.eigenmatrix_right()</c> which returns
+            diagonal matrix of eigenvalues and the matrix whose columns of eigenvectors. Let us
+            explore some example. </p>
+    </introduction>
 
-                <sage>
-                    <input>
-                        A.eigenmatrix_right()
-                    </input>
-                    <output>
-                        
-                    </output>
-                </sage>
-            </solution>
-          </example>
+    <example>
+        <p> Find the eigenvalues of eigenvectors of <m>A = \begin{pmatrix}1 \amp 1 \amp 1\\ 1 \amp 1
+            \amp 1\\1 \amp 1 \amp 1 \end{pmatrix}</m>. </p>
+        <solution>
+            <sage>
+                <input>
+                    A = matrix([[1,1,1],[1,1,1],[1,1,1]])
+                    A.eigenvalues()
+                </input>
+                <output>
 
-          <p>
-            Sage can also compute eigenvalues and eigenvectors of a symbolic matrix. Let us look at the next example.
-          </p>
-          <example>
-           <sage>
+                </output>
+            </sage>
+
+            <sage>
+                <input>
+                    A.eigenvectors_right()
+                </input>
+                <output>
+
+                </output>
+            </sage>
+
+            <sage>
+                <input>
+                    A.eigenmatrix_right()
+                </input>
+                <output>
+
+                </output>
+            </sage>
+        </solution>
+    </example>
+
+    <p>
+        Sage can also compute eigenvalues and eigenvectors of a symbolic matrix. Let us look at the
+        next example.
+    </p>
+    <example>
+        <sage>
             <input>
                 var('t')
                 A = matrix([[1,t,t],[t,1,t],[t,t,1]])
@@ -60,302 +64,287 @@
                 print(A.eigenvectors_right())
             </input>
             <output>
-                
+
             </output>
-           </sage> 
-          </example>
-          <p>
-            Sage can also find the characteristic polynomial of  matrix with ease using two  matrix method
-            <c>A..charpoly()</c> and <c>A.characteristic_polynomial()</c> Let us look at the next example.
-          </p>
+        </sage>
+    </example>
+    <p> Sage can also find the characteristic polynomial of matrix with ease using two matrix method <c>
+        A..charpoly()</c> and <c>A.characteristic_polynomial()</c> Let us look at the next example. </p>
 
-          <example>
-            <p>
-                Find the characteristics polynomial of the matrix 
-            </p>
-            <sage>
-                <input>
-                    A=matrix([[1,2,-2],[1,1,1],[1,3,-1]])
-                    print(A.charpoly())
-                    print(A.characteristic_polynomial())
-                </input>
-                <output>
-                    
-                </output>
-            </sage>
-            <p>
-                We can factorize the characteristic polynomial to find its roots.
-            </p>
-            <sage>
-                <input>
-                    A.characteristic_polynomial().factor()
-                </input>
-                <output>
-                    
-                </output>
-            </sage>
-            <sage>
-                <input>
-                    print(A.eigenvalues())
-                    print(A.eigenvectors_right())
-                </input>
-                <output>
-                    
-                </output>
-            </sage>
-          </example>
+    <example>
+        <p>
+            Find the characteristics polynomial of the matrix
+        </p>
+        <sage>
+            <input>
+                A=matrix([[1,2,-2],[1,1,1],[1,3,-1]])
+                print(A.charpoly())
+                print(A.characteristic_polynomial())
+            </input>
+            <output>
 
-          <p>
-            Sage can find eigenvalues and eigenvalues of bigsize matriz also. However, the computation 
-            is done numerically. Let us look at the next example.
-          </p>
-          <example>
-            <p>
-                Consider the matrix <m>A=\left(\begin{array}{rrrrr}
-412 \amp -479 \amp 251 \amp -7 \amp 381 \\
--479 \amp 867 \amp -373 \amp -10 \amp -435 \\
-251 \amp -373 \amp 217 \amp -24 \amp 176 \\
--7 \amp -10 \amp -24 \amp 20 \amp 18 \\
-381 \amp -435 \amp 176 \amp 18 \amp 450
-\end{array}\right)</m>. Find the characteristics polynomial, eigenvalues and eigenvectors of <m>A</m>.
-            </p>
+            </output>
+        </sage>
+        <p>
+            We can factorize the characteristic polynomial to find its roots.
+        </p>
+        <sage>
+            <input>
+                A.characteristic_polynomial().factor()
+            </input>
+            <output>
+
+            </output>
+        </sage>
+        <sage>
+            <input>
+                print(A.eigenvalues())
+                print(A.eigenvectors_right())
+            </input>
+            <output>
+
+            </output>
+        </sage>
+    </example>
+
+    <p>
+        Sage can find eigenvalues and eigenvalues of bigsize matriz also. However, the computation
+        is done numerically. Let us look at the next example.
+    </p>
+    <example>
+        <p> Consider the matrix <m>A=\left(\begin{array}{rrrrr}
+                412 \amp -479 \amp 251 \amp -7 \amp 381 \\
+                -479 \amp 867 \amp -373 \amp -10 \amp -435 \\
+                251 \amp -373 \amp 217 \amp -24 \amp 176 \\
+                -7 \amp -10 \amp -24 \amp 20 \amp 18 \\
+                381 \amp -435 \amp 176 \amp 18 \amp 450
+                \end{array}\right)</m>. Find the characteristics polynomial, eigenvalues and
+            eigenvectors of <m>A</m>. </p>
+        <sage>
+            <input>
+                A = matrix([[412, -479, 251, -7, 381],[-479, 867, -373, -10, -435],
+                [251, -373, 217, -24, 176],[-7, -10, -24, 20, 18],[381, -435, 176, 18, 450]])
+                A.characteristic_polynomial()
+            </input>
+            <output>
+
+            </output>
+        </sage>
+        <p> Now let us try to factorize the characteristic polynomial of <m>A</m>. </p>
+        <sage>
+            <input>
+                A.characteristic_polynomial().factor()
+            </input>
+            <output>
+
+            </output>
+        </sage>
+        <p> Clearly this polynomial cannot be factorized in the field of rational numbers. However,
+            Sage provide an extended field <c>QQbar</c> in whihc we can find the rots of this
+            polynomial. </p>
+        <sage>
+            <input>
+                A.change_ring(QQbar)
+                A.characteristic_polynomial().roots(QQbar)
+            </input>
+            <output>
+
+            </output>
+        </sage>
+        <p> These are the eigenvalues that sage can find using <c>A.eigenvalues()</c>
+        </p>
+        <sage>
+            <input>
+                A.eigenvalues()
+            </input>
+            <output>
+
+            </output>
+        </sage>
+        <p>
+            For this example, let us also verify that (i) the sum of eigenvalues equals to the trace
+            and
+            (ii) the product of eigenvalues equals to the determinant.
+        </p>
+        <sage>
+            <input>
+                print(sum(A.eigenvalues()))
+                print(A.trace())
+            </input>
+            <output>
+
+            </output>
+        </sage>
+        <sage>
+            <input>
+                print(prod(A.eigenvalues()))
+                print(A.det())
+            </input>
+            <output>
+
+            </output>
+        </sage>
+        <p>
+            We can also verify the Cayley-Hamilton thorem for the above matrix.
+        </p>
+        <sage>
+            <input>
+                p(x)=A.characteristic_polynomial()
+                s = p(x).coefficients(sparse=False)
+                sum([s[i]*A**i for i in range(len(s))])
+            </input>
+            <output>
+
+            </output>
+        </sage>
+    </example>
+
+    <activity>
+        <statement>
+            <p> Consider the matrix <m>A=\left(\begin{array}{rrrrrr}
+                    -24 \amp 6 \amp 0 \amp -1 \amp 31 \amp 7 \\
+                    -9 \amp -2 \amp -8 \amp -17 \amp 24 \amp -29 \\
+                    4 \amp -10 \amp 1 \amp 1 \amp -12 \amp -36 \\
+                    -19 \amp 11 \amp -1 \amp -4 \amp 33 \amp 29 \\
+                    -11 \amp 6 \amp 2 \amp 3 \amp 14 \amp 21 \\
+                    5 \amp -1 \amp 2 \amp 5 \amp -11 \amp 4
+                    \end{array}\right)</m>. Find the eigenvalues of <m>A</m> and verify the
+                Cayley-Hamilton theorem. Also find the sum and product of eigenvalues of <m>A</m>
+                and observe that they are the trace and determinant of <m>A</m> respectively. </p>
+        </statement>
+    </activity>
+    <example>
+        <title>Eigenspaces</title>
+        <p> Consider a matrix <m>A=\left(\begin{array}{rrrrr}
+                -19 \amp 6 \amp 42 \amp -6 \amp 60 \\
+                -3 \amp -13 \amp 6 \amp 15 \amp 72 \\
+                -9 \amp 9 \amp 20 \amp -9 \amp 0 \\
+                -3 \amp 0 \amp 6 \amp 2 \amp 12 \\
+                0 \amp -3 \amp 0 \amp 3 \amp 14
+                \end{array}\right)</m>. Find the eigenvalues and eigenvectors of <m>A</m>. Also find
+            the eigenspace corresponding to each eigenvalues. Check if the the given matrix is
+            diagonalizable. </p>
+        <solution>
             <sage>
                 <input>
-                    A = matrix([[412, -479, 251, -7, 381],[-479, 867, -373, -10, -435],
-                    [251, -373, 217, -24, 176],[-7, -10, -24, 20, 18],[381, -435, 176, 18, 450]])
-                    A.characteristic_polynomial()
+                    A = matrix(QQ,[[-19, 6, 42, -6, 60],
+                    [-3, -13, 6, 15, 72],
+                    [-9, 9, 20, -9, 0],
+                    [-3, 0, 6, 2, 12],
+                    [0, -3, 0, 3, 14]])
+                    A.charpoly().factor()
                 </input>
                 <output>
-                    
+
                 </output>
             </sage>
-            <p>
-                Now let us try to factorize the characteristic polynomial of <m>A</m>.
-            </p>
-            <sage>
-                <input>
-                    A.characteristic_polynomial().factor()
-                </input>
-                <output>
-                    
-                </output>
-            </sage>
-            <p>
-                Clearly this polynomial cannot be factorized in the field of rational numbers. However, 
-                Sage provide an extended field <c>QQbar</c> in whihc we can find the rots of this polynomial.
-            </p>
-            <sage>
-                <input>
-                    A.change_ring(QQbar)
-                    A.characteristic_polynomial().roots(QQbar)
-                </input>
-                <output>
-                    
-                </output>
-            </sage>
-            <p>
-                These are the eigenvalues that sage can find using <c>A.eigenvalues()</c>
-            </p>
             <sage>
                 <input>
                     A.eigenvalues()
                 </input>
                 <output>
-                    
+
+                </output>
+            </sage>
+            <sage>
+                <input>
+                    A.eigenspaces_right()
+                </input>
+                <output>
+
                 </output>
             </sage>
             <p>
-                For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and 
-                (ii) the product of eigenvalues equals to the determinant.
+                This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.
             </p>
+
+            <p> Note that the eigenspace corresponding to the eigenvalue <m>\lamba</m> is the <m>\text{kerne}(A-\lambda
+                I)</m> and the gemetric multiplicity is the nullity of <m>(A-\lambda I)</m>. </p>
             <sage>
                 <input>
-                    print(sum(A.eigenvalues()))
-                    print(A.trace())
+                    λ = 2
+                    B = A-λ*identity_matrix(5)
+                    B.nullity()
                 </input>
                 <output>
-                    
+
                 </output>
             </sage>
+            <p> To find the eigenspace with respect to the eigenvalue <m>\lambda</m> can be obtained
+                by appplying RREF to the matrix <m>(A-\lambda I)</m> and solving the corresponding
+                system of equations. </p>
             <sage>
                 <input>
-                    print(prod(A.eigenvalues()))
-                    print(A.det())
+                    λ = 2
+                    B = A-λ*identity_matrix(5)
+                    B.rref()
                 </input>
                 <output>
-                    
+
                 </output>
             </sage>
-            <p>
-                We can also verify the Cayley-Hamilton thorem for the above matrix. 
-            </p>
+            <p> Now we can solve the system of equations, <m>x_1-2x_3-4x_5=0, x_2-x_4-4x_5=0</m> to
+                obtaine the eigenspace. </p>
             <sage>
                 <input>
-                    p(x)=A.characteristic_polynomial()
-                    s = p(x).coefficients(sparse=False)
-                    sum([s[i]*A**i for i in range(len(s))])
+                    B.right_kernel()
                 </input>
                 <output>
-                    
+
                 </output>
             </sage>
-          </example>
-
-          <activity>
-            <statement>
-            <p> Consider the matrix <m>A=\left(\begin{array}{rrrrrr}
--24 \amp 6 \amp 0 \amp -1 \amp 31 \amp 7 \\
--9 \amp -2 \amp -8 \amp -17 \amp 24 \amp -29 \\
-4 \amp -10 \amp 1 \amp 1 \amp -12 \amp -36 \\
--19 \amp 11 \amp -1 \amp -4 \amp 33 \amp 29 \\
--11 \amp 6 \amp 2 \amp 3 \amp 14 \amp 21 \\
-5 \amp -1 \amp 2 \amp 5 \amp -11 \amp 4
-\end{array}\right)</m>. Find the eigenvalues of <m>A</m> and verify the Cayley-Hamilton theorem. Also  find the sum and product of eigenvalues of <m>A</m> and observe that they are the trace and determinant of <m>A</m> respectively.
+            <p> Similarly, we can find the eigenspace with respect to the eigenvalue <m>\lambda=-1</m>
             </p>
-            </statement>
-        </activity>
-<example><title>Eigenspaces</title>
-    <p>
-        Consider a matrix <m>A=\left(\begin{array}{rrrrr}
--19 \amp 6 \amp 42 \amp -6 \amp 60 \\
--3 \amp -13 \amp 6 \amp 15 \amp 72 \\
--9 \amp 9 \amp 20 \amp -9 \amp 0 \\
--3 \amp 0 \amp 6 \amp 2 \amp 12 \\
-0 \amp -3 \amp 0 \amp 3 \amp 14
-\end{array}\right)</m>. Find the eigenvalues and eigenvectors of <m>A</m>. Also find the eigenspace 
-corresponding to each eigenvalues. Check if the the given matrix is diagonalizable.
-    </p>
-<solution>
-    <sage>
-        <input>
-            A = matrix(QQ,[[-19, 6, 42, -6, 60],
-            [-3, -13, 6, 15, 72],
-            [-9, 9, 20, -9, 0],
-            [-3, 0, 6, 2, 12],
-            [0, -3, 0, 3, 14]])
-            A.charpoly().factor()
-        </input>
-        <output>
-            
-        </output>
-    </sage>
-    <sage>
-        <input>
-            A.eigenvalues()
-        </input>
-        <output>
-            
-        </output>
-    </sage>
-    <sage>
-        <input>
-            A.eigenspaces_right()
-        </input>
-        <output>
-            
-        </output>
-    </sage>
-    <p>
-        This returns the eigenvalues are the corresponding eigenspace of each eigenvalue. 
-    </p>
+        </solution>
+    </example>
+    <example>
+        <title>Diagonalizability</title>
+        <p> Consider the same matrix <m>A=\left(\begin{array}{rrrrr}
+                -19 \amp 6 \amp 42 \amp -6 \amp 60 \\
+                -3 \amp -13 \amp 6 \amp 15 \amp 72 \\
+                -9 \amp 9 \amp 20 \amp -9 \amp 0 \\
+                -3 \amp 0 \amp 6 \amp 2 \amp 12 \\
+                0 \amp -3 \amp 0 \amp 3 \amp 14
+                \end{array}\right)</m>. We shall check the diagonalizability of <m>A</m>. </p>
 
-<p>
-    Note that the eigenspace corresponding to the eigenvalue <m>\lamba</m> is the <m>\text{kerne}(A-\lambda I)</m> and the gemetric multiplicity is the nullity of <m>(A-\lambda I)</m>. 
-</p>
-<sage>
-    <input>
-        λ = 2
-        B = A-λ*identity_matrix(5)
-        B.nullity()
-    </input>
-    <output>
-        
-    </output>
-</sage>
-<p>
-    To find the eigenspace with respect to the eigenvalue <m>\lambda</m> can be obtained by 
-    appplying RREF to the matrix <m>(A-\lambda I)</m> and solving the corresponding system of equations.
-</p>
-<sage>
-    <input>
-        λ = 2
-        B = A-λ*identity_matrix(5)
-        B.rref()
-    </input>
-    <output>
-        
-    </output>
-</sage>
-<p>
-    Now we can solve the system of equations, <m>x_1-2x_3-4x_5=0, x_2-x_4-4x_5=0</m> to obtaine the 
-    eigenspace. 
-</p>
-<sage>
-    <input>
-        B.right_kernel()
-    </input>
-    <output>
-        
-    </output>
-</sage>
-<p>
-    Similarly, we can find the eigenspace with respect to the eigenvalue <m>\lambda=-1</m>
-</p>
-</solution>
-</example>
-<example>
-    <title>Diagonalizability</title>
-    <p>
-    Consider the same matrix <m>A=\left(\begin{array}{rrrrr}
--19 \amp 6 \amp 42 \amp -6 \amp 60 \\
--3 \amp -13 \amp 6 \amp 15 \amp 72 \\
--9 \amp 9 \amp 20 \amp -9 \amp 0 \\
--3 \amp 0 \amp 6 \amp 2 \amp 12 \\
-0 \amp -3 \amp 0 \amp 3 \amp 14
-\end{array}\right)</m>. We shall check the diagonalizability of <m>A</m>.
+        <solution>
 
-    </p>
+            <sage>
+                <input>
+                    A = matrix(QQ,[[-19, 6, 42, -6, 60],
+                    [-3, -13, 6, 15, 72],
+                    [-9, 9, 20, -9, 0],
+                    [-3, 0, 6, 2, 12],
+                    [0, -3, 0, 3, 14]])
+                    A.is_diagonalizable()
+                </input>
+                <output>
 
-    <solution>
-    
-        <sage>
-            <input>
-                A = matrix(QQ,[[-19, 6, 42, -6, 60],
-                [-3, -13, 6, 15, 72],
-                [-9, 9, 20, -9, 0],
-                [-3, 0, 6, 2, 12],
-                [0, -3, 0, 3, 14]])
-                A.is_diagonalizable()
-            </input>
-            <output>
-                
-            </output>
-        </sage>
-        <p>
-            Clearly <m>A</m> is diagonalizable.  We can also find the matrix <m>P</m> of eigenvectors 
-            and check if <m>P^{-1}AP</m> is the diagonal matrix whose diagonal entries are eigenvalues. 
+                </output>
+            </sage>
+            <p> Clearly <m>A</m> is diagonalizable. We can also find the matrix <m>P</m> of
+                eigenvectors and check if <m>P^{-1}AP</m> is the diagonal matrix whose diagonal
+                entries are eigenvalues. </p>
+            <sage>
+                <input>
+                    D, P = A.right_eigenmatrix()
+                    P.inverse()*A*P
+                </input>
+                <output>
 
-        </p>
-        <sage>
-            <input>
-                D, P = A.right_eigenmatrix()
-                P.inverse()*A*P
-            </input>
-            <output>
-                
-            </output>
-        </sage>
+                </output>
+            </sage>
 
-        <sage>
-            <input>
-                P.inverse()*A*P==D
-            </input>
-            <output>
-                
-            </output>
-        </sage>
-    </solution>
-</example>
+            <sage>
+                <input>
+                    P.inverse()*A*P==D
+                </input>
+                <output>
+
+                </output>
+            </sage>
+        </solution>
+    </example>
 
 
-   </section>
+</section>

@@ -2,8 +2,10 @@
 
 <section xml:id="sec-LT-Geom" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Geometry of Linear Transformations</title>
-  <p> We look at some specific linear transformations from <m>\R^2</m> to <m>R^2</m> and how it
-    transforms the unit square. Readers are encouraged to draw figures. </p>
+  <introduction>
+    <p> We look at some specific linear transformations from <m>\R^2</m> to <m>R^2</m> and how it
+      transforms the unit square. Readers are encouraged to draw figures. </p>
+  </introduction>
 
   <example xml:id="x-expansion">
     <title>Exmpansion along <m>x</m>-axis.</title>
@@ -231,13 +233,16 @@
         # get the image
         import urllib.request
         URL = "https://raw.githubusercontent.com/jephianlin/LA-notebook/main/incrediville-side.jpg"
+        # URL = "https://github.com/ajitbkp/LinAlg-SageBook/blob/main/assets/images/Taj2.png"
         urllib.request.urlretrieve(URL, "incrediville-side.jpg")
+        # urllib.request.urlretrieve(URL, "Taj2.png")
         import numpy as np
         import matplotlib.pyplot as plt
         from PIL import Image
         img = Image.open('incrediville-side.jpg')
+        # img = Image.open('Taj2.png')
         r = 10
-        img = Image.open('incrediville-side.jpg')
+        # img = Image.open('incrediville-side.jpg')
         x,y = img.size
         img = img.resize((x // r, y // r)).convert("L")
         img_array = np.array(img)
