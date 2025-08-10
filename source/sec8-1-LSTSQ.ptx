@@ -166,7 +166,7 @@
 
             <p>
               Hence the least square solution of <m>Ax=b</m> is the solution of the normal equation
-              <m>A^TAx=A^b</m> which is <m>x^*=\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)</m>.
+              <m>A^TAx=A^Tb</m> which is <m>x^*=\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)</m>.
               The same can obtained as <m>x^* =(A^TA)^{-1}A^Tb</m>.
             </p>
 
@@ -185,7 +185,28 @@
                 b = \begin{pmatrix}-1\\3\\5\\1 \end{pmatrix} =w+u=\left(\begin{array}{r} \frac{1}{13} \\ \frac{41}{13} \\ \frac{62}{13} \\ \frac{18}{13} \end{array} \right)+\left(\begin{array}{r} -\frac{14}{13} \\ -\frac{2}{13} \\ \frac{3}{13} \\ -\frac{5}{13} \end{array} \right)
               </me>.
             </p>
-          </statement>
+          
+          <sage>
+            <input>
+A= matrix([[1 ,  -1],[1 ,  1], [2 ,  1],  [-2 ,  3]]) 
+b = vector([-1,3,5,1])
+print(A.T*A)
+print(A.T*b)
+xstar = (A.T*A).inverse()*A.T*b
+print('The least square solution is:')
+print(xstar)
+w = A*xstar
+print('The orthogonal projection is:')
+print(w)
+u = b-w
+print('The vector u such that b = w+u is')
+print(u)            </input>
+            <output>
+              
+            </output>
+          </sage>
+  </statement>
+          
         </example>
 
       <exercises xml:id="exercises-LSQ-ex1">
@@ -496,6 +517,65 @@
             <figure xml:id="fig_mumtempplot2">
               <image width="70%" source="images/mum_temp_plot2.png"/>
             </figure>
+
+            <sage>
+              <input>
+year=[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,
+      2013,2014,2015,2016,2017,2018,2019,2020,2021]
+temp=[27.08,26.93,27.11,27.18,26.94,27.25,27.64,27.66,27.75,27.65,27.61,27.26,27.82,
+      27.46,27.00,27.36,27.36,28.02,27.75,28.33,28.16,27.94,27.61,27.63,28.18,28.67,28.24,28.55,
+      28.76,28.27,28.40,28.48]
+data = zip(year,temp)
+point2d(data,figsize=8)
+              </input>
+
+              <output>
+                
+              </output>
+            </sage>
+  <sage>
+    <input>
+n = len(year);n
+ones = [1]*n
+A = column_matrix([ones,year])
+b = column_matrix(temp)
+s = (A.T*A).inverse()*A.T*b
+print("The least square solution is give by:")
+print(s)
+    </input>
+    <output>
+      
+    </output>
+  </sage>          
+  <p>
+    This means the slope of the fitted (regression line) is 0.0477584310854127 and the intercept is -68.0279710416216. Now we plot the fitted line along with the fitted line.
+  </p>
+  <sage>
+    <input>
+var('t')
+data1 = [(year[i],temp[i]) for i in range(n)]
+point(data1,figsize=5)+plot((s[0]+s[1]*t)[0],(t,1990,2022),color='red',figsize=5)
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+  <p>
+    Sage also has an inbult function to find the fitted line. 
+  </p>
+  <sage>
+    <input>
+    ## Using Sage inbult function
+var('t,a,b')
+model(t) = a+b*t
+data1 = [(year[i],temp[i]) for i in range(n)]
+fit = find_fit(data1,model, solution_dict = True)
+print(fit)
+    </input>
+    <output>
+      
+    </output>
+  </sage>
           </statement>
         </example>
       
@@ -661,6 +741,38 @@
             <figure xml:id="fig_cubic_plot1"> 
               <image width="70%" source="images/cubic_plot1.png"/>
             </figure>
+
+            <sage>
+              <input>
+xx = [-3.0 , -2.8 , -2.5 , -2.2 , -2.0 , -1.8 , -1.5 , -1.2 , -1.0 , -0.75 , -0.50 ,
+      -0.25 , 0.00 , 0.25 , 0.50 , 0.75 , 1.0 , 1.2 , 1.5 , 1.8]
+yy = [1.1 , 4.0 , 7.3 , 7.1 , 8.2 , 7.8 , 9.9 , 7.1 , 8.8 , 6.2 , 7.0 , 3.7 , 4.7 , 
+      3.4 , 5.6 , 5.8 , 5.3 , 6.6 , 10. , 12]
+n = len(xx)
+point([(xx[i],yy[i]) for i in range(n)])
+ones = [1]*n
+xx2 = [xx[i]^2 for i in range(n)]
+xx3 =[xx[i]^3 for i in range(n)]
+b = column_matrix(yy)
+A = column_matrix([ones, xx, xx2,xx3])
+s= (A.T*A).inverse()*A.T*b
+print('The least square solution is')
+print(s)
+              </input>
+              <output>
+                
+              </output>
+            </sage>
+  <sage>
+    <input>
+      pts = point([(xx[i],yy[i]) for i in range(20)],figsize=5)
+      cubic = plot(s[0][0]+s[1][0]*t+s[2][0]*t^2+s[3][0]*t^3,(t,-3.2,2),color="red",figsize=5)
+      pts+cubic
+    </input>
+    <output>
+      
+    </output>
+  </sage>
           </statement>
         </example>
 
