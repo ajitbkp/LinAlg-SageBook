@@ -1076,6 +1076,12 @@ print(s)
 </script></div> <div id="sec8-1-LSTSQ-4-5-1-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">pts = point([(xx[i],yy[i]) for i in range(20)],figsize=5)
 cubic = plot(s[0][0]+s[1][0]*t+s[2][0]*t^2+s[3][0]*t^3,(t,-3.2,2),color="red",figsize=5)
 pts+cubic
+</script></div> <div class="para" id="sec8-1-LSTSQ-4-5-1-10">Using the inbuilt sage function <code class="code-inline tex2jax_ignore">find_fit</code>, we have</div> <div id="sec8-1-LSTSQ-4-5-1-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Using Sage inbult function
+var('t,a0,a1,a2,a3')
+model(t) = a0+a1*t+a2*t^2+a3*t^3
+data1 = [(xx[i],yy[i]) for i in range(n)]
+fit = find_fit(data1,model, solution_dict = True)
+print(fit)
 </script></div></article><section class="exercises" id="exercises-"><h4 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
 </h4>
