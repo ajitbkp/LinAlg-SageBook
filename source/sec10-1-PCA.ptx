@@ -367,8 +367,127 @@
               </p>
             </statement>
           </example>
+<p>
+  Let us solve the above problem in Sage.
+</p>
+<sage>
+  <input>
+xx = [2.5,0.5,2.2,1.9,3.0,2.3,2.0,1.0,1.5,1.1]
+yy = [2.0,0.7,2.9,2.2,2.8,2.7,1.6,1.1,1.6,0.9]
+X = column_matrix([xx,yy])
+n = len(xx)
+d = 2
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<p>
+  Next we plot the set of points. 
+</p>
+<sage>
+  <input>
+pts = points([(xx[i],yy[i]) for i in range(n)],size=10)
+show(pts,axes=(0,0),xmin=-0.2,ymin=-0.2,figsize=4)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+xxm = mean(xx)
+yym = mean(yy)
+print(xxm.n(digits=3),yym.n(digits=3))    
+mean_matrix = column_matrix([[xxm for i in range(n)],[yym for i in range(n)]])
+Xc = X-mean_matrix;
+Xc.n(digits=2)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+mean_pts = points(Xc,size=10,color='blue');mean_pts
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+S = 1/(n-1)*(Xc.T)*Xc
+print('The Covariance matrix is')
+S = S.change_ring(CDF)
+eigenvalues = S.eigenvalues()
+print('The principal components are:')
+print(eigenvalues)
+print('The Eigenvectors of covariance matrix are')
+evec=S.eigenvectors_right();
+print(evec)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+pc1 = evec[1][1][0]
+pc2 = evec[0][1][0]
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+ pca_plot = (2*pc1).plot(color='green')+pc2.plot(color='red')+mean_pts
+show(pca_plot,aspect_ratio=1)   
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+V = column_matrix([pc1,pc2])
+Z = Xc*V; 
+print(Z)
+  </input>
+  <output>
+    
+  </output>
+</sage>
 
+<sage>
+  <input>
+ X1 = Z*V.T;
+X1.n(digits=3)
+print(X1)   
+  </input>
+  <output>
+    
+  </output>
+</sage>
 
+<sage>
+  <input>
+  print(Z*V+mean_matrix)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+## Variance explaines by the 1st PAC.
+eigenvalues[1]/(sum(eigenvalues))*100
+  </input>
+  <output>
+    
+  </output>
+</sage>
           <example xml:id="pca-eg2">
             <statement>
               <p>
@@ -514,5 +633,152 @@
               </p>
             </statement>
           </example>
+  <p>
+  Let us solve the above problem in Sage.  
+  </p>
+  <sage>
+    <input>
+import numpy as np
+X = np.array([[24, 13, 38], [8, 3, 17], [21, 6, 40], [1, 14, -9], [9, 3, 21], [7, 1, 14],
+              [8, 7, 11], [10, 16, 3], [1, 3, 2], [15, 2, 30], [4, 6, 1], [12, 10, 18], [1, 9, -4],
+              [7, 3, 19], [5, 1, 13], [1, 12, -6], [21, 9, 34], [8, 8, 7], [1, 18, -18],
+              [15, 8, 25], [16, 10, 29], [7, 0, 17], [14, 2, 31], [3, 7, 0], [5, 6, 7]])
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+  <sage>
+    <input>
+u = X[:,0] # First column of X
+v = X[:,1] # Second column of X
+w = X[:,2] # Third column of X
+n = len(u)
+u_bar = np.mean(u) # Mean of the first column
+v_bar = np.mean(v) # Mean of the second column
+w_bar = np.mean(w) # Mean of the third column
+u1=u-u_bar 
+v1 = v-v_bar
+w1 = w-w_bar
+X_bar = np.array([u1,v1,w1]).T # Adjusted data
+X1 = X-np.mean(X,axis=0) # Adjusted data
+S1 = 1/(n-1)*(X1.T).dot(X1)
+print(f'The covaraince matrix is:\n {S1}')
+eigens = np.linalg.eigvals(S1)
+print(f'Eigenvalues of the covariance matrix are:\n{eigens}')
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+  <sage>
+    <input>
+eig_val,eig_vec= np.linalg.eig(S1)
+print('Eigenvalues are:',eig_val)
+print('Matrix of eigenvectors:',eig_vec)
+print("Eigenvectors are:", eig_vec[:,0], 'and', eig_vec[:,1], eig_vec[:,2])
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+<sage>
+  <input>
+S1 = matrix(S1).change_ring(CDF)
+S1.eigenmatrix_right()
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+evec=S1.eigenvectors_right();
+print(evec)
+pc1 = evec[0][1][0]
+pc2 = evec[2][1][0]
+pc3 = evec[1][1][0];pc3
+print('The pricipal components are')
+print(pc1,pc2,pc3)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+# Variance explained by the 1st PCA 
+eig_val[0]/sum(eig_val)*100    
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+# Variance explained by the 1st two PCAs
+(eig_val[0]+eig_val[2])/sum(eig_val)*100
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<p>
+We can vizualize the PCA in the 3d. We use a simulated data of 200 points in 3d.
+</p>
+
+<sage>
+  <input>
+import numpy as np
+
+# Seed for reproducibility
+np.random.seed(42)
+
+# Generate 3D data with correlation
+# First principal axis is along (1, 2, 0.5)
+n_points = 200
+t = np.linspace(-5, 5, n_points)
+x = t + np.random.normal(0, 0.5, n_points)
+y = 2*t + np.random.normal(0, 0.5, n_points)
+z = 0.5*t + np.random.normal(0, 0.5, n_points)
+
+X = np.vstack((x, y, z)).T
+
+# Mean-center
+X_mean = np.mean(X, axis=0)
+X_centered = X - X_mean
+
+# Covariance matrix
+cov_matrix = np.cov(X_centered, rowvar=False)
+
+# Eigen decomposition
+eigenvalues, eigenvectors = np.linalg.eigh(cov_matrix)
+
+# Sort by descending eigenvalue
+idx = np.argsort(eigenvalues)[::-1]
+eigenvalues = eigenvalues[idx]
+eigenvectors = eigenvectors[:, idx]
+
+# Scale for plotting
+scale = 3
+pc_vectors = [scale*np.sqrt(ev)*vec for ev, vec in zip(eigenvalues, eigenvectors.T)]
+
+# Plot points
+points3d_list = [point3d(p, size=20, color='blue') for p in X_centered]
+
+# Plot principal component arrows
+origin = vector([0, 0, 0])
+pca_arrows = [arrow3d(origin, vector(v), color='red', width=2) for v in pc_vectors]
+
+# Show plot
+p = sum(points3d_list) + sum(pca_arrows)
+p.show(viewer='threejs', frame=True)
+
+  </input>
+  <output>
+    
+  </output>
+</sage>
         </subsection>
       </section>

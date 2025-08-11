@@ -1323,4 +1323,10 @@ plt.show()
 
 </remark>
       </subsection>
+
+  <conclusion>
+    <p>
+      In essence, SVD bridges theory and application—providing a unifying framework in linear algebra with far-reaching uses from solving least squares problems to dimensionality reduction and real-world data compression.
+    </p>
+  </conclusion>
 </section>
