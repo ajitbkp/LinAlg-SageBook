@@ -50,6 +50,58 @@
     <dedication>
       <p>To my wife Sadhana, my son Chinmay and daughter Sara.</p>
   </dedication>
+<preface xml:id="preface">
+    <title>Preface</title>
+    <p>
+        This book, <title><em>Linear Algebra with SageMath: A Gentle Introduction</em></title>, 
+        is designed as a self-contained, accessible pathway into linear algebra with an emphasis 
+        on computation using SageMath. It begins with familiar topics such as systems of linear 
+        equations and elementary row operations, then systematically expands into topics like 
+        vector spaces, linear transformations, eigenvalues, orthogonality, inner product spaces, 
+        regression, singular value decomposition, and principal component analysis.
+    </p>
+    <p>
+        The text is based on the author’s course of lectures for engineering students, refined 
+        over several years of teaching and integrating computational approaches into the curriculum.
+    </p>
+    <p>
+        A distinctive feature of the book is its consistent use of the 
+        <term>Reduced Row Echelon Form (RREF)</term> as a central computational tool. 
+        The RREF approach is not only essential for solving systems of equations, but also proves 
+        to be a unifying and highly effective method for a wide range of computations in linear algebra.
+    </p>
+    <p>Key features include:</p>
+    <ul>
+        <li>
+            <em>Gradual structure</em>: Each chapter builds on the previous one, starting from 
+            Gaussian elimination, advancing through theory with geometric intuition and computational examples.
+        </li>
+        <li>
+            <em>Interactive learning</em>: SageMath examples, computational exercises, and “Sage Computations” 
+            sections scattered throughout the text reinforce concepts through hands-on experimentation.
+        </li>
+        <li>
+            <em>Applied focus</em>: Special applications—such as polynomial fitting, Markov chains, 
+            image compression, and PCA—highlight how linear algebra underpins both theoretical and practical domains.
+        </li>
+        <li>
+            <em>Balanced pedagogy</em>: Rigour and intuition go hand-in-hand. Abstract notions like 
+            inner product spaces and orthogonal complements are grounded by SageMath implementations, 
+            guiding both self-learners and classroom users.
+        </li>
+    </ul>
+    <p>
+        I hope this text serves as an inviting and productive introduction to linear algebra, equipping 
+        readers with both conceptual clarity and computational competence as they progress through topics 
+        and exercises.
+    </p>
+     <attribution>
+    <line>Ajit Kumar, Ph.D.</line>
+    <line>Department of Mathematics</line>
+    <line>Institute of Chemical technology, Mumbai (INDIA)</line>
+    </attribution>
+
+</preface>
 
 </frontmatter>
 
