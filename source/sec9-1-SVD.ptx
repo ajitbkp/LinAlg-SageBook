@@ -1146,5 +1146,133 @@ P4.show(aspect_ratio=[1,1,1])
         then it is of size <m>100(995+1770)=276500</m> which quite small compared to the original size.
       </p>
       
+      <p>
+        Now let us see how, we can implement image compression in Python. 
+      </p>
+   <sage>
+      <input>
+        import numpy as np
+        from PIL import Image
+        import requests
+        from io import BytesIO
+        import matplotlib.pyplot as plt
+        url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
+        response = requests.get(url)
+        img = Image.open(BytesIO(response.content))
+        img_array = np.array(img)
+        # img.show() # may open in viewer depending on Sage environment
+        img
+      </input>
+    </sage>
+   
+    <sage>
+      <input>
+imggray = img.convert('LA')
+imgmat = np.array( list(imggray.getdata(band = 0)), float)
+imgmat.shape = (imggray.size[1], imggray.size[0])
+imgmat.shape
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+<sage>
+  <input>
+plt.figure()
+plt.imshow(imgmat, cmap = 'gray')
+plt.title("Image after converting it into the Grayscale pattern")
+plt.show()    
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+U, S, Vt = np.linalg.svd(imgmat) #singular value decomposition
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+i = 10
+cmpimg = np.matrix(U[:, :i]) * np.diag(S[:i]) * np.matrix(Vt[:i,:])
+plt.imshow(cmpimg, cmap = 'gray')
+title = " Image after =  %s" %i
+plt.title(title)
+plt.show()
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+print("After compression: ")
+for i in [5, 10, 50,100,200]:
+    cmpimg = np.matrix(U[:, :i]) * np.diag(S[:i]) * np.matrix(Vt[:i,:])
+    plt.imshow(cmpimg, cmap = 'gray')
+    title = "Image with %s components" %i
+    plt.title(title)
+    plt.show()
+    result = Image.fromarray((cmpimg ).astype(np.uint8))
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<example>
+  <title>Color Image Compression</title>
+  <sage>
+    <input>
+import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+import requests
+from io import BytesIO
+import urllib.request
+url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
+urllib.request.urlretrieve(url, "Sardar.jpg")
+img = Image.open('Sardar.jpg')
+arr = np.array(img)
+
+r = arr[:,:,0]
+g = arr[:,:,1]
+b = arr[:,:,2]
+ur,sr,vr = np.linalg.svd(r, full_matrices=False)
+ug,sg,vg = np.linalg.svd(g, full_matrices=False)
+ub,sb,vb = np.linalg.svd(b, full_matrices=False)
+
+k=5 ## Number of components
+rr = np.dot(ur[:,:k],np.dot(np.diag(sr[:k]), vr[:k,:]))
+rg = np.dot(ug[:,:k],np.dot(np.diag(sg[:k]), vg[:k,:]))
+rb = np.dot(ub[:,:k],np.dot(np.diag(sb[:k]), vb[:k,:]))
+rimg = np.zeros(arr.shape)
+rimg[:,:,0] = rr
+rimg[:,:,1] = rg
+rimg[:,:,2] = rb
+for ind1, row in enumerate(rimg):
+        for ind2, col in enumerate(row):
+            for ind3, value in enumerate(col):
+                if value &lt; 0:
+                    rimg[ind1,ind2,ind3] = abs(value)
+                if value > 255:
+                    rimg[ind1,ind2,ind3] = 255
+compressed_image = rimg.astype(np.uint8)
+plt.imshow(compressed_image)
+plt.axis('off')
+plt.show()
+   </input>
+    <output>
+      
+    </output>
+  </sage>
+</example>
       </subsection>
 </section>
