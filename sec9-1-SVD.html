@@ -217,6 +217,9 @@ sagecell.makeSagecell({
 #def-pseudoinverse-1-2-1 { counter-set: def-pseudoinverse-1-2-1 0; }
 #def-pseudoinverse-1-2-1 > li::marker { content: ""counter(def-pseudoinverse-1-2-1,decimal)"."; }
 #def-pseudoinverse-1-2-1 > li { counter-increment: def-pseudoinverse-1-2-1; }
+#sec9-1-SVD-6-27-2 { counter-set: sec9-1-SVD-6-27-2 0; }
+#sec9-1-SVD-6-27-2 > li::marker { content: ""counter(sec9-1-SVD-6-27-2,decimal)"."; }
+#sec9-1-SVD-6-27-2 > li { counter-increment: sec9-1-SVD-6-27-2; }
 </style>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -1202,7 +1205,7 @@ for i in [5, 10, 50,100,200]:
 </script></div>
 <article class="example example-like" id="sec9-1-SVD-6-26"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Color Image Compression.</span>
-</h4> <div id="sec9-1-SVD-6-26-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
+</h4> <div class="para" id="sec9-1-SVD-6-26-2">In this example, we present a Python program that demonstrates color image compression using Singular Value Decomposition (SVD). The method involves separating the image into its Red, Green, and Blue (RGB) channels, applying SVD to each channel individually, and then recombining the compressed channels to obtain the final compressed image.</div> <div class="para" id="sec9-1-SVD-6-26-3"><em class="emphasis">The reader is encouraged to copy the following code and execute it in a Python environment.</em></div> <div id="sec9-1-SVD-6-26-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 import requests
@@ -1239,7 +1242,25 @@ compressed_image = rimg.astype(np.uint8)
 plt.imshow(compressed_image)
 plt.axis('off')
 plt.show()
-</script></div></article></section></section></div>
+</script></div></article><article class="remark remark-like" id="sec9-1-SVD-6-27"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">9.1.22</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec9-1-SVD-6-27-1">Suppose <span class="process-math">\(A=U\Sigma V^T\)</span> is the singular value decomposition of <span class="process-math">\(A\text{.}\)</span> Then we get the following informations from the SVD of <span class="process-math">\(A\text{.}\)</span>
+</div> <ol class="decimal" id="sec9-1-SVD-6-27-2">
+<li id="sec9-1-SVD-6-27-2-1"><div class="para" id="sec9-1-SVD-6-27-2-1-1">The rank is equal to the number of non-zero singular values: <span class="process-math">\(\mathrm{rank}(A) = \#\{\sigma_i &gt; 0\}\)</span>
+</div></li>
+<li id="sec9-1-SVD-6-27-2-2"><div class="para" id="sec9-1-SVD-6-27-2-2-1">Null space (Kernel) is  obtained from the columns of <span class="process-math">\(V\)</span> corresponding to zero singular values.</div></li>
+<li id="sec9-1-SVD-6-27-2-3"><div class="para" id="sec9-1-SVD-6-27-2-3-1">Column space (Range) is panned by the first <span class="process-math">\(r\)</span> columns of <span class="process-math">\(U\text{,}\)</span> where <span class="process-math">\(r = \mathrm{rank}(A)\text{.}\)</span>
+</div></li>
+<li id="sec9-1-SVD-6-27-2-4"><div class="para" id="sec9-1-SVD-6-27-2-4-1">Row space is  spanned by the first <span class="process-math">\(r\)</span> columns of <span class="process-math">\(V\text{.}\)</span>
+</div></li>
+<li id="sec9-1-SVD-6-27-2-5"><div class="para" id="sec9-1-SVD-6-27-2-5-1">Spectral norm,  <span class="process-math">\(\|A\|_2 = \sigma_{\max}\)</span>
+</div></li>
+<li id="sec9-1-SVD-6-27-2-6"><div class="para" id="sec9-1-SVD-6-27-2-6-1">Frobenius norm <span class="process-math">\(\|A\|_F = \sqrt{\sum \sigma_i^2}\)</span>
+</div></li>
+<li id="sec9-1-SVD-6-27-2-7"><div class="para" id="sec9-1-SVD-6-27-2-7-1">Condition number, defined as <span class="process-math">\(\kappa(A) = \frac{\sigma_{\max}}{\sigma_{\min}}\text{.}\)</span>
+</div></li>
+</ol></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chap9-SVD.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap10-PCA.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
