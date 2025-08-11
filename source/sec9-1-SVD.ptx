@@ -1229,6 +1229,13 @@ for i in [5, 10, 50,100,200]:
 
 <example>
   <title>Color Image Compression</title>
+  <p>
+    In this example, we present a Python program that demonstrates color image compression using Singular Value Decomposition (SVD). The method involves separating the image into its Red, Green, and Blue (RGB) channels, applying SVD to each channel individually, and then recombining the compressed channels to obtain the final compressed image.
+    
+  </p>
+  <p>
+    <em>The reader is encouraged to copy the following code and execute it in a Python environment.</em>
+  </p>
   <sage>
     <input>
 import numpy as np
@@ -1274,5 +1281,46 @@ plt.show()
     </output>
   </sage>
 </example>
+<remark>
+ <p>
+  Suppose <m>A=U\Sigma V^T</m> is the singular value decomposition of <m>A</m>. Then we get the following informations from the SVD of <m>A</m>. 
+ </p>
+  
+  <ol>
+    <li>
+      <p>
+        The rank is equal to the number of non-zero singular values: <m>\mathrm{rank}(A) = \#\{\sigma_i &gt; 0\}</m>
+      </p>
+    </li>
+    <li>
+      <p>
+        Null space (Kernel) is  obtained from the columns of <m>V</m> corresponding to zero singular values.</p>
+    </li>
+    <li>
+      <p>
+        Column space (Range) is panned by the first <m>r</m> columns of <m>U</m>, where <m>r = \mathrm{rank}(A)</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Row space is  spanned by the first <m>r</m> columns of <m>V</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Spectral norm,  <m>\|A\|_2 = \sigma_{\max}</m>
+      </p>
+    </li>
+    <li>
+      <p>
+        Frobenius norm <m>\|A\|_F = \sum a_{ij}^2=\sqrt{\sum \sigma_i^2}</m></p>
+    </li>
+    <li><p>
+    Condition number, defined as <m>\kappa(A) = \frac{\sigma_{\max}}{\sigma_{\min}}</m>.
+    </p>
+    </li>
+  </ol>
+
+</remark>
       </subsection>
 </section>
