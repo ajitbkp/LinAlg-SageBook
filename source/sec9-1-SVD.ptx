@@ -356,10 +356,178 @@
           <p>
             It is easy to check that that <m>UAV^T=\sum</m>.
           </p>
-        </statement>
+
+  <sage>
+    <input>
+A = matrix([[3,2,2],[2,3,-2]])
+print('A^TA is:' )
+ATA = A.T*A
+print(ATA)
+print('Eigenvalues of A^TA are:')
+evals = ATA.eigenvalues()
+print(evals)
+V=[]
+evecs = ATA.eigenvectors_right()
+for i in range(len(evecs)):
+    print(f'The eigenvector with respect to eigenvalue {evecs[i][0]} is {evecs[i][1][0]}')
+    v = evecs[i][1][0]/norm(evecs[i][1][0])
+    V.append(v)
+V = column_matrix(V)
+print('The matrix V is:')
+print(V)
+u1 = A*V.columns()[0]/sqrt(evals[0])
+u2 = A*V.columns()[1]/sqrt(evals[1])
+U = column_matrix([u1,u2]);
+print('The matrix U is:')
+print(U)
+S = zero_matrix(A.dimensions()[0],A.dimensions()[1])
+for i in range(A.rank()):
+    S[i,i]=sqrt(evals[i])
+print('The matrix S is:')
+print(S)
+print('Check if U*S*V^T==A')
+print(U*S*V.T==A)      
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+  </statement>
+
       </example>
 
-    <exercises xml:id="exercises-SVD-exer-set2">
+  <p>
+    Sage includes a built-in method for computing the SVD of a matrix. However, the matrix must be defined over the Real Double Field (RDF), a numerical field of real numbers represented in 64-bit double precision, offering approximately 15–16 decimal digits of accuracy. Let us see to achieve this.
+  </p>
+
+  <sage>
+    <input>
+A = matrix(RDF,[[3,2,2],[2,3,-2]])
+# Compute the SVD
+U, S, V = A.SVD()
+# Display results
+print("U =\n", U)
+print("Singular values =\n", S)
+print("V =\n", V)
+</input>
+    <output>
+      
+    </output>
+  </sage>
+<sage>
+  <input>
+# Reconstruction
+A_reconstructed = U * S * V.transpose()
+print(A_reconstructed)
+print('Due to numeruical computation,we shall check if the norm of the difference is very small')
+print(norm(A_reconstructed.numerical_approx()-A.numerical_approx()))
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<example>
+<p>
+  Find the signular value decomposition of the matrix 
+  <m>A=\left(\begin{array}{rr}3 \amp 5 \\5 \amp -3 \\4 \amp 4\end{array}\right)</m>.
+</p>  
+
+<solution>
+  <p>
+    We have 
+    <me>
+      A^TA=\left(\begin{array}{rr}
+50 \amp 16 \\
+16 \amp 50
+\end{array}\right).
+    </me>
+It is easy to check that eigenvalues of <m>A^TA</m> are 66 and  34 with corresponding eigenvectors 
+<m>(1,1)</m> and <m>(1,-1)</m>. Hence we have 
+<me>V= \left(\begin{array}{rr}
+\frac{1}{2} \, \sqrt{2} \amp \frac{1}{2} \, \sqrt{2} \\
+\frac{1}{2} \, \sqrt{2} \amp -\frac{1}{2} \, \sqrt{2}
+\end{array}\right) \text{ and } \Sigma = \left(\begin{array}{rr}
+\sqrt{66} \amp 0 \\
+0 \amp \sqrt{34} \\
+0 \amp 0
+\end{array}\right).
+</me>    
+  </p>
+  <p>
+    Now let us find the matrix <m>U</m>. We have <m>v_1=\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2}\end{pmatrix}</m>, 
+    <m>v_2=\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2}\end{pmatrix}</m> and <m>\sigma_1=\sqrt{66}, \sigma_2=\sqrt{34}</m>. Hence 
+    <me>
+      u_1 = \frac{1}{\sigma_1}Av_1=\left(\begin{array}{r}
+\frac{2}{33} \, \sqrt{66} \sqrt{2} \\
+\frac{1}{66} \, \sqrt{66} \sqrt{2} \\
+\frac{2}{33} \, \sqrt{66} \sqrt{2}
+\end{array}\right), u_2 = \frac{1}{\sigma_2}Av_2=\left(\begin{array}{r}
+-\frac{1}{34} \, \sqrt{34} \sqrt{2} \\
+\frac{2}{17} \, \sqrt{34} \sqrt{2} \\
+0
+\end{array}\right).
+    </me>
+    To find <m>u_3</m>, we take the cross product of <m>u_1</m> and <m>u_2</m>. Thus
+    <me>
+      u_3 = u_1\times u_2 = \left(\begin{array}{r}
+-\frac{8}{561} \, \sqrt{66} \sqrt{34} \\
+-\frac{2}{561} \, \sqrt{66} \sqrt{34} \\
+\frac{1}{66} \, \sqrt{66} \sqrt{34}
+\end{array}\right).
+    </me>
+    Hence we have
+    <me>
+      U= \left(\begin{array}{rrr}
+\frac{2}{33} \, \sqrt{66} \sqrt{2} \amp -\frac{1}{34} \, \sqrt{34} \sqrt{2} \amp -\frac{8}{561} \, \sqrt{66} \sqrt{34} \\
+\frac{1}{66} \, \sqrt{66} \sqrt{2} \amp \frac{2}{17} \, \sqrt{34} \sqrt{2} \amp -\frac{2}{561} \, \sqrt{66} \sqrt{34} \\
+\frac{2}{33} \, \sqrt{66} \sqrt{2} \amp 0 \amp \frac{1}{66} \, \sqrt{66} \sqrt{34}
+\end{array}\right)
+    </me>
+    Veryfy that <m>U\Sigma V^T=A</m>.
+  </p>
+
+  <sage>
+    <input>
+A = matrix([[3,5,4],[5,-3,4]]).T
+print('A^TA is:' )
+ATA = A.T*A
+print(ATA)
+print('Eigenvalues of A^TA are:')
+evals = ATA.eigenvalues()
+print(evals)
+V=[]
+evecs = ATA.eigenvectors_right()
+for i in range(len(evecs)):
+    print(f'The eigenvector with respect to eigenvalue {evecs[i][0]} is {evecs[i][1][0]}')
+    v = evecs[i][1][0]/norm(evecs[i][1][0])
+    V.append(v)
+V = column_matrix(V)
+print('The matrix V is:')
+print(V)
+u1 = A*V.columns()[0]/sqrt(evals[0])
+u2 = A*V.columns()[1]/sqrt(evals[1])
+u3 = u1.cross_product(u2)
+U = column_matrix([u1,u2,u3])
+print('The matrix U is:')
+print(U)
+S = zero_matrix(SR,A.dimensions()[0],A.dimensions()[1])
+for i in range(A.rank()):
+    S[i,i]=sqrt(evals[i])
+print('The matrix S is:')
+print(S)
+print('Check if U*S*V^T==A')
+print(U*S*V.T==A)
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+</solution>
+
+</example>
+  
+<exercises xml:id="exercises-SVD-exer-set2">
       
       <exercise  xml:id="exer-9-1-8">
         <statement>
@@ -389,8 +557,6 @@
     </exercises>
   
   </subsection>
-
-  
 
     <subsection>
       <title>Pseudoinverse using SVD</title>
@@ -524,6 +690,35 @@
           </p>
         </statement>
       </example>
+<p>
+  Sage provdes a method <c>.pseudoinverse()</c> to find the pseudoinverse of a matrix.
+</p>
+<sage>
+  <input>
+# pseudoinverse using inbuilt Sage method
+A = matrix(SR,[[1,1],[1,1],[1,-1]])
+A.pseudoinverse()    
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+## pseudoinverse using SVD
+A = matrix(SR,[[1,1],[1,1],[1,-1]])
+A1 = A.change_ring(RDF)
+U,S, V = A1.SVD()
+# To find generatlize inverse of S
+S1 = S.T
+for i in range(2):
+    S1[i,i]=1/S1[i,i]
+V*S1*U.T    
+  </input>
+  <output>
+    
+  </output>
+</sage>
 
       <reading-questions xml:id="rqs-SVD-psedo-exer-set1">
        <exercise xml:id="psedo_ex1">
@@ -571,6 +766,36 @@
         </statement>
       </theorem>
       
+<example xml:id="eg-lstsq-psedo1">
+ Consider the  <xref ref="lst-sq-eg814"/>. Solve this problem using the notion of pseudoinverse in Sage.
+
+ <p>
+  <solution>
+    <sage>
+      <input>
+xx = [-3.0 , -2.8 , -2.5 , -2.2 , -2.0 , -1.8 , -1.5 , -1.2 , -1.0 , -0.75 , -0.50 , -0.25 , 0.00 , 
+      0.25 , 0.50 , 0.75 , 1.0 , 1.2 , 1.5 , 1.8]
+yy=[1.1 , 4.0 , 7.3 , 7.1 , 8.2 , 7.8 , 9.9 , 7.1 , 8.8 , 6.2 , 7.0 , 3.7 , 4.7 , 3.4 , 5.6 , 5.8 , 
+    5.3 , 6.6 , 10. , 12]
+point = ([(xx[i],yy[i]) for i in range(20)])
+n = len(xx)
+ones = [1]*n
+xx2 = [xx[i]^2 for i in range(n)]
+xx3 =[xx[i]^3 for i in range(n)]
+b = column_matrix(yy)
+A = column_matrix([ones, xx, xx2,xx3])
+A.pseudoinverse()*b
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+    <p>
+      Note that we get the same answer.
+    </p>
+  </solution>
+ </p>
+</example>
       
 
       <exercises xml:id="exercises-SVD-exer-set3">
@@ -628,7 +853,81 @@
         <caption>Transformation of unit circle under SVD</caption>
         <image width="60%" source="images/SVD_Unit_Circle.PNG"/>
     </figure>
+<p>
+  Let us use Sage to demonstrate geometry of the above example. 
+</p>
+<sage>
+  <input>
+A=matrix(RDF,[[4,-2],[-2,3]])
+U,S,V=A.change_ring(RDF).SVD()
+  </input>
+  <output>
+    
+  </output>
+</sage>
 
+<sage>
+  <input>
+var('t')
+cir=vector([cos(t),sin(t)])
+c1=parametric_plot(cir,(t,0,2*pi),figsize=4)
+e1 =vector([1,0])
+e2 =vector([0,1])
+svd1=c1+plot(e1,color='red')+plot(e2,color='green')
+svd1
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+c2=parametric_plot(V.T*cir,(t,0,2*pi),figsize=4)
+svd2=plot(V.T*e1,color='red')+plot(V.T*e2,color='green')+c2
+show(svd2)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+c3=parametric_plot(S*V.T*cir,(t,0,2*pi),figsize=4)
+svd3=plot(S*V.T*e1,color='red')+plot(S*V.T*e2,color='green')+c3
+svd3.show()
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+c4=parametric_plot(U*S*V.T*cir,(t,0,2*pi),figsize=4)
+svd4=plot(U*S*V.T*e1,color='red')+plot(U*S*V.T*e2,color='green')+c4
+svd4.show()
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<p>
+ We can plot the image under <m>A</m>. 
+</p>  
+
+<sage>
+  <input>
+## Image under A
+svdCir = parametric_plot(A*cir,(t,0,2*pi),figsize=4)
+svdA=plot(A*e1,color='red')+plot(A*e2,color='green')+c4
+show(svdA+svdCir)
+  </input>
+  <output>
+    
+  </output>
+</sage>
       <example>
         <statement>
           <p>
@@ -648,6 +947,82 @@
           <!--<image source="images/SVD_Unit_Sphere.PNG"/>-->
         </statement>
       </example>
+      <p>
+        We can also demostrate the <m>3\times 3</m> example also in Sage. </p>
+  <sage>
+    <input>
+A=matrix(RDF, [[2,3,1],[-1,2,1],[0,2,3]])
+U, S, VT = A.SVD()
+V=VT.transpose()
+v1=V.columns()[0]
+v2=V.columns()[1]
+v3=V.columns()[2]
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+
+  <sage>
+    <input>
+## parametric coordinates of shpere
+var('s,t')
+spr=vector([cos(s)*sin(t),sin(s)*sin(t),cos(t)])
+e = identity_matrix(3).columns()
+P0=parametric_plot(spr,(s,0,2*pi),(t,0,pi),igsize=2,color='gray',opacity=0.3)
+cord_axes=plot(e[0],thickness=0.5)+plot(e[1],color='red',thickness=0.5)+\
+plot(e[2],color='green',thickness=0.5)
+P0=P0+cord_axes
+P0.show(aspect_ratio=[1,1,1])
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+  <sage>
+    <input>
+P1=parametric_plot(spr,(s,0,2*pi),(t,0,pi),color='gray',opacity=0.7)+\
+plot(e[0],thickness=2)+plot(e[1],color='red',thickness=2)+plot(e[2],color='green',thickness=2)
+P1 = P1+cord_axes
+P1.show(aspect_ratio=[1,1,1])
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+
+  <sage>
+    <input>
+P2=parametric_plot(VT*spr,(s,0,2*pi),(t,0,pi),igsize=4,color='gray',opacity=0.7)+\
+plot(VT*e[0],thickness=2)+plot(VT*e[1],color='red',thickness=2)+plot(VT*e[2],color='green',thickness=2)
+P2.show(aspect_ratio=[1,1,1])
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+<sage>
+  <input>
+P3=parametric_plot(S*V.transpose()*spr,(s,0,2*pi),(t,0,pi),igsize=4,color='gray',opacity=0.7)+\
+plot(S*VT*e[0],thickness=2)+plot(S*VT*e[1],color='red',thickness=2)+plot(S*VT*e[2],color='green',thickness=2)
+P3.show(aspect_ratio=[1,1,1])
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+P4=parametric_plot(U*S*VT*spr,(s,0,2*pi),(t,0,pi),igsize=4,color='gray',opacity=0.7)+\
+plot(U*S*VT*e[0],thickness=2)+plot(U*S*VT*e[1],color='red',thickness=2)+\
+plot(U*S*VT*e[2],color='green',thickness=2)
+P4.show(aspect_ratio=[1,1,1])
+  </input>
+  <output>
+    
+  </output>
+</sage>
     </subsection>
 
 

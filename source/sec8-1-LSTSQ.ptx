@@ -611,7 +611,7 @@ print(fit)
           <m>x^* = (A^TA)A^Tb</m> provided columns of <m>A</m> are linearly independent.
         </p>
 
-        <example>
+        <example xml:id="lst-sq-eg814">
           <statement>
             <p>
               Find th best fit cubic <m>y=a_0+a_1x+a_2x^2+a_3x^3</m> to the following set of points
