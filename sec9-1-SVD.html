@@ -1206,41 +1206,51 @@ for i in [5, 10, 50,100,200]:
 <article class="example example-like" id="sec9-1-SVD-6-26"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Color Image Compression.</span>
 </h4> <div class="para" id="sec9-1-SVD-6-26-2">In this example, we present a Python program that demonstrates color image compression using Singular Value Decomposition (SVD). The method involves separating the image into its Red, Green, and Blue (RGB) channels, applying SVD to each channel individually, and then recombining the compressed channels to obtain the final compressed image.</div> <div class="para" id="sec9-1-SVD-6-26-3"><em class="emphasis">The reader is encouraged to copy the following code and execute it in a Python environment.</em></div> <div id="sec9-1-SVD-6-26-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
-import matplotlib.pyplot as plt
 from PIL import Image
 import requests
 from io import BytesIO
-import urllib.request
-url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
-urllib.request.urlretrieve(url, "Sardar.jpg")
-img = Image.open('Sardar.jpg')
-arr = np.array(img)
+import matplotlib.pyplot as plt
 
-r = arr[:,:,0]
-g = arr[:,:,1]
-b = arr[:,:,2]
-ur,sr,vr = np.linalg.svd(r, full_matrices=False)
-ug,sg,vg = np.linalg.svd(g, full_matrices=False)
-ub,sb,vb = np.linalg.svd(b, full_matrices=False)
+# Load the image from the URL
+url = "https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
+img = np.array(img, dtype=float)
 
-k=5 ## Number of components
-rr = np.dot(ur[:,:k],np.dot(np.diag(sr[:k]), vr[:k,:]))
-rg = np.dot(ug[:,:k],np.dot(np.diag(sg[:k]), vg[:k,:]))
-rb = np.dot(ub[:,:k],np.dot(np.diag(sb[:k]), vb[:k,:]))
-rimg = np.zeros(arr.shape)
-rimg[:,:,0] = rr
-rimg[:,:,1] = rg
-rimg[:,:,2] = rb
-for ind1, row in enumerate(rimg):
-        for ind2, col in enumerate(row):
-            for ind3, value in enumerate(col):
-                if value < 0:
-                    rimg[ind1,ind2,ind3] = abs(value)
-                if value > 255:
-                    rimg[ind1,ind2,ind3] = 255
-compressed_image = rimg.astype(np.uint8)
-plt.imshow(compressed_image)
-plt.axis('off')
+# Function to compress a single channel using SVD
+def svd_compress(channel, k):
+    # Perform Singular Value Decomposition
+    U, S, VT = np.linalg.svd(channel, full_matrices=False)
+    # Keep only top k singular values
+    U_k = U[:, :k]
+    S_k = np.diag(S[:k])
+    VT_k = VT[:k, :]
+    # Reconstruct the channel
+    compressed = np.dot(U_k, np.dot(S_k, VT_k))
+    return compressed
+
+# Compression rank
+k = 10
+
+# Apply SVD compression to each RGB channel
+R_c = svd_compress(img[:, :, 0], k)
+G_c = svd_compress(img[:, :, 1], k)
+B_c = svd_compress(img[:, :, 2], k)
+
+# Stack channels back and clip values to [0, 255]
+compressed_img = np.dstack([R_c, G_c, B_c])
+compressed_img = np.clip(compressed_img, 0, 255).astype(np.uint8)
+
+# Show original and compressed images
+fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+axes[0].imshow(img.astype(np.uint8))
+axes[0].set_title("Original")
+axes[0].axis("off")
+
+axes[1].imshow(compressed_img)
+axes[1].set_title(f"SVD Compressed (k={k})")
+axes[1].axis("off")
+
 plt.show()
 </script></div></article><article class="remark remark-like" id="sec9-1-SVD-6-27"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">9.1.22</span><span class="period">.</span>

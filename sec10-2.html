@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -560,7 +572,70 @@ u_i = \frac{1}{\sqrt{n-1}}Xv_i\text{.}
 \begin{bmatrix}3 \amp  -4 \amp  7 \amp  1 \amp  -4 \amp  -3\\7 \amp  -6 \amp  8 \amp  -1 \amp  -1 \amp  7 \end{bmatrix}
 \end{equation*}
 </div>
-</div> <div class="para" id="exer-10-1-22-1-2">What percentage of the variation in the data is explained by the first principal component.</div></article></section></section></div>
+</div> <div class="para" id="exer-10-1-22-1-2">What percentage of the variation in the data is explained by the first principal component.</div></article></section><div id="sec10-2-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
+from PIL import Image
+import requests
+from io import BytesIO
+import matplotlib.pyplot as plt
+url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
+img = np.array(img)
+
+# Separate RGB channels
+R = img[:, :, 0]
+G = img[:, :, 1]
+B = img[:, :, 2]
+
+def pca_compress(channel, k):
+    """
+    Compress a single channel using PCA, keeping k components.
+    """
+    # Center the data
+    mean = np.mean(channel, axis=0)
+    centered = channel - mean
+    
+    # Compute covariance matrix
+    cov_matrix = np.cov(centered, rowvar=False)
+    
+    # Eigen decomposition
+    eig_vals, eig_vecs = np.linalg.eigh(cov_matrix)
+    
+    # Sort eigenvalues in descending order
+    idx = np.argsort(eig_vals)[::-1]
+    eig_vecs = eig_vecs[:, idx]
+    
+    # Select top k eigenvectors
+    eig_vecs_k = eig_vecs[:, :k]
+    
+    # Project and reconstruct
+    transformed = np.dot(centered, eig_vecs_k)
+    reconstructed = np.dot(transformed, eig_vecs_k.T) + mean
+    
+    return reconstructed
+
+# Compression rank
+k = 10
+R_c = pca_compress(R, k)
+G_c = pca_compress(G, k)
+B_c = pca_compress(B, k)
+
+# Stack back and clip
+compressed_img = np.dstack([R_c, G_c, B_c])
+compressed_img = np.clip(compressed_img, 0, 255).astype(np.uint8)
+
+# Show images
+fig, axes = plt.subplots(1, 2, figsize=(10,5))
+axes[0].imshow(img.astype(np.uint8))
+axes[0].set_title("Original")
+axes[0].axis("off")
+
+axes[1].imshow(compressed_img)
+axes[1].set_title(f"Compressed (k={k})")
+axes[1].axis("off")
+
+plt.show()
+</script></div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec10-1-PCA.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec10-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
