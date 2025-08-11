@@ -196,9 +196,9 @@ sagecell.makeSagecell({
 #sec5-4-eigen-exer-2-1 { counter-set: sec5-4-eigen-exer-2-1 0; }
 #sec5-4-eigen-exer-2-1 > li::marker { content: ""counter(sec5-4-eigen-exer-2-1,decimal)"."; }
 #sec5-4-eigen-exer-2-1 > li { counter-increment: sec5-4-eigen-exer-2-1; }
-#sec6-0-orthogonality-8-1-1-1 { counter-set: sec6-0-orthogonality-8-1-1-1 0; }
-#sec6-0-orthogonality-8-1-1-1 > li::marker { content: ""counter(sec6-0-orthogonality-8-1-1-1,decimal)"."; }
-#sec6-0-orthogonality-8-1-1-1 > li { counter-increment: sec6-0-orthogonality-8-1-1-1; }
+#ex-ortho-6-0-0-1-1-1 { counter-set: ex-ortho-6-0-0-1-1-1 0; }
+#ex-ortho-6-0-0-1-1-1 > li::marker { content: ""counter(ex-ortho-6-0-0-1-1-1,decimal)"."; }
+#ex-ortho-6-0-0-1-1-1 > li { counter-increment: ex-ortho-6-0-0-1-1-1; }
 #sec6-3-10-1-2-1 { counter-set: sec6-3-10-1-2-1 0; }
 #sec6-3-10-1-2-1 > li::marker { content: ""counter(sec6-3-10-1-2-1,decimal)"."; }
 #sec6-3-10-1-2-1 > li { counter-increment: sec6-3-10-1-2-1; }
@@ -366,8 +366,9 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Sage Computations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-polynomial-space-sage" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Polynomial Space in Sage</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-matrix-space" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Matrix Spaces in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-Vector-Spaces-Sage" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Vector Spaces in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-polynomial-space-sage" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Polynomial Space in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-matrix-space" class="internal"><span class="codenumber">4.6.3</span> <span class="title">Matrix Spaces in Sage</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-5-VS-Ex.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Exercise Set</span></a></div></li>
@@ -400,7 +401,13 @@ sagecell.makeSagecell({
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-0-orthogonality.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Orthogonality</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-1-GramSchmidt.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Gram-Schmidt Orthogonalization Process</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-2.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec6-2.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec6-2.html#subsec-orthogonal-complements" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec6-2.html#subsec-Proj-Ref_HyperPlane" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Projection and Reflection</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-3.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Orthogonal Diagonalizations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-4.html" class="internal"><span class="codenumber">6.5</span> <span class="title">QR-Factorization</span></a></div></li>
 </ul>
@@ -1141,7 +1148,81 @@ print(fit)
 </tr>
 </table></div></article></section></section><section class="subsection" id="sec-weigheted-lstsq"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="space"> </span><span class="title">Weighted Least Square Problems</span>
-</h3></section></section></div>
+</h3>
+<div class="para" id="sec-weigheted-lstsq-2">Weighted Least Squares (WLS) is an extension of the Ordinary Least Squares (OLS) method, allowing each observation to have a different weight based on its reliability. This is particularly useful when data points have unequal variances, a situation known as <dfn class="terminology">heteroscedasticity</dfn>.</div>
+<div class="para logical" id="sec-weigheted-lstsq-3">
+<div class="para">Consider the overdetermined system <span class="process-math">\(A\mathbf{x} \approx \mathbf{b}\text{,}\)</span> where <span class="process-math">\(A \in \mathbb{R}^{m \times n}\)</span> is the design matrix, <span class="process-math">\(\mathbf{x} \in \mathbb{R}^n\)</span> is the vector of unknowns, and <span class="process-math">\(\mathbf{b} \in \mathbb{R}^m\)</span> contains the observations. If the <span class="process-math">\(i\)</span>-th observation has variance <span class="process-math">\(\sigma_i^2\text{,}\)</span> the corresponding weight is <span class="process-math">\(w_i = \frac{1}{\sigma_i^2}\text{.}\)</span> We define the diagonal weight matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+W = \mathrm{diag}(w_1, w_2, \dots, w_m).
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec-weigheted-lstsq-4">
+<div class="para">The WLS problem minimizes the weighted squared residuals:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\min_{\mathbf{x}} \| W^{1/2} (A\mathbf{x} - \mathbf{b}) \|_2^2
+\end{equation*}
+</div>
+<div class="para">leading to the <dfn class="terminology">normal equations</dfn>:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^\mathsf{T} W A \mathbf{x} = A^\mathsf{T} W \mathbf{b}.
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(A^\mathsf{T} W A\)</span> is invertible, the solution is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{x} = (A^\mathsf{T} W A)^{-1} A^\mathsf{T} W \mathbf{b}.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec-weigheted-lstsq-5">
+<div class="para">Geometrically, this is equivalent to projecting <span class="process-math">\(\mathbf{b}\)</span> onto the column space of <span class="process-math">\(A\)</span> using the <span class="process-math">\(W\)</span>-weighted inner product:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle \mathbf{u}, \mathbf{v} \rangle_W = \mathbf{u}^\mathsf{T} W \mathbf{v}.
+\end{equation*}
+</div>
+</div>
+<div id="sec-weigheted-lstsq-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def weighted_least_squares(A, b, w):
+    """
+    Solve Weighted Least Squares problem:
+    Minimize || W^{1/2} (A x - b) ||_2^2
+    
+    Parameters:
+    A - matrix (SageMatrix)
+    b - vector (SageVector)
+    w - list or vector of weights (positive)
+    
+    Returns:
+    x - solution vector
+    """
+    # Convert to Sage objects
+    A = matrix(QQ, A)
+    b = vector(QQ, b)
+    W = diagonal_matrix(w)
+    
+    # Check weights positivity
+    if any(wi <= 0 for wi in w):
+        raise ValueError("All weights must be positive.")
+    
+    # Solve normal equations
+    ATA = A.transpose() * W * A
+    ATb = A.transpose() * W * b
+    x = ATA.inverse() * ATb
+    
+    return x
+</script></div>
+<div id="sec-weigheted-lstsq-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Example usage:
+A = [[1, 1], [1, 2], [1, 3],[2,4],[2,5],[2,6]]
+b = [1, 2, 2,4,2,4]
+weights = [1, 4, 1,2,2,3]  # Second observation has higher reliability
+
+x_solution = weighted_least_squares(A, b, weights)
+print("Weighted Least Squares Solution:", x_solution)
+</script></div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chap8-Least-Square.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap9-SVD.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

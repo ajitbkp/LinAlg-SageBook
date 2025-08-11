@@ -196,9 +196,9 @@ sagecell.makeSagecell({
 #sec5-4-eigen-exer-2-1 { counter-set: sec5-4-eigen-exer-2-1 0; }
 #sec5-4-eigen-exer-2-1 > li::marker { content: ""counter(sec5-4-eigen-exer-2-1,decimal)"."; }
 #sec5-4-eigen-exer-2-1 > li { counter-increment: sec5-4-eigen-exer-2-1; }
-#sec6-0-orthogonality-8-1-1-1 { counter-set: sec6-0-orthogonality-8-1-1-1 0; }
-#sec6-0-orthogonality-8-1-1-1 > li::marker { content: ""counter(sec6-0-orthogonality-8-1-1-1,decimal)"."; }
-#sec6-0-orthogonality-8-1-1-1 > li { counter-increment: sec6-0-orthogonality-8-1-1-1; }
+#ex-ortho-6-0-0-1-1-1 { counter-set: ex-ortho-6-0-0-1-1-1 0; }
+#ex-ortho-6-0-0-1-1-1 > li::marker { content: ""counter(ex-ortho-6-0-0-1-1-1,decimal)"."; }
+#ex-ortho-6-0-0-1-1-1 > li { counter-increment: ex-ortho-6-0-0-1-1-1; }
 #sec6-3-10-1-2-1 { counter-set: sec6-3-10-1-2-1 0; }
 #sec6-3-10-1-2-1 > li::marker { content: ""counter(sec6-3-10-1-2-1,decimal)"."; }
 #sec6-3-10-1-2-1 > li { counter-increment: sec6-3-10-1-2-1; }
@@ -366,8 +366,9 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Sage Computations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-polynomial-space-sage" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Polynomial Space in Sage</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-matrix-space" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Matrix Spaces in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-Vector-Spaces-Sage" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Vector Spaces in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-polynomial-space-sage" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Polynomial Space in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-matrix-space" class="internal"><span class="codenumber">4.6.3</span> <span class="title">Matrix Spaces in Sage</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-5-VS-Ex.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Exercise Set</span></a></div></li>
@@ -400,7 +401,13 @@ sagecell.makeSagecell({
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-0-orthogonality.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Orthogonality</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-1-GramSchmidt.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Gram-Schmidt Orthogonalization Process</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-2.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec6-2.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec6-2.html#subsec-orthogonal-complements" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec6-2.html#subsec-Proj-Ref_HyperPlane" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Projection and Reflection</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-3.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Orthogonal Diagonalizations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-4.html" class="internal"><span class="codenumber">6.5</span> <span class="title">QR-Factorization</span></a></div></li>
 </ul>
@@ -974,7 +981,10 @@ p(x)  = \inner{p(x)}{\ell_0(x)}\ell_0(x)+\inner{p(x)}{\ell_1(x)}\ell_1(x)+\cdots
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.1.27</span><span class="period">.</span>
 </h3>
 <div class="para" id="inp-7-1-17-1-1">Find the orthogonal projection of vector <span class="process-math">\(b=\begin{bmatrix}1\\2\\3\\4 \end{bmatrix}\)</span> onto the subspace spanned by three vectors <span class="process-math">\(\left\{\begin{bmatrix}1\\-1\\0\\1 \end{bmatrix} , \begin{bmatrix}0\\1\\1\\-1 \end{bmatrix} , \begin{bmatrix}1\\1\\-1\\0 \end{bmatrix} \right\}\text{.}\)</span>
-</div></article></section></div>
+</div></article><article class="activity project-like" id="sec7-1-InnerProduct-50"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec7-1-InnerProduct-50-1"><em class="emphasis">Notion of orthogonal projection and reflection in an inner product space.</em></div> <div class="para" id="sec7-1-InnerProduct-50-2">Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, and reflection can be naturally extended to an inner product space <span class="process-math">\((V, \langle \cdot, \cdot \rangle)\text{.}\)</span> Explore how these notions generalize in such spaces, and implement solutions to related problems using Sage.</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chap7-inner-product.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec7-2-Exer.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

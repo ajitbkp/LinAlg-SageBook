@@ -196,9 +196,9 @@ sagecell.makeSagecell({
 #sec5-4-eigen-exer-2-1 { counter-set: sec5-4-eigen-exer-2-1 0; }
 #sec5-4-eigen-exer-2-1 > li::marker { content: ""counter(sec5-4-eigen-exer-2-1,decimal)"."; }
 #sec5-4-eigen-exer-2-1 > li { counter-increment: sec5-4-eigen-exer-2-1; }
-#sec6-0-orthogonality-8-1-1-1 { counter-set: sec6-0-orthogonality-8-1-1-1 0; }
-#sec6-0-orthogonality-8-1-1-1 > li::marker { content: ""counter(sec6-0-orthogonality-8-1-1-1,decimal)"."; }
-#sec6-0-orthogonality-8-1-1-1 > li { counter-increment: sec6-0-orthogonality-8-1-1-1; }
+#ex-ortho-6-0-0-1-1-1 { counter-set: ex-ortho-6-0-0-1-1-1 0; }
+#ex-ortho-6-0-0-1-1-1 > li::marker { content: ""counter(ex-ortho-6-0-0-1-1-1,decimal)"."; }
+#ex-ortho-6-0-0-1-1-1 > li { counter-increment: ex-ortho-6-0-0-1-1-1; }
 #sec6-3-10-1-2-1 { counter-set: sec6-3-10-1-2-1 0; }
 #sec6-3-10-1-2-1 > li::marker { content: ""counter(sec6-3-10-1-2-1,decimal)"."; }
 #sec6-3-10-1-2-1 > li { counter-increment: sec6-3-10-1-2-1; }
@@ -366,8 +366,9 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Sage Computations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-polynomial-space-sage" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Polynomial Space in Sage</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-matrix-space" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Matrix Spaces in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-Vector-Spaces-Sage" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Vector Spaces in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-polynomial-space-sage" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Polynomial Space in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-matrix-space" class="internal"><span class="codenumber">4.6.3</span> <span class="title">Matrix Spaces in Sage</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-5-VS-Ex.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Exercise Set</span></a></div></li>
@@ -400,7 +401,13 @@ sagecell.makeSagecell({
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-0-orthogonality.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Orthogonality</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-1-GramSchmidt.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Gram-Schmidt Orthogonalization Process</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-2.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec6-2.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec6-2.html#subsec-orthogonal-complements" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec6-2.html#subsec-Proj-Ref_HyperPlane" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Projection and Reflection</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-3.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Orthogonal Diagonalizations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-4.html" class="internal"><span class="codenumber">6.5</span> <span class="title">QR-Factorization</span></a></div></li>
 </ul>
@@ -485,39 +492,42 @@ sagecell.makeSagecell({
 </h2>
 <section class="introduction" id="sec-sec4-5-VS-Sage-2"><div class="para" id="sec-sec4-5-VS-Sage-2-1">In this section, we demonstrate how Sage can be utilized to define vector spaces and perform computations involving vectors. We shall explore various concepts related to vector spaces that have been introduced in this chapter. The majority of the computations will be carried out in the vector spaces <span class="process-math">\(\mathbb{Q}^n\text{,}\)</span> <span class="process-math">\(\mathbb{R}^n\)</span> and <span class="process-math">\(\mathbb{C}^n\text{.}\)</span> Additionally, we shall examine certain concepts pertaining to the vector space <span class="process-math">\({\mathcal{P}}_n(\mathbb{R})\text{.}\)</span>
 </div> <div class="para" id="sec-sec4-5-VS-Sage-2-2">To define a vector space <span class="process-math">\(\mathbb{Q}^n\)</span> in Sage, one may use <code class="code-inline tex2jax_ignore">QQ^n</code> or <code class="code-inline tex2jax_ignore">VectorSpace(QQ,
-    n)</code>. Similarly, the vector spaces <span class="process-math">\(\mathbb{Q}^n\)</span> and <span class="process-math">\(\mathbb{C}^n\)</span> can be defined using <code class="code-inline tex2jax_ignore">RR^n</code> and <code class="code-inline tex2jax_ignore">CC^n</code>, respectively. Sage provides built-in functions for generating the linear span of a set of vectors, checking their linear dependence, and determining the coordinates of a vector with respect to a given basis. Nevertheless, we will also employ the Reduced Row Echelon Form (RREF) to explore various concepts such as subspaces, linear dependence and independence, and the computation of coordinates.</div></section><article class="example example-like" id="sec4-5-VS-eg1"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space <span class="process-math">\(\mathbb{Q}^6\)</span>.</span>
+    n)</code>. Similarly, the vector spaces <span class="process-math">\(\mathbb{Q}^n\)</span> and <span class="process-math">\(\mathbb{C}^n\)</span> can be defined using <code class="code-inline tex2jax_ignore">RR^n</code> and <code class="code-inline tex2jax_ignore">CC^n</code>, respectively. Sage provides built-in functions for generating the linear span of a set of vectors, checking their linear dependence, and determining the coordinates of a vector with respect to a given basis. Nevertheless, we will also employ the Reduced Row Echelon Form (RREF) to explore various concepts such as subspaces, linear dependence and independence, and the computation of coordinates.</div></section><section class="subsection" id="subsec-Vector-Spaces-Sage"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="space"> </span><span class="title">Vector Spaces in Sage</span>
 </h3>
+<article class="example example-like" id="sec4-5-VS-eg1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space <span class="process-math">\(\mathbb{Q}^6\)</span>.</span>
+</h4>
 <div class="para" id="sec4-5-VS-eg1-2-1">Let us define the vector space <span class="process-math">\(\mathbb{Q}^6\)</span> and explore the various concepts in Sage. Define 5 vectors <span class="process-math">\(v_1=\left(1,\,-1,\,2,\,3,\,1,\,4\right)
 \text{,}\)</span> <span class="process-math">\(v_2=(\left(2,\,1,\,0,\,2,\,-3,\,1\right),)
 \text{,}\)</span> <span class="process-math">\(v_3=(\left(-4,\,-5,\,4,\,0,\,11,\,5\right),)
 \text{,}\)</span> <span class="process-math">\(v_4=(\left(-1,\,0,\,2,\,1,\,3,\,2\right),)\)</span> and <span class="process-math">\(v_5=(\left(-2,\,-2,\,4,\,2,\,7,\,5\right),)
-\text{.}\)</span> Find the linear span of <span class="process-math">\(B=\{v_1,v_2,v_3,v_4,v_5\}\text{.}\)</span> Check of <span class="process-math">\(B\)</span> is a linearly independent set.</div></article><div class="para" id="sec-sec4-5-VS-Sage-4">We can use the following sage commands to define the <span class="process-math">\(\mathbb{Q}^6\text{.}\)</span>
+\text{.}\)</span> Find the linear span of <span class="process-math">\(B=\{v_1,v_2,v_3,v_4,v_5\}\text{.}\)</span> Check of <span class="process-math">\(B\)</span> is a linearly independent set.</div></article><div class="para" id="subsec-Vector-Spaces-Sage-3">We can use the following sage commands to define the <span class="process-math">\(\mathbb{Q}^6\text{.}\)</span>
 </div>
-<div id="sec-sec4-5-VS-Sage-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4;V
+<div id="subsec-Vector-Spaces-Sage-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4;V
 </script></div>
-<div id="sec-sec4-5-VS-Sage-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = VectorSpace(QQ,6);V
+<div id="subsec-Vector-Spaces-Sage-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = VectorSpace(QQ,6);V
 </script></div>
-<code class="code-inline tex2jax_ignore">V</code><div id="sec-sec4-5-VS-Sage-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.an_element() # Returns an element of this parent V.
+<code class="code-inline tex2jax_ignore">V</code><div id="subsec-Vector-Spaces-Sage-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.an_element() # Returns an element of this parent V.
 </script></div>
-<div id="sec-sec4-5-VS-Sage-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.random_element() # Returns a random vector of V.
+<div id="subsec-Vector-Spaces-Sage-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.random_element() # Returns a random vector of V.
 </script></div>
-<div id="sec-sec4-5-VS-Sage-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.base()
+<div id="subsec-Vector-Spaces-Sage-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.base()
 V.base_field()
 </script></div>
-<div id="sec-sec4-5-VS-Sage-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V1 = V.base_extend(RR) # Used to extend the base field to real field.
+<div id="subsec-Vector-Spaces-Sage-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V1 = V.base_extend(RR) # Used to extend the base field to real field.
 V1.random_element()
 </script></div>
-<div id="sec-sec4-5-VS-Sage-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.basis_matrix() # Returns the basis matrix of V.
+<div id="subsec-Vector-Spaces-Sage-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.basis_matrix() # Returns the basis matrix of V.
 </script></div>
-<div id="sec-sec4-5-VS-Sage-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.basis() # Returns the standard basis of V.
+<div id="subsec-Vector-Spaces-Sage-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.basis() # Returns the standard basis of V.
 </script></div>
-<div id="sec-sec4-5-VS-Sage-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.dimension() # Returns the dimension of V.
+<div id="subsec-Vector-Spaces-Sage-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.dimension() # Returns the dimension of V.
 </script></div>
-<div class="para" id="sec-sec4-5-VS-Sage-15">Try to explore more methods on the object <code class="code-inline tex2jax_ignore">V</code>.</div>
-<div class="para" id="sec-sec4-5-VS-Sage-16">Now let us define vectors in <span class="process-math">\(V\text{.}\)</span>
+<div class="para" id="subsec-Vector-Spaces-Sage-14">Try to explore more methods on the object <code class="code-inline tex2jax_ignore">V</code>.</div>
+<div class="para" id="subsec-Vector-Spaces-Sage-15">Now let us define vectors in <span class="process-math">\(V\text{.}\)</span>
 </div>
-<div id="sec-sec4-5-VS-Sage-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^6
+<div id="subsec-Vector-Spaces-Sage-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^6
 v1 = vector([1,-1,2,3,1,4])
 v2 = vector([2,1,0,2,-3,1])
 v3 = vector([-4,-5,4,0,11,5])
@@ -525,59 +535,59 @@ v4 = vector([-1,0,2,1,3,2])
 v5 = vector([-2,-2,4,2,7,5])
 v1 in V
 </script></div>
-<div class="para" id="sec-sec4-5-VS-Sage-18">Next, let us define the linear span of <span class="process-math">\(B=\{v_1,\ldots,
+<div class="para" id="subsec-Vector-Spaces-Sage-17">Next, let us define the linear span of <span class="process-math">\(B=\{v_1,\ldots,
 v_5\}\text{.}\)</span>
 </div>
-<div id="sec-sec4-5-VS-Sage-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">B = [v1,v2,v3,v4,v5]
+<div id="subsec-Vector-Spaces-Sage-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">B = [v1,v2,v3,v4,v5]
 W = V.span(B)
 W
 </script></div>
-<div class="para" id="sec-sec4-5-VS-Sage-20">We can check if <code class="code-inline tex2jax_ignore">W</code> is a subspace of <code class="code-inline tex2jax_ignore">V</code>.</div>
-<div id="sec-sec4-5-VS-Sage-21" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">W.is_subspace(V)
+<div class="para" id="subsec-Vector-Spaces-Sage-19">We can check if <code class="code-inline tex2jax_ignore">W</code> is a subspace of <code class="code-inline tex2jax_ignore">V</code>.</div>
+<div id="subsec-Vector-Spaces-Sage-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">W.is_subspace(V)
 </script></div>
-<div class="para" id="sec-sec4-5-VS-Sage-22">Note that a basis of the <span class="process-math">\(L(B)\)</span> can be also obtained by applying RREF on the matrix whose rows are vectors, <span class="process-math">\(v_1,\ldots, v_5\text{.}\)</span>
+<div class="para" id="subsec-Vector-Spaces-Sage-21">Note that a basis of the <span class="process-math">\(L(B)\)</span> can be also obtained by applying RREF on the matrix whose rows are vectors, <span class="process-math">\(v_1,\ldots, v_5\text{.}\)</span>
 </div>
-<div id="sec-sec4-5-VS-Sage-23" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = column_matrix([v1,v2,v3,v4,v5]).T
+<div id="subsec-Vector-Spaces-Sage-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = column_matrix([v1,v2,v3,v4,v5]).T
 A.rref()
 </script></div>
-<div class="para" id="sec-sec4-5-VS-Sage-24">Notice that the 1st three rows of the above output consitute the basis of the <span class="process-math">\(L(B\text{.}\)</span>
+<div class="para" id="subsec-Vector-Spaces-Sage-23">Notice that the 1st three rows of the above output consitute the basis of the <span class="process-math">\(L(B\text{.}\)</span>
 </div>
-<div class="para" id="sec-sec4-5-VS-Sage-25">Next let us check whether the set of vecors <span class="process-math">\(B\)</span> is linearly dependent using the following Sage syntax.</div>
-<div id="sec-sec4-5-VS-Sage-26" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">S = V.linear_dependence(B);S
+<div class="para" id="subsec-Vector-Spaces-Sage-24">Next let us check whether the set of vecors <span class="process-math">\(B\)</span> is linearly dependent using the following Sage syntax.</div>
+<div id="subsec-Vector-Spaces-Sage-25" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">S = V.linear_dependence(B);S
 </script></div>
-<div class="para" id="sec-sec4-5-VS-Sage-27">If the set is linearly indepensent then <code class="code-inline tex2jax_ignore">S =
+<div class="para" id="subsec-Vector-Spaces-Sage-26">If the set is linearly indepensent then <code class="code-inline tex2jax_ignore">S =
     V.linear_dependence(B);S</code> returns an empty list. However, if <span class="process-math">\(B\)</span> is linearly dependent then it returs a list of scalars (possibly more than on1), say <span class="process-math">\(\alpha_1,\cdots,\alpha_5\)</span> such that <span class="process-math">\(\sum v_i\alpha_i=0\text{.}\)</span> Let us verift the same.</div>
-<div id="sec-sec4-5-VS-Sage-28" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">        print(V.linear_combination([(B[i],S[0][i]) for i in range(5)]))
+<div id="subsec-Vector-Spaces-Sage-27" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">        print(V.linear_combination([(B[i],S[0][i]) for i in range(5)]))
 print(V.linear_combination([(B[i],S[1][i]) for i in range(5)]))
 </script></div>
-<article class="exercise exercise-like" id="sec-sec4-5-VS-Sage-29"><h3 class="heading">
+<article class="exercise exercise-like" id="subsec-Vector-Spaces-Sage-28"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="period">.</span>
-</h3>
-<div class="para" id="sec-sec4-5-VS-Sage-29-1-1">Repeat the above example on the vector space <span class="process-math">\(\mathbb{R}^6\text{.}\)</span>
-</div></article><article class="example example-like" id="sec-sec4-5-VS-Sage-30"><h3 class="heading">
+</h4>
+<div class="para" id="subsec-Vector-Spaces-Sage-28-1-1">Repeat the above example on the vector space <span class="process-math">\(\mathbb{R}^6\text{.}\)</span>
+</div></article><article class="example example-like" id="subsec-Vector-Spaces-Sage-29"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="period">.</span>
-</h3>
-<div class="para" id="sec-sec4-5-VS-Sage-30-1-1">Let <span class="process-math">\(V=\mathbb{Q}^4\)</span> be a vector space. Let <span class="process-math">\({\cal
+</h4>
+<div class="para" id="subsec-Vector-Spaces-Sage-29-1-1">Let <span class="process-math">\(V=\mathbb{Q}^4\)</span> be a vector space. Let <span class="process-math">\({\cal
 B}=\{(1,0,0,0),(1,1,0,0,),(1,0,-1,0),(0,0,0,1)\}\text{.}\)</span> Check if <span class="process-math">\({\cal B}\)</span> is linearly independent. Consider a vector <span class="process-math">\(v=(-1,2,3,-2)\text{.}\)</span> Find the coordinates of <span class="process-math">\(v\)</span> with respect to <span class="process-math">\({\cal B}\text{.}\)</span>
-</div></article><details id="sec-sec4-5-VS-Sage-31" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sec-sec4-5-VS-Sage-31-1">Let us solve this problem in Sage.</div> <div id="sec-sec4-5-VS-Sage-31-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
+</div></article><details id="subsec-Vector-Spaces-Sage-30" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec-Vector-Spaces-Sage-30-1">Let us solve this problem in Sage.</div> <div id="subsec-Vector-Spaces-Sage-30-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
 v1=vector(QQ,[1,0,0,0])
 v2=vector(QQ,[1,1,0,0])
 v3=vector(QQ,[1,0,-1,0])
 v4=vector(QQ,[0,0,0,1])
 B=[v1,v2,v3,v4]
 S = V.linear_dependence(B);S
-</script></div> <div class="para" id="sec-sec4-5-VS-Sage-31-3">Since <span class="process-math">\(S\)</span> is an empty list, <span class="process-math">\(B\)</span> is a linearly independent set.</div> <div class="para" id="sec-sec4-5-VS-Sage-31-4">Next, we define a subspace with <span class="process-math">\(B\)</span> as a basis and then find the coordinates of the vector <span class="process-math">\(v\)</span> with respect to <span class="process-math">\(B\text{.}\)</span>
-</div> <div id="sec-sec4-5-VS-Sage-31-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=V.subspace_with_basis(B)
+</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-30-3">Since <span class="process-math">\(S\)</span> is an empty list, <span class="process-math">\(B\)</span> is a linearly independent set.</div> <div class="para" id="subsec-Vector-Spaces-Sage-30-4">Next, we define a subspace with <span class="process-math">\(B\)</span> as a basis and then find the coordinates of the vector <span class="process-math">\(v\)</span> with respect to <span class="process-math">\(B\text{.}\)</span>
+</div> <div id="subsec-Vector-Spaces-Sage-30-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=V.subspace_with_basis(B)
 v=vector(QQ,[-1,2,3,-2])
 V.coordinates(v)
-</script></div> <div class="para" id="sec-sec4-5-VS-Sage-31-6">We can also find the coordinate vector of <span class="process-math">\(v\text{.}\)</span>
-</div> <div id="sec-sec4-5-VS-Sage-31-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.coordinate_vector(v)
-</script></div> We cal also find the coordinates of <span class="process-math">\(v\)</span> using RREF. <div id="sec-sec4-5-VS-Sage-31-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(B).augment(v,subdivide=True).rref()
-</script></div> The last columns of the above output is the coordinate vector.</div></details><article class="example example-like" id="sec-sec4-5-VS-Sage-32"><h3 class="heading">
+</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-30-6">We can also find the coordinate vector of <span class="process-math">\(v\text{.}\)</span>
+</div> <div id="subsec-Vector-Spaces-Sage-30-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.coordinate_vector(v)
+</script></div> We cal also find the coordinates of <span class="process-math">\(v\)</span> using RREF. <div id="subsec-Vector-Spaces-Sage-30-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(B).augment(v,subdivide=True).rref()
+</script></div> The last columns of the above output is the coordinate vector.</div></details><article class="example example-like" id="subsec-Vector-Spaces-Sage-31"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.4</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="sec-sec4-5-VS-Sage-32-1-1">
+</h4>
+<div class="para logical" id="subsec-Vector-Spaces-Sage-31-1-1">
 <div class="para">Let <span class="process-math">\(V=\mathbb{Q}^4\)</span> be a vector space. Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -594,8 +604,8 @@ V.coordinates(v)
 C}^{\cal B}\text{.}\)</span> Consider a vector <span class="process-math">\(v=(-1,2,3,-2)\text{.}\)</span> Suppose <span class="process-math">\(c_{\cal B}\)</span> be the coordinate vector of <span class="process-math">\(v\)</span> with respect to the basis <span class="process-math">\({\cal B}\)</span> and <span class="process-math">\(v_{\cal C}\)</span> be the coordinate vector of <span class="process-math">\(v\)</span> with respect to the basis <span class="process-math">\({\cal C}\text{.}\)</span> Verify that <span class="process-math">\(v_{\cal
 C}=M_{\cal B}^{\cal C}v_{\cal B}\text{.}\)</span>
 </div>
-</div></article><details id="sec-sec4-5-VS-Sage-33" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sec-sec4-5-VS-Sage-33-1">Let us solve the above problem in Sage. Note that the matrix <span class="process-math">\(M_{\cal B}^{\cal C}\)</span> can be obtained in many ways. One way, is to find this by writing the matrix of whose columns are the coordinate vectors of each vector in <span class="process-math">\({\cal B}\)</span> with respect to <span class="process-math">\({\cal B}\text{.}\)</span> Alternatively, we can use RREF on <span class="process-math">\([{\cal C}~ {\cal B}\)</span> and take the last four columns of the same.</div> <div id="sec-sec4-5-VS-Sage-33-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
+</div></article><details id="subsec-Vector-Spaces-Sage-32" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec-Vector-Spaces-Sage-32-1">Let us solve the above problem in Sage. Note that the matrix <span class="process-math">\(M_{\cal B}^{\cal C}\)</span> can be obtained in many ways. One way, is to find this by writing the matrix of whose columns are the coordinate vectors of each vector in <span class="process-math">\({\cal B}\)</span> with respect to <span class="process-math">\({\cal B}\text{.}\)</span> Alternatively, we can use RREF on <span class="process-math">\([{\cal C}~ {\cal B}\)</span> and take the last four columns of the same.</div> <div id="subsec-Vector-Spaces-Sage-32-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
 v1=vector(QQ,[1,0,0,0])
 v2=vector(QQ,[1,1,0,0])
 v3=vector(QQ,[1,0,-1,0])
@@ -605,7 +615,7 @@ V=V.subspace_with_basis(B)
 v=vector(QQ,[-1,2,3,-2])
 v_B=V.coordinate_vector(v)
 print(v_B)
-</script></div> <div id="sec-sec4-5-VS-Sage-33-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
+</script></div> <div id="subsec-Vector-Spaces-Sage-32-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
 w1=vector(QQ,[1,1,1,0])
 w2=vector(QQ,[1,1,0,1])
 w3=vector(QQ,[1,0,1,1])
@@ -615,21 +625,21 @@ W=V.subspace_with_basis(C)
 v=vector(QQ,[-1,2,3,-2])
 v_C=W.coordinate_vector(v)
 print(v_C)
-</script></div> <div id="sec-sec4-5-VS-Sage-33-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M_BC=column_matrix([W.coordinates(B[i]) for i in range(4)])
+</script></div> <div id="subsec-Vector-Spaces-Sage-32-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M_BC=column_matrix([W.coordinates(B[i]) for i in range(4)])
 print(M_BC)
-</script></div> <div class="para" id="sec-sec4-5-VS-Sage-33-5">Next we find the change of basis matrix using RREF.</div> <div id="sec-sec4-5-VS-Sage-33-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">BB=column_matrix(B)
+</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-32-5">Next we find the change of basis matrix using RREF.</div> <div id="subsec-Vector-Spaces-Sage-32-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">BB=column_matrix(B)
 CC=column_matrix(C)
 NN=CC.augment(BB,subdivide=True)
 NN.rref()[:,4:]
-</script></div> <div id="sec-sec4-5-VS-Sage-33-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M_CB=column_matrix([V.coordinates(C[i]) for i in range(4)])
+</script></div> <div id="subsec-Vector-Spaces-Sage-32-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M_CB=column_matrix([V.coordinates(C[i]) for i in range(4)])
 print(M_CB)
-</script></div> <div id="sec-sec4-5-VS-Sage-33-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">BB=column_matrix(B)
+</script></div> <div id="subsec-Vector-Spaces-Sage-32-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">BB=column_matrix(B)
 CC=column_matrix(C)
 MM=BB.augment(CC,subdivide=True)
 MM.rref()[:,4:]
-</script></div> <div class="para" id="sec-sec4-5-VS-Sage-33-9">Let us verify that <span class="process-math">\(v_{\cal C}=M_{\cal B}^{\cal C}v_{\cal B}\text{.}\)</span>
-</div> <div id="sec-sec4-5-VS-Sage-33-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v_C==M_BC*v_B
-</script></div> <div class="para" id="sec-sec4-5-VS-Sage-33-11">The change of basis matrix <span class="process-math">\(M_{\cal B}^{\cal C}\text{,}\)</span> can be also otained by finding the matrix of the identity linear transformation <span class="process-math">\(Id: \mathbb{Q}^4\to \mathbb{Q}^4\)</span> and find its matrix with respect to the basis <span class="process-math">\({\cal B}\)</span> of the domain and <span class="process-math">\({\cal C}\)</span> on the codomain.</div> <div id="sec-sec4-5-VS-Sage-33-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4
+</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-32-9">Let us verify that <span class="process-math">\(v_{\cal C}=M_{\cal B}^{\cal C}v_{\cal B}\text{.}\)</span>
+</div> <div id="subsec-Vector-Spaces-Sage-32-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v_C==M_BC*v_B
+</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-32-11">The change of basis matrix <span class="process-math">\(M_{\cal B}^{\cal C}\text{,}\)</span> can be also otained by finding the matrix of the identity linear transformation <span class="process-math">\(Id: \mathbb{Q}^4\to \mathbb{Q}^4\)</span> and find its matrix with respect to the basis <span class="process-math">\({\cal B}\)</span> of the domain and <span class="process-math">\({\cal C}\)</span> on the codomain.</div> <div id="subsec-Vector-Spaces-Sage-32-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4
 T = linear_transformation(identity_matrix(4),V,V)
 v1=vector(QQ,[1,0,0,0])
 v2=vector(QQ,[1,1,0,0])
@@ -646,16 +656,16 @@ W=V.subspace_with_basis(C)
 S = T.restrict_domain(U).restrict_codomain(W)
 S.matrix(side='right')
 </script></div>
-</div></details><article class="example example-like" id="sec-sec4-5-VS-Sage-34"><h3 class="heading">
+</div></details><article class="example example-like" id="subsec-Vector-Spaces-Sage-33"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">The Dimesnion Formula.</span>
-</h3>
-<div class="para" id="sec-sec4-5-VS-Sage-34-2-1">Let <span class="process-math">\(\text{.}\)</span>  Let  <span class="process-math">\(W_1\)</span> be a subspace spanned by <span class="process-math">\(v_1=(-3, 1, -1, 2),
+</h4>
+<div class="para" id="subsec-Vector-Spaces-Sage-33-2-1">Let <span class="process-math">\(\text{.}\)</span>  Let  <span class="process-math">\(W_1\)</span> be a subspace spanned by <span class="process-math">\(v_1=(-3, 1, -1, 2),
 v_2=(1, -1, 11, 3),  v_3=(-5, 1, 9, 7), v_4=(-1, 12, 5, 4)\)</span> and <span class="process-math">\(W_2\)</span> be the subspace spanned by vectors <span class="process-math">\(u_1=(3, -1, 5,  7), u_2 =(21, 11, 10, -13), u_3=(-2, 3, -51,
 7), u_4=(-17,
 -10, -51, 34)\text{.}\)</span> Find bases and dimensions of  subspace <span class="process-math">\(W_1+W_2\)</span> and <span class="process-math">\(W_1\cap
 W_2\text{.}\)</span>
-</div></article><details id="sec-sec4-5-VS-Sage-35" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="sec-sec4-5-VS-Sage-35-1">Let us solve the above problem using Sage.</div> <div id="sec-sec4-5-VS-Sage-35-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4 # vector space of dimension 4 over rational field
+</div></article><details id="subsec-Vector-Spaces-Sage-34" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec-Vector-Spaces-Sage-34-1">Let us solve the above problem using Sage.</div> <div id="subsec-Vector-Spaces-Sage-34-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4 # vector space of dimension 4 over rational field
 v1=vector(QQ,[-3, 1, -1, 2])
 v2=vector(QQ,[1, -1, 11, 3])
 v3=vector(QQ,[-5, 1, 9, 7])
@@ -665,10 +675,10 @@ B1=[v1,v2,v3,v4]
 W1=V.span(B1);
 C1=W1.basis_matrix() # Basis of W1
 k=C1.dimensions()[0] # dimension of W1
-</script></div> <div id="sec-sec4-5-VS-Sage-35-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print("The dimesion of W1 is {}".format(k))
+</script></div> <div id="subsec-Vector-Spaces-Sage-34-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print("The dimesion of W1 is {}".format(k))
 print("A basis of W1 is:")
 print(C1)
-</script></div> <div id="sec-sec4-5-VS-Sage-35-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u1=vector(QQ,[3, -1, 5, 7])
+</script></div> <div id="subsec-Vector-Spaces-Sage-34-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u1=vector(QQ,[3, -1, 5, 7])
 u2 =vector(QQ,[21, 11, 10, -13])
 u3=vector(QQ,[-2, 3, -51, 7])
 u4=vector(QQ,[-17, -10, -51, 34])
@@ -677,21 +687,21 @@ B2=[u1,u2,u3,u4]
 W2=V.span(B2);
 C2=W2.basis_matrix() # Basis of W2
 p=C2.dimensions()[0] # dimension of W2
-</script></div> <div id="sec-sec4-5-VS-Sage-35-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print("The dimesion of W2 is {}".format(p))
+</script></div> <div id="subsec-Vector-Spaces-Sage-34-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print("The dimesion of W2 is {}".format(p))
 print("A basis of W2 is:")
 print(C2)
-</script></div> <div class="para" id="sec-sec4-5-VS-Sage-35-6">
+</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-34-6">
 <code class="code-inline tex2jax_ignore">W1+W2</code> returns the space <span class="process-math">\(W_1+W_2\text{.}\)</span>
-</div> <div id="sec-sec4-5-VS-Sage-35-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(W1+W2)
+</div> <div id="subsec-Vector-Spaces-Sage-34-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(W1+W2)
 print((W1+W2).basis_matrix())
 print("The dimension of W1+W2 is {}".format(dimension(W1+W2)))
-</script></div> <div class="para" id="sec-sec4-5-VS-Sage-35-8">Intersection of W1 and W2 using the inbuilt sage function <code class="code-inline tex2jax_ignore">intersection</code>
-</div> <div id="sec-sec4-5-VS-Sage-35-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">U=W1.intersection(W2)
+</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-34-8">Intersection of W1 and W2 using the inbuilt sage function <code class="code-inline tex2jax_ignore">intersection</code>
+</div> <div id="subsec-Vector-Spaces-Sage-34-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">U=W1.intersection(W2)
 print(U.basis_matrix()) # The basis of the intersection of W1 and W2
-</script></div> <div class="para" id="sec-sec4-5-VS-Sage-35-10">Finally, we can verify the dimension formula.</div> <div id="sec-sec4-5-VS-Sage-35-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">dimension(W1+W2)==dimension(W1)+dimension(W2)-dimension(W1.intersection(W2))
+</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-34-10">Finally, we can verify the dimension formula.</div> <div id="subsec-Vector-Spaces-Sage-34-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">dimension(W1+W2)==dimension(W1)+dimension(W2)-dimension(W1.intersection(W2))
 </script></div>
-</div></details><section class="subsection" id="subsec-polynomial-space-sage"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="space"> </span><span class="title">Polynomial Space in Sage</span>
+</div></details></section><section class="subsection" id="subsec-polynomial-space-sage"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="space"> </span><span class="title">Polynomial Space in Sage</span>
 </h3>
 <section class="introduction" id="subsec-polynomial-space-sage-2"><div class="para" id="subsec-polynomial-space-sage-2-1">In this subsection we shall explore, how to work with the polynomial space <span class="process-math">\({\mathcal{P}}_n(\mathbb{R})\)</span> in Sage. The main idea is to consider a polynomial <span class="process-math">\(p(x)
 =\sum_i^n a_i x^i\)</span> as a vecror <span class="process-math">\(\left(a_0,a_1,\ldots,a_n\right)\in \mathbb{R}^{n+1}.\)</span>
@@ -829,7 +839,7 @@ subspace is {dim} ')
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.6.6</span><span class="period">.</span>
 </h4>
 <div class="para" id="subsec-polynomial-space-sage-26-1">Once we get the basis matrix of the subspace we can write the corresponding polynomials as basis.</div></article></section><section class="subsection" id="subsec-matrix-space"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="space"> </span><span class="title">Matrix Spaces in Sage</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="space"> </span><span class="title">Matrix Spaces in Sage</span>
 </h3>
 <section class="introduction" id="subsec-matrix-space-2"><div class="para logical" id="subsec-matrix-space-2-1">
 <div class="para">How to we work with matrix space in Sage? Note that if <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> real matrix, then we can think of this as a vector in <span class="process-math">\(\mathbb{R}^{mn}\)</span> defined by stacking the entries row-by-row (or column-by-column). In particular, the matrix space <span class="process-math">\(M(m,n,\mathbb{R})\)</span> is ismorphic to <span class="process-math">\(\mathbb{R}^{mn}\)</span> via flattening map</div>

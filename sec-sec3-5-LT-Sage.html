@@ -196,9 +196,9 @@ sagecell.makeSagecell({
 #sec5-4-eigen-exer-2-1 { counter-set: sec5-4-eigen-exer-2-1 0; }
 #sec5-4-eigen-exer-2-1 > li::marker { content: ""counter(sec5-4-eigen-exer-2-1,decimal)"."; }
 #sec5-4-eigen-exer-2-1 > li { counter-increment: sec5-4-eigen-exer-2-1; }
-#sec6-0-orthogonality-8-1-1-1 { counter-set: sec6-0-orthogonality-8-1-1-1 0; }
-#sec6-0-orthogonality-8-1-1-1 > li::marker { content: ""counter(sec6-0-orthogonality-8-1-1-1,decimal)"."; }
-#sec6-0-orthogonality-8-1-1-1 > li { counter-increment: sec6-0-orthogonality-8-1-1-1; }
+#ex-ortho-6-0-0-1-1-1 { counter-set: ex-ortho-6-0-0-1-1-1 0; }
+#ex-ortho-6-0-0-1-1-1 > li::marker { content: ""counter(ex-ortho-6-0-0-1-1-1,decimal)"."; }
+#ex-ortho-6-0-0-1-1-1 > li { counter-increment: ex-ortho-6-0-0-1-1-1; }
 #sec6-3-10-1-2-1 { counter-set: sec6-3-10-1-2-1 0; }
 #sec6-3-10-1-2-1 > li::marker { content: ""counter(sec6-3-10-1-2-1,decimal)"."; }
 #sec6-3-10-1-2-1 > li { counter-increment: sec6-3-10-1-2-1; }
@@ -366,8 +366,9 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Sage Computations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-polynomial-space-sage" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Polynomial Space in Sage</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-matrix-space" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Matrix Spaces in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-Vector-Spaces-Sage" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Vector Spaces in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-polynomial-space-sage" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Polynomial Space in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-matrix-space" class="internal"><span class="codenumber">4.6.3</span> <span class="title">Matrix Spaces in Sage</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec4-5-VS-Ex.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Exercise Set</span></a></div></li>
@@ -400,7 +401,13 @@ sagecell.makeSagecell({
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-0-orthogonality.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Orthogonality</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-1-GramSchmidt.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Gram-Schmidt Orthogonalization Process</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-2.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec6-2.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec6-2.html#subsec-orthogonal-complements" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec6-2.html#subsec-Proj-Ref_HyperPlane" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Projection and Reflection</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-3.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Orthogonal Diagonalizations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec6-4.html" class="internal"><span class="codenumber">6.5</span> <span class="title">QR-Factorization</span></a></div></li>
 </ul>
@@ -592,7 +599,36 @@ C1 = [w1,w3,w2,w4]
 W2=V.subspace_with_basis(C1)
 T3=T.restrict_domain(V1).restrict_codomain(W2)
 MBC1=T3.matrix(side='right');MBC1
-</script></div> <div class="para" id="sec-sec3-5-LT-Sage-5-19">Clearly in this case 2nd and 3rd rows of <span class="process-math">\([T]_\beta^\gamma\)</span> are interchanged.</div></article></section></div>
+</script></div> <div class="para" id="sec-sec3-5-LT-Sage-5-19">Clearly in this case 2nd and 3rd rows of <span class="process-math">\([T]_\beta^\gamma\)</span> are interchanged.</div></article><article class="example example-like" id="reflection-sage-eg1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Reflection about a line <span class="process-math">\(y=mx\)</span>.</span>
+</h3> Find the reflection of <span class="process-math">\((2,4)\)</span> about the line <span class="process-math">\(y=\frac{1}{2} x\text{.}\)</span> Also plot the point and the line and the point point obtained by reflection. <div id="reflection-sage-eg1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">m = 1/2
+Q = 1/(1+m^2)*matrix([[1-m^2, 2*m],[2*m,m^2-1]])
+v = vector([2,4])
+Rv = Q*v  
+print(Rv)
+</script></div> <div id="reflection-sage-eg1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">line = plot(m*x,(x,-5,5),color='black')
+point = point2d(v,color='blue',size=20)
+Rpoint = point2d(Rv,color='red',size=20)
+vecP= v.plot(linestyle="--",color='blue')
+vecRv= Rv.plot(linestyle="--",color='red')
+ll = ll=line2d([v,Rv],linestyle="--",color='blue')
+show(line+point+Rpoint+vecP+vecRv+ll,figsize=5)
+</script></div></article><article class="example example-like" id="projection-sage-eg1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.5</span><span class="period">.</span>
+</h3>Find the projection of <span class="process-math">\((4,-1)\)</span> about the line <span class="process-math">\(y=\frac12 x\text{.}\)</span> Plot the point, the line and the point of proection.</article><div id="sec-sec3-5-LT-Sage-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">m =1/2
+P = 1/(1+m^2)*matrix([[1, m],[m,m^2]])
+v = vector([4,-1])
+Pv = P*v
+print(Pv)
+</script></div>
+<div id="sec-sec3-5-LT-Sage-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">line = plot(m*x,(x,-5,5),color='black')
+point = point2d(v,color='blue',size=20)
+Ppoint = point2d(Pv,color='red',size=20)
+vecP= v.plot(color='blue')
+vecPv= Pv.plot(linestyle="--",color='red')
+ll = ll=line2d([v,Pv],linestyle="--",color='blue')
+show(line+point+Ppoint+vecP+vecPv+ll,figsize=5)
+</script></div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-LT-Geom.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap4-Vector-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
