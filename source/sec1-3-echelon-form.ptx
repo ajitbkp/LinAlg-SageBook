@@ -37,13 +37,19 @@
                 Each leading 1 is to the right of all leading 1s in the rows above it. 
             </p>
         </li>
-            A row-echelon matrix is said to be in <alert>reduced row-echelon form (RREF)</alert>  or <alert>reduced row-echelon matrix</alert> if, in addition, it satisfies the following condition: 
-    </ol>
-           
+    </ol>         
 </p>
-</statement>
+<p>  A row-echelon matrix is said to be in <alert>reduced row-echelon form (RREF)</alert>  or <alert>reduced row-echelon matrix</alert> if, in addition, it satisfies the following condition: 
+          </p>
+          <p>
+    <m>\phantom{so}</m> 4. Each leading 1 is the only nonzero entry in its column.
+          </p>
+      </statement>
 </definition>	
 
+<remark>
+    The leading entry or pivot entry in any row in a row-echelon-form can be any non-zero number.
+</remark>
 <p>
 <example xml:id="eg-echelon-matrices"><title>Echelon Matrices</title>
 <p>
@@ -87,8 +93,8 @@
                 0\amp   1  \amp   0  \amp   1  \amp   -1  \\
             \end{pmatrix} , \quad 
             \begin{pmatrix}
-                1  \amp  6   \amp  8   \amp    0  \\
-                0  \amp   5  \amp   9  \amp    1  \\
+                2  \amp  6   \amp  8   \amp    0  \\
+                1  \amp   0  \amp   9  \amp    1  \\
                 0  \amp   0  \amp   1  \amp   -1  \\
             \end{pmatrix}</me>.
         </p>
@@ -633,5 +639,6 @@ c_4
 </solution>
 </p>
 </example>
+
 </subsection>
 </section>
