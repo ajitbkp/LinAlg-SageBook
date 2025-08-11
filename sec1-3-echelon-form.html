@@ -133,9 +133,9 @@ sagecell.makeSagecell({
 #def-echelon-form-1-2-1 { counter-set: def-echelon-form-1-2-1 0; }
 #def-echelon-form-1-2-1 > li::marker { content: ""counter(def-echelon-form-1-2-1,decimal)"."; }
 #def-echelon-form-1-2-1 > li { counter-increment: def-echelon-form-1-2-1; }
-#sec-row-echelon-6 { counter-set: sec-row-echelon-6 0; }
-#sec-row-echelon-6 > li::marker { content: ""counter(sec-row-echelon-6,decimal)"."; }
-#sec-row-echelon-6 > li { counter-increment: sec-row-echelon-6; }
+#sec-row-echelon-7 { counter-set: sec-row-echelon-7 0; }
+#sec-row-echelon-7 > li::marker { content: ""counter(sec-row-echelon-7,decimal)"."; }
+#sec-row-echelon-7 > li { counter-increment: sec-row-echelon-7; }
 #alg-gaussian-elimination-2-1-1 { counter-set: alg-gaussian-elimination-2-1-1 0; }
 #alg-gaussian-elimination-2-1-1 > li::marker { content: ""counter(alg-gaussian-elimination-2-1-1,decimal)"."; }
 #alg-gaussian-elimination-2-1-1 > li { counter-increment: alg-gaussian-elimination-2-1-1; }
@@ -504,8 +504,11 @@ sagecell.makeSagecell({
 <li id="def-echelon-form-1-2-1-1"><div class="para" id="def-echelon-form-1-2-1-1-1">All zero rows (consisting entirely of zeros) are at the bottom.</div></li>
 <li id="def-echelon-form-1-2-1-2"><div class="para" id="def-echelon-form-1-2-1-2-1">The first nonzero entry from the left in each nonzero row is a 1, called the <em class="alert">leading</em> 1 or <em class="alert">pivot</em> element  for that row. Row containing pivot elements are called the pivot row and the columns containing the pivot element are called the pivot columns.</div></li>
 <li id="def-echelon-form-1-2-1-3"><div class="para" id="def-echelon-form-1-2-1-3-1">Each leading 1 is to the right of all leading 1s in the rows above it.</div></li>
-</ol></div></article><div class="para" id="sec-row-echelon-3"><article class="example example-like" id="eg-echelon-matrices"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Echelon Matrices.</span>
+</ol></div> <div class="para" id="def-echelon-form-1-3">A row-echelon matrix is said to be in <em class="alert">reduced row-echelon form (RREF)</em>  or <em class="alert">reduced row-echelon matrix</em> if, in addition, it satisfies the following condition:</div> <div class="para" id="def-echelon-form-1-4">
+<span class="process-math">\(\phantom{so}\)</span> 4. Each leading 1 is the only nonzero entry in its column.</div></article><article class="remark remark-like" id="sec-row-echelon-3"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h4>The leading entry or pivot entry in any row in a row-echelon-form can be any non-zero number.</article><div class="para" id="sec-row-echelon-4"><article class="example example-like" id="eg-echelon-matrices"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Echelon Matrices.</span>
 </h4> <div class="para logical" id="eg-echelon-matrices-2">
 <div class="para">Following are examples of echelon matrices:</div>
 <div class="displaymath process-math">
@@ -529,8 +532,8 @@ sagecell.makeSagecell({
 \end{equation*}
 </div>
 </div></article></div>
-<div class="para" id="sec-row-echelon-4"><article class="example example-like" id="eg-non-echelon-matrices"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Non Echelon Matrices.</span>
+<div class="para" id="sec-row-echelon-5"><article class="example example-like" id="eg-non-echelon-matrices"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Non Echelon Matrices.</span>
 </h4> <div class="para logical" id="eg-non-echelon-matrices-2">
 <div class="para">Following are examples of some non echelon matrices:</div>
 <div class="displaymath process-math">
@@ -546,28 +549,28 @@ sagecell.makeSagecell({
 0\amp   1  \amp   0  \amp   1  \amp   -1  \\
 \end{pmatrix} , \quad 
 \begin{pmatrix}
-1  \amp  6   \amp  8   \amp    0  \\
-0  \amp   5  \amp   9  \amp    1  \\
+2  \amp  6   \amp  8   \amp    0  \\
+1  \amp   0  \amp   9  \amp    1  \\
 0  \amp   0  \amp   1  \amp   -1  \\
 \end{pmatrix}\text{.}
 \end{equation*}
 </div>
 </div></article></div>
-<div class="para" id="sec-row-echelon-5">Every nonzero <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\)</span> is row equivalent to a matrix which is a row echelon matrix. We employ the following procedures to convert a matrix into a row echelon form:</div>
-<ol class="decimal" id="sec-row-echelon-6">
-<li id="sec-row-echelon-6-1"><div class="para" id="sec-row-echelon-6-1-1">Choose a pivot element from the nonzero entries in the 1st  column. Row containing pivot is called the pivot row.</div></li>
-<li id="sec-row-echelon-6-2"><div class="para" id="sec-row-echelon-6-2-1">Interchange rows (if necessary) so that pivot row is the new 1st row.</div></li>
-<li id="sec-row-echelon-6-3"><div class="para" id="sec-row-echelon-6-3-1">Multiply pivot row by a constant so that the new pivot is 1.</div></li>
-<li id="sec-row-echelon-6-4"><div class="para" id="sec-row-echelon-6-4-1">Make all subsequent entries in the 1st column 0 by using elementary row operations.</div></li>
-<li id="sec-row-echelon-6-5"><div class="para" id="sec-row-echelon-6-5-1">Repeat this process with next column.</div></li>
+<div class="para" id="sec-row-echelon-6">Every nonzero <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\)</span> is row equivalent to a matrix which is a row echelon matrix. We employ the following procedures to convert a matrix into a row echelon form:</div>
+<ol class="decimal" id="sec-row-echelon-7">
+<li id="sec-row-echelon-7-1"><div class="para" id="sec-row-echelon-7-1-1">Choose a pivot element from the nonzero entries in the 1st  column. Row containing pivot is called the pivot row.</div></li>
+<li id="sec-row-echelon-7-2"><div class="para" id="sec-row-echelon-7-2-1">Interchange rows (if necessary) so that pivot row is the new 1st row.</div></li>
+<li id="sec-row-echelon-7-3"><div class="para" id="sec-row-echelon-7-3-1">Multiply pivot row by a constant so that the new pivot is 1.</div></li>
+<li id="sec-row-echelon-7-4"><div class="para" id="sec-row-echelon-7-4-1">Make all subsequent entries in the 1st column 0 by using elementary row operations.</div></li>
+<li id="sec-row-echelon-7-5"><div class="para" id="sec-row-echelon-7-5-1">Repeat this process with next column.</div></li>
 </ol>
-<article class="example example-like" id="sec-row-echelon-7"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
+<article class="example example-like" id="sec-row-echelon-8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-row-echelon-7-1">Reduce the matrix <span class="process-math">\(A=\begin{pmatrix}1\amp  2   \amp  4    \\
+<div class="para" id="sec-row-echelon-8-1">Reduce the matrix <span class="process-math">\(A=\begin{pmatrix}1\amp  2   \amp  4    \\
 1\amp   0  \amp  2    \\
 2\amp    4 \amp   1  
-\end{pmatrix}\)</span>  to row echelon form.</div> <details id="sec-row-echelon-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec-row-echelon-7-2-1">
+\end{pmatrix}\)</span>  to row echelon form.</div> <details id="sec-row-echelon-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec-row-echelon-8-2-1">
 <div class="para">
 <span class="process-math">\(\begin{pmatrix}
 1\amp  2   \amp  4    \\
@@ -612,12 +615,12 @@ R_2\to R_2-R_3 \\R_1\to R_1-4R_3\\R_1\to R_1-2R_2\\
 \end{pmatrix}
 \end{equation*}
 </div>
-<div class="para">Sage has inbulit method `A.rref()’ to convert the matrix into reduced row echelon form. You may also try ’A.echelonize()’ and ’A.echelon_form()’ <div id="sec-row-echelon-7-2-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
-</script></div> <div id="sec-row-echelon-7-2-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.rref()
+<div class="para">Sage has inbulit method `A.rref()’ to convert the matrix into reduced row echelon form. You may also try ’A.echelonize()’ and ’A.echelon_form()’ <div id="sec-row-echelon-8-2-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
+</script></div> <div id="sec-row-echelon-8-2-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.rref()
 </script></div>
 </div>
-</div></div></details></article><div class="para" id="sec-row-echelon-8">
-<em class="alert">Step by Step method to find RREF of a matrix</em> <div id="sec-row-echelon-8-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">#A=matrix(QQ, [[0,-2,1],[6, -0, 3],[4, 1, 8],[14, 10, -8]])
+</div></div></details></article><div class="para" id="sec-row-echelon-9">
+<em class="alert">Step by Step method to find RREF of a matrix</em> <div id="sec-row-echelon-9-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">#A=matrix(QQ, [[0,-2,1],[6, -0, 3],[4, 1, 8],[14, 10, -8]])
 A=matrix(QQ, [[3,-2,1,2],[6, 0,-1, 3],[4, 1,2, 8]])
 m = A.nrows()
 n = A.ncols()
@@ -665,14 +668,14 @@ for i in range(0,r):
 </h3>
 <div class="para" id="subsec-Gaussian-Elimination-2">Solving a system of linear equations <span class="process-math">\(AX = B\text{,}\)</span> by reducing the augmented matrix <span class="process-math">\(A^*= [A~|~B]\)</span> to echelon form by using elementary row operations and then solving the equivalent system by back substitution is called solving by <em class="alert">Gaussian elimination</em> process. Now we state the step involved in the Gaussian elimination process. Only use the row operations stated above and work from top to bottom.</div>
 <article class="algorithm theorem-like" id="alg-gaussian-elimination"><h4 class="heading">
-<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Gaussian Elimination.</span>
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Gaussian Elimination.</span>
 </h4>
 <div class="para logical" id="alg-gaussian-elimination-2-1"><ol class="decimal" id="alg-gaussian-elimination-2-1-1">
 <li id="alg-gaussian-elimination-2-1-1-1"><div class="para" id="alg-gaussian-elimination-2-1-1-1-1">Make in each row the first non-zero element (called the main element) equal to 1.</div></li>
 <li id="alg-gaussian-elimination-2-1-1-2"><div class="para" id="alg-gaussian-elimination-2-1-1-2-1">Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.</div></li>
 <li id="alg-gaussian-elimination-2-1-1-3"><div class="para" id="alg-gaussian-elimination-2-1-1-3-1">If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.</div></li>
 </ol></div></article><article class="example example-like" id="row-echelon-eg1"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="row-echelon-eg1-1">
 <div class="para">Solve the following system of linear equations using the Gaussian elimination method.</div>
@@ -740,7 +743,7 @@ Aug = A.augment(b,subdivide=True)
 Aug
 </script></div> <div id="row-echelon-eg1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
 </script></div></article><article class="example example-like" id="row-echelon-eg2"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="row-echelon-eg2-1">
 <div class="para">Solve the following system of linear equations.</div>
@@ -763,7 +766,7 @@ Aug = A.augment(b,subdivide=True)
 Aug
 </script></div> <div id="row-echelon-eg2-2-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
 </script></div> Since last row zero, it represents the equation <span class="process-math">\(0=0\text{,}\)</span> in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.</div></details></article><article class="example example-like" id="subsec-Gaussian-Elimination-6"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-Gaussian-Elimination-6-1">
 <div class="para">Solve the following system using the Gaussian elimination method and show that it has no solution.</div>
@@ -786,7 +789,7 @@ Aug
 </h3>
 <div class="para" id="subsec-Gauss-Jordan-Method-2">Guass-Jordan method of solving the linear system <span class="process-math">\(AX=B\)</span> is very similar to that of the Gaussian elimination method. In this method we continue the the row elimination till we reduce the row-reduced matrix of <span class="process-math">\(A\)</span> to identity matrix.</div>
 <article class="example example-like" id="subsec-Gauss-Jordan-Method-3"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-Gauss-Jordan-Method-3-1">
 <div class="para">Solve the system <span class="process-math">\(Ax=b\)</span>  using the Gauss-Jordan elimination method, where</div>
@@ -812,7 +815,7 @@ x_1=11/34, x_2 = 89/85, x_3 = 23/170, x_4=253/170\text{.}
 </div> <div id="subsec-Gauss-Jordan-Method-3-2-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A.solve_right(b)
 </script></div>
 </div></details></article><article class="example example-like" id="subsec-Gauss-Jordan-Method-4"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.11</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-Gauss-Jordan-Method-4-1">
 <div class="para">Four well-mixed tanks <span class="process-math">\(T_1, T_2, T_3, T_4\)</span> form a recirculation/mixing network used to produce a sauce.  At steady state, the concentration <span class="process-math">\(c_i\)</span> (in <span class="process-math">\(kg\cdot m^{-3}\)</span>) of a soluble ingredient ( say salt or sugar) in tank <span class="process-math">\(T_i\)</span> satisfies the steady-state mass balance:</div>

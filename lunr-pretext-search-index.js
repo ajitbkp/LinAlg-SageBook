@@ -178,7 +178,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Echelon Forms",
-  "body": " Echelon Forms   In this section we define the row echelon form of matrices which is useful to deal with various concepts related to matrices. We shall also see how Sage can be used to convert any matrix to its row-echelon form.    Row Echelon Form    An matrix is said to be in row-echelon form or row-echelon matrix if it satisfies the following conditions:     All zero rows (consisting entirely of zeros) are at the bottom.    The first nonzero entry from the left in each nonzero row is a 1, called the leading 1 or pivot element for that row. Row containing pivot elements are called the pivot row and the columns containing the pivot element are called the pivot columns.    Each leading 1 is to the right of all leading 1s in the rows above it.  A row-echelon matrix is said to be in reduced row-echelon form (RREF) or reduced row-echelon matrix if, in addition, it satisfies the following condition:      Echelon Matrices  Following are examples of echelon matrices: .     Non Echelon Matrices  Following are examples of some non echelon matrices: .    Every nonzero matrix is row equivalent to a matrix which is a row echelon matrix. We employ the following procedures to convert a matrix into a row echelon form:    Choose a pivot element from the nonzero entries in the 1st column. Row containing pivot is called the pivot row.    Interchange rows (if necessary) so that pivot row is the new 1st row.    Multiply pivot row by a constant so that the new pivot is 1.    Make all subsequent entries in the 1st column 0 by using elementary row operations.    Repeat this process with next column.     Reduce the matrix to row echelon form.    This is row-echelon matrix equivalent to . We can apply elementary row operation and make it to reduced-row-echelon form. Sage has inbulit method `A.rref()' to convert the matrix into reduced row echelon form. You may also try 'A.echelonize()' and 'A.echelon_form()'       Step by Step method to find RREF of a matrix      Gaussian Elimination Method  Solving a system of linear equations , by reducing the augmented matrix to echelon form by using elementary row operations and then solving the equivalent system by back substitution is called solving by Gaussian elimination process. Now we state the step involved in the Gaussian elimination process. Only use the row operations stated above and work from top to bottom.  Gaussian Elimination      Make in each row the first non-zero element (called the main element) equal to 1.    Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.    If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.        Solve the following system of linear equations using the Gaussian elimination method.    The corresponding augmented matrix is      We can do more step of row elimination to convert the first three columns into identity matrix. However, the above augmented matrix represents the following equations: Using back substitution, we get .       Solve the following system of linear equations. using Gaussian elimination method. Show that this system has infinitely many solutions.    Since last row zero, it represents the equation , in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.    Solve the following system using the Gaussian elimination method and show that it has no solution.      Since last row represents the equation , the system has no solution.      Gauss-Jordan elimination method  Guass-Jordan method of solving the linear system is very similar to that of the Gaussian elimination method. In this method we continue the the row elimination till we reduce the row-reduced matrix of to identity matrix.   Solve the system using the Gauss-Jordan elimination method, where    Let us solve this in Sage.   Clearly the solution of the above system is . We can also solve the above system using the 'A.solve_right(b)' command in Sage.      Four well-mixed tanks form a recirculation\/mixing network used to produce a sauce. At steady state, the concentration (in ) of a soluble ingredient ( say salt or sugar) in tank satisfies the steady-state mass balance: The system of equations can be written in matrix form as where For example, the first equation reads: , meaning the total outflow coefficient from is 20, the inflows from is 2 and are 5 and 3 respectively, and the net external ingredient feed to is 14 (in consistent units).    Hence the solution is       "
+  "body": " Echelon Forms   In this section we define the row echelon form of matrices which is useful to deal with various concepts related to matrices. We shall also see how Sage can be used to convert any matrix to its row-echelon form.    Row Echelon Form    An matrix is said to be in row-echelon form or row-echelon matrix if it satisfies the following conditions:     All zero rows (consisting entirely of zeros) are at the bottom.    The first nonzero entry from the left in each nonzero row is a 1, called the leading 1 or pivot element for that row. Row containing pivot elements are called the pivot row and the columns containing the pivot element are called the pivot columns.    Each leading 1 is to the right of all leading 1s in the rows above it.     A row-echelon matrix is said to be in reduced row-echelon form (RREF) or reduced row-echelon matrix if, in addition, it satisfies the following condition:   4. Each leading 1 is the only nonzero entry in its column.    The leading entry or pivot entry in any row in a row-echelon-form can be any non-zero number.   Echelon Matrices  Following are examples of echelon matrices: .     Non Echelon Matrices  Following are examples of some non echelon matrices: .    Every nonzero matrix is row equivalent to a matrix which is a row echelon matrix. We employ the following procedures to convert a matrix into a row echelon form:    Choose a pivot element from the nonzero entries in the 1st column. Row containing pivot is called the pivot row.    Interchange rows (if necessary) so that pivot row is the new 1st row.    Multiply pivot row by a constant so that the new pivot is 1.    Make all subsequent entries in the 1st column 0 by using elementary row operations.    Repeat this process with next column.     Reduce the matrix to row echelon form.    This is row-echelon matrix equivalent to . We can apply elementary row operation and make it to reduced-row-echelon form. Sage has inbulit method `A.rref()' to convert the matrix into reduced row echelon form. You may also try 'A.echelonize()' and 'A.echelon_form()'       Step by Step method to find RREF of a matrix      Gaussian Elimination Method  Solving a system of linear equations , by reducing the augmented matrix to echelon form by using elementary row operations and then solving the equivalent system by back substitution is called solving by Gaussian elimination process. Now we state the step involved in the Gaussian elimination process. Only use the row operations stated above and work from top to bottom.  Gaussian Elimination      Make in each row the first non-zero element (called the main element) equal to 1.    Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.    If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.        Solve the following system of linear equations using the Gaussian elimination method.    The corresponding augmented matrix is      We can do more step of row elimination to convert the first three columns into identity matrix. However, the above augmented matrix represents the following equations: Using back substitution, we get .       Solve the following system of linear equations. using Gaussian elimination method. Show that this system has infinitely many solutions.    Since last row zero, it represents the equation , in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.    Solve the following system using the Gaussian elimination method and show that it has no solution.      Since last row represents the equation , the system has no solution.      Gauss-Jordan elimination method  Guass-Jordan method of solving the linear system is very similar to that of the Gaussian elimination method. In this method we continue the the row elimination till we reduce the row-reduced matrix of to identity matrix.   Solve the system using the Gauss-Jordan elimination method, where    Let us solve this in Sage.   Clearly the solution of the above system is . We can also solve the above system using the 'A.solve_right(b)' command in Sage.      Four well-mixed tanks form a recirculation\/mixing network used to produce a sauce. At steady state, the concentration (in ) of a soluble ingredient ( say salt or sugar) in tank satisfies the steady-state mass balance: The system of equations can be written in matrix form as where For example, the first equation reads: , meaning the total outflow coefficient from is 20, the inflows from is 2 and are 5 and 3 respectively, and the net external ingredient feed to is 14 (in consistent units).    Hence the solution is       "
 },
 {
   "id": "def-echelon-form",
@@ -187,14 +187,23 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.3.1",
   "title": "",
-  "body": "  An matrix is said to be in row-echelon form or row-echelon matrix if it satisfies the following conditions:     All zero rows (consisting entirely of zeros) are at the bottom.    The first nonzero entry from the left in each nonzero row is a 1, called the leading 1 or pivot element for that row. Row containing pivot elements are called the pivot row and the columns containing the pivot element are called the pivot columns.    Each leading 1 is to the right of all leading 1s in the rows above it.  A row-echelon matrix is said to be in reduced row-echelon form (RREF) or reduced row-echelon matrix if, in addition, it satisfies the following condition:    "
+  "body": "  An matrix is said to be in row-echelon form or row-echelon matrix if it satisfies the following conditions:     All zero rows (consisting entirely of zeros) are at the bottom.    The first nonzero entry from the left in each nonzero row is a 1, called the leading 1 or pivot element for that row. Row containing pivot elements are called the pivot row and the columns containing the pivot element are called the pivot columns.    Each leading 1 is to the right of all leading 1s in the rows above it.     A row-echelon matrix is said to be in reduced row-echelon form (RREF) or reduced row-echelon matrix if, in addition, it satisfies the following condition:   4. Each leading 1 is the only nonzero entry in its column.   "
+},
+{
+  "id": "sec-row-echelon-3",
+  "level": "2",
+  "url": "sec1-3-echelon-form.html#sec-row-echelon-3",
+  "type": "Remark",
+  "number": "1.3.2",
+  "title": "",
+  "body": "The leading entry or pivot entry in any row in a row-echelon-form can be any non-zero number. "
 },
 {
   "id": "eg-echelon-matrices",
   "level": "2",
   "url": "sec1-3-echelon-form.html#eg-echelon-matrices",
   "type": "Example",
-  "number": "1.3.2",
+  "number": "1.3.3",
   "title": "Echelon Matrices.",
   "body": "Echelon Matrices  Following are examples of echelon matrices: .  "
 },
@@ -203,16 +212,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#eg-non-echelon-matrices",
   "type": "Example",
-  "number": "1.3.3",
+  "number": "1.3.4",
   "title": "Non Echelon Matrices.",
   "body": "Non Echelon Matrices  Following are examples of some non echelon matrices: .  "
 },
 {
-  "id": "sec-row-echelon-7",
+  "id": "sec-row-echelon-8",
   "level": "2",
-  "url": "sec1-3-echelon-form.html#sec-row-echelon-7",
+  "url": "sec1-3-echelon-form.html#sec-row-echelon-8",
   "type": "Example",
-  "number": "1.3.4",
+  "number": "1.3.5",
   "title": "",
   "body": " Reduce the matrix to row echelon form.    This is row-echelon matrix equivalent to . We can apply elementary row operation and make it to reduced-row-echelon form. Sage has inbulit method `A.rref()' to convert the matrix into reduced row echelon form. You may also try 'A.echelonize()' and 'A.echelon_form()'     "
 },
@@ -221,7 +230,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#alg-gaussian-elimination",
   "type": "Algorithm",
-  "number": "1.3.5",
+  "number": "1.3.6",
   "title": "Gaussian Elimination.",
   "body": "Gaussian Elimination      Make in each row the first non-zero element (called the main element) equal to 1.    Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.    If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.      "
 },
@@ -230,7 +239,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#row-echelon-eg1",
   "type": "Example",
-  "number": "1.3.6",
+  "number": "1.3.7",
   "title": "",
   "body": " Solve the following system of linear equations using the Gaussian elimination method.    The corresponding augmented matrix is      We can do more step of row elimination to convert the first three columns into identity matrix. However, the above augmented matrix represents the following equations: Using back substitution, we get .     "
 },
@@ -239,7 +248,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#row-echelon-eg2",
   "type": "Example",
-  "number": "1.3.7",
+  "number": "1.3.8",
   "title": "",
   "body": " Solve the following system of linear equations. using Gaussian elimination method. Show that this system has infinitely many solutions.    Since last row zero, it represents the equation , in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.  "
 },
@@ -248,7 +257,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#subsec-Gaussian-Elimination-6",
   "type": "Example",
-  "number": "1.3.8",
+  "number": "1.3.9",
   "title": "",
   "body": " Solve the following system using the Gaussian elimination method and show that it has no solution.      Since last row represents the equation , the system has no solution.   "
 },
@@ -257,7 +266,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#subsec-Gauss-Jordan-Method-3",
   "type": "Example",
-  "number": "1.3.9",
+  "number": "1.3.10",
   "title": "",
   "body": " Solve the system using the Gauss-Jordan elimination method, where    Let us solve this in Sage.   Clearly the solution of the above system is . We can also solve the above system using the 'A.solve_right(b)' command in Sage.    "
 },
@@ -266,7 +275,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#subsec-Gauss-Jordan-Method-4",
   "type": "Example",
-  "number": "1.3.10",
+  "number": "1.3.11",
   "title": "",
   "body": " Four well-mixed tanks form a recirculation\/mixing network used to produce a sauce. At steady state, the concentration (in ) of a soluble ingredient ( say salt or sugar) in tank satisfies the steady-state mass balance: The system of equations can be written in matrix form as where For example, the first equation reads: , meaning the total outflow coefficient from is 20, the inflows from is 2 and are 5 and 3 respectively, and the net external ingredient feed to is 14 (in consistent units).    Hence the solution is     "
 },
