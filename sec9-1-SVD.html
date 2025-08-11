@@ -1158,7 +1158,88 @@ A_k:=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ku_kv_k^T (k\leq r)
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.17<span class="period">.</span></span><span class="space"> </span>Approximate Image with 20 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im30"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im30.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.18<span class="period">.</span></span><span class="space"> </span>Approximate Image with 30 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im50"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im50.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.19<span class="period">.</span></span><span class="space"> </span>Approximate Image with 50 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im100"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im100.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.20<span class="period">.</span></span><span class="space"> </span>Approximate Image with 100 terms</figcaption></figure><div class="para" id="sec9-1-SVD-6-18">It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image. Note that the original image has <span class="process-math">\(995\times 1770=1761150\)</span> pixels, where as if we take the 1st 100 terms, then it is of size <span class="process-math">\(100(995+1770)=276500\)</span> which quite small compared to the original size.</div></section></section></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.20<span class="period">.</span></span><span class="space"> </span>Approximate Image with 100 terms</figcaption></figure><div class="para" id="sec9-1-SVD-6-18">It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image. Note that the original image has <span class="process-math">\(995\times 1770=1761150\)</span> pixels, where as if we take the 1st 100 terms, then it is of size <span class="process-math">\(100(995+1770)=276500\)</span> which quite small compared to the original size.</div>
+<div class="para" id="sec9-1-SVD-6-19">Now let us see how, we can implement image compression in Python.</div>
+<div id="sec9-1-SVD-6-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
+from PIL import Image
+import requests
+from io import BytesIO
+import matplotlib.pyplot as plt
+url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
+img_array = np.array(img)
+# img.show() # may open in viewer depending on Sage environment
+img
+</script></div>
+<div id="sec9-1-SVD-6-21" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">imggray = img.convert('LA')
+imgmat = np.array( list(imggray.getdata(band = 0)), float)
+imgmat.shape = (imggray.size[1], imggray.size[0])
+imgmat.shape
+</script></div>
+<div id="sec9-1-SVD-6-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">plt.figure()
+plt.imshow(imgmat, cmap = 'gray')
+plt.title("Image after converting it into the Grayscale pattern")
+plt.show()
+</script></div>
+<div id="sec9-1-SVD-6-23" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">U, S, Vt = np.linalg.svd(imgmat) #singular value decomposition
+</script></div>
+<div id="sec9-1-SVD-6-24" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">i = 10
+cmpimg = np.matrix(U[:, :i]) * np.diag(S[:i]) * np.matrix(Vt[:i,:])
+plt.imshow(cmpimg, cmap = 'gray')
+title = " Image after =  %s" %i
+plt.title(title)
+plt.show()
+</script></div>
+<div id="sec9-1-SVD-6-25" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print("After compression: ")
+for i in [5, 10, 50,100,200]:
+    cmpimg = np.matrix(U[:, :i]) * np.diag(S[:i]) * np.matrix(Vt[:i,:])
+    plt.imshow(cmpimg, cmap = 'gray')
+    title = "Image with %s components" %i
+    plt.title(title)
+    plt.show()
+    result = Image.fromarray((cmpimg ).astype(np.uint8))
+</script></div>
+<article class="example example-like" id="sec9-1-SVD-6-26"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Color Image Compression.</span>
+</h4> <div id="sec9-1-SVD-6-26-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+import requests
+from io import BytesIO
+import urllib.request
+url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
+urllib.request.urlretrieve(url, "Sardar.jpg")
+img = Image.open('Sardar.jpg')
+arr = np.array(img)
+
+r = arr[:,:,0]
+g = arr[:,:,1]
+b = arr[:,:,2]
+ur,sr,vr = np.linalg.svd(r, full_matrices=False)
+ug,sg,vg = np.linalg.svd(g, full_matrices=False)
+ub,sb,vb = np.linalg.svd(b, full_matrices=False)
+
+k=5 ## Number of components
+rr = np.dot(ur[:,:k],np.dot(np.diag(sr[:k]), vr[:k,:]))
+rg = np.dot(ug[:,:k],np.dot(np.diag(sg[:k]), vg[:k,:]))
+rb = np.dot(ub[:,:k],np.dot(np.diag(sb[:k]), vb[:k,:]))
+rimg = np.zeros(arr.shape)
+rimg[:,:,0] = rr
+rimg[:,:,1] = rg
+rimg[:,:,2] = rb
+for ind1, row in enumerate(rimg):
+        for ind2, col in enumerate(row):
+            for ind3, value in enumerate(col):
+                if value < 0:
+                    rimg[ind1,ind2,ind3] = abs(value)
+                if value > 255:
+                    rimg[ind1,ind2,ind3] = 255
+compressed_image = rimg.astype(np.uint8)
+plt.imshow(compressed_image)
+plt.axis('off')
+plt.show()
+</script></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chap9-SVD.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap10-PCA.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
