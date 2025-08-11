@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -725,7 +737,145 @@ V=\begin{pmatrix}\frac{1}{2} \, \sqrt{2} \amp  \frac{1}{6} \, \sqrt{2} \amp  \fr
 \end{equation*}
 </div>
 </div> <div class="para" id="eg_svd1-1-5">It is easy to check that that <span class="process-math">\(UAV^T=\sum\text{.}\)</span>
-</div></article><section class="exercises" id="exercises-SVD-exer-set2"><h4 class="heading hide-type">
+</div> <div id="eg_svd1-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix([[3,2,2],[2,3,-2]])
+print('A^TA is:' )
+ATA = A.T*A
+print(ATA)
+print('Eigenvalues of A^TA are:')
+evals = ATA.eigenvalues()
+print(evals)
+V=[]
+evecs = ATA.eigenvectors_right()
+for i in range(len(evecs)):
+    print(f'The eigenvector with respect to eigenvalue {evecs[i][0]} is {evecs[i][1][0]}')
+    v = evecs[i][1][0]/norm(evecs[i][1][0])
+    V.append(v)
+V = column_matrix(V)
+print('The matrix V is:')
+print(V)
+u1 = A*V.columns()[0]/sqrt(evals[0])
+u2 = A*V.columns()[1]/sqrt(evals[1])
+U = column_matrix([u1,u2]);
+print('The matrix U is:')
+print(U)
+S = zero_matrix(A.dimensions()[0],A.dimensions()[1])
+for i in range(A.rank()):
+    S[i,i]=sqrt(evals[i])
+print('The matrix S is:')
+print(S)
+print('Check if U*S*V^T==A')
+print(U*S*V.T==A)
+</script></div></article><div class="para" id="sec9-1-SVD-3-20">Sage includes a built-in method for computing the SVD of a matrix. However, the matrix must be defined over the Real Double Field (RDF), a numerical field of real numbers represented in 64-bit double precision, offering approximately 15–16 decimal digits of accuracy. Let us see to achieve this.</div>
+<div id="sec9-1-SVD-3-21" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(RDF,[[3,2,2],[2,3,-2]])
+# Compute the SVD
+U, S, V = A.SVD()
+# Display results
+print("U =\n", U)
+print("Singular values =\n", S)
+print("V =\n", V)
+</script></div>
+<div id="sec9-1-SVD-3-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Reconstruction
+A_reconstructed = U * S * V.transpose()
+print(A_reconstructed)
+print('Due to numeruical computation,we shall check if the norm of the difference is very small')
+print(norm(A_reconstructed.numerical_approx()-A.numerical_approx()))
+</script></div>
+<article class="example example-like" id="sec9-1-SVD-3-23"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec9-1-SVD-3-23-1">Find the signular value decomposition of the matrix <span class="process-math">\(A=\left(\begin{array}{rr}3 \amp 5 \\5 \amp -3 \\4 \amp 4\end{array}\right)\text{.}\)</span>
+</div> <details id="sec9-1-SVD-3-23-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec9-1-SVD-3-23-2-1">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^TA=\left(\begin{array}{rr}
+50 \amp 16 \\
+16 \amp 50
+\end{array}\right).
+\end{equation*}
+</div>
+<div class="para">It is easy to check that eigenvalues of <span class="process-math">\(A^TA\)</span> are 66 and  34 with corresponding eigenvectors <span class="process-math">\((1,1)\)</span> and <span class="process-math">\((1,-1)\text{.}\)</span> Hence we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V= \left(\begin{array}{rr}
+\frac{1}{2} \, \sqrt{2} \amp \frac{1}{2} \, \sqrt{2} \\
+\frac{1}{2} \, \sqrt{2} \amp -\frac{1}{2} \, \sqrt{2}
+\end{array}\right) \text{ and } \Sigma = \left(\begin{array}{rr}
+\sqrt{66} \amp 0 \\
+0 \amp \sqrt{34} \\
+0 \amp 0
+\end{array}\right).
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec9-1-SVD-3-23-2-2">
+<div class="para">Now let us find the matrix <span class="process-math">\(U\text{.}\)</span> We have <span class="process-math">\(v_1=\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2}\end{pmatrix}\text{,}\)</span> <span class="process-math">\(v_2=\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2}\end{pmatrix}\)</span> and <span class="process-math">\(\sigma_1=\sqrt{66}, \sigma_2=\sqrt{34}\text{.}\)</span> Hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+u_1 = \frac{1}{\sigma_1}Av_1=\left(\begin{array}{r}
+\frac{2}{33} \, \sqrt{66} \sqrt{2} \\
+\frac{1}{66} \, \sqrt{66} \sqrt{2} \\
+\frac{2}{33} \, \sqrt{66} \sqrt{2}
+\end{array}\right), u_2 = \frac{1}{\sigma_2}Av_2=\left(\begin{array}{r}
+-\frac{1}{34} \, \sqrt{34} \sqrt{2} \\
+\frac{2}{17} \, \sqrt{34} \sqrt{2} \\
+0
+\end{array}\right).
+\end{equation*}
+</div>
+<div class="para">To find <span class="process-math">\(u_3\text{,}\)</span> we take the cross product of <span class="process-math">\(u_1\)</span> and <span class="process-math">\(u_2\text{.}\)</span> Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+u_3 = u_1\times u_2 = \left(\begin{array}{r}
+-\frac{8}{561} \, \sqrt{66} \sqrt{34} \\
+-\frac{2}{561} \, \sqrt{66} \sqrt{34} \\
+\frac{1}{66} \, \sqrt{66} \sqrt{34}
+\end{array}\right).
+\end{equation*}
+</div>
+<div class="para">Hence we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U= \left(\begin{array}{rrr}
+\frac{2}{33} \, \sqrt{66} \sqrt{2} \amp -\frac{1}{34} \, \sqrt{34} \sqrt{2} \amp -\frac{8}{561} \, \sqrt{66} \sqrt{34} \\
+\frac{1}{66} \, \sqrt{66} \sqrt{2} \amp \frac{2}{17} \, \sqrt{34} \sqrt{2} \amp -\frac{2}{561} \, \sqrt{66} \sqrt{34} \\
+\frac{2}{33} \, \sqrt{66} \sqrt{2} \amp 0 \amp \frac{1}{66} \, \sqrt{66} \sqrt{34}
+\end{array}\right)
+\end{equation*}
+</div>
+<div class="para">Veryfy that <span class="process-math">\(U\Sigma V^T=A\text{.}\)</span>
+</div>
+</div> <div id="sec9-1-SVD-3-23-2-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix([[3,5,4],[5,-3,4]]).T
+print('A^TA is:' )
+ATA = A.T*A
+print(ATA)
+print('Eigenvalues of A^TA are:')
+evals = ATA.eigenvalues()
+print(evals)
+V=[]
+evecs = ATA.eigenvectors_right()
+for i in range(len(evecs)):
+    print(f'The eigenvector with respect to eigenvalue {evecs[i][0]} is {evecs[i][1][0]}')
+    v = evecs[i][1][0]/norm(evecs[i][1][0])
+    V.append(v)
+V = column_matrix(V)
+print('The matrix V is:')
+print(V)
+u1 = A*V.columns()[0]/sqrt(evals[0])
+u2 = A*V.columns()[1]/sqrt(evals[1])
+u3 = u1.cross_product(u2)
+U = column_matrix([u1,u2,u3])
+print('The matrix U is:')
+print(U)
+S = zero_matrix(SR,A.dimensions()[0],A.dimensions()[1])
+for i in range(A.rank()):
+    S[i,i]=sqrt(evals[i])
+print('The matrix S is:')
+print(S)
+print('Check if U*S*V^T==A')
+print(U*S*V.T==A)
+</script></div>
+</div></details></article><section class="exercises" id="exercises-SVD-exer-set2"><h4 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
 </h4>
 <article class="exercise exercise-like" id="exer-9-1-8"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
@@ -743,7 +893,7 @@ A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T\text{.}
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="space"> </span><span class="title">Pseudoinverse using SVD</span>
 </h3>
 <article class="definition definition-like" id="def-pseudoinverse"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">9.1.5</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">9.1.6</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-pseudoinverse-1-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(m\times n\)</span> matrix, then the <em class="emphasis">pseudoinverse</em> of <span class="process-math">\(A\)</span> is matrix <span class="process-math">\(X\)</span> satisfying the following properties:</div> <div class="para logical" id="def-pseudoinverse-1-2"><ol class="decimal" id="def-pseudoinverse-1-2-1">
 <li id="def-pseudoinverse-1-2-1-1"><div class="para" id="def-pseudoinverse-1-2-1-1-1"><span class="process-math">\(\displaystyle AXA=A\)</span></div></li>
@@ -791,7 +941,7 @@ A^\dagger:=V{\sum}^\dagger U^T\text{.}\tag{9.1.8}
 </div>
 </div>
 <article class="example example-like" id="eg_svd2"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.6</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.7</span><span class="period">.</span>
 </h4>
 <div class="para" id="eg_svd2-1-1">Find the pseudoinverse of <span class="process-math">\(A=\begin{pmatrix}1\amp 1\\1\amp 1\\1\amp -1 \end{pmatrix}\text{.}\)</span>
 </div> <div class="para logical" id="eg_svd2-1-2">
@@ -822,7 +972,22 @@ A^\dagger=\amp V{\sum}^\dagger U^T=
 =\amp \begin{pmatrix}1/4\amp 1/4\amp 1/2\\1/4\amp 1/4\amp -1/2 \end{pmatrix}\text{.}
 \end{align*}
 </div>
-</div></article><section class="reading-questions" id="rqs-SVD-psedo-exer-set1"><h4 class="heading hide-type">
+</div></article><div class="para" id="sec9-1-SVD-4-7">Sage provdes a method <code class="code-inline tex2jax_ignore">.pseudoinverse()</code> to find the pseudoinverse of a matrix.</div>
+<div id="sec9-1-SVD-4-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># pseudoinverse using inbuilt Sage method
+A = matrix(SR,[[1,1],[1,1],[1,-1]])
+A.pseudoinverse()
+</script></div>
+<div id="sec9-1-SVD-4-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## pseudoinverse using SVD
+A = matrix(SR,[[1,1],[1,1],[1,-1]])
+A1 = A.change_ring(RDF)
+U,S, V = A1.SVD()
+# To find generatlize inverse of S
+S1 = S.T
+for i in range(2):
+    S1[i,i]=1/S1[i,i]
+V*S1*U.T
+</script></div>
+<section class="reading-questions" id="rqs-SVD-psedo-exer-set1"><h4 class="heading hide-type">
 <span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Reading Questions</span>
 </h4>
 <article class="exercise exercise-like" id="psedo_ex1"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
@@ -845,11 +1010,27 @@ A^\dagger =A^T(AA^T)^{-1}\text{.}
 </div>
 </div> <div class="para" id="psedo_ex2-1-2">
 <span class="process-math">\(A^T(AA^T)^{-1}\)</span> is called the <em class="emphasis">right pseudoinverse</em> of <span class="process-math">\(A\text{.}\)</span>
-</div></article></section><article class="theorem theorem-like" id="sec9-1-SVD-4-8"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.7</span><span class="period">.</span>
+</div></article></section><article class="theorem theorem-like" id="sec9-1-SVD-4-11"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec9-1-SVD-4-8-1-1">Let <span class="process-math">\(Ax = b\text{,}\)</span> be a system of <span class="process-math">\(m\)</span> equations in <span class="process-math">\(n\)</span> variables with <span class="process-math">\(m\geq n\text{.}\)</span> Let <span class="process-math">\(\rank(A) = n\text{.}\)</span> Then the vector <span class="process-math">\(x^*=A^\dagger b\)</span> minimizes <span class="process-math">\(\norm{Ax-b}^2\)</span> on <span class="process-math">\(\R^n\text{,}\)</span> that is the least square solution of <span class="process-math">\(Ax=b\text{.}\)</span>
-</div></article><section class="exercises" id="exercises-SVD-exer-set3"><h4 class="heading hide-type">
+<div class="para" id="sec9-1-SVD-4-11-1-1">Let <span class="process-math">\(Ax = b\text{,}\)</span> be a system of <span class="process-math">\(m\)</span> equations in <span class="process-math">\(n\)</span> variables with <span class="process-math">\(m\geq n\text{.}\)</span> Let <span class="process-math">\(\rank(A) = n\text{.}\)</span> Then the vector <span class="process-math">\(x^*=A^\dagger b\)</span> minimizes <span class="process-math">\(\norm{Ax-b}^2\)</span> on <span class="process-math">\(\R^n\text{,}\)</span> that is the least square solution of <span class="process-math">\(Ax=b\text{.}\)</span>
+</div></article><article class="example example-like" id="eg-lstsq-psedo1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.9</span><span class="period">.</span>
+</h4>Consider the  <a href="sec8-1-LSTSQ.html#lst-sq-eg814" class="xref" data-knowl="./knowl/xref/lst-sq-eg814.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.1.7">Example 8.1.7</a>. Solve this problem using the notion of pseudoinverse in Sage. <div class="para" id="eg-lstsq-psedo1-2"><details id="eg-lstsq-psedo1-2-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div id="eg-lstsq-psedo1-2-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">xx = [-3.0 , -2.8 , -2.5 , -2.2 , -2.0 , -1.8 , -1.5 , -1.2 , -1.0 , -0.75 , -0.50 , -0.25 , 0.00 , 
+      0.25 , 0.50 , 0.75 , 1.0 , 1.2 , 1.5 , 1.8]
+yy=[1.1 , 4.0 , 7.3 , 7.1 , 8.2 , 7.8 , 9.9 , 7.1 , 8.8 , 6.2 , 7.0 , 3.7 , 4.7 , 3.4 , 5.6 , 5.8 , 
+    5.3 , 6.6 , 10. , 12]
+point = ([(xx[i],yy[i]) for i in range(20)])
+n = len(xx)
+ones = [1]*n
+xx2 = [xx[i]^2 for i in range(n)]
+xx3 =[xx[i]^3 for i in range(n)]
+b = column_matrix(yy)
+A = column_matrix([ones, xx, xx2,xx3])
+A.pseudoinverse()*b
+</script></div> <div class="para" id="eg-lstsq-psedo1-2-1-2">Note that we get the same answer.</div>
+</div></details></div></article><section class="exercises" id="exercises-SVD-exer-set3"><h4 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
 </h4>
 <article class="exercise exercise-like" id="exer-9-1-14a"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
@@ -869,13 +1050,79 @@ A=\left(\begin{array}{rr} -0.78820 \amp  0.61541 \\ 0.61541 \amp  0.78820 \end{a
 \end{equation*}
 </div>
 </div>
-<div class="para" id="sec9-1-SVD-5-4">The geometric meaning of <span class="process-math">\(A\)</span> applied to unit circle along with unit vectors <span class="process-math">\(e_1\)</span> and <span class="process-math">\(e_2\)</span> is explained in the following figure <a href="sec9-1-SVD.html#fig_Unit_Circle-SVD" class="xref" data-knowl="./knowl/xref/fig_Unit_Circle-SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.8">Figure 9.1.8</a>.</div>
+<div class="para" id="sec9-1-SVD-5-4">The geometric meaning of <span class="process-math">\(A\)</span> applied to unit circle along with unit vectors <span class="process-math">\(e_1\)</span> and <span class="process-math">\(e_2\)</span> is explained in the following figure <a href="sec9-1-SVD.html#fig_Unit_Circle-SVD" class="xref" data-knowl="./knowl/xref/fig_Unit_Circle-SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.10">Figure 9.1.10</a>.</div>
 <figure class="figure figure-like" id="fig_Unit_Circle-SVD"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/SVD_Unit_Circle.PNG" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.8<span class="period">.</span></span><span class="space"> </span>Transformation of unit circle under SVD</figcaption></figure><article class="example example-like" id="sec9-1-SVD-5-6"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.9</span><span class="period">.</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.10<span class="period">.</span></span><span class="space"> </span>Transformation of unit circle under SVD</figcaption></figure><div class="para" id="sec9-1-SVD-5-6">Let us use Sage to demonstrate geometry of the above example.</div>
+<div id="sec9-1-SVD-5-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix(RDF,[[4,-2],[-2,3]])
+U,S,V=A.change_ring(RDF).SVD()
+</script></div>
+<div id="sec9-1-SVD-5-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('t')
+cir=vector([cos(t),sin(t)])
+c1=parametric_plot(cir,(t,0,2*pi),figsize=4)
+e1 =vector([1,0])
+e2 =vector([0,1])
+svd1=c1+plot(e1,color='red')+plot(e2,color='green')
+svd1
+</script></div>
+<div id="sec9-1-SVD-5-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">c2=parametric_plot(V.T*cir,(t,0,2*pi),figsize=4)
+svd2=plot(V.T*e1,color='red')+plot(V.T*e2,color='green')+c2
+show(svd2)
+</script></div>
+<div id="sec9-1-SVD-5-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">c3=parametric_plot(S*V.T*cir,(t,0,2*pi),figsize=4)
+svd3=plot(S*V.T*e1,color='red')+plot(S*V.T*e2,color='green')+c3
+svd3.show()
+</script></div>
+<div id="sec9-1-SVD-5-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">c4=parametric_plot(U*S*V.T*cir,(t,0,2*pi),figsize=4)
+svd4=plot(U*S*V.T*e1,color='red')+plot(U*S*V.T*e2,color='green')+c4
+svd4.show()
+</script></div>
+<div class="para" id="sec9-1-SVD-5-12">We can plot the image under <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div id="sec9-1-SVD-5-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Image under A
+svdCir = parametric_plot(A*cir,(t,0,2*pi),figsize=4)
+svdA=plot(A*e1,color='red')+plot(A*e2,color='green')+c4
+show(svdA+svdCir)
+</script></div>
+<article class="example example-like" id="sec9-1-SVD-5-14"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec9-1-SVD-5-6-1-1">Consider a <span class="process-math">\(3\times 3\)</span> matrix <span class="process-math">\(A=\begin{pmatrix}2 \amp 3 \amp 1 \\ -1 \amp 2 \amp 1 \\ 0 \amp 2 \amp 3 \end{pmatrix}\text{.}\)</span> The singular values of <span class="process-math">\(A\)</span> are 5.107, 2.2982 and 1.2779.</div> <div class="para" id="sec9-1-SVD-5-6-1-2">The Figure <a href="sec9-1-SVD.html#fig_Unit_Sphere-SVD" class="xref" data-knowl="./knowl/xref/fig_Unit_Sphere-SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.10">Figure 9.1.10</a> below explains what happens to a unit sphere and unit vectors under <span class="process-math">\(A\text{,}\)</span> obtained using SVD.</div> <figure class="figure figure-like" id="fig_Unit_Sphere-SVD"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/SVD_Unit_Sphere.PNG" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.10<span class="period">.</span></span><span class="space"> </span>Transformation of unit circle under SVD</figcaption></figure> </article></section><section class="subsection" id="sec9-1-SVD-6"><h3 class="heading hide-type">
+<div class="para" id="sec9-1-SVD-5-14-1-1">Consider a <span class="process-math">\(3\times 3\)</span> matrix <span class="process-math">\(A=\begin{pmatrix}2 \amp 3 \amp 1 \\ -1 \amp 2 \amp 1 \\ 0 \amp 2 \amp 3 \end{pmatrix}\text{.}\)</span> The singular values of <span class="process-math">\(A\)</span> are 5.107, 2.2982 and 1.2779.</div> <div class="para" id="sec9-1-SVD-5-14-1-2">The Figure <a href="sec9-1-SVD.html#fig_Unit_Sphere-SVD" class="xref" data-knowl="./knowl/xref/fig_Unit_Sphere-SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.12">Figure 9.1.12</a> below explains what happens to a unit sphere and unit vectors under <span class="process-math">\(A\text{,}\)</span> obtained using SVD.</div> <figure class="figure figure-like" id="fig_Unit_Sphere-SVD"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/SVD_Unit_Sphere.PNG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.12<span class="period">.</span></span><span class="space"> </span>Transformation of unit circle under SVD</figcaption></figure> </article><div class="para" id="sec9-1-SVD-5-15">We can also demostrate the <span class="process-math">\(3\times 3\)</span> example also in Sage.</div>
+<div id="sec9-1-SVD-5-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix(RDF, [[2,3,1],[-1,2,1],[0,2,3]])
+U, S, VT = A.SVD()
+V=VT.transpose()
+v1=V.columns()[0]
+v2=V.columns()[1]
+v3=V.columns()[2]
+</script></div>
+<div id="sec9-1-SVD-5-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## parametric coordinates of shpere
+var('s,t')
+spr=vector([cos(s)*sin(t),sin(s)*sin(t),cos(t)])
+e = identity_matrix(3).columns()
+P0=parametric_plot(spr,(s,0,2*pi),(t,0,pi),igsize=2,color='gray',opacity=0.3)
+cord_axes=plot(e[0],thickness=0.5)+plot(e[1],color='red',thickness=0.5)+\
+plot(e[2],color='green',thickness=0.5)
+P0=P0+cord_axes
+P0.show(aspect_ratio=[1,1,1])
+</script></div>
+<div id="sec9-1-SVD-5-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">P1=parametric_plot(spr,(s,0,2*pi),(t,0,pi),color='gray',opacity=0.7)+\
+plot(e[0],thickness=2)+plot(e[1],color='red',thickness=2)+plot(e[2],color='green',thickness=2)
+P1 = P1+cord_axes
+P1.show(aspect_ratio=[1,1,1])
+</script></div>
+<div id="sec9-1-SVD-5-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">P2=parametric_plot(VT*spr,(s,0,2*pi),(t,0,pi),igsize=4,color='gray',opacity=0.7)+\
+plot(VT*e[0],thickness=2)+plot(VT*e[1],color='red',thickness=2)+plot(VT*e[2],color='green',thickness=2)
+P2.show(aspect_ratio=[1,1,1])
+</script></div>
+<div id="sec9-1-SVD-5-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">P3=parametric_plot(S*V.transpose()*spr,(s,0,2*pi),(t,0,pi),igsize=4,color='gray',opacity=0.7)+\
+plot(S*VT*e[0],thickness=2)+plot(S*VT*e[1],color='red',thickness=2)+plot(S*VT*e[2],color='green',thickness=2)
+P3.show(aspect_ratio=[1,1,1])
+</script></div>
+<div id="sec9-1-SVD-5-21" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">P4=parametric_plot(U*S*VT*spr,(s,0,2*pi),(t,0,pi),igsize=4,color='gray',opacity=0.7)+\
+plot(U*S*VT*e[0],thickness=2)+plot(U*S*VT*e[1],color='red',thickness=2)+\
+plot(U*S*VT*e[2],color='green',thickness=2)
+P4.show(aspect_ratio=[1,1,1])
+</script></div></section><section class="subsection" id="sec9-1-SVD-6"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.4</span><span class="space"> </span><span class="title">Image Compression using SVD</span>
 </h3>
 <div class="para" id="sec9-1-SVD-6-2">Images stored on a computer is a collection of dots called pixels. The collection of dots/pixels that constitute an image can be stored as a matrix. The color image can be thought of as 3 dimensional array.</div>
@@ -899,19 +1146,19 @@ A_k:=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ku_kv_k^T (k\leq r)
 </div>
 </div>
 <div class="para" id="sec9-1-SVD-6-6">When an image (the corresponding matrix) is transformed using SVD, it is not compressed, but the data take a form in which the first singular value has a more amount of the image information. This allows us to use first few singular values to represent the image almost identical to the original.</div>
-<div class="para" id="sec9-1-SVD-6-7">Look at the Image in <a href="sec9-1-SVD.html#fig_Sardar-im1" class="xref" data-knowl="./knowl/xref/fig_Sardar-im1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.11">Fig 9.1.11</a>. The associates matrix for this image is of size <span class="process-math">\(995\times 1770\times 3\text{.}\)</span>
+<div class="para" id="sec9-1-SVD-6-7">Look at the Image in <a href="sec9-1-SVD.html#fig_Sardar-im1" class="xref" data-knowl="./knowl/xref/fig_Sardar-im1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.13">Fig 9.1.13</a>. The associates matrix for this image is of size <span class="process-math">\(995\times 1770\times 3\text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="fig_Sardar-im1"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar_color.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.11<span class="period">.</span></span><span class="space"> </span>Orginal  Color Image</figcaption></figure><div class="para" id="sec9-1-SVD-6-9">This image is converted into a gray scale image (See <a href="sec9-1-SVD.html#fig_Sardar-im2" class="xref" data-knowl="./knowl/xref/fig_Sardar-im2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.12">Figure 9.1.12</a>). This size of matrix associated to the gray scale image is <span class="process-math">\(995\times 1770\)</span> with rank 995.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.13<span class="period">.</span></span><span class="space"> </span>Orginal  Color Image</figcaption></figure><div class="para" id="sec9-1-SVD-6-9">This image is converted into a gray scale image (See <a href="sec9-1-SVD.html#fig_Sardar-im2" class="xref" data-knowl="./knowl/xref/fig_Sardar-im2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.14">Figure 9.1.14</a>). This size of matrix associated to the gray scale image is <span class="process-math">\(995\times 1770\)</span> with rank 995.</div>
 <figure class="figure figure-like" id="fig_Sardar-im2"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar_Gray.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.12<span class="period">.</span></span><span class="space"> </span>Original Gray Image</figcaption></figure><div class="para" id="sec9-1-SVD-6-11">After applying SVD to the Gray image and using 1st 5, 10, 20,30, 50, 100 terms respectively of the rank one approximation the approximate images are plotted in the <a href="sec9-1-SVD.html#fig_Sardar-im5" class="xref" data-knowl="./knowl/xref/fig_Sardar-im5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.13">Figures 9.1.13</a>, <a href="sec9-1-SVD.html#fig_Sardar-im10" class="xref" data-knowl="./knowl/xref/fig_Sardar-im10.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.14">Figure 9.1.14</a>, <a href="sec9-1-SVD.html#fig_Sardar-im20" class="xref" data-knowl="./knowl/xref/fig_Sardar-im20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.15">Figure 9.1.15</a>, <a href="sec9-1-SVD.html#fig_Sardar-im50" class="xref" data-knowl="./knowl/xref/fig_Sardar-im50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.17">Figure 9.1.17</a>, <a href="sec9-1-SVD.html#fig_Sardar-im50" class="xref" data-knowl="./knowl/xref/fig_Sardar-im50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.17">Figure 9.1.17</a>, <a href="sec9-1-SVD.html#fig_Sardar-im100" class="xref" data-knowl="./knowl/xref/fig_Sardar-im100.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.18">Figure 9.1.18</a> respectively.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.14<span class="period">.</span></span><span class="space"> </span>Original Gray Image</figcaption></figure><div class="para" id="sec9-1-SVD-6-11">After applying SVD to the Gray image and using 1st 5, 10, 20,30, 50, 100 terms respectively of the rank one approximation the approximate images are plotted in the <a href="sec9-1-SVD.html#fig_Sardar-im5" class="xref" data-knowl="./knowl/xref/fig_Sardar-im5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.15">Figures 9.1.15</a>, <a href="sec9-1-SVD.html#fig_Sardar-im10" class="xref" data-knowl="./knowl/xref/fig_Sardar-im10.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.16">Figure 9.1.16</a>, <a href="sec9-1-SVD.html#fig_Sardar-im20" class="xref" data-knowl="./knowl/xref/fig_Sardar-im20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.17">Figure 9.1.17</a>, <a href="sec9-1-SVD.html#fig_Sardar-im50" class="xref" data-knowl="./knowl/xref/fig_Sardar-im50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.19">Figure 9.1.19</a>, <a href="sec9-1-SVD.html#fig_Sardar-im50" class="xref" data-knowl="./knowl/xref/fig_Sardar-im50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.19">Figure 9.1.19</a>, <a href="sec9-1-SVD.html#fig_Sardar-im100" class="xref" data-knowl="./knowl/xref/fig_Sardar-im100.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.20">Figure 9.1.20</a> respectively.</div>
 <figure class="figure figure-like" id="fig_Sardar-im5"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im5.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.13<span class="period">.</span></span><span class="space"> </span>Approximate Image with 5 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im10"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im10.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.14<span class="period">.</span></span><span class="space"> </span>Approximate Image with 10 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im20"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im20.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.15<span class="period">.</span></span><span class="space"> </span>Approximate Image with 20 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im30"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im30.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.16<span class="period">.</span></span><span class="space"> </span>Approximate Image with 30 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im50"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im50.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.17<span class="period">.</span></span><span class="space"> </span>Approximate Image with 50 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im100"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im100.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.18<span class="period">.</span></span><span class="space"> </span>Approximate Image with 100 terms</figcaption></figure><div class="para" id="sec9-1-SVD-6-18">It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image. Note that the original image has <span class="process-math">\(995\times 1770=1761150\)</span> pixels, where as if we take the 1st 100 terms, then it is of size <span class="process-math">\(100(995+1770)=276500\)</span> which quite small compared to the original size.</div></section></section></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.15<span class="period">.</span></span><span class="space"> </span>Approximate Image with 5 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im10"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im10.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.16<span class="period">.</span></span><span class="space"> </span>Approximate Image with 10 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im20"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im20.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.17<span class="period">.</span></span><span class="space"> </span>Approximate Image with 20 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im30"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im30.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.18<span class="period">.</span></span><span class="space"> </span>Approximate Image with 30 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im50"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im50.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.19<span class="period">.</span></span><span class="space"> </span>Approximate Image with 50 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im100"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im100.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.20<span class="period">.</span></span><span class="space"> </span>Approximate Image with 100 terms</figcaption></figure><div class="para" id="sec9-1-SVD-6-18">It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image. Note that the original image has <span class="process-math">\(995\times 1770=1761150\)</span> pixels, where as if we take the 1st 100 terms, then it is of size <span class="process-math">\(100(995+1770)=276500\)</span> which quite small compared to the original size.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chap9-SVD.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap10-PCA.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

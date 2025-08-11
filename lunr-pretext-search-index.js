@@ -3916,9 +3916,9 @@ var ptx_lunr_docs = [
   "body": "  The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.                Year  1990  1991  1992  1993  1994  1995  1996  1997    Temp  27.07  26.93  27.11  27.18  26.94  27.25  27.64  27.66               Year  1998  1999  2000  2001  2002  2003  2004  2005    Temp  27.75  27.65  27.61  27.26  27.82  27.46  27.00  27.36               Year  2006  2007  2008  2009  2010  2011  2012  2013    Temp  27.36  28.02  27.75  28.33  28.16  27.94  27.61  27.63               Year  2014  2015  2016  2017  2018  2019  2020  2021    Temp  28.18  28.67  28.24  28.55  28.76  28.27  28.40  28.48                Find the equation of the line that best fits these data points.  The temperature data is plotted in the Figure .     We wish to find the best fit line to the given set of data. Suppose the line is given by , then we wish to find and such that the line is best fit. Now what is meaning of \"best fit\". Suppose we consider the point , if it lies on , then , other wise is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by where is the number of points. Note that the sum of error squares can be written as .  Here   Thus finding amount to finding the least square solution of , which is given by   For the given problem, we have   We have  .  Hence   The set of points along with the best fitted line is shown in the Figure        This means the slope of the fitted (regression line) is 0.0477584310854127 and the intercept is -68.0279710416216. Now we plot the fitted line along with the fitted line.   Sage also has an inbult function to find the fitted line.    "
 },
 {
-  "id": "sec8-1-LSTSQ-4-5",
+  "id": "lst-sq-eg814",
   "level": "2",
-  "url": "sec8-1-LSTSQ.html#sec8-1-LSTSQ-4-5",
+  "url": "sec8-1-LSTSQ.html#lst-sq-eg814",
   "type": "Example",
   "number": "8.1.7",
   "title": "",
@@ -3967,7 +3967,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.1",
   "title": "Singular Value Decomposition",
-  "body": " Singular Value Decomposition   In this section, we deal with one of the most important matrix factorization tools, called the singular value decomposition (SVD). The SVD of a matrix is closely related to eigen decomposition of the matrix . One can also think of this as a generalization of diagonalization procedure that allows us to diagonalize any matrix not necessarily square matrix. The SVD is computationally a viable tool for a wide variety of applications. It has applications in image and signal processing, control theory, least square problems, time series analysis, pattern recognition, dimensionality reduction, biomedical engineering and defining a generalized inverse of a matrix and many more. We shall deal with few of these applications.    Singular Value Decomposition Theorem   SVD Theorem   Let be a real matrix. Then can be factorized as where is an orthogonal matrix, is an orthogonal matrix and is a diagonal matrix given by whose diagonal entries are non negative and are arranged in a non increasing order.  The number of non zero entries in is the rank of .    The decomposition is called a singular value decomposition of . The diagonals entries are called singular values of . (that is why the name singular value decomposition.)  Before we prove this theorem, let us play with the equation . We have . This implies . Hence   The Eqn. suggests that columns of are eigenvectors of , and are called right singular vectors .  Similarly, This implies   The Eqn. suggests that columns of are eigenvectors of , and are called left singular vectors .  The notion of right and left eigenvectors suggest a way to construct the matrix and in the SVD decomposition. Let us see what do I mean? Suppose and . Then we have .  Hence .  Thus suggests, that may be defined as . However, if , then .  If we want to be orthogonal, we may define .  Let us look at proof of .   Note that is symmetric and . Let . Further .  Hence is a symmetric and semi-positive definite matrix. Hence all its eigenvalues are real and non negative. Let be non zero eigenvalues of with . The remaining eigenvalues of are . Let us denote for . Since is symmetric matrix, it is diagonalizable. Hence there exists an orthogonal eigenbasis for of . Let . This implies   From , we have .  This implies, .  We define .  We claim that is an orthonormal set. For .  Now we complete to an orthonormal basis of . Define   We claim that and hence . .  Hence .    The singular values of a matrix in a SVD are unique, however singular vectors are not unique.     Let be a SVD of where and , are singular values of . Then can also be written as .    The decomposition is called a rank one decomposition of , as rank of each term in is 1. (why?) This is a very useful way of decomposing as we shall see this later.    Use SVD to show that a square matrix is symmetric ( ) if and only if .    implies right singular vectors of are same as left singular vectors of with same singular values. Hence the SVD of with . Any matrix of the form is symmetric.       An matrix is rank one matrix if and only if there exist non-zero vectors such that .    If is a real symmetric matrix with eigenvalues , then show that singular values of are     A square matrix is non singular if and only if all singular values of are non zero.      Let us find a singular value decomposition of .  We have . The eigenvalues of are and . The corresponding eigenvectors with respect to eigenvalues of are , and respectively. Hence an orthonormal eigenbasis of is .  We define .  Thus we have  .  It is easy to check that that .      Verify the equation for example . That is, .    Find a singular value decomposition of .   Find the SVD of using step by step calculations.     Pseudoinverse using SVD    If is a matrix, then the pseudoinverse of is matrix satisfying the following properties:                     .     The pseudoinverse of a matrix is denoted by . Pseudoinverse is also called the generalized inverse or Moore-Penrose pseudoinverse.     Singular value decomposition provides an effective procedure to find the pseudoinverse of a matrix.  Suppose is a SVD of . Since and are orthogonal matrices they are invertible. Thus to define pseudoinverse of , it is sufficient to define pseudoinverse of the diagonal matrix . It is natural to define the inverse of diagonal matrix by taking reciprocal of the nonzero diagonal entries and taking its transpose. Thus if . Then .  Having defined the generalized inverse of , now it is natural to define .    Find the pseudoinverse of .  Note that . The eigenvalues of are and with corresponding orthonormal eigenvectors and respectively. Now .  Extending to an orthonormal basis of , we can select .  Thus a SVD is given by .  Hence .      If is matrix with and then .   is called the left pseudoinnverse of .    If and then .   is called the right pseudoinverse of .      Let , be a system of equations in variables with . Let . Then the vector minimizes on , that is the least square solution of .      If is square matrix, then show that and are similar.    Find the SVD of a matrix .    Find the least square solution of the system of equations where and using generalized inverse.      Geometry of SVD  SVD provides effective way to look at how a matrix tranforms and object geometrically. In order to see the geometric, let us consider the matrix .  The singular value decomposition of is given by .  The geometric meaning of applied to unit circle along with unit vectors and is explained in the following figure .    Transformation of unit circle under SVD      Consider a matrix . The singular values of are 5.107, 2.2982 and 1.2779.  The Figure below explains what happens to a unit sphere and unit vectors under , obtained using SVD.   Transformation of unit circle under SVD         Image Compression using SVD  Images stored on a computer is a collection of dots called pixels. The collection of dots\/pixels that constitute an image can be stored as a matrix. The color image can be thought of as 3 dimensional array.  Using Eqn. we can write a matrix as sum of rank one matrices. .  This property says that is equal to the number of singular values of . Since , the first term has highest impact on followed by the second term and so on. This propriety allows us to reduce the noise or compress the matrix data by eliminating the small singular values or the higher ranks. This can be used as approximation of a given matrix, in particular we can approximate a matrix by adding only the first few terms of .  If we let then the total storage required for is which is much less compare to .  When an image (the corresponding matrix) is transformed using SVD, it is not compressed, but the data take a form in which the first singular value has a more amount of the image information. This allows us to use first few singular values to represent the image almost identical to the original.  Look at the Image in Fig . The associates matrix for this image is of size .   Orginal Color Image    This image is converted into a gray scale image (See Figure ). This size of matrix associated to the gray scale image is with rank 995.    Original Gray Image   After applying SVD to the Gray image and using 1st 5, 10, 20,30, 50, 100 terms respectively of the rank one approximation the approximate images are plotted in the Figures , , , , , respectively.    Approximate Image with 5 terms     Approximate Image with 10 terms     Approximate Image with 20 terms     Approximate Image with 30 terms     Approximate Image with 50 terms     Approximate Image with 100 terms   It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image. Note that the original image has pixels, where as if we take the 1st 100 terms, then it is of size which quite small compared to the original size.   "
+  "body": " Singular Value Decomposition   In this section, we deal with one of the most important matrix factorization tools, called the singular value decomposition (SVD). The SVD of a matrix is closely related to eigen decomposition of the matrix . One can also think of this as a generalization of diagonalization procedure that allows us to diagonalize any matrix not necessarily square matrix. The SVD is computationally a viable tool for a wide variety of applications. It has applications in image and signal processing, control theory, least square problems, time series analysis, pattern recognition, dimensionality reduction, biomedical engineering and defining a generalized inverse of a matrix and many more. We shall deal with few of these applications.    Singular Value Decomposition Theorem   SVD Theorem   Let be a real matrix. Then can be factorized as where is an orthogonal matrix, is an orthogonal matrix and is a diagonal matrix given by whose diagonal entries are non negative and are arranged in a non increasing order.  The number of non zero entries in is the rank of .    The decomposition is called a singular value decomposition of . The diagonals entries are called singular values of . (that is why the name singular value decomposition.)  Before we prove this theorem, let us play with the equation . We have . This implies . Hence   The Eqn. suggests that columns of are eigenvectors of , and are called right singular vectors .  Similarly, This implies   The Eqn. suggests that columns of are eigenvectors of , and are called left singular vectors .  The notion of right and left eigenvectors suggest a way to construct the matrix and in the SVD decomposition. Let us see what do I mean? Suppose and . Then we have .  Hence .  Thus suggests, that may be defined as . However, if , then .  If we want to be orthogonal, we may define .  Let us look at proof of .   Note that is symmetric and . Let . Further .  Hence is a symmetric and semi-positive definite matrix. Hence all its eigenvalues are real and non negative. Let be non zero eigenvalues of with . The remaining eigenvalues of are . Let us denote for . Since is symmetric matrix, it is diagonalizable. Hence there exists an orthogonal eigenbasis for of . Let . This implies   From , we have .  This implies, .  We define .  We claim that is an orthonormal set. For .  Now we complete to an orthonormal basis of . Define   We claim that and hence . .  Hence .    The singular values of a matrix in a SVD are unique, however singular vectors are not unique.     Let be a SVD of where and , are singular values of . Then can also be written as .    The decomposition is called a rank one decomposition of , as rank of each term in is 1. (why?) This is a very useful way of decomposing as we shall see this later.    Use SVD to show that a square matrix is symmetric ( ) if and only if .    implies right singular vectors of are same as left singular vectors of with same singular values. Hence the SVD of with . Any matrix of the form is symmetric.       An matrix is rank one matrix if and only if there exist non-zero vectors such that .    If is a real symmetric matrix with eigenvalues , then show that singular values of are     A square matrix is non singular if and only if all singular values of are non zero.      Let us find a singular value decomposition of .  We have . The eigenvalues of are and . The corresponding eigenvectors with respect to eigenvalues of are , and respectively. Hence an orthonormal eigenbasis of is .  We define .  Thus we have  .  It is easy to check that that .     Sage includes a built-in method for computing the SVD of a matrix. However, the matrix must be defined over the Real Double Field (RDF), a numerical field of real numbers represented in 64-bit double precision, offering approximately 15–16 decimal digits of accuracy. Let us see to achieve this.     Find the signular value decomposition of the matrix .   We have It is easy to check that eigenvalues of are 66 and 34 with corresponding eigenvectors and . Hence we have   Now let us find the matrix . We have , and . Hence To find , we take the cross product of and . Thus Hence we have Veryfy that .       Verify the equation for example . That is, .    Find a singular value decomposition of .   Find the SVD of using step by step calculations.     Pseudoinverse using SVD    If is a matrix, then the pseudoinverse of is matrix satisfying the following properties:                     .     The pseudoinverse of a matrix is denoted by . Pseudoinverse is also called the generalized inverse or Moore-Penrose pseudoinverse.     Singular value decomposition provides an effective procedure to find the pseudoinverse of a matrix.  Suppose is a SVD of . Since and are orthogonal matrices they are invertible. Thus to define pseudoinverse of , it is sufficient to define pseudoinverse of the diagonal matrix . It is natural to define the inverse of diagonal matrix by taking reciprocal of the nonzero diagonal entries and taking its transpose. Thus if . Then .  Having defined the generalized inverse of , now it is natural to define .    Find the pseudoinverse of .  Note that . The eigenvalues of are and with corresponding orthonormal eigenvectors and respectively. Now .  Extending to an orthonormal basis of , we can select .  Thus a SVD is given by .  Hence .    Sage provdes a method .pseudoinverse() to find the pseudoinverse of a matrix.      If is matrix with and then .   is called the left pseudoinnverse of .    If and then .   is called the right pseudoinverse of .      Let , be a system of equations in variables with . Let . Then the vector minimizes on , that is the least square solution of .    Consider the . Solve this problem using the notion of pseudoinverse in Sage.    Note that we get the same answer.       If is square matrix, then show that and are similar.    Find the SVD of a matrix .    Find the least square solution of the system of equations where and using generalized inverse.      Geometry of SVD  SVD provides effective way to look at how a matrix tranforms and object geometrically. In order to see the geometric, let us consider the matrix .  The singular value decomposition of is given by .  The geometric meaning of applied to unit circle along with unit vectors and is explained in the following figure .    Transformation of unit circle under SVD    Let us use Sage to demonstrate geometry of the above example.       We can plot the image under .     Consider a matrix . The singular values of are 5.107, 2.2982 and 1.2779.  The Figure below explains what happens to a unit sphere and unit vectors under , obtained using SVD.   Transformation of unit circle under SVD       We can also demostrate the example also in Sage.          Image Compression using SVD  Images stored on a computer is a collection of dots called pixels. The collection of dots\/pixels that constitute an image can be stored as a matrix. The color image can be thought of as 3 dimensional array.  Using Eqn. we can write a matrix as sum of rank one matrices. .  This property says that is equal to the number of singular values of . Since , the first term has highest impact on followed by the second term and so on. This propriety allows us to reduce the noise or compress the matrix data by eliminating the small singular values or the higher ranks. This can be used as approximation of a given matrix, in particular we can approximate a matrix by adding only the first few terms of .  If we let then the total storage required for is which is much less compare to .  When an image (the corresponding matrix) is transformed using SVD, it is not compressed, but the data take a form in which the first singular value has a more amount of the image information. This allows us to use first few singular values to represent the image almost identical to the original.  Look at the Image in Fig . The associates matrix for this image is of size .   Orginal Color Image    This image is converted into a gray scale image (See Figure ). This size of matrix associated to the gray scale image is with rank 995.    Original Gray Image   After applying SVD to the Gray image and using 1st 5, 10, 20,30, 50, 100 terms respectively of the rank one approximation the approximate images are plotted in the Figures , , , , , respectively.    Approximate Image with 5 terms     Approximate Image with 10 terms     Approximate Image with 20 terms     Approximate Image with 30 terms     Approximate Image with 50 terms     Approximate Image with 100 terms   It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image. Note that the original image has pixels, where as if we take the 1st 100 terms, then it is of size which quite small compared to the original size.   "
 },
 {
   "id": "thm_svd1",
@@ -4048,7 +4048,16 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "9.1.4",
   "title": "",
-  "body": "  Let us find a singular value decomposition of .  We have . The eigenvalues of are and . The corresponding eigenvectors with respect to eigenvalues of are , and respectively. Hence an orthonormal eigenbasis of is .  We define .  Thus we have  .  It is easy to check that that .   "
+  "body": "  Let us find a singular value decomposition of .  We have . The eigenvalues of are and . The corresponding eigenvectors with respect to eigenvalues of are , and respectively. Hence an orthonormal eigenbasis of is .  We define .  Thus we have  .  It is easy to check that that .    "
+},
+{
+  "id": "sec9-1-SVD-3-23",
+  "level": "2",
+  "url": "sec9-1-SVD.html#sec9-1-SVD-3-23",
+  "type": "Example",
+  "number": "9.1.5",
+  "title": "",
+  "body": " Find the signular value decomposition of the matrix .   We have It is easy to check that eigenvalues of are 66 and 34 with corresponding eigenvectors and . Hence we have   Now let us find the matrix . We have , and . Hence To find , we take the cross product of and . Thus Hence we have Veryfy that .    "
 },
 {
   "id": "exer-9-1-8",
@@ -4082,7 +4091,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#def-pseudoinverse",
   "type": "Definition",
-  "number": "9.1.5",
+  "number": "9.1.6",
   "title": "",
   "body": "  If is a matrix, then the pseudoinverse of is matrix satisfying the following properties:                     .     The pseudoinverse of a matrix is denoted by . Pseudoinverse is also called the generalized inverse or Moore-Penrose pseudoinverse.    "
 },
@@ -4091,7 +4100,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#eg_svd2",
   "type": "Example",
-  "number": "9.1.6",
+  "number": "9.1.7",
   "title": "",
   "body": "  Find the pseudoinverse of .  Note that . The eigenvalues of are and with corresponding orthonormal eigenvectors and respectively. Now .  Extending to an orthonormal basis of , we can select .  Thus a SVD is given by .  Hence .   "
 },
@@ -4114,13 +4123,22 @@ var ptx_lunr_docs = [
   "body": " If and then .   is called the right pseudoinverse of .  "
 },
 {
-  "id": "sec9-1-SVD-4-8",
+  "id": "sec9-1-SVD-4-11",
   "level": "2",
-  "url": "sec9-1-SVD.html#sec9-1-SVD-4-8",
+  "url": "sec9-1-SVD.html#sec9-1-SVD-4-11",
   "type": "Theorem",
-  "number": "9.1.7",
+  "number": "9.1.8",
   "title": "",
   "body": "  Let , be a system of equations in variables with . Let . Then the vector minimizes on , that is the least square solution of .   "
+},
+{
+  "id": "eg-lstsq-psedo1",
+  "level": "2",
+  "url": "sec9-1-SVD.html#eg-lstsq-psedo1",
+  "type": "Example",
+  "number": "9.1.9",
+  "title": "",
+  "body": "Consider the . Solve this problem using the notion of pseudoinverse in Sage.    Note that we get the same answer.    "
 },
 {
   "id": "exer-9-1-14a",
@@ -4154,16 +4172,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Unit_Circle-SVD",
   "type": "Figure",
-  "number": "9.1.8",
+  "number": "9.1.10",
   "title": "",
   "body": " Transformation of unit circle under SVD   "
 },
 {
-  "id": "sec9-1-SVD-5-6",
+  "id": "sec9-1-SVD-5-14",
   "level": "2",
-  "url": "sec9-1-SVD.html#sec9-1-SVD-5-6",
+  "url": "sec9-1-SVD.html#sec9-1-SVD-5-14",
   "type": "Example",
-  "number": "9.1.9",
+  "number": "9.1.11",
   "title": "",
   "body": "  Consider a matrix . The singular values of are 5.107, 2.2982 and 1.2779.  The Figure below explains what happens to a unit sphere and unit vectors under , obtained using SVD.   Transformation of unit circle under SVD      "
 },
@@ -4172,7 +4190,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im1",
   "type": "Figure",
-  "number": "9.1.11",
+  "number": "9.1.13",
   "title": "",
   "body": " Orginal Color Image   "
 },
@@ -4181,7 +4199,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im2",
   "type": "Figure",
-  "number": "9.1.12",
+  "number": "9.1.14",
   "title": "",
   "body": "  Original Gray Image  "
 },
@@ -4190,7 +4208,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im5",
   "type": "Figure",
-  "number": "9.1.13",
+  "number": "9.1.15",
   "title": "",
   "body": "  Approximate Image with 5 terms  "
 },
@@ -4199,7 +4217,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im10",
   "type": "Figure",
-  "number": "9.1.14",
+  "number": "9.1.16",
   "title": "",
   "body": "  Approximate Image with 10 terms  "
 },
@@ -4208,7 +4226,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im20",
   "type": "Figure",
-  "number": "9.1.15",
+  "number": "9.1.17",
   "title": "",
   "body": "  Approximate Image with 20 terms  "
 },
@@ -4217,7 +4235,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im30",
   "type": "Figure",
-  "number": "9.1.16",
+  "number": "9.1.18",
   "title": "",
   "body": "  Approximate Image with 30 terms  "
 },
@@ -4226,7 +4244,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im50",
   "type": "Figure",
-  "number": "9.1.17",
+  "number": "9.1.19",
   "title": "",
   "body": "  Approximate Image with 50 terms  "
 },
@@ -4235,7 +4253,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec9-1-SVD.html#fig_Sardar-im100",
   "type": "Figure",
-  "number": "9.1.18",
+  "number": "9.1.20",
   "title": "",
   "body": "  Approximate Image with 100 terms  "
 },

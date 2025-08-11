@@ -9,6 +9,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
@@ -43,6 +56,34 @@ V=\begin{pmatrix}\frac{1}{2} \, \sqrt{2} \amp  \frac{1}{6} \, \sqrt{2} \amp  \fr
 \end{equation*}
 </div>
 </div> <div class="para">It is easy to check that that <span class="process-math">\(UAV^T=\sum\text{.}\)</span>
-</div></article><span class="incontext"><a class="internal" href="sec9-1-SVD.html#eg_svd1">in-context</a></span>
+</div> <div id="eg_svd1-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix([[3,2,2],[2,3,-2]])
+print('A^TA is:' )
+ATA = A.T*A
+print(ATA)
+print('Eigenvalues of A^TA are:')
+evals = ATA.eigenvalues()
+print(evals)
+V=[]
+evecs = ATA.eigenvectors_right()
+for i in range(len(evecs)):
+    print(f'The eigenvector with respect to eigenvalue {evecs[i][0]} is {evecs[i][1][0]}')
+    v = evecs[i][1][0]/norm(evecs[i][1][0])
+    V.append(v)
+V = column_matrix(V)
+print('The matrix V is:')
+print(V)
+u1 = A*V.columns()[0]/sqrt(evals[0])
+u2 = A*V.columns()[1]/sqrt(evals[1])
+U = column_matrix([u1,u2]);
+print('The matrix U is:')
+print(U)
+S = zero_matrix(A.dimensions()[0],A.dimensions()[1])
+for i in range(A.rank()):
+    S[i,i]=sqrt(evals[i])
+print('The matrix S is:')
+print(S)
+print('Check if U*S*V^T==A')
+print(U*S*V.T==A)
+</script></div></article><span class="incontext"><a class="internal" href="sec9-1-SVD.html#eg_svd1">in-context</a></span>
 </body>
 </html>
