@@ -1236,51 +1236,63 @@ for i in [5, 10, 50,100,200]:
   <p>
     <em>The reader is encouraged to copy the following code and execute it in a Python environment.</em>
   </p>
-  <sage>
-    <input>
+<sage>
+  <input>
 import numpy as np
-import matplotlib.pyplot as plt
 from PIL import Image
 import requests
 from io import BytesIO
-import urllib.request
-url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
-urllib.request.urlretrieve(url, "Sardar.jpg")
-img = Image.open('Sardar.jpg')
-arr = np.array(img)
+import matplotlib.pyplot as plt
 
-r = arr[:,:,0]
-g = arr[:,:,1]
-b = arr[:,:,2]
-ur,sr,vr = np.linalg.svd(r, full_matrices=False)
-ug,sg,vg = np.linalg.svd(g, full_matrices=False)
-ub,sb,vb = np.linalg.svd(b, full_matrices=False)
+# Load the image from the URL
+url = "https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
+img = np.array(img, dtype=float)
 
-k=5 ## Number of components
-rr = np.dot(ur[:,:k],np.dot(np.diag(sr[:k]), vr[:k,:]))
-rg = np.dot(ug[:,:k],np.dot(np.diag(sg[:k]), vg[:k,:]))
-rb = np.dot(ub[:,:k],np.dot(np.diag(sb[:k]), vb[:k,:]))
-rimg = np.zeros(arr.shape)
-rimg[:,:,0] = rr
-rimg[:,:,1] = rg
-rimg[:,:,2] = rb
-for ind1, row in enumerate(rimg):
-        for ind2, col in enumerate(row):
-            for ind3, value in enumerate(col):
-                if value &lt; 0:
-                    rimg[ind1,ind2,ind3] = abs(value)
-                if value > 255:
-                    rimg[ind1,ind2,ind3] = 255
-compressed_image = rimg.astype(np.uint8)
-plt.imshow(compressed_image)
-plt.axis('off')
+# Function to compress a single channel using SVD
+def svd_compress(channel, k):
+    # Perform Singular Value Decomposition
+    U, S, VT = np.linalg.svd(channel, full_matrices=False)
+    # Keep only top k singular values
+    U_k = U[:, :k]
+    S_k = np.diag(S[:k])
+    VT_k = VT[:k, :]
+    # Reconstruct the channel
+    compressed = np.dot(U_k, np.dot(S_k, VT_k))
+    return compressed
+
+# Compression rank
+k = 10
+
+# Apply SVD compression to each RGB channel
+R_c = svd_compress(img[:, :, 0], k)
+G_c = svd_compress(img[:, :, 1], k)
+B_c = svd_compress(img[:, :, 2], k)
+
+# Stack channels back and clip values to [0, 255]
+compressed_img = np.dstack([R_c, G_c, B_c])
+compressed_img = np.clip(compressed_img, 0, 255).astype(np.uint8)
+
+# Show original and compressed images
+fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+axes[0].imshow(img.astype(np.uint8))
+axes[0].set_title("Original")
+axes[0].axis("off")
+
+axes[1].imshow(compressed_img)
+axes[1].set_title(f"SVD Compressed (k={k})")
+axes[1].axis("off")
+
 plt.show()
-   </input>
-    <output>
-      
-    </output>
-  </sage>
+
+  </input>
+  <output>
+    
+  </output>
+</sage>
 </example>
+
 <remark>
  <p>
   Suppose <m>A=U\Sigma V^T</m> is the singular value decomposition of <m>A</m>. Then we get the following informations from the SVD of <m>A</m>. 
@@ -1322,7 +1334,8 @@ plt.show()
   </ol>
 
 </remark>
-      </subsection>
+
+  </subsection>
 
   <conclusion>
     <p>

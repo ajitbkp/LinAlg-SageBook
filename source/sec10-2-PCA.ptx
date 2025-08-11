@@ -186,5 +186,74 @@
           </statement>
         </exercise>
       </subsection>
+<sage>
+  <input>
+import numpy as np
+from PIL import Image
+import requests
+from io import BytesIO
+import matplotlib.pyplot as plt
+url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
+img = np.array(img)
 
+# Separate RGB channels
+R = img[:, :, 0]
+G = img[:, :, 1]
+B = img[:, :, 2]
+
+def pca_compress(channel, k):
+    """
+    Compress a single channel using PCA, keeping k components.
+    """
+    # Center the data
+    mean = np.mean(channel, axis=0)
+    centered = channel - mean
+    
+    # Compute covariance matrix
+    cov_matrix = np.cov(centered, rowvar=False)
+    
+    # Eigen decomposition
+    eig_vals, eig_vecs = np.linalg.eigh(cov_matrix)
+    
+    # Sort eigenvalues in descending order
+    idx = np.argsort(eig_vals)[::-1]
+    eig_vecs = eig_vecs[:, idx]
+    
+    # Select top k eigenvectors
+    eig_vecs_k = eig_vecs[:, :k]
+    
+    # Project and reconstruct
+    transformed = np.dot(centered, eig_vecs_k)
+    reconstructed = np.dot(transformed, eig_vecs_k.T) + mean
+    
+    return reconstructed
+
+# Compression rank
+k = 10
+R_c = pca_compress(R, k)
+G_c = pca_compress(G, k)
+B_c = pca_compress(B, k)
+
+# Stack back and clip
+compressed_img = np.dstack([R_c, G_c, B_c])
+compressed_img = np.clip(compressed_img, 0, 255).astype(np.uint8)
+
+# Show images
+fig, axes = plt.subplots(1, 2, figsize=(10,5))
+axes[0].imshow(img.astype(np.uint8))
+axes[0].set_title("Original")
+axes[0].axis("off")
+
+axes[1].imshow(compressed_img)
+axes[1].set_title(f"Compressed (k={k})")
+axes[1].axis("off")
+
+plt.show()
+  </input>
+  <output>
+    
+  </output>
+</sage>
     </section>
