@@ -28,6 +28,24 @@ var ptx_lunr_docs = [
   "body": " To my wife Sadhana, my son Chinmay and daughter Sara.  "
 },
 {
+  "id": "preface",
+  "level": "1",
+  "url": "preface.html",
+  "type": "Preface",
+  "number": "",
+  "title": "Preface",
+  "body": " Preface  This book, Linear Algebra with SageMath: A Gentle Introduction , is designed as a self-contained, accessible pathway into linear algebra with an emphasis on computation using SageMath. It begins with familiar topics such as systems of linear equations and elementary row operations, then systematically expands into topics like vector spaces, linear transformations, eigenvalues, orthogonality, inner product spaces, regression, singular value decomposition, and principal component analysis.  The text is based on the author’s course of lectures for engineering students, refined over several years of teaching and integrating computational approaches into the curriculum.  A distinctive feature of the book is its consistent use of the Reduced Row Echelon Form (RREF) as a central computational tool. The RREF approach is not only essential for solving systems of equations, but also proves to be a unifying and highly effective method for a wide range of computations in linear algebra.  Key features include:    Gradual structure : Each chapter builds on the previous one, starting from Gaussian elimination, advancing through theory with geometric intuition and computational examples.   Interactive learning : SageMath examples, computational exercises, and “Sage Computations” sections scattered throughout the text reinforce concepts through hands-on experimentation.   Applied focus : Special applications—such as polynomial fitting, Markov chains, image compression, and PCA—highlight how linear algebra underpins both theoretical and practical domains.   Balanced pedagogy : Rigour and intuition go hand-in-hand. Abstract notions like inner product spaces and orthogonal complements are grounded by SageMath implementations, guiding both self-learners and classroom users.   I hope this text serves as an inviting and productive introduction to linear algebra, equipping readers with both conceptual clarity and computational competence as they progress through topics and exercises.   Ajit Kumar, Ph.D.  Department of Mathematics  Institute of Chemical technology, Mumbai (INDIA)   "
+},
+{
+  "id": "preface-4",
+  "level": "2",
+  "url": "preface.html#preface-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Reduced Row Echelon Form (RREF) "
+},
+{
   "id": "sec1-1-elementary-operations",
   "level": "1",
   "url": "sec1-1-elementary-operations.html",
