@@ -414,4 +414,66 @@
 
 </example>
 
+<example xml:id="reflection-sage-eg1">
+ <title>Reflection about a line <m>y=mx</m></title>
+ Find the reflection of <m>(2,4)</m> about the line <m>y=\frac{1}{2} x</m>. Also plot the point and the line and the point point obtained by reflection.
+  
+ <sage>
+    <input>
+m = 1/2
+Q = 1/(1+m^2)*matrix([[1-m^2, 2*m],[2*m,m^2-1]])
+v = vector([2,4])
+Rv = Q*v  
+print(Rv)     
+    </input>
+    <output>
+        
+    </output>
+ </sage>
+ <sage>
+    <input>
+line = plot(m*x,(x,-5,5),color='black')
+point = point2d(v,color='blue',size=20)
+Rpoint = point2d(Rv,color='red',size=20)
+vecP= v.plot(linestyle="--",color='blue')
+vecRv= Rv.plot(linestyle="--",color='red')
+ll = ll=line2d([v,Rv],linestyle="--",color='blue')
+show(line+point+Rpoint+vecP+vecRv+ll,figsize=5)
+    </input>
+    <output>
+        
+    </output>
+ </sage>
+</example>
+
+<example xml:id="projection-sage-eg1">
+    Find the projection of <m>(4,-1)</m> about the line <m>y=\frac12 x</m>. Plot the point, the line and the point of proection.
+</example>
+<sage>
+    <input>
+m =1/2
+P = 1/(1+m^2)*matrix([[1, m],[m,m^2]])
+v = vector([4,-1])
+Pv = P*v
+print(Pv)
+    </input>
+    <output>
+        
+    </output>
+</sage>
+
+<sage>
+    <input>
+line = plot(m*x,(x,-5,5),color='black')
+point = point2d(v,color='blue',size=20)
+Ppoint = point2d(Pv,color='red',size=20)
+vecP= v.plot(color='blue')
+vecPv= Pv.plot(linestyle="--",color='red')
+ll = ll=line2d([v,Pv],linestyle="--",color='blue')
+show(line+point+Ppoint+vecP+vecPv+ll,figsize=5)
+    </input>
+    <output>
+        
+    </output>
+</sage>
 </section>

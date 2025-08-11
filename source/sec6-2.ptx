@@ -2,8 +2,14 @@
 
 <section xml:id="sec6-2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Orthogonal Complements</title>
-
-  
+<introduction>
+  <p>
+    In this section, we shall explore the notion of orthogonal complement of 
+    a subspace in a <m>\mathbb{R}^n</m>.
+  </p>
+</introduction>
+  <subsection xml:id="subsec-orthogonal-complements">
+    <title>Orthogonal Complements</title>
   <definition xml:id="def-orthogonal-complement">
     <statement>
       <p>
@@ -109,6 +115,8 @@
     </statement>
   </example>
 
+  <p style="font-size: 2.8em; font-weight: bold;"> Orthogonal Proojection onto a subspace</p>
+
   <p>
     How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in <m>\R^n</m>?
     Let <m>\beta = \{w_1,\ldots, w_k\}</m> be a basis of <m>W</m>.
@@ -160,13 +168,13 @@
 3 \\
 -1 \\
 4
-\end{array}\right), v3 = \left(\begin{array}{r}
+\end{array}\right), v_3 = \left(\begin{array}{r}
 -5 \\
 13 \\
 -6 \\
 -7 \\
 -17
-\end{array}\right), v4 = \left(\begin{array}{r}
+\end{array}\right), v_4 = \left(\begin{array}{r}
 -2 \\
 1 \\
 3 \\
@@ -244,4 +252,175 @@ p
       </hint>
     </statement>
   </exercise>
+  </subsection>
+  <subsection xml:id="subsec-Proj-Ref_HyperPlane">
+    <title>Projection and Reflection</title>
+    <introduction>
+      <p>
+        In this subsection, we deal with two concepts, orthogonla projection of a vector onto a hyperplane in <m>\mathbb{R}^n</m> and reflection of a vector about a hyperplane.
+      </p>
+    </introduction>
+
+    <definition xml:id="def-hyperplane">
+      <statement>
+        <p>
+        A hyperplane <m>H</m> in <m>\mathbb{R}^n</m> is an <m>n-1</m>-dimensional affine space defined by 
+        <men xml:id="eqn-hyperplane">
+          H:=\{x\in \mathbb{R}^n: a^x=b\}        
+        </men>
+        where <m>a</m> is a nonzero vector in <m>\mathbb{R}^n</m> and <m>b\in \mathbb{R}</m>. 
+        If <m>b=0</m>, then <m>H</m> is an <m>n-1</m>-dimensiional subspace of of <m>\mathbb{R}^n</m>. 
+        </p>
+        
+        <p>
+         Note that if  <m>H</m> is an <m>n-1</m>-dimensiional subspace of of <m>\mathbb{R}^n</m>, defined by <m>a</m>, let us 
+         denote it by <m>H_a</m>, then <m>a</m> is orthogonal to <m>H</m>. 
+        </p>
+      </statement>
+    </definition>
+<p>
+    How to find the orthogonal projection of a vector <m>v\in \mathbb{R}^n</m> onto <m>H_a</m>? Note that we have already done one way 
+    by finding a basis vector of <m>H_a</m>. We would like to get a formula in terms of <m>a</m>. If <m>v_{H_a}</m> is the orthogonal projection of <m>v</m> onto <m>H_a</m>, then it can be obianed by taking out the orthogonal prjection of <m>v</m> onto the vector <m>a</m>  from <m>v</m>. Thus we have
+    <men xml:id="eqn-othgonal-proj1">
+      v_{H_a} = v-\frac{v\cdot a}{\norm{a}^2}a=v-\frac{aa^T}{\norm{a}^2}v=(I-\frac{aa^T}{\norm{a}^2})v.
+    </men>
+    The matrix <m>P_H=(I-\frac{aa^T}{\norm{a}^2})</m> is nothing but the <em>projection matrix</em>.
+  </p>
+  <p>
+    
+  How do we obtain <m>v_H</m>, the orthogonal projection of <m>v</m> onto <m>H</m>? Note that <m>v-v_H</m> is parallel to <m>a</m>. Hence 
+  <m>v-v_H=ta</m> for some scalar <m>t</m>. Since <m>v_H=v-ta\in H</m>, we have <m>a^T(v-ta)=b</m>. Simplyfying we get
+    <men xml:id="eqn-othgonal-proj2">
+      v_H = v-\frac{v\cdot a-b}{\norm{a}^2}a.
+    </men>
+  </p>  
+  <sage>
+    <input>
+  def project_onto_hyperplane(a, b, x):
+      """
+      a, x : vectors (length d)
+      b : scalar
+      returns: projection of x onto { y : a^T y = b }
+      """
+      a = vector(RR, a)
+      x = vector(RR, x)
+      denom = a.dot_product(a)
+      if denom == 0:
+          raise ValueError("Normal vector a must be nonzero.")
+      t = (a.dot_product(x) - b) / denom
+      return x - t * a
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+
+  <example xml:id="eg-orthogonal-proj-sage1">
+   <statement>
+    <p>
+      Find the orthogonal projevction of a vector <m>(1,2,3,4)</m> to to the hyperplane given by <m>3x_1-2x_2+5x_3+4x_4=7</m> in <m>\mathbb{R}^4</m>
+    </p>
+   </statement>
+   <p>
+   <solution>
+  
+      <sage>
+        <input>
+a = vector([3, -2, 5, 4])
+b = 7
+x = vector([1,2,3,4])
+xH = project_onto_hyperplane(a, b, x)
+print("Projection x_H =", xH)
+print("Check a^T x_H =", a.dot_product(xH), " (should equal b =", b, ")")
+        </input>
+        <output>
+          
+        </output>
+      </sage>
+   
+   </solution> 
+   </p>
+  </example>
+  <p>
+    Next we wish to find the reflection of a vector <m>v</m> about the hyperplane <m>H</m>.  Suppose 
+    <m>v_R</m> is the projection of <m>v</m> about <m>H</m>, then <m>v_R</m> can be obtained by going the same distance on the 
+    opposite side along the vector <m>v-v_H</m>. Thus
+    <men xml:id="eqn-othgonal-ref1">
+      v_R = v_H-(v-v_H)=2v_H-v
+    </men>
+    
+  Substituting the formula for <m>v_H</m>, and after simplification, we get
+    <men xml:id="eqn-othgonal-ref2">
+      v_R = v - 2 \frac{a^T v - b}{\norm{a}^2} a.
+    </men>
+   </p>
+<p>
+    As as special if <m>b = 0</m>, the hyperplane passes through the origin,
+            <me>
+                v_R = v - 2 \frac{a^T v}{\norm{a}^2} a=(I-2\frac{aa^T}{\norm{a}^2}v).
+            </me>
+    If <m>a</m> is a unit vector, <m>\|a\| = 1</m>, this simplifies to:
+            <me>
+                v_R = v - 2(a^T v) a=(I-2(aa^T))v.
+            </me>
+      The matrix <m>R_H =I-2\frac{aa^T}{\norm{a}^2}</m> is called the <em>reflection matrix</em>.
+          </p>
+
+  <sage><title>Sage Code for Reflection</title>
+    <input>
+# Reflection of a vector about a hyperplane in SageMath
+
+def reflect_about_hyperplane(x, a, b):
+    """
+    Reflect vector x about the hyperplane a·y = b.
+    x, a: vectors in R^n
+    b: scalar
+    """
+    # Ensure vectors are in Sage vector format
+    x = vector(RR, x)
+    a = vector(RR, a)
+    
+    # Check normal vector is nonzero
+    if a.norm() == 0:
+        raise ValueError("Normal vector 'a' must be nonzero.")
+    
+    # Reflection formula
+    x_R = x - 2 * (a.dot_product(x) - b) / (a.norm()^2) * a
+    return x_R     
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+  <example> 
+    <p>Find the reflection of the vector <m>x=(4,2,-1,3)</m> about the hyperplane <m>2x_1-x_2+3x_3+4x_4=5</m>.
+<sage>
+  <input>
+a = [2, -1, 3,4]    # normal vector
+b = 5             # hyperplane constant
+x = [4, 2, -1,3]    # point to reflect
+x_reflected = reflect_about_hyperplane(x, a, b)
+print("Reflected vector:", x_reflected)
+
+  </input>
+  <output>
+    
+  </output>
+</sage>
+</p>
+  </example>
+
+  <activity>
+    <em>Plottig orthogonal projection and reclection in <m>\mathbb{R}^3</m></em>
+    <p> Use sage to plot the hyperplane <m>H</m> defined by the equation <m>3x-2y+z=2</m> and also plot the vector <m>v=(1,-1,3)</m> and its
+    orthogonal projection <m>v_H</m> and the reflection <m>v_R</m> about <m>H</m>.
+    </p>
+  </activity>
+  </subsection>
+
+  <conclusion>
+        <p>
+            Orthogonal complements provide a way to decompose vector spaces and are closely related to projections and reflections.
+        </p>
+    </conclusion>
 </section>

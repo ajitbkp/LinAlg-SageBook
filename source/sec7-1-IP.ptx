@@ -851,5 +851,17 @@ print(q1,q2,q3)
       </statement>
     </exercise>
  
+    <activity>
+      <p>
+        <em>Notion of orthogonal projection and reflection in an inner product space.</em>
+      </p>
+      <p>
+        Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, 
+        and reflection can be naturally extended to an inner product space 
+        <m>(V, \langle \cdot, \cdot \rangle)</m>. 
+        Explore how these notions generalize in such spaces, and implement 
+        solutions to related problems using Sage.
+            </p>
+    </activity>
 
 </section>

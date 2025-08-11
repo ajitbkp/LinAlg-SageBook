@@ -18,7 +18,9 @@
     Reduced Row Echelon Form (RREF) to explore various concepts such as subspaces, linear dependence
     and independence, and the computation of coordinates. </p>
     </introduction>
-
+<subsection xml:id="subsec-Vector-Spaces-Sage">
+    <title>Vector Spaces in Sage</title>
+    
 <example
         label="sec4-5-VS-eg1">
         <title>Vector space <m>\mathbb{Q}^6</m></title>
@@ -536,6 +538,7 @@
         </sage>
     </solution>
 
+</subsection>
 
      <subsection
         xml:id="subsec-polynomial-space-sage">

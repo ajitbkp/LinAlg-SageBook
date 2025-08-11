@@ -74,7 +74,7 @@
     </statement>
   </definition>
 
-  <exercise>
+  <exercise xml:id="ex-ortho-6-0-0">
     <statement>
       <p>
       <ol>
@@ -116,7 +116,7 @@
     be explicitly written in terms of <m>u</m> and <m>u_i</m>. This is advantage of having an orthonormal basis.
   </p>
 
-  <exercise>
+  <exercise xml:id="ex-ortho-6-0-1">
     <statement>
       <p>
         (i) Find the coordinates of a vector <m>(1,2)</m> with respect to an orthonormal basis <m>\beta =\left\{\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right), \left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)\right\}</m> of <m>\R^2</m>.
@@ -174,7 +174,7 @@ Let us verify that <m>u_4</m> is orthogonal to <m>u_1,u_2,u_3</m>.
 </sage>
 
 </activity>
-  <exercise>
+  <exercise xml:id="ex-ortho-6-0-2">
     <p>
  Can you think of how will you generate an orthogonal basis of <m>\mathbb{R}^n</m> starting with a non-zero vector in <m>\mathbb{R}^n</m>?
     </p>
