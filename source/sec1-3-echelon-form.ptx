@@ -38,11 +38,6 @@
             </p>
         </li>
             A row-echelon matrix is said to be in <alert>reduced row-echelon form (RREF)</alert>  or <alert>reduced row-echelon matrix</alert> if, in addition, it satisfies the following condition: 
-        <li>
-            <p>
-                Each leading 1 is the only nonzero entry in its column.       
-            </p>
-        </li>
     </ol>
            
 </p>
