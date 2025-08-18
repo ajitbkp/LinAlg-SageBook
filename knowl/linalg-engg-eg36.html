@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
+</h4>
+<p>Let <span class="process-math">\(Q\)</span> be the reflection in <span class="process-math">\(\R^2\)</span> about the line <span class="process-math">\(y=mx\text{,}\)</span> where <span class="process-math">\(m=\tan\theta\text{.}\)</span> We wish to find the matrix of <span class="process-math">\(Q\)</span> with respect to the standard basis.</p>
+<p>Note that <span class="process-math">\(Q\)</span> can be accomplished by first rotating by <span class="process-math">\(-\theta\text{,}\)</span> then reflecting about <span class="process-math">\(x\)</span>-axis and then rotating back by <span class="process-math">\(\theta\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+Q=R_\theta\circ R_f\circ R_{-\theta}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Note that <span class="process-math">\(R_f, R_\theta\)</span> and <span class="process-math">\(R_{-\theta}\)</span> are linear map, and hence <span class="process-math">\(Q\)</span> is a linear map.</p>
+<p>Using the notion of matrix of composition, the matrix of <span class="process-math">\(Q\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+Q=\amp \begin{bmatrix}\cos (\theta) \amp  -\sin (\theta) \\\sin(\theta) \amp  \cos(\theta) \end{bmatrix} 
+\begin{bmatrix}1 \amp  0\\0 \amp  -1 \end{bmatrix} 
+\begin{bmatrix}\cos (-\theta) \amp  -\sin (-\theta) \\
+\sin(-\theta) \amp  \cos(-\theta) \end{bmatrix}\\
+=\amp \begin{bmatrix}\cos^2\theta-\sin^2\theta \amp  2\cos\theta\sin\theta\\ 
+2\cos\theta\sin\theta \amp   \sin^2\theta-\cos^2\theta \end{bmatrix}
+\end{align*}
+</div>
+<p>Since <span class="process-math">\(m=\tan\theta\text{,}\)</span> <span class="process-math">\(\cos \theta = \frac{1}{\sqrt{1+m^2}}\)</span> and <span class="process-math">\(\sin \theta = \frac{m}{\sqrt{1+m^2}}\text{.}\)</span> Using this the matrix of <span class="process-math">\(Q\)</span> with respect to the standard basis <span class="process-math">\(\beta\)</span> of <span class="process-math">\(\R^2\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+[Q]_\beta=Q=\begin{bmatrix}\frac{1-m^2}{1+m^2} \amp  \frac{2m}{1+m^2}\\ \frac{2m}{1+m^2} \amp  \frac{m^2-1}{1+m^2} \end{bmatrix} =\frac{1}{1+m^2}\begin{bmatrix}1-m^2 \amp  2m\\ 2m \amp  m^2-1 \end{bmatrix}\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="sec3-3-LT.html#linalg-engg-eg36" class="internal">in-context</a></span>
+</body>
+</html>

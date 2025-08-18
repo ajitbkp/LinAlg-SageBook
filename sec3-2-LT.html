@@ -6,15 +6,20 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Linear maps from \R^n to \R^m</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Linear Algebra with SageMath">
-<meta property="book:author" content="Ajit Kumar">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -86,137 +91,51 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
-<style>
-#subsec-elmentary-row-operations-3-1 { counter-set: subsec-elmentary-row-operations-3-1 0; }
-#subsec-elmentary-row-operations-3-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-3-1,decimal)"."; }
-#subsec-elmentary-row-operations-3-1 > li { counter-increment: subsec-elmentary-row-operations-3-1; }
-#def-elementary-row-operations-2-2-1 { counter-set: def-elementary-row-operations-2-2-1 0; }
-#def-elementary-row-operations-2-2-1 > li::marker { content: ""counter(def-elementary-row-operations-2-2-1,decimal)"."; }
-#def-elementary-row-operations-2-2-1 > li { counter-increment: def-elementary-row-operations-2-2-1; }
-#subsec-elmentary-row-operations-8-2-1 { counter-set: subsec-elmentary-row-operations-8-2-1 0; }
-#subsec-elmentary-row-operations-8-2-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-8-2-1,decimal)"."; }
-#subsec-elmentary-row-operations-8-2-1 > li { counter-increment: subsec-elmentary-row-operations-8-2-1; }
-#subsec-elmentary-row-operations-16-1-1-1 { counter-set: subsec-elmentary-row-operations-16-1-1-1 0; }
-#subsec-elmentary-row-operations-16-1-1-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-16-1-1-1,decimal)"."; }
-#subsec-elmentary-row-operations-16-1-1-1 > li { counter-increment: subsec-elmentary-row-operations-16-1-1-1; }
-#def-echelon-form-1-2-1 { counter-set: def-echelon-form-1-2-1 0; }
-#def-echelon-form-1-2-1 > li::marker { content: ""counter(def-echelon-form-1-2-1,decimal)"."; }
-#def-echelon-form-1-2-1 > li { counter-increment: def-echelon-form-1-2-1; }
-#sec-row-echelon-7 { counter-set: sec-row-echelon-7 0; }
-#sec-row-echelon-7 > li::marker { content: ""counter(sec-row-echelon-7,decimal)"."; }
-#sec-row-echelon-7 > li { counter-increment: sec-row-echelon-7; }
-#alg-gaussian-elimination-2-1-1 { counter-set: alg-gaussian-elimination-2-1-1 0; }
-#alg-gaussian-elimination-2-1-1 > li::marker { content: ""counter(alg-gaussian-elimination-2-1-1,decimal)"."; }
-#alg-gaussian-elimination-2-1-1 > li { counter-increment: alg-gaussian-elimination-2-1-1; }
-#sec1-4-matrix-rank-5-2-1 { counter-set: sec1-4-matrix-rank-5-2-1 0; }
-#sec1-4-matrix-rank-5-2-1 > li::marker { content: ""counter(sec1-4-matrix-rank-5-2-1,decimal)"."; }
-#sec1-4-matrix-rank-5-2-1 > li { counter-increment: sec1-4-matrix-rank-5-2-1; }
-#thm-nosol-rank-2-2-1 { counter-set: thm-nosol-rank-2-2-1 0; }
-#thm-nosol-rank-2-2-1 > li::marker { content: ""counter(thm-nosol-rank-2-2-1,decimal)"."; }
-#thm-nosol-rank-2-2-1 > li { counter-increment: thm-nosol-rank-2-2-1; }
-#subsec-Doolittle-5-1 { counter-set: subsec-Doolittle-5-1 0; }
-#subsec-Doolittle-5-1 > li::marker { content: ""counter(subsec-Doolittle-5-1,decimal)"."; }
-#subsec-Doolittle-5-1 > li { counter-increment: subsec-Doolittle-5-1; }
-#subsec-Doolittle-8-1 { counter-set: subsec-Doolittle-8-1 0; }
-#subsec-Doolittle-8-1 > li::marker { content: ""counter(subsec-Doolittle-8-1,decimal)"."; }
-#subsec-Doolittle-8-1 > li { counter-increment: subsec-Doolittle-8-1; }
-#sec1-7-exer-2-1 { counter-set: sec1-7-exer-2-1 0; }
-#sec1-7-exer-2-1 > li::marker { content: ""counter(sec1-7-exer-2-1,decimal)"."; }
-#sec1-7-exer-2-1 > li { counter-increment: sec1-7-exer-2-1; }
-#sec1-7-exer-2-1-3-2-1 { counter-set: sec1-7-exer-2-1-3-2-1 0; }
-#sec1-7-exer-2-1-3-2-1 > li::marker { content: "("counter(sec1-7-exer-2-1-3-2-1,lower-alpha)")"; }
-#sec1-7-exer-2-1-3-2-1 > li { counter-increment: sec1-7-exer-2-1-3-2-1; }
-#sec2-0-intro-11-1-1-1 { counter-set: sec2-0-intro-11-1-1-1 0; }
-#sec2-0-intro-11-1-1-1 > li::marker { content: ""counter(sec2-0-intro-11-1-1-1,decimal)"."; }
-#sec2-0-intro-11-1-1-1 > li { counter-increment: sec2-0-intro-11-1-1-1; }
-#exer-2-1-100-2-1 { counter-set: exer-2-1-100-2-1 0; }
-#exer-2-1-100-2-1 > li::marker { content: ""counter(exer-2-1-100-2-1,decimal)"."; }
-#exer-2-1-100-2-1 > li { counter-increment: exer-2-1-100-2-1; }
-#sec2-1-matrix-spaces-3-1 { counter-set: sec2-1-matrix-spaces-3-1 0; }
-#sec2-1-matrix-spaces-3-1 > li::marker { content: ""counter(sec2-1-matrix-spaces-3-1,decimal)"."; }
-#sec2-1-matrix-spaces-3-1 > li { counter-increment: sec2-1-matrix-spaces-3-1; }
-#sec-2-2-remrak2-1-1-1 { counter-set: sec-2-2-remrak2-1-1-1 0; }
-#sec-2-2-remrak2-1-1-1 > li::marker { content: ""counter(sec-2-2-remrak2-1-1-1,decimal)"."; }
-#sec-2-2-remrak2-1-1-1 > li { counter-increment: sec-2-2-remrak2-1-1-1; }
-#sec-sec3-5-LT-Sage-2-3-1 { counter-set: sec-sec3-5-LT-Sage-2-3-1 0; }
-#sec-sec3-5-LT-Sage-2-3-1 > li::marker { content: ""counter(sec-sec3-5-LT-Sage-2-3-1,decimal)"."; }
-#sec-sec3-5-LT-Sage-2-3-1 > li { counter-increment: sec-sec3-5-LT-Sage-2-3-1; }
-#sec4-1-VS-3-2-2-1 { counter-set: sec4-1-VS-3-2-2-1 0; }
-#sec4-1-VS-3-2-2-1 > li::marker { content: ""counter(sec4-1-VS-3-2-2-1,decimal)"."; }
-#sec4-1-VS-3-2-2-1 > li { counter-increment: sec4-1-VS-3-2-2-1; }
-#thm-basis-equiv-1-2-1 { counter-set: thm-basis-equiv-1-2-1 0; }
-#thm-basis-equiv-1-2-1 > li::marker { content: ""counter(thm-basis-equiv-1-2-1,decimal)"."; }
-#thm-basis-equiv-1-2-1 > li { counter-increment: thm-basis-equiv-1-2-1; }
-#sec4-5-VS-Ex-2-1 { counter-set: sec4-5-VS-Ex-2-1 0; }
-#sec4-5-VS-Ex-2-1 > li::marker { content: ""counter(sec4-5-VS-Ex-2-1,decimal)"."; }
-#sec4-5-VS-Ex-2-1 > li { counter-increment: sec4-5-VS-Ex-2-1; }
-#eigen-properties-2-1-1 { counter-set: eigen-properties-2-1-1 0; }
-#eigen-properties-2-1-1 > li::marker { content: ""counter(eigen-properties-2-1-1,decimal)"."; }
-#eigen-properties-2-1-1 > li { counter-increment: eigen-properties-2-1-1; }
-#sec5-1-eigen-intro-24-1-1-1 { counter-set: sec5-1-eigen-intro-24-1-1-1 0; }
-#sec5-1-eigen-intro-24-1-1-1 > li::marker { content: ""counter(sec5-1-eigen-intro-24-1-1-1,decimal)"."; }
-#sec5-1-eigen-intro-24-1-1-1 > li { counter-increment: sec5-1-eigen-intro-24-1-1-1; }
-#subsec5-3-linear-ode-12-1 { counter-set: subsec5-3-linear-ode-12-1 0; }
-#subsec5-3-linear-ode-12-1 > li::marker { content: ""counter(subsec5-3-linear-ode-12-1,decimal)"."; }
-#subsec5-3-linear-ode-12-1 > li { counter-increment: subsec5-3-linear-ode-12-1; }
-#subsec5-3-Google-Search-6-1 { counter-set: subsec5-3-Google-Search-6-1 0; }
-#subsec5-3-Google-Search-6-1 > li::marker { content: ""counter(subsec5-3-Google-Search-6-1,decimal)"."; }
-#subsec5-3-Google-Search-6-1 > li { counter-increment: subsec5-3-Google-Search-6-1; }
-#sec5-4-eigen-exer-2-1 { counter-set: sec5-4-eigen-exer-2-1 0; }
-#sec5-4-eigen-exer-2-1 > li::marker { content: ""counter(sec5-4-eigen-exer-2-1,decimal)"."; }
-#sec5-4-eigen-exer-2-1 > li { counter-increment: sec5-4-eigen-exer-2-1; }
-#ex-ortho-6-0-0-1-1-1 { counter-set: ex-ortho-6-0-0-1-1-1 0; }
-#ex-ortho-6-0-0-1-1-1 > li::marker { content: ""counter(ex-ortho-6-0-0-1-1-1,decimal)"."; }
-#ex-ortho-6-0-0-1-1-1 > li { counter-increment: ex-ortho-6-0-0-1-1-1; }
-#sec6-3-10-1-2-1 { counter-set: sec6-3-10-1-2-1 0; }
-#sec6-3-10-1-2-1 > li::marker { content: ""counter(sec6-3-10-1-2-1,decimal)"."; }
-#sec6-3-10-1-2-1 > li { counter-increment: sec6-3-10-1-2-1; }
-#sec7-1-InnerProduct-4-1 { counter-set: sec7-1-InnerProduct-4-1 0; }
-#sec7-1-InnerProduct-4-1 > li::marker { content: ""counter(sec7-1-InnerProduct-4-1,decimal)"."; }
-#sec7-1-InnerProduct-4-1 > li { counter-increment: sec7-1-InnerProduct-4-1; }
-#def-inner-product-2-2-1 { counter-set: def-inner-product-2-2-1 0; }
-#def-inner-product-2-2-1 > li::marker { content: ""counter(def-inner-product-2-2-1,decimal)"."; }
-#def-inner-product-2-2-1 > li { counter-increment: def-inner-product-2-2-1; }
-#thm-norm-properties-2-2-1 { counter-set: thm-norm-properties-2-2-1 0; }
-#thm-norm-properties-2-2-1 > li::marker { content: ""counter(thm-norm-properties-2-2-1,decimal)"."; }
-#thm-norm-properties-2-2-1 > li { counter-increment: thm-norm-properties-2-2-1; }
-#sec7-2-Exer-3-1 { counter-set: sec7-2-Exer-3-1 0; }
-#sec7-2-Exer-3-1 > li::marker { content: ""counter(sec7-2-Exer-3-1,decimal)"."; }
-#sec7-2-Exer-3-1 > li { counter-increment: sec7-2-Exer-3-1; }
-#def-pseudoinverse-1-2-1 { counter-set: def-pseudoinverse-1-2-1 0; }
-#def-pseudoinverse-1-2-1 > li::marker { content: ""counter(def-pseudoinverse-1-2-1,decimal)"."; }
-#def-pseudoinverse-1-2-1 > li { counter-increment: def-pseudoinverse-1-2-1; }
-#sec9-1-SVD-6-27-2 { counter-set: sec9-1-SVD-6-27-2 0; }
-#sec9-1-SVD-6-27-2 > li::marker { content: ""counter(sec9-1-SVD-6-27-2,decimal)"."; }
-#sec9-1-SVD-6-27-2 > li { counter-increment: sec9-1-SVD-6-27-2; }
-</style>
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body id="changeme" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
 <p class="byline">Ajit Kumar</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -227,7 +146,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec3-1-LT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap3-LT.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec3-3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec3-1-LT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap3-LT.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec3-3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -249,13 +169,13 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Author Biography</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -313,9 +233,9 @@ window.MathJax = {
 <div class="toc-title-box"><a href="chap3-LT.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec3-1-LT.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec3-2-LT.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-RntoRm" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-composition" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Composition of linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection">
@@ -477,13 +397,28 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-sage-into.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-sage-into-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction to SageMath</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="getting-started-sagemath.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Getting Started with Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-sage-programming.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Programming in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-plotting-sage.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Plotting in Sage</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec3-2-LT"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.2</span><span class="space"> </span><span class="title">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span>
 </h2>
-<section class="introduction" id="sec3-2-LT-2"><div class="para" id="sec3-2-LT-2-1">In this section, we wish to find linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\text{.}\)</span> We shall see that these linear maps are essentially given by an <span class="process-math">\(m\times n\)</span> matrix. We shall also see how to find matrix of a linear transformation with respect to a given basis on domain and codomain.</div></section><section class="subsection" id="sec3-2-LT-RntoRm"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="space"> </span><span class="title">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span>
+<section class="introduction" id="sec3-2-LT-2"><div class="para" id="sec3-2-LT-2-1">In this section, we wish to find linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\text{.}\)</span> We shall see that these linear maps are essentially given by an <span class="process-math">\(m\times n\)</span> matrix. We shall also see how to find matrix of a linear transformation with respect to a given basis on domain and codomain.<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="sec3-2-LT-RntoRm"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span>
 </h3>
 <div class="para logical" id="sec3-2-LT-RntoRm-2">
 <div class="para">We want to find a linear map from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\text{.}\)</span> Suppose <span class="process-math">\(T\colon \R^n\to \R^m\)</span> is a linear map. Then for <span class="process-math">\(x\in \R^n\text{,}\)</span> <span class="process-math">\(T(x)\in \R^m\text{.}\)</span> In particular, <span class="process-math">\(T(x)\)</span> has <span class="process-math">\(m\)</span> components. Let us write these components as <span class="process-math">\(T_1(x),\ldots, T_m(x)\text{.}\)</span> Thus <span class="process-math">\(T\)</span> is given by</div>
@@ -492,17 +427,19 @@ window.MathJax = {
 T(x)=\begin{bmatrix}T_1(x)\\T_2(x)\\\vdots\\T_m(x) \end{bmatrix}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec3-2-LT-RntoRm-3">Note that for each <span class="process-math">\(i=1,\ldots, m\text{,}\)</span> <span class="process-math">\(T_i\)</span> is a map from <span class="process-math">\(\R^n\to \R\text{.}\)</span>
+<div class="para" id="sec3-2-LT-RntoRm-3">Note that for each <span class="process-math">\(i=1,\ldots, m\text{,}\)</span> <span class="process-math">\(T_i\)</span> is a map from <span class="process-math">\(\R^n\to \R\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exercise exercise-like" id="linalg-engg-ex29"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="linalg-engg-ex29-1-1">Show that <span class="process-math">\(T\colon \R^n\to \R^m\)</span> defined by <span class="process-math">\(T(x)=\left(T_1(x),\ldots, T_m(x)\right)\)</span> is linear map if and only if <span class="process-math">\(T_i\colon \R^n\to \R\)</span> is linear map for each <span class="process-math">\(i\text{.}\)</span>
-</div></article><div class="para" id="sec3-2-LT-RntoRm-5">From Ex. <a href="sec3-2-LT.html#linalg-engg-ex29" class="xref" data-knowl="./knowl/xref/linalg-engg-ex29.html" data-reveal-label="Reveal" data-close-label="Close" title="Checkpoint 3.2.1">Checkpoint 3.2.1</a>, it follows that in order to know linear map <span class="process-math">\(T\text{,}\)</span> it is sufficient to know component <span class="process-math">\(T_i\colon \R^n\to \R\)</span> for each <span class="process-math">\(i\text{.}\)</span>
+<div class="para" id="linalg-engg-ex29-1-1">Show that <span class="process-math">\(T\colon \R^n\to \R^m\)</span> defined by <span class="process-math">\(T(x)=\left(T_1(x),\ldots, T_m(x)\right)\)</span> is linear map if and only if <span class="process-math">\(T_i\colon \R^n\to \R\)</span> is linear map for each <span class="process-math">\(i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-ex29-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 3.2.1"><a href="#linalg-engg-ex29" title="Copy heading and permalink for Checkpoint 3.2.1" aria-label="Copy heading and permalink for Checkpoint 3.2.1">🔗</a></div></article><div class="para" id="sec3-2-LT-RntoRm-5">From Ex. <a href="sec3-2-LT.html#linalg-engg-ex29" class="xref" data-knowl="./knowl/xref/linalg-engg-ex29.html" data-reveal-label="Reveal" data-close-label="Close" title="Checkpoint 3.2.1">Checkpoint 3.2.1</a>, it follows that in order to know linear map <span class="process-math">\(T\text{,}\)</span> it is sufficient to know component <span class="process-math">\(T_i\colon \R^n\to \R\)</span> for each <span class="process-math">\(i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sec3-2-LT-RntoRm-6"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Linear map from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R\)</span>.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linear map from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R\)</span>.</span>
 </h4>
 <div class="para logical" id="sec3-2-LT-RntoRm-6-2-1">
 <div class="para">Suppose <span class="process-math">\(T\colon \R^n\to \R\)</span> is a linear map. Consider the standard basis <span class="process-math">\(\beta=\{e_1,e_2,\ldots,
@@ -513,6 +450,7 @@ T(x)=\amp T(x_1e_1+x_2e_2+\cdots+x_n e_n)\\
 =\amp x_1T(e_2)+x_2T(e_2)+\cdots+x_n T(e_n)\text{.}
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec3-2-LT-RntoRm-6-2-2">
 <div class="para">Define <span class="process-math">\(T(e_1):=a_1, T(e_2):=a_2,\ldots, T(e_n):=a_n\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
@@ -520,7 +458,8 @@ T(x)=\amp T(x_1e_1+x_2e_2+\cdots+x_n e_n)\\
 T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec3-2-LT-RntoRm-6-2-3">Thus, if <span class="process-math">\(T\colon \R^n\to \R\)</span> is a linear map, there there exist scalars, <span class="process-math">\(a_1,a_2,\ldots,a_n\)</span> such that <span class="process-math">\(T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n\text{.}\)</span> Here we have <span class="process-math">\(a_i=T(e_i)\)</span> for <span class="process-math">\(i=1,\ldots,n\text{.}\)</span> It is clear that to know <span class="process-math">\(T\)</span> it is good enough to know <span class="process-math">\(T(e_1),\ldots, T(e_n)\text{.}\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec3-2-LT-RntoRm-6-2-3">Thus, if <span class="process-math">\(T\colon \R^n\to \R\)</span> is a linear map, there there exist scalars, <span class="process-math">\(a_1,a_2,\ldots,a_n\)</span> such that <span class="process-math">\(T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n\text{.}\)</span> Here we have <span class="process-math">\(a_i=T(e_i)\)</span> for <span class="process-math">\(i=1,\ldots,n\text{.}\)</span> It is clear that to know <span class="process-math">\(T\)</span> it is good enough to know <span class="process-math">\(T(e_1),\ldots, T(e_n)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-6-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec3-2-LT-RntoRm-6-2-4">
 <div class="para">What we have proved is, any linear map <span class="process-math">\(T\)</span> from <span class="process-math">\(\R^n\to \R\)</span> is given by</div>
 <div class="displaymath process-math">
@@ -530,13 +469,17 @@ T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n
 </div>
 <div class="para">where <span class="process-math">\(a_i=T(e_i)\)</span> for <span class="process-math">\(1\leq i\leq n\text{.}\)</span>
 </div>
-</div> <div class="para" id="sec3-2-LT-RntoRm-6-2-5">What happens if you chose a different basis (other than standard basis)?</div></article><div class="para logical" id="sec3-2-LT-RntoRm-7">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-6-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec3-2-LT-RntoRm-6-2-5">What happens if you chose a different basis (other than standard basis)?<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-6-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.2.2: Linear map from \R^n to \R"><a href="#sec3-2-LT-RntoRm-6" title="Copy heading and permalink for Example 3.2.2: Linear map from \R^n to \R" aria-label="Copy heading and permalink for Example 3.2.2: Linear map from \R^n to \R">🔗</a></div></article><div class="para logical" id="sec3-2-LT-RntoRm-7">
 <div class="para">Let us come back to the linear map <span class="process-math">\(T(x)=\begin{bmatrix}T_1(x)\\T_2(x)\\\vdots\\T_m(x) \end{bmatrix}\text{.}\)</span> Since for each <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(T_i\)</span> is linear, there exist scalars, <span class="process-math">\(a_{i1},a_{i2},\ldots,a_{in}\in \R\)</span> such that <span class="process-math">\(T_i(x)=a_{i1}x_1+a_{i2}x_2+\cdots+a_{i_n}x_n\text{.}\)</span> Thus</div>
 <div class="displaymath process-math">
 \begin{equation*}
 T(x)=\begin{bmatrix}a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n\\ a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n\\\vdots\\ a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n \end{bmatrix} = \begin{bmatrix}a_{11}\amp a_{12}\amp \cdots\amp a_{1n}\\ a_{21}\amp a_{22}\amp \cdots\amp a_{2n}\\ \vdots \amp \vdots\amp \ddots\amp \vdots\\ a_{m1}\amp a_{m2}\amp \cdots\amp a_{mn} \end{bmatrix}  \begin{bmatrix}x_1\\x_2\\\vdots \\x_n \end{bmatrix}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec3-2-LT-RntoRm-8">
 <div class="para">Thus we have shown that any linear map <span class="process-math">\(T\colon \R^n\to\R^m\)</span> is a matrix transformation <span class="process-math">\(T_A\text{,}\)</span> where <span class="process-math">\(A=[a_{ij}]\text{.}\)</span> Note that the matrix of <span class="process-math">\(T\)</span>
@@ -549,20 +492,25 @@ A =
 =\amp \begin{bmatrix}T(e_1)\amp T(e_2)\amp \cdots \amp  T(e_n) \end{bmatrix}\text{.}
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec3-2-LT-RntoRm-9">Notice that the <span class="process-math">\(j\)</span>-th columns of <span class="process-math">\(A\)</span> is the coordinates of the vector <span class="process-math">\(T(e_j)\)</span> with respect to the standard basis <span class="process-math">\(\{e_1,\ldots,e_m\}\)</span> of <span class="process-math">\(\R^m\text{.}\)</span> Thus to find the matrix of <span class="process-math">\(T\text{,}\)</span> we find the coordinates of <span class="process-math">\(T(e_j)\)</span> with respect to the basis on the codomain and put it in the <span class="process-math">\(j\)</span>-th column.</div>
-<div class="para" id="sec3-2-LT-RntoRm-10">What happens if we change the bases on <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\text{.}\)</span> In order to see this let us consider an example.</div>
+<div class="para" id="sec3-2-LT-RntoRm-9">Notice that the <span class="process-math">\(j\)</span>-th columns of <span class="process-math">\(A\)</span> is the coordinates of the vector <span class="process-math">\(T(e_j)\)</span> with respect to the standard basis <span class="process-math">\(\{e_1,\ldots,e_m\}\)</span> of <span class="process-math">\(\R^m\text{.}\)</span> Thus to find the matrix of <span class="process-math">\(T\text{,}\)</span> we find the coordinates of <span class="process-math">\(T(e_j)\)</span> with respect to the basis on the codomain and put it in the <span class="process-math">\(j\)</span>-th column.<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec3-2-LT-RntoRm-10">What happens if we change the bases on <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\text{.}\)</span> In order to see this let us consider an example.<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <article class="example example-like" id="ling-engg-eg31"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="ling-engg-eg31-1-1">Consider a linear map <span class="process-math">\(T\colon \R^3\to \R^2\)</span> defined by <span class="process-math">\(T\left(\begin{bmatrix}x_1\\x_2\\x_3 \end{bmatrix} \right)=\begin{bmatrix}2x_1-x_2+x_3\\x_1+x_2-x_3 \end{bmatrix}\text{.}\)</span> It is easy to see that <span class="process-math">\(T\)</span> is a matrix transformation <span class="process-math">\(T_A\)</span> where <span class="process-math">\(A=\begin{bmatrix}2 \amp -1 \amp 1\\1 \amp 1\amp -1 \end{bmatrix}\text{.}\)</span> In particular, <span class="process-math">\(A\)</span> is the matrix of <span class="process-math">\(T\)</span> when we consider standard bases on the domain <span class="process-math">\(\R^3\)</span> and codomain <span class="process-math">\(\R^2\text{.}\)</span>
-</div> <div class="para" id="ling-engg-eg31-1-2">Let us consider a basis <span class="process-math">\(\beta =\{v_1=(1,1,-1),v_2=(1,-1,1),v_3=(-1,1,1)\}\)</span> of the domain and the standard basis <span class="process-math">\(\gamma=\{(1,0),(0,1)\}\)</span> on the codomain. In order to find the matrix <span class="process-math">\(A\)</span> of <span class="process-math">\(T\text{,}\)</span> we find the image of <span class="process-math">\(T(v_1)\)</span> and find its coordinates with respect to the standard basis <span class="process-math">\(\gamma\text{.}\)</span> We have <span class="process-math">\(T(v_1)=(0,3)\text{.}\)</span> Thus the first columns of <span class="process-math">\(A\)</span> is <span class="process-math">\(\begin{bmatrix}0\\3 \end{bmatrix}\text{.}\)</span> Similarly <span class="process-math">\(T(v_2)=(4,-1)\)</span> and <span class="process-math">\(T(v_3)=(2,-1)\text{.}\)</span> Hence the matrix of <span class="process-math">\(A\)</span> of <span class="process-math">\(T\)</span> with respect to the basis <span class="process-math">\(\beta\)</span> and <span class="process-math">\(\gamma\)</span> is <span class="process-math">\(\begin{bmatrix}0\amp 4 \amp 2\\3\amp -1\amp -1 \end{bmatrix}\text{.}\)</span> We denote this matrix as <span class="process-math">\([T]_\beta^\gamma\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="3-2-4"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
+<div class="para" id="ling-engg-eg31-1-1">Consider a linear map <span class="process-math">\(T\colon \R^3\to \R^2\)</span> defined by <span class="process-math">\(T\left(\begin{bmatrix}x_1\\x_2\\x_3 \end{bmatrix} \right)=\begin{bmatrix}2x_1-x_2+x_3\\x_1+x_2-x_3 \end{bmatrix}\text{.}\)</span> It is easy to see that <span class="process-math">\(T\)</span> is a matrix transformation <span class="process-math">\(T_A\)</span> where <span class="process-math">\(A=\begin{bmatrix}2 \amp -1 \amp 1\\1 \amp 1\amp -1 \end{bmatrix}\text{.}\)</span> In particular, <span class="process-math">\(A\)</span> is the matrix of <span class="process-math">\(T\)</span> when we consider standard bases on the domain <span class="process-math">\(\R^3\)</span> and codomain <span class="process-math">\(\R^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ling-engg-eg31-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ling-engg-eg31-1-2">Let us consider a basis <span class="process-math">\(\beta =\{v_1=(1,1,-1),v_2=(1,-1,1),v_3=(-1,1,1)\}\)</span> of the domain and the standard basis <span class="process-math">\(\gamma=\{(1,0),(0,1)\}\)</span> on the codomain. In order to find the matrix <span class="process-math">\(A\)</span> of <span class="process-math">\(T\text{,}\)</span> we find the image of <span class="process-math">\(T(v_1)\)</span> and find its coordinates with respect to the standard basis <span class="process-math">\(\gamma\text{.}\)</span> We have <span class="process-math">\(T(v_1)=(0,3)\text{.}\)</span> Thus the first columns of <span class="process-math">\(A\)</span> is <span class="process-math">\(\begin{bmatrix}0\\3 \end{bmatrix}\text{.}\)</span> Similarly <span class="process-math">\(T(v_2)=(4,-1)\)</span> and <span class="process-math">\(T(v_3)=(2,-1)\text{.}\)</span> Hence the matrix of <span class="process-math">\(A\)</span> of <span class="process-math">\(T\)</span> with respect to the basis <span class="process-math">\(\beta\)</span> and <span class="process-math">\(\gamma\)</span> is <span class="process-math">\(\begin{bmatrix}0\amp 4 \amp 2\\3\amp -1\amp -1 \end{bmatrix}\text{.}\)</span> We denote this matrix as <span class="process-math">\([T]_\beta^\gamma\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ling-engg-eg31-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.2.3"><a href="#ling-engg-eg31" title="Copy heading and permalink for Example 3.2.3" aria-label="Copy heading and permalink for Example 3.2.3">🔗</a></div></article><article class="exercise exercise-like" id="exer-3-2-4"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="3-2-4-1-1">Consider the linear transformation defined in the <a href="sec3-2-LT.html#ling-engg-eg31" class="xref" data-knowl="./knowl/xref/ling-engg-eg31.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.2.3">Example 3.2.3</a>. Find the matrix of <span class="process-math">\(T\)</span> with respect to a basis <span class="process-math">\(\beta =\{v_1=(1,1,-1),v_2=(1,-1,1),v_3=(-1,1,1)\}\)</span> of <span class="process-math">\(\R^3\)</span> and <span class="process-math">\(\gamma=\{w_2=(1,-1),(2,1)\}\)</span> of <span class="process-math">\(\R^2\text{.}\)</span>
-</div></article><article class="example example-like" id="ling-engg-eg33"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
+<div class="para" id="exer-3-2-4-1-1">Consider the linear transformation defined in the <a href="sec3-2-LT.html#ling-engg-eg31" class="xref" data-knowl="./knowl/xref/ling-engg-eg31.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.2.3">Example 3.2.3</a>. Find the matrix of <span class="process-math">\(T\)</span> with respect to a basis <span class="process-math">\(\beta =\{v_1=(1,1,-1),v_2=(1,-1,1),v_3=(-1,1,1)\}\)</span> of <span class="process-math">\(\R^3\)</span> and <span class="process-math">\(\gamma=\{w_2=(1,-1),(2,1)\}\)</span> of <span class="process-math">\(\R^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-3-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 3.2.4"><a href="#exer-3-2-4" title="Copy heading and permalink for Checkpoint 3.2.4" aria-label="Copy heading and permalink for Checkpoint 3.2.4">🔗</a></div></article><article class="example example-like" id="ling-engg-eg33"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="ling-engg-eg33-1-1">
 <div class="para">Consider a linear map <span class="process-math">\(T\colon \R^3\to \R^3\)</span> given by <span class="process-math">\(T\left(\begin{bmatrix}x_1\\x_2\\x_3 \end{bmatrix} \right)=\begin{bmatrix}2x_1-x_2+x_3\\x_1+x_2-x_3\\3x_1+2x_3 \end{bmatrix}\text{.}\)</span> Let us find the matrix of <span class="process-math">\(T\)</span> with respect to a basis <span class="process-math">\(\beta =\{v_1=(1,1,-1),v_2=(1,-1,1),v_3=(-1,1,1)\}\)</span> of <span class="process-math">\(\R^3\)</span> on the domain and codomain. Note that columns of <span class="process-math">\([T]_\beta^\beta\)</span> are the coordinates of <span class="process-math">\(T(v_1), T(v_2), T(v_3)\)</span> with respect to the basis <span class="process-math">\(\beta\text{.}\)</span> This can be obtained simultaneously by applying RREF to <span class="process-math">\(\begin{bmatrix}v_1 \amp  v_2 \amp  v_3 \amp  T(v_1)\amp  T(v_2)\amp  T(v_3) \end{bmatrix}\)</span> and taking the last three columns as <span class="process-math">\([T]_\beta^\beta\text{.}\)</span>
@@ -574,6 +522,7 @@ A =
 \xrightarrow{RREF}\left[\begin{array}{rrrrrr} 1 \amp  0 \amp  0 \amp  \frac{3}{2} \amp  \frac{3}{2} \amp  -\frac{3}{2} \\ 0 \amp  1 \amp  0 \amp  \frac{1}{2} \amp  \frac{9}{2} \amp  -\frac{3}{2} \\ 0 \amp  0 \amp  1 \amp  2 \amp  2 \amp  -1 \end{array} \right]
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ling-engg-eg33-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ling-engg-eg33-1-2">
 <div class="para">Hence</div>
 <div class="displaymath process-math">
@@ -581,14 +530,20 @@ A =
 [T]_\beta=\left[\begin{array}{rrr} \frac{3}{2} \amp  \frac{3}{2} \amp  -\frac{3}{2} \\ \frac{1}{2} \amp  \frac{9}{2} \amp  -\frac{3}{2} \\ 2 \amp  2 \amp  -1 \end{array} \right]\text{.}
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="sumoflinearmaps"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="period">.</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#ling-engg-eg33-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.2.5"><a href="#ling-engg-eg33" title="Copy heading and permalink for Example 3.2.5" aria-label="Copy heading and permalink for Example 3.2.5">🔗</a></div></article><article class="exercise exercise-like" id="sumoflinearmaps"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sumoflinearmaps-1-1">Let <span class="process-math">\(T,S\colon \R^n\to \R^m\)</span> be two linear maps. Then show that <span class="process-math">\(T+S\)</span> is a linear map. Furthermore, the matrix of <span class="process-math">\(T+S\)</span> is the sum of matrices of <span class="process-math">\(T\)</span> and <span class="process-math">\(S\text{.}\)</span>
-</div></article><div class="para" id="sec3-2-LT-RntoRm-15">Next we look the composition of linear maps.</div></section><section class="subsection" id="sec3-2-LT-composition"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="space"> </span><span class="title">Composition of linear transformations</span>
+<div class="para" id="sumoflinearmaps-1-1">Let <span class="process-math">\(T,S\colon \R^n\to \R^m\)</span> be two linear maps. Then show that <span class="process-math">\(T+S\)</span> is a linear map. Furthermore, the matrix of <span class="process-math">\(T+S\)</span> is the sum of matrices of <span class="process-math">\(T\)</span> and <span class="process-math">\(S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sumoflinearmaps-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 3.2.6"><a href="#sumoflinearmaps" title="Copy heading and permalink for Checkpoint 3.2.6" aria-label="Copy heading and permalink for Checkpoint 3.2.6">🔗</a></div></article><div class="para" id="sec3-2-LT-RntoRm-15">Next we look the composition of linear maps.<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-RntoRm-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 3.2.1: Linear maps from \R^n to \R^m"><a href="#sec3-2-LT-RntoRm" title="Copy heading and permalink for Subsection 3.2.1: Linear maps from \R^n to \R^m" aria-label="Copy heading and permalink for Subsection 3.2.1: Linear maps from \R^n to \R^m">🔗</a></div></section><section class="subsection" id="sec3-2-LT-composition"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Composition of linear transformations</span>
 </h3>
-<div class="para" id="sec3-2-LT-composition-2">Let <span class="process-math">\(T\colon \R^n\to \R^m\)</span> and <span class="process-math">\(S\colon R^m\to \R^p\)</span> be linear transformations. Then <span class="process-math">\(S\circ T\colon \R^n\to \R^p\)</span> defined by <span class="process-math">\((S\circ T)(x)=S(T(x))\)</span> is a linear map.</div>
+<div class="para" id="sec3-2-LT-composition-2">Let <span class="process-math">\(T\colon \R^n\to \R^m\)</span> and <span class="process-math">\(S\colon R^m\to \R^p\)</span> be linear transformations. Then <span class="process-math">\(S\circ T\colon \R^n\to \R^p\)</span> defined by <span class="process-math">\((S\circ T)(x)=S(T(x))\)</span> is a linear map.<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-composition-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="sec3-2-LT-composition-3">
 <div class="para">Suppose <span class="process-math">\(T(x)=Ax\)</span> and <span class="process-math">\(S(y)=By\)</span> are matrices transformations. Then</div>
 <div class="displaymath process-math">
@@ -598,9 +553,10 @@ S(T(x))=S(Ax)=B(Ax)=(BA)x\text{.}
 </div>
 <div class="para">Thus the matrix of <span class="process-math">\(S\circ T\)</span> is <span class="process-math">\(BA\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-composition-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="linalg-engg-eg34"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="linalg-engg-eg34-1-1">
 <div class="para">Let <span class="process-math">\(T\colon \R^4\to \R^3\)</span> and <span class="process-math">\(S\colon \R^3\to \R^4\)</span> defined by</div>
@@ -616,6 +572,7 @@ T\left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix} \right):=
 S\left(\begin{bmatrix}y_1\\y_2\\y_3 \end{bmatrix} \right):= \begin{bmatrix}y_{1} + y_{3} \\ y_{1} + 3  y_{2} + 2  y_{3} \\ 2  y_{1} - y_{2} + 3  y_{3} \\ y_{2} - y_{3} \end{bmatrix}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg34-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="linalg-engg-eg34-1-2">
 <div class="para">Let</div>
 <div class="displaymath process-math" id="linalg-engg-eg34-1-2-1">
@@ -636,6 +593,7 @@ u_3=\left(-1,2,-1,-1\right), u_4=\left(2,-8,4,-3\right)
 S\circ T \left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix} \right) := \begin{bmatrix}3  x_{1} + x_{2} + 4  x_{3} - x_{4}\\ 8  x_{1} + 5  x_{2} + 13  x_{3} - 6  x_{4}\\ 7  x_{1} + 2  x_{2} + 9  x_{3} - 3  x_{4}\\ -x_{1} - x_{3} + x_{4} \end{bmatrix}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg34-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="linalg-engg-eg34-1-3">
 <div class="para">First we find the matrix <span class="process-math">\(A\)</span> using RREF</div>
 <div class="displaymath process-math" id="linalg-engg-eg34-1-3-2">
@@ -649,6 +607,7 @@ S\circ T \left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix} \right) := \begin
 0 \amp  0 \amp  1 \amp  1 \amp  -1 \amp  \frac{1}{3} \amp  \frac{10}{3} \end{bmatrix}\amp 
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg34-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="linalg-engg-eg34-1-4">
 <div class="para">Hence <span class="process-math">\(A = \left[\begin{array}{rrrr} 3 \amp  -\frac{3}{2} \amp  \frac{7}{6} \amp  \frac{43}{6} \\ 1 \amp  \frac{1}{2} \amp  -\frac{5}{6} \amp  \frac{7}{6} \\ 1 \amp  -1 \amp  \frac{1}{3} \amp  \frac{10}{3} \end{array} \right]\text{.}\)</span> Next we find <span class="process-math">\(B\)</span> using RREF</div>
 <div class="displaymath process-math" id="linalg-engg-eg34-1-4-3">
@@ -664,6 +623,7 @@ S\circ T \left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix} \right) := \begin
 0 \amp  0 \amp  0 \amp  1 \amp  -4 \amp  -24 \amp  -7 \end{bmatrix}\amp
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg34-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="linalg-engg-eg34-1-5">
 <div class="para">Hence <span class="process-math">\(B=\left[ \begin{array}{rrr} 8 \amp  56 \amp  19 \\ -4 \amp  -16 \amp  -2 \\ 0 \amp  2 \amp  2 \\ -4 \amp  -24 \amp  -7 \end{array} \right]\text{.}\)</span> It is easy to check that</div>
 <div class="displaymath process-math">
@@ -674,7 +634,10 @@ BA= \left[\begin{array}{rrrr} 99 \amp -3 \amp -31 \amp 186 \\
 -43 \amp 1 \amp 13 \amp -80 \end{array} \right]\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="linalg-engg-eg34-1-6">Now we find the matrix <span class="process-math">\(C\)</span> of the composition <span class="process-math">\(U=S\circ T\)</span> using RREF</div> <div class="para logical" id="linalg-engg-eg34-1-7"><div class="displaymath process-math" id="linalg-engg-eg34-1-7-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg34-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="linalg-engg-eg34-1-6">Now we find the matrix <span class="process-math">\(C\)</span> of the composition <span class="process-math">\(U=S\circ T\)</span> using RREF<div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg34-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="linalg-engg-eg34-1-7">
+<div class="displaymath process-math" id="linalg-engg-eg34-1-7-1">
 \begin{align*}
 \begin{bmatrix}u_1\amp  u_2 \amp  u_3 \amp  u_4 \amp  U(u_1) \amp  U(u_2) \amp  U(u_3)\amp  U(u_4) \end{bmatrix}  =\amp \\
 \begin{bmatrix} 1 \amp  0 \amp  -1 \amp  2 \amp  9 \amp  0 \amp  -4 \amp  17 \\ 
@@ -686,24 +649,30 @@ BA= \left[\begin{array}{rrrr} 99 \amp -3 \amp -31 \amp 186 \\
 0 \amp  0 \amp  1 \amp  0 \amp  4 \amp  -1 \amp  -1 \amp  9 \\ 
 0 \amp  0 \amp  0 \amp  1 \amp  -43 \amp  1 \amp  13 \amp  -80 \end{bmatrix}\amp 
 \end{align*}
-</div></div> <div class="para" id="linalg-engg-eg34-1-8">This <span class="process-math">\(C= \left[\begin{array}{rrrr} 99 \amp -3 \amp -31 \amp 186 \\ -30 \amp 0 \amp 8 \amp -54 \\ 4 \amp -1 \amp -1 \amp 9 \\ -43 \amp 1 \amp 13 \amp -80 \end{array} \right]\text{.}\)</span>
-</div> <div class="para" id="linalg-engg-eg34-1-9">Hence we have <span class="process-math">\(C=BA\text{.}\)</span>
-</div></article></section><section class="subsection" id="sec3-2-LT-basis-change"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="space"> </span><span class="title">Matrix of Change of basis</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg34-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="linalg-engg-eg34-1-8">This <span class="process-math">\(C= \left[\begin{array}{rrrr} 99 \amp -3 \amp -31 \amp 186 \\ -30 \amp 0 \amp 8 \amp -54 \\ 4 \amp -1 \amp -1 \amp 9 \\ -43 \amp 1 \amp 13 \amp -80 \end{array} \right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg34-1-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="linalg-engg-eg34-1-9">Hence we have <span class="process-math">\(C=BA\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg34-1-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.2.7"><a href="#linalg-engg-eg34" title="Copy heading and permalink for Example 3.2.7" aria-label="Copy heading and permalink for Example 3.2.7">🔗</a></div></article><div class="autopermalink" data-description="Subsection 3.2.2: Composition of linear transformations"><a href="#sec3-2-LT-composition" title="Copy heading and permalink for Subsection 3.2.2: Composition of linear transformations" aria-label="Copy heading and permalink for Subsection 3.2.2: Composition of linear transformations">🔗</a></div></section><section class="subsection" id="sec3-2-LT-basis-change"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix of Change of basis</span>
 </h3>
-<div class="para" id="sec3-2-LT-basis-change-2">Let <span class="process-math">\(\beta=\{u_1,u_2\ldots,u_n\}\)</span> and <span class="process-math">\(\gamma=\{v_1,v_2\ldots,v_n\}\)</span> be two bases of <span class="process-math">\(\R^n\text{.}\)</span> Recall, the the definition of the matrix of change of bases <span class="process-math">\([I]_\beta^\gamma\text{.}\)</span> We obtained <span class="process-math">\([I]_\beta^\gamma\)</span> by applying RREF to the matrix <span class="process-math">\([B~|A]\)</span> and extracting the last <span class="process-math">\(n\)</span> columns. This is nothing but the matrix of the identity linear map <span class="process-math">\(I\colon \R^n\to \R^n\)</span> with respect to a basis <span class="process-math">\(\beta\)</span> of the domain and <span class="process-math">\(\gamma\)</span> of the codomain.</div>
-<div class="para" id="sec3-2-LT-basis-change-3">Now let us consider what happens to the matrix of a linear transformation <span class="process-math">\(T\colon \R^n\to \R^m\)</span> when we change the basis on domain and codoamin. Let <span class="process-math">\(\beta=\{u_1,u_2\ldots,u_n\}\)</span> and <span class="process-math">\(\gamma=\{v_1,v_2\ldots,v_m\}\)</span> be bases of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\)</span> respectively. Let <span class="process-math">\(A =[T]_\beta^\gamma\)</span> be the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta\)</span> and <span class="process-math">\(\gamma\text{.}\)</span> Let <span class="process-math">\(\beta'=\{u_1',u_2'\ldots,u_n'\}\)</span> and <span class="process-math">\(\gamma'=\{v_1',v_2'\ldots,v_m'\}\)</span> be another bases of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\)</span> respectively. Let <span class="process-math">\(B =[T]_{\beta'}^{\gamma'}\)</span> be the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta'\)</span> and <span class="process-math">\(\gamma'\text{.}\)</span> How are <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> related? The relation is given by the following commutative diagram.</div>
+<div class="para" id="sec3-2-LT-basis-change-2">Let <span class="process-math">\(\beta=\{u_1,u_2\ldots,u_n\}\)</span> and <span class="process-math">\(\gamma=\{v_1,v_2\ldots,v_n\}\)</span> be two bases of <span class="process-math">\(\R^n\text{.}\)</span> Recall, the the definition of the matrix of change of bases <span class="process-math">\([I]_\beta^\gamma\text{.}\)</span> We obtained <span class="process-math">\([I]_\beta^\gamma\)</span> by applying RREF to the matrix <span class="process-math">\([B~|A]\)</span> and extracting the last <span class="process-math">\(n\)</span> columns. This is nothing but the matrix of the identity linear map <span class="process-math">\(I\colon \R^n\to \R^n\)</span> with respect to a basis <span class="process-math">\(\beta\)</span> of the domain and <span class="process-math">\(\gamma\)</span> of the codomain.<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-basis-change-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec3-2-LT-basis-change-3">Now let us consider what happens to the matrix of a linear transformation <span class="process-math">\(T\colon \R^n\to \R^m\)</span> when we change the basis on domain and codoamin. Let <span class="process-math">\(\beta=\{u_1,u_2\ldots,u_n\}\)</span> and <span class="process-math">\(\gamma=\{v_1,v_2\ldots,v_m\}\)</span> be bases of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\)</span> respectively. Let <span class="process-math">\(A =[T]_\beta^\gamma\)</span> be the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta\)</span> and <span class="process-math">\(\gamma\text{.}\)</span> Let <span class="process-math">\(\beta'=\{u_1',u_2'\ldots,u_n'\}\)</span> and <span class="process-math">\(\gamma'=\{v_1',v_2'\ldots,v_m'\}\)</span> be another bases of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\)</span> respectively. Let <span class="process-math">\(B =[T]_{\beta'}^{\gamma'}\)</span> be the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta'\)</span> and <span class="process-math">\(\gamma'\text{.}\)</span> How are <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> related? The relation is given by the following commutative diagram.<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-basis-change-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <figure class="figure figure-like" id="commutative-diagram"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/images/commutative_diagram.PNG" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.8<span class="period">.</span></span><span class="space"> </span>Commutative Diagram</figcaption></figure><div class="para logical" id="sec3-2-LT-basis-change-5">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Commutative Diagram<div class="autopermalink" data-description="Figure 3.2.8"><a href="#commutative-diagram" title="Copy heading and permalink for Figure 3.2.8" aria-label="Copy heading and permalink for Figure 3.2.8">🔗</a></div></figcaption></figure><div class="para logical" id="sec3-2-LT-basis-change-5">
 <div class="para">From the above commutative diagram, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \tau A = B\rho \implies B = \tau A \rho^{-1} \text{ or }  A = \tau^{-1}B\rho\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-basis-change-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="linalg-engg-eg35"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.9</span><span class="period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="linalg-engg-eg35-1-1">
 <div class="para">Consider a linear map <span class="process-math">\(T\colon \R^4\to \R^3\)</span> defined in the <a href="sec3-2-LT.html#linalg-engg-eg34" class="xref" data-knowl="./knowl/xref/linalg-engg-eg34.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.2.7">Example 3.2.7</a>. Consider a basis<span class="process-math">\(\beta=\{u_1,u_2,u_3,u_4\}\)</span> where</div>
@@ -734,31 +703,37 @@ u_3'=\left(1,-1,1,1\right), u_4'=\left(-1,1,1,1\right)
 </div>
 <div class="para">be another basis of <span class="process-math">\(\R^3\text{.}\)</span> Then the matrix <span class="process-math">\(B=[T]_{\beta'}^{\gamma'}=\left[\begin{array}{rrrr} 6 \amp  -2 \amp  0 \amp  0 \\ 2 \amp  0 \amp  2 \amp  0 \\ -1 \amp  1 \amp  1 \amp  1 \end{array} \right]\text{.}\)</span>
 </div>
-</div> <div class="para" id="linalg-engg-eg35-1-2">The matrix of change of basis <span class="process-math">\(\rho=[I]_\beta^\{\beta'\}=\left(\begin{array}{rrrr} \frac{1}{4} \amp 0 \amp \frac{1}{4} \amp \frac{1}{4} \\ -\frac{5}{4} \amp \frac{1}{2} \amp \frac{1}{4} \amp -\frac{13}{4} \\ \frac{5}{4} \amp 0 \amp -\frac{5}{4} \amp \frac{11}{4} \\ -\frac{3}{4} \amp \frac{1}{2} \amp \frac{1}{4} \amp -\frac{9}{4} \end{array} \right)\text{.}\)</span>
-</div> <div class="para" id="linalg-engg-eg35-1-3">The matrix of change of basis <span class="process-math">\(\tau=[I]_\gamma^{\gamma'}=\left(\begin{array}{rrr} \frac{3}{2} \amp \frac{1}{2} \amp -1 \\ -\frac{1}{2} \amp \frac{5}{2} \amp 2 \\ -\frac{1}{2} \amp \frac{1}{2} \amp 0 \end{array} \right)\text{.}\)</span>
-</div> <div class="para" id="linalg-engg-eg35-1-4">It is easy to check that <span class="process-math">\(B\rho = \tau A\text{.}\)</span>
-</div></article><div class="para" id="sec3-2-LT-basis-change-7">Let <span class="process-math">\(T\colon \R^n\to \R^n\)</span> be a linear transformation. Let <span class="process-math">\(\beta=\{v_1,\ldots,
+<div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg35-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="linalg-engg-eg35-1-2">The matrix of change of basis <span class="process-math">\(\rho=[I]_\beta^\{\beta'\}=\left(\begin{array}{rrrr} \frac{1}{4} \amp 0 \amp \frac{1}{4} \amp \frac{1}{4} \\ -\frac{5}{4} \amp \frac{1}{2} \amp \frac{1}{4} \amp -\frac{13}{4} \\ \frac{5}{4} \amp 0 \amp -\frac{5}{4} \amp \frac{11}{4} \\ -\frac{3}{4} \amp \frac{1}{2} \amp \frac{1}{4} \amp -\frac{9}{4} \end{array} \right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg35-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="linalg-engg-eg35-1-3">The matrix of change of basis <span class="process-math">\(\tau=[I]_\gamma^{\gamma'}=\left(\begin{array}{rrr} \frac{3}{2} \amp \frac{1}{2} \amp -1 \\ -\frac{1}{2} \amp \frac{5}{2} \amp 2 \\ -\frac{1}{2} \amp \frac{1}{2} \amp 0 \end{array} \right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg35-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="linalg-engg-eg35-1-4">It is easy to check that <span class="process-math">\(B\rho = \tau A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg35-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.2.9"><a href="#linalg-engg-eg35" title="Copy heading and permalink for Example 3.2.9" aria-label="Copy heading and permalink for Example 3.2.9">🔗</a></div></article><div class="para" id="sec3-2-LT-basis-change-7">Let <span class="process-math">\(T\colon \R^n\to \R^n\)</span> be a linear transformation. Let <span class="process-math">\(\beta=\{v_1,\ldots,
 v_n\}\)</span> be a basis of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(A=[T]_\beta\text{,}\)</span> the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta\text{.}\)</span> Let <span class="process-math">\(\gamma=\{u_1,\ldots,
-u_n\}\)</span> be another basis of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(B=[T]_\gamma\text{,}\)</span> the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\gamma\text{.}\)</span> Let <span class="process-math">\(\rho=[I]_\beta^{\gamma}\)</span> be matrix of change of basis from <span class="process-math">\(\beta\)</span> to <span class="process-math">\(\gamma\text{.}\)</span> Then we have <span class="process-math">\(B = \rho^{-1}A\rho\text{.}\)</span> In this case, <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are said to be similar matrices.</div>
+u_n\}\)</span> be another basis of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(B=[T]_\gamma\text{,}\)</span> the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\gamma\text{.}\)</span> Let <span class="process-math">\(\rho=[I]_\beta^{\gamma}\)</span> be matrix of change of basis from <span class="process-math">\(\beta\)</span> to <span class="process-math">\(\gamma\text{.}\)</span> Then we have <span class="process-math">\(B = \rho^{-1}A\rho\text{.}\)</span> In this case, <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are said to be similar matrices.<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-basis-change-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <article class="definition definition-like" id="def-matrix-similarity"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.10</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="def-matrix-similarity-1-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two real <span class="process-math">\(n\times n\)</span> matrices. Then <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are called similar if there exists a non singular matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(B=P^{-1}AP\text{.}\)</span>
-</div></article><article class="remark remark-like" id="rem-defining-LT"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.2.11</span><span class="period">.</span>
+<div class="para" id="def-matrix-similarity-1-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two real <span class="process-math">\(n\times n\)</span> matrices. Then <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are called similar if there exists a non singular matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(B=P^{-1}AP\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-matrix-similarity-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 3.2.10"><a href="#def-matrix-similarity" title="Copy heading and permalink for Definition 3.2.10" aria-label="Copy heading and permalink for Definition 3.2.10">🔗</a></div></article><article class="remark remark-like" id="rem-defining-LT"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="rem-defining-LT-1">A linear transformation <span class="process-math">\(T\colon \R^n\to \R^m\)</span> is completely determined once it is defined on a basis. In other words, Let <span class="process-math">\(\beta=\{v_1,\ldots,
-v_n\}\)</span> be a basis of <span class="process-math">\(\R^n\text{.}\)</span> Let <span class="process-math">\(w_1,\ldots, w_n\)</span> be <span class="process-math">\(n\)</span> vectors in <span class="process-math">\(\R^m\text{.}\)</span> Then there exists a unique linear transformation <span class="process-math">\(T\colon \R^n\to \R^m\)</span> such that <span class="process-math">\(T(v_i)=w_i\)</span> for <span class="process-math">\(i=1,\ldots, n\text{.}\)</span>
-</div></article><div class="para" id="sec3-2-LT-basis-change-10">How is <span class="process-math">\(T\)</span> defined, if <span class="process-math">\(T(v_i)=w_i\text{?}\)</span> For <span class="process-math">\(v\in V\text{,}\)</span> there exist scalars, <span class="process-math">\(\alpha_1,\ldots, \alpha_n\)</span> such that <span class="process-math">\(v=\sum \alpha_iv_i\text{.}\)</span> Then <span class="process-math">\(T(v)=\sum \alpha T(v_1)=\sum\alpha w_i\text{.}\)</span>
+v_n\}\)</span> be a basis of <span class="process-math">\(\R^n\text{.}\)</span> Let <span class="process-math">\(w_1,\ldots, w_n\)</span> be <span class="process-math">\(n\)</span> vectors in <span class="process-math">\(\R^m\text{.}\)</span> Then there exists a unique linear transformation <span class="process-math">\(T\colon \R^n\to \R^m\)</span> such that <span class="process-math">\(T(v_i)=w_i\)</span> for <span class="process-math">\(i=1,\ldots, n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rem-defining-LT-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 3.2.11"><a href="#rem-defining-LT" title="Copy heading and permalink for Remark 3.2.11" aria-label="Copy heading and permalink for Remark 3.2.11">🔗</a></div></article><div class="para" id="sec3-2-LT-basis-change-10">How is <span class="process-math">\(T\)</span> defined, if <span class="process-math">\(T(v_i)=w_i\text{?}\)</span> For <span class="process-math">\(v\in V\text{,}\)</span> there exist scalars, <span class="process-math">\(\alpha_1,\ldots, \alpha_n\)</span> such that <span class="process-math">\(v=\sum \alpha_iv_i\text{.}\)</span> Then <span class="process-math">\(T(v)=\sum \alpha T(v_1)=\sum\alpha w_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-basis-change-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <section class="reading-questions" id="rqs-uniqueness-of-LT"><h4 class="heading hide-type">
-<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Reading Questions</span>
+<span class="type">Reading Questions</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reading Questions</span>
 </h4>
-<div class="para" id="rqs-uniqueness-of-LT-1">Prove the uniqueness of the linear tranformation in the <a href="sec3-2-LT.html#rem-defining-LT" class="xref" data-knowl="./knowl/xref/rem-defining-LT.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 3.2.11">Remark 3.2.11</a>
-</div></section><article class="example example-like" id="linalg-engg-eg40"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.12</span><span class="period">.</span>
+<div class="para" id="rqs-uniqueness-of-LT-1">Prove the uniqueness of the linear tranformation in the <a href="sec3-2-LT.html#rem-defining-LT" class="xref" data-knowl="./knowl/xref/rem-defining-LT.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 3.2.11">Remark 3.2.11</a><div class="autopermalink" data-description="Paragraph"><a href="#rqs-uniqueness-of-LT-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Questions 3.2.3"><a href="#rqs-uniqueness-of-LT" title="Copy heading and permalink for Reading Questions 3.2.3" aria-label="Copy heading and permalink for Reading Questions 3.2.3">🔗</a></div></section><article class="example example-like" id="linalg-engg-eg40"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="linalg-engg-eg40-1-1">Fix a basis <span class="process-math">\(\beta =\{ (1,1,-1),(1,-1,1),(-1,1,1)\}\)</span> of <span class="process-math">\(\R^3\text{.}\)</span> Define a linear map <span class="process-math">\(T\colon \R^3\to \R^3\)</span> such that <span class="process-math">\(T(1,1,-1)=(1,1,0), T(1,-1,1)=(1,0,1), T(-1,1,1)=(0,1,1)\text{.}\)</span> Find <span class="process-math">\(T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)\text{.}\)</span>
+<div class="para" id="linalg-engg-eg40-1-1">Fix a basis <span class="process-math">\(\beta =\{ (1,1,-1),(1,-1,1),(-1,1,1)\}\)</span> of <span class="process-math">\(\R^3\text{.}\)</span> Define a linear map <span class="process-math">\(T\colon \R^3\to \R^3\)</span> such that <span class="process-math">\(T(1,1,-1)=(1,1,0), T(1,-1,1)=(1,0,1), T(-1,1,1)=(0,1,1)\text{.}\)</span> Find <span class="process-math">\(T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg40-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="linalg-engg-eg40-1-2">
 <div class="para">We have</div>
 <div class="displaymath process-math">
@@ -766,6 +741,7 @@ v_n\}\)</span> be a basis of <span class="process-math">\(\R^n\text{.}\)</span> 
 T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)=T(x_1e_1+x_2e_2+x_3e_3)=x_1T(e_1)+x_2T(e_2)+x_3T(e_3)\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg40-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="linalg-engg-eg40-1-3">
 <div class="para">Thus in order to find <span class="process-math">\(T\)</span> we need to know how is <span class="process-math">\(T\)</span> defined on the standard basis vector. First we need to find the coordinates of <span class="process-math">\(e_1,e_2,e_2\)</span> with respect to the basis <span class="process-math">\(\beta\)</span> using RREF.</div>
 <div class="displaymath process-math" id="linalg-engg-eg40-1-3-5">
@@ -780,6 +756,7 @@ T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)=T(x_1e_1+x_2e_2+x_3e
 0 \amp  0 \amp  1 \amp  0 \amp  \frac{1}{2} \amp  \frac{1}{2} \end{array} \right]\text{.}
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg40-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="linalg-engg-eg40-1-4">
 <div class="para">We have</div>
 <div class="displaymath process-math">
@@ -798,14 +775,16 @@ T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right) =\amp x_1T(e_1)+x_2T
 \frac{1}{2}  x_{1} + \frac{1}{2}  x_{2} + x_{3} \end{bmatrix} \text{.}
 \end{align*}
 </div>
-</div> <div class="para" id="linalg-engg-eg40-1-5">It is easy to check that <span class="process-math">\(T(v_i)=w_i\text{.}\)</span>
-</div></article></section></section></div>
-<div class="ptx-content-footer">
+<div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg40-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="linalg-engg-eg40-1-5">It is easy to check that <span class="process-math">\(T(v_i)=w_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg40-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.2.12"><a href="#linalg-engg-eg40" title="Copy heading and permalink for Example 3.2.12" aria-label="Copy heading and permalink for Example 3.2.12">🔗</a></div></article><div class="autopermalink" data-description="Subsection 3.2.3: Matrix of Change of basis"><a href="#sec3-2-LT-basis-change" title="Copy heading and permalink for Subsection 3.2.3: Matrix of Change of basis" aria-label="Copy heading and permalink for Subsection 3.2.3: Matrix of Change of basis">🔗</a></div></section><div class="autopermalink" data-description="Section 3.2: Linear maps from \R^n to \R^m"><a href="#sec3-2-LT" title="Copy heading and permalink for Section 3.2: Linear maps from \R^n to \R^m" aria-label="Copy heading and permalink for Section 3.2: Linear maps from \R^n to \R^m">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec3-1-LT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec3-3-LT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

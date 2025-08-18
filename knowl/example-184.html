@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:32+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.24</span><span class="period">.</span>
+</h3>
+<p>Let <span class="process-math">\(A=\left(\begin{array}{rrr}2 \amp -1 \amp 0 \\-1 \amp 2 \amp -1 \\0 \amp -1 \amp 2 \end{array} \right)\text{.}\)</span> It is easy to check that <span class="process-math">\(A\)</span> is a symmetric and positive definite matrix. (why?) Define an inner product on <span class="process-math">\(\mathbb{R}^3\)</span> as <span class="process-math">\(\inner{u}{v}:=v^TAu\text{.}\)</span></p>
+<p>Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors <span class="process-math">\(\beta=\{e_1, e_2, e_3\}\)</span> with respect to the above inner product.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+u_1:  =\amp (1,0,0)\\
+u_2: =\amp  e_2-\frac{\inner{u_2\cdot e_2}{u_1}}{\norm{u_1}^2}u_1=(0,1,0)-\frac{-1}{2}(1,0,0)=(1/2,1,0)\\
+u_3: =\amp  e_3 -\frac{\inner{e_3}{u_1}}{\norm{u_1}^2}u_1-\frac{\inner{e_3}{u_1}}{\norm{u_2}^2}u_2\\
+= \amp  (0,0,1)-\frac{0}{2}(1,0,0)-\frac{-1}{3/2}(1/2,1,0)=(1/3, 2/3, 1)
+\end{align*}
+</div>
+<div class="solutions"><a href="" class="hint-knowl original" data-knowl="./knowl/hint-6-hidden.html" title="Hint 7.1.24.1"><span class="type">Hint</span><span class="period">.</span></a></div></article><span class="incontext"><a href="sec7-1-InnerProduct.html#example-184" class="internal">in-context</a></span>
+</body>
+</html>

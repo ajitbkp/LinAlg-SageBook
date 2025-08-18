@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:32+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.20</span><span class="period">.</span>
+</h4>
+<p>Let us consider a network with 5 webpages as shown in <a href="" class="xref" data-knowl="./knowl/Page_Rank_Fig1.html" title="Figure 5.4.21">Figure 5.4.21</a>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/images/Page_Rank_Fig1.PNG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.21<span class="period">.</span></span><span class="space"> </span>Network with 5 webpages</figcaption></figure><p>The hyper matrix of the network <a href="" class="xref" data-knowl="./knowl/Page_Rank_Fig1.html" title="Figure 5.4.21">Figure 5.4.21</a> is the following:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Page_Rank_Fig1.html">
+\begin{equation*}
+H=\begin{pmatrix}
+0 \amp 0 \amp \frac{1}{2} \amp \frac{1}{2} \amp 0\\[1mm]
+\frac{1}{3} \amp 0 \amp 0 \amp \frac{1}{2} \amp 0\\[1mm]
+\frac{1}{3} \amp 0 \amp 0 \amp 0 \amp 0\\[1mm]
+0 \amp \frac{1}{2} \amp 0 \amp 0 \amp 0\\[1mm]
+\frac{1}{3} \amp \frac{1}{2} \amp \frac{1}{2} \amp 0 \amp 0\\
+\end{pmatrix}.
+\end{equation*}
+</div>
+<p>Note that <span class="process-math">\(H\)</span> is a stochastic matrix and sum of each of its row is 1.</p>
+<p>If a surfer lands on a page after <span class="process-math">\(i\)</span> steps or clicks, then its probability is denoted by <span class="process-math">\(p_k(j)=p{ij}\text{.}\)</span></p>
+<p>The vector vector</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p_i=\begin{pmatrix}
+p_{i1}\\p_{i2}\\\vdots\\p_{in}\end{pmatrix}
+\end{equation*}
+</div>
+<p class="continuation">is called the <span class="process-math">\(i\)</span>-th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p_0=\begin{pmatrix}
+0\\0\\1\\0 \\0 \end{pmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page <span class="process-math">\(i\)</span> in long runs. The vector</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p_1=Hp_0=
+\left(\begin{array}{r}
+\frac{1}{2} \\
+0 \\
+0 \\
+0 \\
+\frac{1}{2}
+\end{array}\right)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability <span class="process-math">\(1/2\)</span> or at webpage 5 with probability <span class="process-math">\(1/2\text{.}\)</span></p>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p_2=H^2p_0=\left(\begin{array}{r}
+0 \\
+\frac{1}{6} \\
+\frac{1}{6} \\
+\frac{1}{2} \\
+\frac{1}{6}
+\end{array}\right), p_3=H^3p_0=
+\left(\begin{array}{r}
+\frac{1}{3} \\
+\frac{1}{4} \\
+0 \\
+\frac{1}{4} \\
+\frac{1}{6}
+\end{array}\right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p_{20}=\left(\begin{array}{r}
+0.19048 \\
+0.22222 \\
+0.063492 \\
+0.31746 \\
+0.20635
+\end{array}\right),
+p_{25}= \left(\begin{array}{r}
+0.19047 \\
+0.22222 \\
+0.063492 \\
+0.31746 \\
+0.20635
+\end{array}\right), \ldots,
+p_{50}=\left(\begin{array}{r}
+0.19047 \\
+0.22222 \\
+0.063492 \\
+0.31746 \\
+0.20635
+\end{array}\right)
+\end{equation*}
+</div>
+<p>Thus we see that the probability vector seems to converge to a vector</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\pi=\left(\begin{array}{r}
+0.19047 \\
+0.22222 \\
+0.063492 \\
+0.31746 \\
+0.20635
+\end{array}\right)
+\end{equation*}
+</div>
+<p class="continuation">which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, <span class="process-math">\([4, 2, 5, 1, 2]\text{.}\)</span></p>
+<p>One can show that the vector <span class="process-math">\(\pi\)</span> is independent of the initial vector <span class="process-math">\(p_0\)</span> for this particular network. This is called the <em class="emphasis">stationary distribution vector.</em> Thus the stationary distribution vector for any network is <span class="process-math">\(\displaystyle \lim_{n\to
+\infty} H^np_0\)</span> if it exists.</p></article><span class="incontext"><a href="sec5-3-eigen-Appl.html#eg-google_search1" class="internal">in-context</a></span>
+</body>
+</html>

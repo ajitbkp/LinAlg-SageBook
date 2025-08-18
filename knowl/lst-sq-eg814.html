@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:32+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.7</span><span class="period">.</span>
+</h4>
+<p>Find th best fit cubic <span class="process-math">\(y=a_0+a_1x+a_2x^2+a_3x^3\)</span> to the following set of points</p>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_i\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">-3.0</td>
+<td class="l m b0 r0 l0 t0 lines">-2.8</td>
+<td class="l m b0 r0 l0 t0 lines">-2.5</td>
+<td class="l m b0 r0 l0 t0 lines">-2.2</td>
+<td class="l m b0 r0 l0 t0 lines">-2.0</td>
+<td class="l m b0 r0 l0 t0 lines">-1.8</td>
+<td class="l m b0 r0 l0 t0 lines">-1.5</td>
+<td class="l m b0 r0 l0 t0 lines">-1.2</td>
+<td class="l m b0 r0 l0 t0 lines">-1.0</td>
+<td class="l m b0 r0 l0 t0 lines">-0.75</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(y_i\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">1.1</td>
+<td class="l m b0 r0 l0 t0 lines">4.0</td>
+<td class="l m b0 r0 l0 t0 lines">7.3</td>
+<td class="l m b0 r0 l0 t0 lines">7.1</td>
+<td class="l m b0 r0 l0 t0 lines">8.2</td>
+<td class="l m b0 r0 l0 t0 lines">7.8</td>
+<td class="l m b0 r0 l0 t0 lines">9.9</td>
+<td class="l m b0 r0 l0 t0 lines">7.1</td>
+<td class="l m b0 r0 l0 t0 lines">8.8</td>
+<td class="l m b0 r0 l0 t0 lines">6.2</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_i\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">-0.50</td>
+<td class="l m b0 r0 l0 t0 lines">-0.25</td>
+<td class="l m b0 r0 l0 t0 lines">0.00</td>
+<td class="l m b0 r0 l0 t0 lines">0.25</td>
+<td class="l m b0 r0 l0 t0 lines">0.50</td>
+<td class="l m b0 r0 l0 t0 lines">0.75</td>
+<td class="l m b0 r0 l0 t0 lines">1.0</td>
+<td class="l m b0 r0 l0 t0 lines">1.2</td>
+<td class="l m b0 r0 l0 t0 lines">1.5</td>
+<td class="l m b0 r0 l0 t0 lines">1.8</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(y_i\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">7.0</td>
+<td class="l m b0 r0 l0 t0 lines">3.7</td>
+<td class="l m b0 r0 l0 t0 lines">4.7</td>
+<td class="l m b0 r0 l0 t0 lines">3.4</td>
+<td class="l m b0 r0 l0 t0 lines">5.6</td>
+<td class="l m b0 r0 l0 t0 lines">5.8</td>
+<td class="l m b0 r0 l0 t0 lines">5.3</td>
+<td class="l m b0 r0 l0 t0 lines">6.6</td>
+<td class="l m b0 r0 l0 t0 lines">10.</td>
+<td class="l m b0 r0 l0 t0 lines">12.</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+<p>Thus we need to find the least square solution of <span class="process-math">\(Ax=b\text{,}\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = \left(\begin{array}{rrrr} 1.00 \amp  -3.00 \amp  9.00 \amp  -27.00\\ 1.0 \amp  -2.80 \amp  7.84\amp  -21.952\\ 1.00 \amp  -2.500\amp  6.250 \amp  -15.625\\ \vdots \amp  \vdots\amp  \vdots \amp  \vdots \\ 1.00 \amp  1.80\amp  3.240 \amp  5.832 \end{array} \right),  b = \left(\begin{array}{r} 1.1\\ 4.0 \\ 7.3\\ \vdots\\ 12.0 \end{array} \right)
+\end{equation*}
+</div>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^TA = \left(\begin{array}{rrrr} 20.0 \amp  -12.5\amp  49.54 \amp  -83.225\\ -12.5\amp  49.54\amp  -83.225 \amp  258.986725 \\ 49.54 \amp  -83.225\amp  258.986725 \amp  -596.29625 \\ -83.225 \amp  258.986725\amp  -596.29625 \amp  1731.57619431250 \end{array} \right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^Tb = \left(\begin{array}{r} 131.6 \\ -62.235 \\ 307.14775 \\ -352.6518375 \end{array} \right)
+\end{equation*}
+</div>
+<p>Hence the least square solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x^* = (A^TA)^{-1}A^Tb=\begin{bmatrix}a_0 \\a_1\\a_2\\a_3 \end{bmatrix}  = \begin{bmatrix}4.82641673699866 \\ -1.84149774223300 \\ 1.78790889783526 \\ 0.919436026634361 \end{bmatrix}
+\end{equation*}
+</div>
+<p>See the <a href="" class="xref" data-knowl="./knowl/fig_cubic_plot1.html" title="Figure 8.1.8">Figure 8.1.8</a> for fitted curve along with the data.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/images/cubic_plot1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure><pre class="ptx-sagecell sagecell-sage" id="sage-286"><script type="text/x-sage">xx = [-3.0 , -2.8 , -2.5 , -2.2 , -2.0 , -1.8 , -1.5 , -1.2 , -1.0 , -0.75 , -0.50 ,
+      -0.25 , 0.00 , 0.25 , 0.50 , 0.75 , 1.0 , 1.2 , 1.5 , 1.8]
+yy = [1.1 , 4.0 , 7.3 , 7.1 , 8.2 , 7.8 , 9.9 , 7.1 , 8.8 , 6.2 , 7.0 , 3.7 , 4.7 , 
+      3.4 , 5.6 , 5.8 , 5.3 , 6.6 , 10. , 12]
+n = len(xx)
+point([(xx[i],yy[i]) for i in range(n)])
+ones = [1]*n
+xx2 = [xx[i]^2 for i in range(n)]
+xx3 =[xx[i]^3 for i in range(n)]
+b = column_matrix(yy)
+A = column_matrix([ones, xx, xx2,xx3])
+s= (A.T*A).inverse()*A.T*b
+print('The least square solution is')
+print(s)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-287"><script type="text/x-sage">pts = point([(xx[i],yy[i]) for i in range(20)],figsize=5)
+cubic = plot(s[0][0]+s[1][0]*t+s[2][0]*t^2+s[3][0]*t^3,(t,-3.2,2),color="red",figsize=5)
+pts+cubic
+</script></pre>
+<p>Using the inbuilt sage function <code class="code-inline tex2jax_ignore">find_fit</code>, we have</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-288"><script type="text/x-sage">## Using Sage inbult function
+var('t,a0,a1,a2,a3')
+model(t) = a0+a1*t+a2*t^2+a3*t^3
+data1 = [(xx[i],yy[i]) for i in range(n)]
+fit = find_fit(data1,model, solution_dict = True)
+print(fit)
+</script></pre></article><span class="incontext"><a href="sec8-1-LSTSQ.html#lst-sq-eg814" class="internal">in-context</a></span>
+</body>
+</html>

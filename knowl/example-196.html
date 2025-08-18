@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:33+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.1.9</span><span class="period">.</span>
+</h4>
+<p>Consider the following 2 dimensional data.</p>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b2 r3 l3 t3 lines"><span class="process-math">\(x_1\)</span></td>
+<td class="l m b2 r3 l0 t3 lines">2.5</td>
+<td class="l m b2 r3 l0 t3 lines">0.5</td>
+<td class="l m b2 r3 l0 t3 lines">2.2</td>
+<td class="l m b2 r3 l0 t3 lines">1.9</td>
+<td class="l m b2 r3 l0 t3 lines">3.0</td>
+<td class="l m b2 r3 l0 t3 lines">2.3</td>
+<td class="l m b2 r3 l0 t3 lines">2.0</td>
+<td class="l m b2 r3 l0 t3 lines">1.0</td>
+<td class="l m b2 r3 l0 t3 lines">1.5</td>
+<td class="l m b2 r2 l0 t3 lines">1.1</td>
+</tr>
+<tr>
+<td class="l m b2 r3 l3 t0 lines"><span class="process-math">\(x_2\)</span></td>
+<td class="l m b2 r3 l0 t0 lines">2.0</td>
+<td class="l m b2 r3 l0 t0 lines">0.7</td>
+<td class="l m b2 r3 l0 t0 lines">2.9</td>
+<td class="l m b2 r3 l0 t0 lines">2.2</td>
+<td class="l m b2 r3 l0 t0 lines">2.8</td>
+<td class="l m b2 r3 l0 t0 lines">2.7</td>
+<td class="l m b2 r3 l0 t0 lines">1.6</td>
+<td class="l m b2 r3 l0 t0 lines">1.1</td>
+<td class="l m b2 r3 l0 t0 lines">1.6</td>
+<td class="l m b2 r2 l0 t0 lines">0.9</td>
+</tr>
+</table></div>
+<p>Find the first and the second principal components of this data set. Explain what percentage of variance os explained by the 1st principal component.</p>
+<p>The <span class="process-math">\(\overline{x_1} =1.8\)</span> and <span class="process-math">\(\overline{x_2}=1.85\text{.}\)</span> The centered data set is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+X_c = X - \begin{bmatrix}\overline{x_1}\\\overline{x_2} \end{bmatrix} =\left(\begin{array}{rr} 0.7 \amp  0.15 \\ -1.3 \amp  -1.15\\ 0.4 \amp  1.05\\ 0.1 \amp  0.35 \\ 1.2 \amp  0.95 \\ 0.5\amp  0.85 \\ 0.2 \amp  -0.25\\ -0.8 \amp  -0.75 \\ -0.3 \amp  -0.25 \\ -0.7 \amp  -0.95 \end{array} \right)
+\end{equation*}
+</div>
+<p>Next we construct the covariance matrix of <span class="process-math">\(X\text{,}\)</span> which is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S = \frac{1}{10-1}X_c^TX_c=\left(\begin{array}{rr} 0.589 \amp  0.546 \\ 0.546 \amp  0.643 \end{array} \right)
+\end{equation*}
+</div>
+<p>The eigenvalues of <span class="process-math">\(S\)</span> are eigenvalues <span class="process-math">\(\lambda_1 =1.1620\)</span> and <span class="process-math">\(\lambda_2=0.0696\text{.}\)</span> The corresponding eigenvectors are <span class="process-math">\(u_1 = \begin{pmatrix}0.6894\\0.7243 \end{pmatrix}\)</span> and <span class="process-math">\(u_2 = \begin{pmatrix}0.7243\\-0.689 \end{pmatrix}\text{.}\)</span></p>
+<p>Hence the loading matrix <span class="process-math">\(V\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+V = \left(\begin{array}{rr} 0.6894 \amp  0.7243 \\ 0.7243 \amp  -0.6894 \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The projected data on the 1st two principal components is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+Z = X_cV = \left(\begin{array}{rr} 0.591 \amp  0.404 \\ -1.73 \amp  -0.149 \\ 1.04 \amp  -0.434 \\ 0.322 \amp  -0.169 \\ 1.52 \amp  0.214 \\ 0.960 \amp  -0.224 \\ -0.0432 \amp  0.317 \\ -1.09 \amp  -0.0624 \\ -0.388 \amp  -0.0449 \\ -1.17 \amp  0.148 \end{array} \right)
+\end{equation*}
+</div>
+<p>We can recover the original data set by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+ZV^T+\left(\begin{array}{rr} 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \\ 1.80 \amp  1.85 \end{array} \right)=X
+\end{equation*}
+</div>
+<p>The variance explained by the 1st principal component is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{\lambda_1}{\lambda_1+\lambda_2}\approx 0.9435
+\end{equation*}
+</div>
+<p>Thus approximately 94.35% variance is captured by the 1st principal component.</p></article><span class="incontext"><a href="sec10-1-PCA.html#example-196" class="internal">in-context</a></span>
+</body>
+</html>

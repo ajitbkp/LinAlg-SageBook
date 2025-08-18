@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p><pre class="ptx-sagecell sagecell-sage" id="sage-94"><script type="text/x-sage">A =matrix([[-351, -1053 , -1053 , 160 , 382 , 1657 ], 
+[-32 , -96 , -96 , 15 , 35 , 152 ],
+[-36 , -108 , -108 , 16 , 39 , 169 ],
+[11 , 33 , 33 , -5 , -12 , -52 ],
+[-11 , -33 , -33 , 5 , 12 , 52]])
+rowA = A.row_space()
+colA = A.column_space()
+nullA = A.right_kernel()
+leftnullA = A.left_kernel()
+</script></pre> <pre class="ptx-sagecell sagecell-sage" id="sage-95"><script type="text/x-sage">u = rowA.random_element()
+v = nullA.random_element()
+u.dot_product(v)
+</script></pre> <pre class="ptx-sagecell sagecell-sage" id="sage-96"><script type="text/x-sage">u = colA.random_element()
+v = leftnullA.random_element()
+u.dot_product(v)
+</script></pre></p>
+<span class="incontext"><a href="sec2-4-Sage.html#p-387" class="internal">in-context</a></span>
+</body>
+</html>

@@ -6,15 +6,20 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Singular Value Decomposition</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Linear Algebra with SageMath">
-<meta property="book:author" content="Ajit Kumar">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -86,7 +91,44 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
   "inputLocation": "div.sagecell-sage",
@@ -98,137 +140,14 @@ sagecell.makeSagecell({
   ],
   "evalButtonText": "Evaluate (Sage)"
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
-<style>
-#subsec-elmentary-row-operations-3-1 { counter-set: subsec-elmentary-row-operations-3-1 0; }
-#subsec-elmentary-row-operations-3-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-3-1,decimal)"."; }
-#subsec-elmentary-row-operations-3-1 > li { counter-increment: subsec-elmentary-row-operations-3-1; }
-#def-elementary-row-operations-2-2-1 { counter-set: def-elementary-row-operations-2-2-1 0; }
-#def-elementary-row-operations-2-2-1 > li::marker { content: ""counter(def-elementary-row-operations-2-2-1,decimal)"."; }
-#def-elementary-row-operations-2-2-1 > li { counter-increment: def-elementary-row-operations-2-2-1; }
-#subsec-elmentary-row-operations-8-2-1 { counter-set: subsec-elmentary-row-operations-8-2-1 0; }
-#subsec-elmentary-row-operations-8-2-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-8-2-1,decimal)"."; }
-#subsec-elmentary-row-operations-8-2-1 > li { counter-increment: subsec-elmentary-row-operations-8-2-1; }
-#subsec-elmentary-row-operations-16-1-1-1 { counter-set: subsec-elmentary-row-operations-16-1-1-1 0; }
-#subsec-elmentary-row-operations-16-1-1-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-16-1-1-1,decimal)"."; }
-#subsec-elmentary-row-operations-16-1-1-1 > li { counter-increment: subsec-elmentary-row-operations-16-1-1-1; }
-#def-echelon-form-1-2-1 { counter-set: def-echelon-form-1-2-1 0; }
-#def-echelon-form-1-2-1 > li::marker { content: ""counter(def-echelon-form-1-2-1,decimal)"."; }
-#def-echelon-form-1-2-1 > li { counter-increment: def-echelon-form-1-2-1; }
-#sec-row-echelon-7 { counter-set: sec-row-echelon-7 0; }
-#sec-row-echelon-7 > li::marker { content: ""counter(sec-row-echelon-7,decimal)"."; }
-#sec-row-echelon-7 > li { counter-increment: sec-row-echelon-7; }
-#alg-gaussian-elimination-2-1-1 { counter-set: alg-gaussian-elimination-2-1-1 0; }
-#alg-gaussian-elimination-2-1-1 > li::marker { content: ""counter(alg-gaussian-elimination-2-1-1,decimal)"."; }
-#alg-gaussian-elimination-2-1-1 > li { counter-increment: alg-gaussian-elimination-2-1-1; }
-#sec1-4-matrix-rank-5-2-1 { counter-set: sec1-4-matrix-rank-5-2-1 0; }
-#sec1-4-matrix-rank-5-2-1 > li::marker { content: ""counter(sec1-4-matrix-rank-5-2-1,decimal)"."; }
-#sec1-4-matrix-rank-5-2-1 > li { counter-increment: sec1-4-matrix-rank-5-2-1; }
-#thm-nosol-rank-2-2-1 { counter-set: thm-nosol-rank-2-2-1 0; }
-#thm-nosol-rank-2-2-1 > li::marker { content: ""counter(thm-nosol-rank-2-2-1,decimal)"."; }
-#thm-nosol-rank-2-2-1 > li { counter-increment: thm-nosol-rank-2-2-1; }
-#subsec-Doolittle-5-1 { counter-set: subsec-Doolittle-5-1 0; }
-#subsec-Doolittle-5-1 > li::marker { content: ""counter(subsec-Doolittle-5-1,decimal)"."; }
-#subsec-Doolittle-5-1 > li { counter-increment: subsec-Doolittle-5-1; }
-#subsec-Doolittle-8-1 { counter-set: subsec-Doolittle-8-1 0; }
-#subsec-Doolittle-8-1 > li::marker { content: ""counter(subsec-Doolittle-8-1,decimal)"."; }
-#subsec-Doolittle-8-1 > li { counter-increment: subsec-Doolittle-8-1; }
-#sec1-7-exer-2-1 { counter-set: sec1-7-exer-2-1 0; }
-#sec1-7-exer-2-1 > li::marker { content: ""counter(sec1-7-exer-2-1,decimal)"."; }
-#sec1-7-exer-2-1 > li { counter-increment: sec1-7-exer-2-1; }
-#sec1-7-exer-2-1-3-2-1 { counter-set: sec1-7-exer-2-1-3-2-1 0; }
-#sec1-7-exer-2-1-3-2-1 > li::marker { content: "("counter(sec1-7-exer-2-1-3-2-1,lower-alpha)")"; }
-#sec1-7-exer-2-1-3-2-1 > li { counter-increment: sec1-7-exer-2-1-3-2-1; }
-#sec2-0-intro-11-1-1-1 { counter-set: sec2-0-intro-11-1-1-1 0; }
-#sec2-0-intro-11-1-1-1 > li::marker { content: ""counter(sec2-0-intro-11-1-1-1,decimal)"."; }
-#sec2-0-intro-11-1-1-1 > li { counter-increment: sec2-0-intro-11-1-1-1; }
-#exer-2-1-100-2-1 { counter-set: exer-2-1-100-2-1 0; }
-#exer-2-1-100-2-1 > li::marker { content: ""counter(exer-2-1-100-2-1,decimal)"."; }
-#exer-2-1-100-2-1 > li { counter-increment: exer-2-1-100-2-1; }
-#sec2-1-matrix-spaces-3-1 { counter-set: sec2-1-matrix-spaces-3-1 0; }
-#sec2-1-matrix-spaces-3-1 > li::marker { content: ""counter(sec2-1-matrix-spaces-3-1,decimal)"."; }
-#sec2-1-matrix-spaces-3-1 > li { counter-increment: sec2-1-matrix-spaces-3-1; }
-#sec-2-2-remrak2-1-1-1 { counter-set: sec-2-2-remrak2-1-1-1 0; }
-#sec-2-2-remrak2-1-1-1 > li::marker { content: ""counter(sec-2-2-remrak2-1-1-1,decimal)"."; }
-#sec-2-2-remrak2-1-1-1 > li { counter-increment: sec-2-2-remrak2-1-1-1; }
-#sec-sec3-5-LT-Sage-2-3-1 { counter-set: sec-sec3-5-LT-Sage-2-3-1 0; }
-#sec-sec3-5-LT-Sage-2-3-1 > li::marker { content: ""counter(sec-sec3-5-LT-Sage-2-3-1,decimal)"."; }
-#sec-sec3-5-LT-Sage-2-3-1 > li { counter-increment: sec-sec3-5-LT-Sage-2-3-1; }
-#sec4-1-VS-3-2-2-1 { counter-set: sec4-1-VS-3-2-2-1 0; }
-#sec4-1-VS-3-2-2-1 > li::marker { content: ""counter(sec4-1-VS-3-2-2-1,decimal)"."; }
-#sec4-1-VS-3-2-2-1 > li { counter-increment: sec4-1-VS-3-2-2-1; }
-#thm-basis-equiv-1-2-1 { counter-set: thm-basis-equiv-1-2-1 0; }
-#thm-basis-equiv-1-2-1 > li::marker { content: ""counter(thm-basis-equiv-1-2-1,decimal)"."; }
-#thm-basis-equiv-1-2-1 > li { counter-increment: thm-basis-equiv-1-2-1; }
-#sec4-5-VS-Ex-2-1 { counter-set: sec4-5-VS-Ex-2-1 0; }
-#sec4-5-VS-Ex-2-1 > li::marker { content: ""counter(sec4-5-VS-Ex-2-1,decimal)"."; }
-#sec4-5-VS-Ex-2-1 > li { counter-increment: sec4-5-VS-Ex-2-1; }
-#eigen-properties-2-1-1 { counter-set: eigen-properties-2-1-1 0; }
-#eigen-properties-2-1-1 > li::marker { content: ""counter(eigen-properties-2-1-1,decimal)"."; }
-#eigen-properties-2-1-1 > li { counter-increment: eigen-properties-2-1-1; }
-#sec5-1-eigen-intro-24-1-1-1 { counter-set: sec5-1-eigen-intro-24-1-1-1 0; }
-#sec5-1-eigen-intro-24-1-1-1 > li::marker { content: ""counter(sec5-1-eigen-intro-24-1-1-1,decimal)"."; }
-#sec5-1-eigen-intro-24-1-1-1 > li { counter-increment: sec5-1-eigen-intro-24-1-1-1; }
-#subsec5-3-linear-ode-12-1 { counter-set: subsec5-3-linear-ode-12-1 0; }
-#subsec5-3-linear-ode-12-1 > li::marker { content: ""counter(subsec5-3-linear-ode-12-1,decimal)"."; }
-#subsec5-3-linear-ode-12-1 > li { counter-increment: subsec5-3-linear-ode-12-1; }
-#subsec5-3-Google-Search-6-1 { counter-set: subsec5-3-Google-Search-6-1 0; }
-#subsec5-3-Google-Search-6-1 > li::marker { content: ""counter(subsec5-3-Google-Search-6-1,decimal)"."; }
-#subsec5-3-Google-Search-6-1 > li { counter-increment: subsec5-3-Google-Search-6-1; }
-#sec5-4-eigen-exer-2-1 { counter-set: sec5-4-eigen-exer-2-1 0; }
-#sec5-4-eigen-exer-2-1 > li::marker { content: ""counter(sec5-4-eigen-exer-2-1,decimal)"."; }
-#sec5-4-eigen-exer-2-1 > li { counter-increment: sec5-4-eigen-exer-2-1; }
-#ex-ortho-6-0-0-1-1-1 { counter-set: ex-ortho-6-0-0-1-1-1 0; }
-#ex-ortho-6-0-0-1-1-1 > li::marker { content: ""counter(ex-ortho-6-0-0-1-1-1,decimal)"."; }
-#ex-ortho-6-0-0-1-1-1 > li { counter-increment: ex-ortho-6-0-0-1-1-1; }
-#sec6-3-10-1-2-1 { counter-set: sec6-3-10-1-2-1 0; }
-#sec6-3-10-1-2-1 > li::marker { content: ""counter(sec6-3-10-1-2-1,decimal)"."; }
-#sec6-3-10-1-2-1 > li { counter-increment: sec6-3-10-1-2-1; }
-#sec7-1-InnerProduct-4-1 { counter-set: sec7-1-InnerProduct-4-1 0; }
-#sec7-1-InnerProduct-4-1 > li::marker { content: ""counter(sec7-1-InnerProduct-4-1,decimal)"."; }
-#sec7-1-InnerProduct-4-1 > li { counter-increment: sec7-1-InnerProduct-4-1; }
-#def-inner-product-2-2-1 { counter-set: def-inner-product-2-2-1 0; }
-#def-inner-product-2-2-1 > li::marker { content: ""counter(def-inner-product-2-2-1,decimal)"."; }
-#def-inner-product-2-2-1 > li { counter-increment: def-inner-product-2-2-1; }
-#thm-norm-properties-2-2-1 { counter-set: thm-norm-properties-2-2-1 0; }
-#thm-norm-properties-2-2-1 > li::marker { content: ""counter(thm-norm-properties-2-2-1,decimal)"."; }
-#thm-norm-properties-2-2-1 > li { counter-increment: thm-norm-properties-2-2-1; }
-#sec7-2-Exer-3-1 { counter-set: sec7-2-Exer-3-1 0; }
-#sec7-2-Exer-3-1 > li::marker { content: ""counter(sec7-2-Exer-3-1,decimal)"."; }
-#sec7-2-Exer-3-1 > li { counter-increment: sec7-2-Exer-3-1; }
-#def-pseudoinverse-1-2-1 { counter-set: def-pseudoinverse-1-2-1 0; }
-#def-pseudoinverse-1-2-1 > li::marker { content: ""counter(def-pseudoinverse-1-2-1,decimal)"."; }
-#def-pseudoinverse-1-2-1 > li { counter-increment: def-pseudoinverse-1-2-1; }
-#sec9-1-SVD-6-27-2 { counter-set: sec9-1-SVD-6-27-2 0; }
-#sec9-1-SVD-6-27-2 > li::marker { content: ""counter(sec9-1-SVD-6-27-2,decimal)"."; }
-#sec9-1-SVD-6-27-2 > li { counter-increment: sec9-1-SVD-6-27-2; }
-</style>
+</script>
 </head>
 <body id="changeme" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
 <p class="byline">Ajit Kumar</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -239,7 +158,8 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chap9-SVD.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap9-SVD.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap10-PCA.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="chap9-SVD.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap9-SVD.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap10-PCA.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -261,13 +181,13 @@ sagecell.makeSagecell({
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Author Biography</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -442,9 +362,9 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chap9-SVD.html" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a></div>
-<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active">
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec9-1-SVD.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Singular Value Decomposition</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec9-1-SVD.html#sec9-1-SVD-3" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Singular Value Decomposition Theorem</span></a></div>
 <ul class="structural toc-item-list">
@@ -489,16 +409,31 @@ sagecell.makeSagecell({
 </li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-sage-into.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-sage-into-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction to SageMath</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="getting-started-sagemath.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Getting Started with Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-sage-programming.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Programming in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-plotting-sage.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Plotting in Sage</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec9-1-SVD"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">9.1</span><span class="space"> </span><span class="title">Singular Value Decomposition</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Singular Value Decomposition</span>
 </h2>
-<section class="introduction" id="sec9-1-SVD-2"><div class="para" id="sec9-1-SVD-2-1">In this section, we deal with one of the most important matrix factorization tools, called the singular value decomposition (SVD). The SVD of a matrix <span class="process-math">\(A\)</span> is closely related to eigen decomposition of the matrix <span class="process-math">\(AA^T\text{.}\)</span> One can also think of this as a generalization of diagonalization procedure that allows us to diagonalize any matrix not necessarily square matrix. The SVD is computationally a viable tool for a wide variety of applications. It has applications in image and signal processing, control theory, least square problems, time series analysis, pattern recognition, dimensionality reduction, biomedical engineering and defining a generalized inverse of a matrix and many more. We shall deal with few of these applications.</div></section><section class="subsection" id="sec9-1-SVD-3"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="space"> </span><span class="title">Singular Value Decomposition Theorem</span>
+<section class="introduction" id="sec9-1-SVD-2"><div class="para" id="sec9-1-SVD-2-1">In this section, we deal with one of the most important matrix factorization tools, called the singular value decomposition (SVD). The SVD of a matrix <span class="process-math">\(A\)</span> is closely related to eigen decomposition of the matrix <span class="process-math">\(AA^T\text{.}\)</span> One can also think of this as a generalization of diagonalization procedure that allows us to diagonalize any matrix not necessarily square matrix. The SVD is computationally a viable tool for a wide variety of applications. It has applications in image and signal processing, control theory, least square problems, time series analysis, pattern recognition, dimensionality reduction, biomedical engineering and defining a generalized inverse of a matrix and many more. We shall deal with few of these applications.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="sec9-1-SVD-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Singular Value Decomposition Theorem</span>
 </h3>
 <article class="theorem theorem-like" id="thm_svd1"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">SVD Theorem.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">SVD Theorem.</span>
 </h4>
 <div class="para logical" id="thm_svd1-2-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be a real <span class="process-math">\(m\times n\)</span> matrix. Then <span class="process-math">\(A\)</span> can be factorized as</div>
@@ -522,8 +457,11 @@ A=U\sum V^T\tag{9.1.1}
 \end{equation*}
 </div>
 <div class="para">whose diagonal entries are non negative and are arranged in a non increasing order.</div>
-</div> <div class="para" id="thm_svd1-2-2">The number of non zero entries in <span class="process-math">\(\sum\)</span> is the rank of <span class="process-math">\(A\text{.}\)</span>
-</div></article><div class="para" id="sec9-1-SVD-3-3">The decomposition <span class="process-math">\(A=U\sum V^T\)</span> is called a <em class="emphasis">singular value decomposition</em> of <span class="process-math">\(A\text{.}\)</span> The diagonals entries <span class="process-math">\(\sigma_1,\sigma_2,\ldots, \sigma_r\)</span> are called <em class="emphasis">singular values</em> of <span class="process-math">\(A\text{.}\)</span> (that is why the name singular value decomposition.)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm_svd1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="thm_svd1-2-2">The number of non zero entries in <span class="process-math">\(\sum\)</span> is the rank of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm_svd1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 9.1.1: SVD Theorem"><a href="#thm_svd1" title="Copy heading and permalink for Theorem 9.1.1: SVD Theorem" aria-label="Copy heading and permalink for Theorem 9.1.1: SVD Theorem">🔗</a></div></article><div class="para" id="sec9-1-SVD-3-3">The decomposition <span class="process-math">\(A=U\sum V^T\)</span> is called a <em class="emphasis">singular value decomposition</em> of <span class="process-math">\(A\text{.}\)</span> The diagonals entries <span class="process-math">\(\sigma_1,\sigma_2,\ldots, \sigma_r\)</span> are called <em class="emphasis">singular values</em> of <span class="process-math">\(A\text{.}\)</span> (that is why the name singular value decomposition.)<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="sec9-1-SVD-3-4">
 <div class="para">Before we prove this theorem, let us play with the equation <a href="sec9-1-SVD.html#eq_svd1" class="xref" data-knowl="./knowl/xref/eq_svd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.1">(9.1.1)</a>. We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_svd1.html">
@@ -552,8 +490,10 @@ V^T(A^TA)V =
 \end{array}\right]_{n\times n}\tag{9.1.2}
 \end{equation}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec9-1-SVD-3-5">The Eqn. <a href="sec9-1-SVD.html#eq_svd2" class="xref" data-knowl="./knowl/xref/eq_svd2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.2">(9.1.2)</a> suggests that columns of <span class="process-math">\(V\)</span> are eigenvectors of <span class="process-math">\(A^TA\text{,}\)</span> and are called <em class="emphasis">right singular vectors</em>.</div>
+<div class="para" id="sec9-1-SVD-3-5">The Eqn. <a href="sec9-1-SVD.html#eq_svd2" class="xref" data-knowl="./knowl/xref/eq_svd2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.2">(9.1.2)</a> suggests that columns of <span class="process-math">\(V\)</span> are eigenvectors of <span class="process-math">\(A^TA\text{,}\)</span> and are called <em class="emphasis">right singular vectors</em>.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="sec9-1-SVD-3-6">
 <div class="para">Similarly,</div>
 <div class="displaymath process-math">
@@ -576,8 +516,10 @@ U(A^TA)U^T =
 \end{array}\right]_{m\times m}\tag{9.1.3}
 \end{equation}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec9-1-SVD-3-7">The Eqn. <a href="sec9-1-SVD.html#eq_svd3" class="xref" data-knowl="./knowl/xref/eq_svd3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.3">(9.1.3)</a> suggests that columns of <span class="process-math">\(U\)</span> are eigenvectors of <span class="process-math">\(AA^T\text{,}\)</span> and are called <em class="emphasis">left singular vectors</em>.</div>
+<div class="para" id="sec9-1-SVD-3-7">The Eqn. <a href="sec9-1-SVD.html#eq_svd3" class="xref" data-knowl="./knowl/xref/eq_svd3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.3">(9.1.3)</a> suggests that columns of <span class="process-math">\(U\)</span> are eigenvectors of <span class="process-math">\(AA^T\text{,}\)</span> and are called <em class="emphasis">left singular vectors</em>.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="sec9-1-SVD-3-8">
 <div class="para">The notion of right and left eigenvectors suggest a way to construct the matrix <span class="process-math">\(V\)</span> and <span class="process-math">\(U\)</span> in the SVD decomposition. Let us see what do I mean? Suppose <span class="process-math">\(U=[u_1~u_2~\cdots~u_m]\)</span> and <span class="process-math">\(V=[v_1~v_2~\cdots~v_n]\text{.}\)</span> Then we have</div>
 <div class="displaymath process-math">
@@ -585,6 +527,7 @@ U(A^TA)U^T =
 A^TAv_i=\sigma_i^2 v_i \text{ and }  AA^Tu_i=\sigma_i^2 u_i\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec9-1-SVD-3-9">
 <div class="para">Hence</div>
@@ -593,6 +536,7 @@ A^TAv_i=\sigma_i^2 v_i \text{ and }  AA^Tu_i=\sigma_i^2 u_i\text{.}
 A(A^TA v_i) = (AA^T)(Av_i)=A(\sigma_i^2v_i)=\sigma_i^2(Av_i)\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec9-1-SVD-3-10">
 <div class="para">Thus suggests, that <span class="process-math">\(u_i\)</span> may be defined as <span class="process-math">\(Av_i\text{.}\)</span> However, if <span class="process-math">\(u_i=Av_i\text{,}\)</span> then</div>
@@ -601,18 +545,22 @@ A(A^TA v_i) = (AA^T)(Av_i)=A(\sigma_i^2v_i)=\sigma_i^2(Av_i)\text{.}
 \innprod{u_i}{u_j} = \innprod{Av_i}{Av_j}=\innprod{A^TAv_i}{v_j}=\sigma_i^2\innprod{v_i}{v_j}=\sigma_i^2\delta_{ij}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec9-1-SVD-3-11">If we want <span class="process-math">\(U\)</span> to be orthogonal, we may define <span class="process-math">\(u_i=\frac{1}{\sigma_i}Av_i\text{.}\)</span>
+<div class="para" id="sec9-1-SVD-3-11">If we want <span class="process-math">\(U\)</span> to be orthogonal, we may define <span class="process-math">\(u_i=\frac{1}{\sigma_i}Av_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec9-1-SVD-3-12">Let us look at proof of <a href="sec9-1-SVD.html#thm_svd1" class="xref" data-knowl="./knowl/xref/thm_svd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.1: SVD Theorem">Theorem 9.1.1</a>.</div>
-<details id="sec9-1-SVD-3-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec9-1-SVD-3-13-1">
+<div class="para" id="sec9-1-SVD-3-12">Let us look at proof of <a href="sec9-1-SVD.html#thm_svd1" class="xref" data-knowl="./knowl/xref/thm_svd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.1: SVD Theorem">Theorem 9.1.1</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec9-1-SVD-3-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec9-1-SVD-3-13-1">
 <div class="para">Note that <span class="process-math">\(A^TA\)</span> is symmetric and <span class="process-math">\(\rank{(A)}=\rank{(A^TA)}\text{.}\)</span> Let <span class="process-math">\(\rank{(A)}=r\text{.}\)</span> Further</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \innprod{A^TAx}{x}=\innprod{Ax}{Ax}=\norm{Ax}^2\geq 0, \forall x\in \R^n\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="sec9-1-SVD-3-13-2">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec9-1-SVD-3-13-2">
 <div class="para">Hence <span class="process-math">\(A^TA\)</span> is a symmetric and semi-positive definite matrix. Hence all its eigenvalues are real and non negative. Let <span class="process-math">\(\lambda_1, \lambda_2,\ldots,\lambda_r\)</span> be non zero eigenvalues of <span class="process-math">\(A^TA\)</span> with <span class="process-math">\(\lambda_1\geq \lambda_2\geq\cdots\geq\lambda_r\text{.}\)</span> The remaining eigenvalues of <span class="process-math">\(A^TA\)</span> are <span class="process-math">\(\lambda_{r+1}=\lambda_{r+2}=\cdots=\lambda_n=0\text{.}\)</span> Let us denote <span class="process-math">\(\lambda_i=\sigma_i^2\)</span> for <span class="process-math">\(i=1,\ldots, n\text{.}\)</span> Since <span class="process-math">\(A^TA\)</span> is symmetric matrix, it is diagonalizable. Hence there exists an orthogonal eigenbasis <span class="process-math">\(v_1,\ldots,
 v_n\)</span> for <span class="process-math">\(\R^n\)</span> of <span class="process-math">\(A^TA\text{.}\)</span> Let <span class="process-math">\(A^TAv_i=\sigma_i^2v_i\text{.}\)</span> This implies</div>
 <div class="displaymath process-math" id="sec9-1-SVD-3-13-2-14">
@@ -621,28 +569,36 @@ v_i^TA^TAv_i=\amp \sigma_i^2 \amp \text{ for }  i=1,2,\ldots, r\tag{9.1.4}\\
 v_i^TA^TAv_i=\amp 0 \amp \text{ for }  i=r+1,\ldots, n\tag{9.1.5}
 \end{align}
 </div>
-</div> <div class="para logical" id="sec9-1-SVD-3-13-3">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec9-1-SVD-3-13-3">
 <div class="para">From <a href="sec9-1-SVD.html#sec9-1-SVD-3-13-2-14" class="xref" data-knowl="./knowl/xref/eq_svd31.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.5">(9.1.5)</a>, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_svd31.html">
 \begin{equation*}
 v_k^TA^TAv_k=\innprod{Av_k}{Av_k}=0   \text{ for }  i=r+1,\ldots,n\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="sec9-1-SVD-3-13-4">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-13-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec9-1-SVD-3-13-4">
 <div class="para">This implies,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 Av_k=0  \text{ for }  i=r+1,\ldots,n\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="sec9-1-SVD-3-13-5">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-13-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec9-1-SVD-3-13-5">
 <div class="para">We define</div>
 <div class="displaymath process-math" id="eq_svd4">
 \begin{equation}
 u_i:=\frac{1}{\sigma_i}Av_i \text{ for }  i=1,2,\ldots, r\text{.}\tag{9.1.6}
 \end{equation}
 </div>
-</div> <div class="para logical" id="sec9-1-SVD-3-13-6">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-13-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec9-1-SVD-3-13-6">
 <div class="para">We claim that <span class="process-math">\(\{u_1,\ldots,
 u_r\}\)</span> is an orthonormal set. For</div>
 <div class="displaymath process-math">
@@ -650,7 +606,9 @@ u_r\}\)</span> is an orthonormal set. For</div>
 \innprod{u_i}{u_j}=u_i^Tu_j=\frac{1}{\sigma_i}(Av_i)^T\frac{1}{\sigma_j}Av_j =\frac{1}{\sigma_i\sigma_j}v_i^TA^TAv_j=\delta_{ij}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="sec9-1-SVD-3-13-7">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-13-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec9-1-SVD-3-13-7">
 <div class="para">Now we complete <span class="process-math">\(\{u_1,\ldots,
 u_r\}\)</span> to an orthonormal basis <span class="process-math">\(\{u_1,\ldots,
 u_r,u_{r+1},\ldots, u_n\}\)</span> of <span class="process-math">\(\R^n\text{.}\)</span> Define</div>
@@ -659,7 +617,9 @@ u_r,u_{r+1},\ldots, u_n\}\)</span> of <span class="process-math">\(\R^n\text{.}\
 U:=[u_1~\ldots~ u_r~u_{r+1}~\ldots~ u_n] \text{ and } V:=[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n].
 \end{equation*}
 </div>
-</div> <div class="para logical" id="sec9-1-SVD-3-13-8">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-13-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec9-1-SVD-3-13-8">
 <div class="para">We claim that <span class="process-math">\(U^TAV=\sum\)</span> and hence <span class="process-math">\(A= U\Sigma V^T\text{.}\)</span>
 </div>
 <div class="displaymath process-math" id="sec9-1-SVD-3-13-8-3">
@@ -673,18 +633,24 @@ u_{r+1}^T\\\vdots\\u_n^T\end{pmatrix}[Av_1~\ldots~ Av_r~v_{r+1}~\ldots~ Av_n]\\
 =\amp \diag(\sigma_1,\ldots,\sigma_r,0,\ldots,0)=\sum\text{.}
 \end{align*}
 </div>
-</div> <div class="para logical" id="sec9-1-SVD-3-13-9">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-13-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec9-1-SVD-3-13-9">
 <div class="para">Hence</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A=U\sum V^T\text{.}
 \end{equation*}
 </div>
-</div></article></details><article class="remark remark-like" id="rem_svd1"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="period">.</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-13-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 9.1.1.1"><a href="#sec9-1-SVD-3-13" title="Copy heading and permalink for Proof 9.1.1.1" aria-label="Copy heading and permalink for Proof 9.1.1.1">🔗</a></div></article></details><article class="remark remark-like" id="rem_svd1"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="rem_svd1-1">The singular values of a matrix in a SVD are unique, however singular vectors are not unique.</div></article><article class="corollary theorem-like" id="rem_svd2"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">9.1.3</span><span class="period">.</span>
+<div class="para" id="rem_svd1-1">The singular values of a matrix in a SVD are unique, however singular vectors are not unique.<div class="autopermalink" data-description="Paragraph"><a href="#rem_svd1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 9.1.2"><a href="#rem_svd1" title="Copy heading and permalink for Remark 9.1.2" aria-label="Copy heading and permalink for Remark 9.1.2">🔗</a></div></article><article class="corollary theorem-like" id="rem_svd2"><h4 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="rem_svd2-1-1">
 <div class="para">Let <span class="process-math">\(A=U\Sigma V^T\)</span> be a SVD of <span class="process-math">\(A\)</span> where <span class="process-math">\(U=[u_1~u_2~\cdots~u_m]\)</span> and <span class="process-math">\(V=[v_1~v_2~\cdots~v_n]\text{,}\)</span> <span class="process-math">\(\sigma_1,\ldots,  \sigma_r\)</span> are singular values of <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(A\)</span> can also be written as</div>
@@ -693,25 +659,36 @@ A=U\sum V^T\text{.}
 A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ru_rv_r^T\text{.}\tag{9.1.7}
 \end{gather}
 </div>
-</div></article><div class="para" id="sec9-1-SVD-3-16">The decomposition <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a> is called a <em class="emphasis">rank one decomposition of <span class="process-math">\(A\)</span></em>, as rank of each term in <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a> is 1. (why?) This is a very useful way of decomposing <span class="process-math">\(A\)</span> as we shall see this later.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#rem_svd2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 9.1.3"><a href="#rem_svd2" title="Copy heading and permalink for Corollary 9.1.3" aria-label="Copy heading and permalink for Corollary 9.1.3">🔗</a></div></article><div class="para" id="sec9-1-SVD-3-16">The decomposition <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a> is called a <em class="emphasis">rank one decomposition of <span class="process-math">\(A\)</span></em>, as rank of each term in <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a> is 1. (why?) This is a very useful way of decomposing <span class="process-math">\(A\)</span> as we shall see this later.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <section class="reading-questions" id="rqs-exer-9-1-15a"><h4 class="heading hide-type">
-<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Reading Questions</span>
+<span class="type">Reading Questions</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reading Questions</span>
 </h4>
-<article class="exercise exercise-like" id="exer-9-1-15"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="exer-9-1-15-1-1">Use SVD to show that a square matrix <span class="process-math">\(A\)</span> is symmetric (<span class="process-math">\(A^T=A\)</span>) if and only if <span class="process-math">\(A^TA=AA^T\text{.}\)</span>
-</div> <details id="exer-9-1-15-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="exer-9-1-15-1-2-1">
-<span class="process-math">\(A^TA=AA^T\)</span> implies right singular vectors of <span class="process-math">\(A\)</span> are same as left singular vectors of <span class="process-math">\(A\)</span> with same singular values. Hence the SVD of <span class="process-math">\(A=Q\Sigma P\)</span> with <span class="process-math">\(P=Q\text{.}\)</span> Any matrix of the form <span class="process-math">\(P\Sigma P^T\)</span> is symmetric.</div></div></details></article></section><section class="exercises" id="exercises-SVD-exer-set1"><h4 class="heading hide-type">
-<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+<article class="exercise exercise-like" id="exer-9-1-15"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exer-9-1-15-1-1">Use SVD to show that a square matrix <span class="process-math">\(A\)</span> is symmetric (<span class="process-math">\(A^T=A\)</span>) if and only if <span class="process-math">\(A^TA=AA^T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-9-1-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <details id="exer-9-1-15-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="exer-9-1-15-1-2-1">
+<span class="process-math">\(A^TA=AA^T\)</span> implies right singular vectors of <span class="process-math">\(A\)</span> are same as left singular vectors of <span class="process-math">\(A\)</span> with same singular values. Hence the SVD of <span class="process-math">\(A=Q\Sigma P\)</span> with <span class="process-math">\(P=Q\text{.}\)</span> Any matrix of the form <span class="process-math">\(P\Sigma P^T\)</span> is symmetric.<div class="autopermalink" data-description="Paragraph"><a href="#exer-9-1-15-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1"><a href="#exer-9-1-15-1-2" title="Copy heading and permalink for Hint 1" aria-label="Copy heading and permalink for Hint 1">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Reading Question 9.1.1.1"><a href="#exer-9-1-15" title="Copy heading and permalink for Reading Question 9.1.1.1" aria-label="Copy heading and permalink for Reading Question 9.1.1.1">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 9.1.1"><a href="#rqs-exer-9-1-15a" title="Copy heading and permalink for Reading Questions 9.1.1" aria-label="Copy heading and permalink for Reading Questions 9.1.1">🔗</a></div></section><section class="exercises" id="exercises-SVD-exer-set1"><h4 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h4>
-<article class="exercise exercise-like" id="rank1-matrix"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="rank1-matrix-1-1">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is rank one matrix if and only if there exist non-zero vectors <span class="process-math">\(p,q\in \R^n\)</span> such that <span class="process-math">\(A=pq^T\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="ex_svd1"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="ex_svd1-1-1">If <span class="process-math">\(A\)</span> is a real symmetric matrix with eigenvalues <span class="process-math">\(\lambda_1,\ldots,\lambda_n\text{,}\)</span> then show that singular values of <span class="process-math">\(A\)</span> are <span class="process-math">\(|\lambda_1|,\ldots,|\lambda_n|\)</span>
-</div></article><article class="exercise exercise-like" id="ex_svd2"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="ex_svd2-1-1">A square matrix <span class="process-math">\(A\)</span> is non singular if and only if all singular values of <span class="process-math">\(A\)</span> are non zero.</div></article></section><article class="example example-like" id="eg_svd1"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.4</span><span class="period">.</span>
+<article class="exercise exercise-like" id="rank1-matrix"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="rank1-matrix-1-1">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is rank one matrix if and only if there exist non-zero vectors <span class="process-math">\(p,q\in \R^n\)</span> such that <span class="process-math">\(A=pq^T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rank1-matrix-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 9.1.1.1"><a href="#rank1-matrix" title="Copy heading and permalink for Exercise 9.1.1.1" aria-label="Copy heading and permalink for Exercise 9.1.1.1">🔗</a></div></article><article class="exercise exercise-like" id="ex_svd1"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex_svd1-1-1">If <span class="process-math">\(A\)</span> is a real symmetric matrix with eigenvalues <span class="process-math">\(\lambda_1,\ldots,\lambda_n\text{,}\)</span> then show that singular values of <span class="process-math">\(A\)</span> are <span class="process-math">\(|\lambda_1|,\ldots,|\lambda_n|\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_svd1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 9.1.1.2"><a href="#ex_svd1" title="Copy heading and permalink for Exercise 9.1.1.2" aria-label="Copy heading and permalink for Exercise 9.1.1.2">🔗</a></div></article><article class="exercise exercise-like" id="ex_svd2"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex_svd2-1-1">A square matrix <span class="process-math">\(A\)</span> is non singular if and only if all singular values of <span class="process-math">\(A\)</span> are non zero.<div class="autopermalink" data-description="Paragraph"><a href="#ex_svd2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 9.1.1.3"><a href="#ex_svd2" title="Copy heading and permalink for Exercise 9.1.1.3" aria-label="Copy heading and permalink for Exercise 9.1.1.3">🔗</a></div></article><div class="autopermalink" data-description="Exercises 9.1.1"><a href="#exercises-SVD-exer-set1" title="Copy heading and permalink for Exercises 9.1.1" aria-label="Copy heading and permalink for Exercises 9.1.1">🔗</a></div></section><article class="example example-like" id="eg_svd1"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="eg_svd1-1-1">Let us find a singular value decomposition of <span class="process-math">\(A= \begin{pmatrix}3 \amp 2 \amp 2 \\ 2 \amp 3 \amp -2 \end{pmatrix}\text{.}\)</span>
+<div class="para" id="eg_svd1-1-1">Let us find a singular value decomposition of <span class="process-math">\(A= \begin{pmatrix}3 \amp 2 \amp 2 \\ 2 \amp 3 \amp -2 \end{pmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_svd1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eg_svd1-1-2">
 <div class="para">We have <span class="process-math">\(A^TA=\begin{pmatrix}13 \amp  12 \amp  2 \\ 12 \amp  13 \amp  -2 \\ 2 \amp  -2 \amp  8 \end{pmatrix}\text{.}\)</span> The eigenvalues of <span class="process-math">\(A^TA\)</span> are <span class="process-math">\(\sigma_1^2=25, \sigma_2^2=9\)</span> and <span class="process-math">\(\sigma_3^2=0\text{.}\)</span> The corresponding eigenvectors with respect to eigenvalues <span class="process-math">\(25,9, 0\)</span> of <span class="process-math">\(A^TA\)</span> are <span class="process-math">\(\begin{pmatrix}1\\1\\0 \end{pmatrix}\text{,}\)</span> <span class="process-math">\(\begin{pmatrix}1\\-1\\4 \end{pmatrix}\)</span> and <span class="process-math">\(\begin{pmatrix}1\\-1\\-\frac{1}{2} \end{pmatrix}\)</span> respectively. Hence an orthonormal eigenbasis of <span class="process-math">\(A^TA\)</span> is</div>
 <div class="displaymath process-math">
@@ -719,6 +696,7 @@ A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ru_rv_r^T\text{.}\tag{9.1.7}
 \{v_1,v_2,v_3\}=\left\{\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2}\\0 \end{pmatrix} , \begin{pmatrix}1/\sqrt{18}\\-1/\sqrt{18}\\4/\sqrt{18} \end{pmatrix} , \begin{pmatrix}2/3\\-2/3\\-1/3 \end{pmatrix} \right\}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_svd1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eg_svd1-1-3">
 <div class="para">We define</div>
 <div class="displaymath process-math">
@@ -727,6 +705,7 @@ u_1:=\frac{1}{\sigma_1}Av_1=\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2} \end{pmatrix} 
 u_2:= \frac{1}{\sigma_2}Av_2=\begin{pmatrix}1/\sqrt{2}\\-1/\sqrt{2} \end{pmatrix}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_svd1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eg_svd1-1-4">
 <div class="para">Thus we have</div>
 <div class="displaymath process-math">
@@ -739,7 +718,8 @@ U=\begin{pmatrix}\frac{1}{2} \, \sqrt{2} \amp  \frac{1}{2} \, \sqrt{2} \\ \frac{
 V=\begin{pmatrix}\frac{1}{2} \, \sqrt{2} \amp  \frac{1}{6} \, \sqrt{2} \amp  \frac{2}{3} \\\frac{1}{2} \, \sqrt{2} \amp  -\frac{1}{6} \, \sqrt{2} \amp -\frac{2}{3} \\ 0 \amp  \frac{2}{3} \, \sqrt{2} \amp  -\frac{1}{3} \end{pmatrix}  \text{ and } \sum = \begin{pmatrix}5 \amp  0 \amp  0 \\ 0 \amp  3 \amp  0 \end{pmatrix}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="eg_svd1-1-5">It is easy to check that that <span class="process-math">\(UAV^T=\sum\text{.}\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_svd1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="eg_svd1-1-5">It is easy to check that that <span class="process-math">\(UAV^T=\sum\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_svd1-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div id="eg_svd1-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix([[3,2,2],[2,3,-2]])
 print('A^TA is:' )
 ATA = A.T*A
@@ -768,7 +748,9 @@ print('The matrix S is:')
 print(S)
 print('Check if U*S*V^T==A')
 print(U*S*V.T==A)
-</script></div></article><div class="para" id="sec9-1-SVD-3-20">Sage includes a built-in method for computing the SVD of a matrix. However, the matrix must be defined over the Real Double Field (RDF), a numerical field of real numbers represented in 64-bit double precision, offering approximately 15–16 decimal digits of accuracy. Let us see to achieve this.</div>
+</script></div>
+<div class="autopermalink" data-description="Example 9.1.4"><a href="#eg_svd1" title="Copy heading and permalink for Example 9.1.4" aria-label="Copy heading and permalink for Example 9.1.4">🔗</a></div></article><div class="para" id="sec9-1-SVD-3-20">Sage includes a built-in method for computing the SVD of a matrix. However, the matrix must be defined over the Real Double Field (RDF), a numerical field of real numbers represented in 64-bit double precision, offering approximately 15–16 decimal digits of accuracy. Let us see to achieve this.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sec9-1-SVD-3-21" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(RDF,[[3,2,2],[2,3,-2]])
 # Compute the SVD
 U, S, V = A.SVD()
@@ -784,10 +766,11 @@ print('Due to numeruical computation,we shall check if the norm of the differenc
 print(norm(A_reconstructed.numerical_approx()-A.numerical_approx()))
 </script></div>
 <article class="example example-like" id="sec9-1-SVD-3-23"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.5</span><span class="period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sec9-1-SVD-3-23-1">Find the signular value decomposition of the matrix <span class="process-math">\(A=\left(\begin{array}{rr}3 \amp 5 \\5 \amp -3 \\4 \amp 4\end{array}\right)\text{.}\)</span>
-</div> <details id="sec9-1-SVD-3-23-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec9-1-SVD-3-23-1">Find the signular value decomposition of the matrix <span class="process-math">\(A=\left(\begin{array}{rr}3 \amp 5 \\5 \amp -3 \\4 \amp 4\end{array}\right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec9-1-SVD-3-23-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="sec9-1-SVD-3-23-2-1">
 <div class="para">We have</div>
 <div class="displaymath process-math">
@@ -811,7 +794,9 @@ V= \left(\begin{array}{rr}
 \end{array}\right).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="sec9-1-SVD-3-23-2-2">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-23-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec9-1-SVD-3-23-2-2">
 <div class="para">Now let us find the matrix <span class="process-math">\(U\text{.}\)</span> We have <span class="process-math">\(v_1=\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2}\end{pmatrix}\text{,}\)</span> <span class="process-math">\(v_2=\begin{pmatrix}1/\sqrt{2}\\1/\sqrt{2}\end{pmatrix}\)</span> and <span class="process-math">\(\sigma_1=\sqrt{66}, \sigma_2=\sqrt{34}\text{.}\)</span> Hence</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -848,7 +833,9 @@ U= \left(\begin{array}{rrr}
 </div>
 <div class="para">Veryfy that <span class="process-math">\(U\Sigma V^T=A\text{.}\)</span>
 </div>
-</div> <div id="sec9-1-SVD-3-23-2-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix([[3,5,4],[5,-3,4]]).T
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-3-23-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sec9-1-SVD-3-23-2-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix([[3,5,4],[5,-3,4]]).T
 print('A^TA is:' )
 ATA = A.T*A
 print(ATA)
@@ -878,10 +865,11 @@ print(S)
 print('Check if U*S*V^T==A')
 print(U*S*V.T==A)
 </script></div>
-</div></details></article><section class="exercises" id="exercises-SVD-exer-set2"><h4 class="heading hide-type">
-<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+<div class="autopermalink" data-description="Solution 9.1.5.1"><a href="#sec9-1-SVD-3-23-2" title="Copy heading and permalink for Solution 9.1.5.1" aria-label="Copy heading and permalink for Solution 9.1.5.1">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Example 9.1.5"><a href="#sec9-1-SVD-3-23" title="Copy heading and permalink for Example 9.1.5" aria-label="Copy heading and permalink for Example 9.1.5">🔗</a></div></article><section class="exercises" id="exercises-SVD-exer-set2"><h4 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h4>
-<article class="exercise exercise-like" id="exer-9-1-8"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<article class="exercise exercise-like" id="exer-9-1-8"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
 <div class="para logical" id="exer-9-1-8-1-1">
 <div class="para">Verify the equation <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a> for <a href="sec9-1-SVD.html#eg_svd1" class="xref" data-knowl="./knowl/xref/eg_svd1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.1.4">example 9.1.4</a>. That is,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_svd9.html ./knowl/xref/eg_svd1.html">
@@ -889,22 +877,53 @@ print(U*S*V.T==A)
 A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T\text{.}
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="exer-9-1-9"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="exer-9-1-9-1-1">Find a singular value decomposition of <span class="process-math">\(A =\begin{pmatrix}1 \amp 1 \amp -1\\1 \amp 1 \amp -1 \end{pmatrix}\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="exercises-SVD-exer-set2-3"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="exercises-SVD-exer-set2-3-1">Find the SVD of <span class="process-math">\(A = \begin{pmatrix}1 \amp 1 \\2 \amp 2 \\3 \amp 1 \end{pmatrix}\)</span> using step by step calculations.</div></article></section></section><section class="subsection" id="sec9-1-SVD-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="space"> </span><span class="title">Pseudoinverse using SVD</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#exer-9-1-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 9.1.1.1"><a href="#exer-9-1-8" title="Copy heading and permalink for Exercise 9.1.1.1" aria-label="Copy heading and permalink for Exercise 9.1.1.1">🔗</a></div></article><article class="exercise exercise-like" id="exer-9-1-9"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exer-9-1-9-1-1">Find a singular value decomposition of <span class="process-math">\(A =\begin{pmatrix}1 \amp 1 \amp -1\\1 \amp 1 \amp -1 \end{pmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-9-1-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 9.1.1.2"><a href="#exer-9-1-9" title="Copy heading and permalink for Exercise 9.1.1.2" aria-label="Copy heading and permalink for Exercise 9.1.1.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises-SVD-exer-set2-3"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercises-SVD-exer-set2-3-1">Find the SVD of <span class="process-math">\(A = \begin{pmatrix}1 \amp 1 \\2 \amp 2 \\3 \amp 1 \end{pmatrix}\)</span> using step by step calculations.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-SVD-exer-set2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 9.1.1.3"><a href="#exercises-SVD-exer-set2-3" title="Copy heading and permalink for Exercise 9.1.1.3" aria-label="Copy heading and permalink for Exercise 9.1.1.3">🔗</a></div></article><div class="autopermalink" data-description="Exercises 9.1.1"><a href="#exercises-SVD-exer-set2" title="Copy heading and permalink for Exercises 9.1.1" aria-label="Copy heading and permalink for Exercises 9.1.1">🔗</a></div></section><div class="autopermalink" data-description="Subsection 9.1.1: Singular Value Decomposition Theorem"><a href="#sec9-1-SVD-3" title="Copy heading and permalink for Subsection 9.1.1: Singular Value Decomposition Theorem" aria-label="Copy heading and permalink for Subsection 9.1.1: Singular Value Decomposition Theorem">🔗</a></div></section><section class="subsection" id="sec9-1-SVD-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pseudoinverse using SVD</span>
 </h3>
 <article class="definition definition-like" id="def-pseudoinverse"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">9.1.6</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="def-pseudoinverse-1-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(m\times n\)</span> matrix, then the <em class="emphasis">pseudoinverse</em> of <span class="process-math">\(A\)</span> is matrix <span class="process-math">\(X\)</span> satisfying the following properties:</div> <div class="para logical" id="def-pseudoinverse-1-2"><ol class="decimal" id="def-pseudoinverse-1-2-1">
-<li id="def-pseudoinverse-1-2-1-1"><div class="para" id="def-pseudoinverse-1-2-1-1-1"><span class="process-math">\(\displaystyle AXA=A\)</span></div></li>
-<li id="def-pseudoinverse-1-2-1-2"><div class="para" id="def-pseudoinverse-1-2-1-2-1"><span class="process-math">\(\displaystyle XAX=X\)</span></div></li>
-<li id="def-pseudoinverse-1-2-1-3"><div class="para" id="def-pseudoinverse-1-2-1-3-1"><span class="process-math">\(\displaystyle (AX)^T=AX\)</span></div></li>
-<li id="def-pseudoinverse-1-2-1-4"><div class="para" id="def-pseudoinverse-1-2-1-4-1"><span class="process-math">\((XA)^T=XA\text{.}\)</span></div></li>
-</ol></div> <div class="para" id="def-pseudoinverse-1-3">The pseudoinverse of a matrix <span class="process-math">\(A\)</span> is denoted by <span class="process-math">\(A^\dagger\text{.}\)</span> Pseudoinverse is also called the <em class="emphasis">generalized inverse</em> or <em class="emphasis">Moore-Penrose pseudoinverse.</em>
-</div></article><div class="para" id="sec9-1-SVD-4-3">Singular value decomposition provides an effective procedure to find the pseudoinverse of a matrix.</div>
+<div class="para" id="def-pseudoinverse-1-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(m\times n\)</span> matrix, then the <em class="emphasis">pseudoinverse</em> of <span class="process-math">\(A\)</span> is matrix <span class="process-math">\(X\)</span> satisfying the following properties:<div class="autopermalink" data-description="Paragraph"><a href="#def-pseudoinverse-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="def-pseudoinverse-1-2">
+<ol class="decimal" id="def-pseudoinverse-1-2-1">
+<li id="def-pseudoinverse-1-2-1-1">
+<div class="para" id="def-pseudoinverse-1-2-1-1-1">
+<span class="process-math">\(\displaystyle AXA=A\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-pseudoinverse-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#def-pseudoinverse-1-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="def-pseudoinverse-1-2-1-2">
+<div class="para" id="def-pseudoinverse-1-2-1-2-1">
+<span class="process-math">\(\displaystyle XAX=X\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-pseudoinverse-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#def-pseudoinverse-1-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="def-pseudoinverse-1-2-1-3">
+<div class="para" id="def-pseudoinverse-1-2-1-3-1">
+<span class="process-math">\(\displaystyle (AX)^T=AX\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-pseudoinverse-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#def-pseudoinverse-1-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="def-pseudoinverse-1-2-1-4">
+<div class="para" id="def-pseudoinverse-1-2-1-4-1">
+<span class="process-math">\((XA)^T=XA\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-pseudoinverse-1-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#def-pseudoinverse-1-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-pseudoinverse-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="def-pseudoinverse-1-3">The pseudoinverse of a matrix <span class="process-math">\(A\)</span> is denoted by <span class="process-math">\(A^\dagger\text{.}\)</span> Pseudoinverse is also called the <em class="emphasis">generalized inverse</em> or <em class="emphasis">Moore-Penrose pseudoinverse.</em><div class="autopermalink" data-description="Paragraph"><a href="#def-pseudoinverse-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 9.1.6"><a href="#def-pseudoinverse" title="Copy heading and permalink for Definition 9.1.6" aria-label="Copy heading and permalink for Definition 9.1.6">🔗</a></div></article><div class="para" id="sec9-1-SVD-4-3">Singular value decomposition provides an effective procedure to find the pseudoinverse of a matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="sec9-1-SVD-4-4">
 <div class="para">Suppose <span class="process-math">\(A=U\sum V^T\)</span> is a SVD of <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(U\)</span> and <span class="process-math">\(V\)</span> are orthogonal matrices they are invertible. Thus to define pseudoinverse of <span class="process-math">\(A\text{,}\)</span> it is sufficient to define pseudoinverse of the diagonal matrix <span class="process-math">\(\sum\text{.}\)</span> It is natural to define the inverse of diagonal matrix by taking reciprocal of the nonzero diagonal entries and taking its transpose. Thus if</div>
 <div class="displaymath process-math">
@@ -934,6 +953,7 @@ A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T\text{.}
 \end{array}\right]_{m\times n}^T\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec9-1-SVD-4-5">
 <div class="para">Having defined the generalized inverse of <span class="process-math">\(\sum\text{,}\)</span> now it is natural to define</div>
@@ -942,11 +962,12 @@ A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T\text{.}
 A^\dagger:=V{\sum}^\dagger U^T\text{.}\tag{9.1.8}
 \end{equation}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="eg_svd2"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.7</span><span class="period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="eg_svd2-1-1">Find the pseudoinverse of <span class="process-math">\(A=\begin{pmatrix}1\amp 1\\1\amp 1\\1\amp -1 \end{pmatrix}\text{.}\)</span>
+<div class="para" id="eg_svd2-1-1">Find the pseudoinverse of <span class="process-math">\(A=\begin{pmatrix}1\amp 1\\1\amp 1\\1\amp -1 \end{pmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_svd2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eg_svd2-1-2">
 <div class="para">Note that <span class="process-math">\(A^TA=\begin{pmatrix}3\amp 1\\1\amp 3 \end{pmatrix}\text{.}\)</span> The eigenvalues of <span class="process-math">\(A^TA\)</span> are <span class="process-math">\(\sigma_1^2=4\)</span> and <span class="process-math">\(\sigma_2^2=2\)</span> with corresponding orthonormal eigenvectors <span class="process-math">\(v_1=\begin{pmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}} \end{pmatrix}\)</span> and <span class="process-math">\(v_2=\begin{pmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}} \end{pmatrix}\)</span> respectively. Now</div>
 <div class="displaymath process-math">
@@ -954,7 +975,8 @@ A^\dagger:=V{\sum}^\dagger U^T\text{.}\tag{9.1.8}
 u_1=\frac{1}{\sigma_1}Av_1=\begin{pmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\\0 \end{pmatrix}   \text{ and } u_2=\frac{1}{\sigma_2}Av_2=\begin{pmatrix}0\\0\\1 \end{pmatrix}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="eg_svd2-1-3">Extending <span class="process-math">\(u_1,u_2\)</span> to an orthonormal basis of <span class="process-math">\(\R^3\text{,}\)</span> we can select<span class="process-math">\(u_3=\begin{pmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\\0 \end{pmatrix}\text{.}\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_svd2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="eg_svd2-1-3">Extending <span class="process-math">\(u_1,u_2\)</span> to an orthonormal basis of <span class="process-math">\(\R^3\text{,}\)</span> we can select<span class="process-math">\(u_3=\begin{pmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\\0 \end{pmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_svd2-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eg_svd2-1-4">
 <div class="para">Thus a SVD is given by</div>
 <div class="displaymath process-math">
@@ -962,6 +984,7 @@ u_1=\frac{1}{\sigma_1}Av_1=\begin{pmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}
 A=U\sum V^T= \begin{pmatrix}\frac{1}{\sqrt{2}} \amp 0 \amp \frac{1}{\sqrt{2}}\\ \frac{1}{\sqrt{2}} \amp 0 \amp -\frac{1}{\sqrt{2}}\\ 0 \amp  1 \amp 0 \end{pmatrix} \begin{pmatrix}2\amp 0\\ 0 \amp \sqrt{2}\\ 0\amp 0 \end{pmatrix} \begin{pmatrix}\frac{1}{\sqrt{2}}  \amp \frac{1}{\sqrt{2}}\\ \frac{1}{\sqrt{2}}  \amp -\frac{1}{\sqrt{2}} \end{pmatrix}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_svd2-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eg_svd2-1-5">
 <div class="para">Hence</div>
 <div class="displaymath process-math" id="eg_svd2-1-5-1">
@@ -975,7 +998,10 @@ A^\dagger=\amp V{\sum}^\dagger U^T=
 =\amp \begin{pmatrix}1/4\amp 1/4\amp 1/2\\1/4\amp 1/4\amp -1/2 \end{pmatrix}\text{.}
 \end{align*}
 </div>
-</div></article><div class="para" id="sec9-1-SVD-4-7">Sage provdes a method <code class="code-inline tex2jax_ignore">.pseudoinverse()</code> to find the pseudoinverse of a matrix.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_svd2-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 9.1.7"><a href="#eg_svd2" title="Copy heading and permalink for Example 9.1.7" aria-label="Copy heading and permalink for Example 9.1.7">🔗</a></div></article><div class="para" id="sec9-1-SVD-4-7">Sage provdes a method <code class="code-inline tex2jax_ignore">.pseudoinverse()</code> to find the pseudoinverse of a matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sec9-1-SVD-4-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># pseudoinverse using inbuilt Sage method
 A = matrix(SR,[[1,1],[1,1],[1,-1]])
 A.pseudoinverse()
@@ -991,9 +1017,9 @@ for i in range(2):
 V*S1*U.T
 </script></div>
 <section class="reading-questions" id="rqs-SVD-psedo-exer-set1"><h4 class="heading hide-type">
-<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Reading Questions</span>
+<span class="type">Reading Questions</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reading Questions</span>
 </h4>
-<article class="exercise exercise-like" id="psedo_ex1"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<article class="exercise exercise-like" id="psedo_ex1"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
 <div class="para logical" id="psedo_ex1-1-1">
 <div class="para">If <span class="process-math">\(A\)</span> is <span class="process-math">\(m\times n\)</span> matrix with <span class="process-math">\(m\geq n\)</span> and <span class="process-math">\(\rank(A)=n\)</span> then</div>
 <div class="displaymath process-math">
@@ -1001,9 +1027,11 @@ V*S1*U.T
 A^\dagger=(A^TA)^{-1}A^T\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#psedo_ex1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="psedo_ex1-1-2">
-<span class="process-math">\((A^TA)^{-1}A^T\)</span> is called the <em class="emphasis">left pseudoinnverse</em> of <span class="process-math">\(A\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="psedo_ex2"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<span class="process-math">\((A^TA)^{-1}A^T\)</span> is called the <em class="emphasis">left pseudoinnverse</em> of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#psedo_ex1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 9.1.2.1"><a href="#psedo_ex1" title="Copy heading and permalink for Reading Question 9.1.2.1" aria-label="Copy heading and permalink for Reading Question 9.1.2.1">🔗</a></div></article><article class="exercise exercise-like" id="psedo_ex2"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
 <div class="para logical" id="psedo_ex2-1-1">
 <div class="para">If <span class="process-math">\(m\leq n\)</span> and <span class="process-math">\(\rank(A)=m\)</span> then</div>
 <div class="displaymath process-math">
@@ -1011,15 +1039,20 @@ A^\dagger=(A^TA)^{-1}A^T\text{.}
 A^\dagger =A^T(AA^T)^{-1}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#psedo_ex2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="psedo_ex2-1-2">
-<span class="process-math">\(A^T(AA^T)^{-1}\)</span> is called the <em class="emphasis">right pseudoinverse</em> of <span class="process-math">\(A\text{.}\)</span>
-</div></article></section><article class="theorem theorem-like" id="sec9-1-SVD-4-11"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.8</span><span class="period">.</span>
+<span class="process-math">\(A^T(AA^T)^{-1}\)</span> is called the <em class="emphasis">right pseudoinverse</em> of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#psedo_ex2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 9.1.2.2"><a href="#psedo_ex2" title="Copy heading and permalink for Reading Question 9.1.2.2" aria-label="Copy heading and permalink for Reading Question 9.1.2.2">🔗</a></div></article><div class="autopermalink" data-description="Reading Questions 9.1.2"><a href="#rqs-SVD-psedo-exer-set1" title="Copy heading and permalink for Reading Questions 9.1.2" aria-label="Copy heading and permalink for Reading Questions 9.1.2">🔗</a></div></section><article class="theorem theorem-like" id="sec9-1-SVD-4-11"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sec9-1-SVD-4-11-1-1">Let <span class="process-math">\(Ax = b\text{,}\)</span> be a system of <span class="process-math">\(m\)</span> equations in <span class="process-math">\(n\)</span> variables with <span class="process-math">\(m\geq n\text{.}\)</span> Let <span class="process-math">\(\rank(A) = n\text{.}\)</span> Then the vector <span class="process-math">\(x^*=A^\dagger b\)</span> minimizes <span class="process-math">\(\norm{Ax-b}^2\)</span> on <span class="process-math">\(\R^n\text{,}\)</span> that is the least square solution of <span class="process-math">\(Ax=b\text{.}\)</span>
-</div></article><article class="example example-like" id="eg-lstsq-psedo1"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.9</span><span class="period">.</span>
-</h4>Consider the  <a href="sec8-1-LSTSQ.html#lst-sq-eg814" class="xref" data-knowl="./knowl/xref/lst-sq-eg814.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.1.7">Example 8.1.7</a>. Solve this problem using the notion of pseudoinverse in Sage. <div class="para" id="eg-lstsq-psedo1-2"><details id="eg-lstsq-psedo1-2-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec9-1-SVD-4-11-1-1">Let <span class="process-math">\(Ax = b\text{,}\)</span> be a system of <span class="process-math">\(m\)</span> equations in <span class="process-math">\(n\)</span> variables with <span class="process-math">\(m\geq n\text{.}\)</span> Let <span class="process-math">\(\rank(A) = n\text{.}\)</span> Then the vector <span class="process-math">\(x^*=A^\dagger b\)</span> minimizes <span class="process-math">\(\norm{Ax-b}^2\)</span> on <span class="process-math">\(\R^n\text{,}\)</span> that is the least square solution of <span class="process-math">\(Ax=b\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-4-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 9.1.8"><a href="#sec9-1-SVD-4-11" title="Copy heading and permalink for Theorem 9.1.8" aria-label="Copy heading and permalink for Theorem 9.1.8">🔗</a></div></article><article class="example example-like" id="eg-lstsq-psedo1"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<a href="sec8-1-LSTSQ.html#lst-sq-eg814" class="xref" data-knowl="./knowl/xref/lst-sq-eg814.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.1.7">Example 8.1.7</a><div class="para" id="eg-lstsq-psedo1-2">
+<details id="eg-lstsq-psedo1-2-1" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div id="eg-lstsq-psedo1-2-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">xx = [-3.0 , -2.8 , -2.5 , -2.2 , -2.0 , -1.8 , -1.5 , -1.2 , -1.0 , -0.75 , -0.50 , -0.25 , 0.00 , 
       0.25 , 0.50 , 0.75 , 1.0 , 1.2 , 1.5 , 1.8]
 yy=[1.1 , 4.0 , 7.3 , 7.1 , 8.2 , 7.8 , 9.9 , 7.1 , 8.8 , 6.2 , 7.0 , 3.7 , 4.7 , 3.4 , 5.6 , 5.8 , 
@@ -1032,18 +1065,28 @@ xx3 =[xx[i]^3 for i in range(n)]
 b = column_matrix(yy)
 A = column_matrix([ones, xx, xx2,xx3])
 A.pseudoinverse()*b
-</script></div> <div class="para" id="eg-lstsq-psedo1-2-1-2">Note that we get the same answer.</div>
-</div></details></div></article><section class="exercises" id="exercises-SVD-exer-set3"><h4 class="heading hide-type">
-<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</script></div>
+<div class="para" id="eg-lstsq-psedo1-2-1-2">Note that we get the same answer.<div class="autopermalink" data-description="Paragraph"><a href="#eg-lstsq-psedo1-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1"><a href="#eg-lstsq-psedo1-2-1" title="Copy heading and permalink for Solution 1" aria-label="Copy heading and permalink for Solution 1">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Paragraph"><a href="#eg-lstsq-psedo1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 9.1.9"><a href="#eg-lstsq-psedo1" title="Copy heading and permalink for Example 9.1.9" aria-label="Copy heading and permalink for Example 9.1.9">🔗</a></div></article><section class="exercises" id="exercises-SVD-exer-set3"><h4 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h4>
-<article class="exercise exercise-like" id="exer-9-1-14a"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="exer-9-1-14a-1-1">If <span class="process-math">\(A\)</span> is square matrix, then show that <span class="process-math">\(A^TA\)</span> and <span class="process-math">\(AA^T\)</span> are similar.</div></article><article class="exercise exercise-like" id="exer-9-1-14b"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="exer-9-1-14b-1-1">Find the SVD of a matrix <span class="process-math">\(\begin{pmatrix}1 \amp 1 \amp 1 \\2 \amp 2 \amp 2\\3 \amp 1 \amp -1 \end{pmatrix}\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="exer-9-1-14c"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="exer-9-1-14c-1-1">Find the least square solution of the system of equations <span class="process-math">\(Ax=b\)</span> where <span class="process-math">\(A =\begin{pmatrix}2 \amp 3 \amp -1\\-2 \amp 1 \amp 4\\3 \amp 1 \amp 3\\ -5 \amp 4 \amp 2\\1 \amp 1 \amp 1 \end{pmatrix}\)</span> and <span class="process-math">\(b= \begin{pmatrix}-10\\7\\15\\8\\9 \end{pmatrix}\)</span> using generalized inverse.</div></article></section></section><section class="subsection" id="sec9-1-SVD-5"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.3</span><span class="space"> </span><span class="title">Geometry of SVD</span>
+<article class="exercise exercise-like" id="exer-9-1-14a"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exer-9-1-14a-1-1">If <span class="process-math">\(A\)</span> is square matrix, then show that <span class="process-math">\(A^TA\)</span> and <span class="process-math">\(AA^T\)</span> are similar.<div class="autopermalink" data-description="Paragraph"><a href="#exer-9-1-14a-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 9.1.2.1"><a href="#exer-9-1-14a" title="Copy heading and permalink for Exercise 9.1.2.1" aria-label="Copy heading and permalink for Exercise 9.1.2.1">🔗</a></div></article><article class="exercise exercise-like" id="exer-9-1-14b"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exer-9-1-14b-1-1">Find the SVD of a matrix <span class="process-math">\(\begin{pmatrix}1 \amp 1 \amp 1 \\2 \amp 2 \amp 2\\3 \amp 1 \amp -1 \end{pmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-9-1-14b-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 9.1.2.2"><a href="#exer-9-1-14b" title="Copy heading and permalink for Exercise 9.1.2.2" aria-label="Copy heading and permalink for Exercise 9.1.2.2">🔗</a></div></article><article class="exercise exercise-like" id="exer-9-1-14c"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exer-9-1-14c-1-1">Find the least square solution of the system of equations <span class="process-math">\(Ax=b\)</span> where <span class="process-math">\(A =\begin{pmatrix}2 \amp 3 \amp -1\\-2 \amp 1 \amp 4\\3 \amp 1 \amp 3\\ -5 \amp 4 \amp 2\\1 \amp 1 \amp 1 \end{pmatrix}\)</span> and <span class="process-math">\(b= \begin{pmatrix}-10\\7\\15\\8\\9 \end{pmatrix}\)</span> using generalized inverse.<div class="autopermalink" data-description="Paragraph"><a href="#exer-9-1-14c-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 9.1.2.3"><a href="#exer-9-1-14c" title="Copy heading and permalink for Exercise 9.1.2.3" aria-label="Copy heading and permalink for Exercise 9.1.2.3">🔗</a></div></article><div class="autopermalink" data-description="Exercises 9.1.2"><a href="#exercises-SVD-exer-set3" title="Copy heading and permalink for Exercises 9.1.2" aria-label="Copy heading and permalink for Exercises 9.1.2">🔗</a></div></section><div class="autopermalink" data-description="Subsection 9.1.2: Pseudoinverse using SVD"><a href="#sec9-1-SVD-4" title="Copy heading and permalink for Subsection 9.1.2: Pseudoinverse using SVD" aria-label="Copy heading and permalink for Subsection 9.1.2: Pseudoinverse using SVD">🔗</a></div></section><section class="subsection" id="sec9-1-SVD-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Geometry of SVD</span>
 </h3>
-<div class="para" id="sec9-1-SVD-5-2">SVD provides effective way to look at how a matrix tranforms and object geometrically. In order to see the geometric, let us consider the matrix <span class="process-math">\(A=\left(\begin{array}{rr} 4 \amp -2 \\ -2 \amp 3 \end{array} \right)\text{.}\)</span>
+<div class="para" id="sec9-1-SVD-5-2">SVD provides effective way to look at how a matrix tranforms and object geometrically. In order to see the geometric, let us consider the matrix <span class="process-math">\(A=\left(\begin{array}{rr} 4 \amp -2 \\ -2 \amp 3 \end{array} \right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec9-1-SVD-5-3">
 <div class="para">The singular value decomposition of <span class="process-math">\(A=USV^T\)</span> is given by</div>
@@ -1052,10 +1095,13 @@ A.pseudoinverse()*b
 A=\left(\begin{array}{rr} -0.78820 \amp  0.61541 \\ 0.61541 \amp  0.78820 \end{array} \right)\left(\begin{array}{rr} 5.56150 \amp  0.0 \\ 0.0 \amp  1.4384 \end{array} \right)\left(\begin{array}{rr} -0.78820 \amp  0.61541 \\ 0.61541 \amp  0.78820 \end{array} \right)^T\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec9-1-SVD-5-4">The geometric meaning of <span class="process-math">\(A\)</span> applied to unit circle along with unit vectors <span class="process-math">\(e_1\)</span> and <span class="process-math">\(e_2\)</span> is explained in the following figure <a href="sec9-1-SVD.html#fig_Unit_Circle-SVD" class="xref" data-knowl="./knowl/xref/fig_Unit_Circle-SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.10">Figure 9.1.10</a>.</div>
+<div class="para" id="sec9-1-SVD-5-4">The geometric meaning of <span class="process-math">\(A\)</span> applied to unit circle along with unit vectors <span class="process-math">\(e_1\)</span> and <span class="process-math">\(e_2\)</span> is explained in the following figure <a href="sec9-1-SVD.html#fig_Unit_Circle-SVD" class="xref" data-knowl="./knowl/xref/fig_Unit_Circle-SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.10">Figure 9.1.10</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <figure class="figure figure-like" id="fig_Unit_Circle-SVD"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/SVD_Unit_Circle.PNG" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.10<span class="period">.</span></span><span class="space"> </span>Transformation of unit circle under SVD</figcaption></figure><div class="para" id="sec9-1-SVD-5-6">Let us use Sage to demonstrate geometry of the above example.</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Transformation of unit circle under SVD<div class="autopermalink" data-description="Figure 9.1.10"><a href="#fig_Unit_Circle-SVD" title="Copy heading and permalink for Figure 9.1.10" aria-label="Copy heading and permalink for Figure 9.1.10">🔗</a></div></figcaption></figure><div class="para" id="sec9-1-SVD-5-6">Let us use Sage to demonstrate geometry of the above example.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sec9-1-SVD-5-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix(RDF,[[4,-2],[-2,3]])
 U,S,V=A.change_ring(RDF).SVD()
 </script></div>
@@ -1079,7 +1125,7 @@ svd3.show()
 svd4=plot(U*S*V.T*e1,color='red')+plot(U*S*V.T*e2,color='green')+c4
 svd4.show()
 </script></div>
-<div class="para" id="sec9-1-SVD-5-12">We can plot the image under <span class="process-math">\(A\text{.}\)</span>
+<div class="para" id="sec9-1-SVD-5-12">We can plot the image under <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-5-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div id="sec9-1-SVD-5-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Image under A
 svdCir = parametric_plot(A*cir,(t,0,2*pi),figsize=4)
@@ -1087,10 +1133,13 @@ svdA=plot(A*e1,color='red')+plot(A*e2,color='green')+c4
 show(svdA+svdCir)
 </script></div>
 <article class="example example-like" id="sec9-1-SVD-5-14"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.11</span><span class="period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sec9-1-SVD-5-14-1-1">Consider a <span class="process-math">\(3\times 3\)</span> matrix <span class="process-math">\(A=\begin{pmatrix}2 \amp 3 \amp 1 \\ -1 \amp 2 \amp 1 \\ 0 \amp 2 \amp 3 \end{pmatrix}\text{.}\)</span> The singular values of <span class="process-math">\(A\)</span> are 5.107, 2.2982 and 1.2779.</div> <div class="para" id="sec9-1-SVD-5-14-1-2">The Figure <a href="sec9-1-SVD.html#fig_Unit_Sphere-SVD" class="xref" data-knowl="./knowl/xref/fig_Unit_Sphere-SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.12">Figure 9.1.12</a> below explains what happens to a unit sphere and unit vectors under <span class="process-math">\(A\text{,}\)</span> obtained using SVD.</div> <figure class="figure figure-like" id="fig_Unit_Sphere-SVD"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/SVD_Unit_Sphere.PNG" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.12<span class="period">.</span></span><span class="space"> </span>Transformation of unit circle under SVD</figcaption></figure> </article><div class="para" id="sec9-1-SVD-5-15">We can also demostrate the <span class="process-math">\(3\times 3\)</span> example also in Sage.</div>
+<div class="para" id="sec9-1-SVD-5-14-1-1">Consider a <span class="process-math">\(3\times 3\)</span> matrix <span class="process-math">\(A=\begin{pmatrix}2 \amp 3 \amp 1 \\ -1 \amp 2 \amp 1 \\ 0 \amp 2 \amp 3 \end{pmatrix}\text{.}\)</span> The singular values of <span class="process-math">\(A\)</span> are 5.107, 2.2982 and 1.2779.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-5-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec9-1-SVD-5-14-1-2">The Figure <a href="sec9-1-SVD.html#fig_Unit_Sphere-SVD" class="xref" data-knowl="./knowl/xref/fig_Unit_Sphere-SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.12">Figure 9.1.12</a> below explains what happens to a unit sphere and unit vectors under <span class="process-math">\(A\text{,}\)</span> obtained using SVD.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-5-14-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="fig_Unit_Sphere-SVD"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/SVD_Unit_Sphere.PNG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Transformation of unit circle under SVD<div class="autopermalink" data-description="Figure 9.1.12"><a href="#fig_Unit_Sphere-SVD" title="Copy heading and permalink for Figure 9.1.12" aria-label="Copy heading and permalink for Figure 9.1.12">🔗</a></div></figcaption></figure> <div class="autopermalink" data-description="Example 9.1.11"><a href="#sec9-1-SVD-5-14" title="Copy heading and permalink for Example 9.1.11" aria-label="Copy heading and permalink for Example 9.1.11">🔗</a></div></article><div class="para" id="sec9-1-SVD-5-15">We can also demostrate the <span class="process-math">\(3\times 3\)</span> example also in Sage.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-5-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sec9-1-SVD-5-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix(RDF, [[2,3,1],[-1,2,1],[0,2,3]])
 U, S, VT = A.SVD()
 V=VT.transpose()
@@ -1125,10 +1174,12 @@ P3.show(aspect_ratio=[1,1,1])
 plot(U*S*VT*e[0],thickness=2)+plot(U*S*VT*e[1],color='red',thickness=2)+\
 plot(U*S*VT*e[2],color='green',thickness=2)
 P4.show(aspect_ratio=[1,1,1])
-</script></div></section><section class="subsection" id="sec9-1-SVD-6"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.4</span><span class="space"> </span><span class="title">Image Compression using SVD</span>
+</script></div>
+<div class="autopermalink" data-description="Subsection 9.1.3: Geometry of SVD"><a href="#sec9-1-SVD-5" title="Copy heading and permalink for Subsection 9.1.3: Geometry of SVD" aria-label="Copy heading and permalink for Subsection 9.1.3: Geometry of SVD">🔗</a></div></section><section class="subsection" id="sec9-1-SVD-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Image Compression using SVD</span>
 </h3>
-<div class="para" id="sec9-1-SVD-6-2">Images stored on a computer is a collection of dots called pixels. The collection of dots/pixels that constitute an image can be stored as a matrix. The color image can be thought of as 3 dimensional array.</div>
+<div class="para" id="sec9-1-SVD-6-2">Images stored on a computer is a collection of dots called pixels. The collection of dots/pixels that constitute an image can be stored as a matrix. The color image can be thought of as 3 dimensional array.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="sec9-1-SVD-6-3">
 <div class="para">Using Eqn. <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a> we can write a matrix as sum of rank one matrices.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_svd9.html">
@@ -1136,8 +1187,10 @@ P4.show(aspect_ratio=[1,1,1])
 A=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ru_rv_r^T\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec9-1-SVD-6-4">This property says that <span class="process-math">\(\rank{(A)}\)</span> is equal to the number of singular values of <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(\sigma_1\gt \sigma_2\gt \cdots\gt \sigma_r\text{,}\)</span> the first term has highest impact on <span class="process-math">\(A\)</span> followed by the second term and so on. This propriety allows us to reduce the noise or compress the matrix data by eliminating the small singular values or the higher ranks. This can be used as approximation of a given matrix, in particular we can approximate a matrix by adding only the first few terms of <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a>.</div>
+<div class="para" id="sec9-1-SVD-6-4">This property says that <span class="process-math">\(\rank{(A)}\)</span> is equal to the number of singular values of <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(\sigma_1\gt \sigma_2\gt \cdots\gt \sigma_r\text{,}\)</span> the first term has highest impact on <span class="process-math">\(A\)</span> followed by the second term and so on. This propriety allows us to reduce the noise or compress the matrix data by eliminating the small singular values or the higher ranks. This can be used as approximation of a given matrix, in particular we can approximate a matrix by adding only the first few terms of <a href="sec9-1-SVD.html#rem_svd2-1-1-8" class="xref" data-knowl="./knowl/xref/eq_svd9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="sec9-1-SVD-6-5">
 <div class="para">If we let</div>
 <div class="displaymath process-math">
@@ -1147,22 +1200,28 @@ A_k:=\sigma_1u_1v_1^T+\sigma_2u_2v_2^T+\cdots+\sigma_ku_kv_k^T (k\leq r)
 </div>
 <div class="para">then the total storage required for <span class="process-math">\(A_k\)</span> is <span class="process-math">\(k(m+n+1)\)</span> which is much less compare to <span class="process-math">\(mn\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec9-1-SVD-6-6">When an image (the corresponding matrix) is transformed using SVD, it is not compressed, but the data take a form in which the first singular value has a more amount of the image information. This allows us to use first few singular values to represent the image almost identical to the original.</div>
-<div class="para" id="sec9-1-SVD-6-7">Look at the Image in <a href="sec9-1-SVD.html#fig_Sardar-im1" class="xref" data-knowl="./knowl/xref/fig_Sardar-im1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.13">Fig 9.1.13</a>. The associates matrix for this image is of size <span class="process-math">\(995\times 1770\times 3\text{.}\)</span>
+<div class="para" id="sec9-1-SVD-6-6">When an image (the corresponding matrix) is transformed using SVD, it is not compressed, but the data take a form in which the first singular value has a more amount of the image information. This allows us to use first few singular values to represent the image almost identical to the original.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec9-1-SVD-6-7">Look at the Image in <a href="sec9-1-SVD.html#fig_Sardar-im1" class="xref" data-knowl="./knowl/xref/fig_Sardar-im1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.13">Fig 9.1.13</a>. The associates matrix for this image is of size <span class="process-math">\(995\times 1770\times 3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_Sardar-im1"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar_color.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.13<span class="period">.</span></span><span class="space"> </span>Orginal  Color Image</figcaption></figure><div class="para" id="sec9-1-SVD-6-9">This image is converted into a gray scale image (See <a href="sec9-1-SVD.html#fig_Sardar-im2" class="xref" data-knowl="./knowl/xref/fig_Sardar-im2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.14">Figure 9.1.14</a>). This size of matrix associated to the gray scale image is <span class="process-math">\(995\times 1770\)</span> with rank 995.</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Orginal  Color Image<div class="autopermalink" data-description="Figure 9.1.13"><a href="#fig_Sardar-im1" title="Copy heading and permalink for Figure 9.1.13" aria-label="Copy heading and permalink for Figure 9.1.13">🔗</a></div></figcaption></figure><div class="para" id="sec9-1-SVD-6-9">This image is converted into a gray scale image (See <a href="sec9-1-SVD.html#fig_Sardar-im2" class="xref" data-knowl="./knowl/xref/fig_Sardar-im2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.14">Figure 9.1.14</a>). This size of matrix associated to the gray scale image is <span class="process-math">\(995\times 1770\)</span> with rank 995.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <figure class="figure figure-like" id="fig_Sardar-im2"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar_Gray.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.14<span class="period">.</span></span><span class="space"> </span>Original Gray Image</figcaption></figure><div class="para" id="sec9-1-SVD-6-11">After applying SVD to the Gray image and using 1st 5, 10, 20,30, 50, 100 terms respectively of the rank one approximation the approximate images are plotted in the <a href="sec9-1-SVD.html#fig_Sardar-im5" class="xref" data-knowl="./knowl/xref/fig_Sardar-im5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.15">Figures 9.1.15</a>, <a href="sec9-1-SVD.html#fig_Sardar-im10" class="xref" data-knowl="./knowl/xref/fig_Sardar-im10.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.16">Figure 9.1.16</a>, <a href="sec9-1-SVD.html#fig_Sardar-im20" class="xref" data-knowl="./knowl/xref/fig_Sardar-im20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.17">Figure 9.1.17</a>, <a href="sec9-1-SVD.html#fig_Sardar-im50" class="xref" data-knowl="./knowl/xref/fig_Sardar-im50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.19">Figure 9.1.19</a>, <a href="sec9-1-SVD.html#fig_Sardar-im50" class="xref" data-knowl="./knowl/xref/fig_Sardar-im50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.19">Figure 9.1.19</a>, <a href="sec9-1-SVD.html#fig_Sardar-im100" class="xref" data-knowl="./knowl/xref/fig_Sardar-im100.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.20">Figure 9.1.20</a> respectively.</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Original Gray Image<div class="autopermalink" data-description="Figure 9.1.14"><a href="#fig_Sardar-im2" title="Copy heading and permalink for Figure 9.1.14" aria-label="Copy heading and permalink for Figure 9.1.14">🔗</a></div></figcaption></figure><div class="para" id="sec9-1-SVD-6-11">After applying SVD to the Gray image and using 1st 5, 10, 20,30, 50, 100 terms respectively of the rank one approximation the approximate images are plotted in the <a href="sec9-1-SVD.html#fig_Sardar-im5" class="xref" data-knowl="./knowl/xref/fig_Sardar-im5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.15">Figures 9.1.15</a>, <a href="sec9-1-SVD.html#fig_Sardar-im10" class="xref" data-knowl="./knowl/xref/fig_Sardar-im10.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.16">Figure 9.1.16</a>, <a href="sec9-1-SVD.html#fig_Sardar-im20" class="xref" data-knowl="./knowl/xref/fig_Sardar-im20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.17">Figure 9.1.17</a>, <a href="sec9-1-SVD.html#fig_Sardar-im50" class="xref" data-knowl="./knowl/xref/fig_Sardar-im50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.19">Figure 9.1.19</a>, <a href="sec9-1-SVD.html#fig_Sardar-im50" class="xref" data-knowl="./knowl/xref/fig_Sardar-im50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.19">Figure 9.1.19</a>, <a href="sec9-1-SVD.html#fig_Sardar-im100" class="xref" data-knowl="./knowl/xref/fig_Sardar-im100.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.20">Figure 9.1.20</a> respectively.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <figure class="figure figure-like" id="fig_Sardar-im5"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im5.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.15<span class="period">.</span></span><span class="space"> </span>Approximate Image with 5 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im10"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im10.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.16<span class="period">.</span></span><span class="space"> </span>Approximate Image with 10 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im20"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im20.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.17<span class="period">.</span></span><span class="space"> </span>Approximate Image with 20 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im30"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im30.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.18<span class="period">.</span></span><span class="space"> </span>Approximate Image with 30 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im50"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im50.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.19<span class="period">.</span></span><span class="space"> </span>Approximate Image with 50 terms</figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im100"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im100.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.20<span class="period">.</span></span><span class="space"> </span>Approximate Image with 100 terms</figcaption></figure><div class="para" id="sec9-1-SVD-6-18">It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image. Note that the original image has <span class="process-math">\(995\times 1770=1761150\)</span> pixels, where as if we take the 1st 100 terms, then it is of size <span class="process-math">\(100(995+1770)=276500\)</span> which quite small compared to the original size.</div>
-<div class="para" id="sec9-1-SVD-6-19">Now let us see how, we can implement image compression in Python.</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Approximate Image with 5 terms<div class="autopermalink" data-description="Figure 9.1.15"><a href="#fig_Sardar-im5" title="Copy heading and permalink for Figure 9.1.15" aria-label="Copy heading and permalink for Figure 9.1.15">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im10"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im10.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Approximate Image with 10 terms<div class="autopermalink" data-description="Figure 9.1.16"><a href="#fig_Sardar-im10" title="Copy heading and permalink for Figure 9.1.16" aria-label="Copy heading and permalink for Figure 9.1.16">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im20"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im20.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Approximate Image with 20 terms<div class="autopermalink" data-description="Figure 9.1.17"><a href="#fig_Sardar-im20" title="Copy heading and permalink for Figure 9.1.17" aria-label="Copy heading and permalink for Figure 9.1.17">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im30"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im30.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Approximate Image with 30 terms<div class="autopermalink" data-description="Figure 9.1.18"><a href="#fig_Sardar-im30" title="Copy heading and permalink for Figure 9.1.18" aria-label="Copy heading and permalink for Figure 9.1.18">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im50"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im50.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Approximate Image with 50 terms<div class="autopermalink" data-description="Figure 9.1.19"><a href="#fig_Sardar-im50" title="Copy heading and permalink for Figure 9.1.19" aria-label="Copy heading and permalink for Figure 9.1.19">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig_Sardar-im100"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/images/Sardar-im100.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Approximate Image with 100 terms<div class="autopermalink" data-description="Figure 9.1.20"><a href="#fig_Sardar-im100" title="Copy heading and permalink for Figure 9.1.20" aria-label="Copy heading and permalink for Figure 9.1.20">🔗</a></div></figcaption></figure><div class="para" id="sec9-1-SVD-6-18">It is quite evident that 1st 100 terms itself gives a very good approximation of the original gray scale image. Note that the original image has <span class="process-math">\(995\times 1770=1761150\)</span> pixels, where as if we take the 1st 100 terms, then it is of size <span class="process-math">\(100(995+1770)=276500\)</span> which quite small compared to the original size.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec9-1-SVD-6-19">Now let us see how, we can implement image compression in Python.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sec9-1-SVD-6-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
 from PIL import Image
 import requests
@@ -1204,8 +1263,14 @@ for i in [5, 10, 50,100,200]:
     result = Image.fromarray((cmpimg ).astype(np.uint8))
 </script></div>
 <article class="example example-like" id="sec9-1-SVD-6-26"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Color Image Compression.</span>
-</h4> <div class="para" id="sec9-1-SVD-6-26-2">In this example, we present a Python program that demonstrates color image compression using Singular Value Decomposition (SVD). The method involves separating the image into its Red, Green, and Blue (RGB) channels, applying SVD to each channel individually, and then recombining the compressed channels to obtain the final compressed image.</div> <div class="para" id="sec9-1-SVD-6-26-3"><em class="emphasis">The reader is encouraged to copy the following code and execute it in a Python environment.</em></div> <div id="sec9-1-SVD-6-26-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Color Image Compression.</span>
+</h4>
+<div class="para" id="sec9-1-SVD-6-26-2">In this example, we present a Python program that demonstrates color image compression using Singular Value Decomposition (SVD). The method involves separating the image into its Red, Green, and Blue (RGB) channels, applying SVD to each channel individually, and then recombining the compressed channels to obtain the final compressed image.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-26-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec9-1-SVD-6-26-3">
+<em class="emphasis">The reader is encouraged to copy the following code and execute it in a Python environment.</em><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-26-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sec9-1-SVD-6-26-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
 from PIL import Image
 import requests
 from io import BytesIO
@@ -1252,31 +1317,57 @@ axes[1].set_title(f"SVD Compressed (k={k})")
 axes[1].axis("off")
 
 plt.show()
-</script></div></article><article class="remark remark-like" id="sec9-1-SVD-6-27"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">9.1.22</span><span class="period">.</span>
+</script></div>
+<div class="autopermalink" data-description="Example 9.1.21: Color Image Compression"><a href="#sec9-1-SVD-6-26" title="Copy heading and permalink for Example 9.1.21: Color Image Compression" aria-label="Copy heading and permalink for Example 9.1.21: Color Image Compression">🔗</a></div></article><article class="remark remark-like" id="sec9-1-SVD-6-27"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sec9-1-SVD-6-27-1">Suppose <span class="process-math">\(A=U\Sigma V^T\)</span> is the singular value decomposition of <span class="process-math">\(A\text{.}\)</span> Then we get the following informations from the SVD of <span class="process-math">\(A\text{.}\)</span>
-</div> <ol class="decimal" id="sec9-1-SVD-6-27-2">
-<li id="sec9-1-SVD-6-27-2-1"><div class="para" id="sec9-1-SVD-6-27-2-1-1">The rank is equal to the number of non-zero singular values: <span class="process-math">\(\mathrm{rank}(A) = \#\{\sigma_i &gt; 0\}\)</span>
-</div></li>
-<li id="sec9-1-SVD-6-27-2-2"><div class="para" id="sec9-1-SVD-6-27-2-2-1">Null space (Kernel) is  obtained from the columns of <span class="process-math">\(V\)</span> corresponding to zero singular values.</div></li>
-<li id="sec9-1-SVD-6-27-2-3"><div class="para" id="sec9-1-SVD-6-27-2-3-1">Column space (Range) is panned by the first <span class="process-math">\(r\)</span> columns of <span class="process-math">\(U\text{,}\)</span> where <span class="process-math">\(r = \mathrm{rank}(A)\text{.}\)</span>
-</div></li>
-<li id="sec9-1-SVD-6-27-2-4"><div class="para" id="sec9-1-SVD-6-27-2-4-1">Row space is  spanned by the first <span class="process-math">\(r\)</span> columns of <span class="process-math">\(V\text{.}\)</span>
-</div></li>
-<li id="sec9-1-SVD-6-27-2-5"><div class="para" id="sec9-1-SVD-6-27-2-5-1">Spectral norm,  <span class="process-math">\(\|A\|_2 = \sigma_{\max}\)</span>
-</div></li>
-<li id="sec9-1-SVD-6-27-2-6"><div class="para" id="sec9-1-SVD-6-27-2-6-1">Frobenius norm <span class="process-math">\(\|A\|_F = \sum a_{ij}^2=\sqrt{\sum \sigma_i^2}\)</span>
-</div></li>
-<li id="sec9-1-SVD-6-27-2-7"><div class="para" id="sec9-1-SVD-6-27-2-7-1">Condition number, defined as <span class="process-math">\(\kappa(A) = \frac{\sigma_{\max}}{\sigma_{\min}}\text{.}\)</span>
-</div></li>
-</ol></article></section><section class="conclusion" id="sec9-1-SVD-7"><div class="para" id="sec9-1-SVD-7-1">In essence, SVD bridges theory and application—providing a unifying framework in linear algebra with far-reaching uses from solving least squares problems to dimensionality reduction and real-world data compression.</div></section></section></div>
-<div class="ptx-content-footer">
+<div class="para" id="sec9-1-SVD-6-27-1">Suppose <span class="process-math">\(A=U\Sigma V^T\)</span> is the singular value decomposition of <span class="process-math">\(A\text{.}\)</span> Then we get the following informations from the SVD of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-27-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="sec9-1-SVD-6-27-2">
+<li id="sec9-1-SVD-6-27-2-1">
+<div class="para" id="sec9-1-SVD-6-27-2-1-1">The rank is equal to the number of non-zero singular values: <span class="process-math">\(\mathrm{rank}(A) = \#\{\sigma_i &gt; 0\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-27-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec9-1-SVD-6-27-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec9-1-SVD-6-27-2-2">
+<div class="para" id="sec9-1-SVD-6-27-2-2-1">Null space (Kernel) is  obtained from the columns of <span class="process-math">\(V\)</span> corresponding to zero singular values.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-27-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec9-1-SVD-6-27-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec9-1-SVD-6-27-2-3">
+<div class="para" id="sec9-1-SVD-6-27-2-3-1">Column space (Range) is panned by the first <span class="process-math">\(r\)</span> columns of <span class="process-math">\(U\text{,}\)</span> where <span class="process-math">\(r = \mathrm{rank}(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-27-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec9-1-SVD-6-27-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sec9-1-SVD-6-27-2-4">
+<div class="para" id="sec9-1-SVD-6-27-2-4-1">Row space is  spanned by the first <span class="process-math">\(r\)</span> columns of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-27-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#sec9-1-SVD-6-27-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="sec9-1-SVD-6-27-2-5">
+<div class="para" id="sec9-1-SVD-6-27-2-5-1">Spectral norm,  <span class="process-math">\(\|A\|_2 = \sigma_{\max}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-27-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#sec9-1-SVD-6-27-2-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="sec9-1-SVD-6-27-2-6">
+<div class="para" id="sec9-1-SVD-6-27-2-6-1">Frobenius norm <span class="process-math">\(\|A\|_F = \sum a_{ij}^2=\sqrt{\sum \sigma_i^2}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-27-2-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#sec9-1-SVD-6-27-2-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+<li id="sec9-1-SVD-6-27-2-7">
+<div class="para" id="sec9-1-SVD-6-27-2-7-1">Condition number, defined as <span class="process-math">\(\kappa(A) = \frac{\sigma_{\max}}{\sigma_{\min}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-6-27-2-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7"><a href="#sec9-1-SVD-6-27-2-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Remark 9.1.22"><a href="#sec9-1-SVD-6-27" title="Copy heading and permalink for Remark 9.1.22" aria-label="Copy heading and permalink for Remark 9.1.22">🔗</a></div></article><div class="autopermalink" data-description="Subsection 9.1.4: Image Compression using SVD"><a href="#sec9-1-SVD-6" title="Copy heading and permalink for Subsection 9.1.4: Image Compression using SVD" aria-label="Copy heading and permalink for Subsection 9.1.4: Image Compression using SVD">🔗</a></div></section><section class="conclusion" id="sec9-1-SVD-7"><div class="para" id="sec9-1-SVD-7-1">In essence, SVD bridges theory and application—providing a unifying framework in linear algebra with far-reaching uses from solving least squares problems to dimensionality reduction and real-world data compression.<div class="autopermalink" data-description="Paragraph"><a href="#sec9-1-SVD-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><div class="autopermalink" data-description="Section 9.1: Singular Value Decomposition"><a href="#sec9-1-SVD" title="Copy heading and permalink for Section 9.1: Singular Value Decomposition" aria-label="Copy heading and permalink for Section 9.1: Singular Value Decomposition">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="chap9-SVD.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap10-PCA.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

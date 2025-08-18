@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:33+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.8</span><span class="period">.</span>
+</h3>
+<p>Creating array of graphs.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-379"><script type="text/x-sage">f(x) = sin(x)
+g(x) = sin(2*x)
+h(x) = sin(4*x)
+p1 = plot(f,(-2*pi,2*pi),color='red')
+p2 = plot(g,(-2*pi,2*pi),color='green')
+p3 = parametric_plot((f,g),(0,2*pi),color='blue')
+p4 = parametric_plot((f,h),(0,2*pi),color='black')
+G=graphics_array(((p1,p2),(p3,p4)))
+G.show(figsize=4)
+</script></pre></article><span class="incontext"><a href="subsec-plotting-sage.html#example-205" class="internal">in-context</a></span>
+</body>
+</html>

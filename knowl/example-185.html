@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:32+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Lagrange Interpolating Polynomials.</span>
+</h3>
+<p>Fix any <span class="process-math">\(n+1\)</span> distinct real numbers, <span class="process-math">\(c_0,c_1,\ldots, c_n\)</span> and define</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\langle p,q \rangle := p(c_0)q(c_0)+p(c_1)q(c_1)+\cdots +p(c_n)q(c_n)
+\end{equation*}
+</div>
+<p class="continuation">an inner product on <span class="process-math">\({\cal P}_n(\R)\text{.}\)</span></p>
+<p>Recall the Lagrange Polynomial defined (Eqn. <a href="" class="xref" data-knowl="./knowl/lagrange-eq1.html" title="Equation 4.5.1">(4.5.1)</a>).</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lagrange-eq1.html">
+\begin{equation*}
+\ell_i(x)=\prod_{j=0,j\neq i}^{n}\frac{x-c_j}{c_i-c_j}\text{.}
+\end{equation*}
+</div>
+<p>Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\inner{\ell_i}{\ell_j}=\sum_{j=0}^n \ell_i(c_j)\ell_j(c_j)=\delta_{ij}
+\end{equation*}
+</div>
+<p>Hence <span class="process-math">\(\{\ell_i\}\)</span> is an orthonormal basis of <span class="process-math">\({\cal P}_n(\R)\text{.}\)</span></p>
+<p>Let <span class="process-math">\(p(x)\in {\cal P}_n(\R)\)</span> be any polynomial, then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\inner{p}{\ell_k}=p(c_0)\ell_k(c_0)+p(c_1)\ell_k(c_1)+\cdots +p(c_n)\ell_k(c_n)=p(c_k)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since <span class="process-math">\(\{\ell_i\}\)</span> is an orthonormal basis of <span class="process-math">\({\cal P}_n(\R)\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{gather*}
+p(x)  = \inner{p(x)}{\ell_0(x)}\ell_0(x)+\inner{p(x)}{\ell_1(x)}\ell_1(x)+\cdots +\inner{p(x)}{\ell_n(x)}\ell_n(x)\\
+=  p(c_0)\ell_0(x)+p(c_1)\ell_1(x)+p(c_2)\ell_2(x)+\cdots +p(c_n)\ell_n(x)
+\end{gather*}
+</div>
+<p class="continuation">which is the Lagrange interpolation expansion of <span class="process-math">\(p(x)\text{.}\)</span></p></article><span class="incontext"><a href="sec7-1-InnerProduct.html#example-185" class="internal">in-context</a></span>
+</body>
+</html>

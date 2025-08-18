@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.12</span><span class="period">.</span>
+</h4>
+<p>Fix a basis <span class="process-math">\(\beta =\{ (1,1,-1),(1,-1,1),(-1,1,1)\}\)</span> of <span class="process-math">\(\R^3\text{.}\)</span> Define a linear map <span class="process-math">\(T\colon \R^3\to \R^3\)</span> such that <span class="process-math">\(T(1,1,-1)=(1,1,0), T(1,-1,1)=(1,0,1), T(-1,1,1)=(0,1,1)\text{.}\)</span> Find <span class="process-math">\(T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)\text{.}\)</span></p>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)=T(x_1e_1+x_2e_2+x_3e_3)=x_1T(e_1)+x_2T(e_2)+x_3T(e_3)\text{.}
+\end{equation*}
+</div>
+<p>Thus in order to find <span class="process-math">\(T\)</span> we need to know how is <span class="process-math">\(T\)</span> defined on the standard basis vector. First we need to find the coordinates of <span class="process-math">\(e_1,e_2,e_2\)</span> with respect to the basis <span class="process-math">\(\beta\)</span> using RREF.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\begin{bmatrix}v_1 \amp  v_2 \amp  v_3 \amp | \amp  e_1 \amp  e_2 \amp  e_3 \end{bmatrix} = \amp
+\left[\begin{array}{rrr|rrr} 1 \amp  1 \amp  -1 \amp  1 \amp  0 \amp  0 \\ 
+1 \amp  -1 \amp  1 \amp  0 \amp  1 \amp  0 \\ 
+-1 \amp  1 \amp  1 \amp  0 \amp  0 \amp  1 \end{array} \right]\\
+\amp  \xrightarrow{RREF} 
+\left[\begin{array}{rrr|rrr} 1 \amp  0 \amp  0 \amp  \frac{1}{2} \amp  \frac{1}{2} \amp  0 \\ 
+0 \amp  1 \amp  0 \amp  \frac{1}{2} \amp  0 \amp  \frac{1}{2} \\ 
+0 \amp  0 \amp  1 \amp  0 \amp  \frac{1}{2} \amp  \frac{1}{2} \end{array} \right]\text{.}
+\end{align*}
+</div>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned} e_1 = 1/2 v_1+1/2v_2 \implies   T(e_1)=1/2 w_1+1/2 w_2=(1, 1/2, 1/2).\\ 
+e_2 = 1/2 v_1+1/2v_3 \implies   T(e_2)=1/2 w_1+1/2 w_3=(1/2, 1, 1/2).\\ 
+e_3 = 1/2 v_2+1/2v_3 \implies T(e_3)=1/2 w_2+1/2 w_3=(1/2, 1/2, 1). \end{aligned}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right) =\amp x_1T(e_1)+x_2T(e_2)+x_3T(e_3)\\
+=\amp x_1(1, 1/2, 1/2)+x_2(1/2, 1, 1/2)+x_3(1/2, 1/2, 1)\\
+=\amp  \begin{bmatrix}x_{1} + \frac{1}{2}  x_{2} + \frac{1}{2}  x_{3}\\ 
+\frac{1}{2}  x_{1} + x_{2} + \frac{1}{2}  x_{3}\\ 
+\frac{1}{2}  x_{1} + \frac{1}{2}  x_{2} + x_{3} \end{bmatrix} \text{.}
+\end{align*}
+</div>
+<p>It is easy to check that <span class="process-math">\(T(v_i)=w_i\text{.}\)</span></p></article><span class="incontext"><a href="sec3-2-LT.html#linalg-engg-eg40" class="internal">in-context</a></span>
+</body>
+</html>

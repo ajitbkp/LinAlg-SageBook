@@ -6,15 +6,20 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Sage Computations</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Linear Algebra with SageMath">
-<meta property="book:author" content="Ajit Kumar">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -86,7 +91,44 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
   "inputLocation": "div.sagecell-sage",
@@ -98,137 +140,14 @@ sagecell.makeSagecell({
   ],
   "evalButtonText": "Evaluate (Sage)"
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
-<style>
-#subsec-elmentary-row-operations-3-1 { counter-set: subsec-elmentary-row-operations-3-1 0; }
-#subsec-elmentary-row-operations-3-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-3-1,decimal)"."; }
-#subsec-elmentary-row-operations-3-1 > li { counter-increment: subsec-elmentary-row-operations-3-1; }
-#def-elementary-row-operations-2-2-1 { counter-set: def-elementary-row-operations-2-2-1 0; }
-#def-elementary-row-operations-2-2-1 > li::marker { content: ""counter(def-elementary-row-operations-2-2-1,decimal)"."; }
-#def-elementary-row-operations-2-2-1 > li { counter-increment: def-elementary-row-operations-2-2-1; }
-#subsec-elmentary-row-operations-8-2-1 { counter-set: subsec-elmentary-row-operations-8-2-1 0; }
-#subsec-elmentary-row-operations-8-2-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-8-2-1,decimal)"."; }
-#subsec-elmentary-row-operations-8-2-1 > li { counter-increment: subsec-elmentary-row-operations-8-2-1; }
-#subsec-elmentary-row-operations-16-1-1-1 { counter-set: subsec-elmentary-row-operations-16-1-1-1 0; }
-#subsec-elmentary-row-operations-16-1-1-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-16-1-1-1,decimal)"."; }
-#subsec-elmentary-row-operations-16-1-1-1 > li { counter-increment: subsec-elmentary-row-operations-16-1-1-1; }
-#def-echelon-form-1-2-1 { counter-set: def-echelon-form-1-2-1 0; }
-#def-echelon-form-1-2-1 > li::marker { content: ""counter(def-echelon-form-1-2-1,decimal)"."; }
-#def-echelon-form-1-2-1 > li { counter-increment: def-echelon-form-1-2-1; }
-#sec-row-echelon-7 { counter-set: sec-row-echelon-7 0; }
-#sec-row-echelon-7 > li::marker { content: ""counter(sec-row-echelon-7,decimal)"."; }
-#sec-row-echelon-7 > li { counter-increment: sec-row-echelon-7; }
-#alg-gaussian-elimination-2-1-1 { counter-set: alg-gaussian-elimination-2-1-1 0; }
-#alg-gaussian-elimination-2-1-1 > li::marker { content: ""counter(alg-gaussian-elimination-2-1-1,decimal)"."; }
-#alg-gaussian-elimination-2-1-1 > li { counter-increment: alg-gaussian-elimination-2-1-1; }
-#sec1-4-matrix-rank-5-2-1 { counter-set: sec1-4-matrix-rank-5-2-1 0; }
-#sec1-4-matrix-rank-5-2-1 > li::marker { content: ""counter(sec1-4-matrix-rank-5-2-1,decimal)"."; }
-#sec1-4-matrix-rank-5-2-1 > li { counter-increment: sec1-4-matrix-rank-5-2-1; }
-#thm-nosol-rank-2-2-1 { counter-set: thm-nosol-rank-2-2-1 0; }
-#thm-nosol-rank-2-2-1 > li::marker { content: ""counter(thm-nosol-rank-2-2-1,decimal)"."; }
-#thm-nosol-rank-2-2-1 > li { counter-increment: thm-nosol-rank-2-2-1; }
-#subsec-Doolittle-5-1 { counter-set: subsec-Doolittle-5-1 0; }
-#subsec-Doolittle-5-1 > li::marker { content: ""counter(subsec-Doolittle-5-1,decimal)"."; }
-#subsec-Doolittle-5-1 > li { counter-increment: subsec-Doolittle-5-1; }
-#subsec-Doolittle-8-1 { counter-set: subsec-Doolittle-8-1 0; }
-#subsec-Doolittle-8-1 > li::marker { content: ""counter(subsec-Doolittle-8-1,decimal)"."; }
-#subsec-Doolittle-8-1 > li { counter-increment: subsec-Doolittle-8-1; }
-#sec1-7-exer-2-1 { counter-set: sec1-7-exer-2-1 0; }
-#sec1-7-exer-2-1 > li::marker { content: ""counter(sec1-7-exer-2-1,decimal)"."; }
-#sec1-7-exer-2-1 > li { counter-increment: sec1-7-exer-2-1; }
-#sec1-7-exer-2-1-3-2-1 { counter-set: sec1-7-exer-2-1-3-2-1 0; }
-#sec1-7-exer-2-1-3-2-1 > li::marker { content: "("counter(sec1-7-exer-2-1-3-2-1,lower-alpha)")"; }
-#sec1-7-exer-2-1-3-2-1 > li { counter-increment: sec1-7-exer-2-1-3-2-1; }
-#sec2-0-intro-11-1-1-1 { counter-set: sec2-0-intro-11-1-1-1 0; }
-#sec2-0-intro-11-1-1-1 > li::marker { content: ""counter(sec2-0-intro-11-1-1-1,decimal)"."; }
-#sec2-0-intro-11-1-1-1 > li { counter-increment: sec2-0-intro-11-1-1-1; }
-#exer-2-1-100-2-1 { counter-set: exer-2-1-100-2-1 0; }
-#exer-2-1-100-2-1 > li::marker { content: ""counter(exer-2-1-100-2-1,decimal)"."; }
-#exer-2-1-100-2-1 > li { counter-increment: exer-2-1-100-2-1; }
-#sec2-1-matrix-spaces-3-1 { counter-set: sec2-1-matrix-spaces-3-1 0; }
-#sec2-1-matrix-spaces-3-1 > li::marker { content: ""counter(sec2-1-matrix-spaces-3-1,decimal)"."; }
-#sec2-1-matrix-spaces-3-1 > li { counter-increment: sec2-1-matrix-spaces-3-1; }
-#sec-2-2-remrak2-1-1-1 { counter-set: sec-2-2-remrak2-1-1-1 0; }
-#sec-2-2-remrak2-1-1-1 > li::marker { content: ""counter(sec-2-2-remrak2-1-1-1,decimal)"."; }
-#sec-2-2-remrak2-1-1-1 > li { counter-increment: sec-2-2-remrak2-1-1-1; }
-#sec-sec3-5-LT-Sage-2-3-1 { counter-set: sec-sec3-5-LT-Sage-2-3-1 0; }
-#sec-sec3-5-LT-Sage-2-3-1 > li::marker { content: ""counter(sec-sec3-5-LT-Sage-2-3-1,decimal)"."; }
-#sec-sec3-5-LT-Sage-2-3-1 > li { counter-increment: sec-sec3-5-LT-Sage-2-3-1; }
-#sec4-1-VS-3-2-2-1 { counter-set: sec4-1-VS-3-2-2-1 0; }
-#sec4-1-VS-3-2-2-1 > li::marker { content: ""counter(sec4-1-VS-3-2-2-1,decimal)"."; }
-#sec4-1-VS-3-2-2-1 > li { counter-increment: sec4-1-VS-3-2-2-1; }
-#thm-basis-equiv-1-2-1 { counter-set: thm-basis-equiv-1-2-1 0; }
-#thm-basis-equiv-1-2-1 > li::marker { content: ""counter(thm-basis-equiv-1-2-1,decimal)"."; }
-#thm-basis-equiv-1-2-1 > li { counter-increment: thm-basis-equiv-1-2-1; }
-#sec4-5-VS-Ex-2-1 { counter-set: sec4-5-VS-Ex-2-1 0; }
-#sec4-5-VS-Ex-2-1 > li::marker { content: ""counter(sec4-5-VS-Ex-2-1,decimal)"."; }
-#sec4-5-VS-Ex-2-1 > li { counter-increment: sec4-5-VS-Ex-2-1; }
-#eigen-properties-2-1-1 { counter-set: eigen-properties-2-1-1 0; }
-#eigen-properties-2-1-1 > li::marker { content: ""counter(eigen-properties-2-1-1,decimal)"."; }
-#eigen-properties-2-1-1 > li { counter-increment: eigen-properties-2-1-1; }
-#sec5-1-eigen-intro-24-1-1-1 { counter-set: sec5-1-eigen-intro-24-1-1-1 0; }
-#sec5-1-eigen-intro-24-1-1-1 > li::marker { content: ""counter(sec5-1-eigen-intro-24-1-1-1,decimal)"."; }
-#sec5-1-eigen-intro-24-1-1-1 > li { counter-increment: sec5-1-eigen-intro-24-1-1-1; }
-#subsec5-3-linear-ode-12-1 { counter-set: subsec5-3-linear-ode-12-1 0; }
-#subsec5-3-linear-ode-12-1 > li::marker { content: ""counter(subsec5-3-linear-ode-12-1,decimal)"."; }
-#subsec5-3-linear-ode-12-1 > li { counter-increment: subsec5-3-linear-ode-12-1; }
-#subsec5-3-Google-Search-6-1 { counter-set: subsec5-3-Google-Search-6-1 0; }
-#subsec5-3-Google-Search-6-1 > li::marker { content: ""counter(subsec5-3-Google-Search-6-1,decimal)"."; }
-#subsec5-3-Google-Search-6-1 > li { counter-increment: subsec5-3-Google-Search-6-1; }
-#sec5-4-eigen-exer-2-1 { counter-set: sec5-4-eigen-exer-2-1 0; }
-#sec5-4-eigen-exer-2-1 > li::marker { content: ""counter(sec5-4-eigen-exer-2-1,decimal)"."; }
-#sec5-4-eigen-exer-2-1 > li { counter-increment: sec5-4-eigen-exer-2-1; }
-#ex-ortho-6-0-0-1-1-1 { counter-set: ex-ortho-6-0-0-1-1-1 0; }
-#ex-ortho-6-0-0-1-1-1 > li::marker { content: ""counter(ex-ortho-6-0-0-1-1-1,decimal)"."; }
-#ex-ortho-6-0-0-1-1-1 > li { counter-increment: ex-ortho-6-0-0-1-1-1; }
-#sec6-3-10-1-2-1 { counter-set: sec6-3-10-1-2-1 0; }
-#sec6-3-10-1-2-1 > li::marker { content: ""counter(sec6-3-10-1-2-1,decimal)"."; }
-#sec6-3-10-1-2-1 > li { counter-increment: sec6-3-10-1-2-1; }
-#sec7-1-InnerProduct-4-1 { counter-set: sec7-1-InnerProduct-4-1 0; }
-#sec7-1-InnerProduct-4-1 > li::marker { content: ""counter(sec7-1-InnerProduct-4-1,decimal)"."; }
-#sec7-1-InnerProduct-4-1 > li { counter-increment: sec7-1-InnerProduct-4-1; }
-#def-inner-product-2-2-1 { counter-set: def-inner-product-2-2-1 0; }
-#def-inner-product-2-2-1 > li::marker { content: ""counter(def-inner-product-2-2-1,decimal)"."; }
-#def-inner-product-2-2-1 > li { counter-increment: def-inner-product-2-2-1; }
-#thm-norm-properties-2-2-1 { counter-set: thm-norm-properties-2-2-1 0; }
-#thm-norm-properties-2-2-1 > li::marker { content: ""counter(thm-norm-properties-2-2-1,decimal)"."; }
-#thm-norm-properties-2-2-1 > li { counter-increment: thm-norm-properties-2-2-1; }
-#sec7-2-Exer-3-1 { counter-set: sec7-2-Exer-3-1 0; }
-#sec7-2-Exer-3-1 > li::marker { content: ""counter(sec7-2-Exer-3-1,decimal)"."; }
-#sec7-2-Exer-3-1 > li { counter-increment: sec7-2-Exer-3-1; }
-#def-pseudoinverse-1-2-1 { counter-set: def-pseudoinverse-1-2-1 0; }
-#def-pseudoinverse-1-2-1 > li::marker { content: ""counter(def-pseudoinverse-1-2-1,decimal)"."; }
-#def-pseudoinverse-1-2-1 > li { counter-increment: def-pseudoinverse-1-2-1; }
-#sec9-1-SVD-6-27-2 { counter-set: sec9-1-SVD-6-27-2 0; }
-#sec9-1-SVD-6-27-2 > li::marker { content: ""counter(sec9-1-SVD-6-27-2,decimal)"."; }
-#sec9-1-SVD-6-27-2 > li { counter-increment: sec9-1-SVD-6-27-2; }
-</style>
+</script>
 </head>
 <body id="changeme" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
 <p class="byline">Ajit Kumar</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -239,7 +158,8 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec4-5-basis-dim-VS.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap4-Vector-Space.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec4-5-VS-Ex.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec4-5-basis-dim-VS.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap4-Vector-Space.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec4-5-VS-Ex.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -261,13 +181,13 @@ sagecell.makeSagecell({
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Author Biography</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -367,9 +287,9 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Dimension Formula</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Sage Computations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-Vector-Spaces-Sage" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Vector Spaces in Sage</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-polynomial-space-sage" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Polynomial Space in Sage</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sec4-5-VS-Sage.html#subsec-matrix-space" class="internal"><span class="codenumber">4.6.3</span> <span class="title">Matrix Spaces in Sage</span></a></div></li>
@@ -489,24 +409,41 @@ sagecell.makeSagecell({
 </li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-sage-into.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-sage-into-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction to SageMath</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="getting-started-sagemath.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Getting Started with Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-sage-programming.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Programming in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-plotting-sage.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Plotting in Sage</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-sec4-5-VS-Sage"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.6</span><span class="space"> </span><span class="title">Sage Computations</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sage Computations</span>
 </h2>
-<section class="introduction" id="sec-sec4-5-VS-Sage-2"><div class="para" id="sec-sec4-5-VS-Sage-2-1">In this section, we demonstrate how Sage can be utilized to define vector spaces and perform computations involving vectors. We shall explore various concepts related to vector spaces that have been introduced in this chapter. The majority of the computations will be carried out in the vector spaces <span class="process-math">\(\mathbb{Q}^n\text{,}\)</span> <span class="process-math">\(\mathbb{R}^n\)</span> and <span class="process-math">\(\mathbb{C}^n\text{.}\)</span> Additionally, we shall examine certain concepts pertaining to the vector space <span class="process-math">\({\mathcal{P}}_n(\mathbb{R})\text{.}\)</span>
-</div> <div class="para" id="sec-sec4-5-VS-Sage-2-2">To define a vector space <span class="process-math">\(\mathbb{Q}^n\)</span> in Sage, one may use <code class="code-inline tex2jax_ignore">QQ^n</code> or <code class="code-inline tex2jax_ignore">VectorSpace(QQ,
-    n)</code>. Similarly, the vector spaces <span class="process-math">\(\mathbb{Q}^n\)</span> and <span class="process-math">\(\mathbb{C}^n\)</span> can be defined using <code class="code-inline tex2jax_ignore">RR^n</code> and <code class="code-inline tex2jax_ignore">CC^n</code>, respectively. Sage provides built-in functions for generating the linear span of a set of vectors, checking their linear dependence, and determining the coordinates of a vector with respect to a given basis. Nevertheless, we will also employ the Reduced Row Echelon Form (RREF) to explore various concepts such as subspaces, linear dependence and independence, and the computation of coordinates.</div></section><section class="subsection" id="subsec-Vector-Spaces-Sage"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="space"> </span><span class="title">Vector Spaces in Sage</span>
+<section class="introduction" id="sec-sec4-5-VS-Sage-2"><div class="para" id="sec-sec4-5-VS-Sage-2-1">In this section, we demonstrate how Sage can be utilized to define vector spaces and perform computations involving vectors. We shall explore various concepts related to vector spaces that have been introduced in this chapter. The majority of the computations will be carried out in the vector spaces <span class="process-math">\(\mathbb{Q}^n\text{,}\)</span> <span class="process-math">\(\mathbb{R}^n\)</span> and <span class="process-math">\(\mathbb{C}^n\text{.}\)</span> Additionally, we shall examine certain concepts pertaining to the vector space <span class="process-math">\({\mathcal{P}}_n(\mathbb{R})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-sec4-5-VS-Sage-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-sec4-5-VS-Sage-2-2">To define a vector space <span class="process-math">\(\mathbb{Q}^n\)</span> in Sage, one may use <code class="code-inline tex2jax_ignore">QQ^n</code> or <code class="code-inline tex2jax_ignore">VectorSpace(QQ, n)</code>. Similarly, the vector spaces <span class="process-math">\(\mathbb{Q}^n\)</span> and <span class="process-math">\(\mathbb{C}^n\)</span> can be defined using <code class="code-inline tex2jax_ignore">RR^n</code> and <code class="code-inline tex2jax_ignore">CC^n</code>, respectively. Sage provides built-in functions for generating the linear span of a set of vectors, checking their linear dependence, and determining the coordinates of a vector with respect to a given basis. Nevertheless, we will also employ the Reduced Row Echelon Form (RREF) to explore various concepts such as subspaces, linear dependence and independence, and the computation of coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec4-5-VS-Sage-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-Vector-Spaces-Sage"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector Spaces in Sage</span>
 </h3>
 <article class="example example-like" id="sec4-5-VS-eg1"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space <span class="process-math">\(\mathbb{Q}^6\)</span>.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector space <span class="process-math">\(\mathbb{Q}^6\)</span>.</span>
 </h4>
 <div class="para" id="sec4-5-VS-eg1-2-1">Let us define the vector space <span class="process-math">\(\mathbb{Q}^6\)</span> and explore the various concepts in Sage. Define 5 vectors <span class="process-math">\(v_1=\left(1,\,-1,\,2,\,3,\,1,\,4\right)
 \text{,}\)</span> <span class="process-math">\(v_2=(\left(2,\,1,\,0,\,2,\,-3,\,1\right),)
 \text{,}\)</span> <span class="process-math">\(v_3=(\left(-4,\,-5,\,4,\,0,\,11,\,5\right),)
 \text{,}\)</span> <span class="process-math">\(v_4=(\left(-1,\,0,\,2,\,1,\,3,\,2\right),)\)</span> and <span class="process-math">\(v_5=(\left(-2,\,-2,\,4,\,2,\,7,\,5\right),)
-\text{.}\)</span> Find the linear span of <span class="process-math">\(B=\{v_1,v_2,v_3,v_4,v_5\}\text{.}\)</span> Check of <span class="process-math">\(B\)</span> is a linearly independent set.</div></article><div class="para" id="subsec-Vector-Spaces-Sage-3">We can use the following sage commands to define the <span class="process-math">\(\mathbb{Q}^6\text{.}\)</span>
+\text{.}\)</span> Find the linear span of <span class="process-math">\(B=\{v_1,v_2,v_3,v_4,v_5\}\text{.}\)</span> Check of <span class="process-math">\(B\)</span> is a linearly independent set.<div class="autopermalink" data-description="Paragraph"><a href="#sec4-5-VS-eg1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.6.1: Vector space \mathbb{Q}^6"><a href="#sec4-5-VS-eg1" title="Copy heading and permalink for Example 4.6.1: Vector space \mathbb{Q}^6" aria-label="Copy heading and permalink for Example 4.6.1: Vector space \mathbb{Q}^6">🔗</a></div></article><div class="para" id="subsec-Vector-Spaces-Sage-3">We can use the following sage commands to define the <span class="process-math">\(\mathbb{Q}^6\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div id="subsec-Vector-Spaces-Sage-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4;V
 </script></div>
@@ -528,8 +465,9 @@ V1.random_element()
 </script></div>
 <div id="subsec-Vector-Spaces-Sage-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.dimension() # Returns the dimension of V.
 </script></div>
-<div class="para" id="subsec-Vector-Spaces-Sage-14">Try to explore more methods on the object <code class="code-inline tex2jax_ignore">V</code>.</div>
-<div class="para" id="subsec-Vector-Spaces-Sage-15">Now let us define vectors in <span class="process-math">\(V\text{.}\)</span>
+<div class="para" id="subsec-Vector-Spaces-Sage-14">Try to explore more methods on the object <code class="code-inline tex2jax_ignore">V</code>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Vector-Spaces-Sage-15">Now let us define vectors in <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div id="subsec-Vector-Spaces-Sage-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^6
 v1 = vector([1,-1,2,3,1,4])
@@ -540,56 +478,72 @@ v5 = vector([-2,-2,4,2,7,5])
 v1 in V
 </script></div>
 <div class="para" id="subsec-Vector-Spaces-Sage-17">Next, let us define the linear span of <span class="process-math">\(B=\{v_1,\ldots,
-v_5\}\text{.}\)</span>
+v_5\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div id="subsec-Vector-Spaces-Sage-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">B = [v1,v2,v3,v4,v5]
 W = V.span(B)
 W
 </script></div>
-<div class="para" id="subsec-Vector-Spaces-Sage-19">We can check if <code class="code-inline tex2jax_ignore">W</code> is a subspace of <code class="code-inline tex2jax_ignore">V</code>.</div>
+<div class="para" id="subsec-Vector-Spaces-Sage-19">We can check if <code class="code-inline tex2jax_ignore">W</code> is a subspace of <code class="code-inline tex2jax_ignore">V</code>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="subsec-Vector-Spaces-Sage-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">W.is_subspace(V)
 </script></div>
-<div class="para" id="subsec-Vector-Spaces-Sage-21">Note that a basis of the <span class="process-math">\(L(B)\)</span> can be also obtained by applying RREF on the matrix whose rows are vectors, <span class="process-math">\(v_1,\ldots, v_5\text{.}\)</span>
+<div class="para" id="subsec-Vector-Spaces-Sage-21">Note that a basis of the <span class="process-math">\(L(B)\)</span> can be also obtained by applying RREF on the matrix whose rows are vectors, <span class="process-math">\(v_1,\ldots, v_5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div id="subsec-Vector-Spaces-Sage-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = column_matrix([v1,v2,v3,v4,v5]).T
 A.rref()
 </script></div>
-<div class="para" id="subsec-Vector-Spaces-Sage-23">Notice that the 1st three rows of the above output consitute the basis of the <span class="process-math">\(L(B\text{.}\)</span>
+<div class="para" id="subsec-Vector-Spaces-Sage-23">Notice that the 1st three rows of the above output consitute the basis of the <span class="process-math">\(L(B\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-Vector-Spaces-Sage-24">Next let us check whether the set of vecors <span class="process-math">\(B\)</span> is linearly dependent using the following Sage syntax.</div>
+<div class="para" id="subsec-Vector-Spaces-Sage-24">Next let us check whether the set of vecors <span class="process-math">\(B\)</span> is linearly dependent using the following Sage syntax.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="subsec-Vector-Spaces-Sage-25" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">S = V.linear_dependence(B);S
 </script></div>
-<div class="para" id="subsec-Vector-Spaces-Sage-26">If the set is linearly indepensent then <code class="code-inline tex2jax_ignore">S =
-    V.linear_dependence(B);S</code> returns an empty list. However, if <span class="process-math">\(B\)</span> is linearly dependent then it returs a list of scalars (possibly more than on1), say <span class="process-math">\(\alpha_1,\cdots,\alpha_5\)</span> such that <span class="process-math">\(\sum v_i\alpha_i=0\text{.}\)</span> Let us verift the same.</div>
+<div class="para" id="subsec-Vector-Spaces-Sage-26">If the set is linearly indepensent then <code class="code-inline tex2jax_ignore">S = V.linear_dependence(B);S</code> returns an empty list. However, if <span class="process-math">\(B\)</span> is linearly dependent then it returs a list of scalars (possibly more than on1), say <span class="process-math">\(\alpha_1,\cdots,\alpha_5\)</span> such that <span class="process-math">\(\sum v_i\alpha_i=0\text{.}\)</span> Let us verift the same.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="subsec-Vector-Spaces-Sage-27" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">        print(V.linear_combination([(B[i],S[0][i]) for i in range(5)]))
 print(V.linear_combination([(B[i],S[1][i]) for i in range(5)]))
 </script></div>
 <article class="exercise exercise-like" id="subsec-Vector-Spaces-Sage-28"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="period">.</span>
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="subsec-Vector-Spaces-Sage-28-1-1">Repeat the above example on the vector space <span class="process-math">\(\mathbb{R}^6\text{.}\)</span>
-</div></article><article class="example example-like" id="subsec-Vector-Spaces-Sage-29"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="period">.</span>
+<div class="para" id="subsec-Vector-Spaces-Sage-28-1-1">Repeat the above example on the vector space <span class="process-math">\(\mathbb{R}^6\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-28-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 4.6.2"><a href="#subsec-Vector-Spaces-Sage-28" title="Copy heading and permalink for Checkpoint 4.6.2" aria-label="Copy heading and permalink for Checkpoint 4.6.2">🔗</a></div></article><article class="example example-like" id="subsec-Vector-Spaces-Sage-29"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="subsec-Vector-Spaces-Sage-29-1-1">Let <span class="process-math">\(V=\mathbb{Q}^4\)</span> be a vector space. Let <span class="process-math">\({\cal
-B}=\{(1,0,0,0),(1,1,0,0,),(1,0,-1,0),(0,0,0,1)\}\text{.}\)</span> Check if <span class="process-math">\({\cal B}\)</span> is linearly independent. Consider a vector <span class="process-math">\(v=(-1,2,3,-2)\text{.}\)</span> Find the coordinates of <span class="process-math">\(v\)</span> with respect to <span class="process-math">\({\cal B}\text{.}\)</span>
-</div></article><details id="subsec-Vector-Spaces-Sage-30" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="subsec-Vector-Spaces-Sage-30-1">Let us solve this problem in Sage.</div> <div id="subsec-Vector-Spaces-Sage-30-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
+B}=\{(1,0,0,0),(1,1,0,0,),(1,0,-1,0),(0,0,0,1)\}\text{.}\)</span> Check if <span class="process-math">\({\cal B}\)</span> is linearly independent. Consider a vector <span class="process-math">\(v=(-1,2,3,-2)\text{.}\)</span> Find the coordinates of <span class="process-math">\(v\)</span> with respect to <span class="process-math">\({\cal B}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-29-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.6.3"><a href="#subsec-Vector-Spaces-Sage-29" title="Copy heading and permalink for Example 4.6.3" aria-label="Copy heading and permalink for Example 4.6.3">🔗</a></div></article><details id="subsec-Vector-Spaces-Sage-30" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec-Vector-Spaces-Sage-30-1">Let us solve this problem in Sage.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-30-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-Vector-Spaces-Sage-30-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
 v1=vector(QQ,[1,0,0,0])
 v2=vector(QQ,[1,1,0,0])
 v3=vector(QQ,[1,0,-1,0])
 v4=vector(QQ,[0,0,0,1])
 B=[v1,v2,v3,v4]
-S = V.linear_dependence(B);S
-</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-30-3">Since <span class="process-math">\(S\)</span> is an empty list, <span class="process-math">\(B\)</span> is a linearly independent set.</div> <div class="para" id="subsec-Vector-Spaces-Sage-30-4">Next, we define a subspace with <span class="process-math">\(B\)</span> as a basis and then find the coordinates of the vector <span class="process-math">\(v\)</span> with respect to <span class="process-math">\(B\text{.}\)</span>
-</div> <div id="subsec-Vector-Spaces-Sage-30-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=V.subspace_with_basis(B)
+S = V.linear_dependence(B);
+S
+</script></div>
+<div class="para" id="subsec-Vector-Spaces-Sage-30-3">Since <span class="process-math">\(S\)</span> is an empty list, <span class="process-math">\(B\)</span> is a linearly independent set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-30-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Vector-Spaces-Sage-30-4">Next, we define a subspace with <span class="process-math">\(B\)</span> as a basis and then find the coordinates of the vector <span class="process-math">\(v\)</span> with respect to <span class="process-math">\(B\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-30-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-Vector-Spaces-Sage-30-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=V.subspace_with_basis(B)
 v=vector(QQ,[-1,2,3,-2])
 V.coordinates(v)
-</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-30-6">We can also find the coordinate vector of <span class="process-math">\(v\text{.}\)</span>
-</div> <div id="subsec-Vector-Spaces-Sage-30-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.coordinate_vector(v)
-</script></div> We cal also find the coordinates of <span class="process-math">\(v\)</span> using RREF. <div id="subsec-Vector-Spaces-Sage-30-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(B).augment(v,subdivide=True).rref()
-</script></div> The last columns of the above output is the coordinate vector.</div></details><article class="example example-like" id="subsec-Vector-Spaces-Sage-31"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.4</span><span class="period">.</span>
+</script></div>
+<div class="para" id="subsec-Vector-Spaces-Sage-30-6">We can also find the coordinate vector of <span class="process-math">\(v\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-30-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-Vector-Spaces-Sage-30-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V.coordinate_vector(v)
+</script></div>
+<span class="process-math">\(v\)</span><div id="subsec-Vector-Spaces-Sage-30-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix(B).augment(v,subdivide=True).rref()
+</script></div>
+<div class="autopermalink" data-description="Solution 4.6.1.1"><a href="#subsec-Vector-Spaces-Sage-30" title="Copy heading and permalink for Solution 4.6.1.1" aria-label="Copy heading and permalink for Solution 4.6.1.1">🔗</a></div>
+</div></details><article class="example example-like" id="subsec-Vector-Spaces-Sage-31"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="subsec-Vector-Spaces-Sage-31-1-1">
 <div class="para">Let <span class="process-math">\(V=\mathbb{Q}^4\)</span> be a vector space. Let</div>
@@ -608,8 +562,12 @@ V.coordinates(v)
 C}^{\cal B}\text{.}\)</span> Consider a vector <span class="process-math">\(v=(-1,2,3,-2)\text{.}\)</span> Suppose <span class="process-math">\(c_{\cal B}\)</span> be the coordinate vector of <span class="process-math">\(v\)</span> with respect to the basis <span class="process-math">\({\cal B}\)</span> and <span class="process-math">\(v_{\cal C}\)</span> be the coordinate vector of <span class="process-math">\(v\)</span> with respect to the basis <span class="process-math">\({\cal C}\text{.}\)</span> Verify that <span class="process-math">\(v_{\cal
 C}=M_{\cal B}^{\cal C}v_{\cal B}\text{.}\)</span>
 </div>
-</div></article><details id="subsec-Vector-Spaces-Sage-32" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="subsec-Vector-Spaces-Sage-32-1">Let us solve the above problem in Sage. Note that the matrix <span class="process-math">\(M_{\cal B}^{\cal C}\)</span> can be obtained in many ways. One way, is to find this by writing the matrix of whose columns are the coordinate vectors of each vector in <span class="process-math">\({\cal B}\)</span> with respect to <span class="process-math">\({\cal B}\text{.}\)</span> Alternatively, we can use RREF on <span class="process-math">\([{\cal C}~ {\cal B}\)</span> and take the last four columns of the same.</div> <div id="subsec-Vector-Spaces-Sage-32-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-31-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.6.4"><a href="#subsec-Vector-Spaces-Sage-31" title="Copy heading and permalink for Example 4.6.4" aria-label="Copy heading and permalink for Example 4.6.4">🔗</a></div></article><details id="subsec-Vector-Spaces-Sage-32" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec-Vector-Spaces-Sage-32-1">Let us solve the above problem in Sage. Note that the matrix <span class="process-math">\(M_{\cal B}^{\cal C}\)</span> can be obtained in many ways. One way, is to find this by writing the matrix of whose columns are the coordinate vectors of each vector in <span class="process-math">\({\cal B}\)</span> with respect to <span class="process-math">\({\cal B}\text{.}\)</span> Alternatively, we can use RREF on <span class="process-math">\([{\cal C}~ {\cal B}\)</span> and take the last four columns of the same.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-32-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-Vector-Spaces-Sage-32-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
 v1=vector(QQ,[1,0,0,0])
 v2=vector(QQ,[1,1,0,0])
 v3=vector(QQ,[1,0,-1,0])
@@ -619,7 +577,8 @@ V=V.subspace_with_basis(B)
 v=vector(QQ,[-1,2,3,-2])
 v_B=V.coordinate_vector(v)
 print(v_B)
-</script></div> <div id="subsec-Vector-Spaces-Sage-32-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
+</script></div>
+<div id="subsec-Vector-Spaces-Sage-32-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V=QQ^4
 w1=vector(QQ,[1,1,1,0])
 w2=vector(QQ,[1,1,0,1])
 w3=vector(QQ,[1,0,1,1])
@@ -629,21 +588,32 @@ W=V.subspace_with_basis(C)
 v=vector(QQ,[-1,2,3,-2])
 v_C=W.coordinate_vector(v)
 print(v_C)
-</script></div> <div id="subsec-Vector-Spaces-Sage-32-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M_BC=column_matrix([W.coordinates(B[i]) for i in range(4)])
+</script></div>
+<div id="subsec-Vector-Spaces-Sage-32-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M_BC=column_matrix([W.coordinates(B[i]) for i in range(4)])
 print(M_BC)
-</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-32-5">Next we find the change of basis matrix using RREF.</div> <div id="subsec-Vector-Spaces-Sage-32-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">BB=column_matrix(B)
+</script></div>
+<div class="para" id="subsec-Vector-Spaces-Sage-32-5">Next we find the change of basis matrix using RREF.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-32-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-Vector-Spaces-Sage-32-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">BB=column_matrix(B)
 CC=column_matrix(C)
 NN=CC.augment(BB,subdivide=True)
 NN.rref()[:,4:]
-</script></div> <div id="subsec-Vector-Spaces-Sage-32-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M_CB=column_matrix([V.coordinates(C[i]) for i in range(4)])
+</script></div>
+<div id="subsec-Vector-Spaces-Sage-32-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M_CB=column_matrix([V.coordinates(C[i]) for i in range(4)])
 print(M_CB)
-</script></div> <div id="subsec-Vector-Spaces-Sage-32-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">BB=column_matrix(B)
+</script></div>
+<div id="subsec-Vector-Spaces-Sage-32-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">BB=column_matrix(B)
 CC=column_matrix(C)
 MM=BB.augment(CC,subdivide=True)
 MM.rref()[:,4:]
-</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-32-9">Let us verify that <span class="process-math">\(v_{\cal C}=M_{\cal B}^{\cal C}v_{\cal B}\text{.}\)</span>
-</div> <div id="subsec-Vector-Spaces-Sage-32-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v_C==M_BC*v_B
-</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-32-11">The change of basis matrix <span class="process-math">\(M_{\cal B}^{\cal C}\text{,}\)</span> can be also otained by finding the matrix of the identity linear transformation <span class="process-math">\(Id: \mathbb{Q}^4\to \mathbb{Q}^4\)</span> and find its matrix with respect to the basis <span class="process-math">\({\cal B}\)</span> of the domain and <span class="process-math">\({\cal C}\)</span> on the codomain.</div> <div id="subsec-Vector-Spaces-Sage-32-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4
+</script></div>
+<div class="para" id="subsec-Vector-Spaces-Sage-32-9">Let us verify that <span class="process-math">\(v_{\cal C}=M_{\cal B}^{\cal C}v_{\cal B}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-32-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-Vector-Spaces-Sage-32-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v_C==M_BC*v_B
+</script></div>
+<div class="para" id="subsec-Vector-Spaces-Sage-32-11">The change of basis matrix <span class="process-math">\(M_{\cal B}^{\cal C}\text{,}\)</span> can be also otained by finding the matrix of the identity linear transformation <span class="process-math">\(Id: \mathbb{Q}^4\to \mathbb{Q}^4\)</span> and find its matrix with respect to the basis <span class="process-math">\({\cal B}\)</span> of the domain and <span class="process-math">\({\cal C}\)</span> on the codomain.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-32-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-Vector-Spaces-Sage-32-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4
 T = linear_transformation(identity_matrix(4),V,V)
 v1=vector(QQ,[1,0,0,0])
 v2=vector(QQ,[1,1,0,0])
@@ -660,16 +630,20 @@ W=V.subspace_with_basis(C)
 S = T.restrict_domain(U).restrict_codomain(W)
 S.matrix(side='right')
 </script></div>
+<div class="autopermalink" data-description="Solution 4.6.1.2"><a href="#subsec-Vector-Spaces-Sage-32" title="Copy heading and permalink for Solution 4.6.1.2" aria-label="Copy heading and permalink for Solution 4.6.1.2">🔗</a></div>
 </div></details><article class="example example-like" id="subsec-Vector-Spaces-Sage-33"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">The Dimesnion Formula.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Dimesnion Formula.</span>
 </h4>
 <div class="para" id="subsec-Vector-Spaces-Sage-33-2-1">Let <span class="process-math">\(\text{.}\)</span>  Let  <span class="process-math">\(W_1\)</span> be a subspace spanned by <span class="process-math">\(v_1=(-3, 1, -1, 2),
 v_2=(1, -1, 11, 3),  v_3=(-5, 1, 9, 7), v_4=(-1, 12, 5, 4)\)</span> and <span class="process-math">\(W_2\)</span> be the subspace spanned by vectors <span class="process-math">\(u_1=(3, -1, 5,  7), u_2 =(21, 11, 10, -13), u_3=(-2, 3, -51,
 7), u_4=(-17,
 -10, -51, 34)\text{.}\)</span> Find bases and dimensions of  subspace <span class="process-math">\(W_1+W_2\)</span> and <span class="process-math">\(W_1\cap
-W_2\text{.}\)</span>
-</div></article><details id="subsec-Vector-Spaces-Sage-34" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="subsec-Vector-Spaces-Sage-34-1">Let us solve the above problem using Sage.</div> <div id="subsec-Vector-Spaces-Sage-34-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4 # vector space of dimension 4 over rational field
+W_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-33-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.6.5: The Dimesnion Formula"><a href="#subsec-Vector-Spaces-Sage-33" title="Copy heading and permalink for Example 4.6.5: The Dimesnion Formula" aria-label="Copy heading and permalink for Example 4.6.5: The Dimesnion Formula">🔗</a></div></article><details id="subsec-Vector-Spaces-Sage-34" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec-Vector-Spaces-Sage-34-1">Let us solve the above problem using Sage.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-34-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-Vector-Spaces-Sage-34-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4 # vector space of dimension 4 over rational field
 v1=vector(QQ,[-3, 1, -1, 2])
 v2=vector(QQ,[1, -1, 11, 3])
 v3=vector(QQ,[-5, 1, 9, 7])
@@ -679,10 +653,12 @@ B1=[v1,v2,v3,v4]
 W1=V.span(B1);
 C1=W1.basis_matrix() # Basis of W1
 k=C1.dimensions()[0] # dimension of W1
-</script></div> <div id="subsec-Vector-Spaces-Sage-34-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print("The dimesion of W1 is {}".format(k))
+</script></div>
+<div id="subsec-Vector-Spaces-Sage-34-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print("The dimesion of W1 is {}".format(k))
 print("A basis of W1 is:")
 print(C1)
-</script></div> <div id="subsec-Vector-Spaces-Sage-34-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u1=vector(QQ,[3, -1, 5, 7])
+</script></div>
+<div id="subsec-Vector-Spaces-Sage-34-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u1=vector(QQ,[3, -1, 5, 7])
 u2 =vector(QQ,[21, 11, 10, -13])
 u3=vector(QQ,[-2, 3, -51, 7])
 u4=vector(QQ,[-17, -10, -51, 34])
@@ -691,44 +667,55 @@ B2=[u1,u2,u3,u4]
 W2=V.span(B2);
 C2=W2.basis_matrix() # Basis of W2
 p=C2.dimensions()[0] # dimension of W2
-</script></div> <div id="subsec-Vector-Spaces-Sage-34-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print("The dimesion of W2 is {}".format(p))
+</script></div>
+<div id="subsec-Vector-Spaces-Sage-34-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print("The dimesion of W2 is {}".format(p))
 print("A basis of W2 is:")
 print(C2)
-</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-34-6">
-<code class="code-inline tex2jax_ignore">W1+W2</code> returns the space <span class="process-math">\(W_1+W_2\text{.}\)</span>
-</div> <div id="subsec-Vector-Spaces-Sage-34-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(W1+W2)
+</script></div>
+<div class="para" id="subsec-Vector-Spaces-Sage-34-6">
+<code class="code-inline tex2jax_ignore">W1+W2</code> returns the space <span class="process-math">\(W_1+W_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-34-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-Vector-Spaces-Sage-34-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(W1+W2)
 print((W1+W2).basis_matrix())
 print("The dimension of W1+W2 is {}".format(dimension(W1+W2)))
-</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-34-8">Intersection of W1 and W2 using the inbuilt sage function <code class="code-inline tex2jax_ignore">intersection</code>
-</div> <div id="subsec-Vector-Spaces-Sage-34-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">U=W1.intersection(W2)
-print(U.basis_matrix()) # The basis of the intersection of W1 and W2
-</script></div> <div class="para" id="subsec-Vector-Spaces-Sage-34-10">Finally, we can verify the dimension formula.</div> <div id="subsec-Vector-Spaces-Sage-34-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">dimension(W1+W2)==dimension(W1)+dimension(W2)-dimension(W1.intersection(W2))
 </script></div>
-</div></details></section><section class="subsection" id="subsec-polynomial-space-sage"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="space"> </span><span class="title">Polynomial Space in Sage</span>
+<div class="para" id="subsec-Vector-Spaces-Sage-34-8">Intersection of W1 and W2 using the inbuilt sage function <code class="code-inline tex2jax_ignore">intersection</code><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-34-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-Vector-Spaces-Sage-34-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">U=W1.intersection(W2)
+print(U.basis_matrix()) # The basis of the intersection of W1 and W2
+</script></div>
+<div class="para" id="subsec-Vector-Spaces-Sage-34-10">Finally, we can verify the dimension formula.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Vector-Spaces-Sage-34-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-Vector-Spaces-Sage-34-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">dimension(W1+W2)==dimension(W1)+dimension(W2)-dimension(W1.intersection(W2))
+</script></div>
+<div class="autopermalink" data-description="Solution 4.6.1.3"><a href="#subsec-Vector-Spaces-Sage-34" title="Copy heading and permalink for Solution 4.6.1.3" aria-label="Copy heading and permalink for Solution 4.6.1.3">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Subsection 4.6.1: Vector Spaces in Sage"><a href="#subsec-Vector-Spaces-Sage" title="Copy heading and permalink for Subsection 4.6.1: Vector Spaces in Sage" aria-label="Copy heading and permalink for Subsection 4.6.1: Vector Spaces in Sage">🔗</a></div></section><section class="subsection" id="subsec-polynomial-space-sage"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Polynomial Space in Sage</span>
 </h3>
 <section class="introduction" id="subsec-polynomial-space-sage-2"><div class="para" id="subsec-polynomial-space-sage-2-1">In this subsection we shall explore, how to work with the polynomial space <span class="process-math">\({\mathcal{P}}_n(\mathbb{R})\)</span> in Sage. The main idea is to consider a polynomial <span class="process-math">\(p(x)
-=\sum_i^n a_i x^i\)</span> as a vecror <span class="process-math">\(\left(a_0,a_1,\ldots,a_n\right)\in \mathbb{R}^{n+1}.\)</span>
-</div></section><div class="para" id="subsec-polynomial-space-sage-3">Sage provides ways to extract coefficents of a polynomail. If <span class="process-math">\(p(x)\)</span> is a polynomial then <code class="code-inline tex2jax_ignore">p(x).coefficients()</code> returns the list of coefficints and the corresponding degree in increasing order of degree.</div>
-<div id="subsec-polynomial-space-sage-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">            p(x) = x^4-5*x^3+2*x-2
-            p(x).coefficients() #Return the coefficients of this symbolic expression as a
-polynomial in x
+=\sum_i^n a_i x^i\)</span> as a vecror <span class="process-math">\(\left(a_0,a_1,\ldots,a_n\right)\in \mathbb{R}^{n+1}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-polynomial-space-sage-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><div class="para" id="subsec-polynomial-space-sage-3">Sage provides ways to extract coefficents of a polynomail. If <span class="process-math">\(p(x)\)</span> is a polynomial then <code class="code-inline tex2jax_ignore">p(x).coefficients()</code> returns the list of coefficints and the corresponding degree in increasing order of degree.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-polynomial-space-sage-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-polynomial-space-sage-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p(x) = x^4-5*x^3+2*x-2
+p(x).coefficients()
 </script></div>
 <div id="subsec-polynomial-space-sage-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p(x) = 6
 p(x).coefficients()
 </script></div>
-<div class="para" id="subsec-polynomial-space-sage-6">There is a way to get only the coeffiencts as well as follows.</div>
+<div class="para" id="subsec-polynomial-space-sage-6">There is a way to get only the coeffiencts as well as follows.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-polynomial-space-sage-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="subsec-polynomial-space-sage-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p(x).coefficients(sparse=False) # returns only the coefficients
 </script></div>
-<div class="para" id="subsec-polynomial-space-sage-8">Note that if <span class="process-math">\(p\)</span> is a polynomial of degree <span class="process-math">\(k\text{,}\)</span> then it can be also thought of as a vector in <span class="process-math">\({\mathcal{P}}_n(\mathbb{R})\)</span> for <span class="process-math">\(m\geq k\text{.}\)</span> In order take care of this, let us create s sage routine as follow.</div>
+<div class="para" id="subsec-polynomial-space-sage-8">Note that if <span class="process-math">\(p\)</span> is a polynomial of degree <span class="process-math">\(k\text{,}\)</span> then it can be also thought of as a vector in <span class="process-math">\({\mathcal{P}}_n(\mathbb{R})\)</span> for <span class="process-math">\(m\geq k\text{.}\)</span> In order take care of this, let us create s sage routine as follow.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-polynomial-space-sage-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="subsec-polynomial-space-sage-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## The following function returns the degress of a polynomial
 def Poly_Coeff(p,n):
-L = p(x).coefficients()
-LP=[0]*(n+1)
-for i in range(len(L)):
-k = L[i][1]
-LP[k]=L[i][0]
-return LP
+    L = p(x).coefficients()
+    LP=[0]*(n+1)
+    for i in range(len(L)):
+        k = L[i][1]
+        LP[k]=L[i][0]
+    return LP
 </script></div>
 <div id="subsec-polynomial-space-sage-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p(x)=1
 print(Poly_Coeff(p,1))
@@ -736,11 +723,12 @@ p(x) = x^4-5*x^3+2*x-2
 print(Poly_Coeff(p,4))
 print(Poly_Coeff(p,6))
 </script></div>
-<div class="para" id="subsec-polynomial-space-sage-11">Next we write a Sage routine to find the degree of a polynomial.</div>
+<div class="para" id="subsec-polynomial-space-sage-11">Next we write a Sage routine to find the degree of a polynomial.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-polynomial-space-sage-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="subsec-polynomial-space-sage-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def Poly_Degree(p):
-L = p(x).coefficients()
-D = [L[i][1] for i in range(len(L))]
-return max(D)
+    L = p(x).coefficients()
+    D = [L[i][1] for i in range(len(L))]
+    return max(D)
 </script></div>
 <div id="subsec-polynomial-space-sage-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p(x) = 7
 print(Poly_Degree(p))
@@ -749,23 +737,23 @@ print(Poly_Degree(p))
 </script></div>
 <div class="para" id="subsec-polynomial-space-sage-14">Now we write a Sage routine to check if a set of polynomial is linearly independent or linearly dependent. How do we do this? Suppose <span class="process-math">\(p_1(x), \ldots, p_k(x)\)</span> be polynomials of degrees <span class="process-math">\(n_1, n_2, \ldots, n_k\)</span> respectively. Let <span class="process-math">\(n = \max\{deg(p_i)\} \text{.}\)</span> Then <span class="process-math">\(p_i(x)\in
 {\mathcal{P}}_n(\mathbb{R})\)</span> for each <span class="process-math">\(i\)</span> and each <span class="process-math">\(p_i\)</span> corresponds to a vector <span class="process-math">\(v_i
-\in \mathbb{R}^{n+1}\text{.}\)</span> Thus to check linearly dependency of <span class="process-math">\(p_1(x),\ldots, p_k(x)\)</span> amount to checking linearly dependency of <span class="process-math">\(v_1,\ldots, v_k \in \mathbb{R}^{n+1}\text{.}\)</span>
+\in \mathbb{R}^{n+1}\text{.}\)</span> Thus to check linearly dependency of <span class="process-math">\(p_1(x),\ldots, p_k(x)\)</span> amount to checking linearly dependency of <span class="process-math">\(v_1,\ldots, v_k \in \mathbb{R}^{n+1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-polynomial-space-sage-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div id="subsec-polynomial-space-sage-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def Poly_linear_depend(L):
-k = len(L)
-n = max([Poly_Degree(L[i]) for i in range(k)])
-V = VectorSpace(RR,n+1)
-B = []
-for i in range(k):
-v = vector(Poly_Coeff(L[i],n))
-B.append(v)
-M = column_matrix(B)
-S = V.linear_dependence(B)
-if(rank(M)==k):
-print('These polynomials are linearly independent.')
-else:
-print('These polynomials are linearly dependent.')
-return(S)
+    k = len(L)
+    n = max([Poly_Degree(L[i]) for i in range(k)])
+    V = VectorSpace(RR,n+1)
+    B = []
+    for i in range(k):
+        v = vector(Poly_Coeff(L[i],n))
+        B.append(v)
+        M = column_matrix(B)
+    S = V.linear_dependence(B)
+    if(rank(M)==k):
+        print('These polynomials are linearly independent.')
+    else:
+         print('These polynomials are linearly dependent.')
+    return(S)
 </script></div>
 <div id="subsec-polynomial-space-sage-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('x')
 p1(x) = 1+x + 3*x^2
@@ -785,19 +773,20 @@ p5(x) = x^3 - x^5
 l = [p1, p2, p3,p4, p5]
 Poly_linear_depend(l)
 </script></div>
-<div class="para" id="subsec-polynomial-space-sage-18">Next we write a Sage routine to find the coordinates of a polynomial with respect to a basis of a polynomial space.</div>
+<div class="para" id="subsec-polynomial-space-sage-18">Next we write a Sage routine to find the coordinates of a polynomial with respect to a basis of a polynomial space.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-polynomial-space-sage-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="subsec-polynomial-space-sage-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def Poly_Coordinates(p,B):
-k = len(B)
-n = max([Poly_Degree(B[i]) for i in range(k)])
-M = []
-u = vector(Poly_Coeff(p,n))
-for i in range(k):
-v = vector(Poly_Coeff(B[i],n))
-M.append(v)
-M.append(u)
-M1 = column_matrix(M)
-s = M1.rref()[:,k]
-return s
+    k = len(B)
+    n = max([Poly_Degree(B[i]) for i in range(k)])
+    M = []
+    u = vector(Poly_Coeff(p,n))
+    for i in range(k):
+        v = vector(Poly_Coeff(B[i],n))
+        M.append(v)
+    M.append(u)
+    M1 = column_matrix(M)
+    s = M1.rref()[:,k]
+    return s
 </script></div>
 <div id="subsec-polynomial-space-sage-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('x')
 p1(x) = 1+x^3
@@ -817,16 +806,17 @@ p(x)=7-3*x+x^2-6*x^3
 B = [p1,p2,p3,p4]
 Poly_Coordinates(p,B)
 </script></div>
-<div class="para" id="subsec-polynomial-space-sage-22">Finally let us define a Sage routine to find the linear span of set of polynomials.</div>
+<div class="para" id="subsec-polynomial-space-sage-22">Finally let us define a Sage routine to find the linear span of set of polynomials.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-polynomial-space-sage-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div id="subsec-polynomial-space-sage-23" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def Poly_linspan(L, n):
-c = []
-k = len(L)
-for i in range(k):
-co = Poly_Coeff(L[i],n)
-c.append(co)
-B = column_matrix(c).T.rref()
-dim = B.rank()
-return (dim, B[:dim,:])
+    c = []
+    k = len(L)
+    for i in range(k):
+        co = Poly_Coeff(L[i],n)
+        c.append(co)
+    B = column_matrix(c).T.rref()
+    dim = B.rank()
+    return (dim, B[:dim,:])
 </script></div>
 <div id="subsec-polynomial-space-sage-24" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">q1(x)=1; q2(x)= x; q3(x)=x^2;q4(x)=x^3
 L = [q1,q2,q3,q4]
@@ -836,14 +826,16 @@ Basis,dim
 <div id="subsec-polynomial-space-sage-25" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p1(x)=2; p2(x)= 3*x^2-x; p3(x)=x^3- 2*x;p4(x)=x^3-3*x+3*x^2
 L = [p1,p2,p3,p4]
 dim,Basis = Poly_linspan(L,3)
-print(f'A basis matric of the linear span is\n{Basis}\n\nThe Dimesion of the
-subspace is {dim} ')
+print(f'A basis matrix of the linear span is\n{Basis}')
+print(f'The Dimesion of the subspace is {dim}')
 </script></div>
 <article class="remark remark-like" id="subsec-polynomial-space-sage-26"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.6.6</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="subsec-polynomial-space-sage-26-1">Once we get the basis matrix of the subspace we can write the corresponding polynomials as basis.</div></article></section><section class="subsection" id="subsec-matrix-space"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="space"> </span><span class="title">Matrix Spaces in Sage</span>
+<div class="para" id="subsec-polynomial-space-sage-26-1">Once we get the basis matrix of the subspace we can write the corresponding polynomials as basis.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-polynomial-space-sage-26-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.6.6"><a href="#subsec-polynomial-space-sage-26" title="Copy heading and permalink for Remark 4.6.6" aria-label="Copy heading and permalink for Remark 4.6.6">🔗</a></div></article><div class="autopermalink" data-description="Subsection 4.6.2: Polynomial Space in Sage"><a href="#subsec-polynomial-space-sage" title="Copy heading and permalink for Subsection 4.6.2: Polynomial Space in Sage" aria-label="Copy heading and permalink for Subsection 4.6.2: Polynomial Space in Sage">🔗</a></div></section><section class="subsection" id="subsec-matrix-space"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix Spaces in Sage</span>
 </h3>
 <section class="introduction" id="subsec-matrix-space-2"><div class="para logical" id="subsec-matrix-space-2-1">
 <div class="para">How to we work with matrix space in Sage? Note that if <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> real matrix, then we can think of this as a vector in <span class="process-math">\(\mathbb{R}^{mn}\)</span> defined by stacking the entries row-by-row (or column-by-column). In particular, the matrix space <span class="process-math">\(M(m,n,\mathbb{R})\)</span> is ismorphic to <span class="process-math">\(\mathbb{R}^{mn}\)</span> via flattening map</div>
@@ -853,28 +845,31 @@ subspace is {dim} ')
 \end{equation*}
 </div>
 <div class="para">defined by stacking the entries row-by-row (or column-by-column).</div>
-</div> Thus if we have apply linear algebra concepts to a set of matrices <span class="process-math">\(\{A_1,\ldots, A_k\}\text{,}\)</span> this amounts to applying the linear algebra concepts to <span class="process-math">\(\{\varphi(A_1),\ldots, \varphi(A_k)\}\)</span> and taking <span class="process-math">\(\varphi^{-1}\)</span> to the resultant vectors <span class="process-math">\(M(m,n,\mathbb{R})\text{.}\)</span></section><div class="para" id="subsec-matrix-space-3">Let us first see how to convert a given matrix to <span class="process-math">\(A\)</span> to the associated vector <span class="process-math">\(v=\varphi(A)\)</span> and conversely, how to convert a given vector <span class="process-math">\(v\)</span> to the associated matrix <span class="process-math">\(A=\varphi^{-1}(v)\)</span> in sage. We define two Sage rountines. <div id="subsec-matrix-space-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">m, n = 3, 4
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-space-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<span class="process-math">\(\{A_1,\ldots, A_k\}\text{,}\)</span><span class="process-math">\(\{\varphi(A_1),\ldots, \varphi(A_k)\}\)</span><span class="process-math">\(\varphi^{-1}\)</span><span class="process-math">\(M(m,n,\mathbb{R})\text{.}\)</span></section><div class="para" id="subsec-matrix-space-3">Let us first see how to convert a given matrix to <span class="process-math">\(A\)</span> to the associated vector <span class="process-math">\(v=\varphi(A)\)</span> and conversely, how to convert a given vector <span class="process-math">\(v\)</span> to the associated matrix <span class="process-math">\(A=\varphi^{-1}(v)\)</span> in sage. We define two Sage rountines. <div id="subsec-matrix-space-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">m, n = 3, 4
 MS = MatrixSpace(QQ, m,n)
 A = MS([[1, 2, 3,-1], [2,4, 5, 6],[5,0,-3,1]])
 A
 </script></div> <div id="subsec-matrix-space-3-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def mat_flatten(A):
-row = A.rows()
-v = []
-for r in row:
-v=v+flatten(r)
-return vector(v)
+    row = A.rows()
+    v = []
+    for r in row:
+        v=v+flatten(r)
+    return vector(v)
 </script></div> <div id="subsec-matrix-space-3-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">mat_flatten(A)
 </script></div> <div id="subsec-matrix-space-3-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def mat_unflatten(v,m,n):
-MS = MatrixSpace(QQ, m,n)
-return MS(list(v))
+    MS = MatrixSpace(QQ, m,n)
+    return MS(list(v))
 </script></div> <div id="subsec-matrix-space-3-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">m, n = 3, 4
 MS = MatrixSpace(QQ, m,n)
 A = MS([[1, 2, 3,-1], [2,4, 5, 6],[5,0,-3,1]])
 mat_unflatten(mat_flatten(A),m,n)
 </script></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-space-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="subsec-matrix-space-4"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.7</span><span class="period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="subsec-matrix-space-4-1">
 <div class="para">Check if the set of matrices <span class="process-math">\(\{A_1,A_2,A_3,A_4,A_5\}\)</span> where</div>
@@ -910,36 +905,42 @@ A_4 = \left(\begin{array}{rrrr}
 </div>
 <div class="para">is linearly depedent in <span class="process-math">\(M(3,r,\mathbb{Q})\text{.}\)</span>
 </div>
-</div> <details id="subsec-matrix-space-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="subsec-matrix-space-4-2-1">
-<div class="para">
-<div id="subsec-matrix-space-4-2-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">                        A1 = MS([[0 , -1 , 0 , 1],[2 , -2 , -2 , -1 ],[1/2 , -2 , 0 , 1]])
-                        A2 = MS([[0 , 1/2, 0 , -2 ],[0 , 0 , 0 , -1 ],[0 , 1 , 0 , -1]])
-                        A3 = MS([[ 0,-1 , -2 , 0 ],[0 , -1/2 , -1 , -1 ],[-2 , 0 , 1 , 2]])
-                        A4 = MS([[1 , 1/2 , 2 , -1 ],[-2 , 1 , 0 , 1 ],[-1/2 , 0 , 0 , -1]])
-                        A5 = MS([[-1 , -5 , -4 , 9 ],[6 , -11/2, -5 , -1 ],[-1/2 , -7 , 1 , 8]])
-m,n = A1.dimensions()
-                        V = VectorSpace(QQ,m*n)
-                        B = [A1,A2,A3,A4,A5]
-                        L=[]
-                        for i in range(len(B)):
-                        L.append(mat_flatten(B[i]))
-                        V.linear_dependence(L)
-</script></div> Clearly the above set of matrices are not linearly independent. In fact,</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-space-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-matrix-space-4-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">m,n = 3,4
+V = VectorSpace(QQ,m*n)
+A1 = MS([[0 , -1 , 0 , 1],[2 , -2 , -2 , -1 ],[1/2 , -2 , 0 , 1]])
+A2 = MS([[0 , 1/2, 0 , -2 ],[0 , 0 , 0 , -1 ],[0 , 1 , 0 , -1]])
+A3 = MS([[ 0,-1 , -2 , 0 ],[0 , -1/2 , -1 , -1 ],[-2 , 0 , 1 , 2]])
+A4 = MS([[1 , 1/2 , 2 , -1 ],[-2 , 1 , 0 , 1 ],[-1/2 , 0 , 0 , -1]])
+A5 = MS([[-1 , -5 , -4 , 9 ],[6 , -11/2, -5 , -1 ],[-1/2 , -7 , 1 , 8]])
+B = [A1,A2,A3,A4,A5]
+L=[]
+for i in range(len(B)):
+    L.append(mat_flatten(B[i]))
+V.linear_dependence(L)
+</script></div>
+<div class="para logical" id="subsec-matrix-space-4-3">
+<div class="para">Clearly the above set of matrices are not linearly independent. In fact,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A_1-3/2A_2+1/2A_3-1/2A_4 -1/2A_5=0.
+A_1-3/2A_2+1/2A_3-1/2A_4 -1/2A_5=0. 
 \end{equation*}
 </div>
-</div></div></details></article><article class="exercise exercise-like" id="subsec-matrix-space-5"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.6.8</span><span class="period">.</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-space-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.6.7"><a href="#subsec-matrix-space-4" title="Copy heading and permalink for Example 4.6.7" aria-label="Copy heading and permalink for Example 4.6.7">🔗</a></div></article><article class="activity project-like" id="subsec-matrix-space-5"><h4 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.6.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="subsec-matrix-space-5-1">Write Sage rountines to find coordinates of a matrix with repect to a basis of a matrix space and also the to find the linear span of set of matrices.</div></article></section></section></div>
-<div class="ptx-content-footer">
+<div class="para" id="subsec-matrix-space-5-1">Write Sage rountines to find coordinates of a matrix with repect to a basis of a matrix space and also the to find the linear span of set of matrices.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-matrix-space-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 4.6.1"><a href="#subsec-matrix-space-5" title="Copy heading and permalink for Activity 4.6.1" aria-label="Copy heading and permalink for Activity 4.6.1">🔗</a></div></article><div class="autopermalink" data-description="Subsection 4.6.3: Matrix Spaces in Sage"><a href="#subsec-matrix-space" title="Copy heading and permalink for Subsection 4.6.3: Matrix Spaces in Sage" aria-label="Copy heading and permalink for Subsection 4.6.3: Matrix Spaces in Sage">🔗</a></div></section><div class="autopermalink" data-description="Section 4.6: Sage Computations"><a href="#sec-sec4-5-VS-Sage" title="Copy heading and permalink for Section 4.6: Sage Computations" aria-label="Copy heading and permalink for Section 4.6: Sage Computations">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec4-5-basis-dim-VS.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec4-5-VS-Ex.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

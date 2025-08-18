@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>The eigenvalues of the coefficient matrix <span class="process-math">\(A\)</span> are</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lambda_1=1,
+\lambda_2=2,\lambda_3=3
+\end{equation*}
+</div>
+<p class="continuation">and the corresponding eigenvectors are</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v_1=\begin{pmatrix} 0\\4\\-1\end{pmatrix},
+v_2=\begin{pmatrix} 1\\1\\0\end{pmatrix},
+v_3=\begin{pmatrix} 2\\0\\1\end{pmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">Hence a general solution of the given system is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x(t) =\amp c_1e^t\begin{pmatrix} 0\\4\\-1\end{pmatrix}+
+c_2e^{2t}\begin{pmatrix} 1\\1\\0\end{pmatrix}+
+c_3e^{3t}\begin{pmatrix} 2\\0\\1\end{pmatrix} 
+\end{align*}
+</div>
+<p class="continuation">Using the given initial conditions, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left(\begin{array}{rrr}
+0 \amp 1 \amp 2 \\
+4 \amp 1 \amp 0 \\
+-1 \amp 0 \amp 1
+\end{array}\right) \begin{pmatrix}
+c_1\\c_2\\c_3
+\end{pmatrix}=\begin{pmatrix}
+7\\-4\\5
+\end{pmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">Solving the above equations, yields, <span class="process-math">\(c_1=-1/2, c_2=-2,c_3=9/2\text{.}\)</span> Hence the required solution of the problem is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x(t)=-1/2e^t\begin{pmatrix} 0\\4\\-1\end{pmatrix}+
+-2e^{2t}\begin{pmatrix} 1\\1\\0\end{pmatrix}+
+9/2e^{3t}\begin{pmatrix} 2\\0\\1\end{pmatrix}
+\end{equation*}
+</div>
+<p class="continuation">You may write the each component of the solution.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-234"><script type="text/x-sage">var('t')
+A = matrix([[1,1,4],[2,0,-4],[-1,1,5]])
+X0=vector([7,-4,5])
+D,P=A.eigenmatrix_right()
+Y=P*exp(t*D)*P.inverse()
+X=Y*X0
+print(X)
+</script></pre>
+<p>Using the inbuilt function <code class="code-inline tex2jax_ignore">dessole_system</code>, we have the following.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-235"><script type="text/x-sage">t= var('t')
+x = function('x')(t)
+y = function('y')(t)
+z = function('z')(t)
+de1 = diff(x,t)==x + y+4*z
+de2 = diff(y,t) == 2*x-4*z
+de3 = diff(z,t)== -x+y+5*z
+des = [de1,de2,de3]
+vars = [x,y,z]
+sol= desolve_system(des, vars,[0,7,-4,5])
+sol
+</script></pre>
+</div></body>
+</html>

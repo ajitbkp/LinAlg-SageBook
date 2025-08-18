@@ -6,15 +6,20 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Rank of Matrices</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Linear Algebra with SageMath">
-<meta property="book:author" content="Ajit Kumar">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -86,7 +91,44 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
   "inputLocation": "div.sagecell-sage",
@@ -98,137 +140,14 @@ sagecell.makeSagecell({
   ],
   "evalButtonText": "Evaluate (Sage)"
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
-<style>
-#subsec-elmentary-row-operations-3-1 { counter-set: subsec-elmentary-row-operations-3-1 0; }
-#subsec-elmentary-row-operations-3-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-3-1,decimal)"."; }
-#subsec-elmentary-row-operations-3-1 > li { counter-increment: subsec-elmentary-row-operations-3-1; }
-#def-elementary-row-operations-2-2-1 { counter-set: def-elementary-row-operations-2-2-1 0; }
-#def-elementary-row-operations-2-2-1 > li::marker { content: ""counter(def-elementary-row-operations-2-2-1,decimal)"."; }
-#def-elementary-row-operations-2-2-1 > li { counter-increment: def-elementary-row-operations-2-2-1; }
-#subsec-elmentary-row-operations-8-2-1 { counter-set: subsec-elmentary-row-operations-8-2-1 0; }
-#subsec-elmentary-row-operations-8-2-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-8-2-1,decimal)"."; }
-#subsec-elmentary-row-operations-8-2-1 > li { counter-increment: subsec-elmentary-row-operations-8-2-1; }
-#subsec-elmentary-row-operations-16-1-1-1 { counter-set: subsec-elmentary-row-operations-16-1-1-1 0; }
-#subsec-elmentary-row-operations-16-1-1-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-16-1-1-1,decimal)"."; }
-#subsec-elmentary-row-operations-16-1-1-1 > li { counter-increment: subsec-elmentary-row-operations-16-1-1-1; }
-#def-echelon-form-1-2-1 { counter-set: def-echelon-form-1-2-1 0; }
-#def-echelon-form-1-2-1 > li::marker { content: ""counter(def-echelon-form-1-2-1,decimal)"."; }
-#def-echelon-form-1-2-1 > li { counter-increment: def-echelon-form-1-2-1; }
-#sec-row-echelon-7 { counter-set: sec-row-echelon-7 0; }
-#sec-row-echelon-7 > li::marker { content: ""counter(sec-row-echelon-7,decimal)"."; }
-#sec-row-echelon-7 > li { counter-increment: sec-row-echelon-7; }
-#alg-gaussian-elimination-2-1-1 { counter-set: alg-gaussian-elimination-2-1-1 0; }
-#alg-gaussian-elimination-2-1-1 > li::marker { content: ""counter(alg-gaussian-elimination-2-1-1,decimal)"."; }
-#alg-gaussian-elimination-2-1-1 > li { counter-increment: alg-gaussian-elimination-2-1-1; }
-#sec1-4-matrix-rank-5-2-1 { counter-set: sec1-4-matrix-rank-5-2-1 0; }
-#sec1-4-matrix-rank-5-2-1 > li::marker { content: ""counter(sec1-4-matrix-rank-5-2-1,decimal)"."; }
-#sec1-4-matrix-rank-5-2-1 > li { counter-increment: sec1-4-matrix-rank-5-2-1; }
-#thm-nosol-rank-2-2-1 { counter-set: thm-nosol-rank-2-2-1 0; }
-#thm-nosol-rank-2-2-1 > li::marker { content: ""counter(thm-nosol-rank-2-2-1,decimal)"."; }
-#thm-nosol-rank-2-2-1 > li { counter-increment: thm-nosol-rank-2-2-1; }
-#subsec-Doolittle-5-1 { counter-set: subsec-Doolittle-5-1 0; }
-#subsec-Doolittle-5-1 > li::marker { content: ""counter(subsec-Doolittle-5-1,decimal)"."; }
-#subsec-Doolittle-5-1 > li { counter-increment: subsec-Doolittle-5-1; }
-#subsec-Doolittle-8-1 { counter-set: subsec-Doolittle-8-1 0; }
-#subsec-Doolittle-8-1 > li::marker { content: ""counter(subsec-Doolittle-8-1,decimal)"."; }
-#subsec-Doolittle-8-1 > li { counter-increment: subsec-Doolittle-8-1; }
-#sec1-7-exer-2-1 { counter-set: sec1-7-exer-2-1 0; }
-#sec1-7-exer-2-1 > li::marker { content: ""counter(sec1-7-exer-2-1,decimal)"."; }
-#sec1-7-exer-2-1 > li { counter-increment: sec1-7-exer-2-1; }
-#sec1-7-exer-2-1-3-2-1 { counter-set: sec1-7-exer-2-1-3-2-1 0; }
-#sec1-7-exer-2-1-3-2-1 > li::marker { content: "("counter(sec1-7-exer-2-1-3-2-1,lower-alpha)")"; }
-#sec1-7-exer-2-1-3-2-1 > li { counter-increment: sec1-7-exer-2-1-3-2-1; }
-#sec2-0-intro-11-1-1-1 { counter-set: sec2-0-intro-11-1-1-1 0; }
-#sec2-0-intro-11-1-1-1 > li::marker { content: ""counter(sec2-0-intro-11-1-1-1,decimal)"."; }
-#sec2-0-intro-11-1-1-1 > li { counter-increment: sec2-0-intro-11-1-1-1; }
-#exer-2-1-100-2-1 { counter-set: exer-2-1-100-2-1 0; }
-#exer-2-1-100-2-1 > li::marker { content: ""counter(exer-2-1-100-2-1,decimal)"."; }
-#exer-2-1-100-2-1 > li { counter-increment: exer-2-1-100-2-1; }
-#sec2-1-matrix-spaces-3-1 { counter-set: sec2-1-matrix-spaces-3-1 0; }
-#sec2-1-matrix-spaces-3-1 > li::marker { content: ""counter(sec2-1-matrix-spaces-3-1,decimal)"."; }
-#sec2-1-matrix-spaces-3-1 > li { counter-increment: sec2-1-matrix-spaces-3-1; }
-#sec-2-2-remrak2-1-1-1 { counter-set: sec-2-2-remrak2-1-1-1 0; }
-#sec-2-2-remrak2-1-1-1 > li::marker { content: ""counter(sec-2-2-remrak2-1-1-1,decimal)"."; }
-#sec-2-2-remrak2-1-1-1 > li { counter-increment: sec-2-2-remrak2-1-1-1; }
-#sec-sec3-5-LT-Sage-2-3-1 { counter-set: sec-sec3-5-LT-Sage-2-3-1 0; }
-#sec-sec3-5-LT-Sage-2-3-1 > li::marker { content: ""counter(sec-sec3-5-LT-Sage-2-3-1,decimal)"."; }
-#sec-sec3-5-LT-Sage-2-3-1 > li { counter-increment: sec-sec3-5-LT-Sage-2-3-1; }
-#sec4-1-VS-3-2-2-1 { counter-set: sec4-1-VS-3-2-2-1 0; }
-#sec4-1-VS-3-2-2-1 > li::marker { content: ""counter(sec4-1-VS-3-2-2-1,decimal)"."; }
-#sec4-1-VS-3-2-2-1 > li { counter-increment: sec4-1-VS-3-2-2-1; }
-#thm-basis-equiv-1-2-1 { counter-set: thm-basis-equiv-1-2-1 0; }
-#thm-basis-equiv-1-2-1 > li::marker { content: ""counter(thm-basis-equiv-1-2-1,decimal)"."; }
-#thm-basis-equiv-1-2-1 > li { counter-increment: thm-basis-equiv-1-2-1; }
-#sec4-5-VS-Ex-2-1 { counter-set: sec4-5-VS-Ex-2-1 0; }
-#sec4-5-VS-Ex-2-1 > li::marker { content: ""counter(sec4-5-VS-Ex-2-1,decimal)"."; }
-#sec4-5-VS-Ex-2-1 > li { counter-increment: sec4-5-VS-Ex-2-1; }
-#eigen-properties-2-1-1 { counter-set: eigen-properties-2-1-1 0; }
-#eigen-properties-2-1-1 > li::marker { content: ""counter(eigen-properties-2-1-1,decimal)"."; }
-#eigen-properties-2-1-1 > li { counter-increment: eigen-properties-2-1-1; }
-#sec5-1-eigen-intro-24-1-1-1 { counter-set: sec5-1-eigen-intro-24-1-1-1 0; }
-#sec5-1-eigen-intro-24-1-1-1 > li::marker { content: ""counter(sec5-1-eigen-intro-24-1-1-1,decimal)"."; }
-#sec5-1-eigen-intro-24-1-1-1 > li { counter-increment: sec5-1-eigen-intro-24-1-1-1; }
-#subsec5-3-linear-ode-12-1 { counter-set: subsec5-3-linear-ode-12-1 0; }
-#subsec5-3-linear-ode-12-1 > li::marker { content: ""counter(subsec5-3-linear-ode-12-1,decimal)"."; }
-#subsec5-3-linear-ode-12-1 > li { counter-increment: subsec5-3-linear-ode-12-1; }
-#subsec5-3-Google-Search-6-1 { counter-set: subsec5-3-Google-Search-6-1 0; }
-#subsec5-3-Google-Search-6-1 > li::marker { content: ""counter(subsec5-3-Google-Search-6-1,decimal)"."; }
-#subsec5-3-Google-Search-6-1 > li { counter-increment: subsec5-3-Google-Search-6-1; }
-#sec5-4-eigen-exer-2-1 { counter-set: sec5-4-eigen-exer-2-1 0; }
-#sec5-4-eigen-exer-2-1 > li::marker { content: ""counter(sec5-4-eigen-exer-2-1,decimal)"."; }
-#sec5-4-eigen-exer-2-1 > li { counter-increment: sec5-4-eigen-exer-2-1; }
-#ex-ortho-6-0-0-1-1-1 { counter-set: ex-ortho-6-0-0-1-1-1 0; }
-#ex-ortho-6-0-0-1-1-1 > li::marker { content: ""counter(ex-ortho-6-0-0-1-1-1,decimal)"."; }
-#ex-ortho-6-0-0-1-1-1 > li { counter-increment: ex-ortho-6-0-0-1-1-1; }
-#sec6-3-10-1-2-1 { counter-set: sec6-3-10-1-2-1 0; }
-#sec6-3-10-1-2-1 > li::marker { content: ""counter(sec6-3-10-1-2-1,decimal)"."; }
-#sec6-3-10-1-2-1 > li { counter-increment: sec6-3-10-1-2-1; }
-#sec7-1-InnerProduct-4-1 { counter-set: sec7-1-InnerProduct-4-1 0; }
-#sec7-1-InnerProduct-4-1 > li::marker { content: ""counter(sec7-1-InnerProduct-4-1,decimal)"."; }
-#sec7-1-InnerProduct-4-1 > li { counter-increment: sec7-1-InnerProduct-4-1; }
-#def-inner-product-2-2-1 { counter-set: def-inner-product-2-2-1 0; }
-#def-inner-product-2-2-1 > li::marker { content: ""counter(def-inner-product-2-2-1,decimal)"."; }
-#def-inner-product-2-2-1 > li { counter-increment: def-inner-product-2-2-1; }
-#thm-norm-properties-2-2-1 { counter-set: thm-norm-properties-2-2-1 0; }
-#thm-norm-properties-2-2-1 > li::marker { content: ""counter(thm-norm-properties-2-2-1,decimal)"."; }
-#thm-norm-properties-2-2-1 > li { counter-increment: thm-norm-properties-2-2-1; }
-#sec7-2-Exer-3-1 { counter-set: sec7-2-Exer-3-1 0; }
-#sec7-2-Exer-3-1 > li::marker { content: ""counter(sec7-2-Exer-3-1,decimal)"."; }
-#sec7-2-Exer-3-1 > li { counter-increment: sec7-2-Exer-3-1; }
-#def-pseudoinverse-1-2-1 { counter-set: def-pseudoinverse-1-2-1 0; }
-#def-pseudoinverse-1-2-1 > li::marker { content: ""counter(def-pseudoinverse-1-2-1,decimal)"."; }
-#def-pseudoinverse-1-2-1 > li { counter-increment: def-pseudoinverse-1-2-1; }
-#sec9-1-SVD-6-27-2 { counter-set: sec9-1-SVD-6-27-2 0; }
-#sec9-1-SVD-6-27-2 > li::marker { content: ""counter(sec9-1-SVD-6-27-2,decimal)"."; }
-#sec9-1-SVD-6-27-2 > li { counter-increment: sec9-1-SVD-6-27-2; }
-</style>
+</script>
 </head>
 <body id="changeme" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
 <p class="byline">Ajit Kumar</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -239,7 +158,8 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec1-3-echelon-form.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec1-5-hom-system.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec1-3-echelon-form.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-lineq.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec1-5-hom-system.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -261,13 +181,13 @@ sagecell.makeSagecell({
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Author Biography</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -489,69 +409,130 @@ sagecell.makeSagecell({
 </li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-sage-into.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-sage-into-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction to SageMath</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="getting-started-sagemath.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Getting Started with Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-sage-programming.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Programming in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-plotting-sage.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Plotting in Sage</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec1-4-matrix-rank"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.4</span><span class="space"> </span><span class="title">Rank of Matrices</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Rank of Matrices</span>
 </h2>
 <article class="definition definition-like" id="def-sub-matrix"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="def-sub-matrix-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m \times n\)</span> matrix. Delete any <span class="process-math">\(m-k\)</span> rows and <span class="process-math">\(n-l\)</span> columns of <span class="process-math">\(A\text{.}\)</span> The resulting matrix is called a <span class="process-math">\(k\times  l\)</span> sub-matrix  of <span class="process-math">\(A\text{.}\)</span> If <span class="process-math">\(k = l\text{,}\)</span> then it is called a square sub-matrix of <span class="process-math">\(A\)</span> of order <span class="process-math">\(k\text{.}\)</span>
-</div></article><article class="definition definition-like" id="def-matrix-rank"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
+<div class="para" id="def-sub-matrix-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m \times n\)</span> matrix. Delete any <span class="process-math">\(m-k\)</span> rows and <span class="process-math">\(n-l\)</span> columns of <span class="process-math">\(A\text{.}\)</span> The resulting matrix is called a <span class="process-math">\(k\times  l\)</span> sub-matrix  of <span class="process-math">\(A\text{.}\)</span> If <span class="process-math">\(k = l\text{,}\)</span> then it is called a square sub-matrix of <span class="process-math">\(A\)</span> of order <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-sub-matrix-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.4.1"><a href="#def-sub-matrix" title="Copy heading and permalink for Definition 1.4.1" aria-label="Copy heading and permalink for Definition 1.4.1">🔗</a></div></article><article class="definition definition-like" id="def-matrix-rank"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="def-matrix-rank-1-1">The <em class="alert">rank</em> of an <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\)</span>  is the order of the largest square sub-matrix of <span class="process-math">\(A\)</span> whose determinant is non-zero. We denote the rank of a matrix <span class="process-math">\(A\)</span> by <span class="process-math">\(r(A)\text{.}\)</span>
-</div></article><article class="example example-like" id="sec1-4-matrix-rank-4"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
+<div class="para" id="def-matrix-rank-1-1">The <em class="alert">rank</em> of an <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\)</span>  is the order of the largest square sub-matrix of <span class="process-math">\(A\)</span> whose determinant is non-zero. We denote the rank of a matrix <span class="process-math">\(A\)</span> by <span class="process-math">\(r(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-matrix-rank-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.4.2"><a href="#def-matrix-rank" title="Copy heading and permalink for Definition 1.4.2" aria-label="Copy heading and permalink for Definition 1.4.2">🔗</a></div></article><article class="example example-like" id="sec1-4-matrix-rank-4"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec1-4-matrix-rank-4-1">Determine the rank of <span class="process-math">\(A=
 \begin{pmatrix}
 1 \amp  1   \amp  1   \\
 2 \amp  3  \amp  4   \\
 4 \amp   5  \amp  6   \\
-\end{pmatrix}\text{.}\)</span>
-</div> <details id="sec1-4-matrix-rank-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="sec1-4-matrix-rank-4-2-1">We can see that <span class="process-math">\(\mid A\mid  = 0\text{.}\)</span> Hence <span class="process-math">\(r(A) \leq 2\text{.}\)</span> Now we look for the square sub-matrix of <span class="process-math">\(A\)</span> of order 2 whose determinant is non-zero. Consider the square sub-matrix <span class="process-math">\(B= 
+\end{pmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec1-4-matrix-rank-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec1-4-matrix-rank-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec1-4-matrix-rank-4-2-1">We can see that <span class="process-math">\(\mid A\mid  = 0\text{.}\)</span> Hence <span class="process-math">\(r(A) \leq 2\text{.}\)</span> Now we look for the square sub-matrix of <span class="process-math">\(A\)</span> of order 2 whose determinant is non-zero. Consider the square sub-matrix <span class="process-math">\(B= 
 \begin{pmatrix}
 1\amp 1   \\
 2\amp 3   \\
-\end{pmatrix}\text{,}\)</span>   <span class="process-math">\(\mid B\mid = 1\text{.}\)</span> Hence  <span class="process-math">\(r(A) = 2\text{.}\)</span>
-</div></div></details></article><article class="observation remark-like" id="sec1-4-matrix-rank-5"><h3 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span>
+\end{pmatrix}\text{,}\)</span>   <span class="process-math">\(\mid B\mid = 1\text{.}\)</span> Hence  <span class="process-math">\(r(A) = 2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec1-4-matrix-rank-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.3.1"><a href="#sec1-4-matrix-rank-4-2" title="Copy heading and permalink for Solution 1.4.3.1" aria-label="Copy heading and permalink for Solution 1.4.3.1">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Example 1.4.3"><a href="#sec1-4-matrix-rank-4" title="Copy heading and permalink for Example 1.4.3" aria-label="Copy heading and permalink for Example 1.4.3">🔗</a></div></article><article class="observation remark-like" id="sec1-4-matrix-rank-5"><h3 class="heading">
+<span class="type">Observation</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec1-4-matrix-rank-5-1">We list the following results without proof.</div> <div class="para logical" id="sec1-4-matrix-rank-5-2"><ol class="decimal" id="sec1-4-matrix-rank-5-2-1">
-<li id="sec1-4-matrix-rank-5-2-1-1"><div class="para" id="sec1-4-matrix-rank-5-2-1-1-1">An <span class="process-math">\(m \times n\)</span> matrix is of rank 0 if and only it is a zero matrix.</div></li>
-<li id="sec1-4-matrix-rank-5-2-1-2"><div class="para" id="sec1-4-matrix-rank-5-2-1-2-1">An <span class="process-math">\(n \times n\)</span> square matrix <span class="process-math">\(A\)</span> has rank <span class="process-math">\(n\)</span> if and only if <span class="process-math">\(|A| \neq 0\text{.}\)</span>
-</div></li>
-<li id="sec1-4-matrix-rank-5-2-1-3"><div class="para" id="sec1-4-matrix-rank-5-2-1-3-1">An <span class="process-math">\(n \times n\)</span> square matrix <span class="process-math">\(A\)</span> has rank  strictly less than <span class="process-math">\(n\)</span> if and only 		if <span class="process-math">\(|A| = 0\text{.}\)</span>
-</div></li>
-<li id="sec1-4-matrix-rank-5-2-1-4"><div class="para" id="sec1-4-matrix-rank-5-2-1-4-1">For an <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> rank of <span class="process-math">\(A \leq  \min \{m, n\}.\)</span>
-</div></li>
-<li id="sec1-4-matrix-rank-5-2-1-5"><div class="para" id="sec1-4-matrix-rank-5-2-1-5-1">The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.</div></li>
-<li id="sec1-4-matrix-rank-5-2-1-6"><div class="para" id="sec1-4-matrix-rank-5-2-1-6-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m \times n\)</span> matrix, then <span class="process-math">\(r(A) = r(A^T)\text{,}\)</span> where <span class="process-math">\(A^T\)</span> is the transpose of<span class="process-math">\(A\text{.}\)</span>
-</div></li>
-</ol></div></article><article class="theorem theorem-like" id="thm-rank-theorem"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
+<div class="para" id="sec1-4-matrix-rank-5-1">We list the following results without proof.<div class="autopermalink" data-description="Paragraph"><a href="#sec1-4-matrix-rank-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec1-4-matrix-rank-5-2">
+<ol class="decimal" id="sec1-4-matrix-rank-5-2-1">
+<li id="sec1-4-matrix-rank-5-2-1-1">
+<div class="para" id="sec1-4-matrix-rank-5-2-1-1-1">An <span class="process-math">\(m \times n\)</span> matrix is of rank 0 if and only it is a zero matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sec1-4-matrix-rank-5-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec1-4-matrix-rank-5-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec1-4-matrix-rank-5-2-1-2">
+<div class="para" id="sec1-4-matrix-rank-5-2-1-2-1">An <span class="process-math">\(n \times n\)</span> square matrix <span class="process-math">\(A\)</span> has rank <span class="process-math">\(n\)</span> if and only if <span class="process-math">\(|A| \neq 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec1-4-matrix-rank-5-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec1-4-matrix-rank-5-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec1-4-matrix-rank-5-2-1-3">
+<div class="para" id="sec1-4-matrix-rank-5-2-1-3-1">An <span class="process-math">\(n \times n\)</span> square matrix <span class="process-math">\(A\)</span> has rank  strictly less than <span class="process-math">\(n\)</span> if and only 		if <span class="process-math">\(|A| = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec1-4-matrix-rank-5-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec1-4-matrix-rank-5-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sec1-4-matrix-rank-5-2-1-4">
+<div class="para" id="sec1-4-matrix-rank-5-2-1-4-1">For an <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> rank of <span class="process-math">\(A \leq  \min \{m, n\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec1-4-matrix-rank-5-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#sec1-4-matrix-rank-5-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="sec1-4-matrix-rank-5-2-1-5">
+<div class="para" id="sec1-4-matrix-rank-5-2-1-5-1">The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.<div class="autopermalink" data-description="Paragraph"><a href="#sec1-4-matrix-rank-5-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#sec1-4-matrix-rank-5-2-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="sec1-4-matrix-rank-5-2-1-6">
+<div class="para" id="sec1-4-matrix-rank-5-2-1-6-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m \times n\)</span> matrix, then <span class="process-math">\(r(A) = r(A^T)\text{,}\)</span> where <span class="process-math">\(A^T\)</span> is the transpose of<span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec1-4-matrix-rank-5-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#sec1-4-matrix-rank-5-2-1-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec1-4-matrix-rank-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Observation 1.4.4"><a href="#sec1-4-matrix-rank-5" title="Copy heading and permalink for Observation 1.4.4" aria-label="Copy heading and permalink for Observation 1.4.4">🔗</a></div></article><article class="theorem theorem-like" id="thm-rank-theorem"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="thm-rank-theorem-1-1">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(m \times n\)</span> matrix. The rank of  <span class="process-math">\(A\)</span> is equal to the number of non-zero rows  in an echelon equivalent form of   <span class="process-math">\(A\text{.}\)</span>  In other words, the rank of matrix  <span class="process-math">\(A\)</span> is the number of leading 1’s in any row-echelon matrix to which  <span class="process-math">\(A\)</span> can be carried by row operations.</div></article><article class="example example-like" id="sec1-4-matrix-rank-7"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span>
+<div class="para" id="thm-rank-theorem-1-1">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(m \times n\)</span> matrix. The rank of  <span class="process-math">\(A\)</span> is equal to the number of non-zero rows  in an echelon equivalent form of   <span class="process-math">\(A\text{.}\)</span>  In other words, the rank of matrix  <span class="process-math">\(A\)</span> is the number of leading 1’s in any row-echelon matrix to which  <span class="process-math">\(A\)</span> can be carried by row operations. \qed<div class="autopermalink" data-description="Paragraph"><a href="#thm-rank-theorem-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 1.4.5"><a href="#thm-rank-theorem" title="Copy heading and permalink for Theorem 1.4.5" aria-label="Copy heading and permalink for Theorem 1.4.5">🔗</a></div></article><article class="example example-like" id="eg-1-4-6"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec1-4-matrix-rank-7-1">Let us find the ranl of <span class="process-math">\(A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}\text{.}\)</span>
-</div> <details id="sec1-4-matrix-rank-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="sec1-4-matrix-rank-7-2-1">
+<div class="para" id="eg-1-4-6-1-1">Let us find the rank of <span class="process-math">\(A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg-1-4-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="eg-1-4-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="eg-1-4-6-2-1">
 <div class="displaymath process-math">
 \begin{equation*}
-A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}\overrightarrow{\text{Row echelon form}}\begin{bmatrix}1 \amp  0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp 0\amp 1\\0\amp 0\amp 0\amp 1\amp -1\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}\text{.}
+A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}
+\xrightarrow{
+\begin{array}{c}
+R_3-R_2   \\
+\end{array}}
+\begin{bmatrix}1 \amp  0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp 0\amp 1\\0\amp 0\amp 0\amp 1\amp -1\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">Hence <span class="process-math">\(r(A)=3\text{.}\)</span>
 </div>
-</div></div></details></article><article class="example example-like" id="sec1-4-matrix-rank-8"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg-1-4-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.6.1"><a href="#eg-1-4-6-2" title="Copy heading and permalink for Solution 1.4.6.1" aria-label="Copy heading and permalink for Solution 1.4.6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.6"><a href="#eg-1-4-6" title="Copy heading and permalink for Example 1.4.6" aria-label="Copy heading and permalink for Example 1.4.6">🔗</a></div></article><article class="example example-like" id="eg-1-4-7"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec1-4-matrix-rank-8-1">Consider a matrix <span class="process-math">\(\begin{bmatrix} 1 \amp  1 \amp  2 \amp  a^2\\1 \amp  1-a \amp  2\amp  0 \\2 \amp  2-a \amp  6-a \amp  4\end{bmatrix}\text{.}\)</span> Find the rank of the matrix.</div> <details id="sec1-4-matrix-rank-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="sec1-4-matrix-rank-8-2-1">
+<div class="para" id="eg-1-4-7-1-1">Consider a matrix <span class="process-math">\(\begin{bmatrix} 1 \amp  1 \amp  2 \amp  a^2\\1 \amp  1-a \amp  2\amp  0 \\2 \amp  2-a \amp  6-a \amp  4\end{bmatrix}\text{.}\)</span> Find the rank of the matrix.<div class="autopermalink" data-description="Paragraph"><a href="#eg-1-4-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="eg-1-4-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="eg-1-4-7-2-1">
 <div class="para">Let us apply elementary row operations of <span class="process-math">\(A\text{.}\)</span> We have</div>
-<div class="displaymath process-math" id="sec1-4-matrix-rank-8-2-1-2">
+<div class="displaymath process-math" id="eg-1-4-7-2-1-2">
 \begin{align*}
 \begin{bmatrix} 1 \amp  1 \amp  2 \amp  a^2\\1 \amp  1-a\amp  2\amp  0 \\2 \amp  2-a \amp  6-a \amp  4\end{bmatrix}
 \amp\xrightarrow{
@@ -586,35 +567,61 @@ R_3-R_2   \\
 \end{align*}
 </div>
 <div class="para">Clearly the rank of <span class="process-math">\(A\)</span> is 3 if <span class="process-math">\(a\neq 0,  2\text{.}\)</span> If <span class="process-math">\(a=0\)</span> or <span class="process-math">\(a=2\text{,}\)</span> then it is easy to check that rank of <span class="process-math">\(A\)</span> is 2.</div>
-</div> <div id="sec1-4-matrix-rank-8-2-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('a') # Declaraing a as symbomic variable.
+<div class="autopermalink" data-description="Paragraph"><a href="#eg-1-4-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="eg-1-4-7-2-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('a') # Declaraing a as symbomic variable.
 A = matrix([[1,1,2,a^2],[1,1-a,2,0],[2,2-a,6-a,4]])
 A1=A.rref()
 show(A1)
-</script></div> <div id="sec1-4-matrix-rank-8-2-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a=0
-A = matrix([[1,1,2,a^2],[1,1-a,2,0],[2,2-a,6-a,4]])
-print(A)
-rank(A)
-</script></div> <div id="sec1-4-matrix-rank-8-2-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a=2
+</script></div>
+<div id="eg-1-4-7-2-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a=0
 A = matrix([[1,1,2,a^2],[1,1-a,2,0],[2,2-a,6-a,4]])
 print(A)
 rank(A)
 </script></div>
-</div></details></article><article class="theorem theorem-like" id="thm-nosol-rank"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Number of Solution of a System.</span>
+<div id="eg-1-4-7-2-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a=2
+A = matrix([[1,1,2,a^2],[1,1-a,2,0],[2,2-a,6-a,4]])
+print(A)
+rank(A)
+</script></div>
+<div class="autopermalink" data-description="Solution 1.4.7.1"><a href="#eg-1-4-7-2" title="Copy heading and permalink for Solution 1.4.7.1" aria-label="Copy heading and permalink for Solution 1.4.7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.7"><a href="#eg-1-4-7" title="Copy heading and permalink for Example 1.4.7" aria-label="Copy heading and permalink for Example 1.4.7">🔗</a></div></article><article class="theorem theorem-like" id="thm-nosol-rank"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Number of Solution of a System.</span>
 </h3>
-<div class="para" id="thm-nosol-rank-2-1">Let <span class="process-math">\(AX = B\)</span> be a system of <span class="process-math">\(m\)</span> 	linear equations in <span class="process-math">\(n\)</span> unknowns and <span class="process-math">\(A^* = [A~|~B]\text{,}\)</span> the augmented matrix of the system. Then</div> <div class="para logical" id="thm-nosol-rank-2-2"><ol class="decimal" id="thm-nosol-rank-2-2-1">
-<li id="thm-nosol-rank-2-2-1-1"><div class="para" id="thm-nosol-rank-2-2-1-1-1">The system has a solution i.e. the system is consistent if and only if <span class="process-math">\(r(A) = r(A^*)\text{.}\)</span>
-</div></li>
-<li id="thm-nosol-rank-2-2-1-2"><div class="para" id="thm-nosol-rank-2-2-1-2-1">If <span class="process-math">\(r(A) = r(A^*) \)</span> and <span class="process-math">\(r(A) = r \)</span> whihc is strictly less than <span class="process-math">\(n\text{,}\)</span> then number of                 unknowns, then there are infinite number of solutions and <span class="process-math">\(n-r\)</span> variables can be chosen freely.</div></li>
-<li id="thm-nosol-rank-2-2-1-3"><div class="para" id="thm-nosol-rank-2-2-1-3-1">If <span class="process-math">\(r(A) = r(A^*)\)</span> and <span class="process-math">\(r(A) = n\text{,}\)</span> the number of unknowns, then there is only one (unique) solution for the system.</div></li>
-</ol></div></article><article class="corollary theorem-like" id="cor-rank1"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.4.9</span><span class="period">.</span>
+<div class="para" id="thm-nosol-rank-2-1">Let <span class="process-math">\(AX = B\)</span> be a system of <span class="process-math">\(m\)</span> 	linear equations in <span class="process-math">\(n\)</span> unknowns and <span class="process-math">\(A^* = [A~|~B]\text{,}\)</span> the augmented matrix of the system. Then<div class="autopermalink" data-description="Paragraph"><a href="#thm-nosol-rank-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="thm-nosol-rank-2-2">
+<ol class="decimal" id="thm-nosol-rank-2-2-1">
+<li id="thm-nosol-rank-2-2-1-1">
+<div class="para" id="thm-nosol-rank-2-2-1-1-1">The system has a solution i.e. the system is consistent if and only if <span class="process-math">\(r(A) = r(A^*)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-nosol-rank-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-nosol-rank-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-nosol-rank-2-2-1-2">
+<div class="para" id="thm-nosol-rank-2-2-1-2-1">If <span class="process-math">\(r(A) = r(A^*) \)</span> and <span class="process-math">\(r(A) = r \)</span> whihc is strictly less than <span class="process-math">\(n\text{,}\)</span> then number of                 unknowns, then there are infinite number of solutions and <span class="process-math">\(n-r\)</span> variables can be chosen freely.<div class="autopermalink" data-description="Paragraph"><a href="#thm-nosol-rank-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-nosol-rank-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="thm-nosol-rank-2-2-1-3">
+<div class="para" id="thm-nosol-rank-2-2-1-3-1">If <span class="process-math">\(r(A) = r(A^*)\)</span> and <span class="process-math">\(r(A) = n\text{,}\)</span> the number of unknowns, then there is only one (unique) solution for the system.<div class="autopermalink" data-description="Paragraph"><a href="#thm-nosol-rank-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#thm-nosol-rank-2-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-nosol-rank-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 1.4.8: Number of Solution of a System"><a href="#thm-nosol-rank" title="Copy heading and permalink for Theorem 1.4.8: Number of Solution of a System" aria-label="Copy heading and permalink for Theorem 1.4.8: Number of Solution of a System">🔗</a></div></article><article class="corollary theorem-like" id="cor-rank1"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="cor-rank1-1-1">Suppose <span class="process-math">\(AX = B\)</span> is a system of <span class="process-math">\(m\)</span> linear equations in <span class="process-math">\(n\)</span> unknowns with <span class="process-math">\(m \lt n\text{.}\)</span>  If <span class="process-math">\(r(A)\neq r(A^*)\text{,}\)</span> then the system <span class="process-math">\(AX=B\)</span> has no solution.</div></article><article class="corollary theorem-like" id="cor-rank2"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.4.10</span><span class="period">.</span>
+<div class="para" id="cor-rank1-1-1">Suppose <span class="process-math">\(AX = B\)</span> is a system of <span class="process-math">\(m\)</span> linear equations in <span class="process-math">\(n\)</span> unknowns with <span class="process-math">\(m \lt n\text{.}\)</span>  If <span class="process-math">\(r(A)\neq r(A^*)\text{,}\)</span> then the system <span class="process-math">\(AX=B\)</span> has no solution.<div class="autopermalink" data-description="Paragraph"><a href="#cor-rank1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 1.4.9"><a href="#cor-rank1" title="Copy heading and permalink for Corollary 1.4.9" aria-label="Copy heading and permalink for Corollary 1.4.9">🔗</a></div></article><article class="corollary theorem-like" id="cor-rank2"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="cor-rank2-1-1">Suppose <span class="process-math">\(AX = B\)</span> is a system of <span class="process-math">\(m\)</span> linear equations in <span class="process-math">\(n\)</span> unknowns with <span class="process-math">\(m \lt n\text{.}\)</span> Then the system either has no solution or has infinitely many solutions.</div></article><article class="example example-like" id="matrix-rank-eg1"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.11</span><span class="period">.</span>
+<div class="para" id="cor-rank2-1-1">Suppose <span class="process-math">\(AX = B\)</span> is a system of <span class="process-math">\(m\)</span> linear equations in <span class="process-math">\(n\)</span> unknowns with <span class="process-math">\(m \lt n\text{.}\)</span> Then the system either has no solution or has infinitely many solutions.<div class="autopermalink" data-description="Paragraph"><a href="#cor-rank2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 1.4.10"><a href="#cor-rank2" title="Copy heading and permalink for Corollary 1.4.10" aria-label="Copy heading and permalink for Corollary 1.4.10">🔗</a></div></article><article class="example example-like" id="matrix-rank-eg1"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="matrix-rank-eg1-1">
 <div class="para">` Consider the Example~<a href="sec1-3-echelon-form.html#row-echelon-eg1" class="xref" data-knowl="./knowl/xref/row-echelon-eg1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.7">Example 1.3.7</a>.</div>
@@ -637,11 +644,15 @@ RREF
 \end{align*}
 </div>
 <div class="para">Thus we have  <span class="process-math">\(r(A)=r(A^*)=3\text{,}\)</span>  hence this system has a unique solution.</div>
-</div></article><article class="example example-like" id="matrix-rank-eg2"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.12</span><span class="period">.</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#matrix-rank-eg1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.4.11"><a href="#matrix-rank-eg1" title="Copy heading and permalink for Example 1.4.11" aria-label="Copy heading and permalink for Example 1.4.11">🔗</a></div></article><article class="example example-like" id="matrix-rank-eg2"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="matrix-rank-eg2-1">` Let us consider the system <span class="process-math">\(AX=B\)</span> where <span class="process-math">\(A=\begin{bmatrix}1 \amp   -2\amp  0\amp  3\\3\amp  2\amp  8\amp  1\\2\amp  3\amp  7\amp  2\\-1\amp  2\amp  0\amp  4\end{bmatrix}\quad  B=\begin{bmatrix}-4\\4\\3\\-3\end{bmatrix}\quad  X=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}.\)</span> <details id="matrix-rank-eg2-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="matrix-rank-eg2-1-3-1">
-<div class="displaymath process-math" id="matrix-rank-eg2-1-3-1-1">
+<div class="para logical" id="matrix-rank-eg2-1-1">
+<div class="para">Let us consider the system <span class="process-math">\(AX=B\)</span> where <span class="process-math">\(A=\begin{bmatrix}1 \amp   -2\amp  0\amp  3\\3\amp  2\amp  8\amp  1\\2\amp  3\amp  7\amp  2\\-1\amp  2\amp  0\amp  4\end{bmatrix}\)</span> <span class="process-math">\(B=\begin{bmatrix}-4\\4\\3\\-3\end{bmatrix}\)</span> and <span class="process-math">\(X=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}.\)</span>
+</div>
+<div class="displaymath process-math" id="matrix-rank-eg2-1-1-5">
 \begin{align*}
 A^*=\begin{bmatrix}
 1 \amp   -2\amp  0\amp  3\amp  |\amp  -4\\
@@ -650,7 +661,10 @@ A^*=\begin{bmatrix}
 -1\amp  2\amp  0\amp  4\amp  |\amp  -3
 \end{bmatrix} 
 \amp
-\overrightarrow{\text{RREF}}
+\xrightarrow{
+\begin{array}{c}
+RREF
+\end{array}}
 \begin{bmatrix}
 1 \amp   0\amp  2\amp  0\amp  |\amp  1\\
 0\amp  1\amp  1\amp  0\amp  |\amp  1\\
@@ -660,11 +674,12 @@ A^*=\begin{bmatrix}
 \end{align*}
 </div>
 <div class="para">Clearly <span class="process-math">\(r(A)=r(A^*)=3\lt4\text{,}\)</span> hence this system has infinitely many solutions.</div>
-</div></div></details>
-</div></article><article class="example example-like" id="matrix-rank-eg3"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.13</span><span class="period">.</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#matrix-rank-eg2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.4.12"><a href="#matrix-rank-eg2" title="Copy heading and permalink for Example 1.4.12" aria-label="Copy heading and permalink for Example 1.4.12">🔗</a></div></article><article class="example example-like" id="matrix-rank-eg3"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="matrix-rank-eg3-1">
+<div class="para logical" id="matrix-rank-eg3-1-1">
 <div class="para">Consider the system of linear equations <span class="process-math">\(Ax=b\text{,}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -676,10 +691,9 @@ A^*=\begin{bmatrix}
 \end{pmatrix}, \text{ and } 
 b= \begin{pmatrix}
 5 \\ -7 \\ 8 \\ 11
-\end{pmatrix}
+\end{pmatrix}.
 \end{equation*}
 </div>
-</div> <details id="matrix-rank-eg3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="displaymath process-math">
 \begin{equation*}
 \left(\begin{array}{rrrr|r}
@@ -688,7 +702,10 @@ b= \begin{pmatrix}
 -2 \amp  0 \amp  3 \amp  4 \amp  8 \\
 13 \amp  2 \amp  -9 \amp  1 \amp  11
 \end{array}\right)
-\overrightarrow{\text{RREF}}
+\xrightarrow{
+\begin{array}{c}
+RREF
+\end{array}}
 \left(\begin{array}{rrrr|r}
 1 \amp  0 \amp  0 \amp  \frac{10}{7} \amp  0 \\
 0 \amp  1 \amp  0 \amp  \frac{3}{2} \amp  0 \\
@@ -697,22 +714,27 @@ b= \begin{pmatrix}
 \end{array}\right)
 \end{equation*}
 </div>
-<div class="para" id="matrix-rank-eg3-2-2">Clearly <span class="process-math">\(r(A)=3\)</span> but <span class="process-math">\(r(A^*=4\text{.}\)</span> Hence the system does not have a solution.</div> <div id="matrix-rank-eg3-2-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">                    A = matrix(QQ,[[1, -2, 2, 3], 
+<div class="para">
+<div class="para" id="matrix-rank-eg3-1-1-4">Clearly <span class="process-math">\(r(A)=3\)</span> but <span class="process-math">\(r(A^*=4\text{.}\)</span> Hence the system does not have a solution.<div class="autopermalink" data-description="Paragraph"><a href="#matrix-rank-eg3-1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div id="matrix-rank-eg3-1-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">                    A = matrix(QQ,[[1, -2, 2, 3], 
               [3, 2, -1, 5], 
                [-2, 0, 3, 4], 
                [13, 2, -9, 1]])
 b = vector([5,-7,8,11])
 Aug = A.augment(b,subdivide=True)
 Aug
-</script></div> <div id="matrix-rank-eg3-2-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
+</script></div> <div id="matrix-rank-eg3-1-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Aug.rref()
 </script></div>
-</div></details></article></section></div>
-<div class="ptx-content-footer">
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#matrix-rank-eg3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.4.13"><a href="#matrix-rank-eg3" title="Copy heading and permalink for Example 1.4.13" aria-label="Copy heading and permalink for Example 1.4.13">🔗</a></div></article><div class="autopermalink" data-description="Section 1.4: Rank of Matrices"><a href="#sec1-4-matrix-rank" title="Copy heading and permalink for Section 1.4: Rank of Matrices" aria-label="Copy heading and permalink for Section 1.4: Rank of Matrices">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec1-3-echelon-form.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec1-5-hom-system.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

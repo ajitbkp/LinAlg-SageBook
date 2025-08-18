@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>Let us solve the above problem using Sage.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-175"><script type="text/x-sage">V = QQ^4 # vector space of dimension 4 over rational field
+v1=vector(QQ,[-3, 1, -1, 2])
+v2=vector(QQ,[1, -1, 11, 3])
+v3=vector(QQ,[-5, 1, 9, 7])
+v4=vector(QQ,[-1, 12, 5, 4])
+B1=[v1,v2,v3,v4]
+## W1, Subspace spanned by v1,v2,v3,v4
+W1=V.span(B1);
+C1=W1.basis_matrix() # Basis of W1
+k=C1.dimensions()[0] # dimension of W1
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-176"><script type="text/x-sage">print("The dimesion of W1 is {}".format(k))
+print("A basis of W1 is:")
+print(C1)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-177"><script type="text/x-sage">u1=vector(QQ,[3, -1, 5, 7])
+u2 =vector(QQ,[21, 11, 10, -13])
+u3=vector(QQ,[-2, 3, -51, 7])
+u4=vector(QQ,[-17, -10, -51, 34])
+B2=[u1,u2,u3,u4]
+## W2, Subspace spanned by u1,u2,u3,u4
+W2=V.span(B2);
+C2=W2.basis_matrix() # Basis of W2
+p=C2.dimensions()[0] # dimension of W2
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-178"><script type="text/x-sage">print("The dimesion of W2 is {}".format(p))
+print("A basis of W2 is:")
+print(C2)
+</script></pre>
+<p><code class="code-inline tex2jax_ignore">W1+W2</code> returns the space <span class="process-math">\(W_1+W_2\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-179"><script type="text/x-sage">print(W1+W2)
+print((W1+W2).basis_matrix())
+print("The dimension of W1+W2 is {}".format(dimension(W1+W2)))
+</script></pre>
+<p>Intersection of W1 and W2 using the inbuilt sage function <code class="code-inline tex2jax_ignore">intersection</code></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-180"><script type="text/x-sage">U=W1.intersection(W2)
+print(U.basis_matrix()) # The basis of the intersection of W1 and W2
+</script></pre>
+<p>Finally, we can verify the dimension formula.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-181"><script type="text/x-sage">dimension(W1+W2)==dimension(W1)+dimension(W2)-dimension(W1.intersection(W2))
+</script></pre>
+</div></body>
+</html>

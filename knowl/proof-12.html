@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:32+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<p>Note that <span class="process-math">\(A^TA\)</span> is symmetric and <span class="process-math">\(\rank{(A)}=\rank{(A^TA)}\text{.}\)</span> Let <span class="process-math">\(\rank{(A)}=r\text{.}\)</span> Further</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\innprod{A^TAx}{x}=\innprod{Ax}{Ax}=\norm{Ax}^2\geq 0, \forall x\in \R^n\text{.}
+\end{equation*}
+</div>
+<p>Hence <span class="process-math">\(A^TA\)</span> is a symmetric and semi-positive definite matrix. Hence all its eigenvalues are real and non negative. Let <span class="process-math">\(\lambda_1, \lambda_2,\ldots,\lambda_r\)</span> be non zero eigenvalues of <span class="process-math">\(A^TA\)</span> with <span class="process-math">\(\lambda_1\geq \lambda_2\geq\cdots\geq\lambda_r\text{.}\)</span> The remaining eigenvalues of <span class="process-math">\(A^TA\)</span> are <span class="process-math">\(\lambda_{r+1}=\lambda_{r+2}=\cdots=\lambda_n=0\text{.}\)</span> Let us denote <span class="process-math">\(\lambda_i=\sigma_i^2\)</span> for <span class="process-math">\(i=1,\ldots, n\text{.}\)</span> Since <span class="process-math">\(A^TA\)</span> is symmetric matrix, it is diagonalizable. Hence there exists an orthogonal eigenbasis <span class="process-math">\(v_1,\ldots,
+v_n\)</span> for <span class="process-math">\(\R^n\)</span> of <span class="process-math">\(A^TA\text{.}\)</span> Let <span class="process-math">\(A^TAv_i=\sigma_i^2v_i\text{.}\)</span> This implies</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align}
+v_i^TA^TAv_i=\amp \sigma_i^2 \amp \text{ for }  i=1,2,\ldots, r\tag{9.1.4}\\
+v_i^TA^TAv_i=\amp 0 \amp \text{ for }  i=r+1,\ldots, n\tag{9.1.5}
+\end{align}
+</div>
+<p>From <a href="" class="xref" data-knowl="./knowl/eq_svd31.html" title="Equation 9.1.5">(9.1.5)</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_svd31.html">
+\begin{equation*}
+v_k^TA^TAv_k=\innprod{Av_k}{Av_k}=0   \text{ for }  i=r+1,\ldots,n\text{.}
+\end{equation*}
+</div>
+<p>This implies,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+Av_k=0  \text{ for }  i=r+1,\ldots,n\text{.}
+\end{equation*}
+</div>
+<p>We define</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation}
+u_i:=\frac{1}{\sigma_i}Av_i \text{ for }  i=1,2,\ldots, r\text{.}\tag{9.1.6}
+\end{equation}
+</div>
+<p>We claim that <span class="process-math">\(\{u_1,\ldots,
+u_r\}\)</span> is an orthonormal set. For</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\innprod{u_i}{u_j}=u_i^Tu_j=\frac{1}{\sigma_i}(Av_i)^T\frac{1}{\sigma_j}Av_j =\frac{1}{\sigma_i\sigma_j}v_i^TA^TAv_j=\delta_{ij}\text{.}
+\end{equation*}
+</div>
+<p>Now we complete <span class="process-math">\(\{u_1,\ldots,
+u_r\}\)</span> to an orthonormal basis <span class="process-math">\(\{u_1,\ldots,
+u_r,u_{r+1},\ldots, u_n\}\)</span> of <span class="process-math">\(\R^n\text{.}\)</span> Define</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+U:=[u_1~\ldots~ u_r~u_{r+1}~\ldots~ u_n] \text{ and } V:=[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n].
+\end{equation*}
+</div>
+<p>We claim that <span class="process-math">\(U^TAV=\sum\)</span> and hence <span class="process-math">\(A= U\Sigma V^T\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+U^TAV =\amp  \begin{pmatrix} u_1^T\\\vdots \\ u_r^T\\u_{r+1}^T\\\vdots\\u_n^T\end{pmatrix}
+A[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n]\\
+=\amp \begin{pmatrix} \frac{1}{\sigma_1}v_1^TA^T\\\vdots\\\frac{1}{\sigma_r}v_r^TA^T\\u_{r+1}^T\\
+\vdots\\u_n^T\end{pmatrix}A[v_1~\ldots~ v_r~v_{r+1}~\ldots~ v_n]\\
+=\amp \begin{pmatrix} \frac{1}{\sigma_1}v_1^TA^T\\\vdots\\\frac{1}{\sigma_r}v_r^TA^T\\
+u_{r+1}^T\\\vdots\\u_n^T\end{pmatrix}[Av_1~\ldots~ Av_r~v_{r+1}~\ldots~ Av_n]\\
+=\amp \diag(\sigma_1,\ldots,\sigma_r,0,\ldots,0)=\sum\text{.}
+\end{align*}
+</div>
+<p>Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A=U\sum V^T\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="sec9-1-SVD.html#proof-12" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:33+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.11</span><span class="period">.</span><span class="space"> </span><span class="title">Sage Interact.</span>
+</h3>
+<p>SageMath provides a way to create an interactive application for users. This is done using the SageMath function <code class="code-inline tex2jax_ignore">@interact</code>. One can create interactive applications using input boxes, sliders, and selectors. For several examples on Sage <code class="code-inline tex2jax_ignore">@interact</code>, the reader can refer to <a class="external" href="http://wiki.sagemath.org/interact/" target="_blank"><code class="code-inline tex2jax_ignore">Sage Interact Wiki</code></a>.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-383"><script type="text/x-sage">@interact
+def _(a = slider(-8, 8, 0.5, default=2, label='Angular Frequency ($\\omega$)'),
+       b = slider(-5, 5, 0.5, default=1, label='Phase ($\\phi$)'),
+       c = slider(-8, 8, 0.5, default=1, label='Amplitude (A)')):
+       pretty_print(html('Graph of the function $y = A\\sin(\\omega x+\\phi)$'))
+       show(plot(c*sin(a*x+b), (x,-2*pi,2*pi), color='red', figsize=4))
+</script></pre></article><span class="incontext"><a href="subsec-plotting-sage.html#example-208" class="internal">in-context</a></span>
+</body>
+</html>

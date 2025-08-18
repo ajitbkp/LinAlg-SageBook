@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.3</span><span class="period">.</span>
+</h3>
+<p>Let us define a linear transformation <span class="process-math">\(T:\Q^4\to\Q^4\)</span> given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T(x_1,x_2,x_3,x_4)=\left(\begin{array}{r}
+-x_{1} + 2 \, x_{3} - x_{4} \\
+x_{1} + 3 \, x_{2} + 7 \, x_{3} - 2 \, x_{4} \\
+x_{1} - 3 \, x_{2} - 21 \, x_{3} + 4 \, x_{4} \\
+x_{1} + 6 \, x_{2} + 16 \, x_{3} - 5 \, x_{4}
+\end{array}\right) 
+\end{equation*}
+</div>
+<p class="continuation">and explore this in Sage.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-134"><script type="text/x-sage">V = QQ^4
+W = QQ^4
+x1, x2, x3,x4 = var('x1, x2, x3,x4')
+outputs = [ -x1+ 2*x3-x4,
+             x1 + 3*x2 + 7*x3-2*x4,
+             x1 - 3*x2 - 21*x3 + 4*x4,
+                     x1 + 6*x2 + 16*x3 - 5*x4]
+T_symbolic(x1, x2, x3,x4) = outputs
+T = linear_transformation(V,W, T_symbolic,side='right')
+T
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-135"><script type="text/x-sage">print('The image of T is:\n')
+print(T.image())
+print('The kernel of T is:\n')
+print(T.kernel())
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-136"><script type="text/x-sage">T.matrix(side='right')
+</script></pre>
+<p>Next we find the matrix of <span class="process-math">\(T\)</span> with respect to a bases <span class="process-math">\(\beta\)</span> on the domain and a basis <span class="process-math">\(\gamma\)</span> on the codomain.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-137"><script type="text/x-sage">## Basis of domain,say, B=[u1,u2,u3,u4]
+u1 = vector(QQ, [ 1, -3,  2, -1])
+u2 = vector(QQ, [ 0,  1,  0,  1])
+u3 = vector(QQ, [-1,  2, -1, -1])
+u4 = vector(QQ, [ 2, -8,  4, -3])
+B = [u1,u2,u3,u4]
+## Checking if B is linearly dependent
+V.linear_dependence(B)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-138"><script type="text/x-sage">## Basis of codomain, say,C=[w1,w2,w3,w4]
+w1 = vector(QQ, [ 2, -3,  2, -1])
+w2 = vector(QQ, [ 1,  2,  -1, 3])
+w3 = vector(QQ, [ 1,  -1, 5, 1])
+w4 = vector(QQ, [ 0, -4,  3, 2])
+C = [w1, w2, w3, w4]
+## Checking if C is linearly dependent
+W.linear_dependence(C)
+</script></pre>
+<p>Now we define a subspace <span class="process-math">\(V_1\)</span> of <span class="process-math">\(V\)</span> with B as a basis and a subspace <span class="process-math">\(W_1\)</span> of <span class="process-math">\(W\)</span> with C as a basis. After that we rectrict T on to <span class="process-math">\(V_1\)</span> on its domain and <span class="process-math">\(W_1\)</span> on its codomain. We call this restriction as <span class="process-math">\(T_1\text{.}\)</span> The matrix of <span class="process-math">\(T_1\)</span> is the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta\)</span> on domain and <span class="process-math">\(\gamma\)</span> on codmain, that is <span class="process-math">\([T]_\beta^\gamma\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-139"><script type="text/x-sage">V1 = V.subspace_with_basis(B)
+W1 = W.subspace_with_basis(C)
+T1=T.restrict_domain(V1).restrict_codomain(W1)
+MBC=T1.matrix(side='right');MBC
+</script></pre>
+<p>Note that the matrix <span class="process-math">\([T]_\beta^\gamma\)</span> can also be obtained by defining a column matrix whose columns are <span class="process-math">\(w_1,w_2,w_3,w_4, T(v_1), T(v_2), T(v_3), T(v_4)\text{,}\)</span> then applying RREF and extracting the last four columns.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-140"><script type="text/x-sage">M = column_matrix([w1,w2,w3,w4,T(u1),T(u2),T(u3),T(u4)]).rref()
+print(M)
+M.submatrix(0,4)
+</script></pre>
+<p>The image of <span class="process-math">\(T\)</span> can also be obtained by using RREF  of the matrix whose rows are vectors <span class="process-math">\(T(u1),T(u2),T(u3),T(u4)\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-141"><script type="text/x-sage">column_matrix([T(u1),T(u2),T(u3),T(u4)]).T.rref()
+</script></pre>
+<p>Note that the first three rows of this is sage as what we get using <code class="code-inline tex2jax_ignore">T.image()</code>.</p>
+<p><em class="alert">Reshufle the basis elements.</em> Let us see what happens to the matrix of a linear transformation when we reshuffle the elemnts of a basis on domain and codomain. Let us find the matrix of the abobe linear transformation with resepect the basis <span class="process-math">\(\beta_1 =\{u_1,u_3,u_2,u_4\}\)</span> of the domain and <span class="process-math">\(\gamma\)</span> of the codomain. Here we have interchanged 2nd and 3rd basis elements of <span class="process-math">\(\beta\text{.}\)</span>  You may also explore with other interchanges.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-142"><script type="text/x-sage">## interchanging 2nd and 3rd elements of domain basis
+B1 = [u1,u3,u2,u4]
+V2 = V.subspace_with_basis(B1)
+T2=T.restrict_domain(V2).restrict_codomain(W1)
+MB1C=T2.matrix(side='right');MB1C
+</script></pre>
+<p>Clearly in this case 2nd and 3rd columns of <span class="process-math">\([T]_\beta^\gamma\)</span> are interchanged.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-143"><script type="text/x-sage">## interchanging 2nd and 3rd elements of codomain basis
+C1 = [w1,w3,w2,w4]
+W2=V.subspace_with_basis(C1)
+T3=T.restrict_domain(V1).restrict_codomain(W2)
+MBC1=T3.matrix(side='right');MBC1
+</script></pre>
+<p>Clearly in this case 2nd and 3rd rows of <span class="process-math">\([T]_\beta^\gamma\)</span> are interchanged.</p></article><span class="incontext"><a href="sec-sec3-5-LT-Sage.html#example-83" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.4.6.1</span><span class="period">.</span>
+</h4>
+<p>The given system of ODE is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x'(t)=Ax(t), \quad \text{ where } A = \begin{pmatrix} 1 \amp 1\\-1 \amp 1\end{pmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">The eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda_1=1-i\)</span> and <span class="process-math">\(\lambda_2=1+i,\)</span> with eigenvectors <span class="process-math">\(v_1=\begin{pmatrix} 1\\ -i \end{pmatrix}\)</span> and <span class="process-math">\(v_2=\begin{pmatrix}
+1\\ i \end{pmatrix}\)</span> respectively.</p>
+<p>Let us define <span class="process-math">\(P:=[v_1~~v_2]=\begin{pmatrix}
+1 \amp 1\\-i \amp i
+\end{pmatrix}\text{.}\)</span> Then it is easy to see that <span class="process-math">\(P^{-1}AP=D=\begin{pmatrix}
+1-i \amp 0\\0 \amp 1+i
+\end{pmatrix}\text{.}\)</span></p>
+<p>Hence the solution is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x(t)=\amp c_1e^{(1-i)t}\begin{pmatrix} 1\\ -i
+\end{pmatrix}+c_2e^{(1+i)t}\begin{pmatrix} 1\\ i \end{pmatrix}\\
+= \amp c_1e^{t} e^{-it}\begin{pmatrix} 1\\ -i \end{pmatrix}+c_1e^{t}
+e^{it}\begin{pmatrix} 1\\ i \end{pmatrix}
+\end{align*}
+</div>
+<p>Writing <span class="process-math">\(e^{it}=\cos
+t+i\sin t, e^{-it}=\cos t-i\sin t\)</span> and adjusting the constants, we can write the solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_1(t)=e^t(d_1\cos t +d_2\sin t), x_2(t)=e^{t}(d_1\cos t + d_2\sin t).
+\end{equation*}
+</div>
+<p>After using the initial conditions, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x(t) = (\cos(t) + \sin(t)) e^t, y(t) = (\cos(t) - \sin(t))*e^t
+\end{equation*}
+</div>
+<p>This we can verify using the Sage inbuilt function.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-236"><script type="text/x-sage">t= var('t')
+x = function('x')(t)
+y = function('y')(t)
+de1 = diff(x,t)== x+y
+de2 = diff(y,t) ==-x+y
+des = [de1,de2]
+vars = [x,y]
+sol= desolve_system(des, vars,[0,1,1])
+print(sol)
+</script></pre>
+</div>
+<span class="incontext"><a href="sec5-3-eigen-Appl.html#solution-28" class="internal">in-context</a></span>
+</body>
+</html>

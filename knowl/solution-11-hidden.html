@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:30+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>From Example <a href="" class="xref" data-knowl="./knowl/eg-LU2.html" title="Example 1.6.3">Example 1.6.3</a>, we have  <span class="process-math">\(L=\begin{pmatrix}
+1\amp 0\amp 0\\2\amp 1\amp 0\\1\amp -4\amp 1
+\end{pmatrix}\)</span> and <span class="process-math">\(U=\begin{pmatrix}
+1\amp -1\amp 5\\0\amp -1\amp -9\\0\amp 0\amp -34     
+\end{pmatrix}\)</span> Let <span class="process-math">\(X=\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}\text{,}\)</span>  <span class="process-math">\(Z=\begin{pmatrix}z_1\\z_2\\z_3\end{pmatrix}\text{.}\)</span> <span class="process-math">\(AX=B\)</span> is equivalent to <span class="process-math">\(LU=B\)</span> which can be written as <span class="process-math">\(LZ=b\)</span> where <span class="process-math">\(Z=UX\text{.}\)</span> First we solve</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg-LU2.html">
+\begin{equation*}
+LZ=b\Longrightarrow \begin{pmatrix}
+z_1\\2z_1+z_2\\z_1-4z_2+z_3
+\end{pmatrix}=\begin{pmatrix} 7\\-6\\5\end{pmatrix}
+\end{equation*}
+</div>
+<p class="continuation">Using forward substitution we get, <span class="process-math">\(z_1=7, z_2=-20, z_3=-82\text{.}\)</span> Now, we the required solution by solving <span class="process-math">\(UX=Z\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg-LU2.html">
+\begin{equation*}
+UX=Z\Longrightarrow \begin{pmatrix}
+x_1-x_2+5x_3\\-x_2-9x_3\\-34x_3
+\end{pmatrix}=\begin{pmatrix} 7\\-20\\-82\end{pmatrix}
+\end{equation*}
+</div>
+<p class="continuation">Now solving using the back substitution we get, <span class="process-math">\(x_1=\frac{115}{17}, x_2=\frac{-29}{17}\)</span> and <span class="process-math">\(x_3=\frac{41}{17}\text{.}\)</span></p>
+</div></body>
+</html>

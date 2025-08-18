@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:32+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Sage Code for Loop Network.</span>
+</h4>
+<p>Let use the loop network to find what happens to the initial vector in a long run.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-243"><script type="text/x-sage">d={1: [2,3,4,5], 2: [5], 3:[1,2],4: [2,3,5], 5: [2]}
+g=DiGraph(d)
+g.show()
+</script></pre>
+<p>We can find the transition matrix using <code class="code-inline tex2jax_ignore">.adjacency_matrix()</code> method and taking its transpose.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-244"><script type="text/x-sage">p0=matrix([1,0,0,0,0]).transpose()
+HH=g.adjacency_matrix().transpose()
+show(HH)
+H1=[]
+for c in HH.columns():
+    H1.append(c/max(sum(c),1))
+H=column_matrix(H1)
+show(H)
+p=matrix(RR,[0,0,1,0,0]).transpose();p
+n = 500
+H^n*p
+</script></pre></article><span class="incontext"><a href="sec5-3-eigen-Appl.html#activity-10" class="internal">in-context</a></span>
+</body>
+</html>

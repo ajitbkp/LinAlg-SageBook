@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span>
+</h3>
+<p>Consider the matrix <span class="process-math">\(A=\left(\begin{array}{rrrrr}
+412 \amp -479 \amp 251 \amp -7 \amp 381 \\
+-479 \amp 867 \amp -373 \amp -10 \amp -435 \\
+251 \amp -373 \amp 217 \amp -24 \amp 176 \\
+-7 \amp -10 \amp -24 \amp 20 \amp 18 \\
+381 \amp -435 \amp 176 \amp 18 \amp 450
+\end{array}\right)\text{.}\)</span> Find the characteristics polynomial, eigenvalues and eigenvectors of <span class="process-math">\(A\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-211"><script type="text/x-sage">A = matrix([[412, -479, 251, -7, 381],[-479, 867, -373, -10, -435],
+[251, -373, 217, -24, 176],[-7, -10, -24, 20, 18],[381, -435, 176, 18, 450]])
+A.characteristic_polynomial()
+</script></pre>
+<p>Now let us try to factorize the characteristic polynomial of <span class="process-math">\(A\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-212"><script type="text/x-sage">A.characteristic_polynomial().factor()
+</script></pre>
+<p>Clearly this polynomial cannot be factorized in the field of rational numbers. However, Sage provide an extended field <code class="code-inline tex2jax_ignore">QQbar</code> in whihc we can find the rots of this polynomial.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-213"><script type="text/x-sage">A.change_ring(QQbar)
+A.characteristic_polynomial().roots(QQbar)
+</script></pre>
+<p>These are the eigenvalues that sage can find using <code class="code-inline tex2jax_ignore">A.eigenvalues()</code></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-214"><script type="text/x-sage">A.eigenvalues()
+</script></pre>
+<p>For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and (ii) the product of eigenvalues equals to the determinant.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-215"><script type="text/x-sage">print(sum(A.eigenvalues()))
+print(A.trace())
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-216"><script type="text/x-sage">print(prod(A.eigenvalues()))
+print(A.det())
+</script></pre>
+<p>We can also verify the Cayley-Hamilton thorem for the above matrix.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-217"><script type="text/x-sage">p(x)=A.characteristic_polynomial()
+s = p(x).coefficients(sparse=False)
+sum([s[i]*A**i for i in range(len(s))])
+</script></pre></article><span class="incontext"><a href="sec5-5-Eigen-Sage.html#example-152" class="internal">in-context</a></span>
+</body>
+</html>

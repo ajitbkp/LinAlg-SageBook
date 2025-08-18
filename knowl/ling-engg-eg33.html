@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
+</h4>
+<p>Consider a linear map <span class="process-math">\(T\colon \R^3\to \R^3\)</span> given by <span class="process-math">\(T\left(\begin{bmatrix}x_1\\x_2\\x_3 \end{bmatrix} \right)=\begin{bmatrix}2x_1-x_2+x_3\\x_1+x_2-x_3\\3x_1+2x_3 \end{bmatrix}\text{.}\)</span> Let us find the matrix of <span class="process-math">\(T\)</span> with respect to a basis <span class="process-math">\(\beta =\{v_1=(1,1,-1),v_2=(1,-1,1),v_3=(-1,1,1)\}\)</span> of <span class="process-math">\(\R^3\)</span> on the domain and codomain. Note that columns of <span class="process-math">\([T]_\beta^\beta\)</span> are the coordinates of <span class="process-math">\(T(v_1), T(v_2), T(v_3)\)</span> with respect to the basis <span class="process-math">\(\beta\text{.}\)</span> This can be obtained simultaneously by applying RREF to <span class="process-math">\(\begin{bmatrix}v_1 \amp  v_2 \amp  v_3 \amp  T(v_1)\amp  T(v_2)\amp  T(v_3) \end{bmatrix}\)</span> and taking the last three columns as <span class="process-math">\([T]_\beta^\beta\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\amp \begin{bmatrix}v_1 \amp  v_2 \amp  v_3 \amp  T(v_1)\amp  T(v_2)\amp  T(v_3) \end{bmatrix} \\
+=\amp \left[\begin{array}{rrrrrr} 1 \amp  1 \amp  -1 \amp  0 \amp  4 \amp  -2 \\ 1 \amp  -1 \amp  1 \amp  3 \amp  -1 \amp  -1 \\ -1 \amp  1 \amp  1 \amp  1 \amp  5 \amp  -1 \end{array} \right]
+\xrightarrow{RREF}\left[\begin{array}{rrrrrr} 1 \amp  0 \amp  0 \amp  \frac{3}{2} \amp  \frac{3}{2} \amp  -\frac{3}{2} \\ 0 \amp  1 \amp  0 \amp  \frac{1}{2} \amp  \frac{9}{2} \amp  -\frac{3}{2} \\ 0 \amp  0 \amp  1 \amp  2 \amp  2 \amp  -1 \end{array} \right]
+\end{align*}
+</div>
+<p>Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+[T]_\beta=\left[\begin{array}{rrr} \frac{3}{2} \amp  \frac{3}{2} \amp  -\frac{3}{2} \\ \frac{1}{2} \amp  \frac{9}{2} \amp  -\frac{3}{2} \\ 2 \amp  2 \amp  -1 \end{array} \right]\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="sec3-2-LT.html#ling-engg-eg33" class="internal">in-context</a></span>
+</body>
+</html>

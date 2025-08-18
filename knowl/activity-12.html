@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:32+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Page-Rank Example (all together).</span>
+</h4>
+<pre class="ptx-sagecell sagecell-sage" id="sage-248"><script type="text/x-sage">          @interact
+def _(n=input_box(10, width=10, label="No of sites"),
+      N=input_box(60, width=10, label="No of links"),
+     i=input_box(1, width=10, label="Stat site"),
+     k=input_box(500, width=10, label="No of cliks"),
+      AdjMat=checkbox(False, label='Adjacency Matrix'),
+      TranMat=checkbox(False, label='Transition Matrix'),
+      GoogleMat=checkbox(False, label='Google Matrix')):
+    D = digraphs.RandomDirectedGNM(n,N)
+    show(D,figsize=6)
+    H=D.adjacency_matrix()
+    H=H.T
+    P=column_matrix([H.columns()[i]/max(sum(H.columns()[i]),1) for i in range(n)])
+    L = [0]*n;L[i-1]=1;v = vector(L);v
+    S=1/n*matrix([[1]*n]*n)
+    alpha=0.85 ## damping factor
+    G = alpha*P+(1-alpha)*S; 
+    pn = G^k*v.n(digits=6)
+    PN = flatten(pn)
+    sorted_nodes = []
+    for i in range(n):
+        sorted_nodes.append([PN[i],i])
+        sorted_nodes.sort(reverse=True)  
+    print('Sorted websites\n')
+    print(table(sorted_nodes))
+    if AdjMat:
+        print('\n Adjacency Matrix is:');
+        print(H)
+    if TranMat:
+        print('\n Transition Matrix is:');
+        print(P)
+    if GoogleMat:
+        print('\n Google Matrix is:');
+        print(G)
+</script></pre></article><span class="incontext"><a href="sec5-3-eigen-Appl.html#activity-12" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.22</span><span class="period">.</span><span class="space"> </span><span class="title">Applying shear transform to an image.</span>
+</h3>
+<p>Shear in Python is implemented as affine transformation where each point <span class="process-math">\((x, y)\)</span> of an image is mapped to a new point <span class="process-math">\((x',y')\)</span> via</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{pmatrix}
+x' \\
+y' \\
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+a \amp b \amp c \\
+d \amp e \amp f \\
+0 \amp 0 \amp 1
+\end{pmatrix}
+\begin{pmatrix}
+x \\
+y \\
+1
+\end{pmatrix}
+\end{equation*}
+</div>
+<p>Hence we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x' = a \cdot x + b \cdot y + c, \quad y' = d \cdot x + e \cdot y + f.
+\end{equation*}
+</div>
+<p class="continuation">For a shear in the <span class="process-math">\(x\)</span>-direction, we wish to shift <span class="process-math">\(x\)</span> proportionally to <span class="process-math">\(y\)</span> while leaving <span class="process-math">\(y\)</span> unchanged. This corresponds to:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a = 1, \quad b = k, \quad c = 0,
+\quad d = 0, \quad e = 1, \quad f = 0
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(k\)</span> is the shear factor. Thus, the shear matrix becomes:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp k \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">In Python's Pillow library, the transform method uses parameters <span class="process-math">\((a, b, c, d, e, f)\)</span> corresponding to the first two rows of the above matrix, that is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(a, b, c, d, e, f) =
+(1, k, 0, 0, 1, 0).
+\end{equation*}
+</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-122"><script type="text/x-sage">import numpy as np
+from PIL import Image
+import requests
+from io import BytesIO
+import matplotlib.pyplot as plt
+url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Taj2.png"
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
+img_array = np.array(img)
+# Shear in x-direction
+shear_factor = 0.5 # Positive = right slant, negative = left slant
+a, b, c = 1, shear_factor, 0
+d, e, f = 0, 1, 0
+width, height = img.size
+# Apply shear in x-direction
+sheared_img = img.transform(
+(width + int(abs(shear_factor) * height), height),
+Image.AFFINE,(a, b, c, d, e, f),
+resample=Image.BICUBIC
+)
+# Step 4: Display
+plt.figure(figsize=(10,5))
+plt.subplot(1, 2, 1)
+plt.title("Original Grayscale")
+plt.imshow(img_array, cmap='gray')
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.title("Sheared Image")
+plt.imshow(sheared_img, cmap='gray')
+plt.axis('off')
+plt.show()
+</script></pre></article><span class="incontext"><a href="sec-LT-Geom.html#example-81" class="internal">in-context</a></span>
+</body>
+</html>

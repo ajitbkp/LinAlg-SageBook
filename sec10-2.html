@@ -6,15 +6,20 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Applications of PCA</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Linear Algebra with SageMath">
-<meta property="book:author" content="Ajit Kumar">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -86,7 +91,44 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
   "inputLocation": "div.sagecell-sage",
@@ -98,137 +140,14 @@ sagecell.makeSagecell({
   ],
   "evalButtonText": "Evaluate (Sage)"
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_oscarlevin.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
-<style>
-#subsec-elmentary-row-operations-3-1 { counter-set: subsec-elmentary-row-operations-3-1 0; }
-#subsec-elmentary-row-operations-3-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-3-1,decimal)"."; }
-#subsec-elmentary-row-operations-3-1 > li { counter-increment: subsec-elmentary-row-operations-3-1; }
-#def-elementary-row-operations-2-2-1 { counter-set: def-elementary-row-operations-2-2-1 0; }
-#def-elementary-row-operations-2-2-1 > li::marker { content: ""counter(def-elementary-row-operations-2-2-1,decimal)"."; }
-#def-elementary-row-operations-2-2-1 > li { counter-increment: def-elementary-row-operations-2-2-1; }
-#subsec-elmentary-row-operations-8-2-1 { counter-set: subsec-elmentary-row-operations-8-2-1 0; }
-#subsec-elmentary-row-operations-8-2-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-8-2-1,decimal)"."; }
-#subsec-elmentary-row-operations-8-2-1 > li { counter-increment: subsec-elmentary-row-operations-8-2-1; }
-#subsec-elmentary-row-operations-16-1-1-1 { counter-set: subsec-elmentary-row-operations-16-1-1-1 0; }
-#subsec-elmentary-row-operations-16-1-1-1 > li::marker { content: ""counter(subsec-elmentary-row-operations-16-1-1-1,decimal)"."; }
-#subsec-elmentary-row-operations-16-1-1-1 > li { counter-increment: subsec-elmentary-row-operations-16-1-1-1; }
-#def-echelon-form-1-2-1 { counter-set: def-echelon-form-1-2-1 0; }
-#def-echelon-form-1-2-1 > li::marker { content: ""counter(def-echelon-form-1-2-1,decimal)"."; }
-#def-echelon-form-1-2-1 > li { counter-increment: def-echelon-form-1-2-1; }
-#sec-row-echelon-7 { counter-set: sec-row-echelon-7 0; }
-#sec-row-echelon-7 > li::marker { content: ""counter(sec-row-echelon-7,decimal)"."; }
-#sec-row-echelon-7 > li { counter-increment: sec-row-echelon-7; }
-#alg-gaussian-elimination-2-1-1 { counter-set: alg-gaussian-elimination-2-1-1 0; }
-#alg-gaussian-elimination-2-1-1 > li::marker { content: ""counter(alg-gaussian-elimination-2-1-1,decimal)"."; }
-#alg-gaussian-elimination-2-1-1 > li { counter-increment: alg-gaussian-elimination-2-1-1; }
-#sec1-4-matrix-rank-5-2-1 { counter-set: sec1-4-matrix-rank-5-2-1 0; }
-#sec1-4-matrix-rank-5-2-1 > li::marker { content: ""counter(sec1-4-matrix-rank-5-2-1,decimal)"."; }
-#sec1-4-matrix-rank-5-2-1 > li { counter-increment: sec1-4-matrix-rank-5-2-1; }
-#thm-nosol-rank-2-2-1 { counter-set: thm-nosol-rank-2-2-1 0; }
-#thm-nosol-rank-2-2-1 > li::marker { content: ""counter(thm-nosol-rank-2-2-1,decimal)"."; }
-#thm-nosol-rank-2-2-1 > li { counter-increment: thm-nosol-rank-2-2-1; }
-#subsec-Doolittle-5-1 { counter-set: subsec-Doolittle-5-1 0; }
-#subsec-Doolittle-5-1 > li::marker { content: ""counter(subsec-Doolittle-5-1,decimal)"."; }
-#subsec-Doolittle-5-1 > li { counter-increment: subsec-Doolittle-5-1; }
-#subsec-Doolittle-8-1 { counter-set: subsec-Doolittle-8-1 0; }
-#subsec-Doolittle-8-1 > li::marker { content: ""counter(subsec-Doolittle-8-1,decimal)"."; }
-#subsec-Doolittle-8-1 > li { counter-increment: subsec-Doolittle-8-1; }
-#sec1-7-exer-2-1 { counter-set: sec1-7-exer-2-1 0; }
-#sec1-7-exer-2-1 > li::marker { content: ""counter(sec1-7-exer-2-1,decimal)"."; }
-#sec1-7-exer-2-1 > li { counter-increment: sec1-7-exer-2-1; }
-#sec1-7-exer-2-1-3-2-1 { counter-set: sec1-7-exer-2-1-3-2-1 0; }
-#sec1-7-exer-2-1-3-2-1 > li::marker { content: "("counter(sec1-7-exer-2-1-3-2-1,lower-alpha)")"; }
-#sec1-7-exer-2-1-3-2-1 > li { counter-increment: sec1-7-exer-2-1-3-2-1; }
-#sec2-0-intro-11-1-1-1 { counter-set: sec2-0-intro-11-1-1-1 0; }
-#sec2-0-intro-11-1-1-1 > li::marker { content: ""counter(sec2-0-intro-11-1-1-1,decimal)"."; }
-#sec2-0-intro-11-1-1-1 > li { counter-increment: sec2-0-intro-11-1-1-1; }
-#exer-2-1-100-2-1 { counter-set: exer-2-1-100-2-1 0; }
-#exer-2-1-100-2-1 > li::marker { content: ""counter(exer-2-1-100-2-1,decimal)"."; }
-#exer-2-1-100-2-1 > li { counter-increment: exer-2-1-100-2-1; }
-#sec2-1-matrix-spaces-3-1 { counter-set: sec2-1-matrix-spaces-3-1 0; }
-#sec2-1-matrix-spaces-3-1 > li::marker { content: ""counter(sec2-1-matrix-spaces-3-1,decimal)"."; }
-#sec2-1-matrix-spaces-3-1 > li { counter-increment: sec2-1-matrix-spaces-3-1; }
-#sec-2-2-remrak2-1-1-1 { counter-set: sec-2-2-remrak2-1-1-1 0; }
-#sec-2-2-remrak2-1-1-1 > li::marker { content: ""counter(sec-2-2-remrak2-1-1-1,decimal)"."; }
-#sec-2-2-remrak2-1-1-1 > li { counter-increment: sec-2-2-remrak2-1-1-1; }
-#sec-sec3-5-LT-Sage-2-3-1 { counter-set: sec-sec3-5-LT-Sage-2-3-1 0; }
-#sec-sec3-5-LT-Sage-2-3-1 > li::marker { content: ""counter(sec-sec3-5-LT-Sage-2-3-1,decimal)"."; }
-#sec-sec3-5-LT-Sage-2-3-1 > li { counter-increment: sec-sec3-5-LT-Sage-2-3-1; }
-#sec4-1-VS-3-2-2-1 { counter-set: sec4-1-VS-3-2-2-1 0; }
-#sec4-1-VS-3-2-2-1 > li::marker { content: ""counter(sec4-1-VS-3-2-2-1,decimal)"."; }
-#sec4-1-VS-3-2-2-1 > li { counter-increment: sec4-1-VS-3-2-2-1; }
-#thm-basis-equiv-1-2-1 { counter-set: thm-basis-equiv-1-2-1 0; }
-#thm-basis-equiv-1-2-1 > li::marker { content: ""counter(thm-basis-equiv-1-2-1,decimal)"."; }
-#thm-basis-equiv-1-2-1 > li { counter-increment: thm-basis-equiv-1-2-1; }
-#sec4-5-VS-Ex-2-1 { counter-set: sec4-5-VS-Ex-2-1 0; }
-#sec4-5-VS-Ex-2-1 > li::marker { content: ""counter(sec4-5-VS-Ex-2-1,decimal)"."; }
-#sec4-5-VS-Ex-2-1 > li { counter-increment: sec4-5-VS-Ex-2-1; }
-#eigen-properties-2-1-1 { counter-set: eigen-properties-2-1-1 0; }
-#eigen-properties-2-1-1 > li::marker { content: ""counter(eigen-properties-2-1-1,decimal)"."; }
-#eigen-properties-2-1-1 > li { counter-increment: eigen-properties-2-1-1; }
-#sec5-1-eigen-intro-24-1-1-1 { counter-set: sec5-1-eigen-intro-24-1-1-1 0; }
-#sec5-1-eigen-intro-24-1-1-1 > li::marker { content: ""counter(sec5-1-eigen-intro-24-1-1-1,decimal)"."; }
-#sec5-1-eigen-intro-24-1-1-1 > li { counter-increment: sec5-1-eigen-intro-24-1-1-1; }
-#subsec5-3-linear-ode-12-1 { counter-set: subsec5-3-linear-ode-12-1 0; }
-#subsec5-3-linear-ode-12-1 > li::marker { content: ""counter(subsec5-3-linear-ode-12-1,decimal)"."; }
-#subsec5-3-linear-ode-12-1 > li { counter-increment: subsec5-3-linear-ode-12-1; }
-#subsec5-3-Google-Search-6-1 { counter-set: subsec5-3-Google-Search-6-1 0; }
-#subsec5-3-Google-Search-6-1 > li::marker { content: ""counter(subsec5-3-Google-Search-6-1,decimal)"."; }
-#subsec5-3-Google-Search-6-1 > li { counter-increment: subsec5-3-Google-Search-6-1; }
-#sec5-4-eigen-exer-2-1 { counter-set: sec5-4-eigen-exer-2-1 0; }
-#sec5-4-eigen-exer-2-1 > li::marker { content: ""counter(sec5-4-eigen-exer-2-1,decimal)"."; }
-#sec5-4-eigen-exer-2-1 > li { counter-increment: sec5-4-eigen-exer-2-1; }
-#ex-ortho-6-0-0-1-1-1 { counter-set: ex-ortho-6-0-0-1-1-1 0; }
-#ex-ortho-6-0-0-1-1-1 > li::marker { content: ""counter(ex-ortho-6-0-0-1-1-1,decimal)"."; }
-#ex-ortho-6-0-0-1-1-1 > li { counter-increment: ex-ortho-6-0-0-1-1-1; }
-#sec6-3-10-1-2-1 { counter-set: sec6-3-10-1-2-1 0; }
-#sec6-3-10-1-2-1 > li::marker { content: ""counter(sec6-3-10-1-2-1,decimal)"."; }
-#sec6-3-10-1-2-1 > li { counter-increment: sec6-3-10-1-2-1; }
-#sec7-1-InnerProduct-4-1 { counter-set: sec7-1-InnerProduct-4-1 0; }
-#sec7-1-InnerProduct-4-1 > li::marker { content: ""counter(sec7-1-InnerProduct-4-1,decimal)"."; }
-#sec7-1-InnerProduct-4-1 > li { counter-increment: sec7-1-InnerProduct-4-1; }
-#def-inner-product-2-2-1 { counter-set: def-inner-product-2-2-1 0; }
-#def-inner-product-2-2-1 > li::marker { content: ""counter(def-inner-product-2-2-1,decimal)"."; }
-#def-inner-product-2-2-1 > li { counter-increment: def-inner-product-2-2-1; }
-#thm-norm-properties-2-2-1 { counter-set: thm-norm-properties-2-2-1 0; }
-#thm-norm-properties-2-2-1 > li::marker { content: ""counter(thm-norm-properties-2-2-1,decimal)"."; }
-#thm-norm-properties-2-2-1 > li { counter-increment: thm-norm-properties-2-2-1; }
-#sec7-2-Exer-3-1 { counter-set: sec7-2-Exer-3-1 0; }
-#sec7-2-Exer-3-1 > li::marker { content: ""counter(sec7-2-Exer-3-1,decimal)"."; }
-#sec7-2-Exer-3-1 > li { counter-increment: sec7-2-Exer-3-1; }
-#def-pseudoinverse-1-2-1 { counter-set: def-pseudoinverse-1-2-1 0; }
-#def-pseudoinverse-1-2-1 > li::marker { content: ""counter(def-pseudoinverse-1-2-1,decimal)"."; }
-#def-pseudoinverse-1-2-1 > li { counter-increment: def-pseudoinverse-1-2-1; }
-#sec9-1-SVD-6-27-2 { counter-set: sec9-1-SVD-6-27-2 0; }
-#sec9-1-SVD-6-27-2 > li::marker { content: ""counter(sec9-1-SVD-6-27-2,decimal)"."; }
-#sec9-1-SVD-6-27-2 > li { counter-increment: sec9-1-SVD-6-27-2; }
-</style>
+</script>
 </head>
 <body id="changeme" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
 <p class="byline">Ajit Kumar</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -239,7 +158,8 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec10-1-PCA.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap10-PCA.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec10-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec10-1-PCA.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap10-PCA.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec10-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -261,13 +181,13 @@ sagecell.makeSagecell({
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Author Biography</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -475,9 +395,9 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec10-1-PCA.html#sec10-1-PCA-4" class="internal"><span class="codenumber">10.1.2</span> <span class="title">Mathematics behind PCA</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec10-2.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Applications of PCA</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec10-2.html#sec10-2-3" class="internal"><span class="codenumber">10.2.1</span> <span class="title">Image compression with PCA</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec10-2.html#sec10-2-4" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Relation Between SVD and PCA</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec10-2.html#sec10-2-5" class="internal"><span class="codenumber">10.2.3</span> <span class="title">Exercise Set</span></a></div></li>
@@ -489,28 +409,48 @@ sagecell.makeSagecell({
 </li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-sage-into.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-sage-into-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction to SageMath</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="getting-started-sagemath.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Getting Started with Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-sage-programming.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Programming in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="subsec-plotting-sage.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Plotting in Sage</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec10-2"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">10.2</span><span class="space"> </span><span class="title">Applications of PCA</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Applications of PCA</span>
 </h2>
-<section class="introduction" id="sec10-2-2"><div class="para" id="sec10-2-2-1">PCA, as mentioned earlier, is a dimensionality reduction techniques. It has numerous applications like, visualization of high dimensional data, facial recognition, computer vision, image compression, determining patterns in a data, data mining, bioinformatics, psychology, analyzing and forecasting stock data,etc. We mention, image compression as one of the applications.</div></section><section class="subsection" id="sec10-2-3"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">10.2.1</span><span class="space"> </span><span class="title">Image compression with PCA</span>
+<section class="introduction" id="sec10-2-2"><div class="para" id="sec10-2-2-1">PCA, as mentioned earlier, is a dimensionality reduction techniques. It has numerous applications like, visualization of high dimensional data, facial recognition, computer vision, image compression, determining patterns in a data, data mining, bioinformatics, psychology, analyzing and forecasting stock data,etc. We mention, image compression as one of the applications.<div class="autopermalink" data-description="Paragraph"><a href="#sec10-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="sec10-2-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Image compression with PCA</span>
 </h3>
-<div class="para" id="sec10-2-3-2">Similar to SVD, we can also compress the images using PCA. We take any image, first of all we separate the RBG channels of the images and apply PCA separately to red channel, green channel and blue channel. Next we take first <span class="process-math">\(k\)</span> principal components and project the red, green and blue channel images and then combine the three channels to obtained the transformed image with <span class="process-math">\(k\)</span> principal components.</div>
+<div class="para" id="sec10-2-3-2">Similar to SVD, we can also compress the images using PCA. We take any image, first of all we separate the RBG channels of the images and apply PCA separately to red channel, green channel and blue channel. Next we take first <span class="process-math">\(k\)</span> principal components and project the red, green and blue channel images and then combine the three channels to obtained the transformed image with <span class="process-math">\(k\)</span> principal components.<div class="autopermalink" data-description="Paragraph"><a href="#sec10-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <article class="example example-like" id="sec10-2-3-3"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.2.1</span><span class="period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sec10-2-3-3-1-1">Consider an image of a Rose as shown in the <a href="sec10-2.html#fig_Rose" class="xref" data-knowl="./knowl/xref/fig_Rose.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.2">Figure 10.2.2</a> This image is of sinze <span class="process-math">\(600\times 800\times 3\)</span> array.</div> <figure class="figure figure-like" id="fig_Rose"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/Rose.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.2<span class="period">.</span></span><span class="space"> </span>Original  Rose Image</figcaption></figure> <div class="para" id="sec10-2-3-3-1-3">The red green and blue channel images are shown in the <a href="sec10-2.html#fig_RoseR" class="xref" data-knowl="./knowl/xref/fig_RoseR.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.3">Figures 10.2.3</a>, <a href="sec10-2.html#fig_RoseG" class="xref" data-knowl="./knowl/xref/fig_RoseG.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.4">Figure 10.2.4</a>, <a href="sec10-2.html#fig_RoseB" class="xref" data-knowl="./knowl/xref/fig_RoseB.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.5">Figure 10.2.5</a>.</div> <figure class="figure figure-like" id="fig_RoseR"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/RoseR.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.3<span class="period">.</span></span><span class="space"> </span>Red Channel</figcaption></figure> <figure class="figure figure-like" id="fig_RoseG"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/RoseR.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.4<span class="period">.</span></span><span class="space"> </span>Green Channel</figcaption></figure> <figure class="figure figure-like" id="fig_RoseB"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/RoseR.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.5<span class="period">.</span></span><span class="space"> </span>Blue Channel</figcaption></figure> <div class="para" id="sec10-2-3-3-1-7">After applying PCA and taking first 5, 20 and 50 principal components and combining the three channels together we get the following approximate images as shown in the <a href="sec10-2.html#fig_Rose-PCA5" class="xref" data-knowl="./knowl/xref/fig_Rose-PCA5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.6">Figures 10.2.6</a>, <a href="sec10-2.html#fig_Rose-PCA20" class="xref" data-knowl="./knowl/xref/fig_Rose-PCA20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.7">Figure 10.2.7</a>, <a href="sec10-2.html#fig_Rose-PCA50" class="xref" data-knowl="./knowl/xref/fig_Rose-PCA50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.8">Figure 10.2.8</a>, respectively. Each channel is of size <span class="process-math">\(600\times 800\text{.}\)</span>
+<div class="para" id="sec10-2-3-3-1-1">Consider an image of a Rose as shown in the <a href="sec10-2.html#fig_Rose" class="xref" data-knowl="./knowl/xref/fig_Rose.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.2">Figure 10.2.2</a> This image is of sinze <span class="process-math">\(600\times 800\times 3\)</span> array.<div class="autopermalink" data-description="Paragraph"><a href="#sec10-2-3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="fig_Rose"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/Rose.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Original  Rose Image<div class="autopermalink" data-description="Figure 10.2.2"><a href="#fig_Rose" title="Copy heading and permalink for Figure 10.2.2" aria-label="Copy heading and permalink for Figure 10.2.2">🔗</a></div></figcaption></figure> <div class="para" id="sec10-2-3-3-1-3">The red green and blue channel images are shown in the <a href="sec10-2.html#fig_RoseR" class="xref" data-knowl="./knowl/xref/fig_RoseR.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.3">Figures 10.2.3</a>, <a href="sec10-2.html#fig_RoseG" class="xref" data-knowl="./knowl/xref/fig_RoseG.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.4">Figure 10.2.4</a>, <a href="sec10-2.html#fig_RoseB" class="xref" data-knowl="./knowl/xref/fig_RoseB.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.5">Figure 10.2.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec10-2-3-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="fig_RoseR"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/RoseR.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Red Channel<div class="autopermalink" data-description="Figure 10.2.3"><a href="#fig_RoseR" title="Copy heading and permalink for Figure 10.2.3" aria-label="Copy heading and permalink for Figure 10.2.3">🔗</a></div></figcaption></figure> <figure class="figure figure-like" id="fig_RoseG"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/RoseR.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Green Channel<div class="autopermalink" data-description="Figure 10.2.4"><a href="#fig_RoseG" title="Copy heading and permalink for Figure 10.2.4" aria-label="Copy heading and permalink for Figure 10.2.4">🔗</a></div></figcaption></figure> <figure class="figure figure-like" id="fig_RoseB"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/RoseR.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Blue Channel<div class="autopermalink" data-description="Figure 10.2.5"><a href="#fig_RoseB" title="Copy heading and permalink for Figure 10.2.5" aria-label="Copy heading and permalink for Figure 10.2.5">🔗</a></div></figcaption></figure> <div class="para" id="sec10-2-3-3-1-7">After applying PCA and taking first 5, 20 and 50 principal components and combining the three channels together we get the following approximate images as shown in the <a href="sec10-2.html#fig_Rose-PCA5" class="xref" data-knowl="./knowl/xref/fig_Rose-PCA5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.6">Figures 10.2.6</a>, <a href="sec10-2.html#fig_Rose-PCA20" class="xref" data-knowl="./knowl/xref/fig_Rose-PCA20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.7">Figure 10.2.7</a>, <a href="sec10-2.html#fig_Rose-PCA50" class="xref" data-knowl="./knowl/xref/fig_Rose-PCA50.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.8">Figure 10.2.8</a>, respectively. Each channel is of size <span class="process-math">\(600\times 800\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec10-2-3-3-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="fig_Rose-PCA5"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/Rose_PCA5.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.6<span class="period">.</span></span><span class="space"> </span>5 components</figcaption></figure> <figure class="figure figure-like" id="fig_Rose-PCA20"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/Rose_PCA20.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.7<span class="period">.</span></span><span class="space"> </span>20 components</figcaption></figure> <figure class="figure figure-like" id="fig_Rose-PCA50"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/Rose_PCA50.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.8<span class="period">.</span></span><span class="space"> </span>50 components</figcaption></figure> <div class="para" id="sec10-2-3-3-1-11">We can see from the image, that 1st 50 components gives a very good approximation to the original image.</div></article></section><section class="subsection" id="sec10-2-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">10.2.2</span><span class="space"> </span><span class="title">Relation Between SVD and PCA</span>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>5 components<div class="autopermalink" data-description="Figure 10.2.6"><a href="#fig_Rose-PCA5" title="Copy heading and permalink for Figure 10.2.6" aria-label="Copy heading and permalink for Figure 10.2.6">🔗</a></div></figcaption></figure> <figure class="figure figure-like" id="fig_Rose-PCA20"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/Rose_PCA20.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>20 components<div class="autopermalink" data-description="Figure 10.2.7"><a href="#fig_Rose-PCA20" title="Copy heading and permalink for Figure 10.2.7" aria-label="Copy heading and permalink for Figure 10.2.7">🔗</a></div></figcaption></figure> <figure class="figure figure-like" id="fig_Rose-PCA50"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/Rose_PCA50.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>50 components<div class="autopermalink" data-description="Figure 10.2.8"><a href="#fig_Rose-PCA50" title="Copy heading and permalink for Figure 10.2.8" aria-label="Copy heading and permalink for Figure 10.2.8">🔗</a></div></figcaption></figure> <div class="para" id="sec10-2-3-3-1-11">We can see from the image, that 1st 50 components gives a very good approximation to the original image.<div class="autopermalink" data-description="Paragraph"><a href="#sec10-2-3-3-1-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 10.2.1"><a href="#sec10-2-3-3" title="Copy heading and permalink for Example 10.2.1" aria-label="Copy heading and permalink for Example 10.2.1">🔗</a></div></article><div class="autopermalink" data-description="Subsection 10.2.1: Image compression with PCA"><a href="#sec10-2-3" title="Copy heading and permalink for Subsection 10.2.1: Image compression with PCA" aria-label="Copy heading and permalink for Subsection 10.2.1: Image compression with PCA">🔗</a></div></section><section class="subsection" id="sec10-2-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Relation Between SVD and PCA</span>
 </h3>
 <div class="para logical" id="sec10-2-4-2">
 <div class="para">Consider a matrix <span class="process-math">\(X\)</span> of size <span class="process-math">\(n\times d\text{.}\)</span> We can apply SVD and PCA on <span class="process-math">\(X\text{.}\)</span> Suppose the SVD of <span class="process-math">\(X\)</span> is given by</div>
@@ -525,6 +465,7 @@ X = U\Sigma V^T\text{.}
 X^TX = V\left( \Sigma^T\Sigma\right) V^T\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec10-2-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec10-2-4-3">
 <div class="para">The covariance matrix of <span class="process-math">\(X\)</span> is <span class="process-math">\(\frac{1}{n-1}X^TX\text{.}\)</span> This shows that <span class="process-math">\(S\)</span> and <span class="process-math">\(X^TX\)</span> are similar matrices. If <span class="process-math">\(\lambda_1,\ldots, \lambda_r\)</span> are non zero eigenvalues of <span class="process-math">\(S\)</span> and <span class="process-math">\(\sigma_1,\ldots, \sigma_r\)</span> are singular values of <span class="process-math">\(X\text{.}\)</span> Then they are related by the following relation</div>
@@ -533,6 +474,7 @@ X^TX = V\left( \Sigma^T\Sigma\right) V^T\text{.}
 \sigma_i^2=(n-1)\lambda_i, i = 1, 2,\ldots, r\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec10-2-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec10-2-4-4">
 <div class="para">The relation <span class="process-math">\(X^TX = V\left( \Sigma^T\Sigma\right) V^T\)</span> shows that right singular vectors are same as principal components. The left singular vectors are given by</div>
@@ -541,19 +483,25 @@ X^TX = V\left( \Sigma^T\Sigma\right) V^T\text{.}
 u_i = \frac{1}{\sqrt{n-1}}Xv_i\text{.}
 \end{equation*}
 </div>
-</div></section><section class="subsection" id="sec10-2-5"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">10.2.3</span><span class="space"> </span><span class="title">Exercise Set</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec10-2-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 10.2.2: Relation Between SVD and PCA"><a href="#sec10-2-4" title="Copy heading and permalink for Subsection 10.2.2: Relation Between SVD and PCA" aria-label="Copy heading and permalink for Subsection 10.2.2: Relation Between SVD and PCA">🔗</a></div></section><section class="subsection" id="sec10-2-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercise Set</span>
 </h3>
 <article class="exercise exercise-like" id="exer-10-1-19"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">10.2.9</span><span class="period">.</span>
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="exer-10-1-19-1-1">Find the singular values Decomposition of the following matrices.</div> <div class="para" id="exer-10-1-19-1-2">(a) <span class="process-math">\(\begin{bmatrix}-2 \amp 2 \\ 1 \amp 1 \end{bmatrix}\text{,}\)</span>(b) <span class="process-math">\(\begin{bmatrix}1 \amp 1 \\ 0 \amp 1 \\1 \amp 0 \end{bmatrix}\text{,}\)</span> (c) <span class="process-math">\(\begin{bmatrix}-1 \amp 1 \\ -1 \amp 1\\2 \amp -2 \end{bmatrix}\text{,}\)</span> (d) <span class="process-math">\(\begin{bmatrix}1 \amp 1 \\ -3 \amp -3 \end{bmatrix}\text{,}\)</span> (e) <span class="process-math">\(\begin{bmatrix}1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1\\-1 \amp 1\amp 0 \end{bmatrix}\)</span>
-</div></article><article class="exercise exercise-like" id="exer-10-1-20"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">10.2.10</span><span class="period">.</span>
+<div class="para" id="exer-10-1-19-1-1">Find the singular values Decomposition of the following matrices.<div class="autopermalink" data-description="Paragraph"><a href="#exer-10-1-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="exer-10-1-19-1-2">(a) <span class="process-math">\(\begin{bmatrix}-2 \amp 2 \\ 1 \amp 1 \end{bmatrix}\text{,}\)</span>(b) <span class="process-math">\(\begin{bmatrix}1 \amp 1 \\ 0 \amp 1 \\1 \amp 0 \end{bmatrix}\text{,}\)</span> (c) <span class="process-math">\(\begin{bmatrix}-1 \amp 1 \\ -1 \amp 1\\2 \amp -2 \end{bmatrix}\text{,}\)</span> (d) <span class="process-math">\(\begin{bmatrix}1 \amp 1 \\ -3 \amp -3 \end{bmatrix}\text{,}\)</span> (e) <span class="process-math">\(\begin{bmatrix}1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1\\-1 \amp 1\amp 0 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-10-1-19-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 10.2.9"><a href="#exer-10-1-19" title="Copy heading and permalink for Checkpoint 10.2.9" aria-label="Copy heading and permalink for Checkpoint 10.2.9">🔗</a></div></article><article class="exercise exercise-like" id="exer-10-1-20"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="exer-10-1-20-1-1">Use SVD to find generalized inverse of the following matrices:</div> <div class="para" id="exer-10-1-20-1-2">(a) <span class="process-math">\(\begin{bmatrix}1 \amp 1 \\ -3 \amp -3 \end{bmatrix}\text{,}\)</span> (b) <span class="process-math">\(\begin{bmatrix}1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1\\-1 \amp 1\amp 0 \end{bmatrix}\text{,}\)</span> (c) <span class="process-math">\(\begin{bmatrix}1 \amp 0 \amp -1\\-1 \amp 0 \amp 1\\0 \amp 1 \amp 0 \end{bmatrix}\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="exer-10-1-21"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">10.2.11</span><span class="period">.</span>
+<div class="para" id="exer-10-1-20-1-1">Use SVD to find generalized inverse of the following matrices:<div class="autopermalink" data-description="Paragraph"><a href="#exer-10-1-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="exer-10-1-20-1-2">(a) <span class="process-math">\(\begin{bmatrix}1 \amp 1 \\ -3 \amp -3 \end{bmatrix}\text{,}\)</span> (b) <span class="process-math">\(\begin{bmatrix}1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1\\-1 \amp 1\amp 0 \end{bmatrix}\text{,}\)</span> (c) <span class="process-math">\(\begin{bmatrix}1 \amp 0 \amp -1\\-1 \amp 0 \amp 1\\0 \amp 1 \amp 0 \end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-10-1-20-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 10.2.10"><a href="#exer-10-1-20" title="Copy heading and permalink for Checkpoint 10.2.10" aria-label="Copy heading and permalink for Checkpoint 10.2.10">🔗</a></div></article><article class="exercise exercise-like" id="exer-10-1-21"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="exer-10-1-21-1-1">
 <div class="para">Use the generalized inverse from the SVD to find the least square solution of the system of linear equations <span class="process-math">\(Ax=b\)</span> where</div>
@@ -562,8 +510,10 @@ u_i = \frac{1}{\sqrt{n-1}}Xv_i\text{.}
 \begin{bmatrix}1 \amp  2 \\ -1 \amp  1\\ 2 \amp  1\\ 2 \amp  -1\\1 \amp  1 \end{bmatrix} ,  b=\begin{bmatrix}2 \amp  1 \amp  -2 \amp  1 \amp  3 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="exer-10-1-22"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">10.2.12</span><span class="period">.</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#exer-10-1-21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 10.2.11"><a href="#exer-10-1-21" title="Copy heading and permalink for Checkpoint 10.2.11" aria-label="Copy heading and permalink for Checkpoint 10.2.11">🔗</a></div></article><article class="exercise exercise-like" id="exer-10-1-22"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="exer-10-1-22-1-1">
 <div class="para">Find the principal components of the matrix</div>
@@ -572,7 +522,10 @@ u_i = \frac{1}{\sqrt{n-1}}Xv_i\text{.}
 \begin{bmatrix}3 \amp  -4 \amp  7 \amp  1 \amp  -4 \amp  -3\\7 \amp  -6 \amp  8 \amp  -1 \amp  -1 \amp  7 \end{bmatrix}
 \end{equation*}
 </div>
-</div> <div class="para" id="exer-10-1-22-1-2">What percentage of the variation in the data is explained by the first principal component.</div></article></section><div id="sec10-2-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
+<div class="autopermalink" data-description="Paragraph"><a href="#exer-10-1-22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="exer-10-1-22-1-2">What percentage of the variation in the data is explained by the first principal component.<div class="autopermalink" data-description="Paragraph"><a href="#exer-10-1-22-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 10.2.12"><a href="#exer-10-1-22" title="Copy heading and permalink for Checkpoint 10.2.12" aria-label="Copy heading and permalink for Checkpoint 10.2.12">🔗</a></div></article><div class="autopermalink" data-description="Subsection 10.2.3: Exercise Set"><a href="#sec10-2-5" title="Copy heading and permalink for Subsection 10.2.3: Exercise Set" aria-label="Copy heading and permalink for Subsection 10.2.3: Exercise Set">🔗</a></div></section><div id="sec10-2-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
 from PIL import Image
 import requests
 from io import BytesIO
@@ -635,13 +588,14 @@ axes[1].set_title(f"Compressed (k={k})")
 axes[1].axis("off")
 
 plt.show()
-</script></div></section></div>
-<div class="ptx-content-footer">
+</script></div>
+<div class="autopermalink" data-description="Section 10.2: Applications of PCA"><a href="#sec10-2" title="Copy heading and permalink for Section 10.2: Applications of PCA" aria-label="Copy heading and permalink for Section 10.2: Applications of PCA">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec10-1-PCA.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec10-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

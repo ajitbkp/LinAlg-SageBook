@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:32+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Color Image Compression.</span>
+</h4>
+<p>In this example, we present a Python program that demonstrates color image compression using Singular Value Decomposition (SVD). The method involves separating the image into its Red, Green, and Blue (RGB) channels, applying SVD to each channel individually, and then recombining the compressed channels to obtain the final compressed image.</p>
+<p><em class="emphasis">The reader is encouraged to copy the following code and execute it in a Python environment.</em></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-316"><script type="text/x-sage">import numpy as np
+from PIL import Image
+import requests
+from io import BytesIO
+import matplotlib.pyplot as plt
+
+# Load the image from the URL
+url = "https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
+img = np.array(img, dtype=float)
+
+# Function to compress a single channel using SVD
+def svd_compress(channel, k):
+    # Perform Singular Value Decomposition
+    U, S, VT = np.linalg.svd(channel, full_matrices=False)
+    # Keep only top k singular values
+    U_k = U[:, :k]
+    S_k = np.diag(S[:k])
+    VT_k = VT[:k, :]
+    # Reconstruct the channel
+    compressed = np.dot(U_k, np.dot(S_k, VT_k))
+    return compressed
+
+# Compression rank
+k = 10
+
+# Apply SVD compression to each RGB channel
+R_c = svd_compress(img[:, :, 0], k)
+G_c = svd_compress(img[:, :, 1], k)
+B_c = svd_compress(img[:, :, 2], k)
+
+# Stack channels back and clip values to [0, 255]
+compressed_img = np.dstack([R_c, G_c, B_c])
+compressed_img = np.clip(compressed_img, 0, 255).astype(np.uint8)
+
+# Show original and compressed images
+fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+axes[0].imshow(img.astype(np.uint8))
+axes[0].set_title("Original")
+axes[0].axis("off")
+
+axes[1].imshow(compressed_img)
+axes[1].set_title(f"SVD Compressed (k={k})")
+axes[1].axis("off")
+
+plt.show()
+</script></pre></article><span class="incontext"><a href="sec9-1-SVD.html#example-195" class="internal">in-context</a></span>
+</body>
+</html>
