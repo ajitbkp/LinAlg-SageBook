@@ -65,6 +65,8 @@
     <page right-alignment="flush" bottom-alignment="ragged" />
     <!-- Add content to \geometry{}: -->
     <!-- <geometry></geometry> -->
+     <geometry>a4paper,margin=0.5in</geometry>
+
     <!-- The asymptote/@links set to "yes" would produce  -->
     <!-- links the html version of asymptote graphics.    -->
     <asymptote links="no" />
@@ -110,6 +112,8 @@
         toc="default"
         banner="default"
         navbar="default"
+        theme="default-modern"
+        palette="blue-green"
     />
     <!-- Search can be default or none, or you can use a Google-cx number to use google's search
     feature (but then variant should be set to none to avoid conflict) -->

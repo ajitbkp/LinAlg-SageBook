@@ -60,7 +60,7 @@
       </statement>
     </example>
     
-    <exercise xml:id="3-3-2">
+    <activity xml:id="exer-3-3-2">
       <statement>
         <p>
           For the following linear transformation <m>T\colon \R^2\to \R^2</m>.
@@ -68,24 +68,24 @@
         </p>
     
         <p>
-          (i) <m>T</m> is reflection about <m>y</m> axis.
+          (i)  If <m>T</m> is reflection about <m>y</m> axis.
         </p>
     
         <p>
-          (ii) <m>T</m> is reflection about the line <m>y=x</m>
+          (ii) If <m>T</m> is reflection about the line <m>y=x</m>
         </p>
     
         <p>
-          (iii) <m>T</m> is reflection about the line <m>y=-x</m>
+          (iii) If <m>T</m> is reflection about the line <m>y=-x</m>
         </p>
     
         <p>
-          (iv) <m>T</m> is a clockwise rotation by an angle <m>\pi/2</m>.
+          (iv) If <m>T</m> is a clockwise rotation by an angle <m>\pi/2</m>.
         </p>
       </statement>
-    </exercise>
+    </activity>
     
-    <exercise xml:id="3-3-3"> 
+    <activity xml:id="exer-3-3-3"> 
       <statement>
         <p>
           (i) Let <m>T\colon \R^3\to \R^3</m> be a linear transformation which is reflection about the <m>xy</m> plane.
@@ -96,7 +96,7 @@
           Write <m>T</m> explicitly and hence show that it is induced by a matrix.
         </p>
       </statement>
-    </exercise>
+    </activity>
   </subsection>
 
   <subsection xml:id="projection-R2">
@@ -157,7 +157,7 @@
       </statement>
     </example>
     
-    <exercise xml:id="3-3-5">
+    <activity xml:id="exer-3-3-5">
       <statement>
         <p>
           If <m>P</m> is the projection onto the line <m>y=mx</m>,
@@ -170,9 +170,9 @@
           with <m>a\neq 0</m>.
         </p>
       </statement>
-    </exercise>
+    </activity>
     
-    <exercise xml:id="3-3-6">
+    <activity xml:id="exer-3-3-6">
       <statement>
         <p>
           For the following linear transformations <m>P\colon \R^3\to T^3</m>,
@@ -185,7 +185,7 @@
           (ii) <m>P</m> is is projection onto <m>yz</m> plane.
         </p>
       </statement>
-    </exercise>
+    </activity>
    
   </subsection>
   

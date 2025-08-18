@@ -18,10 +18,7 @@
 
   <colophon>
 
-    <website>
-      <url href="https://pretextbook.org">My Website</url>
-    </website>
-
+  
     <copyright>
       <year>2020<ndash />2023</year>
       <holder>Ajit Kumar</holder>
@@ -40,7 +37,7 @@
       </p>
       
       <p>He has been associated with the Mathematics Training and Talent 
-        Search  (MTTS) Programme  <url href="https://mtts.org.in/">https://mtts.org.in/</url> aimed at mathematics students at undergraduate and postgraduate levels in 
+        Search  (MTTS) Programme  <url href="https://mtts.org.in/"/> aimed at mathematics students at undergraduate and postgraduate levels in 
         Universities  in India for more than two decades. This programme has been running in India since 1993.</p>
         
 
@@ -95,12 +92,16 @@
         readers with both conceptual clarity and computational competence as they progress through topics 
         and exercises.
     </p>
+    <p>
      <attribution>
     <line>Ajit Kumar, Ph.D.</line>
     <line>Department of Mathematics</line>
     <line>Institute of Chemical technology, Mumbai (INDIA)</line>
-    </attribution>
-
+     <line>
+      <url href="https://ajitmathsoft.wordpress.com/" visual ="Personal Website"/>
+     </line>
+        </attribution>
+</p>
 </preface>
 
 </frontmatter>

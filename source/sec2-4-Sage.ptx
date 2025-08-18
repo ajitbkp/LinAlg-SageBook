@@ -138,9 +138,9 @@ integers between -10 and 10. Find the linear combinations of these vectors with 
         v5 = vector([randint(-10,10) for i in range(n)])
         B = [v1,v2,v3,v4,v5]
         print(B)
-        α = [randint(-10,10) for i in range(5)]
-        print(α)
-        sum([α[i]*B[i] for i in range(5)])
+        a = [randint(-10,10) for i in range(5)]
+        print(a)
+        sum([a[i]*B[i] for i in range(5)])
     </input>
     <output>
         
@@ -1008,6 +1008,7 @@ and
 
 <example>
     <title>Sum and intersection of subspaces</title>
+    <statement>
     <p>
         Let <m>u_1=\left(2,-1,0,3,1,2\right)</m>, <m> u_2=\left(-1,2,0,-6,-2,-1\right)</m>,
         <m>u_3=\left(5,-6,-2,18,3,6\right)</m> and <m> u_4=\left(-12,18,6,-54,-9,-15\right)</m>.
@@ -1024,7 +1025,7 @@ and
         <p>
 Find the subspaces <m>W_1\cap W_2</m> and <m>W_1+W_2</m>.
         </p>
-
+    </statement>
     <solution>
         <p>
             Sage has inbulit method to find sum and intersection of 

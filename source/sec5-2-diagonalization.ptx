@@ -46,7 +46,7 @@
             </statement>
           </example>
 
-          <exercise xml:id="5-2-4">
+          <exercise xml:id="exer-5-2-4">
             <statement>
               <p>
                 If <m>A=[a_{ij}]</m> has <m>n</m> distinct eigenvalues then <m>A</m> is diagonalizable.

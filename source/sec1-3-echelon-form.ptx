@@ -557,11 +557,12 @@ row-reduced matrix of <m>A</m> to identity matrix.
 <example>
    <p>
     Four well-mixed tanks <m>T_1, T_2, T_3, T_4</m> form a recirculation/mixing network used to produce a sauce.  At steady state, the concentration <m>c_i</m> (in <m>kg\cdot m^{-3}</m>) of a soluble ingredient ( say salt or sugar) in tank <m>T_i</m> satisfies the steady-state mass balance:
-<me>
-\left(\text{total outflow from tank } T_i \right) c_i
--\sum_{j\neq i} \left(\text{ flow from tank <m> T_j </m> to <m> T_i </m>} \right) c_j
-=\text{net external feed of ingredient to tank <m>T_i</m>}.
-</me>
+<m>
+\left(\text{total outflow from } T_i \right) c_i
+-\sum_{j\neq i} \left(\text{ flow from <m> T_j </m> to <m> T_i </m>} \right) c_j
+=\text{net external feed of ingredient to <m>T_i</m>}.
+</m>
+
 The system of equations can be written in matrix form as
 <me>
 A \mathbf{c} = \mathbf{b},

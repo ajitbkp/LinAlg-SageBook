@@ -69,7 +69,7 @@
         </sage>
     </example>
     <p> Sage can also find the characteristic polynomial of matrix with ease using two matrix method <c>
-        A..charpoly()</c> and <c>A.characteristic_polynomial()</c> Let us look at the next example. </p>
+        A.charpoly()</c> and <c>A.characteristic_polynomial()</c> Let us look at the next example. </p>
 
     <example>
         <p>
@@ -258,12 +258,12 @@
                 This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.
             </p>
 
-            <p> Note that the eigenspace corresponding to the eigenvalue <m>\lamba</m> is the <m>\text{kerne}(A-\lambda
+            <p> Note that the eigenspace corresponding to the eigenvalue <m>\lambda</m> is the <m>\text{kerne}(A-\lambda
                 I)</m> and the gemetric multiplicity is the nullity of <m>(A-\lambda I)</m>. </p>
             <sage>
                 <input>
-                    λ = 2
-                    B = A-λ*identity_matrix(5)
+                    lambda = 2
+                    B = A-lambda*identity_matrix(5)
                     B.nullity()
                 </input>
                 <output>
@@ -275,8 +275,8 @@
                 system of equations. </p>
             <sage>
                 <input>
-                    λ = 2
-                    B = A-λ*identity_matrix(5)
+                    lambda = 2
+                    B = A-lambda*identity_matrix(5)
                     B.rref()
                 </input>
                 <output>

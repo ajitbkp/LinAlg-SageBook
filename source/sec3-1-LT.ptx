@@ -157,18 +157,13 @@
               <p>
                 Let us find all linear maps from <m>\R</m> to <m>\R</m>.
               </p>
-            
-           
-             
-              <blockquote>
-                Suppose <m>f\colon \R\to \R</m> is a linear map. We know that  <m>\{1\}</m> is  
+           <p>     Suppose <m>f\colon \R\to \R</m> is a linear map. We know that  <m>\{1\}</m> is  
                 basis of <m>\R</m>. Then any vector <m>x=x\cdot 1</m>. 
                 Therefore, <m>f(x)=f(x\cdot 1)=xf(1)</m>. Thus  if we define <m>f(1)=a\in \R</m>
                 <m>f(x)=ax</m>. If <m>f</m> is linear map from <m>\R\to \R</m>, then there exist a real number 
                 <m>a\in \R</m> such that <m>f(x)=ax</m>. Note that in this case <m>a=f(1)</m>.
-              </blockquote>
-                        
-            </statement>
+           </p>
+                        </statement>
           </example>
 
         </introduction>

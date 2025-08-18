@@ -498,11 +498,11 @@ Furthermore, the transition matrix <m>I_\gamma^\beta</m> can be obtained by appl
 
   <example>
     <p>
-      Consider 
-<m>\beta = \left\{\left(2,-1,3\right), \left(3,1,2\right), \left(1,1,1\right)\right\}</m>, 
+      Consider  two bases   <m>\R^3</m>
+<m>\beta = \left\{\left(2,-1,3\right), \left(3,1,2\right), \left(1,1,1\right)\right\}</m>
 and  
 <m>\gamma = \left\{\left(1,-1,1\right), \left(1,1,-1\right), \left(-1,1,1\right)\right\}
-</m> be two bases of <m>\R^3</m>.  Consider a vector <m>x=(1,2,3)</m>.  We have 
+</m>.  Consider a vector <m>x=(1,2,3)</m>.  We have 
 <me>
 A = \left(\begin{array}{rrr}
 	2 \amp  3 \amp  1 \\

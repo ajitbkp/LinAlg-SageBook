@@ -92,7 +92,7 @@
 		matrix, then <m>r(A) = r(A^T)</m>, where <m>A^T</m> is the transpose of<m>A</m>.
                 </p>
             </li>
-        </ol>
+           </ol>
        
     </p>
 </observation>
@@ -105,34 +105,40 @@
 	rank of  <m>A</m> is equal to the number of non-zero rows  in an
 	echelon equivalent form of   <m>A</m>.  In other words, the rank of matrix  <m>A</m> 
 	is the number of leading 1's in any row-echelon matrix to which  <m>A</m> can be
-	carried by row operations.
+	carried by row operations. \qed
 	
                 </p>
             </statement>
         </theorem>
 
  
-        <example>
-            <p>
-            Let us find the ranl of <m>A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}</m>.
+        <example xml:id="eg-1-4-6"> 
+    <statement>
+        <p>
+            Let us find the rank of <m>A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}</m>.
             </p>
-    
-    
-    
+        </statement>
+
             <solution>
                 <p>
-                    <me>A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}\overrightarrow{\text{Row echelon form}}\begin{bmatrix}1 \amp  0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp 0\amp 1\\0\amp 0\amp 0\amp 1\amp -1\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}</me>. Hence <m>r(A)=3</m>.
+                    <me>A=\begin{bmatrix}1 \amp  -2\amp 0\amp 3\amp -4\\3\amp 2\amp 8\amp 1\amp 4\\2\amp 3\amp 7\amp 2\amp 3\\-1\amp 2\amp 0\amp 4\amp -3\end{bmatrix}
+                         \xrightarrow{
+                                \begin{array}{c}
+                                    R_3-R_2   \\
+                            \end{array}}
+                            \begin{bmatrix}1 \amp  0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp 0\amp 1\\0\amp 0\amp 0\amp 1\amp -1\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}</me>. Hence <m>r(A)=3</m>.
                 </p>
             </solution>
        
        
     </example>
   
-       <example>
-        <p>   
+       <example xml:id="eg-1-4-7">
+        <statement>
+            <p>
         Consider a matrix <m>\begin{bmatrix} 1 \amp  1 \amp  2 \amp  a^2\\1 \amp  1-a \amp  2\amp  0 \\2 \amp  2-a \amp  6-a \amp  4\end{bmatrix}</m>. Find the rank of the matrix. 
-        </p>    
-  
+        </p>
+        </statement>
 
             <solution>
                 <p>
@@ -306,13 +312,14 @@
 
 
     <example xml:id="matrix-rank-eg2">
-        <p>`
+    <statement>
+        <p>
         Let us consider the system <m>AX=B</m> where 
-        <m>A=\begin{bmatrix}1 \amp   -2\amp  0\amp  3\\3\amp  2\amp  8\amp  1\\2\amp  3\amp  7\amp  2\\-1\amp  2\amp  0\amp  4\end{bmatrix}\quad  B=\begin{bmatrix}-4\\4\\3\\-3\end{bmatrix}\quad  X=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}.
-        </m>    
-   
-            <solution>
-                <p>
+        <m>A=\begin{bmatrix}1 \amp   -2\amp  0\amp  3\\3\amp  2\amp  8\amp  1\\2\amp  3\amp  7\amp  2\\-1\amp  2\amp  0\amp  4\end{bmatrix}</m>
+        <m> B=\begin{bmatrix}-4\\4\\3\\-3\end{bmatrix}</m> and <m> X=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}.
+        </m>      
+        
+      
         <md>
             <mrow>
                 A^*=\begin{bmatrix}
@@ -322,7 +329,10 @@
                 -1\amp  2\amp  0\amp  4\amp  |\amp  -3
                 \end{bmatrix} 
                 \amp
-                \overrightarrow{\text{RREF}}
+                \xrightarrow{
+                \begin{array}{c}
+                    RREF
+            \end{array}}
                 \begin{bmatrix}
                 1 \amp   0\amp  2\amp  0\amp  |\amp  1\\
                 0\amp  1\amp  1\amp  0\amp  |\amp  1\\
@@ -333,15 +343,17 @@
         </md>
             Clearly <m>r(A)=r(A^*)=3\lt4</m>, hence this system has infinitely many solutions.
            
-                </p>
-            </solution>
-        </p>
+      </p>
+    </statement>
+      
   
     </example>
 
 
     <example xml:id="matrix-rank-eg3">
-        <p> Consider the system of linear equations <m>Ax=b</m>, where
+        <statement>
+            <p>
+                Consider the system of linear equations <m>Ax=b</m>, where
         <me>\begin{pmatrix}
 		1 \amp  -2 \amp  2 \amp  3 \\
 		3 \amp  2 \amp  -1 \amp  5 \\
@@ -350,11 +362,9 @@
 	\end{pmatrix}, \text{ and } 
 	b= \begin{pmatrix}
 		5 \\ -7 \\ 8 \\ 11
-	\end{pmatrix}
+	\end{pmatrix}.
 	</me>
-</p>
-
-    <solution>
+    
         <me> 
             \left(\begin{array}{rrrr|r}
             1 \amp  -2 \amp  2 \amp  3 \amp  5 \\
@@ -362,7 +372,10 @@
             -2 \amp  0 \amp  3 \amp  4 \amp  8 \\
             13 \amp  2 \amp  -9 \amp  1 \amp  11
             \end{array}\right)
-            \overrightarrow{\text{RREF}}
+            \xrightarrow{
+                \begin{array}{c}
+                    RREF
+            \end{array}}
             \left(\begin{array}{rrrr|r}
             1 \amp  0 \amp  0 \amp  \frac{10}{7} \amp  0 \\
             0 \amp  1 \amp  0 \amp  \frac{3}{2} \amp  0 \\
@@ -402,9 +415,8 @@ Aug
                     [   0    0    0    0|   1]
                 </output>
             </sage>
-       
-    </solution>
-
+        </p>
+        </statement>
     </example>
 
 </section>

@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="appendix-sage-into" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to Sage</title>
+  <introduction>
+    <p>
+        In this section, we briefly introduce Sage for users 
+        who do not have prior experence of using Sage.  Readers can also watch a
+        series of lectures on introrduction to Sage by the author available on <url href="https://ajitmathsoft.wordpress.com/sagemath/" /> 
+    </p>
+
+    <p>
+   <alert>Recommended Reference Books for SageMath</alert>
+   </p>
+
+  <ul>
+    <li>
+      <p>
+        <bold>Computational Mathematics with SageMath</bold> by Paul Zimmermann et al. — A comprehensive, example-driven guide designed for learners across various levels—from high school to graduate.
+      </p>
+    </li>
+    <li>
+      <p>
+        <bold>An Introduction to Sage Programming</bold> — A Wiley publication that teaches SageMath through programming techniques and illustrations of numerical methods.
+      </p>
+    </li>
+    <li>
+      <p>
+        <bold>Sage for Undergraduates</bold> by Gregory V. Bard — A student-friendly book providing step-by-step guidance and explanations for learning SageMath.
+      </p>
+    </li>
+    <li>
+      <p>
+        <bold>Sage Tutorial</bold> by William Stein — A concise, efficient introduction to SageMath, great for beginners seeking a fast start.
+      </p>
+    </li>
+</ul>
+
+  <p>
+    Additional resources:
+    <url href="https://doc.sagemath.org/html/en/reference/" visual="Official SageMath Reference Manual"/>
+    for full documentation, and the
+    <url href="https://www.sagemath.org/library.html" visual="SageMath Library and Teaching Materials"/>
+    for tutorials, problem sets, and interactive examples.
+  </p>
+
+
+  </introduction>
+
+<subsection>
+<title>Introduction to SageMath</title>
+    <p>
+        <c>SageMath</c> (commonly referred to as <c>Sage</c>) is a free, open-source 
+        Computer Algebra System (CAS) distributed under the 
+        <c>GNU General Public License, Version 3 (GPL v3)</c>. 
+        It is among the most powerful and comprehensive open-source 
+        mathematical software systems available today.
+    </p>
+
+    <p>
+        <c>SageMath</c> supports a wide range of mathematical domains, 
+        from basic computations to advanced research-level mathematics. 
+        It provides a rich set of built-in objects and functions for 
+        representing mathematical concepts and performing symbolic, 
+        numeric, and graphical computations.
+    </p>
+
+    <p>
+        Owing to its versatility and accessibility, <c>SageMath</c> 
+        serves as an excellent platform for both teaching and research 
+        in mathematics and related disciplines.
+    </p>
+
+    <p>
+        The mission of SageMath is to 
+        <p>
+        <q><em>create a robust, free, and open-source alternative to Magma, Maple, Mathematica, and MATLAB.</em></q>
+        </p>
+    </p>
+
+    <p>
+        SageMath was initiated in 2005 by Prof. William Stein, an American academician, with the goal of building a 
+        comprehensive open-source environment for mathematical computation. Initially concentrating on number theory, 
+        SageMath quickly expanded to include many branches of mathematics as more contributors joined the project. 
+        With the integration of Python’s numerical capabilities, it has become a versatile, general-purpose mathematical 
+        software.
+    </p>
+
+    <p>
+        SageMath is built on top of hundreds of scientific libraries and software packages. 
+        A complete list of these components is available at 
+        <url href="http://www.sagemath.org/links-components.html" visual = "SageMath Components"/>.
+    </p>
+
+    <p>
+        SageMath uses the Python programming language, known for its ease of use and growing popularity in the scientific 
+        community. This combination allows users to integrate SageMath’s computational tools with a wide variety of 
+        Python libraries for data analysis, visualization, networking, databases, and other technical applications.
+    </p>
+
+    <p>
+        The <url href="http://www.sagemath.org" visual="official SageMath website"/> offers extensive resources for 
+        self-learning, including tutorials and quick-reference materials.
+    </p>
+
+    <p>
+        SageMath also supports tight integration with <latex/> through the 
+        <c>SageTeX</c> package, enabling users to embed SageMath computations directly in LaTeX documents. 
+        Furthermore, LaTeX code can be included within SageMath worksheets to create interactive and well-formatted content.
+    </p>
+
+</subsection>
+
+<subsection xml:id="getting-started-sagemath">
+    <title>Getting Started with Sage</title>
+    
+    <p>
+        Sage is simple to use — all you need is a web browser with internet access. 
+        A convenient starting point is  
+        <url href="http://sagecell.sagemath.org/" visual="SageMathCell"/>, 
+        an easy-to-use web interface for Sage that lets you experiment with commands 
+        and explore its features without installation.
+    </p>
+    
+    <p>
+        Another option is <url href="http://cocalc.com" visual="CoCalc"/>, a web-based cloud 
+        computing and course management platform for computational mathematics using SageMath.
+    </p>
+    
+    <p>
+        For long-term or intensive use, it is recommended to install an appropriate distribution 
+        of Sage. Details are available on the official SageMath download page
+        and follwoing the instructions for Sage installation.
+    </p>
+    
+    <p>
+        Getting started depends on your environment:
+        <ul>
+            <li><em>Online:</em> Create a CoCalc account, start a project, and open a Jupyter worksheet.</li>
+             
+            <li><em>Linux/MacOS:</em> Open a terminal and run <code>sage --notebook</code>, 
+                then choose between the Jupyter notebook and the classic Sage notebook.</li>
+        <li><em>Windows:</em> Use the shortcut icon to launch SageMath in case 
+                you have installed Sage using older binaries. After 9.5 version windows 
+            binaries are not available. However one can install Sage using Windows Subsystem for Linux (WSL).
+        It allows Windows users to run a Linux environment directly on their machine without setting up a separate 
+        virtual machine. Installing SageMath through WSL gives access to a native Linux version of Sage, which ensures better compatibility and performance.
+        </li>
+            </ul>
+    </p>
+    
+    <p>
+        SageMath is built on top of Python. This allows users to employ 
+        Python syntax directly within SageMath and integrate Python libraries 
+        seamlessly into mathematical computations. This combination of 
+        mathematical depth and programming flexibility makes SageMath a 
+        powerful environment for problem-solving, research, and education.
+    </p>
+
+    <p>
+        Let us now begin exploring SageMath.
+    </p>
+
+    <sage>
+        <input>
+    63735+6353 # adding two numbers
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <p>
+        To operate with exponents, we use <c>^</c> or <c>**</c>
+    </p>
+    <sage>
+        <input>
+    ## The following two codes have the same output.
+    print(27^101)
+    print(27**101)
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+
+    <sage>
+        <input>
+print(706/11) # return rational number
+print(706/11.0) # returns the floating point number 
+print(706//11) # quotient when 706 is divided by 11.
+print(706 % 11) # remainder when 706 is divided by 11.
+      </input>
+        <output>
+            
+        </output>
+    </sage>
+<p>
+    Several standard mathematical functions and constants are already defined in Sage. Let us see some of them. It is easy to guess the name of the function and method.
+</p>
+<sage>
+    <input>
+print(factorial(15))
+print(binomial(18,8))
+print(numerical_approx(pi))
+print(numerical_approx(pi,digits=50))
+print(sin(pi/3))
+print(tan(pi/4))
+print(sqrt(5))
+print(sqrt(5).n(digits=30))
+print(euler_gamma.n()) # Euler-Mascheroni Constant
+print(golden_ratio.n(digits=20))
+print(exp(I*pi/4))
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<sage>
+    <input>
+# Guess and try our different function evaluations.
+
+
+    </input>
+    <output>
+        
+    </output>
+</sage>
+
+<p>
+        SageMath provides an in-built reference manual for every function, constant, object, or command. 
+        This documentation can be accessed by appending a question mark (<c>? </c>) to the name of the command. 
+        For instance, typing <c>factorial?</c> displays a help page that includes the function description, 
+        its syntax, and illustrative examples.  
+    </p>
+
+    <p>
+        Alternatively, the same information can be obtained using the <c>help()</c> function. 
+        For example, <c>help(factorial)</c> will also display the corresponding documentation.
+    </p>
+
+    <p>
+        Both methods are convenient for quickly understanding the usage and behavior of SageMath functions.
+    </p>
+    <sage>
+        <input>
+    solve?
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <sage>
+        <input>
+    factor??
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+
+    <sage>
+        <input>
+    help(binomial)
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <p> <em> Variables and Symbolic Expressions</em></p>
+        <p>
+            Since Sage is interfaced via the Python programming language, we can facilitate calculations using Python variables in the following manner.
+        </p>
+    <sage>
+        <input>
+        x=5265
+        y=634
+        z=x**2+y**2-2*x*y
+        z==(x-y)**2
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <p>
+    Python variables can be named arbitrarily, it is not recommended to redefine predefined constants or functions. This could lead to confusing results. However Fortunately, the original value can be restored via <c>restore()</c> and <c>reset()</c> commandns
+    </p>
+
+    <sage>
+        <input>
+pi =3.14
+print(sin(pi))
+from sage.all import pi
+print(sin(pi))
+print(z)
+reset()
+print(z)        
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+<p>
+SageMath provides a variety of symbolic manipulations.  SageMath thinks of <c>x</c> as a 
+default variable. Any other variable if needed has to be declared using 
+<c>y = var('y')</c> or <c>v=SR.('y')</c>. 
+</p>
+
+<sage>
+    <input>
+a,b,c,x = var('a,b,c,x')
+eq = a*x^2+b*x+c
+solve(eq==0,x)
+    </input>
+    <output>
+    
+    </output>
+</sage>
+
+<sage>
+    <input>
+
+    </input>
+    <output>
+        
+    </output>
+</sage>
+
+<sage>
+    <input>
+x, y = var('x, y') 
+solve([ x^2 * y == 24, x * y^2 == 18], x, y)
+    </input>
+    <output>
+        
+    </output>
+</sage>
+
+<sage>
+    <input>
+expr = x^3- 4*x^2 + 6*x- 3
+print(expr.roots(x))
+print(expr.roots(x,ring=RR))
+    </input>
+    <output>
+        
+    </output>
+</sage>
+
+<sage>
+    <input>
+<![CDATA[
+var('x y')
+solve(x^2 - 5*x + 6 > 0, x)
+]]>
+</input>
+    <output>
+        
+    </output>
+</sage>
+
+<p>
+The <c>solve()</c> function in SageMath is a powerful 
+symbolic tool for solving equations and systems of equations and even inequalities.
+It works with linear, nonlinear, polynomial, trigonometric, exponential, and logarithmic equations.
+</p>
+<p>
+    <em>Using Dot-Tab Completion in SageMath</em>
+</p>
+
+    <p>
+        SageMath supports <term>dot-tab completion</term>, a powerful feature that helps users 
+        quickly discover the available methods and attributes for a given object. 
+        By typing the object name followed by a dot (<c>.</c>) and pressing the 
+        <kbd>Tab</kbd> key, SageMath displays a list of all applicable methods and properties.  
+    </p>
+    <p>
+    This feature is extremely useful for 
+</p>
+ <ul>
+        <li>exploring available operations for an object.</li>
+        <li>auto-completing method names.</li>
+        <li>reducing syntax errors due to misspelled method names.</li>
+        <li>learning by exploration, without needing to refer to external documentation.</li>
+    </ul>
+<p>
+The dot-tab completion feature in SageMath works when you are using Sage in an interactive environment that supports code introspection. It does not work in every context—its availability depends on where and how you are running Sage. For example if works 
+</p>
+<ul>
+    <li>
+        <p>
+            if you lauch sage in a terminal.
+        </p>
+    </li>
+    <li>
+        <p>
+            in both browser-based and local installations when using Sage as a Jupyter kernel.
+        </p>
+    </li>
+    <li>
+        <p>
+            using Sage online via CoCalc.   
+        </p>
+    </li>
+</ul>
+
+<sage>
+    <input>
+a,b=4,26
+q,r = b.quo_rem(a); # quotient and remainder together
+print(q,r)
+b == a*q+r # to check the division algorithm
+       
+    </input>
+    <output>
+        
+    </output>
+</sage>
+
+<sage>
+    <input>
+
+m = 6
+n = 2462
+print(m.divides(n))
+k = 2466
+print(m.divides(k)) 
+    </input>
+    <output>
+        
+    </output>
+</sage>
+
+<sage>
+    <input>
+a,b = 86, 904
+d = gcd(a,b);
+print(f'The cgd of {a} and {b} is {d}.')
+    </input>
+    <output>
+        
+    </output>
+</sage>
+
+<p>
+The extended gcd command <c>xgcd(a,b)</c>  can be used to display a triplet, 
+<m>(d,r,s)</m> such that <m>d=ra+sb</m>. This is called <em>Bezout's Lemma</em>.
+</p>
+
+<sage>
+<input>
+a,b = 84, 984
+d,r,s = xgcd(a,b)
+print(d,r,s)
+# Verification of Bezout's Lemma
+r*a+s*b==d       
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<p>
+The same <c>gcd</c> Sage function cal also find the gcd of two polynomuials as well.
+</p>
+<sage>
+    <input>
+ <![CDATA[
+ f(x) =2*x^4 + 3*x^3-19*x^2 - 28 *x + 6
+ g(x)=x^3 + 2*x^2 - 9*x-18
+ print(gcd(f,g)) 
+ ]]>
+     </input>
+    <output>
+        
+    </output>
+</sage>
+<exercise>
+ <p>
+Take any three integers <m>a,b, c</m> in SageMath and find their gcd. 
+Also find integers <m>m, n, p</m> such 
+that <m>ma+nb+pc=gcd(a,b,c)</m>.   
+ </p>   
+        <p>
+            Use <c>gcd([a,b,c])</c>
+        </p>
+</exercise>
+</subsection>
+
+<subsection xml:id="subsec-sage-programming">
+    <title>Programming in Sage</title>
+  <introduction>
+    <p>
+Since <c>SageMath</c> is an extension of the <c>Python</c> programming language, 
+it allows, with few exceptions, the use of standard <c>Python</c> programming constructs. 
+Knowledge of <c>Python</c> is not essential for using <c>Sage</c>. 
+However, users with a <c>Python</c> programming background will have an advantage. 
+Users who are already fluent in <c>Python</c> can safely skip this subection.
+</p>
+  </introduction>  
+<p>
+ <em>Use of if-else statements</em>   
+</p>
+  <sage>
+    <input>
+a,b,c = 65,72,97
+if (a^2+b^2==c^2 or a^+c^2 == b^2 or b^2+c^2 == a^2):
+    print(f"{a},{b},{c} are Pythagorean triplets.")
+else:
+    print(f"{a},{b},{c} are not Pythagorean triplets.")       
+    </input>
+    <output>
+        
+    </output>
+  </sage>
+<p>
+<c>if</c> and <c>else</c> can be combined together as <c>elif</c>. 
+Let us look at the following codes.
+</p>
+
+<sage>
+    <input>
+<![CDATA[
+marks = 79
+if marks < 0 or marks > 100:
+    print("Invalid marks! Please enter between 0 and 100.")
+else:
+    if marks >= 90:
+        print("Grade: A+")
+    elif marks >= 80:
+        if marks >= 85:
+            print("Grade: A")
+        else:
+            print("Grade: B+")
+    elif marks >= 70:
+        if marks >= 75:
+            print("Grade: B")
+        else:
+            print("Grade: C")
+    else:
+        print("Grade: D")
+]]>
+    </input>
+    <output>
+
+    </output>
+</sage>
+<p>
+<alert>For Loops</alert>
+</p>
+<p>
+Loops are essentially used for performing same computation several times. We also 
+given example of use of <c>break</c> and <c>continue</c> inside loops.
+</p>
+
+<example>
+ <p>
+    Let us print all the twin primes between 1 and 50 using a for loop.
+ 
+       <sage>
+        <input>
+         <![CDATA[
+            count = 0
+            a,b = 1,50
+            for k in [a..b]:
+                if(k.is_prime() and (k+2).is_prime()):
+                    print(k,k+2)
+                    count = count +1
+            print(f'The number of twin primes between {a} and {b} is {count}')
+        ]]>   
+        </input>
+        <output>
+            
+        </output>
+       </sage> 
+    </p>
+</example>
+
+<example>
+<statement> <p>
+In this example, we approximate the Euler number <m>e:=\sum_{k=0}^\infty\frac{1}{k!}</m> 
+as a sequence of partial sums <m>e \approx \sum_{k=0}^n\frac{1}{k!}</m> using list comprension.
+ </p>   
+<sage>
+    <input>
+    <![CDATA[
+    n=30
+    euler_number = sum([1/factorial(i) for i in range(n)])
+    print(euler_number.n())
+    ]]>
+    </input>
+    <output>
+        
+    </output>
+</sage>
+
+ </statement>
+</example>
+
+<example>
+    <statement>
+        <p>
+            The <m>n</m>-th Fibonacci number <m>F_n</m> is defined by the recurrence relation
+<me>
+F_n = f_{n-1}+F_{n-2} \text{ for } n\geq 2, F_0=0, F_1=1.
+</me>
+We can obtain Fibonacci sequence using matrix multiplication. Let us assume 
+that <m>X_0=\begin{pmatrix} F_0 \\ F_1\end{pmatrix}</m> and <m>A=\begin{pmatrix} 0 \amp 1 
+\\ 1 \amp 1\end{pmatrix}</m>.  The <m>X_n=A^nX_0</m> gives <m>\begin{pmatrix} F_n \\ 
+F_{n+1}\end{pmatrix}</m>. Note that SageMath has inbuilt function <c>fibonacci(n)</c> 
+to find the <m>n</m>-th Fibonacci number.
+
+Although the sequence <m>F_n</m> diverges, the ratio <m>\frac{F_{n+1}}{F_n}</m> tends to 
+a real number which is called the Golden Ratio. Let us find the 
+numerical value of the Golden Ratio within the error <m>0.0001</m>.
+        </p>
+
+<sage>
+    <input>
+        <![CDATA[
+        def fibo(n):
+            X0=vector([0,1])
+            A = matrix([[0,1],[1,1]])
+            return (A^n*X0)[0]
+
+        print(fibo(10))
+        ## Check with inbuilt Sage function
+        print(fibo(10)==fibonacci(10))
+        error = 0.0001
+        Err = 100
+        n = 1
+        while(Err>=error):
+             Golden_Ratio = (fibo(n+1)/fibo(n)).n()
+             Err=Err-Golden_Ratio
+             n=n+1
+        print(Golden_Ratio)
+    ]]>
+    </input>
+    <output>
+        
+    </output>
+</sage>
+    </statement>
+</example>
+
+<p>
+    <alert>Use of break and continue</alert>
+</p>
+
+<p>
+        In SageMath, the <c>break</c> statement is used to terminate a loop 
+        immediately once a condition is met, while the <c>continue</c> 
+        statement skips the current iteration and moves on to the next one. 
+        These two constructs are useful in controlling the flow of loops 
+        and improving efficiency.
+    </p>
+
+    <p>
+        In the following program, we demonstrate the use of both 
+        <c>break</c> and <c>continue</c> in the process of checking 
+        whether a number is prime:
+    </p>
+
+    <sage>
+        <input>
+    <![CDATA[        
+    def is_prime_with_break_continue(n):
+        if n < 2:
+            return False
+        
+        for i in range(2, n):
+            # Skip even numbers greater than 2
+            if i > 2 and i % 2 == 0:
+                continue
+
+            # If divisible, not prime -> break immediately
+            if n % i == 0:
+                return False
+                break
+
+        return True
+
+    # Demonstration: Print primes between 2 and 30
+    for num in range(2, 31):
+        if is_prime_with_break_continue(num):
+            print(num, "is prime")
+        else:
+            print(num, "is not prime")
+    ]]>
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    
+</subsection>
+
+<subsection xml:id="subsec-plotting-sage">
+    <title>Plotting in Sage</title>
+  <introduction>
+    <p>
+        In this subsection we briefly demonstrate how to plot graphs of 2D and 3D objects. 
+Graph plotted in SageMath can be exported in various format such 'pdf','png','ps','eps' etc.
+    </p>
+  </introduction>  
+  <p>
+Listing some of the standard functions in SageMath which can be used for plotting 2D graphs. Readers are advised to go through the plotting section of 
+the help manual and explore more. Some of the standard plotting function are as follows.
+  </p>
+
+  <p>
+<sidebyside>
+  <tabular>
+    <row>
+      <cell><bold>Functions Name</bold></cell>
+      <cell><bold>Explanation</bold></cell>
+    </row>
+    <row>
+      <cell><c>plot</c></cell>
+      <cell>Graph of explicitly defined function <m>y=f(x)</m>.</cell>
+    </row>
+    <row>
+      <cell><c>parametric_plot</c></cell>
+      <cell>Plotting 2D parametric curves.</cell>
+    </row>
+    <row>
+      <cell><c>polar_plot</c></cell>
+      <cell>Plotting 2D curves defined in polar coordinates.</cell>
+    </row>
+    <row>
+      <cell><c>implicit_plot</c></cell>
+      <cell>Plotting 2D curves defined implicitly.</cell>
+    </row>
+    <row>
+      <cell><c>line</c></cell>
+      <cell>Plotting line between two points.</cell>
+    </row>
+    <row>
+      <cell><c>points</c></cell>
+      <cell>Plotting scatter points.</cell>
+    </row>
+    <row>
+      <cell><c>circle</c></cell>
+      <cell>Plotting circles with given center and radius.</cell>
+    </row>
+    <row>
+      <cell><c>polygon</c></cell>
+      <cell>Plotting polygons with given vertices.</cell>
+    </row>
+    <row>
+      <cell><c>complex_plot</c></cell>
+      <cell>Plotting level curves of complex functions.</cell>
+    </row>
+    <row>
+      <cell><c>plot_vector_field</c></cell>
+      <cell>Plotting vector fields.</cell>
+    </row>
+    <row>
+      <cell><c>matrix_plot</c></cell>
+      <cell>Plotting matrix entries.</cell>
+    </row>
+  </tabular>
+</sidebyside>
+
+<p>
+Reader can get help on each of the above functions and explore how to use them.
+</p>
+
+  </p>
+
+ <example>
+    <p>
+        Graph of <m>y=x\sin\frac{1}{x}</m>
+    </p>
+    <sage>
+        <input>
+            g(x)=x*sin(1/x)
+            p=plot(g,-0.1,0.1)
+            p
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <p>
+        SageMath provides various options to render graphs in desired look and feel for clarity. 
+One can change thickness, color, title, figure size, labeling axes, background, grids etc. Let 
+us look at some of these options.
+
+    </p>
+
+    <sage>
+        <input>
+      <![CDATA[
+        g(x) = x*sin(1/x)
+        plot(
+            g,
+            -0.1, 0.1,
+            figsize=6,
+            color='green',
+            aspect_ratio=1,
+            title=r"A plot of $\frac{\sin(x)}{x}$",
+            axes_labels=[r"$x$", r"$y$"]
+            )
+            ]]>
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+ </example> 
+
+ <example>
+<statement>
+    <p>
+     Plotting several graphs together.
+    <sage>
+        <input>
+        <![CDATA[
+        f(x)=exp(-x^2)*sin(x)
+        p1=plot(f,-3,3,color='red',legend_label=r'$f(x)=e^{-x^2}\sin(x)$')
+        p2=plot(f.diff(x),-3,3,color='seagreen',legend_label=r"$f'(x)$")
+        p3=plot(f.diff(2),-3,3,color='goldenrod',legend_label=r'$f''(x)$')
+        show(p1+p2+p3,figsize=5)
+        ]]>
+            
+        </input>
+        <output>
+
+        </output>
+    </sage>
+</p>
+</statement>
+ </example>
+
+ <example>
+    <statement>
+        <p>
+         Scatter Plots.   
+        </p>
+        <sage>
+            <input>
+        <![CDATA[
+        import random
+        pts = [(random.randint(1,50),random.randint(1,50)) for i in range(100)]
+        list_plot(pts,color='red',figsize=5,size=20)
+        ]]>
+
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+    </statement>
+ </example>
+
+ <example>
+    <statement>
+        <p>
+            Creating array of graphs.
+        </p>
+
+        <sage>
+            <input>
+        <![CDATA[
+            f(x) = sin(x)
+            g(x) = sin(2*x)
+            h(x) = sin(4*x)
+            p1 = plot(f,(-2*pi,2*pi),color='red')
+            p2 = plot(g,(-2*pi,2*pi),color='green')
+            p3 = parametric_plot((f,g),(0,2*pi),color='blue')
+            p4 = parametric_plot((f,h),(0,2*pi),color='black')
+            G=graphics_array(((p1,p2),(p3,p4)))
+            G.show(figsize=4)
+        ]]>
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+    </statement>
+ </example>
+ 
+ <p>
+    <alert><em>3D plotting in Sage:</em></alert>
+   Several functions exist to deal with 3D plotting in Sage. We shall just 
+demonstrate a few and leave it to the readers to explore the rest.
+ </p>
+
+ <p>
+<sidebyside>
+   <tabular>
+    <row header="yes">
+      <cell><bold>Function Name</bold></cell>
+      <cell><bold>Explanation</bold></cell>
+    </row>
+
+    <row>
+      <cell><c>plot3d</c></cell>
+      <cell>Graph of explicitly defined function <m>z=f(x,y)</m>.</cell>
+    </row>
+
+    <row>
+      <cell><c>parametric_plot3d</c></cell>
+      <cell>Plotting parametric surfaces.</cell>
+    </row>
+
+    <row>
+      <cell><c>implicit_plot3d</c></cell>
+      <cell>Plotting 3D surfaces defined implicitly.</cell>
+    </row>
+
+    <row>
+      <cell><c>arrow3d</c></cell>
+      <cell>Plotting 3D arrows.</cell>
+    </row>
+
+    <row>
+      <cell><c>points3d</c></cell>
+      <cell>Plotting scatter points.</cell>
+    </row>
+
+    <row>
+      <cell><c>line3d</c></cell>
+      <cell>Plotting line between two points.</cell>
+    </row>
+
+    <row>
+      <cell><c>Sphere</c></cell>
+      <cell>Plotting 3D sphere.</cell>
+    </row>
+
+    <row>
+      <cell><c>Torus</c></cell>
+      <cell>Plotting 3D torus.</cell>
+    </row>
+
+    <row>
+      <cell><c>polygon3d</c></cell>
+      <cell>Draw a polygon in 3D.</cell>
+    </row>
+
+    <row>
+      <cell><c>spherical_plot3d</c></cell>
+      <cell>Plots a function in spherical coordinates.</cell>
+    </row>
+
+    <row>
+      <cell><c>cylindrical_plot3d</c></cell>
+      <cell>Plots a function in cylindrical coordinates.</cell>
+    </row>
+  </tabular>
+</sidebyside>
+</p>
+
+<p>Reader can get help on each of the above functions and explore how to use them.</p>
+
+<example>
+    <statement>
+        <p>
+            Plotting graph of the function <m>f(x,y)=\sin(x^2+y^2)</m>. 
+            We also plot the contours in the same domain.
+
+            <sage>
+                <input>
+                     <![CDATA[
+                    var('x,y')
+                    f(x,y)=sin(x^2+y^2)
+                    plot3d(f(x,y),(x,-pi,pi),(y,-pi,pi))
+                    ]]>
+                </input>
+                <output>
+                    
+                </output>
+            </sage>
+<p>
+    Let us plot the contours for the above function.
+    <sage>
+        <input>
+            <![CDATA[
+            var('x,y')
+            f(x,y)=sin(x^2+y^2)
+            contour_plot(f(x,y),(x,-pi,pi),(y,-pi,pi),fill=False)
+        ]]>
+            </input>
+        <output>
+            
+        </output>
+    </sage>
+</p>
+        </p>
+    </statement>
+</example>
+
+<example>
+    <statement>
+        <p>
+            Let us plot the graph of the surface defined by the following
+<me>
+x=\cos(u), y=\sin(u) + \cos(v), z=\sin(v), 0\leq  u\leq 2\pi,  -\pi\leq v\leq 
+\pi.
+</me>
+<sage>
+    <input>
+        <![CDATA[
+        var('u,v')
+        parametric_plot3d((cos(u), sin(u) + cos(v), sin(v)), 
+        (u, 0, 2*pi), (v, -pi, pi),
+        color='green', opacity=0.5, plot_points=[30,30])
+        ]]>
+    </input>
+    <output>
+        
+    </output>
+</sage>
+        </p>
+    </statement>
+</example>
+
+<example>
+ <title>Sage Interact</title>
+ <p>
+  SageMath provides a way to create an interactive application for users. This is
+  done using the SageMath function <c>@interact</c>. One can create interactive applications 
+  using input boxes, sliders, and selectors. For several examples on Sage <c>@interact</c>, 
+  the reader can refer to 
+  <url href="http://wiki.sagemath.org/interact/" visual="Sage Interact Wiki"/>.
+</p>
+
+<sage>
+  <input>
+     <![CDATA[
+@interact
+def _(a = slider(-8, 8, 0.5, default=2, label='Angular Frequency ($\\omega$)'),
+       b = slider(-5, 5, 0.5, default=1, label='Phase ($\\phi$)'),
+       c = slider(-8, 8, 0.5, default=1, label='Amplitude (A)')):
+       pretty_print(html('Graph of the function $y = A\\sin(\\omega x+\\phi)$'))
+       show(plot(c*sin(a*x+b), (x,-2*pi,2*pi), color='red', figsize=4))
+       ]]>
+  </input>
+  <output />
+</sage>
+   
+</example>
+</subsection>
+
+   </section>

@@ -101,7 +101,7 @@
   <example>
     <statement>
       <p>
-        Consider the plane <m>\pi=\{(x,y,z\in \R^3:3x+y-5z=0\}</m>.
+        Consider the plane <m>\pi=\{(x,y,z)\in \R^3:3x+y-5z=0\}</m>.
         It is easy to see that <m>v_1=(2,-1,1),
         v_2=(1,2,1)</m> lie on the plane <m>\pi</m>.
         Using the Gram-Schmidt process we can find an orthogonal basis <m>u_1 = (2,-1,1),
@@ -244,12 +244,12 @@ p
         Let <m>A</m> be an <m>n\times n</m> real matrix.  Recall <m>{\cal R}(A)</m> and <m>{\cal N}(A)</m>, range or columns space of <m>A</m> and null or kernel of <m>A</m>. Then show that 
         (i) <m>{\cal R}(A)^\perp={\cal N}(A^T)</m> and (ii)  <m>{\cal N}(A)^\perp={\cal R}(A^T)</m>.
       </p>
-      <hint>
-        <p>
+     
+      <p>
           Let <m>x \in {\cal R}(A)^\perp</m>. Then <m>y^TA^Tx=(Ay)^Tx=0</m> for all <m>y</m>. Hence <m>x\in {\cal N}(A^T)</m>. This implies that, <m>{\cal R}(A)^\perp\subseteq {\cal N}(A^T)</m>. Next 
           let <m>x\in {\cal N}(A^T)</m> then <m>(Ay)^Tx=y^TA^Tx=0</m> for all <m>y</m>. Hence <m>x\in {\cal R}(A)^\perp</m>. That is, <m>{\cal N}(A^T) \subseteq {\cal R}(A)^\perp</m>.
         </p>
-      </hint>
+     
     </statement>
   </exercise>
   </subsection>

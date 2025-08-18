@@ -131,6 +131,7 @@
 
  <sage>
         <input>
+            <![CDATA[
             V = QQ^6
             v1 = vector([1,-1,2,3,1,4])
             v2 = vector([2,1,0,2,-3,1])
@@ -138,6 +139,7 @@
             v4 = vector([-1,0,2,1,3,2])
             v5 = vector([-2,-2,4,2,7,5])
             v1 in V
+            ]]>
         </input>
         <output>
 
@@ -148,9 +150,11 @@
 
  <sage>
         <input>
+            <![CDATA[
             B = [v1,v2,v3,v4,v5]
             W = V.span(B)
             W
+            ]]>
         </input>
         <output>
 
@@ -229,13 +233,16 @@
 
         <sage>
             <input>
+               <![CDATA[
                 V=QQ^4
                 v1=vector(QQ,[1,0,0,0])
                 v2=vector(QQ,[1,1,0,0])
                 v3=vector(QQ,[1,0,-1,0])
                 v4=vector(QQ,[0,0,0,1])
                 B=[v1,v2,v3,v4]
-                S = V.linear_dependence(B);S
+                S = V.linear_dependence(B);
+                S
+                ]]>
             </input>
             <output>
 
@@ -302,6 +309,7 @@
 
         <sage>
             <input>
+                <![CDATA[
                 V=QQ^4
                 v1=vector(QQ,[1,0,0,0])
                 v2=vector(QQ,[1,1,0,0])
@@ -312,6 +320,7 @@
                 v=vector(QQ,[-1,2,3,-2])
                 v_B=V.coordinate_vector(v)
                 print(v_B)
+                ]]>
             </input>
             <output>
 
@@ -320,6 +329,7 @@
 
         <sage>
             <input>
+                <![CDATA[
                 V=QQ^4
                 w1=vector(QQ,[1,1,1,0])
                 w2=vector(QQ,[1,1,0,1])
@@ -330,6 +340,7 @@
                 v=vector(QQ,[-1,2,3,-2])
                 v_C=W.coordinate_vector(v)
                 print(v_C)
+                ]]>
             </input>
             <output>
 
@@ -401,6 +412,7 @@
 
         <sage>
             <input>
+                <![CDATA[
                 V = QQ^4
                 T = linear_transformation(identity_matrix(4),V,V)
                 v1=vector(QQ,[1,0,0,0])
@@ -417,6 +429,7 @@
                 W=V.subspace_with_basis(C)
                 S = T.restrict_domain(U).restrict_codomain(W)
                 S.matrix(side='right')
+                ]]>
             </input>
             <output>
 
@@ -444,6 +457,7 @@
 
         <sage>
             <input>
+                <![CDATA[
                 V = QQ^4 # vector space of dimension 4 over rational field
                 v1=vector(QQ,[-3, 1, -1, 2])
                 v2=vector(QQ,[1, -1, 11, 3])
@@ -454,6 +468,7 @@
                 W1=V.span(B1);
                 C1=W1.basis_matrix() # Basis of W1
                 k=C1.dimensions()[0] # dimension of W1
+                ]]>
             </input>
             <output>
 
@@ -473,6 +488,7 @@
 
         <sage>
             <input>
+                <![CDATA[
                 u1=vector(QQ,[3, -1, 5, 7])
                 u2 =vector(QQ,[21, 11, 10, -13])
                 u3=vector(QQ,[-2, 3, -51, 7])
@@ -482,6 +498,7 @@
                 W2=V.span(B2);
                 C2=W2.basis_matrix() # Basis of W2
                 p=C2.dimensions()[0] # dimension of W2
+                ]]>
             </input>
             <output>
 
@@ -555,14 +572,16 @@
 
         <sage>
             <input>
-                p(x) = x^4-5*x^3+2*x-2
-                p(x).coefficients() #Return the coefficients of this symbolic expression as a
-    polynomial in x
+            <![CDATA[
+            p(x) = x^4-5*x^3+2*x-2
+            p(x).coefficients() 
+            ]]>
             </input>
             <output>
                 [[-2, 0], [2, 1], [-5, 3], [1, 4]]
             </output>
         </sage>
+       
         <sage>
             <input>
                 p(x) = 6
@@ -590,14 +609,16 @@
 
         <sage>
             <input>
+                <![CDATA[
                 ## The following function returns the degress of a polynomial
                 def Poly_Coeff(p,n):
-                L = p(x).coefficients()
-                LP=[0]*(n+1)
-                for i in range(len(L)):
-                k = L[i][1]
-                LP[k]=L[i][0]
-                return LP
+                    L = p(x).coefficients()
+                    LP=[0]*(n+1)
+                    for i in range(len(L)):
+                        k = L[i][1]
+                        LP[k]=L[i][0]
+                    return LP
+                ]]>
             </input>
             <output>
 
@@ -606,12 +627,13 @@
 
         <sage>
             <input>
+                <![CDATA[
                 p(x)=1
                 print(Poly_Coeff(p,1))
                 p(x) = x^4-5*x^3+2*x-2
                 print(Poly_Coeff(p,4))
                 print(Poly_Coeff(p,6))
-
+                ]]>
             </input>
             <output>
 
@@ -622,10 +644,12 @@
         </p>
         <sage>
             <input>
+                <![CDATA[
                 def Poly_Degree(p):
-                L = p(x).coefficients()
-                D = [L[i][1] for i in range(len(L))]
-                return max(D)
+                    L = p(x).coefficients()
+                    D = [L[i][1] for i in range(len(L))]
+                    return max(D)
+                ]]>
             </input>
             <output>
 
@@ -633,10 +657,12 @@
         </sage>
         <sage>
             <input>
+                <![CDATA[
                 p(x) = 7
                 print(Poly_Degree(p))
                 p(x)=9-x^5
                 print(Poly_Degree(p))
+                ]]>
             </input>
             <output>
 
@@ -651,21 +677,23 @@
 
         <sage>
             <input>
+                <![CDATA[
                 def Poly_linear_depend(L):
-                k = len(L)
-                n = max([Poly_Degree(L[i]) for i in range(k)])
-                V = VectorSpace(RR,n+1)
-                B = []
-                for i in range(k):
-                v = vector(Poly_Coeff(L[i],n))
-                B.append(v)
-                M = column_matrix(B)
-                S = V.linear_dependence(B)
-                if(rank(M)==k):
-                print('These polynomials are linearly independent.')
-                else:
-                print('These polynomials are linearly dependent.')
-                return(S)
+                    k = len(L)
+                    n = max([Poly_Degree(L[i]) for i in range(k)])
+                    V = VectorSpace(RR,n+1)
+                    B = []
+                    for i in range(k):
+                        v = vector(Poly_Coeff(L[i],n))
+                        B.append(v)
+                        M = column_matrix(B)
+                    S = V.linear_dependence(B)
+                    if(rank(M)==k):
+                        print('These polynomials are linearly independent.')
+                    else:
+                         print('These polynomials are linearly dependent.')
+                    return(S)
+                ]]>
             </input>
             <output>
 
@@ -673,6 +701,7 @@
         </sage>
         <sage>
             <input>
+                <![CDATA[
                 var('x')
                 p1(x) = 1+x + 3*x^2
                 p2(x) = 1 + 5*x^3 - 2*x^5
@@ -681,6 +710,7 @@
                 p5(x) = x^3 - x^4
                 l = [p1, p2,p3, p4, p5]
                 Poly_linear_depend(l)
+                ]]>
             </input>
             <output>
 
@@ -688,6 +718,7 @@
         </sage>
         <sage>
             <input>
+                <![CDATA[
                 var('x')
                 p1(x) = 1+x + 3*x^2
                 p2(x) = 1 + 5*x^3 - 2*x^5
@@ -696,6 +727,7 @@
                 p5(x) = x^3 - x^5
                 l = [p1, p2, p3,p4, p5]
                 Poly_linear_depend(l)
+                ]]>
             </input>
             <output>
 
@@ -707,18 +739,20 @@
         </p>
         <sage>
             <input>
+                <![CDATA[
                 def Poly_Coordinates(p,B):
-                k = len(B)
-                n = max([Poly_Degree(B[i]) for i in range(k)])
-                M = []
-                u = vector(Poly_Coeff(p,n))
-                for i in range(k):
-                v = vector(Poly_Coeff(B[i],n))
-                M.append(v)
-                M.append(u)
-                M1 = column_matrix(M)
-                s = M1.rref()[:,k]
-                return s
+                    k = len(B)
+                    n = max([Poly_Degree(B[i]) for i in range(k)])
+                    M = []
+                    u = vector(Poly_Coeff(p,n))
+                    for i in range(k):
+                        v = vector(Poly_Coeff(B[i],n))
+                        M.append(v)
+                    M.append(u)
+                    M1 = column_matrix(M)
+                    s = M1.rref()[:,k]
+                    return s
+                ]]>
             </input>
             <output>
 
@@ -726,6 +760,7 @@
         </sage>
         <sage>
             <input>
+                <![CDATA[
                 var('x')
                 p1(x) = 1+x^3
                 p2(x) = x+x^2-x^3
@@ -734,6 +769,7 @@
                 p(x)=7-3*x+x^2-6*x^3
                 B = [p1,p2,p3,p4]
                 Poly_Coordinates(p,B)
+                ]]>
             </input>
             <output>
 
@@ -742,6 +778,7 @@
 
         <sage>
             <input>
+                <![CDATA[
                 var('x')
                 p1(x) = 1
                 p2(x) = x
@@ -750,6 +787,7 @@
                 p(x)=7-3*x+x^2-6*x^3
                 B = [p1,p2,p3,p4]
                 Poly_Coordinates(p,B)
+                ]]>
             </input>
             <output>
 
@@ -760,15 +798,17 @@
         </p>
         <sage>
             <input>
+                <![CDATA[
                 def Poly_linspan(L, n):
-                c = []
-                k = len(L)
-                for i in range(k):
-                co = Poly_Coeff(L[i],n)
-                c.append(co)
-                B = column_matrix(c).T.rref()
-                dim = B.rank()
-                return (dim, B[:dim,:])
+                    c = []
+                    k = len(L)
+                    for i in range(k):
+                        co = Poly_Coeff(L[i],n)
+                        c.append(co)
+                    B = column_matrix(c).T.rref()
+                    dim = B.rank()
+                    return (dim, B[:dim,:])
+                ]]>
             </input>
             <output>
 
@@ -777,10 +817,12 @@
 
         <sage>
             <input>
+                <![CDATA[
                 q1(x)=1; q2(x)= x; q3(x)=x^2;q4(x)=x^3
                 L = [q1,q2,q3,q4]
                 dim,Basis = Poly_linspan(L,3)
                 Basis,dim
+                ]]>
             </input>
             <output>
 
@@ -788,11 +830,13 @@
         </sage>
         <sage>
             <input>
+                <![CDATA[
                 p1(x)=2; p2(x)= 3*x^2-x; p3(x)=x^3- 2*x;p4(x)=x^3-3*x+3*x^2
                 L = [p1,p2,p3,p4]
                 dim,Basis = Poly_linspan(L,3)
-                print(f'A basis matric of the linear span is\n{Basis}\n\nThe Dimesion of the
-                subspace is {dim} ')
+                print(f'A basis matrix of the linear span is\n{Basis}')
+                print(f'The Dimesion of the subspace is {dim}')
+                ]]>
             </input>
             <output>
 
@@ -826,10 +870,12 @@
     v=\varphi(A)</m> and conversely, how to convert a given vector <m>v</m> to the associated matrix <m>
     A=\varphi^{-1}(v)</m> in sage. We define two Sage rountines. <sage>
                 <input>
+                    <![CDATA[
                     m, n = 3, 4
                     MS = MatrixSpace(QQ, m,n)
                     A = MS([[1, 2, 3,-1], [2,4, 5, 6],[5,0,-3,1]])
                     A
+                    ]]>
                 </input>
                 <output>
 
@@ -838,12 +884,14 @@
 
  <sage>
                 <input>
+                     <![CDATA[
                     def mat_flatten(A):
-                    row = A.rows()
-                    v = []
-                    for r in row:
-                    v=v+flatten(r)
-                    return vector(v)
+                        row = A.rows()
+                        v = []
+                        for r in row:
+                            v=v+flatten(r)
+                        return vector(v)
+                     ]]>
                 </input>
                 <output>
 
@@ -861,9 +909,11 @@
 
  <sage>
                 <input>
+                   <![CDATA[
                     def mat_unflatten(v,m,n):
-                    MS = MatrixSpace(QQ, m,n)
-                    return MS(list(v))
+                        MS = MatrixSpace(QQ, m,n)
+                        return MS(list(v))
+                    ]]>
                 </input>
                 <output>
 
@@ -872,16 +922,20 @@
 
  <sage>
                 <input>
+                     <![CDATA[
                     m, n = 3, 4
                     MS = MatrixSpace(QQ, m,n)
                     A = MS([[1, 2, 3,-1], [2,4, 5, 6],[5,0,-3,1]])
                     mat_unflatten(mat_flatten(A),m,n)
+                    ]]>
                 </input>
                 <output>
 
                 </output>
             </sage>
         </p>
+
+
         <example>
             <p> Check if the set of matrices <m>\{A_1,A_2,A_3,A_4,A_5\}</m> where <me>
     A_1=\left(\begin{array}{rrrr}
@@ -910,41 +964,40 @@
                 </me>
     is linearly depedent in <m>M(3,r,\mathbb{Q})</m>. </p>
 
-            <solution>
+            <sage>
+                <input>
+                <![CDATA[
+                    m,n = 3,4
+                    V = VectorSpace(QQ,m*n)
+                    A1 = MS([[0 , -1 , 0 , 1],[2 , -2 , -2 , -1 ],[1/2 , -2 , 0 , 1]])
+                    A2 = MS([[0 , 1/2, 0 , -2 ],[0 , 0 , 0 , -1 ],[0 , 1 , 0 , -1]])
+                    A3 = MS([[ 0,-1 , -2 , 0 ],[0 , -1/2 , -1 , -1 ],[-2 , 0 , 1 , 2]])
+                    A4 = MS([[1 , 1/2 , 2 , -1 ],[-2 , 1 , 0 , 1 ],[-1/2 , 0 , 0 , -1]])
+                    A5 = MS([[-1 , -5 , -4 , 9 ],[6 , -11/2, -5 , -1 ],[-1/2 , -7 , 1 , 8]])
+                    B = [A1,A2,A3,A4,A5]
+                    L=[]
+                    for i in range(len(B)):
+                        L.append(mat_flatten(B[i]))
+                    V.linear_dependence(L)                
+                    ]]>
+                </input>
+                 <output>
+                    [
+                    (1, -3/2, 1/2, -1/2, -1/2)
+                    ]
+                    </output>
+                </sage>
                 <p>
-                    <sage>
-                        <input>
-                            A1 = MS([[0 , -1 , 0 , 1],[2 , -2 , -2 , -1 ],[1/2 , -2 , 0 , 1]])
-                            A2 = MS([[0 , 1/2, 0 , -2 ],[0 , 0 , 0 , -1 ],[0 , 1 , 0 , -1]])
-                            A3 = MS([[ 0,-1 , -2 , 0 ],[0 , -1/2 , -1 , -1 ],[-2 , 0 , 1 , 2]])
-                            A4 = MS([[1 , 1/2 , 2 , -1 ],[-2 , 1 , 0 , 1 ],[-1/2 , 0 , 0 , -1]])
-                            A5 = MS([[-1 , -5 , -4 , 9 ],[6 , -11/2, -5 , -1 ],[-1/2 , -7 , 1 , 8]])
-    m,n = A1.dimensions()
-                            V = VectorSpace(QQ,m*n)
-                            B = [A1,A2,A3,A4,A5]
-                            L=[]
-                            for i in range(len(B)):
-                            L.append(mat_flatten(B[i]))
-                            V.linear_dependence(L)
-                        </input>
-                        <output>
-                            [
-                            (1, -3/2, 1/2, -1/2, -1/2)
-                            ]
-                        </output>
-                    </sage>
-    Clearly the above set of matrices are not linearly independent. In fact, <me>
-    A_1-3/2A_2+1/2A_3-1/2A_4 -1/2A_5=0.
-                    </me>
-
+    Clearly the above set of matrices are not linearly independent. In fact, 
+    <me> A_1-3/2A_2+1/2A_3-1/2A_4 -1/2A_5=0. </me>
                 </p>
-            </solution>
         </example>
-        <exercise>
+
+        <activity>
             <p>
                 Write Sage rountines to find coordinates of a matrix with repect to a basis of a
     matrix space and also the to find the linear span of set of matrices.
             </p>
-        </exercise>
+        </activity>
     </subsection>
 </section>

@@ -108,7 +108,7 @@ to another row.
   Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.
 </p>
 
-<observation>
+<observation xml:id="obs-1-1-4">
   <p>
   Let <m>A</m> be an <m>n\times n</m> matrix of real numbers. Let the columns of <m>A</m> 
     are <m>a_1,a_2,\ldots a_n</m>, 
@@ -140,6 +140,24 @@ to another row.
                         <m>a_{ij}=e_i^TAe_j</m> for <m>1\leq i, j\leq n</m>.
                       </p>
                       </li>
+                        <li>
+                <p>
+                    Suppse <m>B</m> is a matrix such that <m>AB</m> exist. Also assume that 
+                    columns of <m>B</m> are <m>b_1,\ldots, b_n</m>. In particular, that is, 
+                    <m>B=\begin{bmatrix} b_1\amp b_2\amp\cdots \amp b_n\end{bmatrix}</m>. Then 
+                    <me>
+                      AB = \begin{bmatrix} Ab_1\amp Ab_2\amp\cdots \amp Ab_n\end{bmatrix}.
+                    </me>
+                 </p>
+                 <p>
+                 Similarly, we have 
+                 <me>
+                  AB = \begin{bmatrix} R_1B\\ R_2B\\\vdots \\ R_nB\end{bmatrix}.
+                 </me>
+                </p>
+            </li>
+            
+       
                       </ol>
                   </p>
 </observation>
@@ -186,6 +204,31 @@ show(E)
     
   </output>
 </sage>
+<p>
+  Now we verify the item 4 of <xref ref="obs-1-1-4"/>
+</p>
+<sage>
+  <input>
+    A = random_matrix(ZZ,5,5)
+    print('The matrix A is')
+    print(A)
+    B = random_matrix(ZZ,5,5);
+    print('The matrix B is')
+    print(B)
+    print('The matrix AB is')
+    print(A*B)
+    a = A.columns()
+    R = A.rows();
+    b = B.columns()
+    print('The matrix obtained by [Ab_1 Ab_2  ... Ab_n]')
+    print(column_matrix([A*b[i] for i in range(5)]))
+    print('The matrix obtained by [R_1B R_2B  ... R_nB]^T')
+    print(matrix([R[i]*B for i in range(5)]))
+  </input>
+  <output>
+    
+  </output>
+</sage>
 
 <definition xml:id="def-elementary-row-operation-2">
   <statement>
@@ -206,6 +249,11 @@ show(E)
 	<m>E = e(I_m)</m>. Then, for any <m>m\times n</m> matrix <m>A</m>, <m>e(A) = E\cdot A</m>.
     </p>
   </statement>
+<proof>
+  <p>
+    Follows from <xref ref="obs-1-1-4"/>
+  </p>
+</proof>
 </theorem>
 
 <exercise>

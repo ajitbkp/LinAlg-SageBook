@@ -221,7 +221,29 @@ print("Check A = Q*R:", Q*R == A)
     
   </output>
 </sage>
-  
+<p>
+  Sage has in inbuilt function to find the <m>QR</m>-factorization. Let us demonstrate this. 
+</p>
+
+<sage>
+  <input>
+    A = matrix(QQbar, [[-3, 0, -4, -1, -2],
+                       [-1, 1, -5, -2, -3],
+                       [2, 1, 7, 4, 5],
+                       [6, -, 8, 3, 3],
+                       [-2, 2, -6, -6, 5]])
+    Q, R = A.QR()
+    print('The matrix Q is')
+    print(Q)
+    print('The matrix R is')
+    print(R)
+    print('Check if QR=A')
+    print(Q*R==A)
+  </input>
+  <output>
+    
+  </output>
+</sage>  
 </activity>
 
 </section>

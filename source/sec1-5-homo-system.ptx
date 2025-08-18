@@ -127,9 +127,10 @@ are stated in the following Theorem.
                 \left\{\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix} :\alpha \in \R\right\}=\left\{\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\alpha\begin{pmatrix} 1\\-\frac{2}{3}\end{pmatrix} :\alpha \in \R\right\}.
                 </me>
                 Notice that tho two lines, <m>2x_1+3x_2=5</m> and <m>2x_1+3x_2=0</m> are parallel to each other. Plot the figure in Sage using the following Sage sybtax.
-            <p>
+    
                 <sage>
                     <input>
+                    <![CDATA[    
                     var('x,y')
                     l1 = implicit_plot(2*x+3*y==5,(x,-5,5),(y,-5,5),gridlines='minor')
                     l2= implicit_plot(2*x+3*y==0,(x,-5,5),(y,-5,5),color='red',gridlines='minor')
@@ -138,12 +139,13 @@ are stated in the following Theorem.
                     t0 =text('$(1,-\\frac{-2}{3})$',(1,-1.5),color='red')
                     t1 =text('$(0,-\\frac{5}{3})$',(1,5/3),color='blue')
                     show(l1+l2+p0+p1+t0+t1,axes=True,figsize=5)
+                    ]]>
                     </input>
                     <output>
                         
                     </output>
                 </sage>
-            </p>
+        
         </p>
             </example>
     
@@ -178,9 +180,9 @@ are stated in the following Theorem.
 
                     Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax.
                     
-                    <p>
                         <sage>
                             <input>
+                            <![CDATA[
                             var('x,y,z,t')
                             eq1 = 2*x-y-z-5
                             eq2 = x+y-2*z-7
@@ -191,12 +193,12 @@ are stated in the following Theorem.
                             plane20 = implicit_plot3d(eq2+7,(x,-5,5),(y,-5,5),(z,-5,5),color='red',opacity=0.4)
                             l0 = parametric_plot3d([t,t,t],(t,-5,5),color='black',thikness=15)
                             show(plane1+plane2+l1+plane10+plane20+l0,axes=True,frame=False)
+                            ]]>
                             </input>
                             <output>
                                 
                             </output>
                         </sage>
-                    </p>
 
                 </p>
             </p>

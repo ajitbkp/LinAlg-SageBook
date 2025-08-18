@@ -54,7 +54,7 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
 
 
 
-  <exercise xml:id="exer-2-1-100">
+  <activity xml:id="exer-2-1-100">
     <p> Try to prove the following.
     </p>
     <p>
@@ -127,7 +127,7 @@ This shows that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
 
 </solution>  
 
-</exercise>
+</activity>
 
 
 <example xml:id="sec2-1-matrix-spaces">
