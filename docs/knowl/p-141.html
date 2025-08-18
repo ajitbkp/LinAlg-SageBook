@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:30+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Geometrically, each equation in the non homogeneous system represents a plane and the solution is the line of intersection of the the two planes. Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax. <pre class="ptx-sagecell sagecell-sage" id="sage-38"><script type="text/x-sage">var('x,y,z,t')
+eq1 = 2*x-y-z-5
+eq2 = x+y-2*z-7
+plane1 = implicit_plot3d(eq1,(x,-5,5),(y,-5,5),(z,-5,5),opacity=0.4)
+plane2 = implicit_plot3d(eq2,(x,-5,5),(y,-5,5),(z,-5,5),color='red',opacity=0.4)
+l1 = parametric_plot3d([4+t,3+t,t],(t,-5,5),color='black',thikness=15)
+plane10 = implicit_plot3d(eq1+5,(x,-5,5),(y,-5,5),(z,-5,5),opacity=0.4)
+plane20 = implicit_plot3d(eq2+7,(x,-5,5),(y,-5,5),(z,-5,5),color='red',opacity=0.4)
+l0 = parametric_plot3d([t,t,t],(t,-5,5),color='black',thikness=15)
+show(plane1+plane2+l1+plane10+plane20+l0,axes=True,frame=False)
+</script></pre></p>
+<span class="incontext"><a href="sec1-5-hom-system.html#p-141" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:33+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Let us plot the graph of the surface defined by the following</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=\cos(u), y=\sin(u) + \cos(v), z=\sin(v), 0\leq  u\leq 2\pi,  -\pi\leq v\leq 
+\pi.
+\end{equation*}
+</div>
+<p class="continuation"><pre class="ptx-sagecell sagecell-sage" id="sage-382"><script type="text/x-sage">var('u,v')
+parametric_plot3d((cos(u), sin(u) + cos(v), sin(v)), 
+(u, 0, 2*pi), (v, -pi, pi),
+color='green', opacity=0.5, plot_points=[30,30])
+</script></pre></p>
+<span class="incontext"><a href="subsec-plotting-sage.html#p-1586" class="internal">in-context</a></span>
+</body>
+</html>

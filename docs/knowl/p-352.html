@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:30+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p><p>(i) Let us plot the linear span of a single vector <span class="process-math">\((3,2, -1)\)</span> in  <span class="process-math">\(\R^3\)</span> in Sage.</p> <p>Let us also plot the linear span of two vectors <span class="process-math">\((3,2, -1), (-1,1,2)\)</span> in <span class="process-math">\(\R^3\)</span> in Sage.</p> <p>This can be achieved by sage method 'parametric_plot3d' in sage.</p> <pre class="ptx-sagecell sagecell-sage" id="sage-60"><script type="text/x-sage">v = vector([3,2, -1])
+var('s')
+pv = plot(v,color='red',thickness=3)
+linspan = parametric_plot3d(s*v,(s,-2,2),axes=True,frame=False, color='black')
+linspan+pv
+</script></pre> <pre class="ptx-sagecell sagecell-sage" id="sage-61"><script type="text/x-sage">v1 = vector([3,2, -1])
+v2 = vector([-1,1,2])
+var('s,t')
+pv1 = plot(v1,color='red',thickness=5)
+pv2 = plot(v2,color='green',thickness=5)
+linspan = parametric_plot3d(s*v1+t*v2,(s,-3,3),(t,-3,3),axes=True,frame=False,opacity=0.4)
+linspan+pv1+pv2
+</script></pre></p>
+<span class="incontext"><a href="sec2-4-Sage.html#p-352" class="internal">in-context</a></span>
+</body>
+</html>

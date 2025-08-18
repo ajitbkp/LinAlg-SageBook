@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:29+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Basis and Dimension</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body id="changeme" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<p class="byline">Ajit Kumar</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-2-2-LI.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap2-Rn-Space.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec2-4-Sage.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-2-2-LI.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap2-Rn-Space.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec2-4-Sage.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="biography-1.html" data-scroll="biography-1" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1-lineq.html" data-scroll="chap1-lineq" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a><ul>
+<li><a href="sec1-1-elementary-operations.html" data-scroll="sec1-1-elementary-operations" class="internal">Elementary Row Operations</a></li>
+<li><a href="sec1-2-col-operations.html" data-scroll="sec1-2-col-operations" class="internal">Elementary Column Operations</a></li>
+<li><a href="sec1-3-echelon-form.html" data-scroll="sec1-3-echelon-form" class="internal">Echelon Forms</a></li>
+<li><a href="sec1-4-matrix-rank.html" data-scroll="sec1-4-matrix-rank" class="internal">Rank of Matrices</a></li>
+<li><a href="sec1-5-hom-system.html" data-scroll="sec1-5-hom-system" class="internal">Homogeneous System of Linear Equations</a></li>
+<li><a href="sec1-6-LU.html" data-scroll="sec1-6-LU" class="internal"><span class="process-math">\(LU\)</span>-Facotorization</a></li>
+<li><a href="sec1-7-exer.html" data-scroll="sec1-7-exer" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2-Rn-Space.html" data-scroll="chap2-Rn-Space" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a><ul>
+<li><a href="sec2-0-intro.html" data-scroll="sec2-0-intro" class="internal">Introduction</a></li>
+<li><a href="sec2-1-LinSpan.html" data-scroll="sec2-1-LinSpan" class="internal">Linear Spans</a></li>
+<li><a href="sec-2-2-LI.html" data-scroll="sec-2-2-LI" class="internal">Linear Dependence</a></li>
+<li><a href="sec-2-3-basis-dimension.html" data-scroll="sec-2-3-basis-dimension" class="active">Basis and Dimension</a></li>
+<li><a href="sec2-4-Sage.html" data-scroll="sec2-4-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3-LT.html" data-scroll="chap3-LT" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a><ul>
+<li><a href="sec3-1-LT.html" data-scroll="sec3-1-LT" class="internal">Introduction</a></li>
+<li><a href="sec3-2-LT.html" data-scroll="sec3-2-LT" class="internal">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></a></li>
+<li><a href="sec3-3-LT.html" data-scroll="sec3-3-LT" class="internal">Reflections and Projections</a></li>
+<li><a href="sec-LT-Geom.html" data-scroll="sec-LT-Geom" class="internal">Geometry of Linear Transformations</a></li>
+<li><a href="sec-sec3-5-LT-Sage.html" data-scroll="sec-sec3-5-LT-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4-Vector-Space.html" data-scroll="chap4-Vector-Space" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a><ul>
+<li><a href="sec4-1-VS.html" data-scroll="sec4-1-VS" class="internal">Introduction</a></li>
+<li><a href="sec4-2-Abst-VS.html" data-scroll="sec4-2-Abst-VS" class="internal">Vector Subspaces</a></li>
+<li><a href="sec4-3-linspan-VS.html" data-scroll="sec4-3-linspan-VS" class="internal">Linear Span</a></li>
+<li><a href="sec4-3-LI-VS.html" data-scroll="sec4-3-LI-VS" class="internal">Linear dependence and independence</a></li>
+<li><a href="sec4-5-basis-dim-VS.html" data-scroll="sec4-5-basis-dim-VS" class="internal">Basis and dimension</a></li>
+<li><a href="sec-sec4-5-VS-Sage.html" data-scroll="sec-sec4-5-VS-Sage" class="internal">Sage Computations</a></li>
+<li><a href="sec4-5-VS-Ex.html" data-scroll="sec4-5-VS-Ex" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-Eigen.html" data-scroll="chap5-Eigen" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a><ul>
+<li><a href="sec5-1-eigen-intro.html" data-scroll="sec5-1-eigen-intro" class="internal">Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-2-diagonalization.html" data-scroll="sec5-2-diagonalization" class="internal">Diagonalization</a></li>
+<li><a href="sec5-5-Eigen-Sage.html" data-scroll="sec5-5-Eigen-Sage" class="internal">Eigenvalues and Eigenvectors in Sage</a></li>
+<li><a href="sec5-3-eigen-Appl.html" data-scroll="sec5-3-eigen-Appl" class="internal">Applications of Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-4-eigen-exer.html" data-scroll="sec5-4-eigen-exer" class="internal">Exercises on Eigenvalues and Eigenvectors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-orthogonality.html" data-scroll="chap5-orthogonality" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec6-0-orthogonality.html" data-scroll="sec6-0-orthogonality" class="internal">Orthogonality</a></li>
+<li><a href="sec6-1-GramSchmidt.html" data-scroll="sec6-1-GramSchmidt" class="internal">Gram-Schmidt Orthogonalization Process</a></li>
+<li><a href="sec6-2.html" data-scroll="sec6-2" class="internal">Orthogonal Complements</a></li>
+<li><a href="sec6-3.html" data-scroll="sec6-3" class="internal">Orthogonal Diagonalizations</a></li>
+<li><a href="sec6-4.html" data-scroll="sec6-4" class="internal">QR-Factorization</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7-inner-product.html" data-scroll="chap7-inner-product" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a><ul>
+<li><a href="sec7-1-InnerProduct.html" data-scroll="sec7-1-InnerProduct" class="internal">Inner Product</a></li>
+<li><a href="sec7-2-Exer.html" data-scroll="sec7-2-Exer" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap8-Least-Square.html" data-scroll="chap8-Least-Square" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a><ul><li><a href="sec8-1-LSTSQ.html" data-scroll="sec8-1-LSTSQ" class="internal">Least Square Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="chap9-SVD.html" data-scroll="chap9-SVD" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a><ul><li><a href="sec9-1-SVD.html" data-scroll="sec9-1-SVD" class="internal">Singular Value Decomposition</a></li></ul>
+</li>
+<li class="link">
+<a href="chap10-PCA.html" data-scroll="chap10-PCA" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a><ul>
+<li><a href="sec10-1-PCA.html" data-scroll="sec10-1-PCA" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec10-2.html" data-scroll="sec10-2" class="internal">Applications of PCA</a></li>
+<li><a href="sec10-3.html" data-scroll="sec10-3" class="internal">Sage Practice Area</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link">
+<a href="appendix-sage-into.html" data-scroll="appendix-sage-into" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a><ul>
+<li><a href="subsection-47.html" data-scroll="subsection-47" class="internal">Introduction to SageMath</a></li>
+<li><a href="getting-started-sagemath.html" data-scroll="getting-started-sagemath" class="internal">Getting Started with Sage</a></li>
+<li><a href="subsec-sage-programming.html" data-scroll="subsec-sage-programming" class="internal">Programming in Sage</a></li>
+<li><a href="subsec-plotting-sage.html" data-scroll="subsec-plotting-sage" class="internal">Plotting in Sage</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-2-3-basis-dimension"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Basis and Dimension</span>
+</h2>
+<section class="introduction" id="introduction-8"><p id="p-286">In this section, we define basis of a subspace and also deal with coordinates of a vector with respect to a basis.</p></section><section class="subsection" id="subsec-basis-intro"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Basis</span>
+</h3>
+<article class="definition definition-like" id="def-sec2-2-LI"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Basis.</span>
+</h4>
+<p id="p-287">A set of vectors <span class="process-math">\(\beta=\{v_1,v_2,\ldots,v_n\}\)</span> is called a <em class="alert">basis</em> of <span class="process-math">\(\R^n\)</span> if every vector <span class="process-math">\(v\in \R^n\)</span> can be  expressed uniquely as  linear combinations of <span class="process-math">\(v_1,v_2,\ldots,v_n\text{.}\)</span> Thus <span class="process-math">\(\beta\)</span> is basis of <span class="process-math">\(\R^n\)</span> if <p id="p-288">(i) <span class="process-math">\(L(\beta)=\R^n\text{,}\)</span> that every vector <span class="process-math">\(v\in \R^n\)</span> can be expressed as linear combinations of <span class="process-math">\(v_1,v_2,\ldots,v_n\text{.}\)</span></p> <p id="p-289">(ii) If <span class="process-math">\(v=\alpha_1v_1+\alpha_2v_2+\cdots +\alpha_nv_n\)</span> and <span class="process-math">\(v=\beta_1v_1+\beta_2v_2+\cdots +\beta_nv_n\text{,}\)</span> then <span class="process-math">\(\alpha_1=\beta_1, \alpha_2=\beta_2=\cdots,\alpha_n=\beta_n\text{.}\)</span></p> <p id="p-290">Similarly one can define a basis of any subspace of <span class="process-math">\(\R^n\text{.}\)</span></p></p></article><p id="p-291">It is easy to prove the follwoing theorem which is opent taken as definition in many books.</p>
+<article class="theorem theorem-like" id="thm-sec2-3-basis-thm1"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+</h4>
+<p id="p-292">A set of vectors <span class="process-math">\(\beta=\{v_1,v_2,\ldots,v_n\}\)</span> is called a basis of <span class="process-math">\(\R^n\)</span> iff (i) <span class="process-math">\(L(\beta)=\R^n\)</span>and <span class="process-math">\(\beta\)</span> is linearly independent.</p></article><article class="example example-like" id="example-33"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+</h4>
+<p id="p-293">(i) <span class="process-math">\(\{(1,0),(0,1)\}\)</span> is a basis of <span class="process-math">\(\R^2\)</span> called the standard basis of <span class="process-math">\(\R^2\text{.}\)</span></p>
+<p id="p-294">(ii) <span class="process-math">\(\{(1,-1),(2,1)\}\)</span> is a basis of <span class="process-math">\(\R^2\text{.}\)</span></p>
+<p id="p-295">(iii) <span class="process-math">\(\{(1,0,0),(0,1,0),(0,0,1)\}\)</span> is a basis of <span class="process-math">\(\R^3\)</span> called the standard basis of <span class="process-math">\(\R^3\text{.}\)</span></p>
+<p id="p-296">(iv) <span class="process-math">\(\{(1,1,-1),(-1,1,1),(1,-1,1)\}\)</span> is a basis of <span class="process-math">\(\R^3\text{.}\)</span></p></article><p id="p-297">In <span class="process-math">\(\R^n\text{,}\)</span> we define <span class="process-math">\(e_i:=(0,\ldots, 1,\ldots,0)\)</span> where <span class="process-math">\(i\)</span> component is 1 rest are zeros. Then it is easy to see that <span class="process-math">\(\{e_1,\ldots, e_n\}\)</span> is a bais of  <span class="process-math">\(\R^n\)</span> called the <em class="alert">standard basis</em>.</p>
+<article class="example example-like" id="example-34"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+</h4>
+<p id="p-298">Consider the plane <span class="process-math">\(W=\{(x_1,x_2,x_3)\in \R^3:x_1+2x_2-x_3=0\}\text{.}\)</span> Note that, here <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> can be thought of as free variables. Any point <span class="process-math">\((x_1,x_2,x_3)\in W\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(x_1,x_2,x_3)=(x_1,x_2,x_1+2x_2)=(\alpha,\beta,\alpha+2\beta)=\alpha(1,0,1)+\beta(0,1,2).
+\end{equation*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(\{(1,0,1),(0,1,2)\}\)</span> spans <span class="process-math">\(W\text{.}\)</span> It is easy to see that <span class="process-math">\(\{(1,0,1),(0,1,2)\}\)</span> is linearly independent. Hence <span class="process-math">\(\beta =\{(1,0,1),(0,1,2)\}\)</span> is a basis of <span class="process-math">\(W\text{.}\)</span> In fact, any two vectors in <span class="process-math">\(W\)</span> which are linearly independent form a basis of <span class="process-math">\(W\text{.}\)</span></p></article><article class="theorem theorem-like" id="thm-sec2-3-thm3"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
+</h4>
+<p id="p-299">Any set of <span class="process-math">\(n\)</span> linearly independent vectors forms a basis of <span class="process-math">\(\R^n\text{.}\)</span></p></article><article class="hiddenproof" id="proof-7"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-7"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><p id="p-300">Follows from Theorem <a href="" class="xref" data-knowl="./knowl/thm-sec2-2-thm2.html" title="Theorem 2.3.3">Theorem 2.3.3</a>.</p></article></div>
+<article class="theorem theorem-like" id="thm-sec2-3-thm4"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span>
+</h4>
+<p id="p-301">Let <span class="process-math">\(\beta=\{u_1,u_2,\ldots,u_k\}\)</span> be a basis of a subsapce <span class="process-math">\(W\)</span>  of <span class="process-math">\(\R^n\)</span> with <span class="process-math">\(k\)</span> elements. Then any set <span class="process-math">\(S=\{v_1,v_2,\ldots, v_{k+1}\}\subset W\)</span> with <span class="process-math">\(k+1\)</span> elements is linearly dependent.</p></article><article class="hiddenproof" id="proof-8"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-8"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><p id="p-302">Let <span class="process-math">\(\alpha_1,\ldots,\alpha_{k+1}\)</span> be scalars such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-3-eq1.html ./knowl/sec2-3-eq2.html" id="sec2-3-eq1">
+\begin{equation}
+\alpha_1 v_1+\alpha_2v_2+\cdots+\alpha_kv_k+\alpha_{k+1}v_{k+1}=0\tag{2.4.1}
+\end{equation}
+</div>
+<p class="continuation">Since <span class="process-math">\(\beta\)</span> is a basis of <span class="process-math">\(W\text{,}\)</span> for each <span class="process-math">\(i=1,2,\ldots, k+1\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-3-eq1.html ./knowl/sec2-3-eq2.html">
+\begin{equation*}
+v_i = \sum_{j=1}^k a_{ij}u_j
+\end{equation*}
+</div>
+<p class="continuation">Substituting this in Equation <a href="" class="xref" data-knowl="./knowl/sec2-3-eq1.html" title="Equation 2.4.1">(2.4.1)</a>, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-3-eq1.html ./knowl/sec2-3-eq2.html" id="sec2-3-eq2">
+\begin{equation}
+\alpha_1 \left(\sum_{j=1}^k a_{1j}u_j\right)+\cdots+
+\alpha_{k+1}\left(\sum_{j=1}^k a_{k+1j}u_j\right)=0\tag{2.4.2}
+\end{equation}
+</div>
+<p class="continuation">Collecting the coefficients of <span class="process-math">\(u_i's\)</span> in the Equation <a href="" class="xref" data-knowl="./knowl/sec2-3-eq2.html" title="Equation 2.4.2">(2.4.2)</a>, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-3-eq1.html ./knowl/sec2-3-eq2.html" id="sec2-3-eq3">
+\begin{equation}
+\left(\sum \alpha_ia_{i1}\right)u_1+\cdots +
+\left(\sum \alpha_ia_{ik+1}\right)u_{k+1}=0.\tag{2.4.3}
+\end{equation}
+</div>
+<p class="continuation">Since<span class="process-math">\(\beta\)</span> is lineary independent, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-3-eq1.html ./knowl/sec2-3-eq2.html" id="md-15">
+\begin{align*}
+\alpha_1 a_{11}+\alpha_2a_{21}+\cdots+\alpha_{k+1}a_{k+11} =\amp 0 \\
+\alpha_1 a_{12}+\alpha_2a_{22}+\cdots+\alpha_{k+1}a_{k+12} =\amp 0 \\
+\vdots  \amp  \\
+\alpha_1 a_{1k}+\alpha_2a_{2k}+\cdots+\alpha_{k+1}a_{k+1k} =\amp 0 
+\end{align*}
+</div> These are <span class="process-math">\(k\)</span> homogeneous linear equations in <span class="process-math">\(k+1\)</span> variables <span class="process-math">\(\alpha_1,\ldots,\alpha_{k+1}\text{.}\)</span> Hence it has a non zero solution. In particular, there exist scalars,  <span class="process-math">\(\alpha_1,\ldots,\alpha_{k+1}\)</span> not all zero such that <span class="process-math">\(\alpha_1 v_1+\alpha_2v_2+\cdots+\alpha_kv_k+\alpha_{k+1}v_{k+1}=0\text{.}\)</span> Hence <span class="process-math">\(S\)</span> is linearly dependent.</article></div>
+<article class="corollary theorem-like" id="sec2-3-cor1"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span>
+</h4>
+<p id="p-303">Let <span class="process-math">\(\beta=\{v_1,v_2,\ldots,v_k\}\)</span> be a basis of a subscape <span class="process-math">\(W\)</span>  of <span class="process-math">\(\R^n\)</span> with <span class="process-math">\(k\)</span> elements. If <span class="process-math">\(S\)</span> is a linearly independet subset in <span class="process-math">\(W\text{,}\)</span> then <span class="process-math">\(|S|\leq k\text{.}\)</span></p></article><article class="theorem theorem-like" id="thm-sec2-3-thm5"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span>
+</h4>
+<p id="p-304">Let <span class="process-math">\(\beta\)</span> and <span class="process-math">\(\gamma\)</span> be two bases of  a subscape <span class="process-math">\(W\)</span>  of <span class="process-math">\(\R^n\text{.}\)</span> Then <span class="process-math">\(\beta\)</span> and <span class="process-math">\(\gamma\)</span> have the same number of elements.</p></article><article class="hiddenproof" id="proof-9"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><p id="p-305">Suppose <span class="process-math">\(|\beta|=r\)</span> and <span class="process-math">\(|\gamma|=s\text{.}\)</span>  Since <span class="process-math">\(\beta\)</span> is a basis and <span class="process-math">\(\gamma\)</span> is linearly independet, by Corollary <a href="" class="xref" data-knowl="./knowl/sec2-3-cor1.html" title="Corollary 2.4.7">Corollary 2.4.7</a>, <span class="process-math">\(s\leq r\text{.}\)</span> Similarly <span class="process-math">\(\gamma\)</span> is a basis and <span class="process-math">\(\beta\)</span> is linearly independet, we have <span class="process-math">\(s\leq r\text{.}\)</span> Hence <span class="process-math">\(r=s\text{.}\)</span></p></article></div></section><section class="subsection" id="subsec-dimension-intro"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">Dimension of Subspaces</span>
+</h3>
+<p id="p-306">Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.</p>
+<article class="definition definition-like" id="def-sec2-3-dimension"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span>
+</h4>
+<p id="p-307">Let <span class="process-math">\(W\)</span> be subspace of <span class="process-math">\(\R^n\text{.}\)</span> The number of elements in a basis of <span class="process-math">\(W\)</span> is called the <em class="alert">dimension</em> of <span class="process-math">\(W\text{.}\)</span></p></article><article class="example example-like" id="example-35"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.10</span><span class="period">.</span>
+</h4>
+<p id="p-308">(i) <span class="process-math">\(\R^n\)</span> is a <span class="process-math">\(n\)</span>-dimensional vector space over <span class="process-math">\(\R\text{.}\)</span></p>
+<p id="p-309">(ii) Any plane passing through origin in <span class="process-math">\(\R^3\)</span> is a 2 dimensional subspace.</p>
+<p id="p-310">(iii) <span class="process-math">\(W:=\{(x_1,\ldots,x_n):x_1+\cdots+x_n=0\}\)</span> is <span class="process-math">\(n-1\)</span> dimensional subspace of <span class="process-math">\(\R^n\text{.}\)</span> Write down a basis of <span class="process-math">\(W\text{.}\)</span></p>
+<p id="p-311">(iv) <span class="process-math">\(W=\{(x_1,x_2,x_3,x_4)\in \R^4:x_1=x_3,x_2=x_4\}\)</span> is a 2-dimensional subspace of <span class="process-math">\(\R^4\text{.}\)</span> Write down a basis of <span class="process-math">\(W\text{.}\)</span></p></article><p id="p-312"><em class="alert">How to find basis of a subspace <span class="process-math">\(L(S)\text{?}\)</span></em></p>
+<p id="p-313">Suppose  <span class="process-math">\(W\)</span> is subspace spanned by a set of <span class="process-math">\(k\)</span> vectors, say, <span class="process-math">\(v_1,\ldots,v_k\)</span> in <span class="process-math">\(\R^n\text{.}\)</span> How to find a basis of <span class="process-math">\(W\text{?}\)</span> Note that <span class="process-math">\(\dim{(W)}\leq k\text{.}\)</span> In order to find a basis of <span class="process-math">\(W\text{,}\)</span> we construct a matrix <span class="process-math">\(A\)</span> whose rows are <span class="process-math">\(v_1, \ldots, v_k\text{.}\)</span> Find the reduced-row-echelon form  of <span class="process-math">\(A\text{.}\)</span> Then the non-zero rows in RREF(<span class="process-math">\(A\)</span>) form a basis of <span class="process-math">\(W\text{.}\)</span></p>
+<article class="example example-like" id="example-36"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.11</span><span class="period">.</span>
+</h4>
+<p id="p-314">Consider the set of vectors <span class="process-math">\(v_1 =\left(1,-1,2,3,1,4\right)\text{,}\)</span> <span class="process-math">\(v_2=\left(2,1,0,2,-3,1\right)\text{,}\)</span> <span class="process-math">\(v_3=\left(-4,-5,4,0,11,5\right)\text{,}\)</span> <span class="process-math">\(v_4=\left(-1,0,2,1,3,2\right)\)</span> and <span class="process-math">\(v_5=\left(-2,-2,4,2,7,5\right)\text{.}\)</span> Let <span class="process-math">\(W\)</span> be the linear span of <span class="process-math">\(\{v_1,v_2,v_3,v_4,v_5\}\text{.}\)</span> Let us find a basis and hence the dimension of <span class="process-math">\(W\text{.}\)</span></p>
+<p id="p-315">We construct the matrix <span class="process-math">\(A\)</span> whose rows are <span class="process-math">\(\{v_1,v_2,v_3,v_4,v_5\}\)</span> and apply RREF.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+RREF\left(\left[\begin{array}{rrrrrr}
+1 \amp  -1 \amp  2 \amp  3 \amp  1 \amp  4 \\
+2 \amp  1 \amp  0 \amp  2 \amp  -3 \amp  1 \\
+-4 \amp  -5 \amp  4 \amp  0 \amp  11 \amp  5 \\
+-1 \amp  0 \amp  2 \amp  1 \amp  3 \amp  2 \\
+-2 \amp  -2 \amp  4 \amp  2 \amp  7 \amp  5
+\end{array}\right]\right)=\left[\begin{array}{rrrrrr}
+1 \amp  0 \amp  0 \amp  1 \amp  -\frac{5}{4} \amp  \frac{3}{4} \\
+0 \amp  1 \amp  0 \amp  0 \amp  -\frac{1}{2} \amp  -\frac{1}{2} \\
+0 \amp  0 \amp  1 \amp  1 \amp  \frac{7}{8} \amp  \frac{11}{8} \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(W\)</span> has a basis consisting of three non zero rows of <span class="process-math">\(RREF(A)\text{.}\)</span> That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\beta = \left\{\left(1 , 0 , 0 , 1 , -\frac{5}{4} , \frac{3}{4}\right),
+\left(0 , 1 , 0 , 0 , -\frac{1}{2} , -\frac{1}{2}\right),
+\left(0 , 0 , 1 , 1 , \frac{7}{8} , \frac{11}{8}\right)\right\}
+\end{equation*}
+</div>
+<p class="continuation">is basis of <span class="process-math">\(W\)</span> and it is a 3 dimensional subspace of <span class="process-math">\(\R^6\text{.}\)</span> Note that <span class="process-math">\(W\)</span> is also the row space of <span class="process-math">\(A\text{.}\)</span> <p id="p-316">Note that each column of <span class="process-math">\(A\)</span> is a vector in <span class="process-math">\(\R^5\text{.}\)</span> Let us find the column space of <span class="process-math">\(A\text{.}\)</span> Thus to find the <span class="process-math">\({\rm col}(A)\text{,}\)</span> we take the transpose of <span class="process-math">\(A\)</span> and apply the RREF.</p></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+RREF\left(\left[\begin{array}{rrrrr}
+1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\
+-1 \amp  1 \amp  -5 \amp  0 \amp  -2 \\
+2 \amp  0 \amp  4 \amp  2 \amp  4 \\
+3 \amp  2 \amp  0 \amp  1 \amp  2 \\
+1 \amp  -3 \amp  11 \amp  3 \amp  7 \\
+4 \amp  1 \amp  5 \amp  2 \amp  5
+\end{array}\right]\right)=
+\left[\begin{array}{rrrrr}
+1 \amp  0 \amp  2 \amp  0 \amp  1 \\
+0 \amp  1 \amp  -3 \amp  0 \amp  -1 \\
+0 \amp  0 \amp  0 \amp  1 \amp  1 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">Thus the basis <span class="process-math">\(\gamma\)</span> of  <span class="process-math">\({\rm col}(A)\)</span> consists of three non-zero rows of <span class="process-math">\(RREF(A^T)\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\gamma=\{(1,0,2,0,1),(0,1,-3,0,-1),(0,0,0,1,1)\}
+\end{equation*}
+</div>
+<p class="continuation">is a basis of <span class="process-math">\({\rm col}(A)\text{.}\)</span> Notice that <span class="process-math">\(\dim{({\rm col}(A))}=\dim{({\rm row}(A))}\text{.}\)</span></p></article><article class="definition definition-like" id="def-row-column-rank"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.12</span><span class="period">.</span>
+</h4>
+<p id="p-317">The <span class="process-math">\(\dim{({\rm col}(A))}\)</span> is called the <em class="alert">column rank</em> of <span class="process-math">\(A\)</span> and <span class="process-math">\(\dim{({\rm row}(A))}\)</span> is called the <em class="alert">row rank</em> of <span class="process-math">\(A\text{.}\)</span></p></article><article class="theorem theorem-like" id="thm-row-rank-col-rank"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.13</span><span class="period">.</span>
+</h4>
+<p id="p-318">The row rank and column rank of any matrix are same. This is called the rank of the matrix.</p></article><article class="example example-like" id="example-37"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.14</span><span class="period">.</span>
+</h4>
+<p id="p-319">Consider a matrix <span class="process-math">\(A=\left[\begin{array}{rrrrr}
+1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\
+-1 \amp  1 \amp  -5 \amp  0 \amp  -2 \\
+2 \amp  0 \amp  4 \amp  2 \amp  4 \\
+3 \amp  2 \amp  0 \amp  1 \amp  2 \\
+1 \amp  -3 \amp  11 \amp  3 \amp  7 \\
+4 \amp  1 \amp  5 \amp  2 \amp  5
+\end{array}\right]\text{.}\)</span> Let us find the null space of <span class="process-math">\(A\text{.}\)</span> That is,  find a basis of <span class="process-math">\({\cal N}(A)\text{.}\)</span> The null space of <span class="process-math">\(A\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-16">
+\begin{align*}
+{\cal N}(A) =\amp  \{x\in \R^5:Ax=0\}\\
+=\amp  \left\{\begin{bmatrix} x_1\\x_2\\\vdots\\x_5\end{bmatrix}: 
+\left[\begin{array}{rrrrr}
+1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\
+-1 \amp  1 \amp  -5 \amp  0 \amp  -2 \\
+2 \amp  0 \amp  4 \amp  2 \amp  4 \\
+3 \amp  2 \amp  0 \amp  1 \amp  2 \\
+1 \amp  -3 \amp  11 \amp  3 \amp  7 \\
+4 \amp  1 \amp  5 \amp  2 \amp  5
+\end{array}\right]\begin{bmatrix} x_1\\x_2\\\vdots\\x_5\end{bmatrix}=\begin{bmatrix} 0\\0\\\vdots\\0\end{bmatrix}
+\right\}\\
+=\amp \left\{\begin{bmatrix} x_1\\x_2\\\vdots\\x_5\end{bmatrix}: 
+\left[\begin{array}{rrrrr}
+1 \amp  0 \amp  2 \amp  0 \amp  1 \\
+0 \amp  1 \amp  -3 \amp  0 \amp  -1 \\
+0 \amp  0 \amp  0 \amp  1 \amp  1 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0
+\end{array}\right]
+\begin{bmatrix} x_1\\x_2\\\vdots\\x_5\end{bmatrix}=\begin{bmatrix} 0\\0\\\vdots\\0\end{bmatrix}
+\right\}\quad \text{using RREF}\\
+=\amp 
+\left\{\begin{bmatrix} x_1\\x_2\\\vdots\\x_5\end{bmatrix}: 
+x_1+2x_3+x_5=0, x_2-3x_3-x_5=0,x_4+x_5=0
+\right\}\\
+=\amp 
+\left\{\begin{bmatrix} \alpha\\\beta\\\alpha+\beta\\2\alpha+\beta\\-2\alpha-\beta\end{bmatrix}:\alpha,\beta\in\R \right\}\\
+=\amp  
+\left\{
+\alpha \begin{bmatrix} 
+1 \\0\\1\\3\\-3\end{bmatrix}+\beta\begin{bmatrix} 
+0 \\1\\1\\2\\-2\end{bmatrix}:\alpha,\beta\in\R 
+\right\}
+\end{align*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(\dim{{\cal N}(A)}=2\)</span> and <span class="process-math">\(\delta =\{(1,0,1,3,-3),(0,1,1,2,-2)\}\)</span> is a basis of <span class="process-math">\({\cal N}(A)\text{.}\)</span> <p id="p-320">The <span class="process-math">\(\dim{{\cal N}(A)}\)</span> is called the nullity of <span class="process-math">\(A\text{.}\)</span> Notice that for this matrix</p><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+{\rm nullity}(A)+{\rm rank}(A)=\text{ number of columns of }A.
+\end{equation*}
+</div><p class="continuation">This is true for any matrix <span class="process-math">\(A\text{.}\)</span></p></p></article><article class="example example-like" id="example-38"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.15</span><span class="period">.</span>
+</h4>
+<p id="p-321">Consider the matrix <span class="process-math">\(A=\left[\begin{array}{rrrrrr}
+1 \amp  -1 \amp  2 \amp  3 \amp  1 \amp  4 \\
+2 \amp  1 \amp  0 \amp  2 \amp  -3 \amp  1 \\
+-4 \amp  -5 \amp  4 \amp  0 \amp  11 \amp  5 \\
+-1 \amp  0 \amp  2 \amp  1 \amp  3 \amp  2 \\
+-2 \amp  -2 \amp  4 \amp  2 \amp  7 \amp  5
+\end{array}\right]\text{.}\)</span> Let us find the image space, <span class="process-math">\({\cal R}(A)\)</span> of <span class="process-math">\(A\text{.}\)</span> Let <span class="process-math">\(b = \begin{bmatrix} b_1\\b_2\\b_3\\b_4\\b_5\end{bmatrix}\in {\cal R}(A)\)</span> lies in then there exists <span class="process-math">\(x\in\R^6\)</span> such that <span class="process-math">\(Ax=b\text{,}\)</span> In particular <span class="process-math">\(Ax=b\)</span> has a solution. Thus to find a solution we apply the RREF to the augmented matrix <span class="process-math">\([A|b]\text{.}\)</span> It is easy to see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+RREF(A)=
+\left[\begin{array}{rrrrrrr}
+1 \amp  0 \amp  0 \amp  1 \amp  -\frac{5}{4} \amp  \frac{3}{4} \amp  \frac{1}{4} b_{1} + \frac{1}{4} b_{2} - \frac{1}{4} b_{4} \\
+0 \amp  1 \amp  0 \amp  0 \amp  -\frac{1}{2} \amp  -\frac{1}{2} \amp  -\frac{1}{2} b_{1} + \frac{1}{2} b_{2} + \frac{1}{2} b_{4} \\
+0 \amp  0 \amp  1 \amp  1 \amp  \frac{7}{8} \amp  \frac{11}{8} \amp  \frac{1}{8} b_{1} + \frac{1}{8} b_{2} + \frac{3}{8} b_{4} \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  -2 b_{1} + 3 b_{2} + b_{3} \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  -b_{1} + b_{2} - b_{4} + b_{5}
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">This means that <span class="process-math">\(Ax=b\)</span> has a solution iff</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-2 b_{1} + 3 b_{2} + b_{3}=0 \text{ and }-b_{1} + b_{2} - b_{4} + b_{5}=0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Solving these equations, it is easy to see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-17">
+\begin{align*}
+{\cal R}(A)=\amp \left\{\begin{bmatrix}
+b_1\\b_2\\b_3\\b_4\\b_5
+\end{bmatrix}: -2 b_{1} + 3 b_{2} + b_{3}=0, -b_{1} + b_{2} - b_{4} + b_{5}=0\right\}\\
+=\amp  \left\{\begin{bmatrix}
+b_1\\b_2\\2b_1-3b_2\\b_4\\b_1-b_2+b4
+\end{bmatrix}:b_1,b_2,b_4\in \R\right\}\\
+=\amp \left\{b_1\begin{bmatrix}1\\0\\2\\0\\1\end{bmatrix}+
+b_2\begin{bmatrix}0\\1\\-3\\0\\-1\end{bmatrix}+
+b_4\begin{bmatrix}0\\0\\0\\1\\1\end{bmatrix}:b_1,b_2,b_4\in \R\right\}
+\end{align*}
+</div>
+<p class="continuation">Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left\{\begin{bmatrix}1\\0\\2\\0\\1\end{bmatrix},
+\begin{bmatrix}0\\1\\-3\\0\\-1\end{bmatrix},
+\begin{bmatrix}0\\0\\0\\1\\1\end{bmatrix}
+\right\}
+\end{equation*}
+</div>
+<p class="continuation">is a basis of <span class="process-math">\({\cal R}(A)\)</span> which is same as the column space of <span class="process-math">\(A\text{.}\)</span> Note that <span class="process-math">\({\cal R}(A)\)</span> is null space of the matrix <span class="process-math">\(\begin{bmatrix} -2 \amp  3 \amp  1 \amp  0 \amp  0\\-1\amp  1\amp  0 \amp -1 \amp  1 \end{bmatrix}\text{.}\)</span></p></article><article class="theorem theorem-like" id="sec2-3-thm-rank-nullity"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.16</span><span class="period">.</span>
+</h4>
+<p id="p-322">Let <span class="process-math">\(A \)</span> be <span class="process-math">\(m\times n\)</span> real matrix. Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+{\rm rank}(A)+{\rm nullity}(A)=n\text{.}
+\end{equation*}
+</div></article><article class="definition definition-like" id="def-sec2-1-coordinates"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.17</span><span class="period">.</span>
+</h4>
+<p id="p-323">Let <span class="process-math">\(\beta =\{v_1,v_2,\ldots, v_n\}\)</span>be a basis of <span class="process-math">\(\R^n\text{.}\)</span> Let <span class="process-math">\(x\in \R^n\text{.}\)</span> Then we know that there exists unique scalars <span class="process-math">\(x_1,\ldots, x_n\)</span> such that <span class="process-math">\(x=x_1v_1+x_2v_2+\cdots+x_nv_n\text{.}\)</span> Then <span class="process-math">\(x_1,\ldots, x_n\)</span> are called the <em class="alert">coordinates</em> of <span class="process-math">\(x\)</span> with respect to the basis <span class="process-math">\(\beta\text{.}\)</span></p></article><p id="p-324">Notice that the order in which basis vectors appear is important. Suppose <span class="process-math">\(\beta'=\{v_2,v_2,v_3\ldots, v_n\}\text{.}\)</span> Then <span class="process-math">\(\beta'\)</span> is also a basis of <span class="process-math">\(\R^n\text{.}\)</span> However the coordinates of <span class="process-math">\(x\)</span> with respect to the basis <span class="process-math">\(\beta'\)</span> is <span class="process-math">\(x_2,x_1,x_3,\ldots,x_n\text{.}\)</span> This is the reason basis of <span class="process-math">\(\R^n\)</span> is called an <em class="alert">ordered basis</em>. By a basis we will always mean an ordered basis.</p>
+<p id="p-325"><em class="alert">How to find the coordinates of a vector w.r.t. a given basis?</em></p>
+<p id="p-326">Suppose <span class="process-math">\(\beta=\{v_1,v_2,\ldots, v_n\}\)</span> be a basis of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(v\in \R^n\text{.}\)</span> How to find the coordinates of <span class="process-math">\(v\)</span> with respect to <span class="process-math">\(\beta\text{?}\)</span> Let <span class="process-math">\(v =x_1v_1+x_2v_2+\cdots+x_nv_n\text{.}\)</span> We need to find <span class="process-math">\(x_1,\cdots, x_n\text{.}\)</span> Note that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v = x_1v_1+x_2v_2+\cdots+x_nv_n=
+\begin{bmatrix} v_1\amp  v_2\cdots\amp v_n\end{bmatrix}
+\begin{bmatrix}	x_1\\x_2\\\vdots\\x_n\end{bmatrix}=Ax.
+\end{equation*}
+</div>
+<p class="continuation">Thus to find <span class="process-math">\(x\text{,}\)</span> we need to solve <span class="process-math">\(Ax=v\text{,}\)</span> where <span class="process-math">\(A\)</span> is the matrix whose columns are <span class="process-math">\(v_1,\ldots, v_n\text{.}\)</span> This can be done using the RREF. Let us illustrate this with few examples.</p>
+<article class="example example-like" id="example-39"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.18</span><span class="period">.</span>
+</h4>
+<p id="p-327">If <span class="process-math">\(x=(x_1,\ldots,x_n)\in \R^n\text{.}\)</span> Then <span class="process-math">\(x=x_1e_1+x_2e_2+\cdots+x_ne_n\text{.}\)</span> In particular <span class="process-math">\(x_1,x_2,\ldots, x_n\)</span> is the coordinate of <span class="process-math">\(x\)</span> with respect to the standard basis <span class="process-math">\(\{e_1,e_2,\ldots,e_n\}\text{.}\)</span></p></article><article class="example example-like" id="example-40"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.19</span><span class="period">.</span>
+</h4>
+<p id="p-328">Consider a basis <span class="process-math">\(\beta=\{(1,-1),(2,1)\}\text{.}\)</span> Find the coordinates of <span class="process-math">\(v=(2,3)\)</span> with respect to <span class="process-math">\(\beta\text{.}\)</span>  In order to find the coordinates of <span class="process-math">\(v\)</span> with respect to <span class="process-math">\(\beta\text{,}\)</span> we solve the system <span class="process-math">\(Ax=b\)</span> where <span class="process-math">\(A=\begin{bmatrix} 1 \amp  2\\-1\amp  1\end{bmatrix}\)</span> and <span class="process-math">\(b = \begin{bmatrix} 2\\3\end{bmatrix}\text{.}\)</span> Using RREF</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+[A~|~b]\xrightarrow{RREF} \left[\begin{array}{rr|r}
+1 \amp  0 \amp  -\frac{4}{3} \\
+0 \amp  1 \amp  \frac{5}{3}
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">Hence the coordinates of <span class="process-math">\(v\)</span> w.r.t. <span class="process-math">\(\beta\)</span> is <span class="process-math">\((-4/3,5/3)\text{.}\)</span></p></article><article class="example example-like" id="example-41"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.20</span><span class="period">.</span>
+</h4>
+<p id="p-329">Find the coordinates of the vector <span class="process-math">\((1,2,3)\)</span> with respect to a basis\\ <span class="process-math">\(\beta=\{(1,-1,1),(1,1,-1),(-1,1,1)\}\)</span> of <span class="process-math">\(\R^3\text{.}\)</span> Using the RREF we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rrr|r}
+1 \amp  1 \amp  -1 \amp  1 \\
+-1 \amp  1 \amp  1 \amp  2 \\
+1 \amp  -1 \amp  1 \amp  3
+\end{array}\right] \xrightarrow{RREF} 
+\left[\begin{array}{rrr|r}
+1 \amp  0 \amp  0 \amp  2 \\
+0 \amp  1 \amp  0 \amp  \frac{3}{2} \\
+0 \amp  0 \amp  1 \amp  \frac{5}{2}
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">Hence the coordinates of <span class="process-math">\((1,2,3)\)</span> with respect the given basis is <span class="process-math">\((2,3/2,5/2)\text{.}\)</span></p></article><article class="example example-like" id="example-42"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.21</span><span class="period">.</span>
+</h4>
+<p id="p-330">Find the coordinates of the vector <span class="process-math">\((1,2,3,4)\)</span> with respect to a basis <span class="process-math">\(\beta=\{(1,-1,1,1),(1,1,-1,1),(1,1,-1,1),(-1,1,1,1)\}\)</span> of <span class="process-math">\(\R^4\text{.}\)</span> Using the RREF we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rrrr|r}
+1 \amp  1 \amp  1 \amp  -1 \amp  1\\
+-1 \amp  1 \amp  1 \amp  1  \amp  2\\
+1 \amp  -1 \amp  1 \amp  1 \amp  3\\
+1 \amp  1 \amp  -1 \amp  1 \amp  4
+\end{array}\right] \xrightarrow{RREF} 
+\left[\begin{array}{rrrr|r}
+1 \amp  0 \amp  0 \amp  0 \amp  \frac{3}{2} \\
+0 \amp  1 \amp  0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  1 \amp  0 \amp  \frac{1}{2} \\
+0 \amp  0 \amp  0 \amp  1 \amp  2
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p class="continuation">Hence the coordinates of <span class="process-math">\((1,2,3)\)</span> with respect the given basis is <span class="process-math">\((3/2,1,1/2,2)\text{.}\)</span></p></article></section><section class="subsection" id="sec2-3-change-of-basis"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">Change of bases.</span>
+</h3>
+<p id="p-331">Let <span class="process-math">\(\beta=\{u_1,u_2\ldots,u_n\}\)</span> and <span class="process-math">\(\gamma=\{v_1,v_2\ldots,v_n\}\)</span> be two bases of <span class="process-math">\(\R^n\text{.}\)</span> Fix a vector <span class="process-math">\(x\in \R^n\text{.}\)</span>  Let <span class="process-math">\(x_\beta=\begin{bmatrix}c_1\\\vdots \\c_n\end{bmatrix}\)</span>   and <span class="process-math">\(x_\gamma=\begin{bmatrix}d_1\\\vdots \\d_n\end{bmatrix}\)</span>  be the coordinates of <span class="process-math">\(x\)</span> with respect to <span class="process-math">\(\beta\)</span> and <span class="process-math">\(\gamma\)</span> respectively. Then we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x = \begin{bmatrix}u_1\amp \cdots \amp  u_n\end{bmatrix}\begin{bmatrix}c_1\\\vdots \\c_n\end{bmatrix}=Ax_\beta.
+\end{equation*}
+</div>
+<p id="p-332">Similarly</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x = \begin{bmatrix}v_1\amp \cdots \amp  v_n\end{bmatrix}\begin{bmatrix}d_1\\\vdots \\d_n\end{bmatrix}=Bx_\gamma.
+\end{equation*}
+</div>
+<p class="continuation">Thus we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+Ax_\beta=Bx_\gamma\implies x_\beta = A^{-1}B x_\gamma \text{ and } x_\gamma = B^{-1}Ax_\beta.
+\end{equation*}
+</div>
+<p class="continuation">The matrices <span class="process-math">\(A^{-1}B\)</span> and <span class="process-math">\(B^{-1}A\)</span> are called <em class="alert">transition matrices</em>. We denotes <span class="process-math">\(A^{-1}B\)</span> by <span class="process-math">\([I]_\gamma^\beta\)</span> and <span class="process-math">\(B^{-1}A\)</span> by <span class="process-math">\([I]_\beta^\gamma\text{.}\)</span> Note that <span class="process-math">\([I]_\beta^\gamma=\left([I]_\gamma^\beta\right)^{-1}.\)</span></p>
+<p id="p-333">Furthermore, the transition matrix <span class="process-math">\(I_\gamma^\beta\)</span> can be obtained by applying RREF to the <span class="process-math">\([A|B]\)</span> and extracting the last <span class="process-math">\(n\)</span> columns. Let us illustrate this with an example.</p>
+<article class="example example-like" id="example-43"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.22</span><span class="period">.</span>
+</h4>
+<p id="p-334">Consider  two bases   <span class="process-math">\(\R^3\)</span> <span class="process-math">\(\beta = \left\{\left(2,-1,3\right), \left(3,1,2\right), \left(1,1,1\right)\right\}\)</span> and <span class="process-math">\(\gamma = \left\{\left(1,-1,1\right), \left(1,1,-1\right), \left(-1,1,1\right)\right\}
+\text{.}\)</span>  Consider a vector <span class="process-math">\(x=(1,2,3)\text{.}\)</span>  We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = \left(\begin{array}{rrr}
+2 \amp  3 \amp  1 \\
+-1 \amp  1 \amp  1 \\
+3 \amp  2 \amp  1
+\end{array}\right), B = \left(\begin{array}{rrr}
+1 \amp  1 \amp  -1 \\
+-1 \amp  1 \amp  1 \\
+1 \amp  -1 \amp  1
+\end{array}\right)
+\end{equation*}
+</div>
+<p class="continuation">First we find <span class="process-math">\(x_\beta\)</span> and <span class="process-math">\(x_\gamma\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left(\begin{array}{rrr|r}
+2 \amp  3 \amp  1 \amp  1 \\
+-1 \amp  1 \amp  1 \amp  2 \\
+3 \amp  2 \amp  1 \amp  3
+\end{array}\right)
+\xrightarrow{RREF}
+\left(\begin{array}{rrr|r}
+1 \amp  0 \amp  0 \amp  \frac{3}{5} \\
+0 \amp  1 \amp  0 \amp  -\frac{7}{5} \\
+0 \amp  0 \amp  1 \amp  4
+\end{array}\right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\implies x_\beta =\begin{pmatrix} 3/5\\7/5\\4\end{pmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">Similarly</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left(\begin{array}{rrr|r}
+1 \amp  1 \amp  -1 \amp  1 \\
+-1 \amp  1 \amp  1 \amp  2 \\
+1 \amp  -1 \amp  1 \amp  3
+\end{array}\right)\xrightarrow{RREF}
+\left(\begin{array}{rrr|r}
+1 \amp  0 \amp  0 \amp  2 \\
+0 \amp  1 \amp  0 \amp  \frac{3}{2} \\
+0 \amp  0 \amp  1 \amp  \frac{5}{2}
+\end{array}\right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\implies x_\gamma =\begin{pmatrix} 2\\3/2\\5/2\end{pmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">Now to find the transition matrix <span class="process-math">\([I]_\gamma^\beta\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+[A~|~B]\xrightarrow{RREF} \left(\begin{array}{rrr|rrr}
+1 \amp  0 \amp  0 \amp  \frac{2}{5} \amp  -\frac{4}{5} \amp  \frac{2}{5} \\
+0 \amp  1 \amp  0 \amp  \frac{2}{5} \amp  \frac{6}{5} \amp  -\frac{8}{5} \\
+0 \amp  0 \amp  1 \amp  -1 \amp  -1 \amp  3
+\end{array}\right) 
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\implies [I]_\gamma^\beta =
+\left(\begin{array}{rrr}
+\frac{2}{5} \amp  -\frac{4}{5} \amp  \frac{2}{5} \\
+\frac{2}{5} \amp  \frac{6}{5} \amp  -\frac{8}{5} \\
+-1 \amp  -1 \amp  3
+\end{array}\right) 
+\end{equation*}
+</div>
+<p class="continuation">It is easy to verify that <span class="process-math">\(x_\beta = [I]_\gamma^\beta x_\gamma\text{.}\)</span> Similarly to find the transition matrix <span class="process-math">\([I]_\beta\gamma\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+[B~|~A]\xrightarrow{RREF} \left(\begin{array}{rrr|rrr}
+1 \amp  0 \amp  0 \amp  \frac{5}{2} \amp  \frac{5}{2} \amp  1 \\
+0 \amp  1 \amp  0 \amp  \frac{1}{2} \amp  2 \amp  1 \\
+0 \amp  0 \amp  1 \amp  1 \amp  \frac{3}{2} \amp  1
+\end{array}\right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\implies [I]_\beta^\gamma =\left(\begin{array}{rrr}
+\frac{5}{2} \amp  \frac{5}{2} \amp  1 \\
+\frac{1}{2} \amp  2 \amp  1 \\
+1 \amp  \frac{3}{2} \amp  1
+\end{array}\right)
+\end{equation*}
+</div>
+<p class="continuation">It is easy to verify that <span class="process-math">\(x_\gamma=[I]_\beta^\gamma x_\beta\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.23</span><span class="period">.</span>
+</h4>
+<p id="p-335">What are all subspaces of <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\text{?}\)</span></p></article><article class="exercise exercise-like" id="exercise-3"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.24</span><span class="period">.</span>
+</h4>
+<p id="p-336">If <span class="process-math">\(W\)</span> is a subspace of <span class="process-math">\(\R^n\text{,}\)</span> then it is null space of some matrix.</p></article><p id="p-337">We end this chapter by look at a bigger example. Here we also illustrate RREF gives several informations on a matrix.</p>
+<article class="example example-like" id="example-44"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.25</span><span class="period">.</span>
+</h4>
+<p id="p-338">Consider a set of 7 vectors <span class="process-math">\(v_1,\ldots, v_7\in \R^7\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v_1=\left(\begin{array}{r}
+1 \\
+-1 \\
+2 \\
+0 \\
+3 \\
+2 \\
+1
+\end{array}\right), 
+v_2=\left(\begin{array}{r}
+2 \\
+1 \\
+0 \\
+2 \\
+-3 \\
+0 \\
+1
+\end{array}\right), 
+v_3=\left(\begin{array}{r}
+-1 \\
+-5 \\
+6 \\
+-4 \\
+15 \\
+6 \\
+1
+\end{array}\right), 
+v_4=\left(\begin{array}{r}
+0 \\
+2 \\
+3 \\
+1 \\
+-1 \\
+3 \\
+-1
+\end{array}\right),
+v_5=\left(\begin{array}{r}
+4 \\
+3 \\
+1 \\
+2 \\
+0 \\
+1 \\
+3
+\end{array}\right),
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v_6=\left(\begin{array}{r}
+-13 \\
+-30 \\
+4 \\
+-22 \\
+52 \\
+4 \\
+0
+\end{array}\right),
+v_7=\left(\begin{array}{r}
+-2 \\
+-1 \\
+0 \\
+1 \\
+2 \\
+3 \\
+4
+\end{array}\right)
+\end{equation*}
+</div>
+<p class="continuation">Define the matrix <span class="process-math">\(A\)</span> whose columns are <span class="process-math">\(v_1,\ldots, v_7\)</span> and apply RREF to <span class="process-math">\(A\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A=\left(\begin{array}{rrrrrrr}
+1 \amp  2 \amp  -1 \amp  0 \amp  4 \amp  -13 \amp  -2 \\
+-1 \amp  1 \amp  -5 \amp  2 \amp  3 \amp  -30 \amp  -1 \\
+2 \amp  0 \amp  6 \amp  3 \amp  1 \amp  4 \amp  0 \\
+0 \amp  2 \amp  -4 \amp  1 \amp  2 \amp  -22 \amp  1 \\
+3 \amp  -3 \amp  15 \amp  -1 \amp  0 \amp  52 \amp  2 \\
+2 \amp  0 \amp  6 \amp  3 \amp  1 \amp  4 \amp  3 \\
+1 \amp  1 \amp  1 \amp  -1 \amp  3 \amp  0 \amp  4
+\end{array}\right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+RREF(A)=\left(\begin{array}{rrrrrrr}
+1 \amp  0 \amp  3 \amp  0 \amp  0 \amp  9 \amp  0 \\
+0 \amp  1 \amp  -2 \amp  0 \amp  0 \amp  -7 \amp  0 \\
+0 \amp  0 \amp  0 \amp  1 \amp  0 \amp  -4 \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  1 \amp  -2 \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \\
+0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0
+\end{array}\right)
+\end{equation*}
+</div>
+<p class="continuation">From the RREF of <span class="process-math">\(A\text{,}\)</span> we have the following observations: <p id="p-339">(i) The reduced row-echelon form of <span class="process-math">\(A\)</span> has 5 non zero rows. This means the rank of <span class="process-math">\(A\)</span> is 5. In particular, <span class="process-math">\(A\)</span> is singular.</p> <p id="p-340">(ii) The pivots columns are 1, 2, 4, 5, 7. In particular, <span class="process-math">\(\{v_1,v_2,v_4,v_5,v_7\}\)</span> are linearly independent and forms a basis of the subspace spanned by <span class="process-math">\(\{v_1,v_2,v_4,v_5,v_7\}\text{.}\)</span></p> <p id="p-341">(iii) The 3rd columns gives <span class="process-math">\(v_3\)</span> as linear combinations of <span class="process-math">\(v_1\)</span> and <span class="process-math">\(v_2\text{.}\)</span> In particular, <span class="process-math">\(v_3=3v_1-2v_2\text{.}\)</span> Similarly <span class="process-math">\(v_6=9v_1-7v_2-4v_4-2v_5\text{.}\)</span></p> <p id="p-342">(iv) Since rank of <span class="process-math">\(A\)</span> is 5, the nullity of <span class="process-math">\(A\)</span> is 2.</p> <p id="p-343">(v) First five rows of <span class="process-math">\(RREF(A)\)</span> constitute a basis of the row space of <span class="process-math">\(A\text{.}\)</span></p></p></article></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:32+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<pre class="ptx-sagecell sagecell-sage" id="sage-297"><script type="text/x-sage">xx = [-3.0 , -2.8 , -2.5 , -2.2 , -2.0 , -1.8 , -1.5 , -1.2 , -1.0 , -0.75 , -0.50 , -0.25 , 0.00 , 
+      0.25 , 0.50 , 0.75 , 1.0 , 1.2 , 1.5 , 1.8]
+yy=[1.1 , 4.0 , 7.3 , 7.1 , 8.2 , 7.8 , 9.9 , 7.1 , 8.8 , 6.2 , 7.0 , 3.7 , 4.7 , 3.4 , 5.6 , 5.8 , 
+    5.3 , 6.6 , 10. , 12]
+point = ([(xx[i],yy[i]) for i in range(20)])
+n = len(xx)
+ones = [1]*n
+xx2 = [xx[i]^2 for i in range(n)]
+xx3 =[xx[i]^3 for i in range(n)]
+b = column_matrix(yy)
+A = column_matrix([ones, xx, xx2,xx3])
+A.pseudoinverse()*b
+</script></pre>
+<p>Note that we get the same answer.</p>
+</div></body>
+</html>

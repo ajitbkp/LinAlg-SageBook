@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:32+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span>
+</h4>
+<p>Consider a system of linear equations <span class="process-math">\(Ax=b\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A= \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp  1 \\ -2 \amp  3 \end{array} \right),\qquad b = \begin{pmatrix}-1\\3\\5\\1 \end{pmatrix}
+\end{equation*}
+</div>
+<p>(a) Find the least square solution of <span class="process-math">\(Ax=b\text{.}\)</span></p>
+<p>(b) Find the orthogonal projection of <span class="process-math">\(b\)</span> onto the column space <span class="process-math">\(W={col}(A)\text{.}\)</span></p>
+<p>(c) Write the <span class="process-math">\(b\)</span> as <span class="process-math">\(b=w+u\)</span> where <span class="process-math">\(w\in W\)</span> and <span class="process-math">\(u\in W^\perp\text{.}\)</span></p>
+<p><em class="emphasis">Solution:</em> It is easy to see that the columns of <span class="process-math">\(A\)</span> are linearly independent, hence the least square solution exists. We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^TA = \left(\begin{array}{rr} 10 \amp  -4 \\ -4 \amp  12 \end{array} \right),\text{ and }  A^Tb=\left(\begin{array}{rr}10\\12 \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<p>Hence the least square solution of <span class="process-math">\(Ax=b\)</span> is the solution of the normal equation <span class="process-math">\(A^TAx=A^Tb\)</span> which is <span class="process-math">\(x^*=\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)\text{.}\)</span> The same can obtained as <span class="process-math">\(x^* =(A^TA)^{-1}A^Tb\text{.}\)</span></p>
+<p>(b) The orthogonal projection of <span class="process-math">\(b\)</span> onto <span class="process-math">\(W\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+w = A(A^TA)^{-1}A^Tb = \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp  1 \\ -2 \amp  3 \end{array} \right)\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)=\left(\begin{array}{r} \frac{1}{13} \\ \frac{41}{13} \\ \frac{62}{13} \\ \frac{18}{13} \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<p>(b) Since we have found <span class="process-math">\(w\text{,}\)</span> <span class="process-math">\(u\)</span> is given by <span class="process-math">\(b-w=\left(\begin{array}{r} -\frac{14}{13} \\ -\frac{2}{13} \\ \frac{3}{13} \\ -\frac{5}{13} \end{array} \right)\text{.}\)</span> Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+b = \begin{pmatrix}-1\\3\\5\\1 \end{pmatrix} =w+u=\left(\begin{array}{r} \frac{1}{13} \\ \frac{41}{13} \\ \frac{62}{13} \\ \frac{18}{13} \end{array} \right)+\left(\begin{array}{r} -\frac{14}{13} \\ -\frac{2}{13} \\ \frac{3}{13} \\ -\frac{5}{13} \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-281"><script type="text/x-sage">A= matrix([[1 ,  -1],[1 ,  1], [2 ,  1],  [-2 ,  3]]) 
+b = vector([-1,3,5,1])
+print(A.T*A)
+print(A.T*b)
+xstar = (A.T*A).inverse()*A.T*b
+print('The least square solution is:')
+print(xstar)
+w = A*xstar
+print('The orthogonal projection is:')
+print(w)
+u = b-w
+print('The vector u such that b = w+u is')
+print(u)
+</script></pre></article><span class="incontext"><a href="sec8-1-LSTSQ.html#example-187" class="internal">in-context</a></span>
+</body>
+</html>

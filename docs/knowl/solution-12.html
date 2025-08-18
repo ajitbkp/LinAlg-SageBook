@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:30+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.6.6.1</span><span class="period">.</span>
+</h4>
+<p>The above system is equivalent to <span class="process-math">\(AX=B\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A=\begin{pmatrix}
+2 \amp  1 \amp  3\\ 4 \amp  1 \amp  7 \\ -6 \amp  -2 \amp  -12
+\end{pmatrix}, \quad 
+X=\begin{pmatrix}
+x\\y\\z
+\end{pmatrix}
+\quad \text {and } 
+B=\begin{pmatrix}
+-1\\5\\-2
+\end{pmatrix}
+\end{equation*}
+</div>
+<p class="continuation">First of all let us decompose <span class="process-math">\(A=LU\)</span> using the elementary row operation.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+A=\amp\begin{pmatrix}
+2 \amp  1 \amp  3\\ 4 \amp  1 \amp  7 \\ -6 \amp  -2 \amp  -12
+\end{pmatrix} \xrightarrow{R_2\to R_2-2R_1}  
+\begin{pmatrix}
+2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ -6 \amp  -2 \amp  -12
+\end{pmatrix}\\
+\amp =\begin{pmatrix}
+1 \amp  0 \amp  0\\ -2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1
+\end{pmatrix}A=E_1A \\
+\amp \xrightarrow{R_3\to R_3+3R_1} 
+\begin{pmatrix}
+2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  1 \amp  -3
+\end{pmatrix} \\
+\amp =\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 3 \amp  0 \amp  1
+\end{pmatrix}E_1A=E_2E_1A\\
+\amp \xrightarrow{R_3\to R_2+R_2}
+\begin{pmatrix}
+2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2
+\end{pmatrix}\\
+= \amp\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  1 \amp  1
+\end{pmatrix}E_2E_1A=E_3E_2E_1A
+\end{align*}
+</div>
+<p class="continuation">Note that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E_1=
+\begin{pmatrix}
+1 \amp  0 \amp  0\\ -2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1
+\end{pmatrix}, 
+E_2=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 3 \amp  0 \amp  1
+\end{pmatrix},
+E_3=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  1 \amp  1
+\end{pmatrix}
+\end{equation*}
+</div>
+<p class="continuation">Their inverses are given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E^{-1}_1=
+\begin{pmatrix}
+1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1
+\end{pmatrix}, 
+E^{-1}_2=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ -3 \amp  0 \amp  1
+\end{pmatrix},
+E^{-1}_3=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \\ 0 \amp  -1 \amp  1
+\end{pmatrix}
+\end{equation*}
+</div>
+<p class="continuation">Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L=E^{-1}_1E^{-1}_2E^{-1}_3=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1
+\end{pmatrix} 
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A=LU=\begin{pmatrix}
+1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1
+\end{pmatrix} \begin{pmatrix}
+2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2
+\end{pmatrix}
+\end{equation*}
+</div>
+<p class="continuation">Now the equation <span class="process-math">\(AX=B\)</span> becomes <span class="process-math">\(LUX=B\text{.}\)</span> Let <span class="process-math">\(UX=Y=\begin{pmatrix} u\\v\\w\end{pmatrix}\text{.}\)</span> First we solve <span class="process-math">\(LY=B\text{.}\)</span> That is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{pmatrix}
+1 \amp  0 \amp  0\\ 2 \amp  1 \amp  0 \\ -3 \amp  -1 \amp  1
+\end{pmatrix} \begin{pmatrix} u\\v\\w\end{pmatrix}=\begin{pmatrix} -1\\5\\-2\end{pmatrix}
+\end{equation*}
+</div>
+<p class="continuation">Solving the above system using the forward substitution we get <span class="process-math">\(u=-1, v=7, w=2\text{.}\)</span> Now substituting the in equation <span class="process-math">\(UX=Y\)</span> we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{pmatrix}
+2 \amp  1 \amp  3\\ 0 \amp  -1 \amp  1 \\ 0 \amp  0 \amp  -2
+\end{pmatrix} \begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}-1\\7\\2\end{pmatrix}
+\end{equation*}
+</div>
+<p class="continuation">Solving the above system by back substitution we get the required solution <span class="process-math">\(x=5, y=-8, z=-1\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec1-6-LU.html#solution-12" class="internal">in-context</a></span>
+</body>
+</html>

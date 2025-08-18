@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:30+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Let us consider one equation in two variables, <span class="process-math">\(2x_1+3x_2=5\text{.}\)</span> The corresponding homogeneous system is <span class="process-math">\(2x_1+3x_2=0\text{.}\)</span> It is easy see that <span class="process-math">\(\left\{\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix}:\alpha\in \R\right\}\)</span> is set of all solutions of  <span class="process-math">\(2x_1+3x_2=0\text{.}\)</span> Let us consider a solution <span class="process-math">\(X_0=\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}\)</span> of the non homogeneous system <span class="process-math">\(2x_1+3x_2=5\text{.}\)</span>  Let <span class="process-math">\(X=\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix}\)</span> be any solution of <span class="process-math">\(2x_1+3x_2=0\text{.}\)</span> Then it is easy to check that <span class="process-math">\(X_0+X=\begin{pmatrix} \alpha\\\frac{5}{3}-\frac{2}{3}\alpha\end{pmatrix}\)</span> is a solution of <span class="process-math">\(2x_1+3x_2=5\text{.}\)</span> Alternatively, to solve <span class="process-math">\(2x_1+3x_2=5\text{,}\)</span> we can free one of the variable say <span class="process-math">\(x_1\text{.}\)</span> That is <span class="process-math">\(x_1\)</span> can take any real value. Let <span class="process-math">\(x_1=\alpha\text{,}\)</span>  then <span class="process-math">\(x_2=\frac{5}{3}-\frac{2}{3}\alpha\text{.}\)</span> Hence a generic solution of <span class="process-math">\(2x_1+3x_2=5\)</span> is given by <span class="process-math">\(\begin{pmatrix}x_1\\x_2\end{pmatrix}=\begin{pmatrix} \alpha\\\frac{5}{3}-\frac{2}{3}\alpha\end{pmatrix}\text{,}\)</span> which can be rewritten as <span class="process-math">\(\begin{pmatrix} \alpha\\\frac{5}{3}-\frac{2}{3}\alpha\end{pmatrix}=\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix}
+\text{.}\)</span> Thus all solutions of <span class="process-math">\(2x_1+3x_2=5\)</span> are of the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left\{\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix} :\alpha \in \R\right\}=\left\{\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\alpha\begin{pmatrix} 1\\-\frac{2}{3}\end{pmatrix} :\alpha \in \R\right\}.
+\end{equation*}
+</div>
+<p class="continuation">Notice that tho two lines, <span class="process-math">\(2x_1+3x_2=5\)</span> and <span class="process-math">\(2x_1+3x_2=0\)</span> are parallel to each other. Plot the figure in Sage using the following Sage sybtax. <pre class="ptx-sagecell sagecell-sage" id="sage-37"><script type="text/x-sage">var('x,y')
+l1 = implicit_plot(2*x+3*y==5,(x,-5,5),(y,-5,5),gridlines='minor')
+l2= implicit_plot(2*x+3*y==0,(x,-5,5),(y,-5,5),color='red',gridlines='minor')
+p1 = point((0,5/3),color='blue',size=20)
+p0 = point((1,-2/3),color='red',size=20)
+t0 =text('$(1,-\\frac{-2}{3})$',(1,-1.5),color='red')
+t1 =text('$(0,-\\frac{5}{3})$',(1,5/3),color='blue')
+show(l1+l2+p0+p1+t0+t1,axes=True,figsize=5)
+</script></pre></p>
+<span class="incontext"><a href="sec1-5-hom-system.html#p-139" class="internal">in-context</a></span>
+</body>
+</html>

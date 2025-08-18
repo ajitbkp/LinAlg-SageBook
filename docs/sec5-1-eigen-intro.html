@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:29+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Eigenvalues and Eigenvectors</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body id="changeme" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<p class="byline">Ajit Kumar</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap5-Eigen.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap5-Eigen.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec5-2-diagonalization.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap5-Eigen.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap5-Eigen.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec5-2-diagonalization.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="biography-1.html" data-scroll="biography-1" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1-lineq.html" data-scroll="chap1-lineq" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a><ul>
+<li><a href="sec1-1-elementary-operations.html" data-scroll="sec1-1-elementary-operations" class="internal">Elementary Row Operations</a></li>
+<li><a href="sec1-2-col-operations.html" data-scroll="sec1-2-col-operations" class="internal">Elementary Column Operations</a></li>
+<li><a href="sec1-3-echelon-form.html" data-scroll="sec1-3-echelon-form" class="internal">Echelon Forms</a></li>
+<li><a href="sec1-4-matrix-rank.html" data-scroll="sec1-4-matrix-rank" class="internal">Rank of Matrices</a></li>
+<li><a href="sec1-5-hom-system.html" data-scroll="sec1-5-hom-system" class="internal">Homogeneous System of Linear Equations</a></li>
+<li><a href="sec1-6-LU.html" data-scroll="sec1-6-LU" class="internal"><span class="process-math">\(LU\)</span>-Facotorization</a></li>
+<li><a href="sec1-7-exer.html" data-scroll="sec1-7-exer" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2-Rn-Space.html" data-scroll="chap2-Rn-Space" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a><ul>
+<li><a href="sec2-0-intro.html" data-scroll="sec2-0-intro" class="internal">Introduction</a></li>
+<li><a href="sec2-1-LinSpan.html" data-scroll="sec2-1-LinSpan" class="internal">Linear Spans</a></li>
+<li><a href="sec-2-2-LI.html" data-scroll="sec-2-2-LI" class="internal">Linear Dependence</a></li>
+<li><a href="sec-2-3-basis-dimension.html" data-scroll="sec-2-3-basis-dimension" class="internal">Basis and Dimension</a></li>
+<li><a href="sec2-4-Sage.html" data-scroll="sec2-4-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3-LT.html" data-scroll="chap3-LT" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a><ul>
+<li><a href="sec3-1-LT.html" data-scroll="sec3-1-LT" class="internal">Introduction</a></li>
+<li><a href="sec3-2-LT.html" data-scroll="sec3-2-LT" class="internal">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></a></li>
+<li><a href="sec3-3-LT.html" data-scroll="sec3-3-LT" class="internal">Reflections and Projections</a></li>
+<li><a href="sec-LT-Geom.html" data-scroll="sec-LT-Geom" class="internal">Geometry of Linear Transformations</a></li>
+<li><a href="sec-sec3-5-LT-Sage.html" data-scroll="sec-sec3-5-LT-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4-Vector-Space.html" data-scroll="chap4-Vector-Space" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a><ul>
+<li><a href="sec4-1-VS.html" data-scroll="sec4-1-VS" class="internal">Introduction</a></li>
+<li><a href="sec4-2-Abst-VS.html" data-scroll="sec4-2-Abst-VS" class="internal">Vector Subspaces</a></li>
+<li><a href="sec4-3-linspan-VS.html" data-scroll="sec4-3-linspan-VS" class="internal">Linear Span</a></li>
+<li><a href="sec4-3-LI-VS.html" data-scroll="sec4-3-LI-VS" class="internal">Linear dependence and independence</a></li>
+<li><a href="sec4-5-basis-dim-VS.html" data-scroll="sec4-5-basis-dim-VS" class="internal">Basis and dimension</a></li>
+<li><a href="sec-sec4-5-VS-Sage.html" data-scroll="sec-sec4-5-VS-Sage" class="internal">Sage Computations</a></li>
+<li><a href="sec4-5-VS-Ex.html" data-scroll="sec4-5-VS-Ex" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-Eigen.html" data-scroll="chap5-Eigen" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a><ul>
+<li><a href="sec5-1-eigen-intro.html" data-scroll="sec5-1-eigen-intro" class="active">Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-2-diagonalization.html" data-scroll="sec5-2-diagonalization" class="internal">Diagonalization</a></li>
+<li><a href="sec5-5-Eigen-Sage.html" data-scroll="sec5-5-Eigen-Sage" class="internal">Eigenvalues and Eigenvectors in Sage</a></li>
+<li><a href="sec5-3-eigen-Appl.html" data-scroll="sec5-3-eigen-Appl" class="internal">Applications of Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-4-eigen-exer.html" data-scroll="sec5-4-eigen-exer" class="internal">Exercises on Eigenvalues and Eigenvectors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-orthogonality.html" data-scroll="chap5-orthogonality" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec6-0-orthogonality.html" data-scroll="sec6-0-orthogonality" class="internal">Orthogonality</a></li>
+<li><a href="sec6-1-GramSchmidt.html" data-scroll="sec6-1-GramSchmidt" class="internal">Gram-Schmidt Orthogonalization Process</a></li>
+<li><a href="sec6-2.html" data-scroll="sec6-2" class="internal">Orthogonal Complements</a></li>
+<li><a href="sec6-3.html" data-scroll="sec6-3" class="internal">Orthogonal Diagonalizations</a></li>
+<li><a href="sec6-4.html" data-scroll="sec6-4" class="internal">QR-Factorization</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7-inner-product.html" data-scroll="chap7-inner-product" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a><ul>
+<li><a href="sec7-1-InnerProduct.html" data-scroll="sec7-1-InnerProduct" class="internal">Inner Product</a></li>
+<li><a href="sec7-2-Exer.html" data-scroll="sec7-2-Exer" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap8-Least-Square.html" data-scroll="chap8-Least-Square" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a><ul><li><a href="sec8-1-LSTSQ.html" data-scroll="sec8-1-LSTSQ" class="internal">Least Square Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="chap9-SVD.html" data-scroll="chap9-SVD" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a><ul><li><a href="sec9-1-SVD.html" data-scroll="sec9-1-SVD" class="internal">Singular Value Decomposition</a></li></ul>
+</li>
+<li class="link">
+<a href="chap10-PCA.html" data-scroll="chap10-PCA" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a><ul>
+<li><a href="sec10-1-PCA.html" data-scroll="sec10-1-PCA" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec10-2.html" data-scroll="sec10-2" class="internal">Applications of PCA</a></li>
+<li><a href="sec10-3.html" data-scroll="sec10-3" class="internal">Sage Practice Area</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link">
+<a href="appendix-sage-into.html" data-scroll="appendix-sage-into" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a><ul>
+<li><a href="subsection-47.html" data-scroll="subsection-47" class="internal">Introduction to SageMath</a></li>
+<li><a href="getting-started-sagemath.html" data-scroll="getting-started-sagemath" class="internal">Getting Started with Sage</a></li>
+<li><a href="subsec-sage-programming.html" data-scroll="subsec-sage-programming" class="internal">Programming in Sage</a></li>
+<li><a href="subsec-plotting-sage.html" data-scroll="subsec-plotting-sage" class="internal">Plotting in Sage</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec5-1-eigen-intro"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Eigenvalues and Eigenvectors</span>
+</h2>
+<section class="introduction" id="introduction-18"><p id="p-810">In this section we define the notion of eigenvalues and eigenvectors and look at some of its properties. It has several real life applications.   We shall deal with some of them in later sections.</p></section><article class="definition definition-like" id="def-eigenvector"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues and Eigenvectors.</span>
+</h3>
+<p id="p-811">Let <span class="process-math">\(T\)</span> be a linear transformation from <span class="process-math">\(\mathbb{R}^n\to \R^n\text{.}\)</span> A real number (scalar) is called an <em class="emphasis">eigenvalue</em> of <span class="process-math">\(T\)</span> if there exists a non zero vector <span class="process-math">\(v\in \R^n\)</span> (called an<em class="emphasis">eigenvector</em> corresponding to eigenvalue <span class="process-math">\(\lambda\)</span>) if <span class="process-math">\(T(v)=\lambda v\text{.}\)</span> That is, if <span class="process-math">\(T(v)\)</span> is parallel to <span class="process-math">\(v\text{.}\)</span></p>
+<p id="p-812">Thus if <span class="process-math">\(T(v)=\lambda v\text{,}\)</span> then <span class="process-math">\({\lambda I-T}(v)=0\text{,}\)</span> where <span class="process-math">\(I\)</span> is identity transformation on <span class="process-math">\(V\text{.}\)</span></p>
+<p id="p-813">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> real matrix matrix, then we know that <span class="process-math">\(T_A(x)=Ax\)</span> is a linear transformation induced by <span class="process-math">\(A\text{.}\)</span> We can define eigenvalue of <span class="process-math">\(A\)</span> as eigenvalue of <span class="process-math">\(T_A\text{.}\)</span> In particular, real number is called an <em class="emphasis">eigenvalue</em> of <span class="process-math">\(A\)</span> if there exists a non zero vector <span class="process-math">\(v\in \R^n\)</span> (called an <em class="emphasis">eigenvector</em> corresponding to eigenvalue <span class="process-math">\(\lambda\)</span>) if <span class="process-math">\(Av=\lambda v\text{.}\)</span></p></article><article class="example example-like" id="example-129"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
+</h3>
+<p id="p-814">Let <span class="process-math">\(A=\left(\begin{array}{rr} 1 \amp 2 \\ -1 \amp 4 \end{array} \right)\text{.}\)</span> Consider a vector <span class="process-math">\(u=\begin{pmatrix}1\\1 \end{pmatrix}\text{.}\)</span> Then <span class="process-math">\(Au=\begin{pmatrix}3\\3 \end{pmatrix} =3\begin{pmatrix}1\\1 \end{pmatrix} =3u\text{.}\)</span> Hence <span class="process-math">\(u\)</span> is an eigenvector and <span class="process-math">\(\lambda = 3\)</span> is an eigenvalue.</p>
+<p id="p-815">Consider <span class="process-math">\(v=\begin{pmatrix}2\\1 \end{pmatrix}\text{.}\)</span> Then it is easy to check that <span class="process-math">\(Av=\begin{pmatrix}4\\2 \end{pmatrix} =2\begin{pmatrix}2\\1 \end{pmatrix}\text{.}\)</span> Hence <span class="process-math">\(v\)</span> is also an eigenvector and <span class="process-math">\(\lambda = 2\)</span> is an eigenvalue.</p></article><article class="example example-like" id="example-130"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
+</h3>
+<p id="p-816">If <span class="process-math">\(T\)</span> is an identity transformation from <span class="process-math">\(\R^n\to \R^n\text{,}\)</span> then every nonzero vector is an eigenvector corresponding the eiegenvalue 1. The same is true for <span class="process-math">\(n\times n \)</span>  identity matrix.</p></article><article class="example example-like" id="example-131"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
+</h3>
+<p id="p-817">Consider the matrix of rotation <span class="process-math">\(R_\theta\)</span> in anti-clock wise by an angle <span class="process-math">\(\theta\neq n\pi\)</span> for <span class="process-math">\(n\in \Z\text{.}\)</span> Then it is easy to see that <span class="process-math">\(R_\theta\)</span> does not have an eigenvector. Thus not all square matrices have eigenvectors.</p></article><article class="remark remark-like" id="remark-8"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span>
+</h3>
+<p id="p-818">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> with corresponding eigenvector <span class="process-math">\(v\neq 0\text{.}\)</span> Then any scalar multiple of <span class="process-math">\(v\)</span> is also an eigenvector corresponding to the same eigenvalue <span class="process-math">\(\lambda\text{.}\)</span></p></article><p id="p-819">Let us analyze the notion of eigenvalues and eigenvector. If <span class="process-math">\(v\)</span> is a eigenvector corresponding to an eigenvalue <span class="process-math">\(\lambda\text{.}\)</span> Then <span class="process-math">\(Av=\lambda v\text{.}\)</span> This implies <span class="process-math">\((\lambda I-A)v=0\text{,}\)</span> where <span class="process-math">\(I\)</span> is <span class="process-math">\(n\times n\)</span> identity matrix. This means that the homogeneous system <span class="process-math">\((\lambda I-A)x=0\)</span> has a non zero solution, namely <span class="process-math">\(v\text{.}\)</span> Hence <span class="process-math">\(\det{(\lambda I-A)}=0\text{.}\)</span> Notice that <span class="process-math">\(\det(A-\lambda I)\)</span> is a polynomial (called the characteristic polynomial of <span class="process-math">\(A\)</span>) of degree <span class="process-math">\(n\)</span> in <span class="process-math">\(\lambda\text{.}\)</span> Thus if <span class="process-math">\(Av=\lambda v\text{,}\)</span> then <span class="process-math">\(\lambda\)</span> is a root of the the characteristic polynomial <span class="process-math">\(\det(A-\lambda I)\text{.}\)</span> By fundamental theorem of algebra an <span class="process-math">\(n\times n\)</span> real matrix can have at most <span class="process-math">\(n\)</span> real eigenvalues. The equation <span class="process-math">\(\det(A-\lambda I)=0\)</span> is called <em class="emphasis">characteristic equation</em> of <span class="process-math">\(A\text{.}\)</span></p>
+<p id="p-820">We can write <span class="process-math">\(\det(A-\lambda I)=0\)</span> as <span class="process-math">\(\det(A-\lambda I)=\lambda^n-c_1\lambda^{n-1}+c_2\lambda^{n-2}-\cdots+(-1)^nc_n=0\text{.}\)</span> If <span class="process-math">\(\lambda_1,\ldots, \lambda_n\)</span> are roots of the characteristics equation, then using the theory of equations one can show that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="mdn-2">
+\begin{align}
+\lambda_1+\cdots+\lambda_n\amp = c_1={ trace(A)}\tag{5.1.1}\\
+\lambda_1\lambda_2+\cdots +\lambda_{n-1}\lambda_n \amp =  c_2\tag{5.1.2}\\
+\vdots \amp \notag\\
+\lambda_1\lambda_2\cdots\lambda_n \amp = c_n = \det(A)\text{.}\tag{5.1.3}
+\end{align}
+</div>
+<p id="p-821">Thus we have the following.</p>
+<article class="theorem theorem-like" id="thm-sum-produc-eiegn"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span>
+</h3>
+<p id="p-822">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> real matrix. Then (i) the sum of eigenvalues of <span class="process-math">\(A\)</span> is the trace of <span class="process-math">\(A\)</span> and (ii) the product of eigenvalues is the determeninat of <span class="process-math">\(A\text{.}\)</span></p></article><article class="example example-like" id="eigen_eg0"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span>
+</h3>
+<p id="p-823">Let <span class="process-math">\(A = \begin{pmatrix}1 \amp 1 \amp 1\\ 1 \amp 1 \amp 1\\1 \amp 1 \amp 1 \end{pmatrix}\text{.}\)</span> What are eigenvalues and eigenvectors of <span class="process-math">\(A\text{?}\)</span></p>
+<p id="p-824">Note that <span class="process-math">\(Ae_1=Ae_2=Ae_3=e_1+e_2+e_3\text{.}\)</span> This means <span class="process-math">\(A(e_1+e_2+e_3)=3(e_2+e_2+e_3)\text{.}\)</span> Hence <span class="process-math">\(3\)</span> is an eigenvalue and <span class="process-math">\(e_1+e_2+e_3=\begin{pmatrix}1 \\1\\1 \end{pmatrix}\)</span> is an eigenvectors w.r.t. eigenvalue 3.</p>
+<p id="p-825">Also <span class="process-math">\(A(e_1-e_2)=0\text{.}\)</span> Hence <span class="process-math">\(0\)</span> is an eigenvalue and <span class="process-math">\(e_1-e_2=\begin{pmatrix}1 \\-1\\0 \end{pmatrix}\)</span> is an eigenvector corresponding to the eigenvalue 0. Also, <span class="process-math">\(e_1-e_3\)</span> and <span class="process-math">\(e_2-e_3\)</span> are also eigenvectors corresponding to the eigenvalue 0.</p>
+<p id="p-826">Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.</p>
+<p id="p-827">What will be generalization of this example?</p></article><article class="example example-like" id="eigen_eg0b"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
+</h3>
+<p id="p-828">Let <span class="process-math">\(A = \begin{pmatrix}1 \amp t \amp t\\ t \amp 1 \amp t\\t \amp t \amp 1 \end{pmatrix}\text{.}\)</span> What are eigenvalues of <span class="process-math">\(A\text{?}\)</span></p>
+<p id="p-829">The trace of <span class="process-math">\(A\)</span> is 3. The <span class="process-math">\(\det{(A)}=2t^3 - 3t^2 + 1=(2t + 1)(t - 1)^2\text{.}\)</span> Since sum of eigenvalues is 3 and the product of eigenvalues is <span class="process-math">\(\det{(A)}\text{,}\)</span> it is easy to guess that <span class="process-math">\(\lambda_1 =2t+1\text{,}\)</span> <span class="process-math">\(\lambda_2=\lambda_3=1-t\)</span> are eigenvalues of <span class="process-math">\(A\text{.}\)</span></p>
+<p id="p-830">We can adopt a procedure similar to <a href="" class="xref" data-knowl="./knowl/eigen_eg0b.html" title="Example 5.1.8">Example 5.1.8</a> to show that <span class="process-math">\(e_1+e_2+e_3\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(1+2t\text{.}\)</span> Similarly, <span class="process-math">\(e_1-e_2,e_2-e_3, e_1-e_3\)</span> are eigenvectors corresponding to the eigenvalue <span class="process-math">\(1-t\text{.}\)</span></p></article><article class="example example-like" id="eigen_eg1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span>
+</h3>
+<p id="p-831">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\text{.}\)</span> Find eigenvalues and corresponding eigenvector of <span class="process-math">\(A\text{.}\)</span></p>
+<p id="p-832">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\det(A-\lambda I)=\begin{vmatrix}1-\lambda\amp 2\amp -2\\
+1\amp 1-\lambda\amp 1\\1\amp 3\amp -1-\lambda
+\end{vmatrix}=\lambda^3-\lambda^2-4\lambda+4\text{.}
+\end{equation*}
+</div>
+<p class="continuation">It is easy to see that characteristic polynomial <span class="process-math">\(\det(A-\lambda I)\)</span> has roots <span class="process-math">\(\lambda=1, \lambda=-2, \lambda=2\text{.}\)</span> Thus <span class="process-math">\(A\)</span> has eigenvalues <span class="process-math">\(1, -2, 2\text{.}\)</span></p>
+<p id="p-833">Let us find eigenvectors with respect to the eigenvalue <span class="process-math">\(\lambda=1\text{.}\)</span> Let <span class="process-math">\(v=\begin{pmatrix}x_1\\x_2\\x_3 \end{pmatrix}\)</span> be an eigenvector corresponding to <span class="process-math">\(\lambda=1\text{.}\)</span> Then <span class="process-math">\(Av=\lambda v=v\text{.}\)</span> That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix} \begin{pmatrix}x_1\\x_2\\x_3 \end{pmatrix} =\begin{pmatrix}x_1\\x_2\\x_3 \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<p id="p-834">This gives a system of linear equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_1+2x_2-2x_3=x_1; x_1+x_2+x_3=x_2; x_1+3x_2-x_3=x_3
+\end{equation*}
+</div>
+<p id="p-835">Solving the above system, we get <span class="process-math">\(x_1=-x_2, x_2=x_3\text{.}\)</span> Thus <span class="process-math">\(v=\begin{pmatrix}\alpha\\-\alpha\\-\alpha \end{pmatrix}\)</span> for <span class="process-math">\(\alpha\in \R\)</span> is an eigenvector. In particular, <span class="process-math">\(v=\begin{pmatrix}1\\-1\\-1 \end{pmatrix}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\lambda=1\text{.}\)</span></p>
+<p id="p-836">Similarly show that <span class="process-math">\(\begin{pmatrix}0\\1\\1 \end{pmatrix}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\lambda=2\)</span> and <span class="process-math">\(\begin{pmatrix}8/7\\-5/7\\1 \end{pmatrix}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\lambda=-2\)</span></p></article><article class="example example-like" id="example-135"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span>
+</h3>
+<p id="p-837">Let <span class="process-math">\(\begin{pmatrix}0\amp 1\\-1\amp 0 \end{pmatrix}\text{.}\)</span> Find eigenvalues and corresponding eigenvector of <span class="process-math">\(A\text{.}\)</span></p>
+<p id="p-838">The characteristic equation of <span class="process-math">\(A\)</span> is given by <span class="process-math">\(\det(A-\lambda I)=\begin{vmatrix}-\lambda\amp 1\\-1\amp -\lambda\end{vmatrix}=\lambda^2+1\text{.}\)</span> Hence eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda=\pm i\text{.}\)</span></p>
+<p id="p-839">Let us find eigenvectors with respect to the eigenvalue <span class="process-math">\(\lambda=i\text{.}\)</span> Let <span class="process-math">\(v=\begin{pmatrix}x_1\\x_2 \end{pmatrix}\)</span> be an eigenvector corresponding to <span class="process-math">\(\lambda=i\text{.}\)</span> Then <span class="process-math">\(Av=\lambda v=i v\text{.}\)</span> That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{pmatrix}0\amp 1\\-1\amp 0 \end{pmatrix} \begin{pmatrix}x_1\\x_2 \end{pmatrix} =\begin{pmatrix}i x_1\\ ix_2 \end{pmatrix} \Longrightarrow \begin{pmatrix}x_2\\-x_1 \end{pmatrix} =\begin{pmatrix}i x_1\\ ix_2 \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<p id="p-840">Now it is easy to see that <span class="process-math">\(v=\begin{pmatrix}1\\ i \end{pmatrix}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\lambda=i\text{.}\)</span> Similarly one can show that <span class="process-math">\(v=\begin{pmatrix}1\\ -i \end{pmatrix}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\lambda=-i\text{.}\)</span></p>
+<p id="p-841">Note that in the above example, <span class="process-math">\(A\)</span> is a real matrix but its eigenvalues and eigenvectors are complex.</p></article><section class="reading-questions" id="rqs-eigenspace-subspace"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span> <span class="codenumber"></span> <span class="title">Reading Questions</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-23"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-842">Let <span class="process-math">\(A\)</span> an <span class="process-math">\(n\times n\)</span> real matrix and <span class="process-math">\(\lambda\in \R\)</span> be an eigenvalue of <span class="process-math">\(A\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E_\lambda = \{x\in \R^n: Ax=\lambda x\}
+\end{equation*}
+</div>
+<p class="continuation">is a subspace of <span class="process-math">\(\R^n\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-24"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-843"><span class="process-math">\(E_\lambda\)</span> is the kernel of <span class="process-math">\(A-\lambda I\text{.}\)</span></p></article></section><article class="definition definition-like" id="def-eigenspace"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenspace.</span>
+</h3>
+<p id="p-844">Let <span class="process-math">\(A\)</span> an <span class="process-math">\(n\times n\)</span> real matrix and <span class="process-math">\(\lambda\in \R\)</span> be an eigenvalue of <span class="process-math">\(A\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E_\lambda = \{x\in \R^n: Ax=\lambda x\}
+\end{equation*}
+</div>
+<p class="continuation">the collection of all eigenvectors of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\lambda\)</span> is a subspace of <span class="process-math">\(A\text{,}\)</span> called the <em class="emphasis">eigenspace of <span class="process-math">\(A\)</span></em>. The dimension of <span class="process-math">\(E_\lambda\)</span> is called the <em class="emphasis">geometric multiplicity</em> of <span class="process-math">\(A\text{.}\)</span></p>
+<p id="p-845">Let <span class="process-math">\(\det{(x I -A)}=(x-\lambda_1)^{m_1}(x-\lambda_21)^{m_2}\cdots (x-\lambda_k)^{m_k}\text{.}\)</span> Then <span class="process-math">\(\lambda_i\)</span> are eigenvalue of <span class="process-math">\(A\)</span> with multiplicity <span class="process-math">\(m_i\text{,}\)</span> called the <em class="emphasis">algebraic multiplicity</em> of <span class="process-math">\(\lambda_i\text{.}\)</span></p></article><article class="remark remark-like" id="remark-9"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span>
+</h3>
+<p id="p-846">Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if <span class="process-math">\(m\)</span> is the geometric multiplicity of <span class="process-math">\(\lambda\)</span> then <span class="process-math">\(m\leq \dim{(E_\lambda)}\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-25"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.13</span><span class="period">.</span>
+</h3>
+<p id="p-847">The geometric multiplicity of an eigenvalue <span class="process-math">\(\lambda\)</span> is the nullity of <span class="process-math">\(A-\lambda I\)</span> which is the dimension of null space of <span class="process-math">\(A-\lambda I\text{.}\)</span></p></article><article class="example example-like" id="eigen-eg117"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.14</span><span class="period">.</span>
+</h3>
+<p id="p-848">Consider the matrix <span class="process-math">\(A=\begin{pmatrix}-1\amp  1 \amp  0\\0 \amp  -1 \amp  1\\0 \amp  0 \amp  -1 \end{pmatrix}\text{.}\)</span> It is easy to check that <span class="process-math">\(\det{(xI-A)}=(x+1)^3\text{.}\)</span> That is, <span class="process-math">\(A\)</span> has only one eigenvalue of <span class="process-math">\(\lambda =-1\)</span> of geometric multiplicity 3. It is easy to see that <span class="process-math">\(e_3=(0,0,1)\)</span> is an eigenvector corresponding to <span class="process-math">\(\lambda=-1\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A -\lambda I = \begin{pmatrix}0\amp  1 \amp  0\\0 \amp  0 \amp  1\\0 \amp  0 \amp  0 \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">It is easy to see that nullity of <span class="process-math">\(A -\lambda I\)</span> is 1. Hence the geometric multiplicity of <span class="process-math">\(\lambda\)</span> is 1 where as its algebraic multiplicity is 3.</p></article><p id="p-849">We list the following properties of eigenvalues and eigenvectors without proof.</p>
+<article class="theorem theorem-like" id="eigen-properties"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Eigenvalues and Eigenvectors.</span>
+</h3>
+<ol id="p-850" class="decimal">
+<li id="li-113"><p id="p-851"><span class="process-math">\(A\)</span> and <span class="process-math">\(A^T\)</span> have the same eigenvalues.</p></li>
+<li id="li-114"><p id="p-852">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\alpha \lambda\)</span> is an eigenvalue of <span class="process-math">\(\alpha A\text{.}\)</span></p></li>
+<li id="li-115"><p id="p-853">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\lambda^2\)</span> is an eigenvalue of <span class="process-math">\(A^2\text{.}\)</span></p></li>
+<li id="li-116"><p id="p-854">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of a non singular matrix <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(1/ \lambda\)</span> is an eigenvalue of <span class="process-math">\(A^{-1}\text{.}\)</span></p></li>
+<li id="li-117"><p id="p-855">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\lambda-k\)</span> is an eigenvalue of <span class="process-math">\(A-kI\)</span> for any scalar <span class="process-math">\(k\text{.}\)</span></p></li>
+<li id="li-118"><p id="p-856">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> and <span class="process-math">\(p(x)=c_0+c_cx+c_2x^2+\cdots c_kx^k\)</span> is a polynomial in <span class="process-math">\(x\text{,}\)</span> then <span class="process-math">\(p(\lambda)\)</span> is an eigenvalue of <span class="process-math">\(p(A)=c_0I+c_cA+c_2A^2+\cdots c_kA^k\text{.}\)</span></p></li>
+<li id="li-119"><p id="p-857">Two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are called <em class="emphasis">similar</em> if there exists a matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(B=P^{-1}AP\text{.}\)</span> Similar matrices have same eigenvalues.</p></li>
+<li id="li-120"><p id="p-858">If <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> are distinct eigenvalues of <span class="process-math">\(A\)</span> then eigenvectors <span class="process-math">\(v_1\)</span> and <span class="process-math">\(v_2\)</span> corresponding to <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> are linearly independent. Can you generalize this?</p></li>
+<li id="li-121"><p id="p-859">The rank if a matrix a square matrix <span class="process-math">\(A\)</span> is is the number of nonzero eigenvalues of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li id="li-122"><p id="p-860">If <span class="process-math">\(T\)</span> is a linear transformation from <span class="process-math">\(\R^n\to \R^m\text{.}\)</span> Fix a basis <span class="process-math">\(\beta\)</span> of <span class="process-math">\(\R^n\text{.}\)</span> Let <span class="process-math">\(A=[T]_\beta\)</span> be the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta\text{.}\)</span> Then <span class="process-math">\(A\)</span> and <span class="process-math">\(T\)</span> have the same eigenvalues. Furthermore, eigenvalues of <span class="process-math">\(T\)</span> are independent of the basis.</p></li>
+</ol></article><article class="example example-like" id="example-137"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.16</span><span class="period">.</span>
+</h3>
+<p id="p-861">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\)</span> and <span class="process-math">\(B=A^3-3A+I\text{.}\)</span> Let us find eigenvalues of <span class="process-math">\(B\text{.}\)</span></p>
+<p id="p-862">It is easy to the characteristic polynomial of <span class="process-math">\(A\)</span> is given by <span class="process-math">\(\lambda^3-\lambda^2-4\lambda+4\)</span> and <span class="process-math">\(\lambda=-2, 1, 2\text{.}\)</span> Then eigenvalues of <span class="process-math">\(B\)</span> are given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{(-2)^3-3\times (-2)+1, 1^3-3\times 1+1, 2^3-3\times (2)+1\} =\{-1, -1, 3\}
+\end{equation*}
+</div></article><article class="theorem theorem-like" id="theorem-25"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.17</span><span class="period">.</span>
+</h3>
+<ol id="p-863" class="decimal">
+<li id="li-123"><p id="p-864">Eigenvalues of Hermitian (symmetric) matrix are real.</p></li>
+<li id="li-124"><p id="p-865">Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.</p></li>
+</ol></article><article class="hiddenproof" id="proof-10"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><p id="p-866">(a) Let <span class="process-math">\(\lambda\)</span> be an eigenvalues of <span class="process-math">\(A\)</span> and <span class="process-math">\(v\text{,}\)</span> the corresponding eigenvector of <span class="process-math">\(A\text{.}\)</span> Then by definition <span class="process-math">\(Av=\lambda v\text{.}\)</span> Multiplying both sides by <span class="process-math">\(\overline{v}^T\)</span> (the conjugate transpose of the vector <span class="process-math">\(v\)</span>), we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\overline{v}^TAv=\lambda\overline{v}^Tv \Longrightarrow \lambda=\dfrac{\overline{v}^TAv}{\overline{v}^Tv}\text{.}
+\end{equation*}
+</div>
+<p id="p-867">It is easy to see that <span class="process-math">\(\overline{v}^TAv\)</span> and <span class="process-math">\(\overline{v}^Tv\)</span> are scalars and that <span class="process-math">\(\overline{v}^Tv\)</span> is a real number. Hence the behavior of <span class="process-math">\(\lambda\)</span> is determined by <span class="process-math">\(\overline{v}^TAv\text{.}\)</span></p>
+<p id="p-868">If <span class="process-math">\(A\)</span> is a herminitan matrix then <span class="process-math">\(\overline{A}=A^T\text{,}\)</span> also <span class="process-math">\(\overline{v}^TAv\)</span> is scalar, implies <span class="process-math">\((\overline{v}^TAv)^T=\overline{v}^TAv\text{.}\)</span> Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\overline{(\overline{v}^TAv)}=v^T\overline{A}\overline{v}=v^T{A^T}\overline{v}=(\overline{v}^TA{v})^T=v^T{A}\overline{v}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This implies that <span class="process-math">\(\overline{v}^TAv\)</span> is a real number and hence <span class="process-math">\(\lambda\)</span> is a real number.</p>
+<p id="p-869">Now if <span class="process-math">\(A\)</span> is a skew-hermitian matrix, then it is easy to show that <span class="process-math">\(\overline{(\overline{v}^TAv)}=-(\overline{v}^TAv)\text{.}\)</span> Hence <span class="process-math">\(\overline{v}^TAv\)</span> is either purely imaginary or zero. Which show <span class="process-math">\(\lambda\)</span> is either purely imaginary of zero.</p></article></div>
+<p id="p-870">In genegarl, let <span class="process-math">\(f(x)=\alpha_0+\alpha_1 x+\alpha_2 x^2+\cdots+\alpha_kx^k\)</span> be a polynomial of degree <span class="process-math">\(k\)</span> and <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> real matrix. Then  we can define <span class="process-math">\(f(A)=\alpha_0 I+\alpha_1 A+\alpha_2 A^2+\cdots+\alpha_k A^k\text{.}\)</span> If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> theh <span class="process-math">\(f(\lambda)\)</span> is an eigenvalue of <span class="process-math">\(f(A)\text{.}\)</span></p>
+<article class="theorem theorem-like" id="theorem-26"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">Cayley-Hamilton Theorem.</span>
+</h3>
+<p id="p-871">Every square matrix satisfies its characteristic equation. That is, if <span class="process-math">\(p(x)=0\)</span> is characteristic equation of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(p(A)=0\text{.}\)</span></p></article><article class="example example-like" id="example-138"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.19</span><span class="period">.</span>
+</h3>
+<p id="p-872">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\text{.}\)</span> From <a href="" class="xref" data-knowl="./knowl/eigen_eg1.html" title="Example 5.1.9">Example 5.1.9</a>, the characteristic polynomial of <span class="process-math">\(A\)</span> is given by <span class="process-math">\(p(x)=\det{x I -A}=x^3-x^2-4x+4\text{.}\)</span> We have <span class="process-math">\(A^2=\left(\begin{array}{rrr} 1 \amp  -2 \amp  2 \\ 3 \amp  6 \amp  -2 \\ 3 \amp  2 \amp  2 \end{array} \right)\)</span> and <span class="process-math">\(A^3=\left(\begin{array}{rrr} 1 \amp  6 \amp  -6 \\ 7 \amp  6 \amp  2 \\ 7 \amp  14 \amp  -6 \end{array} \right)\text{.}\)</span> Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eigen_eg1.html" id="md-40">
+\begin{align*}
+p(A) =\amp A^3-A^2-4A+4I\\
+=\amp  \left(\begin{array}{rrr} 1 \amp  6 \amp  -6 \\ 
+7 \amp  6 \amp  2 \\ 7 \amp  14 \amp  -6 \end{array} \right)-
+\left(\begin{array}{rrr} 1 \amp  -2 \amp  2 \\
+3 \amp  6 \amp  -2 \\ 3 \amp  2 \amp  2 \end{array} \right)\\
+\amp -4\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix} +4\begin{pmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{pmatrix}\\
+=\amp  \begin{pmatrix}0\amp 0\amp 0\\0\amp 0\amp 0\\ 0\amp 0\amp 0 \end{pmatrix} \text{.}
+\end{align*}
+</div>
+<p id="p-873">Hence <span class="process-math">\(A\)</span> satisfies its characteristic equation.</p>
+<p id="p-874">It is easy to check that <span class="process-math">\(\det{(A)}=-4\text{,}\)</span> hence <span class="process-math">\(A\)</span> is non singular. Since <span class="process-math">\(A^3-A^2-4A+4I=0\text{,}\)</span> multiplying both sides by its inverse, we get <span class="process-math">\(A^2-A+4I+4A^{-1}=0\text{.}\)</span> Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^{-1}=-\frac{-1}{4}A^2+\frac{1}{4}A+I=\left(\begin{array}{rrr} 1 \amp  1 \amp  -1 \\ -\frac{1}{2} \amp  -\frac{1}{4} \amp  \frac{3}{4} \\ -\frac{1}{2} \amp  \frac{1}{4} \amp  \frac{1}{4} \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<p id="p-875">We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by <span class="process-math">\(A\)</span> to the equation, <span class="process-math">\(A^3-A^2-4A+4I=0\text{,}\)</span> we get <span class="process-math">\(A^4-A^3-4A^2+4A=0\text{,}\)</span> from this we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^4 = A^3+4A^2-4A=\left(\begin{array}{rrr} 1 \amp  -10 \amp  10 \\ 15 \amp  26 \amp  -10 \\ 15 \amp  10 \amp  6 \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<p id="p-876">Can you find <span class="process-math">\(A^5\text{?}\)</span></p></article><article class="exercise exercise-like" id="exercise-26"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.20</span><span class="period">.</span>
+</h3>
+<p id="p-877">(i) Consider the matrix <span class="process-math">\(A = \begin{pmatrix}3 \amp -2 \\-4\amp 3 \end{pmatrix}\text{.}\)</span> Show that <span class="process-math">\(A\)</span> satisfies its characteristics equation. Hence find <span class="process-math">\(A^{-1}, A^3, A^4\text{.}\)</span></p>
+<p id="p-878">(i) Consider the matrix <span class="process-math">\(A = \begin{pmatrix}1 \amp 0 \amp 0 \\ -4 \amp -3 \amp 4 \\ -2 \amp -2 \amp 3 \end{pmatrix}\text{.}\)</span> Show that <span class="process-math">\(A\)</span> satisfies its characteristics equation. Hence find <span class="process-math">\(A^{-1}, A^4, A^5\text{.}\)</span></p></article><article class="definition definition-like" id="def-spectral-radius"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Spectral Radius.</span>
+</h3>
+<p id="p-879">Let <span class="process-math">\(A\)</span> an <span class="process-math">\(n\times n\)</span> and <span class="process-math">\(\lambda_i\)</span> for <span class="process-math">\(1\leq i\leq n\)</span> be eigenvalues of <span class="process-math">\(A\)</span> then the <em class="emphasis">spectral radius</em> of <span class="process-math">\(A\)</span> is define as <span class="process-math">\(\rho(A):=\displaystyle\max_{1\leq i\leq n}\{ |\lambda_i| \}\text{.}\)</span></p></article><article class="example example-like" id="example-139"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.22</span><span class="period">.</span>
+</h3>
+<p id="p-880">Let <span class="process-math">\(A= \begin{pmatrix}0 \amp  -1\\1 \amp  0 \end{pmatrix}\text{.}\)</span> Then the characteristics polynomial of <span class="process-math">\(A\)</span> is <span class="process-math">\(\det{(xI-A)}=x^2+1\text{.}\)</span> Hence <span class="process-math">\(x=\{i,-i\}\)</span> are roots of the characteristic polynomial. Hence <span class="process-math">\(i\)</span> and <span class="process-math">\(-i\)</span> are eigenvalues of <span class="process-math">\(A\text{.}\)</span> Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\rho(A) = \max\{|i|,|-i|\}=1\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="example-140"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.23</span><span class="period">.</span>
+</h3>
+<p id="p-881">Consider the matrix <span class="process-math">\(A=\left(\begin{array}{rrr} 4 \amp  -3 \amp  0 \\ 3 \amp  4 \amp  0 \\ 5 \amp  10 \amp  10 \end{array} \right)\text{.}\)</span> Then the characteristics polynomial of <span class="process-math">\(A\)</span> is <span class="process-math">\(\det{xI-A}=x^{3} - 18 x^{2} + 105 x - 250\text{.}\)</span> Which has roots, <span class="process-math">\(10, 3-4i,3+4i\text{.}\)</span> Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\rho(A) = \max\{10,|3-4i|,|3+4i\}=10\text{.}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-27"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.24</span><span class="period">.</span>
+</h3>
+<p id="p-882">Find the spectral radius of <span class="process-math">\(\left(\begin{array}{rr} 2 \amp -3 \\ 3 \amp 2 \end{array} \right), \left(\begin{array}{rrr} 2 \amp 3 \amp 1 \\ -3 \amp 2 \amp 2 \\ 0 \amp 0 \amp 2 \end{array} \right)\)</span> and <span class="process-math">\(\left(\begin{array}{rrr} 2 \amp 3 \amp 1 \\ 3 \amp 2 \amp 2 \\ 0 \amp 0 \amp 1 \end{array} \right)\text{.}\)</span></p></article><article class="definition definition-like" id="definition-38"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Positive definite matrix.</span>
+</h3>
+<p id="p-883">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> symmetric matrix. Then <span class="process-math">\(A\)</span> is said to be <em class="emphasis">positive definite</em> if <span class="process-math">\(x^TAx\gt 0\)</span> for all <span class="process-math">\(x\in \R^n\setminus \{0\}\)</span> and <span class="process-math">\(x^TAx=0\)</span> if and only if <span class="process-math">\(x=0\text{.}\)</span> <span class="process-math">\(A\)</span> is called <em class="emphasis">negative definite</em> if <span class="process-math">\(-A\)</span> is positive definite.</p></article><article class="example example-like" id="example-141"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.26</span><span class="period">.</span>
+</h3>
+<p id="p-884">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\\2\amp 5 \end{pmatrix}\text{.}\)</span> Let <span class="process-math">\(x=\begin{pmatrix}x_1\\x_2 \end{pmatrix}\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-41">
+\begin{align*}
+x^TAx=\amp \begin{pmatrix}x_1\amp x_2 \end{pmatrix} 
+\begin{pmatrix}1\amp 2\\2\amp 5 \end{pmatrix} 
+\begin{pmatrix}x_1\\x_2 \end{pmatrix}\\
+=\amp \begin{pmatrix}x_1\amp x_2 \end{pmatrix} 
+\begin{pmatrix}x_1+2x_2\\2x_1+5x_2 \end{pmatrix} \\
+=\amp x_1^2+4x_1x_2+5x_2^2=(x_1+2x_2)^2+x_2^2\text{.}
+\end{align*}
+</div>
+<p id="p-885">Clearly <span class="process-math">\(x^TAx&gt;0\)</span> for all non zero vector <span class="process-math">\(x\)</span> and <span class="process-math">\(x^TAx=0\)</span> if and only if <span class="process-math">\(x=0\text{.}\)</span> Hence <span class="process-math">\(A\)</span> is positive definite.</p></article><article class="example example-like" id="example-142"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.27</span><span class="period">.</span>
+</h3>
+<p id="p-886">Let <span class="process-math">\(A=\begin{pmatrix}0\amp 1\\1\amp 0 \end{pmatrix}\text{.}\)</span> Let <span class="process-math">\(x=\begin{pmatrix}x_1\\x_2 \end{pmatrix}\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x^TAx=\begin{pmatrix}x_1\amp x_2 \end{pmatrix} \begin{pmatrix}0\amp 1\\1\amp 0 \end{pmatrix} \begin{pmatrix}x_1\\x_2 \end{pmatrix} = \begin{pmatrix}x_1\amp x_2 \end{pmatrix} \begin{pmatrix}x_2\\x_1 \end{pmatrix} =2x_1x_2
+\end{equation*}
+</div>
+<p id="p-887">Thus if <span class="process-math">\(x=\begin{pmatrix}1\\-1 \end{pmatrix}\)</span> then <span class="process-math">\(x^TAx=-2\lt 0\text{.}\)</span> Hence it is not a positive definite. Its easy to see that <span class="process-math">\(A\)</span> is also not negative definite.</p></article><article class="exercise exercise-like" id="exercise-28"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.28</span><span class="period">.</span>
+</h3>
+<p id="p-888">If <span class="process-math">\(A\)</span> is a positive definite matrix then all its eigenvalues are positive.</p></article><article class="exercise exercise-like" id="exercise-29"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.29</span><span class="period">.</span>
+</h3>
+<p id="p-889">If <span class="process-math">\(A\)</span> is a negative definite matrix then all its eigenvalues are negative.</p></article><p id="p-890">We have the following result about positive definite matrices known as <em class="emphasis">Sylvester's criterion</em>. It allows us to determine if a given matrix in positive definite using the leading principal minors of the matrix.</p>
+<p id="p-891">The leading principal minors of a matrix <span class="process-math">\(A\)</span> are <span class="process-math">\({\rm det}(A)\)</span> and the minors obtained by successively removing the last row and the last columns. That is, the leading principal miniors of a matrix <span class="process-math">\(A\)</span> are</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\Delta_1 =a_{11}, 
+\Delta_2 =\begin{vmatrix}a_{11} \amp a_{12}\\a_{21} \amp a_{22}\end{vmatrix}, \Delta_3=
+\begin{vmatrix}a_{11} \amp a_{12} \amp a_{13}\\a_{21} \amp a_{22} \amp a_{23}\\a_{31} \amp a_{32}\amp a_{33}\end{vmatrix},
+\cdots, \Delta_n ={\rm det}{(A)}\text{.}
+\end{equation*}
+</div>
+<article class="theorem theorem-like" id="thm-sylvyster"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.30</span><span class="period">.</span><span class="space"> </span><span class="title">Sylvester's Criterion.</span>
+</h3>
+<p id="p-892">If <span class="process-math">\(A\)</span> is a real symmetric matrix then <span class="process-math">\(A\)</span> is positive definite if and only if all leading minor of <span class="process-math">\(A\)</span> are positive.</p></article><article class="example example-like" id="example-143"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.31</span><span class="period">.</span>
+</h3>
+<p id="p-893">Let <span class="process-math">\(A=\begin{pmatrix}2 \amp  1 \amp 1\\1\amp 2\amp 1\\1\amp 1\amp 2 \end{pmatrix}\text{.}\)</span> For any <span class="process-math">\(x=\begin{pmatrix}x_1\\x_2\\x_2 \end{pmatrix} \in \R^2\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x^TAx=x_1^2+x_2^2+x_3^2+(x_1+x_2+x_3)^2
+\end{equation*}
+</div>
+<p id="p-894">Henc e <span class="process-math">\(A\)</span> is positive definite.</p></article><article class="exercise exercise-like" id="exercise-30"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.32</span><span class="period">.</span>
+</h3>
+<p id="p-895">Let <span class="process-math">\(A=\begin{pmatrix}2 \amp -1 \amp 0\\-1\amp 2\amp -1\\0\amp -1\amp 2 \end{pmatrix}\text{.}\)</span> Show that <span class="process-math">\(A\)</span> is positive definite.</p></article><p id="p-896">Note that if <span class="process-math">\(A\)</span> is not a symmetric matrix, then the Sylvester's criteria cannot be used to check positive definiteness. For, condider the matrix <span class="process-math">\(A=\begin{pmatrix} 1 \amp 0\\-3 \amp 1\end{pmatrix}\text{.}\)</span> It is easy to see that all principal minors of <span class="process-math">\(A\)</span> are positive. For <span class="process-math">\(u=\begin{pmatrix}1\\2\end{pmatrix}\text{,}\)</span> <span class="process-math">\(u^TAu=-1\text{,}\)</span> however for <span class="process-math">\(v=\begin{pmatrix}3\\1\end{pmatrix}\text{,}\)</span> <span class="process-math">\(v^TAv=1\text{.}\)</span></p></section></div></main>
+</div>
+</body>
+</html>

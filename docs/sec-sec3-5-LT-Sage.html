@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:29+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sage Computations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body id="changeme" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<p class="byline">Ajit Kumar</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-LT-Geom.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap3-LT.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap4-Vector-Space.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-LT-Geom.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap3-LT.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap4-Vector-Space.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="biography-1.html" data-scroll="biography-1" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1-lineq.html" data-scroll="chap1-lineq" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a><ul>
+<li><a href="sec1-1-elementary-operations.html" data-scroll="sec1-1-elementary-operations" class="internal">Elementary Row Operations</a></li>
+<li><a href="sec1-2-col-operations.html" data-scroll="sec1-2-col-operations" class="internal">Elementary Column Operations</a></li>
+<li><a href="sec1-3-echelon-form.html" data-scroll="sec1-3-echelon-form" class="internal">Echelon Forms</a></li>
+<li><a href="sec1-4-matrix-rank.html" data-scroll="sec1-4-matrix-rank" class="internal">Rank of Matrices</a></li>
+<li><a href="sec1-5-hom-system.html" data-scroll="sec1-5-hom-system" class="internal">Homogeneous System of Linear Equations</a></li>
+<li><a href="sec1-6-LU.html" data-scroll="sec1-6-LU" class="internal"><span class="process-math">\(LU\)</span>-Facotorization</a></li>
+<li><a href="sec1-7-exer.html" data-scroll="sec1-7-exer" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2-Rn-Space.html" data-scroll="chap2-Rn-Space" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a><ul>
+<li><a href="sec2-0-intro.html" data-scroll="sec2-0-intro" class="internal">Introduction</a></li>
+<li><a href="sec2-1-LinSpan.html" data-scroll="sec2-1-LinSpan" class="internal">Linear Spans</a></li>
+<li><a href="sec-2-2-LI.html" data-scroll="sec-2-2-LI" class="internal">Linear Dependence</a></li>
+<li><a href="sec-2-3-basis-dimension.html" data-scroll="sec-2-3-basis-dimension" class="internal">Basis and Dimension</a></li>
+<li><a href="sec2-4-Sage.html" data-scroll="sec2-4-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3-LT.html" data-scroll="chap3-LT" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a><ul>
+<li><a href="sec3-1-LT.html" data-scroll="sec3-1-LT" class="internal">Introduction</a></li>
+<li><a href="sec3-2-LT.html" data-scroll="sec3-2-LT" class="internal">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></a></li>
+<li><a href="sec3-3-LT.html" data-scroll="sec3-3-LT" class="internal">Reflections and Projections</a></li>
+<li><a href="sec-LT-Geom.html" data-scroll="sec-LT-Geom" class="internal">Geometry of Linear Transformations</a></li>
+<li><a href="sec-sec3-5-LT-Sage.html" data-scroll="sec-sec3-5-LT-Sage" class="active">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4-Vector-Space.html" data-scroll="chap4-Vector-Space" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a><ul>
+<li><a href="sec4-1-VS.html" data-scroll="sec4-1-VS" class="internal">Introduction</a></li>
+<li><a href="sec4-2-Abst-VS.html" data-scroll="sec4-2-Abst-VS" class="internal">Vector Subspaces</a></li>
+<li><a href="sec4-3-linspan-VS.html" data-scroll="sec4-3-linspan-VS" class="internal">Linear Span</a></li>
+<li><a href="sec4-3-LI-VS.html" data-scroll="sec4-3-LI-VS" class="internal">Linear dependence and independence</a></li>
+<li><a href="sec4-5-basis-dim-VS.html" data-scroll="sec4-5-basis-dim-VS" class="internal">Basis and dimension</a></li>
+<li><a href="sec-sec4-5-VS-Sage.html" data-scroll="sec-sec4-5-VS-Sage" class="internal">Sage Computations</a></li>
+<li><a href="sec4-5-VS-Ex.html" data-scroll="sec4-5-VS-Ex" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-Eigen.html" data-scroll="chap5-Eigen" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a><ul>
+<li><a href="sec5-1-eigen-intro.html" data-scroll="sec5-1-eigen-intro" class="internal">Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-2-diagonalization.html" data-scroll="sec5-2-diagonalization" class="internal">Diagonalization</a></li>
+<li><a href="sec5-5-Eigen-Sage.html" data-scroll="sec5-5-Eigen-Sage" class="internal">Eigenvalues and Eigenvectors in Sage</a></li>
+<li><a href="sec5-3-eigen-Appl.html" data-scroll="sec5-3-eigen-Appl" class="internal">Applications of Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-4-eigen-exer.html" data-scroll="sec5-4-eigen-exer" class="internal">Exercises on Eigenvalues and Eigenvectors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-orthogonality.html" data-scroll="chap5-orthogonality" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec6-0-orthogonality.html" data-scroll="sec6-0-orthogonality" class="internal">Orthogonality</a></li>
+<li><a href="sec6-1-GramSchmidt.html" data-scroll="sec6-1-GramSchmidt" class="internal">Gram-Schmidt Orthogonalization Process</a></li>
+<li><a href="sec6-2.html" data-scroll="sec6-2" class="internal">Orthogonal Complements</a></li>
+<li><a href="sec6-3.html" data-scroll="sec6-3" class="internal">Orthogonal Diagonalizations</a></li>
+<li><a href="sec6-4.html" data-scroll="sec6-4" class="internal">QR-Factorization</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7-inner-product.html" data-scroll="chap7-inner-product" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a><ul>
+<li><a href="sec7-1-InnerProduct.html" data-scroll="sec7-1-InnerProduct" class="internal">Inner Product</a></li>
+<li><a href="sec7-2-Exer.html" data-scroll="sec7-2-Exer" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap8-Least-Square.html" data-scroll="chap8-Least-Square" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a><ul><li><a href="sec8-1-LSTSQ.html" data-scroll="sec8-1-LSTSQ" class="internal">Least Square Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="chap9-SVD.html" data-scroll="chap9-SVD" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a><ul><li><a href="sec9-1-SVD.html" data-scroll="sec9-1-SVD" class="internal">Singular Value Decomposition</a></li></ul>
+</li>
+<li class="link">
+<a href="chap10-PCA.html" data-scroll="chap10-PCA" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a><ul>
+<li><a href="sec10-1-PCA.html" data-scroll="sec10-1-PCA" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec10-2.html" data-scroll="sec10-2" class="internal">Applications of PCA</a></li>
+<li><a href="sec10-3.html" data-scroll="sec10-3" class="internal">Sage Practice Area</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link">
+<a href="appendix-sage-into.html" data-scroll="appendix-sage-into" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a><ul>
+<li><a href="subsection-47.html" data-scroll="subsection-47" class="internal">Introduction to SageMath</a></li>
+<li><a href="getting-started-sagemath.html" data-scroll="getting-started-sagemath" class="internal">Getting Started with Sage</a></li>
+<li><a href="subsec-sage-programming.html" data-scroll="subsec-sage-programming" class="internal">Programming in Sage</a></li>
+<li><a href="subsec-plotting-sage.html" data-scroll="subsec-plotting-sage" class="internal">Plotting in Sage</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-sec3-5-LT-Sage"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">Sage Computations</span>
+</h2>
+<section class="introduction" id="introduction-14"><p id="p-550">In this section we explain how Sage can be used to explore linear transformations and deal with various concepts related to linear transformations that we have learned in this chapter.</p>
+<p id="p-551">Sage has a construction <code class="code-inline tex2jax_ignore">linear_transformation()</code> to define a linear transformation. We can define a linear transformation in Sage using the following four different ways.</p>
+<ol id="p-552" class="decimal">
+<li id="li-85"><p id="p-553"><code class="code-inline tex2jax_ignore"> linear_transformation(A, side='left')</code> defines a linear transformation as a matrix transformation defined by the matrix <span class="process-math">\(A\text{.}\)</span> Domain and the codomain and the base space are inferred by the dimension of the matrix and base ring (the ring from on matrix is defined). Side is the keyword that can be taken as 'left' or 'right', the default value is 'left'.</p></li>
+<li id="li-86"><p id="p-554"><code class="code-inline tex2jax_ignore">linear_transformation(D, C, A, side='left') </code>, this is same as before, however, here domain is taken as <span class="process-math">\(D\)</span> and codomain is taken as <span class="process-math">\(C\text{.}\)</span></p></li>
+<li id="li-87"><p id="p-555"><code class="code-inline tex2jax_ignore">linear_transformation(D, C, f)</code>, in this case <span class="process-math">\(f\)</span> is the function that is defined on on a basis element of the domain and it produces the elements of the codomain. The linear tranformation is the unique linear transformation that is extended linearly on the domain <span class="process-math">\(D\text{.}\)</span></p></li>
+<li id="li-88"><p id="p-556"><code class="code-inline tex2jax_ignore">linear_transformation(D, C, images)</code>, where 'images' is a list or  a  touple of vectors of the codmain, whihc is equal to the size of the basis. Each element of th basis is mapped to the corresponding element of the image.</p></li>
+</ol></section><article class="example example-like" id="example-82"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Linear transformaation defined by a matrix..</span>
+</h3>
+<p id="p-557">Let us define a linear tarnsformatrion defined by a matrix <span class="process-math">\(A\)</span> over a rational numbers.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-123"><script type="text/x-sage">A = matrix(QQ, [[2, -1,3], [-2,3, 5]])
+T = linear_transformation(A,side='right')
+T
+</script></pre>
+<p id="p-558">Clearly, here <span class="process-math">\(T\)</span> is the matrix tranformatrion defined from <span class="process-math">\(\Q^3\)</span> to <span class="process-math">\(\Q^2\text{.}\)</span> We can find, the domain, codmain, parent, images, kernel, that is null space etc using the dot methods. Let us explore some of them.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-124"><script type="text/x-sage">T.domain()
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-125"><script type="text/x-sage">T.codomain()
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-126"><script type="text/x-sage">T.image()
+</script></pre>
+<p id="p-559">This returns a basis matrix of the image along with the dimension of the image space.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-127"><script type="text/x-sage">T.matrix(side='right')
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-128"><script type="text/x-sage">T.parent()
+</script></pre>
+<p id="p-560">We can find image of any vector using the following Sage syntax.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-129"><script type="text/x-sage">v = vector(QQ,[1,2,3])
+T(v)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-130"><script type="text/x-sage">T.kernel()
+</script></pre>
+<p id="p-561">If we take a vector <span class="process-math">\(w\)</span> in the range space of <span class="process-math">\(T\text{,}\)</span> we can find a representative of the <span class="process-math">\(T^{-1}(w)\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-131"><script type="text/x-sage">w = vector(QQ,[2,-10])
+T.preimage_representative(w)
+</script></pre>
+<p id="p-562">Note that the same linear transformation, we can also define as follows.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-132"><script type="text/x-sage">T1 = linear_transformation(QQ^3,QQ^2,A,side='right')
+T==T1
+</script></pre></article><article class="problem example-like" id="problem-3"><h3 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span>
+</h3>
+<p id="p-563">Define a matrix <span class="process-math">\(A=\left(\begin{array}{rrr}
+-1 \amp  1 \amp  0 \\
+2 \amp  0 \amp  -1 \\
+2 \amp  -1 \amp  1 \\
+0 \amp  2 \amp  1
+\end{array}\right)\)</span> and define a linear transformation <span class="process-math">\(T:\Q^3\to \Q^4\)</span> by <span class="process-math">\(T(x)=Ax\text{.}\)</span> Now define two vectors <span class="process-math">\(w_1=(-3, -1, 0, -31/3)\)</span> and <span class="process-math">\(w_2=(1, -1/2, -1, 11/6)\)</span> . Check that <span class="process-math">\(w_1,w_2\)</span> lie in the image space of <span class="process-math">\(T\text{.}\)</span> Let <span class="process-math">\(v_1\in T^{-1}(w_1)\)</span> and <span class="process-math">\(v_2\in T^{-1}(w_1)\text{.}\)</span> Show that <span class="process-math">\(v_1, v_2\)</span> are linearly independent in <span class="process-math">\(\Q^3\text{.}\)</span>  Can you  generalize this result and prove the same?</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-133"><script type="text/x-sage">## Sage Practice Area
+A = matrix([[-1,1,0],[2,0,-1],[2,-1,1],[0,2,1]])
+w1 = vector(QQ,[-3, -1, 0, -31/3])
+w2 = vector(QQ,[1, -1/2, -1, 11/6])
+</script></pre></article><article class="example example-like" id="example-83"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.3</span><span class="period">.</span>
+</h3>
+<p id="p-564">Let us define a linear transformation <span class="process-math">\(T:\Q^4\to\Q^4\)</span> given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T(x_1,x_2,x_3,x_4)=\left(\begin{array}{r}
+-x_{1} + 2 \, x_{3} - x_{4} \\
+x_{1} + 3 \, x_{2} + 7 \, x_{3} - 2 \, x_{4} \\
+x_{1} - 3 \, x_{2} - 21 \, x_{3} + 4 \, x_{4} \\
+x_{1} + 6 \, x_{2} + 16 \, x_{3} - 5 \, x_{4}
+\end{array}\right) 
+\end{equation*}
+</div>
+<p class="continuation">and explore this in Sage.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-134"><script type="text/x-sage">V = QQ^4
+W = QQ^4
+x1, x2, x3,x4 = var('x1, x2, x3,x4')
+outputs = [ -x1+ 2*x3-x4,
+             x1 + 3*x2 + 7*x3-2*x4,
+             x1 - 3*x2 - 21*x3 + 4*x4,
+                     x1 + 6*x2 + 16*x3 - 5*x4]
+T_symbolic(x1, x2, x3,x4) = outputs
+T = linear_transformation(V,W, T_symbolic,side='right')
+T
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-135"><script type="text/x-sage">print('The image of T is:\n')
+print(T.image())
+print('The kernel of T is:\n')
+print(T.kernel())
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-136"><script type="text/x-sage">T.matrix(side='right')
+</script></pre>
+<p id="p-565">Next we find the matrix of <span class="process-math">\(T\)</span> with respect to a bases <span class="process-math">\(\beta\)</span> on the domain and a basis <span class="process-math">\(\gamma\)</span> on the codomain.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-137"><script type="text/x-sage">## Basis of domain,say, B=[u1,u2,u3,u4]
+u1 = vector(QQ, [ 1, -3,  2, -1])
+u2 = vector(QQ, [ 0,  1,  0,  1])
+u3 = vector(QQ, [-1,  2, -1, -1])
+u4 = vector(QQ, [ 2, -8,  4, -3])
+B = [u1,u2,u3,u4]
+## Checking if B is linearly dependent
+V.linear_dependence(B)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-138"><script type="text/x-sage">## Basis of codomain, say,C=[w1,w2,w3,w4]
+w1 = vector(QQ, [ 2, -3,  2, -1])
+w2 = vector(QQ, [ 1,  2,  -1, 3])
+w3 = vector(QQ, [ 1,  -1, 5, 1])
+w4 = vector(QQ, [ 0, -4,  3, 2])
+C = [w1, w2, w3, w4]
+## Checking if C is linearly dependent
+W.linear_dependence(C)
+</script></pre>
+<p id="p-566">Now we define a subspace <span class="process-math">\(V_1\)</span> of <span class="process-math">\(V\)</span> with B as a basis and a subspace <span class="process-math">\(W_1\)</span> of <span class="process-math">\(W\)</span> with C as a basis. After that we rectrict T on to <span class="process-math">\(V_1\)</span> on its domain and <span class="process-math">\(W_1\)</span> on its codomain. We call this restriction as <span class="process-math">\(T_1\text{.}\)</span> The matrix of <span class="process-math">\(T_1\)</span> is the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta\)</span> on domain and <span class="process-math">\(\gamma\)</span> on codmain, that is <span class="process-math">\([T]_\beta^\gamma\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-139"><script type="text/x-sage">V1 = V.subspace_with_basis(B)
+W1 = W.subspace_with_basis(C)
+T1=T.restrict_domain(V1).restrict_codomain(W1)
+MBC=T1.matrix(side='right');MBC
+</script></pre>
+<p id="p-567">Note that the matrix <span class="process-math">\([T]_\beta^\gamma\)</span> can also be obtained by defining a column matrix whose columns are <span class="process-math">\(w_1,w_2,w_3,w_4, T(v_1), T(v_2), T(v_3), T(v_4)\text{,}\)</span> then applying RREF and extracting the last four columns.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-140"><script type="text/x-sage">M = column_matrix([w1,w2,w3,w4,T(u1),T(u2),T(u3),T(u4)]).rref()
+print(M)
+M.submatrix(0,4)
+</script></pre>
+<p id="p-568">The image of <span class="process-math">\(T\)</span> can also be obtained by using RREF  of the matrix whose rows are vectors <span class="process-math">\(T(u1),T(u2),T(u3),T(u4)\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-141"><script type="text/x-sage">column_matrix([T(u1),T(u2),T(u3),T(u4)]).T.rref()
+</script></pre>
+<p id="p-569">Note that the first three rows of this is sage as what we get using <code class="code-inline tex2jax_ignore">T.image()</code>.</p>
+<p id="p-570"><em class="alert">Reshufle the basis elements.</em> Let us see what happens to the matrix of a linear transformation when we reshuffle the elemnts of a basis on domain and codomain. Let us find the matrix of the abobe linear transformation with resepect the basis <span class="process-math">\(\beta_1 =\{u_1,u_3,u_2,u_4\}\)</span> of the domain and <span class="process-math">\(\gamma\)</span> of the codomain. Here we have interchanged 2nd and 3rd basis elements of <span class="process-math">\(\beta\text{.}\)</span>  You may also explore with other interchanges.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-142"><script type="text/x-sage">## interchanging 2nd and 3rd elements of domain basis
+B1 = [u1,u3,u2,u4]
+V2 = V.subspace_with_basis(B1)
+T2=T.restrict_domain(V2).restrict_codomain(W1)
+MB1C=T2.matrix(side='right');MB1C
+</script></pre>
+<p id="p-571">Clearly in this case 2nd and 3rd columns of <span class="process-math">\([T]_\beta^\gamma\)</span> are interchanged.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-143"><script type="text/x-sage">## interchanging 2nd and 3rd elements of codomain basis
+C1 = [w1,w3,w2,w4]
+W2=V.subspace_with_basis(C1)
+T3=T.restrict_domain(V1).restrict_codomain(W2)
+MBC1=T3.matrix(side='right');MBC1
+</script></pre>
+<p id="p-572">Clearly in this case 2nd and 3rd rows of <span class="process-math">\([T]_\beta^\gamma\)</span> are interchanged.</p></article><article class="example example-like" id="reflection-sage-eg1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Reflection about a line <span class="process-math">\(y=mx\)</span>.</span>
+</h3> Find the reflection of <span class="process-math">\((2,4)\)</span> about the line <span class="process-math">\(y=\frac{1}{2} x\text{.}\)</span> Also plot the point and the line and the point point obtained by reflection. <pre class="ptx-sagecell sagecell-sage" id="sage-144"><script type="text/x-sage">m = 1/2
+Q = 1/(1+m^2)*matrix([[1-m^2, 2*m],[2*m,m^2-1]])
+v = vector([2,4])
+Rv = Q*v  
+print(Rv)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-145"><script type="text/x-sage">line = plot(m*x,(x,-5,5),color='black')
+point = point2d(v,color='blue',size=20)
+Rpoint = point2d(Rv,color='red',size=20)
+vecP= v.plot(linestyle="--",color='blue')
+vecRv= Rv.plot(linestyle="--",color='red')
+ll = ll=line2d([v,Rv],linestyle="--",color='blue')
+show(line+point+Rpoint+vecP+vecRv+ll,figsize=5)
+</script></pre></article><article class="example example-like" id="projection-sage-eg1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.5</span><span class="period">.</span>
+</h3>Find the projection of <span class="process-math">\((4,-1)\)</span> about the line <span class="process-math">\(y=\frac12 x\text{.}\)</span> Plot the point, the line and the point of proection.</article><pre class="ptx-sagecell sagecell-sage" id="sage-146"><script type="text/x-sage">m =1/2
+P = 1/(1+m^2)*matrix([[1, m],[m,m^2]])
+v = vector([4,-1])
+Pv = P*v
+print(Pv)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-147"><script type="text/x-sage">line = plot(m*x,(x,-5,5),color='black')
+point = point2d(v,color='blue',size=20)
+Ppoint = point2d(Pv,color='red',size=20)
+vecP= v.plot(color='blue')
+vecPv= Pv.plot(linestyle="--",color='red')
+ll = ll=line2d([v,Pv],linestyle="--",color='blue')
+show(line+point+Ppoint+vecP+vecPv+ll,figsize=5)
+</script></pre></section></div></main>
+</div>
+</body>
+</html>

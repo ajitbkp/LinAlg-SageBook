@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:30+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Applications of PCA</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body id="changeme" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<p class="byline">Ajit Kumar</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec10-1-PCA.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap10-PCA.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec10-3.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec10-1-PCA.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap10-PCA.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec10-3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="biography-1.html" data-scroll="biography-1" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1-lineq.html" data-scroll="chap1-lineq" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a><ul>
+<li><a href="sec1-1-elementary-operations.html" data-scroll="sec1-1-elementary-operations" class="internal">Elementary Row Operations</a></li>
+<li><a href="sec1-2-col-operations.html" data-scroll="sec1-2-col-operations" class="internal">Elementary Column Operations</a></li>
+<li><a href="sec1-3-echelon-form.html" data-scroll="sec1-3-echelon-form" class="internal">Echelon Forms</a></li>
+<li><a href="sec1-4-matrix-rank.html" data-scroll="sec1-4-matrix-rank" class="internal">Rank of Matrices</a></li>
+<li><a href="sec1-5-hom-system.html" data-scroll="sec1-5-hom-system" class="internal">Homogeneous System of Linear Equations</a></li>
+<li><a href="sec1-6-LU.html" data-scroll="sec1-6-LU" class="internal"><span class="process-math">\(LU\)</span>-Facotorization</a></li>
+<li><a href="sec1-7-exer.html" data-scroll="sec1-7-exer" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2-Rn-Space.html" data-scroll="chap2-Rn-Space" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a><ul>
+<li><a href="sec2-0-intro.html" data-scroll="sec2-0-intro" class="internal">Introduction</a></li>
+<li><a href="sec2-1-LinSpan.html" data-scroll="sec2-1-LinSpan" class="internal">Linear Spans</a></li>
+<li><a href="sec-2-2-LI.html" data-scroll="sec-2-2-LI" class="internal">Linear Dependence</a></li>
+<li><a href="sec-2-3-basis-dimension.html" data-scroll="sec-2-3-basis-dimension" class="internal">Basis and Dimension</a></li>
+<li><a href="sec2-4-Sage.html" data-scroll="sec2-4-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3-LT.html" data-scroll="chap3-LT" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a><ul>
+<li><a href="sec3-1-LT.html" data-scroll="sec3-1-LT" class="internal">Introduction</a></li>
+<li><a href="sec3-2-LT.html" data-scroll="sec3-2-LT" class="internal">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></a></li>
+<li><a href="sec3-3-LT.html" data-scroll="sec3-3-LT" class="internal">Reflections and Projections</a></li>
+<li><a href="sec-LT-Geom.html" data-scroll="sec-LT-Geom" class="internal">Geometry of Linear Transformations</a></li>
+<li><a href="sec-sec3-5-LT-Sage.html" data-scroll="sec-sec3-5-LT-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4-Vector-Space.html" data-scroll="chap4-Vector-Space" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a><ul>
+<li><a href="sec4-1-VS.html" data-scroll="sec4-1-VS" class="internal">Introduction</a></li>
+<li><a href="sec4-2-Abst-VS.html" data-scroll="sec4-2-Abst-VS" class="internal">Vector Subspaces</a></li>
+<li><a href="sec4-3-linspan-VS.html" data-scroll="sec4-3-linspan-VS" class="internal">Linear Span</a></li>
+<li><a href="sec4-3-LI-VS.html" data-scroll="sec4-3-LI-VS" class="internal">Linear dependence and independence</a></li>
+<li><a href="sec4-5-basis-dim-VS.html" data-scroll="sec4-5-basis-dim-VS" class="internal">Basis and dimension</a></li>
+<li><a href="sec-sec4-5-VS-Sage.html" data-scroll="sec-sec4-5-VS-Sage" class="internal">Sage Computations</a></li>
+<li><a href="sec4-5-VS-Ex.html" data-scroll="sec4-5-VS-Ex" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-Eigen.html" data-scroll="chap5-Eigen" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a><ul>
+<li><a href="sec5-1-eigen-intro.html" data-scroll="sec5-1-eigen-intro" class="internal">Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-2-diagonalization.html" data-scroll="sec5-2-diagonalization" class="internal">Diagonalization</a></li>
+<li><a href="sec5-5-Eigen-Sage.html" data-scroll="sec5-5-Eigen-Sage" class="internal">Eigenvalues and Eigenvectors in Sage</a></li>
+<li><a href="sec5-3-eigen-Appl.html" data-scroll="sec5-3-eigen-Appl" class="internal">Applications of Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-4-eigen-exer.html" data-scroll="sec5-4-eigen-exer" class="internal">Exercises on Eigenvalues and Eigenvectors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-orthogonality.html" data-scroll="chap5-orthogonality" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec6-0-orthogonality.html" data-scroll="sec6-0-orthogonality" class="internal">Orthogonality</a></li>
+<li><a href="sec6-1-GramSchmidt.html" data-scroll="sec6-1-GramSchmidt" class="internal">Gram-Schmidt Orthogonalization Process</a></li>
+<li><a href="sec6-2.html" data-scroll="sec6-2" class="internal">Orthogonal Complements</a></li>
+<li><a href="sec6-3.html" data-scroll="sec6-3" class="internal">Orthogonal Diagonalizations</a></li>
+<li><a href="sec6-4.html" data-scroll="sec6-4" class="internal">QR-Factorization</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7-inner-product.html" data-scroll="chap7-inner-product" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a><ul>
+<li><a href="sec7-1-InnerProduct.html" data-scroll="sec7-1-InnerProduct" class="internal">Inner Product</a></li>
+<li><a href="sec7-2-Exer.html" data-scroll="sec7-2-Exer" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap8-Least-Square.html" data-scroll="chap8-Least-Square" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a><ul><li><a href="sec8-1-LSTSQ.html" data-scroll="sec8-1-LSTSQ" class="internal">Least Square Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="chap9-SVD.html" data-scroll="chap9-SVD" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a><ul><li><a href="sec9-1-SVD.html" data-scroll="sec9-1-SVD" class="internal">Singular Value Decomposition</a></li></ul>
+</li>
+<li class="link">
+<a href="chap10-PCA.html" data-scroll="chap10-PCA" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a><ul>
+<li><a href="sec10-1-PCA.html" data-scroll="sec10-1-PCA" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec10-2.html" data-scroll="sec10-2" class="active">Applications of PCA</a></li>
+<li><a href="sec10-3.html" data-scroll="sec10-3" class="internal">Sage Practice Area</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link">
+<a href="appendix-sage-into.html" data-scroll="appendix-sage-into" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a><ul>
+<li><a href="subsection-47.html" data-scroll="subsection-47" class="internal">Introduction to SageMath</a></li>
+<li><a href="getting-started-sagemath.html" data-scroll="getting-started-sagemath" class="internal">Getting Started with Sage</a></li>
+<li><a href="subsec-sage-programming.html" data-scroll="subsec-sage-programming" class="internal">Programming in Sage</a></li>
+<li><a href="subsec-plotting-sage.html" data-scroll="subsec-plotting-sage" class="internal">Plotting in Sage</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec10-2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">10.2</span> <span class="title">Applications of PCA</span>
+</h2>
+<section class="introduction" id="introduction-27"><p id="p-1500">PCA, as mentioned earlier, is a dimensionality reduction techniques. It has numerous applications like, visualization of high dimensional data, facial recognition, computer vision, image compression, determining patterns in a data, data mining, bioinformatics, psychology, analyzing and forecasting stock data,etc. We mention, image compression as one of the applications.</p></section><section class="subsection" id="subsection-43"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">10.2.1</span> <span class="title">Image compression with PCA</span>
+</h3>
+<p id="p-1501">Similar to SVD, we can also compress the images using PCA. We take any image, first of all we separate the RBG channels of the images and apply PCA separately to red channel, green channel and blue channel. Next we take first <span class="process-math">\(k\)</span> principal components and project the red, green and blue channel images and then combine the three channels to obtained the transformed image with <span class="process-math">\(k\)</span> principal components.</p>
+<article class="example example-like" id="example-198"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.2.1</span><span class="period">.</span>
+</h4>
+<p id="p-1502">Consider an image of a Rose as shown in the <a href="" class="xref" data-knowl="./knowl/fig_Rose.html" title="Figure 10.2.2">Figure 10.2.2</a> This image is of sinze <span class="process-math">\(600\times 800\times 3\)</span> array.</p>
+<figure class="figure figure-like" id="fig_Rose"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/Rose.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.2<span class="period">.</span></span><span class="space"> </span>Original  Rose Image</figcaption></figure><p id="p-1503">The red green and blue channel images are shown in the <a href="" class="xref" data-knowl="./knowl/fig_RoseR.html" title="Figure 10.2.3">Figures 10.2.3</a>, <a href="" class="xref" data-knowl="./knowl/fig_RoseG.html" title="Figure 10.2.4">Figure 10.2.4</a>, <a href="" class="xref" data-knowl="./knowl/fig_RoseB.html" title="Figure 10.2.5">Figure 10.2.5</a>.</p>
+<figure class="figure figure-like" id="fig_RoseR"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/RoseR.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.3<span class="period">.</span></span><span class="space"> </span>Red Channel</figcaption></figure><figure class="figure figure-like" id="fig_RoseG"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/RoseR.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.4<span class="period">.</span></span><span class="space"> </span>Green Channel</figcaption></figure><figure class="figure figure-like" id="fig_RoseB"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/RoseR.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.5<span class="period">.</span></span><span class="space"> </span>Blue Channel</figcaption></figure><p id="p-1504">After applying PCA and taking first 5, 20 and 50 principal components and combining the three channels together we get the following approximate images as shown in the <a href="" class="xref" data-knowl="./knowl/fig_Rose-PCA5.html" title="Figure 10.2.6">Figures 10.2.6</a>, <a href="" class="xref" data-knowl="./knowl/fig_Rose-PCA20.html" title="Figure 10.2.7">Figure 10.2.7</a>, <a href="" class="xref" data-knowl="./knowl/fig_Rose-PCA50.html" title="Figure 10.2.8">Figure 10.2.8</a>, respectively. Each channel is of size <span class="process-math">\(600\times 800\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_Rose-PCA5"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/Rose_PCA5.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.6<span class="period">.</span></span><span class="space"> </span>5 components</figcaption></figure><figure class="figure figure-like" id="fig_Rose-PCA20"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/Rose_PCA20.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.7<span class="period">.</span></span><span class="space"> </span>20 components</figcaption></figure><figure class="figure figure-like" id="fig_Rose-PCA50"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/images/Rose_PCA50.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.2.8<span class="period">.</span></span><span class="space"> </span>50 components</figcaption></figure><p id="p-1505">We can see from the image, that 1st 50 components gives a very good approximation to the original image.</p></article></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">10.2.2</span> <span class="title">Relation Between SVD and PCA</span>
+</h3>
+<p id="p-1506">Consider a matrix <span class="process-math">\(X\)</span> of size <span class="process-math">\(n\times d\text{.}\)</span> We can apply SVD and PCA on <span class="process-math">\(X\text{.}\)</span> Suppose the SVD of <span class="process-math">\(X\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+X = U\Sigma V^T\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Let <span class="process-math">\(U=[u_1~\ldots~ u_n]\)</span> and <span class="process-math">\(V^T=\begin{bmatrix}v_1^T\\v_2^T\\\vdots\\v_d^T \end{bmatrix}\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+X^TX = V\left( \Sigma^T\Sigma\right) V^T\text{.}
+\end{equation*}
+</div>
+<p id="p-1507">The covariance matrix of <span class="process-math">\(X\)</span> is <span class="process-math">\(\frac{1}{n-1}X^TX\text{.}\)</span> This shows that <span class="process-math">\(S\)</span> and <span class="process-math">\(X^TX\)</span> are similar matrices. If <span class="process-math">\(\lambda_1,\ldots, \lambda_r\)</span> are non zero eigenvalues of <span class="process-math">\(S\)</span> and <span class="process-math">\(\sigma_1,\ldots, \sigma_r\)</span> are singular values of <span class="process-math">\(X\text{.}\)</span> Then they are related by the following relation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sigma_i^2=(n-1)\lambda_i, i = 1, 2,\ldots, r\text{.}
+\end{equation*}
+</div>
+<p id="p-1508">The relation <span class="process-math">\(X^TX = V\left( \Sigma^T\Sigma\right) V^T\)</span> shows that right singular vectors are same as principal components. The left singular vectors are given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+u_i = \frac{1}{\sqrt{n-1}}Xv_i\text{.}
+\end{equation*}
+</div></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">10.2.3</span> <span class="title">Exercise Set</span>
+</h3>
+<article class="exercise exercise-like" id="exer-10-1-19"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">10.2.9</span><span class="period">.</span>
+</h4>
+<p id="p-1509">Find the singular values Decomposition of the following matrices.</p>
+<p id="p-1510">(a) <span class="process-math">\(\begin{bmatrix}-2 \amp 2 \\ 1 \amp 1 \end{bmatrix}\text{,}\)</span>(b) <span class="process-math">\(\begin{bmatrix}1 \amp 1 \\ 0 \amp 1 \\1 \amp 0 \end{bmatrix}\text{,}\)</span> (c) <span class="process-math">\(\begin{bmatrix}-1 \amp 1 \\ -1 \amp 1\\2 \amp -2 \end{bmatrix}\text{,}\)</span> (d) <span class="process-math">\(\begin{bmatrix}1 \amp 1 \\ -3 \amp -3 \end{bmatrix}\text{,}\)</span> (e) <span class="process-math">\(\begin{bmatrix}1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1\\-1 \amp 1\amp 0 \end{bmatrix}\)</span></p></article><article class="exercise exercise-like" id="exer-10-1-20"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">10.2.10</span><span class="period">.</span>
+</h4>
+<p id="p-1511">Use SVD to find generalized inverse of the following matrices:</p>
+<p id="p-1512">(a) <span class="process-math">\(\begin{bmatrix}1 \amp 1 \\ -3 \amp -3 \end{bmatrix}\text{,}\)</span> (b) <span class="process-math">\(\begin{bmatrix}1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1\\-1 \amp 1\amp 0 \end{bmatrix}\text{,}\)</span> (c) <span class="process-math">\(\begin{bmatrix}1 \amp 0 \amp -1\\-1 \amp 0 \amp 1\\0 \amp 1 \amp 0 \end{bmatrix}\text{.}\)</span></p></article><article class="exercise exercise-like" id="exer-10-1-21"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">10.2.11</span><span class="period">.</span>
+</h4>
+<p id="p-1513">Use the generalized inverse from the SVD to find the least square solution of the system of linear equations <span class="process-math">\(Ax=b\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{bmatrix}1 \amp  2 \\ -1 \amp  1\\ 2 \amp  1\\ 2 \amp  -1\\1 \amp  1 \end{bmatrix} ,  b=\begin{bmatrix}2 \amp  1 \amp  -2 \amp  1 \amp  3 \end{bmatrix}\text{.}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exer-10-1-22"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">10.2.12</span><span class="period">.</span>
+</h4>
+<p id="p-1514">Find the principal components of the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{bmatrix}3 \amp  -4 \amp  7 \amp  1 \amp  -4 \amp  -3\\7 \amp  -6 \amp  8 \amp  -1 \amp  -1 \amp  7 \end{bmatrix}
+\end{equation*}
+</div>
+<p id="p-1515">What percentage of the variation in the data is explained by the first principal component.</p></article></section><pre class="ptx-sagecell sagecell-sage" id="sage-336"><script type="text/x-sage">import numpy as np
+from PIL import Image
+import requests
+from io import BytesIO
+import matplotlib.pyplot as plt
+url ="https://raw.githubusercontent.com/ajitbkp/LinAlg-SageBook/main/assets/images/Sardar.png"
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
+img = np.array(img)
+
+# Separate RGB channels
+R = img[:, :, 0]
+G = img[:, :, 1]
+B = img[:, :, 2]
+
+def pca_compress(channel, k):
+    """
+    Compress a single channel using PCA, keeping k components.
+    """
+    # Center the data
+    mean = np.mean(channel, axis=0)
+    centered = channel - mean
+    
+    # Compute covariance matrix
+    cov_matrix = np.cov(centered, rowvar=False)
+    
+    # Eigen decomposition
+    eig_vals, eig_vecs = np.linalg.eigh(cov_matrix)
+    
+    # Sort eigenvalues in descending order
+    idx = np.argsort(eig_vals)[::-1]
+    eig_vecs = eig_vecs[:, idx]
+    
+    # Select top k eigenvectors
+    eig_vecs_k = eig_vecs[:, :k]
+    
+    # Project and reconstruct
+    transformed = np.dot(centered, eig_vecs_k)
+    reconstructed = np.dot(transformed, eig_vecs_k.T) + mean
+    
+    return reconstructed
+
+# Compression rank
+k = 10
+R_c = pca_compress(R, k)
+G_c = pca_compress(G, k)
+B_c = pca_compress(B, k)
+
+# Stack back and clip
+compressed_img = np.dstack([R_c, G_c, B_c])
+compressed_img = np.clip(compressed_img, 0, 255).astype(np.uint8)
+
+# Show images
+fig, axes = plt.subplots(1, 2, figsize=(10,5))
+axes[0].imshow(img.astype(np.uint8))
+axes[0].set_title("Original")
+axes[0].axis("off")
+
+axes[1].imshow(compressed_img)
+axes[1].set_title(f"Compressed (k={k})")
+axes[1].axis("off")
+
+plt.show()
+</script></pre></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.19</span><span class="period">.</span>
+</h3>
+<p>Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\text{.}\)</span> From <a href="" class="xref" data-knowl="./knowl/eigen_eg1.html" title="Example 5.1.9">Example 5.1.9</a>, the characteristic polynomial of <span class="process-math">\(A\)</span> is given by <span class="process-math">\(p(x)=\det{x I -A}=x^3-x^2-4x+4\text{.}\)</span> We have <span class="process-math">\(A^2=\left(\begin{array}{rrr} 1 \amp  -2 \amp  2 \\ 3 \amp  6 \amp  -2 \\ 3 \amp  2 \amp  2 \end{array} \right)\)</span> and <span class="process-math">\(A^3=\left(\begin{array}{rrr} 1 \amp  6 \amp  -6 \\ 7 \amp  6 \amp  2 \\ 7 \amp  14 \amp  -6 \end{array} \right)\text{.}\)</span> Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eigen_eg1.html">
+\begin{align*}
+p(A) =\amp A^3-A^2-4A+4I\\
+=\amp  \left(\begin{array}{rrr} 1 \amp  6 \amp  -6 \\ 
+7 \amp  6 \amp  2 \\ 7 \amp  14 \amp  -6 \end{array} \right)-
+\left(\begin{array}{rrr} 1 \amp  -2 \amp  2 \\
+3 \amp  6 \amp  -2 \\ 3 \amp  2 \amp  2 \end{array} \right)\\
+\amp -4\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix} +4\begin{pmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{pmatrix}\\
+=\amp  \begin{pmatrix}0\amp 0\amp 0\\0\amp 0\amp 0\\ 0\amp 0\amp 0 \end{pmatrix} \text{.}
+\end{align*}
+</div>
+<p>Hence <span class="process-math">\(A\)</span> satisfies its characteristic equation.</p>
+<p>It is easy to check that <span class="process-math">\(\det{(A)}=-4\text{,}\)</span> hence <span class="process-math">\(A\)</span> is non singular. Since <span class="process-math">\(A^3-A^2-4A+4I=0\text{,}\)</span> multiplying both sides by its inverse, we get <span class="process-math">\(A^2-A+4I+4A^{-1}=0\text{.}\)</span> Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^{-1}=-\frac{-1}{4}A^2+\frac{1}{4}A+I=\left(\begin{array}{rrr} 1 \amp  1 \amp  -1 \\ -\frac{1}{2} \amp  -\frac{1}{4} \amp  \frac{3}{4} \\ -\frac{1}{2} \amp  \frac{1}{4} \amp  \frac{1}{4} \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<p>We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by <span class="process-math">\(A\)</span> to the equation, <span class="process-math">\(A^3-A^2-4A+4I=0\text{,}\)</span> we get <span class="process-math">\(A^4-A^3-4A^2+4A=0\text{,}\)</span> from this we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^4 = A^3+4A^2-4A=\left(\begin{array}{rrr} 1 \amp  -10 \amp  10 \\ 15 \amp  26 \amp  -10 \\ 15 \amp  10 \amp  6 \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<p>Can you find <span class="process-math">\(A^5\text{?}\)</span></p></article><span class="incontext"><a href="sec5-1-eigen-intro.html#example-138" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues of a linear operator.</span>
+</h3>
+<p>Consider  the linear tranformation <span class="process-math">\(T\colon \mathbb{R}^3\to \mathbb{R}^3\)</span> defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T(x,y,z)=(3x+2z,3y-2z, 2x-2y+z)
+\end{equation*}
+</div>
+<p class="continuation">Let us find the eigenvalues of <span class="process-math">\(T\)</span> and also show that the eigenvalues are independent of the basis on the domain</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-227"><script type="text/x-sage">x, y, z = var('x, y, z')
+outputs = [3*x+2*z,3*y-2*z, 2*x-2*y+z]
+T_symbolic(x, y, z)=outputs
+T=linear_transformation(QQ^3, QQ^3, T_symbolic)
+T.eigenvalues()
+</script></pre>
+<p>We can also find the characteristics polynomial of <span class="process-math">\(T\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-228"><script type="text/x-sage">cp = T.characteristic_polynomial()
+print(cp)
+print(cp.factor())
+</script></pre>
+<p>Let us find the matrix <span class="process-math">\(A\)</span> of <span class="process-math">\(T\)</span> with respect to the standard basis of <span class="process-math">\(\mathbb{R}^3\)</span> and find find the eigenvalues of <span class="process-math">\(A\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-229"><script type="text/x-sage">M=T.matrix(side='right')
+M.eigenvalues()
+</script></pre>
+<p>Now let us find the matrix <span class="process-math">\(B\)</span> of <span class="process-math">\(T\)</span> with respect to a basis <span class="process-math">\(\beta=\{(1,1,0),(-1,1,1),(0,-1,1)\}\)</span> and find eigenvalues of <span class="process-math">\(B\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-230"><script type="text/x-sage">V=QQ^3
+u1=vector(QQ,[1,1,0])
+u2=vector(QQ,[-1,1,1])
+u3=vector(QQ,[0,-1,1])
+B=[u1,u2,u3]
+BB=[V.random_element() for i in range(3)]
+V1=V.subspace_with_basis(BB)    
+M2=T.restrict_domain(V1).restrict_codomain(V1)
+M2=M2.matrix(side='right')
+eigen2=M2.eigenvalues()
+print(eigen2)
+</script></pre>
+<p>Clearly eigenvalues of <span class="process-math">\(T\text{,}\)</span> <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are same. This is not suprizing as <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar matrices and similar matrices have the same determinant and eigenvalues.</p></article><span class="incontext"><a href="sec5-5-Eigen-Sage.html#example-155" class="internal">in-context</a></span>
+</body>
+</html>

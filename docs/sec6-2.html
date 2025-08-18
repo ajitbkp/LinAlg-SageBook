@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:29+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Orthogonal Complements</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body id="changeme" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<p class="byline">Ajit Kumar</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec6-1-GramSchmidt.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap5-orthogonality.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec6-3.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec6-1-GramSchmidt.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap5-orthogonality.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec6-3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="biography-1.html" data-scroll="biography-1" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1-lineq.html" data-scroll="chap1-lineq" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a><ul>
+<li><a href="sec1-1-elementary-operations.html" data-scroll="sec1-1-elementary-operations" class="internal">Elementary Row Operations</a></li>
+<li><a href="sec1-2-col-operations.html" data-scroll="sec1-2-col-operations" class="internal">Elementary Column Operations</a></li>
+<li><a href="sec1-3-echelon-form.html" data-scroll="sec1-3-echelon-form" class="internal">Echelon Forms</a></li>
+<li><a href="sec1-4-matrix-rank.html" data-scroll="sec1-4-matrix-rank" class="internal">Rank of Matrices</a></li>
+<li><a href="sec1-5-hom-system.html" data-scroll="sec1-5-hom-system" class="internal">Homogeneous System of Linear Equations</a></li>
+<li><a href="sec1-6-LU.html" data-scroll="sec1-6-LU" class="internal"><span class="process-math">\(LU\)</span>-Facotorization</a></li>
+<li><a href="sec1-7-exer.html" data-scroll="sec1-7-exer" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2-Rn-Space.html" data-scroll="chap2-Rn-Space" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a><ul>
+<li><a href="sec2-0-intro.html" data-scroll="sec2-0-intro" class="internal">Introduction</a></li>
+<li><a href="sec2-1-LinSpan.html" data-scroll="sec2-1-LinSpan" class="internal">Linear Spans</a></li>
+<li><a href="sec-2-2-LI.html" data-scroll="sec-2-2-LI" class="internal">Linear Dependence</a></li>
+<li><a href="sec-2-3-basis-dimension.html" data-scroll="sec-2-3-basis-dimension" class="internal">Basis and Dimension</a></li>
+<li><a href="sec2-4-Sage.html" data-scroll="sec2-4-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3-LT.html" data-scroll="chap3-LT" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a><ul>
+<li><a href="sec3-1-LT.html" data-scroll="sec3-1-LT" class="internal">Introduction</a></li>
+<li><a href="sec3-2-LT.html" data-scroll="sec3-2-LT" class="internal">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></a></li>
+<li><a href="sec3-3-LT.html" data-scroll="sec3-3-LT" class="internal">Reflections and Projections</a></li>
+<li><a href="sec-LT-Geom.html" data-scroll="sec-LT-Geom" class="internal">Geometry of Linear Transformations</a></li>
+<li><a href="sec-sec3-5-LT-Sage.html" data-scroll="sec-sec3-5-LT-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4-Vector-Space.html" data-scroll="chap4-Vector-Space" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a><ul>
+<li><a href="sec4-1-VS.html" data-scroll="sec4-1-VS" class="internal">Introduction</a></li>
+<li><a href="sec4-2-Abst-VS.html" data-scroll="sec4-2-Abst-VS" class="internal">Vector Subspaces</a></li>
+<li><a href="sec4-3-linspan-VS.html" data-scroll="sec4-3-linspan-VS" class="internal">Linear Span</a></li>
+<li><a href="sec4-3-LI-VS.html" data-scroll="sec4-3-LI-VS" class="internal">Linear dependence and independence</a></li>
+<li><a href="sec4-5-basis-dim-VS.html" data-scroll="sec4-5-basis-dim-VS" class="internal">Basis and dimension</a></li>
+<li><a href="sec-sec4-5-VS-Sage.html" data-scroll="sec-sec4-5-VS-Sage" class="internal">Sage Computations</a></li>
+<li><a href="sec4-5-VS-Ex.html" data-scroll="sec4-5-VS-Ex" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-Eigen.html" data-scroll="chap5-Eigen" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a><ul>
+<li><a href="sec5-1-eigen-intro.html" data-scroll="sec5-1-eigen-intro" class="internal">Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-2-diagonalization.html" data-scroll="sec5-2-diagonalization" class="internal">Diagonalization</a></li>
+<li><a href="sec5-5-Eigen-Sage.html" data-scroll="sec5-5-Eigen-Sage" class="internal">Eigenvalues and Eigenvectors in Sage</a></li>
+<li><a href="sec5-3-eigen-Appl.html" data-scroll="sec5-3-eigen-Appl" class="internal">Applications of Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-4-eigen-exer.html" data-scroll="sec5-4-eigen-exer" class="internal">Exercises on Eigenvalues and Eigenvectors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-orthogonality.html" data-scroll="chap5-orthogonality" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec6-0-orthogonality.html" data-scroll="sec6-0-orthogonality" class="internal">Orthogonality</a></li>
+<li><a href="sec6-1-GramSchmidt.html" data-scroll="sec6-1-GramSchmidt" class="internal">Gram-Schmidt Orthogonalization Process</a></li>
+<li><a href="sec6-2.html" data-scroll="sec6-2" class="active">Orthogonal Complements</a></li>
+<li><a href="sec6-3.html" data-scroll="sec6-3" class="internal">Orthogonal Diagonalizations</a></li>
+<li><a href="sec6-4.html" data-scroll="sec6-4" class="internal">QR-Factorization</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7-inner-product.html" data-scroll="chap7-inner-product" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a><ul>
+<li><a href="sec7-1-InnerProduct.html" data-scroll="sec7-1-InnerProduct" class="internal">Inner Product</a></li>
+<li><a href="sec7-2-Exer.html" data-scroll="sec7-2-Exer" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap8-Least-Square.html" data-scroll="chap8-Least-Square" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a><ul><li><a href="sec8-1-LSTSQ.html" data-scroll="sec8-1-LSTSQ" class="internal">Least Square Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="chap9-SVD.html" data-scroll="chap9-SVD" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a><ul><li><a href="sec9-1-SVD.html" data-scroll="sec9-1-SVD" class="internal">Singular Value Decomposition</a></li></ul>
+</li>
+<li class="link">
+<a href="chap10-PCA.html" data-scroll="chap10-PCA" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a><ul>
+<li><a href="sec10-1-PCA.html" data-scroll="sec10-1-PCA" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec10-2.html" data-scroll="sec10-2" class="internal">Applications of PCA</a></li>
+<li><a href="sec10-3.html" data-scroll="sec10-3" class="internal">Sage Practice Area</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link">
+<a href="appendix-sage-into.html" data-scroll="appendix-sage-into" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a><ul>
+<li><a href="subsection-47.html" data-scroll="subsection-47" class="internal">Introduction to SageMath</a></li>
+<li><a href="getting-started-sagemath.html" data-scroll="getting-started-sagemath" class="internal">Getting Started with Sage</a></li>
+<li><a href="subsec-sage-programming.html" data-scroll="subsec-sage-programming" class="internal">Programming in Sage</a></li>
+<li><a href="subsec-plotting-sage.html" data-scroll="subsec-plotting-sage" class="internal">Plotting in Sage</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec6-2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.3</span> <span class="title">Orthogonal Complements</span>
+</h2>
+<section class="introduction" id="introduction-22"><p id="p-1132">In this section, we shall explore the notion of orthogonal complement of a subspace in a <span class="process-math">\(\mathbb{R}^n\text{.}\)</span></p></section><section class="subsection" id="subsec-orthogonal-complements"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.1</span> <span class="title">Orthogonal Complements</span>
+</h3>
+<article class="definition definition-like" id="def-orthogonal-complement"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span>
+</h4>
+<p id="p-1133">Let <span class="process-math">\(U\subset \R^n\text{.}\)</span> Then <span class="process-math">\(U^\perp:=\{x\in \R^n: x\cdot u=0, \forall u\in U\}\)</span> is called the <em class="emphasis">orthogonal complement</em> of <span class="process-math">\(U\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-43"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span>
+</h4>
+<p id="p-1134">(i) <span class="process-math">\(\{0\}^\perp = \R^n\)</span></p>
+<p id="p-1135">(ii) <span class="process-math">\({\R^n}^{\perp}=\{0\}\text{.}\)</span></p>
+<p id="p-1136">(iii) Let <span class="process-math">\(U\subset \R^n\text{.}\)</span> Then <span class="process-math">\(U^\perp\)</span> is a subspace of <span class="process-math">\(\R^n\text{.}\)</span> Note that <span class="process-math">\(U\)</span> need not be a subspace of <span class="process-math">\(\R^n\text{.}\)</span></p></article><article class="example example-like" id="example-167"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span>
+</h4>
+<p id="p-1137">Let <span class="process-math">\(U=span(\{(2,-1,1),(1,2,-1)\})\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-63">
+\begin{align*}
+U^\perp  =\amp  \{(x_1,x_2,x_3): 2x_1-x_2+x_3=0,x_1+2x_2-x_3=0\}\\
+=\amp null\left(\begin{array}{rrr} 2 \amp  -1 \amp  1 \\ 1 \amp  2 \amp  -1 \end{array} \right)= \{t(1,-3,-5):t\in \R\}\text{.}
+\end{align*}
+</div></article><article class="example example-like" id="example-168"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span>
+</h4>
+<p id="p-1138">Find the orthogonal complement of <span class="process-math">\(span(\{\left(2,\,0,\,1,\,-1\right), \left(1,\,2,\,0,\,-1\right)\})\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-64">
+\begin{align*}
+U^\perp  =\amp  \{(x_1,x_2,x_3,x_3): 2x_1+x_3-x_4=0,x_1+2x_2-x_4=0\}\\
+=\amp null\left(\begin{array}{rrrr} 2 \amp  0 \amp  1 \amp  -1 \\ 1 \amp  2 \amp  0 \amp  -1 \end{array} \right)\\
+=\amp  span(\{(1,  0, -1,  1),(0,  1,  2,  2)\})
+\end{align*}
+</div></article><article class="definition definition-like" id="subspace-projection1"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.5</span><span class="period">.</span>
+</h4>
+<p id="p-1139">Let <span class="process-math">\(U\)</span> be a subspace of <span class="process-math">\(\R^n\)</span> with an orthogonal basis <span class="process-math">\(\{u_1,\ldots,u_k\}\text{.}\)</span> If <span class="process-math">\(x\in \R^n\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="proj_onto_subspace">
+\begin{equation}
+\proj_U(x)=\frac{x\cdot u_1}{\norm{u_1}^2}u_1+\frac{x\cdot u_2}{\norm{u_2}^2}u_2+\cdots + \frac{x\cdot u_k}{\norm{u_k}^2}u_k\text{.}\tag{6.3.1}
+\end{equation}
+</div>
+<p class="continuation"><span class="process-math">\(\proj_U(x)\)</span> called the <em class="emphasis">orthogononal projection</em> of <span class="process-math">\(x\)</span>  onto <span class="process-math">\(U\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-44"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.6</span><span class="period">.</span>
+</h4>
+<p id="p-1140">Let <span class="process-math">\(U\)</span> be a subspace of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(p=\proj_U(x)\text{.}\)</span> Then</p>
+<p id="p-1141">(i) <span class="process-math">\(p\in U\)</span> and <span class="process-math">\((x-p) \in U^\perp\text{.}\)</span></p>
+<p id="p-1142">(ii) <span class="process-math">\(p\)</span> is a vector in <span class="process-math">\(U\text{,}\)</span> which is closet to <span class="process-math">\(x\text{.}\)</span> That is for all <span class="process-math">\(y\in U\text{,}\)</span> <span class="process-math">\(\norm{x-p}\leq \norm{x-y}\text{.}\)</span> Note that <span class="process-math">\((x-p)\perp (y-p)\text{.}\)</span> Hence by the Pythagoras theorem, <span class="process-math">\(\norm{x-p}^2+\norm{p-y}^2=\norm{x-y}^2\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\norm{x-y}^2=\norm{x-p+p-y}^2=\norm{x-p}^2+\norm{y-p}^2\geq \norm{x-p}^2\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="example-169"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.7</span><span class="period">.</span>
+</h4>
+<p id="p-1143">Consider the plane <span class="process-math">\(\pi=\{(x,y,z)\in \R^3:3x+y-5z=0\}\text{.}\)</span> It is easy to see that <span class="process-math">\(v_1=(2,-1,1),
+v_2=(1,2,1)\)</span> lie on the plane <span class="process-math">\(\pi\text{.}\)</span> Using the Gram-Schmidt process we can find an orthogonal basis <span class="process-math">\(u_1 = (2,-1,1),
+u_2=(2/3, 13/6, 5/6)\)</span> on <span class="process-math">\(\pi\text{.}\)</span> Let us find the orthogonal projection of <span class="process-math">\(v=(1,2,3)\)</span> onto <span class="process-math">\(\pi\text{.}\)</span> The required vector</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\proj_\pi(v)=\frac{v\cdot u_1}{\norm{u_1}^2}u_1+\frac{v\cdot u_2}{\norm{u_2}^2}u_2=(13/7, 16/7, 11/7)\text{.}
+\end{equation*}
+</div></article><p id="p-1144">Orthogonal Proojection onto a subspace</p>
+<p id="p-1145">How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in <span class="process-math">\(\R^n\text{?}\)</span> Let <span class="process-math">\(\beta = \{w_1,\ldots, w_k\}\)</span> be a basis of <span class="process-math">\(W\text{.}\)</span> We want to find the vector <span class="process-math">\(p\)</span> which is the orthogonal projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(W\text{.}\)</span></p>
+<p id="p-1146">Note that <span class="process-math">\(p\in W\text{,}\)</span> therefore, there exist scalars <span class="process-math">\(x_1,\ldots, x_k\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p=x_1 v_1+\cdots + x_k v_k=Ax
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(A=[v_1~\cdots ~ v_k]\)</span> and <span class="process-math">\(x=[x_1~\cdots~x_k]^T\text{.}\)</span></p>
+<p id="p-1147">It is clear that <span class="process-math">\(v-p=v-Ax\in W^\perp\text{.}\)</span> Hence <span class="process-math">\((v_i)^T(v-Ax)=0\)</span> for <span class="process-math">\(1\leq i\leq k\text{.}\)</span> This is same as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^T(v-Ax)=0 \implies x=(A^TA)^{-1}(A^Tv)\text{.}
+\end{equation*}
+</div>
+<p id="p-1148">Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="orth-Proj-W">
+\begin{equation}
+p=A(A^TA)^{-1}(A^Tv)\tag{6.3.2}
+\end{equation}
+</div>
+<p id="p-1149">The matrix <span class="process-math">\(Q=A(A^TA)^{-1}A^T\)</span> is called the <em class="emphasis">projection matrix</em> for the subspace <span class="process-math">\(W\text{.}\)</span></p>
+<article class="example example-like" id="example-170"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.8</span><span class="period">.</span>
+</h4>
+<p id="p-1150">Consider a set of vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v_1 = \left(\begin{array}{r}
+-1 \\
+1 \\
+0 \\
+-3 \\
+-3
+\end{array}\right), v_2=\left(\begin{array}{r}
+1 \\
+-5 \\
+3 \\
+-1 \\
+4
+\end{array}\right), v_3 = \left(\begin{array}{r}
+-5 \\
+13 \\
+-6 \\
+-7 \\
+-17
+\end{array}\right), v_4 = \left(\begin{array}{r}
+-2 \\
+1 \\
+3 \\
+8 \\
+1
+\end{array}\right).
+\end{equation*}
+</div>
+<p class="continuation">Let <span class="process-math">\(W\)</span> be the subspace spanned by <span class="process-math">\(\{v_1,v_2,v_3,v_4\}\)</span> in <span class="process-math">\(\mathbb{R}^5\text{.}\)</span> Find the orthogonal projection of the vector <span class="process-math">\(u = \left(\begin{array}{r}
+1 \\
+3 \\
+5 \\
+7 \\
+11
+\end{array}\right)\)</span> onto <span class="process-math">\(W\)</span> in Sage.</p>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like">
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-257"><script type="text/x-sage">        v1 = vector(QQ,[-1, 1, 0, -3, -3])
+v2 = vector(QQ,[1, -5, 3, -1, 4])
+v3 = vector(QQ,[-5, 13, -6, -7, -17])
+v4 = vector(QQ,[-2, 1, 3, 8, 1])
+u = vector(QQ,[1,3,5,7,11])
+A = column_matrix([v1,v2,v3,v4])
+p = A.pivots()
+p
+</script></pre>
+<p id="p-1151">Since pivots indices are <span class="process-math">\(\{0,1,3\}\text{,}\)</span> <span class="process-math">\(v_1,v_2,v_4\)</span> are linearly independent. We define a matrix <span class="process-math">\(M\)</span> of whose columns are <span class="process-math">\(v_1,v_2,v_4\text{.}\)</span> Then the orthogonal projection of <span class="process-math">\(u\)</span> onto <span class="process-math">\(W\)</span> is <span class="process-math">\(M(M^TM)^{-1}M^Tu\text{.}\)</span></p>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-258"><script type="text/x-sage">L = [A.columns()[x] for x in p]
+M = column_matrix(L)
+p = M*(M.T*M).inverse()*M.T*u
+print('The orthogonal projection is:')
+print(p)
+print('The orthogonal projection matrix is:')
+P = M*(M.T*M).inverse()*M.T
+print(P)
+</script></pre>
+<p id="p-1152">It is easy to check that <span class="process-math">\(u-p\)</span>  is orgthogonal to <span class="process-math">\(W\text{.}\)</span></p>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-259"><script type="text/x-sage">print(v1.dot_product(u-p), v2.dot_product(u-p),v3.dot_product(u-p),v4.dot_product(u-p))
+</script></pre>
+</div></div></article><article class="exercise exercise-like" id="exercise-45"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.9</span><span class="period">.</span>
+</h4>
+<p id="p-1153">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> real matrix.  Recall <span class="process-math">\({\cal R}(A)\)</span> and <span class="process-math">\({\cal N}(A)\text{,}\)</span> range or columns space of <span class="process-math">\(A\)</span> and null or kernel of <span class="process-math">\(A\text{.}\)</span> Then show that (i) <span class="process-math">\({\cal R}(A)^\perp={\cal N}(A^T)\)</span> and (ii)  <span class="process-math">\({\cal N}(A)^\perp={\cal R}(A^T)\text{.}\)</span></p>
+<p id="p-1154">Let <span class="process-math">\(x \in {\cal R}(A)^\perp\text{.}\)</span> Then <span class="process-math">\(y^TA^Tx=(Ay)^Tx=0\)</span> for all <span class="process-math">\(y\text{.}\)</span> Hence <span class="process-math">\(x\in {\cal N}(A^T)\text{.}\)</span> This implies that, <span class="process-math">\({\cal R}(A)^\perp\subseteq {\cal N}(A^T)\text{.}\)</span> Next let <span class="process-math">\(x\in {\cal N}(A^T)\)</span> then <span class="process-math">\((Ay)^Tx=y^TA^Tx=0\)</span> for all <span class="process-math">\(y\text{.}\)</span> Hence <span class="process-math">\(x\in {\cal R}(A)^\perp\text{.}\)</span> That is, <span class="process-math">\({\cal N}(A^T) \subseteq {\cal R}(A)^\perp\text{.}\)</span></p></article></section><section class="subsection" id="subsec-Proj-Ref_HyperPlane"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.2</span> <span class="title">Projection and Reflection</span>
+</h3>
+<section class="introduction" id="introduction-23"><p id="p-1155">In this subsection, we deal with two concepts, orthogonla projection of a vector onto a hyperplane in <span class="process-math">\(\mathbb{R}^n\)</span> and reflection of a vector about a hyperplane.</p></section><article class="definition definition-like" id="def-hyperplane"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.10</span><span class="period">.</span>
+</h4>
+<p id="p-1156">A hyperplane <span class="process-math">\(H\)</span> in <span class="process-math">\(\mathbb{R}^n\)</span> is an <span class="process-math">\(n-1\)</span>-dimensional affine space defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eqn-hyperplane">
+\begin{equation}
+H:=\{x\in \mathbb{R}^n: a^x=b\}        \tag{6.3.3}
+\end{equation}
+</div>
+<p class="continuation">where <span class="process-math">\(a\)</span> is a nonzero vector in <span class="process-math">\(\mathbb{R}^n\)</span> and <span class="process-math">\(b\in \mathbb{R}\text{.}\)</span> If <span class="process-math">\(b=0\text{,}\)</span> then <span class="process-math">\(H\)</span> is an <span class="process-math">\(n-1\)</span>-dimensiional subspace of of <span class="process-math">\(\mathbb{R}^n\text{.}\)</span></p>
+<p id="p-1157">Note that if  <span class="process-math">\(H\)</span> is an <span class="process-math">\(n-1\)</span>-dimensiional subspace of of <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> defined by <span class="process-math">\(a\text{,}\)</span> let us denote it by <span class="process-math">\(H_a\text{,}\)</span> then <span class="process-math">\(a\)</span> is orthogonal to <span class="process-math">\(H\text{.}\)</span></p></article><p id="p-1158">How to find the orthogonal projection of a vector <span class="process-math">\(v\in \mathbb{R}^n\)</span> onto <span class="process-math">\(H_a\text{?}\)</span> Note that we have already done one way by finding a basis vector of <span class="process-math">\(H_a\text{.}\)</span> We would like to get a formula in terms of <span class="process-math">\(a\text{.}\)</span> If <span class="process-math">\(v_{H_a}\)</span> is the orthogonal projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(H_a\text{,}\)</span> then it can be obianed by taking out the orthogonal prjection of <span class="process-math">\(v\)</span> onto the vector <span class="process-math">\(a\)</span>  from <span class="process-math">\(v\text{.}\)</span> Thus we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eqn-othgonal-proj1">
+\begin{equation}
+v_{H_a} = v-\frac{v\cdot a}{\norm{a}^2}a=v-\frac{aa^T}{\norm{a}^2}v=(I-\frac{aa^T}{\norm{a}^2})v.\tag{6.3.4}
+\end{equation}
+</div>
+<p class="continuation">The matrix <span class="process-math">\(P_H=(I-\frac{aa^T}{\norm{a}^2})\)</span> is nothing but the <em class="emphasis">projection matrix</em>.</p>
+<p id="p-1159">How do we obtain <span class="process-math">\(v_H\text{,}\)</span> the orthogonal projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(H\text{?}\)</span> Note that <span class="process-math">\(v-v_H\)</span> is parallel to <span class="process-math">\(a\text{.}\)</span> Hence <span class="process-math">\(v-v_H=ta\)</span> for some scalar <span class="process-math">\(t\text{.}\)</span> Since <span class="process-math">\(v_H=v-ta\in H\text{,}\)</span> we have <span class="process-math">\(a^T(v-ta)=b\text{.}\)</span> Simplyfying we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eqn-othgonal-proj2">
+\begin{equation}
+v_H = v-\frac{v\cdot a-b}{\norm{a}^2}a.\tag{6.3.5}
+\end{equation}
+</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-260"><script type="text/x-sage">def project_onto_hyperplane(a, b, x):
+    """
+    a, x : vectors (length d)
+    b : scalar
+    returns: projection of x onto { y : a^T y = b }
+    """
+    a = vector(RR, a)
+    x = vector(RR, x)
+    denom = a.dot_product(a)
+    if denom == 0:
+        raise ValueError("Normal vector a must be nonzero.")
+    t = (a.dot_product(x) - b) / denom
+    return x - t * a
+</script></pre>
+<article class="example example-like" id="eg-orthogonal-proj-sage1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.11</span><span class="period">.</span>
+</h4>
+<p id="p-1160">Find the orthogonal projevction of a vector <span class="process-math">\((1,2,3,4)\)</span> to to the hyperplane given by <span class="process-math">\(3x_1-2x_2+5x_3+4x_4=7\)</span> in <span class="process-math">\(\mathbb{R}^4\)</span></p></article><p id="p-1162">Next we wish to find the reflection of a vector <span class="process-math">\(v\)</span> about the hyperplane <span class="process-math">\(H\text{.}\)</span>  Suppose <span class="process-math">\(v_R\)</span> is the projection of <span class="process-math">\(v\)</span> about <span class="process-math">\(H\text{,}\)</span> then <span class="process-math">\(v_R\)</span> can be obtained by going the same distance on the opposite side along the vector <span class="process-math">\(v-v_H\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eqn-othgonal-ref1">
+\begin{equation}
+v_R = v_H-(v-v_H)=2v_H-v\tag{6.3.6}
+\end{equation}
+</div>
+<p class="continuation">Substituting the formula for <span class="process-math">\(v_H\text{,}\)</span> and after simplification, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eqn-othgonal-ref2">
+\begin{equation}
+v_R = v - 2 \frac{a^T v - b}{\norm{a}^2} a.\tag{6.3.7}
+\end{equation}
+</div>
+<p id="p-1163">As as special if <span class="process-math">\(b = 0\text{,}\)</span> the hyperplane passes through the origin,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v_R = v - 2 \frac{a^T v}{\norm{a}^2} a=(I-2\frac{aa^T}{\norm{a}^2}v).
+\end{equation*}
+</div>
+<p class="continuation">If <span class="process-math">\(a\)</span> is a unit vector, <span class="process-math">\(\|a\| = 1\text{,}\)</span> this simplifies to:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v_R = v - 2(a^T v) a=(I-2(aa^T))v.
+\end{equation*}
+</div>
+<p class="continuation">The matrix <span class="process-math">\(R_H =I-2\frac{aa^T}{\norm{a}^2}\)</span> is called the <em class="emphasis">reflection matrix</em>.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-262"><script type="text/x-sage"># Reflection of a vector about a hyperplane in SageMath
+
+def reflect_about_hyperplane(x, a, b):
+    """
+    Reflect vector x about the hyperplane a·y = b.
+    x, a: vectors in R^n
+    b: scalar
+    """
+    # Ensure vectors are in Sage vector format
+    x = vector(RR, x)
+    a = vector(RR, a)
+    
+    # Check normal vector is nonzero
+    if a.norm() == 0:
+        raise ValueError("Normal vector 'a' must be nonzero.")
+    
+    # Reflection formula
+    x_R = x - 2 * (a.dot_product(x) - b) / (a.norm()^2) * a
+    return x_R
+</script></pre>
+<article class="example example-like" id="example-172"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.12</span><span class="period">.</span>
+</h4>
+<p id="p-1164">Find the reflection of the vector <span class="process-math">\(x=(4,2,-1,3)\)</span> about the hyperplane <span class="process-math">\(2x_1-x_2+3x_3+4x_4=5\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-263"><script type="text/x-sage">a = [2, -1, 3,4]    # normal vector
+b = 5             # hyperplane constant
+x = [4, 2, -1,3]    # point to reflect
+x_reflected = reflect_about_hyperplane(x, a, b)
+print("Reflected vector:", x_reflected)
+</script></pre></p></article><article class="activity project-like" id="activity-15"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span>
+</h4>
+<em class="emphasis">Plottig orthogonal projection and reclection in <span class="process-math">\(\mathbb{R}^3\)</span></em><p id="p-1165">Use sage to plot the hyperplane <span class="process-math">\(H\)</span> defined by the equation <span class="process-math">\(3x-2y+z=2\)</span> and also plot the vector <span class="process-math">\(v=(1,-1,3)\)</span> and its orthogonal projection <span class="process-math">\(v_H\)</span> and the reflection <span class="process-math">\(v_R\)</span> about <span class="process-math">\(H\text{.}\)</span></p></article></section><section class="conclusion" id="conclusion-1"><p id="p-1166">Orthogonal complements provide a way to decompose vector spaces and are closely related to projections and reflections.</p></section></section></div></main>
+</div>
+</body>
+</html>

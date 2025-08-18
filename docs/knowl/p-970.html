@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:31+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>A general solution of the above system is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+u_1=c_1e^{\lambda_1 t},
+u_2=c_2e^{\lambda_2 t},\ldots, u_n=c_ne^{\lambda_n t}.
+\end{equation*}
+</div>
+<p class="continuation">The above equations can be written in matrix form as follows</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+u=\begin{bmatrix}u_1\\u_2\\\vdots\\u_2\end{bmatrix} =\amp
+\begin{bmatrix}e^{\lambda_1 t} \amp 0 \amp \cdots \amp 0\\
+0 \amp e^{\lambda_2 t}\amp \cdots \amp 0\\
+\vdots \amp \vdots \amp \ddots \amp \vdots\\
+0 \amp 0 \amp \cdots \amp e^{\lambda_n t}
+\end{bmatrix} \begin{bmatrix}c_1\\c_2\\\vdots\\c_2\end{bmatrix}=e^{tD}c
+\end{align*}
+</div>
+<p class="continuation">Here <span class="process-math">\(e^{tD}\)</span> is the exponential of the matrix <span class="process-math">\(tD\)</span> and <span class="process-math">\(c\)</span> is the column matrix of constants. From this we get a general solution of the original system as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_i=\sum_{j=1}^n p_{ij}u_j=\sum_{j=1}^n p_{ij}c_je^{\lambda_j t}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(P=[p_{ij}]\)</span> .</p>
+<span class="incontext"><a href="sec5-3-eigen-Appl.html#p-970" class="internal">in-context</a></span>
+</body>
+</html>

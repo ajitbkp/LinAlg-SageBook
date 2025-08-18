@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:30+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Linear Span of vectors in Sage.</span>
+</h3>
+<p>Sage can generate a linear span of a set of vectors in a vector space using the vector space method .span(). Let us explore this for set of 5 vectors in a vector space V=QQ^4.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-71"><script type="text/x-sage">V =QQ^5
+v1 = vector(QQ,[1,-1,3,2,4])
+v2 = vector(QQ,[-2,1,0,3,-1])
+v3 = vector(QQ,[-5,3,-3,4,-6])
+v4 = vector(QQ,[3,2,1,2,3])
+v5 = vector(QQ,[-13,4,-7,6,-15])
+B = [v1,v2,v3,v4,v5]
+W=V.span(B)
+W
+</script></pre>
+<p>It returns the dimension of the linear span along with a basis as a matrix. We can check if any linear combinations of vectors in B lies in W.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-72"><script type="text/x-sage">a = [randint(-10,10) for i in range(len(B))]
+x = sum(a[i]*B[i] for i in range(len(B)))
+x in W
+</script></pre>
+<p>We can also check if W is a subspave of V using the following sage syntaxes.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-73"><script type="text/x-sage">W <= V
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-74"><script type="text/x-sage">W.is_subspace(V)
+</script></pre></article><span class="incontext"><a href="sec2-4-Sage.html#example-48" class="internal">in-context</a></span>
+</body>
+</html>

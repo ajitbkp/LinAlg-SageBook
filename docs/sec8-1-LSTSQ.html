@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:30+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Least Square Problems</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body id="changeme" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<p class="byline">Ajit Kumar</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap8-Least-Square.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap8-Least-Square.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap9-SVD.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap8-Least-Square.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap8-Least-Square.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap9-SVD.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="biography-1.html" data-scroll="biography-1" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1-lineq.html" data-scroll="chap1-lineq" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a><ul>
+<li><a href="sec1-1-elementary-operations.html" data-scroll="sec1-1-elementary-operations" class="internal">Elementary Row Operations</a></li>
+<li><a href="sec1-2-col-operations.html" data-scroll="sec1-2-col-operations" class="internal">Elementary Column Operations</a></li>
+<li><a href="sec1-3-echelon-form.html" data-scroll="sec1-3-echelon-form" class="internal">Echelon Forms</a></li>
+<li><a href="sec1-4-matrix-rank.html" data-scroll="sec1-4-matrix-rank" class="internal">Rank of Matrices</a></li>
+<li><a href="sec1-5-hom-system.html" data-scroll="sec1-5-hom-system" class="internal">Homogeneous System of Linear Equations</a></li>
+<li><a href="sec1-6-LU.html" data-scroll="sec1-6-LU" class="internal"><span class="process-math">\(LU\)</span>-Facotorization</a></li>
+<li><a href="sec1-7-exer.html" data-scroll="sec1-7-exer" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2-Rn-Space.html" data-scroll="chap2-Rn-Space" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a><ul>
+<li><a href="sec2-0-intro.html" data-scroll="sec2-0-intro" class="internal">Introduction</a></li>
+<li><a href="sec2-1-LinSpan.html" data-scroll="sec2-1-LinSpan" class="internal">Linear Spans</a></li>
+<li><a href="sec-2-2-LI.html" data-scroll="sec-2-2-LI" class="internal">Linear Dependence</a></li>
+<li><a href="sec-2-3-basis-dimension.html" data-scroll="sec-2-3-basis-dimension" class="internal">Basis and Dimension</a></li>
+<li><a href="sec2-4-Sage.html" data-scroll="sec2-4-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3-LT.html" data-scroll="chap3-LT" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a><ul>
+<li><a href="sec3-1-LT.html" data-scroll="sec3-1-LT" class="internal">Introduction</a></li>
+<li><a href="sec3-2-LT.html" data-scroll="sec3-2-LT" class="internal">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></a></li>
+<li><a href="sec3-3-LT.html" data-scroll="sec3-3-LT" class="internal">Reflections and Projections</a></li>
+<li><a href="sec-LT-Geom.html" data-scroll="sec-LT-Geom" class="internal">Geometry of Linear Transformations</a></li>
+<li><a href="sec-sec3-5-LT-Sage.html" data-scroll="sec-sec3-5-LT-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4-Vector-Space.html" data-scroll="chap4-Vector-Space" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a><ul>
+<li><a href="sec4-1-VS.html" data-scroll="sec4-1-VS" class="internal">Introduction</a></li>
+<li><a href="sec4-2-Abst-VS.html" data-scroll="sec4-2-Abst-VS" class="internal">Vector Subspaces</a></li>
+<li><a href="sec4-3-linspan-VS.html" data-scroll="sec4-3-linspan-VS" class="internal">Linear Span</a></li>
+<li><a href="sec4-3-LI-VS.html" data-scroll="sec4-3-LI-VS" class="internal">Linear dependence and independence</a></li>
+<li><a href="sec4-5-basis-dim-VS.html" data-scroll="sec4-5-basis-dim-VS" class="internal">Basis and dimension</a></li>
+<li><a href="sec-sec4-5-VS-Sage.html" data-scroll="sec-sec4-5-VS-Sage" class="internal">Sage Computations</a></li>
+<li><a href="sec4-5-VS-Ex.html" data-scroll="sec4-5-VS-Ex" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-Eigen.html" data-scroll="chap5-Eigen" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a><ul>
+<li><a href="sec5-1-eigen-intro.html" data-scroll="sec5-1-eigen-intro" class="internal">Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-2-diagonalization.html" data-scroll="sec5-2-diagonalization" class="internal">Diagonalization</a></li>
+<li><a href="sec5-5-Eigen-Sage.html" data-scroll="sec5-5-Eigen-Sage" class="internal">Eigenvalues and Eigenvectors in Sage</a></li>
+<li><a href="sec5-3-eigen-Appl.html" data-scroll="sec5-3-eigen-Appl" class="internal">Applications of Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-4-eigen-exer.html" data-scroll="sec5-4-eigen-exer" class="internal">Exercises on Eigenvalues and Eigenvectors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-orthogonality.html" data-scroll="chap5-orthogonality" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec6-0-orthogonality.html" data-scroll="sec6-0-orthogonality" class="internal">Orthogonality</a></li>
+<li><a href="sec6-1-GramSchmidt.html" data-scroll="sec6-1-GramSchmidt" class="internal">Gram-Schmidt Orthogonalization Process</a></li>
+<li><a href="sec6-2.html" data-scroll="sec6-2" class="internal">Orthogonal Complements</a></li>
+<li><a href="sec6-3.html" data-scroll="sec6-3" class="internal">Orthogonal Diagonalizations</a></li>
+<li><a href="sec6-4.html" data-scroll="sec6-4" class="internal">QR-Factorization</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7-inner-product.html" data-scroll="chap7-inner-product" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a><ul>
+<li><a href="sec7-1-InnerProduct.html" data-scroll="sec7-1-InnerProduct" class="internal">Inner Product</a></li>
+<li><a href="sec7-2-Exer.html" data-scroll="sec7-2-Exer" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap8-Least-Square.html" data-scroll="chap8-Least-Square" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a><ul><li><a href="sec8-1-LSTSQ.html" data-scroll="sec8-1-LSTSQ" class="active">Least Square Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="chap9-SVD.html" data-scroll="chap9-SVD" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a><ul><li><a href="sec9-1-SVD.html" data-scroll="sec9-1-SVD" class="internal">Singular Value Decomposition</a></li></ul>
+</li>
+<li class="link">
+<a href="chap10-PCA.html" data-scroll="chap10-PCA" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a><ul>
+<li><a href="sec10-1-PCA.html" data-scroll="sec10-1-PCA" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec10-2.html" data-scroll="sec10-2" class="internal">Applications of PCA</a></li>
+<li><a href="sec10-3.html" data-scroll="sec10-3" class="internal">Sage Practice Area</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link">
+<a href="appendix-sage-into.html" data-scroll="appendix-sage-into" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a><ul>
+<li><a href="subsection-47.html" data-scroll="subsection-47" class="internal">Introduction to SageMath</a></li>
+<li><a href="getting-started-sagemath.html" data-scroll="getting-started-sagemath" class="internal">Getting Started with Sage</a></li>
+<li><a href="subsec-sage-programming.html" data-scroll="subsec-sage-programming" class="internal">Programming in Sage</a></li>
+<li><a href="subsec-plotting-sage.html" data-scroll="subsec-plotting-sage" class="internal">Plotting in Sage</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec8-1-LSTSQ"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">8.1</span> <span class="title">Least Square Problems</span>
+</h2>
+<section class="introduction" id="introduction-24"><p id="p-1308">This chapter deals with linear least square problems and its applications.</p></section><section class="subsection" id="sec-linear-lstsq"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.1.1</span> <span class="title">Linear Least Square Problems</span>
+</h3>
+<p id="p-1309">Consider a system of equations <span class="process-math">\(Ax=b\)</span> having <span class="process-math">\(m\)</span> equations in <span class="process-math">\(n\)</span> variables. Suppose <span class="process-math">\(m\geq n\text{.}\)</span> Then this system may not have a solution. Then we can look for what is the best approximate solution. If <span class="process-math">\(z\in \R^n\)</span> is a solution of <span class="process-math">\(Ax=b\)</span> then <span class="process-math">\(\norm{Az-b}=0\text{.}\)</span> Here <span class="process-math">\(\norm{Az-b}\)</span> is the measure of how far <span class="process-math">\(b\)</span> from <span class="process-math">\(Az\text{.}\)</span> The aim is to find the point <span class="process-math">\(z \in \R^b\)</span> such that <span class="process-math">\(Az\)</span> is at the smallest distance from <span class="process-math">\(b\text{.}\)</span> Thus if such a <span class="process-math">\(z\)</span> exists then <span class="process-math">\(\norm{Az-b}\leq \norm{Ax-b}\)</span> for all <span class="process-math">\(x\in \R^n\text{.}\)</span></p>
+<p id="p-1310">The answer to the above question is “yes”. In order to find this, we consider</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+W={\cal R}(A)=\{Ax:x\in \R^n\}\text{.}
+\end{equation*}
+</div>
+<p id="p-1311">Note that <span class="process-math">\(W\)</span> is subspace of <span class="process-math">\(\R^m\text{.}\)</span> We are looking for <span class="process-math">\(z\)</span> which is at the smallest distance from <span class="process-math">\(b\text{,}\)</span> which is nothing but the orthogonal projection of <span class="process-math">\(b\)</span> onto <span class="process-math">\(W\text{.}\)</span> Suppose we assume that columns of <span class="process-math">\(A\)</span> are linearly independent. Then <span class="process-math">\(W\)</span> is the column space of. Hence by the Eq. <a href="" class="xref" data-knowl="./knowl/orth-Proj-W.html" title="Equation 6.3.2">(6.3.2)</a>, orthogonal projection is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/orth-Proj-W.html">
+\begin{equation*}
+z = A(A^TA)^{-1}A^Tb\text{.}
+\end{equation*}
+</div>
+<p id="p-1312">Here the vector <span class="process-math">\(x^*=(A^TA)^{-1}A^Tb\)</span> is called the <em class="emphasis">least square approximation (solution)</em> of<span class="process-math">\(Ax=b\text{.}\)</span></p>
+<p id="p-1313">For the system <span class="process-math">\(Ax=b\text{,}\)</span> after multiplying both sides by <span class="process-math">\(A^T\text{,}\)</span> we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^TAx=A^Tb
+\end{equation*}
+</div>
+<p class="continuation">which is called the normal equation. We know that rank of <span class="process-math">\(A\)</span> is equal to rank of <span class="process-math">\(A^TA\text{.}\)</span> Hence <span class="process-math">\(A^T\)</span> is invertible if <span class="process-math">\(A\)</span> has linearly independent columns. Also the <span class="process-math">\(Ax=b\)</span> has least square solution if and only if the associated normal equation <span class="process-math">\(A^TAx=b\)</span> has a solution.</p>
+<p id="p-1314">Note that the least square solution <span class="process-math">\(x^*=(A^TA)^{-1}A^Tb\)</span> is the minimizer of the function <span class="process-math">\(f(x)=\norm{Ax-b}^2\text{.}\)</span> This can also be obtained using calculus.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-74">
+\begin{align*}
+f(x) \amp = \norm{Ax-b}^2 = (Ax-b)^T(Ax-b)\\
+\amp =  x^TA^TAx-x^TA^Tb-b^TAx+b^Tb\\
+\amp =  x^TA^TAx-2A^Tbx+b^Tb \text{.}
+\end{align*}
+</div>
+<p id="p-1315">The last equiality is due to the fact that, <span class="process-math">\(x^TA^Tb=b^TAx\text{.}\)</span></p>
+<p id="p-1316">Hence the gradient <span class="process-math">\(\nabla f(x)=2A^TAx-2A^Tb\text{.}\)</span> Hence <span class="process-math">\(\nabla f(x)=0\)</span> implies</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="lst-sq-eqn1">
+\begin{equation}
+x^*=(A^TA)^{-1}A^Tb\tag{8.1.1}
+\end{equation}
+</div>
+<p class="continuation">provided <span class="process-math">\(A^TA\)</span> is non singular.</p>
+<article class="example example-like" id="example-186"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.1</span><span class="period">.</span>
+</h4>
+<p id="p-1317">Consider the inner product space <span class="process-math">\({\cal C}[-1,1]\)</span> equipped with inner product</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\inner{f}{g}=\int_{-1}^1 f(x)g(x)\text{.}
+\end{equation*}
+</div>
+<p id="p-1318">Find the polynomial of degree at most 2 which is closest to the function <span class="process-math">\(f(x)=|x|\text{.}\)</span> Here we consider the subspace <span class="process-math">\(W={\cal P}_2(\R)\text{.}\)</span> We need the find the orthogonal projection of <span class="process-math">\(f(x)\)</span> onto <span class="process-math">\(W\text{.}\)</span></p>
+<p id="p-1319">From <a href="" class="xref" data-knowl="./knowl/Legendre-poly.html" title="Example 7.1.21: Legendre Polynomials">Example 7.1.21</a>, we know that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Legendre-poly.html">
+\begin{equation*}
+\left\{u_1 = \frac{1}{\sqrt{2}}, u_2 = \frac{\sqrt{6}}{2}x, u_3=\frac{3\sqrt{10}}{4}\left(x^2-\frac13\right)\right\}
+\end{equation*}
+</div>
+<p class="continuation">is an orthonormal basis of <span class="process-math">\(W\text{.}\)</span> Hence the orthogonal projection <span class="process-math">\(p\)</span> of <span class="process-math">\(f\)</span> onto <span class="process-math">\(W\)</span> is give by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Legendre-poly.html">
+\begin{equation*}
+p(x)=\inner{f}{u_1}u_1+\inner{f}{u_2}u_2+\inner{f}{u_2}u_3\text{.}
+\end{equation*}
+</div>
+<p id="p-1320">After simplification we get <span class="process-math">\(p(x)=\frac{3}{16}(5x^2+1)\text{.}\)</span></p></article><article class="exercise exercise-like" id="exer-8-1-2"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">8.1.2</span><span class="period">.</span>
+</h4>
+<p id="p-1321">Consider the inner product space <span class="process-math">\({\cal C}[-1,1]\)</span> equipped with inner product</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\inner{f}{g}=\int_{-1}^1 f(x)g(x)\text{.}
+\end{equation*}
+</div>
+<p id="p-1322">Find the polynomial of degree at most 2 which is closest to the function <span class="process-math">\(f(x)=\sin x\text{.}\)</span></p></article><article class="example example-like" id="example-187"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span>
+</h4>
+<p id="p-1323">Consider a system of linear equations <span class="process-math">\(Ax=b\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A= \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp  1 \\ -2 \amp  3 \end{array} \right),\qquad b = \begin{pmatrix}-1\\3\\5\\1 \end{pmatrix}
+\end{equation*}
+</div>
+<p id="p-1324">(a) Find the least square solution of <span class="process-math">\(Ax=b\text{.}\)</span></p>
+<p id="p-1325">(b) Find the orthogonal projection of <span class="process-math">\(b\)</span> onto the column space <span class="process-math">\(W={col}(A)\text{.}\)</span></p>
+<p id="p-1326">(c) Write the <span class="process-math">\(b\)</span> as <span class="process-math">\(b=w+u\)</span> where <span class="process-math">\(w\in W\)</span> and <span class="process-math">\(u\in W^\perp\text{.}\)</span></p>
+<p id="p-1327"><em class="emphasis">Solution:</em> It is easy to see that the columns of <span class="process-math">\(A\)</span> are linearly independent, hence the least square solution exists. We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^TA = \left(\begin{array}{rr} 10 \amp  -4 \\ -4 \amp  12 \end{array} \right),\text{ and }  A^Tb=\left(\begin{array}{rr}10\\12 \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<p id="p-1328">Hence the least square solution of <span class="process-math">\(Ax=b\)</span> is the solution of the normal equation <span class="process-math">\(A^TAx=A^Tb\)</span> which is <span class="process-math">\(x^*=\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)\text{.}\)</span> The same can obtained as <span class="process-math">\(x^* =(A^TA)^{-1}A^Tb\text{.}\)</span></p>
+<p id="p-1329">(b) The orthogonal projection of <span class="process-math">\(b\)</span> onto <span class="process-math">\(W\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+w = A(A^TA)^{-1}A^Tb = \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp  1 \\ -2 \amp  3 \end{array} \right)\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)=\left(\begin{array}{r} \frac{1}{13} \\ \frac{41}{13} \\ \frac{62}{13} \\ \frac{18}{13} \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<p id="p-1330">(b) Since we have found <span class="process-math">\(w\text{,}\)</span> <span class="process-math">\(u\)</span> is given by <span class="process-math">\(b-w=\left(\begin{array}{r} -\frac{14}{13} \\ -\frac{2}{13} \\ \frac{3}{13} \\ -\frac{5}{13} \end{array} \right)\text{.}\)</span> Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+b = \begin{pmatrix}-1\\3\\5\\1 \end{pmatrix} =w+u=\left(\begin{array}{r} \frac{1}{13} \\ \frac{41}{13} \\ \frac{62}{13} \\ \frac{18}{13} \end{array} \right)+\left(\begin{array}{r} -\frac{14}{13} \\ -\frac{2}{13} \\ \frac{3}{13} \\ -\frac{5}{13} \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-281"><script type="text/x-sage">A= matrix([[1 ,  -1],[1 ,  1], [2 ,  1],  [-2 ,  3]]) 
+b = vector([-1,3,5,1])
+print(A.T*A)
+print(A.T*b)
+xstar = (A.T*A).inverse()*A.T*b
+print('The least square solution is:')
+print(xstar)
+w = A*xstar
+print('The orthogonal projection is:')
+print(w)
+u = b-w
+print('The vector u such that b = w+u is')
+print(u)
+</script></pre></article><section class="exercises" id="exercises-LSQ-ex1"><h4 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h4>
+<article class="exercise exercise-like" id="exer-8-1-3"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<p id="p-1331">(i) Find the best approximation (least square solution) of the system of linear equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+3x-y = 4,  x+2y=0, 2x+y = 1
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exer-8-1-4"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<p id="p-1332">The average number of goals <span class="process-math">\(g\text{,}\)</span> per game scored by a football player is related linearly to two factors, (i) the number <span class="process-math">\(x_1\)</span> of years of experience and (ii) the number <span class="process-math">\(x_2\)</span> of goals in the preceding 10 games. Find the linear The data on the following page were collected on four players. Find the linear function <span class="process-math">\(y=a_0+a_1x_1+a_2x_2\text{.}\)</span></p>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">goals <span class="process-math">\((g)\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">0.8</td>
+<td class="l m b0 r0 l0 t0 lines">0.7</td>
+<td class="l m b0 r0 l0 t0 lines">0.6</td>
+<td class="l m b0 r0 l0 t0 lines">0.5</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></div></article></section><article class="example example-like" id="example-188"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.4</span><span class="period">.</span>
+</h4>
+<p id="p-1333">The average annual temperature of Santacruz in Mumbai recorded from 1991 to 2021 is given in the following table.</p>
+<p id="p-1334"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Year</td>
+<td class="l m b0 r0 l0 t0 lines">1990</td>
+<td class="l m b0 r0 l0 t0 lines">1991</td>
+<td class="l m b0 r0 l0 t0 lines">1992</td>
+<td class="l m b0 r0 l0 t0 lines">1993</td>
+<td class="l m b0 r0 l0 t0 lines">1994</td>
+<td class="l m b0 r0 l0 t0 lines">1995</td>
+<td class="l m b0 r0 l0 t0 lines">1996</td>
+<td class="l m b0 r0 l0 t0 lines">1997</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Temp</td>
+<td class="l m b0 r0 l0 t0 lines">27.07</td>
+<td class="l m b0 r0 l0 t0 lines">26.93</td>
+<td class="l m b0 r0 l0 t0 lines">27.11</td>
+<td class="l m b0 r0 l0 t0 lines">27.18</td>
+<td class="l m b0 r0 l0 t0 lines">26.94</td>
+<td class="l m b0 r0 l0 t0 lines">27.25</td>
+<td class="l m b0 r0 l0 t0 lines">27.64</td>
+<td class="l m b0 r0 l0 t0 lines">27.66</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Year</td>
+<td class="l m b0 r0 l0 t0 lines">1998</td>
+<td class="l m b0 r0 l0 t0 lines">1999</td>
+<td class="l m b0 r0 l0 t0 lines">2000</td>
+<td class="l m b0 r0 l0 t0 lines">2001</td>
+<td class="l m b0 r0 l0 t0 lines">2002</td>
+<td class="l m b0 r0 l0 t0 lines">2003</td>
+<td class="l m b0 r0 l0 t0 lines">2004</td>
+<td class="l m b0 r0 l0 t0 lines">2005</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Temp</td>
+<td class="l m b0 r0 l0 t0 lines">27.75</td>
+<td class="l m b0 r0 l0 t0 lines">27.65</td>
+<td class="l m b0 r0 l0 t0 lines">27.61</td>
+<td class="l m b0 r0 l0 t0 lines">27.26</td>
+<td class="l m b0 r0 l0 t0 lines">27.82</td>
+<td class="l m b0 r0 l0 t0 lines">27.46</td>
+<td class="l m b0 r0 l0 t0 lines">27.00</td>
+<td class="l m b0 r0 l0 t0 lines">27.36</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Year</td>
+<td class="l m b0 r0 l0 t0 lines">2006</td>
+<td class="l m b0 r0 l0 t0 lines">2007</td>
+<td class="l m b0 r0 l0 t0 lines">2008</td>
+<td class="l m b0 r0 l0 t0 lines">2009</td>
+<td class="l m b0 r0 l0 t0 lines">2010</td>
+<td class="l m b0 r0 l0 t0 lines">2011</td>
+<td class="l m b0 r0 l0 t0 lines">2012</td>
+<td class="l m b0 r0 l0 t0 lines">2013</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Temp</td>
+<td class="l m b0 r0 l0 t0 lines">27.36</td>
+<td class="l m b0 r0 l0 t0 lines">28.02</td>
+<td class="l m b0 r0 l0 t0 lines">27.75</td>
+<td class="l m b0 r0 l0 t0 lines">28.33</td>
+<td class="l m b0 r0 l0 t0 lines">28.16</td>
+<td class="l m b0 r0 l0 t0 lines">27.94</td>
+<td class="l m b0 r0 l0 t0 lines">27.61</td>
+<td class="l m b0 r0 l0 t0 lines">27.63</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Year</td>
+<td class="l m b0 r0 l0 t0 lines">2014</td>
+<td class="l m b0 r0 l0 t0 lines">2015</td>
+<td class="l m b0 r0 l0 t0 lines">2016</td>
+<td class="l m b0 r0 l0 t0 lines">2017</td>
+<td class="l m b0 r0 l0 t0 lines">2018</td>
+<td class="l m b0 r0 l0 t0 lines">2019</td>
+<td class="l m b0 r0 l0 t0 lines">2020</td>
+<td class="l m b0 r0 l0 t0 lines">2021</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Temp</td>
+<td class="l m b0 r0 l0 t0 lines">28.18</td>
+<td class="l m b0 r0 l0 t0 lines">28.67</td>
+<td class="l m b0 r0 l0 t0 lines">28.24</td>
+<td class="l m b0 r0 l0 t0 lines">28.55</td>
+<td class="l m b0 r0 l0 t0 lines">28.76</td>
+<td class="l m b0 r0 l0 t0 lines">28.27</td>
+<td class="l m b0 r0 l0 t0 lines">28.40</td>
+<td class="l m b0 r0 l0 t0 lines">28.48</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></div></p>
+<p id="p-1335">Find the equation of the line that best fits these data points.</p>
+<p id="p-1336">The temperature data is plotted in the <a href="" class="xref" data-knowl="./knowl/fig_mumtempplot.html" title="Figure 8.1.5">Figure 8.1.5</a>.</p>
+<figure class="figure figure-like" id="fig_mumtempplot"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/images/mum_temp_plot.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1337">We wish to find the best fit line to the given set of data. Suppose the line is given by <span class="process-math">\(y=c+mx\text{,}\)</span> then we wish to find <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> such that the line <span class="process-math">\(y=c+mx\)</span> is best fit. Now what is meaning of "best fit". Suppose we consider the point <span class="process-math">\((x_i,y_i)\text{,}\)</span> if it lies on <span class="process-math">\(c+mx\text{,}\)</span> then <span class="process-math">\(y=c+mx_i\text{,}\)</span> other wise <span class="process-math">\(|(c+mx_i)-y_i|\)</span> is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{i=1}^n [(c+mx_i)-y_i]^2
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(n\)</span> is the number of points. Note that the sum of error squares can be written as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{i=1}^n [(c+mx_i)-y_i]^2 = \norm{\begin{bmatrix}1 \amp  x_1 \\1 \amp  x_2 \\\vdots \amp  \vdots \\ 1 \amp x_n \end{bmatrix}  \begin{bmatrix}c\\m \end{bmatrix}  -\begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix} }=\norm{Ax-b}\text{.}
+\end{equation*}
+</div>
+<p id="p-1338">Here</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = \begin{bmatrix}1 \amp  x_1 \\1 \amp  x_2 \\\vdots \amp  \vdots \\ 1 \amp x_n \end{bmatrix}  x= \begin{bmatrix}c\\m \end{bmatrix} ,b = \begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix}
+\end{equation*}
+</div>
+<p id="p-1339">Thus finding <span class="process-math">\(m,c\)</span> amount to finding the least square solution of <span class="process-math">\(Ax=b\text{,}\)</span> which is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x^*=\begin{bmatrix}c\\m \end{bmatrix} =(A^TA)^{-1}A^Tb
+\end{equation*}
+</div>
+<p id="p-1340">For the given problem, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = \begin{bmatrix}1 \amp  1990 \\1 \amp  1991 \\\vdots \amp  \vdots \\ 1 \amp 2021 \end{bmatrix} , b = \begin{bmatrix}27.07\\26.93\\\vdots\\28.48 \end{bmatrix}
+\end{equation*}
+</div>
+<p id="p-1341">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^T = \left(\begin{array}{rr} 32 \amp  64176 \\ 64176 \amp  128707696 \end{array} \right), A^Tb =\left(\begin{array}{r} 888.050000000000 \\ 1.78111456000000 \times 10^{6} \end{array} \right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(A^TA)^{-1}=\left(\begin{array}{rr} \frac{8044231}{5456} \amp  -\frac{4011}{5456} \\ -\frac{4011}{5456} \amp  \frac{1}{2728} \end{array} \right)\text{.}
+\end{equation*}
+</div>
+<p id="p-1342">Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x^*=\begin{bmatrix}c\\m \end{bmatrix} =(A^TA)^{-1}A^Tb = \left(\begin{array}{r} -68.0279710416216 \\ 0.0477584310854127 \end{array} \right)
+\end{equation*}
+</div>
+<p id="p-1343">The set of points along with the best fitted line is shown in the <a href="" class="xref" data-knowl="./knowl/fig_mumtempplot2.html" title="Figure 8.1.6">Figure 8.1.6</a></p>
+<figure class="figure figure-like" id="fig_mumtempplot2"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/images/mum_temp_plot2.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><pre class="ptx-sagecell sagecell-sage" id="sage-282"><script type="text/x-sage">year=[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,
+      2013,2014,2015,2016,2017,2018,2019,2020,2021]
+temp=[27.08,26.93,27.11,27.18,26.94,27.25,27.64,27.66,27.75,27.65,27.61,27.26,27.82,
+      27.46,27.00,27.36,27.36,28.02,27.75,28.33,28.16,27.94,27.61,27.63,28.18,28.67,28.24,28.55,
+      28.76,28.27,28.40,28.48]
+data = zip(year,temp)
+point2d(data,figsize=8)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-283"><script type="text/x-sage">n = len(year);n
+ones = [1]*n
+A = column_matrix([ones,year])
+b = column_matrix(temp)
+s = (A.T*A).inverse()*A.T*b
+print("The least square solution is give by:")
+print(s)
+</script></pre>
+<p id="p-1344">This means the slope of the fitted (regression line) is 0.0477584310854127 and the intercept is -68.0279710416216. Now we plot the fitted line along with the fitted line.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-284"><script type="text/x-sage">var('t')
+data1 = [(year[i],temp[i]) for i in range(n)]
+point(data1,figsize=5)+plot((s[0]+s[1]*t)[0],(t,1990,2022),color='red',figsize=5)
+</script></pre>
+<p id="p-1345">Sage also has an inbult function to find the fitted line.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-285"><script type="text/x-sage">    ## Using Sage inbult function
+var('t,a,b')
+model(t) = a+b*t
+data1 = [(year[i],temp[i]) for i in range(n)]
+fit = find_fit(data1,model, solution_dict = True)
+print(fit)
+</script></pre></article></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.1.2</span> <span class="title">Fitting polynomials to a data set</span>
+</h3>
+<p id="p-1346">Suppose we are given a set of <span class="process-math">\(n\)</span>-data points <span class="process-math">\((x_i y_i)\)</span> and we wish to find the best fit polynomial curve of degree <span class="process-math">\(p\text{,}\)</span> say, <span class="process-math">\(y=a_0+a_1x+a_2x^2+\cdots +a_px^p\text{,}\)</span> with <span class="process-math">\(a_p\neq 0\text{.}\)</span> In this case, the error term for <span class="process-math">\((x_i,y_i)\)</span> from the the the curve <span class="process-math">\(y\)</span> is <span class="process-math">\(|(a_0+a_1x_i+a_2x_i^2+\cdots +a_px_i^p)-y_i|\text{.}\)</span> Thus the sum of the error square is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_i^n [(a_0+a_1x_i+a_2x_i^2+\cdots +a_px_i^p)-y_i]^2
+\end{equation*}
+</div>
+<p id="p-1347">The sum of error square can be written as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_i^n [y_i-(a_0+a_1x_i+a_2x_i^2+\cdots +a_px_i^p)]^2=\norm{Ax-b}^2\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = \begin{bmatrix}1 \amp  x_1 \amp  x_1^2 \amp  \cdots \amp  x_1^p\\ 1 \amp  x_2 \amp  x_2^2 \amp  \cdots \amp x_2^p\\ \vdots \amp  \vdots \amp  \cdots \amp  \ddots \amp  \vdots\\ 1 \amp  x_n \amp  x_n^2 \amp  \cdots \amp x_n^p \end{bmatrix} ,  b = \begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix} , x = \begin{bmatrix}a_0\\a_1\\a_2\\\vdots\\a_p \end{bmatrix}
+\end{equation*}
+</div>
+<p id="p-1348">Thus the least square solution is given by <span class="process-math">\(x^* = (A^TA)A^Tb\)</span> provided columns of <span class="process-math">\(A\)</span> are linearly independent.</p>
+<article class="example example-like" id="lst-sq-eg814"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.7</span><span class="period">.</span>
+</h4>
+<p id="p-1349">Find th best fit cubic <span class="process-math">\(y=a_0+a_1x+a_2x^2+a_3x^3\)</span> to the following set of points</p>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_i\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">-3.0</td>
+<td class="l m b0 r0 l0 t0 lines">-2.8</td>
+<td class="l m b0 r0 l0 t0 lines">-2.5</td>
+<td class="l m b0 r0 l0 t0 lines">-2.2</td>
+<td class="l m b0 r0 l0 t0 lines">-2.0</td>
+<td class="l m b0 r0 l0 t0 lines">-1.8</td>
+<td class="l m b0 r0 l0 t0 lines">-1.5</td>
+<td class="l m b0 r0 l0 t0 lines">-1.2</td>
+<td class="l m b0 r0 l0 t0 lines">-1.0</td>
+<td class="l m b0 r0 l0 t0 lines">-0.75</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(y_i\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">1.1</td>
+<td class="l m b0 r0 l0 t0 lines">4.0</td>
+<td class="l m b0 r0 l0 t0 lines">7.3</td>
+<td class="l m b0 r0 l0 t0 lines">7.1</td>
+<td class="l m b0 r0 l0 t0 lines">8.2</td>
+<td class="l m b0 r0 l0 t0 lines">7.8</td>
+<td class="l m b0 r0 l0 t0 lines">9.9</td>
+<td class="l m b0 r0 l0 t0 lines">7.1</td>
+<td class="l m b0 r0 l0 t0 lines">8.8</td>
+<td class="l m b0 r0 l0 t0 lines">6.2</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_i\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">-0.50</td>
+<td class="l m b0 r0 l0 t0 lines">-0.25</td>
+<td class="l m b0 r0 l0 t0 lines">0.00</td>
+<td class="l m b0 r0 l0 t0 lines">0.25</td>
+<td class="l m b0 r0 l0 t0 lines">0.50</td>
+<td class="l m b0 r0 l0 t0 lines">0.75</td>
+<td class="l m b0 r0 l0 t0 lines">1.0</td>
+<td class="l m b0 r0 l0 t0 lines">1.2</td>
+<td class="l m b0 r0 l0 t0 lines">1.5</td>
+<td class="l m b0 r0 l0 t0 lines">1.8</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(y_i\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">7.0</td>
+<td class="l m b0 r0 l0 t0 lines">3.7</td>
+<td class="l m b0 r0 l0 t0 lines">4.7</td>
+<td class="l m b0 r0 l0 t0 lines">3.4</td>
+<td class="l m b0 r0 l0 t0 lines">5.6</td>
+<td class="l m b0 r0 l0 t0 lines">5.8</td>
+<td class="l m b0 r0 l0 t0 lines">5.3</td>
+<td class="l m b0 r0 l0 t0 lines">6.6</td>
+<td class="l m b0 r0 l0 t0 lines">10.</td>
+<td class="l m b0 r0 l0 t0 lines">12.</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+<p id="p-1350">Thus we need to find the least square solution of <span class="process-math">\(Ax=b\text{,}\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = \left(\begin{array}{rrrr} 1.00 \amp  -3.00 \amp  9.00 \amp  -27.00\\ 1.0 \amp  -2.80 \amp  7.84\amp  -21.952\\ 1.00 \amp  -2.500\amp  6.250 \amp  -15.625\\ \vdots \amp  \vdots\amp  \vdots \amp  \vdots \\ 1.00 \amp  1.80\amp  3.240 \amp  5.832 \end{array} \right),  b = \left(\begin{array}{r} 1.1\\ 4.0 \\ 7.3\\ \vdots\\ 12.0 \end{array} \right)
+\end{equation*}
+</div>
+<p id="p-1351">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^TA = \left(\begin{array}{rrrr} 20.0 \amp  -12.5\amp  49.54 \amp  -83.225\\ -12.5\amp  49.54\amp  -83.225 \amp  258.986725 \\ 49.54 \amp  -83.225\amp  258.986725 \amp  -596.29625 \\ -83.225 \amp  258.986725\amp  -596.29625 \amp  1731.57619431250 \end{array} \right)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^Tb = \left(\begin{array}{r} 131.6 \\ -62.235 \\ 307.14775 \\ -352.6518375 \end{array} \right)
+\end{equation*}
+</div>
+<p id="p-1352">Hence the least square solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x^* = (A^TA)^{-1}A^Tb=\begin{bmatrix}a_0 \\a_1\\a_2\\a_3 \end{bmatrix}  = \begin{bmatrix}4.82641673699866 \\ -1.84149774223300 \\ 1.78790889783526 \\ 0.919436026634361 \end{bmatrix}
+\end{equation*}
+</div>
+<p id="p-1353">See the <a href="" class="xref" data-knowl="./knowl/fig_cubic_plot1.html" title="Figure 8.1.8">Figure 8.1.8</a> for fitted curve along with the data.</p>
+<figure class="figure figure-like" id="fig_cubic_plot1"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/images/cubic_plot1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure><pre class="ptx-sagecell sagecell-sage" id="sage-286"><script type="text/x-sage">xx = [-3.0 , -2.8 , -2.5 , -2.2 , -2.0 , -1.8 , -1.5 , -1.2 , -1.0 , -0.75 , -0.50 ,
+      -0.25 , 0.00 , 0.25 , 0.50 , 0.75 , 1.0 , 1.2 , 1.5 , 1.8]
+yy = [1.1 , 4.0 , 7.3 , 7.1 , 8.2 , 7.8 , 9.9 , 7.1 , 8.8 , 6.2 , 7.0 , 3.7 , 4.7 , 
+      3.4 , 5.6 , 5.8 , 5.3 , 6.6 , 10. , 12]
+n = len(xx)
+point([(xx[i],yy[i]) for i in range(n)])
+ones = [1]*n
+xx2 = [xx[i]^2 for i in range(n)]
+xx3 =[xx[i]^3 for i in range(n)]
+b = column_matrix(yy)
+A = column_matrix([ones, xx, xx2,xx3])
+s= (A.T*A).inverse()*A.T*b
+print('The least square solution is')
+print(s)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-287"><script type="text/x-sage">pts = point([(xx[i],yy[i]) for i in range(20)],figsize=5)
+cubic = plot(s[0][0]+s[1][0]*t+s[2][0]*t^2+s[3][0]*t^3,(t,-3.2,2),color="red",figsize=5)
+pts+cubic
+</script></pre>
+<p id="p-1354">Using the inbuilt sage function <code class="code-inline tex2jax_ignore">find_fit</code>, we have</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-288"><script type="text/x-sage">## Using Sage inbult function
+var('t,a0,a1,a2,a3')
+model(t) = a0+a1*t+a2*t^2+a3*t^3
+data1 = [(xx[i],yy[i]) for i in range(n)]
+fit = find_fit(data1,model, solution_dict = True)
+print(fit)
+</script></pre></article><section class="exercises" id="exercises-"><h4 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h4>
+<article class="exercise exercise-like" id="exer-8-1-5"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<p id="p-1355">Find the least squares approximating line <span class="process-math">\(y = a_0 +a_1x\)</span> for each of the following sets of data points.</p>
+<p id="p-1356">(i) <span class="process-math">\((-2, 3), (-1, 1), (0, 0), (1, -2), (2, -4)\)</span></p>
+<p id="p-1357">(ii) <span class="process-math">\((-1, -1), (0, 1), (1, 2), (2, 4), (3, 6)\)</span></p></article><article class="exercise exercise-like" id="exer-8-1-6"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<p id="p-1358">Find the least squares approximating quadratic <span class="process-math">\(y=a_0+a_1x+a_2x^2\)</span> for each of the following sets of data points.</p>
+<p id="p-1359">(i) <span class="process-math">\(. (-2, 1), (0, 0), (3, 2), (4, 3)\)</span></p>
+<p id="p-1360">(ii) The table gives the worldwide cumulative HIV infections in millions.</p>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1980</td>
+<td class="l m b0 r0 l0 t0 lines">0.1</td>
+<td class="l m b0 r0 l0 t0 lines">1995</td>
+<td class="l m b0 r0 l0 t0 lines">29.8</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1982</td>
+<td class="l m b0 r0 l0 t0 lines">0.7</td>
+<td class="l m b0 r0 l0 t0 lines">1997</td>
+<td class="l m b0 r0 l0 t0 lines">40.9</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1985</td>
+<td class="l m b0 r0 l0 t0 lines">2.4</td>
+<td class="l m b0 r0 l0 t0 lines">2000</td>
+<td class="l m b0 r0 l0 t0 lines">57.9</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1987</td>
+<td class="l m b0 r0 l0 t0 lines">4.5</td>
+<td class="l m b0 r0 l0 t0 lines">2002</td>
+<td class="l m b0 r0 l0 t0 lines">67.9</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1990</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">2005</td>
+<td class="l m b0 r0 l0 t0 lines">82.7</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1992</td>
+<td class="l m b0 r0 l0 t0 lines">16.1</td>
+<td class="l m b0 r0 l0 t0 lines">2008</td>
+<td class="l m b0 r0 l0 t0 lines">100.2</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></div></article></section></section><section class="subsection" id="sec-weigheted-lstsq"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.1.3</span> <span class="title">Weighted Least Square Problems</span>
+</h3>
+<p id="p-1361">Weighted Least Squares (WLS) is an extension of the Ordinary Least Squares (OLS) method, allowing each observation to have a different weight based on its reliability. This is particularly useful when data points have unequal variances, a situation known as <dfn class="terminology">heteroscedasticity</dfn>.</p>
+<p id="p-1362">Consider the overdetermined system <span class="process-math">\(A\mathbf{x} \approx \mathbf{b}\text{,}\)</span> where <span class="process-math">\(A \in \mathbb{R}^{m \times n}\)</span> is the design matrix, <span class="process-math">\(\mathbf{x} \in \mathbb{R}^n\)</span> is the vector of unknowns, and <span class="process-math">\(\mathbf{b} \in \mathbb{R}^m\)</span> contains the observations. If the <span class="process-math">\(i\)</span>-th observation has variance <span class="process-math">\(\sigma_i^2\text{,}\)</span> the corresponding weight is <span class="process-math">\(w_i = \frac{1}{\sigma_i^2}\text{.}\)</span> We define the diagonal weight matrix:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+W = \mathrm{diag}(w_1, w_2, \dots, w_m).
+\end{equation*}
+</div>
+<p id="p-1363">The WLS problem minimizes the weighted squared residuals:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\min_{\mathbf{x}} \| W^{1/2} (A\mathbf{x} - \mathbf{b}) \|_2^2
+\end{equation*}
+</div>
+<p class="continuation">leading to the <dfn class="terminology">normal equations</dfn>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^\mathsf{T} W A \mathbf{x} = A^\mathsf{T} W \mathbf{b}.
+\end{equation*}
+</div>
+<p class="continuation">If <span class="process-math">\(A^\mathsf{T} W A\)</span> is invertible, the solution is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mathbf{x} = (A^\mathsf{T} W A)^{-1} A^\mathsf{T} W \mathbf{b}.
+\end{equation*}
+</div>
+<p id="p-1364">Geometrically, this is equivalent to projecting <span class="process-math">\(\mathbf{b}\)</span> onto the column space of <span class="process-math">\(A\)</span> using the <span class="process-math">\(W\)</span>-weighted inner product:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\langle \mathbf{u}, \mathbf{v} \rangle_W = \mathbf{u}^\mathsf{T} W \mathbf{v}.
+\end{equation*}
+</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-289"><script type="text/x-sage">def weighted_least_squares(A, b, w):
+    """
+    Solve Weighted Least Squares problem:
+    Minimize || W^{1/2} (A x - b) ||_2^2
+    
+    Parameters:
+    A - matrix (SageMatrix)
+    b - vector (SageVector)
+    w - list or vector of weights (positive)
+    
+    Returns:
+    x - solution vector
+    """
+    # Convert to Sage objects
+    A = matrix(QQ, A)
+    b = vector(QQ, b)
+    W = diagonal_matrix(w)
+    
+    # Check weights positivity
+    if any(wi <= 0 for wi in w):
+        raise ValueError("All weights must be positive.")
+    
+    # Solve normal equations
+    ATA = A.transpose() * W * A
+    ATb = A.transpose() * W * b
+    x = ATA.inverse() * ATb
+    
+    return x
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-290"><script type="text/x-sage"># Example usage:
+A = [[1, 1], [1, 2], [1, 3],[2,4],[2,5],[2,6]]
+b = [1, 2, 2,4,2,4]
+weights = [1, 4, 1,2,2,3]  # Second observation has higher reliability
+
+x_solution = weighted_least_squares(A, b, weights)
+print("Weighted Least Squares Solution:", x_solution)
+</script></pre></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:28+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Echelon Forms</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body id="changeme" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<p class="byline">Ajit Kumar</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec1-2-col-operations.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap1-lineq.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec1-4-matrix-rank.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec1-2-col-operations.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap1-lineq.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec1-4-matrix-rank.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="biography-1.html" data-scroll="biography-1" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1-lineq.html" data-scroll="chap1-lineq" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a><ul>
+<li><a href="sec1-1-elementary-operations.html" data-scroll="sec1-1-elementary-operations" class="internal">Elementary Row Operations</a></li>
+<li><a href="sec1-2-col-operations.html" data-scroll="sec1-2-col-operations" class="internal">Elementary Column Operations</a></li>
+<li><a href="sec1-3-echelon-form.html" data-scroll="sec1-3-echelon-form" class="active">Echelon Forms</a></li>
+<li><a href="sec1-4-matrix-rank.html" data-scroll="sec1-4-matrix-rank" class="internal">Rank of Matrices</a></li>
+<li><a href="sec1-5-hom-system.html" data-scroll="sec1-5-hom-system" class="internal">Homogeneous System of Linear Equations</a></li>
+<li><a href="sec1-6-LU.html" data-scroll="sec1-6-LU" class="internal"><span class="process-math">\(LU\)</span>-Facotorization</a></li>
+<li><a href="sec1-7-exer.html" data-scroll="sec1-7-exer" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2-Rn-Space.html" data-scroll="chap2-Rn-Space" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a><ul>
+<li><a href="sec2-0-intro.html" data-scroll="sec2-0-intro" class="internal">Introduction</a></li>
+<li><a href="sec2-1-LinSpan.html" data-scroll="sec2-1-LinSpan" class="internal">Linear Spans</a></li>
+<li><a href="sec-2-2-LI.html" data-scroll="sec-2-2-LI" class="internal">Linear Dependence</a></li>
+<li><a href="sec-2-3-basis-dimension.html" data-scroll="sec-2-3-basis-dimension" class="internal">Basis and Dimension</a></li>
+<li><a href="sec2-4-Sage.html" data-scroll="sec2-4-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3-LT.html" data-scroll="chap3-LT" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a><ul>
+<li><a href="sec3-1-LT.html" data-scroll="sec3-1-LT" class="internal">Introduction</a></li>
+<li><a href="sec3-2-LT.html" data-scroll="sec3-2-LT" class="internal">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></a></li>
+<li><a href="sec3-3-LT.html" data-scroll="sec3-3-LT" class="internal">Reflections and Projections</a></li>
+<li><a href="sec-LT-Geom.html" data-scroll="sec-LT-Geom" class="internal">Geometry of Linear Transformations</a></li>
+<li><a href="sec-sec3-5-LT-Sage.html" data-scroll="sec-sec3-5-LT-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4-Vector-Space.html" data-scroll="chap4-Vector-Space" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a><ul>
+<li><a href="sec4-1-VS.html" data-scroll="sec4-1-VS" class="internal">Introduction</a></li>
+<li><a href="sec4-2-Abst-VS.html" data-scroll="sec4-2-Abst-VS" class="internal">Vector Subspaces</a></li>
+<li><a href="sec4-3-linspan-VS.html" data-scroll="sec4-3-linspan-VS" class="internal">Linear Span</a></li>
+<li><a href="sec4-3-LI-VS.html" data-scroll="sec4-3-LI-VS" class="internal">Linear dependence and independence</a></li>
+<li><a href="sec4-5-basis-dim-VS.html" data-scroll="sec4-5-basis-dim-VS" class="internal">Basis and dimension</a></li>
+<li><a href="sec-sec4-5-VS-Sage.html" data-scroll="sec-sec4-5-VS-Sage" class="internal">Sage Computations</a></li>
+<li><a href="sec4-5-VS-Ex.html" data-scroll="sec4-5-VS-Ex" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-Eigen.html" data-scroll="chap5-Eigen" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a><ul>
+<li><a href="sec5-1-eigen-intro.html" data-scroll="sec5-1-eigen-intro" class="internal">Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-2-diagonalization.html" data-scroll="sec5-2-diagonalization" class="internal">Diagonalization</a></li>
+<li><a href="sec5-5-Eigen-Sage.html" data-scroll="sec5-5-Eigen-Sage" class="internal">Eigenvalues and Eigenvectors in Sage</a></li>
+<li><a href="sec5-3-eigen-Appl.html" data-scroll="sec5-3-eigen-Appl" class="internal">Applications of Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-4-eigen-exer.html" data-scroll="sec5-4-eigen-exer" class="internal">Exercises on Eigenvalues and Eigenvectors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-orthogonality.html" data-scroll="chap5-orthogonality" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec6-0-orthogonality.html" data-scroll="sec6-0-orthogonality" class="internal">Orthogonality</a></li>
+<li><a href="sec6-1-GramSchmidt.html" data-scroll="sec6-1-GramSchmidt" class="internal">Gram-Schmidt Orthogonalization Process</a></li>
+<li><a href="sec6-2.html" data-scroll="sec6-2" class="internal">Orthogonal Complements</a></li>
+<li><a href="sec6-3.html" data-scroll="sec6-3" class="internal">Orthogonal Diagonalizations</a></li>
+<li><a href="sec6-4.html" data-scroll="sec6-4" class="internal">QR-Factorization</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7-inner-product.html" data-scroll="chap7-inner-product" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a><ul>
+<li><a href="sec7-1-InnerProduct.html" data-scroll="sec7-1-InnerProduct" class="internal">Inner Product</a></li>
+<li><a href="sec7-2-Exer.html" data-scroll="sec7-2-Exer" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap8-Least-Square.html" data-scroll="chap8-Least-Square" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a><ul><li><a href="sec8-1-LSTSQ.html" data-scroll="sec8-1-LSTSQ" class="internal">Least Square Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="chap9-SVD.html" data-scroll="chap9-SVD" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a><ul><li><a href="sec9-1-SVD.html" data-scroll="sec9-1-SVD" class="internal">Singular Value Decomposition</a></li></ul>
+</li>
+<li class="link">
+<a href="chap10-PCA.html" data-scroll="chap10-PCA" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a><ul>
+<li><a href="sec10-1-PCA.html" data-scroll="sec10-1-PCA" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec10-2.html" data-scroll="sec10-2" class="internal">Applications of PCA</a></li>
+<li><a href="sec10-3.html" data-scroll="sec10-3" class="internal">Sage Practice Area</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link">
+<a href="appendix-sage-into.html" data-scroll="appendix-sage-into" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a><ul>
+<li><a href="subsection-47.html" data-scroll="subsection-47" class="internal">Introduction to SageMath</a></li>
+<li><a href="getting-started-sagemath.html" data-scroll="getting-started-sagemath" class="internal">Getting Started with Sage</a></li>
+<li><a href="subsec-sage-programming.html" data-scroll="subsec-sage-programming" class="internal">Programming in Sage</a></li>
+<li><a href="subsec-plotting-sage.html" data-scroll="subsec-plotting-sage" class="internal">Plotting in Sage</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec1-3-echelon-form"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Echelon Forms</span>
+</h2>
+<section class="introduction" id="introduction-3"><p id="p-60">In this section we define the row echelon form of matrices which is useful to deal with various concepts related to matrices. We shall also see how Sage can be used to convert any matrix to its row-echelon form.</p></section><section class="subsection" id="sec-row-echelon"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">Row Echelon Form</span>
+</h3>
+<article class="definition definition-like" id="def-echelon-form"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+</h4>
+<p id="p-61">An <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\)</span> is said to be in <em class="alert">row-echelon form</em> or <em class="alert">row-echelon matrix</em> if it satisfies the following conditions:</p>
+<ol id="p-62" class="decimal">
+<li id="li-19"><p id="p-63">All zero rows (consisting entirely of zeros) are at the bottom.</p></li>
+<li id="li-20"><p id="p-64">The first nonzero entry from the left in each nonzero row is a 1, called the <em class="alert">leading</em> 1 or <em class="alert">pivot</em> element  for that row. Row containing pivot elements are called the pivot row and the columns containing the pivot element are called the pivot columns.</p></li>
+<li id="li-21"><p id="p-65">Each leading 1 is to the right of all leading 1s in the rows above it.</p></li>
+</ol>
+<p id="p-66">A row-echelon matrix is said to be in <em class="alert">reduced row-echelon form (RREF)</em>  or <em class="alert">reduced row-echelon matrix</em> if, in addition, it satisfies the following condition:</p>
+<p id="p-67"><span class="process-math">\(\phantom{so}\)</span> 4. Each leading 1 is the only nonzero entry in its column.</p></article><article class="remark remark-like" id="remark-2"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h4>The leading entry or pivot entry in any row in a row-echelon-form can be any non-zero number.</article><p id="p-68"><article class="example example-like" id="eg-echelon-matrices"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Echelon Matrices.</span>
+</h4>
+<p id="p-69">Following are examples of echelon matrices:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{pmatrix}
+1 \amp  2 \amp  4 \\
+0 \amp  1 \amp  -5 \\
+0 \amp  0 \amp  0
+\end{pmatrix},
+\begin{pmatrix}
+1\amp   3  \amp  6   \amp  8   \amp    0  \\
+0\amp   0  \amp   1  \amp   9  \amp    1  \\
+0\amp   0  \amp   0  \amp   1  \amp   -1  \\
+\end{pmatrix},
+\begin{pmatrix}
+1\amp   0  \amp   3  \amp   4    \\
+0\amp   1  \amp   2  \amp   1    \\
+0\amp   0  \amp   1  \amp   4   \\
+0 \amp  0 \amp  0 \amp  1
+\end{pmatrix}\text{.}
+\end{equation*}
+</div></article></p>
+<p id="p-70"><article class="example example-like" id="eg-non-echelon-matrices"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Non Echelon Matrices.</span>
+</h4>
+<p id="p-71">Following are examples of some non echelon matrices:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{pmatrix} 
+1\amp   3  \amp  6   \amp  8   \amp    0  \\
+0\amp   0  \amp   1  \amp   9  \amp    1  \\
+0\amp   1  \amp   0  \amp   1  \amp   -1  \\
+\end{pmatrix} , \quad 
+\begin{pmatrix} 
+0\amp   1  \amp  6   \amp  8   \amp    0  \\
+0\amp   1  \amp   1  \amp   9  \amp    1  \\
+0\amp   1  \amp   0  \amp   1  \amp   -1  \\
+\end{pmatrix} , \quad 
+\begin{pmatrix}
+2  \amp  6   \amp  8   \amp    0  \\
+1  \amp   0  \amp   9  \amp    1  \\
+0  \amp   0  \amp   1  \amp   -1  \\
+\end{pmatrix}\text{.}
+\end{equation*}
+</div></article></p>
+<p id="p-72">Every nonzero <span class="process-math">\(m \times n\)</span> matrix <span class="process-math">\(A\)</span> is row equivalent to a matrix which is a row echelon matrix. We employ the following procedures to convert a matrix into a row echelon form:</p>
+<ol class="decimal">
+<li id="li-22"><p id="p-73">Choose a pivot element from the nonzero entries in the 1st  column. Row containing pivot is called the pivot row.</p></li>
+<li id="li-23"><p id="p-74">Interchange rows (if necessary) so that pivot row is the new 1st row.</p></li>
+<li id="li-24"><p id="p-75">Multiply pivot row by a constant so that the new pivot is 1.</p></li>
+<li id="li-25"><p id="p-76">Make all subsequent entries in the 1st column 0 by using elementary row operations.</p></li>
+<li id="li-26"><p id="p-77">Repeat this process with next column.</p></li>
+</ol>
+<article class="example example-like" id="example-6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
+</h4>
+<p id="p-78">Reduce the matrix <span class="process-math">\(A=\begin{pmatrix}1\amp  2   \amp  4    \\
+1\amp   0  \amp  2    \\
+2\amp    4 \amp   1  
+\end{pmatrix}\)</span>  to row echelon form.</p>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
+<p id="p-79"><span class="process-math">\(\begin{pmatrix}
+1\amp  2   \amp  4    \\
+1\amp   0  \amp  2    \\
+2\amp    4 \amp   1   \\
+\end{pmatrix}
+\xrightarrow{
+\begin{array}{c}
+R_2\to R_2-R_1   \\  R_3\to R_3-2R_1   \\
+\end{array}}
+\begin{pmatrix}
+1\amp    2    \amp    4   \amp    \\
+0\amp   -2    \amp   -2   \amp  \\
+0\amp    0    \amp   -7   \amp  \\
+\end{pmatrix}
+\xrightarrow{\begin{array}{c}  R_1\to\frac{-1}{7}R_1   \\
+R_2\to\frac{-1}{2}R_2   \\
+\end{array}}
+\begin{pmatrix}
+1\amp   2   \amp   4      \\
+0\amp   1   \amp   1   \\
+0\amp   0   \amp   1  
+\end{pmatrix}\)</span> This <span class="process-math">\(\begin{pmatrix}
+1\amp   2   \amp   4      \\
+0\amp   1   \amp   1   \\
+0\amp   0   \amp   1  
+\end{pmatrix}\)</span>  is row-echelon matrix equivalent to <span class="process-math">\(A\)</span> . We can apply elementary row operation and make it to reduced-row-echelon  form.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{pmatrix}
+1\amp   2   \amp   4      \\
+0\amp   1   \amp   1   \\
+0\amp   0   \amp   1  
+\end{pmatrix}\xrightarrow{
+\begin{array}{c}
+R_2\to R_2-R_3 \\R_1\to R_1-4R_3\\R_1\to R_1-2R_2\\
+\end{array}}
+\begin{pmatrix}
+1\amp   0   \amp   0      \\
+0\amp   1   \amp   0   \\
+0\amp   0   \amp   1  
+\end{pmatrix}
+\end{equation*}
+</div>
+<p class="continuation">Sage has inbulit method `A.rref()' to convert the matrix into reduced row echelon form. You may also try 'A.echelonize()' and 'A.echelon_form()' <pre class="ptx-sagecell sagecell-sage" id="sage-19"><script type="text/x-sage">A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
+</script></pre> <pre class="ptx-sagecell sagecell-sage" id="sage-20"><script type="text/x-sage">A.rref()
+</script></pre></p>
+</div></div></article><p id="p-80"><em class="alert">Step by Step method to find RREF of a matrix</em> <pre class="ptx-sagecell sagecell-sage" id="sage-21"><script type="text/x-sage">#A=matrix(QQ, [[0,-2,1],[6, -0, 3],[4, 1, 8],[14, 10, -8]])
+A=matrix(QQ, [[3,-2,1,2],[6, 0,-1, 3],[4, 1,2, 8]])
+m = A.nrows()
+n = A.ncols()
+print( 'The original matrix is')
+print(A)
+#### Forward Steps
+for k in range(0,m-1):
+        #if A[k,k] == 0:
+        listA = [(abs(A[j,k]),j) for j in range(k,m)]
+        maxv, pivot = max(listA)
+        if(maxv!=abs(A[k,k])):    
+            A[pivot,:],A[k,:]=A[k,:],A[pivot,:]
+            print('We permute rows %d and %d'%(k+1,pivot+1))
+            print(A)
+        ## Making all entries below the pivot zero
+        for i in range(k+1,m):
+            a=A[k,k]
+            if A[i,k] != 0:
+                print( "We add %s times row %d to row %d"%(-A[i,k]/a, k+1, i+1))
+                A=A.with_added_multiple_of_row(i,k,-A[i,k]/a)
+                print(A)
+print('\n ########### End of forward steps ######\n ')
+### Backward Steps
+r =min(m,n)
+
+for k in range(r-1,-1,-1):
+        for i in range(k-1,-1,-1):
+            a=A[k,k]
+            if A[i,k]!=0:
+                print ("We add %s times row %d to the row %d"%(-A[i,k]/a, k+1, i+1))
+                A=A.with_added_multiple_of_row(i,k,-A[i,k]/a)
+                print(A)
+
+print('\n ########### End of backward steps ######\n ')
+## Making leading element 1
+r = min(m,n)
+for i in range(0,r):
+        if A[i,i]!=1:
+            print( 'We divide row %d by %s'%(i+1,A[i,i]))
+            A = A.with_rescaled_row(i,1/A[i,i])
+            print(A)
+</script></pre></p></section><section class="subsection" id="subsec-Gaussian-Elimination"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">Gaussian Elimination Method</span>
+</h3>
+<p id="p-81">Solving a system of linear equations <span class="process-math">\(AX = B\text{,}\)</span> by reducing the augmented matrix <span class="process-math">\(A^*= [A~|~B]\)</span> to echelon form by using elementary row operations and then solving the equivalent system by back substitution is called solving by <em class="alert">Gaussian elimination</em> process. Now we state the step involved in the Gaussian elimination process. Only use the row operations stated above and work from top to bottom.</p>
+<article class="algorithm theorem-like" id="alg-gaussian-elimination"><h4 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Gaussian Elimination.</span>
+</h4>
+<ol id="p-82" class="decimal">
+<li id="li-27"><p id="p-83">Make in each row the first non-zero element (called the main element) equal to 1.</p></li>
+<li id="li-28"><p id="p-84">Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.</p></li>
+<li id="li-29"><p id="p-85">If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.</p></li>
+</ol></article><article class="example example-like" id="row-echelon-eg1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
+</h4>
+<p id="p-86">Solve the following system of linear equations using the Gaussian elimination method.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+x+2y+4z \amp   = 3 \\
+x+2z   \amp =    0 \\
+2x+4y+z \amp  = 3   
+\end{align*}
+</div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
+<p id="p-87">The corresponding augmented matrix is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A^* =  [A~|~B]= \begin{pmatrix}
+1\amp  2   \amp  4   \amp   |  \amp  3   \\
+1\amp   0  \amp  2   \amp    |  \amp  0   \\
+2\amp    4 \amp   1  \amp    |  \amp   3  \\
+\end{pmatrix}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-2">
+\begin{align*}
+\begin{pmatrix}
+1\amp  2   \amp  4   \amp   |  \amp  3   \\
+1\amp   0  \amp  2   \amp    |  \amp  0   \\
+2\amp    4 \amp   1  \amp    |  \amp   3  \\
+\end{pmatrix} \amp
+\xrightarrow{
+\begin{array}{c}
+R_2-R_1   \\  R_3-2R_1   \\
+\end{array}} 
+\begin{pmatrix}
+1\amp    2    \amp    4   \amp    |  \amp    3   \\
+0\amp   -2    \amp   -2   \amp    |  \amp   -3   \\
+0\amp    0    \amp   -7   \amp    |  \amp   -3   \\
+\end{pmatrix} \\
+\amp \xrightarrow{ \begin{array}{c}  \frac{-1}{7}R_1   \\
+\frac{-1}{2}R_2   \\
+\end{array}}
+\begin{pmatrix}
+1\amp   2   \amp   4   \amp    |  \amp    3   \\
+0\amp   1   \amp   1   \amp    |  \amp   3/2   \\
+0\amp   0   \amp   1   \amp    |  \amp   3/7   \\
+\end{pmatrix}
+\end{align*}
+</div>
+<p id="p-89">We can do more step of row elimination to convert the first three columns into identity matrix. However, the above augmented matrix represents the following equations:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x+2y+4z=3;\quad y+z=3/2;\quad z=3/7.
+\end{equation*}
+</div>
+<p class="continuation">Using back substitution, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=-6/7, y=15/14, z=3/7\text{.}
+\end{equation*}
+</div>
+</div></div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-22"><script type="text/x-sage">A = matrix(QQ,[[1,2,4],[1,0,2],[2,4,1]])
+b = vector(QQ,[3,0,3])
+Aug = A.augment(b,subdivide=True)
+Aug
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-23"><script type="text/x-sage">Aug.rref()
+</script></pre></article><article class="example example-like" id="row-echelon-eg2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span>
+</h4>
+<p id="p-90">Solve the following system of linear equations.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-3">
+\begin{align*}
+x+y+z-w \amp    =  1   \\
+y-z+w \amp    =  -1   \\
+3x+6z-6w \amp   =   6   \\
+-y+z-w \amp   =   1   
+\end{align*}
+</div>
+<p class="continuation">using Gaussian elimination method. Show that this system has infinitely many solutions.</p>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-24"><script type="text/x-sage">            A = matrix(QQ,[[1,1,1,-1],
+              [0,1,-1,1],
+              [2,0,6,-6],
+              [0,-1,1,-1]])
+b = vector(QQ,[1,-1,6,1])
+Aug = A.augment(b,subdivide=True)
+Aug
+</script></pre>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-25"><script type="text/x-sage">Aug.rref()
+</script></pre> Since last row zero, it represents the equation <span class="process-math">\(0=0\text{,}\)</span> in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.</div></div></article><article class="example example-like" id="example-9"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span>
+</h4>
+<p id="p-91">Solve the following system using the Gaussian elimination method and show that it has no solution.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-4">
+\begin{align*}
+x+3y \amp   =  1   \\
+2x+y \amp  =  -3   \\
+2x+2y \amp  =   0   
+\end{align*}
+</div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like">
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-26"><script type="text/x-sage">A = matrix([[1,3],[2,1],[2,2]])
+b = vector([1,-3,0])
+Aug = A.augment(b, subdivide=True)
+Aug
+</script></pre>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-27"><script type="text/x-sage">Aug.rref()
+</script></pre>
+<p id="p-92">Since last row represents the equation <span class="process-math">\(0=1\text{,}\)</span> the system has no solution.</p>
+</div></div></article></section><section class="subsection" id="subsec-Gauss-Jordan-Method"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.3</span> <span class="title">Gauss-Jordan elimination method</span>
+</h3>
+<p id="p-93">Guass-Jordan method of solving the linear system <span class="process-math">\(AX=B\)</span> is very similar to that of the Gaussian elimination method. In this method we continue the the row elimination till we reduce the row-reduced matrix of <span class="process-math">\(A\)</span> to identity matrix.</p>
+<article class="example example-like" id="example-10"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span>
+</h4>
+<p id="p-94">Solve the system <span class="process-math">\(Ax=b\)</span>  using the Gauss-Jordan elimination method, where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A= \begin{pmatrix} 1\amp 0\amp 5\amp 0\\-1\amp 4\amp 1\amp 0\\3\amp 0\amp 4\amp 1\\-2\amp 1\amp 1\amp 3 \end{pmatrix} \text{ and } 
+b=\begin{pmatrix}1\\4\\3\\5\end{pmatrix}
+\end{equation*}
+</div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like">
+<p id="p-95">Let us solve this in Sage.</p>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-28"><script type="text/x-sage">A = matrix(QQ,[[1,0,5,0],[-1,4,1,0],[3,0,4,1],[-2,1,1,3]])
+b = vector(QQ,[1,4,3,5])
+Aug = A.augment(b, subdivide=True)
+Aug.rref()
+</script></pre>
+<p id="p-96">Clearly the solution of the above system is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_1=11/34, x_2 = 89/85, x_3 = 23/170, x_4=253/170\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We can also solve the above system using the 'A.solve_right(b)' command in Sage.</p>
+<pre class="ptx-sagecell hidden-sagecell-sage" id="sage-29"><script type="text/x-sage">A.solve_right(b)
+</script></pre>
+</div></div></article><article class="example example-like" id="example-11"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.11</span><span class="period">.</span>
+</h4>
+<p id="p-97">Four well-mixed tanks <span class="process-math">\(T_1, T_2, T_3, T_4\)</span> form a recirculation/mixing network used to produce a sauce.  At steady state, the concentration <span class="process-math">\(c_i\)</span> (in <span class="process-math">\(kg\cdot m^{-3}\)</span>) of a soluble ingredient ( say salt or sugar) in tank <span class="process-math">\(T_i\)</span> satisfies the steady-state mass balance: <span class="process-math">\(\left(\text{total outflow from } T_i \right) c_i
+-\sum_{j\neq i} \left(\text{ flow from  to } \right) c_j
+=\text{net external feed of ingredient to }.\)</span> The system of equations can be written in matrix form as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A \mathbf{c} = \mathbf{b},
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = 
+\begin{pmatrix}
+20 \amp -5 \amp -3 \amp 0\\
+-4 \amp 18 \amp -6 \amp -2\\
+0 \amp -3 \amp 15 \amp -4\\
+-2 \amp 0 \amp -5 \amp 17
+\end{pmatrix},
+\quad
+\mathbf{b} = 
+\begin{pmatrix}
+14\\
+20\\
+9\\
+11
+\end{pmatrix},
+\quad
+\mathbf{c} =
+\begin{pmatrix}
+c_1\\
+c_2\\
+c_3\\
+c_4
+\end{pmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">For example, the first equation reads: <span class="process-math">\(20c_1 - 5c_2 - 3c_3 = 14\text{,}\)</span> meaning the total outflow coefficient from <span class="process-math">\(T_1\)</span> is 20, the inflows from <span class="process-math">\(T_2\)</span> is 2 and <span class="process-math">\(T_3\)</span> are 5 and 3 respectively, and the net external ingredient feed to <span class="process-math">\(T_1\)</span> is 14 (in consistent units). <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like">
+<p id="p-98"><pre class="ptx-sagecell sagecell-sage" id="sage-30"><script type="text/x-sage">A = matrix(QQ,[[20, -5,-3, 0],[-4,18,-6,-2],[0 , -3, 15, -4],[-2,0,-5,17]])
+b = vector([14,20,9,11])
+Aug = A.augment(b,subdivide=True)
+Aug
+</script></pre> <pre class="ptx-sagecell sagecell-sage" id="sage-31"><script type="text/x-sage">Aug.rref()
+</script></pre> Hence the solution is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c= \begin{pmatrix}
+c_1 \\
+c_2 \\
+c_3 \\
+c_4 
+\end{pmatrix}=\begin{pmatrix}
+\dfrac{49961}{35780}\\[6pt]
+\dfrac{17838}{8945}\\[6pt]
+\dfrac{2359}{1789}\\[6pt]
+\dfrac{21453}{17890}
+\end{pmatrix}\approx \begin{pmatrix}
+1.396339,\\
+1.994187,\\
+1.318614,\\
+1.199162
+\end{pmatrix}.
+\end{equation*}
+</div>
+</div></div></p></article></section></section></div></main>
+</div>
+</body>
+</html>

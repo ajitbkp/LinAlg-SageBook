@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:32+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Dot Product and Orthogonality in Sage.</span>
+</h3>
+<p>Sage has a method <code class="code-inline tex2jax_ignore">.dot_product()</code> to find the dot product of two vectors and <code class="code-inline tex2jax_ignore">u.norm()</code> returns the norm of <span class="process-math">\(u\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-249"><script type="text/x-sage">u = vector([1,-1,3,2,-3,1])
+v = vector([2,-1,4,-2,5,-3])
+print(u.dot_product(v))
+print(u.norm())
+</script></pre>
+<p>Consider a set of vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+u_1=(1,1,1,1), u_2=(1,2,-1,-2),u_3=(-7,5,1,1) \in \mathbb{R}^4  
+\end{equation*}
+</div>
+<p class="continuation">Let us check that <span class="process-math">\(u_1,u_2,u_3\)</span> are orthogonal. Let <span class="process-math">\(u=(1,2,3,4)\in \mathbb{R}^4\text{.}\)</span> Define</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+u_4:=u-\frac{u_1\cdot u}{\norm{u_1}^2}u_1-\frac{u_2\cdot u}{\norm{u_2}^2}u_2-\frac{u_3\cdot u}{\norm{u_k}^2}u_3.
+\end{equation*}
+</div>
+<p class="continuation">Let us verify that <span class="process-math">\(u_4\)</span> is orthogonal to <span class="process-math">\(u_1,u_2,u_3\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-250"><script type="text/x-sage">u1=vector([1,1,1,1]);u2=vector([1,2,-1,-2]);u3=vector([-7,5,1,1])
+# Checking orthogonality of u1,u2,u3
+print(u1.dot_product(u2), u1.dot_product(u3),u2.dot_product(u3))
+u = vector([1,2,3,4])
+u4 = u-u.dot_product(u1)/u1.norm()^2*u1-u.dot_product(u2)/u2.norm()^2*u2-u.dot_product(u3)/u3.norm()^2*u3
+print(u4)
+# Checking orthogonality of u1,u2,u3,u
+u4.dot_product(u1), u4.dot_product(u2),u4.dot_product(u3)
+</script></pre></article><span class="incontext"><a href="sec6-0-orthogonality.html#activity-13" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:29+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Diagonalization</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body id="changeme" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<p class="byline">Ajit Kumar</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec5-1-eigen-intro.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap5-Eigen.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec5-5-Eigen-Sage.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec5-1-eigen-intro.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap5-Eigen.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec5-5-Eigen-Sage.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="biography-1.html" data-scroll="biography-1" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1-lineq.html" data-scroll="chap1-lineq" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a><ul>
+<li><a href="sec1-1-elementary-operations.html" data-scroll="sec1-1-elementary-operations" class="internal">Elementary Row Operations</a></li>
+<li><a href="sec1-2-col-operations.html" data-scroll="sec1-2-col-operations" class="internal">Elementary Column Operations</a></li>
+<li><a href="sec1-3-echelon-form.html" data-scroll="sec1-3-echelon-form" class="internal">Echelon Forms</a></li>
+<li><a href="sec1-4-matrix-rank.html" data-scroll="sec1-4-matrix-rank" class="internal">Rank of Matrices</a></li>
+<li><a href="sec1-5-hom-system.html" data-scroll="sec1-5-hom-system" class="internal">Homogeneous System of Linear Equations</a></li>
+<li><a href="sec1-6-LU.html" data-scroll="sec1-6-LU" class="internal"><span class="process-math">\(LU\)</span>-Facotorization</a></li>
+<li><a href="sec1-7-exer.html" data-scroll="sec1-7-exer" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2-Rn-Space.html" data-scroll="chap2-Rn-Space" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a><ul>
+<li><a href="sec2-0-intro.html" data-scroll="sec2-0-intro" class="internal">Introduction</a></li>
+<li><a href="sec2-1-LinSpan.html" data-scroll="sec2-1-LinSpan" class="internal">Linear Spans</a></li>
+<li><a href="sec-2-2-LI.html" data-scroll="sec-2-2-LI" class="internal">Linear Dependence</a></li>
+<li><a href="sec-2-3-basis-dimension.html" data-scroll="sec-2-3-basis-dimension" class="internal">Basis and Dimension</a></li>
+<li><a href="sec2-4-Sage.html" data-scroll="sec2-4-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3-LT.html" data-scroll="chap3-LT" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a><ul>
+<li><a href="sec3-1-LT.html" data-scroll="sec3-1-LT" class="internal">Introduction</a></li>
+<li><a href="sec3-2-LT.html" data-scroll="sec3-2-LT" class="internal">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></a></li>
+<li><a href="sec3-3-LT.html" data-scroll="sec3-3-LT" class="internal">Reflections and Projections</a></li>
+<li><a href="sec-LT-Geom.html" data-scroll="sec-LT-Geom" class="internal">Geometry of Linear Transformations</a></li>
+<li><a href="sec-sec3-5-LT-Sage.html" data-scroll="sec-sec3-5-LT-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4-Vector-Space.html" data-scroll="chap4-Vector-Space" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a><ul>
+<li><a href="sec4-1-VS.html" data-scroll="sec4-1-VS" class="internal">Introduction</a></li>
+<li><a href="sec4-2-Abst-VS.html" data-scroll="sec4-2-Abst-VS" class="internal">Vector Subspaces</a></li>
+<li><a href="sec4-3-linspan-VS.html" data-scroll="sec4-3-linspan-VS" class="internal">Linear Span</a></li>
+<li><a href="sec4-3-LI-VS.html" data-scroll="sec4-3-LI-VS" class="internal">Linear dependence and independence</a></li>
+<li><a href="sec4-5-basis-dim-VS.html" data-scroll="sec4-5-basis-dim-VS" class="internal">Basis and dimension</a></li>
+<li><a href="sec-sec4-5-VS-Sage.html" data-scroll="sec-sec4-5-VS-Sage" class="internal">Sage Computations</a></li>
+<li><a href="sec4-5-VS-Ex.html" data-scroll="sec4-5-VS-Ex" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-Eigen.html" data-scroll="chap5-Eigen" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a><ul>
+<li><a href="sec5-1-eigen-intro.html" data-scroll="sec5-1-eigen-intro" class="internal">Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-2-diagonalization.html" data-scroll="sec5-2-diagonalization" class="active">Diagonalization</a></li>
+<li><a href="sec5-5-Eigen-Sage.html" data-scroll="sec5-5-Eigen-Sage" class="internal">Eigenvalues and Eigenvectors in Sage</a></li>
+<li><a href="sec5-3-eigen-Appl.html" data-scroll="sec5-3-eigen-Appl" class="internal">Applications of Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-4-eigen-exer.html" data-scroll="sec5-4-eigen-exer" class="internal">Exercises on Eigenvalues and Eigenvectors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-orthogonality.html" data-scroll="chap5-orthogonality" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec6-0-orthogonality.html" data-scroll="sec6-0-orthogonality" class="internal">Orthogonality</a></li>
+<li><a href="sec6-1-GramSchmidt.html" data-scroll="sec6-1-GramSchmidt" class="internal">Gram-Schmidt Orthogonalization Process</a></li>
+<li><a href="sec6-2.html" data-scroll="sec6-2" class="internal">Orthogonal Complements</a></li>
+<li><a href="sec6-3.html" data-scroll="sec6-3" class="internal">Orthogonal Diagonalizations</a></li>
+<li><a href="sec6-4.html" data-scroll="sec6-4" class="internal">QR-Factorization</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7-inner-product.html" data-scroll="chap7-inner-product" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a><ul>
+<li><a href="sec7-1-InnerProduct.html" data-scroll="sec7-1-InnerProduct" class="internal">Inner Product</a></li>
+<li><a href="sec7-2-Exer.html" data-scroll="sec7-2-Exer" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap8-Least-Square.html" data-scroll="chap8-Least-Square" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a><ul><li><a href="sec8-1-LSTSQ.html" data-scroll="sec8-1-LSTSQ" class="internal">Least Square Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="chap9-SVD.html" data-scroll="chap9-SVD" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a><ul><li><a href="sec9-1-SVD.html" data-scroll="sec9-1-SVD" class="internal">Singular Value Decomposition</a></li></ul>
+</li>
+<li class="link">
+<a href="chap10-PCA.html" data-scroll="chap10-PCA" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a><ul>
+<li><a href="sec10-1-PCA.html" data-scroll="sec10-1-PCA" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec10-2.html" data-scroll="sec10-2" class="internal">Applications of PCA</a></li>
+<li><a href="sec10-3.html" data-scroll="sec10-3" class="internal">Sage Practice Area</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link">
+<a href="appendix-sage-into.html" data-scroll="appendix-sage-into" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a><ul>
+<li><a href="subsection-47.html" data-scroll="subsection-47" class="internal">Introduction to SageMath</a></li>
+<li><a href="getting-started-sagemath.html" data-scroll="getting-started-sagemath" class="internal">Getting Started with Sage</a></li>
+<li><a href="subsec-sage-programming.html" data-scroll="subsec-sage-programming" class="internal">Programming in Sage</a></li>
+<li><a href="subsec-plotting-sage.html" data-scroll="subsec-plotting-sage" class="internal">Plotting in Sage</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec5-2-diagonalization"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Diagonalization</span>
+</h2>
+<article class="definition definition-like" id="def-diagonalizability"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
+</h3>
+<p id="p-897">A matrix <span class="process-math">\(A\)</span> is said to be <em class="emphasis">diagonalizable</em> if there exists a non singular matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(P^{-1}AP\)</span> is a diagonal matrix. That is, <span class="process-math">\(A\)</span> is similar to a diagonal matrix.</p></article><article class="example example-like" id="example-144"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h3>
+<p id="p-898">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\)</span> as in <a href="" class="xref" data-knowl="./knowl/eigen_eg1.html" title="Example 5.1.9">Example 5.1.9</a>. Define <span class="process-math">\(P=\begin{pmatrix}1\amp 0\amp 8/7\\-1\amp 1\amp -5/7\\-1\amp 1\amp 1 \end{pmatrix}\text{,}\)</span> whose columns are eigenvectors of <span class="process-math">\(A\text{.}\)</span></p>
+<p id="p-899">Check that <span class="process-math">\(\det(P)=\dfrac{12}{7}\)</span> and <span class="process-math">\(\text{ adj } (P)=\begin{pmatrix}12/7 \amp 8/7 \amp -8/7\\12/7 \amp 15/7\amp -3/7\\0 \amp -1 \amp 1 \end{pmatrix}\text{.}\)</span> Hence <span class="process-math">\(P^{-1}=\begin{pmatrix}1\amp 2/3 \amp -2/3\\1\amp 5/4\amp -1/4\\0\amp -7/4\amp 7/4 \end{pmatrix}\)</span></p>
+<p id="p-900">Then it is easy to check that <span class="process-math">\(P^{-1}AP=\begin{pmatrix}1\amp 0\amp 0\\0\amp 2\amp 0\\0\amp 0\amp -2 \end{pmatrix}\text{.}\)</span></p>
+<p id="p-901">In this case we can find any power of <span class="process-math">\(A\)</span> quite easily. For example <span class="process-math">\(A^n=P^{-1}\begin{pmatrix}1\amp 0\amp 0\\0\amp 2^n\amp 0\\0\amp 0\amp (-2)^n \end{pmatrix} P\text{.}\)</span></p></article><article class="example example-like" id="example-145"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+</h3>
+<p id="p-902">Let <span class="process-math">\(A=\begin{pmatrix}1 \amp 1\\0 \amp 1 \end{pmatrix}\text{.}\)</span> Then 1 is a repeated eigenvalue of <span class="process-math">\(A\)</span> with eigenvector <span class="process-math">\(\begin{pmatrix}1\\ 0 \end{pmatrix}\text{.}\)</span> It is easuy to see that <span class="process-math">\(A\)</span> is non diagonalizable.</p></article><article class="exercise exercise-like" id="exer-5-2-4"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h3>
+<p id="p-903">If <span class="process-math">\(A=[a_{ij}]\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues then <span class="process-math">\(A\)</span> is diagonalizable. In this case, one can define <span class="process-math">\(P\)</span> where columns of <span class="process-math">\(P\)</span> are <span class="process-math">\(n\)</span> eigenvectors of <span class="process-math">\(A\text{.}\)</span></p></article><article class="theorem theorem-like" id="thm_diag"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
+</h3>
+<p id="p-904">A square matrix <span class="process-math">\(A\)</span> of order <span class="process-math">\(n\)</span> is diagonalizable if and only if <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> linearly independent eigenvectors.</p></article><article class="hiddenproof" id="proof-11"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-11"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-11"><article class="hiddenproof"><p id="p-905">Let <span class="process-math">\(A\)</span> be diagonalizable, and that there exists a non singular matrix <span class="process-math">\(P\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="thm_diag_eq1">
+\begin{equation}
+P^{-1}AP=D=\diag(\lambda_1,\ldots,\lambda_n)\tag{5.2.1}
+\end{equation}
+</div>
+<p id="p-906">Let us write <span class="process-math">\(P=[P_1,\ldots,P_n]\)</span> where <span class="process-math">\(P_j\)</span> is the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(P\text{.}\)</span> Then Eq. <a href="" class="xref" data-knowl="./knowl/thm_diag_eq1.html" title="Equation 5.2.1">(5.2.1)</a> implies</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_diag_eq1.html">
+\begin{equation*}
+AP=P\diag(\lambda_1,\ldots,\lambda_n) 
+\end{equation*}
+</div>
+<p class="continuation">This implies</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_diag_eq1.html">
+\begin{equation*}
+[AP_1,AP_2,\ldots,AP_n]=[\lambda_1P_1,\lambda_2P_2,\ldots,\lambda_nP_n]
+\end{equation*}
+</div>
+<p id="p-907">Equivalently <span class="process-math">\(AP_i=\lambda_iP_i\)</span> for <span class="process-math">\(1\leq i\leq n\text{.}\)</span> That is same as saying columns of <span class="process-math">\(P\)</span> are eigenvectors of <span class="process-math">\(A\)</span> with respect to eigenvalue <span class="process-math">\(\lambda_i\text{.}\)</span> This implies <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> linearly eigenvectors, namely columns of <span class="process-math">\(P\text{.}\)</span></p>
+<p id="p-908">Conversely, let <span class="process-math">\(A\)</span> have <span class="process-math">\(n\)</span> linearly independent eigenvectors <span class="process-math">\(v_1, \ldots,
+v_n\)</span> and that <span class="process-math">\(Av_j=\lambda_jv_j\text{.}\)</span> Define <span class="process-math">\(P:=[v_1,v_2\ldots,v_n]\)</span> and <span class="process-math">\(D:=\diag(\lambda_1,\ldots,\lambda_n)\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+AP=[Av_1,Av_2,\ldots,Av_n]=[\lambda_1v_1,\lambda_2v_2,\ldots,\lambda_nv_n]=PD\text{.}
+\end{equation*}
+</div>
+<p id="p-909">Hence <span class="process-math">\(P^{-1}AP=D\text{.}\)</span> Note that <span class="process-math">\(P\)</span> has rank <span class="process-math">\(n\text{,}\)</span> which implies <span class="process-math">\(P\)</span> is invertible.</p></article></div>
+<article class="corollary theorem-like" id="corollary-4"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
+</h3>
+<p id="p-910">If <span class="process-math">\(A\)</span> is a square matrix of order <span class="process-math">\(n\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues then <span class="process-math">\(A\)</span> is diagonalizable.</p></article><article class="example example-like" id="example-146"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
+</h3>
+<p id="p-911">Let <span class="process-math">\(A\)</span> be a <span class="process-math">\(3\times 3\)</span> real matrix with eigenvalues <span class="process-math">\(\lambda_1=2,\lambda_2=1,\lambda_3=-1\)</span> and corresponding eigenvectors <span class="process-math">\(v_1=\left(1,\,\frac{1}{3},\,-\frac{1}{3}\right),
+v_2=\left(1,\,0,\,-\frac{1}{3}\right),
+v_3=\left(1,\,\frac{1}{2},\,-\frac{1}{2}\right)\)</span> respectively. Then we have <span class="process-math">\(P=[v_1~v_2~v_3]=\left(\begin{array}{rrr} 1 \amp 1 \amp 1 \\ \frac{1}{3} \amp 0 \amp \frac{1}{2} \\ -\frac{1}{3} \amp -\frac{1}{3} \amp -\frac{1}{2} \end{array} \right)\text{.}\)</span> <span class="process-math">\(P^{-1}AP=\left(\begin{array}{rrr} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp -1 \end{array} \right)\text{.}\)</span> Hence <span class="process-math">\(A = P\left(\begin{array}{rrr} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp -1 \end{array} \right)P^{-1}\text{.}\)</span> It is easy to see that <span class="process-math">\(P^{-1}=\left(\begin{array}{rrr} 3 \amp 3 \amp 9 \\ 0 \amp -3 \amp -3 \\ -2 \amp 0 \amp -6 \end{array} \right)\text{.}\)</span></p>
+<p id="p-912">Hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-42">
+\begin{align*}
+A =\amp \left(\begin{array}{rrr} 1 \amp  1 \amp  1 \\
+\frac{1}{3} \amp  0 \amp  \frac{1}{2} \\ 
+-\frac{1}{3} \amp  -\frac{1}{3} \amp  -\frac{1}{2} \end{array} \right) 
+\begin{pmatrix}2\amp  0 \amp  0\\0 \amp  1 \amp  0\\
+0 \amp  0 \amp  1 \end{pmatrix} 
+\left(\begin{array}{rrr} 3 \amp  3 \amp  9 \\ 
+0 \amp  -3 \amp  -3 \\ -2 \amp  0 \amp  -6 \end{array} \right)\\
+=\amp \left(\begin{array}{rrr} 8 \amp  3 \amp  21 \\ 
+3 \amp  2 \amp  9 \\ -3 \amp  -1 \amp  -8 \end{array} \right)\text{.}
+\end{align*}
+</div></article><article class="example example-like" id="example-147"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span>
+</h3>
+<p id="p-913">Let <span class="process-math">\(A=\begin{pmatrix}-1\amp -1\amp -2\\8\amp -11\amp -8\\-10\amp 11\amp 7 \end{pmatrix}\)</span> and <span class="process-math">\(B=\begin{pmatrix}1\amp -4\amp -4\\8\amp -11\amp -8\\-8\amp 8\amp 5 \end{pmatrix}\text{.}\)</span></p>
+<p id="p-914">It is easy to check that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have same characteristic polynomial <span class="process-math">\(\lambda^3+5\lambda^2+3\lambda-9=(\lambda-1)(\lambda+3)^2\text{.}\)</span> Also We can show that <span class="process-math">\(A\)</span> has only one linearly independent eigenvectors corresponding to eigenvalue <span class="process-math">\(-3\text{.}\)</span> This implies <span class="process-math">\(A\)</span> has only two eigenvectors and hence <span class="process-math">\(A\)</span> is not diagonalizable.</p>
+<p id="p-915">Similarly, We can show that <span class="process-math">\(B\)</span> has two linearly independent eigenvectors corresponding to eigenvalue <span class="process-math">\(-3\text{.}\)</span> This implies <span class="process-math">\(B\)</span> has three eigenvectors and hence <span class="process-math">\(B\)</span> is diagonalizable.</p></article><p id="p-916">We mention another criteria of diagonalizability without proof.</p>
+<article class="theorem theorem-like" id="diagonalizable-thm2"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.9</span><span class="period">.</span>
+</h3>
+<p id="p-917">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> real matrix with distinct eigenvalues <span class="process-math">\(\lambda_1,\ldots, \lambda_k\)</span> and algebraic multiplicity <span class="process-math">\(m_1,\ldots,
+m_k\)</span> respectively. Then <span class="process-math">\(A\)</span> is diagonalizable if and only if algebraic multiplicity is same as geometric multiplicity for each eigenvalue. That is <span class="process-math">\(m_i=\dim{(E_{\lambda_i})}\)</span> for <span class="process-math">\(i=1,2,\ldots,k\text{.}\)</span></p></article><article class="example example-like" id="example-148"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.10</span><span class="period">.</span>
+</h3>
+<p id="p-918">In view of <a href="" class="xref" data-knowl="./knowl/diagonalizable-thm2.html" title="Theorem 5.2.9">theorem 5.2.9</a>, the matrix in the <a href="" class="xref" data-knowl="./knowl/eigen-eg117.html" title="Example 5.1.14">example 5.1.14</a> is not diagonalizable.</p></article></section></div></main>
+</div>
+</body>
+</html>

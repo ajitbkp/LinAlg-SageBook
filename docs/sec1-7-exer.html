@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-08-18T19:42:28+05:30       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Exercises</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra with SageMath">
+<meta property="book:author" content="Ajit Kumar">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body id="changeme" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linalg-pretext-book.html"><span class="title">Linear Algebra with SageMath:</span> <span class="subtitle">A Gentle Introduction</span></a></h1>
+<p class="byline">Ajit Kumar</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec1-6-LU.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap1-lineq.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap2-Rn-Space.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec1-6-LU.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap1-lineq.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap2-Rn-Space.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="biography-1.html" data-scroll="biography-1" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1-lineq.html" data-scroll="chap1-lineq" class="internal"><span class="codenumber">1</span> <span class="title">System of Linear Equations</span></a><ul>
+<li><a href="sec1-1-elementary-operations.html" data-scroll="sec1-1-elementary-operations" class="internal">Elementary Row Operations</a></li>
+<li><a href="sec1-2-col-operations.html" data-scroll="sec1-2-col-operations" class="internal">Elementary Column Operations</a></li>
+<li><a href="sec1-3-echelon-form.html" data-scroll="sec1-3-echelon-form" class="internal">Echelon Forms</a></li>
+<li><a href="sec1-4-matrix-rank.html" data-scroll="sec1-4-matrix-rank" class="internal">Rank of Matrices</a></li>
+<li><a href="sec1-5-hom-system.html" data-scroll="sec1-5-hom-system" class="internal">Homogeneous System of Linear Equations</a></li>
+<li><a href="sec1-6-LU.html" data-scroll="sec1-6-LU" class="internal"><span class="process-math">\(LU\)</span>-Facotorization</a></li>
+<li><a href="sec1-7-exer.html" data-scroll="sec1-7-exer" class="active">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2-Rn-Space.html" data-scroll="chap2-Rn-Space" class="internal"><span class="codenumber">2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a><ul>
+<li><a href="sec2-0-intro.html" data-scroll="sec2-0-intro" class="internal">Introduction</a></li>
+<li><a href="sec2-1-LinSpan.html" data-scroll="sec2-1-LinSpan" class="internal">Linear Spans</a></li>
+<li><a href="sec-2-2-LI.html" data-scroll="sec-2-2-LI" class="internal">Linear Dependence</a></li>
+<li><a href="sec-2-3-basis-dimension.html" data-scroll="sec-2-3-basis-dimension" class="internal">Basis and Dimension</a></li>
+<li><a href="sec2-4-Sage.html" data-scroll="sec2-4-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3-LT.html" data-scroll="chap3-LT" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a><ul>
+<li><a href="sec3-1-LT.html" data-scroll="sec3-1-LT" class="internal">Introduction</a></li>
+<li><a href="sec3-2-LT.html" data-scroll="sec3-2-LT" class="internal">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></a></li>
+<li><a href="sec3-3-LT.html" data-scroll="sec3-3-LT" class="internal">Reflections and Projections</a></li>
+<li><a href="sec-LT-Geom.html" data-scroll="sec-LT-Geom" class="internal">Geometry of Linear Transformations</a></li>
+<li><a href="sec-sec3-5-LT-Sage.html" data-scroll="sec-sec3-5-LT-Sage" class="internal">Sage Computations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4-Vector-Space.html" data-scroll="chap4-Vector-Space" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a><ul>
+<li><a href="sec4-1-VS.html" data-scroll="sec4-1-VS" class="internal">Introduction</a></li>
+<li><a href="sec4-2-Abst-VS.html" data-scroll="sec4-2-Abst-VS" class="internal">Vector Subspaces</a></li>
+<li><a href="sec4-3-linspan-VS.html" data-scroll="sec4-3-linspan-VS" class="internal">Linear Span</a></li>
+<li><a href="sec4-3-LI-VS.html" data-scroll="sec4-3-LI-VS" class="internal">Linear dependence and independence</a></li>
+<li><a href="sec4-5-basis-dim-VS.html" data-scroll="sec4-5-basis-dim-VS" class="internal">Basis and dimension</a></li>
+<li><a href="sec-sec4-5-VS-Sage.html" data-scroll="sec-sec4-5-VS-Sage" class="internal">Sage Computations</a></li>
+<li><a href="sec4-5-VS-Ex.html" data-scroll="sec4-5-VS-Ex" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-Eigen.html" data-scroll="chap5-Eigen" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a><ul>
+<li><a href="sec5-1-eigen-intro.html" data-scroll="sec5-1-eigen-intro" class="internal">Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-2-diagonalization.html" data-scroll="sec5-2-diagonalization" class="internal">Diagonalization</a></li>
+<li><a href="sec5-5-Eigen-Sage.html" data-scroll="sec5-5-Eigen-Sage" class="internal">Eigenvalues and Eigenvectors in Sage</a></li>
+<li><a href="sec5-3-eigen-Appl.html" data-scroll="sec5-3-eigen-Appl" class="internal">Applications of Eigenvalues and Eigenvectors</a></li>
+<li><a href="sec5-4-eigen-exer.html" data-scroll="sec5-4-eigen-exer" class="internal">Exercises on Eigenvalues and Eigenvectors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5-orthogonality.html" data-scroll="chap5-orthogonality" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec6-0-orthogonality.html" data-scroll="sec6-0-orthogonality" class="internal">Orthogonality</a></li>
+<li><a href="sec6-1-GramSchmidt.html" data-scroll="sec6-1-GramSchmidt" class="internal">Gram-Schmidt Orthogonalization Process</a></li>
+<li><a href="sec6-2.html" data-scroll="sec6-2" class="internal">Orthogonal Complements</a></li>
+<li><a href="sec6-3.html" data-scroll="sec6-3" class="internal">Orthogonal Diagonalizations</a></li>
+<li><a href="sec6-4.html" data-scroll="sec6-4" class="internal">QR-Factorization</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7-inner-product.html" data-scroll="chap7-inner-product" class="internal"><span class="codenumber">7</span> <span class="title">Inner Product</span></a><ul>
+<li><a href="sec7-1-InnerProduct.html" data-scroll="sec7-1-InnerProduct" class="internal">Inner Product</a></li>
+<li><a href="sec7-2-Exer.html" data-scroll="sec7-2-Exer" class="internal">Exercise Set</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap8-Least-Square.html" data-scroll="chap8-Least-Square" class="internal"><span class="codenumber">8</span> <span class="title">Least Square Problems</span></a><ul><li><a href="sec8-1-LSTSQ.html" data-scroll="sec8-1-LSTSQ" class="internal">Least Square Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="chap9-SVD.html" data-scroll="chap9-SVD" class="internal"><span class="codenumber">9</span> <span class="title">Singular Value Decomposition</span></a><ul><li><a href="sec9-1-SVD.html" data-scroll="sec9-1-SVD" class="internal">Singular Value Decomposition</a></li></ul>
+</li>
+<li class="link">
+<a href="chap10-PCA.html" data-scroll="chap10-PCA" class="internal"><span class="codenumber">10</span> <span class="title">Principal Component Analysis</span></a><ul>
+<li><a href="sec10-1-PCA.html" data-scroll="sec10-1-PCA" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec10-2.html" data-scroll="sec10-2" class="internal">Applications of PCA</a></li>
+<li><a href="sec10-3.html" data-scroll="sec10-3" class="internal">Sage Practice Area</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link">
+<a href="appendix-sage-into.html" data-scroll="appendix-sage-into" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to Sage</span></a><ul>
+<li><a href="subsection-47.html" data-scroll="subsection-47" class="internal">Introduction to SageMath</a></li>
+<li><a href="getting-started-sagemath.html" data-scroll="getting-started-sagemath" class="internal">Getting Started with Sage</a></li>
+<li><a href="subsec-sage-programming.html" data-scroll="subsec-sage-programming" class="internal">Programming in Sage</a></li>
+<li><a href="subsec-plotting-sage.html" data-scroll="subsec-plotting-sage" class="internal">Plotting in Sage</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec1-7-exer"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.7</span> <span class="title">Exercises</span>
+</h2>
+<ol id="p-173" class="decimal">
+<li id="li-43">
+<p id="p-174">Reduce the following matrices into row-echelon form.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-11">
+\begin{align*}
+\begin{pmatrix}
+1 \amp  2 \amp  3 \amp  4\\
+2 \amp  1 \amp  4 \amp  5\\
+1 \amp  5 \amp  5 \amp  7\\
+8\amp  1 \amp  14 \amp  17
+\end{pmatrix}, \amp
+\begin{pmatrix}
+1 \amp  2 \amp  -1 \amp  1\\
+2 \amp  3 \amp  4 \amp  5\\
+1 \amp  4 \amp -13 \amp  -5
+\end{pmatrix}\\
+\begin{pmatrix}
+2 \amp  3 \amp  1 \amp  0 \amp  4\\
+3 \amp  1 \amp  2 \amp -1\amp 1\\
+4 \amp  -1 \amp  3 \amp -2\amp  -2\\
+5 \amp  4 \amp  3 \amp  -1 \amp  5 
+\end{pmatrix},\amp
+\begin{pmatrix}
+-1 \amp  1 \amp  2\\
+3 \amp  -1 \amp  1\\
+1\amp 3\amp  4
+\end{pmatrix}
+\end{align*}
+</div>
+</li>
+<li id="li-44">
+<p id="p-175">Find the sequence of row operations that converts the matrix.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{bmatrix} 
+a_1+b_1 \amp  a_2+b_2 \amp  a_3+b_3\\
+a_1+c_1 \amp  a_2+c_2 \amp  a_3+c_3\\
+b_1+c_1 \amp  b_2+c_2 \amp  b_3+c_3
+\end{bmatrix} \text{ to } 
+\begin{bmatrix} 
+a_1\amp  a_2 \amp  a_3\\
+b_1 \amp  b_2 \amp  b_3\\
+c_1 \amp  c_2 \amp  c_3
+\end{bmatrix}
+\end{equation*}
+</div>
+</li>
+<li id="li-45">
+<p id="p-176">Solve the following systems of linear equations by Gaussian elimination  method.</p>
+<ol id="p-177" class="lower-alpha">
+<li id="li-46"><div class="displaymath process-math" data-contains-math-knowls="" id="p-178">
+\begin{equation*}
+\begin{array}{ccc}
+x+2y+3z \amp  =   \amp  2    \\
+3x+7y+9z\amp  =   \amp    0 \\
+x+4y+z\amp  =   \amp    2 \\
+\end{array}
+\end{equation*}
+</div></li>
+<li id="li-47"><div class="displaymath process-math" data-contains-math-knowls="" id="p-179">
+\begin{equation*}
+\begin{array}{ccc}
+x-2z\amp  =   \amp  0   \\
+y+3z\amp  =   \amp    0 \\
+4x+y+2z\amp  =   \amp    0 \\
+\end{array}
+\end{equation*}
+</div></li>
+<li id="li-48"><div class="displaymath process-math" data-contains-math-knowls="" id="p-180">
+\begin{equation*}
+\begin{array}{ccc}
+x+y+2z          \amp   =  \amp    4 \\ x-y+z          \amp   =  \amp   2  \\
+\end{array}
+\end{equation*}
+</div></li>
+<li id="li-49"><div class="displaymath process-math" data-contains-math-knowls="" id="p-181">
+\begin{equation*}
+\begin{array}{ccc} x+y+2z          \amp   =  \amp    0 \\ x-y+z \amp   =  \amp 
+0  \\
+\end{array}
+\end{equation*}
+</div></li>
+<li id="li-50"><div class="displaymath process-math" data-contains-math-knowls="" id="p-182">
+\begin{equation*}
+\begin{array}{ccc}
+x+y\amp  =   \amp     -2\\
+2x+3y+z\amp  =   \amp    1 \\
+3x+2y+z\amp  =   \amp     3\\
+\end{array}
+\end{equation*}
+</div></li>
+<li id="li-51"><div class="displaymath process-math" data-contains-math-knowls="" id="p-183">
+\begin{equation*}
+\begin{array}{ccc}
+x-y+2z          \amp   =  \amp     4\\
+3x+y+z          \amp   =  \amp     -2\\
+2x-3y+3z          \amp   =  \amp     0
+\end{array}
+\end{equation*}
+</div></li>
+</ol>
+</li>
+<li id="li-52">
+<p id="p-184">Find the rank of the following matrices:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A=\begin{pmatrix}
+1 \amp  2 \amp  3\\2\amp  1 \amp  -1\\1 \amp  -1 \amp  2\\5 \amp  4\amp  -5
+\end{pmatrix},
+B=
+\begin{pmatrix}
+2 \amp  1 \amp  5\amp  -1 \amp \\-1 \amp  2\amp  5\amp  3\\3 \amp  2\amp  9\amp  -1
+\end{pmatrix},
+C=
+\begin{pmatrix}
+1 \amp  1 \amp  1 \\a \amp  b \amp  c\\a^2 \amp  b^2\amp  c^2
+\end{pmatrix}
+\end{equation*}
+</div>
+</li>
+<li id="li-53"><p id="p-185">Find all values of <span class="process-math">\(k\)</span> such that the rank of the matrix <span class="process-math">\(\begin{pmatrix}
+k \amp  -1 \amp  0\amp 0 \\0 \amp  k \amp  -1\amp 0\\0\amp  0  \amp  k\amp  -1\\-6 \amp   11\amp  -6 \amp 1
+\end{pmatrix}\)</span> is 3.</p></li>
+<li id="li-54"><p id="p-186">Find all values of <span class="process-math">\(k\)</span> such that the rank of the matrix <span class="process-math">\(\begin{bmatrix} k+3 \amp  1 \amp  -2\\ 3 \amp  -2 \amp  k\\-k \amp  -3 \amp  3
+\end{bmatrix}\)</span> is 3.</p></li>
+<li id="li-55"><p id="p-187">For the following system of equations write the solution in the form of <span class="process-math">\(X_0+S_h\)</span> where <span class="process-math">\(X_0\)</span> is a solution of non homogeneous system and <span class="process-math">\(S_h\)</span> is the set of solutions of the corresponding homogeneous system <p id="p-188">(i) <span class="process-math">\(3x-4y=1\)</span></p> <p id="p-189">(ii) <span class="process-math">\(-3x + 6 y + -11z =  4;       3x - 4y + 6z  = -3\)</span></p> <p id="p-190">(iii) <span class="process-math">\(x+y+z-w   =  1;       3x+6z-6w  =   6;             -y+z-w  =   1 \)</span></p> <p id="p-191">(iv) <span class="process-math">\(x+2y+4z   =  3;      2x+4y+z  =   3 \)</span></p></p></li>
+<li id="li-56">
+<p id="p-192">Balance the following photosynthesis reaction</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+CO_2 + H_2O \to C_6H_{12}O_6 + O_2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Here <span class="process-math">\(C_6H_{12}O_6\)</span> is glucose.</p>
+</li>
+<li id="li-57">
+<p id="p-193">The augmented matrix of a linear system has the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{bmatrix} 1 \amp 2\amp  -1 \amp  a \\
+2 \amp 3\amp  -2 \amp  b\\
+-1 \amp -1\amp  1 \amp  c
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation"><p id="p-194">(a) Determine the values of a, b, and c for which the linear system is consistent.</p> <p id="p-195">(b) Determine the values of a, b, and c for which the linear system is inconsistent.</p> <p id="p-196">(c) When it is consistent, does the linear system have a unique solution or infinitely many solutions?</p> <p id="p-197">(d) Give a specific consistent linear system and find one particular solution.</p></p>
+</li>
+<li id="li-58">
+<p id="p-198">Solve the following system of equations for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x^2 + xy =y^2 = 1, \quad 
+2x^2 - xy + 3y^2 = 13,\quad x^2 + 3xy + 2y^2 = 0\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-59"><p id="p-199">Find a polynomial of the form <span class="process-math">\(y = a_0 +a_1 x+a_2 x^2 +a_3 x^3\)</span> which passes through the points <span class="process-math">\((-3, -2), (-1, 2), (1, 5), (2, 1)\text{.}\)</span></p></li>
+<li id="li-60">
+<p id="p-200">Find the values of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> for which the following system is consistent. Also find the complete solution when <span class="process-math">\(a = b = 2\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x+y-z+w = 1;\quad    ax + y + z + w = b;\quad
+3x + 2y +    aw = 1 + a\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-61">
+<p id="p-201">The  following table lists the number of milligrams of vitamin A, vitamin B, vitamin C, and niacin contained in 1 g of four different foods. A dietitian wants to prepare a meal that provides 250 mg of vitamin A, 300 mg of vitamin B, 400 mg of vitamin C, and 70 mg of niacin. Determine how many grams of each food must be included, and describe any limitations on the quantities of each food that can be used</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{ccccc}
+Nutrients \amp  Group~1 \amp  Group~2 \amp  Group~3 \amp  Group \\
+Vitamin~A \amp  20 \amp  30 \amp  40 \amp  10\\
+Vitamin~B \amp  40 \amp  20 \amp  35 \amp  20\\
+Vitamin~C \amp  50 \amp  40 \amp  10 \amp  30\\
+Niacin 	  \amp  5 \amp  5 \amp  10 \amp  5
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li id="li-62">
+<p id="p-202">Let <span class="process-math">\(A\)</span> be the coefficient matrix of the following homogeneous system of <span class="process-math">\(n \)</span>  equations in <span class="process-math">\(n\)</span>   unknowns:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{ccc}
+(1-n)x_1 + x_2 + \cdots + x_n \amp=\amp 0\\
+x_1 + (1- n)x_2 + \cdots + x_n \amp=\amp 0\\
+\vdots\amp\amp \vdots\\
+x_1 + x_2 + \cdots + (1-n)x_n \amp=\amp 0.
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">Find the reduced row-echelon form of <span class="process-math">\(A\)</span>   and hence, or otherwise, prove that the solution of the above system is <span class="process-math">\(x_1 = x_2 = \ldots = x_n\)</span>   , with <span class="process-math">\(x_n\)</span>  arbitrary.</p>
+</li>
+<li id="li-63">
+<p id="p-203">For which rational numbers <span class="process-math">\(a\)</span> does the following system have (i) no solutions (ii) exactly one solution (iii) infinitely many solutions?</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x + 2y-3z = 4;\quad 
+3x-y + 5z = 2;\quad
+4x + y + (a^2-14)z = a + 2\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-64">
+<p id="p-204">If <span class="process-math">\((\alpha_1 ,\ldots,\alpha_n)\)</span> and <span class="process-math">\((\beta_1 ,\ldots,\beta_n)\)</span> are solutions of a system of linear equations, prove that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+((1-t)\alpha_1+t\beta_1 , \ldots, (1-t)\alpha_n+t\beta_n)
+\end{equation*}
+</div>
+<p class="continuation">is also a solution.</p>
+</li>
+<li id="li-65"><p id="p-205">Solve the system <span class="process-math">\(AX=b\)</span>   using  Doolittle method: <p id="p-206">(i)  <span class="process-math">\(A=\begin{pmatrix} 25\amp 5\amp 1\\64\amp 8\amp 1\\144\amp 12\amp 1 \end{pmatrix}\)</span> and <span class="process-math">\(b=\begin{pmatrix}3\\1\\-2\end{pmatrix}\)</span></p> <p id="p-207">(ii) <span class="process-math">\(A= \begin{pmatrix}1\amp 1\amp 1\\3\amp 1\amp -3\\1\amp -2\amp -5 \end{pmatrix} \)</span> and <span class="process-math">\(b=\begin{pmatrix}-3\\7\\2\end{pmatrix}\text{.}\)</span></p></p></li>
+<li id="li-66"><p id="p-208">Solve the system <span class="process-math">\(AX=b\)</span> using Crout's method <p id="p-209">(i) <span class="process-math">\(A=\begin{pmatrix} 2\amp -4\amp 3\\4\amp 1\amp -6\\5\amp 8\amp -4 \end{pmatrix}\)</span> and <span class="process-math">\(b=\begin{pmatrix}2\\-1\\5\end{pmatrix}\)</span></p> <p id="p-210">(ii) <span class="process-math">\(A= \begin{pmatrix} 1\amp 0\amp 5\amp 0\\-1\amp 4\amp 1\amp 0\\3\amp 0\amp 4\amp 1\\-2\amp 1\amp 1\amp 3 \end{pmatrix}\)</span> and <span class="process-math">\(b=\begin{pmatrix}1\\4\\3\\5\end{pmatrix}\)</span></p></p></li>
+</ol></section></div></main>
+</div>
+</body>
+</html>
