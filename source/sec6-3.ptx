@@ -295,7 +295,7 @@ orthogonal transformation and <m>v</m> is a called a translation vector. Such ma
   which is parabola. Here <m>\tilde{y}=v</m> and <m>g=\alpha^2/(4\lambda_1)-f</m>.
 </p>
 
-<p><alert>Classification of Conics</alert></p>
+<p><alert>Classification of Conics in two variables</alert></p>
 
 
         <p>Based on the above discussions, the classification of the above conic section 
@@ -598,7 +598,350 @@ show(curve+neworigin+newxaxis+newyaxis+xaxis+yaxis,aspect_ratio=1)
     </output>
   </sage>
 </example>
+
+<example>
+  <statement>
+    <p>
+  Consider the quadratic equation <m>Q(x,y) = 3 \, x^{2} - 6 \, x y + 3 \, y^{2} - 6 \, x + 8 \, y + 5</m> and classify this 
+  to  a conic section.
+  </p>
+  
+  </statement>
+
+  <solution>
+    <p>
+   The matrix associated with the quadratic part of the above equation is 
+   <m>A = \left(\begin{array}{rr}
+3 \amp -3 \\
+-3 \amp 3
+\end{array}\right)</m>. It is easy to check that the eigenvalues of <m>A</m> are <m>\lambda_1=6, \lambda_2=0</m>. Since one of the eigenvalues is 0, this curve is a parabola.  Let us draw this curve along with the tranformed orgini and the two new coordinate directions in Sage.
+   </p>
+<sage>
+  <input>
+  var('x,y')
+var('u,v')
+var('s,t')
+var('z')
+X = vector([x,y])
+Y = vector([u,v])
+a,b,c,d,e,f = 3,-3,3,-6,8,5
+Q(x,y) = a*x^2+2*b*x*y+c*y^2+d*x+e*y+f
+print('The curve is given by')
+show(Q(x,y))
+curve = implicit_plot(Q(x,y),(x,-5,5),(y,-5,5),gridlines=True,aspect_ratio=1)
+xaxis=line([(-5,0),(5,0)],color='black')
+yaxis=line([(0,-5),(0,5)],color='black')
+show(curve+xaxis+yaxis)
+## We define the associated matrix A
+A= matrix([[a,b],[b,c]])
+B= vector([d,e])
+print('The quadratic in terms of matrices A and B')
+show(expand(X.dot_product(A*X))+B.dot_product(X)+f)
+## Orthogonal Diagonalization of the matrix A
+print(f'The eigenvalues of A are {A.eigenvalues()}')
+D,P = A.eigenmatrix_right();
+lam1 = D[0,0]
+lam2 = D[1,1]
+
+## We normalize the eigenvectors and redefine P
+v1 = P.columns()[0]/norm(P.columns()[0])
+v2 = P.columns()[1]/norm(P.columns()[1])
+P = column_matrix([v1,v2])
+print('To check if PDP^{-1}=A')
+print(P*D*P.inverse())
+
+## The qudratic in terms of new coordinate system uv
+R(u,v)=expand(Q.substitute(x=(P*Y)[0],y=(P*Y)[1])(u,v));
+print(R(u,v))
+
+## The translation vector
+alpha = (B*P)[0]
+beta = (B*P)[1]
+x0=-alpha/(2*lam1)
+y0=-beta
+g = alpha^2/(4*lam1)-f
+
+## Plotting the parabola
+origin = P*vector([x0,y0])
+neworigin = point([(origin[0],origin[1])],color='green')
+newxaxis = parametric_plot(origin+z*v1, (z,-5,5),color='green')
+newyaxis = parametric_plot(origin+z*v2, (z,-5,5),color='green')
+show(curve+neworigin+newxaxis+newyaxis+xaxis+yaxis,aspect_ratio=1)
+  </input>
+  <output>
+    
+  </output>
+</sage>   
+   
+  </solution>
+</example>
+
+<activity>
+  <p>
+    For given quadratic equation <m>Q(x,y)=ax^2+2bxy+cy^2+dx+ey+f=0</m>, write down the corresponding canonical conics by describing
+    the new orgin <m>(x_0,y_0)</m>, and the new coordinate vectors by codisering different cases in a tabular form. 
+  </p>
+</activity>
+
+</subsection>
+
+
+<subsection xml:id="subsec-conic-suraces-3variables">
+  <title>Classification of Quadratic Surfaces in Three Variables</title>
+  <introduction>
+    <p>
+      The classification of quadratic equation in three varibale can be done in a very similar manner as we have seen in case of two variable <xref ref="subsec-6-3-quadratic-form"/>
+    </p>
+  </introduction>
+
+  <p>
+  A general quadratic equation in three variables is
+<me>Q(x,y,z) = ax^2 + by^2 + cz^2 + 2dxy + 2eyz + 2fzx + gx + hy + iz + j=0
+</me>
+where <m>a,b,c,d,e,f,g,h,i,j \in \mathbb{R}</m>.  
+</p>
+<p>
+In matrix form,
+<me>
+Q(\mathbf{x}) = \mathbf{x}^T A \mathbf{x} +  \mathbf{b}^T \mathbf{x} + j,
+\quad 
+\mathbf{x} = \begin{bmatrix} x \\ y \\ z \end{bmatrix}, \quad 
+A = \begin{bmatrix} a \amp d \amp f \\ d \amp b \amp e \\ f \amp e \amp c \end{bmatrix}, \quad
+\mathbf{b} = \begin{bmatrix} g \\ h \\ i \end{bmatrix}.
+</me>
+
+Since <m>A</m> is symmetric, there exists an orthogonal matrix <m>P</m> such that 
+<me>
+P^T A P = \Lambda = \operatorname{diag}(\lambda_1,\lambda_2,\lambda_3).
+</me>
+After an orthogonal change of variables <m>\mathbf{x} = P\mathbf{u}</m> and a translation 
+to eliminate linear terms, the quadratic form reduces to the <em>canonical form</em>.
+<me>
+Q(u,v,w) = \lambda_1 u^2 + \lambda_2 v^2 + \lambda_3 w^2 + j = 0.
+</me>
+  </p>
+
+ <p><alert>Classification of Quadrics</alert></p>
+  
+ 
+<p>
+Depending on the signs of <m>\lambda_1, \lambda_2, \lambda_3</m>, we obtain the following surfaces:
+</p>
+
+<ol>
+  <li>
+    <p>
+      <em>Ellipsoid: </em> All eigenvalues positive.
+      <me>
+         \frac{u^2}{a^2} + \frac{v^2}{b^2} + \frac{w^2}{c^2} = 1, a,b,c &gt; 0</me>. 
+      </p>
+         <sage>
+          <input>
+        ## Ellipsoid
+        var('x y z')
+        a, b, c = 2, 1.5, 1  # semi-axes
+
+        ellipsoid = implicit_plot3d(x^2/a^2 + y^2/b^2 + z^2/c^2 - 1, 
+                                      (x,-2,2), (y,-2,2), (z,-2,2), 
+                                      color='gray', opacity=0.4)
+        ellipsoid.show(frame=False,axes=True)
+        </input>
+          <output>
+            
+          </output>
+        </sage>
+  </li>
+  <li>
+    <p>
+      <em>Hyperboloid of One Sheet: </em> Two positive eigenvalues, one negative.
+      <me>
+        \frac{u^2}{a^2} + \frac{v^2}{b^2} - \frac{w^2}{c^2} = 1.
+      </me>
+    </p>
+    <sage>
+      <input>
+    ##Hyperboloid of One Sheets
+var('x,y,z')
+a, b, c = 1, 1, 1
+hyperboloid1 = implicit_plot3d(x^2/a^2 + y^2/b^2 - z^2/c^2 - 1, 
+                               (x,-2,2), (y,-2,2), (z,-3,3),
+                               color='orange', opacity=0.4)
+hyperboloid1.show(frame=False,axes=True,title='Hyperboloid of One Sheets')
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+  </li>
+  <li>
+    <p>
+       <em>Hyperboloid of Two Sheets:</em> One positive eigenvalue, two negative.
+  <me>
+  -\frac{u^2}{a^2} - \frac{v^2}{b^2} + \frac{w^2}{c^2} = 1.
+  </me>
+    </p>
+
+    <sage>
+      <input>
+##Hyperboloid of Two Sheets
+var('x,y,z')
+a,b,c =1,1,1
+hyperboloid2 = implicit_plot3d(-x^2/a^2 -y^2/b^2 + z^2/c^2 - 1, 
+                               (x,-2,2), (y,-2,2), (z,-3,3),
+                               color='green', opacity=0.6)
+hyperboloid2.show(frame=False,axes=True)
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+  </li>
+  <li>
+    <p>
+      <em>Elliptic Cone: </em> Two positibve and one negative eigenvalues with no constant term.
+  <me>
+  \frac{u^2}{a^2} + \frac{v^2}{b^2} - \frac{w^2}{c^2} = 0.
+  </me>
+    </p>
+    <sage>
+      <input>
+## Elliptic Cone
+var('x,y,z')
+a,b,c =1,1,1
+elliptic_cone = implicit_plot3d(x^2/a^2 +y^2/b^2 - z^2/c^2, 
+                               (x,-2,2), (y,-2,2), (z,-3,3),
+                               color='green', opacity=0.6)
+elliptic_cone.show(frame=False,axes=True)
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+  </li>
+  <li>
+    <p>
+  <em>Elliptic Paraboloid: (Bowl-shaped surface)</em> Two positive eigenvalues, one zero.
+  <me>
+  \frac{u^2}{a^2} + \frac{v^2}{b^2} = \frac{w}{c}.
+  </me>
+    </p>
+    <sage>
+      <input>
+ ## Elliptic Paraboloid
+var('x,y,z')
+a,b,c=3,1,5
+bowl = implicit_plot3d(x^2/a^2 + y^2/b^2-z/c, 
+                (x,-2,2), (y,-2,2),(z,-2,2),
+                color='green', opacity=0.6)
+bowl.show(frame=False,axes=True)    
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+  </li>
+  <li>
+    <p>
+      <em>Hyperbolic Paraboloid: (Saddle Surface)</em> One positive eigenvalue, one negative, one zero.
+  <me>
+  \frac{u^2}{a^2} - \frac{v^2}{b^2} = \frac{w}{c}.
+  </me>
+    </p>
+    <sage>
+      <input>
+    ## Hyperbolic Paraboloid (Saddle)
+var('x,y,z')
+a,b,c = 3,2,5
+saddle = implicit_plot3d(x^2/a^2 - y^2/b^2-z/c, 
+                (x,-2,2), (y,-2,2),(z,-2,2),
+                color='green', opacity=0.6)
+saddle.show(frame=False,axes=True)
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+  </li>
+  <li>
+    <p>
+   <em>Elliptic Cylinder:</em> Two positive eigenvalues, third zero.
+  <me>
+  \frac{u^2}{a^2} + \frac{v^2}{b^2} = 1.
+  </me>
+    </p>
+    <sage>
+      <input>
+## Elliptic Cylinder
+var('x,y,z')
+a,b=2,1
+ell_cyl = implicit_plot3d(x^2/a^2 + y^2/b^2-1, 
+                (x,-4,4), (y,-2,2),(z,-2,2),
+                color='green', opacity=0.6)
+ell_cyl.show(frame=False,axes=True)
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+  </li>
+  <li>
+    <p>
+    <em>Hyperbolic Cylinder:  </em> One positive, one negative, third zero.
+<me>
+  \frac{u^2}{a^2} - \frac{v^2}{b^2} = 1.
+</me>  
+    </p>
+  <sage>
+    <input>
+  ## Hyperbolic Cylinder
+var('x,y,z')
+a,b=2,1
+hyp_cyl = implicit_plot3d(x^2/a^2 - y^2/b^2-1, 
+                (x,-4,4), (y,-2,2),(z,-2,2),
+                color='green', opacity=0.6)
+hyp_cyl.show(frame=False,axes=True)    
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+  </li>
+  <li>
+    <p>
+      <em>Parabolic Cylinder:</em> Only one  nonzero eigenvalue.
+  <me>
+  \frac{u^2}{a^2} = \frac{v}{b}.
+  </me>
+    </p>
+    <sage>
+      <input>
+     ## Parabolic Cylinder
+var('x,y,z')
+a,b=1,1
+par_cyl = implicit_plot3d(x^2/a^2 - y/b-1, 
+                (x,-2,2), (y,-2,2),(z,-2,2),
+                color='green', opacity=0.6)
+par_cyl.show(frame=False,axes=True)   
+      </input>
+      <output>
+        
+      </output>
+    </sage>
+  </li>
+</ol>
+
+
 </subsection>
   
-   
 </section>
+<!-- 
+
+
+\subsection*{Summary}
+\begin{itemize}
+  \item All eigenvalues same sign $\;\Rightarrow\;$ Ellipsoid (positive) or imaginary ellipsoid (negative).
+  \item Two eigenvalues same sign, one opposite $\;\Rightarrow\;$ Hyperboloid of one or two sheets.
+  \item One eigenvalue zero $\;\Rightarrow\;$ Paraboloid or cylinder.
+  \item Homogeneous case (no constant term) $\;\Rightarrow\;$ Cone.
+\end{itemize}
+-->
