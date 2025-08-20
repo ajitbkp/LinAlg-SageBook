@@ -7,10 +7,15 @@
           <p>
            You may try out Sage codes here to solve excercises.   
         </p>
+
       </introduction>
 
       <subsection xml:id="sec-10-3-sage-practice1">
         <title>Sage Practice Area</title>
+ <p>       
+
+</p>
+
         <sage>
             <input>
             

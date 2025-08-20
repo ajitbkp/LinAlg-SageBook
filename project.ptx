@@ -46,4 +46,5 @@
       <node>node</node>
       <liblouis>file2brl</liblouis>
     </executables>
-</project>
+  <prefigure-preamble/>
+  </project>

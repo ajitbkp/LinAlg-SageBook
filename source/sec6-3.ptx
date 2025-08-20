@@ -167,6 +167,438 @@
       </statement>
     </theorem>
       
+  <subsection xml:id="subsec-6-3-quadratic-form">
+    <title>Quadratic Forms and Conic Sections</title>
+      <p>
+        In this subsection, we give an application of orthogonal diagonalizability  to conic sections.
+      </p>
+    
+      <p>
+            A general second-degree equation in two variables is given by
+            <me>
+                Q(x,y) = ax^2 + 2bxy + cy^2 + dx + ey + f = 0,
+            </me>
+            where <m>a,b,c,d,e,f \in \mathbb{R}</m>.
+        </p>
+
+          <p>
+            This equation can be written compactly in matrix notation as
+            <me>
+                Q(x,y) =
+                \begin{bmatrix}x \amp y\end{bmatrix} 
+                \begin{bmatrix} a \amp b \\ b \amp c \end{bmatrix}
+                \begin{bmatrix}x \\ y\end{bmatrix}+ \begin{bmatrix} d \amp e \end{bmatrix} 
+                \begin{bmatrix} x \\ y \end{bmatrix} + f = 0.
+            </me>
+        </p>
+        <p>
+            Here,
+            <me>
+               A = \begin{bmatrix} a \amp b \\ b  \amp c \end{bmatrix}
+            </me>
+            is the symmetric matrix associated with the quadratic part <m>ax^2+2bxy+cy^2</m>.
+        </p>
+
+         <p>
+            Since <m>A</m> is symmetric, it is orthogonally diagonalizable.  
+            That is, there exists an orthogonal matrix <m>P</m> such that
+            <me>
+                P^TAP = D = \begin{pmatrix} \lambda_1 \amp 0\\ 0 \amp \lambda_2\end{pmatrix},
+            </me>
+            where <m>\lambda_1,\lambda_2</m> are eigenvalues of <m>A</m> and <m>P</m> is 
+            the column matrix of orthogonal eigenbasis.
+        </p>
+
+<p> 
+        With the change of variables
+        <me>
+        \begin{bmatrix} x \\ y \end{bmatrix} = P \begin{bmatrix} u \\ v \end{bmatrix},
+        </me> the quadratic form simplifies to
+        <me>Q(u,v) = \lambda_1 u^2 + \lambda_2 v^2 + \alpha u+\beta v + f = 0.</me>  
+        Note that here
+   <me>
+    \begin{bmatrix}\alpha\\\beta\end{bmatrix} =\begin{bmatrix}d\amp e\end{bmatrix}P. 
+   </me>
+
+Thus, the cross term <m>2bxy</m> is eliminated by using the 
+orthogonal linear trasformation <m>\begin{bmatrix} u \\ v \end{bmatrix}=P\begin{bmatrix} x \\ y \end{bmatrix} </m> 
+and the conic aligns with its principal axes, that 
+is along the eigenvectors directions. 
+</p>
+
+<p>
+   Now we have various cases. 
+   If we assume that <m>\lambda_1</m> and <m>\lambda_2</m> are positive,  then 
+   we can complete square and we get
+   <me>
+    Q(u,v) = \lambda_1\left(u+\frac{\alpha}{2\lambda_1}\right)^2+
+    \lambda_2\left(v+\frac{\beta}{2\lambda_2}\right)^2-g,
+   </me>
+    for some real number <m>g</m>.  What is <m>g</m>? It is <m>\left(\frac{\alpha^2}{4\lambda_1}
+        + \frac{\beta^2}{4\lambda_2} - f\right)</m>.
+    </p>
+
+    <p> 
+The origin of this quadratic in <m>uv</m>-coordinates is 
+<me> \begin{bmatrix} u_0\\v_0\end{bmatrix}=
+  \begin{bmatrix}-\frac{\alpha}{2\lambda_1}\\-\frac{\beta}{2\lambda_2}\end{bmatrix}.
+</me>
+Hence the orgin in terms of <m>xy</m>-coordinates is 
+<me> \begin{bmatrix} x_0\\y_0\end{bmatrix}=
+  P\begin{bmatrix}-\frac{\alpha}{2\lambda_1}\\-\frac{\beta}{2\lambda_2}\end{bmatrix}.
+</me>
+Thus we have converted the original quadratic <m>Q(x,y)</m> to 
+<me>
+Q(\tilde{x},\tilde{y})=\lambda_1\tilde{x}^2+\lambda_2\tilde{y}^2-g =
+\frac{\tilde{x}^2}{\left(\frac{g}{\lambda_1}\right)^2}+\frac{\tilde{y}^2}{\left(\frac{g}{\lambda_1}\right)^2}-1.
+</me>
+This is an ellipse.
+
+Here,  we have
+<me>
+  \begin{pmatrix}
+  \tilde{x}\\ \tilde{y}
+  \end{pmatrix} = \begin{pmatrix} u+\frac{\alpha}{2\lambda_1}\\v+\frac{\beta}{2\lambda_2}\end{pmatrix}
+  =\begin{pmatrix} u\\v\end{pmatrix}+\begin{pmatrix} \frac{\alpha}{2\lambda_1}\\\frac{\beta}{2\lambda_2}\end{pmatrix}=
+  P^{-1}\begin{pmatrix}x\\y
+  \end{pmatrix}+\begin{pmatrix} \frac{\alpha}{2\lambda_1}\\\frac{\beta}{2\lambda_2}\end{pmatrix}.
+</me> 
+
+The transformation, <m>P^{-1}\begin{pmatrix}x\\y
+  \end{pmatrix}+\begin{pmatrix} \frac{\alpha}{2\lambda_1}\\\frac{\beta}{2\lambda_2}\end{pmatrix} </m> is called an <em>affine linear transformation.</em> Here <m>P^{-1}</m> is a orthogonl linear map.
+
+ Thus an <em>affine linear transformation</em> on <m>\R^n</m> is a map of the form <m>T(x)=Px+v</m> ,where <m>P</m> is an 
+orthogonal transformation and <m>v</m> is a called a translation vector. Such maps are also called 
+<em>isometries.</em>
+</p>
+
+<p>
+  In case, <m>\lambda_1</m> and <m>\lambda_2</m> both are negative then, we can multiply the 
+  whole equation by <m>-1</m> and we get the a similar expression except, the right hand changes 
+  its sign.
+</p>
+  
+<p>
+  In case one of the <m>\lambda's</m>, say <m>\lambda_2&lt;0</m>, then the conic tranforms to 
+  <me>
+    Q(\tilde{x},\tilde{y})=\lambda_1\tilde{x}^2-\lambda_2\tilde{y}^2-g, 
+  </me>
+  which is a hyperbola.
+</p>
+
+
+<p>
+  In case one of the <m>\lambda's</m>, say <m>\lambda_2=0</m>, then the conic tranforms to 
+  <me>
+    Q(\tilde{x},\tilde{y})=\lambda_1\tilde{x}^2+\beta \tilde{y} -g, 
+  </me>
+  which is parabola. Here <m>\tilde{y}=v</m> and <m>g=\alpha^2/(4\lambda_1)-f</m>.
+</p>
+
+<p><alert>Classification of Conics</alert></p>
+
+
+        <p>Based on the above discussions, the classification of the above conic section 
+          depends on the eigenvalues of <m>A</m>.</p>
+<p>
+        <ul>
+            <li>
+                <p><em>Ellipse:</em> If both eigenvalues <m>\lambda_1, \lambda_2</m> 
+                  have the same sign, then the quadratic is an ellipe of the form 
+                  <m>x^2/a^2+y^2/b^2=1</m>.
+                </p>
+            </li>
+            <li>
+                <p><em>Circle:</em> When <m>\lambda_1 = \lambda_2</m>, then the quadratic is circle.</p>
+            </li>
+            <li>
+                <p><em>Hyperbola:</em> If eigenvalues have opposite signs, then the quadratic is a hyperbola of the form 
+                <me>x^2/a^2 -y^2/b^2= 1.</me> </p>
+            </li>
+            <li>
+                <p><em>Parabola:</em> If one eigenvalue is zero, then it is a parabola.</p>
+            </li>
+        </ul>
+      </p>
+
+
+      <example xml:id="eg-conic-ellipe1">
+        <statement>
+          <p>
+         Condiser the quadratic <m>(Q(x,y)=7 \, x^{2} - 6 \, x y + 7 \, y^{2} - 2 \, x + 3 \, y - 24</m>. Let us convert this 
+         quadrtic into a conic section in canonial form.    
+          </p>
+        </statement>
+       <solution>
+        <p>
+          The associated symmetric matrix of this quadratic <m>A</m> is given by 
+          <me>
+            A = \begin{pmatrix} 7 \amp -3 \\-3 \amp 7\end{pmatrix}.
+          </me>
+          It is easy to check the the eigenvalues of <m>A</m> are <m>\lambda_1=10</m> and <m>\lambda_2=4</m> with 
+          the corresponding eigenvectors <m>v_1 = \left(\frac{1}{2} \, \sqrt{2},\,-\frac{1}{2} \, \sqrt{2}\right)</m> and 
+          <m>v_2=\left(\frac{1}{2} \, \sqrt{2},\,\frac{1}{2} \, \sqrt{2}\right)</m>. Hence we have 
+          <me>
+            D= \left(\begin{array}{rr}
+10 \amp 0 \\
+0 \amp 4
+\end{array}\right), P = \left(\begin{array}{rr}
+\frac{1}{\sqrt{2}}  \amp \frac{1}{\sqrt{2}} \\
+-\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}}
+\end{array}\right).
+          </me>      
+  The new coordinates in terms of <m>uv</m> is 
+  <me>
+    \begin{bmatrix} x \\ y \end{bmatrix} = P \begin{bmatrix} u \\ v \end{bmatrix}=\left(\begin{array}{rr}
+\frac{1}{\sqrt{2}} u + \frac{1}{\sqrt{2}}  v \\ -\frac{1}{\sqrt{2}}  u + \frac{1}{\sqrt{2}v} 
+\end{array}\right).
+  </me>
+   Now substituting <m>x=\frac{1}{\sqrt{2}} u + \frac{1}{\sqrt{2}}  v</m> and <m>y=-\frac{1}{\sqrt{2}} u + \frac{1}{\sqrt{2}} v </m> in the given quadratic, we get
+   <me>
+    Q(u,v)=10 \, u^{2} + 4 \, v^{2} - 7 \, \sqrt{2} u + \sqrt{2} v - 56.
+   </me>
+   After completing the squares, we get
+   <me>
+    Q(u,v)=10 \left(u- \frac{7\sqrt{2}}{20}\right)^2+ 4 \left(v+ \frac{\sqrt{2}}{8}\right)^2 - 2343/40.
+   </me>
+   This can be written as an equation of ellipes. Note that here the translation vector is given by
+   <me>
+    \begin{pmatrix}x_0\\y_0\end{pmatrix}=P\begin{pmatrix} \frac{7\sqrt{2}}{20}\\\frac{-\sqrt{2}}{8}\end{pmatrix}=
+    \begin{pmatrix}\frac{9}{40}\\ -\frac{19}{40}\end{pmatrix}.
+   </me>
+   
+        </p>
+        <p>
+          Let us explore this in Sage. Here we plot the orginal quadratic curve along with 
+          the transformed coordinates.  
+
+          <sage>
+            <input>
+          var('x,y')
+var('u,v')
+var('s,t')
+var('z')
+X = vector([x,y])
+Y = vector([u,v])
+a,b,c,d,e,f = 7,-3,7,-6,8,-56
+Q(x,y) = a*x^2+2*b*x*y+c*y^2+d*x+e*y+f
+print('The curve is given by')
+show(Q(x,y))
+curve = implicit_plot(Q(x,y),(x,-4,4),(y,-4,4),gridlines=True,aspect_ratio=1)
+xaxis=line([(-4,0),(4,0)],color='black')
+yaxis=line([(0,-4),(0,4)],color='black')
+show(curve+xaxis+yaxis)
+## We define the associated matrix A
+A= matrix([[a,b],[b,c]])
+B= vector([d,e])
+print('The quadratic in terms of matrices A and B')
+show(expand(X.dot_product(A*X))+B.dot_product(X)+f)
+
+## Orthogonal Diagonalization of the matrix A
+print(f'The eigenvalues of A are {A.eigenvalues()}')
+D,P = A.eigenmatrix_right();
+lam1 = D[0,0]
+lam2 = D[1,1]
+
+## We normalize the eigenvectors and redefine P
+v1 = P.columns()[0]/norm(P.columns()[0])
+v2 = P.columns()[1]/norm(P.columns()[1])
+P = column_matrix([v1,v2])
+print('To check if PDP^{-1}=A')
+print(P*D*P.inverse())
+
+## The qudratic in terms of new coordinate system uv
+R(u,v)=expand(Q.substitute(x=(P*Y)[0],y=(P*Y)[1])(u,v));
+print(R(u,v))
+
+## The translation vector
+alpha = (B*P)[0]
+beta = (B*P)[1]
+x0=-alpha/(2*lam1)
+y0=-beta/(2*lam2)
+g = (alpha)^2/(4*lam1)+(beta)^2/(4*lam2)-f
+show(g)
+print('The quadatic in canonical form is')
+S(s,t)=expand(R.subs(u=s-alpha/(2*lam1),v=t-beta/(2*lam2))(s,t))
+show(S(s,t))
+## Plotting the ellipes withe major-minor arix
+origin = P*vector([x0,y0])
+neworigin = point([(origin[0],origin[1])],color='green')
+newxaxis = parametric_plot(origin+z*v1, (z,-5,5),color='green')
+newyaxis = parametric_plot(origin+z*v2, (z,-5,5),color='green')
+show(curve+neworigin+newxaxis+newyaxis+xaxis+yaxis,aspect_ratio=1)
+            </input>
+            <output>
+              
+            </output>
+          </sage>
+        </p>
+       </solution>
+      </example>
+    <example>
+      <p>
+      Consider the quadratic equation  <m>3x^{2}+4xy + 2 y^{2} - 8 x + 6 y-3=0</m>. We wish the classify this as a conic section.
+        </p>
+       
+       <p>   
+        Let us first plot the graph of this curve in Sage.
+      </p>
+  <sage>
+  <input>
+    var('x,y')
+    curve = implicit_plot(3*x^2 + 4*x*y + 2*y^2 - 8*x + 6*y - 3==0,(x,-5,20),(y,-20,10),gridlines=True,aspect_ratio=1)
+    xaxis=line([(-5,0),(20,0)],color='black')
+    yaxis=line([(0,-20),(0,10)],color='black')
+    show(curve+xaxis+yaxis)
+
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<p>
+  The symmetric matrix associated with quadratic tem is given by 
+            <me>A = \begin{pmatrix}3 \amp 2 \\ 2 \amp 2 \end{pmatrix}</me>.
+
+           It is easy to check that  he eigenvalues are <m>\lambda_1=0.4384471871911698, \lambda_2=4.561552812808830</m>.  Since 
+           both the eigenvalues are positive, this quadratic is an ellipse. This is what the graph shows. 
+        </p>
+
+ <p>
+  Now we give all the steps in Sage to plot the curve along with the now coordinate system.   
+ </p>       
+
+ <sage>
+  <input>
+var('x,y')
+var('u,v')
+var('s,t')
+var('z')
+X = vector([x,y])
+Y = vector([u,v])
+a,b,c,d,e,f = 3,2,2,-8,6,-3
+Q(x,y) = a*x^2+2*b*x*y+c*y^2+d*x+e*y+f
+print('The curve is given by')
+show(Q(x,y))
+curve = implicit_plot(Q(x,y),(x,-5,20),(y,-20,10),gridlines=True,aspect_ratio=1)
+xaxis=line([(-5,0),(20,0)],color='black')
+yaxis=line([(0,-20),(0,10)],color='black')
+show(curve+xaxis+yaxis)
+## We define the associated matrix A
+A= matrix([[a,b],[b,c]])
+B= vector([d,e])
+print('The quadratic in terms of matrices A and B')
+show(expand(X.dot_product(A*X))+B.dot_product(X)+f)
+
+## Orthogonal Diagonalization of the matrix A
+print(f'The eigenvalues of A are {A.eigenvalues()}')
+D,P = A.eigenmatrix_right();
+lam1 = D[0,0]
+lam2 = D[1,1]
+
+## We normalize the eigenvectors and redefine P
+v1 = P.columns()[0]/norm(P.columns()[0])
+v2 = P.columns()[1]/norm(P.columns()[1])
+P = column_matrix([v1,v2])
+print('To check if PDP^{-1}=A')
+print(P*D*P.inverse())
+
+## The qudratic in terms of new coordinate system uv
+R(u,v)=expand(Q.substitute(x=(P*Y)[0],y=(P*Y)[1])(u,v));
+print(R(u,v))
+
+## The translation vector
+alpha = (B*P)[0]
+beta = (B*P)[1]
+x0=-alpha/(2*lam1)
+y0=-beta/(2*lam2)
+g = (alpha)^2/(4*lam1)+(beta)^2/(4*lam2)-f
+show(g)
+print('The quadatic in canonical form is')
+S(s,t)=expand(R.subs(u=s-alpha/(2*lam1),v=t-beta/(2*lam2))(s,t))
+show(S(s,t))
+## Plotting the ellipes withe major-minor arix
+origin = P*vector([x0,y0])
+neworigin = point([(origin[0],origin[1])],color='green')
+newxaxis = parametric_plot(origin+z*v1, (z,-15,15),color='green')
+newyaxis = parametric_plot(origin+z*v2, (z,-15,15),color='green')
+show(curve+neworigin+newxaxis+newyaxis+xaxis+yaxis,aspect_ratio=1)
+  </input>
+
+    <output>
+    
+  </output>
+ </sage>
+</example>
+
+<example>
+  <p>
+   Consider the quadratic eqation given by <m>-x^2+4xy-y^2-30x,+y+20=0</m>. Use Sage to classify this and plot the 
+   curve along with the transformed coordinates system. 
+  </p>
+  <sage>
+    <input>
+var('x,y')
+var('u,v')
+var('s,t')
+var('z')
+X = vector([x,y])
+Y = vector([u,v])
+a,b,c,d,e,f = -1,4,-1,-30,1,20
+Q(x,y) = a*x^2+2*b*x*y+c*y^2+d*x+e*y+f
+print('The curve is given by')
+show(Q(x,y))
+curve = implicit_plot(Q(x,y),(x,-5,10),(y,-5,10),gridlines=True,aspect_ratio=1)
+xaxis=line([(-4,0),(4,0)],color='black')
+yaxis=line([(0,-4),(0,4)],color='black')
+show(curve+xaxis+yaxis)
+## We define the associated matrix A
+A= matrix([[a,b],[b,c]])
+B= vector([d,e])
+print('The quadratic in terms of matrices A and B')
+show(expand(X.dot_product(A*X))+B.dot_product(X)+f)
+
+## Orthogonal Diagonalization of the matrix A
+print(f'The eigenvalues of A are {A.eigenvalues()}')
+D,P = A.eigenmatrix_right();
+lam1 = D[0,0]
+lam2 = D[1,1]
+
+## We normalize the eigenvectors and redefine P
+v1 = P.columns()[0]/norm(P.columns()[0])
+v2 = P.columns()[1]/norm(P.columns()[1])
+P = column_matrix([v1,v2])
+print('To check if PDP^{-1}=A')
+print(P*D*P.inverse())
+
+## The qudratic in terms of new coordinate system uv
+R(u,v)=expand(Q.substitute(x=(P*Y)[0],y=(P*Y)[1])(u,v));
+print(R(u,v))
+
+## The translation vector
+alpha = (B*P)[0]
+beta = (B*P)[1]
+x0=-alpha/(2*lam1)
+y0=-beta/(2*lam2)
+g = (alpha)^2/(4*lam1)+(beta)^2/(4*lam2)-f
+show(g)
+
+S(s,t)=expand(R.subs(u=s-alpha/(2*lam1),v=t-beta/(2*lam2))(s,t))
+show(S(s,t))
+## Plotting the ellipes withe major-minor arix
+origin = P*vector([x0,y0])
+neworigin = point([(origin[0],origin[1])],color='green')
+newxaxis = parametric_plot(origin+z*v1, (z,-5,5),color='green')
+newyaxis = parametric_plot(origin+z*v2, (z,-5,5),color='green')
+show(curve+neworigin+newxaxis+newyaxis+xaxis+yaxis,aspect_ratio=1)
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+</example>
+</subsection>
   
    
 </section>
