@@ -3445,7 +3445,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.4",
   "title": "Orthogonal Diagonalizations",
-  "body": " Orthogonal Diagonalizations    Let be an matrix. Then the following are equivalent:  (i) is non-singular and .  (ii) The rows of are orthonormal vectors in .  (iii) The columns of are orthonormal vectors in .      A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .      (i) The matrix is an orthogonal matrix.  (ii) is an orthogonal matrix.      An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.      Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.      Let be an matrix. Then the following are equivalent.  (i) has an orthonormal set of eigenvectors.  (ii) is orthogonally diagonalizable.  (iii) is symmetric.      Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .      For the following matrices find an orthogonal matrix such that is a diagonal matrix.       The following are equivalent for an matrix .      is orthogonal.     for all .     for all .     .       "
+  "body": " Orthogonal Diagonalizations    Let be an matrix. Then the following are equivalent:  (i) is non-singular and .  (ii) The rows of are orthonormal vectors in .  (iii) The columns of are orthonormal vectors in .      A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .      (i) The matrix is an orthogonal matrix.  (ii) is an orthogonal matrix.      An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.      Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.      Let be an matrix. Then the following are equivalent.  (i) has an orthonormal set of eigenvectors.  (ii) is orthogonally diagonalizable.  (iii) is symmetric.      Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .      For the following matrices find an orthogonal matrix such that is a diagonal matrix.       The following are equivalent for an matrix .      is orthogonal.     for all .     for all .     .        Quadratic Forms and Conic Sections  In this subsection, we give an application of orthogonal diagonalizability to conic sections.  A general second-degree equation in two variables is given by where .  This equation can be written compactly in matrix notation as   Here, is the symmetric matrix associated with the quadratic part .  Since is symmetric, it is orthogonally diagonalizable. That is, there exists an orthogonal matrix such that where are eigenvalues of and is the column matrix of orthogonal eigenbasis.  With the change of variables the quadratic form simplifies to Note that here Thus, the cross term is eliminated by using the orthogonal linear trasformation and the conic aligns with its principal axes, that is along the eigenvectors directions.  Now we have various cases. If we assume that and are positive, then we can complete square and we get for some real number . What is ? It is .  The origin of this quadratic in -coordinates is Hence the orgin in terms of -coordinates is Thus we have converted the original quadratic to This is an ellipse. Here, we have The transformation, is called an affine linear transformation. Here is a orthogonl linear map. Thus an affine linear transformation on is a map of the form ,where is an orthogonal transformation and is a called a translation vector. Such maps are also called isometries.   In case, and both are negative then, we can multiply the whole equation by and we get the a similar expression except, the right hand changes its sign.  In case one of the , say , then the conic tranforms to which is a hyperbola.  In case one of the , say , then the conic tranforms to which is parabola. Here and .  Classification of Conics  Based on the above discussions, the classification of the above conic section depends on the eigenvalues of .     Ellipse: If both eigenvalues have the same sign, then the quadratic is an ellipe of the form .    Circle: When , then the quadratic is circle.    Hyperbola: If eigenvalues have opposite signs, then the quadratic is a hyperbola of the form     Parabola: If one eigenvalue is zero, then it is a parabola.       Condiser the quadratic . Let us convert this quadrtic into a conic section in canonial form.    The associated symmetric matrix of this quadratic is given by It is easy to check the the eigenvalues of are and with the corresponding eigenvectors and . Hence we have The new coordinates in terms of is Now substituting and in the given quadratic, we get After completing the squares, we get This can be written as an equation of ellipes. Note that here the translation vector is given by   Let us explore this in Sage. Here we plot the orginal quadratic curve along with the transformed coordinates.      Consider the quadratic equation . We wish the classify this as a conic section.  Let us first plot the graph of this curve in Sage.   The symmetric matrix associated with quadratic tem is given by . It is easy to check that he eigenvalues are . Since both the eigenvalues are positive, this quadratic is an ellipse. This is what the graph shows.  Now we give all the steps in Sage to plot the curve along with the now coordinate system.     Consider the quadratic eqation given by . Use Sage to classify this and plot the curve along with the transformed coordinates system.     "
 },
 {
   "id": "orthogonal-ex1",
@@ -3527,6 +3527,33 @@ var ptx_lunr_docs = [
   "number": "6.4.9",
   "title": "",
   "body": "  The following are equivalent for an matrix .      is orthogonal.     for all .     for all .     .      "
+},
+{
+  "id": "eg-conic-ellipe1",
+  "level": "2",
+  "url": "sec6-3.html#eg-conic-ellipe1",
+  "type": "Example",
+  "number": "6.4.10",
+  "title": "",
+  "body": "  Condiser the quadratic . Let us convert this quadrtic into a conic section in canonial form.    The associated symmetric matrix of this quadratic is given by It is easy to check the the eigenvalues of are and with the corresponding eigenvectors and . Hence we have The new coordinates in terms of is Now substituting and in the given quadratic, we get After completing the squares, we get This can be written as an equation of ellipes. Note that here the translation vector is given by   Let us explore this in Sage. Here we plot the orginal quadratic curve along with the transformed coordinates.    "
+},
+{
+  "id": "subsec-6-3-quadratic-form-17",
+  "level": "2",
+  "url": "sec6-3.html#subsec-6-3-quadratic-form-17",
+  "type": "Example",
+  "number": "6.4.11",
+  "title": "",
+  "body": " Consider the quadratic equation . We wish the classify this as a conic section.  Let us first plot the graph of this curve in Sage.   The symmetric matrix associated with quadratic tem is given by . It is easy to check that he eigenvalues are . Since both the eigenvalues are positive, this quadratic is an ellipse. This is what the graph shows.  Now we give all the steps in Sage to plot the curve along with the now coordinate system.   "
+},
+{
+  "id": "subsec-6-3-quadratic-form-18",
+  "level": "2",
+  "url": "sec6-3.html#subsec-6-3-quadratic-form-18",
+  "type": "Example",
+  "number": "6.4.12",
+  "title": "",
+  "body": " Consider the quadratic eqation given by . Use Sage to classify this and plot the curve along with the transformed coordinates system.   "
 },
 {
   "id": "sec6-4",
@@ -4444,7 +4471,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "10.3",
   "title": "Sage Practice Area",
-  "body": " Sage Practice Area   You may try out Sage codes here to solve excercises.    Sage Practice Area               "
+  "body": " Sage Practice Area   You may try out Sage codes here to solve excercises.    Sage Practice Area                 "
 },
 {
   "id": "appendix-sage-into-3",
