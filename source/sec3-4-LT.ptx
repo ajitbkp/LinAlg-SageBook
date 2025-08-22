@@ -221,7 +221,7 @@
   </p>
   <figure xml:id="figure-geom-LT">
     <caption>Goemetry of Linear Tranformation</caption>
-    <interactive dark-mode-enabled="yes" xml:id="Geom-LT" platform="sage" width="100%" aspect="4:5">
+    <interactive dark-mode-enabled="yes" xml:id="Geom-LT" platform="sage" width="60%" aspect="1:1">
       <slate surface="sage">
         @interact
         def linear_transformation(A=matrix(QQ,[[1,1/2],[1,-1]]).transpose(),u=vector(QQ,[1,1]),v=vector(QQ,[-1/2,1])):

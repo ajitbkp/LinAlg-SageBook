@@ -7,7 +7,69 @@
     In this section we define the notion of eigenvalues and eigenvectors and look at some of its properties.
     It has several real life applications.   We shall deal with some of them in later sections.
   </p>
+
+  <p>
+  Suppose <m>T</m> is a linear map from a vector space <m>V</m> to itself. 
+  For a given <m>v</m>, <m>T(v)</m> is a vector in <m>V</m>. 
+  Look the <xref ref="fig-eigen1"/> in which image of vectors <m>v_1,\ldots v_{24}</m> 
+  under the linear map <m>T(x,y)=(x/2+y,x+y/2)</m> are shown. Notice that 
+  <m>v_3</m> and <m>T(v_3)</m> are parallel, similarly <m>v_{21}</m> and <m>T(v_{21})</m> are parallel. 
+  
+<figure xml:id="fig-eigen1">
+            <image width="65%" source="images/eigen_fig1.png"/>
+             <caption>Image of vectors under <m>T(x,y)=(x/2+y,x+y/2).</m></caption>.
+</figure>
+ You can also observe that <m>v_{15}</m> and <m>T(v_{15})</m> are parallel, 
+ but this this expected as <m>v_{15}=-v_3</m>. Similarly  
+ <m>v_{9}</m> and <m>T(v_{9})</m> are parallel. Such vectors are called 
+ eigenvectors of <m>T</m>. In particular, <m>v</m> and <m>T(v)</m> are parallel, 
+ then <m>T(v)=\lambda v</m> for some <m>\lambda\in \R</m>, such a <m>\lambda</m>
+ is called the eigenvalue corresonidng to eigenvector <m>v</m>. What happens 
+ if <m>v=0</m>? 
+</p>
+
+<p>
+  You can also explore the same while rotating a vector <m>v</m> and observing 
+  what happens to its image using the interactive diagram below 
+  (see <xref ref="fig-eigen2"/>).
+</p>
+
+<figure xml:id="fig-eigen2">
+    <caption>Exploration of eigenvectors</caption>
+    <interactive dark-mode-enabled="yes" xml:id="Eigen-Applet1" platform="sage" width="80%" aspect="4:5">
+      <slate surface="sage">
+        @ interact
+        def Vec_Circle(nframes=45, A=matrix(QQ,[[1/2, 1],[1, 1/2]])):
+            angles = [2*pi*k/nframes for k in range(nframes)]
+
+            frames = []
+            
+            for theta in angles:
+                # point on the unit circle
+                x = 1/2*cos(theta)
+                y = 1/2*sin(theta)
+                v = vector([x,y])
+                Av = A*v
+                
+                G = plot(v, color="blue")  # moving vector v
+                G += text("$v$",(v[0]+0.05*v[0],v[1]+0.05*v[1]),color='blue')
+                G += plot(Av, color="red")  # moving vector Av
+                G += text("$Av$",(Av[0]+0.05*Av[0],Av[1]+0.05*Av[1]),color='red')
+                G += circle((0,0), 1/2, color="black",ticks=[[],[]])   # unit circle
+                frames.append(G)
+
+            # create and show animation
+            a = animate(frames)
+            show(a)
+     </slate>
+    </interactive>
+</figure>
+
+<p> These exploration leads to the following definition of 
+  eigenvector and eigenvalues.
+</p>
 </introduction>   
+
 
         <definition xml:id="def-eigenvector"><title>Eigenvalues and Eigenvectors</title>
                
