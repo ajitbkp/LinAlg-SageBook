@@ -186,6 +186,7 @@
     <p> In this exampe, we demostrate linear transformation from <m>\R^2</m> to itself using the
       Sage interatact feature. </p>
 
+
     <sage>
       <input>
         <![CDATA[
@@ -214,6 +215,36 @@
       </output>
     </sage>
   </example>
+
+  <p>
+    <term>The follow iteract is generated using slate</term>
+  </p>
+  <figure xml:id="figure-geom-LT">
+    <caption>Goemetry of Linear Tranformation</caption>
+    <interactive dark-mode-enabled="yes" xml:id="Geom-LT" platform="sage" width="100%" aspect="4:5">
+      <slate surface="sage">
+        @interact
+        def linear_transformation(A=matrix(QQ,[[1,1/2],[1,-1]]).transpose(),u=vector(QQ,[1,1]),v=vector(QQ,[-1/2,1])):
+            #u=vector(QQ,[u[0,0],u[0,1]])
+            #v=vector(QQ,[v[0,0],v[0,1]])
+            e=vector(QQ,[1/20,1/10])
+            u1 = A*u
+            v1 = A*v
+            p1=plot(u,color='blue')+plot(v,color='blue')
+            p1=p1+plot(u+v,color='blue')
+            p1=p1+line((u,u+v),linestyle="--",color='blue')
+            p1=p1+line((v,u+v),linestyle="--",color='blue')
+            p2=plot(A*u,color='red')+plot(A*v,color='red')
+            p2=p2+plot(A*(u+v),color='red')
+            p2=p2+line((A*u,A*(u+v)),linestyle="--",color='red')
+            p2=p2+line((A*v,A*(u+v)),linestyle="--",color='red')
+            t=text('$u$',u+e)+text('$v$',v+e)+text('$u+v$',u+v+e)
+            t=t+text('$Au$',A*u+e,color='red')+text('$Av$',A*v+e,color='red')+text('$A(u+v)$',A*(u+v)+e,color='red')
+            show(p1+p2+t,aspect_ratio=1)
+    </slate>
+          </interactive>
+  </figure>
+
 
   <subsection xml:id="subsec-image-tranfromation">
     <title>Image Tranfromation</title>
@@ -431,4 +462,5 @@
     </sage>
 
   </example>
+
 </section>

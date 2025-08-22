@@ -246,4 +246,129 @@ print("Check A = Q*R:", Q*R == A)
 </sage>  
 </activity>
 
+<p>
+  <alert>QR Algorithm for Eigenvalues</alert>
+</p>
+<p>
+  The QR-factorization has many applications of which one of 
+  them is to compute eigenvalues iteratively.  The algorithm is as follows:
+</p>
+<ol>
+  <li>
+    <p>
+    Start with a square matrix <m>A_0 = A</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+    For <m>k = 0,1,2,\ldots</m> do:
+    </p>
+  </li>
+  <li>
+    <p>
+      <ol>
+        <li>Compute the QR decomposition <m>A_k = Q_k R_k</m>.</li>
+        <li>Form <m>A_{k+1} = R_k Q_k</m>.</li>
+      </ol>
+      </p>
+  </li>
+  <li>
+        <p>
+          Continue until convergence, i.e., <m>A_k</m> is (nearly) upper triangular.
+        </p>
+      </li>
+      <li>
+        <p>
+        The eigenvalues are approximated by the diagonal entries of the limiting matrix <m>A_k</m>.
+        </p>
+      </li>
+</ol>
+<p>
+  Let us write a Sage routine to compute the eigenvalues of a square matrix iteratively.
+</p>
+<sage>
+  <input>
+<![CDATA[
+# QR Algorithm for Eigenvalues in SageMath
+def Eigen_QR(A, max_iter=100, tol=1e-10):
+    n = A.nrows()
+    Ak = A.change_ring(RDF)  
+   
+    for i in range(max_iter):
+        Q, R = Ak.QR()  
+        Ak_next = R*Q
+        # Check for convergence (off-diagonal small)
+        if (Ak_next - Ak).norm() < tol:
+            break
+        Ak = Ak_next
+    
+    return [Ak[i,i] for i in range(n)]
+  ]]>
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<p>
+  Next let us call the Sage function to find eigenvalues.
+</p>
+<sage>
+  <input>
+<![CDATA[
+A = matrix([[2, 1],
+            [1, 2]])
+
+eigs = Eigen_QR(A, max_iter=200)
+print("Approximate eigenvalues:", eigs)
+print("Exact eigenvalues:", A.eigenvalues())
+]]>
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+<![CDATA[
+A = matrix([[3, -2,5],[-2,4,-3],[5,-4,7]])
+eigs = Eigen_QR(A, max_iter=200)
+print("Approximate eigenvalues:", eigs)
+print("Exact eigenvalues:", A.eigenvalues())
+]]>
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<p>
+Try your own examples.
+</p>
+
+<sage>
+  <input>
+ ## Sage Practice Area   
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<sage>
+  <input>
+ ## Sage Practice Area   
+  </input>
+  <output>
+    
+  </output>
+</sage>
+<sage>
+  <input>
+ ## Sage Practice Area   
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
 </section>

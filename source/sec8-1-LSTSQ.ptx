@@ -879,6 +879,13 @@ print(fit)
 
     </subsection>
 
+    <subsection xml:id="subsec-LSQ-QR">
+      <title>Least Square Solution us QR-factorization</title>
+    <p>
+      <m>QR</m>-factorization can also be used to find the solution of least square problems.
+    </p>  
+    </subsection>
+
       <subsection xml:id="sec-weigheted-lstsq">
         <title>Weighted Least Square Problems</title>
          <p>

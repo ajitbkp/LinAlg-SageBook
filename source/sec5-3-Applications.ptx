@@ -290,7 +290,7 @@
       </ol>
     </p>
 
-    <example>
+    <example xml:id="ODE-Sys1">
       <statement>
         <p> Solve the following system of linear differential equations <md>
             <mrow>x'=\amp -5x+2y</mrow>
@@ -353,10 +353,72 @@
             [x(t) == -e^(-3*t) + 2*e^(-6*t), y(t) == -e^(-3*t) - e^(-6*t)]
           </output>
         </sage>
+       
       </solution>
 
     </example>
-    <exercise>
+
+
+      <p>
+        <alert>Visulization of Slope Fields</alert>
+      </p>
+      <p>
+         <p>
+          Cosider a system of first order linear ODE  
+          <me>\begin{pmatrix}\frac{dx_1}{dt}\\\frac{dx_2}{dt}\end{pmatrix}
+            = \begin{pmatrix}f_1(x_1,x_2)\\f_2(x_1,x_2)\end{pmatrix}.
+          </me>  
+        </p>
+        Here <m>f_1(x_1,x_2),f_2(x_1,x_2)</m> represnt the velocity vector at each point <m>(x_1,x_2)</m> 
+        at time <m>t</m>. This can be visualized by drawing velocity vectors at large number of grid 
+        points in some domain. This is what is called the slope field.  
+        Geometrically, the slope field describes the <em>flow</em> of the system. Any solution curve 
+        <m>(x_1(t), x_2(t))</m> is  tangent to these arrows at every point along its path.
+      </p>
+      <p>
+        We can vizualize the slope field along with the solution curve in Sage using the 
+        function <c>plot_vector_field</c>. Let us demonstrate 
+        this for the ODE in  <xref ref="ODE-Sys1"/>
+      </p>
+      <sage>
+        <input>
+      x, y, t = var('x y t')
+      F = [5*x +2*y,x-4*y]
+      n = sqrt(F[0]^2 + F[1]^2)
+      F_unit = [F[0]/n, F[1]/n] #set all vectors in the vector field to be same length
+      vf = plot_vector_field(F_unit, (x,-4,4), (y,-4,4), axes_labels=['$x(t)$','$y(t)$'], 
+                  xmax = 4, xmin = -4, ymax = 4, ymin = -4, aspect_ratio=1)
+      show(vf)
+        </input>
+        <output>
+          
+        </output>
+      </sage>
+      <p> Here we have drawn unit slope vectors are all the points.  Along with the 
+        slope field Sage provide a way to vizualise the trajecorty or the solution curve 
+       with a given starting point using the Sage function <c>streamline_plot</c>.
+      </p>
+      <sage>
+        <input>
+x, y, t = var('x y t')
+F = [5*x +2*y,x-4*y]
+n = sqrt(F[0]^2 + F[1]^2)
+F_unit = [F[0]/n, F[1]/n] #set all vectors in the vector field to be same length
+vf = plot_vector_field(F_unit, (x,-4,4), (y,-4,4), axes_labels=['$x(t)$','$y(t)$'], 
+                  xmax = 4, xmin = -4, ymax = 4, ymin = -4, aspect_ratio=1)
+## Plotting Trajectories
+trajectories = streamline_plot(F_unit,(x,-4,4), (y,-4,4))
+## Solutions curves at given initial points.
+sol_curves = streamline_plot(F_unit,(x,-4,4), (y,-4,4),
+start_points=[(0,1.2),(0,-1.2),(-1,0),(1,0)],color='red')
+
+show(vf+trajectories+sol_curves)
+        </input>
+        <output>
+          
+        </output>
+      </sage>
+      <exercise>
       <statement>
         <p> What will be the solution of <md>
             <mrow>x'=\amp -5x+2y</mrow>
@@ -374,55 +436,57 @@
             2 \amp 0 \amp -4 \\
             -1 \amp 1 \amp 5
             \end{pmatrix} x(t), \quad x(0)=\begin{pmatrix}
-            7\\-4\\5
+            0\\1\\-1
             \end{pmatrix}.
           </me>
         </p>
 
       </statement>
       <solution>
-        <p> The eigenvalues of the coefficient matrix <m>A</m> are <me>\lambda_1=1,
-          \lambda_2=2,\lambda_3=3</me> and the corresponding eigenvectors are <me>
-          v_1=\begin{pmatrix} 0\\4\\-1\end{pmatrix},
+        <p> The eigenvalues of the coefficient matrix <m>A</m> are <me>\lambda_1=3,
+          \lambda_2=2,\lambda_3=1</me> and the corresponding eigenvectors are <me>
+          v_1=\begin{pmatrix} 1\\0\\1/2\end{pmatrix},
             v_2=\begin{pmatrix} 1\\1\\0\end{pmatrix},
-            v_3=\begin{pmatrix} 2\\0\\1\end{pmatrix}.
+            v_3=\begin{pmatrix} 0\\1\\-1/4\end{pmatrix}.
           </me>
           Hence a general solution of the given system is given by <md>
-            <mrow>x(t) =\amp c_1e^t\begin{pmatrix} 0\\4\\-1\end{pmatrix}+
+            <mrow>x(t) =\amp c_1e^t\begin{pmatrix} 1\\0\\1/2\end{pmatrix}+
               c_2e^{2t}\begin{pmatrix} 1\\1\\0\end{pmatrix}+
-              c_3e^{3t}\begin{pmatrix} 2\\0\\1\end{pmatrix} </mrow>
+              c_3e^{3t}\begin{pmatrix} 0\\1\\-1/4\end{pmatrix} </mrow>
           </md> Using the given
           initial conditions, we get <me>
             \left(\begin{array}{rrr}
-            0 \amp 1 \amp 2 \\
-            4 \amp 1 \amp 0 \\
-            -1 \amp 0 \amp 1
+            1 \amp 1 \amp 0 \\
+            0 \amp 1 \amp 1 \\
+            1/2 \amp 0 \amp -1/4
             \end{array}\right) \begin{pmatrix}
             c_1\\c_2\\c_3
             \end{pmatrix}=\begin{pmatrix}
-            7\\-4\\5
+            0\\1\\-1
             \end{pmatrix}.
           </me>
-          Solving the above equations, yields, <m>c_1=-1/2, c_2=-2,c_3=9/2</m>. Hence the required
+          Solving the above equations, yields, <m>c_1=-3, c_2=3,c_3=-2</m>. Hence the required
           solution of the problem is <me>
-            x(t)=-1/2e^t\begin{pmatrix} 0\\4\\-1\end{pmatrix}+
-            -2e^{2t}\begin{pmatrix} 1\\1\\0\end{pmatrix}+
-            9/2e^{3t}\begin{pmatrix} 2\\0\\1\end{pmatrix}
+            x(t)=-3e^t\begin{pmatrix} 1\\0\\\frac{1}{2}\end{pmatrix}+
+            3e^{2t}\begin{pmatrix} 1\\1\\0\end{pmatrix}
+            -2e^{t}\begin{pmatrix} 0\\1\\\frac{-1}{4}\end{pmatrix} =
+            \begin{pmatrix} 3*e^{3t} + 3e^{2t}\\ 3e^{2t}- 2e^t\\ -\frac{3}{2}e^{3t} + \frac{1}{2}e^t
+            \end{pmatrix}.
           </me>
-          You may write the each component of the solution. </p>
+           </p>
 
         <sage>
           <input>
             var('t')
             A = matrix([[1,1,4],[2,0,-4],[-1,1,5]])
-            X0=vector([7,-4,5])
+            X0=vector([0,1,-1])
             D,P=A.eigenmatrix_right()
             Y=P*exp(t*D)*P.inverse()
             X=Y*X0
             print(X)
           </input>
           <output>
-            (9*e^(3*t) - 2*e^(2*t), -2*e^(2*t) - 2*e^t, 9/2*e^(3*t) + 1/2*e^t)
+           (-3*e^(3*t) + 3*e^(2*t), 3*e^(2*t) - 2*e^t, -3/2*e^(3*t) + 1/2*e^t)
           </output>
         </sage>
         <p> Using the inbuilt function <c>dessole_system</c>, we have the following. </p>
@@ -437,17 +501,53 @@
             de3 = diff(z,t)== -x+y+5*z
             des = [de1,de2,de3]
             vars = [x,y,z]
-            sol= desolve_system(des, vars,[0,7,-4,5])
+            sol= desolve_system(des, vars,[0,0,1,-1])
             sol
           </input>
           <output>
-
+        [x(t) == -3*e^(3*t) + 3*e^(2*t),
+ y(t) == 3*e^(2*t) - 2*e^t,
+ z(t) == -3/2*e^(3*t) + 1/2*e^t]
+          </output>
+        </sage>
+        <p>
+          We can also visualize the slope field and solution curve in Sage using the 
+          following Sage syntax. 
+        </p>
+        <sage>
+          <input>
+        x,y,z = var('x y z')
+        F =[x+y+4*z,2*x-4*z,-x+y+5*z]
+        n = sqrt(F[0]^2+F[1]^2+F[2]^2)
+        F1 = [F[0]/(10*n),F[1]/(10*n),F[2]/(10*n)]
+        vf = plot_vector_field3d(F,(x,-2,2), (y,-2,2), (z,-2,2), plot_points=10)
+        vf
+          </input>
+          <output>
+            
+          </output>
+        </sage>
+        <sage>
+          <input>
+        t= var('t')
+        x = function('x')(t)
+        y = function('y')(t)
+        z = function('z')(t)
+        de1 = diff(x,t)==x + y+4*z
+        de2 = diff(y,t) == 2*x-4*z
+        de3 = diff(z,t)== -x+y+5*z
+        sol= desolve_system([de1,de2,de3], [x,y,z],[0,0,1,-1])
+        sol_curve = parametric_plot3d((sol[0].rhs(),sol[1].rhs(),sol[2].rhs()),(t,-2.5,0.25),color='black',thickness=2)
+        sol_curve+vf
+          </input>
+          <output>
+            
           </output>
         </sage>
       </solution>
     </example>
-
-    <example>
+   
+   <example>
       <statement>
         <p> Solve the following 2nd order differential equations. Consider the system <md>
             <mrow> x_1''(t)= \amp x_1'+2x_2'-2x_2</mrow>
@@ -503,6 +603,19 @@
           </md>
 
         </p>
+
+        <p>
+          Solve the above problem in Sage.
+        </p>
+        <sage>
+          <input>
+            ## Sage Practice area
+            
+          </input>
+          <output>
+            
+          </output>
+        </sage>
       </solution>
     </example>
 
