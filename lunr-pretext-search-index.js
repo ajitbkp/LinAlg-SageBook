@@ -2410,14 +2410,32 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Eigenvalues and Eigenvectors",
-  "body": " Eigenvalues and Eigenvectors   In this section we define the notion of eigenvalues and eigenvectors and look at some of its properties. It has several real life applications. We shall deal with some of them in later sections.   Eigenvalues and Eigenvectors   Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .      Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.      If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the eiegenvalue 1. The same is true for identity matrix.      Consider the matrix of rotation in anti-clock wise by an angle for . Then it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvectors.     If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .   Let us analyze the notion of eigenvalues and eigenvector. If is a eigenvector corresponding to an eigenvalue . Then . This implies , where is identity matrix. This means that the homogeneous system has a non zero solution, namely . Hence . Notice that is a polynomial (called the characteristic polynomial of ) of degree in . Thus if , then is a root of the the characteristic polynomial . By fundamental theorem of algebra an real matrix can have at most real eigenvalues. The equation is called characteristic equation of .  We can write as . If are roots of the characteristics equation, then using the theory of equations one can show that .  Thus we have the following.    Let be an real matrix. Then (i) the sum of eigenvalues of is the trace of and (ii) the product of eigenvalues is the determeninat of .      Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvector corresponding to the eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?      Let . What are eigenvalues of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .  We can adopt a procedure similar to to show that is an eigenvector corresponding to the eigenvalue . Similarly, are eigenvectors corresponding to the eigenvalue .      Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to       Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.       Let an real matrix and be an eigenvalue of . Then is a subspace of .      is the kernel of .    Eigenspace   Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the geometric multiplicity of .  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .     Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .     The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .      Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of geometric multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.    We list the following properties of eigenvalues and eigenvectors without proof.   Properties of Eigenvalues and Eigenvectors       and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.         Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by          Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.        (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.   In genegarl, let be a polynomial of degree and be an real matrix. Then we can define . If is an eigenvalue of , theh is an eigenvalue of .   Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .      Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by to the equation, , we get , from this we have .  Can you find ?      (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .     Spectral Radius   Let an and for be eigenvalues of then the spectral radius of is define as .      Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .      Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .      Find the spectral radius of and .    Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.      Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.      Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.      If is a positive definite matrix then all its eigenvalues are positive.      If is a negative definite matrix then all its eigenvalues are negative.    We have the following result about positive definite matrices known as Sylvester's criterion . It allows us to determine if a given matrix in positive definite using the leading principal minors of the matrix.  The leading principal minors of a matrix are and the minors obtained by successively removing the last row and the last columns. That is, the leading principal miniors of a matrix are .  Sylvester's Criterion   If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.      Let . For any , we have   Henc e is positive definite.      Let . Show that is positive definite.    Note that if is not a symmetric matrix, then the Sylvester's criteria cannot be used to check positive definiteness. For, condider the matrix . It is easy to see that all principal minors of are positive. For , , however for , .  "
+  "body": " Eigenvalues and Eigenvectors   In this section we define the notion of eigenvalues and eigenvectors and look at some of its properties. It has several real life applications. We shall deal with some of them in later sections.  Suppose is a linear map from a vector space to itself. For a given , is a vector in . Look the in which image of vectors under the linear map are shown. Notice that and are parallel, similarly and are parallel.   Image of vectors under . You can also observe that and are parallel, but this this expected as . Similarly and are parallel. Such vectors are called eigenvectors of . In particular, and are parallel, then for some , such a is called the eigenvalue corresonidng to eigenvector . What happens if ?  You can also explore the same while rotating a vector and observing what happens to its image using the interactive diagram below (see ).   Exploration of eigenvectors    These exploration leads to the following definition of eigenvector and eigenvalues.   Eigenvalues and Eigenvectors   Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .      Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.      If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the eiegenvalue 1. The same is true for identity matrix.      Consider the matrix of rotation in anti-clock wise by an angle for . Then it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvectors.     If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .   Let us analyze the notion of eigenvalues and eigenvector. If is a eigenvector corresponding to an eigenvalue . Then . This implies , where is identity matrix. This means that the homogeneous system has a non zero solution, namely . Hence . Notice that is a polynomial (called the characteristic polynomial of ) of degree in . Thus if , then is a root of the the characteristic polynomial . By fundamental theorem of algebra an real matrix can have at most real eigenvalues. The equation is called characteristic equation of .  We can write as . If are roots of the characteristics equation, then using the theory of equations one can show that .  Thus we have the following.    Let be an real matrix. Then (i) the sum of eigenvalues of is the trace of and (ii) the product of eigenvalues is the determeninat of .      Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvector corresponding to the eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?      Let . What are eigenvalues of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .  We can adopt a procedure similar to to show that is an eigenvector corresponding to the eigenvalue . Similarly, are eigenvectors corresponding to the eigenvalue .      Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to       Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.       Let an real matrix and be an eigenvalue of . Then is a subspace of .      is the kernel of .    Eigenspace   Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the geometric multiplicity of .  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .     Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .     The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .      Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of geometric multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.    We list the following properties of eigenvalues and eigenvectors without proof.   Properties of Eigenvalues and Eigenvectors       and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.         Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by          Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.        (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.   In genegarl, let be a polynomial of degree and be an real matrix. Then we can define . If is an eigenvalue of , theh is an eigenvalue of .   Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .      Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by to the equation, , we get , from this we have .  Can you find ?      (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .     Spectral Radius   Let an and for be eigenvalues of then the spectral radius of is define as .      Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .      Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .      Find the spectral radius of and .    Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.      Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.      Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.      If is a positive definite matrix then all its eigenvalues are positive.      If is a negative definite matrix then all its eigenvalues are negative.    We have the following result about positive definite matrices known as Sylvester's criterion . It allows us to determine if a given matrix in positive definite using the leading principal minors of the matrix.  The leading principal minors of a matrix are and the minors obtained by successively removing the last row and the last columns. That is, the leading principal miniors of a matrix are .  Sylvester's Criterion   If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.      Let . For any , we have   Henc e is positive definite.      Let . Show that is positive definite.    Note that if is not a symmetric matrix, then the Sylvester's criteria cannot be used to check positive definiteness. For, condider the matrix . It is easy to see that all principal minors of are positive. For , , however for , .  "
+},
+{
+  "id": "fig-eigen1",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#fig-eigen1",
+  "type": "Figure",
+  "number": "5.1.1",
+  "title": "",
+  "body": "  Image of vectors under . "
+},
+{
+  "id": "fig-eigen2",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#fig-eigen2",
+  "type": "Figure",
+  "number": "5.1.2",
+  "title": "",
+  "body": " Exploration of eigenvectors   "
 },
 {
   "id": "def-eigenvector",
   "level": "2",
   "url": "sec5-1-eigen-intro.html#def-eigenvector",
   "type": "Definition",
-  "number": "5.1.1",
+  "number": "5.1.3",
   "title": "Eigenvalues and Eigenvectors.",
   "body": "Eigenvalues and Eigenvectors   Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .   "
 },
@@ -2426,7 +2444,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-4",
   "type": "Example",
-  "number": "5.1.2",
+  "number": "5.1.4",
   "title": "",
   "body": "  Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.   "
 },
@@ -2435,7 +2453,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-5",
   "type": "Example",
-  "number": "5.1.3",
+  "number": "5.1.5",
   "title": "",
   "body": "  If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the eiegenvalue 1. The same is true for identity matrix.   "
 },
@@ -2444,7 +2462,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-6",
   "type": "Example",
-  "number": "5.1.4",
+  "number": "5.1.6",
   "title": "",
   "body": "  Consider the matrix of rotation in anti-clock wise by an angle for . Then it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvectors.   "
 },
@@ -2453,7 +2471,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-7",
   "type": "Remark",
-  "number": "5.1.5",
+  "number": "5.1.7",
   "title": "",
   "body": " If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .  "
 },
@@ -2462,7 +2480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#thm-sum-produc-eiegn",
   "type": "Theorem",
-  "number": "5.1.6",
+  "number": "5.1.8",
   "title": "",
   "body": "  Let be an real matrix. Then (i) the sum of eigenvalues of is the trace of and (ii) the product of eigenvalues is the determeninat of .   "
 },
@@ -2471,7 +2489,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#eigen_eg0",
   "type": "Example",
-  "number": "5.1.7",
+  "number": "5.1.9",
   "title": "",
   "body": "  Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvector corresponding to the eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?   "
 },
@@ -2480,7 +2498,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#eigen_eg0b",
   "type": "Example",
-  "number": "5.1.8",
+  "number": "5.1.10",
   "title": "",
   "body": "  Let . What are eigenvalues of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .  We can adopt a procedure similar to to show that is an eigenvector corresponding to the eigenvalue . Similarly, are eigenvectors corresponding to the eigenvalue .   "
 },
@@ -2489,7 +2507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#eigen_eg1",
   "type": "Example",
-  "number": "5.1.9",
+  "number": "5.1.11",
   "title": "",
   "body": "  Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to    "
 },
@@ -2498,7 +2516,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-15",
   "type": "Example",
-  "number": "5.1.10",
+  "number": "5.1.12",
   "title": "",
   "body": "  Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.   "
 },
@@ -2525,7 +2543,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#def-eigenspace",
   "type": "Definition",
-  "number": "5.1.11",
+  "number": "5.1.13",
   "title": "Eigenspace.",
   "body": "Eigenspace   Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the geometric multiplicity of .  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .   "
 },
@@ -2534,7 +2552,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-18",
   "type": "Remark",
-  "number": "5.1.12",
+  "number": "5.1.14",
   "title": "",
   "body": " Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .  "
 },
@@ -2543,7 +2561,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-19",
   "type": "Checkpoint",
-  "number": "5.1.13",
+  "number": "5.1.15",
   "title": "",
   "body": "  The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .   "
 },
@@ -2552,7 +2570,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#eigen-eg117",
   "type": "Example",
-  "number": "5.1.14",
+  "number": "5.1.16",
   "title": "",
   "body": "  Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of geometric multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.   "
 },
@@ -2561,7 +2579,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#eigen-properties",
   "type": "Theorem",
-  "number": "5.1.15",
+  "number": "5.1.17",
   "title": "Properties of Eigenvalues and Eigenvectors.",
   "body": " Properties of Eigenvalues and Eigenvectors       and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.      "
 },
@@ -2570,7 +2588,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-23",
   "type": "Example",
-  "number": "5.1.16",
+  "number": "5.1.18",
   "title": "",
   "body": "  Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by    "
 },
@@ -2579,7 +2597,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-24",
   "type": "Theorem",
-  "number": "5.1.17",
+  "number": "5.1.19",
   "title": "",
   "body": "     Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.      "
 },
@@ -2597,7 +2615,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-27",
   "type": "Theorem",
-  "number": "5.1.18",
+  "number": "5.1.20",
   "title": "Cayley-Hamilton Theorem.",
   "body": " Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .   "
 },
@@ -2606,7 +2624,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-28",
   "type": "Example",
-  "number": "5.1.19",
+  "number": "5.1.21",
   "title": "",
   "body": "  Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by to the equation, , we get , from this we have .  Can you find ?   "
 },
@@ -2615,7 +2633,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-29",
   "type": "Checkpoint",
-  "number": "5.1.20",
+  "number": "5.1.22",
   "title": "",
   "body": "  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .   "
 },
@@ -2624,7 +2642,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#def-spectral-radius",
   "type": "Definition",
-  "number": "5.1.21",
+  "number": "5.1.23",
   "title": "Spectral Radius.",
   "body": " Spectral Radius   Let an and for be eigenvalues of then the spectral radius of is define as .   "
 },
@@ -2633,7 +2651,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-31",
   "type": "Example",
-  "number": "5.1.22",
+  "number": "5.1.24",
   "title": "",
   "body": "  Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .   "
 },
@@ -2642,7 +2660,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-32",
   "type": "Example",
-  "number": "5.1.23",
+  "number": "5.1.25",
   "title": "",
   "body": "  Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .   "
 },
@@ -2651,7 +2669,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-33",
   "type": "Checkpoint",
-  "number": "5.1.24",
+  "number": "5.1.26",
   "title": "",
   "body": "  Find the spectral radius of and .   "
 },
@@ -2660,7 +2678,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-34",
   "type": "Definition",
-  "number": "5.1.25",
+  "number": "5.1.27",
   "title": "Positive definite matrix.",
   "body": "Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.   "
 },
@@ -2669,7 +2687,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-35",
   "type": "Example",
-  "number": "5.1.26",
+  "number": "5.1.28",
   "title": "",
   "body": "  Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.   "
 },
@@ -2678,7 +2696,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-36",
   "type": "Example",
-  "number": "5.1.27",
+  "number": "5.1.29",
   "title": "",
   "body": "  Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.   "
 },
@@ -2687,7 +2705,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-37",
   "type": "Checkpoint",
-  "number": "5.1.28",
+  "number": "5.1.30",
   "title": "",
   "body": "  If is a positive definite matrix then all its eigenvalues are positive.   "
 },
@@ -2696,7 +2714,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-38",
   "type": "Checkpoint",
-  "number": "5.1.29",
+  "number": "5.1.31",
   "title": "",
   "body": "  If is a negative definite matrix then all its eigenvalues are negative.   "
 },
@@ -2705,7 +2723,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#thm-sylvyster",
   "type": "Theorem",
-  "number": "5.1.30",
+  "number": "5.1.32",
   "title": "Sylvester’s Criterion.",
   "body": "Sylvester's Criterion   If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.   "
 },
@@ -2714,7 +2732,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-42",
   "type": "Example",
-  "number": "5.1.31",
+  "number": "5.1.33",
   "title": "",
   "body": "  Let . For any , we have   Henc e is positive definite.   "
 },
@@ -2723,7 +2741,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-43",
   "type": "Checkpoint",
-  "number": "5.1.32",
+  "number": "5.1.34",
   "title": "",
   "body": "  Let . Show that is positive definite.   "
 },
