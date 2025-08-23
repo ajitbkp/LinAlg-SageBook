@@ -24,11 +24,42 @@ L(S):=\{\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k:\alpha_1,\cdots,\alpha_k\in \
     Note that if <m>x\in L(S)</m> means there exist scalars <m>\alpha_1,\ldots,\alpha_k \in \R</m> such that 
     <m>x=\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_kv_k</m>.
 </p>
+<p>
+    Look the interactive demo for linear span to two vectors in <m>\R^2</m>. 
+    You can change vectors and scalars and see what is the linear combinations.
+</p>
+
+<figure xml:id="figure-linear-span-demo">
+    <caption>Linear span of two vetors in <m>\R^2</m></caption>
+    <interactive dark-mode-enabled="yes" xml:id="Linear-Span" 
+    platform="sage" width="100%" aspect="1:1">
+      <slate surface="sage">
+        @interact
+def lincomb(v1 = vector(QQ,[1,1]),v2 = vector(QQ,[-1,1/2]),
+            a = slider(-2,2,0.2,default=1.2,label="$\alpha_1$"),
+            b = slider(-2,2,0.2,default=0.5,label="$\alpha_2$")):
+    p = plot(v1,color='red')
+    p += plot(v2,color='blue')
+    p += plot(a*v1,color='red')
+    p += plot(b*v2,color='blue')
+    v = a*v1+b*v2
+    p += plot(v, color='green')
+    p += line([a*v1,v],linestyle="--")
+    p += line([b*v2,v],linestyle="--")
+    p += text("$v_1$",(v1[0],v1[1]))
+    p += text("$v_2$",(v2[0],v2[1]))
+    p += text("$\\alpha_1v_1$",(a*v1[0],a*v1[1]))
+    p += text("$\\alpha_2v_2$",(b*v2[0],b*v2[1]))
+    p += text("$\\alpha_1v_1+\\alpha_2v_2$",(v[0],v[1]))
+    
+    show(p,xmin=-4,xmax=4,ymin=-4,ymax=4)
+
+    </slate>
+          </interactive>
+  </figure>
 
     <example  xml:id="sec2-1-eg-linspan-as-vs">
     <p>
-        
-   
  Let <m>S=\{v_1, v_2,\ldots, v_k\}</m> be a subset of vectors in <m>\R^n</m>. Then show that <m>L(S)</m> is a vector subspace of <m>\R^n</m>.
     </p>
 

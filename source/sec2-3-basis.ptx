@@ -377,17 +377,65 @@ Thus <me>
           </p>
         </statement>
     </definition>
+<p>
+  Basis give rise to a new coordinate system. We are familiar 
+  with the standard (cartesian) coordinate system and how to find 
+  coordinates of a given vector about the standard coordinates system. 
 
-    <p>
-      Notice that the order in which basis vectors appear is important. 
+  Look at two different coordinates system below. 
+</p>
+      <sidebyside widths="45% 45%" valigns="middle top middle">
+          <figure>
+            <caption>Coordinate system w.r.t. basis  <m>\beta_1</m></caption>
+            <image source="images/2nd_coordinates"/>
+          </figure>
+          <figure>
+            <caption>Coordinate system w.r.t. basis  <m>\beta_2</m></caption>
+            <image source="images/3rd_coordinates"/>
+          </figure>
+         </sidebyside>
+        
+    
+<example xml:id="coodinates_figure1">
+ <statement>
+  <p>
+  Let <m>\beta=\{v_1=(1,1),v_2=(-1/2,1)\}</m>. It is easy to check that 
+  <m>\beta</m> is a basis of <m>\R^2</m>. Consider two vectors <m>v=(3/2,3)</m>
+  and <m>w=-2v_1+3v_2 =(-7/2,-1)</m>. 
+  Look at the <xref ref="coordinate_change_fig1"/> in which the 
+  coordinate system with repext to <m>\beta</m> is shown.
+
+ 
+  <figure xml:id="coordinate_change_fig1">
+	<sidebyside width="60%">
+	  <image source="images/coordinate_change_fig1" />
+	</sidebyside>
+	 <caption>Coordinates system w.r.t. basis  <m>\beta=\{v_1,v_2\}</m>
+  </caption>
+               </figure>
+
+               Goemtrically it  is clear that <m>v=2v_1+v2</m> and 
+               <m>w=-2v_2+3v_2</m>. Thus the coordinates of 
+               <m>v</m> and with respect to <m>\beta</m> are <m>(2,1)</m>  and 
+               <m>(-2,3)</m> respectively. (verify)
+    
+               Do you see how we have found these coordinates?
+              </p>
+ </statement> 
+</example>
+
+      <remark>
+    <p>  Note that the order in which basis vectors appear is important. 
       Suppose <m>\beta'=\{v_2,v_2,v_3\ldots, v_n\}</m>. 
       Then <m>\beta'</m> is also a basis of <m>\R^n</m>. However the coordinates of 
       <m>x</m> with respect to the basis <m>\beta'</m> is 
       <m>x_2,x_1,x_3,\ldots,x_n</m>. This is the reason basis of 
       <m>\R^n</m> is called an <alert>ordered basis</alert>. By a basis we will always mean 
-      an ordered basis.
-    </p>
-
+      an ordered basis. 
+       </p> 
+      </remark>
+      
+   
     <p>
       <alert>How to find the coordinates of a vector w.r.t. a given basis?</alert>
     </p>
