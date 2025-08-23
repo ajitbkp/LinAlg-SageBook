@@ -118,29 +118,25 @@ window.MathJax = {
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<div style="width:480px; height:600px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">@ interact
-def Vec_Circle(nframes=45, A=matrix(QQ,[[1/2, 1],[1, 1/2]])):
-    angles = [2*pi*k/nframes for k in range(nframes)]
-
-    frames = []
+<div style="width:600px; height:600px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">        @interact
+def lincomb(v1 = vector(QQ,[1,1]),v2 = vector(QQ,[-1,1/2]),
+            a = slider(-2,2,0.2,default=1.2,label="$\alpha_1$"),
+            b = slider(-2,2,0.2,default=0.5,label="$\alpha_2$")):
+    p = plot(v1,color='red')
+    p += plot(v2,color='blue')
+    p += plot(a*v1,color='red')
+    p += plot(b*v2,color='blue')
+    v = a*v1+b*v2
+    p += plot(v, color='green')
+    p += line([a*v1,v],linestyle="--")
+    p += line([b*v2,v],linestyle="--")
+    p += text("$v_1$",(v1[0],v1[1]))
+    p += text("$v_2$",(v2[0],v2[1]))
+    p += text("$\\alpha_1v_1$",(a*v1[0],a*v1[1]))
+    p += text("$\\alpha_2v_2$",(b*v2[0],b*v2[1]))
+    p += text("$\\alpha_1v_1+\\alpha_2v_2$",(v[0],v[1]))
     
-    for theta in angles:
-        # point on the unit circle
-        x = 1/2*cos(theta)
-        y = 1/2*sin(theta)
-        v = vector([x,y])
-        Av = A*v
-        
-        G = plot(v, color="blue")  # moving vector v
-        G += text("$v$",(v[0]+0.05*v[0],v[1]+0.05*v[1]),color='blue')
-        G += plot(Av, color="red")  # moving vector Av
-        G += text("$Av$",(Av[0]+0.05*Av[0],Av[1]+0.05*Av[1]),color='red')
-        G += circle((0,0), 1/2, color="black",ticks=[[],[]])   # unit circle
-        frames.append(G)
-
-    # create and show animation
-    a = animate(frames)
-    show(a)
+    show(p,xmin=-4,xmax=4,ymin=-4,ymax=4)
 </script></pre></div>
 </body>
 </html>

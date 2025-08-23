@@ -682,7 +682,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Linear Spans",
-  "body": " Linear Spans   In this section we define linear span of a subset of and look at several example. We also look at an important class of suspaces associated with a matrix.     Let be a non empty subset of vectors in . Then the linear span of , denoted by is a subset of defined as     Note that if means there exist scalars such that .   Let be a subset of vectors in . Then show that is a vector subspace of .   Let , then by definitions there exist scalars such that and there exist another set of scalars such that . Hence The readers should understand what the properties of vector addition and scalar multiplications are used above.  Next, let be a scalar, then . This shows that is a vector subspace of .    Try to prove the following.     If is a non-zero vector in , then is a the line passing through origin and . We shall denote by .    Let . Then .    Let , then .    Let , then is the -plane given by the equation .    Let , then .     . Then is a plane passing through the origin and the two points . Can you find the scalars such that is the plane represented by the equation ?    Let . Then .      Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem.  We need to show that , that is, and . Let us define for convenience. Clearly by, definition, . To show , we let . We need to find scalars, say such that . As a vector, . It is easy to check that the above system has a unique solution as rank of is 3 (This can be easily verified by Sage). Hence and hence . Hence we have .      Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets      . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range space or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .     The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix .   "
+  "body": " Linear Spans   In this section we define linear span of a subset of and look at several example. We also look at an important class of suspaces associated with a matrix.     Let be a non empty subset of vectors in . Then the linear span of , denoted by is a subset of defined as     Note that if means there exist scalars such that .  Look the interactive demo for linear span to two vectors in . You can change vectors and scalars and see what is the linear combinations.   Linear span of two vetors in     Let be a subset of vectors in . Then show that is a vector subspace of .   Let , then by definitions there exist scalars such that and there exist another set of scalars such that . Hence The readers should understand what the properties of vector addition and scalar multiplications are used above.  Next, let be a scalar, then . This shows that is a vector subspace of .    Try to prove the following.     If is a non-zero vector in , then is a the line passing through origin and . We shall denote by .    Let . Then .    Let , then .    Let , then is the -plane given by the equation .    Let , then .     . Then is a plane passing through the origin and the two points . Can you find the scalars such that is the plane represented by the equation ?    Let . Then .      Solution of all the problmes listed are easy verifications. Let us write a detailed proof of the last problem.  We need to show that , that is, and . Let us define for convenience. Clearly by, definition, . To show , we let . We need to find scalars, say such that . As a vector, . It is easy to check that the above system has a unique solution as rank of is 3 (This can be easily verified by Sage). Hence and hence . Hence we have .      Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets      . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range space or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .     The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix .   "
 },
 {
   "id": "def-sec2-1-linear-span",
@@ -694,11 +694,20 @@ var ptx_lunr_docs = [
   "body": "  Let be a non empty subset of vectors in . Then the linear span of , denoted by is a subset of defined as    "
 },
 {
+  "id": "figure-linear-span-demo",
+  "level": "2",
+  "url": "sec2-1-LinSpan.html#figure-linear-span-demo",
+  "type": "Figure",
+  "number": "2.2.2",
+  "title": "",
+  "body": " Linear span of two vetors in   "
+},
+{
   "id": "sec2-1-eg-linspan-as-vs",
   "level": "2",
   "url": "sec2-1-LinSpan.html#sec2-1-eg-linspan-as-vs",
   "type": "Example",
-  "number": "2.2.2",
+  "number": "2.2.3",
   "title": "",
   "body": " Let be a subset of vectors in . Then show that is a vector subspace of .   Let , then by definitions there exist scalars such that and there exist another set of scalars such that . Hence The readers should understand what the properties of vector addition and scalar multiplications are used above.  Next, let be a scalar, then . This shows that is a vector subspace of .  "
 },
@@ -716,7 +725,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec2-1-LinSpan.html#sec2-1-matrix-spaces",
   "type": "Example",
-  "number": "2.2.3",
+  "number": "2.2.4",
   "title": "Matrix Spaces.",
   "body": " Matrix Spaces  Let be a real matrix. For any vector , . Consider the following subsets      . It is easy to check that is a subspace of called the null space of or kernel of .     is a subspace of , called the image space or range space or column space of . It is easy to see that for , is linear combinations of columns of . We also denote by .     is a subspace of called the left null space of .    Suppose we write rows of as . Then each is a vector in . Then linear span of is called the row space of denoted by . It turns out that is a subspace of .     The four subspaces, namely , , and are called the fundamental subspaces associated with a matrix .  "
 },
@@ -808,7 +817,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Basis and Dimension",
-  "body": " Basis and Dimension   In this section, we define basis of a subspace and also deal with coordinates of a vector with respect to a basis.    Basis  Basis   A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of . Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .  Similarly one can define a basis of any subspace of .     It is easy to prove the follwoing theorem which is opent taken as definition in many books.    A set of vectors is called a basis of iff (i) and is linearly independent.     (i) is a basis of called the standard basis of .  (ii) is a basis of .  (iii) is a basis of called the standard basis of .  (iv) is a basis of .   In , we define where component is 1 rest are zeros. Then it is easy to see that is a bais of called the standard basis .   Consider the plane . Note that, here and can be thought of as free variables. Any point , we have Thus spans . It is easy to see that is linearly independent. Hence is a basis of . In fact, any two vectors in which are linearly independent form a basis of .     Any set of linearly independent vectors forms a basis of .     Follows from Theorem .     Let be a basis of a subsapce of with elements. Then any set with elements is linearly dependent.     Let be scalars such that Since is a basis of , for each , we have Substituting this in Equation , we get Collecting the coefficients of in the Equation , we get Since is lineary independent, we have  These are homogeneous linear equations in variables . Hence it has a non zero solution. In particular, there exist scalars, not all zero such that . Hence is linearly dependent.    Let be a basis of a subscape of with elements. If is a linearly independet subset in , then .      Let and be two bases of a subscape of . Then and have the same number of elements.     Suppose and . Since is a basis and is linearly independet, by Corollary , . Similarly is a basis and is linearly independet, we have . Hence .     Dimension of Subspaces  Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.    Let be subspace of . The number of elements in a basis of is called the dimension of .     (i) is a -dimensional vector space over .  (ii) Any plane passing through origin in is a 2 dimensional subspace.  (iii) is dimensional subspace of . Write down a basis of .  (iv) is a 2-dimensional subspace of . Write down a basis of .    How to find basis of a subspace ?   Suppose is subspace spanned by a set of vectors, say, in . How to find a basis of ? Note that . In order to find a basis of , we construct a matrix whose rows are . Find the reduced-row-echelon form of . Then the non-zero rows in RREF( ) form a basis of .   Consider the set of vectors , , , and . Let be the linear span of . Let us find a basis and hence the dimension of .  We construct the matrix whose rows are and apply RREF. Thus has a basis consisting of three non zero rows of . That is, is basis of and it is a 3 dimensional subspace of . Note that is also the row space of . Note that each column of is a vector in . Let us find the column space of . Thus to find the , we take the transpose of and apply the RREF.  Thus the basis of consists of three non-zero rows of . Thus is a basis of . Notice that .     The is called the column rank of and is called the row rank of .      The row rank and column rank of any matrix are same. This is called the rank of the matrix.     Consider a matrix . Let us find the null space of . That is, find a basis of . The null space of is given by Thus and is a basis of . The is called the nullity of . Notice that for this matrix This is true for any matrix .     Consider the matrix . Let us find the image space, of . Let lies in then there exists such that , In particular has a solution. Thus to find a solution we apply the RREF to the augmented matrix . It is easy to see that This means that has a solution iff . Solving these equations, it is easy to see that Thus is a basis of which is same as the column space of . Note that is null space of the matrix .     Let be real matrix. Then .      Let be a basis of . Let . Then we know that there exists unique scalars such that . Then are called the coordinates of with respect to the basis .    Notice that the order in which basis vectors appear is important. Suppose . Then is also a basis of . However the coordinates of with respect to the basis is . This is the reason basis of is called an ordered basis . By a basis we will always mean an ordered basis.   How to find the coordinates of a vector w.r.t. a given basis?   Suppose be a basis of and . How to find the coordinates of with respect to ? Let . We need to find . Note that Thus to find , we need to solve , where is the matrix whose columns are . This can be done using the RREF. Let us illustrate this with few examples.   If . Then . In particular is the coordinate of with respect to the standard basis .    Consider a basis . Find the coordinates of with respect to . In order to find the coordinates of with respect to , we solve the system where and . Using RREF Hence the coordinates of w.r.t. is .    Find the coordinates of the vector with respect to a basis\\\\ of . Using the RREF we have Hence the coordinates of with respect the given basis is .    Find the coordinates of the vector with respect to a basis of . Using the RREF we have Hence the coordinates of with respect the given basis is .     Change of bases.  Let and be two bases of . Fix a vector . Let and be the coordinates of with respect to and respectively. Then we have   Similarly Thus we have The matrices and are called transition matrices . We denotes by and by . Note that   Furthermore, the transition matrix can be obtained by applying RREF to the and extracting the last columns. Let us illustrate this with an example.   Consider two bases  and . Consider a vector . We have First we find and .  Similarly  Now to find the transition matrix , we have  It is easy to verify that . Similarly to find the transition matrix , we have  It is easy to verify that .     What are all subspaces of and ?      If is a subspace of , then it is null space of some matrix.    We end this chapter by look at a bigger example. Here we also illustrate RREF gives several informations on a matrix.   Consider a set of 7 vectors .  Define the matrix whose columns are and apply RREF to .  From the RREF of , we have the following observations: (i) The reduced row-echelon form of has 5 non zero rows. This means the rank of is 5. In particular, is singular.  (ii) The pivots columns are 1, 2, 4, 5, 7. In particular, are linearly independent and forms a basis of the subspace spanned by .  (iii) The 3rd columns gives as linear combinations of and . In particular, . Similarly .  (iv) Since rank of is 5, the nullity of is 2.  (v) First five rows of constitute a basis of the row space of .     "
+  "body": " Basis and Dimension   In this section, we define basis of a subspace and also deal with coordinates of a vector with respect to a basis.    Basis  Basis   A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of . Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .  Similarly one can define a basis of any subspace of .     It is easy to prove the follwoing theorem which is opent taken as definition in many books.    A set of vectors is called a basis of iff (i) and is linearly independent.     (i) is a basis of called the standard basis of .  (ii) is a basis of .  (iii) is a basis of called the standard basis of .  (iv) is a basis of .   In , we define where component is 1 rest are zeros. Then it is easy to see that is a bais of called the standard basis .   Consider the plane . Note that, here and can be thought of as free variables. Any point , we have Thus spans . It is easy to see that is linearly independent. Hence is a basis of . In fact, any two vectors in which are linearly independent form a basis of .     Any set of linearly independent vectors forms a basis of .     Follows from Theorem .     Let be a basis of a subsapce of with elements. Then any set with elements is linearly dependent.     Let be scalars such that Since is a basis of , for each , we have Substituting this in Equation , we get Collecting the coefficients of in the Equation , we get Since is lineary independent, we have  These are homogeneous linear equations in variables . Hence it has a non zero solution. In particular, there exist scalars, not all zero such that . Hence is linearly dependent.    Let be a basis of a subscape of with elements. If is a linearly independet subset in , then .      Let and be two bases of a subscape of . Then and have the same number of elements.     Suppose and . Since is a basis and is linearly independet, by Corollary , . Similarly is a basis and is linearly independet, we have . Hence .     Dimension of Subspaces  Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.    Let be subspace of . The number of elements in a basis of is called the dimension of .     (i) is a -dimensional vector space over .  (ii) Any plane passing through origin in is a 2 dimensional subspace.  (iii) is dimensional subspace of . Write down a basis of .  (iv) is a 2-dimensional subspace of . Write down a basis of .    How to find basis of a subspace ?   Suppose is subspace spanned by a set of vectors, say, in . How to find a basis of ? Note that . In order to find a basis of , we construct a matrix whose rows are . Find the reduced-row-echelon form of . Then the non-zero rows in RREF( ) form a basis of .   Consider the set of vectors , , , and . Let be the linear span of . Let us find a basis and hence the dimension of .  We construct the matrix whose rows are and apply RREF. Thus has a basis consisting of three non zero rows of . That is, is basis of and it is a 3 dimensional subspace of . Note that is also the row space of . Note that each column of is a vector in . Let us find the column space of . Thus to find the , we take the transpose of and apply the RREF.  Thus the basis of consists of three non-zero rows of . Thus is a basis of . Notice that .     The is called the column rank of and is called the row rank of .      The row rank and column rank of any matrix are same. This is called the rank of the matrix.     Consider a matrix . Let us find the null space of . That is, find a basis of . The null space of is given by Thus and is a basis of . The is called the nullity of . Notice that for this matrix This is true for any matrix .     Consider the matrix . Let us find the image space, of . Let lies in then there exists such that , In particular has a solution. Thus to find a solution we apply the RREF to the augmented matrix . It is easy to see that This means that has a solution iff . Solving these equations, it is easy to see that Thus is a basis of which is same as the column space of . Note that is null space of the matrix .     Let be real matrix. Then .      Let be a basis of . Let . Then we know that there exists unique scalars such that . Then are called the coordinates of with respect to the basis .    Basis give rise to a new coordinate system. We are familiar with the standard (cartesian) coordinate system and how to find coordinates of a given vector about the standard coordinates system. Look at two different coordinates system below.    Coordinate system w.r.t. basis     Coordinate system w.r.t. basis       Let . It is easy to check that is a basis of . Consider two vectors and . Look at the in which the coordinate system with repext to is shown.     Coordinates system w.r.t. basis   Goemtrically it is clear that and . Thus the coordinates of and with respect to are and respectively. (verify) Do you see how we have found these coordinates?     Note that the order in which basis vectors appear is important. Suppose . Then is also a basis of . However the coordinates of with respect to the basis is . This is the reason basis of is called an ordered basis . By a basis we will always mean an ordered basis.    How to find the coordinates of a vector w.r.t. a given basis?   Suppose be a basis of and . How to find the coordinates of with respect to ? Let . We need to find . Note that Thus to find , we need to solve , where is the matrix whose columns are . This can be done using the RREF. Let us illustrate this with few examples.   If . Then . In particular is the coordinate of with respect to the standard basis .    Consider a basis . Find the coordinates of with respect to . In order to find the coordinates of with respect to , we solve the system where and . Using RREF Hence the coordinates of w.r.t. is .    Find the coordinates of the vector with respect to a basis\\\\ of . Using the RREF we have Hence the coordinates of with respect the given basis is .    Find the coordinates of the vector with respect to a basis of . Using the RREF we have Hence the coordinates of with respect the given basis is .     Change of bases.  Let and be two bases of . Fix a vector . Let and be the coordinates of with respect to and respectively. Then we have   Similarly Thus we have The matrices and are called transition matrices . We denotes by and by . Note that   Furthermore, the transition matrix can be obtained by applying RREF to the and extracting the last columns. Let us illustrate this with an example.   Consider two bases  and . Consider a vector . We have First we find and .  Similarly  Now to find the transition matrix , we have  It is easy to verify that . Similarly to find the transition matrix , we have  It is easy to verify that .     What are all subspaces of and ?      If is a subspace of , then it is null space of some matrix.    We end this chapter by look at a bigger example. Here we also illustrate RREF gives several informations on a matrix.   Consider a set of 7 vectors .  Define the matrix whose columns are and apply RREF to .  From the RREF of , we have the following observations: (i) The reduced row-echelon form of has 5 non zero rows. This means the rank of is 5. In particular, is singular.  (ii) The pivots columns are 1, 2, 4, 5, 7. In particular, are linearly independent and forms a basis of the subspace spanned by .  (iii) The 3rd columns gives as linear combinations of and . In particular, . Similarly .  (iv) Since rank of is 5, the nullity of is 2.  (v) First five rows of constitute a basis of the row space of .     "
 },
 {
   "id": "def-sec2-2-LI",
@@ -991,38 +1000,74 @@ var ptx_lunr_docs = [
   "body": "  Let be a basis of . Let . Then we know that there exists unique scalars such that . Then are called the coordinates of with respect to the basis .   "
 },
 {
-  "id": "subsec-dimension-intro-17",
+  "id": "subsec-dimension-intro-15-1",
   "level": "2",
-  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-17",
-  "type": "Example",
+  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-15-1",
+  "type": "Figure",
   "number": "2.4.18",
   "title": "",
-  "body": " If . Then . In particular is the coordinate of with respect to the standard basis .  "
+  "body": " Coordinate system w.r.t. basis   "
 },
 {
-  "id": "subsec-dimension-intro-18",
+  "id": "subsec-dimension-intro-15-2",
   "level": "2",
-  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-18",
-  "type": "Example",
+  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-15-2",
+  "type": "Figure",
   "number": "2.4.19",
   "title": "",
-  "body": " Consider a basis . Find the coordinates of with respect to . In order to find the coordinates of with respect to , we solve the system where and . Using RREF Hence the coordinates of w.r.t. is .  "
+  "body": " Coordinate system w.r.t. basis   "
 },
 {
-  "id": "subsec-dimension-intro-19",
+  "id": "coodinates_figure1",
   "level": "2",
-  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-19",
+  "url": "sec-2-3-basis-dimension.html#coodinates_figure1",
   "type": "Example",
   "number": "2.4.20",
   "title": "",
-  "body": " Find the coordinates of the vector with respect to a basis\\\\ of . Using the RREF we have Hence the coordinates of with respect the given basis is .  "
+  "body": "  Let . It is easy to check that is a basis of . Consider two vectors and . Look at the in which the coordinate system with repext to is shown.     Coordinates system w.r.t. basis   Goemtrically it is clear that and . Thus the coordinates of and with respect to are and respectively. (verify) Do you see how we have found these coordinates?   "
+},
+{
+  "id": "subsec-dimension-intro-17",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-17",
+  "type": "Remark",
+  "number": "2.4.22",
+  "title": "",
+  "body": " Note that the order in which basis vectors appear is important. Suppose . Then is also a basis of . However the coordinates of with respect to the basis is . This is the reason basis of is called an ordered basis . By a basis we will always mean an ordered basis.  "
 },
 {
   "id": "subsec-dimension-intro-20",
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-20",
   "type": "Example",
-  "number": "2.4.21",
+  "number": "2.4.23",
+  "title": "",
+  "body": " If . Then . In particular is the coordinate of with respect to the standard basis .  "
+},
+{
+  "id": "subsec-dimension-intro-21",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-21",
+  "type": "Example",
+  "number": "2.4.24",
+  "title": "",
+  "body": " Consider a basis . Find the coordinates of with respect to . In order to find the coordinates of with respect to , we solve the system where and . Using RREF Hence the coordinates of w.r.t. is .  "
+},
+{
+  "id": "subsec-dimension-intro-22",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-22",
+  "type": "Example",
+  "number": "2.4.25",
+  "title": "",
+  "body": " Find the coordinates of the vector with respect to a basis\\\\ of . Using the RREF we have Hence the coordinates of with respect the given basis is .  "
+},
+{
+  "id": "subsec-dimension-intro-23",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-23",
+  "type": "Example",
+  "number": "2.4.26",
   "title": "",
   "body": " Find the coordinates of the vector with respect to a basis of . Using the RREF we have Hence the coordinates of with respect the given basis is .  "
 },
@@ -1031,7 +1076,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-5",
   "type": "Example",
-  "number": "2.4.22",
+  "number": "2.4.27",
   "title": "",
   "body": " Consider two bases  and . Consider a vector . We have First we find and .  Similarly  Now to find the transition matrix , we have  It is easy to verify that . Similarly to find the transition matrix , we have  It is easy to verify that .  "
 },
@@ -1040,7 +1085,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-6",
   "type": "Checkpoint",
-  "number": "2.4.23",
+  "number": "2.4.28",
   "title": "",
   "body": "  What are all subspaces of and ?   "
 },
@@ -1049,7 +1094,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-7",
   "type": "Checkpoint",
-  "number": "2.4.24",
+  "number": "2.4.29",
   "title": "",
   "body": "  If is a subspace of , then it is null space of some matrix.   "
 },
@@ -1058,7 +1103,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-9",
   "type": "Example",
-  "number": "2.4.25",
+  "number": "2.4.30",
   "title": "",
   "body": " Consider a set of 7 vectors .  Define the matrix whose columns are and apply RREF to .  From the RREF of , we have the following observations: (i) The reduced row-echelon form of has 5 non zero rows. This means the rank of is 5. In particular, is singular.  (ii) The pivots columns are 1, 2, 4, 5, 7. In particular, are linearly independent and forms a basis of the subspace spanned by .  (iii) The 3rd columns gives as linear combinations of and . In particular, . Similarly .  (iv) Since rank of is 5, the nullity of is 2.  (v) First five rows of constitute a basis of the row space of .   "
 },
@@ -1168,43 +1213,52 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Introduction",
-  "body": " Introduction   Consider the Cartesian plane . The reflection about -axis in is given by  . Note that we can write . Thus the map is obtained as a matrix multiplication by .  Similarly consider a map as a rotation of a vector by an angle anti-clock wise. Any point can be written as in polar coordinates. Here and is the angle that vector makes with positive -axis. Then . After Simplification, we have   Thus .  Thus the rotation in the plane can also be given by the matrix multiplication.  Suppose is a real matrix. Then for a vector , . Thus can be thought of as a map that takes vector in to a vector in . Let us denote this map as . Thus .   is called the matrix transformation induced by the matrix .  Note that the matrix transformation has the following properties: (i) for all .  (ii) for all and .   In particular, preserves vector addition and scalar multiplication. Any such map is called a linear transformation. We have the following definition.    A map is called a linear transformation (or linear map) if it satisfies the following properties:  (i) for all , .  (ii) for all and , .     Examples of linear transformation   (i) If is a linear map, then . That is, takes the zero vector in to the zero vector in .  (ii) If is a linear map, then for all .      (i) Zero map defined by for all is a linear map.  (ii) The identity map given by for all is a linear map.  (iii) The reflection and rotation defined above are linear maps from to .  (iv) Any matrix transformation given by is a linear map.  (v) Fix a vector in and define as . Is a linear map? When is this linear? (The map is called translation by .)  (vi) Let be two real numbers. Define as . It is easy to check that is a linear map? Can you generalize this?  (vii) Let be real numbers. Define by . It is easy to check that is a linear map.      Let us find all linear maps from to .  Suppose is a linear map. We know that is basis of . Then any vector . Therefore, . Thus if we define  . If is linear map from , then there exist a real number such that . Note that in this case .     "
+  "body": " Introduction   Consider the Cartesian plane . The reflection about -axis in is given by  . Look at the .     Reflection of a point about -axis.  Note that we can write . Thus the map is obtained as a matrix multiplication by .  Similarly consider a map as a rotation of a vector by an angle anti-clock wise. Any point can be written as in polar coordinates. Here and is the angle that vector makes with positive -axis. Then . Look at the .     Rotation of a point by .  After Simplification, we have   Thus .  Thus the rotation in the plane can also be given by the matrix multiplication.  Suppose is a real matrix. Then for a vector , . Thus can be thought of as a map that takes vector in to a vector in . Let us denote this map as . Thus .   is called the matrix transformation induced by the matrix . Note that the matrix transformation has the following properties:     for all .     for all and .    In particular, preserves vector addition and scalar multiplication. Any such map is called a linear transformation. We have the following definition.    A map is called a linear transformation (or linear map) if it satisfies the following properties:    for all , .    for all and , .      The following are very simple and trivial properties of linear transformation follows directly from the definition.    If is a linear map, then . That is, takes the zero vector in to the zero vector in .    If is a linear map, then for all .         Zero map defined by for all is a linear map.    The identity map given by for all is a linear map.    The reflection and rotation defined above are linear maps from to .    Any matrix transformation given by is a linear map.    Fix a vector in and define as . Is a linear map? When is this linear? (The map is called translation by .)    Let be two real numbers. Define as . It is easy to check that is a linear map? Can you generalize this?    Let be real numbers. Define by . It is easy to check that is a linear map.        Linear maps from    Let us find all linear maps from to . Suppose is a linear map. We know that is basis of . Then any vector . Therefore, . Thus if we define  . If is linear map from , then there exist a real number such that . Note that in this case .      "
+},
+{
+  "id": "reflection-fig1",
+  "level": "2",
+  "url": "sec3-1-LT.html#reflection-fig1",
+  "type": "Figure",
+  "number": "3.1.1",
+  "title": "",
+  "body": "    Reflection of a point about -axis.  "
+},
+{
+  "id": "rotation-fig1",
+  "level": "2",
+  "url": "sec3-1-LT.html#rotation-fig1",
+  "type": "Figure",
+  "number": "3.1.2",
+  "title": "",
+  "body": "    Rotation of a point by .  "
 },
 {
   "id": "def-linear-tarnsformation",
   "level": "2",
   "url": "sec3-1-LT.html#def-linear-tarnsformation",
   "type": "Definition",
-  "number": "3.1.1",
-  "title": "",
-  "body": "  A map is called a linear transformation (or linear map) if it satisfies the following properties:  (i) for all , .  (ii) for all and , .   "
-},
-{
-  "id": "sec3-1-LT-2-10",
-  "level": "2",
-  "url": "sec3-1-LT.html#sec3-1-LT-2-10",
-  "type": "Example",
-  "number": "3.1.2",
-  "title": "Examples of linear transformation.",
-  "body": " Examples of linear transformation   (i) If is a linear map, then . That is, takes the zero vector in to the zero vector in .  (ii) If is a linear map, then for all .   "
-},
-{
-  "id": "sec3-1-LT-2-11",
-  "level": "2",
-  "url": "sec3-1-LT.html#sec3-1-LT-2-11",
-  "type": "Example",
   "number": "3.1.3",
   "title": "",
-  "body": "  (i) Zero map defined by for all is a linear map.  (ii) The identity map given by for all is a linear map.  (iii) The reflection and rotation defined above are linear maps from to .  (iv) Any matrix transformation given by is a linear map.  (v) Fix a vector in and define as . Is a linear map? When is this linear? (The map is called translation by .)  (vi) Let be two real numbers. Define as . It is easy to check that is a linear map? Can you generalize this?  (vii) Let be real numbers. Define by . It is easy to check that is a linear map.   "
+  "body": "  A map is called a linear transformation (or linear map) if it satisfies the following properties:    for all , .    for all and , .     "
+},
+{
+  "id": "LT-examples-1",
+  "level": "2",
+  "url": "sec3-1-LT.html#LT-examples-1",
+  "type": "Example",
+  "number": "3.1.4",
+  "title": "",
+  "body": "     Zero map defined by for all is a linear map.    The identity map given by for all is a linear map.    The reflection and rotation defined above are linear maps from to .    Any matrix transformation given by is a linear map.    Fix a vector in and define as . Is a linear map? When is this linear? (The map is called translation by .)    Let be two real numbers. Define as . It is easy to check that is a linear map? Can you generalize this?    Let be real numbers. Define by . It is easy to check that is a linear map.      "
 },
 {
   "id": "linear-maps-from-R-to-R",
   "level": "2",
   "url": "sec3-1-LT.html#linear-maps-from-R-to-R",
   "type": "Example",
-  "number": "3.1.4",
-  "title": "",
-  "body": "  Let us find all linear maps from to .  Suppose is a linear map. We know that is basis of . Then any vector . Therefore, . Thus if we define  . If is linear map from , then there exist a real number such that . Note that in this case .   "
+  "number": "3.1.5",
+  "title": "Linear maps from <span class=\"process-math\">\\(\\R\\to \\R\\)<\/span>.",
+  "body": " Linear maps from    Let us find all linear maps from to . Suppose is a linear map. We know that is basis of . Then any vector . Therefore, . Thus if we define  . If is linear map from , then there exist a real number such that . Note that in this case .    "
 },
 {
   "id": "sec3-2-LT",
@@ -1330,7 +1384,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.3",
   "title": "Reflections and Projections",
-  "body": " Reflections and Projections   In this section, we shall look at reflections and rotations in  as linear maps. We shall also find their matrices explicitley.    Reflections in  Recall that the reflection about the -axis in is give by . The matrix of with respect to the standard basis is . Let us look at how to find the reflection about any line where .    Let be the reflection in about the line , where . We wish to find the matrix of with respect to the standard basis.  Note that can be accomplished by first rotating by , then reflecting about -axis and then rotating back by . Thus . Note that and are linear map, and hence is a linear map.  Using the notion of matrix of composition, the matrix of is given by   Since , and . Using this the matrix of with respect to the standard basis of  .      For the following linear transformation . Show that is induced by a matrix and hence find the matrix.  (i) If is reflection about axis.  (ii) If is reflection about the line   (iii) If is reflection about the line   (iv) If is a clockwise rotation by an angle .      (i) Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.  (ii) Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.      Projections in  The linear map , given is the projection on to -axis. Similarly, , given is the projection on to -axis. It is easy to check that the matrix of with respect to the standard basis is . Similarly, the matrix of with respect to the standard basis is .  We wish to define the projection onto the line , where .    Let be the projection in onto the line , where . We wish to find the matrix of with respect to the standard basis.  Using a similar procedure, we have   Hence the matrix of is .  After simplification, the matrix of is .  Write down the matrix of reflection about the line passing through the origin and the point , with .      If is the projection onto the line , then show that . In particular, . Thus the matrix is an idempotent matrix.  Write down the matrix of reflection onto the line passing through the origin and the point , with .      For the following linear transformations , show that its is induced by a matrix and find the matrix.  (i) is is projection onto plane.  (ii) is is projection onto plane.      Projection and Reflection in   Rotation in   Let denote the rotation in about the -axis through an angle from the positive x= -axis toward the positive -axis (that is anticlockwise). Let us find the matrix of this transformation with respect to the standard basis.  First of notice that in this case, the -coordinate of any vector does not change. Thus . What happens to and ? They get rotated by an angle . That is and . Hence the matrix of is   Find the matrix of and .     Projection onto a line in   Let be a nonzero vector in and is the line passing through and the origin, that is, . We wish to find the orthogonal projection of any vector . If is the orthogonal projection of onto , then for some scalar and is orthogonal to . Reader is encouraged to draw figure. From this, it is easy to see that . Hence .  We denote this projection by . Thus the matrix of is .    Reflection about a line in   Let be a nonzero vector in and is the line passing through . We wish to find the reflection of any vector through the line . Suppose is the orthogonal projection of onto . Then is the mid point of and . Hence . By the Ex. , the matrix of is given by      Projection onto a plane in   Let be a plane given by the equation . Then the vector is normal to . We wish to find the orthogonal projection of any vector onto .  Let be denote the projection of onto and , the projection of onto to . (Draw figure) Then .  Hence the the matrix of is given by      Reflection through a plane in   Let be a plane given by the equation . Then the vector is normal to . We wish to find the reflection of any vector through .  Suppose is the orthogonal projection of onto . Then it is easy to see that .  Now it is easy to show that the matrix of is given by .     "
+  "body": " Reflections and Projections   In this section, we shall look at reflections and rotations in  as linear maps. We shall also find their matrices explicitley.    Reflections in  Recall that the reflection about the -axis in is give by . The matrix of with respect to the standard basis is . Let us look at how to find the reflection about any line passing through the orifin, say, where     Let denote be the reflection in about the line , where . We wish to find the matrix of with respect to the standard basis.  Note that can be accomplished by first rotating by , then reflecting about -axis and then rotating back by . Thus . Note that and are linear map, and hence is a linear map.  Using the notion of matrix of composition, the matrix of is given by   Since , and . Using this the matrix of with respect to the standard basis of  .      For the following linear transformation . Show that is induced by a matrix and hence find the matrix.  If is reflection about axis.    If is reflection about the line     If is reflection about the line     If is a clockwise rotation by an angle .          Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.    Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.        Projections in  The linear map , given is the projection on to -axis. Similarly, , given is the projection on to -axis. It is easy to check that the matrix of with respect to the standard basis is . Similarly, the matrix of with respect to the standard basis is .  We wish to define the projection onto the line , where .    Let be the projection in onto the line , where . We wish to find the matrix of with respect to the standard basis.  Using a similar procedure, we have   Hence the matrix of is .  After simplification, the matrix of is .  Write down the matrix of reflection about the line passing through the origin and the point , with .      If is the projection onto the line , then show that . In particular, . Thus the matrix is an idempotent matrix.  Write down the matrix of reflection onto the line passing through the origin and the point , with .      For the following linear transformations , show that its is induced by a matrix and find the matrix.     is is projection onto plane.     is is projection onto plane.        Projection and Reflection in   Rotation in   Let denote the rotation in about the -axis through an angle from the positive -axis toward the positive -axis (that is anticlockwise). Let us find the matrix of this transformation with respect to the standard basis.  First of all notice that in this case, the -coordinate of any vector does not change. Thus . What happens to and ? They get rotated by an angle . That is and . Hence the matrix of is   Find the matrix of and .      Write the matrix of rotation about -axis and -axis.          Projection onto a line in   Let be a nonzero vector in and is the line passing through and the origin, that is, . We wish to find the orthogonal projection of any vector . If is the orthogonal projection of onto , then for some scalar and is orthogonal to . Reader is encouraged to draw figure. From this, it is easy to see that . Hence .  We denote this projection by . Thus the matrix of is .    Reflection about a line in   Let be a nonzero vector in and is the line passing through . We wish to find the reflection of any vector through the line . Suppose is the orthogonal projection of onto . Then is the mid point of and . Hence . By the Ex. , the matrix of is given by      Projection onto a plane in   Let be a plane given by the equation . Then the vector is normal to . We wish to find the orthogonal projection of any vector onto .  Let be denote the projection of onto and , the projection of onto to . (Draw figure) Then .  Hence the the matrix of is given by      Reflection through a plane in   Let be a plane given by the equation . Then the vector is normal to . We wish to find the reflection of any vector through .  Suppose is the orthogonal projection of onto . Then it is easy to see that .  Now it is easy to show that the matrix of is given by .     "
 },
 {
   "id": "linalg-engg-eg36",
@@ -1339,7 +1393,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.3.1",
   "title": "",
-  "body": "  Let be the reflection in about the line , where . We wish to find the matrix of with respect to the standard basis.  Note that can be accomplished by first rotating by , then reflecting about -axis and then rotating back by . Thus . Note that and are linear map, and hence is a linear map.  Using the notion of matrix of composition, the matrix of is given by   Since , and . Using this the matrix of with respect to the standard basis of  .   "
+  "body": "  Let denote be the reflection in about the line , where . We wish to find the matrix of with respect to the standard basis.  Note that can be accomplished by first rotating by , then reflecting about -axis and then rotating back by . Thus . Note that and are linear map, and hence is a linear map.  Using the notion of matrix of composition, the matrix of is given by   Since , and . Using this the matrix of with respect to the standard basis of  .   "
 },
 {
   "id": "exer-3-3-2",
@@ -1348,7 +1402,7 @@ var ptx_lunr_docs = [
   "type": "Activity",
   "number": "3.3.1",
   "title": "",
-  "body": "  For the following linear transformation . Show that is induced by a matrix and hence find the matrix.  (i) If is reflection about axis.  (ii) If is reflection about the line   (iii) If is reflection about the line   (iv) If is a clockwise rotation by an angle .   "
+  "body": "  For the following linear transformation . Show that is induced by a matrix and hence find the matrix.  If is reflection about axis.    If is reflection about the line     If is reflection about the line     If is a clockwise rotation by an angle .     "
 },
 {
   "id": "exer-3-3-3",
@@ -1357,7 +1411,7 @@ var ptx_lunr_docs = [
   "type": "Activity",
   "number": "3.3.2",
   "title": "",
-  "body": "  (i) Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.  (ii) Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.   "
+  "body": "    Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.    Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.     "
 },
 {
   "id": "linalg-engg-eg37",
@@ -1384,7 +1438,7 @@ var ptx_lunr_docs = [
   "type": "Activity",
   "number": "3.3.4",
   "title": "",
-  "body": "  For the following linear transformations , show that its is induced by a matrix and find the matrix.  (i) is is projection onto plane.  (ii) is is projection onto plane.   "
+  "body": "  For the following linear transformations , show that its is induced by a matrix and find the matrix.     is is projection onto plane.     is is projection onto plane.     "
 },
 {
   "id": "linalg-engg-eg44",
@@ -1393,7 +1447,16 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.3.3",
   "title": "Rotation in <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
-  "body": " Rotation in   Let denote the rotation in about the -axis through an angle from the positive x= -axis toward the positive -axis (that is anticlockwise). Let us find the matrix of this transformation with respect to the standard basis.  First of notice that in this case, the -coordinate of any vector does not change. Thus . What happens to and ? They get rotated by an angle . That is and . Hence the matrix of is   Find the matrix of and .   "
+  "body": " Rotation in   Let denote the rotation in about the -axis through an angle from the positive -axis toward the positive -axis (that is anticlockwise). Let us find the matrix of this transformation with respect to the standard basis.  First of all notice that in this case, the -coordinate of any vector does not change. Thus . What happens to and ? They get rotated by an angle . That is and . Hence the matrix of is   Find the matrix of and .   "
+},
+{
+  "id": "Proj-Refl-R3-3",
+  "level": "2",
+  "url": "sec3-3-LT.html#Proj-Refl-R3-3",
+  "type": "Activity",
+  "number": "3.3.5",
+  "title": "",
+  "body": "  Write the matrix of rotation about -axis and -axis.        "
 },
 {
   "id": "linalg-engg-eg45",
@@ -1438,7 +1501,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.4",
   "title": "Geometry of Linear Transformations",
-  "body": " Geometry of Linear Transformations   We look at some specific linear transformations from to and how it transforms the unit square. Readers are encouraged to draw figures.    Exmpansion along -axis.    where . (Refer to the )  -expansion for        Compression along -axis.    where . Refer to the for .  -Compression for        Expansion along -axis    where . Refer to for .  -expansion for        Compression along -axis    where . Refer to for .  -compression for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Draw the figure for .  Negative -shear for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Refer to for .  Negative -shear for        Dilation and Contraction   Fix a positive real number and define by . It is a linear map which is induced by the scalar matrix . ( is called a dilation if and a contraction if .) Refer to  with and .  Dilations with and .        Streching   Let and be two positive real numbers and . Define by . Then (i) is stretching by a factor along -axis and by a factor along -axis if and (ii) is contraction by a factor along -axis followed by a factor along -axis if . Refer to for stretching along by 2 and -axes by 1.5.  Stretching along by 2 and -axes by 1.5.        Geometry of linear transformation in  In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.     The follow iteract is generated using slate    Goemetry of Linear Tranformation     Image Tranfromation   Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.   The following Python code read a grayscale image of Taj Mahal in India.   We use the transformation , where is the brightness of the image. Let us take about 20\/% increase in the brightness. On each pixel of the image , we have , where . Here min~255 ensures the brightness values stay within valid pixel range.   Next we plot the orginal image along with rescaled image.    Rotation Transformation   Next we apply rotation by an anngle to this image. Note that the rotation matrix is give by         Applying shear transform to an image  Shear in Python is implemented as affine transformation where each point of an image is mapped to a new point via   Hence we get For a shear in the -direction, we wish to shift proportionally to while leaving unchanged. This corresponds to: where is the shear factor. Thus, the shear matrix becomes: In Python's Pillow library, the transform method uses parameters corresponding to the first two rows of the above matrix, that is,     "
+  "body": " Geometry of Linear Transformations   We look at some specific linear transformations from to and how it transforms the unit square. Readers are encouraged to draw figures.    Exmpansion along -axis.    where . (Refer to the )  -expansion for        Compression along -axis.    where . Refer to the for .  -Compression for        Expansion along -axis    where . Refer to for .  -expansion for        Compression along -axis    where . Refer to for .  -compression for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Draw the figure for .  Negative -shear for        Shear along positive -axis    where . Refer to for .  Positive -shear for        Shear along negative -axis    where . Refer to for .  Negative -shear for        Dilation and Contraction   Fix a positive real number and define by . It is a linear map which is induced by the scalar matrix . ( is called a dilation if and a contraction if .) Refer to  with and .  Dilations with and .        Streching   Let and be two positive real numbers and . Define by . Then (i) is stretching by a factor along -axis and by a factor along -axis if and (ii) is contraction by a factor along -axis followed by a factor along -axis if . Refer to for stretching along by 2 and -axes by 1.5.  Stretching along by 2 and -axes by 1.5.        Geometry of linear transformation in  In this exampe, we demostrate linear transformation from to itself using the Sage interatact feature.     The follow iteract is generated using slate.  You can change the input matrix and vectors and submit to see the image of vectors. Additionally, try to use the above tranformations defined such expansion, compression and shers and explore the same.    Goemetry of Linear Tranformation     Image Tranfromation   Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.   The following Python code read a grayscale image of Taj Mahal in India.   We use the transformation , where is the brightness of the image. Let us take about 20\/% increase in the brightness. On each pixel of the image , we have , where . Here min~255 ensures the brightness values stay within valid pixel range.   Next we plot the orginal image along with rescaled image.    Rotation Transformation   Next we apply rotation by an anngle to this image. Note that the rotation matrix is give by         Applying shear transform to an image  Shear in Python is implemented as affine transformation where each point of an image is mapped to a new point via   Hence we get For a shear in the -direction, we wish to shift proportionally to while leaving unchanged. This corresponds to: where is the shear factor. Thus, the shear matrix becomes: In Python's Pillow library, the transform method uses parameters corresponding to the first two rows of the above matrix, that is,     "
 },
 {
   "id": "x-expansion",
@@ -1546,7 +1609,7 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "The follow iteract is generated using slate "
+  "body": "The follow iteract is generated using slate. "
 },
 {
   "id": "figure-geom-LT",
@@ -1627,7 +1690,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.1",
   "title": "Introduction",
-  "body": " Introduction  Recall the eight properties ( ) of operation addition and scalar multiplication in . Any non-empty set with two operations, addition and scalar multiplication satisfying the eight properties is known as vector space. More precisely we have the following definition.   Abstract Vector Space   Let be a nonempty set with two operations defined by and multiplication defined by . Satisfying the following properties:     A1: for all , .   A2: for all , .   A3: There exists such that for all , . This is called an additive identity.   A4: for each , there is a vector , such that . This is called an additive inverse of .   S1: for all and , .   S2: for all and , .   S3: for all and , .   S4: for all , .    The set with and is called a vector space over . Elements of are called vectors.       with usual addition and scalar multiplication defined in the Section is a vector space over .      The set , the set of all real matrices with usual matrix addition and scalar multiplication by a real number is a vector space over .      Fix a natural number . The set , the set of all polynomials of degree less than equal , with usual polynomial addition and scalar multiplication by a real number is a vector space over .      Let be the set of real-valued functions defined on an interval . For all and in and , define addition and scalar multiplication, respectively, by . is a vector space over .      The set of complex numbers , where , with addition and multiplication defined as .  The set is a vector space over .      Let be any nonempty set and define , the set of all functions from to . Define addition and scalar multiplication, respectively, by . Then is a vector space over .      (i) The set of rational numbers with usual addition and multiplication is a vector space over . However, is not a vector space over .  (ii) is a vector space over .      Let be a vector space over and is a nonempty set. Let be a bijection. We define addition and scalar multiplication on as follows:   It is easy to check that with above addition and scalar multiplication is a vector space over .      Let . Define addition and scalar multiplication on as follows: .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .      Let . Define addition and scalar multiplication on by .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .      Let be a singleton set. Define addition and scalar multiplication by .  Check that is a vector space over under the addition and scalar multiplication defined above.      Let . Define addition and scalar multiplication on as and .  Check that is a vector space over . Find the bijection is used to covert into a vector space using these operations. Find additive identity and the additive inverse of in corresponding to .      Consider the unit circle . Define the addition and scalar multiplications by and .  Show that is a vector space over with respect to the addition and scalar multiplication defined above. Find the additive identity and additive inverse.      Let denote the set of all non singular real matrices. Define where is the usual matrix multiplication, and is the usual scalar multiplication. Show that is a vector space over .    Next we list the some properties in a vector space over . These properties are easy to prove. Readers are encouraged to prove these properties.   Properties   Let be a vector space over . Then we have the following properties:  (i) Additive identity in is unique.  (ii) Additive inverse in is unique.  (iii) for any .  (iv) for all .  (v) for all .  (vi) If then either or .  (vii) If , then , called the right cancellation. Similarly, we have left cancellation.  (viii) If and , then .  (ix ) and , then .    In view of these, properties, here onward we will write the additive identity and the additive inverse .  "
+  "body": " Introduction  Recall the eight properties ( ) of operation addition and scalar multiplication in . Any non-empty set with two operations, addition and scalar multiplication satisfying the eight properties is known as vector space. More precisely we have the following definition.   Abstract Vector Space   Let be a nonempty set with two operations defined by and multiplication defined by . Satisfying the following properties:    for all , .  for all , .  There exists such that for all , . This is called an additive identity.  for each , there is a vector , such that . This is called an additive inverse of .    for all and , .  for all and , .  for all and , .  for all , .    The set with and is called a vector space over . Elements of are called vectors.      In the above definition one can replace with any field  However, in this text unless mention, we shall assume a vector space over.       with usual addition and scalar multiplication defined in the Section is a vector space over .      The set , the set of all real matrices with usual matrix addition and scalar multiplication by a real number is a vector space over .      Fix a natural number . The set , the set of all polynomials of degree less than equal , with usual polynomial addition and scalar multiplication by a real number is a vector space over .      Let be the set of real-valued functions defined on an interval . For all and in and , define addition and scalar multiplication, respectively, by . is a vector space over .      The set of complex numbers , where , with addition and multiplication defined as .  The set is a vector space over .      Let be any nonempty set and define , the set of all functions from to . Define addition and scalar multiplication, respectively, by . Then is a vector space over .         The set of rational numbers with usual addition and multiplication is a vector space over . However, is not a vector space over .     is a vector space over .         Let be a vector space over and is a nonempty set. Let be a bijection. We define addition and scalar multiplication on as follows:   It is easy to check that with above addition and scalar multiplication is a vector space over .      Let . Define addition and scalar multiplication on as follows: .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .      Let . Define addition and scalar multiplication on by .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .      Let be a singleton set. Define addition and scalar multiplication by .  Check that is a vector space over under the addition and scalar multiplication defined above.      Let . Define addition and scalar multiplication on as and .  Check that is a vector space over . Find the bijection is used to covert into a vector space using these operations. Find additive identity and the additive inverse of in corresponding to .      Consider the unit circle . Define the addition and scalar multiplications by and .  Show that is a vector space over with respect to the addition and scalar multiplication defined above. Find the additive identity and additive inverse.      Let denote the set of all non singular real matrices. Define where is the usual matrix multiplication, and is the usual scalar multiplication. Show that is a vector space over .    Next we list the some properties in a vector space over . These properties are easy to prove. Readers are encouraged to prove these properties.   Properties   Let be a vector space over . Then we have the following properties:   Additive identity in is unique.    Additive inverse in is unique.     for any .     for all .     for all .    If then either or .    If , then , called the right cancellation. Similarly, we have left cancellation.    If and , then .     and , then .       In view of these, properties, here onward we will write the additive identity and the additive inverse .  "
 },
 {
   "id": "sec4-1-VS-3",
@@ -1636,14 +1699,23 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "4.1.1",
   "title": "Abstract Vector Space.",
-  "body": " Abstract Vector Space   Let be a nonempty set with two operations defined by and multiplication defined by . Satisfying the following properties:     A1: for all , .   A2: for all , .   A3: There exists such that for all , . This is called an additive identity.   A4: for each , there is a vector , such that . This is called an additive inverse of .   S1: for all and , .   S2: for all and , .   S3: for all and , .   S4: for all , .    The set with and is called a vector space over . Elements of are called vectors.   "
+  "body": " Abstract Vector Space   Let be a nonempty set with two operations defined by and multiplication defined by . Satisfying the following properties:    for all , .  for all , .  There exists such that for all , . This is called an additive identity.  for each , there is a vector , such that . This is called an additive inverse of .    for all and , .  for all and , .  for all and , .  for all , .    The set with and is called a vector space over . Elements of are called vectors.   "
+},
+{
+  "id": "sec4-1-VS-4",
+  "level": "2",
+  "url": "sec4-1-VS.html#sec4-1-VS-4",
+  "type": "Remark",
+  "number": "4.1.2",
+  "title": "",
+  "body": "  In the above definition one can replace with any field  However, in this text unless mention, we shall assume a vector space over.   "
 },
 {
   "id": "eg-Rn-vs",
   "level": "2",
   "url": "sec4-1-VS.html#eg-Rn-vs",
   "type": "Example",
-  "number": "4.1.2",
+  "number": "4.1.3",
   "title": "",
   "body": "   with usual addition and scalar multiplication defined in the Section is a vector space over .   "
 },
@@ -1652,7 +1724,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-1-VS.html#eg-matix-vs",
   "type": "Example",
-  "number": "4.1.3",
+  "number": "4.1.4",
   "title": "",
   "body": "  The set , the set of all real matrices with usual matrix addition and scalar multiplication by a real number is a vector space over .   "
 },
@@ -1661,7 +1733,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-1-VS.html#eg-poly-vs",
   "type": "Example",
-  "number": "4.1.4",
+  "number": "4.1.5",
   "title": "",
   "body": "  Fix a natural number . The set , the set of all polynomials of degree less than equal , with usual polynomial addition and scalar multiplication by a real number is a vector space over .   "
 },
@@ -1670,7 +1742,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-1-VS.html#eg-ralvaluesfun-vs",
   "type": "Example",
-  "number": "4.1.5",
+  "number": "4.1.6",
   "title": "",
   "body": "  Let be the set of real-valued functions defined on an interval . For all and in and , define addition and scalar multiplication, respectively, by . is a vector space over .   "
 },
@@ -1679,7 +1751,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-1-VS.html#eg-complex-vs",
   "type": "Example",
-  "number": "4.1.6",
+  "number": "4.1.7",
   "title": "",
   "body": "  The set of complex numbers , where , with addition and multiplication defined as .  The set is a vector space over .   "
 },
@@ -1688,7 +1760,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-1-VS.html#eg-function-vs",
   "type": "Example",
-  "number": "4.1.7",
+  "number": "4.1.8",
   "title": "",
   "body": "  Let be any nonempty set and define , the set of all functions from to . Define addition and scalar multiplication, respectively, by . Then is a vector space over .   "
 },
@@ -1697,27 +1769,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-1-VS.html#eg-rationals-vs",
   "type": "Example",
-  "number": "4.1.8",
+  "number": "4.1.9",
   "title": "",
-  "body": "  (i) The set of rational numbers with usual addition and multiplication is a vector space over . However, is not a vector space over .  (ii) is a vector space over .   "
+  "body": "     The set of rational numbers with usual addition and multiplication is a vector space over . However, is not a vector space over .     is a vector space over .      "
 },
 {
   "id": "eg-bijection-vs",
   "level": "2",
   "url": "sec4-1-VS.html#eg-bijection-vs",
   "type": "Example",
-  "number": "4.1.9",
-  "title": "",
-  "body": "  Let be a vector space over and is a nonempty set. Let be a bijection. We define addition and scalar multiplication on as follows:   It is easy to check that with above addition and scalar multiplication is a vector space over .   "
-},
-{
-  "id": "sec4-1-VS-12",
-  "level": "2",
-  "url": "sec4-1-VS.html#sec4-1-VS-12",
-  "type": "Example",
   "number": "4.1.10",
   "title": "",
-  "body": "  Let . Define addition and scalar multiplication on as follows: .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .   "
+  "body": "  Let be a vector space over and is a nonempty set. Let be a bijection. We define addition and scalar multiplication on as follows:   It is easy to check that with above addition and scalar multiplication is a vector space over .   "
 },
 {
   "id": "sec4-1-VS-13",
@@ -1726,7 +1789,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.1.11",
   "title": "",
-  "body": "  Let . Define addition and scalar multiplication on by .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .   "
+  "body": "  Let . Define addition and scalar multiplication on as follows: .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .   "
 },
 {
   "id": "sec4-1-VS-14",
@@ -1735,7 +1798,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.1.12",
   "title": "",
-  "body": "  Let be a singleton set. Define addition and scalar multiplication by .  Check that is a vector space over under the addition and scalar multiplication defined above.   "
+  "body": "  Let . Define addition and scalar multiplication on by .  Check that under this addition and scalar multiplication is a vector space over . Contrast this example with Example .   "
 },
 {
   "id": "sec4-1-VS-15",
@@ -1744,7 +1807,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.1.13",
   "title": "",
-  "body": "  Let . Define addition and scalar multiplication on as and .  Check that is a vector space over . Find the bijection is used to covert into a vector space using these operations. Find additive identity and the additive inverse of in corresponding to .   "
+  "body": "  Let be a singleton set. Define addition and scalar multiplication by .  Check that is a vector space over under the addition and scalar multiplication defined above.   "
 },
 {
   "id": "sec4-1-VS-16",
@@ -1753,7 +1816,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.1.14",
   "title": "",
-  "body": "  Consider the unit circle . Define the addition and scalar multiplications by and .  Show that is a vector space over with respect to the addition and scalar multiplication defined above. Find the additive identity and additive inverse.   "
+  "body": "  Let . Define addition and scalar multiplication on as and .  Check that is a vector space over . Find the bijection is used to covert into a vector space using these operations. Find additive identity and the additive inverse of in corresponding to .   "
 },
 {
   "id": "sec4-1-VS-17",
@@ -1762,6 +1825,15 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.1.15",
   "title": "",
+  "body": "  Consider the unit circle . Define the addition and scalar multiplications by and .  Show that is a vector space over with respect to the addition and scalar multiplication defined above. Find the additive identity and additive inverse.   "
+},
+{
+  "id": "sec4-1-VS-18",
+  "level": "2",
+  "url": "sec4-1-VS.html#sec4-1-VS-18",
+  "type": "Example",
+  "number": "4.1.16",
+  "title": "",
   "body": "  Let denote the set of all non singular real matrices. Define where is the usual matrix multiplication, and is the usual scalar multiplication. Show that is a vector space over .   "
 },
 {
@@ -1769,9 +1841,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-1-VS.html#thm-vs-prop",
   "type": "Theorem",
-  "number": "4.1.16",
+  "number": "4.1.17",
   "title": "Properties.",
-  "body": " Properties   Let be a vector space over . Then we have the following properties:  (i) Additive identity in is unique.  (ii) Additive inverse in is unique.  (iii) for any .  (iv) for all .  (v) for all .  (vi) If then either or .  (vii) If , then , called the right cancellation. Similarly, we have left cancellation.  (viii) If and , then .  (ix ) and , then .   "
+  "body": " Properties   Let be a vector space over . Then we have the following properties:   Additive identity in is unique.    Additive inverse in is unique.     for any .     for all .     for all .    If then either or .    If , then , called the right cancellation. Similarly, we have left cancellation.    If and , then .     and , then .      "
 },
 {
   "id": "sec4-2-Abst-VS",
@@ -1780,7 +1852,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.2",
   "title": "Vector Subspaces",
-  "body": " Vector Subspaces   Vector subspace   Let be a vector space over and a nonempty subset of . The is called a subspace of , if itself is a vector space under the inherited vector addition and scalar multiplication on .      If is a vector space over , then and are two trivial subspaces of .    Let be a vector space over and a nonempty subset of . Assume that is closed under addition and scalar multiplication on . For to be a subspace of , we need to show that all the eight properties in definition of vector space must be satisfied for elements in . Fortunately, our task is simplified as most of these properties are inherited from the vector space . Let , the . Note that we require for this property. Also for , . Thus contains the additive identity and additive inverse. Remaining conditions are true as elements in and hence are also true as elements of . This show that if nonempty subset of which is closed under addition and scalar multiplication, then it is subspace of .  If itself is a vector space under the addition and scalar multiplication on , then is closed under addition and scalar multiplication. Thus we have the following result.    Let be a vector space over and a nonempty subset of . Then is a subspace of if and only if is closed under addition and scalar multiplication.    Thus in order to check that if a nonempty subset is a subspace, all we need to check that it is closed under addition and scalar multiplication inherited from .    Let with usual addition and scalar multiplication.  (i) Any line in passing through the origin is a subspace of .  (ii) The line is not a subspace of , as it does not contain the origin.  (iii) The , the first quadrant is not a subspace as it is not closed under scalar multiplication (why?). However, it is closed under addition.  (iv) The , the the union of first and third quadrant is not a subspace as it is not closed addition (why?). However it is closed under scalar multiplication.  In fact, and any line passing through origin are only subspaces of .      Let with usual addition and scalar multiplication.  (i) Any line in passing through the origin is a subspace of .  (ii) Any plane in passing through the origin is a subspace of .  (iii) If is a subspace of , then is one of the following: , , a line passing through origin, a plane passing through origin.      Let be an real matrix. Then we have the following subspaces associated to .  (i) is subspace of   (ii) is subspace of   (iii) is subspace of   (iv) is subspace of .  The above four subspaces are called fundamental subspaces associated to .      Let , the set of all real matrices with usual matrix addition and scalar multiplication.  (i) is a subspace of .  (ii) is a subspace of .  (iii) is a subspace of .  (iv) is not a subspace of .  (v) is not a subspace of .      Fix a matrix . Define . Show that is a subspace of .      Let set of all functions from with addition and scalar multiplication defined as in Example . Let us look at some of the subspaces of .  (i) , the set of all bounded functions from to is a subspace of .  (ii) , the set of all continuous functions from to is a subspace of .  (iii) , the set of all differentiable functions from to is a subspace of .  (iv) Fix and is a subspace of . (What if we take all functions vanishing at finitely many points.)  (iv) is the set of even functions from is a subspace of . What about set of odd functions?      Let be a vector space over . Let and be two subspaces of . Then  (i) is a subspace of . What about ?  (ii) is a subspace of .      Let be a vector space over . Let be a subset of . Then the linear span defined as is a subspace of .    "
+  "body": " Vector Subspaces   Vector subspace   In linear algebra, we often encounter a set of vectors that themselves possess the structure of a vector space, but live naturally inside a larger vector space. For example, the set of all solutions to a homogeneous system of linear equations in may not the whole space , yet it still satisfies the axioms of a vector space. Such subsets, closed under vector addition and scalar multiplication, are called subspaces .    Let be a vector space over and a nonempty subset of . The is called a subspace of , if itself is a vector space under the inherited vector addition and scalar multiplication on .      If is a vector space over , then and are two trivial subspaces of .    Let be a vector space over and a nonempty subset of . Assume that is closed under addition and scalar multiplication on . For to be a subspace of , we need to show that all the eight properties in definition of vector space must be satisfied for elements in . Fortunately, our task is simplified as most of these properties are inherited from the vector space . Let , the . Note that we require for this property. Also for , . Thus contains the additive identity and additive inverse. Remaining conditions are true as elements in and hence are also true as elements of . This show that if nonempty subset of which is closed under addition and scalar multiplication, then it is subspace of .  If itself is a vector space under the addition and scalar multiplication on , then is closed under addition and scalar multiplication. Thus we have the following result.    Let be a vector space over and a nonempty subset of . Then is a subspace of if and only if is closed under addition and scalar multiplication.    Thus in order to check that if a nonempty subset is a subspace, all we need to check that it is closed under addition and scalar multiplication inherited from .    Let with usual addition and scalar multiplication.   Any line in passing through the origin is a subspace of .      The line is not a subspace of , as it does not contain the origin.    The , the first quadrant is not a subspace as it is not closed under scalar multiplication (why?). However, it is closed under addition.    The , the the union of first and third quadrant is not a subspace as it is not closed addition (why?). However it is closed under scalar multiplication.    In fact, and any line passing through origin are only subspaces of .         Let with usual addition and scalar multiplication.   Any line in passing through the origin is a subspace of .    Any plane in passing through the origin is a subspace of .    If is a subspace of , then is one of the following: , , a line passing through origin, a plane passing through origin.         Let be an real matrix. Then we have the following subspaces associated to .    is subspace of      is subspace of      is subspace of      is subspace of .   The above four subspaces are called fundamental subspaces associated to .      Let , the set of all real matrices with usual matrix addition and scalar multiplication.    is a subspace of .     is a subspace of .     is a subspace of .     is not a subspace of .     is not a subspace of .         Fix a matrix . Define . Show that is a subspace of .      Let set of all functions from with addition and scalar multiplication defined as in Example . Let us look at some of the subspaces of .    , the set of all bounded functions from to is a subspace of .     , the set of all continuous functions from to is a subspace of .     , the set of all differentiable functions from to is a subspace of .    Fix and is a subspace of . (What if we take all functions vanishing at finitely many points.)     is the set of even functions from is a subspace of . What about set of odd functions?         Let be a vector space over . Let and be two subspaces of . Then    is a subspace of . What about ?     is a subspace of .         Let be a vector space over . Let be a subset of . Then the linear span defined as is a subspace of .    "
 },
 {
   "id": "def-vector-subspace",
@@ -1789,7 +1861,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "4.2.1",
   "title": "Vector subspace.",
-  "body": " Vector subspace   Let be a vector space over and a nonempty subset of . The is called a subspace of , if itself is a vector space under the inherited vector addition and scalar multiplication on .   "
+  "body": " Vector subspace   In linear algebra, we often encounter a set of vectors that themselves possess the structure of a vector space, but live naturally inside a larger vector space. For example, the set of all solutions to a homogeneous system of linear equations in may not the whole space , yet it still satisfies the axioms of a vector space. Such subsets, closed under vector addition and scalar multiplication, are called subspaces .    Let be a vector space over and a nonempty subset of . The is called a subspace of , if itself is a vector space under the inherited vector addition and scalar multiplication on .   "
 },
 {
   "id": "sec4-2-Abst-VS-3",
@@ -1816,7 +1888,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.2.4",
   "title": "",
-  "body": "  Let with usual addition and scalar multiplication.  (i) Any line in passing through the origin is a subspace of .  (ii) The line is not a subspace of , as it does not contain the origin.  (iii) The , the first quadrant is not a subspace as it is not closed under scalar multiplication (why?). However, it is closed under addition.  (iv) The , the the union of first and third quadrant is not a subspace as it is not closed addition (why?). However it is closed under scalar multiplication.  In fact, and any line passing through origin are only subspaces of .   "
+  "body": "  Let with usual addition and scalar multiplication.   Any line in passing through the origin is a subspace of .      The line is not a subspace of , as it does not contain the origin.    The , the first quadrant is not a subspace as it is not closed under scalar multiplication (why?). However, it is closed under addition.    The , the the union of first and third quadrant is not a subspace as it is not closed addition (why?). However it is closed under scalar multiplication.    In fact, and any line passing through origin are only subspaces of .      "
 },
 {
   "id": "sec4-2-Abst-VS-9",
@@ -1825,7 +1897,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.2.5",
   "title": "",
-  "body": "  Let with usual addition and scalar multiplication.  (i) Any line in passing through the origin is a subspace of .  (ii) Any plane in passing through the origin is a subspace of .  (iii) If is a subspace of , then is one of the following: , , a line passing through origin, a plane passing through origin.   "
+  "body": "  Let with usual addition and scalar multiplication.   Any line in passing through the origin is a subspace of .    Any plane in passing through the origin is a subspace of .    If is a subspace of , then is one of the following: , , a line passing through origin, a plane passing through origin.      "
 },
 {
   "id": "fundamentalsubspaces",
@@ -1834,7 +1906,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.2.6",
   "title": "",
-  "body": "  Let be an real matrix. Then we have the following subspaces associated to .  (i) is subspace of   (ii) is subspace of   (iii) is subspace of   (iv) is subspace of .  The above four subspaces are called fundamental subspaces associated to .   "
+  "body": "  Let be an real matrix. Then we have the following subspaces associated to .    is subspace of      is subspace of      is subspace of      is subspace of .   The above four subspaces are called fundamental subspaces associated to .   "
 },
 {
   "id": "matrix-subspaces",
@@ -1843,7 +1915,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.2.7",
   "title": "",
-  "body": "  Let , the set of all real matrices with usual matrix addition and scalar multiplication.  (i) is a subspace of .  (ii) is a subspace of .  (iii) is a subspace of .  (iv) is not a subspace of .  (v) is not a subspace of .   "
+  "body": "  Let , the set of all real matrices with usual matrix addition and scalar multiplication.    is a subspace of .     is a subspace of .     is a subspace of .     is not a subspace of .     is not a subspace of .      "
 },
 {
   "id": "sec4-2-Abst-VS-12",
@@ -1861,7 +1933,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.2.9",
   "title": "",
-  "body": "  Let set of all functions from with addition and scalar multiplication defined as in Example . Let us look at some of the subspaces of .  (i) , the set of all bounded functions from to is a subspace of .  (ii) , the set of all continuous functions from to is a subspace of .  (iii) , the set of all differentiable functions from to is a subspace of .  (iv) Fix and is a subspace of . (What if we take all functions vanishing at finitely many points.)  (iv) is the set of even functions from is a subspace of . What about set of odd functions?   "
+  "body": "  Let set of all functions from with addition and scalar multiplication defined as in Example . Let us look at some of the subspaces of .    , the set of all bounded functions from to is a subspace of .     , the set of all continuous functions from to is a subspace of .     , the set of all differentiable functions from to is a subspace of .    Fix and is a subspace of . (What if we take all functions vanishing at finitely many points.)     is the set of even functions from is a subspace of . What about set of odd functions?      "
 },
 {
   "id": "sec4-2-Abst-VS-14",
@@ -1870,7 +1942,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.2.10",
   "title": "",
-  "body": "  Let be a vector space over . Let and be two subspaces of . Then  (i) is a subspace of . What about ?  (ii) is a subspace of .   "
+  "body": "  Let be a vector space over . Let and be two subspaces of . Then    is a subspace of . What about ?     is a subspace of .      "
 },
 {
   "id": "sec4-2-Abst-VS-15",
@@ -1888,7 +1960,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.3",
   "title": "Linear Span",
-  "body": " Linear Span  We have already defined linear span of a set of vectors in . The same one can defined in any vector space.   Linear Span   Let be a vector space over . Let be a set of vectors in . Then a vector is called a linear combination of if there exist scalars such that .  The set is called the linear span or spanning set of . We know that is a vector space of .    If is any subset of (may be infinite), then is the set of all finite linear combinations of elements from . In particular, if there exists and scalars such that .    For any subset , is a subspace of .      Let and and . What is ? Can identify it geometrically? Yes, it is a plane passing through the origin. That the can be written as for some ? Can you find what are .  From the concept of dot product, it easy to identify as a vector which is orthogonal\/perpendicular to both and . In particular, we can find and , the cross product of and .  Suppose, we do not want to use the above concept to find , then what do we do?  Suppose , Then there exists scalars and such that .  In particular, is the image space of .  We need to find such that for any . In particular, we have for any . Note that is our choice and we can choose conveniently to find . It is easy to see that   This is same say substituting in the equation .  In particular, we have such that .  Thus is the kernel of and is the orthogonal complement of kernel of .  Solving the above equations, we can find as one of the choices. This implies is the plane .      Let with usual addition and scalar multiplication .  Then is the set of symmetric matrices.      Let with usual addition and scalar multiplication .  Then .      Let . Then is the set of all polynomials of degree less than or equals to .      Let such that . Then show that is a subspace of .      Let . Then show that . Can you generalize this?      Let be a vector space and . A subspace of is called the smallest subspace of containing if (i) is subspace of with , and (ii) if is subspace of with , then .      (i) Let . Then is the smallest subspace of containing .  (ii) Let . Then is the smallest subspace of containing .      Suppose is a line in the plane? Then what is ?    "
+  "body": " Linear Span  We have already defined linear span of a set of vectors in . The same one can define in any vector space.   Linear Span   Let be a vector space over . Let be a set of vectors in . Then a vector is called a linear combination of if there exist scalars such that .  The set is called the linear span or spanning set of . We know that is a vector space of .    If is any subset of (may be infinite), then is the set of all finite linear combinations of elements from . In particular, if there exists and scalars such that .    For any subset , is a subspace of .      Let and and . What is ? Can identify it geometrically? Yes, it is a plane passing through the origin. That the can be written as for some ? Can you find what are .  From the concept of dot product, it easy to identify as a vector which is orthogonal\/perpendicular to both and . In particular, we can find and , the cross product of and .  Suppose, we do not want to use the above concept to find , then what do we do?  Suppose , Then there exists scalars and such that .  In particular, is the image space of .  We need to find such that for any . In particular, we have for any . Note that is our choice and we can choose conveniently to find . It is easy to see that   This is same say substituting in the equation .  In particular, we have such that .  Thus is the kernel of and is the orthogonal complement of kernel of .  Solving the above equations, we can find as one of the choices. This implies is the plane .      Let with usual addition and scalar multiplication .  Then is the set of symmetric matrices.      Let with usual addition and scalar multiplication .  Then .      Let . Then is the set of all polynomials of degree less than or equals to .      Let such that . Then show that is a subspace of .      Let . Then show that . Can you generalize this?      Let be a vector space and . A subspace of is called the smallest subspace of containing if (i) is subspace of with , and (ii) if is subspace of with , then .      (i) Let . Then is the smallest subspace of containing .  (ii) Let . Then is the smallest subspace of containing .      Suppose is a line in the plane? Then what is ?    "
 },
 {
   "id": "def-linear-span",
@@ -1996,7 +2068,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.4",
   "title": "Linear dependence and independence",
-  "body": " Linear dependence and independence  Linear dependence and linear independence set of vectors are defined exactly in a same way as we defined in .   Linear Dependence   A set of vectors is said to be linearly dependent if there exists scalars not all zero such that .  It is easy to see that is linearly dependent if there exists such that .     Linear Dedependence   A set of vectors is said to be linearly independent if it is not linearly dependent.    Let us understand this notion in order to get a working definition. Let us write the linearly dependent definition using quantifiers.  A set is linearly dependent if .   is linearly independent is same as negating the above statement. Thus  A set is linearly independent if .  The contra positive of the above statement state that A set is linearly independent whenever implies .  Thus we have the following equivalent definition of a linearly independent set.     is linearly independent whenever implies .      If , then is linearly dependent.      (i) If , then is linearly independent.  (iv) is linearly dependent if one of them is scalar multiple of the other.      (i) Let . The set is linearly independent.  (ii) Check if is linearly independent in .      Let such that and . Then show that is linearly independent in .      Let is linearly independent set. Suppose such that for scalars, 's and 's. Then . In other words, every vector in can be written in a unique way as a linear combination of the elements from .      Let be three vectors in . Show that is linearly independent if and only if is linearly independent.    "
+  "body": " Linear dependence and independence  Linear dependence and linear independence set of vectors are defined exactly in a same way as we defined in .   Linear Dependence   A set of vectors is said to be linearly dependent if there exists scalars not all zero such that .  It is easy to see that is linearly dependent if there exists such that .     Linear Dedependence   A set of vectors is said to be linearly independent if it is not linearly dependent.    Let us understand this notion in order to get a working definition. Let us write the linearly dependent definition using quantifiers.  A set is linearly dependent if .   is linearly independent is same as negating the above statement. Thus  A set is linearly independent if .  The contra positive of the above statement state that A set is linearly independent whenever implies .  Thus we have the following equivalent definition of a linearly independent set.     is linearly independent whenever implies .      If , then is linearly dependent.         If , then is linearly independent.     is linearly dependent if one of them is scalar multiple of the other.            Let . The set is linearly independent.    Check if is linearly independent in .         Let such that and . Then show that is linearly independent in .      Let is linearly independent set. Suppose such that for scalars, 's and 's. Then . In other words, every vector in can be written in a unique way as a linear combination of the elements from .      Let be three vectors in . Show that is linearly independent if and only if is linearly independent.    "
 },
 {
   "id": "LD-VS",
@@ -2026,54 +2098,54 @@ var ptx_lunr_docs = [
   "body": "   is linearly independent whenever implies .   "
 },
 {
-  "id": "sec4-3-LI-VS-12",
+  "id": "exer-LI-1",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-12",
+  "url": "sec4-3-LI-VS.html#exer-LI-1",
   "type": "Checkpoint",
   "number": "4.4.4",
   "title": "",
   "body": "  If , then is linearly dependent.   "
 },
 {
-  "id": "sec4-3-LI-VS-13",
+  "id": "exer-LI-2",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-13",
+  "url": "sec4-3-LI-VS.html#exer-LI-2",
   "type": "Checkpoint",
   "number": "4.4.5",
   "title": "",
-  "body": "  (i) If , then is linearly independent.  (iv) is linearly dependent if one of them is scalar multiple of the other.   "
+  "body": "     If , then is linearly independent.     is linearly dependent if one of them is scalar multiple of the other.      "
 },
 {
-  "id": "sec4-3-LI-VS-14",
+  "id": "exer-LI-3",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-14",
+  "url": "sec4-3-LI-VS.html#exer-LI-3",
   "type": "Checkpoint",
   "number": "4.4.6",
   "title": "",
-  "body": "  (i) Let . The set is linearly independent.  (ii) Check if is linearly independent in .   "
+  "body": "     Let . The set is linearly independent.    Check if is linearly independent in .      "
 },
 {
-  "id": "sec4-3-LI-VS-15",
+  "id": "exer-LI-4",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-15",
+  "url": "sec4-3-LI-VS.html#exer-LI-4",
   "type": "Checkpoint",
   "number": "4.4.7",
   "title": "",
   "body": "  Let such that and . Then show that is linearly independent in .   "
 },
 {
-  "id": "sec4-3-LI-VS-16",
+  "id": "exer-LI-5",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-16",
+  "url": "sec4-3-LI-VS.html#exer-LI-5",
   "type": "Checkpoint",
   "number": "4.4.8",
   "title": "",
   "body": "  Let is linearly independent set. Suppose such that for scalars, 's and 's. Then . In other words, every vector in can be written in a unique way as a linear combination of the elements from .   "
 },
 {
-  "id": "sec4-3-LI-VS-17",
+  "id": "exer-LI-6",
   "level": "2",
-  "url": "sec4-3-LI-VS.html#sec4-3-LI-VS-17",
+  "url": "sec4-3-LI-VS.html#exer-LI-6",
   "type": "Checkpoint",
   "number": "4.4.9",
   "title": "",
@@ -2086,7 +2158,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.5",
   "title": "Basis and dimension",
-  "body": " Basis and dimension   Basis of a Vector Space  We can defined basis of a vector space similar to basis of subspaces in .   Basis of a vector space   Let be a vector space over . A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of .  Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .    We have already seen several examples of bases in and some subspaces of .    Let . The set is basis of , called the standard basis.       is a basis of as a vector space over .      . is a basis , called the standard basis.      Any linearly independent set of vectors forms a basis of .      Let be a vector space over . Let and be two bases of . Then .      If a vector space has a basis consisting of elements then any set of vectors is linearly dependent.     Finite Dimensional Vector Space   A vector space is called finite dimensional if there exists a finite subset of such that .  A vector space which is not finite dimensional is called an infinite dimensional .      We say a vector space is of dimension if it has a basis consisting of elements.      What is the dimension of , the zero space?      (i) is a dimensional vectors space over .  (ii) , the set of all matrices pver is a -dimensional vector space over .  (iii) , the set of all polynomials of degree less than or equal to over is -dimensional vector space over .      Let be the set of all real symmetric matrices. The set is a basis of . That is, is 6 dimensional vector space over . What is dimension of the set of real symmetric matrices and dimension of real skew-symmetric matrices?     Let be the set of all real skew-symmetric matrices. Find a basis and hence the dimension of .     How to find a basis of a finite dimensional vector space?  First let us look at the following results.    Let be a linearly independent set of vectors. Suppose . Then is linearly independent.      Let be a finite dimensional vector space over . Then any linearly independent set can be extended to a basis of . More precisely, there exist vectors, where such that is a basis of .    These two exercises give a way to find a basis of a finite dimensional vector space starting with a nonzero vector in .    Complete the set to a basis of . One way of achieving this to find . Then Chose . Then in view of Exercise , is linearly independent. Since , is a basis of .  Another way to achieve this is to look at the standard basis vectors not in . In particular, . In order to find this we can apply RREF to the matrix and choose columns corresponding to the pivots. We have .  Clearly pivot columns are 1,2,4,6, which corresponds to vector . Thus is an extended basis of .      Let be a finite dimensional vector space over . Suppose is a finite set such that . Then there exists a subset such that is a basis of .      Consider in , where   We wish to find a subset of which is a basis of . We can achieve this by applying RREF to the column matrix . Thus   Clearly pivot columns are 1, 2, 3, 5, 7. Hence is basis of .      Let be a vector space. A set of vectors of is called a maximal linearly independent set if is linearly dependent for any vector .      (i) Any set with two linearly independent set of vectors in is a maximal linearly independent set.  (ii) Any set with three linearly independent set of vectors in is a maximal linearly independent set.      Let be a vector space. A set of vectors of is called a minimal set of generators if (i) and (ii) for any , .      (i) Any set with two linearly independent set of vectors in is a minimal set of generators.  (ii) Any set with three linearly independent set of vectors in is a minimal set of generators.    In the following theorem we mention the equivalent condition for a set to be a basis of a finite dimensional vector space.    Let be a finite dimensional vector space over . Then the following are equivalent.      is a basis of .     and is linearly independent.     is maximal linearly independent set.     is minimal set of generators.         Lagrange Interpolation  Consider the vector space . Fix distinct real numbers . Define polynomials for . The above equation can be written as   It is easy to see that if and 0 otherwise. We claim that is a linearly independent subset of . For .  Here the right hand side is the zero polynomial. This implies for all . Since , it implies that for all . Hence the claim.  Since is -dimensional vector space, the set is a basis. Hence every -th degree polynomial can be expressed uniquely as linear combination of . Suppose is polynomial passing through points , (that is ) where are distinct real numbers. This unique polynomial is given by called the Lagrange interpolation polynomial passing through .    Dimension Formula    Let be a finite dimensional vector space over . Let and be subspaces of . Then .  It is easy to check that is a subspace of . Moreover       Let . Consider subspaces and . Clearly and are subspaces of each of dimension 2. What is ? It is the line of intersection of the two planes, and . Thus . It is easy to see that   What is ? One can easily show that . However by dimension formula .  Since is a 3 dimensional subspace of , it is in fact .     "
+  "body": " Basis and dimension   Basis of a Vector Space  We can defined basis of a vector space similar to basis of subspaces in .   Basis of a vector space   Let be a vector space over . A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of .  Thus is basis of if    , that is, every vector can be expressed as linear combinations of     If and , then .       We have already seen several examples of bases in and some subspaces of .    Let . The set is basis of , called the standard basis.       is a basis of as a vector space over .       is a basis , called the standard basis.      Any linearly independent set of vectors forms a basis of .      Let be a vector space over . Let and be two bases of . Then .      If a vector space has a basis consisting of elements then any set of vectors is linearly dependent.     Finite Dimensional Vector Space   A vector space is called finite dimensional if there exists a finite subset of such that .  A vector space which is not finite dimensional is called an infinite dimensional .      We say a vector space is of dimension if it has a basis consisting of elements.      What is the dimension of , the zero space?      (i) is a dimensional vectors space over .  (ii) , the set of all matrices pver is a -dimensional vector space over .  (iii) , the set of all polynomials of degree less than or equal to over is -dimensional vector space over .      Let be the set of all real symmetric matrices. The set is a basis of . That is, is 6 dimensional vector space over . What is dimension of the set of real symmetric matrices and dimension of real skew-symmetric matrices?     Let be the set of all real skew-symmetric matrices. Find a basis and hence the dimension of .     How to find a basis of a finite dimensional vector space?  First let us look at the following results.    Let be a linearly independent set of vectors. Suppose . Then is linearly independent.      Let be a finite dimensional vector space over . Then any linearly independent set can be extended to a basis of . More precisely, there exist vectors, where such that is a basis of .    These two exercises give a way to find a basis of a finite dimensional vector space starting with a nonzero vector in .    Complete the set to a basis of . One way of achieving this to find . Then Chose . Then in view of Exercise , is linearly independent. Since , is a basis of .  Another way to achieve this is to look at the standard basis vectors not in . In particular, . In order to find this we can apply RREF to the matrix and choose columns corresponding to the pivots. We have .  Clearly pivot columns are 1,2,4,6, which corresponds to vector . Thus is an extended basis of .      Let be a finite dimensional vector space over . Suppose is a finite set such that . Then there exists a subset such that is a basis of .      Consider in , where   We wish to find a subset of which is a basis of . We can achieve this by applying RREF to the column matrix . Thus   Clearly pivot columns are 1, 2, 3, 5, 7. Hence is basis of .      Let be a vector space. A set of vectors of is called a maximal linearly independent set if is linearly dependent for any vector .      (i) Any set with two linearly independent set of vectors in is a maximal linearly independent set.  (ii) Any set with three linearly independent set of vectors in is a maximal linearly independent set.      Let be a vector space. A set of vectors of is called a minimal set of generators if (i) and (ii) for any , .      (i) Any set with two linearly independent set of vectors in is a minimal set of generators.  (ii) Any set with three linearly independent set of vectors in is a minimal set of generators.    In the following theorem we mention the equivalent condition for a set to be a basis of a finite dimensional vector space.    Let be a finite dimensional vector space over . Then the following are equivalent.      is a basis of .     and is linearly independent.     is maximal linearly independent set.     is minimal set of generators.         Lagrange Interpolation  Consider the vector space . Fix distinct real numbers . Define polynomials for . The above equation can be written as   It is easy to see that if and 0 otherwise. We claim that is a linearly independent subset of . For .  Here the right hand side is the zero polynomial. This implies for all . Since , it implies that for all . Hence the claim.  Since is -dimensional vector space, the set is a basis. Hence every -th degree polynomial can be expressed uniquely as linear combination of . Suppose is polynomial passing through points , (that is ) where are distinct real numbers. This unique polynomial is given by called the Lagrange interpolation polynomial passing through .    Dimension Formula    Let be a finite dimensional vector space over . Let and be subspaces of . Then .  It is easy to check that is a subspace of . Moreover       Let . Consider subspaces and . Clearly and are subspaces of each of dimension 2. What is ? It is the line of intersection of the two planes, and . Thus . It is easy to see that   What is ? One can easily show that . However by dimension formula .  Since is a 3 dimensional subspace of , it is in fact .     "
 },
 {
   "id": "def-basis-VS",
@@ -2095,7 +2167,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "4.5.1",
   "title": "Basis of a vector space.",
-  "body": " Basis of a vector space   Let be a vector space over . A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of .  Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .   "
+  "body": " Basis of a vector space   Let be a vector space over . A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of .  Thus is basis of if    , that is, every vector can be expressed as linear combinations of     If and , then .      "
 },
 {
   "id": "subsec-basis-VS-5",
@@ -2122,7 +2194,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.5.4",
   "title": "",
-  "body": "  . is a basis , called the standard basis.   "
+  "body": "   is a basis , called the standard basis.   "
 },
 {
   "id": "subsec-basis-VS-8",
