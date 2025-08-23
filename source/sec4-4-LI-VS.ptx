@@ -74,7 +74,7 @@
           </statement>
         </definition>
 
-        <exercise>
+        <exercise xml:id="exer-LI-1">
           <statement>
             <p>
               If <m>0\in S</m>, then <m>S</m> is linearly dependent.
@@ -82,30 +82,47 @@
           </statement>
         </exercise>
 
-        <exercise>
+        <exercise xml:id="exer-LI-2">
           <statement>
             <p>
-              (i) If <m>0\neq v\in V</m>, then <m>\{v\}</m> is linearly independent.
+              <ol marker="(i)">
+                <li>
+                  <p>
+              If <m>0\neq v\in V</m>, then <m>\{v\}</m> is linearly independent.
             </p>
-            <p>
-              (iv) <m>\{u,v\}\subset V</m> is linearly dependent if one of them is scalar multiple of the other.
+          </li>
+              <li>
+                <p>
+             <m>\{u,v\}\subset V</m> is linearly dependent if one of them is scalar multiple of the other.
             </p>
+          </li>
+        </ol>
+      </p>
           </statement>
         </exercise>
 
-        <exercise>
+        <exercise xml:id="exer-LI-3">
           <statement>
             <p>
-              (i) Let <m>V={\cal P}_n(\R)</m>.
+              <ol marker ="(i)">
+                <li>
+                  <p>
+               Let <m>V={\cal P}_n(\R)</m>.
               The set <m>\{1,x,x^2,\ldots, x^n\}</m> is linearly independent.
             </p>
+          </li>
+              <li>
             <p>
-              (ii) Check if <m>\{1+x+x^2+x^3,x+x^3,x^2+x^3,x^3\}</m> is linearly independent in <m>{\cal P}_3(\R)</m>.
+             Check if <m>\{1+x+x^2+x^3,x+x^3,x^2+x^3,x^3\}</m> is linearly independent in <m>{\cal P}_3(\R)</m>.
             </p>
+          </li>
+        </ol>
+      </p>
+      
           </statement>
         </exercise>
 
-        <exercise>
+        <exercise xml:id="exer-LI-4">
           <statement>
             <p>
               Let <m>A\in M_n({\R})</m> such that <m>A^k=0</m> and <m>A^{k-1}\neq 0</m>.
@@ -118,7 +135,7 @@
           </statement>
         </exercise>
 
-        <exercise>
+        <exercise xml:id="exer-LI-5">
           <statement>
             <p>
               Let <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly independent set.
@@ -134,7 +151,7 @@
           </statement>
         </exercise>
 
-        <exercise>
+        <exercise xml:id="exer-LI-6">
           <statement>
             <p>
               Let <m>u,v,w</m> be three vectors in <m>V</m>.

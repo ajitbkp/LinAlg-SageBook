@@ -14,13 +14,14 @@
     <p>
       Recall that the reflection <m>R_f</m> about the <m>x</m>-axis in <m>\R^2</m> is give by <m>R(x_1,x_2)=(x_1,-x_2)</m>.
       The matrix of <m>R_f</m> with respect to the standard basis is <m>\begin{bmatrix}1 \amp 0\\0 \amp -1 \end{bmatrix}</m>.
-      Let us look at how to find the reflection about any line <m>y=mx</m> where <m>m=\tan\theta</m>.
+      Let us look at how to find the reflection about any line passing through the orifin, 
+      say, <m>y=mx</m> where <m>m=\tan\theta</m>
     </p>
 
     <example xml:id="linalg-engg-eg36">
       <statement>
         <p>
-          Let <m>Q</m> be the reflection in <m>\R^2</m> about the line <m>y=mx</m>,
+          Let <m>Q</m> denote be the reflection in <m>\R^2</m> about the line <m>y=mx</m>,
           where <m>m=\tan\theta</m>.
           We wish to find the matrix of <m>Q</m> with respect to the standard basis.
         </p>
@@ -68,33 +69,44 @@
         </p>
     
         <p>
-          (i)  If <m>T</m> is reflection about <m>y</m> axis.
+           If <m>T</m> is reflection about <m>y</m> axis.
         </p>
-    
+        <ol marker="(i)">
+          <li>
         <p>
-          (ii) If <m>T</m> is reflection about the line <m>y=x</m>
+          If <m>T</m> is reflection about the line <m>y=x</m>
         </p>
-    
+      </li>
+      <li>
         <p>
-          (iii) If <m>T</m> is reflection about the line <m>y=-x</m>
+          If <m>T</m> is reflection about the line <m>y=-x</m>
         </p>
-    
+        </li>
+        <li>
         <p>
-          (iv) If <m>T</m> is a clockwise rotation by an angle <m>\pi/2</m>.
+          If <m>T</m> is a clockwise rotation by an angle <m>\pi/2</m>.
         </p>
+      </li>
+    </ol>
       </statement>
     </activity>
     
     <activity xml:id="exer-3-3-3"> 
       <statement>
+        <ol marker ="(i)">
+          <li>
         <p>
-          (i) Let <m>T\colon \R^3\to \R^3</m> be a linear transformation which is reflection about the <m>xy</m> plane.
+          Let <m>T\colon \R^3\to \R^3</m> be a linear transformation which is reflection about the <m>xy</m> plane.
           Write <m>T</m> explicitly and hence show that it is induced by a matrix.
         </p>
+        </li>
+        <li>
         <p>
-          (ii) Let <m>T\colon \R^3\to \R^3</m> be a linear transformation which is reflection about the <m>yz</m> plane.
+          Let <m>T\colon \R^3\to \R^3</m> be a linear transformation which is reflection about the <m>yz</m> plane.
           Write <m>T</m> explicitly and hence show that it is induced by a matrix.
         </p>
+        </li>
+      </ol>
       </statement>
     </activity>
   </subsection>
@@ -178,12 +190,18 @@
           For the following linear transformations <m>P\colon \R^3\to T^3</m>,
           show that its is induced by a matrix and find the matrix.
         </p>
+        <ol marker="(i)">
+          <li>
         <p>
-          (i) <m>P</m> is is projection onto <m>xy</m> plane.
+          <m>P</m> is is projection onto <m>xy</m> plane.
         </p>
+      </li>
+      <li>
         <p>
-          (ii) <m>P</m> is is projection onto <m>yz</m> plane.
+          <m>P</m> is is projection onto <m>yz</m> plane.
         </p>
+      </li>
+    </ol>
       </statement>
     </activity>
    
@@ -196,21 +214,29 @@
       <title>Rotation in <m>\R^3</m></title>
       <statement>
         <p>
-          Let <m>R_{z,\theta} \colon \R^3\to \R^3</m> denote the rotation in <m>\R^3</m> about the <m>z</m>-axis through an angle <m>\theta</m> from the positive x=<m>x</m>-axis toward the positive <m>y</m>-axis
-          (that is anticlockwise).
+          Let <m>R_{z,\theta} \colon \R^3\to \R^3</m> denote the rotation in <m>\R^3</m> about the 
+          <m>z</m>-axis through an angle <m>\theta</m> from the positive 
+          <m>x</m>-axis toward the positive <m>y</m>-axis (that is anticlockwise).
           Let us find the matrix of this transformation with respect to the standard basis.
         </p>
     
         <p>
-          First of notice that in this case,
+          First of all notice that in this case,
           the <m>z</m>-coordinate of any vector does not change.
-          Thus <m>R_{z,\theta}(e_3)=e^3</m>.
+          Thus <m>R_{z,\theta}(e_3)=e_3</m>.
           What happens to <m>e_1</m> and <m>e_2</m>?
           They get rotated by an angle <m>\theta</m>.
-          That is <m>R_{z,\theta}(e_1)=\begin{bmatrix}\cos \theta \\\sin\theta\amp  0 \end{bmatrix}</m> and <m>R_{z,\theta}(e_2)=\begin{bmatrix}-\sin \theta \\\cos\theta\amp  0 \end{bmatrix}</m>.
+          That is <m>R_{z,\theta}(e_1)=
+            \begin{bmatrix}\cos \theta \\ \sin\theta\\ 0 \end{bmatrix}</m> 
+          and 
+          <m>R_{z,\theta}(e_2)=\begin{bmatrix}-\sin \theta \\ \cos\theta\\ 0 
+            \end{bmatrix}</m>.
           Hence the matrix of <m>R_{z,\theta}</m> is
           <me>
-            R_{z,\theta} =\begin{bmatrix}\cos \theta \amp  -\sin\theta\amp  0\\ \sin\theta \amp  \cos\theta \amp  0\\ 0 \amp  0 \amp  1 \end{bmatrix}
+            R_{z,\theta} =\begin{bmatrix}
+            \cos \theta \amp  -\sin\theta\amp  0\\ 
+            \sin\theta  \amp  \cos\theta \amp  0\\ 
+            0 \amp  0 \amp  1 \end{bmatrix}.
           </me>
         </p>
     
@@ -219,6 +245,33 @@
         </p>
       </statement>
     </example>
+
+    <activity>
+      <statement>
+        <p>
+          Write the matrix of rotation about <m>x</m>-axis and 
+          <m>y</m>-axis.
+        </p>
+      </statement>
+      
+      <solution>
+        <p>
+          <md>
+           <mrow>  R_{x,\theta} \amp =\amp \begin{bmatrix}
+            1 \amp 0 \amp 0\\
+            0 \amp \cos \theta \amp  -\sin\theta\\ 
+            0 \amp \sin\theta  \amp  \cos\theta  
+            \end{bmatrix} </mrow> 
+            <mrow> R_{y,\theta} \amp =\amp \begin{bmatrix}
+            \cos \theta  \amp 0 \amp -\sin\theta\\
+            0 \amp 1 \amp 0\\
+            \cos \theta \amp 0 \amp  -\sin\theta            
+            \end{bmatrix} </mrow>
+          </md>
+          
+        </p>
+      </solution>
+    </activity>
     
     <example xml:id="linalg-engg-eg45">
       <title>Projection onto a line in <m>\R^3</m></title>

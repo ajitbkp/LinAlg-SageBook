@@ -6,7 +6,7 @@
   
     <p>
       We have already defined linear span of a set of vectors in <m>\R^n</m>.
-      The same one can defined in any vector space.
+      The same one can define in any vector space.
     </p>
 
     <definition xml:id="def-linear-span">

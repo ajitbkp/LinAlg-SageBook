@@ -19,45 +19,40 @@
             Satisfying the following properties:
           </p>
           <p>
-            <ol>
+            <ol marker="A1">
               <li>
-              <alert>A1:</alert>
                   for all <m>x,y\in V</m>, <m>x+y=y+x</m>.
               </li>
               <li>
-                <alert>A2:</alert>
                   for all <m>x,y,z\in V</m>, <m>x+(y+z)=(x+y)+z</m>.   
               </li>
               <li>
-                <alert>A3:</alert>
                   There exists <m>\overline{0}\in V</m> such that for all <m>x\in V</m>,
                   <m>\overline{0}=x+\overline{0}</m>.
                   This <m>\overline{0}</m> is called an additive identity.
               </li>
               <li>
-                <alert>A4:</alert>
                   for each <m>x\in V</m>, there is a vector <m>x'\in V</m>,
                   such that <m>x+x'=x'+x=\overline{0}</m>.
                   This <m>x'</m> is called an additive inverse of <m>x</m>.
                               </li>
-              <li>
-                <alert>S1:</alert>
+              
+              </ol>
+              <ol marker="S1">
+              <li>  
                   for all <m>\alpha\in \R</m> and <m>x,y \in V</m>,
                   <m>\alpha(x+y)=\alpha x+\alpha y</m>.
                               </li>
               <li>
-                <alert>S2:</alert>
                   for all <m>\alpha,\beta \in \R</m> and <m>x \in V</m>,
                   <m>(\alpha+\beta) x=\alpha x+\beta y</m>.
               </li>
               <li>
-                <alert>S3:</alert>
                   for all <m>\alpha,\beta \in \R</m> and <m>x \in V</m>,
                   <m>(\alpha\beta) x=\alpha (\beta x)y=\beta(\alpha x)</m>.
               </li>
               <li>
-                <alert>S4:</alert>
-                  for all <m>x\in V</m>, <m>1\cdot x=x</m>.
+                 for all <m>x\in V</m>, <m>1\cdot x=x</m>.
               </li>
             </ol>
           </p>
@@ -68,6 +63,15 @@
         </statement>
       </definition>
     
+      <remark>
+        <statement>
+          <p>
+          In the above definition one 
+          can replace <m>\R</m> with any <em>field </em> <m>(F).</m> 
+          However, in this text unless mention, we shall assume <m>V</m> a vector space over.  
+          </p>
+        </statement>
+      </remark>
       <example xml:id="eg-Rn-vs">
         <statement>
           <p>
@@ -145,13 +149,20 @@
       <example xml:id="eg-rationals-vs">
         <statement>
           <p>
-            (i) The set of rational numbers
+            <ol marker="(i)">
+              <li>
+              <p>The set of rational numbers
             <m>\mathbb{Q}</m> with usual addition and multiplication is a vector space over <m>\mathbb{Q}</m>.
             However, <m>Q</m> is not a vector space over <m>\R</m>.
           </p>
-          <p>
-            (ii) <m>\R</m> is a vector space over <m>\mathbb{Q}</m>.
+          </li>
+          <li>
+          <p> 
+            <m>\R</m> is a vector space over <m>\mathbb{Q}</m>.
           </p>
+        </li>
+      </ol>
+    </p>
         </statement>
       </example>
 
@@ -288,39 +299,61 @@
         <title>Properties</title>
         <statement>
           <p>
-            Let <m>V</m> be a vector space over <m>\R</m>.
+          Let <m>V</m> be a vector space over <m>\R</m>.
             Then we have the following properties:
-          </p>
+        
+           <ol marker="(i)">
+            <li>
+              <p>
+                Additive identity in <m>V</m> is unique.
+              </p>
+            </li>
+            <li>
           <p>
-            (i) Additive identity in <m>V</m> is unique.
+            Additive inverse in <m>V</m> is unique.
           </p>
+        </li>
+        <li>
           <p>
-            (ii) Additive inverse in <m>V</m> is unique.
+            <m>0\cdot v=0</m> for any <m>v\in V</m>.
           </p>
+        </li>
+        <li>
           <p>
-            (iii) <m>0\cdot v=0</m> for any <m>v\in V</m>.
+            <m>(-1)\cdot v=-v</m> for all <m>v\in V</m>.
           </p>
+          </li>
+        <li>
           <p>
-            (iv) <m>(-1)\cdot v=-v</m> for all <m>v\in V</m>.
+            <m>-(-v) =v</m> for all <m>v\in V</m>.
           </p>
+          </li>
+        <li>
           <p>
-            (v) <m>-(-v) =v</m> for all <m>v\in V</m>.
+            If <m>\alpha \cdot v=0</m> then either <m>\alpha=0</m> or <m>v=0</m>.
           </p>
+          </li>
+        <li>
           <p>
-            (vi) If <m>\alpha \cdot v=0</m> then either <m>\alpha=0</m> or <m>v=0</m>.
-          </p>
-          <p>
-            (vii) If <m>v+u=u</m>, then <m>v=0</m>,
+           If <m>v+u=u</m>, then <m>v=0</m>,
             called the right cancellation.
             Similarly, we have left cancellation.
           </p>
+          </li>
+        <li>
           <p>
-            (viii) If <m>\alpha v=\beta v</m> and <m>v\neq 0</m>, then <m>\alpha=\beta</m>.
+          If <m>\alpha v=\beta v</m> and <m>v\neq 0</m>, then <m>\alpha=\beta</m>.
           </p>
+          </li>
+        <li>
           <p>
-            (ix ) <m>\alpha v=\alpha u</m> and <m>\alpha\neq 0</m>,
+            <m>\alpha v=\alpha u</m> and <m>\alpha\neq 0</m>,
             then <m>u=v</m>.
           </p>
+          </li>
+        </ol>
+        
+      </p>
         </statement>
       </theorem>
 

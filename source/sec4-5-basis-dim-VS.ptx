@@ -19,12 +19,22 @@
             <m>v\in \R^n</m> can be expressed uniquely as linear combinations of <m>v_1,v_2,\ldots,v_n</m>.
           </p>
           <p>
-            Thus <m>\beta</m> is basis of <m>V</m> if (i) <m>L(\beta)=\R^n</m>,
-            that every vector <m>v\in \R^n</m> can be expressed as linear combinations of <m>v_1,v_2,\ldots,v_n</m>.
-          </p>
-          <p>
-            (ii) If <m>v=\alpha_1v_1+\alpha_2v_2+\cdots +\alpha_nv_n</m> and <m>v=\beta_1v_1+\beta_2v_2+\cdots +\beta_nv_n</m>,
+            Thus <m>\beta</m> is basis of <m>V</m> if
+            <ol marker="(i)">
+              <li>
+                <p>
+                 <m>L(\beta)=\R^n</m>,
+            that is,  every vector <m>v\in \R^n</m> can be expressed as linear 
+            combinations of <m>v_1,v_2,\ldots,v_n</m> 
+                </p>
+              </li>
+              <li>
+                <p>
+                  If <m>v=\alpha_1v_1+\alpha_2v_2+\cdots +\alpha_nv_n</m> and <m>v=\beta_1v_1+\beta_2v_2+\cdots +\beta_nv_n</m>,
             then <m>\alpha_1=\beta_1, \alpha_2=\beta_2=\cdots,\alpha_n=\beta_n</m>.
+                </p>
+              </li>
+            </ol>
           </p>
         </statement>
       </definition>
@@ -64,7 +74,7 @@
             \end{bmatrix} ,
             \begin{bmatrix}0 \amp  0 \\0 \amp  1
             \end{bmatrix} \right\}
-          </me>.
+          </me>
           <p>
             is a basis <m>M_2(\R)</m>, called the standard basis.
           </p>

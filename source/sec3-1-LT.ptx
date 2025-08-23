@@ -11,6 +11,17 @@
             <me>
               R_f\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)=\begin{bmatrix}x_1\\-x_2 \end{bmatrix}
             </me>.
+Look at the <xref ref="reflection-fig1"/>.
+
+            <figure xml:id="reflection-fig1">
+	<sidebyside width="40%">
+	  <image source="images/ref_fig1" />
+	</sidebyside>
+	<caption>
+	  Reflection of a point about <m>x</m>-axis. 
+	</caption>
+      </figure>
+    
             Note that we can write
             <me>
               R_f\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)=
@@ -28,6 +39,18 @@
             <me>
               R_\theta\left(\begin{bmatrix}x_1\\x_2 \end{bmatrix} \right)= \begin{bmatrix}r\cos(\alpha+\theta)\\r\sin(\alpha+\theta) \end{bmatrix}
             </me>.
+            Look at the <xref ref="reflection-fig1"/>.
+
+            <figure xml:id="rotation-fig1">
+	<sidebyside width="40%">
+	  <image source="images/rot_fig1" />
+	</sidebyside>
+	<caption>
+	  Rotation of a point by <m>\theta</m>. 
+	</caption>
+      </figure>
+
+      
             After Simplification, we have
             <me>
               \begin{bmatrix}r\cos(\alpha+\theta)\\r\sin(\alpha+\theta) \end{bmatrix} = \begin{bmatrix}r(\cos \theta \cos\alpha -\sin\theta \sin \alpha) \\ r(\sin\theta\cos\alpha+\cos\theta\sin\alpha) \end{bmatrix} = \begin{bmatrix}\cos \theta \amp  -\sin \theta\\ \cos \theta \amp  \sin \theta \end{bmatrix} \begin{bmatrix}r\cos\alpha\\r\sin\alpha \end{bmatrix}
@@ -54,17 +77,23 @@
             </me>.
           </p>
           <p>
-            <m>T_A</m> is called the matrix transformation induced by the matrix <m>A</m>.
-          </p>
-          <p>
+            <m>T_A</m> is called the matrix transformation induced by the matrix <m>A</m>.     
             Note that the matrix transformation <m>T_A</m> has the following properties: 
-            <p> (i)
-            <m>T_A(x+y)=A(x+y)=Ax+Ay=T_A(x)+T_A(y)</m> for all <m>x,y\in \R^n</m>. </p>
+          </p>
+            <ol marker="(i)">
+              <li>
+            <p> 
+            <m>T_A(x+y)=A(x+y)=Ax+Ay=T_A(x)+T_A(y)</m> for all <m>x,y\in \R^n</m>. 
+            </p>
+            </li>
+           <li>
             <p>
-            (ii) <m>T_A(\alpha x)=A(\alpha x)=\alpha Ax=\alpha T_A(x)</m> for all
+              <m>T_A(\alpha x)=A(\alpha x)=\alpha Ax=\alpha T_A(x)</m> for all
             <m>\alpha\in \R</m> and <m>x\in \R^n</m>.
           </p>
-        </p>
+           </li>
+          </ol>
+        
           <p>
             In particular,
             <m>T_A</m> preserves vector addition and scalar multiplication.
@@ -78,69 +107,95 @@
                 A map <m>T\colon \R^n \to \R^m</m> is called a 
                 <alert>linear transformation (or linear map)</alert> if it satisfies the following properties:
               </p>
-              <p>
-                (i) for all <m>x,y\in \R^n</m>, <m>T(x+y)=T(x)+T(y)</m>.
-              </p>
-              <p>
-                (ii) for all
-                <m>\alpha\in \R</m> and <m>x\in \R^n</m>,  <m>T(\alpha x)=\alpha T(x)</m> .
-              </p>
+              <ol marker="(i)">
+                <li>
+                  <p>
+                for all <m>x,y\in \R^n</m>, <m>T(x+y)=T(x)+T(y)</m>.      
+                  </p>
+                </li>
+                <li>
+                  <p>
+                   for all
+                <m>\alpha\in \R</m> and <m>x\in \R^n</m>,  <m>T(\alpha x)=\alpha T(x)</m>. 
+                  </p>
+                </li>
+              </ol>
             </statement>
           </definition>
 
-          <example>
-            <title>Examples of linear transformation</title>        
-            <statement>
-              <p>
-               (i) If <m>T\colon \R^n\to \R^m</m> is a linear map, then <m>T(0)=0</m>.
+             <p>
+                The following are very simple and trivial properties of linear transformation
+                 follows directly from the definition.
+             </p>
+               <ol marker="(i)">
+                <li>
+                  <p>
+                     If <m>T\colon \R^n\to \R^m</m> is a linear map, then <m>T(0)=0</m>.
                 That is, <m>T</m> takes the zero vector in <m>\R^n</m> to the zero vector in <m>\R^m</m>.
-              </p>
-
-              <p>
-                (ii) If <m>T\colon \R^n\to \R^m</m> is a linear map, then   
-                <m>T(-v)=-T(v)</m> for all <m>v\in \R^n</m>.             </p>
-            </statement>
-          </example>
-
-          <example>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If <m>T\colon \R^n\to \R^m</m> is a linear map, then   
+                <m>T(-v)=-T(v)</m> for all <m>v\in \R^n</m>.
+                  </p>
+                </li>
+               </ol>
+    
+          <example xml:id="LT-examples-1">
             <statement>
               <p>
-                (i) Zero map <m>T\colon \R^n \to \R^m</m> defined by <m>T(x)=0</m> for all 
-                <m>x</m> is a linear map.
-              </p>
-              
+              <ol marker="(i)">
+                <li>
+                <p>
+                  Zero map <m>T\colon \R^n \to \R^m</m> defined by <m>T(x)=0</m> for all 
+                  <m>x</m> is a linear map.
+                </p>
+              </li>
+
+            <li>
               <p> 
-                (ii) The identity map <m>T\colon \R^n \to \R^n</m> given by 
+              The identity map <m>T\colon \R^n \to \R^n</m> given by 
                 <m>T(x)=x</m> for all <m>x\in \R^n</m> is a linear map.
               </p>
+            </li>
 
+            <li>
               <p>
-                (iii) The reflection and rotation defined above are linear maps 
+              The reflection and rotation defined above are linear maps 
                 from <m>\R^2</m> to <m>\R^2</m>.
               </p>
-              
+              </li>
+
+              <li>
               <p>
-                (iv) Any matrix transformation given by <m>T_A(x)=Ax</m> is a linear map.
+              Any matrix transformation given by <m>T_A(x)=Ax</m> is a linear map.
               </p>
-                
+               </li>
+              
+               <li> 
               <p>
-                (v) Fix a vector <m>a</m> in <m>\R^n</m> and define
+              Fix a vector <m>a</m> in <m>\R^n</m> and define
                 <m>T_a\colon \R^n\to \R^n</m> as <m>T_a(x)=x+a</m>.
                 Is <m>T_a</m> a linear map?
 
-                When is this linear? (The map <m>T_a</m> is called <alert>translation by <m>a</m></alert>.)
+                When is this linear? (The map <m>T_a</m> is called 
+                <alert>translation by <m>a</m></alert>.)
               </p>
-
+              </li>
+              
+              <li>
               <p>
-                (vi) Let <m>a,b\in \R</m> be two real numbers.
+              Let <m>a,b\in \R</m> be two real numbers.
                 Define <m>T\colon \R^2\to \R</m> as <m>T(x,y)=ax+by</m>.
                 It is easy to check that <m>T</m> is a linear map?
                 Can you generalize this?
               </p>
+             </li>
              
+             <li>
               <p>
-                (vii) Let <m>a_1,\ldots, a_n</m> be <m>n</m> real numbers.
-                
+              Let <m>a_1,\ldots, a_n</m> be <m>n</m> real numbers.                
                 Define <m>T\colon \R^n\to \R</m> by
 
                 <me>
@@ -148,23 +203,29 @@
                 </me>.
                 It is easy to check that <m>T</m> is a linear map.
               </p>
+               </li> 
+              </ol>
+              </p>
 
             </statement>
           </example>
-        
+    
         <example xml:id="linear-maps-from-R-to-R">
+          <title>Linear maps from <m>\R\to \R</m></title>
+          <p>
             <statement>
               <p>
-                Let us find all linear maps from <m>\R</m> to <m>\R</m>.
-              </p>
-           <p>     Suppose <m>f\colon \R\to \R</m> is a linear map. We know that  <m>\{1\}</m> is  
+                Let us find all linear maps from <m>\R</m> to <m>\R</m>. 
+                Suppose <m>f\colon \R\to \R</m> is a linear map. We know that  <m>\{1\}</m> is  
                 basis of <m>\R</m>. Then any vector <m>x=x\cdot 1</m>. 
                 Therefore, <m>f(x)=f(x\cdot 1)=xf(1)</m>. Thus  if we define <m>f(1)=a\in \R</m>
                 <m>f(x)=ax</m>. If <m>f</m> is linear map from <m>\R\to \R</m>, then there exist a real number 
                 <m>a\in \R</m> such that <m>f(x)=ax</m>. Note that in this case <m>a=f(1)</m>.
-           </p>
-                        </statement>
+                </p>
+              </statement>
+            </p>
           </example>
+
 
         </introduction>
         

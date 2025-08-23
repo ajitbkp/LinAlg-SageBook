@@ -217,11 +217,16 @@
   </example>
 
   <p>
-    <term>The follow iteract is generated using slate</term>
+    <term>The follow iteract is generated using slate.</term>
+    <line>You can change the input matrix and vectors and submit 
+      to see the image of vectors. Additionally, try to use the 
+      above tranformations defined such expansion, compression and shers 
+      and explore the same.
+    </line>
   </p>
   <figure xml:id="figure-geom-LT">
     <caption>Goemetry of Linear Tranformation</caption>
-    <interactive dark-mode-enabled="yes" xml:id="Geom-LT" platform="sage" width="60%" aspect="1:1">
+    <interactive dark-mode-enabled="yes" xml:id="Geom-LT" platform="sage" width="100%" aspect="1:1">
       <slate surface="sage">
         @interact
         def linear_transformation(A=matrix(QQ,[[1,1/2],[1,-1]]).transpose(),u=vector(QQ,[1,1]),v=vector(QQ,[-1/2,1])):
