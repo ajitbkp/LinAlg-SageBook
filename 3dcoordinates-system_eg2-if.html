@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>sagecell.makeSagecell({
+  "inputLocation": ".sage-interact",
+  "autoeval": true,
+  "hide": [
+    "editor",
+    "evalButton",
+    "permalink"
+  ]
+});
+</script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+</head>
+<body class="ptx-content ignore-math" id="changeme">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\Loadedframemethod}{default}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\inner}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\normx}[1]{\left\Vert#1\right\Vert}
+\newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right&gt;}
+\def\rank{{ rank\,}}
+\newcommand{\ds}{\displaystyle}
+
+\def\diag{{ diag\,}}
+\def\proj{{ proj\,}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div style="width:600px; height:600px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">@interact
+def plot_basis_and_grids(
+    b1 = vector(QQ,[1,1,0]), b2 = vector(QQ,[0,1,1]), b3 = vector(QQ,[1,0,1]),
+    b = vector(QQ,[3,-2,-1])):
+
+    # Define the basis vectors from user input
+    
+    basis = [b1, b2, b3]
+
+    colors = ["red", "green", "blue"]
+    labels = ["b1", "b2", "b3"]
+
+    # Plot basis vectors
+    plots = []
+    for v, c, lab in zip(basis, colors, labels):
+        plots.append(arrow3d((0,0,0), v, color=c, thickness=3))
+        plots.append(text3d(lab, v*1.2, color=c))
+
+    # Function to draw grid spanned by two basis vectors
+    def draw_grid(u, v, nu=7, nv=7, factor=3, color="black", opacity=0.4):
+        s_vals = [i/(nu-1)*2*factor - factor for i in range(nu)]
+        t_vals = [i/(nv-1)*2*factor - factor for i in range(nv)]
+        grid_lines = []
+        for s in s_vals:
+            line = [s*u + t*v for t in t_vals]
+            grid_lines.append(line3d(line, color=color, opacity=opacity))
+        for t in t_vals:
+            line = [s*u + t*v for s in s_vals]
+            grid_lines.append(line3d(line, color=color, opacity=opacity))
+        return sum(grid_lines)
+    
+    V = QQ^3
+    W = V.subspace_with_basis(basis)
+    s = W.coordinates(b)
+    print(f'The coordinates of v are {s}')
+
+    a1,a2,a3 = s[0]*b1,s[1]*b2,s[2]*b3
+    L = line3d([b1,a1],color='red',linestyle="--")
+    L += line3d([a1,b],color='red',linestyle="--")
+    L += line3d([b2,a2],color='green',linestyle="--")
+    L += line3d([a2,b],color='green',linestyle="--")
+    L += line3d([b3,a3],color='blue',linestyle="--")
+    L += line3d([a3,b],color='blue',linestyle="--")
+    plotv=arrow3d((0,0,0), b, color='black', thickness=5)
+    vt = text3d("v", 6/5*b, color='black')
+
+    # Add extended grids
+    plots.append(draw_grid(b1, b2, factor=3))
+    plots.append(draw_grid(b1, b3, factor=3))
+    plots.append(draw_grid(b2, b3, factor=3))
+    plots.append(L)
+    plots.append(plotv)
+    plots.append(vt) 
+
+
+    # Show final plot without frame
+    show(sum(plots), aspect_ratio=1, frame=False, viewer="threejs")
+</script></pre></div>
+</body>
+</html>
