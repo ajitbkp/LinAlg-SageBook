@@ -278,7 +278,8 @@
       <statement>
         <p>
          Let
-          <m>v=(a,b,c)</m> be a nonzero vector in <m>\R^3</m> and <m>L</m> is the line passing through <m>(a,b,c)</m> and the origin, that is,
+          <m>v=(a,b,c)</m> be a nonzero vector in <m>\R^3</m> and <m>L</m> denote
+          the line passing through <m>(a,b,c)</m> and the origin, that is,
           <m>L=\R_v=\{\alpha v:\alpha\in \R\}</m>.
           We wish to find the orthogonal projection of any vector <m>u=(x,y,z)\in \R^3</m>.
           If <m>p</m> is the orthogonal projection of <m>u</m> onto <m>L</m>,

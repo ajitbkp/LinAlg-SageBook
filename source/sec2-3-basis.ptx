@@ -378,6 +378,7 @@ Thus <me>
         </statement>
     </definition>
 <p>
+
   Basis give rise to a new coordinate system. We are familiar 
   with the standard (cartesian) coordinate system and how to find 
   coordinates of a given vector about the standard coordinates system. 
@@ -395,7 +396,58 @@ Thus <me>
           </figure>
          </sidebyside>
         
-    
+    <p> <alert>Visualizing coordinate system in <m>\R^3</m></alert></p>
+      Use the following Sage interact applets to vizualize the 
+      coordinate system with respect to a given basis <m>\beta</m>. You can change the 
+      basis vectors <m>b_1,b_2,b_3</m> and submit to redraw the 
+      coordinates system correcsponding  <m>\beta</m>
+      
+ <figure xml:id="figure-3dcoordinates-system">
+    <caption>Goemetry of Linear Tranformation</caption>
+    <interactive dark-mode-enabled="yes" xml:id="3dcoordinates-system" platform="sage" width="100%" aspect="1:1">
+      <slate surface="sage">
+        @interact
+        def plot_basis_and_grids(
+            b1 = vector(QQ,[1,1,0]), b2 = vector(QQ,[0,1,1]), b3 = vector(QQ,[1,0,1])):
+
+            # Define the basis vectors from user input
+            
+            basis = [b1, b2, b3]
+
+            colors = ["red", "green", "blue"]
+            labels = ["b1", "b2", "b3"]
+
+            # Plot basis vectors
+            plots = []
+            for v, c, lab in zip(basis, colors, labels):
+                plots.append(arrow3d((0,0,0), v, color=c, thickness=3))
+                plots.append(text3d(lab, v*1.2, color=c))
+
+            # Function to draw grid spanned by two basis vectors
+            def draw_grid(u, v, nu=7, nv=7, factor=3, color="black", opacity=0.4):
+                s_vals = [i/(nu-1)*2*factor - factor for i in range(nu)]
+                t_vals = [i/(nv-1)*2*factor - factor for i in range(nv)]
+                grid_lines = []
+                for s in s_vals:
+                    line = [s*u + t*v for t in t_vals]
+                    grid_lines.append(line3d(line, color=color, opacity=opacity))
+                for t in t_vals:
+                    line = [s*u + t*v for s in s_vals]
+                    grid_lines.append(line3d(line, color=color, opacity=opacity))
+                return sum(grid_lines)
+
+            # Add extended grids
+            plots.append(draw_grid(b1, b2, factor=3))
+            plots.append(draw_grid(b1, b3, factor=3))
+            plots.append(draw_grid(b2, b3, factor=3))
+
+            # Show final plot without frame
+            show(sum(plots), aspect_ratio=1, frame=False, viewer="threejs")
+            </slate>
+          </interactive>
+  </figure>
+
+
 <example xml:id="coodinates_figure1">
  <statement>
   <p>
@@ -414,7 +466,7 @@ Thus <me>
   </caption>
                </figure>
 
-               Goemtrically it  is clear that <m>v=2v_1+v2</m> and 
+               Goemetrically it  is clear that <m>v=2v_1+v2</m> and 
                <m>w=-2v_2+3v_2</m>. Thus the coordinates of 
                <m>v</m> and with respect to <m>\beta</m> are <m>(2,1)</m>  and 
                <m>(-2,3)</m> respectively. (verify)
