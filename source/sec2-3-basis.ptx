@@ -536,7 +536,7 @@ Thus <me>
           L += line3d([b3,a3],color='blue',linestyle="--")
           L += line3d([a3,b],color='blue',linestyle="--")
           plotv=arrow3d((0,0,0), b, color='black', thickness=5)
-          vt = text3d("v", 6/5*b, color='black')
+          vt = text3d("b", 6/5*b, color='black')
 
           # Add extended grids
           plots.append(draw_grid(b1, b2, factor=3))
