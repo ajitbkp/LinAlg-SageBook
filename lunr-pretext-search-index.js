@@ -817,7 +817,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Basis and Dimension",
-  "body": " Basis and Dimension   In this section, we define basis of a subspace and also deal with coordinates of a vector with respect to a basis.    Basis  Basis   A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of . Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .  Similarly one can define a basis of any subspace of .     It is easy to prove the follwoing theorem which is opent taken as definition in many books.    A set of vectors is called a basis of iff (i) and is linearly independent.     (i) is a basis of called the standard basis of .  (ii) is a basis of .  (iii) is a basis of called the standard basis of .  (iv) is a basis of .   In , we define where component is 1 rest are zeros. Then it is easy to see that is a bais of called the standard basis .   Consider the plane . Note that, here and can be thought of as free variables. Any point , we have Thus spans . It is easy to see that is linearly independent. Hence is a basis of . In fact, any two vectors in which are linearly independent form a basis of .     Any set of linearly independent vectors forms a basis of .     Follows from Theorem .     Let be a basis of a subsapce of with elements. Then any set with elements is linearly dependent.     Let be scalars such that Since is a basis of , for each , we have Substituting this in Equation , we get Collecting the coefficients of in the Equation , we get Since is lineary independent, we have  These are homogeneous linear equations in variables . Hence it has a non zero solution. In particular, there exist scalars, not all zero such that . Hence is linearly dependent.    Let be a basis of a subscape of with elements. If is a linearly independet subset in , then .      Let and be two bases of a subscape of . Then and have the same number of elements.     Suppose and . Since is a basis and is linearly independet, by Corollary , . Similarly is a basis and is linearly independet, we have . Hence .     Dimension of Subspaces  Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.    Let be subspace of . The number of elements in a basis of is called the dimension of .     (i) is a -dimensional vector space over .  (ii) Any plane passing through origin in is a 2 dimensional subspace.  (iii) is dimensional subspace of . Write down a basis of .  (iv) is a 2-dimensional subspace of . Write down a basis of .    How to find basis of a subspace ?   Suppose is subspace spanned by a set of vectors, say, in . How to find a basis of ? Note that . In order to find a basis of , we construct a matrix whose rows are . Find the reduced-row-echelon form of . Then the non-zero rows in RREF( ) form a basis of .   Consider the set of vectors , , , and . Let be the linear span of . Let us find a basis and hence the dimension of .  We construct the matrix whose rows are and apply RREF. Thus has a basis consisting of three non zero rows of . That is, is basis of and it is a 3 dimensional subspace of . Note that is also the row space of . Note that each column of is a vector in . Let us find the column space of . Thus to find the , we take the transpose of and apply the RREF.  Thus the basis of consists of three non-zero rows of . Thus is a basis of . Notice that .     The is called the column rank of and is called the row rank of .      The row rank and column rank of any matrix are same. This is called the rank of the matrix.     Consider a matrix . Let us find the null space of . That is, find a basis of . The null space of is given by Thus and is a basis of . The is called the nullity of . Notice that for this matrix This is true for any matrix .     Consider the matrix . Let us find the image space, of . Let lies in then there exists such that , In particular has a solution. Thus to find a solution we apply the RREF to the augmented matrix . It is easy to see that This means that has a solution iff . Solving these equations, it is easy to see that Thus is a basis of which is same as the column space of . Note that is null space of the matrix .     Let be real matrix. Then .      Let be a basis of . Let . Then we know that there exists unique scalars such that . Then are called the coordinates of with respect to the basis .    Basis give rise to a new coordinate system. We are familiar with the standard (cartesian) coordinate system and how to find coordinates of a given vector about the standard coordinates system. Look at two different coordinates system below.    Coordinate system w.r.t. basis     Coordinate system w.r.t. basis       Let . It is easy to check that is a basis of . Consider two vectors and . Look at the in which the coordinate system with repext to is shown.     Coordinates system w.r.t. basis   Goemtrically it is clear that and . Thus the coordinates of and with respect to are and respectively. (verify) Do you see how we have found these coordinates?     Note that the order in which basis vectors appear is important. Suppose . Then is also a basis of . However the coordinates of with respect to the basis is . This is the reason basis of is called an ordered basis . By a basis we will always mean an ordered basis.    How to find the coordinates of a vector w.r.t. a given basis?   Suppose be a basis of and . How to find the coordinates of with respect to ? Let . We need to find . Note that Thus to find , we need to solve , where is the matrix whose columns are . This can be done using the RREF. Let us illustrate this with few examples.   If . Then . In particular is the coordinate of with respect to the standard basis .    Consider a basis . Find the coordinates of with respect to . In order to find the coordinates of with respect to , we solve the system where and . Using RREF Hence the coordinates of w.r.t. is .    Find the coordinates of the vector with respect to a basis\\\\ of . Using the RREF we have Hence the coordinates of with respect the given basis is .    Find the coordinates of the vector with respect to a basis of . Using the RREF we have Hence the coordinates of with respect the given basis is .     Change of bases.  Let and be two bases of . Fix a vector . Let and be the coordinates of with respect to and respectively. Then we have   Similarly Thus we have The matrices and are called transition matrices . We denotes by and by . Note that   Furthermore, the transition matrix can be obtained by applying RREF to the and extracting the last columns. Let us illustrate this with an example.   Consider two bases  and . Consider a vector . We have First we find and .  Similarly  Now to find the transition matrix , we have  It is easy to verify that . Similarly to find the transition matrix , we have  It is easy to verify that .     What are all subspaces of and ?      If is a subspace of , then it is null space of some matrix.    We end this chapter by look at a bigger example. Here we also illustrate RREF gives several informations on a matrix.   Consider a set of 7 vectors .  Define the matrix whose columns are and apply RREF to .  From the RREF of , we have the following observations: (i) The reduced row-echelon form of has 5 non zero rows. This means the rank of is 5. In particular, is singular.  (ii) The pivots columns are 1, 2, 4, 5, 7. In particular, are linearly independent and forms a basis of the subspace spanned by .  (iii) The 3rd columns gives as linear combinations of and . In particular, . Similarly .  (iv) Since rank of is 5, the nullity of is 2.  (v) First five rows of constitute a basis of the row space of .     "
+  "body": " Basis and Dimension   In this section, we define basis of a subspace and also deal with coordinates of a vector with respect to a basis.    Basis  Basis   A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of . Thus is basis of if (i) , that every vector can be expressed as linear combinations of .  (ii) If and , then .  Similarly one can define a basis of any subspace of .     It is easy to prove the follwoing theorem which is opent taken as definition in many books.    A set of vectors is called a basis of iff (i) and is linearly independent.     (i) is a basis of called the standard basis of .  (ii) is a basis of .  (iii) is a basis of called the standard basis of .  (iv) is a basis of .   In , we define where component is 1 rest are zeros. Then it is easy to see that is a bais of called the standard basis .   Consider the plane . Note that, here and can be thought of as free variables. Any point , we have Thus spans . It is easy to see that is linearly independent. Hence is a basis of . In fact, any two vectors in which are linearly independent form a basis of .     Any set of linearly independent vectors forms a basis of .     Follows from Theorem .     Let be a basis of a subsapce of with elements. Then any set with elements is linearly dependent.     Let be scalars such that Since is a basis of , for each , we have Substituting this in Equation , we get Collecting the coefficients of in the Equation , we get Since is lineary independent, we have  These are homogeneous linear equations in variables . Hence it has a non zero solution. In particular, there exist scalars, not all zero such that . Hence is linearly dependent.    Let be a basis of a subscape of with elements. If is a linearly independet subset in , then .      Let and be two bases of a subscape of . Then and have the same number of elements.     Suppose and . Since is a basis and is linearly independet, by Corollary , . Similarly is a basis and is linearly independet, we have . Hence .     Dimension of Subspaces  Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.    Let be subspace of . The number of elements in a basis of is called the dimension of .     (i) is a -dimensional vector space over .  (ii) Any plane passing through origin in is a 2 dimensional subspace.  (iii) is dimensional subspace of . Write down a basis of .  (iv) is a 2-dimensional subspace of . Write down a basis of .    How to find basis of a subspace ?   Suppose is subspace spanned by a set of vectors, say, in . How to find a basis of ? Note that . In order to find a basis of , we construct a matrix whose rows are . Find the reduced-row-echelon form of . Then the non-zero rows in RREF( ) form a basis of .   Consider the set of vectors , , , and . Let be the linear span of . Let us find a basis and hence the dimension of .  We construct the matrix whose rows are and apply RREF. Thus has a basis consisting of three non zero rows of . That is, is basis of and it is a 3 dimensional subspace of . Note that is also the row space of . Note that each column of is a vector in . Let us find the column space of . Thus to find the , we take the transpose of and apply the RREF.  Thus the basis of consists of three non-zero rows of . Thus is a basis of . Notice that .     The is called the column rank of and is called the row rank of .      The row rank and column rank of any matrix are same. This is called the rank of the matrix.     Consider a matrix . Let us find the null space of . That is, find a basis of . The null space of is given by Thus and is a basis of . The is called the nullity of . Notice that for this matrix This is true for any matrix .     Consider the matrix . Let us find the image space, of . Let lies in then there exists such that , In particular has a solution. Thus to find a solution we apply the RREF to the augmented matrix . It is easy to see that This means that has a solution iff . Solving these equations, it is easy to see that Thus is a basis of which is same as the column space of . Note that is null space of the matrix .     Let be real matrix. Then .      Let be a basis of . Let . Then we know that there exists unique scalars such that . Then are called the coordinates of with respect to the basis .    Basis give rise to a new coordinate system. We are familiar with the standard (cartesian) coordinate system and how to find coordinates of a given vector about the standard coordinates system. Look at two different coordinates system below.    Coordinate system w.r.t. basis     Coordinate system w.r.t. basis      Visualizing coordinate system in Use the following Sage interact applets to vizualize the coordinate system with respect to a given basis . You can change the basis vectors and submit to redraw the coordinates system correcsponding   Goemetry of Linear Tranformation      Let . It is easy to check that is a basis of . Consider two vectors and . Look at the in which the coordinate system with repext to is shown.     Coordinates system w.r.t. basis   Goemetrically it is clear that and . Thus the coordinates of and with respect to are and respectively. (verify) Do you see how we have found these coordinates?     Note that the order in which basis vectors appear is important. Suppose . Then is also a basis of . However the coordinates of with respect to the basis is . This is the reason basis of is called an ordered basis . By a basis we will always mean an ordered basis.    How to find the coordinates of a vector w.r.t. a given basis?   Suppose be a basis of and . How to find the coordinates of with respect to ? Let . We need to find . Note that Thus to find , we need to solve , where is the matrix whose columns are . This can be done using the RREF. Let us illustrate this with few examples.   If . Then . In particular is the coordinate of with respect to the standard basis .    Consider a basis . Find the coordinates of with respect to . In order to find the coordinates of with respect to , we solve the system where and . Using RREF Hence the coordinates of w.r.t. is .    Find the coordinates of the vector with respect to a basis\\\\ of . Using the RREF we have Hence the coordinates of with respect the given basis is .    Find the coordinates of the vector with respect to a basis of . Using the RREF we have Hence the coordinates of with respect the given basis is .     Change of bases.  Let and be two bases of . Fix a vector . Let and be the coordinates of with respect to and respectively. Then we have   Similarly Thus we have The matrices and are called transition matrices . We denotes by and by . Note that   Furthermore, the transition matrix can be obtained by applying RREF to the and extracting the last columns. Let us illustrate this with an example.   Consider two bases  and . Consider a vector . We have First we find and .  Similarly  Now to find the transition matrix , we have  It is easy to verify that . Similarly to find the transition matrix , we have  It is easy to verify that .     What are all subspaces of and ?      If is a subspace of , then it is null space of some matrix.    We end this chapter by look at a bigger example. Here we also illustrate RREF gives several informations on a matrix.   Consider a set of 7 vectors .  Define the matrix whose columns are and apply RREF to .  From the RREF of , we have the following observations: (i) The reduced row-echelon form of has 5 non zero rows. This means the rank of is 5. In particular, is singular.  (ii) The pivots columns are 1, 2, 4, 5, 7. In particular, are linearly independent and forms a basis of the subspace spanned by .  (iii) The 3rd columns gives as linear combinations of and . In particular, . Similarly .  (iv) Since rank of is 5, the nullity of is 2.  (v) First five rows of constitute a basis of the row space of .     "
 },
 {
   "id": "def-sec2-2-LI",
@@ -1018,56 +1018,65 @@ var ptx_lunr_docs = [
   "body": " Coordinate system w.r.t. basis   "
 },
 {
+  "id": "figure-3dcoordinates-system",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#figure-3dcoordinates-system",
+  "type": "Figure",
+  "number": "2.4.20",
+  "title": "",
+  "body": " Goemetry of Linear Tranformation   "
+},
+{
   "id": "coodinates_figure1",
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#coodinates_figure1",
   "type": "Example",
-  "number": "2.4.20",
+  "number": "2.4.21",
   "title": "",
-  "body": "  Let . It is easy to check that is a basis of . Consider two vectors and . Look at the in which the coordinate system with repext to is shown.     Coordinates system w.r.t. basis   Goemtrically it is clear that and . Thus the coordinates of and with respect to are and respectively. (verify) Do you see how we have found these coordinates?   "
-},
-{
-  "id": "subsec-dimension-intro-17",
-  "level": "2",
-  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-17",
-  "type": "Remark",
-  "number": "2.4.22",
-  "title": "",
-  "body": " Note that the order in which basis vectors appear is important. Suppose . Then is also a basis of . However the coordinates of with respect to the basis is . This is the reason basis of is called an ordered basis . By a basis we will always mean an ordered basis.  "
-},
-{
-  "id": "subsec-dimension-intro-20",
-  "level": "2",
-  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-20",
-  "type": "Example",
-  "number": "2.4.23",
-  "title": "",
-  "body": " If . Then . In particular is the coordinate of with respect to the standard basis .  "
-},
-{
-  "id": "subsec-dimension-intro-21",
-  "level": "2",
-  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-21",
-  "type": "Example",
-  "number": "2.4.24",
-  "title": "",
-  "body": " Consider a basis . Find the coordinates of with respect to . In order to find the coordinates of with respect to , we solve the system where and . Using RREF Hence the coordinates of w.r.t. is .  "
+  "body": "  Let . It is easy to check that is a basis of . Consider two vectors and . Look at the in which the coordinate system with repext to is shown.     Coordinates system w.r.t. basis   Goemetrically it is clear that and . Thus the coordinates of and with respect to are and respectively. (verify) Do you see how we have found these coordinates?   "
 },
 {
   "id": "subsec-dimension-intro-22",
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-22",
+  "type": "Remark",
+  "number": "2.4.23",
+  "title": "",
+  "body": " Note that the order in which basis vectors appear is important. Suppose . Then is also a basis of . However the coordinates of with respect to the basis is . This is the reason basis of is called an ordered basis . By a basis we will always mean an ordered basis.  "
+},
+{
+  "id": "subsec-dimension-intro-25",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-25",
+  "type": "Example",
+  "number": "2.4.24",
+  "title": "",
+  "body": " If . Then . In particular is the coordinate of with respect to the standard basis .  "
+},
+{
+  "id": "subsec-dimension-intro-26",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-26",
   "type": "Example",
   "number": "2.4.25",
+  "title": "",
+  "body": " Consider a basis . Find the coordinates of with respect to . In order to find the coordinates of with respect to , we solve the system where and . Using RREF Hence the coordinates of w.r.t. is .  "
+},
+{
+  "id": "subsec-dimension-intro-27",
+  "level": "2",
+  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-27",
+  "type": "Example",
+  "number": "2.4.26",
   "title": "",
   "body": " Find the coordinates of the vector with respect to a basis\\\\ of . Using the RREF we have Hence the coordinates of with respect the given basis is .  "
 },
 {
-  "id": "subsec-dimension-intro-23",
+  "id": "subsec-dimension-intro-28",
   "level": "2",
-  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-23",
+  "url": "sec-2-3-basis-dimension.html#subsec-dimension-intro-28",
   "type": "Example",
-  "number": "2.4.26",
+  "number": "2.4.27",
   "title": "",
   "body": " Find the coordinates of the vector with respect to a basis of . Using the RREF we have Hence the coordinates of with respect the given basis is .  "
 },
@@ -1076,7 +1085,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-5",
   "type": "Example",
-  "number": "2.4.27",
+  "number": "2.4.28",
   "title": "",
   "body": " Consider two bases  and . Consider a vector . We have First we find and .  Similarly  Now to find the transition matrix , we have  It is easy to verify that . Similarly to find the transition matrix , we have  It is easy to verify that .  "
 },
@@ -1085,7 +1094,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-6",
   "type": "Checkpoint",
-  "number": "2.4.28",
+  "number": "2.4.29",
   "title": "",
   "body": "  What are all subspaces of and ?   "
 },
@@ -1094,7 +1103,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-7",
   "type": "Checkpoint",
-  "number": "2.4.29",
+  "number": "2.4.30",
   "title": "",
   "body": "  If is a subspace of , then it is null space of some matrix.   "
 },
@@ -1103,7 +1112,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-9",
   "type": "Example",
-  "number": "2.4.30",
+  "number": "2.4.31",
   "title": "",
   "body": " Consider a set of 7 vectors .  Define the matrix whose columns are and apply RREF to .  From the RREF of , we have the following observations: (i) The reduced row-echelon form of has 5 non zero rows. This means the rank of is 5. In particular, is singular.  (ii) The pivots columns are 1, 2, 4, 5, 7. In particular, are linearly independent and forms a basis of the subspace spanned by .  (iii) The 3rd columns gives as linear combinations of and . In particular, . Similarly .  (iv) Since rank of is 5, the nullity of is 2.  (v) First five rows of constitute a basis of the row space of .   "
 },
@@ -1384,7 +1393,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.3",
   "title": "Reflections and Projections",
-  "body": " Reflections and Projections   In this section, we shall look at reflections and rotations in  as linear maps. We shall also find their matrices explicitley.    Reflections in  Recall that the reflection about the -axis in is give by . The matrix of with respect to the standard basis is . Let us look at how to find the reflection about any line passing through the orifin, say, where     Let denote be the reflection in about the line , where . We wish to find the matrix of with respect to the standard basis.  Note that can be accomplished by first rotating by , then reflecting about -axis and then rotating back by . Thus . Note that and are linear map, and hence is a linear map.  Using the notion of matrix of composition, the matrix of is given by   Since , and . Using this the matrix of with respect to the standard basis of  .      For the following linear transformation . Show that is induced by a matrix and hence find the matrix.  If is reflection about axis.    If is reflection about the line     If is reflection about the line     If is a clockwise rotation by an angle .          Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.    Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.        Projections in  The linear map , given is the projection on to -axis. Similarly, , given is the projection on to -axis. It is easy to check that the matrix of with respect to the standard basis is . Similarly, the matrix of with respect to the standard basis is .  We wish to define the projection onto the line , where .    Let be the projection in onto the line , where . We wish to find the matrix of with respect to the standard basis.  Using a similar procedure, we have   Hence the matrix of is .  After simplification, the matrix of is .  Write down the matrix of reflection about the line passing through the origin and the point , with .      If is the projection onto the line , then show that . In particular, . Thus the matrix is an idempotent matrix.  Write down the matrix of reflection onto the line passing through the origin and the point , with .      For the following linear transformations , show that its is induced by a matrix and find the matrix.     is is projection onto plane.     is is projection onto plane.        Projection and Reflection in   Rotation in   Let denote the rotation in about the -axis through an angle from the positive -axis toward the positive -axis (that is anticlockwise). Let us find the matrix of this transformation with respect to the standard basis.  First of all notice that in this case, the -coordinate of any vector does not change. Thus . What happens to and ? They get rotated by an angle . That is and . Hence the matrix of is   Find the matrix of and .      Write the matrix of rotation about -axis and -axis.          Projection onto a line in   Let be a nonzero vector in and is the line passing through and the origin, that is, . We wish to find the orthogonal projection of any vector . If is the orthogonal projection of onto , then for some scalar and is orthogonal to . Reader is encouraged to draw figure. From this, it is easy to see that . Hence .  We denote this projection by . Thus the matrix of is .    Reflection about a line in   Let be a nonzero vector in and is the line passing through . We wish to find the reflection of any vector through the line . Suppose is the orthogonal projection of onto . Then is the mid point of and . Hence . By the Ex. , the matrix of is given by      Projection onto a plane in   Let be a plane given by the equation . Then the vector is normal to . We wish to find the orthogonal projection of any vector onto .  Let be denote the projection of onto and , the projection of onto to . (Draw figure) Then .  Hence the the matrix of is given by      Reflection through a plane in   Let be a plane given by the equation . Then the vector is normal to . We wish to find the reflection of any vector through .  Suppose is the orthogonal projection of onto . Then it is easy to see that .  Now it is easy to show that the matrix of is given by .     "
+  "body": " Reflections and Projections   In this section, we shall look at reflections and rotations in  as linear maps. We shall also find their matrices explicitley.    Reflections in  Recall that the reflection about the -axis in is give by . The matrix of with respect to the standard basis is . Let us look at how to find the reflection about any line passing through the orifin, say, where     Let denote be the reflection in about the line , where . We wish to find the matrix of with respect to the standard basis.  Note that can be accomplished by first rotating by , then reflecting about -axis and then rotating back by . Thus . Note that and are linear map, and hence is a linear map.  Using the notion of matrix of composition, the matrix of is given by   Since , and . Using this the matrix of with respect to the standard basis of  .      For the following linear transformation . Show that is induced by a matrix and hence find the matrix.  If is reflection about axis.    If is reflection about the line     If is reflection about the line     If is a clockwise rotation by an angle .          Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.    Let be a linear transformation which is reflection about the plane. Write explicitly and hence show that it is induced by a matrix.        Projections in  The linear map , given is the projection on to -axis. Similarly, , given is the projection on to -axis. It is easy to check that the matrix of with respect to the standard basis is . Similarly, the matrix of with respect to the standard basis is .  We wish to define the projection onto the line , where .    Let be the projection in onto the line , where . We wish to find the matrix of with respect to the standard basis.  Using a similar procedure, we have   Hence the matrix of is .  After simplification, the matrix of is .  Write down the matrix of reflection about the line passing through the origin and the point , with .      If is the projection onto the line , then show that . In particular, . Thus the matrix is an idempotent matrix.  Write down the matrix of reflection onto the line passing through the origin and the point , with .      For the following linear transformations , show that its is induced by a matrix and find the matrix.     is is projection onto plane.     is is projection onto plane.        Projection and Reflection in   Rotation in   Let denote the rotation in about the -axis through an angle from the positive -axis toward the positive -axis (that is anticlockwise). Let us find the matrix of this transformation with respect to the standard basis.  First of all notice that in this case, the -coordinate of any vector does not change. Thus . What happens to and ? They get rotated by an angle . That is and . Hence the matrix of is   Find the matrix of and .      Write the matrix of rotation about -axis and -axis.          Projection onto a line in   Let be a nonzero vector in and denote the line passing through and the origin, that is, . We wish to find the orthogonal projection of any vector . If is the orthogonal projection of onto , then for some scalar and is orthogonal to . Reader is encouraged to draw figure. From this, it is easy to see that . Hence .  We denote this projection by . Thus the matrix of is .    Reflection about a line in   Let be a nonzero vector in and is the line passing through . We wish to find the reflection of any vector through the line . Suppose is the orthogonal projection of onto . Then is the mid point of and . Hence . By the Ex. , the matrix of is given by      Projection onto a plane in   Let be a plane given by the equation . Then the vector is normal to . We wish to find the orthogonal projection of any vector onto .  Let be denote the projection of onto and , the projection of onto to . (Draw figure) Then .  Hence the the matrix of is given by      Reflection through a plane in   Let be a plane given by the equation . Then the vector is normal to . We wish to find the reflection of any vector through .  Suppose is the orthogonal projection of onto . Then it is easy to see that .  Now it is easy to show that the matrix of is given by .     "
 },
 {
   "id": "linalg-engg-eg36",
@@ -1465,7 +1474,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.3.4",
   "title": "Projection onto a line in <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
-  "body": " Projection onto a line in   Let be a nonzero vector in and is the line passing through and the origin, that is, . We wish to find the orthogonal projection of any vector . If is the orthogonal projection of onto , then for some scalar and is orthogonal to . Reader is encouraged to draw figure. From this, it is easy to see that . Hence .  We denote this projection by . Thus the matrix of is .   "
+  "body": " Projection onto a line in   Let be a nonzero vector in and denote the line passing through and the origin, that is, . We wish to find the orthogonal projection of any vector . If is the orthogonal projection of onto , then for some scalar and is orthogonal to . Reader is encouraged to draw figure. From this, it is easy to see that . Hence .  We denote this projection by . Thus the matrix of is .   "
 },
 {
   "id": "linalg-engg-eg46",
