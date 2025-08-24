@@ -397,13 +397,16 @@ Thus <me>
          </sidebyside>
         
     <p> <alert>Visualizing coordinate system in <m>\R^3</m></alert></p>
+    <p>
       Use the following Sage interact applets to vizualize the 
       coordinate system with respect to a given basis <m>\beta</m>. You can change the 
       basis vectors <m>b_1,b_2,b_3</m> and submit to redraw the 
-      coordinates system correcsponding  <m>\beta</m>
-      
+      coordinates system correcsponding  <m>\beta</m>. You can also rotoate 
+      the figure to have a better view.
+    </p>
+
  <figure xml:id="figure-3dcoordinates-system">
-    <caption>Goemetry of Linear Tranformation</caption>
+    <caption>Vizualizaton of coordinate system in <m>\R^3</m></caption>
     <interactive dark-mode-enabled="yes" xml:id="3dcoordinates-system" platform="sage" width="100%" aspect="1:1">
       <slate surface="sage">
         @interact
@@ -446,14 +449,13 @@ Thus <me>
             </slate>
           </interactive>
   </figure>
-
-
+  
 <example xml:id="coodinates_figure1">
  <statement>
   <p>
   Let <m>\beta=\{v_1=(1,1),v_2=(-1/2,1)\}</m>. It is easy to check that 
   <m>\beta</m> is a basis of <m>\R^2</m>. Consider two vectors <m>v=(3/2,3)</m>
-  and <m>w=-2v_1+3v_2 =(-7/2,-1)</m>. 
+  and <m>w=(-7/2,1)</m>. 
   Look at the <xref ref="coordinate_change_fig1"/> in which the 
   coordinate system with repext to <m>\beta</m> is shown.
 
@@ -466,14 +468,95 @@ Thus <me>
   </caption>
                </figure>
 
-               Goemetrically it  is clear that <m>v=2v_1+v2</m> and 
+               Goemetrically it  is clear that <m>v=2v_1+v_2</m> and 
                <m>w=-2v_2+3v_2</m>. Thus the coordinates of 
                <m>v</m> and with respect to <m>\beta</m> are <m>(2,1)</m>  and 
                <m>(-2,3)</m> respectively. (verify)
     
                Do you see how we have found these coordinates?
               </p>
- </statement> 
+</statement>
+</example>
+  
+
+<example xml:id="3dcoodinates_figure1" >
+<statement>
+  <p>
+    Consider a set <m>\beta=\{b_1=(1,1,0),b_2=(0,1,1), 1,0,1)\}</m>. 
+    Check that it is a basis of <m>\R^3</m>. Let us find the coordinates 
+    of a vector <m>b=(3,-2,-1)</m> geometrically. Look at the following 
+    Sage interact applet. Geometrically it is clear that 
+    <m>b=b_1-2b_2-b_3</m>. 
+
+  <figure xml:id="figure-3dcoordinates-system_eg2">
+    <caption>Goemetry of Linear Tranformation</caption>
+    <interactive dark-mode-enabled="yes" xml:id="3dcoordinates-system_eg2" platform="sage" width="100%" aspect="1:1">
+      <slate surface="sage">
+      @interact
+      def plot_basis_and_grids(
+          b1 = vector(QQ,[1,1,0]), b2 = vector(QQ,[0,1,1]), b3 = vector(QQ,[1,0,1]),
+          b = vector(QQ,[3,-2,-1])):
+
+          # Define the basis vectors from user input
+          
+          basis = [b1, b2, b3]
+
+          colors = ["red", "green", "blue"]
+          labels = ["b1", "b2", "b3"]
+
+          # Plot basis vectors
+          plots = []
+          for v, c, lab in zip(basis, colors, labels):
+              plots.append(arrow3d((0,0,0), v, color=c, thickness=3))
+              plots.append(text3d(lab, v*1.2, color=c))
+
+          # Function to draw grid spanned by two basis vectors
+          def draw_grid(u, v, nu=7, nv=7, factor=3, color="black", opacity=0.4):
+              s_vals = [i/(nu-1)*2*factor - factor for i in range(nu)]
+              t_vals = [i/(nv-1)*2*factor - factor for i in range(nv)]
+              grid_lines = []
+              for s in s_vals:
+                  line = [s*u + t*v for t in t_vals]
+                  grid_lines.append(line3d(line, color=color, opacity=opacity))
+              for t in t_vals:
+                  line = [s*u + t*v for s in s_vals]
+                  grid_lines.append(line3d(line, color=color, opacity=opacity))
+              return sum(grid_lines)
+          
+          V = QQ^3
+          W = V.subspace_with_basis(basis)
+          s = W.coordinates(b)
+          print(f'The coordinates of v are {s}')
+
+          a1,a2,a3 = s[0]*b1,s[1]*b2,s[2]*b3
+          L = line3d([b1,a1],color='red',linestyle="--")
+          L += line3d([a1,b],color='red',linestyle="--")
+          L += line3d([b2,a2],color='green',linestyle="--")
+          L += line3d([a2,b],color='green',linestyle="--")
+          L += line3d([b3,a3],color='blue',linestyle="--")
+          L += line3d([a3,b],color='blue',linestyle="--")
+          plotv=arrow3d((0,0,0), b, color='black', thickness=5)
+          vt = text3d("v", 6/5*b, color='black')
+
+          # Add extended grids
+          plots.append(draw_grid(b1, b2, factor=3))
+          plots.append(draw_grid(b1, b3, factor=3))
+          plots.append(draw_grid(b2, b3, factor=3))
+          plots.append(L)
+          plots.append(plotv)
+          plots.append(vt) 
+
+
+          # Show final plot without frame
+          show(sum(plots), aspect_ratio=1, frame=False, viewer="threejs")
+  </slate>
+          </interactive>
+  </figure>
+You can change basis vectors  <m>b_1, b_2</m> and <m>b_3</m> and the 
+vector <m>b</m> and sumit to redraw the new coordinate system and the 
+corresponding coordinates of <m>v</m>. 
+  </p>
+</statement>
 </example>
 
       <remark>
