@@ -3391,14 +3391,23 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.2",
   "title": "Gram-Schmidt Orthogonalization Process",
-  "body": " Gram-Schmidt Orthogonalization Process  In this section, we look at how to construct an orthogonal basis of from a basis.  Let be a basis of . Define   In view of Ex. , it is easy to see that is an orthogonal basis of . Now we normalize . Define . Then is an orthononal basis of . Note that we could have defined immediately after defining .  This process is called the Gram-Schmidt orthogonalization process .  Geometrically , constructed by subtracting the orthogonal projection of on to . In order to construct , we take sum of orthogonal projections of onto and , which is the orthogonal projection of the plane spanned by and and subtract this from . Readers are encouraged to draw figures.    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis obtained from the given basis is .       Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .   Sage also has an inbuilt method for Gramm-Schmidt orthogonalization process. For example, A.gram_schmidt() performs Gram-Schmidt orthogonalization on the rows of the matrix, returning a new matrix and a matrix accomplishing the transformation.   Here is the matrix whose rows are nothing but orthogonal vectors obtained by Gram-Schmidt and is an upper triangular matrix. We shall see meaning of and how it is obtained in later sections.      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .     Sage Routine for Gram-Schmidt Orthogonalizatio  Let us create a Sage routine to find an orthogonal basis from a set of linearly independent set of vecrors .   Now let us call the above function.   We can check if the set of vectors thus orbtained is orthonormal?    "
+  "body": " Gram-Schmidt Orthogonalization Process  In this section, we look at how to construct an orthogonal basis of from a basis.  Let be a basis of . Define   In view of Ex. , it is easy to see that is an orthogonal basis of . Now we normalize . Define . Then is an orthononal basis of . Note that we could have defined immediately after defining .  This process is called the Gram-Schmidt orthogonalization process .  Geometrically , constructed by subtracting the orthogonal projection of on to . In order to construct , we take sum of orthogonal projections of onto and , which is the orthogonal projection of the plane spanned by and and subtract this from . Readers are encouraged to draw figures. Also explore the Sage interact applet by changing the basis vectors.   Goemetry of Linear Tranformation      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis obtained from the given basis is .       Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .   Sage also has an inbuilt method for Gramm-Schmidt orthogonalization process. For example, A.gram_schmidt() performs Gram-Schmidt orthogonalization on the rows of the matrix, returning a new matrix and a matrix accomplishing the transformation.   Here is the matrix whose rows are nothing but orthogonal vectors obtained by Gram-Schmidt and is an upper triangular matrix. We shall see meaning of and how it is obtained in later sections.      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .     Sage Routine for Gram-Schmidt Orthogonalizatio  Let us create a Sage routine to find an orthogonal basis from a set of linearly independent set of vecrors .   Now let us call the above function.   We can check if the set of vectors thus orbtained is orthonormal?    "
+},
+{
+  "id": "figure-Gram-Schmidt-Applet1",
+  "level": "2",
+  "url": "sec6-1-GramSchmidt.html#figure-Gram-Schmidt-Applet1",
+  "type": "Figure",
+  "number": "6.2.1",
+  "title": "",
+  "body": " Goemetry of Linear Tranformation   "
 },
 {
   "id": "gram-schmidt-eg1",
   "level": "2",
   "url": "sec6-1-GramSchmidt.html#gram-schmidt-eg1",
   "type": "Example",
-  "number": "6.2.1",
+  "number": "6.2.2",
   "title": "",
   "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis obtained from the given basis is .    "
 },
@@ -3407,18 +3416,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-1-GramSchmidt.html#gram-schmidt-eg2",
   "type": "Example",
-  "number": "6.2.2",
-  "title": "",
-  "body": "  Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .   Sage also has an inbuilt method for Gramm-Schmidt orthogonalization process. For example, A.gram_schmidt() performs Gram-Schmidt orthogonalization on the rows of the matrix, returning a new matrix and a matrix accomplishing the transformation.   Here is the matrix whose rows are nothing but orthogonal vectors obtained by Gram-Schmidt and is an upper triangular matrix. We shall see meaning of and how it is obtained in later sections.   "
-},
-{
-  "id": "sec6-1-GramSchmidt-9",
-  "level": "2",
-  "url": "sec6-1-GramSchmidt.html#sec6-1-GramSchmidt-9",
-  "type": "Checkpoint",
   "number": "6.2.3",
   "title": "",
-  "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .   "
+  "body": "  Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .   Sage also has an inbuilt method for Gramm-Schmidt orthogonalization process. For example, A.gram_schmidt() performs Gram-Schmidt orthogonalization on the rows of the matrix, returning a new matrix and a matrix accomplishing the transformation.   Here is the matrix whose rows are nothing but orthogonal vectors obtained by Gram-Schmidt and is an upper triangular matrix. We shall see meaning of and how it is obtained in later sections.   "
 },
 {
   "id": "sec6-1-GramSchmidt-10",
@@ -3427,12 +3427,21 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "6.2.4",
   "title": "",
-  "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .   "
+  "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .   "
 },
 {
   "id": "sec6-1-GramSchmidt-11",
   "level": "2",
   "url": "sec6-1-GramSchmidt.html#sec6-1-GramSchmidt-11",
+  "type": "Checkpoint",
+  "number": "6.2.5",
+  "title": "",
+  "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .   "
+},
+{
+  "id": "sec6-1-GramSchmidt-12",
+  "level": "2",
+  "url": "sec6-1-GramSchmidt.html#sec6-1-GramSchmidt-12",
   "type": "Activity",
   "number": "6.2.1",
   "title": "Sage Routine for Gram-Schmidt Orthogonalizatio.",
