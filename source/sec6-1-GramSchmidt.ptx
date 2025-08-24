@@ -40,8 +40,74 @@
     In order to construct <m>u_3</m>,
     we take sum of orthogonal projections of <m>v_3</m> onto <m>u_1</m> and <m>u_2</m>,
     which is the orthogonal projection of the plane spanned by <m>u_1</m> and <m>u_2</m> and subtract this from <m>v_3</m>.
-    Readers are encouraged to draw figures.
+    Readers are encouraged to draw figures. Also explore the Sage interact 
+    applet by changing the basis vectors. 
   </p>
+ <figure xml:id="figure-Gram-Schmidt-Applet1">
+    <caption>Goemetry of Linear Tranformation</caption>
+    <interactive dark-mode-enabled="yes" xml:id="Gram-Schmidt-Applet1" platform="sage" width="100%" aspect="1:1">
+      <slate surface="sage">
+      @interact
+      def gram_schmidt_with_projection_lines(
+          v1=input_box([2,1,0], label="$v_1$"),
+          v2=input_box([1,0,1], label="$v_2$"),
+          v3=input_box([0,1,2], label="$v_3$"),
+          normalize=True
+      ):
+          # Convert inputs
+          v1 = vector(v1)
+          v2 = vector(v2)
+          v3 = vector(v3)
+          
+          # Step 1: u1
+          u1 = v1
+          
+          # Step 2: subtract projection of v2 on u1
+          proj_v2_u1 = (v2*u1)/(u1*u1) * u1
+          u2 = v2 - proj_v2_u1
+          
+          # Step 3: subtract projections of v3 on u1, u2
+          proj_v3_u1 = (v3*u1)/(u1*u1) * u1
+          proj_v3_u2 = (v3*u2)/(u2*u2) * u2
+          u3 = v3 - proj_v3_u1 - proj_v3_u2
+          
+          if normalize:
+              u1 = u1/u1.norm()
+              u2 = u2/u2.norm()
+              u3 = u3/u3.norm()
+          
+          # Plotting
+          plots = []
+          
+          # Original basis (red)
+          for v, lab in zip([v1,v2,v3], ["v1", "v2", "v3"]):
+              plots.append(arrow3d((0,0,0), v, color="red", thickness=2))
+              plots.append(text3d(lab, v*1.1, color="red", fontsize=14))
+          
+          # Orthogonal basis (blue)
+          for u, lab in zip([u1,u2,u3], ["q1", "q2", "q3"]):
+              plots.append(arrow3d((0,0,0), u, color="blue", thickness=4))
+              plots.append(text3d(lab, u*1.1, color="blue", fontsize=14))
+          
+          # Projections as arrows (green dashed)
+          for proj, lab in zip(
+              [proj_v2_u1, proj_v3_u1, proj_v3_u2],
+              ["P_q1(v2)", "P_q1(v3)", "P_q2(v3)"]
+          ):
+              plots.append(arrow3d((0,0,0), proj, color="green", thickness=2, linestyle="dashed"))
+        
+          
+          # Projection lines (green dotted from vector tip to projection point)
+          plots.append(line3d([v2, proj_v2_u1], color="green", thickness=2, linestyle="dotted"))
+          plots.append(line3d([v3, proj_v3_u1], color="green", thickness=2, linestyle="dotted"))
+          plots.append(line3d([v3, proj_v3_u2], color="green", thickness=2, linestyle="dotted"))
+          
+          # Show
+          show(sum(plots), aspect_ratio=1, frame=False, viewer="threejs")
+
+      </slate>
+      </interactive>
+  </figure>
 
   <example xml:id="gram-schmidt-eg1">
     <statement>
