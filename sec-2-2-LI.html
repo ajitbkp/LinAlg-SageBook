@@ -440,13 +440,13 @@ eBookConfig.enable_chatcodes =  false;
 </h3>
 <div class="para logical" id="sec-2-2-LI-6-1">
 <div class="para">Suppose <span class="process-math">\(x=\begin{pmatrix}x_1\\x_2\end{pmatrix}\text{,}\)</span> <span class="process-math">\(y=\begin{pmatrix}y_1\\y_2\end{pmatrix}\)</span> and <span class="process-math">\(z=\begin{pmatrix}z_1\\z_2\end{pmatrix}\)</span> be three vectors in <span class="process-math">\(\R^2\text{.}\)</span> We claim that <span class="process-math">\(x,y,z\)</span> are linearly dependent. In particular, any three vectors in <span class="process-math">\(\R^2\)</span> are linearly dependent. Let <span class="process-math">\(\alpha=\begin{pmatrix}\alpha_1\\\alpha_2\\\alpha_3\end{pmatrix}\)</span> be scalars such that <span class="process-math">\(\alpha_1 x+\alpha_2 y+\alpha_3 z=0\text{.}\)</span> We need to solve this equations for <span class="process-math">\(\alpha_1,\alpha_2,\alpha_3\text{.}\)</span> Thsese equation can be written as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hom-system2.html">
 \begin{equation*}
 \begin{pmatrix} x_1 \amp y_1\amp z_1\\x_2 \amp y_2\amp z_2\end{pmatrix} \begin{pmatrix}\alpha_1\\\alpha_2\\\alpha_3\end{pmatrix}=
 \begin{pmatrix} 0\\0\end{pmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">The above equations can be written as <span class="process-math">\(A\alpha=0\)</span> which is a sustem of 2 linear equations in 3 variables. Hence it has a non-zero solution. In particular, there exist scalars <span class="process-math">\(\alpha_1,\alpha_2,\alpha_3\)</span> not all zero such that <span class="process-math">\(\alpha_1 x+\alpha_2 y+\alpha_3 z=0\text{.}\)</span> Hence <span class="process-math">\(x,y,z\)</span> are linearly dependence. Can you generalize this?</div>
+<div class="para">The above equations can be written as <span class="process-math">\(A\alpha=0\)</span> which is a system of 2 linear equations in 3 variables. Hence it has a non-zero solution by <a href="sec1-5-hom-system.html#thm-hom-system2" class="xref" data-knowl="./knowl/xref/thm-hom-system2.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.3">Theorem 1.6.3</a>. In particular, there exist scalars <span class="process-math">\(\alpha_1,\alpha_2,\alpha_3\)</span> not all zero such that <span class="process-math">\(\alpha_1 x+\alpha_2 y+\alpha_3 z=0\text{.}\)</span> Hence <span class="process-math">\(x,y,z\)</span> are linearly dependent. Can you generalize this?</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-2-2-LI-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Example 2.3.2"><a href="#sec-2-2-LI-6" title="Copy heading and permalink for Example 2.3.2" aria-label="Copy heading and permalink for Example 2.3.2">🔗</a></div></article><article class="theorem theorem-like" id="thm-sec2-2-thm2"><h3 class="heading">
@@ -454,7 +454,9 @@ eBookConfig.enable_chatcodes =  false;
 </h3>
 <div class="para" id="thm-sec2-2-thm2-1-1">Any <span class="process-math">\(n+1\)</span> vectors in <span class="process-math">\(\R^n\)</span> are linearly dependent.<div class="autopermalink" data-description="Paragraph"><a href="#thm-sec2-2-thm2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 2.3.3"><a href="#thm-sec2-2-thm2" title="Copy heading and permalink for Theorem 2.3.3" aria-label="Copy heading and permalink for Theorem 2.3.3">🔗</a></div></article><article class="definition definition-like" id="def-sec2-1-LI"><h3 class="heading">
+<div class="autopermalink" data-description="Theorem 2.3.3"><a href="#thm-sec2-2-thm2" title="Copy heading and permalink for Theorem 2.3.3" aria-label="Copy heading and permalink for Theorem 2.3.3">🔗</a></div></article><details id="thm-sec2-2-thm2-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-sec2-2-thm2-2-1">Follows from <a href="sec1-5-hom-system.html#thm-hom-system2" class="xref" data-knowl="./knowl/xref/thm-hom-system2.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.3">Theorem 1.6.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#thm-sec2-2-thm2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.3.3.1"><a href="#thm-sec2-2-thm2-2" title="Copy heading and permalink for Proof 2.3.3.1" aria-label="Copy heading and permalink for Proof 2.3.3.1">🔗</a></div></article></details><article class="definition definition-like" id="def-sec2-1-LI"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linearly Independence.</span>
 </h3>
 <div class="para" id="def-sec2-1-LI-2-1">A set of vectors <span class="process-math">\(\{v_1,v_2,\ldots, v_k\}\)</span> is said to be linearly independent  if it is not linearly dependent. That is, if <span class="process-math">\(\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0\)</span> then it implies <span class="process-math">\(\alpha_1,\ldots, \alpha_k=0\)</span> for any set of scalars <span class="process-math">\(\alpha_1,\alpha_2,\ldots \alpha_k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-sec2-1-LI-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -467,12 +469,18 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Problem 2.3.5"><a href="#sec-2-2-LI-9" title="Copy heading and permalink for Problem 2.3.5" aria-label="Copy heading and permalink for Problem 2.3.5">🔗</a></div></article><article class="remark remark-like" id="sec-2-2-remrak1"><h3 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<span class="process-math">\(v,v_1,v_2,\ldots, v_k\)</span><span class="process-math">\(\R^n\)</span><span class="process-math">\(v=\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k\text{.}\)</span><div class="displaymath process-math">
+<div class="para logical" id="sec-2-2-remrak1-1">
+<div class="para">Let <span class="process-math">\(v,v_1,v_2,\ldots, v_k\)</span> be vectors in <span class="process-math">\(\R^n\)</span> such that <span class="process-math">\(v=\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k\text{.}\)</span> Then we have</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix} v_1 \amp  v_2 \amp  \cdots \amp  v_k\end{bmatrix} \begin{bmatrix} \alpha_1\\\vdots\\\alpha_k\end{bmatrix}=v.
 \end{equation*}
 </div>
-<span class="process-math">\(\alpha_1,\ldots,\alpha_k\)</span><span class="process-math">\(v=\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k\text{,}\)</span><span class="process-math">\(A\alpha =v\text{,}\)</span><span class="process-math">\(A\)</span><span class="process-math">\(v_1,v_2,\ldots, v_k\)</span><span class="process-math">\(\alpha =\begin{bmatrix} \alpha_1\\\vdots\\\alpha_k\end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Remark 2.3.6"><a href="#sec-2-2-remrak1" title="Copy heading and permalink for Remark 2.3.6" aria-label="Copy heading and permalink for Remark 2.3.6">🔗</a></div></article><article class="remark remark-like" id="sec-2-2-remrak2"><h3 class="heading">
+<div class="para">Thus if we want to find <span class="process-math">\(\alpha_1,\ldots,\alpha_k\)</span> such that <span class="process-math">\(v=\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k\text{,}\)</span> it amount to solving the system <span class="process-math">\(A\alpha =v\text{,}\)</span> where <span class="process-math">\(A\)</span> is the column matrix whose columns are <span class="process-math">\(v_1,v_2,\ldots, v_k\)</span> and <span class="process-math">\(\alpha =\begin{bmatrix} \alpha_1\\\vdots\\\alpha_k\end{bmatrix}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2-2-remrak1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.3.6"><a href="#sec-2-2-remrak1" title="Copy heading and permalink for Remark 2.3.6" aria-label="Copy heading and permalink for Remark 2.3.6">🔗</a></div></article><article class="remark remark-like" id="sec-2-2-remrak2"><h3 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sec-2-2-remrak2-1-1">
@@ -498,7 +506,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol class="lower-roman ol-marker-1" id="sec-2-2-LI-12-1-1">
 <li id="sec-2-2-LI-12-1-1-1">
 <div class="para" id="sec-2-2-LI-12-1-1-1-1">
-<span class="process-math">\(\displaystyle \{(1,0,1,2), (0,1,1,2),(1,1,1,3)\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-2-2-LI-12-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\{(1,0,1,2), (0,1,1,2),(1,1,1,3)\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-2-2-LI-12-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item i"><a href="#sec-2-2-LI-12-1-1-1" title="Copy heading and permalink for Item i" aria-label="Copy heading and permalink for Item i">🔗</a></div>
 </li>
@@ -516,8 +524,8 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li id="sec-2-2-LI-12-1-1-4">
 <div class="para" id="sec-2-2-LI-12-1-1-4-1">
-<span class="process-math">\(\displaystyle \{(1, 1, 0, 0), (1, 0, 1, 0), (0, 0, 1, 1),
-(0, 1, 0, 1)\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-2-2-LI-12-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\{(1, 1, 0, 0), (1, 0, 1, 0), (0, 0, 1, 1),
+(0, 1, 0, 1)\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-2-2-LI-12-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item iv"><a href="#sec-2-2-LI-12-1-1-4" title="Copy heading and permalink for Item iv" aria-label="Copy heading and permalink for Item iv">🔗</a></div>
 </li>
