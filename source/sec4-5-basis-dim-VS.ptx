@@ -151,13 +151,25 @@
       <example>
         <statement>
           <p>
-            (i) <m>\R^n</m> is a <m>n</m> dimensional vectors space over <m>\R</m>.
-          </p>
-          <p>
-            (ii) <m>M_n(\R)</m>, the set of all <m>n\times n</m> matrices pver <m>\R</m> is a <m>n^2</m>-dimensional vector space over <m>\R</m>.
-          </p>
-          <p>
-            (iii) <m>{\cal P}_n(\R)</m>, the set of all polynomials of degree less than or equal to <m>n</m> over <m>\R</m> is <m>(n+1)</m>-dimensional vector space over <m>\R</m>.
+            <ol marker="(i)">
+              <li>
+                <p>
+              <m>\R^n</m> is a <m>n</m> dimensional vectors space over <m>\R</m>.      
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>M_n(\R)</m>, the set of all <m>n\times n</m> matrices pver
+                   <m>\R</m> is a <m>n^2</m>-dimensional vector space over <m>\R</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>{\cal P}_n(\R)</m>, the set of all polynomials of degree less than or 
+                  equal to <m>n</m> over <m>\R</m> is <m>(n+1)</m>-dimensional vector space over <m>\R</m>.
+                </p>
+              </li>
+            </ol>
           </p>
         </statement>
       </example>
@@ -351,10 +363,22 @@
       <example>
         <statement>
           <p>
-            (i) Any set <m>S</m> with two linearly independent set of vectors in <m>\R^2</m> is a minimal set of generators.
-          </p>
-          <p>
-            (ii) Any set <m>S</m> with three linearly independent set of vectors in <m>\R^3</m> is a minimal set of generators.
+
+            <ol marker="(i)">
+              <li>
+                <p>
+                  Any set <m>S</m> with two linearly independent set of vectors in 
+                  <m>\R^2</m> is a minimal set of generators.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Any set <m>S</m> with three linearly independent set of vectors in
+                  <m>\R^3</m> is a minimal set of generators.
+                </p>
+              </li>
+            </ol>
+            
           </p>
         </statement>
       </example>

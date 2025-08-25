@@ -48,7 +48,9 @@
 </definition>	
 
 <remark>
-    The leading entry or pivot entry in any row in a row-echelon-form can be any non-zero number.
+    <p>
+        The leading entry or pivot entry in any row in a row-echelon-form can be any non-zero number.
+    </p>
 </remark>
 <p>
 <example xml:id="eg-echelon-matrices"><title>Echelon Matrices</title>

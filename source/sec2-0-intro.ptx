@@ -62,9 +62,11 @@ column vector.
 </definition>
 
 <note>
-    Note that sometime in stead of taking <m>V</m> to non-empty, one can insist that 
+   <p>
+     Note that sometime in stead of taking <m>V</m> to non-empty, one can insist that 
 <m>V</m> conatins the zero vector. In particular, if <m>V</m> is non-empty and a vector 
 subspace then <m>0\in V</m>.
+   </p>
 </note>
 
     <example>

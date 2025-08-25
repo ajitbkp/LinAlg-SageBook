@@ -18,10 +18,22 @@
       A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}</m> is called a <alert>basis</alert> of <m>\R^n</m> if every vector <m>v\in \R^n</m> can be  expressed uniquely as  linear combinations of <m>v_1,v_2,\ldots,v_n</m>. 
 	
       Thus <m>\beta</m> is basis of <m>\R^n</m> if 
-    <p>(i) <m>L(\beta)=\R^n</m>, that every vector <m>v\in \R^n</m> can be expressed as linear combinations of <m>v_1,v_2,\ldots,v_n</m>. </p>
-    <p>	(ii) If <m>v=\alpha_1v_1+\alpha_2v_2+\cdots +\alpha_nv_n</m> and <m>v=\beta_1v_1+\beta_2v_2+\cdots +\beta_nv_n</m>, then <m>\alpha_1=\beta_1, \alpha_2=\beta_2=\cdots,\alpha_n=\beta_n</m>.</p>
-    <p>
-    Similarly one can define a basis of any subspace of <m>\R^n</m>.</p>     
+      <ol marker="(i)">
+        <li>
+          <p>
+            <m>L(\beta)=\R^n</m>, that every vector <m>v\in \R^n</m> can be expressed as linear combinations of 
+            <m>v_1,v_2,\ldots,v_n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>v=\alpha_1v_1+\alpha_2v_2+\cdots +\alpha_nv_n</m> and <m>v=\beta_1v_1+\beta_2v_2+\cdots +\beta_nv_n</m>, 
+            then <m>\alpha_1=\beta_1, \alpha_2=\beta_2=\cdots,\alpha_n=\beta_n</m>.
+          </p>
+        </li>
+      </ol>
+    
+    Similarly one can define a basis of any subspace of <m>\R^n</m>.  
     </p>
   </statement>
 </definition>
@@ -34,18 +46,39 @@
     <statement>
       <p>
         A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}</m> is called a basis of <m>\R^n</m> iff 
-      (i) <m>L(\beta)=\R^n</m>and <m>\beta</m> is linearly independent. 
+      (i) <m>L(\beta)=\R^n</m>and (ii) <m>\beta</m> is linearly independent. 
     
       </p>
     </statement>
   </theorem> 
 
   <example>
-    <p> (i) <m>\{(1,0),(0,1)\}</m> is a basis of <m>\R^2</m> called the standard basis of <m>\R^2</m>.</p>
-    <p>  (ii) <m>\{(1,-1),(2,1)\}</m> is a basis of <m>\R^2</m>.</p>
-    <p> (iii) <m>\{(1,0,0),(0,1,0),(0,0,1)\}</m> is a basis of <m>\R^3</m> called the standard basis of <m>\R^3</m>. </p>
-    <p> (iv) <m>\{(1,1,-1),(-1,1,1),(1,-1,1)\}</m> is a basis of <m>\R^3</m>. </p>
-      
+    <p>
+    <ol marker="(i)">
+      <li>
+        <p>
+          <m>\{(1,0),(0,1)\}</m> is a basis of <m>\R^2</m> called the standard basis of <m>\R^2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\{(1,-1),(2,1)\}</m> is a basis of <m>\R^2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\{(1,0,0),(0,1,0),(0,0,1)\}</m> is a basis of <m>\R^3</m> called the standard basis of 
+    <m>\R^3</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\{(1,1,-1),(-1,1,1),(1,-1,1)\}</m> is a basis of <m>\R^3</m>. 
+        </p>
+      </li>
+    </ol>
+  </p>
+          
   </example>
 
   <p>
@@ -151,11 +184,27 @@ Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0
   </definition>
 
   <example>
-    <p>(i) <m>\R^n</m> is a <m>n</m>-dimensional vector space over <m>\R</m>.</p>
-<p>(ii) Any plane passing through origin in <m>\R^3</m> is a 2 dimensional subspace.</p>
-<p>(iii) <m>W:=\{(x_1,\ldots,x_n):x_1+\cdots+x_n=0\}</m> is <m>n-1</m> dimensional subspace of <m>\R^n</m>. Write down a basis of <m>W</m>.</p>
-<p>(iv) <m>W=\{(x_1,x_2,x_3,x_4)\in \R^4:x_1=x_3,x_2=x_4\}</m> is a 2-dimensional subspace of <m>\R^4</m>. Write down a basis of <m>W</m>.</p>
-
+    <p>
+    <m>\R^n</m> is a <m>n</m>-dimensional vector space over <m>\R</m>.
+<ol marker="(i)">
+  <li>
+    <p>
+    Any plane passing through origin in <m>\R^3</m> is a 2 dimensional subspace.
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>W:=\{(x_1,\ldots,x_n):x_1+\cdots+x_n=0\}</m> is <m>n-1</m> dimensional subspace of <m>\R^n</m>. 
+      Write down a basis of <m>W</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>W=\{(x_1,x_2,x_3,x_4)\in \R^4:x_1=x_3,x_2=x_4\}</m> is a 2-dimensional subspace of <m>\R^4</m>. Write down a basis of <m>W</m>.
+    </p>
+  </li>
+</ol>
+</p>
   </example>
 
 <p>
@@ -787,7 +836,6 @@ on a matrix.
   <example>
   <p>
   Consider a set of 7 vectors <m>v_1,\ldots, v_7\in \R^7</m>. 
-
   <me> v_1=\left(\begin{array}{r}
     1 \\
     -1 \\
@@ -882,27 +930,36 @@ A=\left(\begin{array}{rrrrrrr}
 
 From the RREF of <m>A</m>, we have the following observations:
 
-<p>
-(i) The reduced row-echelon form of <m>A</m> has 5 non zero rows. This means the rank of <m>A</m> is 5. 
-In particular, <m>A</m> is singular.
-</p> 
-
-<p>(ii) The pivots columns are 1, 2, 4, 5, 7. In particular, <m>\{v_1,v_2,v_4,v_5,v_7\}</m> 
+<ol marker="(i)">
+  <li>
+    <p>
+    The reduced row-echelon form of <m>A</m> has 5 non zero rows. This means the rank of <m>A</m> is 5. 
+    In particular, <m>A</m> is singular.  
+    </p>
+  </li>
+  <li>
+    <p>
+      The pivots columns are 1, 2, 4, 5, 7. In particular, <m>\{v_1,v_2,v_4,v_5,v_7\}</m> 
   are linearly independent and forms a basis of the subspace spanned by <m>\{v_1,v_2,v_4,v_5,v_7\}</m>.
-</p>
-
-<p> 
-  (iii) The 3rd columns gives <m>v_3</m> as linear combinations of <m>v_1</m> and <m>v_2</m>. 
+    </p>
+  </li>
+  <li>
+    <p>
+      The 3rd columns gives <m>v_3</m> as linear combinations of <m>v_1</m> and <m>v_2</m>. 
   In particular, <m>v_3=3v_1-2v_2</m>. Similarly <m>v_6=9v_1-7v_2-4v_4-2v_5</m>.
- </p>
-  
-<p>
-(iv) Since rank of <m>A</m> is 5, the nullity of <m>A</m> is 2.
-</p>
-
-<p>
-(v) First five rows of <m>RREF(A)</m> constitute a basis of the row space of <m>A</m>.
-</p>
+    </p>
+  </li>
+  <li>
+    <p>
+        Since rank of <m>A</m> is 5, the nullity of <m>A</m> is 2.
+    </p>
+  </li>
+  <li>
+    <p>
+      First five rows of <m>RREF(A)</m> constitute a basis of the row space of <m>A</m>.
+    </p>
+  </li>
+</ol>
 </p>
 </example>
 

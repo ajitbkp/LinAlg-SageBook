@@ -215,10 +215,23 @@
     <p> We want to find a solution of the above system, that is a column vector <m>x
       =\begin{bmatrix}x_1 \amp x_2\amp \cdots \amp x_n\end{bmatrix}^T</m> of <m>n</m> of
       differentiable functions on some interval <m>[a,b]</m> which satisfies the above system. </p>
+<theorem xml:id="thm-solutions-de-subspace">
+  <statement>
+    <p>
+      Let <m>S</m> be the set of all solutions of the linear system 
+      ODE's, <m>x'=Ax</m>. Then <m>S</m> is an <m>n</m>-dimensional vector subspace <m>D[a,b]</m> of the set of differentiable function
+      on <m>[a,b]</m>.
+    </p>
+  </statement>
+</theorem>
 
-    <p> If <m>S</m> is the set of all solutions of the above system. Then one can show that <m>S</m>
-      is an <m>n</m>-dimensional vector subspace <m>D[a,b]</m> of the set of differentiable function
-      on <m>[a,b]</m>. This mean, if <m>x_1, \ldots, x_n</m> are linearly independent functions
+<proof>
+  <p>
+    Left as exercise.
+  </p>
+</proof>
+
+    <p>  This mean, if <m>x_1, \ldots, x_n</m> are linearly independent functions
       which are solutions of the above system. Then any solution can be written as a linear
       combination of <m>x_1,\ldots,
         x_n</m>. </p>

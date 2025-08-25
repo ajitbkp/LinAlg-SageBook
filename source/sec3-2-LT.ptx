@@ -342,10 +342,12 @@
       The relation is given by the following commutative diagram.
     </p>
 
-    <figure xml:id="commutative-diagram">
-      <caption>Commutative Diagram</caption>
-      <image width="40%" source="images/commutative_diagram.PNG"/>
-    </figure>
+    <me>\begin{CD}
+	(\R^n,\beta) @&gt;A=[T]_\beta^\gamma&gt;&gt; (\R^m,\gamma)\\
+	@VV{\rho=[I]_\beta^{\beta'}}V @VV{\tau=[I]_\gamma^{\gamma'}}V\\
+	(\R^n,\beta') @&gt;B=[T]_{\beta'}^{\gamma'}&gt;&gt;(\R^m,\gamma')
+\end{CD}
+    </me>
     
     <p>
       From the above commutative diagram, we have

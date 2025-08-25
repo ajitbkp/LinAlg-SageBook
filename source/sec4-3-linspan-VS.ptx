@@ -197,12 +197,21 @@
     <example>
       <statement>
         <p>
-          (i) Let <m>v\in V</m>.
+          <ol marker="(i)">
+            <li>
+              <p>
+                 Let <m>v\in V</m>.
           Then <m>\R v=L(\{v\})</m> is the smallest subspace of <m>V</m> containing <m>v</m>.
-        </p>
-        <p>
-          (ii) Let <m>S=\{v_1,\ldots,v_k\}\subset V</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Let <m>S=\{v_1,\ldots,v_k\}\subset V</m>.
           Then <m>L(S)</m> is the smallest subspace of <m>V</m> containing <m>S</m>.
+              </p>
+            </li>
+          </ol>
+          
         </p>
       </statement>
     </example>

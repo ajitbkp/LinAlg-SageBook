@@ -56,11 +56,14 @@
     </ol>  
   </p>
     <note>
-    If an equation of the system after the the avove operations reduces to <m> 0 = \alpha</m>,
+      <p>
+        
+    If an equation of the system after the avove operations reduces to <m> 0 = \alpha</m>,
     where <m>\alpha \neq 0</m>, then the system has no solution.
     This is equivalent to if a row of the augmented matrix is
-    composed of zeros except for the column, then the system
+    composed of zeros except for the last column, then the system
     has no solution.
+      </p>
    </note>
 
    <definition xml:id="def-elementary-row-operations">

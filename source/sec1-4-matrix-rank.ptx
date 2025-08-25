@@ -285,8 +285,8 @@
     </corollary>
 
 <example xml:id="matrix-rank-eg1">
-    <p>`
-    Consider the Example~<xref ref="row-echelon-eg1"/>. 
+    <p>
+    Consider the <xref ref="row-echelon-eg1"/>. 
     
         <md>
            <mrow> \begin{pmatrix}
