@@ -52,7 +52,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Sytem of Linear Equation",
-  "body": " Sytem of Linear Equation   In daily life we often encounter problems where several unknown quantities are related to each other through linear relations. Such problems naturally lead to a system of linear equations. A system of linear equations consists of several linear equations in the same set of variables. Each equation represents a constraint, and the simultaneous solution of all equations corresponds to finding the values of the unknowns that satisfy all the constraints at once.  Studying systems of linear equations is fundamental for several reasons. They arise directly in practical applications—for instance, balancing chemical reactions, analyzing electrical networks, studying forces in equilibrium, or modeling data in statistics. Also they form the backbone of Linear Algebra, since the methods developed for their solution lead naturally to the concepts of vector spaces, linear transformations, and matrix theory.  Before moving to abstract notions of linear algebra, it is important to understand how such systems are represented, how they can be solved.  Let us start with real life a problem.     A person travels from to using a train and a bus. The train runs at a speed of km\/h while the bus runs at km\/h. The total journey takes hours and the total distance covered is km. Find how much time the person spent on the train and on the bus.    Let be the time spent on the train (in hours), and be the time spent on the bus (in hours). Then the problem gives us two conditions:  Total travel time is hours:   Total distance is km:   Thus the system of equations is: How do we solve these equations?  From the first equation, . Substituting into the second equation, we have Simplifying this we get . This implies Hence,   Therefore, the person spent hours on the train and hours on the bus.    The above problem was easy to formaulate and solve. What if the problem involves more variables? Condsider the following situation now.   A traveler goes from to in three legs: by car at km\/h, by train at km\/h, and by ferry at km\/h. The total travel time is hours, and the total distance covered is km. It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.   Let , , and denote the hours spent by car, train, and ferry, respectively. Then the conditions give:  Total time:   Total distance:   Car plus ferry time is equal to train time:   Hence the linear system is   It is easy to solve the above system. It turns out that and . Hence the traveler spends hours by car, hours by train, and hours by ferry.      The combustion of octane ( ) is a classical example of a hydrocarbon fuel reacting with oxygen to form carbon dioxide and water. The unbalanced reaction is: Balancing this chemical equation can be expressed as solving a system of linear equations. Let us carefully set this up for the combustion of octane: This amounts to finding such that Equating the number of carbons, hydrogen and oxygen atoms on both side give size the the following equation. By solving the above equations one of the soltutions is given by . Hence the balanced equation can be written as      Let us consider another example about distribution of taxies at various location in a certain city.    Consider the figure below . Vertices are various locations at which taxies are parked. The edges are directed with labels.     Taxi distributions between 5 locations.  For example arrow going from location 4 to 1 has label . This means of the taxies taken from location comes to location at the end of the day.  Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, taxies and wish to find out how many taxies he\/she should place at various location so that his business runs smoothly. How to formulate this problem?  Suppose denotes the number of taxies to be kept at the locatio . Then we have How many taxies will be there at the location after one day. It is easy to see that it is Similarly the number of taxies at various locations are as follows   Location 1:     Location 2:     Location 3:     Location 4: .   Ideally, the company would want the same number of taxies to come back at each location everyday. How to find these ? It is easy to see that this amount to solving the following system of linear equations The above equations can be written in a matrix form as follows: The above equation can be written as We can write it in compact form as where       In the , suppose we denote by , then is the number of taxies at various locations. What will the the number taxies after two days, three days and in general after days.      Note that the preoblem in involves only 5 depos. What if we have hundreds of depos? How do we solve such problems? In fact, google seach uses millions by million equations. It turns out that solving this problem amounts to finding large power of the coefficient matrix whihc is not an easy task even for poweful computers. This is acheived by notion of diagonalization whihc and numerical computaions of eigenvalues and eigenvectors of a large size matrix. We shall see several such applications in later chapters.    Let us define what is meaning of a system of linear equations involving certain variables. Think about the following questions before making a formal definition of system of linear equations.    How will you write one linear equation involving 20 variables? May be you can name the variables etc  How will you write one linear equation involving as many variables as number of active websites, say on this date?  How will you write linear equations in variables where when and are very large?      A system of linear equations is a finite collection of linear equations. Consider a system of linear equations in -variables . Here for and for . The above system of linear equations can be represented in compact form using the summation notation as follows: .    Next let us define, what is meaning of a solution and the solution set of the system of linear of equations .   A solution of the system of linear equations is an ordered -tuple of the real numbers such that for each satisfies each of the -equations. The set of all solutions of a system is called the solution set . It is a subset of , the Cartesian product of the set of real numbers -times. If we denote the solution set by , then . If the solution set is nonempty then the system is said to be consistent and otherwise it is said to be inconsistent.    The above system of linear equation can be written as a single matrix equation as , where   The matrix is called the coefficient matrix , is called the column matrix of constants or known terms and is called the column matrix of the unknowns.   All the essential data of the system can be gathered in one matrix by inserting the column matrix of the constants to the coefficient matrix as -th column. This matrix is called the augmented or enlarged matrix of the system. Once we know the system, we can get the augmented matrix associated with the system and conversely once we know the augmented matrix, we know the system and start calculating the solutions.  The augmented matrix of the above system is given by     Two systems of linear equations are called equivalent if and only if they have the same set of solutions.    We will define some basic operations by which a system is transformed into an equivalent system.  Geometrically, solving a system of linear equations in two (or three) unknowns\/variables is equivalent to determining whether or not a family of lines (or planes) has a common point of intersection.    Let be real matrix whose columns are and . Then In particular, is a linear combinations of column of . Thus if is a solution of , then is linear combination of columns of . For example, This can be written as    Our goal in this chapter is to find the solution set of a system of equations . Let us first find solution set involving one equation involving one and two variables.   One linear equation in one variable can be written as where, and are real numbers.  How to find the solution set of this equation. We need to find such that the equation holds. Does it mean ? What if ? Thus we need to consider different cases on . If is the solution set of this equation then we have       One linear equation in two variable and can be written as where, and are real numbers. How to find the solution set of this equation?    In this case, we need to consider two cases: (i) and (ii) at least one of is nonzero. If , then the solution depends upon . If , then and if , then , the empty\/null set.  In the second case, the solution set has geometric interpretation, it is that the set of all points on a straight line. For example, if , then the set of solutions is the straight line in the plane through the point and with slope . If , then also the solution set is a straight line. Can you identify it?  Can you write the solution set explicitley by taking all the possible cases?      The solution set of one linear equation , where in two variables is a straight line provides , that is, one of the coefficients or is non-zero.      Write the solution set of ne linear equation in three variables , where .      Let at least one of the , be nonzero, the solution set is a plane in .    "
+  "body": " Sytem of Linear Equation   In daily life we often encounter problems where several unknown quantities are related to each other through linear relations. Such problems naturally lead to a system of linear equations. A system of linear equations consists of several linear equations in the same set of variables. Each equation represents a constraint, and the simultaneous solution of all equations corresponds to finding the values of the unknowns that satisfy all the constraints at once.  Studying systems of linear equations is fundamental for several reasons. They arise directly in practical applications—for instance, balancing chemical reactions, analyzing electrical networks, studying forces in equilibrium, or modeling data in statistics. Also they form the backbone of Linear Algebra, since the methods developed for their solution lead naturally to the concepts of vector spaces, linear transformations, and matrix theory.  Before moving to abstract notions of linear algebra, it is important to understand how such systems are represented, how they can be solved.  Let us start with real life a problem.     A person travels from to using a train and a bus. The train runs at a speed of km\/h while the bus runs at km\/h. The total journey takes hours and the total distance covered is km. Find how much time the person spent on the train and on the bus.    Let be the time spent on the train (in hours), and be the time spent on the bus (in hours). Then the problem gives us two conditions:  Total travel time is hours:   Total distance is km:   Thus the system of equations is: How do we solve these equations?  From the first equation, . Substituting into the second equation, we have Simplifying this we get . This implies Hence,   Therefore, the person spent hours on the train and hours on the bus.    The above problem was easy to formaulate and solve. What if the problem involves more variables? Condsider the following situation now.   A traveler goes from to in three legs: by car at km\/h, by train at km\/h, and by ferry at km\/h. The total travel time is hours, and the total distance covered is km. It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.   Let , , and denote the hours spent by car, train, and ferry, respectively. Then the conditions give:  Total time:   Total distance:   Car plus ferry time is equal to train time:   Hence the linear system is   It is easy to solve the above system. It turns out that and . Hence the traveler spends hours by car, hours by train, and hours by ferry.      The combustion of octane ( ) is a classical example of a hydrocarbon fuel reacting with oxygen to form carbon dioxide and water. The unbalanced reaction is: Balancing this chemical equation can be expressed as solving a system of linear equations. Let us carefully set this up for the combustion of octane: This amounts to finding such that Equating the number of carbons, hydrogen and oxygen atoms on both side gives the following equations. By solving the above equations one of the soltutions is given by . Hence the balanced equation can be written as      Let us consider another example about distribution of taxies at various location in a certain city.    Consider the figure below . Vertices are various locations at which taxies are parked. The edges are directed with labels.     Taxi distributions between 5 locations.  For example arrow going from location 4 to 1 has label . This means of the taxies taken from location comes to location at the end of the day.  Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, taxies and wish to find out how many taxies he\/she should place at various location so that his business runs smoothly. How to formulate this problem?  Suppose denotes the number of taxies to be kept at the locatio . Then we have How many taxies will be there at the location after one day. It is easy to see that it is Similarly the number of taxies at various locations are as follows   Location 1:     Location 2:     Location 3:     Location 4: .   Ideally, the company would want the same number of taxies to come back at each location everyday. How to find these ? It is easy to see that this amount to solving the following system of linear equations The above equations can be written in a matrix form as follows: The above equation can be written as We can write it in compact form as where       In the , suppose we denote by , then is the number of taxies at various locations. What will the the number taxies after two days, three days and in general after days.      Note that the preoblem in involves only 5 depos. What if we have hundreds of depos? How do we solve such problems? In fact, google seach uses millions by million equations. It turns out that solving this problem amounts to finding large power of the coefficient matrix whihc is not an easy task even for poweful computers. This is acheived by notion of diagonalization whihc and numerical computaions of eigenvalues and eigenvectors of a large size matrix. We shall see several such applications in later chapters.    Let us define what is meaning of a system of linear equations involving certain variables. Think about the following questions before making a formal definition of system of linear equations.    How will you write one linear equation involving 20 variables? May be you can name the variables etc  How will you write one linear equation involving as many variables as number of active websites, say on this date?  How will you write linear equations in variables where when and are very large?      A system of linear equations is a finite collection of linear equations. Consider a system of linear equations in -variables . Here for and for . The above system of linear equations can be represented in compact form using the summation notation as follows: .    Next let us define, what is meaning of a solution and the solution set of the system of linear of equations .   A solution of the system of linear equations is an ordered -tuple of the real numbers such that for each satisfies each of the -equations. The set of all solutions of a system is called the solution set . It is a subset of , the Cartesian product of the set of real numbers -times. If we denote the solution set by , then . If the solution set is nonempty then the system is said to be consistent and otherwise it is said to be inconsistent.    The above system of linear equation can be written as a single matrix equation as , where   The matrix is called the coefficient matrix , is called the column matrix of constants or known terms and is called the column matrix of the unknowns.   All the essential data of the system can be gathered in one matrix by inserting the column matrix of the constants to the coefficient matrix as -th column. This matrix is called the augmented or enlarged matrix of the system. Once we know the system, we can get the augmented matrix associated with the system and conversely once we know the augmented matrix, we know the system and start calculating the solutions.  The augmented matrix of the above system is given by     Two systems of linear equations are called equivalent if and only if they have the same set of solutions.    We will define some basic operations by which a system is transformed into an equivalent system.  Geometrically, solving a system of linear equations in two (or three) unknowns\/variables is equivalent to determining whether or not a family of lines (or planes) has a common point of intersection.    Let be real matrix whose columns are and . Then In particular, is a linear combinations of column of . Thus if is a solution of , then is linear combination of columns of . For example, This can be written as    Our goal in this chapter is to find the solution set of a system of equations . Let us first find solution set involving one equation involving one and two variables.   One linear equation in one variable can be written as where, and are real numbers.  How to find the solution set of this equation. We need to find such that the equation holds. Does it mean ? What if ? Thus we need to consider different cases on . If is the solution set of this equation then we have       One linear equation in two variable and can be written as where, and are real numbers. How to find the solution set of this equation?    In this case, we need to consider two cases: (i) and (ii) at least one of is nonzero. If , then the solution depends upon . If , then and if , then , the empty\/null set.  In the second case, the solution set has geometric interpretation, it is that the set of all points on a straight line. For example, if , then the set of solutions is the straight line in the plane through the point and with slope . If , then also the solution set is a straight line. Can you identify it?  Can you write the solution set explicitley by taking all the possible cases?      The solution set of one linear equation , where in two variables is a straight line provides , that is, one of the coefficients or is non-zero.      Write the solution set of ne linear equation in three variables , where .      Let at least one of the , be nonzero, the solution set is a plane in .    "
 },
 {
   "id": "sec1-0-eg1",
@@ -79,7 +79,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.1.3",
   "title": "",
-  "body": "  The combustion of octane ( ) is a classical example of a hydrocarbon fuel reacting with oxygen to form carbon dioxide and water. The unbalanced reaction is: Balancing this chemical equation can be expressed as solving a system of linear equations. Let us carefully set this up for the combustion of octane: This amounts to finding such that Equating the number of carbons, hydrogen and oxygen atoms on both side give size the the following equation. By solving the above equations one of the soltutions is given by . Hence the balanced equation can be written as     "
+  "body": "  The combustion of octane ( ) is a classical example of a hydrocarbon fuel reacting with oxygen to form carbon dioxide and water. The unbalanced reaction is: Balancing this chemical equation can be expressed as solving a system of linear equations. Let us carefully set this up for the combustion of octane: This amounts to finding such that Equating the number of carbons, hydrogen and oxygen atoms on both side gives the following equations. By solving the above equations one of the soltutions is given by . Hence the balanced equation can be written as     "
 },
 {
   "id": "taxi-distribution-eg1",
@@ -2329,7 +2329,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.5",
   "title": "Basis and dimension",
-  "body": " Basis and dimension   Basis of a Vector Space  We can defined basis of a vector space similar to basis of subspaces in .   Basis of a vector space   Let be a vector space over . A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of .  Thus is basis of if    , that is, every vector can be expressed as linear combinations of     If and , then .       We have already seen several examples of bases in and some subspaces of .    Let . The set is basis of , called the standard basis.       is a basis of as a vector space over .       is a basis , called the standard basis.      Any linearly independent set of vectors forms a basis of .      Let be a vector space over . Let and be two bases of . Then .      If a vector space has a basis consisting of elements then any set of vectors is linearly dependent.     Finite Dimensional Vector Space   A vector space is called finite dimensional if there exists a finite subset of such that .  A vector space which is not finite dimensional is called an infinite dimensional .      We say a vector space is of dimension if it has a basis consisting of elements.      What is the dimension of , the zero space?          is a dimensional vectors space over .     , the set of all matrices pver is a -dimensional vector space over .     , the set of all polynomials of degree less than or equal to over is -dimensional vector space over .         Let be the set of all real symmetric matrices. The set is a basis of . That is, is 6 dimensional vector space over . What is dimension of the set of real symmetric matrices and dimension of real skew-symmetric matrices?     Let be the set of all real skew-symmetric matrices. Find a basis and hence the dimension of .     How to find a basis of a finite dimensional vector space?  First let us look at the following results.    Let be a linearly independent set of vectors. Suppose . Then is linearly independent.      Let be a finite dimensional vector space over . Then any linearly independent set can be extended to a basis of . More precisely, there exist vectors, where such that is a basis of .    These two exercises give a way to find a basis of a finite dimensional vector space starting with a nonzero vector in .    Complete the set to a basis of . One way of achieving this to find . Then Chose . Then in view of Exercise , is linearly independent. Since , is a basis of .  Another way to achieve this is to look at the standard basis vectors not in . In particular, . In order to find this we can apply RREF to the matrix and choose columns corresponding to the pivots. We have .  Clearly pivot columns are 1,2,4,6, which corresponds to vector . Thus is an extended basis of .      Let be a finite dimensional vector space over . Suppose is a finite set such that . Then there exists a subset such that is a basis of .      Consider in , where   We wish to find a subset of which is a basis of . We can achieve this by applying RREF to the column matrix . Thus   Clearly pivot columns are 1, 2, 3, 5, 7. Hence is basis of .      Let be a vector space. A set of vectors of is called a maximal linearly independent set if is linearly dependent for any vector .      (i) Any set with two linearly independent set of vectors in is a maximal linearly independent set.  (ii) Any set with three linearly independent set of vectors in is a maximal linearly independent set.      Let be a vector space. A set of vectors of is called a minimal set of generators if (i) and (ii) for any , .         Any set with two linearly independent set of vectors in is a minimal set of generators.    Any set with three linearly independent set of vectors in is a minimal set of generators.       In the following theorem we mention the equivalent condition for a set to be a basis of a finite dimensional vector space.    Let be a finite dimensional vector space over . Then the following are equivalent.      is a basis of .     and is linearly independent.     is maximal linearly independent set.     is minimal set of generators.         Lagrange Interpolation  Consider the vector space . Fix distinct real numbers . Define polynomials for . The above equation can be written as   It is easy to see that if and 0 otherwise. We claim that is a linearly independent subset of . For .  Here the right hand side is the zero polynomial. This implies for all . Since , it implies that for all . Hence the claim.  Since is -dimensional vector space, the set is a basis. Hence every -th degree polynomial can be expressed uniquely as linear combination of . Suppose is polynomial passing through points , (that is ) where are distinct real numbers. This unique polynomial is given by called the Lagrange interpolation polynomial passing through .    Dimension Formula    Let be a finite dimensional vector space over . Let and be subspaces of . Then .  It is easy to check that is a subspace of . Moreover       Let . Consider subspaces and . Clearly and are subspaces of each of dimension 2. What is ? It is the line of intersection of the two planes, and . Thus . It is easy to see that   What is ? One can easily show that . However by dimension formula .  Since is a 3 dimensional subspace of , it is in fact .     "
+  "body": " Basis and dimension   Basis of a Vector Space  We can defined basis of a vector space similar to basis of subspaces in .   Basis of a vector space   Let be a vector space over . A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of .  Thus is basis of if    , that is, every vector can be expressed as linear combinations of     If and , then .        If is a basis of vector spave over , then (i) and (ii) is linearly independent.   Follow the arguments simialr to .    We have already seen several examples of bases in and some subspaces of .    Let . The set is basis of , called the standard basis.       is a basis of as a vector space over .       is a basis , called the standard basis.      Any linearly independent set of vectors forms a basis of .    Let be a linearly independent. Enough to show that . Let . Then we know that is linearly dependent. That is, there exist scalars, not all zero such that We calim that . If , then we have scalars not all zero such that such that This is a contraction, as is linearly independent. Thus . Hence we have In otherwords, .    Can you generalize the above lemma?    If a vector space has a basis consisting of elements then any set of vectors is linearly dependent.    Follow the steps similar to proof of .      Let be a vector space over with a basis consisting of vectors. If is a linearly independet subset in , then .    Follows from .      Let be a vector space over . Let and be two bases of . Then .    Let be a basis and since is linearly independen, by the , we have . Interchanging the role of and , we have . Hence .     Finite Dimensional Vector Space   A vector space is called finite dimensional if there exists a finite subset of such that .  A vector space which is not finite dimensional is called an infinite dimensional .      We say a vector space is of dimension if it has a basis consisting of elements.      What is the dimension of , the zero space?          is a dimensional vectors space over .     , the set of all matrices pver is a -dimensional vector space over .     , the set of all polynomials of degree less than or equal to over is -dimensional vector space over .         Let be the set of all real symmetric matrices. The set is a basis of . That is, is 6 dimensional vector space over . What is dimension of the set of real symmetric matrices and dimension of real skew-symmetric matrices?     Let be the set of all real skew-symmetric matrices. Find a basis and hence the dimension of .     How to find a basis of a finite dimensional vector space?  First let us look at the following results.    Let be a linearly independent set of vectors. Suppose . Then is linearly independent.      Let be a finite dimensional vector space over . Then any linearly independent set can be extended to a basis of . More precisely, there exist vectors, where such that is a basis of .    These two exercises give a way to find a basis of a finite dimensional vector space starting with a nonzero vector in .    Complete the set to a basis of . One way of achieving this to find . Then Chose . Then in view of Exercise , is linearly independent. Since , is a basis of .  Another way to achieve this is to look at the standard basis vectors not in . In particular, . In order to find this we can apply RREF to the matrix and choose columns corresponding to the pivots. We have .  Clearly pivot columns are 1,2,4,6, which corresponds to vector . Thus is an extended basis of .      Let be a finite dimensional vector space over . Suppose is a finite set such that . Then there exists a subset such that is a basis of .      Consider in , where   We wish to find a subset of which is a basis of . We can achieve this by applying RREF to the column matrix . Thus   Clearly pivot columns are 1, 2, 3, 5, 7. Hence is basis of .      Let be a vector space. A set of vectors of is called a maximal linearly independent set if is linearly dependent for any vector .      (i) Any set with two linearly independent set of vectors in is a maximal linearly independent set.  (ii) Any set with three linearly independent set of vectors in is a maximal linearly independent set.      Let be a vector space. A set of vectors of is called a minimal set of generators if (i) and (ii) for any , .         Any set with two linearly independent set of vectors in is a minimal set of generators.    Any set with three linearly independent set of vectors in is a minimal set of generators.       In the following theorem we mention the equivalent conditions for a set to be a basis of a finite dimensional vector space.    Let be a finite dimensional vector space over . Then the following are equivalent.      is a basis of .     and is linearly independent.     is maximal linearly independent set.     is minimal set of generators.       We prove this by showing .   Follows from .    Let be a basis. Let , then by  is linearly dependeny. Hence is maximal linearly independent set in .    Let be a maximal linearly independent set. To show is a minimal set of generators, we need to show two things (i) and (ii) no proper subset of can span .  To prove (i), let . Since is a maximal set of generators, is linearly dependent. Hence there exits scalars, not all zero such that We claim, that . For if , then we have scalars not all zero such that which implies is linearly dependent, a contradiction. Hence . Thus we have This implies, .  We prove (ii) by contradiction. Without loss of generality, we assume that spans . This would mean lies in the spanning set of . In particular, is linearly dependent, a contradiction.    Let be a minimal generating set. We need to show that it is a basis.  Since is a generating set, for any , there exist scalars such that . We need to show that this expression is unique. Suppose not, let with for at least one . Then we have In paticular, This would imply is a generating set for (why?). This is a contradiction to the minimality of .       Lagrange Interpolation  Consider the vector space . Fix distinct real numbers . Define polynomials for . The above equation can be written as   It is easy to see that if and 0 otherwise. We claim that is a linearly independent subset of . For .  Here the right hand side is the zero polynomial. This implies for all . Since , it implies that for all . Hence the claim.  Since is -dimensional vector space, the set is a basis. Hence every -th degree polynomial can be expressed uniquely as linear combination of . Suppose is polynomial passing through points , (that is ) where are distinct real numbers. This unique polynomial is given by called the Lagrange interpolation polynomial passing through .    Dimension Formula  Let be a vector space over . Let and be subspaces of . Define a subset It is easy to check that is a subspace of . (why?)  In addition if, we assume that is a finite dimensional, them we have the following theorem, that gives a way to find the dimension of .    Let and be two subspaces of a finite dimensioanl vector space over . Then       Let and of . Clearly . What is ? It is the line of intersection of the two planes, and . Thus . It is easy to see that   What is ? One can easily show that . However by dimension formula .  Since is a 3 dimensional subspace of , it is in fact .     "
 },
 {
   "id": "def-basis-VS",
@@ -2341,13 +2341,13 @@ var ptx_lunr_docs = [
   "body": " Basis of a vector space   Let be a vector space over . A set of vectors is called a basis of if every vector can be expressed uniquely as linear combinations of .  Thus is basis of if    , that is, every vector can be expressed as linear combinations of     If and , then .      "
 },
 {
-  "id": "subsec-basis-VS-5",
+  "id": "Exer-4-5-1",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#subsec-basis-VS-5",
-  "type": "Example",
+  "url": "sec4-5-basis-dim-VS.html#Exer-4-5-1",
+  "type": "Checkpoint",
   "number": "4.5.2",
   "title": "",
-  "body": "  Let . The set is basis of , called the standard basis.   "
+  "body": " If is a basis of vector spave over , then (i) and (ii) is linearly independent.   Follow the arguments simialr to .   "
 },
 {
   "id": "subsec-basis-VS-6",
@@ -2356,7 +2356,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.5.3",
   "title": "",
-  "body": "   is a basis of as a vector space over .   "
+  "body": "  Let . The set is basis of , called the standard basis.   "
 },
 {
   "id": "subsec-basis-VS-7",
@@ -2365,7 +2365,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.5.4",
   "title": "",
-  "body": "   is a basis , called the standard basis.   "
+  "body": "   is a basis of as a vector space over .   "
 },
 {
   "id": "subsec-basis-VS-8",
@@ -2374,16 +2374,16 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.5.5",
   "title": "",
-  "body": "  Any linearly independent set of vectors forms a basis of .   "
+  "body": "   is a basis , called the standard basis.   "
 },
 {
-  "id": "sec4-4-thm1",
+  "id": "lemma-4-5-5",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-4-thm1",
-  "type": "Theorem",
+  "url": "sec4-5-basis-dim-VS.html#lemma-4-5-5",
+  "type": "Lemma",
   "number": "4.5.6",
   "title": "",
-  "body": "  Let be a vector space over . Let and be two bases of . Then .   "
+  "body": "  Any linearly independent set of vectors forms a basis of .    Let be a linearly independent. Enough to show that . Let . Then we know that is linearly dependent. That is, there exist scalars, not all zero such that We calim that . If , then we have scalars not all zero such that such that This is a contraction, as is linearly independent. Thus . Hence we have In otherwords, .   "
 },
 {
   "id": "sec4-4-thm2",
@@ -2392,14 +2392,32 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "4.5.7",
   "title": "",
-  "body": "  If a vector space has a basis consisting of elements then any set of vectors is linearly dependent.   "
+  "body": "  If a vector space has a basis consisting of elements then any set of vectors is linearly dependent.    Follow the steps similar to proof of .   "
+},
+{
+  "id": "cor-4-5-6",
+  "level": "2",
+  "url": "sec4-5-basis-dim-VS.html#cor-4-5-6",
+  "type": "Corollary",
+  "number": "4.5.8",
+  "title": "",
+  "body": "  Let be a vector space over with a basis consisting of vectors. If is a linearly independet subset in , then .    Follows from .   "
+},
+{
+  "id": "sec4-4-thm1",
+  "level": "2",
+  "url": "sec4-5-basis-dim-VS.html#sec4-4-thm1",
+  "type": "Theorem",
+  "number": "4.5.9",
+  "title": "",
+  "body": "  Let be a vector space over . Let and be two bases of . Then .    Let be a basis and since is linearly independen, by the , we have . Interchanging the role of and , we have . Hence .   "
 },
 {
   "id": "def-finite-dim-VS",
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#def-finite-dim-VS",
   "type": "Definition",
-  "number": "4.5.8",
+  "number": "4.5.10",
   "title": "Finite Dimensional Vector Space.",
   "body": " Finite Dimensional Vector Space   A vector space is called finite dimensional if there exists a finite subset of such that .  A vector space which is not finite dimensional is called an infinite dimensional .   "
 },
@@ -2408,34 +2426,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#def-dimension-VS",
   "type": "Definition",
-  "number": "4.5.9",
+  "number": "4.5.11",
   "title": "",
   "body": "  We say a vector space is of dimension if it has a basis consisting of elements.   "
 },
 {
-  "id": "subsec-basis-VS-13",
+  "id": "subsec-basis-VS-16",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#subsec-basis-VS-13",
+  "url": "sec4-5-basis-dim-VS.html#subsec-basis-VS-16",
   "type": "Checkpoint",
-  "number": "4.5.10",
+  "number": "4.5.12",
   "title": "",
   "body": "  What is the dimension of , the zero space?   "
 },
 {
-  "id": "subsec-basis-VS-14",
+  "id": "subsec-basis-VS-17",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#subsec-basis-VS-14",
+  "url": "sec4-5-basis-dim-VS.html#subsec-basis-VS-17",
   "type": "Example",
-  "number": "4.5.11",
+  "number": "4.5.13",
   "title": "",
   "body": "      is a dimensional vectors space over .     , the set of all matrices pver is a -dimensional vector space over .     , the set of all polynomials of degree less than or equal to over is -dimensional vector space over .      "
 },
 {
-  "id": "subsec-basis-VS-15",
+  "id": "subsec-basis-VS-18",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#subsec-basis-VS-15",
+  "url": "sec4-5-basis-dim-VS.html#subsec-basis-VS-18",
   "type": "Example",
-  "number": "4.5.12",
+  "number": "4.5.14",
   "title": "",
   "body": "  Let be the set of all real symmetric matrices. The set is a basis of . That is, is 6 dimensional vector space over . What is dimension of the set of real symmetric matrices and dimension of real skew-symmetric matrices?   "
 },
@@ -2444,7 +2462,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#rqs-dim-skey-symm",
   "type": "Checkpoint",
-  "number": "4.5.13",
+  "number": "4.5.15",
   "title": "",
   "body": " Let be the set of all real skew-symmetric matrices. Find a basis and hence the dimension of .  "
 },
@@ -2453,7 +2471,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#exer97",
   "type": "Checkpoint",
-  "number": "4.5.14",
+  "number": "4.5.16",
   "title": "",
   "body": "  Let be a linearly independent set of vectors. Suppose . Then is linearly independent.   "
 },
@@ -2462,7 +2480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#exer-4-5-13",
   "type": "Checkpoint",
-  "number": "4.5.15",
+  "number": "4.5.17",
   "title": "",
   "body": "  Let be a finite dimensional vector space over . Then any linearly independent set can be extended to a basis of . More precisely, there exist vectors, where such that is a basis of .   "
 },
@@ -2471,7 +2489,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-3-6",
   "type": "Example",
-  "number": "4.5.16",
+  "number": "4.5.18",
   "title": "",
   "body": "  Complete the set to a basis of . One way of achieving this to find . Then Chose . Then in view of Exercise , is linearly independent. Since , is a basis of .  Another way to achieve this is to look at the standard basis vectors not in . In particular, . In order to find this we can apply RREF to the matrix and choose columns corresponding to the pivots. We have .  Clearly pivot columns are 1,2,4,6, which corresponds to vector . Thus is an extended basis of .   "
 },
@@ -2480,7 +2498,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#exer-4-5-16",
   "type": "Checkpoint",
-  "number": "4.5.17",
+  "number": "4.5.19",
   "title": "",
   "body": "  Let be a finite dimensional vector space over . Suppose is a finite set such that . Then there exists a subset such that is a basis of .   "
 },
@@ -2489,7 +2507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-3-8",
   "type": "Example",
-  "number": "4.5.18",
+  "number": "4.5.20",
   "title": "",
   "body": "  Consider in , where   We wish to find a subset of which is a basis of . We can achieve this by applying RREF to the column matrix . Thus   Clearly pivot columns are 1, 2, 3, 5, 7. Hence is basis of .   "
 },
@@ -2498,7 +2516,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#maxLI",
   "type": "Definition",
-  "number": "4.5.19",
+  "number": "4.5.21",
   "title": "",
   "body": "  Let be a vector space. A set of vectors of is called a maximal linearly independent set if is linearly dependent for any vector .   "
 },
@@ -2507,7 +2525,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-3-10",
   "type": "Example",
-  "number": "4.5.20",
+  "number": "4.5.22",
   "title": "",
   "body": "  (i) Any set with two linearly independent set of vectors in is a maximal linearly independent set.  (ii) Any set with three linearly independent set of vectors in is a maximal linearly independent set.   "
 },
@@ -2516,7 +2534,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#minimalgenerator",
   "type": "Definition",
-  "number": "4.5.21",
+  "number": "4.5.23",
   "title": "",
   "body": "  Let be a vector space. A set of vectors of is called a minimal set of generators if (i) and (ii) for any , .   "
 },
@@ -2525,7 +2543,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-3-12",
   "type": "Example",
-  "number": "4.5.22",
+  "number": "4.5.24",
   "title": "",
   "body": "     Any set with two linearly independent set of vectors in is a minimal set of generators.    Any set with three linearly independent set of vectors in is a minimal set of generators.      "
 },
@@ -2534,27 +2552,27 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec4-5-basis-dim-VS.html#thm-basis-equiv",
   "type": "Theorem",
-  "number": "4.5.23",
-  "title": "",
-  "body": "  Let be a finite dimensional vector space over . Then the following are equivalent.      is a basis of .     and is linearly independent.     is maximal linearly independent set.     is minimal set of generators.      "
-},
-{
-  "id": "sec4-5-basis-dim-VS-5-2",
-  "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5-2",
-  "type": "Problem",
-  "number": "4.5.24",
-  "title": "",
-  "body": "  Let be a finite dimensional vector space over . Let and be subspaces of . Then .  It is easy to check that is a subspace of . Moreover    "
-},
-{
-  "id": "sec4-5-basis-dim-VS-5-3",
-  "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5-3",
-  "type": "Example",
   "number": "4.5.25",
   "title": "",
-  "body": "  Let . Consider subspaces and . Clearly and are subspaces of each of dimension 2. What is ? It is the line of intersection of the two planes, and . Thus . It is easy to see that   What is ? One can easily show that . However by dimension formula .  Since is a 3 dimensional subspace of , it is in fact .   "
+  "body": "  Let be a finite dimensional vector space over . Then the following are equivalent.      is a basis of .     and is linearly independent.     is maximal linearly independent set.     is minimal set of generators.       We prove this by showing .   Follows from .    Let be a basis. Let , then by  is linearly dependeny. Hence is maximal linearly independent set in .    Let be a maximal linearly independent set. To show is a minimal set of generators, we need to show two things (i) and (ii) no proper subset of can span .  To prove (i), let . Since is a maximal set of generators, is linearly dependent. Hence there exits scalars, not all zero such that We claim, that . For if , then we have scalars not all zero such that which implies is linearly dependent, a contradiction. Hence . Thus we have This implies, .  We prove (ii) by contradiction. Without loss of generality, we assume that spans . This would mean lies in the spanning set of . In particular, is linearly dependent, a contradiction.    Let be a minimal generating set. We need to show that it is a basis.  Since is a generating set, for any , there exist scalars such that . We need to show that this expression is unique. Suppose not, let with for at least one . Then we have In paticular, This would imply is a generating set for (why?). This is a contradiction to the minimality of .    "
+},
+{
+  "id": "thm-dimension-formula2",
+  "level": "2",
+  "url": "sec4-5-basis-dim-VS.html#thm-dimension-formula2",
+  "type": "Theorem",
+  "number": "4.5.26",
+  "title": "",
+  "body": "  Let and be two subspaces of a finite dimensioanl vector space over . Then    "
+},
+{
+  "id": "sec4-5-basis-dim-VS-5-5",
+  "level": "2",
+  "url": "sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5-5",
+  "type": "Example",
+  "number": "4.5.27",
+  "title": "",
+  "body": "  Let and of . Clearly . What is ? It is the line of intersection of the two planes, and . Thus . It is easy to see that   What is ? One can easily show that . However by dimension formula .  Since is a 3 dimensional subspace of , it is in fact .   "
 },
 {
   "id": "sec-sec4-5-VS-Sage",
