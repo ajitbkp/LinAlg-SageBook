@@ -105,6 +105,41 @@ Studying systems of linear equations is fundamental for several reasons. They ar
     </p>
   </solution>
 </example>
+
+<example xml:id="chemical-reaction-eg1">
+  <statement>
+    <p>
+    The combustion of octane (<m>C_8H_{18}</m>) is a classical example of a hydrocarbon fuel 
+    reacting with oxygen to form carbon dioxide and water. The unbalanced reaction is:
+    <me>
+    C_8H_{18} + O_2 \to CO_2 + H_2O.
+  </me>
+Balancing this  chemical equation can be expressed as solving a 
+system of linear equations. Let us carefully set this up for the combustion of octane:
+<p>
+  This amounts to finding <m>x,y,z,w</m> such that 
+  <me>
+        xC_8H_{18} + yO_2 \to zCO_2 + wH_2O.
+  </me>
+Equating the number of carbons, hydrogen and oxygen atoms on both side gives the 
+following equations. 
+<md>
+  <mrow>8x \amp=\amp z </mrow>
+    <mrow>18x \amp=\amp 2w </mrow>
+  <mrow>2y \amp=\amp 2z+w </mrow>
+</md>  
+By solving the above equations one of the soltutions is given by 
+<m>
+  x=2, y=25, z=16, w=18
+</m>. Hence the balanced equation can be written as
+ <me>
+        2C_8H_{18} + 25O_2 \to 16CO_2 + 18H_2O.
+  </me>
+</p>  
+</p>
+  </statement>
+</example>
+
 <p>
   Let us consider another example about distribution of taxies 
   at various location in a certain city.
@@ -272,6 +307,7 @@ active websites, say <m>n</m> on this date?
 </p>
 </statement> 
 </question>
+
 <definition xml:id="def-linear-system">
       <statement>
         <p>

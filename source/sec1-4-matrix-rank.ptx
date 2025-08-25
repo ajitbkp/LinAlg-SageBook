@@ -3,6 +3,12 @@
 <section xml:id="sec1-4-matrix-rank" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Rank of Matrices</title>
 
+  <introduction>
+    <p>
+        In this section, we introduce the concept of rank of a matrix which plays an 
+        important role in deciding whether a system <m>Ax=b</m> has a solution.          
+    </p>
+</introduction>
    <definition xml:id="def-sub-matrix">
     <statement>
      <p>

@@ -57,10 +57,39 @@ in <m>n</m> unknowns, where <m>m \lt n</m> has infinitely many nontrivial soluti
 </theorem>
 
 <p>
+    One cam prove <xref ref="thm-hom-system2"/> directly using induction on <m>m</m>m the number of 
+    equtions.
+</p>
+
+<exercise>
+  <p>
+Let <m>X_1</m> and <m>X_2</m> be two solutions of the homogeneous system <m>AX=0</m> and <m>Y_1, Y_2</m> 
+solutions of the non homogeneous sytem <m>AX=B</m>. Then show the following 
+<ol>
+    <li>
+        <p>
+            <m>X_1-X_2</m> is a solution of <m>AX=0</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            for any <m>\alpha,\beta\in \R</m>, <m>\alpha X_1+\beta X_2</m> is a solution of 
+            <m>AX=0</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>Y_1-X_2</m> is a solution of <m>AX=0</m>.
+        </p>
+    </li>
+</ol>   
+</p>
+</exercise>
+<p>
     We would
 like to get the connection between solutions of a homogeneous system
 <m>AX = 0</m> and  the solutions of <m>AX = B</m>, <m>B \neq 0</m>. These
-are stated in the following Theorem.
+are stated in the following Theorem. 
 </p>
 
 <theorem xml:id="thm-hom-system3">
