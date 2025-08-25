@@ -38,7 +38,18 @@
           </p>
         </statement>
       </definition>
-
+<exercise xml:id="Exer-4-5-1">
+  <p>
+  If <m>\beta=\{v_1,\ldots,v_n\}</m> is a basis of vector spave <m>V</m> over <m>\R</m>, 
+  then (i) <m>L(\beta)=V</m> and (ii) <m>\beta</m> is linearly independent.
+  </p>
+  <hint>
+    <p>
+      Follow the arguments simialr to <xref ref="thm-sec2-3-basis-thm1"/>.
+    </p>
+  </hint>
+ </exercise>
+ 
       <p>
         We have already seen several examples of bases in <m>\R^n</m> and some subspaces of <m>\R^n</m>.
       </p>
@@ -82,40 +93,94 @@
       </example>
 
    
-      <example>
+      <lemma xml:id="lemma-4-5-5">
         <statement>
           <p>
             Any <m>n</m> linearly independent set of vectors forms a basis of <m>\R^n</m>.
           </p>
         </statement>
-      </example>
 
+         <proof>
+          <p>
+            Let <m>\beta=\{v_1,\ldots, v_n\}</m> be a linearly independent. Enough to show that 
+            <m>L(\beta)=V</m>. Let <m>v\in \R^n</m>. Then we know that <m>\beta\cup \{ v\}</m> is linearly
+            dependent. That is, there exist scalars, <m>\alpha_1,\ldots, \alpha_n,\alpha_{n+1}</m>  not 
+            all zero such that 
+            <me>
+              \alpha_1v_1+\vdots+\alpha_n v_n+\alpha_{n+1}v=0.
+            </me>
+            We calim that <m>\alpha_{n+1}\neq 0</m>. If <m>\alpha_{n+1}=0</m>, then we have scalars 
+             <m>\alpha_1,\ldots, \alpha_n</m>  not all zero such that such that
+            <me>
+              \alpha_1v_1+\cdots+\alpha_n v_n=0.
+            </me>
+           This is a contraction, as <m>\beta</m> is linearly independent.    Thus 
+           <m>\alpha_{n+1}\neq0</m>. Hence we have 
+           <me>
+              v=-\frac{1}{\alpha_{n+1}}\left(\alpha_1v_1+\cdots+\alpha_n v_n\right).
+            </me>
+            In otherwords, <m>v\in L(\beta)</m>.
+          </p>
+        </proof>
+
+      </lemma>
+
+  <p>
+    Can you generalize the above lemma?
+  </p>
     
-      <theorem xml:id="sec4-4-thm1">
+      <theorem xml:id="sec4-4-thm2">
         <statement>
           <p>
-            Let <m>V</m> be a vector space over <m>R</m>.
+            If a vector space <m>V</m> has a basis consisting of <m>n</m> 
+            elements then any set of <m>n + 1</m> vectors is linearly dependent.
+          </p>
+        </statement>
+
+        <proof>
+          <p>
+            Follow the steps similar to proof of <xref ref="lemma-4-5-5"/>.
+          </p>
+        </proof>
+      </theorem>
+    
+      <corollary xml:id="cor-4-5-6">
+        <statement>
+          <p>
+        Let <m>V</m> be a vector space over <m>\R</m> with a basis <m>\{v_1, \ldots, v_n\}</m> 
+        consisting of <m>n</m> vectors. If <m>\{w_1,\ldots,w_m\}</m> is a linearly 
+        independet subset in <m>V</m>, then <m>m\leq n</m>.   
+          </p>
+        </statement>
+      <proof>
+        <p>
+          Follows from <xref ref="sec4-4-thm2"/>.
+        </p>
+      </proof>
+      </corollary>
+
+ <theorem xml:id="sec4-4-thm1">
+        <statement>
+          <p>
+            Let <m>V</m> be a vector space over <m>\R</m>.
             Let <m>\beta=\{v_1,\ldots,
             v_n \}</m> and <m>\gamma=\{u_1,\ldots,
             u_m\}</m> be two bases of <m>V</m>.
             Then <m>m=n</m>.
           </p>
         </statement>
+
+        <proof>
+          <p>
+            Let <m>\beta</m> be a basis and since <m>\gamma</m> is linearly independen, 
+            by the <xref ref="cor-4-5-6"/>, we have <m>m\leq n</m>. Interchanging the role of 
+            <m>\beta</m> and <m>\gamma</m>, we have <m>n\leq m</m>. Hence <m>m=n</m>.
+          </p>
+        </proof>
       </theorem>
     
      
     
-    
-      <theorem xml:id="sec4-4-thm2">
-        <statement>
-        
-          <p>
-            If a vector space <m>V</m> has a basis consisting of <m>n</m> elements then any set of <m>n + 1</m> vectors is linearly dependent.
-          </p>
-        </statement>
-      </theorem>
-    
-
 
       <definition xml:id="def-finite-dim-VS">
         <title>Finite Dimensional Vector Space</title>       
@@ -246,7 +311,8 @@
       </exercise>
       
       <p>
-        These two  exercises give a way to find a basis of a finite dimensional vector space starting with a nonzero vector in <m>V</m>.
+        These two  exercises give a way to find a basis of a finite dimensional vector 
+        space starting with a nonzero vector in <m>V</m>.
       </p>
       
       <example>
@@ -383,7 +449,8 @@
         </statement>
       </example>
       <p>
-        In the following theorem we mention the equivalent condition for a set to be a basis of a finite dimensional vector space.
+        In the following theorem we mention the equivalent conditions for a set to be a basis of a
+         finite dimensional vector space.
       </p>
       <theorem xml:id="thm-basis-equiv">
         <statement>
@@ -416,6 +483,80 @@
             </ol>
           </p>
         </statement>
+
+        <proof>
+          <p>
+          We prove this by showing <m>(i)\implies (ii)\implies (iii)\implies (iv)\implies (i)</m>.
+          </p>
+          <case direction="cycle">
+            <p>
+              Follows from <xref ref="Exer-4-5-1"/>.
+            </p>
+          </case>
+
+          <case direction="cycle">
+            <p>
+            Let <m>\beta=\{v_1,\ldots, v_n\}</m> be a basis. Let <m>v\in V</m>, then by 
+            <xref ref="sec4-4-thm2"/> <m>\beta\cup \{v\}</m> is linearly dependeny. 
+            Hence <m>\beta</m> is maximal linearly independent set in <m>V</m>.
+            </p>
+          </case>
+          <case direction="cycle">
+            <p>
+             Let <m>\beta=\{v_1,\ldots,v_n\}</m> be a maximal linearly independent set.  
+             To show <m>\beta</m> is a minimal set of generators, we need to show two things 
+             (i) <m>L(\beta)=V</m> and (ii) no proper subset of <m>\beta</m> can span <m>V</m>.
+            </p>
+
+             <p>
+             To prove (i), let <m>v\in V</m>. Since <m>\beta</m> is a maximal set of generators, 
+             <m>\{v,v_1,\ldots,v_n\}</m> is linearly dependent. Hence there exits scalars, 
+             <m>\alpha_0,\alpha_1,\ldots,\alpha_n </m> not all zero such that 
+             <me>
+              \alpha_0 v+\sum_{i=1}^n\alpha_i v_i=0.
+             </me>
+             We claim, that <m>\alpha_0\neq 0</m>. For if <m>\alpha_0=0</m>, then we have 
+             scalars <m>\alpha_1,\ldots,\alpha_n </m> not all zero such that 
+             <me>
+              \sum_{i=1}^n\alpha_i v_i=0
+             </me>
+             which implies <m>\beta</m> is linearly dependent, a contradiction. 
+             Hence <m>\alpha_0\neq 0</m>. Thus we have 
+             <me>
+              v = -\frac{1}{\alpha_0} \sum_{i=1}^n\alpha_i v_i. 
+             </me>
+              This implies, <m>L(\beta)=V</m>.
+            </p>
+          <p>
+            We prove (ii) by contradiction. Without loss of generality, we assume that 
+            <m>\{v_1,v_2,\ldots, v_{n-1}\}</m> spans <m>V</m>. This would mean 
+            <m>v</m> lies in the spanning set of <m>\{v_1,v_2,\ldots, v_{n-1}\}</m>. In particular,
+            <m>\{v_1,v_2,\ldots, v_{n-1},v_n\}</m> is linearly dependent, a contradiction.  
+            </p>
+          </case>
+
+           <case direction="cycle">
+            <p>
+            Let <m>\beta=\{v_1,\ldots,v_n\}</m> be a minimal generating set. We need to 
+            show that it is a basis.
+            </p>
+            <p>
+              Since <m>\beta</m> is a generating set, for any <m>v\in V</m>, there exist
+              scalars <m>\alpha_i</m> such that <m>v=\sum \alpha_i v_i</m>. We need to show that 
+              this expression is unique.  Suppose not, let <m>v=\sum \beta_i v_i</m> with  
+              <m>\beta_i\neq \alpha_i</m> for at least one <m>i\in \{1,\ldots,n\}</m>. Then we have 
+              <me>
+                0=v-v = (\beta_i-\alpha_i)v_i+\sum_{j\neq i} (\beta_j-\alpha_j) v_j.
+              </me>
+              In paticular, 
+              <me>
+                v_i=-\frac{1}{(\beta_i-\alpha_i)}\sum_{j\neq i} (\beta_j-\alpha_j) v_j.
+              </me>
+              This would imply <m>\{v_1,\ldots, v_{i-1},v_{i+1},\ldots,v_n\}</m> is a generating set for 
+              <m>V</m> (why?). This is a contradiction to the minimality of <m>\beta</m>.
+            </p>
+           </case>
+        </proof>
       </theorem>
     
 
@@ -468,33 +609,43 @@
         polynomial passing through <m>\{(x_i,y_i)\}_{i=0}^n</m>.
       </p>
     </subsection>
+
     <subsection>
       <title>Dimension Formula</title>
-      <problem>
+      <p>
+            Let <m>V</m> be a vector space over <m>\R</m>.
+            Let <m>W_1</m> and <m>W_2</m> be subspaces of <m>V</m>.
+           Define a subset
+            <me>
+              W_1+W_2:= \{x+y:x\in W_2,y\in W_2\}.
+            </me>
+        
+        It is easy to check that <m>W_1+W_2</m> is a subspace of <m>V</m>. (why?)
+          </p>
+
+      <p>
+        In addition if, we assume that <m>V</m> is a finite dimensional, them we have the 
+        following theorem, that gives a way to find the dimension of <m>W_1+W_2</m>.
+      </p>
+
+      <theorem xml:id="thm-dimension-formula2">
         <statement>
           <p>
-            Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
-            Let <m>W_1</m> and <m>W_2</m> be subspaces of <m>V</m>.
-            Then
-            <me>
-              W_1+W_2:= \{x+y:x\in W_2,y\in W_2\}
-            </me>.
-          </p>
-          <p>
-            It is easy to check that <m>W_1+W_2</m> is a subspace of <m>V</m>.
-            Moreover
+           Let  <m>W_1</m> and <m>W_2</m> be two subspaces of a finite dimensioanl vector 
+            space  <m>V</m> over <m>\R</m>.  Then
             <md>
-              <mrow xml:id="dimension-formula" number="yes">\dim{(W_1+W_2)}=\dim{(W_1)}+\dim{(W_2)}-\dim{(W_1\cap W_2)}</mrow>
+            <mrow xml:id="dimension-formula" number="yes">\dim{(W_1+W_2)}=\dim{(W_1)}+\dim{(W_2)}-\dim{(W_1\cap W_2)}</mrow>
             </md>
           </p>
         </statement>
-      </problem>
+      </theorem>
+
       <example>
         <statement>
           <p>
-            Let <m>V=\R^3</m>.
-            Consider subspaces <m>W_1=\{(x_1,x_2,x_3):x_1+x_2+x_3=0\}</m> and <m>W_2=\{(x_1,x_2,x_3):x_1+x_2-x_3=0\}</m>.
-            Clearly <m>W_1</m> and <m>W_2</m> are subspaces of <m>V</m> each of dimension 2.
+            Let  <m>W_1=:\{(x_1,x_2,x_3)\in \R^3:x_1+x_2+x_3=0\}</m> and 
+            <m>W_2:=\{(x_1,x_2,x_3)\in \R^3:x_1+x_2-x_3=0\}</m> of <m>\R^3</m>.  
+            Clearly <m>\dim{(W_1)}=\dim{(W_2)}=2</m>.
             What is <m>W_1\cap W_2</m>?
             It is the line of intersection of the two planes,
             <m>x_1+x_2+x_3=0</m> and <m>x_1+x_2-x_3=0</m>.
@@ -519,6 +670,8 @@
           </p>
         </statement>
       </example>
+
+
     </subsection>
   
 
