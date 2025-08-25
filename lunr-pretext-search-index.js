@@ -52,7 +52,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Sytem of Linear Equation",
-  "body": " Sytem of Linear Equation   In daily life we often encounter problems where several unknown quantities are related to each other through linear relations. Such problems naturally lead to a system of linear equations. A system of linear equations consists of several linear equations in the same set of variables. Each equation represents a constraint, and the simultaneous solution of all equations corresponds to finding the values of the unknowns that satisfy all the constraints at once.  Studying systems of linear equations is fundamental for several reasons. They arise directly in practical applications—for instance, balancing chemical reactions, analyzing electrical networks, studying forces in equilibrium, or modeling data in statistics. Also they form the backbone of Linear Algebra, since the methods developed for their solution lead naturally to the concepts of vector spaces, linear transformations, and matrix theory.  Before moving to abstract notions of linear algebra, it is important to understand how such systems are represented, how they can be solved.  Let us start with real life a problem.     A person travels from to using a train and a bus. The train runs at a speed of km\/h while the bus runs at km\/h. The total journey takes hours and the total distance covered is km. Find how much time the person spent on the train and on the bus.    Let be the time spent on the train (in hours), and be the time spent on the bus (in hours). Then the problem gives us two conditions:  Total travel time is hours:   Total distance is km:   Thus the system of equations is: How do we solve these equations?  From the first equation, . Substituting into the second equation, we have Simplifying this we get . This implies Hence,   Therefore, the person spent hours on the train and hours on the bus.    The above problem was easy to formaulate and solve. What if the problem involves more variables? Condsider the following situation now.   A traveler goes from to in three legs: by car at km\/h, by train at km\/h, and by ferry at km\/h. The total travel time is hours, and the total distance covered is km. It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.   Let , , and denote the hours spent by car, train, and ferry, respectively. Then the conditions give:  Total time:   Total distance:   Car plus ferry time is equal to train time:   Hence the linear system is   It is easy to solve the above system. It turns out that and . Hence the traveler spends hours by car, hours by train, and hours by ferry.    Let us consider another example about distribution of taxies at various location in a certain city.    Consider the figure below . Vertices are various locations at which taxies are parked. The edges are directed with labels.     Taxi distributions between 5 locations.  For example arrow going from location 4 to 1 has label . This means of the taxies taken from location comes to location at the end of the day.  Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, taxies and wish to find out how many taxies he\/she should place at various location so that his business runs smoothly. How to formulate this problem?  Suppose denotes the number of taxies to be kept at the locatio . Then we have How many taxies will be there at the location after one day. It is easy to see that it is Similarly the number of taxies at various locations are as follows   Location 1:     Location 2:     Location 3:     Location 4: .   Ideally, the company would want the same number of taxies to come back at each location everyday. How to find these ? It is easy to see that this amount to solving the following system of linear equations The above equations can be written in a matrix form as follows: The above equation can be written as We can write it in compact form as where       In the , suppose we denote by , then is the number of taxies at various locations. What will the the number taxies after two days, three days and in general after days.      Note that the preoblem in involves only 5 depos. What if we have hundreds of depos? How do we solve such problems? In fact, google seach uses millions by million equations. It turns out that solving this problem amounts to finding large power of the coefficient matrix whihc is not an easy task even for poweful computers. This is acheived by notion of diagonalization whihc and numerical computaions of eigenvalues and eigenvectors of a large size matrix. We shall see several such applications in later chapters.    Let us define what is meaning of a system of linear equations involving certain variables. Think about the following questions before making a formal definition of system of linear equations.    How will you write one linear equation involving 20 variables? May be you can name the variables etc  How will you write one linear equation involving as many variables as number of active websites, say on this date?  How will you write linear equations in variables where when and are very large?      A system of linear equations is a finite collection of linear equations. Consider a system of linear equations in -variables . Here for and for . The above system of linear equations can be represented in compact form using the summation notation as follows: .    Next let us define, what is meaning of a solution and the solution set of the system of linear of equations .   A solution of the system of linear equations is an ordered -tuple of the real numbers such that for each satisfies each of the -equations. The set of all solutions of a system is called the solution set . It is a subset of , the Cartesian product of the set of real numbers -times. If we denote the solution set by , then . If the solution set is nonempty then the system is said to be consistent and otherwise it is said to be inconsistent.    The above system of linear equation can be written as a single matrix equation as , where   The matrix is called the coefficient matrix , is called the column matrix of constants or known terms and is called the column matrix of the unknowns.   All the essential data of the system can be gathered in one matrix by inserting the column matrix of the constants to the coefficient matrix as -th column. This matrix is called the augmented or enlarged matrix of the system. Once we know the system, we can get the augmented matrix associated with the system and conversely once we know the augmented matrix, we know the system and start calculating the solutions.  The augmented matrix of the above system is given by     Two systems of linear equations are called equivalent if and only if they have the same set of solutions.    We will define some basic operations by which a system is transformed into an equivalent system.  Geometrically, solving a system of linear equations in two (or three) unknowns\/variables is equivalent to determining whether or not a family of lines (or planes) has a common point of intersection.    Let be real matrix whose columns are and . Then In particular, is a linear combinations of column of . Thus if is a solution of , then is linear combination of columns of . For example, This can be written as    Our goal in this chapter is to find the solution set of a system of equations . Let us first find solution set involving one equation involving one and two variables.   One linear equation in one variable can be written as where, and are real numbers.  How to find the solution set of this equation. We need to find such that the equation holds. Does it mean ? What if ? Thus we need to consider different cases on . If is the solution set of this equation then we have       One linear equation in two variable and can be written as where, and are real numbers. How to find the solution set of this equation?    In this case, we need to consider two cases: (i) and (ii) at least one of is nonzero. If , then the solution depends upon . If , then and if , then , the empty\/null set.  In the second case, the solution set has geometric interpretation, it is that the set of all points on a straight line. For example, if , then the set of solutions is the straight line in the plane through the point and with slope . If , then also the solution set is a straight line. Can you identify it?  Can you write the solution set explicitley by taking all the possible cases?      The solution set of one linear equation , where in two variables is a straight line provides , that is, one of the coefficients or is non-zero.      Write the solution set of ne linear equation in three variables , where .      Let at least one of the , be nonzero, the solution set is a plane in .    "
+  "body": " Sytem of Linear Equation   In daily life we often encounter problems where several unknown quantities are related to each other through linear relations. Such problems naturally lead to a system of linear equations. A system of linear equations consists of several linear equations in the same set of variables. Each equation represents a constraint, and the simultaneous solution of all equations corresponds to finding the values of the unknowns that satisfy all the constraints at once.  Studying systems of linear equations is fundamental for several reasons. They arise directly in practical applications—for instance, balancing chemical reactions, analyzing electrical networks, studying forces in equilibrium, or modeling data in statistics. Also they form the backbone of Linear Algebra, since the methods developed for their solution lead naturally to the concepts of vector spaces, linear transformations, and matrix theory.  Before moving to abstract notions of linear algebra, it is important to understand how such systems are represented, how they can be solved.  Let us start with real life a problem.     A person travels from to using a train and a bus. The train runs at a speed of km\/h while the bus runs at km\/h. The total journey takes hours and the total distance covered is km. Find how much time the person spent on the train and on the bus.    Let be the time spent on the train (in hours), and be the time spent on the bus (in hours). Then the problem gives us two conditions:  Total travel time is hours:   Total distance is km:   Thus the system of equations is: How do we solve these equations?  From the first equation, . Substituting into the second equation, we have Simplifying this we get . This implies Hence,   Therefore, the person spent hours on the train and hours on the bus.    The above problem was easy to formaulate and solve. What if the problem involves more variables? Condsider the following situation now.   A traveler goes from to in three legs: by car at km\/h, by train at km\/h, and by ferry at km\/h. The total travel time is hours, and the total distance covered is km. It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.   Let , , and denote the hours spent by car, train, and ferry, respectively. Then the conditions give:  Total time:   Total distance:   Car plus ferry time is equal to train time:   Hence the linear system is   It is easy to solve the above system. It turns out that and . Hence the traveler spends hours by car, hours by train, and hours by ferry.      The combustion of octane ( ) is a classical example of a hydrocarbon fuel reacting with oxygen to form carbon dioxide and water. The unbalanced reaction is: Balancing this chemical equation can be expressed as solving a system of linear equations. Let us carefully set this up for the combustion of octane: This amounts to finding such that Equating the number of carbons, hydrogen and oxygen atoms on both side give size the the following equation. By solving the above equations one of the soltutions is given by . Hence the balanced equation can be written as      Let us consider another example about distribution of taxies at various location in a certain city.    Consider the figure below . Vertices are various locations at which taxies are parked. The edges are directed with labels.     Taxi distributions between 5 locations.  For example arrow going from location 4 to 1 has label . This means of the taxies taken from location comes to location at the end of the day.  Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, taxies and wish to find out how many taxies he\/she should place at various location so that his business runs smoothly. How to formulate this problem?  Suppose denotes the number of taxies to be kept at the locatio . Then we have How many taxies will be there at the location after one day. It is easy to see that it is Similarly the number of taxies at various locations are as follows   Location 1:     Location 2:     Location 3:     Location 4: .   Ideally, the company would want the same number of taxies to come back at each location everyday. How to find these ? It is easy to see that this amount to solving the following system of linear equations The above equations can be written in a matrix form as follows: The above equation can be written as We can write it in compact form as where       In the , suppose we denote by , then is the number of taxies at various locations. What will the the number taxies after two days, three days and in general after days.      Note that the preoblem in involves only 5 depos. What if we have hundreds of depos? How do we solve such problems? In fact, google seach uses millions by million equations. It turns out that solving this problem amounts to finding large power of the coefficient matrix whihc is not an easy task even for poweful computers. This is acheived by notion of diagonalization whihc and numerical computaions of eigenvalues and eigenvectors of a large size matrix. We shall see several such applications in later chapters.    Let us define what is meaning of a system of linear equations involving certain variables. Think about the following questions before making a formal definition of system of linear equations.    How will you write one linear equation involving 20 variables? May be you can name the variables etc  How will you write one linear equation involving as many variables as number of active websites, say on this date?  How will you write linear equations in variables where when and are very large?      A system of linear equations is a finite collection of linear equations. Consider a system of linear equations in -variables . Here for and for . The above system of linear equations can be represented in compact form using the summation notation as follows: .    Next let us define, what is meaning of a solution and the solution set of the system of linear of equations .   A solution of the system of linear equations is an ordered -tuple of the real numbers such that for each satisfies each of the -equations. The set of all solutions of a system is called the solution set . It is a subset of , the Cartesian product of the set of real numbers -times. If we denote the solution set by , then . If the solution set is nonempty then the system is said to be consistent and otherwise it is said to be inconsistent.    The above system of linear equation can be written as a single matrix equation as , where   The matrix is called the coefficient matrix , is called the column matrix of constants or known terms and is called the column matrix of the unknowns.   All the essential data of the system can be gathered in one matrix by inserting the column matrix of the constants to the coefficient matrix as -th column. This matrix is called the augmented or enlarged matrix of the system. Once we know the system, we can get the augmented matrix associated with the system and conversely once we know the augmented matrix, we know the system and start calculating the solutions.  The augmented matrix of the above system is given by     Two systems of linear equations are called equivalent if and only if they have the same set of solutions.    We will define some basic operations by which a system is transformed into an equivalent system.  Geometrically, solving a system of linear equations in two (or three) unknowns\/variables is equivalent to determining whether or not a family of lines (or planes) has a common point of intersection.    Let be real matrix whose columns are and . Then In particular, is a linear combinations of column of . Thus if is a solution of , then is linear combination of columns of . For example, This can be written as    Our goal in this chapter is to find the solution set of a system of equations . Let us first find solution set involving one equation involving one and two variables.   One linear equation in one variable can be written as where, and are real numbers.  How to find the solution set of this equation. We need to find such that the equation holds. Does it mean ? What if ? Thus we need to consider different cases on . If is the solution set of this equation then we have       One linear equation in two variable and can be written as where, and are real numbers. How to find the solution set of this equation?    In this case, we need to consider two cases: (i) and (ii) at least one of is nonzero. If , then the solution depends upon . If , then and if , then , the empty\/null set.  In the second case, the solution set has geometric interpretation, it is that the set of all points on a straight line. For example, if , then the set of solutions is the straight line in the plane through the point and with slope . If , then also the solution set is a straight line. Can you identify it?  Can you write the solution set explicitley by taking all the possible cases?      The solution set of one linear equation , where in two variables is a straight line provides , that is, one of the coefficients or is non-zero.      Write the solution set of ne linear equation in three variables , where .      Let at least one of the , be nonzero, the solution set is a plane in .    "
 },
 {
   "id": "sec1-0-eg1",
@@ -73,38 +73,47 @@ var ptx_lunr_docs = [
   "body": " A traveler goes from to in three legs: by car at km\/h, by train at km\/h, and by ferry at km\/h. The total travel time is hours, and the total distance covered is km. It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.   Let , , and denote the hours spent by car, train, and ferry, respectively. Then the conditions give:  Total time:   Total distance:   Car plus ferry time is equal to train time:   Hence the linear system is   It is easy to solve the above system. It turns out that and . Hence the traveler spends hours by car, hours by train, and hours by ferry.   "
 },
 {
+  "id": "chemical-reaction-eg1",
+  "level": "2",
+  "url": "sec1-0-lin-eqns.html#chemical-reaction-eg1",
+  "type": "Example",
+  "number": "1.1.3",
+  "title": "",
+  "body": "  The combustion of octane ( ) is a classical example of a hydrocarbon fuel reacting with oxygen to form carbon dioxide and water. The unbalanced reaction is: Balancing this chemical equation can be expressed as solving a system of linear equations. Let us carefully set this up for the combustion of octane: This amounts to finding such that Equating the number of carbons, hydrogen and oxygen atoms on both side give size the the following equation. By solving the above equations one of the soltutions is given by . Hence the balanced equation can be written as     "
+},
+{
   "id": "taxi-distribution-eg1",
   "level": "2",
   "url": "sec1-0-lin-eqns.html#taxi-distribution-eg1",
   "type": "Example",
-  "number": "1.1.3",
+  "number": "1.1.4",
   "title": "",
   "body": "  Consider the figure below . Vertices are various locations at which taxies are parked. The edges are directed with labels.     Taxi distributions between 5 locations.  For example arrow going from location 4 to 1 has label . This means of the taxies taken from location comes to location at the end of the day.  Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, taxies and wish to find out how many taxies he\/she should place at various location so that his business runs smoothly. How to formulate this problem?  Suppose denotes the number of taxies to be kept at the locatio . Then we have How many taxies will be there at the location after one day. It is easy to see that it is Similarly the number of taxies at various locations are as follows   Location 1:     Location 2:     Location 3:     Location 4: .   Ideally, the company would want the same number of taxies to come back at each location everyday. How to find these ? It is easy to see that this amount to solving the following system of linear equations The above equations can be written in a matrix form as follows: The above equation can be written as We can write it in compact form as where    "
-},
-{
-  "id": "sec1-0-lin-eqns-8",
-  "level": "2",
-  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-8",
-  "type": "Question",
-  "number": "1.1.5",
-  "title": "",
-  "body": "  In the , suppose we denote by , then is the number of taxies at various locations. What will the the number taxies after two days, three days and in general after days.   "
 },
 {
   "id": "sec1-0-lin-eqns-9",
   "level": "2",
   "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-9",
-  "type": "Remark",
+  "type": "Question",
   "number": "1.1.6",
+  "title": "",
+  "body": "  In the , suppose we denote by , then is the number of taxies at various locations. What will the the number taxies after two days, three days and in general after days.   "
+},
+{
+  "id": "sec1-0-lin-eqns-10",
+  "level": "2",
+  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-10",
+  "type": "Remark",
+  "number": "1.1.7",
   "title": "",
   "body": "  Note that the preoblem in involves only 5 depos. What if we have hundreds of depos? How do we solve such problems? In fact, google seach uses millions by million equations. It turns out that solving this problem amounts to finding large power of the coefficient matrix whihc is not an easy task even for poweful computers. This is acheived by notion of diagonalization whihc and numerical computaions of eigenvalues and eigenvectors of a large size matrix. We shall see several such applications in later chapters.   "
 },
 {
-  "id": "sec1-0-lin-eqns-11",
+  "id": "sec1-0-lin-eqns-12",
   "level": "2",
-  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-11",
+  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-12",
   "type": "Question",
-  "number": "1.1.7",
+  "number": "1.1.8",
   "title": "",
   "body": "  How will you write one linear equation involving 20 variables? May be you can name the variables etc  How will you write one linear equation involving as many variables as number of active websites, say on this date?  How will you write linear equations in variables where when and are very large?   "
 },
@@ -113,7 +122,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-0-lin-eqns.html#def-linear-system",
   "type": "Definition",
-  "number": "1.1.8",
+  "number": "1.1.9",
   "title": "",
   "body": "  A system of linear equations is a finite collection of linear equations. Consider a system of linear equations in -variables . Here for and for . The above system of linear equations can be represented in compact form using the summation notation as follows: .   "
 },
@@ -122,7 +131,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-0-lin-eqns.html#def-sol-linear-system",
   "type": "Definition",
-  "number": "1.1.9",
+  "number": "1.1.10",
   "title": "",
   "body": " A solution of the system of linear equations is an ordered -tuple of the real numbers such that for each satisfies each of the -equations. The set of all solutions of a system is called the solution set . It is a subset of , the Cartesian product of the set of real numbers -times. If we denote the solution set by , then . If the solution set is nonempty then the system is said to be consistent and otherwise it is said to be inconsistent.   "
 },
@@ -131,16 +140,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-0-lin-eqns.html#def-equivalent-systems",
   "type": "Definition",
-  "number": "1.1.10",
+  "number": "1.1.11",
   "title": "",
   "body": "  Two systems of linear equations are called equivalent if and only if they have the same set of solutions.   "
 },
 {
-  "id": "sec1-0-lin-eqns-22",
+  "id": "sec1-0-lin-eqns-23",
   "level": "2",
-  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-22",
+  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-23",
   "type": "Remark",
-  "number": "1.1.11",
+  "number": "1.1.12",
   "title": "",
   "body": "  Let be real matrix whose columns are and . Then In particular, is a linear combinations of column of . Thus if is a solution of , then is linear combination of columns of . For example, This can be written as    "
 },
@@ -149,7 +158,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-0-lin-eqns.html#one-eqn-one-var",
   "type": "Example",
-  "number": "1.1.12",
+  "number": "1.1.13",
   "title": "",
   "body": "  One linear equation in one variable can be written as where, and are real numbers.  How to find the solution set of this equation. We need to find such that the equation holds. Does it mean ? What if ? Thus we need to consider different cases on . If is the solution set of this equation then we have    "
 },
@@ -158,34 +167,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-0-lin-eqns.html#two-eqn-one-var",
   "type": "Example",
-  "number": "1.1.13",
-  "title": "",
-  "body": "  One linear equation in two variable and can be written as where, and are real numbers. How to find the solution set of this equation?    In this case, we need to consider two cases: (i) and (ii) at least one of is nonzero. If , then the solution depends upon . If , then and if , then , the empty\/null set.  In the second case, the solution set has geometric interpretation, it is that the set of all points on a straight line. For example, if , then the set of solutions is the straight line in the plane through the point and with slope . If , then also the solution set is a straight line. Can you identify it?  Can you write the solution set explicitley by taking all the possible cases?   "
-},
-{
-  "id": "sec1-0-lin-eqns-27",
-  "level": "2",
-  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-27",
-  "type": "Remark",
   "number": "1.1.14",
   "title": "",
-  "body": "  The solution set of one linear equation , where in two variables is a straight line provides , that is, one of the coefficients or is non-zero.   "
+  "body": "  One linear equation in two variable and can be written as where, and are real numbers. How to find the solution set of this equation?    In this case, we need to consider two cases: (i) and (ii) at least one of is nonzero. If , then the solution depends upon . If , then and if , then , the empty\/null set.  In the second case, the solution set has geometric interpretation, it is that the set of all points on a straight line. For example, if , then the set of solutions is the straight line in the plane through the point and with slope . If , then also the solution set is a straight line. Can you identify it?  Can you write the solution set explicitley by taking all the possible cases?   "
 },
 {
   "id": "sec1-0-lin-eqns-28",
   "level": "2",
   "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-28",
-  "type": "Question",
+  "type": "Remark",
   "number": "1.1.15",
   "title": "",
-  "body": "  Write the solution set of ne linear equation in three variables , where .   "
+  "body": "  The solution set of one linear equation , where in two variables is a straight line provides , that is, one of the coefficients or is non-zero.   "
 },
 {
   "id": "sec1-0-lin-eqns-29",
   "level": "2",
   "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-29",
-  "type": "Remark",
+  "type": "Question",
   "number": "1.1.16",
+  "title": "",
+  "body": "  Write the solution set of ne linear equation in three variables , where .   "
+},
+{
+  "id": "sec1-0-lin-eqns-30",
+  "level": "2",
+  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-30",
+  "type": "Remark",
+  "number": "1.1.17",
   "title": "",
   "body": "  Let at least one of the , be nonzero, the solution set is a plane in .   "
 },
@@ -430,7 +439,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Rank of Matrices",
-  "body": " Rank of Matrices    Let be an matrix. Delete any rows and columns of . The resulting matrix is called a sub-matrix of . If , then it is called a square sub-matrix of of order .      The rank of an matrix is the order of the largest square sub-matrix of whose determinant is non-zero. We denote the rank of a matrix by .     Determine the rank of .   We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .     We list the following results without proof.     An matrix is of rank 0 if and only it is a zero matrix.    An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .        Suppose is an matrix. The rank of is equal to the number of non-zero rows in an echelon equivalent form of . In other words, the rank of matrix is the number of leading 1's in any row-echelon matrix to which can be carried by row operations. \\qed      Let us find the rank of .     . Hence .      Consider a matrix . Find the rank of the matrix.    Let us apply elementary row operations of . We have Clearly the rank of is 3 if . If or , then it is easy to check that rank of is 2.       Number of Solution of a System   Let be a system of linear equations in unknowns and , the augmented matrix of the system. Then     The system has a solution i.e. the system is consistent if and only if .    If and whihc is strictly less than , then number of unknowns, then there are infinite number of solutions and variables can be chosen freely.    If and , the number of unknowns, then there is only one (unique) solution for the system.         Suppose is a system of linear equations in unknowns with . If , then the system has no solution.      Suppose is a system of linear equations in unknowns with . Then the system either has no solution or has infinitely many solutions.     Consider the . Thus we have , hence this system has a unique solution.     Let us consider the system where  and  Clearly , hence this system has infinitely many solutions.      Consider the system of linear equations , where   Clearly but . Hence the system does not have a solution.       "
+  "body": " Rank of Matrices   In this section, we introduce the concept of rank of a matrix which plays an important role in deciding whether a system has a solution.     Let be an matrix. Delete any rows and columns of . The resulting matrix is called a sub-matrix of . If , then it is called a square sub-matrix of of order .      The rank of an matrix is the order of the largest square sub-matrix of whose determinant is non-zero. We denote the rank of a matrix by .     Determine the rank of .   We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .     We list the following results without proof.     An matrix is of rank 0 if and only it is a zero matrix.    An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .        Suppose is an matrix. The rank of is equal to the number of non-zero rows in an echelon equivalent form of . In other words, the rank of matrix is the number of leading 1's in any row-echelon matrix to which can be carried by row operations. \\qed      Let us find the rank of .     . Hence .      Consider a matrix . Find the rank of the matrix.    Let us apply elementary row operations of . We have Clearly the rank of is 3 if . If or , then it is easy to check that rank of is 2.       Number of Solution of a System   Let be a system of linear equations in unknowns and , the augmented matrix of the system. Then     The system has a solution i.e. the system is consistent if and only if .    If and whihc is strictly less than , then number of unknowns, then there are infinite number of solutions and variables can be chosen freely.    If and , the number of unknowns, then there is only one (unique) solution for the system.         Suppose is a system of linear equations in unknowns with . If , then the system has no solution.      Suppose is a system of linear equations in unknowns with . Then the system either has no solution or has infinitely many solutions.     Consider the . Thus we have , hence this system has a unique solution.     Let us consider the system where  and  Clearly , hence this system has infinitely many solutions.      Consider the system of linear equations , where   Clearly but . Hence the system does not have a solution.       "
 },
 {
   "id": "def-sub-matrix",
@@ -451,18 +460,18 @@ var ptx_lunr_docs = [
   "body": "  The rank of an matrix is the order of the largest square sub-matrix of whose determinant is non-zero. We denote the rank of a matrix by .   "
 },
 {
-  "id": "sec1-4-matrix-rank-4",
+  "id": "sec1-4-matrix-rank-5",
   "level": "2",
-  "url": "sec1-4-matrix-rank.html#sec1-4-matrix-rank-4",
+  "url": "sec1-4-matrix-rank.html#sec1-4-matrix-rank-5",
   "type": "Example",
   "number": "1.5.3",
   "title": "",
   "body": " Determine the rank of .   We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .   "
 },
 {
-  "id": "sec1-4-matrix-rank-5",
+  "id": "sec1-4-matrix-rank-6",
   "level": "2",
-  "url": "sec1-4-matrix-rank.html#sec1-4-matrix-rank-5",
+  "url": "sec1-4-matrix-rank.html#sec1-4-matrix-rank-6",
   "type": "Observation",
   "number": "1.5.4",
   "title": "",
@@ -556,7 +565,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.6",
   "title": "Homogeneous System of Linear Equations",
-  "body": " Homogeneous System of Linear Equations     A system of linear equations is called homogeneous if . Otherwise it is called a non homogeneous system.     Observe that any homogeneous system of linear equations has at least one solution, namely the trivial solution ( , for all ). The augmented matrix is got from adding one zero column to . Hence .    A homogeneous system of equations in the same number of unknowns ( unknowns) has a nontrivial solution if and only if is singular, that is , if and only if .    The given homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if , the number of variables ( ). But , if and only if is singular.      A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.   If , then and hence the result follows from thm.~ .   We would like to get the connection between solutions of a homogeneous system and the solutions of , . These are stated in the following Theorem.    Suppose the non homogeneous system of linear equations has a solution say . All the solutions of this system are of the form where runs through all the solutions of the corresponding homogeneous system .    Let be a solution of . Then . Hence is a solution of .  Suppose is a solution of , i.e. . Then and hence is a solution of and , where .    The above theorem can be written equivalently as    If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.     Let us consider one equation in two variables, . The corresponding homogeneous system is . It is easy see that is set of all solutions of . Let us consider a solution of the non homogeneous system . Let be any solution of . Then it is easy to check that is a solution of . Alternatively, to solve , we can free one of the variable say . That is can take any real value. Let , then . Hence a generic solution of is given by , which can be rewritten as . Thus all solutions of are of the form Notice that tho two lines, and are parallel to each other. Plot the figure in Sage using the following Sage syntax.     Let consider 2 equations in three variables. The corresponding homogeneous system is given by . It is easy to see that the set of all solutions of the homogeneous system is , we get which implies . Now substituting in the second equation of , we get . Here we can take as a free variable, hence any solution of~ is of the form which can be written as . Note that is a solution . Thus set of all solution of is of the form  Geometrically, each equation in the non homogeneous system represents a plane and the solution is the line of intersection of the the two planes. Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax.     "
+  "body": " Homogeneous System of Linear Equations     A system of linear equations is called homogeneous if . Otherwise it is called a non homogeneous system.     Observe that any homogeneous system of linear equations has at least one solution, namely the trivial solution ( , for all ). The augmented matrix is got from adding one zero column to . Hence .    A homogeneous system of equations in the same number of unknowns ( unknowns) has a nontrivial solution if and only if is singular, that is , if and only if .    The given homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if , the number of variables ( ). But , if and only if is singular.      A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.   If , then and hence the result follows from thm.~ .   One cam prove directly using induction on m the number of equtions.   Let and be two solutions of the homogeneous system and solutions of the non homogeneous sytem . Then show the following    is a solution of .    for any , is a solution of .     is a solution of .      We would like to get the connection between solutions of a homogeneous system and the solutions of , . These are stated in the following Theorem.    Suppose the non homogeneous system of linear equations has a solution say . All the solutions of this system are of the form where runs through all the solutions of the corresponding homogeneous system .    Let be a solution of . Then . Hence is a solution of .  Suppose is a solution of , i.e. . Then and hence is a solution of and , where .    The above theorem can be written equivalently as    If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.     Let us consider one equation in two variables, . The corresponding homogeneous system is . It is easy see that is set of all solutions of . Let us consider a solution of the non homogeneous system . Let be any solution of . Then it is easy to check that is a solution of . Alternatively, to solve , we can free one of the variable say . That is can take any real value. Let , then . Hence a generic solution of is given by , which can be rewritten as . Thus all solutions of are of the form Notice that tho two lines, and are parallel to each other. Plot the figure in Sage using the following Sage syntax.     Let consider 2 equations in three variables. The corresponding homogeneous system is given by . It is easy to see that the set of all solutions of the homogeneous system is , we get which implies . Now substituting in the second equation of , we get . Here we can take as a free variable, hence any solution of~ is of the form which can be written as . Note that is a solution . Thus set of all solution of is of the form  Geometrically, each equation in the non homogeneous system represents a plane and the solution is the line of intersection of the the two planes. Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax.     "
 },
 {
   "id": "def-homo-system",
@@ -586,11 +595,20 @@ var ptx_lunr_docs = [
   "body": "  A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.   If , then and hence the result follows from thm.~ .  "
 },
 {
+  "id": "sec1-5-hom-system-7",
+  "level": "2",
+  "url": "sec1-5-hom-system.html#sec1-5-hom-system-7",
+  "type": "Checkpoint",
+  "number": "1.6.4",
+  "title": "",
+  "body": " Let and be two solutions of the homogeneous system and solutions of the non homogeneous sytem . Then show the following    is a solution of .    for any , is a solution of .     is a solution of .     "
+},
+{
   "id": "thm-hom-system3",
   "level": "2",
   "url": "sec1-5-hom-system.html#thm-hom-system3",
   "type": "Theorem",
-  "number": "1.6.4",
+  "number": "1.6.5",
   "title": "",
   "body": "  Suppose the non homogeneous system of linear equations has a solution say . All the solutions of this system are of the form where runs through all the solutions of the corresponding homogeneous system .    Let be a solution of . Then . Hence is a solution of .  Suppose is a solution of , i.e. . Then and hence is a solution of and , where .   "
 },
@@ -599,25 +617,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-5-hom-system.html#thm-hom-system4",
   "type": "Theorem",
-  "number": "1.6.5",
+  "number": "1.6.6",
   "title": "",
   "body": "  If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.   "
 },
 {
-  "id": "sec1-5-hom-system-10",
+  "id": "sec1-5-hom-system-12",
   "level": "2",
-  "url": "sec1-5-hom-system.html#sec1-5-hom-system-10",
+  "url": "sec1-5-hom-system.html#sec1-5-hom-system-12",
   "type": "Example",
-  "number": "1.6.6",
+  "number": "1.6.7",
   "title": "",
   "body": " Let us consider one equation in two variables, . The corresponding homogeneous system is . It is easy see that is set of all solutions of . Let us consider a solution of the non homogeneous system . Let be any solution of . Then it is easy to check that is a solution of . Alternatively, to solve , we can free one of the variable say . That is can take any real value. Let , then . Hence a generic solution of is given by , which can be rewritten as . Thus all solutions of are of the form Notice that tho two lines, and are parallel to each other. Plot the figure in Sage using the following Sage syntax.   "
 },
 {
-  "id": "sec1-5-hom-system-11",
+  "id": "sec1-5-hom-system-13",
   "level": "2",
-  "url": "sec1-5-hom-system.html#sec1-5-hom-system-11",
+  "url": "sec1-5-hom-system.html#sec1-5-hom-system-13",
   "type": "Example",
-  "number": "1.6.7",
+  "number": "1.6.8",
   "title": "",
   "body": " Let consider 2 equations in three variables. The corresponding homogeneous system is given by . It is easy to see that the set of all solutions of the homogeneous system is , we get which implies . Now substituting in the second equation of , we get . Here we can take as a free variable, hence any solution of~ is of the form which can be written as . Note that is a solution . Thus set of all solution of is of the form  Geometrically, each equation in the non homogeneous system represents a plane and the solution is the line of intersection of the the two planes. Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax.    "
 },
