@@ -29,19 +29,29 @@ column vector.
         <p> 
             We list the properties of vector addition and scalar multiplication in <m>\R^n</m> which can be easily proved. I encourage the readers to prove them.
         </p>
-
-        <p>(i) for all <m>x,y\in \R^n</m>, <m>x+y=y+x</m>. (<alert>Commutative property</alert>)</p>
-        <p>(ii) for all <m>x,y,z\in \R^n</m>, <m>x+(y+z)=(x+y)+z</m>. (<alert>Associative property</alert>)</p>
-    <p>	(iii) The zero vector <m>\overline{0}=(0,0,\ldots,0)</m> has the property, for all 
+        <ol marker="(i)">
+         <li>
+            <p>for all <m>x,y\in \R^n</m>, <m>x+y=y+x</m>. (<alert>Commutative property</alert>)</p>
+         </li>
+         <li>
+            <p> for all <m>x,y,z\in \R^n</m>, <m>x+(y+z)=(x+y)+z</m>. (<alert>Associative property</alert>)</p>
+    </li>
+         <li><p>	The zero vector <m>\overline{0}=(0,0,\ldots,0)</m> has the property, for all 
         <m>x\in \R^n</m>, <m>\overline{0}=x+\overline{0}</m>. This zero vector, we shall denote by 
         0 and is called the <alert>additive identity</alert>. One can show that zero vector is unique.</p>
-    <p>	(iv) for each <m>x\in \R^n</m>, there is a vector <m>x'\in \R^n</m>, such that <m>x+x'=x'+x=\overline{0}</m>. 
+   </li>
+         <li> <p>	for each <m>x\in \R^n</m>, there is a vector <m>x'\in \R^n</m>, such that <m>x+x'=x'+x=\overline{0}</m>. 
         This <m>x'</m> is called the <alert>additive inverse</alert> of <m>x</m>. It is easy to see that <m>x'=-x</m>. </p>
-    <p>	(v) for all <m>\alpha\in \R</m> and <m>x,y \in \R^n</m>, <m>\alpha(x+y)=\alpha x+\alpha y</m>.</p>
-    <p>	(vi) for all <m>\alpha,\beta \in \R</m> and <m>x \in \R^n</m>, <m>(\alpha+\beta) x=\alpha x+\beta y</m>.</p>
-    <p>	(vii) for all <m>\alpha,\beta \in \R</m> and <m>x \in \R^n</m>, <m>(\alpha\beta) x=\alpha (\beta x)y=\beta(\alpha x)</m>. </p>
-    <p>	(viii) for all <m>x\in \R^n</m>, <m>1\cdot x=x</m>.</p>
-     
+    </li>
+         <li><p> for all <m>\alpha\in \R</m> and <m>x,y \in \R^n</m>, <m>\alpha(x+y)=\alpha x+\alpha y</m>.</p>
+    </li>
+         <li><p> for all <m>\alpha,\beta \in \R</m> and <m>x \in \R^n</m>, <m>(\alpha+\beta) x=\alpha x+\beta y</m>.</p>
+    </li>
+         <li><p>	 for all <m>\alpha,\beta \in \R</m> and <m>x \in \R^n</m>, <m>(\alpha\beta) x=\alpha (\beta x)y=\beta(\alpha x)</m>. </p>
+    </li>
+         <li><p> for all <m>x\in \R^n</m>, <m>1\cdot x=x</m>.</p>
+     </li>
+    </ol>
     </statement>
 </proposition>
 
@@ -54,9 +64,13 @@ column vector.
         <p>
             A non empty subset <m>V\subset \R^n</m> is called a vector subspace of <m>\R^n</m> if <m>V</m> 
             is closed under vector addition and scalar multiplication. That is,
-            <p> (i) for all <m>x,y\in V, x+y\in V</m> and </p>
-            <p> (ii) for all <m>x \in V, \alpha \in \R</m>, we have  <m>\alpha x\in V</m>.
+        <ol marker="(i)">  
+         <li> <p> for all <m>x,y\in V, x+y\in V</m> and </p>
+           </li>
+         <li> <p> for all <m>x \in V, \alpha \in \R</m>, we have  <m>\alpha x\in V</m>.
             </p>
+            </li>
+        </ol>
         </p>
     </statement>
 </definition>
@@ -71,12 +85,20 @@ subspace then <m>0\in V</m>.
 
     <example>
         <title>Examples of vector subspaces in <m>\R^n</m></title>
-        <p>(i) <m>\{0\}</m> is a vectors subspace of <m>\R^n</m></p>
-	<p>(ii) Any line passing through origin in <m>\R^2</m> is a subspace of <m>\R^2</m>.</p>
-	<p>(iii) Any line passing through origin in <m>\R^3</m> is a subspace of <m>\R^3</m>.</p>
-	<p>(iv) Any plane passing through origin in <m>\R^3</m> is a subspace of <m>\R^3</m>.</p> 
-        
-        
+        <p>
+        <ol marker="(i)">  
+         <li>
+        <p> <m>\{0\}</m> is a vectors subspace of <m>\R^n</m></p>
+         </li>
+         <li>
+        <p> Any line passing through origin in <m>\R^2</m> is a subspace of <m>\R^2</m>.</p>
+	</li>
+         <li><p> Any line passing through origin in <m>\R^3</m> is a subspace of <m>\R^3</m>.</p>
+	</li>
+         <li><p> Any plane passing through origin in <m>\R^3</m> is a subspace of <m>\R^3</m>.</p> 
+        </li>
+    </ol>
+</p> 
     </example>
 
     <example>
@@ -164,13 +186,19 @@ subspace then <m>0\in V</m>.
         <p>
            Let <m>W_1</m> and <m>W_2</m> be two subspaces of <m>\R^n</m>. Can we generate 
      more subspaces using <m>W_1</m> and <m>W_2</m>? Natural thing to look at are sunsets 
+     <ol marker="(i)">
+         <li>
      <p> (i) <m>W_1\cap W_2</m>, </p> 
-     <p> (ii)  <m>W_1\cup W_2</m> and </p> 
-     <p>  (iii) <m>W_1+W_2</m>. </p>       
-     <p>
+      </li>
+         <li>  
+     <p>   <m>W_1\cup W_2</m> and </p> 
+     </li>
+         <li><p>   <m>W_1+W_2</m>. </p>       
+     </li>
+    </ol>
         It is easy to see that (i) and (iii) are subspaces where as (ii) need not 
         be a subspace. (justify). Under what condition (ii) is a subspace?
-      </p>
+    
     </p>
 </statement>
     </example>
