@@ -445,7 +445,7 @@ sagecell.makeSagecell({
 </div>
 <div class="autopermalink" data-description="Definition 1.6.1"><a href="#def-homo-system" title="Copy heading and permalink for Definition 1.6.1" aria-label="Copy heading and permalink for Definition 1.6.1">🔗</a></div></article><div class="autopermalink" data-description="Paragraph"><a href="#sec1-5-hom-system-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec1-5-hom-system-3">Observe that any homogeneous system <span class="process-math">\(AX = 0\)</span> of linear equations has at least one solution, namely the trivial solution (<span class="process-math">\(x_i = 0\text{,}\)</span> for all <span class="process-math">\(i\)</span>).  The augmented matrix is got from adding one zero column to <span class="process-math">\(A\text{.}\)</span> Hence <span class="process-math">\(.r(A) =
+<div class="para" id="sec1-5-hom-system-3">Observe that any homogeneous system <span class="process-math">\(AX = 0\)</span> of linear equations has at least one solution, namely the trivial solution (<span class="process-math">\(x_i = 0\text{,}\)</span> for all <span class="process-math">\(i\)</span>).  The augmented matrix is got from adding one zero column to <span class="process-math">\(A\text{.}\)</span> Hence <span class="process-math">\(r(A) =
 r(A^*)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec1-5-hom-system-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-hom-system1"><h3 class="heading">
@@ -510,7 +510,7 @@ B\text{.}\)</span>
 \left\{\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix} :\alpha \in \R\right\}=\left\{\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\alpha\begin{pmatrix} 1\\-\frac{2}{3}\end{pmatrix} :\alpha \in \R\right\}.
 \end{equation*}
 </div>
-<div class="para">Notice that tho two lines, <span class="process-math">\(2x_1+3x_2=5\)</span> and <span class="process-math">\(2x_1+3x_2=0\)</span> are parallel to each other. Plot the figure in Sage using the following Sage sybtax. <div id="sec1-5-hom-system-10-1-23" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('x,y')
+<div class="para">Notice that tho two lines, <span class="process-math">\(2x_1+3x_2=5\)</span> and <span class="process-math">\(2x_1+3x_2=0\)</span> are parallel to each other. Plot the figure in Sage using the following Sage syntax. <div id="sec1-5-hom-system-10-1-23" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('x,y')
 l1 = implicit_plot(2*x+3*y==5,(x,-5,5),(y,-5,5),gridlines='minor')
 l2= implicit_plot(2*x+3*y==0,(x,-5,5),(y,-5,5),color='red',gridlines='minor')
 p1 = point((0,5/3),color='blue',size=20)
