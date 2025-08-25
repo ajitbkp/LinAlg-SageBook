@@ -46,11 +46,92 @@ var ptx_lunr_docs = [
   "body": "Reduced Row Echelon Form (RREF) "
 },
 {
+  "id": "sec1-0-lin-eqns",
+  "level": "1",
+  "url": "sec1-0-lin-eqns.html",
+  "type": "Section",
+  "number": "1.1",
+  "title": "Sytem of Linear Equation",
+  "body": " Sytem of Linear Equation   In daily life we often encounter problems where several unknown quantities are related to each other through linear relations. Such problems naturally lead to a system of linear equations. A system of linear equations consists of several linear equations in the same set of variables. Each equation represents a constraint, and the simultaneous solution of all equations corresponds to finding the values of the unknowns that satisfy all the constraints at once.  Studying systems of linear equations is fundamental for several reasons. They arise directly in practical applications—for instance, balancing chemical reactions, analyzing electrical networks, studying forces in equilibrium, or modeling data in statistics. Also they form the backbone of Linear Algebra, since the methods developed for their solution lead naturally to the concepts of vector spaces, linear transformations, and matrix theory.  Before moving to abstract notions of linear algebra, it is important to understand how such systems are represented, how they can be solved.  Let us start with real life a problem.     A person travels from to using a train and a bus. The train runs at a speed of km\/h while the bus runs at km\/h. The total journey takes hours and the total distance covered is km. Find how much time the person spent on the train and on the bus.    Let be the time spent on the train (in hours), and be the time spent on the bus (in hours). Then the problem gives us two conditions:  Total travel time is hours:   Total distance is km:   Thus the system of equations is: How do we solve these equations?  From the first equation, . Substituting into the second equation, we have Simplifying this we get . This implies Hence,   Therefore, the person spent hours on the train and hours on the bus.    The above problem was easy to formaulate and solve. What if the problem involves more variables? Condsider the following situation now.   A traveler goes from to in three legs: by car at km\/h, by train at km\/h, and by ferry at km\/h. The total travel time is hours, and the total distance covered is km. It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.   Let , , and denote the hours spent by car, train, and ferry, respectively. Then the conditions give:  Total time:   Total distance:   Car plus ferry time is equal to train time:   Hence the linear system is   It is easy to solve the above system. It turns out that and . Hence the traveler spends hours by car, hours by train, and hours by ferry.    Let us consider another example about distribution of taxies at various location in a certain city.    Consider the figure below . Vertices are various locations at which taxies are parked. The edges are directed with labels.     Taxi distributions between 5 locations.  For example arrow going from location 4 to 1 has label . This means of the taxies taken from location comes to location at the end of the day.  Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, taxies and wish to find out how many taxies he\/she should place at various location so that his business runs smoothly. How to formulate this problem?  Suppose denotes the number of taxies to be kept at the locatio . Then we have How many taxies will be there at the location after one day. It is easy to see that it is Similarly the number of taxies at various locations are as follows   Location 1:     Location 2:     Location 3:     Location 4: .   Ideally, the company would want the same number of taxies to come back at each location everyday. How to find these ? It is easy to see that this amount to solving the following system of linear equations The above equations can be written in a matrix form as follows: The above equation can be written as We can write it in compact form as where       Note that the preoblem in involves only 5 depos. What if we have hundreds of depos? How do we solve such problems? In fact, google seach uses millions by million equations. It turns out that solving this problem amounts to finding large power of the coefficient matrix whihc is not an easy task even for poweful computers. This is acheived by notion of diagonalization whihc and numerical computaions of eigenvalues and eigenvectors of a large size matrix. We shall see several such applications in later chapters.    Let us define what is meaning of a system of linear equations involving certain variables.    A system of linear equations is a finite collection of linear equations. Consider a system of linear equations in -variables . Here for and for . The above system of linear equations can be represented in compact form using the summation notation as follows: .    Next let us define, what is meaning of a solution and the solution set of the system of linear of equations .   A solution of the system of linear equations is an ordered -tuple of the real numbers such that for each satisfies each of the -equations. The set of all solutions of a system is called the solution set . It is a subset of , the Cartesian product of the set of real numbers -times. If we denote the solution set by , then . If the solution set is nonempty then the system is said to be consistent and otherwise it is said to be inconsistent.    The above system of linear equation can be written as a single matrix equation as , where   The matrix is called the coefficient matrix , is called the column matrix of constants or known terms and is called the column matrix of the unknowns. All the essential data of the system can be gathered in one matrix by inserting the column matrix of the constants to the coefficient matrix as -th column. This matrix is called the augmented or enlarged matrix of the system. Once we know the system, we can get the augmented matrix associated with the system and conversely once we know the augmented matrix, we know the system and start calculating the solutions.  The augmented matrix of the above system is given by     Two systems of linear equations are called equivalent if and only if they have the same set of solutions.    We will define some basic operations by which a system is transformed into an equivalent system.  Geometrically, solving a system of linear equations in two (or three) unknowns\/variables is equivalent to determining whether or not a family of lines (or planes) has a common point of intersection.    Let be real matrix whose columns are and . Then . In particular, is a linear combinations of column of . Thus if is a solution of , then is linear combination of columns of . For example, This can be written as     "
+},
+{
+  "id": "sec1-0-eg1",
+  "level": "2",
+  "url": "sec1-0-lin-eqns.html#sec1-0-eg1",
+  "type": "Example",
+  "number": "1.1.1",
+  "title": "",
+  "body": "  A person travels from to using a train and a bus. The train runs at a speed of km\/h while the bus runs at km\/h. The total journey takes hours and the total distance covered is km. Find how much time the person spent on the train and on the bus.    Let be the time spent on the train (in hours), and be the time spent on the bus (in hours). Then the problem gives us two conditions:  Total travel time is hours:   Total distance is km:   Thus the system of equations is: How do we solve these equations?  From the first equation, . Substituting into the second equation, we have Simplifying this we get . This implies Hence,   Therefore, the person spent hours on the train and hours on the bus.   "
+},
+{
+  "id": "sec1-0-eg2",
+  "level": "2",
+  "url": "sec1-0-lin-eqns.html#sec1-0-eg2",
+  "type": "Example",
+  "number": "1.1.2",
+  "title": "",
+  "body": " A traveler goes from to in three legs: by car at km\/h, by train at km\/h, and by ferry at km\/h. The total travel time is hours, and the total distance covered is km. It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.   Let , , and denote the hours spent by car, train, and ferry, respectively. Then the conditions give:  Total time:   Total distance:   Car plus ferry time is equal to train time:   Hence the linear system is   It is easy to solve the above system. It turns out that and . Hence the traveler spends hours by car, hours by train, and hours by ferry.   "
+},
+{
+  "id": "taxi-distribution-eg1",
+  "level": "2",
+  "url": "sec1-0-lin-eqns.html#taxi-distribution-eg1",
+  "type": "Example",
+  "number": "1.1.3",
+  "title": "",
+  "body": "  Consider the figure below . Vertices are various locations at which taxies are parked. The edges are directed with labels.     Taxi distributions between 5 locations.  For example arrow going from location 4 to 1 has label . This means of the taxies taken from location comes to location at the end of the day.  Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, taxies and wish to find out how many taxies he\/she should place at various location so that his business runs smoothly. How to formulate this problem?  Suppose denotes the number of taxies to be kept at the locatio . Then we have How many taxies will be there at the location after one day. It is easy to see that it is Similarly the number of taxies at various locations are as follows   Location 1:     Location 2:     Location 3:     Location 4: .   Ideally, the company would want the same number of taxies to come back at each location everyday. How to find these ? It is easy to see that this amount to solving the following system of linear equations The above equations can be written in a matrix form as follows: The above equation can be written as We can write it in compact form as where    "
+},
+{
+  "id": "sec1-0-lin-eqns-8",
+  "level": "2",
+  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-8",
+  "type": "Remark",
+  "number": "1.1.5",
+  "title": "",
+  "body": "  Note that the preoblem in involves only 5 depos. What if we have hundreds of depos? How do we solve such problems? In fact, google seach uses millions by million equations. It turns out that solving this problem amounts to finding large power of the coefficient matrix whihc is not an easy task even for poweful computers. This is acheived by notion of diagonalization whihc and numerical computaions of eigenvalues and eigenvectors of a large size matrix. We shall see several such applications in later chapters.   "
+},
+{
+  "id": "def-linear-system",
+  "level": "2",
+  "url": "sec1-0-lin-eqns.html#def-linear-system",
+  "type": "Definition",
+  "number": "1.1.6",
+  "title": "",
+  "body": "  A system of linear equations is a finite collection of linear equations. Consider a system of linear equations in -variables . Here for and for . The above system of linear equations can be represented in compact form using the summation notation as follows: .   "
+},
+{
+  "id": "def-sol-linear-system",
+  "level": "2",
+  "url": "sec1-0-lin-eqns.html#def-sol-linear-system",
+  "type": "Definition",
+  "number": "1.1.7",
+  "title": "",
+  "body": " A solution of the system of linear equations is an ordered -tuple of the real numbers such that for each satisfies each of the -equations. The set of all solutions of a system is called the solution set . It is a subset of , the Cartesian product of the set of real numbers -times. If we denote the solution set by , then . If the solution set is nonempty then the system is said to be consistent and otherwise it is said to be inconsistent.   "
+},
+{
+  "id": "def-equivalent-systems",
+  "level": "2",
+  "url": "sec1-0-lin-eqns.html#def-equivalent-systems",
+  "type": "Definition",
+  "number": "1.1.8",
+  "title": "",
+  "body": "  Two systems of linear equations are called equivalent if and only if they have the same set of solutions.   "
+},
+{
+  "id": "sec1-0-lin-eqns-19",
+  "level": "2",
+  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-19",
+  "type": "Remark",
+  "number": "1.1.9",
+  "title": "",
+  "body": "  Let be real matrix whose columns are and . Then . In particular, is a linear combinations of column of . Thus if is a solution of , then is linear combination of columns of . For example, This can be written as    "
+},
+{
   "id": "sec1-1-elementary-operations",
   "level": "1",
   "url": "sec1-1-elementary-operations.html",
   "type": "Section",
-  "number": "1.1",
+  "number": "1.2",
   "title": "Elementary Row Operations",
   "body": " Elementary Row Operations   In this section, we shall defined elementary row operations which is a backbone of all computations in linear algebra.    Elmentary Row Operations  The solution of a system of linear equations is unchanged if the following operations are performed. In fact this is the basis for solving a system of linear equations.     Multiply one of the equations by a nonzero real number. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.    Multiply one of the equations by a real number and add the result to another equation, leaving the original equation unchanged. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row, leaving the original row unchanged.    Interchanging two equations. This is equivalent to interchanging two rows of the augmented matrix of the system.    Bring the equations which are equivalent to to the bottom row. This is equivalent to moving the zero rows (rows with zero entries) of the augmented matrix to the bottom.     If an equation of the system after the the avove operations reduces to , where , then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the column, then the system has no solution.   Elementary row operations   The following operations on a matrix are called elementary row operations.      Interchange of two rows of a matrix;    Multiplication of one row by a non-zero scalar ;    Adding any two rows.   In practice, most often, we combine second and third operations. This is equivalent to multiplying one of the rows by a nonzero real number and adding to another row.      A matrix is said to be equivalent or row equivalent to matrix , in notation , if can be obtained from by performing finite number of elementary row operations.    Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.   Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let be standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:      for each . That is, -th column can be obtained by multiplying by on the right.     for each . That is, -th row can be obtained by multiplying by on the left.     for .    Suppse is a matrix such that exist. Also assume that columns of are . In particular, that is, . Then   Similarly, we have           Now we verify the item 4 of      Let denote an elementary row operation and the result of applying to a . Let be a matrix obtained by applying to the identity matrix. That is, . Then is called the elementary matrix corresponding to the elementary row operation . It is easy to see that an elementary matrix is non singular. (why?)     Elementary Matrix Theorem   Let be an elementary row operation and , the corresponding elementary matrix defined by . Then, for any matrix , .    Follows from       If is an elemtray matrix (except multiplying identity matrix by zero), then it is invertible. Can you see it why?         Let be a rectangular matrix of order . Let be a matrix obtained by interchanging 2nd and 3rd rows of . Then where .  What is ?    Let be the matrix obtained by multiplying 2nd row of by a scalar . Then , where . What is ?    Let be the matrix obtained by adding 2 times the 2nd row to the 3rd rows of in place of the 3rd row. Then , where . What is ? It is easy to see that whihc is obtained by adding -2 times the 2nd row to the 3rd rows of .         Two matrices and are row equivalent if and only if there exists a non singular matrix such that .     Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.     Matrix Inversion via Elementary Row Operations  We can use the theorem to find the inverse of a matrix using elementary row operations. If a matrix is non singular and is row equivalent to the identity matrix by a sequence of elementary row operations say , then we have, . This implies . In other words, the sequence of elementary row operations required to turn into also turns into . Thus to find inverse of , we adjoin to on the right to give the augmented matrix , and perform elementary row operations on that successively reduces to the identity matrix and then extract from the right half of the transformed augmented matrix.   Find the inverse of using row operations.          Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.           Sage can directly find the inverse of a matrix.    Sage Exercise: Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.     "
 },
@@ -59,7 +140,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-4",
   "type": "Note",
-  "number": "1.1.1",
+  "number": "1.2.1",
   "title": "",
   "body": "If an equation of the system after the the avove operations reduces to , where , then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the column, then the system has no solution. "
 },
@@ -68,7 +149,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#def-elementary-row-operations",
   "type": "Definition",
-  "number": "1.1.2",
+  "number": "1.2.2",
   "title": "Elementary row operations.",
   "body": " Elementary row operations   The following operations on a matrix are called elementary row operations.      Interchange of two rows of a matrix;    Multiplication of one row by a non-zero scalar ;    Adding any two rows.   In practice, most often, we combine second and third operations. This is equivalent to multiplying one of the rows by a nonzero real number and adding to another row.   "
 },
@@ -77,7 +158,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#def-equivalent-system",
   "type": "Definition",
-  "number": "1.1.3",
+  "number": "1.2.3",
   "title": "",
   "body": "  A matrix is said to be equivalent or row equivalent to matrix , in notation , if can be obtained from by performing finite number of elementary row operations.   "
 },
@@ -86,7 +167,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#obs-1-1-4",
   "type": "Observation",
-  "number": "1.1.4",
+  "number": "1.2.4",
   "title": "",
   "body": " Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let be standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:      for each . That is, -th column can be obtained by multiplying by on the right.     for each . That is, -th row can be obtained by multiplying by on the left.     for .    Suppse is a matrix such that exist. Also assume that columns of are . In particular, that is, . Then   Similarly, we have      "
 },
@@ -95,7 +176,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#def-elementary-row-operation-2",
   "type": "Definition",
-  "number": "1.1.5",
+  "number": "1.2.5",
   "title": "",
   "body": "  Let denote an elementary row operation and the result of applying to a . Let be a matrix obtained by applying to the identity matrix. That is, . Then is called the elementary matrix corresponding to the elementary row operation . It is easy to see that an elementary matrix is non singular. (why?)   "
 },
@@ -104,7 +185,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#thm-elementary-matrix-theorem",
   "type": "Theorem",
-  "number": "1.1.6",
+  "number": "1.2.6",
   "title": "Elementary Matrix Theorem.",
   "body": " Elementary Matrix Theorem   Let be an elementary row operation and , the corresponding elementary matrix defined by . Then, for any matrix , .    Follows from    "
 },
@@ -113,7 +194,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-17",
   "type": "Checkpoint",
-  "number": "1.1.7",
+  "number": "1.2.7",
   "title": "",
   "body": "  If is an elemtray matrix (except multiplying identity matrix by zero), then it is invertible. Can you see it why?   "
 },
@@ -122,7 +203,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-18",
   "type": "Example",
-  "number": "1.1.8",
+  "number": "1.2.8",
   "title": "",
   "body": "     Let be a rectangular matrix of order . Let be a matrix obtained by interchanging 2nd and 3rd rows of . Then where .  What is ?    Let be the matrix obtained by multiplying 2nd row of by a scalar . Then , where . What is ?    Let be the matrix obtained by adding 2 times the 2nd row to the 3rd rows of in place of the 3rd row. Then , where . What is ? It is easy to see that whihc is obtained by adding -2 times the 2nd row to the 3rd rows of .      "
 },
@@ -131,7 +212,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#thm-matrix-invese-using-rref",
   "type": "Theorem",
-  "number": "1.1.9",
+  "number": "1.2.9",
   "title": "",
   "body": "  Two matrices and are row equivalent if and only if there exists a non singular matrix such that .   "
 },
@@ -140,7 +221,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#subsec-elmentary-row-operations-20",
   "type": "Proof",
-  "number": "1.1.1.1",
+  "number": "1.2.1.1",
   "title": "",
   "body": " Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.  "
 },
@@ -149,7 +230,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-1-elementary-operations.html#subsec-Matrix-inverse-using-rref-3",
   "type": "Example",
-  "number": "1.1.10",
+  "number": "1.2.10",
   "title": "",
   "body": " Find the inverse of using row operations.          Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.           Sage can directly find the inverse of a matrix.   "
 },
@@ -158,7 +239,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec1-2-col-operations.html",
   "type": "Section",
-  "number": "1.2",
+  "number": "1.3",
   "title": "Elementary Column Operations",
   "body": " Elementary Column Operations  Elementary column operations are the column analogue of elementary row operations. Their precise properties can be deduced by applying elementary row operations to the transpose of a matrix and then transposing the result. In particular, if is the elementary matrix corresponding to the elementary column operation then . Note that, because transposition changes the order of a product, elementary column operations correspond to post-multiplication by an elementary matrix. Two matrices that are related by a sequence of elementary column operations are said to be column equivalent and two matrices and are column equivalent if and only if there exists a non singular matrix such that .    Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.  Let us look at how we can achieve this in Sage.     "
 },
@@ -167,7 +248,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-2-col-operations.html#eg-1-2-1",
   "type": "Example",
-  "number": "1.2.1",
+  "number": "1.3.1",
   "title": "",
   "body": "  Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.  Let us look at how we can achieve this in Sage.    "
 },
@@ -176,7 +257,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec1-3-echelon-form.html",
   "type": "Section",
-  "number": "1.3",
+  "number": "1.4",
   "title": "Echelon Forms",
   "body": " Echelon Forms   In this section we define the row echelon form of matrices which is useful to deal with various concepts related to matrices. We shall also see how Sage can be used to convert any matrix to its row-echelon form.    Row Echelon Form    An matrix is said to be in row-echelon form or row-echelon matrix if it satisfies the following conditions:     All zero rows (consisting entirely of zeros) are at the bottom.    The first nonzero entry from the left in each nonzero row is a 1, called the leading 1 or pivot element for that row. Row containing pivot elements are called the pivot row and the columns containing the pivot element are called the pivot columns.    Each leading 1 is to the right of all leading 1s in the rows above it.     A row-echelon matrix is said to be in reduced row-echelon form (RREF) or reduced row-echelon matrix if, in addition, it satisfies the following condition:   4. Each leading 1 is the only nonzero entry in its column.    The leading entry or pivot entry in any row in a row-echelon-form can be any non-zero number.   Echelon Matrices  Following are examples of echelon matrices: .     Non Echelon Matrices  Following are examples of some non echelon matrices: .    Every nonzero matrix is row equivalent to a matrix which is a row echelon matrix. We employ the following procedures to convert a matrix into a row echelon form:    Choose a pivot element from the nonzero entries in the 1st column. Row containing pivot is called the pivot row.    Interchange rows (if necessary) so that pivot row is the new 1st row.    Multiply pivot row by a constant so that the new pivot is 1.    Make all subsequent entries in the 1st column 0 by using elementary row operations.    Repeat this process with next column.     Reduce the matrix to row echelon form.    This is row-echelon matrix equivalent to . We can apply elementary row operation and make it to reduced-row-echelon form. Sage has inbulit method `A.rref()' to convert the matrix into reduced row echelon form. You may also try 'A.echelonize()' and 'A.echelon_form()'       Step by Step method to find RREF of a matrix      Gaussian Elimination Method  Solving a system of linear equations , by reducing the augmented matrix to echelon form by using elementary row operations and then solving the equivalent system by back substitution is called solving by Gaussian elimination process. Now we state the step involved in the Gaussian elimination process. Only use the row operations stated above and work from top to bottom.  Gaussian Elimination      Make in each row the first non-zero element (called the main element) equal to 1.    Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.    If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.        Solve the following system of linear equations using the Gaussian elimination method.    The corresponding augmented matrix is      We can do more step of row elimination to convert the first three columns into identity matrix. However, the above augmented matrix represents the following equations: Using back substitution, we get .       Solve the following system of linear equations. using Gaussian elimination method. Show that this system has infinitely many solutions.    Since last row zero, it represents the equation , in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.    Solve the following system using the Gaussian elimination method and show that it has no solution.      Since last row represents the equation , the system has no solution.      Gauss-Jordan elimination method  Guass-Jordan method of solving the linear system is very similar to that of the Gaussian elimination method. In this method we continue the the row elimination till we reduce the row-reduced matrix of to identity matrix.   Solve the system using the Gauss-Jordan elimination method, where    Let us solve this in Sage.   Clearly the solution of the above system is . We can also solve the above system using the 'A.solve_right(b)' command in Sage.      Four well-mixed tanks form a recirculation\/mixing network used to produce a sauce. At steady state, the concentration (in ) of a soluble ingredient ( say salt or sugar) in tank satisfies the steady-state mass balance: The system of equations can be written in matrix form as where For example, the first equation reads: , meaning the total outflow coefficient from is 20, the inflows from is 2 and are 5 and 3 respectively, and the net external ingredient feed to is 14 (in consistent units).    Hence the solution is       "
 },
@@ -185,7 +266,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#def-echelon-form",
   "type": "Definition",
-  "number": "1.3.1",
+  "number": "1.4.1",
   "title": "",
   "body": "  An matrix is said to be in row-echelon form or row-echelon matrix if it satisfies the following conditions:     All zero rows (consisting entirely of zeros) are at the bottom.    The first nonzero entry from the left in each nonzero row is a 1, called the leading 1 or pivot element for that row. Row containing pivot elements are called the pivot row and the columns containing the pivot element are called the pivot columns.    Each leading 1 is to the right of all leading 1s in the rows above it.     A row-echelon matrix is said to be in reduced row-echelon form (RREF) or reduced row-echelon matrix if, in addition, it satisfies the following condition:   4. Each leading 1 is the only nonzero entry in its column.   "
 },
@@ -194,7 +275,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#sec-row-echelon-3",
   "type": "Remark",
-  "number": "1.3.2",
+  "number": "1.4.2",
   "title": "",
   "body": "The leading entry or pivot entry in any row in a row-echelon-form can be any non-zero number. "
 },
@@ -203,7 +284,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#eg-echelon-matrices",
   "type": "Example",
-  "number": "1.3.3",
+  "number": "1.4.3",
   "title": "Echelon Matrices.",
   "body": "Echelon Matrices  Following are examples of echelon matrices: .  "
 },
@@ -212,7 +293,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#eg-non-echelon-matrices",
   "type": "Example",
-  "number": "1.3.4",
+  "number": "1.4.4",
   "title": "Non Echelon Matrices.",
   "body": "Non Echelon Matrices  Following are examples of some non echelon matrices: .  "
 },
@@ -221,7 +302,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#sec-row-echelon-8",
   "type": "Example",
-  "number": "1.3.5",
+  "number": "1.4.5",
   "title": "",
   "body": " Reduce the matrix to row echelon form.    This is row-echelon matrix equivalent to . We can apply elementary row operation and make it to reduced-row-echelon form. Sage has inbulit method `A.rref()' to convert the matrix into reduced row echelon form. You may also try 'A.echelonize()' and 'A.echelon_form()'     "
 },
@@ -230,7 +311,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#alg-gaussian-elimination",
   "type": "Algorithm",
-  "number": "1.3.6",
+  "number": "1.4.6",
   "title": "Gaussian Elimination.",
   "body": "Gaussian Elimination      Make in each row the first non-zero element (called the main element) equal to 1.    Make all elements under this main element equal to zero. If one row becomes a zero row shift it to the bottom.    If there comes a row composed of zeroes except for the last element, then stop. The system has no solution.      "
 },
@@ -239,7 +320,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#row-echelon-eg1",
   "type": "Example",
-  "number": "1.3.7",
+  "number": "1.4.7",
   "title": "",
   "body": " Solve the following system of linear equations using the Gaussian elimination method.    The corresponding augmented matrix is      We can do more step of row elimination to convert the first three columns into identity matrix. However, the above augmented matrix represents the following equations: Using back substitution, we get .     "
 },
@@ -248,7 +329,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#row-echelon-eg2",
   "type": "Example",
-  "number": "1.3.8",
+  "number": "1.4.8",
   "title": "",
   "body": " Solve the following system of linear equations. using Gaussian elimination method. Show that this system has infinitely many solutions.    Since last row zero, it represents the equation , in particular, one can eliminate one of the variables. Hence the system has infinitely many solutions.  "
 },
@@ -257,7 +338,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#subsec-Gaussian-Elimination-6",
   "type": "Example",
-  "number": "1.3.9",
+  "number": "1.4.9",
   "title": "",
   "body": " Solve the following system using the Gaussian elimination method and show that it has no solution.      Since last row represents the equation , the system has no solution.   "
 },
@@ -266,7 +347,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#subsec-Gauss-Jordan-Method-3",
   "type": "Example",
-  "number": "1.3.10",
+  "number": "1.4.10",
   "title": "",
   "body": " Solve the system using the Gauss-Jordan elimination method, where    Let us solve this in Sage.   Clearly the solution of the above system is . We can also solve the above system using the 'A.solve_right(b)' command in Sage.    "
 },
@@ -275,7 +356,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-3-echelon-form.html#subsec-Gauss-Jordan-Method-4",
   "type": "Example",
-  "number": "1.3.11",
+  "number": "1.4.11",
   "title": "",
   "body": " Four well-mixed tanks form a recirculation\/mixing network used to produce a sauce. At steady state, the concentration (in ) of a soluble ingredient ( say salt or sugar) in tank satisfies the steady-state mass balance: The system of equations can be written in matrix form as where For example, the first equation reads: , meaning the total outflow coefficient from is 20, the inflows from is 2 and are 5 and 3 respectively, and the net external ingredient feed to is 14 (in consistent units).    Hence the solution is     "
 },
@@ -284,7 +365,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec1-4-matrix-rank.html",
   "type": "Section",
-  "number": "1.4",
+  "number": "1.5",
   "title": "Rank of Matrices",
   "body": " Rank of Matrices    Let be an matrix. Delete any rows and columns of . The resulting matrix is called a sub-matrix of . If , then it is called a square sub-matrix of of order .      The rank of an matrix is the order of the largest square sub-matrix of whose determinant is non-zero. We denote the rank of a matrix by .     Determine the rank of .   We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .     We list the following results without proof.     An matrix is of rank 0 if and only it is a zero matrix.    An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .        Suppose is an matrix. The rank of is equal to the number of non-zero rows in an echelon equivalent form of . In other words, the rank of matrix is the number of leading 1's in any row-echelon matrix to which can be carried by row operations. \\qed      Let us find the rank of .     . Hence .      Consider a matrix . Find the rank of the matrix.    Let us apply elementary row operations of . We have Clearly the rank of is 3 if . If or , then it is easy to check that rank of is 2.       Number of Solution of a System   Let be a system of linear equations in unknowns and , the augmented matrix of the system. Then     The system has a solution i.e. the system is consistent if and only if .    If and whihc is strictly less than , then number of unknowns, then there are infinite number of solutions and variables can be chosen freely.    If and , the number of unknowns, then there is only one (unique) solution for the system.         Suppose is a system of linear equations in unknowns with . If , then the system has no solution.      Suppose is a system of linear equations in unknowns with . Then the system either has no solution or has infinitely many solutions.     ` Consider the Example~ . Thus we have , hence this system has a unique solution.     Let us consider the system where  and  Clearly , hence this system has infinitely many solutions.      Consider the system of linear equations , where   Clearly but . Hence the system does not have a solution.       "
 },
@@ -293,7 +374,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#def-sub-matrix",
   "type": "Definition",
-  "number": "1.4.1",
+  "number": "1.5.1",
   "title": "",
   "body": "  Let be an matrix. Delete any rows and columns of . The resulting matrix is called a sub-matrix of . If , then it is called a square sub-matrix of of order .   "
 },
@@ -302,7 +383,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#def-matrix-rank",
   "type": "Definition",
-  "number": "1.4.2",
+  "number": "1.5.2",
   "title": "",
   "body": "  The rank of an matrix is the order of the largest square sub-matrix of whose determinant is non-zero. We denote the rank of a matrix by .   "
 },
@@ -311,7 +392,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#sec1-4-matrix-rank-4",
   "type": "Example",
-  "number": "1.4.3",
+  "number": "1.5.3",
   "title": "",
   "body": " Determine the rank of .   We can see that . Hence . Now we look for the square sub-matrix of of order 2 whose determinant is non-zero. Consider the square sub-matrix , . Hence .   "
 },
@@ -320,7 +401,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#sec1-4-matrix-rank-5",
   "type": "Observation",
-  "number": "1.4.4",
+  "number": "1.5.4",
   "title": "",
   "body": " We list the following results without proof.     An matrix is of rank 0 if and only it is a zero matrix.    An square matrix has rank if and only if .    An square matrix has rank strictly less than if and only if .    For an matrix , rank of     The rank of a matrix is not affected if we insert zero column or a zero row (of appropriate size) to it.    If is an matrix, then , where is the transpose of .     "
 },
@@ -329,7 +410,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#thm-rank-theorem",
   "type": "Theorem",
-  "number": "1.4.5",
+  "number": "1.5.5",
   "title": "",
   "body": "  Suppose is an matrix. The rank of is equal to the number of non-zero rows in an echelon equivalent form of . In other words, the rank of matrix is the number of leading 1's in any row-echelon matrix to which can be carried by row operations. \\qed   "
 },
@@ -338,7 +419,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#eg-1-4-6",
   "type": "Example",
-  "number": "1.4.6",
+  "number": "1.5.6",
   "title": "",
   "body": "  Let us find the rank of .     . Hence .   "
 },
@@ -347,7 +428,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#eg-1-4-7",
   "type": "Example",
-  "number": "1.4.7",
+  "number": "1.5.7",
   "title": "",
   "body": "  Consider a matrix . Find the rank of the matrix.    Let us apply elementary row operations of . We have Clearly the rank of is 3 if . If or , then it is easy to check that rank of is 2.      "
 },
@@ -356,7 +437,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#thm-nosol-rank",
   "type": "Theorem",
-  "number": "1.4.8",
+  "number": "1.5.8",
   "title": "Number of Solution of a System.",
   "body": "Number of Solution of a System   Let be a system of linear equations in unknowns and , the augmented matrix of the system. Then     The system has a solution i.e. the system is consistent if and only if .    If and whihc is strictly less than , then number of unknowns, then there are infinite number of solutions and variables can be chosen freely.    If and , the number of unknowns, then there is only one (unique) solution for the system.      "
 },
@@ -365,7 +446,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#cor-rank1",
   "type": "Corollary",
-  "number": "1.4.9",
+  "number": "1.5.9",
   "title": "",
   "body": "  Suppose is a system of linear equations in unknowns with . If , then the system has no solution.   "
 },
@@ -374,7 +455,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#cor-rank2",
   "type": "Corollary",
-  "number": "1.4.10",
+  "number": "1.5.10",
   "title": "",
   "body": "  Suppose is a system of linear equations in unknowns with . Then the system either has no solution or has infinitely many solutions.   "
 },
@@ -383,7 +464,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#matrix-rank-eg1",
   "type": "Example",
-  "number": "1.4.11",
+  "number": "1.5.11",
   "title": "",
   "body": " ` Consider the Example~ . Thus we have , hence this system has a unique solution.  "
 },
@@ -392,7 +473,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#matrix-rank-eg2",
   "type": "Example",
-  "number": "1.4.12",
+  "number": "1.5.12",
   "title": "",
   "body": "  Let us consider the system where  and  Clearly , hence this system has infinitely many solutions.   "
 },
@@ -401,7 +482,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-4-matrix-rank.html#matrix-rank-eg3",
   "type": "Example",
-  "number": "1.4.13",
+  "number": "1.5.13",
   "title": "",
   "body": "  Consider the system of linear equations , where   Clearly but . Hence the system does not have a solution.      "
 },
@@ -410,7 +491,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec1-5-hom-system.html",
   "type": "Section",
-  "number": "1.5",
+  "number": "1.6",
   "title": "Homogeneous System of Linear Equations",
   "body": " Homogeneous System of Linear Equations     A system of linear equations is called homogeneous if . Otherwise it is called a non homogeneous system.     Observe that any homogeneous system of linear equations has at least one solution, namely the trivial solution ( , for all ). The augmented matrix is got from adding one zero column to . Hence .    A homogeneous system of equations in the same number of unknowns ( unknowns) has a nontrivial solution if and only if is singular, that is , if and only if .    The given homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if , the number of variables ( ). But , if and only if is singular.      A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.   If , then and hence the result follows from thm.~ .   We would like to get the connection between solutions of a homogeneous system and the solutions of , . These are stated in the following Theorem.    Suppose the non homogeneous system of linear equations has a solution say . All the solutions of this system are of the form where runs through all the solutions of the corresponding homogeneous system .    Let be a solution of . Then . Hence is a solution of .  Suppose is a solution of , i.e. . Then and hence is a solution of and , where .    The above theorem can be written equivalently as    If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.     Let us consider one equation in two variables, . The corresponding homogeneous system is . It is easy see that is set of all solutions of . Let us consider a solution of the non homogeneous system . Let be any solution of . Then it is easy to check that is a solution of . Alternatively, to solve , we can free one of the variable say . That is can take any real value. Let , then . Hence a generic solution of is given by , which can be rewritten as . Thus all solutions of are of the form Notice that tho two lines, and are parallel to each other. Plot the figure in Sage using the following Sage sybtax.     Let consider 2 equations in three variables. The corresponding homogeneous system is given by . It is easy to see that the set of all solutions of the homogeneous system is , we get which implies . Now substituting in the second equation of , we get . Here we can take as a free variable, hence any solution of~ is of the form which can be written as . Note that is a solution . Thus set of all solution of is of the form  Geometrically, each equation in the non homogeneous system represents a plane and the solution is the line of intersection of the the two planes. Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax.     "
 },
@@ -419,7 +500,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-5-hom-system.html#def-homo-system",
   "type": "Definition",
-  "number": "1.5.1",
+  "number": "1.6.1",
   "title": "",
   "body": "  A system of linear equations is called homogeneous if . Otherwise it is called a non homogeneous system.   "
 },
@@ -428,7 +509,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-5-hom-system.html#thm-hom-system1",
   "type": "Theorem",
-  "number": "1.5.2",
+  "number": "1.6.2",
   "title": "",
   "body": "  A homogeneous system of equations in the same number of unknowns ( unknowns) has a nontrivial solution if and only if is singular, that is , if and only if .    The given homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if , the number of variables ( ). But , if and only if is singular.   "
 },
@@ -437,7 +518,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-5-hom-system.html#thm-hom-system2",
   "type": "Theorem",
-  "number": "1.5.3",
+  "number": "1.6.3",
   "title": "",
   "body": "  A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.   If , then and hence the result follows from thm.~ .  "
 },
@@ -446,7 +527,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-5-hom-system.html#thm-hom-system3",
   "type": "Theorem",
-  "number": "1.5.4",
+  "number": "1.6.4",
   "title": "",
   "body": "  Suppose the non homogeneous system of linear equations has a solution say . All the solutions of this system are of the form where runs through all the solutions of the corresponding homogeneous system .    Let be a solution of . Then . Hence is a solution of .  Suppose is a solution of , i.e. . Then and hence is a solution of and , where .   "
 },
@@ -455,7 +536,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-5-hom-system.html#thm-hom-system4",
   "type": "Theorem",
-  "number": "1.5.5",
+  "number": "1.6.5",
   "title": "",
   "body": "  If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.   "
 },
@@ -464,7 +545,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-5-hom-system.html#sec1-5-hom-system-10",
   "type": "Example",
-  "number": "1.5.6",
+  "number": "1.6.6",
   "title": "",
   "body": " Let us consider one equation in two variables, . The corresponding homogeneous system is . It is easy see that is set of all solutions of . Let us consider a solution of the non homogeneous system . Let be any solution of . Then it is easy to check that is a solution of . Alternatively, to solve , we can free one of the variable say . That is can take any real value. Let , then . Hence a generic solution of is given by , which can be rewritten as . Thus all solutions of are of the form Notice that tho two lines, and are parallel to each other. Plot the figure in Sage using the following Sage sybtax.   "
 },
@@ -473,7 +554,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-5-hom-system.html#sec1-5-hom-system-11",
   "type": "Example",
-  "number": "1.5.7",
+  "number": "1.6.7",
   "title": "",
   "body": " Let consider 2 equations in three variables. The corresponding homogeneous system is given by . It is easy to see that the set of all solutions of the homogeneous system is , we get which implies . Now substituting in the second equation of , we get . Here we can take as a free variable, hence any solution of~ is of the form which can be written as . Note that is a solution . Thus set of all solution of is of the form  Geometrically, each equation in the non homogeneous system represents a plane and the solution is the line of intersection of the the two planes. Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax.    "
 },
@@ -482,7 +563,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec1-6-LU.html",
   "type": "Section",
-  "number": "1.6",
+  "number": "1.7",
   "title": "<span class=\"process-math\">\\(LU\\)<\/span>-Facotorization",
   "body": " -Facotorization   In this section we introduce matrix factorization called LU-factorization and its use in solving a system of linear equations. We shall also explain with examples, how Sage can be use to find LU-factorization of matrices. This section also includes Sage subroutines for LU-factorization.    Dooliitle and Crout's Factorization    Let be a square matrix. An -decomposition is a decomposition of the matrix of form where and are lower and upper triangular matrices (of the same size), respectively.    Let where with if is lower triangular and with if is an upper triangular matrix. Equating the entries of the matrices and we get where if and if .  Note that Eqn. gives us equations in unknowns hence it can be solved by taking arbitrary values for any unknowns. One of the simplest choice are      for this method is called Doolittle method      for , this method is called Crout's method      The key to -decomposition is being able to transform the given matrix into upper triangular using elementary row operation, that involves adding multiples of rows to rows. Also every row which is replaced using the row operation in obtaining row-echelon form may be modified by using row which is above this row. We do not use row interchanges. Let us assume that we need elementary such row operations to transform to an upper triangular matrix . That is, Since elementary matrices are invertible, we can multiply both sides by to get the required -decomposition of . Thus It is very easy to see that is an upper triangular matrix with diagonal entries 1.  We list the following results without proof.     An invertible matrix admits an -factorization if and only if all its principal minors are non-zero. The factorization is unique if we require that the diagonal of (or ) consist of ones.    If the matrix is singular, then an factorization may still exist. In fact, a square matrix of rank has an -factorization if the first principal minors are non-zero.      Non existence of DoLittle factorization  Let . It is easy to check that does not have Doolittle -decomposition.    Let . Find the decomposition of using Doolittle's method. Let Which implies Equating the two matrices and and solving, we get Hence     Let . Find the LU-decomposition of using Crout's method. Let Equating the two matrices and and solving, we get Hence      Solving system of equations using LU factorization  LU-factorization is very useful in solving system of linear equation. Let represents equations in variables and that is a LU factorization of . Then can be written as where . Now can be solved using forward substitution method and can be solved using the backward substitution resulting in solution of the system. LU-factorization method allows to solve a whole lot of linear equations having same coefficient matrix.   Solve the system of equations using using Doolittle method, where and    From Example , we have and Let , . is equivalent to which can be written as where . First we solve Using forward substitution we get, . Now, we the required solution by solving . Now solving using the back substitution we get, and .     Solve the following system of equations using LU-decomposition    The above system is equivalent to where First of all let us decompose using the elementary row operation. Note that Their inverses are given by Thus and Now the equation becomes . Let . First we solve . That is Solving the above system using the forward substitution we get . Now substituting the in equation we get Solving the above system by back substitution we get the required solution .    Now we shall look at under what conditions a matrix admits LU factorization. The following theorem provides a sufficient condition for ensuring that the algorithm of factorization does not break down due to division by zero. If is a square matrix, then a sub-matrix of obtained by taking the first rows and first columns of is called a leading principal minor of .    Let be matrix. Suppose that the leading principal minor for are nonsingular. Then admits -factorization. (Note that itself need not be non singular.)     Proof of this theorem follows by induction on order of .   Not every matrix can have LU-factorization. Let us consider . Suppose has LU-factorization, say and . This implies and . This is a contradiction. However, if we interchange the first and second row of , then it is identity matrix which has LU-factorization with .  This leads us to a question, under what conditions, -factorization of a matrix exist. We shall show that even if the matrix does not satisfy the conditions of Theorem , by permuting rows and columns it can be transformed into a new matrix of the same size that admits an -factorization. Let first show this result for a matrix.   Let . Show that there exists a permutation matrix of order 2 such that admits the -factorization. If . Then by Theorem , admits -factorization. Let and . Define . Then which admits -factorization by Theorem . If . Then the result is trivial and we have      Given any matrix there exists a permutation matrix , a unit lower triangular matrix and an upper triangular matrix such that .    The proof of above theorem gives an algorithm for constructing the permutation matrix , and the matrices and .  If is a permutation matrix then is also a permutation matrix. If , then we have . Because of this reason such a factorization is also known as factorization of .    -factorization in Sage  Sage has inbulit method 'LU' to find -factorization. Suppose that is an matrix, then an LU decomposition in Sage output is a lower-triangular matrix with every diagonal element equal to 1, and an upper-triangular matrix, such that the product , after a permutation of the rows, is then equal to . For the 'plu' format the permutation is returned as an m x m permutation matrix such that .  Try to explore help document of LU factorization using 'A.LU?'       User defined functions for DooLitlte and Crout's Methods     Crout's Method function in Sage          "
 },
@@ -491,7 +572,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-6-LU.html#def-LU-factorization",
   "type": "Definition",
-  "number": "1.6.1",
+  "number": "1.7.1",
   "title": "",
   "body": "  Let be a square matrix. An -decomposition is a decomposition of the matrix of form where and are lower and upper triangular matrices (of the same size), respectively.   "
 },
@@ -500,7 +581,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-6-LU.html#eg-LU1-nonlu-eg",
   "type": "Example",
-  "number": "1.6.2",
+  "number": "1.7.2",
   "title": "Non existence of DoLittle <span class=\"process-math\">\\(LU-\\)<\/span>factorization.",
   "body": " Non existence of DoLittle factorization  Let . It is easy to check that does not have Doolittle -decomposition.  "
 },
@@ -509,7 +590,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-6-LU.html#eg-LU2",
   "type": "Example",
-  "number": "1.6.3",
+  "number": "1.7.3",
   "title": "",
   "body": " Let . Find the decomposition of using Doolittle's method. Let Which implies Equating the two matrices and and solving, we get Hence   "
 },
@@ -518,7 +599,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-6-LU.html#eg-LU3",
   "type": "Example",
-  "number": "1.6.4",
+  "number": "1.7.4",
   "title": "",
   "body": " Let . Find the LU-decomposition of using Crout's method. Let Equating the two matrices and and solving, we get Hence   "
 },
@@ -527,7 +608,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-6-LU.html#eg-LU4",
   "type": "Example",
-  "number": "1.6.5",
+  "number": "1.7.5",
   "title": "",
   "body": " Solve the system of equations using using Doolittle method, where and    From Example , we have and Let , . is equivalent to which can be written as where . First we solve Using forward substitution we get, . Now, we the required solution by solving . Now solving using the back substitution we get, and .   "
 },
@@ -536,7 +617,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-6-LU.html#eg-Lu5",
   "type": "Example",
-  "number": "1.6.6",
+  "number": "1.7.6",
   "title": "",
   "body": " Solve the following system of equations using LU-decomposition    The above system is equivalent to where First of all let us decompose using the elementary row operation. Note that Their inverses are given by Thus and Now the equation becomes . Let . First we solve . That is Solving the above system using the forward substitution we get . Now substituting the in equation we get Solving the above system by back substitution we get the required solution .   "
 },
@@ -545,7 +626,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-6-LU.html#thm-LU-thm2",
   "type": "Theorem",
-  "number": "1.6.7",
+  "number": "1.7.7",
   "title": "",
   "body": "  Let be matrix. Suppose that the leading principal minor for are nonsingular. Then admits -factorization. (Note that itself need not be non singular.)   "
 },
@@ -554,7 +635,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-6-LU.html#subsec-solving-system-LU-7",
   "type": "Proof",
-  "number": "1.6.2.1",
+  "number": "1.7.2.1",
   "title": "",
   "body": " Proof of this theorem follows by induction on order of .  "
 },
@@ -563,7 +644,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-6-LU.html#eg-LU5",
   "type": "Example",
-  "number": "1.6.8",
+  "number": "1.7.8",
   "title": "",
   "body": " Let . Show that there exists a permutation matrix of order 2 such that admits the -factorization. If . Then by Theorem , admits -factorization. Let and . Define . Then which admits -factorization by Theorem . If . Then the result is trivial and we have   "
 },
@@ -572,7 +653,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-6-LU.html#thm-LU-th3",
   "type": "Theorem",
-  "number": "1.6.9",
+  "number": "1.7.9",
   "title": "",
   "body": "  Given any matrix there exists a permutation matrix , a unit lower triangular matrix and an upper triangular matrix such that .   "
 },
@@ -581,7 +662,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-6-LU.html#subsec-solving-system-LU-13",
   "type": "Remark",
-  "number": "1.6.10",
+  "number": "1.7.10",
   "title": "",
   "body": "If is a permutation matrix then is also a permutation matrix. If , then we have . Because of this reason such a factorization is also known as factorization of . "
 },
@@ -590,7 +671,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec1-7-exer.html",
   "type": "Section",
-  "number": "1.7",
+  "number": "1.8",
   "title": "Exercises",
   "body": " Exercises     Reduce the following matrices into row-echelon form.     Find the sequence of row operations that converts the matrix.     Solve the following systems of linear equations by Gaussian elimination method.                                      Find the rank of the following matrices:     Find all values of such that the rank of the matrix is 3.    Find all values of such that the rank of the matrix is 3.    For the following system of equations write the solution in the form of where is a solution of non homogeneous system and is the set of solutions of the corresponding homogeneous system (i)  (ii)   (iii)  (iv)     Balance the following photosynthesis reaction . Here is glucose.    The augmented matrix of a linear system has the form  (a) Determine the values of a, b, and c for which the linear system is consistent.  (b) Determine the values of a, b, and c for which the linear system is inconsistent.  (c) When it is consistent, does the linear system have a unique solution or infinitely many solutions?  (d) Give a specific consistent linear system and find one particular solution.     Solve the following system of equations for and . .    Find a polynomial of the form which passes through the points .    Find the values of and for which the following system is consistent. Also find the complete solution when . .    The following table lists the number of milligrams of vitamin A, vitamin B, vitamin C, and niacin contained in 1 g of four different foods. A dietitian wants to prepare a meal that provides 250 mg of vitamin A, 300 mg of vitamin B, 400 mg of vitamin C, and 70 mg of niacin. Determine how many grams of each food must be included, and describe any limitations on the quantities of each food that can be used     Let be the coefficient matrix of the following homogeneous system of equations in unknowns: Find the reduced row-echelon form of and hence, or otherwise, prove that the solution of the above system is , with arbitrary.    For which rational numbers does the following system have (i) no solutions (ii) exactly one solution (iii) infinitely many solutions? .    If and are solutions of a system of linear equations, prove that is also a solution.    Solve the system using Doolittle method: (i) and  (ii) and .     Solve the system using Crout's method (i) and   (ii) and      "
 },
@@ -3390,8 +3471,8 @@ var ptx_lunr_docs = [
   "url": "sec6-1-GramSchmidt.html",
   "type": "Section",
   "number": "6.2",
-  "title": "Gram-Schmidt Orthogonalization Process",
-  "body": " Gram-Schmidt Orthogonalization Process  In this section, we look at how to construct an orthogonal basis of from a basis.  Let be a basis of . Define   In view of Ex. , it is easy to see that is an orthogonal basis of . Now we normalize . Define . Then is an orthononal basis of . Note that we could have defined immediately after defining .  This process is called the Gram-Schmidt orthogonalization process .  Geometrically , constructed by subtracting the orthogonal projection of on to . In order to construct , we take sum of orthogonal projections of onto and , which is the orthogonal projection of the plane spanned by and and subtract this from . Readers are encouraged to draw figures. Also explore the Sage interact applet by changing the basis vectors.   Goemetry of Linear Tranformation      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis obtained from the given basis is .       Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .   Sage also has an inbuilt method for Gramm-Schmidt orthogonalization process. For example, A.gram_schmidt() performs Gram-Schmidt orthogonalization on the rows of the matrix, returning a new matrix and a matrix accomplishing the transformation.   Here is the matrix whose rows are nothing but orthogonal vectors obtained by Gram-Schmidt and is an upper triangular matrix. We shall see meaning of and how it is obtained in later sections.      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .     Sage Routine for Gram-Schmidt Orthogonalizatio  Let us create a Sage routine to find an orthogonal basis from a set of linearly independent set of vecrors .   Now let us call the above function.   We can check if the set of vectors thus orbtained is orthonormal?    "
+  "title": "Gram-Schmidt Orthogonalization",
+  "body": " Gram-Schmidt Orthogonalization  In this section, we look at how to construct an orthogonal basis of from a basis.  Let be a basis of . Define   In view of Ex. , it is easy to see that is an orthogonal basis of . Now we normalize . Define . Then is an orthononal basis of . Note that we could have defined immediately after defining .  This process is called the Gram-Schmidt orthogonalization process .  Geometrically , constructed by subtracting the orthogonal projection of on to . In order to construct , we take sum of orthogonal projections of onto and , which is the orthogonal projection of the plane spanned by and and subtract this from . Readers are encouraged to draw figures. Also explore the Sage interact applet by changing the basis vectors.   Goemetry of Linear Tranformation      Consider a linearly independ set of vectors and . Refer to to see the geometric meaning of the Gram-Schmidt orthogonalization in .     Gram-Schmidt Orthogonalization in .        Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis obtained from the given basis is .       Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .   Sage also has an inbuilt method for Gramm-Schmidt orthogonalization process. For example, A.gram_schmidt() performs Gram-Schmidt orthogonalization on the rows of the matrix, returning a new matrix and a matrix accomplishing the transformation.   Here is the matrix whose rows are nothing but orthogonal vectors obtained by Gram-Schmidt and is an upper triangular matrix. We shall see meaning of and how it is obtained in later sections.      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .      Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .     Sage Routine for Gram-Schmidt Orthogonalizatio  Let us create a Sage routine to find an orthogonal basis from a set of linearly independent set of vecrors .   Now let us call the above function.   We can check if the set of vectors thus orbtained is orthonormal?      "
 },
 {
   "id": "figure-Gram-Schmidt-Applet1",
@@ -3403,11 +3484,20 @@ var ptx_lunr_docs = [
   "body": " Goemetry of Linear Tranformation   "
 },
 {
+  "id": "sec6-1-GramSchmidt-8",
+  "level": "2",
+  "url": "sec6-1-GramSchmidt.html#sec6-1-GramSchmidt-8",
+  "type": "Example",
+  "number": "6.2.2",
+  "title": "",
+  "body": "  Consider a linearly independ set of vectors and . Refer to to see the geometric meaning of the Gram-Schmidt orthogonalization in .     Gram-Schmidt Orthogonalization in .     "
+},
+{
   "id": "gram-schmidt-eg1",
   "level": "2",
   "url": "sec6-1-GramSchmidt.html#gram-schmidt-eg1",
   "type": "Example",
-  "number": "6.2.2",
+  "number": "6.2.4",
   "title": "",
   "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis . Let . Then we have   Thus the orthonormal basis obtained from the given basis is .    "
 },
@@ -3416,32 +3506,32 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-1-GramSchmidt.html#gram-schmidt-eg2",
   "type": "Example",
-  "number": "6.2.3",
+  "number": "6.2.5",
   "title": "",
   "body": "  Consider the matrix . Find an orthogonal basis of the row space of . It is easy to check that rank of is 3. Hence row are linearly independent vectors in .  Let .   Hence is an orthogonal basis of the row space of .   Sage also has an inbuilt method for Gramm-Schmidt orthogonalization process. For example, A.gram_schmidt() performs Gram-Schmidt orthogonalization on the rows of the matrix, returning a new matrix and a matrix accomplishing the transformation.   Here is the matrix whose rows are nothing but orthogonal vectors obtained by Gram-Schmidt and is an upper triangular matrix. We shall see meaning of and how it is obtained in later sections.   "
-},
-{
-  "id": "sec6-1-GramSchmidt-10",
-  "level": "2",
-  "url": "sec6-1-GramSchmidt.html#sec6-1-GramSchmidt-10",
-  "type": "Checkpoint",
-  "number": "6.2.4",
-  "title": "",
-  "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .   "
 },
 {
   "id": "sec6-1-GramSchmidt-11",
   "level": "2",
   "url": "sec6-1-GramSchmidt.html#sec6-1-GramSchmidt-11",
   "type": "Checkpoint",
-  "number": "6.2.5",
+  "number": "6.2.6",
   "title": "",
-  "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .   "
+  "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of starting with a basis .   "
 },
 {
   "id": "sec6-1-GramSchmidt-12",
   "level": "2",
   "url": "sec6-1-GramSchmidt.html#sec6-1-GramSchmidt-12",
+  "type": "Checkpoint",
+  "number": "6.2.7",
+  "title": "",
+  "body": "  Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of the subspace with basis .   "
+},
+{
+  "id": "sec6-1-GramSchmidt-13",
+  "level": "2",
+  "url": "sec6-1-GramSchmidt.html#sec6-1-GramSchmidt-13",
   "type": "Activity",
   "number": "6.2.1",
   "title": "Sage Routine for Gram-Schmidt Orthogonalizatio.",
