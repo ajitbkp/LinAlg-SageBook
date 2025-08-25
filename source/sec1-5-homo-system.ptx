@@ -16,7 +16,7 @@ is called <alert> homogeneous</alert> if
 <p>
     Observe that any homogeneous system <m>AX = 0</m> of linear
 equations has at least one solution, namely the trivial solution (<m>x_i = 0</m>, for all <m>i</m>).  The augmented matrix is
-got from adding one zero column to <m>A</m>. Hence <m>.r(A) =
+got from adding one zero column to <m>A</m>. Hence <m> r(A) =
 r(A^*)</m>.
 </p>
 <theorem xml:id="thm-hom-system1">
@@ -126,7 +126,8 @@ are stated in the following Theorem.
                 <me>
                 \left\{\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\begin{pmatrix} \alpha\\-\frac{2}{3}\alpha\end{pmatrix} :\alpha \in \R\right\}=\left\{\begin{pmatrix} 0\\\frac{5}{3}\end{pmatrix}+\alpha\begin{pmatrix} 1\\-\frac{2}{3}\end{pmatrix} :\alpha \in \R\right\}.
                 </me>
-                Notice that tho two lines, <m>2x_1+3x_2=5</m> and <m>2x_1+3x_2=0</m> are parallel to each other. Plot the figure in Sage using the following Sage sybtax.
+                Notice that tho two lines, <m>2x_1+3x_2=5</m> and <m>2x_1+3x_2=0</m> 
+                are parallel to each other. Plot the figure in Sage using the following Sage syntax.
     
                 <sage>
                     <input>
@@ -178,7 +179,9 @@ are stated in the following Theorem.
                 <p>
                     Geometrically, each equation in the non homogeneous system represents a plane and the solution is the line of intersection of the the two planes. 
 
-                    Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax.
+                    Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding 
+                    plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing 
+                    homogeneous system are parallel lines. Visualize this using the following Sage syntax.
                     
                         <sage>
                             <input>
