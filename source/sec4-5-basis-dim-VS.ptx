@@ -624,8 +624,20 @@
           </p>
 
       <p>
-        In addition if, we assume that <m>V</m> is a finite dimensional, them we have the 
-        following theorem, that gives a way to find the dimension of <m>W_1+W_2</m>.
+        In addition if, we assume that <m>V</m> is a finite dimensional, then what can you say about the 
+        dimension of <m>W_1+W_2</m>? 
+      </p>
+
+        <p>
+          Recall, an analogous result from set theory. If <m>A</m> and <m>B</m> are finite 
+          sets then 
+          <me>
+            |A\cup B|=|A|+|B|-|A\cap B|.
+          </me>
+        </p>
+        <p>
+        The 
+        following theorem gives a way to find the dimension of <m>W_1+W_2</m>.
       </p>
 
       <theorem xml:id="thm-dimension-formula2">
@@ -638,6 +650,12 @@
             </md>
           </p>
         </statement>
+
+        <proof>
+          <p>
+            
+          </p>
+        </proof>
       </theorem>
 
       <example>
@@ -652,7 +670,7 @@
             Thus <m>\dim{(W_1\cap W_2)}=1</m>.
             It is easy to see that
             <me>
-              W_2\cap W_2=\{\alpha(1,-1,0):\alpha\in\R\}
+              W_2\cap W_2=\{\alpha(1,-1,0):\alpha\in\R\}.
             </me>
           </p>
           <p>
