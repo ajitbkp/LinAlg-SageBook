@@ -50,6 +50,19 @@
     
       </p>
     </statement>
+    <proof>
+      <p>
+        (i) follows from the first part of the definition. 
+      </p>
+
+      <p> To prove (ii) suppose a basis <m>\{v_i\}</m> is linearly dependent, then there exist
+scalars<m> \alpha_i\in\R</m>, not all zero, such that <m>\sum \alpha_i v_i=0</m>.
+On the other hand, we have <m>0=0\cdot v_1+\cdots +0\cdot v_n</m>. Since
+<m>\{v_i\}</m> is a basis, by uniqueness of coefficients, we have 
+<m>\alpha_i=0</m> for all <m>i</m>. This contradicts our assumption on <m>\alpha_i's</m>.
+       
+      </p>
+    </proof>
   </theorem> 
 
   <example>
@@ -82,7 +95,7 @@
   </example>
 
   <p>
-  In <m>\R^n</m>, we define <m> e_i:=(0,\ldots, 1,\ldots,0)</m> where <m>i</m> component is 1 rest are zeros. Then it is easy to see that <m> \{e_1,\ldots, e_n\}</m> is a bais of  <m>\R^n</m> called the <alert>standard basis</alert>.
+  In <m>\R^n</m>, we define <m> e_i:=(0,\ldots, 1,\ldots,0)</m> where <m>i</m>th component is 1 rest are zeros. Then it is easy to see that <m> \{e_1,\ldots, e_n\}</m> is a bais of  <m>\R^n</m> called the <alert>standard basis</alert>.
 </p>
 
 <example>
@@ -171,7 +184,7 @@ Thus <m>\{(1,0,1),(0,1,2)\}</m> spans <m>W</m>. It is easy to see that <m>\{(1,0
 <subsection xml:id="subsec-dimension-intro">
   <title>Dimension of Subspaces</title>
 <p>
-  Since the number of elements any two bases are same. This leads to the dinition of dimension of a vector subspace.
+  Since the number of elements any two bases are same. This leads to the definition of dimension of a vector subspace.
 </p>  
 
   <definition xml:id="def-sec2-3-dimension">
