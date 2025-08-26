@@ -241,7 +241,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-RntoRm" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-composition" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Composition of linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-basis-change" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Matrix of Change of basis</span></a></div>
+<div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-basis-change" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Matrix of change of basis</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec3-2-LT.html#rqs-uniqueness-of-LT" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Reading Questions</span></a></div></li></ul>
 </li>
 </ul>
@@ -256,7 +256,10 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-LT-Geom.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Geometry of Linear Transformations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LT-Geom.html#subsec-image-tranfromation" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Image Tranfromation</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LT-Geom.html#subsec-special-LT-plane" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Some special linear map from <span class="process-math">\(\R^2\to \R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LT-Geom.html#subsec-image-tranfromation" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Image Tranfromation</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sec3-5-LT-Sage.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Sage Computations</span></a></div></li>
 </ul>
@@ -272,9 +275,9 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Basis and dimension</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#subsec-basis-VS" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Basis of a Vector Space</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-3" class="internal"><span class="codenumber">4.5.2</span> <span class="title">How to find a basis of a finite dimensional vector space?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-4" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Lagrange Interpolation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Dimension Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-4" class="internal"><span class="codenumber">4.5.2</span> <span class="title">How to find a basis of a finite dimensional vector space?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Lagrange Interpolation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-6" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Dimension Formula</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -544,7 +547,9 @@ S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 
 <div class="autopermalink" data-description="Checkpoint 4.3.8"><a href="#sec4-3-linspan-VS-11" title="Copy heading and permalink for Checkpoint 4.3.8" aria-label="Copy heading and permalink for Checkpoint 4.3.8">🔗</a></div></article><article class="definition definition-like" id="smallest-subspace"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="smallest-subspace-1-1">Let <span class="process-math">\(V\)</span> be a vector space and <span class="process-math">\(S\subset V\text{.}\)</span> A subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(V\)</span> is called the smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\)</span> if (i) <span class="process-math">\(W\)</span> is subspace of <span class="process-math">\(V\)</span> with <span class="process-math">\(S\subset W\text{,}\)</span> and (ii) if <span class="process-math">\(W'\)</span> is subspace of <span class="process-math">\(V\)</span> with <span class="process-math">\(S\subset W'\text{,}\)</span> then <span class="process-math">\(W\subset W'\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#smallest-subspace-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="smallest-subspace-1-1">Let <span class="process-math">\(V\)</span> be a vector space and <span class="process-math">\(S\subset V\text{.}\)</span> A subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(V\)</span> is called the smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\)</span> if (i) <span class="process-math">\(W\)</span> is subspace of <span class="process-math">\(V\)</span> with <span class="process-math">\(S\subset W\text{,}\)</span> and (ii) if <span class="process-math">\(W'\)</span> is subspace of <span class="process-math">\(V\)</span> with <span class="process-math">\(S\subset W'\text{,}\)</span> then <span class="process-math">\(W\subset W'\text{.}\)</span> <div class="para" id="smallest-subspace-1-1-14">The smallest subspace containing <span class="process-math">\(S\)</span> is denoted by <span class="process-math">\(\langle S\rangle\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#smallest-subspace-1-1-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#smallest-subspace-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Definition 4.3.9"><a href="#smallest-subspace" title="Copy heading and permalink for Definition 4.3.9" aria-label="Copy heading and permalink for Definition 4.3.9">🔗</a></div></article><article class="example example-like" id="sec4-3-linspan-VS-13"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -569,7 +574,36 @@ S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 
 </h3>
 <div class="para" id="sec4-3-linspan-VS-14-1-1">Suppose <span class="process-math">\(L\)</span> is a line in the plane? Then what is <span class="process-math">\(L(S)\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec4-3-linspan-VS-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 4.3.11"><a href="#sec4-3-linspan-VS-14" title="Copy heading and permalink for Checkpoint 4.3.11" aria-label="Copy heading and permalink for Checkpoint 4.3.11">🔗</a></div></article><div class="autopermalink" data-description="Section 4.3: Linear Span"><a href="#sec4-3-linspan-VS" title="Copy heading and permalink for Section 4.3: Linear Span" aria-label="Copy heading and permalink for Section 4.3: Linear Span">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Checkpoint 4.3.11"><a href="#sec4-3-linspan-VS-14" title="Copy heading and permalink for Checkpoint 4.3.11" aria-label="Copy heading and permalink for Checkpoint 4.3.11">🔗</a></div></article><article class="exercise exercise-like" id="sec4-3-linspan-VS-15"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec4-3-linspan-VS-15-1">What is the smallest subspace conatining the empty set <span class="process-math">\(\emptyset\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec4-3-linspan-VS-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec4-3-linspan-VS-15-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="sec4-3-linspan-VS-15-2-1">It is the zero space <span class="process-math">\(\{0\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec4-3-linspan-VS-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 4.3.12.1"><a href="#sec4-3-linspan-VS-15-2" title="Copy heading and permalink for Hint 4.3.12.1" aria-label="Copy heading and permalink for Hint 4.3.12.1">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Checkpoint 4.3.12"><a href="#sec4-3-linspan-VS-15" title="Copy heading and permalink for Checkpoint 4.3.12" aria-label="Copy heading and permalink for Checkpoint 4.3.12">🔗</a></div></article><article class="exercise exercise-like" id="sec4-3-linspan-VS-16"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec4-3-linspan-VS-16-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space over <span class="process-math">\(\R\)</span> and <span class="process-math">\(S\subset V\text{.}\)</span> Let <span class="process-math">\({\cal S}\)</span> be the set of all subspaces of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\text{.}\)</span> That is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\cal S}:=\{W:W \text {is a subspace of } V \text{ and } S\subset W\}.
+\end{equation*}
+</div>
+<div class="para">Then show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle S \rangle=\cap_{W\in {\cal S}} W.
+\end{equation*}
+</div>
+<div class="para">In otherwords, the smallest subspace containg <span class="process-math">\(S\)</span> is the intersection of all subsapces of <span class="process-math">\(V\)</span> that contains <span class="process-math">\(S\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec4-3-linspan-VS-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 4.3.13"><a href="#sec4-3-linspan-VS-16" title="Copy heading and permalink for Checkpoint 4.3.13" aria-label="Copy heading and permalink for Checkpoint 4.3.13">🔗</a></div></article><div class="autopermalink" data-description="Section 4.3: Linear Span"><a href="#sec4-3-linspan-VS" title="Copy heading and permalink for Section 4.3: Linear Span" aria-label="Copy heading and permalink for Section 4.3: Linear Span">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec4-2-Abst-VS.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec4-3-LI-VS.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

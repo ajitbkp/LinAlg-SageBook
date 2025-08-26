@@ -253,7 +253,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-RntoRm" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-composition" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Composition of linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-basis-change" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Matrix of Change of basis</span></a></div>
+<div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-basis-change" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Matrix of change of basis</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec3-2-LT.html#rqs-uniqueness-of-LT" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Reading Questions</span></a></div></li></ul>
 </li>
 </ul>
@@ -268,7 +268,10 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-LT-Geom.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Geometry of Linear Transformations</span></a></div>
-<ul class="structural toc-item-list active"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LT-Geom.html#subsec-image-tranfromation" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Image Tranfromation</span></a></div></li></ul>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LT-Geom.html#subsec-special-LT-plane" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Some special linear map from <span class="process-math">\(\R^2\to \R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LT-Geom.html#subsec-image-tranfromation" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Image Tranfromation</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sec3-5-LT-Sage.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Sage Computations</span></a></div></li>
 </ul>
@@ -284,9 +287,9 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Basis and dimension</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#subsec-basis-VS" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Basis of a Vector Space</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-3" class="internal"><span class="codenumber">4.5.2</span> <span class="title">How to find a basis of a finite dimensional vector space?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-4" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Lagrange Interpolation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Dimension Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-4" class="internal"><span class="codenumber">4.5.2</span> <span class="title">How to find a basis of a finite dimensional vector space?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Lagrange Interpolation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-6" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Dimension Formula</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -437,10 +440,16 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-LT-Geom"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Geometry of Linear Transformations</span>
 </h2>
-<section class="introduction" id="sec-LT-Geom-2"><div class="para" id="sec-LT-Geom-2-1">We look at some specific linear transformations from <span class="process-math">\(\R^2\)</span> to <span class="process-math">\(R^2\)</span> and how it transforms the unit square. Readers are encouraged to draw figures.<div class="autopermalink" data-description="Paragraph"><a href="#sec-LT-Geom-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><article class="example example-like" id="x-expansion"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exmpansion along <span class="process-math">\(x\)</span>-axis..</span>
+<section class="introduction" id="sec-LT-Geom-2"><div class="para" id="sec-LT-Geom-2-1">
+<div class="para" id="sec-LT-Geom-2-1-1">In this section, we look at some specific linear transformations from <span class="process-math">\(\R^2\)</span> to <span class="process-math">\(R^2\)</span> and how it transforms the unit square. Readers are encouraged to draw figures.<div class="autopermalink" data-description="Paragraph"><a href="#sec-LT-Geom-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-LT-Geom-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-special-LT-plane"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Some special linear map from <span class="process-math">\(\R^2\to \R^2\)</span></span>
 </h3>
+<article class="example example-like" id="x-expansion"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exmpansion along <span class="process-math">\(x\)</span>-axis..</span>
+</h4>
 <div class="para logical" id="x-expansion-2-1">
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_x-expansion1.html">
 \begin{equation*}
@@ -448,14 +457,14 @@ T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bma
 =\begin{bmatrix}a \amp 0\\0 \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(a&gt;1\text{.}\)</span> (Refer to the <a href="sec-LT-Geom.html#fig_x-expansion1" class="xref" data-knowl="./knowl/xref/fig_x-expansion1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.4.2">Figure 3.4.2</a>) <figure class="figure figure-like" id="fig_x-expansion1"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/x-expansion.png" class="contained"></div>
+<div class="para">where <span class="process-math">\(&gt;1\text{.}\)</span> (Refer to the <a href="sec-LT-Geom.html#fig_x-expansion1" class="xref" data-knowl="./knowl/xref/fig_x-expansion1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.4.2">Figure 3.4.2</a>) <figure class="figure figure-like" id="fig_x-expansion1"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/x-expansion.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="process-math">\(x\)</span>-expansion for <span class="process-math">\(a=2\)</span><div class="autopermalink" data-description="Figure 3.4.2"><a href="#fig_x-expansion1" title="Copy heading and permalink for Figure 3.4.2" aria-label="Copy heading and permalink for Figure 3.4.2">🔗</a></div></figcaption></figure>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x-expansion-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.4.1: Exmpansion along x-axis."><a href="#x-expansion" title="Copy heading and permalink for Example 3.4.1: Exmpansion along x-axis." aria-label="Copy heading and permalink for Example 3.4.1: Exmpansion along x-axis.">🔗</a></div></article><article class="example example-like" id="x-compression"><h3 class="heading">
+<div class="autopermalink" data-description="Example 3.4.1: Exmpansion along x-axis."><a href="#x-expansion" title="Copy heading and permalink for Example 3.4.1: Exmpansion along x-axis." aria-label="Copy heading and permalink for Example 3.4.1: Exmpansion along x-axis.">🔗</a></div></article><article class="example example-like" id="x-compression"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Compression along <span class="process-math">\(x\)</span>-axis..</span>
-</h3>
+</h4>
 <div class="para logical" id="x-compression-2-1">
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_x-compression.html">
 \begin{equation*}
@@ -468,9 +477,9 @@ T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bma
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x-compression-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.4.3: Compression along x-axis."><a href="#x-compression" title="Copy heading and permalink for Example 3.4.3: Compression along x-axis." aria-label="Copy heading and permalink for Example 3.4.3: Compression along x-axis.">🔗</a></div></article><article class="example example-like" id="y-expansion"><h3 class="heading">
+<div class="autopermalink" data-description="Example 3.4.3: Compression along x-axis."><a href="#x-compression" title="Copy heading and permalink for Example 3.4.3: Compression along x-axis." aria-label="Copy heading and permalink for Example 3.4.3: Compression along x-axis.">🔗</a></div></article><article class="example example-like" id="y-expansion"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Expansion along <span class="process-math">\(y\)</span>-axis.</span>
-</h3>
+</h4>
 <div class="para logical" id="y-expansion-2-1">
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_y-expansion.html">
 \begin{equation*}
@@ -483,9 +492,9 @@ T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bma
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#y-expansion-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.4.5: Expansion along y-axis"><a href="#y-expansion" title="Copy heading and permalink for Example 3.4.5: Expansion along y-axis" aria-label="Copy heading and permalink for Example 3.4.5: Expansion along y-axis">🔗</a></div></article><article class="example example-like" id="y-compression"><h3 class="heading">
+<div class="autopermalink" data-description="Example 3.4.5: Expansion along y-axis"><a href="#y-expansion" title="Copy heading and permalink for Example 3.4.5: Expansion along y-axis" aria-label="Copy heading and permalink for Example 3.4.5: Expansion along y-axis">🔗</a></div></article><article class="example example-like" id="y-compression"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Compression along <span class="process-math">\(y\)</span>-axis.</span>
-</h3>
+</h4>
 <div class="para logical" id="y-compression-2-1">
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_y-compression.html">
 \begin{equation*}
@@ -498,9 +507,9 @@ T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bma
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#y-compression-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.4.7: Compression along y-axis"><a href="#y-compression" title="Copy heading and permalink for Example 3.4.7: Compression along y-axis" aria-label="Copy heading and permalink for Example 3.4.7: Compression along y-axis">🔗</a></div></article><article class="example example-like" id="positive-x-shear"><h3 class="heading">
+<div class="autopermalink" data-description="Example 3.4.7: Compression along y-axis"><a href="#y-compression" title="Copy heading and permalink for Example 3.4.7: Compression along y-axis" aria-label="Copy heading and permalink for Example 3.4.7: Compression along y-axis">🔗</a></div></article><article class="example example-like" id="positive-x-shear"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Shear along positive <span class="process-math">\(x\)</span>-axis.</span>
-</h3>
+</h4>
 <div class="para logical" id="positive-x-shear-2-1">
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_x-postive-shear.html">
 \begin{equation*}
@@ -513,9 +522,9 @@ T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{b
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#positive-x-shear-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.4.9: Shear along positive x-axis"><a href="#positive-x-shear" title="Copy heading and permalink for Example 3.4.9: Shear along positive x-axis" aria-label="Copy heading and permalink for Example 3.4.9: Shear along positive x-axis">🔗</a></div></article><article class="example example-like" id="negative-x-shear"><h3 class="heading">
+<div class="autopermalink" data-description="Example 3.4.9: Shear along positive x-axis"><a href="#positive-x-shear" title="Copy heading and permalink for Example 3.4.9: Shear along positive x-axis" aria-label="Copy heading and permalink for Example 3.4.9: Shear along positive x-axis">🔗</a></div></article><article class="example example-like" id="negative-x-shear"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Shear along negative <span class="process-math">\(x\)</span>-axis.</span>
-</h3>
+</h4>
 <div class="para logical" id="negative-x-shear-2-1">
 <div class="displaymath process-math">
 \begin{equation*}
@@ -528,9 +537,9 @@ T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{b
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#negative-x-shear-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.4.11: Shear along negative x-axis"><a href="#negative-x-shear" title="Copy heading and permalink for Example 3.4.11: Shear along negative x-axis" aria-label="Copy heading and permalink for Example 3.4.11: Shear along negative x-axis">🔗</a></div></article><article class="example example-like" id="positive-y-shear"><h3 class="heading">
+<div class="autopermalink" data-description="Example 3.4.11: Shear along negative x-axis"><a href="#negative-x-shear" title="Copy heading and permalink for Example 3.4.11: Shear along negative x-axis" aria-label="Copy heading and permalink for Example 3.4.11: Shear along negative x-axis">🔗</a></div></article><article class="example example-like" id="positive-y-shear"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Shear along positive <span class="process-math">\(y\)</span>-axis.</span>
-</h3>
+</h4>
 <div class="para logical" id="positive-y-shear-2-1">
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_y-postive-shear.html">
 \begin{equation*}
@@ -543,9 +552,9 @@ T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{b
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#positive-y-shear-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.4.13: Shear along positive y-axis"><a href="#positive-y-shear" title="Copy heading and permalink for Example 3.4.13: Shear along positive y-axis" aria-label="Copy heading and permalink for Example 3.4.13: Shear along positive y-axis">🔗</a></div></article><article class="example example-like" id="negative-y-shear"><h3 class="heading">
+<div class="autopermalink" data-description="Example 3.4.13: Shear along positive y-axis"><a href="#positive-y-shear" title="Copy heading and permalink for Example 3.4.13: Shear along positive y-axis" aria-label="Copy heading and permalink for Example 3.4.13: Shear along positive y-axis">🔗</a></div></article><article class="example example-like" id="negative-y-shear"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Shear along negative <span class="process-math">\(y\)</span>-axis.</span>
-</h3>
+</h4>
 <div class="para logical" id="negative-y-shear-2-1">
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_y-negative-shear.html">
 \begin{equation*}
@@ -558,22 +567,22 @@ T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{b
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#negative-y-shear-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.4.15: Shear along negative y-axis"><a href="#negative-y-shear" title="Copy heading and permalink for Example 3.4.15: Shear along negative y-axis" aria-label="Copy heading and permalink for Example 3.4.15: Shear along negative y-axis">🔗</a></div></article><article class="example example-like" id="dilation-contraction"><h3 class="heading">
+<div class="autopermalink" data-description="Example 3.4.15: Shear along negative y-axis"><a href="#negative-y-shear" title="Copy heading and permalink for Example 3.4.15: Shear along negative y-axis" aria-label="Copy heading and permalink for Example 3.4.15: Shear along negative y-axis">🔗</a></div></article><article class="example example-like" id="dilation-contraction"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dilation and Contraction.</span>
-</h3>
+</h4>
 <div class="para" id="dilation-contraction-2-1">Fix a positive real number <span class="process-math">\(a\)</span> and define <span class="process-math">\(D_a\colon \R^n\to \R^n\)</span> by <span class="process-math">\(D_a(x)=ax\text{.}\)</span> It is a linear map which is induced by the scalar matrix <span class="process-math">\(a I_{n}\text{.}\)</span> ( <span class="process-math">\(D_a\)</span> is called a <em class="emphasis">dilation</em> if <span class="process-math">\(a&gt;0\)</span> and a <em class="emphasis">contraction</em> if <span class="process-math">\(a\lt 1\text{.}\)</span>) Refer to <a href="sec-LT-Geom.html#fig_dilation" class="xref" data-knowl="./knowl/xref/fig_dilation.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.4.18">Figure 3.4.18</a> <span class="process-math">\(D_a\colon \R^2\to \R^2\)</span> with <span class="process-math">\(a=2\)</span> and <span class="process-math">\(a=1/2\text{.}\)</span> <figure class="figure figure-like" id="fig_dilation"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/dialation.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Dilations with <span class="process-math">\(a=1/4\)</span> and <span class="process-math">\(a=2\text{.}\)</span><div class="autopermalink" data-description="Figure 3.4.18"><a href="#fig_dilation" title="Copy heading and permalink for Figure 3.4.18" aria-label="Copy heading and permalink for Figure 3.4.18">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Paragraph"><a href="#dilation-contraction-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.4.17: Dilation and Contraction"><a href="#dilation-contraction" title="Copy heading and permalink for Example 3.4.17: Dilation and Contraction" aria-label="Copy heading and permalink for Example 3.4.17: Dilation and Contraction">🔗</a></div></article><article class="example example-like" id="streching"><h3 class="heading">
+<div class="autopermalink" data-description="Example 3.4.17: Dilation and Contraction"><a href="#dilation-contraction" title="Copy heading and permalink for Example 3.4.17: Dilation and Contraction" aria-label="Copy heading and permalink for Example 3.4.17: Dilation and Contraction">🔗</a></div></article><article class="example example-like" id="streching"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Streching.</span>
-</h3>
+</h4>
 <div class="para" id="streching-2-1">Let <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> be two positive real numbers and <span class="process-math">\(A=\begin{bmatrix}a \amp 0
 \\0 \amp b \end{bmatrix}\text{.}\)</span> Define <span class="process-math">\(T\colon\R^2\to \R^2\)</span> by <span class="process-math">\(T(x)=Ax\text{.}\)</span> Then (i) <span class="process-math">\(T\)</span> is stretching by a factor <span class="process-math">\(a\)</span> along <span class="process-math">\(x\)</span>-axis and by a factor <span class="process-math">\(b\)</span> along <span class="process-math">\(y\)</span>-axis if <span class="process-math">\(a,b&gt;1\)</span> and (ii) <span class="process-math">\(T\)</span> is contraction by a factor <span class="process-math">\(a\)</span> along <span class="process-math">\(x\)</span>-axis followed by a factor <span class="process-math">\(b\)</span> along <span class="process-math">\(y\)</span>-axis if <span class="process-math">\(0\lt a,b\lt 1\text{.}\)</span> Refer to <a href="sec-LT-Geom.html#fig_diag-expansion" class="xref" data-knowl="./knowl/xref/fig_diag-expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.4.20">Figure 3.4.20</a> for stretching along <span class="process-math">\(x\)</span> by 2 and <span class="process-math">\(y\)</span>-axes by 1.5. <figure class="figure figure-like" id="fig_diag-expansion"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/diag-expansion.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Stretching along <span class="process-math">\(x\)</span> by 2 and <span class="process-math">\(y\)</span>-axes by 1.5.<div class="autopermalink" data-description="Figure 3.4.20"><a href="#fig_diag-expansion" title="Copy heading and permalink for Figure 3.4.20" aria-label="Copy heading and permalink for Figure 3.4.20">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Paragraph"><a href="#streching-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.4.19: Streching"><a href="#streching" title="Copy heading and permalink for Example 3.4.19: Streching" aria-label="Copy heading and permalink for Example 3.4.19: Streching">🔗</a></div></article><article class="example example-like" id="R2-LT-geom"><h3 class="heading">
+<div class="autopermalink" data-description="Example 3.4.19: Streching"><a href="#streching" title="Copy heading and permalink for Example 3.4.19: Streching" aria-label="Copy heading and permalink for Example 3.4.19: Streching">🔗</a></div></article><article class="example example-like" id="R2-LT-geom"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Geometry of linear transformation in <span class="process-math">\(\R^2\)</span>.</span>
-</h3>
+</h4>
 <div class="para" id="R2-LT-geom-2">In this exampe, we demostrate linear transformation from <span class="process-math">\(\R^2\)</span> to itself using the Sage interatact feature.<div class="autopermalink" data-description="Paragraph"><a href="#R2-LT-geom-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div id="R2-LT-geom-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">@interact
@@ -595,11 +604,11 @@ def linear_transformation(A=matrix(QQ,[[1,1/2],[1,-1]]).transpose(),u=vector(QQ,
     t=t+text('$Au$',A*u+e,color='red')+text('$Av$',A*v+e,color='red')+text('$A(u+v)$',A*(u+v)+e,color='red')
     show(p1+p2+t,aspect_ratio=1)
 </script></div>
-<div class="autopermalink" data-description="Example 3.4.21: Geometry of linear transformation in \R^2"><a href="#R2-LT-geom" title="Copy heading and permalink for Example 3.4.21: Geometry of linear transformation in \R^2" aria-label="Copy heading and permalink for Example 3.4.21: Geometry of linear transformation in \R^2">🔗</a></div></article><div class="para" id="sec-LT-Geom-14">
-<dfn class="terminology">The follow iteract is generated using slate.</dfn> You can change the input matrix and vectors and submit to see the image of vectors. Additionally, try to use the above tranformations defined such expansion, compression and shers and explore the same.<div class="autopermalink" data-description="Paragraph"><a href="#sec-LT-Geom-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 3.4.21: Geometry of linear transformation in \R^2"><a href="#R2-LT-geom" title="Copy heading and permalink for Example 3.4.21: Geometry of linear transformation in \R^2" aria-label="Copy heading and permalink for Example 3.4.21: Geometry of linear transformation in \R^2">🔗</a></div></article><div class="para" id="subsec-special-LT-plane-13">
+<dfn class="terminology">The follow iteract is generated using slate.</dfn> You can change the input matrix and vectors and submit to see the image of vectors. Additionally, try to use the above tranformations defined such expansion, compression and shers and explore the same.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-special-LT-plane-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="figure-geom-LT"><iframe id="Geom-LT" width="600" height="600" src="Geom-LT-if.html" data-dark-mode-enabled="true"></iframe><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.22<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Goemetry of Linear Tranformation<div class="autopermalink" data-description="Figure 3.4.22"><a href="#figure-geom-LT" title="Copy heading and permalink for Figure 3.4.22" aria-label="Copy heading and permalink for Figure 3.4.22">🔗</a></div></figcaption></figure><section class="subsection" id="subsec-image-tranfromation"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Image Tranfromation</span>
+<figure class="figure figure-like" id="figure-geom-LT"><iframe id="Geom-LT" width="600" height="600" src="Geom-LT-if.html" data-dark-mode-enabled="true"></iframe><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.22<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Goemetry of Linear Tranformation<div class="autopermalink" data-description="Figure 3.4.22"><a href="#figure-geom-LT" title="Copy heading and permalink for Figure 3.4.22" aria-label="Copy heading and permalink for Figure 3.4.22">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 3.4.1: Some special linear map from \R^2\to \R^2"><a href="#subsec-special-LT-plane" title="Copy heading and permalink for Subsection 3.4.1: Some special linear map from \R^2\to \R^2" aria-label="Copy heading and permalink for Subsection 3.4.1: Some special linear map from \R^2\to \R^2">🔗</a></div></section><section class="subsection" id="subsec-image-tranfromation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Image Tranfromation</span>
 </h3>
 <section class="introduction" id="subsec-image-tranfromation-2"><div class="para" id="subsec-image-tranfromation-2-1">Let us explore, how a linear transformation tranforms a grayscale image. A grayscale image is simply a 2-dimensional array (matrix) where each entry represents the intensity of light at a particular pixel. We will explain two types of transformations, scaling the intesity and rotation by an angle to a given image.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-image-tranfromation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section><div class="para" id="subsec-image-tranfromation-3">The following Python code read a grayscale image of Taj Mahal in India.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-image-tranfromation-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -680,10 +689,10 @@ plt.imshow(rotated_array, cmap='gray')
 plt.axis('off')
 plt.show()
 </script></div>
-<div class="autopermalink" data-description="Subsection 3.4.1: Image Tranfromation"><a href="#subsec-image-tranfromation" title="Copy heading and permalink for Subsection 3.4.1: Image Tranfromation" aria-label="Copy heading and permalink for Subsection 3.4.1: Image Tranfromation">🔗</a></div></section><article class="example example-like" id="sec-LT-Geom-17"><h3 class="heading">
+<div class="autopermalink" data-description="Subsection 3.4.2: Image Tranfromation"><a href="#subsec-image-tranfromation" title="Copy heading and permalink for Subsection 3.4.2: Image Tranfromation" aria-label="Copy heading and permalink for Subsection 3.4.2: Image Tranfromation">🔗</a></div></section><article class="example example-like" id="sec-LT-Geom-5"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Applying shear transform to an image.</span>
 </h3>
-<div class="para" id="sec-LT-Geom-17-2">Shear in Python is implemented as affine transformation where each point <span class="process-math">\((x, y)\)</span> of an image is mapped to a new point <span class="process-math">\((x',y')\)</span> via<div class="autopermalink" data-description="Paragraph"><a href="#sec-LT-Geom-17-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-LT-Geom-5-2">Shear in Python is implemented as affine transformation where each point <span class="process-math">\((x, y)\)</span> of an image is mapped to a new point <span class="process-math">\((x',y')\)</span> via<div class="autopermalink" data-description="Paragraph"><a href="#sec-LT-Geom-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -705,7 +714,7 @@ y \\
 \end{pmatrix}
 \end{equation*}
 </div>
-<div class="para logical" id="sec-LT-Geom-17-4">
+<div class="para logical" id="sec-LT-Geom-5-4">
 <div class="para">Hence we get</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -736,9 +745,9 @@ a = 1, \quad b = k, \quad c = 0,
 (1, k, 0, 0, 1, 0).
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-LT-Geom-17-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-LT-Geom-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div id="sec-LT-Geom-17-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
+<div id="sec-LT-Geom-5-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import numpy as np
 from PIL import Image
 import requests
 from io import BytesIO
@@ -771,7 +780,7 @@ plt.imshow(sheared_img, cmap='gray')
 plt.axis('off')
 plt.show()
 </script></div>
-<div class="autopermalink" data-description="Example 3.4.23: Applying shear transform to an image"><a href="#sec-LT-Geom-17" title="Copy heading and permalink for Example 3.4.23: Applying shear transform to an image" aria-label="Copy heading and permalink for Example 3.4.23: Applying shear transform to an image">🔗</a></div></article><div class="autopermalink" data-description="Section 3.4: Geometry of Linear Transformations"><a href="#sec-LT-Geom" title="Copy heading and permalink for Section 3.4: Geometry of Linear Transformations" aria-label="Copy heading and permalink for Section 3.4: Geometry of Linear Transformations">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Example 3.4.23: Applying shear transform to an image"><a href="#sec-LT-Geom-5" title="Copy heading and permalink for Example 3.4.23: Applying shear transform to an image" aria-label="Copy heading and permalink for Example 3.4.23: Applying shear transform to an image">🔗</a></div></article><div class="autopermalink" data-description="Section 3.4: Geometry of Linear Transformations"><a href="#sec-LT-Geom" title="Copy heading and permalink for Section 3.4: Geometry of Linear Transformations" aria-label="Copy heading and permalink for Section 3.4: Geometry of Linear Transformations">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec3-3-LT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-sec3-5-LT-Sage.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

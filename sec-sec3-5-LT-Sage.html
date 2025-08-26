@@ -253,7 +253,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-RntoRm" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Linear maps from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-composition" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Composition of linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-basis-change" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Matrix of Change of basis</span></a></div>
+<div class="toc-title-box"><a href="sec3-2-LT.html#sec3-2-LT-basis-change" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Matrix of change of basis</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec3-2-LT.html#rqs-uniqueness-of-LT" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Reading Questions</span></a></div></li></ul>
 </li>
 </ul>
@@ -268,7 +268,10 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-LT-Geom.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Geometry of Linear Transformations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LT-Geom.html#subsec-image-tranfromation" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Image Tranfromation</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LT-Geom.html#subsec-special-LT-plane" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Some special linear map from <span class="process-math">\(\R^2\to \R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-LT-Geom.html#subsec-image-tranfromation" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Image Tranfromation</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-sec3-5-LT-Sage.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Sage Computations</span></a></div></li>
 </ul>
@@ -284,9 +287,9 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Basis and dimension</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#subsec-basis-VS" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Basis of a Vector Space</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-3" class="internal"><span class="codenumber">4.5.2</span> <span class="title">How to find a basis of a finite dimensional vector space?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-4" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Lagrange Interpolation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Dimension Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-4" class="internal"><span class="codenumber">4.5.2</span> <span class="title">How to find a basis of a finite dimensional vector space?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-5" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Lagrange Interpolation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec4-5-basis-dim-VS.html#sec4-5-basis-dim-VS-6" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Dimension Formula</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -470,9 +473,18 @@ sagecell.makeSagecell({
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section><article class="example example-like" id="sec-sec3-5-LT-Sage-3"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linear transformaation defined by a matrix..</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linear transformaation defined by a matrix.</span>
 </h3>
-<div class="para" id="sec-sec3-5-LT-Sage-3-2">Let us define a linear tarnsformatrion defined by a matrix <span class="process-math">\(A\)</span> over a rational numbers.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-sec3-5-LT-Sage-3-2">
+<div class="para">Let us define a linear tarnsformatrion defined by a matrix <span class="process-math">\(A\)</span> over a rational numbers.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{pmatrix} 2\amp -1\amp3\\-2\amp 3\amp 5\end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para">from <span class="process-math">\(\Q^3\to \Q^2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div id="sec-sec3-5-LT-Sage-3-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(QQ, [[2, -1,3], [-2,3, 5]])
 T = linear_transformation(A,side='right')
@@ -486,7 +498,8 @@ T
 </script></div>
 <div id="sec-sec3-5-LT-Sage-3-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">T.image()
 </script></div>
-<div class="para" id="sec-sec3-5-LT-Sage-3-8">This returns a basis matrix of the image along with the dimension of the image space.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-sec3-5-LT-Sage-3-8">
+<code class="code-inline tex2jax_ignore">T.matrix()</code> returns a basis matrix of the image along with the dimension of the image space. By default, it takes option <code class="code-inline tex2jax_ignore">side="left"</code>. In our case, we need to give option <code class="code-inline tex2jax_ignore">side="right"</code>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div id="sec-sec3-5-LT-Sage-3-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">T.matrix(side='right')
 </script></div>
@@ -497,37 +510,39 @@ T
 <div id="sec-sec3-5-LT-Sage-3-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v = vector(QQ,[1,2,3])
 T(v)
 </script></div>
-<div id="sec-sec3-5-LT-Sage-3-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">T.kernel()
-</script></div>
-<div class="para" id="sec-sec3-5-LT-Sage-3-14">If we take a vector <span class="process-math">\(w\)</span> in the range space of <span class="process-math">\(T\text{,}\)</span> we can find a representative of the <span class="process-math">\(T^{-1}(w)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-3-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-sec3-5-LT-Sage-3-13">The kernel of a linear transoformation can be obtained using <code class="code-inline tex2jax_ignore">T.kernel()</code>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-3-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div id="sec-sec3-5-LT-Sage-3-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">w = vector(QQ,[2,-10])
+<div id="sec-sec3-5-LT-Sage-3-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">T.kernel()
+</script></div>
+<div class="para" id="sec-sec3-5-LT-Sage-3-15">If we take a vector <span class="process-math">\(w\)</span> in the range space of <span class="process-math">\(T\text{,}\)</span> we can find a representative of the <span class="process-math">\(T^{-1}(w)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-3-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sec-sec3-5-LT-Sage-3-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">w = vector(QQ,[2,-10])
 T.preimage_representative(w)
 </script></div>
-<div class="para" id="sec-sec3-5-LT-Sage-3-16">Note that the same linear transformation, we can also define as follows.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-3-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-sec3-5-LT-Sage-3-17">Note that the same linear transformation, we can also define as follows.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-3-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div id="sec-sec3-5-LT-Sage-3-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">T1 = linear_transformation(QQ^3,QQ^2,A,side='right')
+<div id="sec-sec3-5-LT-Sage-3-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">T1 = linear_transformation(QQ^3,QQ^2,A,side='right')
 T==T1
 </script></div>
-<div class="autopermalink" data-description="Example 3.5.1: Linear transformaation defined by a matrix."><a href="#sec-sec3-5-LT-Sage-3" title="Copy heading and permalink for Example 3.5.1: Linear transformaation defined by a matrix." aria-label="Copy heading and permalink for Example 3.5.1: Linear transformaation defined by a matrix.">🔗</a></div></article><article class="problem example-like" id="sec-sec3-5-LT-Sage-4"><h3 class="heading">
-<span class="type">Problem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 3.5.1: Linear transformaation defined by a matrix"><a href="#sec-sec3-5-LT-Sage-3" title="Copy heading and permalink for Example 3.5.1: Linear transformaation defined by a matrix" aria-label="Copy heading and permalink for Example 3.5.1: Linear transformaation defined by a matrix">🔗</a></div></article><article class="activity project-like" id="sec-sec3-5-LT-Sage-4"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec-sec3-5-LT-Sage-4-1">Define a matrix <span class="process-math">\(A=\left(\begin{array}{rrr}
+<div class="para" id="sec-sec3-5-LT-Sage-4-1-1">Define a matrix <span class="process-math">\(A=\left(\begin{array}{rrr}
 -1 \amp  1 \amp  0 \\
 2 \amp  0 \amp  -1 \\
 2 \amp  -1 \amp  1 \\
 0 \amp  2 \amp  1
-\end{array}\right)\)</span> and define a linear transformation <span class="process-math">\(T:\Q^3\to \Q^4\)</span> by <span class="process-math">\(T(x)=Ax\text{.}\)</span> Now define two vectors <span class="process-math">\(w_1=(-3, -1, 0, -31/3)\)</span> and <span class="process-math">\(w_2=(1, -1/2, -1, 11/6)\)</span> . Check that <span class="process-math">\(w_1,w_2\)</span> lie in the image space of <span class="process-math">\(T\text{.}\)</span> Let <span class="process-math">\(v_1\in T^{-1}(w_1)\)</span> and <span class="process-math">\(v_2\in T^{-1}(w_1)\text{.}\)</span> Show that <span class="process-math">\(v_1, v_2\)</span> are linearly independent in <span class="process-math">\(\Q^3\text{.}\)</span>  Can you  generalize this result and prove the same?<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div id="sec-sec3-5-LT-Sage-4-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Sage Practice Area
+\end{array}\right)\)</span> and define a linear transformation <span class="process-math">\(T:\Q^3\to \Q^4\)</span> by <span class="process-math">\(T(x)=Ax\text{.}\)</span> Now define two vectors <span class="process-math">\(w_1=(-3, -1, 0, -31/3)\)</span> and <span class="process-math">\(w_2=(1, -1/2, -1, 11/6)\)</span> . Check that <span class="process-math">\(w_1,w_2\)</span> lie in the image space of <span class="process-math">\(T\text{.}\)</span> Let <span class="process-math">\(v_1\in T^{-1}(w_1)\)</span> and <span class="process-math">\(v_2\in T^{-1}(w_1)\text{.}\)</span> Show that <span class="process-math">\(v_1, v_2\)</span> are linearly independent in <span class="process-math">\(\Q^3\text{.}\)</span> Can you  generalize this result and prove the same? <div id="sec-sec3-5-LT-Sage-4-1-1-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Sage Practice Area
 A = matrix([[-1,1,0],[2,0,-1],[2,-1,1],[0,2,1]])
 w1 = vector(QQ,[-3, -1, 0, -31/3])
 w2 = vector(QQ,[1, -1/2, -1, 11/6])
 </script></div>
-<div class="autopermalink" data-description="Problem 3.5.2"><a href="#sec-sec3-5-LT-Sage-4" title="Copy heading and permalink for Problem 3.5.2" aria-label="Copy heading and permalink for Problem 3.5.2">🔗</a></div></article><article class="example example-like" id="sec-sec3-5-LT-Sage-5"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 3.5.1"><a href="#sec-sec3-5-LT-Sage-4" title="Copy heading and permalink for Activity 3.5.1" aria-label="Copy heading and permalink for Activity 3.5.1">🔗</a></div></article><article class="example example-like" id="sec-sec3-5-LT-Sage-5"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="sec-sec3-5-LT-Sage-5-1">
+<div class="para logical" id="sec-sec3-5-LT-Sage-5-1-1">
 <div class="para">Let us define a linear transformation <span class="process-math">\(T:\Q^4\to\Q^4\)</span> given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -539,10 +554,10 @@ x_{1} + 6 \, x_{2} + 16 \, x_{3} - 5 \, x_{4}
 \end{array}\right) 
 \end{equation*}
 </div>
-<div class="para">and explore this in Sage.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">and explore this in Sage to find various concept associated with <span class="process-math">\(T\text{.}\)</span>
 </div>
-<div id="sec-sec3-5-LT-Sage-5-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div id="sec-sec3-5-LT-Sage-5-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = QQ^4
 W = QQ^4
 x1, x2, x3,x4 = var('x1, x2, x3,x4')
 outputs = [ -x1+ 2*x3-x4,
@@ -552,17 +567,13 @@ outputs = [ -x1+ 2*x3-x4,
 T_symbolic(x1, x2, x3,x4) = outputs
 T = linear_transformation(V,W, T_symbolic,side='right')
 T
-</script></div>
-<div id="sec-sec3-5-LT-Sage-5-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print('The image of T is:\n')
+</script></div> <div id="sec-sec3-5-LT-Sage-5-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print('The image of T is:\n')
 print(T.image())
 print('The kernel of T is:\n')
 print(T.kernel())
-</script></div>
-<div id="sec-sec3-5-LT-Sage-5-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">T.matrix(side='right')
-</script></div>
-<div class="para" id="sec-sec3-5-LT-Sage-5-5">Next we find the matrix of <span class="process-math">\(T\)</span> with respect to a bases <span class="process-math">\(\beta\)</span> on the domain and a basis <span class="process-math">\(\gamma\)</span> on the codomain.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div id="sec-sec3-5-LT-Sage-5-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Basis of domain,say, B=[u1,u2,u3,u4]
+</script></div> <div id="sec-sec3-5-LT-Sage-5-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">T.matrix(side='right')
+</script></div> <div class="para" id="sec-sec3-5-LT-Sage-5-1-5">Next we find the matrix of <span class="process-math">\(T\)</span> with respect to a bases <span class="process-math">\(\beta\)</span> on the domain and a basis <span class="process-math">\(\gamma\)</span> on the codomain.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div id="sec-sec3-5-LT-Sage-5-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Basis of domain,say, B=[u1,u2,u3,u4]
 u1 = vector(QQ, [ 1, -3,  2, -1])
 u2 = vector(QQ, [ 0,  1,  0,  1])
 u3 = vector(QQ, [-1,  2, -1, -1])
@@ -570,8 +581,7 @@ u4 = vector(QQ, [ 2, -8,  4, -3])
 B = [u1,u2,u3,u4]
 ## Checking if B is linearly dependent
 V.linear_dependence(B)
-</script></div>
-<div id="sec-sec3-5-LT-Sage-5-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Basis of codomain, say,C=[w1,w2,w3,w4]
+</script></div> <div id="sec-sec3-5-LT-Sage-5-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Basis of codomain, say,C=[w1,w2,w3,w4]
 w1 = vector(QQ, [ 2, -3,  2, -1])
 w2 = vector(QQ, [ 1,  2,  -1, 3])
 w3 = vector(QQ, [ 1,  -1, 5, 1])
@@ -579,55 +589,50 @@ w4 = vector(QQ, [ 0, -4,  3, 2])
 C = [w1, w2, w3, w4]
 ## Checking if C is linearly dependent
 W.linear_dependence(C)
-</script></div>
-<div class="para" id="sec-sec3-5-LT-Sage-5-8">Now we define a subspace <span class="process-math">\(V_1\)</span> of <span class="process-math">\(V\)</span> with B as a basis and a subspace <span class="process-math">\(W_1\)</span> of <span class="process-math">\(W\)</span> with C as a basis. After that we rectrict T on to <span class="process-math">\(V_1\)</span> on its domain and <span class="process-math">\(W_1\)</span> on its codomain. We call this restriction as <span class="process-math">\(T_1\text{.}\)</span> The matrix of <span class="process-math">\(T_1\)</span> is the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta\)</span> on domain and <span class="process-math">\(\gamma\)</span> on codmain, that is <span class="process-math">\([T]_\beta^\gamma\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div id="sec-sec3-5-LT-Sage-5-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V1 = V.subspace_with_basis(B)
+</script></div> <div class="para" id="sec-sec3-5-LT-Sage-5-1-8">Now we define a subspace <span class="process-math">\(V_1\)</span> of <span class="process-math">\(V\)</span> with B as a basis and a subspace <span class="process-math">\(W_1\)</span> of <span class="process-math">\(W\)</span> with C as a basis. After that we rectrict T on to <span class="process-math">\(V_1\)</span> on its domain and <span class="process-math">\(W_1\)</span> on its codomain. We call this restriction as <span class="process-math">\(T_1\text{.}\)</span> The matrix of <span class="process-math">\(T_1\)</span> is the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta\)</span> on domain and <span class="process-math">\(\gamma\)</span> on codmain, that is <span class="process-math">\([T]_\beta^\gamma\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-1-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div id="sec-sec3-5-LT-Sage-5-1-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V1 = V.subspace_with_basis(B)
 W1 = W.subspace_with_basis(C)
 T1=T.restrict_domain(V1).restrict_codomain(W1)
 MBC=T1.matrix(side='right');MBC
-</script></div>
-<div class="para" id="sec-sec3-5-LT-Sage-5-10">Note that the matrix <span class="process-math">\([T]_\beta^\gamma\)</span> can also be obtained by defining a column matrix whose columns are <span class="process-math">\(w_1,w_2,w_3,w_4, T(v_1), T(v_2), T(v_3), T(v_4)\text{,}\)</span> then applying RREF and extracting the last four columns.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div id="sec-sec3-5-LT-Sage-5-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M = column_matrix([w1,w2,w3,w4,T(u1),T(u2),T(u3),T(u4)]).rref()
+</script></div> <div class="para" id="sec-sec3-5-LT-Sage-5-1-10">Note that the matrix <span class="process-math">\([T]_\beta^\gamma\)</span> can also be obtained by defining a column matrix whose columns are <span class="process-math">\(w_1,w_2,w_3,w_4, T(v_1), T(v_2), T(v_3), T(v_4)\text{,}\)</span> then applying RREF and extracting the last four columns.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-1-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div id="sec-sec3-5-LT-Sage-5-1-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">M = column_matrix([w1,w2,w3,w4,T(u1),T(u2),T(u3),T(u4)]).rref()
 print(M)
 M.submatrix(0,4)
-</script></div>
-<div class="para" id="sec-sec3-5-LT-Sage-5-12">The image of <span class="process-math">\(T\)</span> can also be obtained by using RREF  of the matrix whose rows are vectors <span class="process-math">\(T(u1),T(u2),T(u3),T(u4)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div id="sec-sec3-5-LT-Sage-5-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix([T(u1),T(u2),T(u3),T(u4)]).T.rref()
-</script></div>
-<div class="para" id="sec-sec3-5-LT-Sage-5-14">Note that the first three rows of this is sage as what we get using <code class="code-inline tex2jax_ignore">T.image()</code>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-sec3-5-LT-Sage-5-15">
-<em class="alert">Reshufle the basis elements.</em> Let us see what happens to the matrix of a linear transformation when we reshuffle the elemnts of a basis on domain and codomain. Let us find the matrix of the abobe linear transformation with resepect the basis <span class="process-math">\(\beta_1 =\{u_1,u_3,u_2,u_4\}\)</span> of the domain and <span class="process-math">\(\gamma\)</span> of the codomain. Here we have interchanged 2nd and 3rd basis elements of <span class="process-math">\(\beta\text{.}\)</span>  You may also explore with other interchanges.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div id="sec-sec3-5-LT-Sage-5-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## interchanging 2nd and 3rd elements of domain basis
+</script></div> <div class="para" id="sec-sec3-5-LT-Sage-5-1-12">The image of <span class="process-math">\(T\)</span> can also be obtained by using RREF  of the matrix whose rows are vectors <span class="process-math">\(T(u1),T(u2),T(u3),T(u4)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-1-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div id="sec-sec3-5-LT-Sage-5-1-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">column_matrix([T(u1),T(u2),T(u3),T(u4)]).T.rref()
+</script></div> <div class="para" id="sec-sec3-5-LT-Sage-5-1-14">Note that the first three rows of this is sage as what we get using <code class="code-inline tex2jax_ignore">T.image()</code>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-1-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-sec3-5-LT-Sage-5-1-15">
+<em class="alert">Reshufling the basis elements.</em><div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-1-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-sec3-5-LT-Sage-5-1-16">Let us see what happens to the matrix of a linear transformation when we reshuffle the elemnts of a basis on domain and codomain. Let us find the matrix of the abobe linear transformation with resepect the basis <span class="process-math">\(\beta_1 =\{u_1,u_3,u_2,u_4\}\)</span> of the domain and <span class="process-math">\(\gamma\)</span> of the codomain. Here we have interchanged 2nd and 3rd basis elements of <span class="process-math">\(\beta\text{.}\)</span>  You may also explore with other interchanges.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-1-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div id="sec-sec3-5-LT-Sage-5-1-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## interchanging 2nd and 3rd elements of domain basis
 B1 = [u1,u3,u2,u4]
 V2 = V.subspace_with_basis(B1)
 T2=T.restrict_domain(V2).restrict_codomain(W1)
 MB1C=T2.matrix(side='right');MB1C
-</script></div>
-<div class="para" id="sec-sec3-5-LT-Sage-5-17">Clearly in this case 2nd and 3rd columns of <span class="process-math">\([T]_\beta^\gamma\)</span> are interchanged.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div id="sec-sec3-5-LT-Sage-5-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## interchanging 2nd and 3rd elements of codomain basis
+</script></div> <div class="para" id="sec-sec3-5-LT-Sage-5-1-18">Clearly in this case 2nd and 3rd columns of <span class="process-math">\([T]_\beta^\gamma\)</span> are interchanged.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-1-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div id="sec-sec3-5-LT-Sage-5-1-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## interchanging 2nd and 3rd elements of codomain basis
 C1 = [w1,w3,w2,w4]
 W2=V.subspace_with_basis(C1)
 T3=T.restrict_domain(V1).restrict_codomain(W2)
 MBC1=T3.matrix(side='right');MBC1
-</script></div>
-<div class="para" id="sec-sec3-5-LT-Sage-5-19">Clearly in this case 2nd and 3rd rows of <span class="process-math">\([T]_\beta^\gamma\)</span> are interchanged.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</script></div> <div class="para" id="sec-sec3-5-LT-Sage-5-1-20">Clearly in this case 2nd and 3rd rows of <span class="process-math">\([T]_\beta^\gamma\)</span> are interchanged.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-5-1-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.5.3"><a href="#sec-sec3-5-LT-Sage-5" title="Copy heading and permalink for Example 3.5.3" aria-label="Copy heading and permalink for Example 3.5.3">🔗</a></div></article><article class="example example-like" id="reflection-sage-eg1"><h3 class="heading">
+<div class="autopermalink" data-description="Example 3.5.2"><a href="#sec-sec3-5-LT-Sage-5" title="Copy heading and permalink for Example 3.5.2" aria-label="Copy heading and permalink for Example 3.5.2">🔗</a></div></article><div class="para" id="sec-sec3-5-LT-Sage-6">Thus we have the following result.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-basis-reshuffle-LT"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="thm-basis-reshuffle-LT-1-1">Let <span class="process-math">\(T\R^n\to \R^m\)</span> be a linear transformation. Let <span class="process-math">\(\beta=\{v_i\}\)</span> and <span class="process-math">\(\gamma=\{w_j\}\)</span> be bases of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\)</span> respective. Let <span class="process-math">\(A=[T]_\beta^\gamma\text{.}\)</span> Suppose <span class="process-math">\(\beta'\)</span> is a basis obtained by permuting elements of <span class="process-math">\(\beta\text{.}\)</span> Then <span class="process-math">\([T]_{\beta'}^\gamma\)</span> is the matrix obtained by applying same permutaions to columns of <span class="process-math">\(A\text{.}\)</span> Simlarly if <span class="process-math">\(\gamma'\)</span> is a basis obtained by permuting  elements of <span class="process-math">\(\gamma\text{.}\)</span> Then <span class="process-math">\([T]_\beta^{\gamma'}\)</span> is the matrix  obtained by applying same permutaions to rows of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-basis-reshuffle-LT-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 3.5.3"><a href="#thm-basis-reshuffle-LT" title="Copy heading and permalink for Theorem 3.5.3" aria-label="Copy heading and permalink for Theorem 3.5.3">🔗</a></div></article><article class="example example-like" id="reflection-sage-eg1"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reflection about a line <span class="process-math">\(y=mx\)</span>.</span>
 </h3>
-<span class="process-math">\((2,4)\)</span><span class="process-math">\(y=\frac{1}{2} x\text{.}\)</span><div id="reflection-sage-eg1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">m = 1/2
+<div class="para" id="reflection-sage-eg1-2-1">Find the reflection of <span class="process-math">\((2,4)\)</span> about the line <span class="process-math">\(y=\frac{1}{2} x\text{.}\)</span> Also plot the point and the line and the point point obtained by reflection. <div id="reflection-sage-eg1-2-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">m = 1/2
 Q = 1/(1+m^2)*matrix([[1-m^2, 2*m],[2*m,m^2-1]])
 v = vector([2,4])
 Rv = Q*v  
 print(Rv)
-</script></div>
-<div id="reflection-sage-eg1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">line = plot(m*x,(x,-5,5),color='black')
+</script></div> <div id="reflection-sage-eg1-2-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">line = plot(m*x,(x,-5,5),color='black')
 point = point2d(v,color='blue',size=20)
 Rpoint = point2d(Rv,color='red',size=20)
 vecP= v.plot(linestyle="--",color='blue')
@@ -635,16 +640,17 @@ vecRv= Rv.plot(linestyle="--",color='red')
 ll = ll=line2d([v,Rv],linestyle="--",color='blue')
 show(line+point+Rpoint+vecP+vecRv+ll,figsize=5)
 </script></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#reflection-sage-eg1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="autopermalink" data-description="Example 3.5.4: Reflection about a line y=mx"><a href="#reflection-sage-eg1" title="Copy heading and permalink for Example 3.5.4: Reflection about a line y=mx" aria-label="Copy heading and permalink for Example 3.5.4: Reflection about a line y=mx">🔗</a></div></article><article class="example example-like" id="projection-sage-eg1"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<span class="process-math">\((4,-1)\)</span><span class="process-math">\(y=\frac12 x\text{.}\)</span><div class="autopermalink" data-description="Example 3.5.5"><a href="#projection-sage-eg1" title="Copy heading and permalink for Example 3.5.5" aria-label="Copy heading and permalink for Example 3.5.5">🔗</a></div></article><div id="sec-sec3-5-LT-Sage-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">m =1/2
+<div class="para" id="projection-sage-eg1-1-1">Find the projection of <span class="process-math">\((4,-1)\)</span> about the line <span class="process-math">\(y=\frac12 x\text{.}\)</span> Plot the point, the line and the point of proection. <div id="projection-sage-eg1-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">m =1/2
 P = 1/(1+m^2)*matrix([[1, m],[m,m^2]])
 v = vector([4,-1])
 Pv = P*v
 print(Pv)
-</script></div>
-<div id="sec-sec3-5-LT-Sage-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">line = plot(m*x,(x,-5,5),color='black')
+</script></div> <div id="projection-sage-eg1-1-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">line = plot(m*x,(x,-5,5),color='black')
 point = point2d(v,color='blue',size=20)
 Ppoint = point2d(Pv,color='red',size=20)
 vecP= v.plot(color='blue')
@@ -652,7 +658,23 @@ vecPv= Pv.plot(linestyle="--",color='red')
 ll = ll=line2d([v,Pv],linestyle="--",color='blue')
 show(line+point+Ppoint+vecP+vecPv+ll,figsize=5)
 </script></div>
-<div class="autopermalink" data-description="Section 3.5: Sage Computations"><a href="#sec-sec3-5-LT-Sage" title="Copy heading and permalink for Section 3.5: Sage Computations" aria-label="Copy heading and permalink for Section 3.5: Sage Computations">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#projection-sage-eg1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.5.5"><a href="#projection-sage-eg1" title="Copy heading and permalink for Example 3.5.5" aria-label="Copy heading and permalink for Example 3.5.5">🔗</a></div></article><article class="activity project-like" id="sec-sec3-5-LT-Sage-10"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-sec3-5-LT-Sage-10-1-1">Write a Sage routine to find the matrix of reflection about the plane <span class="process-math">\(ax+by+cz=0\text{.}\)</span> Hence use this routine to find the reflection of a point <span class="process-math">\((2,5,7)\)</span> about the plane <span class="process-math">\(2x-3y+z=0\text{.}\)</span> Also plot the point, the plane and the point of reflection.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div id="sec-sec3-5-LT-Sage-10-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Practice Area
+</script></div> <div id="sec-sec3-5-LT-Sage-10-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Practice Area
+</script></div>
+<div class="autopermalink" data-description="Activity 3.5.2"><a href="#sec-sec3-5-LT-Sage-10" title="Copy heading and permalink for Activity 3.5.2" aria-label="Copy heading and permalink for Activity 3.5.2">🔗</a></div></article><article class="activity project-like" id="sec-sec3-5-LT-Sage-11"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-sec3-5-LT-Sage-11-1-1">Write a Sage routine to find the matrix of projection of a point on to the plane <span class="process-math">\(ax+by+cz=0\text{.}\)</span> Hence use this routine to find the projection of point <span class="process-math">\((2,5,7)\)</span> on to  the plane <span class="process-math">\(2x-3y+z=0\text{.}\)</span> Also plot the point, the plane and the point projected.<div class="autopermalink" data-description="Paragraph"><a href="#sec-sec3-5-LT-Sage-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div id="sec-sec3-5-LT-Sage-11-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Practice Area
+</script></div> <div id="sec-sec3-5-LT-Sage-11-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">## Practice Area
+</script></div>
+<div class="autopermalink" data-description="Activity 3.5.3"><a href="#sec-sec3-5-LT-Sage-11" title="Copy heading and permalink for Activity 3.5.3" aria-label="Copy heading and permalink for Activity 3.5.3">🔗</a></div></article><div class="autopermalink" data-description="Section 3.5: Sage Computations"><a href="#sec-sec3-5-LT-Sage" title="Copy heading and permalink for Section 3.5: Sage Computations" aria-label="Copy heading and permalink for Section 3.5: Sage Computations">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-LT-Geom.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap4-Vector-Space.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
