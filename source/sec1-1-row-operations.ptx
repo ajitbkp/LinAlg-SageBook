@@ -259,15 +259,6 @@ show(E)
 </proof>
 </theorem>
 
-<exercise>
-  <statement>
-    <p>
-      If <m>E</m> is an elemtray matrix (except multiplying identity  matrix by zero), then it is invertible. 
-      Can you see it why?
-    </p>
-  </statement>
-</exercise>
-
 <example>
   <statement>
     <p>
@@ -299,6 +290,50 @@ show(E)
 </p>
 </statement>
 </example>
+
+<p>
+  The above examples suggest the following result. 
+</p>
+
+<theorem xml:id="elementary-matrix-invertibility">
+  <statement>
+    <p>
+    Let <m>E</m> be an elemtray matrix (except multiplying identity  matrix by zero), 
+    then it is invertible. 
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Suppose <m>E</m> is an elementary matrix obtained by interchanging <m>i</m>-th  and <m>j</m>-th rows 
+      of the identity matrix. Let us denote it by <m>E_{i \leftrightarrow j}</m>. 
+      It  is easy to see that <m>E_{i \leftrightarrow j}E_{i \leftrightarrow j}=I</m>. 
+      Hence  <m>E_{i \leftrightarrow j}</m> is invertible with   
+      <m>E_{i \leftrightarrow j}^{-1}=E_{i \leftrightarrow j}</m>.
+    </p>
+
+    <p>
+      Suppose <m>E</m> is an elementary matrix obtained by multiplying the <m>i</m>-th row by a non zero scalar 
+      <m>\alpha</m> denoted by <m>E_{i \leftarrow \alpha i} </m>. Then 
+      <me>
+        E_{i \leftarrow \alpha i}E_{i \leftarrow \frac{1}{\alpha} i}=I.
+      </me>
+      Hence <m>E_{i \leftarrow \alpha i}^{-1} =E_{i \leftarrow \frac{1}{\alpha} i}</m>.
+    </p>
+    <p>
+      Suppose <m>E</m> is an elementary matrix obtained by adding the <m>j</m>th row of 
+      the identity matrix to the <m>i</m>-th row. Let us denote it by <m>E_{i\leftarrow i+j}</m>. Then 
+      <me>
+        E_{i\leftarrow i+j} E_{i\leftarrow i-j}=I.
+      </me>
+       Hence <m>E_{i\leftarrow i+j}^{-1}= E_{i\leftarrow i-j}</m>.
+    </p>
+    <p>
+      Since any elementary matrix is obtained by a sequence of elemetary matrix, it is a product 
+      of intertible matrices and hence invertible.
+    </p>
+  </proof>
+</theorem>
+
 
 <theorem xml:id="thm-matrix-invese-using-rref">
   <statement>

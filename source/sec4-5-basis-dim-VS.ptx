@@ -2,6 +2,11 @@
 
 <section xml:id="sec4-5-basis-dim-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
         <title> Basis and dimension</title>
+       <introduction>
+        <p>
+          In this section, we define basis and dimension of  a vector spaces.
+        </p>
+       </introduction>
        
         <subsection xml:id="subsec-basis-VS">
           <title>Basis of a Vector Space</title>
@@ -273,8 +278,6 @@
          </statement>
       </exercise>
     
- 
- 
   </subsection>
 
     <subsection>
@@ -282,7 +285,16 @@
       <p>
         First let us look at the following results.
       </p>
-      <exercise xml:id="exer97">
+      <exercise xml:id="exer-4-5-16">
+        <p>
+          Let <m>u\in V</m> be a nonzero vector. Suppose <m>v\notin L(\{v\})</m>, then show that
+          <m>\{u,v\}</m> is linearly independent.
+        </p>        
+      </exercise>
+      <p>
+        Can you generalize this result?
+      </p>
+      <lemma xml:id="lemma-4-5-17">
         <statement>
           <p>
             Let <m>\{v_1,\ldots,
@@ -291,10 +303,25 @@
             Then <m>\{v,v_1,\ldots, v_k\}</m> is linearly independent.
           </p>
         </statement>
-      </exercise>
-   
+
+        <proof>
+          <p>
+            Let <m>v\notin { span}(\{v_1,\ldots, v_k\})</m> and <m>\alpha_1,\ldots,\alpha_{k+1}</m> be 
+            scalars such that 
+            <me>
+              \alpha_1 v_1+\cdots+\alpha_kv_k+\alpha_{k+1}v=0.
+            </me>
+            We claim that <m>\alpha_{k+1}=0</m>. For if <m>\alpha_{k+1}=0</m> implies 
+            <m>v\in { span}(\{v_1,\ldots, v_k\})</m> a contradiction.
+          </p>
+        </proof>
+      </lemma>
+   <p>
+    <xref ref="lemma-4-5-17"/> gives a way to construct  a basis of a finite dimensional 
+    vector space which is the content of the next theorem. 
+   </p>
      
-    <exercise xml:id="exer-4-5-13">
+    <theorem xml:id="thm-4-5-19">
         <statement>
           <p>
             Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
@@ -308,10 +335,27 @@
             v_k,u_1,\ldots, u_{n-k}\}</m> is a basis of <m>V</m>.
           </p>
         </statement>
-      </exercise>
+
+        <proof>
+          <p>
+            Let <m>S=\{v_1,\ldots,v_k\}</m> be linearly independent set. 
+            if <m>L(S)=V</m>, then we are done as <m>S</m> is a basis of <m>V</m>. Suppose 
+            not, chose <m>u_1\notin L(S)</m>. Then by <xref ref="lemma-4-5-17"/>, 
+            <m>\{v_1,\ldots, u_1\}</m> is linearly independet in <m>V</m>. 
+            If <m>L(\{v_1,\ldots, u_1\})=V</m>, then <m>\{v_1,\ldots, u_1\}</m> is a basis of <m>V</m>.
+          Otherwise we choose, <m>u_2\not in L(\{v_1,\ldots, u_1\})</m>. Again 
+          by <xref ref="lemma-4-5-17"/>, 
+            <m>\{v_1,\ldots, u_1,u_2\}</m> is linearly independet in <m>V</m>. If <m>L(\{v_1,\ldots, u_1,u_2\})=V</m>, 
+            then <m>\{v_1,\ldots, u_1,u_2\}</m> is a basis of <m></m>. 
+            Otherwise, we continue this process. Since <m>V</m>is finite dimensional vector space, 
+            this process must end after a finite number of steps. In fact, the process ends exactly
+            <m>n-k</m> steps where <m>n</m> is the dimension of <m>V</m>. (can you see it why?)
+          </p>
+        </proof>
+      </theorem>
       
       <p>
-        These two  exercises give a way to find a basis of a finite dimensional vector 
+        The above results give a way to find a basis of a finite dimensional vector 
         space starting with a nonzero vector in <m>V</m>.
       </p>
       
@@ -322,7 +366,7 @@
             v_2=(2, 2, 1, 0)\}</m> to a basis of <m>\R^4</m>.
             One way of achieving this to find <m>v_3\notin L(S)</m>.
             Then Chose <m>v_4\notin L(\{v_3\}\cup S)</m>.
-            Then in view of <xref ref="exer97">Exercise</xref>,
+            Then in view of <xref ref="lemma-4-5-17"/>,
             <m>\beta=\{v_1,v_2,v_3,v_4\}</m> is linearly independent.
             Since <m>\dim(\R^4)=4</m>, <m>\beta</m> is a basis of <m>\R^4</m>.
           </p>
@@ -343,8 +387,12 @@
         </statement>
       </example>
      
-    
-      <exercise xml:id="exer-4-5-16">
+    <p>
+      Note that <xref ref="thm-4-5-19"/> gives a way to find a basis of finite  dimensional 
+      vector space starting from a linearly independet set. How about starting with s finite spanning 
+      set?  
+    </p>
+      <theorem xml:id="thm-4-5-20">
         <statement>
           <p>
             Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
@@ -353,7 +401,29 @@
             <m>S'\subset S</m> such that <m>S'</m> is a basis of <m>V</m>.
           </p>
         </statement>
-      </exercise>
+
+        <proof>
+          <p>
+            Assume that <m>0\notin S</m>. Otherwise <m>L(S)=L(S\setminus\{0\})</m>. 
+            We shall use well-ordering principle of natural numbers which states that any non empty
+            subset of natural number has a least element.
+          </p>
+          <p>
+          Define 
+          <me>
+            {\cal A}:=\{A\subset S:L(A)=L(S)=V\}.
+          </me>
+          Clearly, <m>S\in {\cal A}</m>. Hence <m>T:=\{|A|: A\in {\cal A}\}</m> is a non empty subset of 
+          natural numbers. By the Wel-ordering principle, <m>T</m> has a least element. Let <m>n</m>
+          be the least element of <m>T</m> and <m>B\in {\cal A}</m> such that <m>|B|=n</m>. We claim 
+          that <m>B</m> is a basis of <m>V</m>. By definition <m>L(B)=V</m>. We claim that <m>B</m> is linearly independet.
+          Suppose not, there exist <m>v\in B</m> such that <m>v\in L(S\setminus \{v\})</m>. 
+          This implies <m>S\setminus \{v\}\subset S</m> and <m>L(S\setminus \{v\})=V</m>. 
+          Hence <m>S\setminus \{v\}\in {\cal A}</m> but <m>|S\setminus \{v\}|=n-1</m>, a contradiction. This 
+          shows that <m>B</m> is linearly independent. Hence <m>B</m> is basis of <m>V</m>.
+          </p>
+        </proof>
+      </theorem>
 
       <example>
         <statement>
@@ -653,8 +723,57 @@
 
         <proof>
           <p>
-            
+        The basic idea of the proof is to start with a basis of <m>W_1\cap W_2</m> and extend 
+        this to a basis of <m>W_1</m> and <m>W_2</m> and them show that union of basis of 
+        <m>W_1</m> and <m>W_2</m> gives a basis of <m>V</m>.
           </p>
+          <p>
+            Let <m>\{u_1,\ldots,u_k\}</m> be basis of <m>W_2\cap W_2</m>. 
+            Let <m>\{u_1,\ldots,u_k,v_1,\ldots, v_m\}</m> <m>\{u_1,\ldots,u_k,w_1,\ldots, v_n\}</m> be 
+            extended bases of <m>W_1</m> and <m>W_2</m> respectively. Then we have 
+            <md>
+              <mrow> \rm{dim} (W_1)+\rm{dim} (W_2)-\rm{dim} (W_1\cap W_2)\amp=\amp k+n+k+m-k </mrow>
+              <mrow> \amp=\amp k+m+n. </mrow>
+            </md>
+           We calim that <m>\beta =\{u_1,\ldots,u_k,v_1,\ldots, v_m,w_1,\ldots,w_n\}</m> is a 
+            bais of <m>W_1+W_2</m>.
+           </p>
+           <p>
+            Let <m>x\in W_1+W_2</m>. Then <m>x=w_1+w_2</m> for some <m>w_1\in W_1</m> and 
+            <m>w_2\in W_2</m>. Let <m>w_1=\sum\alpha_iu_i+\sum \beta_j v_j</m> and  
+            <m>w_2=\sum\gamma_i u_i+\sum \delta_jw_j</m>. Then we have 
+            <me>
+              x=\sum(\alpha_i+\gamma_i)u_i+\sum \beta_j v_j+\sum \delta_jw_j.
+            </me>
+             This shows that <m>\beta</m> spans <m>W_1+W_2</m>. 
+            </p>
+            <p>
+              Next, we show that <m>\beta</m> is linearly independent. 
+            </p>
+
+            <p>
+              Let <m>\sum \alpha_iu_i+\sum \beta_j v_j+\sum \gamma_rw_r=0</m>.  Then we have 
+              <men xml:id="eq-dim-formula1">
+                \sum \alpha_iu_i+\sum \beta_j v_j=-\sum \gamma_rw_r
+              </men>
+              Since the expression on the left hand side is in <m>W_1</m>, we have 
+              <m>\sum \gamma_rw_r \in W_1\cap W_2</m>. Hence there exist scalars <m>\delta_i</m> such that 
+              <me>
+                -\sum \gamma_rw_r = \sum \delta_iu_r
+              </me>
+              which implies 
+              <me>
+              \sum \delta_iu_r+\sum \gamma_rw_r=0.
+              </me>
+              Since <m>\{u_1,\ldots,u_k,w_1,\ldots,w_n\}</m> is linearly independet, we have 
+              <m>\gamma_1=\cdots=\gamma_n=0</m>.  Hence by <xref ref="eq-dim-formula1"/>, we have 
+              <me>
+                \sum \alpha_iu_i+\sum \beta_j v_j=0.
+              </me>
+            Since <m>\{u_1,\ldots,u_k,v_1,\ldots,v_m\}</m> is linearly independet, we have 
+            <m>\alpha_1=\cdots=\alpha_k=0</m> and <m>\beta_1=\cdots=\beta_m=0</m>.  This proves that 
+            <m>\beta</m> is linearly independent. This completes the proof. 
+            </p>
         </proof>
       </theorem>
 

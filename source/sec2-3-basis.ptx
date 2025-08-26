@@ -671,7 +671,7 @@ columns are <m>v_1,\ldots, v_n</m>. This can be done using the RREF. Let us illu
 
   <example>
     <p>
-      Find the coordinates of the vector <m>(1,2,3)</m> with respect to a basis\\ <m>\beta=\{(1,-1,1),(1,1,-1),(-1,1,1)\}</m> of <m>\R^3</m>. Using the RREF we have 
+      Find the coordinates of the vector <m>(1,2,3)</m> with respect to a basis <m>\beta=\{(1,-1,1),(1,1,-1),(-1,1,1)\}</m> of <m>\R^3</m>. Using the RREF we have 
 <me>
 \left[\begin{array}{rrr|r}
 	1 \amp  1 \amp  -1 \amp  1 \\

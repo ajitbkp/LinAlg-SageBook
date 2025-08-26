@@ -2,11 +2,7 @@
 
 <section xml:id="sec4-2-Abst-VS" xmlns:xi="http://www.w3.org/2001/XInclude">
         <title>Vector Subspaces</title>
-      
-         
-        <definition xml:id="def-vector-subspace">
-          <title>Vector subspace</title>  
-          <introduction>
+         <introduction>
             <p>
     In linear algebra, we often encounter a set of vectors that themselves 
     possess the structure of a vector space, but live naturally inside a larger 
@@ -17,6 +13,10 @@
     called <term>subspaces</term>. 
             </p>
           </introduction>
+       
+         
+        <definition xml:id="def-vector-subspace">
+          <title>Vector subspace</title>  
           <statement>
             <p>
               Let <m>V</m> be a vector space over <m>\R</m> and <m>W</m> a nonempty subset of <m>V</m>.

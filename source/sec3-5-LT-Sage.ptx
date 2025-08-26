@@ -44,9 +44,14 @@
 </introduction>
 
 <example>
- <title>Linear transformaation defined by a matrix.</title>
+ <title>Linear transformaation defined by a matrix</title>
+
  <p>
     Let us define a linear tarnsformatrion defined by a matrix <m>A</m> over a rational numbers.
+    <me>
+        A = \begin{pmatrix} 2\amp -1\amp3\\-2\amp 3\amp 5\end{pmatrix} 
+    </me>
+    from <m>\Q^3\to \Q^2</m>.
  </p>
 
   <sage>
@@ -98,7 +103,9 @@
     </output>
 </sage>
 
-<p> This returns a basis matrix of the image along with the dimension of the image space.  </p>
+<p> <c>T.matrix()</c> returns a basis matrix of the image along with the dimension of the image space.  
+By default, it takes option <c>side="left"</c>. In our case, we need to give option <c>side="right"</c>.
+</p>
 
 <sage>
     <input>
@@ -132,7 +139,9 @@
         (9, 19)
     </output>
 </sage>
-
+<p>
+    The kernel of a linear transoformation can be obtained using <c>T.kernel()</c>.
+</p>
 <sage>
     <input>
         T.kernel()
@@ -144,7 +153,8 @@
     </output>
 </sage>
 
-<p> If we take a vector <m>w</m> in the range space of <m>T</m>, we can find a representative of the <m>T^{-1}(w)</m>.  </p>
+<p> If we take a vector <m>w</m> in the range space of <m>T</m>, 
+    we can find a representative of the <m>T^{-1}(w)</m>.  </p>
 
 <sage>
     <input>
@@ -169,8 +179,9 @@
 </sage>
 </example>
 
-<problem>
-    <p>
+<activity>
+    <statement>
+        <p>
   Define a matrix <m>A=\left(\begin{array}{rrr}
     -1 \amp  1 \amp  0 \\
     2 \amp  0 \amp  -1 \\
@@ -179,9 +190,9 @@
     \end{array}\right)</m> and define a linear transformation <m>T:\Q^3\to \Q^4</m> by <m>T(x)=Ax</m>. 
     Now define two vectors <m>w_1=(-3, -1, 0, -31/3)</m> and <m>w_2=(1, -1/2, -1, 11/6)</m> . Check that 
     <m>w_1,w_2</m> lie in the image space of <m>T</m>. Let <m>v_1\in T^{-1}(w_1)</m> and <m>v_2\in T^{-1}(w_1)</m>. 
-    Show that <m>v_1, v_2</m> are linearly independent in <m>\Q^3</m>.  Can you  generalize this result and prove the 
-    same?
-</p>
+    Show that <m>v_1, v_2</m> are linearly independent in <m>\Q^3</m>.  
+    Can you  generalize this result and prove the same?
+
     <sage>
         <input>
         ## Sage Practice Area
@@ -194,10 +205,13 @@
             
         </output>
     </sage>
-</problem>
+</p>
+    </statement>
+</activity>
 
 <example>
-    <p>
+    <statement>
+        <p>
         Let us define a linear transformation <m>T:\Q^4\to\Q^4</m> given by
         <me>
             T(x_1,x_2,x_3,x_4)=\left(\begin{array}{r}
@@ -206,7 +220,7 @@
             x_{1} - 3 \, x_{2} - 21 \, x_{3} + 4 \, x_{4} \\
             x_{1} + 6 \, x_{2} + 16 \, x_{3} - 5 \, x_{4}
             \end{array}\right) 
-        </me> and explore this in Sage.
+        </me> and explore this in Sage to find various concept associated with <m>T</m>.
     </p>
             <sage>
                 <input>
@@ -367,7 +381,8 @@
                 </p>
 
                 <p>
-                    <alert>Reshufle the basis elements.</alert> Let us see what happens to the matrix 
+                    <alert>Reshufling the basis elements.</alert> </p>
+                    <p>Let us see what happens to the matrix 
                     of a linear transformation when we reshuffle the elemnts of a basis on domain and codomain.
                     Let us find the matrix of the abobe linear transformation with resepect the basis 
                     <m>\beta_1 =\{u_1,u_3,u_2,u_4\}</m> of the domain and <m>\gamma</m> of the codomain. Here we have interchanged 2nd and 3rd basis elements of <m>\beta</m>.  You may also explore with other interchanges.
@@ -411,12 +426,32 @@
                  <p>
                     Clearly in this case 2nd and 3rd rows of <m>[T]_\beta^\gamma</m> are interchanged.
                 </p>
-
+    </statement>
 </example>
+
+<p>
+    Thus we have the following result.
+</p>
+<theorem xml:id="thm-basis-reshuffle-LT">
+    <statement>
+        <p>
+    Let <m>T\R^n\to \R^m</m> be a linear transformation. Let <m>\beta=\{v_i\}</m> and 
+    <m>\gamma=\{w_j\}</m> be bases of <m>\R^n</m> and <m>\R^m</m> respective. Let 
+    <m>A=[T]_\beta^\gamma</m>. Suppose <m>\beta'</m> is a basis obtained by permuting 
+    elements of <m>\beta</m>. Then <m>[T]_{\beta'}^\gamma</m> is the matrix obtained by 
+    applying same permutaions to columns of <m>A</m>. Simlarly if <m>\gamma'</m> is a basis obtained 
+    by permuting  elements of <m>\gamma</m>. Then <m>[T]_\beta^{\gamma'}</m> is the matrix  obtained by 
+    applying same permutaions to rows of <m>A</m>.        
+        </p>
+    </statement>
+</theorem>
 
 <example xml:id="reflection-sage-eg1">
  <title>Reflection about a line <m>y=mx</m></title>
- Find the reflection of <m>(2,4)</m> about the line <m>y=\frac{1}{2} x</m>. Also plot the point and the line and the point point obtained by reflection.
+ <statement>
+    <p>
+    Find the reflection of <m>(2,4)</m> about the line <m>y=\frac{1}{2} x</m>. 
+    Also plot the point and the line and the point point obtained by reflection.
   
  <sage>
     <input>
@@ -444,11 +479,17 @@ show(line+point+Rpoint+vecP+vecRv+ll,figsize=5)
         
     </output>
  </sage>
+      
+    </p>
+ </statement>
+
 </example>
 
 <example xml:id="projection-sage-eg1">
-    Find the projection of <m>(4,-1)</m> about the line <m>y=\frac12 x</m>. Plot the point, the line and the point of proection.
-</example>
+    <statement>
+        <p>
+    Find the projection of <m>(4,-1)</m> about the line <m>y=\frac12 x</m>. 
+    Plot the point, the line and the point of proection.
 <sage>
     <input>
 m =1/2
@@ -476,4 +517,65 @@ show(line+point+Ppoint+vecP+vecPv+ll,figsize=5)
         
     </output>
 </sage>
+        </p>
+    </statement>
+</example>
+
+<activity>
+    <statement>
+        <p>
+            Write a Sage routine to find the matrix 
+            of reflection about the plane <m>ax+by+cz=0</m>. Hence use this 
+            routine to find the reflection of a point <m>(2,5,7)</m> about the plane 
+            <m>2x-3y+z=0</m>. Also plot the point, the plane and the point of reflection.
+        </p>
+        <sage>
+            <input>
+             ## Practice Area   
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+
+        <sage>
+            <input>
+             ## Practice Area   
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+    </statement>
+</activity>
+
+
+<activity>
+    <statement>
+        <p>
+            Write a Sage routine to find the matrix 
+            of projection of a point on to the plane <m>ax+by+cz=0</m>. Hence use this 
+            routine to find the projection of point <m>(2,5,7)</m> on to  the plane 
+            <m>2x-3y+z=0</m>. Also plot the point, the plane and the point projected.
+        </p>
+        <sage>
+            <input>
+             ## Practice Area   
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+
+        <sage>
+            <input>
+             ## Practice Area   
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+    </statement>
+</activity>
+
 </section>

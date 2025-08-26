@@ -187,9 +187,13 @@
       <statement>
         <p>
           Let <m>V</m> be a vector space and <m>S\subset V</m>.
-          A subspace <m>W</m> of <m>V</m> is called the smallest subspace of <m>V</m> containing <m>S</m> if (i) <m>W</m> is subspace of <m>V</m> with <m>S\subset W</m>,
+          A subspace <m>W</m> of <m>V</m> is called the smallest subspace of <m>V</m> containing <m>S</m> if 
+          (i) <m>W</m> is subspace of <m>V</m> with <m>S\subset W</m>,
           and (ii) if <m>W'</m> is subspace of <m>V</m> with
           <m>S\subset W'</m>, then <m>W\subset W'</m>.
+          <p>
+            The smallest subspace containing <m>S</m> is denoted by <m>\langle S\rangle</m>.
+          </p>
         </p>
       </statement>
     </definition>
@@ -225,4 +229,27 @@
       </statement>
     </exercise>
 
+<exercise>
+  <p>
+  What is the smallest subspace conatining the empty set <m>\emptyset</m>?
+  </p>
+  <hint>
+    <p>
+      It is the zero space <m>\{0\}</m>.
+    </p>
+  </hint>
+</exercise>
+
+<exercise>
+  <p>
+  Let <m>V</m> be a vector space over <m>\R</m> and <m>S\subset V</m>. Let <m>{\cal S}</m> be the 
+  set of all subspaces of <m>V</m> containing <m>S</m>. That is 
+  <me>
+    {\cal S}:=\{W:W \text {is a subspace of } V \text{ and } S\subset W\}.
+  </me>
+  Then show that 
+    <me>\langle S \rangle=\cap_{W\in {\cal S}} W.</me> In otherwords, the smallest 
+  subspace containg <m>S</m> is the intersection of all subsapces of <m>V</m> that contains <m>S</m>.
+</p>
+</exercise>
   </section>

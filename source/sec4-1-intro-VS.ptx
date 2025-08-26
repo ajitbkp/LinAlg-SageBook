@@ -67,8 +67,10 @@
         <statement>
           <p>
           In the above definition one 
-          can replace <m>\R</m> with any <em>field </em> <m>(F).</m> 
-          However, in this text unless mention, we shall assume <m>V</m> a vector space over.  
+          can replace <m>\R</m> by any <em>field </em> <m>(F).</m> For it can be 
+          <m>\Q</m>, the set of rational numbers, <m>\mathbb{C}</m>, the set of complex
+          number or even finite fields.However, in this text unless mention, 
+          we shall assume <m>V</m> a vector space over.  
           </p>
         </statement>
       </remark>
@@ -103,6 +105,26 @@
         </statement>
       </example>
 
+
+      <example xml:id="eg-complex-vs">
+        <statement>
+          <p>
+            The set of complex numbers <m>\mathbb{C}:=\{a+ib:a,b\in \R\}</m>,
+            where <m>i^2=-1</m>, with addition and multiplication defined as
+            <me>
+              (a_1+ib_1)+(a_2+ib_2):=(a_1+a_2)+i(b_1+b_2),  
+            </me>
+            <me>
+              \alpha\cdot (a+ib):=(\alpha a)+i(\alpha b).
+            </me>
+            
+          </p>
+          <p>
+            The set <m>(\mathbb{C},+,\cdot)</m> is a vector space over <m>\R</m>.
+          </p>
+        </statement>
+      </example>
+      
       <example xml:id="eg-ralvaluesfun-vs">
         <statement>
           <p>
@@ -117,21 +139,9 @@
         </statement>
       </example>
 
-      <example xml:id="eg-complex-vs">
-        <statement>
-          <p>
-            The set of complex numbers <m>\mathbb{C}:=\{a+ib:a,b\in \R\}</m>,
-            where <m>i^2=-1</m>, with addition and multiplication defined as
-            <me>
-              (a_1+ib_1)+(a_2+ib_2):=(a_1+a_2)+i(b_1+b_2),  \alpha (a+ib)=(\alpha a)+i(\alpha b)
-            </me>.
-          </p>
-          <p>
-            The set <m>(\mathbb{C},+,\cdot)</m> is a vector space over <m>\R</m>.
-          </p>
-        </statement>
-      </example>
-
+<p>
+  We can generalize <xref ref="eg-ralvaluesfun-vs"/> as follows.
+</p>
       <example xml:id="eg-function-vs">
         <statement>
           <p>

@@ -111,7 +111,7 @@
 	rank of  <m>A</m> is equal to the number of non-zero rows  in an
 	echelon equivalent form of   <m>A</m>.  In other words, the rank of matrix  <m>A</m> 
 	is the number of leading 1's in any row-echelon matrix to which  <m>A</m> can be
-	carried by row operations. \qed
+	carried by row operations.
 	
                 </p>
             </statement>

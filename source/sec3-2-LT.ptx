@@ -319,7 +319,7 @@
  
 
   <subsection xml:id="sec3-2-LT-basis-change" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Matrix of Change of basis</title>
+    <title>Matrix of change of basis</title>
     <p>
       Let <m>\beta=\{u_1,u_2\ldots,u_n\}</m> and
       <m>\gamma=\{v_1,v_2\ldots,v_n\}</m> be two bases of <m>\R^n</m>.

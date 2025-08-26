@@ -70,15 +70,33 @@
         </statement>
     </definition>
 
-    <problem>
-        <p>
-        A set of vectors <m>\{v_1,v_2,\ldots, v_k\}</m> is linearly dependent if and only
-        if one of the vectors from the set is a linear combination of the remaining vectors. That is, there 
-        exists <m>j\in \{1,\ldots,k\}</m> such that 
-        <m>v_j=\sum_{i,i\neq j} \alpha_i v_i</m>.    
-    </p>
-    </problem>
+    <p>
+       Suppose a set of vectors <m>\{v_1,v_2,\ldots, v_k\}</m> is linearly dependent in <m>\R^n</m>. 
+       Let <m>\alpha_1, \ldots, \alpha_n</m> be scalars not all zero such that 
+       <me>
+        \alpha_1v_1+\cdots +\alpha_n v_n=0.
+       </me>
+       If <m>\alpha_i\neq 0</m>, then we can write <m>v_i</m> in terms other vectors as follows.
+<me>
+    v_i = -\frac{1}{\alpha_i}\sum_{j\neq i} \alpha_j v_j. 
+</me>
+   Next assume that vectors <m>\{v_1,v_2,\ldots, v_k\}</m> are such that one of the <m>v_i's</m> can be 
+   written as <m>v_i = {\alpha_i}\sum_{j\neq i} \alpha_j v_j</m>, then we have 
+   <m>\sum_{j} \alpha_j v_j=0 </m> with <m>\alpha_i=-1\neq 0</m>.  Thus we have the following result.
+</p>
+   <theorem>
 
+<statement>
+    <p>
+        A set of vectors <m>\{v_1,v_2,\ldots, v_k\}</m> is linearly dependent if and only
+        if one of the vectors from the set is a linear combination of the remaining vectors. 
+        That is, there 
+        exists <m>j\in \{1,\ldots,k\}</m> such that 
+        <m>v_j=\sum_{i\neq j} \alpha_i v_i</m>. 
+    </p>
+</statement>   
+</theorem>
+  
 
     <remark xml:id="sec-2-2-remrak1">
         <p>

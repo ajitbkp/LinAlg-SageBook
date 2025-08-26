@@ -107,6 +107,9 @@ Studying systems of linear equations is fundamental for several reasons. They ar
 </example>
 
 <example xml:id="chemical-reaction-eg1">
+  <title>Balancing Chemical Reaction Equation</title>
+  
+  
   <statement>
     <p>
     The combustion of octane (<m>C_8H_{18}</m>) is a classical example of a hydrocarbon fuel 

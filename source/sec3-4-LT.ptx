@@ -2,12 +2,16 @@
 
 <section xml:id="sec-LT-Geom" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Geometry of Linear Transformations</title>
-  <introduction>
-    <p> We look at some specific linear transformations from <m>\R^2</m> to <m>R^2</m> and how it
-      transforms the unit square. Readers are encouraged to draw figures. </p>
-  </introduction>
 
-  <example xml:id="x-expansion">
+  <introduction>
+    <p>
+    <p> In this section, we look at some specific linear transformations from <m>\R^2</m> to <m>R^2</m> and how it
+      transforms the unit square. Readers are encouraged to draw figures. </p>  
+    </p>
+  </introduction>
+  <subsection xml:id="subsec-special-LT-plane">
+    <title>Some special linear map from <m>\R^2\to \R^2</m></title>
+    <example xml:id="x-expansion">
     <title>Exmpansion along <m>x</m>-axis.</title>
     <statement>
       <p>
@@ -15,8 +19,8 @@
           T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bmatrix}
         =\begin{bmatrix}a \amp 0\\0 \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>a>1</m>. (Refer to the <xref ref="fig_x-expansion1" />) <figure
-          xml:id="fig_x-expansion1">
+        where <m>&gt;1</m>. (Refer to the <xref ref="fig_x-expansion1" />) 
+        <figure xml:id="fig_x-expansion1">
           <caption><m>x</m>-expansion for <m>a=2</m></caption>
           <image width="80%" source="images/x-expansion.png" />
         </figure>
@@ -32,8 +36,8 @@
           T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bmatrix}
         =\begin{bmatrix}a \amp 0\\0 \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>0\lt a\lt 1</m>. Refer to the <xref ref="fig_x-compression" /> for <m>a=1/2</m>. <figure
-          xml:id="fig_x-compression">
+        where <m>0\lt a\lt 1</m>. Refer to the <xref ref="fig_x-compression" /> for <m>a=1/2</m>. 
+        <figure xml:id="fig_x-compression">
           <caption><m>x</m>-Compression for <m>a=1/2</m></caption>
           <image width="80%" source="images/x-compression.png" />
         </figure>
@@ -49,8 +53,8 @@
           T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bmatrix}
         =\begin{bmatrix}0 \amp 0\\0 \amp b \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>b>0</m>. Refer to <xref ref="fig_y-expansion" /> for <m>b=2</m>. <figure
-          xml:id="fig_y-expansion">
+        where <m>b>0</m>. Refer to <xref ref="fig_y-expansion" /> for <m>b=2</m>.
+         <figure xml:id="fig_y-expansion">
           <caption><m>y</m>-expansion for <m>b=2</m></caption>
           <image width="80%" source="images/y-expansion.png" />
         </figure>
@@ -66,8 +70,8 @@
           T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\by \end{bmatrix}
         =\begin{bmatrix}0 \amp 0\\b \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>0\lt b\lt 1</m>. Refer to <xref ref="fig_y-compression" /> for <m>b=1/2</m>. <figure
-          xml:id="fig_y-compression">
+        where <m>0\lt b\lt 1</m>. Refer to <xref ref="fig_y-compression" /> for <m>b=1/2</m>. 
+        <figure xml:id="fig_y-compression">
           <caption><m>y</m>-compression for <m>b=1/2</m></caption>
           <image width="80%" source="images/y-compression.png" />
         </figure>
@@ -83,8 +87,9 @@
           T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{bmatrix}
         =\begin{bmatrix}1 \amp a\\0 \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>a>0</m>. Refer to <xref ref="fig_x-postive-shear" /> for <m>a=1/4</m>. <figure
-          xml:id="fig_x-postive-shear">
+        where <m>a>0</m>. Refer to <xref ref="fig_x-postive-shear" /> for <m>a=1/4</m>. 
+
+        <figure xml:id="fig_x-postive-shear">
           <caption>Positive <m>x</m>-shear for <m>a=1/4</m></caption>
           <image width="80%" source="images/x-positive-shear.png" />
         </figure>
@@ -101,8 +106,9 @@
           T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{bmatrix}
         =\begin{bmatrix}1 \amp a\\0 \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>a\lt 0</m>. Draw the figure for <m>a=-1/4</m>. <figure
-          xml:id="fig_x-negative-shear">
+        where <m>a\lt 0</m>. Draw the figure for <m>a=-1/4</m>. 
+        
+        <figure xml:id="fig_x-negative-shear">
           <caption>Negative <m>x</m>-shear for <m>a=-1/4</m></caption>
           <image width="80%" source="images/x-negative-shear.png" />
         </figure>
@@ -118,8 +124,9 @@
           T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{bmatrix}
         =\begin{bmatrix}1 \amp 0\\a \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>a>0</m>. Refer to <xref ref="fig_y-postive-shear" /> for <m>a=1/4</m>. <figure
-          xml:id="fig_y-postive-shear">
+        where <m>a>0</m>. Refer to <xref ref="fig_y-postive-shear" /> for <m>a=1/4</m>.
+
+         <figure xml:id="fig_y-postive-shear">
           <caption>Positive <m>y</m>-shear for <m>a=1/4</m></caption>
           <image width="80%" source="images/y-positive-shear.png" />
         </figure>
@@ -136,8 +143,9 @@
           T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{bmatrix}
         =\begin{bmatrix}1 \amp 0\\a \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>a\lt 0</m>. Refer to <xref ref="fig_y-negative-shear" /> for <m>a=-1/4</m>. <figure
-          xml:id="fig_y-negative-shear">
+        where <m>a\lt 0</m>. Refer to <xref ref="fig_y-negative-shear" /> for <m>a=-1/4</m>. 
+        
+        <figure xml:id="fig_y-negative-shear">
           <caption>Negative <m>y</m>-shear for <m>a=-1/4</m></caption>
           <image width="80%" source="images/y-negative-shear.png" />
         </figure>
@@ -153,7 +161,9 @@
         D_a</m> is called a <em>dilation</em> if <m>a>0</m> and a <em>contraction</em> if <m>a\lt 1</m>.)
         Refer to <xref ref="fig_dilation" />
     <m>D_a\colon \R^2\to \R^2</m> with <m>a=2</m> and <m>
-        a=1/2</m>. <figure xml:id="fig_dilation">
+        a=1/2</m>. 
+        
+        <figure xml:id="fig_dilation">
           <caption>Dilations with <m>a=1/4</m> and <m>a=2</m>.</caption>
           <image width="80%" source="images/dialation.png" />
         </figure>
@@ -172,8 +182,9 @@
           y</m>-axis if <m>a,b>1</m> and (ii) <m>T</m> is contraction by a factor <m>a</m> along <m>
         x</m>-axis followed by a factor <m>b</m> along <m>y</m>-axis if <m>0\lt a,b\lt 1</m>. Refer
         to <xref
-          ref="fig_diag-expansion" /> for stretching along <m>x</m> by 2 and <m>y</m>-axes by 1.5. <figure
-          xml:id="fig_diag-expansion">
+          ref="fig_diag-expansion" /> for stretching along <m>x</m> by 2 and <m>y</m>-axes by 1.5. 
+          
+          <figure xml:id="fig_diag-expansion">
           <caption>Stretching along <m>x</m> by 2 and <m>y</m>-axes by 1.5.</caption>
           <image width="80%" source="images/diag-expansion.png" />
         </figure>
@@ -249,7 +260,7 @@
     </slate>
           </interactive>
   </figure>
-
+</subsection> 
 
   <subsection xml:id="subsec-image-tranfromation">
     <title>Image Tranfromation</title>
