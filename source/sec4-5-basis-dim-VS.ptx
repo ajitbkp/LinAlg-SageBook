@@ -210,7 +210,7 @@
       </definition>
 
       
-      <exercise>
+      <exercise xml:id="exer-dim-of-zero-space">
         <statement>
           <p>
             What is the dimension of <m>V=\{0\}</m>, the zero space?

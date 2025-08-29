@@ -447,7 +447,7 @@ Thus <me>
 
   Look at two different coordinates system below. 
 </p>
-      <sidebyside widths="45% 45%" valigns="middle top middle">
+      <sidebyside widths="45% 45%" valigns="middle  middle">
           <figure>
             <caption>Coordinate system w.r.t. basis  <m>\beta_1</m></caption>
             <image source="images/2nd_coordinates"/>
@@ -825,7 +825,7 @@ It is easy to verify that <m>x_\gamma=[I]_\beta^\gamma x_\beta</m>.
     </p>
   </example>
 
-<exercise>
+<exercise xml:id="exer-subspaces-of-R2">
   <statement>
     <p>
       What are all subspaces of <m>\R^2</m> and <m>\R^3</m>?
@@ -833,7 +833,7 @@ It is easy to verify that <m>x_\gamma=[I]_\beta^\gamma x_\beta</m>.
   </statement>
 </exercise>
 
-<exercise>
+<exercise xml:id="exser-subspace-as-null-space">
   <statement>
     <p>
         If <m>W</m> is a subspace of <m>\R^n</m>, then it is null space of some matrix.

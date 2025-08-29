@@ -210,7 +210,7 @@
         </output>
     </sage>
 
- <exercise>
+ <exercise xml:id="exer-sage-VS1">
         <statement>
             <p> Repeat the above example on the vector space <m>\mathbb{R}^6</m>. </p>
         </statement>

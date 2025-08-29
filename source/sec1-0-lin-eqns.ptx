@@ -4,80 +4,104 @@
   <title>Sytem of Linear Equation</title>
 <introduction>
     <p>
-        In daily life we often encounter problems where several unknown quantities are related to each other through linear relations. Such problems naturally lead to a system of linear equations. A system of linear equations consists of several linear equations in the same set of variables. Each equation represents a constraint, and the simultaneous solution of all equations corresponds to finding the values of the unknowns that satisfy all the constraints at once.
-    </p>
-    <p>
-Studying systems of linear equations is fundamental for several reasons. They arise directly in practical applications—for instance, balancing chemical reactions, analyzing electrical networks, studying forces in equilibrium, or modeling data in statistics. Also they form the backbone of Linear Algebra, since the methods developed for their solution lead naturally to the concepts of vector spaces, linear transformations, and matrix theory.
+        In daily life we often encounter problems where several unknown quantities are 
+        related to each other through linear relations. Such problems naturally lead to a 
+        system of linear equations. A system of linear equations consists of several linear 
+        equations in the same set of variables. Each equation represents a constraint, 
+        and the simultaneous solution of all equations corresponds to finding the 
+        values of the unknowns that satisfy all the constraints at once.
     </p>
 
     <p>
-    Before moving to abstract notions of linear algebra, it is important to understand how such systems are represented, how they can be solved.
+        Studying systems of linear equations is fundamental for several reasons. 
+        They arise directly in practical applications—for instance, balancing chemical 
+        reactions, analyzing electrical networks, studying forces in equilibrium, or 
+        modeling data in statistics. Also they form the backbone of Linear Algebra, 
+        since the methods developed for their solution lead naturally to the concepts 
+        of vector spaces, linear transformations, and matrix theory.
     </p>
-    <p>
-    Let us start with real life a problem.
 
+    <p>
+        Before moving to abstract notions of linear algebra, it is important to understand 
+        how such systems are represented, how they can be solved.
+    </p>
+
+    <p>
+      Let us start with some real life example.
     </p>
 </introduction>
 
 
-    <example xml:id="sec1-0-eg1">
-  <statement>
-    <p>
-    A person travels from <m>City\;A</m> to <m>City\;B</m> using a train and a bus.  
-    The train runs at a speed of <m>60</m> km/h while the bus runs at <m>40</m> km/h.  
-    The total journey takes <m>5</m> hours and the total distance covered is <m>240</m> km.  
-    Find how much time the person spent on the train and on the bus. 
-    </p>
-</statement>
+  <example xml:id="sec1-0-eg1">
+    <statement>
+      <p>
+        A person travels from <m>City\;A</m> to <m>City\;B</m> using a train and a bus.  
+        The train runs at a speed of <m>60</m> km/h while the bus runs at <m>40</m> km/h.  
+        The total journey takes <m>5</m> hours and the total distance covered is <m>240</m> km.  
+        Find how much time the person spent on the train and on the bus. 
+      </p>
+    </statement>
    
     <solution>
+      <p>
+        Let <m>x</m> be the time spent on the train (in hours), and  
+        <m>y</m> be the time spent on the bus (in hours).  
+        Then the problem gives us two conditions:
+      <ol>
+      <li>
         <p>
-    Let <m>x</m> be the time spent on the train (in hours), and  
-    <m>y</m> be the time spent on the bus (in hours).  
-    Then the problem gives us two conditions:
-    <ol>
-      <li>Total travel time is <m>5</m> hours:
-        <me>x + y = 5.</me>
+          Total travel time is <m>5</m> hours: <me>x + y = 5.</me>
+        </p>
       </li>
-      <li>Total distance is <m>240</m> km:
-        <me>60x + 40y = 240.</me>
+      <li>
+        <p>
+          Total distance is <m>240</m> km: <me>60x + 40y = 240.</me>
+        </p>
       </li>
     </ol>
-    Thus the system of equations is:
-    <me>
-      \begin{cases}
-      x + y = 5, \\
-      60x + 40y = 240.
-      \end{cases}
-    </me>
-    How do we solve these equations?
-</p>
-<p>
-    From the first equation, <m>y = 5 - x</m>.  
-    Substituting into the second equation, we have 
-    <me>60x + 40(5 - x) = 240.</me>
-    Simplifying this we get <m>60x + 200 - 40x = 240,</m>. This implies     <m>x = 2.</m>
-    Hence, <m>y = 5 - 2 = 3.</m>
-</p>
-    <p>Therefore, the person spent <m>2</m> hours on the train and <m>3</m> hours on the bus.</p>
+      Thus the system of equations is:
+        <me>
+          \begin{cases}
+          x + y = 5, \\
+          60x + 40y = 240.
+          \end{cases}
+        </me>
+        How do we solve these equations?
+      </p>
+    
+      <p>
+      From the first equation, <m>y = 5 - x</m>.  
+      Substituting into the second equation, we have 
+      <me>60x + 40(5 - x) = 240.</me>
+      Simplifying this we get <m>60x + 200 - 40x = 240,</m>. This implies     <m>x = 2.</m>
+      Hence, <m>y = 5 - 2 = 3.</m>
+    </p>
+
+    <p>
+      Therefore, the person spent <m>2</m> hours on the train and <m>3</m> hours on the bus.
+    </p>
   </solution>
   </example>
-<p>
-   The above problem was easy to formaulate and solve. What if the problem involves more variables?  Condsider the following situation now.
-</p>
+  <p>
+   The above problem was easy to formaulate and solve. What if the problem involves 
+   more variables?  Condsider the following situation now.
+  </p>
 
 <example xml:id="sec1-0-eg2">
      <statement>
-    A traveler goes from <m>City\;A</m> to <m>City\;B</m> in three legs:
-    by car at <m>50</m> km/h, by train at <m>80</m> km/h, and by ferry at <m>20</m> km/h.
-    The total travel time is <m>10</m> hours, and the total distance covered is <m>520</m> km.
-    It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.
+      <p>
+        A traveler goes from <m>City\;A</m> to <m>City\;B</m> in three legs:
+        by car at <m>50</m> km/h, by train at <m>80</m> km/h, and by ferry at <m>20</m> km/h.
+        The total travel time is <m>10</m> hours, and the total distance covered is <m>520</m> km.
+        It is also known that the time on the train equals the sume of time in the car and in ferry. 
+        Formulate this problem and fine the time (in hours) spent on each mode of transport.
+      </p>
   </statement>
 
   <solution>
     <p>
-        Let <m>x</m>, <m>y</m>, and <m>z</m> denote the hours spent by car, train, and ferry, respectively.
-    Then the conditions give:
+        Let <m>x</m>, <m>y</m>, and <m>z</m> denote the hours spent by car, train, and ferry, 
+        respectively. Then the conditions give:
     <ol>
       <li>Total time:
         <me>x + y + z = 6.</me>
@@ -98,6 +122,7 @@ Studying systems of linear equations is fundamental for several reasons. They ar
       \end{cases}
     </me>
   </p>
+
   <p>
     It is easy to solve the above system.   
     It turns out that <m>x = 2, y= 5</m> and <m>z = 3</m>.
@@ -107,9 +132,7 @@ Studying systems of linear equations is fundamental for several reasons. They ar
 </example>
 
 <example xml:id="chemical-reaction-eg1">
-  <title>Balancing Chemical Reaction Equation</title>
-  
-  
+  <title>Balancing Chemical Reaction Equation</title> 
   <statement>
     <p>
     The combustion of octane (<m>C_8H_{18}</m>) is a classical example of a hydrocarbon fuel 
@@ -117,8 +140,10 @@ Studying systems of linear equations is fundamental for several reasons. They ar
     <me>
     C_8H_{18} + O_2 \to CO_2 + H_2O.
   </me>
-Balancing this  chemical equation can be expressed as solving a 
-system of linear equations. Let us carefully set this up for the combustion of octane:
+    Balancing this  chemical equation can be expressed as solving a system of linear equations. 
+    Let us carefully set this up for the combustion of octane:
+</p>
+
 <p>
   This amounts to finding <m>x,y,z,w</m> such that 
   <me>
@@ -138,7 +163,6 @@ By solving the above equations one of the soltutions is given by
  <me>
         2C_8H_{18} + 25O_2 \to 16CO_2 + 18H_2O.
   </me>
-</p>  
 </p>
   </statement>
 </example>
@@ -154,23 +178,27 @@ By solving the above equations one of the soltutions is given by
       Consider the figure below <xref ref="taxi_fig1"/>. Vertices are 
       various locations at which taxies are parked. The edges are directed with 
       labels. 
-    <figure xml:id="taxi_fig1">
-	<sidebyside width="80%">
-	  <image source="images/taxi_fig1.png" />
-	</sidebyside>
-	 <caption>Taxi distributions between 5 locations.
-  </caption>
-</figure>
-For example arrow going from location 4 to 1 has label 
+    </p>
+      <figure xml:id="taxi_fig1">
+      <sidebyside width="80%">
+        <image source="images/taxi_fig1.png" />
+      </sidebyside>
+      <caption>Taxi distributions between 5 locations.
+      </caption>
+      </figure>
+      
+      <p>
+        For example arrow going from location 4 to 1 has label 
       <m>7/20</m>. This means <m>7/20^{th}=35\%</m> of the taxies taken from location 
       <m>4</m> comes to location <m>1</m> at the end of the day.  
     </p>
+
     <p>
       Now suppose a company is running this taxi services and has certain 
       number of taxies. The above proportation of distribution has been otained 
       from some past experience. Suppose the comany has a total, <m>N</m> taxies
-    and wish to find out how many taxies he/she should place at various location 
-    so that his business runs smoothly.  How to formulate this problem? 
+      and wish to find out how many taxies he/she should place at various location 
+      so that his business runs smoothly.  How to formulate this problem? 
     </p>
 
     <p>
@@ -184,7 +212,7 @@ For example arrow going from location 4 to 1 has label
       <me>
         1/4x_0 + 1/10x_1 + 3/20x_2 + 1/10x_3 + 3/10x_4.
       </me>
-      Similarly the number of taxies at various locations are as follows
+      Similarly the number of taxies at various locations are as follows:
       <ul>
         <li>
           <p>
@@ -207,7 +235,9 @@ For example arrow going from location 4 to 1 has label
           </p>
         </li>
       </ul>
-  
+    </p>
+
+    <p>
     Ideally, the company would want the same number of taxies to come back at 
     each location everyday.  How to find these <m>x_i's</m>? It is easy to see
     that this amount to solving the following system of linear equations
@@ -234,35 +264,36 @@ x_{0} \\ x_{1} \\ x_{2} \\ x_{3} \\x_{4}
   The above equation can be written as 
   <me>
     \left(\begin{array}{rrrrr}
-\frac{1}{4} \amp \frac{1}{10} \amp \frac{3}{20} \amp \frac{1}{10} \amp \frac{3}{10} \\
-\frac{1}{5} \amp \frac{1}{10} \amp \frac{1}{5} \amp \frac{1}{4} \amp 0 \\
-\frac{3}{20} \amp \frac{1}{5} \amp \frac{1}{2} \amp \frac{1}{10} \amp \frac{7}{20} \\
-\frac{7}{20} \amp \frac{1}{4} \amp 0 \amp \frac{7}{20} \amp \frac{1}{10} \\
-\frac{1}{20} \amp \frac{7}{20} \amp \frac{3}{20} \amp \frac{1}{5} \amp \frac{1}{4}
-\end{array}\right) 
-\left(\begin{array}{rrrrr}
-x_{0} \\ x_{1} \\ x_{2} \\ x_{3} \\x_{4}
-\end{array}\right)=\left(\begin{array}{rrrrr}
-x_{0} \\ x_{1} \\ x_{2} \\ x_{3} \\x_{4}
-\end{array}\right).
+    \frac{1}{4} \amp \frac{1}{10} \amp \frac{3}{20} \amp \frac{1}{10} \amp \frac{3}{10} \\
+    \frac{1}{5} \amp \frac{1}{10} \amp \frac{1}{5} \amp \frac{1}{4} \amp 0 \\
+    \frac{3}{20} \amp \frac{1}{5} \amp \frac{1}{2} \amp \frac{1}{10} \amp \frac{7}{20} \\
+    \frac{7}{20} \amp \frac{1}{4} \amp 0 \amp \frac{7}{20} \amp \frac{1}{10} \\
+    \frac{1}{20} \amp \frac{7}{20} \amp \frac{3}{20} \amp \frac{1}{5} \amp \frac{1}{4}
+    \end{array}\right) 
+    \left(\begin{array}{rrrrr}
+    x_{0} \\ x_{1} \\ x_{2} \\ x_{3} \\x_{4}
+    \end{array}\right)=\left(\begin{array}{rrrrr}
+    x_{0} \\ x_{1} \\ x_{2} \\ x_{3} \\x_{4}
+    \end{array}\right).
   </me>
   We can write it in compact form as <m>AX=X</m> where
   <me>
     A = \left(\begin{array}{rrrrr}
-\frac{1}{4} \amp \frac{1}{10} \amp \frac{3}{20} \amp \frac{1}{10} \amp \frac{3}{10} \\
-\frac{1}{5} \amp \frac{1}{10} \amp \frac{1}{5} \amp \frac{1}{4} \amp 0 \\
-\frac{3}{20} \amp \frac{1}{5} \amp \frac{1}{2} \amp \frac{1}{10} \amp \frac{7}{20} \\
-\frac{7}{20} \amp \frac{1}{4} \amp 0 \amp \frac{7}{20} \amp \frac{1}{10} \\
-\frac{1}{20} \amp \frac{7}{20} \amp \frac{3}{20} \amp \frac{1}{5} \amp \frac{1}{4}
-\end{array}\right)
-\quad \text{and} \quad X=\left(\begin{array}{rrrrr}
-x_{0} \\ x_{1} \\ x_{2} \\ x_{3} \\x_{4}
-\end{array}\right).
+      \frac{1}{4} \amp \frac{1}{10} \amp \frac{3}{20} \amp \frac{1}{10} \amp \frac{3}{10} \\
+      \frac{1}{5} \amp \frac{1}{10} \amp \frac{1}{5} \amp \frac{1}{4} \amp 0 \\
+      \frac{3}{20} \amp \frac{1}{5} \amp \frac{1}{2} \amp \frac{1}{10} \amp \frac{7}{20} \\
+      \frac{7}{20} \amp \frac{1}{4} \amp 0 \amp \frac{7}{20} \amp \frac{1}{10} \\
+      \frac{1}{20} \amp \frac{7}{20} \amp \frac{3}{20} \amp \frac{1}{5} \amp \frac{1}{4}
+      \end{array}\right)
+      \quad \text{and} \quad X=\left(\begin{array}{rrrrr}
+      x_{0} \\ x_{1} \\ x_{2} \\ x_{3} \\x_{4}
+      \end{array}\right).
   </me>
   
 </p>
   </statement>
 </example>
+
 <question>
   <statement>
     <p>
@@ -273,18 +304,19 @@ x_{0} \\ x_{1} \\ x_{2} \\ x_{3} \\x_{4}
     </p>
   </statement>
 </question>
-<remark>
+
+<remark xml:id="rem-taxi-examle">
   <statement>
     <p>
-Note that the preoblem in <xref ref="taxi-distribution-eg1"/> involves 
- only 5 depos. What if we have hundreds of depos? How do we solve such problems?
- In fact, google seach uses millions by million equations. It turns out that 
- solving this problem amounts to finding large power of the 
- coefficient matrix <m>A</m> whihc is not an easy task even for 
- poweful computers. This is acheived by notion of diagonalization 
- whihc and numerical computaions of eigenvalues and eigenvectors of a large 
-size matrix. We shall see several such applications in later chapters.
-</p>
+      Note that the preoblem in <xref ref="taxi-distribution-eg1"/> involves 
+      only 5 depos. What if we have hundreds of depos? How do we solve such problems?
+      In fact, google seach uses millions by million equations. It turns out that 
+      solving this problem amounts to finding large power of the 
+      coefficient matrix <m>A</m> whihc is not an easy task even for 
+      poweful computers. This is acheived by notion of diagonalization 
+      whihc and numerical computaions of eigenvalues and eigenvectors of a large 
+      size matrix. We shall see several such applications in later chapters.
+    </p>
   </statement>
 </remark>
 
@@ -293,16 +325,17 @@ size matrix. We shall see several such applications in later chapters.
   involving  certain variables. Think about the following questions before making 
   a formal definition of system of linear equations.
 </p>
+
 <question>
 <statement>
   <p>
-How will you write one linear equation involving 20 variables? 
-May be you can name the variables <m>x, y,z,\alpha, \beta </m> etc    
+    How will you write one linear equation involving 20 variables? 
+    May be you can name the variables <m>x, y,z,\alpha, \beta </m> etc    
   </p>
+
   <p>
-How will you 
-write one linear equation involving as many variables as number of 
-active websites, say <m>n</m> on this date?  
+    How will you  write one linear equation involving as many variables as number of 
+    active websites, say <m>n</m> on this date?  
 </p>
 <p>
   How will you write <m></m> linear equations in <m>n</m> variables where <m>n</m> when 
@@ -310,9 +343,12 @@ active websites, say <m>n</m> on this date?
 </p>
 </statement> 
 </question>
+<p>
+  The above series of questions leads to requirement of double indexing for defining a system
+  of linear equations.
+</p>
 
 <definition xml:id="def-linear-system">
-      <statement>
         <p>
           A system of linear equations is a finite collection of
           linear equations. Consider a system of <m>m</m> linear equations in 
@@ -326,14 +362,15 @@ active websites, say <m>n</m> on this date?
             </mdn>
             Here <m>a_{ij}\in \R</m> for <m>1\leq i\leq m,1\leq j\leq n</m> and 
             <m>b_i\in \R</m> for <m>1\leq i\leq m</m>.  
-   
+          </p>
+
+          <p>
             The above system of linear equations can be represented in compact form using 
             the summation notation as follows:
             <men xml:id="linear-system-eq1-1">
               \sum_{j=1}^n a_{ij}x_j =b_i,\quad 1\leq i\leq m
             </men>.    
         </p>
-      </statement>
     </definition>
 <p>
     Next let us define, what is meaning of a solution and the solution set of the 
@@ -349,7 +386,8 @@ active websites, say <m>n</m> on this date?
         real numbers <m>n</m>-times. If we denote the solution set by 
         <m>S</m>, then 
         <me>S=\{(x_1,\ldots,x_n)\in \R^n:\sum_{j=1}^n a_{ij}x_j =b_i,\quad 1\leq i\leq m\}</me>.
-        If the solution set is nonempty then the system is said to be <alert>consistent</alert> and otherwise it is said to be <alert>inconsistent.</alert>
+        If the solution set is nonempty then the system is said to be <alert>consistent</alert> and 
+        otherwise it is said to be <alert>inconsistent.</alert>
         </p>
       </definition>
 
@@ -365,14 +403,15 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
 \end{pmatrix}. 
         </men>
       </p>
+
       <p>
         The matrix <m>A</m> is called the <alert>coefficient
           matrix</alert>, <m> B</m>  is called the <alert>column matrix of constants or
             known terms</alert> and <m>X</m> is called the <alert>column matrix of the
               unknowns.</alert>
       </p>
-      <p>
-              
+
+      <p>      
         All the essential data of the system can be gathered in one matrix
         by inserting the column matrix of the constants to the coefficient
         matrix as <m>n+1</m>-th column. This matrix is called the <alert>augmented or enlarged
@@ -385,25 +424,22 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
 
       <p>
         The augmented matrix of the above system <m>AX=B</m> is given by 
-<men>[A~|~B]=
-\begin{pmatrix}
-	a_{11} \amp a_{12} \amp \cdots \amp a_{1n} \amp | \amp b_1\\
-	a_{21} \amp a_{22} \amp \cdots \amp  a_{2n} \amp | \amp b_2\\
-	\vdots \amp \vdots \amp \ddots \amp \vdots \amp \vdots \amp \vdots\\
-	a_{m1} \amp a_{m2} \amp \cdots \amp a_{mn} \amp | \amp b_m\\
-\end{pmatrix}.
-</men>
-      
-</p>
+        <men>[A~|~B]=
+        \begin{pmatrix}
+          a_{11} \amp a_{12} \amp \cdots \amp a_{1n} \amp | \amp b_1\\
+          a_{21} \amp a_{22} \amp \cdots \amp  a_{2n} \amp | \amp b_2\\
+          \vdots \amp \vdots \amp \ddots \amp \vdots \amp \vdots \amp \vdots\\
+          a_{m1} \amp a_{m2} \amp \cdots \amp a_{mn} \amp | \amp b_m\\
+        \end{pmatrix}.
+        </men>
+      </p>
 
     <definition xml:id="def-equivalent-systems">
-      <statement>
         <p>
           Two systems of linear equations are
           called <alert>equivalent</alert> if and only if they have the same set
           of solutions.           
         </p>
-      </statement>
     </definition>
 
      <p>
@@ -413,14 +449,12 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
 
        <p> Geometrically, solving a system of linear equations in two (or three)
         unknowns/variables is equivalent to determining whether or not a family of lines (or
-        planes) has a common point of intersection.
-        
+        planes) has a common point of intersection.    
      </p>
     
      <remark>
       <statement>
         <p>
-          
       Let  <m>A</m> be <m>n\times n</m> real matrix whose columns are 
       <m> a_1,\ldots, a_n</m> and <m>x=\begin{pmatrix}x_1\amp\cdots \amp x_n\end{pmatrix}^T</m>. 
       Then <me>Ax=x_1a_1+x_2a_2+\cdots +a_nx_n.</me> 
@@ -453,10 +487,12 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
     </p>
       </statement>
      </remark>
-    
+    <p>
      Our goal in this chapter is to find the solution set <m>S</m> of a system of 
      equations <m>Ax=b</m>. Let us first find solution set involving one equation involving one and 
      two variables.
+    </p>
+
      <example xml:id="one-eqn-one-var">
       <statement>
         <p>
@@ -466,19 +502,19 @@ B=\begin{pmatrix}b_1\\b_2\\ \vdots\\ b_m
           </men>
           where, <m>a</m> and <m>b</m> are real numbers.
         </p>
+        
         <p>
           How to find the solution set of this  equation.  We need to find 
           <m>x\in\R</m> such that the equation holds. Does it mean <m>x=b/a</m>? What if <m>a=0</m>? 
           Thus we need to consider different cases on <m>a</m>. If <m>S</m> is the solution set of 
           this equation then we have   
-		<me>
-      S = \begin{cases}
-      \emptyset, \amp \text{ if }  a=0\\
-      \R, \amp \text{ if } a=0, b=0\\
-      \{b/a\}, \amp \text{ if } a\neq 0\\
-      \end{cases}.
-    </me>
-  
+          <me>
+            S = \begin{cases}
+            \emptyset, \amp \text{ if }  a=0\\
+            \R, \amp \text{ if } a=0, b=0\\
+            \{b/a\}, \amp \text{ if } a\neq 0\\
+            \end{cases}.
+          </me>
         </p>
       </statement>
      </example>
@@ -532,7 +568,7 @@ it?
    <question>
     <statement>
       <p>
-      Write the solution set of ne linear equation in three variables <m>ax+by+cz=d</m>, where <m>a,b,c,d\in\R</m>. 
+      Write the solution set of tne linear equation in three variables <m>ax+by+cz=d</m>, where <m>a,b,c,d\in\R</m>. 
       </p>
     </statement>
    </question>
@@ -540,9 +576,8 @@ it?
    <remark>
   <statement>
     <p>
-    Let  at least one of the <m>a,b, c</m>,
-be nonzero, the solution set <m>S=\{(x,y,z)\in\R^3: ax+by+cz=d\}</m> is a
-plane in <m>\R^3</m>.
+    Let  at least one of the <m>a,b, c</m>, 
+    be nonzero, the solution set <m>S=\{(x,y,z)\in\R^3: ax+by+cz=d\}</m> is a plane in <m>\R^3</m>.
     </p>
   </statement>  
   </remark>

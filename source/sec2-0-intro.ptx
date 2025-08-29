@@ -27,7 +27,8 @@ column vector.
     <title>Properties addition and multiplication in <m>\R^n</m></title>
     <statement>
         <p> 
-            We list the properties of vector addition and scalar multiplication in <m>\R^n</m> which can be easily proved. I encourage the readers to prove them.
+            We list the properties of vector addition and scalar multiplication in <m>\R^n</m> 
+            which can be easily proved. I encourage the readers to prove them.
         </p>
         <ol marker="(i)">
          <li>
@@ -55,7 +56,9 @@ column vector.
     </statement>
 </proposition>
 
-<p> The set <m>\R^n</m> with addition and scalar multiplication along with the above eight properties is called a <alert>vector space</alert> over <m>\R</m>.
+<p> 
+    The set <m>\R^n</m> with addition and scalar multiplication along with the above 
+    eight properties is called a <alert>vector space</alert> over <m>\R</m>.
 </p>
 
 <definition xml:id="def-ch2-0-vector-subspace">
@@ -85,7 +88,7 @@ subspace then <m>0\in V</m>.
 
     <example>
         <title>Examples of vector subspaces in <m>\R^n</m></title>
-        <p>
+         <p>
         <ol marker="(i)">  
          <li>
         <p> <m>\{0\}</m> is a vectors subspace of <m>\R^n</m></p>
@@ -98,7 +101,7 @@ subspace then <m>0\in V</m>.
          <li><p> Any plane passing through origin in <m>\R^3</m> is a subspace of <m>\R^3</m>.</p> 
         </li>
     </ol>
-</p> 
+    </p> 
     </example>
 
     <example>

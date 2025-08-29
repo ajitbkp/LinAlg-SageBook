@@ -8,43 +8,46 @@ precise properties can be deduced by applying elementary row operations to the t
 matrix and then transposing the result. In particular, if <m>F</m> is the elementary matrix corresponding to
 the elementary column operation <m>f</m> then <m>f(A) = AF</m>. Note that, because transposition changes the
 order of a product, elementary column operations correspond to post-multiplication by an
-elementary matrix. Two matrices that are related by a sequence of elementary column operations
-are said to be column equivalent and two matrices <m>A</m> and <m>B</m> are column equivalent if and only if there
+elementary matrix. 
+</p>
+
+<p>
+Two matrices that are related by a sequence of elementary column operations
+are said to be <em>column equivalent</em>. Two matrices <m>A</m> and <m>B</m> are column equivalent if and only if there
 exists a non singular matrix <m>Q</m> such that <m> B = AQ</m>.
 </p>
 
 <example xml:id="eg-1-2-1">
   <statement>
     <p>
-     Use the columns operations to find the inverse of the matrix 
-  <m>\begin{pmatrix}2\amp  1\amp 1\amp 1\\1\amp 0\amp 1\amp 1\\1\amp 1\amp -2\amp 1\\1\amp 1\amp 1\amp -1\end{pmatrix}</m>
-  by appending the <m>4\times 4</m> identity matrix at the bottom and appyling the columns aperation in Sage.   
-    </p>
-  
-<p>
-  Let us look at how we can achieve this in Sage.
-</p>
+      Let
+  <me>
+    A=\left(\begin{array}{rrrrrrrr}
+43 \amp -94 \amp -48 \amp 19 \amp -87 \amp -46 \amp 21 \amp 15 \\
+-10 \amp 30 \amp -22 \amp -48 \amp 142 \amp -84 \amp -54 \amp 38 \\
+33 \amp -85 \amp -169 \amp 15 \amp -13 \amp -29 \amp 44 \amp 12 \\
+11 \amp -6 \amp 98 \amp 12 \amp -53 \amp -29 \amp -22 \amp 2 \\
+-1 \amp -33 \amp -151 \amp -32 \amp 42 \amp 26 \amp 33 \amp 13 \\
+15 \amp -43 \amp -139 \amp 13 \amp 16 \amp -7 \amp 36 \amp 2
+\end{array}\right).
+  </me>
+  Apply to column operation to find a column equivalent matrix of <m>A</m>.
 
     <sage>
       <input>
-        A = matrix(QQ,[[2,1,1,1],[1,0,1,1],[1,1,-2,1],[1,1,1,-1]])
-        Aug = A.T.augment(identity_matrix(4),subdivide=True);Aug.T
-        Aug1 = Aug.T
-        Aug1.rref()
+        A = matrix(QQ,[
+        [43, -94, -48, 19, -87, -46, 21, 15],
+        [-10, 30, -22, -48, 142, -84, -54, 38],
+        [33, -85, -169, 15, -13, -29, 44, 12],
+        [11, -6, 98, 12, -53, -29, -22, 2],
+        [-1, -33, -151, -32, 42, 26, 33, 13],
+        [15, -43, -139, 13, 16, -7, 36, 2]])
+        A.T.rref().T
       </input>
-      <output>
-        [1 0 0 0]
-        [0 1 0 0]
-        [0 0 1 0]
-        [0 0 0 1]
-        [-------]
-        [0 0 0 0]
-        [0 0 0 0]
-        [0 0 0 0]
-        [0 0 0 0] 
+      <output> 
       </output>
     </sage>
-
+  </p>
 </statement>
 </example>
 

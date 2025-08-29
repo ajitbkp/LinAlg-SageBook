@@ -61,7 +61,8 @@ in <m>n</m> unknowns, where <m>m \lt n</m> has infinitely many nontrivial soluti
     equtions.
 </p>
 
-<exercise>
+<exercise xml:id="exer-hom-system1">
+    <statement>
   <p>
 Let <m>X_1</m> and <m>X_2</m> be two solutions of the homogeneous system <m>AX=0</m> and <m>Y_1, Y_2</m> 
 solutions of the non homogeneous sytem <m>AX=B</m>. Then show the following 
@@ -84,6 +85,7 @@ solutions of the non homogeneous sytem <m>AX=B</m>. Then show the following
     </li>
 </ol>   
 </p>
+</statement>
 </exercise>
 <p>
     We would

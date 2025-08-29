@@ -115,7 +115,7 @@
       </me>
     </p>
 
-<exercise>
+<exercise xml:id="exer-Fibonacci1">
       <statement>
         <p> Show that <me>\displaystyle\lim_{n\to
     \infty}\dfrac{F_{n+1}}{F_n}=\frac{1+\sqrt{5}}{2}=\varphi.
@@ -431,7 +431,7 @@ show(vf+trajectories+sol_curves)
           
         </output>
       </sage>
-      <exercise>
+      <exercise xml:id="exer-soln-linear-ode1">
       <statement>
         <p> What will be the solution of <md>
             <mrow>x'=\amp -5x+2y</mrow>
@@ -1078,7 +1078,7 @@ show(vf+trajectories+sol_curves)
     </example>
 
 
-    <exercise>
+    <exercise xml:id="exer-diagonalization1">
       <statement>
         <p> Suppose <m>D</m> is a diagonal matrix given by <m>D= \left(\begin{array}{rrr} 1 \amp 0
           \amp 0 \\ 0 \amp 0.3 \amp 0 \\ 0 \amp 0 \amp 0.2 \end{array} \right)</m> and <m>v\in \R^3</m>.
@@ -1093,7 +1093,7 @@ show(vf+trajectories+sol_curves)
       </statement>
     </exercise>
 
-    <exercise>
+    <exercise xml:id="exer-fishes1">
       <statement>
         <p> 132 fishes are placed in a box with nine rooms. See <xref ref="mouse1">Figure</xref>. </p>
 

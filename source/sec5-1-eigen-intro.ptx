@@ -4,7 +4,7 @@
   <title>Eigenvalues and Eigenvectors</title>
 <introduction>
   <p>
-    In this section we define the notion of eigenvalues and eigenvectors and look at some of its properties.
+    In this chapter we define the notion of eigenvalues and eigenvectors and look at some of its properties.
     It has several real life applications.   We shall deal with some of them in later sections.
   </p>
 
@@ -69,8 +69,9 @@
   eigenvector and eigenvalues.
 </p>
 </introduction>   
-
-
+<subsection xml:id="subsec-egenvalues-eigencecs">
+  <title>Eigenvalues and Eigenvectors</title>
+  
         <definition xml:id="def-eigenvector"><title>Eigenvalues and Eigenvectors</title>
                
             <statement>
@@ -142,7 +143,13 @@
           <remark>
             <p>
               If <m>\lambda</m> is an eigenvalue of <m>A</m> with corresponding eigenvector <m>v\neq 0</m>.
-              Then any scalar multiple of <m>v</m> is also an eigenvector corresponding to the same eigenvalue <m>\lambda</m>.
+              Then any scalar multiple of <m>v</m> is also an eigenvector corresponding to the same 
+              eigenvalue <m>\lambda</m>.  </p>
+              <p>
+                If <m>Av=\lambda v</m>, then 
+                <me>
+                  A(\alpha v)=\alpha Av=\alpha \lambda v =\lambda (\alpha ).
+                </me>
             </p>
           </remark>
 
@@ -167,11 +174,13 @@
           </p>
 
           <p>
-            We can write <m>\det(A-\lambda I)=0</m> as <m>\det(A-\lambda I)=\lambda^n-c_1\lambda^{n-1}+c_2\lambda^{n-2}-\cdots+(-1)^nc_n=0</m>.
+            We can write <m>\det(A-\lambda I)=0</m> as 
+            <me>\det(A-\lambda I)=\lambda^n-c_1\lambda^{n-1}+c_2\lambda^{n-2}-\cdots+(-1)^nc_n=0.
+            </me>
             If <m>\lambda_1,\ldots, \lambda_n</m> are roots of the characteristics equation,
             then using the theory of equations one can show that
             <mdn>
-              <mrow>\lambda_1+\cdots+\lambda_n\amp = c_1={ trace(A)}</mrow>
+              <mrow>\lambda_1+\cdots+\lambda_n\amp = c_1={\rm trace}(A)</mrow>
                 <mrow> \lambda_1\lambda_2+\cdots +\lambda_{n-1}\lambda_n \amp =  c_2</mrow>
                 <mrow  number="no"> \vdots \amp </mrow>
                 <mrow> \lambda_1\lambda_2\cdots\lambda_n \amp = c_n = \det(A)</mrow>
@@ -347,21 +356,26 @@
                 The dimension of <m>E_\lambda</m> is called the <em>geometric multiplicity</em> of <m>A</m>.
               </p>
               <p>
-                Let <m>\det{(x I -A)}=(x-\lambda_1)^{m_1}(x-\lambda_21)^{m_2}\cdots (x-\lambda_k)^{m_k}</m>.
+                Let <m>\det{(x I -A)}=(x-\lambda_1)^{m_1}(x-\lambda_2)^{m_2}\cdots (x-\lambda_k)^{m_k}</m>.
                 Then <m>\lambda_i</m> are eigenvalue of <m>A</m> with multiplicity <m>m_i</m>,
                 called the <em>algebraic multiplicity</em> of <m>\lambda_i</m>.
               </p>
             </statement>
           </definition>
-
-          <remark>
-            <p>
-              Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity.
-              That is, if <m>m</m> is the geometric multiplicity of <m>\lambda</m> then <m>m\leq \dim{(E_\lambda)}</m>.
+          <p>
+            We mention, the following theorem without proof.
+          </p>
+          <theorem>
+            <statement>
+              <p>
+              Geometric multiplicity of an eigenvalue is always less than or equals to its 
+              algebraic multiplicity. That is, if <m>m</m> is the geometric multiplicity of 
+              <m>\lambda</m> then <m>m\leq \dim{(E_\lambda)}</m>.
             </p>
-          </remark>
+            </statement>
+          </theorem>
 
-          <exercise>
+          <exercise xml:id="exer-gem-multiplicity1">
             <statement>
               <p>
                 The geometric multiplicity of an eigenvalue <m>\lambda</m> is the nullity of
@@ -376,7 +390,7 @@
                 Consider the matrix <m>A=\begin{pmatrix}-1\amp  1 \amp  0\\0 \amp  -1 \amp  1\\0 \amp  0 \amp  -1 \end{pmatrix}</m>.
                 It is easy to check that <m>\det{(xI-A)}=(x+1)^3</m>.
                 That is, <m>A</m> has only one eigenvalue of
-                <m>\lambda =-1</m> of geometric multiplicity 3.
+                <m>\lambda =-1</m> of algebraic multiplicity 3.
                 It is easy to see that <m>e_3=(0,0,1)</m> is an eigenvector corresponding to <m>\lambda=-1</m>.
                 We have
                 <me>
@@ -446,7 +460,7 @@
               </li>
               <li>
                 <p>
-                  The rank if a matrix a square matrix <m>A</m> is is the number of nonzero eigenvalues of <m>A</m>.
+                  The rank if a square matrix <m>A</m> is is the number of nonzero eigenvalues of <m>A</m>.
                 </p>
               </li>
               <li>
@@ -606,7 +620,7 @@
             </statement>
           </example>
 
-          <exercise>
+          <exercise xml:id="exer-Cayley-Hamilton1">
             <statement>
               <p>
                 (i) Consider the matrix <m>A = \begin{pmatrix}3 \amp -2 \\-4\amp 3 \end{pmatrix}</m>.
@@ -661,7 +675,7 @@
             </statement>
           </example>
 
-          <exercise>
+          <exercise xml:id="exser-spectral-radius1">
             <statement>
               <p>
                 Find the spectral radius of
@@ -724,7 +738,7 @@
             </statement>
           </example>
           
-          <exercise>
+          <exercise xml:id="exer-eigen-positive-definite">
           <statement>
             <p>
               If <m>A</m> is a positive definite matrix then all its eigenvalues are positive.
@@ -733,7 +747,7 @@
           </exercise>
 
          
-          <exercise>
+          <exercise xml:id="exer-eigen-negative-definite">
             <statement>
               <p>
                 If <m>A</m> is a negative definite matrix then all its eigenvalues are negative.
@@ -780,7 +794,7 @@
             </statement>
           </example>
 
-          <exercise>
+          <exercise xml:id="exer-eigen-positive-definite2">
             <statement>
               <p>
                 Let <m>A=\begin{pmatrix}2 \amp -1 \amp 0\\-1\amp 2\amp -1\\0\amp -1\amp 2 \end{pmatrix}</m>.
@@ -791,5 +805,7 @@
       <p>
         Note that if <m>A</m> is not a symmetric matrix, then the Sylvester's criteria cannot be used to check positive definiteness. For, condider the matrix <m>A=\begin{pmatrix} 1 \amp 0\\-3 \amp 1\end{pmatrix}</m>. It is easy to see that all principal minors of <m>A</m> are positive. For <m>u=\begin{pmatrix}1\\2\end{pmatrix}</m>, <m>u^TAu=-1</m>, however for <m>v=\begin{pmatrix}3\\1\end{pmatrix}</m>, <m>v^TAv=1</m>. 
       </p>
-        </section>
+     
+</subsection>
+   </section>
      

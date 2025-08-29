@@ -220,7 +220,7 @@
       </statement>
     </example>
     
-    <exercise>
+    <exercise xml:id="exer-linspan-of-line">
       <statement>
         <p>
           Suppose <m>L</m> is a line in the plane?
@@ -229,7 +229,7 @@
       </statement>
     </exercise>
 
-<exercise>
+<exercise xml:id="exer-smallest-subspace-emptyset"> 
   <p>
   What is the smallest subspace conatining the empty set <m>\emptyset</m>?
   </p>
@@ -240,7 +240,7 @@
   </hint>
 </exercise>
 
-<exercise>
+<exercise xml:id="exer-smallest-subspace-as-intersection">
   <p>
   Let <m>V</m> be a vector space over <m>\R</m> and <m>S\subset V</m>. Let <m>{\cal S}</m> be the 
   set of all subspaces of <m>V</m> containing <m>S</m>. That is 
