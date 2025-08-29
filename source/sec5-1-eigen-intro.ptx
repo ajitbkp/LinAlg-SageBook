@@ -4,10 +4,38 @@
   <title>Eigenvalues and Eigenvectors</title>
 <introduction>
   <p>
-    In this chapter we define the notion of eigenvalues and eigenvectors and look at some of its properties.
-    It has several real life applications.   We shall deal with some of them in later sections.
+    In this chapter, we extend our study of linear transformations to the concepts of 
+    <term>eigenvalues</term> and <term>eigenvectors</term>, essential for understanding 
+    how certain vectors retain their direction under transformation—merely being scaled 
+    by a scalar factor.
   </p>
 
+  <p>
+    These ideas lie at the heart of many core themes in linear algebra. In particular, 
+    they lay the mathematical foundation for:
+  </p>
+
+  <ul>
+    <li><em>Diagonalization</em> of matrices—simplifying linear transformations to their most transparent form.</li>
+    <li><em>Dynamical systems</em>, including Markov chains and population models, where long-term behavior is driven by dominant eigenvalues.</li>
+    <li>Methods for solving <em>systems of linear differential equations</em> via eigen-decomposition.</li>
+    <li>Dimensional reduction techniques such as <em>Principal Component Analysis (PCA)</em>, where eigenvalues guide us in identifying principal directions.</li>
+    <li>Web algorithms such as <em>PageRank</em>, leveraging eigenvectors to reveal stable structures.</li>
+  </ul>
+
+  <p>
+    Throughout the chapter, we will combine conceptual insight with computational 
+    exploration using <c>SageMath</c>, helping you see not only 
+    <q>what</q> eigenvalues and eigenvectors are, but also <q>how</q> to compute them 
+    effectively and <q>where</q> they matter in applications that span mathematics and 
+    applied sciences.
+  </p>
+
+</introduction>   
+<subsection xml:id="subsec-egenvalues-eigencecs">
+  <title>Eigenvalues and Eigenvectors</title>
+
+  
   <p>
   Suppose <m>T</m> is a linear map from a vector space <m>V</m> to itself. 
   For a given <m>v</m>, <m>T(v)</m> is a vector in <m>V</m>. 
@@ -68,10 +96,7 @@
 <p> These exploration leads to the following definition of 
   eigenvector and eigenvalues.
 </p>
-</introduction>   
-<subsection xml:id="subsec-egenvalues-eigencecs">
-  <title>Eigenvalues and Eigenvectors</title>
-  
+
         <definition xml:id="def-eigenvector"><title>Eigenvalues and Eigenvectors</title>
                
             <statement>
@@ -79,7 +104,7 @@
                 Let <m>T</m> be a linear transformation from <m>\mathbb{R}^n\to \R^n</m>.
                 A real number (scalar) is called an <em>eigenvalue</em>
                 of <m>T</m> if there exists a non zero vector <m>v\in \R^n</m>
-                (called an<em> eigenvector</em>
+                (called an <term> eigenvector</term>
                 corresponding to eigenvalue <m>\lambda</m>)
                 if <m>T(v)=\lambda v</m>.
                 That is, if <m>T(v)</m> is parallel to <m>v</m>.
@@ -335,11 +360,24 @@
                 </p>
               </statement>
             </exercise>
+
             <exercise>
               <p>
                 <m>E_\lambda</m> is the kernel of <m>A-\lambda I</m>.
               </p>
             </exercise>
+
+            <hint>
+              <p>
+                Let <m>v_1,v_2 \in E_\lambda</m>. Then 
+                <me>A(v_1+v_2)=Av_1+Av_2=\lambda v_1+\lambda_v2=
+                  \lambda(v_1+v_2).</me>
+                  <me>
+                    \text{for } \alpha\in R, A(\alpha v)=\alpha Av=\alpha \lambda v=\lambda(\alpha v).
+                  </me>
+                  
+              </p>
+            </hint>
           </reading-questions>
 
           <definition xml:id="def-eigenspace"><title>Eigenspace</title>         
@@ -356,21 +394,27 @@
                 The dimension of <m>E_\lambda</m> is called the <em>geometric multiplicity</em> of <m>A</m>.
               </p>
               <p>
-                Let <m>\det{(x I -A)}=(x-\lambda_1)^{m_1}(x-\lambda_2)^{m_2}\cdots (x-\lambda_k)^{m_k}</m>.
+                Let  <m>x</m> be a enigenvector correspnding to the eigenvalue <m>\lambda</m>. 
+                Let the characteristic polynomila of <m>A</m> splits as
+                <me>p(x)=\det{(x I -A)}=(x-\lambda_1)^{m_1}(x-\lambda_2)^{m_2}\cdots (x-\lambda_k)^{m_k}.
+                </me>
                 Then <m>\lambda_i</m> are eigenvalue of <m>A</m> with multiplicity <m>m_i</m>,
                 called the <em>algebraic multiplicity</em> of <m>\lambda_i</m>.
               </p>
             </statement>
           </definition>
+
           <p>
-            We mention, the following theorem without proof.
+            We mention, the following theorem without proof at this stage. 
+            We shall see the proof later.
           </p>
-          <theorem>
+
+          <theorem xml:id="thm-alg-geom-multiplicity-relation">
             <statement>
               <p>
               Geometric multiplicity of an eigenvalue is always less than or equals to its 
               algebraic multiplicity. That is, if <m>m</m> is the geometric multiplicity of 
-              <m>\lambda</m> then <m>m\leq \dim{(E_\lambda)}</m>.
+              <m>\lambda</m> then <m>\dim{(E_\lambda)} \leq  m</m>.
             </p>
             </statement>
           </theorem>
@@ -396,7 +440,9 @@
                 <me>
                   A -\lambda I = \begin{pmatrix}0\amp  1 \amp  0\\0 \amp  0 \amp  1\\0 \amp  0 \amp  0 \end{pmatrix}
                 </me>.
-                It is easy to see that nullity of <m>A -\lambda I</m> is 1.
+               Since the rank of <m>A-\lambda I</m> is 2. By rank-nullity theorem,
+                nullity of <m>A -\lambda I</m> is 1. 
+            
                 Hence the geometric multiplicity of <m>\lambda</m> is 1 where as its algebraic multiplicity is 3.
               </p>
             </statement>
@@ -408,62 +454,61 @@
         <statement>
           <p>
             <ol>
-              <li>
+              <li xml:id="eigen-properties-1">
                 <p>
                   <m>A</m> and <m>A^T</m> have the same eigenvalues.
                 </p>
               </li>
-              <li>
+              <li xml:id="eigen-properties-2">
                 <p>
                   If <m>\lambda</m> is an eigenvalue of <m>A</m>,
                   then <m>\alpha \lambda</m> is an eigenvalue of <m>\alpha A</m>.
                 </p>
               </li>
-              <li>
+              <li xml:id="eigen-properties-3">
                 <p>
                   If <m>\lambda</m> is an eigenvalue of <m>A</m>,
-                  then <m>\lambda^2</m> is an eigenvalue of <m>A^2</m>.
+                  then <m>\lambda^2</m> is an eigenvalue of <m>A^2</m>. 
+                  In general, <m>\lambda^k</m> is an eigenvalue of <m>A^2</m>
+                  for any <m>k\in \N</m>. 
                 </p>
               </li>
-              <li>
+              <li xml:id="eigen-properties-4">
                 <p>
                   If <m>\lambda</m> is an eigenvalue of a non singular matrix <m>A</m>,
                   then <m>1/ \lambda</m> is an eigenvalue of <m>A^{-1}</m>.
                 </p>
               </li>
-              <li>
-                <p>
+               <li xml:id="eigen-properties-5">
+               <p>
                   If <m>\lambda</m> is an eigenvalue of <m>A</m>,
                   then <m>\lambda-k</m> is an eigenvalue of <m>A-kI</m> for any scalar <m>k</m>.
                 </p>
               </li>
-              <li>
+            
+              <li xml:id="eigen-properties-6">
+
                 <p>
                   If <m>\lambda</m> is an eigenvalue of <m>A</m> and
                   <m>p(x)=c_0+c_cx+c_2x^2+\cdots c_kx^k</m> is a polynomial in <m>x</m>,
                   then <m>p(\lambda)</m> is an eigenvalue of <m>p(A)=c_0I+c_cA+c_2A^2+\cdots c_kA^k</m>.
                 </p>
               </li>
-              <li>
+              <li xml:id="eigen-properties-7">
                 <p>
                   Two matrices <m>A</m> and <m>B</m> are called <em>similar</em>
                   if there exists a matrix <m>P</m> such that <m>B=P^{-1}AP</m>.
                   Similar matrices have same eigenvalues.
                 </p>
               </li>
-              <li>
+               <li xml:id="eigen-properties-8">
                 <p>
                   If <m>\lambda_1</m> and <m>\lambda_2</m> are distinct eigenvalues of <m>A</m> then eigenvectors <m>v_1</m> and <m>v_2</m> corresponding to <m>\lambda_1</m> and
                   <m>\lambda_2</m> are linearly independent.
                   Can you generalize this?
                 </p>
               </li>
-              <li>
-                <p>
-                  The rank if a square matrix <m>A</m> is is the number of nonzero eigenvalues of <m>A</m>.
-                </p>
-              </li>
-              <li>
+              <li xml:id="eigen-properties-9">
                 <p>
                   If <m>T</m> is a linear transformation from <m>\R^n\to \R^m</m>.
                   Fix a basis <m>\beta</m> of <m>\R^n</m>.
@@ -474,9 +519,94 @@
                 </p>
               </li>
             </ol>
-          </p>
-             
+          </p> 
  </statement>
+ <proof>
+  <p>
+   <em>Proof of <xref ref="eigen-properties-1"/></em>. </p>
+   <p>Follows from <m>\det{A^T}=\det{A}</m>. For
+   <m>
+    \det{(xI-A)^T}=\det{(xI-A)}.
+   </m>
+   
+  </p>
+  <p>
+    <em>Proof of <xref ref="eigen-properties-2"/></em>. 
+  </p>
+
+  <p>  <m>A(\alpha v)=\alpha Av =\alpha\lambda v=\lambda(\alpha v)</m>.
+  </p>
+
+  <p>
+    <em>Proof of <xref ref="eigen-properties-3"/></em>. 
+  </p>
+
+  <p>  <m>A^2(v)=A(Av) =A(\lambda v)=\lambda(\lambda v)=\lambda^2 v</m>.
+  </p>
+
+  <p>
+    <em>Proof of <xref ref="eigen-properties-4"/></em>. 
+  </p>
+
+  <p>  <m>A(v)=\lambda v\implies \frac{1}{\lambda}v=A^{-1}v</m>.
+  </p>
+
+   <p>
+    <em>Proof of <xref ref="eigen-properties-5"/></em>. 
+  </p>
+
+  <p>  <m>(A-kI)(v)=Av -\lambda v =\lambda v-\lambda v=(\lambda-k)v</m>.
+  </p>
+
+   <p>
+    <em>Proof of <xref ref="eigen-properties-6"/></em>. 
+   </p>
+<p>
+    <me>
+    p(A)v=c_0v+c_c\lambda v+c_2\lambda^2v+\cdots c_k\lambda^kv=p(\lambda). 
+    </me>
+   
+  </p>
+  
+   <p>
+    <em>Proof of <xref ref="eigen-properties-7"/></em>. 
+  </p>
+<p>
+  Since
+  <me>
+    \det(\lambda I-A) = \det\left(P(\lambda I-A)P^{-1}\right),
+  </me>
+  the eigenvalues of <m>A</m> and <m>PAP^{-1}</m> are same.
+</p>
+
+ <p>
+    <em>Proof of <xref ref="eigen-properties-8"/></em>. 
+  </p>
+<p>
+  Let <m>\lambda_1</m> and <m>\lambda_2</m> be with distict eigenvalues of <m>A</m> corresponding to 
+  the eignevectors, <m>v_1</m> and <m>v_2</m> respectively. Let <m>\alpha_1</m> and <m>\alpha_2</m> be scalars 
+  such that <m>\alpha_1v_+\alpha_2 v_2=0.</m>. Applying <m>A</m> both sides we have
+  <m>\alpha_1\lambda_1v_1+\alpha_2\lambda_2 v_2=0</m>. Mutliplying the 1st equation both sides by 
+  <m>\lambda_1</m> both side and subtracting from the equation 2nd equation we get 
+  <m>\alpha_2(\lambda_2-\lambda_1)v_2=0</m>. Since <m>v_2\neq 0 </m>, and <m>\lambda_1\neq \lambda_2</m>, 
+  we have <m>\alpha_2=0</m>. Similarly, <m>\lambda_1=0</m>.
+</p>
+  <p>
+We have the following generalization. If <m>v_i</m> for <m>i=1,\ldots, k</m> are 
+eigenvvectors with respect to distinct eigenvalues <m>\lamabda_i</m> for <m>i=1,\ldots, k</m> respectively, 
+then <m>v_1,\ldots, v_k</m> are linearly independent. The prove this follows from induction on <m>k</m>.
+</p>
+<p>
+    <em>Proof of <xref ref="eigen-properties-9"/></em>. 
+  </p>
+<p>
+Since <m>T\colon \R^n\to \R^n</m> is a linear transformation, it can be written as 
+<m>T(x)=M</m>, where <m>M</m> is the matrix of <m>T</m> with respect to the 
+standard basis of <m>\R^n</m> and that eigenvalues of <m>T</m>  are 
+same as eigenvalues of <m>A</m>. Then <m>A</m> and <m>M</m> are similar matrices. Hence 
+they have the same eigenvalues.
+</p>
+</proof>
 </theorem>
 
 
@@ -569,6 +699,46 @@
                 then <m>p(A)=0</m>.
               </p>
             </statement>
+
+            <proof>
+              <p>
+                The proof is an application of the formula
+                <me>
+                  A\text{adj}(A)=\det{(A)}I
+                </me>
+                where <m>\det{(A)}</m> is the adjugate of a <m>A</m> and is defined as the transpose 
+                of its cofactor matrix. 
+              </p>
+              <p>
+                We apply the adjugate formula to the matrix <m>\lambda I-A</m>. Hence we have
+                <men xml:id="eqn-Caley-Hamilton-eq1">
+                  (\lambda I-A)\text{adj}(tI-A)=\det(\lambda I-A)\,I = p(\lambda)\,I. 
+                </men> 
+                Note that adjugate matrix <m>\text{adj}(\lambda I-A)</m> is an <m>n\times n</m> matrix 
+      whose entries are polynomials in <m>\lambda</m> of degree at most <m>n-1</m>. 
+      Hence we may write
+      <me>
+        \text{adj}( \lambda I-A)=\sum_{k=0}^{n-1} C_k \lambda^k,
+      </me>
+      where <m>C_k's</m> are matrices with real entries.  Hence by <xref ref="eqn-Caley-Hamilton-eq1"/>, 
+      we have 
+      <men xml:id="eqn-Caley-Hamilton-eq2">
+        (\lambda I-A) \left(\sum_{k=0}^{n-1} C_k \lambda^k\right) = \sum_{k=0}^n a_k A^k.
+      </men>
+      Now comparing the coefficients of power of <m>\lambda</m>, we get
+      <md>
+        <mrow> C_{n-1}\amp = I</mrow>
+        <mrow> C_{n-2}-AC_{n-1}\amp = a_{n-1}I</mrow>
+        <mrow> C_{n-3}-AC_{n-2}\amp = a_{n-2}I</mrow>
+        <mrow>\amp \vdots</mrow>
+        <mrow> C_{0}-AC_{1}\amp = a_{1}I</mrow>
+        <mrow> -AC_{0}\amp = a_{0}I</mrow>
+      </md>
+      Multiplying the first equation by <m>A^n</m>, the second equation by <m>A^{n-1}</m>, 
+      the second last equation by <m>A</m> and the last equation by <m>I</m> and additing, we get
+      the desired result.
+          </p>
+            </proof>
           </theorem>
           
           <example>

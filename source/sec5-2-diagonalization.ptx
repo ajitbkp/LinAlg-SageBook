@@ -54,12 +54,31 @@
                 one can define <m>P</m> where columns of <m>P</m> are <m>n</m> eigenvectors of <m>A</m>.
               </p>
             </statement>
+            <hint>
+              <p>
+                Let <m>\lambda_1, \ldots,\lambda_n</m> be <m>n</m> distinct eigenvalues 
+                of <m>A</m> and <m>v_1,\ldots, v_n</m>, the correspnding eigenvectors then by 
+                <xref ref="eigen-properties-8"/> of <xref ref="eigen-properties"/>, 
+                <m>v_1, \ldots v_n</m> are linearly independent. Now define 
+                <me>
+                  P = \begin{bmatrix}v_1\amp v_2\amp \cdots \amp v_n\end{bmatrix},
+                </me>
+                the matrix whose columns are eigenvectors <m>v_i's</m>. Then <m>P</m> 
+                <m>P</m> is nonsingular.  It is easu to check that 
+                <md>
+                  <mrow> AP \amp =\begin{bmatrix}Av_1\amp Av_2\amp \cdots \amp Av_n\end{bmatrix}</mrow>
+                  <mrow>  \amp = \diag{(\lambda_1,\ldots,\lambda_n)}\begin{bmatrix}v_1\amp v_2\amp \cdots \amp v_n\end{bmatrix}</mrow>
+                  <mrow> \amp= DP</mrow>
+                </md>
+              </p>
+            </hint>
           </exercise>
 
           <theorem xml:id="thm_diag">
             <statement>
               <p>
-                A square matrix <m>A</m> of order <m>n</m> is diagonalizable if and only if <m>A</m> has <m>n</m> linearly independent eigenvectors.
+                A square matrix <m>A</m> of order <m>n</m> is diagonalizable 
+                if and only if <m>A</m> has <m>n</m> linearly independent eigenvectors.
               </p>
             </statement>
           </theorem>
@@ -105,6 +124,7 @@
             </p>
           </proof>
 
+          
           <corollary>
             <statement>
               <p>
@@ -112,6 +132,27 @@
               </p>
             </statement>
           </corollary>
+          
+          <theorem xml:id="thm-rank-eigenvalues">
+            <statement>
+              <p>
+                  The rank of a square diagonalizable matrix <m>A</m> 
+                  is the number of nonzero eigenvalues of <m>A</m>. Is this result true
+                  in general?
+                </p>
+            </statement>
+          </theorem>
+          
+          <example>
+            <statement>
+              <p>
+                Consider the matrix <m>A=\begin{pmatrix} 0 \amp 1 \amp 0\\0 \amp 0 \amp 1\\
+                  0 \amp 0 \amp 0\end{pmatrix}
+                </m>. It is easy to see that <m>\rank{A}=2</m>, 
+                however, 0 is the only eigenvalue of <m>A</m>.
+              </p>
+            </statement>
+          </example>
 
           <example>
             <statement>
