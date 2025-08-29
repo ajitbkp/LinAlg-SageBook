@@ -3,25 +3,53 @@
 <section xml:id="sec6-3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Orthogonal Diagonalizations</title>
 
- 
+ <introduction>
+  <p>
+    Recall the concept of diagonalization of a square matrix. We have seen that an 
+    <m>n\times n</m> matrix <m>A</m> is diagonalizable 
+    if there is an eigenbasis of <m>\R^n</m>. In this section, we shall explore 
+    if we can find an eigenbasis which is also an orthonormal. First of all we shall define 
+    what is meaning of an orthogonal matrix. 
+  </p>
+ </introduction>
   
   
-    <theorem xml:id="orthogonal-ex1">
+    <theorem xml:id="thm-orthogonal-matrix">
       <statement>
         <p>
           Let <m>P</m> be an <m>n\times n</m> matrix.
           Then the following are equivalent:
+       <ol>
+        <li>
+           <p>
+       <m>P</m> is non-singular and <m>P^{-1}=P^T</m>.
         </p>
+      </li>
+       <li>
+         <p>
+       The rows of <m>P</m> are orthonormal vectors in <m>\R^n</m>. 
+        </p>
+      </li>
+      <li>
         <p>
-          (i) <m>P</m> is non-singular and <m>P^{-1}=P^T</m>.
-        </p>
-        <p>
-          (ii) The rows of <m>P</m> are orthonormal vectors in <m>\R^n</m>. 
-        </p>
-        <p>
-        (iii) The columns of <m>P</m> are orthonormal vectors in <m>\R^n</m>.
-        </p>
+       The columns of <m>P</m> are orthonormal vectors in <m>\R^n</m>.
+        </p>  
+        </li>
+       </ol>
+      </p>
       </statement>
+
+      <proof>
+         <p>
+            Assume that <m>P^{-1}=P^T</m>. This implies <m>PP^T=I</m>. Let the columns 
+            of <m>P</m> are <m>p_1, p_2,\ldots, p_n</m>. Then <m>\{p_1,\ldots, p_n\}</m> is 
+            linearly independent. It is easy to see that the <m>ij</m>-th entry of <m>PP^T</m> is 
+            <m>p_i\cdot p_j</m>. Hence we have <m>p_i\cdot p_j=\delta_{ij}=1</m> if <m>i=j</m> 
+            and 0 otherwise. This proves rows of <m>P</m> and orthogonal and hence columns 
+            of <m>P</m> are orthogonal. The converse is easy.
+         </p>
+      </proof>
+
     </theorem>
 
   
@@ -30,8 +58,8 @@
       <statement>
         <p>
           A square matrix <m>P</m> is called an orthogonal matrix if it satisfies any one
-          (and hence all)           the conditions of Theorem
-          <xref ref="orthogonal-ex1"></xref>.
+          (and hence all) the conditions of Theorem
+          <xref ref="thm-orthogonal-matrix"></xref>.
         </p>
       </statement>
     </definition>
@@ -41,11 +69,25 @@
      <example>
       <statement>
         <p>
-          (i) The matrix <m>\begin{pmatrix}\cos \theta \amp -\sin\theta\\\sin\theta \amp \cos\theta \end{pmatrix}</m> is an orthogonal matrix.
-        </p>
-        <p>
-          (ii) <m>\left(\begin{array}{rrr} -\frac{1}{3} \, \sqrt{3} \amp \sqrt{\frac{2}{3}} \amp 0 \\ \frac{1}{3} \, \sqrt{3} \amp \frac{1}{2} \, \sqrt{\frac{2}{3}} \amp -\sqrt{\frac{1}{2}} \\ \frac{1}{3} \, \sqrt{3} \amp \frac{1}{2} \, \sqrt{\frac{2}{3}} \amp \sqrt{\frac{1}{2}} \end{array} \right)</m> is an orthogonal matrix.
-        </p>
+       <ol>
+        <li>
+          <p>
+            The matrix <m>\begin{pmatrix}\cos \theta \amp -\sin\theta\\\sin\theta \amp \cos\theta \end{pmatrix}</m> 
+            is an orthogonal matrix.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\begin{array}{rrr} -\frac{1}{3} \, \sqrt{3} \amp \sqrt{\frac{2}{3}} \amp 0 \\ 
+              \frac{1}{3} \, \sqrt{3} \amp \frac{1}{2} \, \sqrt{\frac{2}{3}} \amp -\sqrt{\frac{1}{2}} \\ 
+              \frac{1}{3} \, \sqrt{3} \amp \frac{1}{2} \, \sqrt{\frac{2}{3}} \amp \sqrt{\frac{1}{2}} 
+              \end{array} \right)</m> 
+            is an orthogonal matrix.
+        
+          </p>
+        </li>
+       </ol>
+         </p>
       </statement>
     </example>
     
@@ -58,13 +100,42 @@
           An <m>n\times n</m> matrix is called
           <em>orthogonally diagonalizable </em>
           if there exists an orthogonal matrix <m>P</m> such that
-          <m>P^{-1}AP</m> is a diagonal matrix.
+          <m>P^{-1}AP=P^TAP</m> is a diagonal matrix.
         </p>
       </statement>
     </definition>
 
-  
-  <example>
+
+  <p>
+    It is easy to easy to see that if <m>P</m> and <m>Q</m> are 
+    orthgogonal matrices then <m>PQ</m> is also orthogonal. (why?)
+  </p>
+
+      <definition xml:id="def-orthogonally-similar-matrics">
+      <statement>
+        <p>
+          Two  <m>n\times n</m> matrices <m>A</m> and <m>B</m> are called
+          <em>orthogonally similar </em>
+          if there exists an orthogonal matrix <m>P</m> such that
+          <m>B =P^{-1}AP=P^TAP</m> is a diagonal matrix.
+        </p>
+      </statement>
+    </definition>
+
+<p>
+  Thus an orthogonally diangomally matrix is ortghogonally similar to a diagonal matrix.
+</p>
+
+<p>
+  Suppose a matrix <m>A</m> is orthogonally diagonalizable. That is <m>P^TAP=D</m>, a digonal matrix. 
+  This means <m>A=PDP^T</m>. Hence 
+  <me>
+    A^T=(PDP^T)^T=PD^TP^T=PDP^T=A.
+  </me>
+  Thus if <m>A</m> is orthogonally diagonalizable then <m>A</m> must be symmetric. 
+</p>
+ 
+<lemma xml:id="lemma-orthogonality-eigenvectors1">
       <statement>
         <p>
           Let <m>A</m> be a symmetric matrix and <m>\lambda_1</m> and
@@ -74,29 +145,75 @@
           Then <m>v_1</m> and <m>v_2</m> are orthogonal.
         </p>
       </statement>
-    </example>
-  
 
-  
-    <theorem>
-      <statement>
+      <proof>
         <p>
-          Let <m>A</m> be an <m>n\times n</m> matrix.
+          We have 
+          <me>
+            (\lambda_1 v_1)\cdot v_2 = (Av_1) \cdot (v_2)=
+            {(Av_1)}^T(v_2)=v_1^T A^Tv_2=v_1^T(\lambda_2 v_2).
+          </me>
+          This implies <m>(\lambda_1-\lambda_2)(v_1\cdot v_2)=0</m>. Since <m>\lambda_1\neq \lambda_2</m>, 
+          we have <m>v_1\cdot v_2=0</m>.
+        </p>
+      </proof>
+    </lemma>
+  
+<p>
+  The following therem shows that every real symmetric matrix is orthogonally 
+  diagonalizable. 
+</p>
+
+<theorem xml:id="thm-6-4-6">
+  <statement>
+    <p>
+          Let <m>A</m> be an <m>n\times n</m> real matrix.
           Then the following are equivalent.
         </p>
+        <ol>
+          <li>
+            <p>
+             <m>A</m> has an orthonormal set of eigenvectors.
+            </p>
+          </li>
+        <li>
+          <p>
+            <m>A</m> is orthogonally diagonalizable.
+          </p>
+        </li>
+      <li>
         <p>
-          (i) <m>A</m> has an orthonormal set of eigenvectors.
+           <m>A</m> is symmetric.
         </p>
-        <p>
-          (ii) <m>A</m> is orthogonally diagonalizable.
-        </p>
-        <p>
-          (iii) <m>A</m> is symmetric.
-        </p>
-      </statement>
-    </theorem>
-  
+      </li>  
+      </ol>
+  </statement>
+<proof>
+  <p>
+      <case direction="cycle">
+  </p>
+  <p>
+  Let <m>v_1,\ldots, v_n</m> be orthogonormal eigenvectors of <m>A</m> such that 
+  <m>Av_i=\lambda_i v_i</m>. Then 
+  <m>P=\begin{bmatrix} v_1\amp v_2\cdots v_n\end{bmatrix}</m> is orthogonal. Hence 
+  <me>
+    P^TAP={\rm diag}(\lambda_1,\ldots,\lambda_n)=D. 
+  </me>
+  Hence <m>A</m> is orthogonally diagonalizable. 
+  </p>
 
+  <p>
+         <case direction="cycle">
+  </p>
+  <p>
+    If <m>A</m> is orthogonally diangonalizable with <m>P^TAP=D</m>then 
+    <me>
+      A^T=(PDP^T)^T=PDP^T=A.
+    </me>
+    Henc <m>A</m> is symmetric. 
+  </p>
+</proof>
+</theorem>
 
     <example>
       <statement>

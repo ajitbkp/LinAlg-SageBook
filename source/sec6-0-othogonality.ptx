@@ -19,12 +19,15 @@
   <definition xml:id="def-orthogonal-set">
     <statement>
       <p>
-        A set of vectors <m>\{v_1,\ldots,
+        A set of non zero vectors <m>\{v_1,\ldots,
         v_k\}</m> is called <em>orthogonal</em> if
         <me>
-          v_i\cdot v_j = \delta_{ij}=\begin{cases}1 \amp  \text{ if \(i=j\) }  \\ 0 \amp \text{ otherwise } \end{cases}
+          v_i\cdot v_j = 0 \text{ if } i\neq j</me> 
+        where <m>u \cdot v </m> represents the standard dot product in <m>\mathbb{R}^n.</m> 
+        More precisely for <m>x=(x_1,\ldots,x_n),y=(y_1,\ldots, y_n)\in \R^n</m>, we have 
+        <me>
+          x\cdot y = x_1y_1+\cdots+x_ny_n=\sum x_i y_i.
         </me>
-        where <m>u \cdot v </m> represents the standard dot product on <m>\mathbb{R}^n.</m>
       </p>
     </statement>
   </definition>
@@ -36,6 +39,29 @@
   
   <exercise xml:id="orth-ex1-0">
     <p> Show that orthogonal set of vectors are linearly independent. </p>
+
+    <hint>
+      <p>
+        Let <m>\{u_1,\ldots, u_n\}</m> be an orthogonal set. Let 
+        <me>
+          \alpha_1 u_1+\cdots+\alpha_n u_n=0.
+        </me>
+        Taking dot product with <m>u_i</m>, we get <m>\alpha_i \norm{u_i}^2=0</m>. Since 
+        <m>u_i\neq 0, \norm{u}\neq 0</m>. Hence <m>\alpha_i=0</m>.
+      </p>
+    </hint>
+  </exercise>
+
+  <exercise xml:id="orth-ex1-1">
+    <p> Let <m>u</m> be a vector in <m>\R^n</m> which is orthoogoanl of all vectors 
+    in <m>\R^n</m>. Then what can you say about <m>u</m>.
+    </p>
+      <hint>
+        <p>
+          <m>u=0</m>, for such a vector <m>u=(u_1,\ldots, u_n)\in \R^n</m>, we have 
+           <m>u\cdot u=\norm{u}^2=0</m>, implies for each <m>i</m>, <m>u_i=0</m>.
+        </p>
+      </hint>
   </exercise>
 
   <exercise xml:id="orth-ex2-1">
@@ -44,9 +70,9 @@
         Let <m>\{u_1,\ldots,
         u_k\}</m> be an orthogonal set of vectors in <m>\R^n</m>.
         Let <m>u\in \R^n</m> and define
-        <me>
+        <men xml:id="eqn-orthgonality-eq1">
           u_{k+1}:=u-\frac{u_1\cdot u}{\norm{u_1}^2}u_1-\frac{u_2\cdot u}{\norm{u_2}^2}u_2-\cdots -\frac{u_k\cdot u}{\norm{u_k}^2}u_k
-        </me>,
+        </men>,
       </p>
       <p>
         Then
@@ -55,10 +81,11 @@
         (i) <m>u_i\cdot u_{k+1}=0</m> for all <m>i=1,\ldots, k</m>
       </p>
       <p>
-        (ii) If <m>u\notin span(\{u_1,\ldots, u_k\})</m>,
+        (ii) If <m>u\notin {\rm span}(\{u_1,\ldots, u_k\})</m>,
         then <m>u_{k+1}\neq 0</m> and
         <m>\{u_1,\ldots,
-        u_k,u_{k+1}\}</m> is an orthogonal set.
+        u_k,u_{k+1}\}</m> is an orthogonal set. What is <m>u_{k+1}</m> if 
+        <m>u\in {\rm span}(\{u_1,\ldots, u_k\})</m>?
       </p>
     </statement>
   </exercise>
@@ -178,8 +205,19 @@ Let us verify that <m>u_4</m> is orthogonal to <m>u_1,u_2,u_3</m>.
     <p>
  Can you think of how will you generate an orthogonal basis of <m>\mathbb{R}^n</m> starting with a non-zero vector in <m>\mathbb{R}^n</m>?
     </p>
+  <hint>
+    <p>
+      We can start with any non zero vector <m>u_1</m>. Now choose 
+      <m>u\notin{\rm span}(u_1)</m> and construct <m>u_2</m> as in <xref ref="eqn-orthgonality-eq1"/>.
+      Next we find <m>u\notin {\rm span}(\{u_1,u_2\})</m> and define <m>u_3</m> as in 
+       <xref ref="eqn-orthgonality-eq1"/>. Conntinuing this way we can get an orthogonal 
+       basis of <m>\R^n.</m>
+    </p>
+  </hint>
   </exercise>
+  
 <p>
-    Next we deal with  finding an orthonormal basis of <m>\R^n</m> or any subspace of <m>\R^n</m>.
+    In the next section, we deal with  finding an orthonormal basis of <m>\R^n</m>  or 
+    any subspace of <m>\R^n</m> from a basis.
   </p>
 </section>
