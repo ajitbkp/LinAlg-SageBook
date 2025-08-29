@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of Eigenvalues and Eigenvectors.</span>
+</h4>
+<div class="para logical">
+<ol class="decimal" id="eigen-properties-2-1-1">
+<li>
+<div class="para">
+<span class="process-math">\(A\)</span> and <span class="process-math">\(A^T\)</span> have the same eigenvalues.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#eigen-properties-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\alpha \lambda\)</span> is an eigenvalue of <span class="process-math">\(\alpha A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#eigen-properties-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li>
+<div class="para">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\lambda^2\)</span> is an eigenvalue of <span class="process-math">\(A^2\text{.}\)</span> In general, <span class="process-math">\(\lambda^k\)</span> is an eigenvalue of <span class="process-math">\(A^2\)</span> for any <span class="process-math">\(k\in \N\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#eigen-properties-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li>
+<div class="para">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of a non singular matrix <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(1/ \lambda\)</span> is an eigenvalue of <span class="process-math">\(A^{-1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#eigen-properties-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li>
+<div class="para">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\lambda-k\)</span> is an eigenvalue of <span class="process-math">\(A-kI\)</span> for any scalar <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#eigen-properties-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li>
+<div class="para">If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> and <span class="process-math">\(p(x)=c_0+c_cx+c_2x^2+\cdots c_kx^k\)</span> is a polynomial in <span class="process-math">\(x\text{,}\)</span> then <span class="process-math">\(p(\lambda)\)</span> is an eigenvalue of <span class="process-math">\(p(A)=c_0I+c_cA+c_2A^2+\cdots c_kA^k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#eigen-properties-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+<li>
+<div class="para">Two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are called <em class="emphasis">similar</em> if there exists a matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(B=P^{-1}AP\text{.}\)</span> Similar matrices have same eigenvalues.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7"><a href="#eigen-properties-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+</li>
+<li>
+<div class="para">If <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> are distinct eigenvalues of <span class="process-math">\(A\)</span> then eigenvectors <span class="process-math">\(v_1\)</span> and <span class="process-math">\(v_2\)</span> corresponding to <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> are linearly independent. Can you generalize this?<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 8"><a href="#eigen-properties-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
+</li>
+<li>
+<div class="para">If <span class="process-math">\(T\)</span> is a linear transformation from <span class="process-math">\(\R^n\to \R^m\text{.}\)</span> Fix a basis <span class="process-math">\(\beta\)</span> of <span class="process-math">\(\R^n\text{.}\)</span> Let <span class="process-math">\(A=[T]_\beta\)</span> be the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta\text{.}\)</span> Then <span class="process-math">\(A\)</span> and <span class="process-math">\(T\)</span> have the same eigenvalues. Furthermore, eigenvalues of <span class="process-math">\(T\)</span> are independent of the basis.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 9"><a href="#eigen-properties-9" title="Copy heading and permalink for Item 9" aria-label="Copy heading and permalink for Item 9">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 5.1.17: Properties of Eigenvalues and Eigenvectors"><a href="#eigen-properties" title="Copy heading and permalink for Theorem 5.1.17: Properties of Eigenvalues and Eigenvectors" aria-label="Copy heading and permalink for Theorem 5.1.17: Properties of Eigenvalues and Eigenvectors">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">
+<em class="emphasis">Proof of <a href="sec5-1-eigen-intro.html#eigen-properties-1" class="xref" data-knowl="./knowl/xref/eigen-properties-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a></em>.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Follows from <span class="process-math">\(\det{A^T}=\det{A}\text{.}\)</span> For <span class="process-math">\(\det{(xI-A)^T}=\det{(xI-A)}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Proof of <a href="sec5-1-eigen-intro.html#eigen-properties-2" class="xref" data-knowl="./knowl/xref/eigen-properties-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a></em>.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<span class="process-math">\(A(\alpha v)=\alpha Av =\alpha\lambda v=\lambda(\alpha v)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Proof of <a href="sec5-1-eigen-intro.html#eigen-properties-3" class="xref" data-knowl="./knowl/xref/eigen-properties-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a></em>.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<span class="process-math">\(A^2(v)=A(Av) =A(\lambda v)=\lambda(\lambda v)=\lambda^2 v\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Proof of <a href="sec5-1-eigen-intro.html#eigen-properties-4" class="xref" data-knowl="./knowl/xref/eigen-properties-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 4">Item 4</a></em>.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<span class="process-math">\(A(v)=\lambda v\implies \frac{1}{\lambda}v=A^{-1}v\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Proof of <a href="sec5-1-eigen-intro.html#eigen-properties-5" class="xref" data-knowl="./knowl/xref/eigen-properties-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 5">Item 5</a></em>.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<span class="process-math">\((A-kI)(v)=Av -\lambda v =\lambda v-\lambda v=(\lambda-k)v\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Proof of <a href="sec5-1-eigen-intro.html#eigen-properties-6" class="xref" data-knowl="./knowl/xref/eigen-properties-6.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 6">Item 6</a></em>.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{equation*}
+p(A)v=c_0v+c_c\lambda v+c_2\lambda^2v+\cdots c_k\lambda^kv=p(\lambda). 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Proof of <a href="sec5-1-eigen-intro.html#eigen-properties-7" class="xref" data-knowl="./knowl/xref/eigen-properties-7.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 7">Item 7</a></em>.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(\lambda I-A) = \det\left(P(\lambda I-A)P^{-1}\right),
+\end{equation*}
+</div>
+<div class="para">the eigenvalues of <span class="process-math">\(A\)</span> and <span class="process-math">\(PAP^{-1}\)</span> are same.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Proof of <a href="sec5-1-eigen-intro.html#eigen-properties-8" class="xref" data-knowl="./knowl/xref/eigen-properties-8.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 8">Item 8</a></em>.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Let <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> be with distict eigenvalues of <span class="process-math">\(A\)</span> corresponding to the eignevectors, <span class="process-math">\(v_1\)</span> and <span class="process-math">\(v_2\)</span> respectively. Let <span class="process-math">\(\alpha_1\)</span> and <span class="process-math">\(\alpha_2\)</span> be scalars such that <span class="process-math">\(\alpha_1v_+\alpha_2 v_2=0.\text{.}\)</span> Applying <span class="process-math">\(A\)</span> both sides we have <span class="process-math">\(\alpha_1\lambda_1v_1+\alpha_2\lambda_2 v_2=0\text{.}\)</span> Mutliplying the 1st equation both sides by <span class="process-math">\(\lambda_1\)</span> both side and subtracting from the equation 2nd equation we get <span class="process-math">\(\alpha_2(\lambda_2-\lambda_1)v_2=0\text{.}\)</span> Since <span class="process-math">\(v_2\neq 0 \text{,}\)</span> and <span class="process-math">\(\lambda_1\neq \lambda_2\text{,}\)</span> we have <span class="process-math">\(\alpha_2=0\text{.}\)</span> Similarly, <span class="process-math">\(\lambda_1=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">We have the following generalization. If <span class="process-math">\(v_i\)</span> for <span class="process-math">\(i=1,\ldots, k\)</span> are eigenvvectors with respect to distinct eigenvalues <span class="process-math">\(\lamabda_i\)</span> for <span class="process-math">\(i=1,\ldots, k\)</span> respectively, then <span class="process-math">\(v_1,\ldots, v_k\)</span> are linearly independent. The prove this follows from induction on <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Proof of <a href="sec5-1-eigen-intro.html#eigen-properties-9" class="xref" data-knowl="./knowl/xref/eigen-properties-9.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 9">Item 9</a></em>.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Since <span class="process-math">\(T\colon \R^n\to \R^n\)</span> is a linear transformation, it can be written as <span class="process-math">\(T(x)=M\text{,}\)</span> where <span class="process-math">\(M\)</span> is the matrix of <span class="process-math">\(T\)</span> with respect to the standard basis of <span class="process-math">\(\R^n\)</span> and that eigenvalues of <span class="process-math">\(T\)</span>  are same as eigenvalues of <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(A\)</span> and <span class="process-math">\(M\)</span> are similar matrices. Hence they have the same eigenvalues.<div class="autopermalink" data-description="Paragraph"><a href="#eigen-properties-3-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5.1.17.1"><a href="#eigen-properties-3" title="Copy heading and permalink for Proof 5.1.17.1" aria-label="Copy heading and permalink for Proof 5.1.17.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="sec5-1-eigen-intro.html#eigen-properties">in-context</a></span>
+</body>
+</html>
