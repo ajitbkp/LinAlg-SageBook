@@ -313,7 +313,6 @@ sagecell.makeSagecell({
 <ul class="structural toc-item-list">
 <li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Reading Questions</span></a></div></li>
 <li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenvalues-poly-space" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Reading Questions</span></a></div></li>
-<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenvalues-matrix-space" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Reading Questions</span></a></div></li>
 <li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenvalues-function-space" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Reading Questions</span></a></div></li>
 </ul>
 </li></ul>
@@ -457,14 +456,18 @@ v_k,v_{k+1}\}\)</span> is linearly independent subset of <span class="process-ma
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="def-orthogonal-set-1-1">
-<div class="para">A set of vectors <span class="process-math">\(\{v_1,\ldots,
+<div class="para">A set of non zero vectors <span class="process-math">\(\{v_1,\ldots,
 v_k\}\)</span> is called <em class="emphasis">orthogonal</em> if</div>
 <div class="displaymath process-math">
 \begin{equation*}
-v_i\cdot v_j = \delta_{ij}=\begin{cases}1 \amp  \text{ if \(i=j\) }  \\ 0 \amp \text{ otherwise } \end{cases}
+v_i\cdot v_j = 0 \text{ if } i\neq j
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(u \cdot v \)</span> represents the standard dot product on <span class="process-math">\(\mathbb{R}^n.\)</span>
+<div class="para">where <span class="process-math">\(u \cdot v \)</span> represents the standard dot product in <span class="process-math">\(\mathbb{R}^n.\)</span> More precisely for <span class="process-math">\(x=(x_1,\ldots,x_n),y=(y_1,\ldots, y_n)\in \R^n\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x\cdot y = x_1y_1+\cdots+x_ny_n=\sum x_i y_i.
+\end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-orthogonal-set-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -475,31 +478,54 @@ v_i\cdot v_j = \delta_{ij}=\begin{cases}1 \amp  \text{ if \(i=j\) }  \\ 0 \amp \
 </h3>
 <div class="para" id="orth-ex1-0-1">Show that orthogonal set of vectors are linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#orth-ex1-0-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 6.1.2"><a href="#orth-ex1-0" title="Copy heading and permalink for Checkpoint 6.1.2" aria-label="Copy heading and permalink for Checkpoint 6.1.2">🔗</a></div></article><article class="exercise exercise-like" id="orth-ex2-1"><h3 class="heading">
+<details id="orth-ex1-0-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para logical" id="orth-ex1-0-2-1">
+<div class="para">Let <span class="process-math">\(\{u_1,\ldots, u_n\}\)</span> be an orthogonal set. Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\alpha_1 u_1+\cdots+\alpha_n u_n=0.
+\end{equation*}
+</div>
+<div class="para">Taking dot product with <span class="process-math">\(u_i\text{,}\)</span> we get <span class="process-math">\(\alpha_i \norm{u_i}^2=0\text{.}\)</span> Since <span class="process-math">\(u_i\neq 0, \norm{u}\neq 0\text{.}\)</span> Hence <span class="process-math">\(\alpha_i=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#orth-ex1-0-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 6.1.2.1"><a href="#orth-ex1-0-2" title="Copy heading and permalink for Hint 6.1.2.1" aria-label="Copy heading and permalink for Hint 6.1.2.1">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Checkpoint 6.1.2"><a href="#orth-ex1-0" title="Copy heading and permalink for Checkpoint 6.1.2" aria-label="Copy heading and permalink for Checkpoint 6.1.2">🔗</a></div></article><article class="exercise exercise-like" id="orth-ex1-1"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="orth-ex1-1-1">Let <span class="process-math">\(u\)</span> be a vector in <span class="process-math">\(\R^n\)</span> which is orthoogoanl of all vectors in <span class="process-math">\(\R^n\text{.}\)</span> Then what can you say about <span class="process-math">\(u\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#orth-ex1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="orth-ex1-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="orth-ex1-1-2-1">
+<span class="process-math">\(u=0\text{,}\)</span> for such a vector <span class="process-math">\(u=(u_1,\ldots, u_n)\in \R^n\text{,}\)</span> we have <span class="process-math">\(u\cdot u=\norm{u}^2=0\text{,}\)</span> implies for each <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(u_i=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#orth-ex1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 6.1.3.1"><a href="#orth-ex1-1-2" title="Copy heading and permalink for Hint 6.1.3.1" aria-label="Copy heading and permalink for Hint 6.1.3.1">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Checkpoint 6.1.3"><a href="#orth-ex1-1" title="Copy heading and permalink for Checkpoint 6.1.3" aria-label="Copy heading and permalink for Checkpoint 6.1.3">🔗</a></div></article><article class="exercise exercise-like" id="orth-ex2-1"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="orth-ex2-1-1-1">
 <div class="para">Let <span class="process-math">\(\{u_1,\ldots,
 u_k\}\)</span> be an orthogonal set of vectors in <span class="process-math">\(\R^n\text{.}\)</span> Let <span class="process-math">\(u\in \R^n\)</span> and define</div>
-<div class="displaymath process-math">
-\begin{equation*}
-u_{k+1}:=u-\frac{u_1\cdot u}{\norm{u_1}^2}u_1-\frac{u_2\cdot u}{\norm{u_2}^2}u_2-\cdots -\frac{u_k\cdot u}{\norm{u_k}^2}u_k\text{,}
-\end{equation*}
+<div class="displaymath process-math" id="eqn-orthgonality-eq1">
+\begin{equation}
+u_{k+1}:=u-\frac{u_1\cdot u}{\norm{u_1}^2}u_1-\frac{u_2\cdot u}{\norm{u_2}^2}u_2-\cdots -\frac{u_k\cdot u}{\norm{u_k}^2}u_k\text{,}\tag{6.1.1}
+\end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#orth-ex2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="orth-ex2-1-1-2">Then<div class="autopermalink" data-description="Paragraph"><a href="#orth-ex2-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="orth-ex2-1-1-3">(i) <span class="process-math">\(u_i\cdot u_{k+1}=0\)</span> for all <span class="process-math">\(i=1,\ldots, k\)</span><div class="autopermalink" data-description="Paragraph"><a href="#orth-ex2-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="orth-ex2-1-1-4">(ii) If <span class="process-math">\(u\notin span(\{u_1,\ldots, u_k\})\text{,}\)</span> then <span class="process-math">\(u_{k+1}\neq 0\)</span> and <span class="process-math">\(\{u_1,\ldots,
-u_k,u_{k+1}\}\)</span> is an orthogonal set.<div class="autopermalink" data-description="Paragraph"><a href="#orth-ex2-1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="orth-ex2-1-1-4">(ii) If <span class="process-math">\(u\notin {\rm span}(\{u_1,\ldots, u_k\})\text{,}\)</span> then <span class="process-math">\(u_{k+1}\neq 0\)</span> and <span class="process-math">\(\{u_1,\ldots,
+u_k,u_{k+1}\}\)</span> is an orthogonal set. What is <span class="process-math">\(u_{k+1}\)</span> if <span class="process-math">\(u\in {\rm span}(\{u_1,\ldots, u_k\})\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#orth-ex2-1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 6.1.3"><a href="#orth-ex2-1" title="Copy heading and permalink for Checkpoint 6.1.3" aria-label="Copy heading and permalink for Checkpoint 6.1.3">🔗</a></div></article><article class="definition definition-like" id="def-orthonormal-basis"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Checkpoint 6.1.4"><a href="#orth-ex2-1" title="Copy heading and permalink for Checkpoint 6.1.4" aria-label="Copy heading and permalink for Checkpoint 6.1.4">🔗</a></div></article><article class="definition definition-like" id="def-orthonormal-basis"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="def-orthonormal-basis-1-1">A basis <span class="process-math">\(\beta =\{u_1,\ldots,
 u_n\}\)</span> is called an <em class="emphasis">orthogonal basis</em> if <span class="process-math">\(\beta\)</span> is an orthogonal set in <span class="process-math">\(\R^n\text{.}\)</span> In addition if <span class="process-math">\(\norm{u_1}=1\)</span> for all <span class="process-math">\(i\text{,}\)</span> then <span class="process-math">\(\beta\)</span> is called an orthonormal basis.<div class="autopermalink" data-description="Paragraph"><a href="#def-orthonormal-basis-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 6.1.4"><a href="#def-orthonormal-basis" title="Copy heading and permalink for Definition 6.1.4" aria-label="Copy heading and permalink for Definition 6.1.4">🔗</a></div></article><article class="exercise exercise-like" id="ex-ortho-6-0-0"><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Definition 6.1.5"><a href="#def-orthonormal-basis" title="Copy heading and permalink for Definition 6.1.5" aria-label="Copy heading and permalink for Definition 6.1.5">🔗</a></div></article><article class="exercise exercise-like" id="ex-ortho-6-0-0"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="ex-ortho-6-0-0-1-1">
 <ol class="decimal" id="ex-ortho-6-0-0-1-1-1">
@@ -507,51 +533,51 @@ u_n\}\)</span> is called an <em class="emphasis">orthogonal basis</em> if <span 
 <div class="para" id="ex-ortho-6-0-0-1-1-1-1-1">The standard basis <span class="process-math">\({\cal E} = \{e_1,\cdots,
 e_n\}\)</span> is an orthonormal basis of <span class="process-math">\(\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-ortho-6-0-0-1-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 6.1.5.1"><a href="#ex-ortho-6-0-0-1-1-1-1" title="Copy heading and permalink for Item 6.1.5.1" aria-label="Copy heading and permalink for Item 6.1.5.1">🔗</a></div>
+<div class="autopermalink" data-description="Item 6.1.6.1"><a href="#ex-ortho-6-0-0-1-1-1-1" title="Copy heading and permalink for Item 6.1.6.1" aria-label="Copy heading and permalink for Item 6.1.6.1">🔗</a></div>
 </li>
 <li id="ex-ortho-6-0-0-1-1-1-2">
 <div class="para" id="ex-ortho-6-0-0-1-1-1-2-1">
 <span class="process-math">\(\beta =\left\{\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right), \left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)\right\}\)</span> is an orthonormal basis of <span class="process-math">\(\R^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-ortho-6-0-0-1-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 6.1.5.2"><a href="#ex-ortho-6-0-0-1-1-1-2" title="Copy heading and permalink for Item 6.1.5.2" aria-label="Copy heading and permalink for Item 6.1.5.2">🔗</a></div>
+<div class="autopermalink" data-description="Item 6.1.6.2"><a href="#ex-ortho-6-0-0-1-1-1-2" title="Copy heading and permalink for Item 6.1.6.2" aria-label="Copy heading and permalink for Item 6.1.6.2">🔗</a></div>
 </li>
 <li id="ex-ortho-6-0-0-1-1-1-3">
 <div class="para" id="ex-ortho-6-0-0-1-1-1-3-1">
 <span class="process-math">\(\beta=\{(2,1,1), (-1,1,1),(0,-1,1)\}\)</span> is an orthogonal basis of <span class="process-math">\(\R^3\text{.}\)</span> However, it is not an orthonormal basis.<div class="autopermalink" data-description="Paragraph"><a href="#ex-ortho-6-0-0-1-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 6.1.5.3"><a href="#ex-ortho-6-0-0-1-1-1-3" title="Copy heading and permalink for Item 6.1.5.3" aria-label="Copy heading and permalink for Item 6.1.5.3">🔗</a></div>
+<div class="autopermalink" data-description="Item 6.1.6.3"><a href="#ex-ortho-6-0-0-1-1-1-3" title="Copy heading and permalink for Item 6.1.6.3" aria-label="Copy heading and permalink for Item 6.1.6.3">🔗</a></div>
 </li>
 <li id="ex-ortho-6-0-0-1-1-1-4">
 <div class="para" id="ex-ortho-6-0-0-1-1-1-4-1">
 <span class="process-math">\(\beta'=\left\{\left(\frac{2}{\sqrt{6}},\frac{1}{\sqrt{6}},\frac{1}{\sqrt{6}}\right), \left(\frac{-1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right),\left(0,\frac{-1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)\right\}\)</span> is an orthonormal basis of <span class="process-math">\(\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-ortho-6-0-0-1-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 6.1.5.4"><a href="#ex-ortho-6-0-0-1-1-1-4" title="Copy heading and permalink for Item 6.1.5.4" aria-label="Copy heading and permalink for Item 6.1.5.4">🔗</a></div>
+<div class="autopermalink" data-description="Item 6.1.6.4"><a href="#ex-ortho-6-0-0-1-1-1-4" title="Copy heading and permalink for Item 6.1.6.4" aria-label="Copy heading and permalink for Item 6.1.6.4">🔗</a></div>
 </li>
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex-ortho-6-0-0-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 6.1.5"><a href="#ex-ortho-6-0-0" title="Copy heading and permalink for Checkpoint 6.1.5" aria-label="Copy heading and permalink for Checkpoint 6.1.5">🔗</a></div></article><div class="para" id="sec6-0-orthogonality-9">
-<em class="alert">What is an advantage of having an orthonormal basis?</em><div class="autopermalink" data-description="Paragraph"><a href="#sec6-0-orthogonality-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Checkpoint 6.1.6"><a href="#ex-ortho-6-0-0" title="Copy heading and permalink for Checkpoint 6.1.6" aria-label="Copy heading and permalink for Checkpoint 6.1.6">🔗</a></div></article><div class="para" id="sec6-0-orthogonality-10">
+<em class="alert">What is an advantage of having an orthonormal basis?</em><div class="autopermalink" data-description="Paragraph"><a href="#sec6-0-orthogonality-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec6-0-orthogonality-10">Let <span class="process-math">\(\beta =\{u_1,\ldots, u_n\}\)</span> be an orthonormal basis of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(x\in \R^n\text{.}\)</span> Then there exist scalars <span class="process-math">\(\alpha_1,\ldots, \alpha_n\)</span> such that <span class="process-math">\(x=\alpha_1u_1+\cdots +\alpha_nu_n\text{.}\)</span> Then it is easy to check that <span class="process-math">\(\alpha_i = x\cdot u_i\)</span> for all <span class="process-math">\(i\text{.}\)</span> In particular, the scalars <span class="process-math">\(\alpha_i\)</span> can be explicitly written in terms of <span class="process-math">\(u\)</span> and <span class="process-math">\(u_i\text{.}\)</span> This is advantage of having an orthonormal basis.<div class="autopermalink" data-description="Paragraph"><a href="#sec6-0-orthogonality-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec6-0-orthogonality-11">Let <span class="process-math">\(\beta =\{u_1,\ldots, u_n\}\)</span> be an orthonormal basis of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(x\in \R^n\text{.}\)</span> Then there exist scalars <span class="process-math">\(\alpha_1,\ldots, \alpha_n\)</span> such that <span class="process-math">\(x=\alpha_1u_1+\cdots +\alpha_nu_n\text{.}\)</span> Then it is easy to check that <span class="process-math">\(\alpha_i = x\cdot u_i\)</span> for all <span class="process-math">\(i\text{.}\)</span> In particular, the scalars <span class="process-math">\(\alpha_i\)</span> can be explicitly written in terms of <span class="process-math">\(u\)</span> and <span class="process-math">\(u_i\text{.}\)</span> This is advantage of having an orthonormal basis.<div class="autopermalink" data-description="Paragraph"><a href="#sec6-0-orthogonality-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exercise exercise-like" id="ex-ortho-6-0-1"><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="ex-ortho-6-0-1-1-1">(i) Find the coordinates of a vector <span class="process-math">\((1,2)\)</span> with respect to an orthonormal basis <span class="process-math">\(\beta =\left\{\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right), \left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)\right\}\)</span> of <span class="process-math">\(\R^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-ortho-6-0-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="ex-ortho-6-0-1-1-2">(ii) Find the coordinates of the vector <span class="process-math">\((2,5,7)\)</span> with respect to an orthonormal basis <span class="process-math">\(\beta'=\left\{\left(\frac{2}{\sqrt{6}},\frac{1}{\sqrt{6}},\frac{1}{\sqrt{6}}\right), \left(\frac{-1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right),\left(0,\frac{-1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)\right\}\)</span> of <span class="process-math">\(\R^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-ortho-6-0-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 6.1.6"><a href="#ex-ortho-6-0-1" title="Copy heading and permalink for Checkpoint 6.1.6" aria-label="Copy heading and permalink for Checkpoint 6.1.6">🔗</a></div></article><article class="activity project-like" id="sec6-0-orthogonality-12"><h3 class="heading">
+<div class="autopermalink" data-description="Checkpoint 6.1.7"><a href="#ex-ortho-6-0-1" title="Copy heading and permalink for Checkpoint 6.1.7" aria-label="Copy heading and permalink for Checkpoint 6.1.7">🔗</a></div></article><article class="activity project-like" id="sec6-0-orthogonality-13"><h3 class="heading">
 <span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dot Product and Orthogonality in Sage.</span>
 </h3>
-<div class="para" id="sec6-0-orthogonality-12-2">Sage has a method <code class="code-inline tex2jax_ignore">.dot_product()</code> to find the dot product of two vectors and <code class="code-inline tex2jax_ignore">u.norm()</code> returns the norm of <span class="process-math">\(u\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec6-0-orthogonality-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec6-0-orthogonality-13-2">Sage has a method <code class="code-inline tex2jax_ignore">.dot_product()</code> to find the dot product of two vectors and <code class="code-inline tex2jax_ignore">u.norm()</code> returns the norm of <span class="process-math">\(u\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec6-0-orthogonality-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div id="sec6-0-orthogonality-12-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u = vector([1,-1,3,2,-3,1])
+<div id="sec6-0-orthogonality-13-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u = vector([1,-1,3,2,-3,1])
 v = vector([2,-1,4,-2,5,-3])
 print(u.dot_product(v))
 print(u.norm())
 </script></div>
-<div class="para logical" id="sec6-0-orthogonality-12-4">
+<div class="para logical" id="sec6-0-orthogonality-13-4">
 <div class="para">Consider a set of vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -566,9 +592,9 @@ u_4:=u-\frac{u_1\cdot u}{\norm{u_1}^2}u_1-\frac{u_2\cdot u}{\norm{u_2}^2}u_2-\fr
 </div>
 <div class="para">Let us verify that <span class="process-math">\(u_4\)</span> is orthogonal to <span class="process-math">\(u_1,u_2,u_3\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec6-0-orthogonality-12-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec6-0-orthogonality-13-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div id="sec6-0-orthogonality-12-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u1=vector([1,1,1,1]);u2=vector([1,2,-1,-2]);u3=vector([-7,5,1,1])
+<div id="sec6-0-orthogonality-13-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">u1=vector([1,1,1,1]);u2=vector([1,2,-1,-2]);u3=vector([-7,5,1,1])
 # Checking orthogonality of u1,u2,u3
 print(u1.dot_product(u2), u1.dot_product(u3),u2.dot_product(u3))
 u = vector([1,2,3,4])
@@ -577,12 +603,16 @@ print(u4)
 # Checking orthogonality of u1,u2,u3,u
 u4.dot_product(u1), u4.dot_product(u2),u4.dot_product(u3)
 </script></div>
-<div class="autopermalink" data-description="Activity 6.1.1: Dot Product and Orthogonality in Sage"><a href="#sec6-0-orthogonality-12" title="Copy heading and permalink for Activity 6.1.1: Dot Product and Orthogonality in Sage" aria-label="Copy heading and permalink for Activity 6.1.1: Dot Product and Orthogonality in Sage">🔗</a></div></article><article class="exercise exercise-like" id="ex-ortho-6-0-2"><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Activity 6.1.1: Dot Product and Orthogonality in Sage"><a href="#sec6-0-orthogonality-13" title="Copy heading and permalink for Activity 6.1.1: Dot Product and Orthogonality in Sage" aria-label="Copy heading and permalink for Activity 6.1.1: Dot Product and Orthogonality in Sage">🔗</a></div></article><article class="exercise exercise-like" id="ex-ortho-6-0-2"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="ex-ortho-6-0-2-1">Can you think of how will you generate an orthogonal basis of <span class="process-math">\(\mathbb{R}^n\)</span> starting with a non-zero vector in <span class="process-math">\(\mathbb{R}^n\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-ortho-6-0-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 6.1.7"><a href="#ex-ortho-6-0-2" title="Copy heading and permalink for Checkpoint 6.1.7" aria-label="Copy heading and permalink for Checkpoint 6.1.7">🔗</a></div></article><div class="para" id="sec6-0-orthogonality-14">Next we deal with  finding an orthonormal basis of <span class="process-math">\(\R^n\)</span> or any subspace of <span class="process-math">\(\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec6-0-orthogonality-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<details id="ex-ortho-6-0-2-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="ex-ortho-6-0-2-2-1">We can start with any non zero vector <span class="process-math">\(u_1\text{.}\)</span> Now choose <span class="process-math">\(u\notin{\rm span}(u_1)\)</span> and construct <span class="process-math">\(u_2\)</span> as in <a href="sec6-0-orthogonality.html#eqn-orthgonality-eq1" class="xref" data-knowl="./knowl/xref/eqn-orthgonality-eq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1.1">(6.1.1)</a>. Next we find <span class="process-math">\(u\notin {\rm span}(\{u_1,u_2\})\)</span> and define <span class="process-math">\(u_3\)</span> as in <a href="sec6-0-orthogonality.html#eqn-orthgonality-eq1" class="xref" data-knowl="./knowl/xref/eqn-orthgonality-eq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1.1">(6.1.1)</a>. Conntinuing this way we can get an orthogonal basis of <span class="process-math">\(\R^n.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-ortho-6-0-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 6.1.8.1"><a href="#ex-ortho-6-0-2-2" title="Copy heading and permalink for Hint 6.1.8.1" aria-label="Copy heading and permalink for Hint 6.1.8.1">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Checkpoint 6.1.8"><a href="#ex-ortho-6-0-2" title="Copy heading and permalink for Checkpoint 6.1.8" aria-label="Copy heading and permalink for Checkpoint 6.1.8">🔗</a></div></article><div class="para" id="sec6-0-orthogonality-15">In the next section, we deal with  finding an orthonormal basis of <span class="process-math">\(\R^n\)</span>  or any subspace of <span class="process-math">\(\R^n\)</span> from a basis.<div class="autopermalink" data-description="Paragraph"><a href="#sec6-0-orthogonality-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Section 6.1: Orthogonality"><a href="#sec6-0-orthogonality" title="Copy heading and permalink for Section 6.1: Orthogonality" aria-label="Copy heading and permalink for Section 6.1: Orthogonality">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">

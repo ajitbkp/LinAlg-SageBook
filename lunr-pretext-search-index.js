@@ -2743,7 +2743,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Eigenvalues and Eigenvectors",
-  "body": " Eigenvalues and Eigenvectors   In this chapter, we extend our study of linear transformations to the concepts of eigenvalues and eigenvectors , essential for understanding how certain vectors retain their direction under transformation—merely being scaled by a scalar factor.  These ideas lie at the heart of many core themes in linear algebra. In particular, they lay the mathematical foundation for:   Diagonalization of matrices—simplifying linear transformations to their most transparent form.  Dynamical systems , including Markov chains and population models, where long-term behavior is driven by dominant eigenvalues.  Methods for solving systems of linear differential equations via eigen-decomposition.  Dimensional reduction techniques such as Principal Component Analysis (PCA) , where eigenvalues guide us in identifying principal directions.  Web algorithms such as PageRank , leveraging eigenvectors to reveal stable structures.   Throughout the chapter, we will combine conceptual insight with computational exploration using SageMath , helping you see not only what eigenvalues and eigenvectors are, but also how to compute them effectively and where they matter in applications that span mathematics and applied sciences.    Eigenvalues and Eigenvectors  Suppose is a linear map from a vector space to itself. For a given , is a vector in . Look the in which image of vectors under the linear map are shown. Notice that and are parallel, similarly and are parallel.   Image of vectors under . You can also observe that and are parallel, but this this expected as . Similarly and are parallel. Such vectors are called eigenvectors of . In particular, and are parallel, then for some , such a is called the eigenvalue corresonidng to eigenvector . What happens if ?  You can also explore the same while rotating a vector and observing what happens to its image using the interactive diagram below (see ).   Exploration of eigenvectors    These exploration leads to the following definition of eigenvector and eigenvalues.  Eigenvalues and Eigenvectors   Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .      Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.      If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the eiegenvalue 1. The same is true for identity matrix.      Consider the matrix of rotation in anti-clock wise by an angle for . Then it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvectors.     If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .  If , then    Let us analyze the notion of eigenvalues and eigenvector. If is a eigenvector corresponding to an eigenvalue . Then . This implies , where is identity matrix. This means that the homogeneous system has a non zero solution, namely . Hence . Notice that is a polynomial (called the characteristic polynomial of ) of degree in . Thus if , then is a root of the the characteristic polynomial . By fundamental theorem of algebra an real matrix can have at most real eigenvalues. The equation is called characteristic equation of .  We can write as If are roots of the characteristics equation, then using the theory of equations one can show that .  Thus we have the following.    Let be an real matrix. Then (i) the sum of eigenvalues of is the trace of and (ii) the product of eigenvalues is the determeninat of .      Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvector corresponding to the eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?      Let . What are eigenvalues of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .  We can adopt a procedure similar to to show that is an eigenvector corresponding to the eigenvalue . Similarly, are eigenvectors corresponding to the eigenvalue .      Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to       Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.         Suppose is a diagonal matrix, then eigenvalues of are diagonal entries.    Suppose is an triangular (upper \/lower) matrix, the eigenvalues of are the main diagonal entries.          Let an real matrix and be an eigenvalue of . Then is a subspace of .      is the kernel of .    Let . Then      Eigenspace   Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the geometric multiplicity of .  Let be a enigenvector correspnding to the eigenvalue . Let the characteristic polynomila of splits as Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .    We mention, the following theorem without proof at this stage. We shall see the proof later.    Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .      The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .      Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of algebraic multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . Since the rank of is 2. By rank-nullity theorem, nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.    We list the following properties of eigenvalues and eigenvectors without proof.   Properties of Eigenvalues and Eigenvectors       and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of . In general, is an eigenvalue of for any .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.        Proof of .  Follows from . For    Proof of .   .   Proof of .   .   Proof of .   .   Proof of .   .   Proof of .      Proof of .  Since the eigenvalues of and are same.   Proof of .  Let and be with distict eigenvalues of corresponding to the eignevectors, and respectively. Let and be scalars such that . Applying both sides we have . Mutliplying the 1st equation both sides by both side and subtracting from the equation 2nd equation we get . Since , and , we have . Similarly, .  We have the following generalization. If for are eigenvvectors with respect to distinct eigenvalues for respectively, then are linearly independent. The prove this follows from induction on .   Proof of .  Since is a linear transformation, it can be written as , where is the matrix of with respect to the standard basis of and that eigenvalues of are same as eigenvalues of . Then and are similar matrices. Hence they have the same eigenvalues.      Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by          Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.        (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.   In genegarl, let be a polynomial of degree and be an real matrix. Then we can define . If is an eigenvalue of , theh is an eigenvalue of .   Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .    The proof is an application of the formula where is the adjugate of a and is defined as the transpose of its cofactor matrix.  We apply the adjugate formula to the matrix . Hence we have Note that adjugate matrix is an matrix whose entries are polynomials in of degree at most . Hence we may write where are matrices with real entries. Hence by , we have Now comparing the coefficients of power of , we get Multiplying the first equation by , the second equation by , the second last equation by and the last equation by and additing, we get the desired result.      Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by to the equation, , we get , from this we have .  Can you find ?      (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .     Spectral Radius   Let an and for be eigenvalues of then the spectral radius of is define as .      Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .      Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .      Find the spectral radius of and .    Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.      Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.      Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.      If is a positive definite matrix then all its eigenvalues are positive.      If is a negative definite matrix then all its eigenvalues are negative.    We have the following result about positive definite matrices known as Sylvester's criterion . It allows us to determine if a given matrix in positive definite using the leading principal minors of the matrix.  The leading principal minors of a matrix are and the minors obtained by successively removing the last row and the last columns. That is, the leading principal miniors of a matrix are .  Sylvester's Criterion   If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.      Let . For any , we have   Henc e is positive definite.      Let . Show that is positive definite.    Note that if is not a symmetric matrix, then the Sylvester's criteria cannot be used to check positive definiteness. For, condider the matrix . It is easy to see that all principal minors of are positive. For , , however for , .    Consider a linear transpfrmation defined by . Whar are eigenvalues and eigenvector of ?    Consider a linear transpfrmation defined by . Whar are eigenvalues and eigenvector of ?    Write matrix of each of the linear transformation with respect to the standard basis and find the eigenvalues and eigenvectors with respect to that see what will the corresponding eigenvalues and eigenvectors of .      Consider a linear transformation defined as . What are eigenvalues and eigenvectors of ?    Consider a linear transformation defined as . What are eigenvalues and eigenvectors of ?    Consider a linear transformation defined as . What are eigenvalues and eigenvectors of ?    Write matrix of each of the linear transformation with respect to the standard basis and find the eigenvalues and eigenvectors with respect to that see what will the corresponding eigenvalues and eigenvectors of .       Let be the set of all twice continuously differentaible functions from to . It is easy to check that it is a vector soace over . Consider the following linear maps:    .     .   Can you find some eigenvalues and eigenvectors of and ?      "
+  "body": " Eigenvalues and Eigenvectors   In this chapter, we extend our study of linear transformations to the concepts of eigenvalues and eigenvectors , essential for understanding how certain vectors retain their direction under transformation—merely being scaled by a scalar factor.  These ideas lie at the heart of many core themes in linear algebra. In particular, they lay the mathematical foundation for:   Diagonalization of matrices—simplifying linear transformations to their most transparent form.  Dynamical systems , including Markov chains and population models, where long-term behavior is driven by dominant eigenvalues.  Methods for solving systems of linear differential equations via eigen-decomposition.  Dimensional reduction techniques such as Principal Component Analysis (PCA) , where eigenvalues guide us in identifying principal directions.  Web algorithms such as PageRank , leveraging eigenvectors to reveal stable structures.   Throughout the chapter, we will combine conceptual insight with computational exploration using SageMath , helping you see not only what eigenvalues and eigenvectors are, but also how to compute them effectively and where they matter in applications that span mathematics and applied sciences.    Eigenvalues and Eigenvectors  Suppose is a linear map from a vector space to itself. For a given , is a vector in . Look the in which image of vectors under the linear map are shown. Notice that and are parallel, similarly and are parallel.   Image of vectors under . You can also observe that and are parallel, but this this expected as . Similarly and are parallel. Such vectors are called eigenvectors of . In particular, and are parallel, then for some , such a is called the eigenvalue corresonidng to eigenvector . What happens if ?  You can also explore the same while rotating a vector and observing what happens to its image using the interactive diagram below (see ).   Exploration of eigenvectors    These exploration leads to the following definition of eigenvector and eigenvalues.  Eigenvalues and Eigenvectors   Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .      Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.      If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the eiegenvalue 1. The same is true for identity matrix.      Consider the matrix of rotation in anti-clock wise by an angle for . Then it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvectors.     If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .  If , then    Let us analyze the notion of eigenvalues and eigenvector. If is a eigenvector corresponding to an eigenvalue . Then . This implies , where is identity matrix. This means that the homogeneous system has a non zero solution, namely . Hence . Notice that is a polynomial (called the characteristic polynomial of ) of degree in . Thus if , then is a root of the the characteristic polynomial . By fundamental theorem of algebra an real matrix can have at most real eigenvalues. The equation is called characteristic equation of .  We can write as If are roots of the characteristics equation, then using the theory of equations one can show that .  Thus we have the following.    Let be an real matrix. Then (i) the sum of eigenvalues of is the trace of and (ii) the product of eigenvalues is the determeninat of .      Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvector corresponding to the eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?      Let . What are eigenvalues of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .  We can adopt a procedure similar to to show that is an eigenvector corresponding to the eigenvalue . Similarly, are eigenvectors corresponding to the eigenvalue .      Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to       Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.         Suppose is a diagonal matrix, then eigenvalues of are diagonal entries.    Suppose is an triangular (upper \/lower) matrix, the eigenvalues of are the main diagonal entries.          Let an real matrix and be an eigenvalue of . Then is a subspace of .      is the kernel of .    Let . Then      Eigenspace   Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the geometric multiplicity of .  Let be a enigenvector correspnding to the eigenvalue . Let the characteristic polynomila of splits as Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .    We mention, the following theorem without proof at this stage. We shall see the proof later.    Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .      The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .      Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of algebraic multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . Since the rank of is 2. By rank-nullity theorem, nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.    We list the following properties of eigenvalues and eigenvectors without proof.   Properties of Eigenvalues and Eigenvectors       and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of . In general, is an eigenvalue of for any .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.        Proof of .  Follows from . For    Proof of .   .   Proof of .   .   Proof of .   .   Proof of .   .   Proof of .      Proof of .  Since the eigenvalues of and are same.   Proof of .  Let and be with distict eigenvalues of corresponding to the eignevectors, and respectively. Let and be scalars such that . Applying both sides we have . Mutliplying the 1st equation both sides by both side and subtracting from the equation 2nd equation we get . Since , and , we have . Similarly, .  We have the following generalization. If for are eigenvvectors with respect to distinct eigenvalues for respectively, then are linearly independent. The prove this follows from induction on .   Proof of .  Since is a linear transformation, it can be written as , where is the matrix of with respect to the standard basis of and that eigenvalues of are same as eigenvalues of . Then and are similar matrices. Hence they have the same eigenvalues.      Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by          Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.        (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.   In genegarl, let be a polynomial of degree and be an real matrix. Then we can define . If is an eigenvalue of , theh is an eigenvalue of .   Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .    The proof is an application of the formula where is the adjugate of a and is defined as the transpose of its cofactor matrix.  We apply the adjugate formula to the matrix . Hence we have Note that adjugate matrix is an matrix whose entries are polynomials in of degree at most . Hence we may write where are matrices with real entries. Hence by , we have Now comparing the coefficients of power of , we get Multiplying the first equation by , the second equation by , the second last equation by and the last equation by and additing, we get the desired result.      Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by to the equation, , we get , from this we have .  Can you find ?      (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .     Spectral Radius   Let an and for be eigenvalues of then the spectral radius of is define as .      Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .      Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .      Find the spectral radius of and .    Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.      Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.      Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.      If is a positive definite matrix then all its eigenvalues are positive.      If is a negative definite matrix then all its eigenvalues are negative.    We have the following result about positive definite matrices known as Sylvester's criterion . It allows us to determine if a given matrix in positive definite using the leading principal minors of the matrix.  The leading principal minors of a matrix are and the minors obtained by successively removing the last row and the last columns. That is, the leading principal miniors of a matrix are .  Sylvester's Criterion   If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.      Let . For any , we have   Henc e is positive definite.      Let . Show that is positive definite.    Note that if is not a symmetric matrix, then the Sylvester's criteria cannot be used to check positive definiteness. For, condider the matrix . It is easy to see that all principal minors of are positive. For , , however for , .    Consider a linear transpfrmation defined by . Whar are eigenvalues and eigenvector of ?    Consider a linear transpfrmation defined by . Whar are eigenvalues and eigenvector of ?    Consider a linear transformation defined as . What are eigenvalues and eigenvectors of ?    Consider a linear transformation defined as . What are eigenvalues and eigenvectors of ?    Consider a linear transformation defined as . What are eigenvalues and eigenvectors of ?    Write matrix of each of the linear transformation with respect to the standard basis and find the eigenvalues and eigenvectors with respect to that see what will the corresponding eigenvalues and eigenvectors of .       Let be the set of all twice continuously differentaible functions from to . It is easy to check that it is a vector soace over . Consider the following linear maps:    .     .   Can you find some eigenvalues and eigenvectors of and ?      "
 },
 {
   "id": "sec5-1-eigen-intro-2-1",
@@ -3115,29 +3115,29 @@ var ptx_lunr_docs = [
   "body": " Consider a linear transpfrmation defined by . Whar are eigenvalues and eigenvector of ?  "
 },
 {
-  "id": "rqs-eigenvalues-matrix-space-1",
+  "id": "rqs-eigenvalues-poly-space-3",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#rqs-eigenvalues-matrix-space-1",
-  "type": "Reading Question",
-  "number": "5.1.1.1",
-  "title": "",
-  "body": " Consider a linear transformation defined as . What are eigenvalues and eigenvectors of ?  "
-},
-{
-  "id": "rqs-eigenvalues-matrix-space-2",
-  "level": "2",
-  "url": "sec5-1-eigen-intro.html#rqs-eigenvalues-matrix-space-2",
-  "type": "Reading Question",
-  "number": "5.1.1.2",
-  "title": "",
-  "body": " Consider a linear transformation defined as . What are eigenvalues and eigenvectors of ?  "
-},
-{
-  "id": "rqs-eigenvalues-matrix-space-3",
-  "level": "2",
-  "url": "sec5-1-eigen-intro.html#rqs-eigenvalues-matrix-space-3",
+  "url": "sec5-1-eigen-intro.html#rqs-eigenvalues-poly-space-3",
   "type": "Reading Question",
   "number": "5.1.1.3",
+  "title": "",
+  "body": " Consider a linear transformation defined as . What are eigenvalues and eigenvectors of ?  "
+},
+{
+  "id": "rqs-eigenvalues-poly-space-4",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#rqs-eigenvalues-poly-space-4",
+  "type": "Reading Question",
+  "number": "5.1.1.4",
+  "title": "",
+  "body": " Consider a linear transformation defined as . What are eigenvalues and eigenvectors of ?  "
+},
+{
+  "id": "rqs-eigenvalues-poly-space-5",
+  "level": "2",
+  "url": "sec5-1-eigen-intro.html#rqs-eigenvalues-poly-space-5",
+  "type": "Reading Question",
+  "number": "5.1.1.5",
   "title": "",
   "body": " Consider a linear transformation defined as . What are eigenvalues and eigenvectors of ?  "
 },
@@ -3661,7 +3661,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.1",
   "title": "Orthogonality",
-  "body": " Orthogonality   In this chapter we deal with orthogonality of vectors and various properties.  Recall, that if is linearly independent subset of and , then is linearly independent subset of . (why?)     A set of vectors is called orthogonal if where represents the standard dot product on     If , then .   Show that orthogonal set of vectors are linearly independent.     Let be an orthogonal set of vectors in . Let and define ,  Then  (i) for all   (ii) If , then and is an orthogonal set.      A basis is called an orthogonal basis if is an orthogonal set in . In addition if for all , then is called an orthonormal basis.         The standard basis is an orthonormal basis of .     is an orthonormal basis of .     is an orthogonal basis of . However, it is not an orthonormal basis.     is an orthonormal basis of .         What is an advantage of having an orthonormal basis?   Let be an orthonormal basis of and . Then there exist scalars such that . Then it is easy to check that for all . In particular, the scalars can be explicitly written in terms of and . This is advantage of having an orthonormal basis.    (i) Find the coordinates of a vector with respect to an orthonormal basis of .  (ii) Find the coordinates of the vector with respect to an orthonormal basis of .     Dot Product and Orthogonality in Sage  Sage has a method .dot_product() to find the dot product of two vectors and u.norm() returns the norm of .   Consider a set of vectors Let us check that are orthogonal. Let . Define Let us verify that is orthogonal to .     Can you think of how will you generate an orthogonal basis of starting with a non-zero vector in ?   Next we deal with finding an orthonormal basis of or any subspace of .  "
+  "body": " Orthogonality   In this chapter we deal with orthogonality of vectors and various properties.  Recall, that if is linearly independent subset of and , then is linearly independent subset of . (why?)     A set of non zero vectors is called orthogonal if where represents the standard dot product in More precisely for , we have     If , then .   Show that orthogonal set of vectors are linearly independent.   Let be an orthogonal set. Let Taking dot product with , we get . Since . Hence .     Let be a vector in which is orthoogoanl of all vectors in . Then what can you say about .    , for such a vector , we have , implies for each , .      Let be an orthogonal set of vectors in . Let and define ,  Then  (i) for all   (ii) If , then and is an orthogonal set. What is if ?      A basis is called an orthogonal basis if is an orthogonal set in . In addition if for all , then is called an orthonormal basis.         The standard basis is an orthonormal basis of .     is an orthonormal basis of .     is an orthogonal basis of . However, it is not an orthonormal basis.     is an orthonormal basis of .         What is an advantage of having an orthonormal basis?   Let be an orthonormal basis of and . Then there exist scalars such that . Then it is easy to check that for all . In particular, the scalars can be explicitly written in terms of and . This is advantage of having an orthonormal basis.    (i) Find the coordinates of a vector with respect to an orthonormal basis of .  (ii) Find the coordinates of the vector with respect to an orthonormal basis of .     Dot Product and Orthogonality in Sage  Sage has a method .dot_product() to find the dot product of two vectors and u.norm() returns the norm of .   Consider a set of vectors Let us check that are orthogonal. Let . Define Let us verify that is orthogonal to .     Can you think of how will you generate an orthogonal basis of starting with a non-zero vector in ?   We can start with any non zero vector . Now choose and construct as in . Next we find and define as in . Conntinuing this way we can get an orthogonal basis of     In the next section, we deal with finding an orthonormal basis of or any subspace of from a basis.  "
 },
 {
   "id": "def-orthogonal-set",
@@ -3670,7 +3670,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "6.1.1",
   "title": "",
-  "body": "  A set of vectors is called orthogonal if where represents the standard dot product on    "
+  "body": "  A set of non zero vectors is called orthogonal if where represents the standard dot product in More precisely for , we have    "
 },
 {
   "id": "orth-ex1-0",
@@ -3679,23 +3679,32 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "6.1.2",
   "title": "",
-  "body": " Show that orthogonal set of vectors are linearly independent.  "
+  "body": " Show that orthogonal set of vectors are linearly independent.   Let be an orthogonal set. Let Taking dot product with , we get . Since . Hence .   "
+},
+{
+  "id": "orth-ex1-1",
+  "level": "2",
+  "url": "sec6-0-orthogonality.html#orth-ex1-1",
+  "type": "Checkpoint",
+  "number": "6.1.3",
+  "title": "",
+  "body": " Let be a vector in which is orthoogoanl of all vectors in . Then what can you say about .    , for such a vector , we have , implies for each , .   "
 },
 {
   "id": "orth-ex2-1",
   "level": "2",
   "url": "sec6-0-orthogonality.html#orth-ex2-1",
   "type": "Checkpoint",
-  "number": "6.1.3",
+  "number": "6.1.4",
   "title": "",
-  "body": "  Let be an orthogonal set of vectors in . Let and define ,  Then  (i) for all   (ii) If , then and is an orthogonal set.   "
+  "body": "  Let be an orthogonal set of vectors in . Let and define ,  Then  (i) for all   (ii) If , then and is an orthogonal set. What is if ?   "
 },
 {
   "id": "def-orthonormal-basis",
   "level": "2",
   "url": "sec6-0-orthogonality.html#def-orthonormal-basis",
   "type": "Definition",
-  "number": "6.1.4",
+  "number": "6.1.5",
   "title": "",
   "body": "  A basis is called an orthogonal basis if is an orthogonal set in . In addition if for all , then is called an orthonormal basis.   "
 },
@@ -3704,7 +3713,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-0-orthogonality.html#ex-ortho-6-0-0",
   "type": "Checkpoint",
-  "number": "6.1.5",
+  "number": "6.1.6",
   "title": "",
   "body": "     The standard basis is an orthonormal basis of .     is an orthonormal basis of .     is an orthogonal basis of . However, it is not an orthonormal basis.     is an orthonormal basis of .      "
 },
@@ -3713,14 +3722,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-0-orthogonality.html#ex-ortho-6-0-1",
   "type": "Checkpoint",
-  "number": "6.1.6",
+  "number": "6.1.7",
   "title": "",
   "body": "  (i) Find the coordinates of a vector with respect to an orthonormal basis of .  (ii) Find the coordinates of the vector with respect to an orthonormal basis of .   "
 },
 {
-  "id": "sec6-0-orthogonality-12",
+  "id": "sec6-0-orthogonality-13",
   "level": "2",
-  "url": "sec6-0-orthogonality.html#sec6-0-orthogonality-12",
+  "url": "sec6-0-orthogonality.html#sec6-0-orthogonality-13",
   "type": "Activity",
   "number": "6.1.1",
   "title": "Dot Product and Orthogonality in Sage.",
@@ -3731,9 +3740,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-0-orthogonality.html#ex-ortho-6-0-2",
   "type": "Checkpoint",
-  "number": "6.1.7",
+  "number": "6.1.8",
   "title": "",
-  "body": " Can you think of how will you generate an orthogonal basis of starting with a non-zero vector in ?  "
+  "body": " Can you think of how will you generate an orthogonal basis of starting with a non-zero vector in ?   We can start with any non zero vector . Now choose and construct as in . Next we find and define as in . Conntinuing this way we can get an orthogonal basis of    "
 },
 {
   "id": "sec6-1-GramSchmidt",
@@ -3814,7 +3823,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.3",
   "title": "Orthogonal Complements",
-  "body": " Orthogonal Complements   In this section, we shall explore the notion of orthogonal complement of a subspace in a .    Orthogonal Complements    Let . Then is called the orthogonal complement of .      (i)   (ii) .  (iii) Let . Then is a subspace of . Note that need not be a subspace of .      Let . Then .      Find the orthogonal complement of .       Let be a subspace of with an orthogonal basis . If , then . called the orthogononal projection of onto .      Let be a subspace of and . Then  (i) and .  (ii) is a vector in , which is closet to . That is for all , . Note that . Hence by the Pythagoras theorem, . .      Consider the plane . It is easy to see that lie on the plane . Using the Gram-Schmidt process we can find an orthogonal basis on . Let us find the orthogonal projection of onto . The required vector .    Orthogonal Proojection onto a subspace  How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in ? Let be a basis of . We want to find the vector which is the orthogonal projection of onto .  Note that , therefore, there exist scalars such that where and .  It is clear that . Hence for . This is same as .  Hence   The matrix is called the projection matrix for the subspace .   Consider a set of vectors Let be the subspace spanned by in . Find the orthogonal projection of the vector onto in Sage.    Since pivots indices are , are linearly independent. We define a matrix of whose columns are . Then the orthogonal projection of onto is .   It is easy to check that is orgthogonal to .       Let be an real matrix. Recall and , range or columns space of and null or kernel of . Then show that (i) and (ii) .  Let . Then for all . Hence . This implies that, . Next let then for all . Hence . That is, .      Projection and Reflection   In this subsection, we deal with two concepts, orthogonla projection of a vector onto a hyperplane in and reflection of a vector about a hyperplane.     A hyperplane in is an -dimensional affine space defined by where is a nonzero vector in and . If , then is an -dimensiional subspace of of .  Note that if is an -dimensiional subspace of of , defined by , let us denote it by , then is orthogonal to .    How to find the orthogonal projection of a vector onto ? Note that we have already done one way by finding a basis vector of . We would like to get a formula in terms of . If is the orthogonal projection of onto , then it can be obianed by taking out the orthogonal prjection of onto the vector from . Thus we have The matrix is nothing but the projection matrix .  How do we obtain , the orthogonal projection of onto ? Note that is parallel to . Hence for some scalar . Since , we have . Simplyfying we get      Find the orthogonal projevction of a vector to to the hyperplane given by in          Next we wish to find the reflection of a vector about the hyperplane . Suppose is the projection of about , then can be obtained by going the same distance on the opposite side along the vector . Thus Substituting the formula for , and after simplification, we get   As as special if , the hyperplane passes through the origin, If is a unit vector, , this simplifies to: The matrix is called the reflection matrix .    Find the reflection of the vector about the hyperplane .     Plottig orthogonal projection and reclection in  Use sage to plot the hyperplane defined by the equation and also plot the vector and its orthogonal projection and the reflection about .     Orthogonal complements provide a way to decompose vector spaces and are closely related to projections and reflections.   "
+  "body": " Orthogonal Complements   In this section, we shall explore the notion of orthogonal complement of a subspace in a .    Orthogonal Complements    Let . Then is called the orthogonal complement of .               .    Let . Then is a subspace of . Note that need not be a subspace of .         Let . Then .      Find the orthogonal complement of .       Let be a subspace of with an orthogonal basis . If , then . called the orthogononal projection of onto .      Let be a subspace of and . Then  (i) and .  (ii) is a vector in , which is closet to . That is for all , .    Note that . Hence by the Pythagoras theorem, . .      Consider the plane . It is easy to see that lie on the plane . Using the Gram-Schmidt process we can find an orthogonal basis on . Let us find the orthogonal projection of onto . The required vector .     Orthogonal Projection onto a subspace  How to find the orthogonal projection of a vector on to the subspace spanned by a set of vectors in ? Let be a basis of . We want to find the vector which is the orthogonal projection of onto .  Note that , therefore, there exist scalars such that where and .  It is clear that . Hence for . This is same as .  Hence   The matrix is called the projection matrix for the subspace .   Consider a set of vectors Let be the subspace spanned by in . Find the orthogonal projection of the vector onto in Sage.    Since pivots indices are , are linearly independent. We define a matrix of whose columns are . Then the orthogonal projection of onto is .   It is easy to check that is orgthogonal to .       Let be an real matrix. Recall and , range or columns space of and null or kernel of . Then show that    and     .      Let . Then for all . Hence . This implies that, . Next let then for all . Hence . That is, .       Projection and Reflection   In this subsection, we deal with two concepts, orthogonla projection of a vector onto a hyperplane in and reflection of a vector about a hyperplane.     A hyperplane in is an -dimensional affine space defined by where is a nonzero vector in and . If , then is an -dimensiional subspace of of .  Note that if is an -dimensiional subspace of of , defined by , let us denote it by , then is orthogonal to .    How to find the orthogonal projection of a vector onto ? Note that we have already done one way by finding a basis vector of . We would like to get a formula in terms of . If is the orthogonal projection of onto , then it can be obianed by taking out the orthogonal prjection of onto the vector from . Thus we have The matrix is nothing but the projection matrix .  How do we obtain , the orthogonal projection of onto ? Note that is parallel to . Hence for some scalar . Since , we have . Simplyfying we get      Find the orthogonal projevction of a vector to to the hyperplane given by in          Next we wish to find the reflection of a vector about the hyperplane . Suppose is the projection of about , then can be obtained by going the same distance on the opposite side along the vector . Thus Substituting the formula for , and after simplification, we get   As as special if , the hyperplane passes through the origin, If is a unit vector, , this simplifies to: The matrix is called the reflection matrix .    Find the reflection of the vector about the hyperplane .     Plottig orthogonal projection and reclection in  Use sage to plot the hyperplane defined by the equation and also plot the vector and its orthogonal projection and the reflection about .     Orthogonal complements provide a way to decompose vector spaces and are closely related to projections and reflections.   "
 },
 {
   "id": "def-orthogonal-complement",
@@ -3832,7 +3841,7 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "6.3.2",
   "title": "",
-  "body": "  (i)   (ii) .  (iii) Let . Then is a subspace of . Note that need not be a subspace of .   "
+  "body": "           .    Let . Then is a subspace of . Note that need not be a subspace of .      "
 },
 {
   "id": "subsec-orthogonal-complements-4",
@@ -3868,7 +3877,7 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "6.3.6",
   "title": "",
-  "body": "  Let be a subspace of and . Then  (i) and .  (ii) is a vector in , which is closet to . That is for all , . Note that . Hence by the Pythagoras theorem, . .   "
+  "body": "  Let be a subspace of and . Then  (i) and .  (ii) is a vector in , which is closet to . That is for all , .    Note that . Hence by the Pythagoras theorem, . .   "
 },
 {
   "id": "subsec-orthogonal-complements-8",
@@ -3878,6 +3887,15 @@ var ptx_lunr_docs = [
   "number": "6.3.7",
   "title": "",
   "body": "  Consider the plane . It is easy to see that lie on the plane . Using the Gram-Schmidt process we can find an orthogonal basis on . Let us find the orthogonal projection of onto . The required vector .   "
+},
+{
+  "id": "subsec-orthogonal-complements-9",
+  "level": "2",
+  "url": "sec6-2.html#subsec-orthogonal-complements-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Orthogonal Projection onto a subspace "
 },
 {
   "id": "subsec-orthogonal-complements-15",
@@ -3895,7 +3913,7 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "6.3.9",
   "title": "",
-  "body": "  Let be an real matrix. Recall and , range or columns space of and null or kernel of . Then show that (i) and (ii) .  Let . Then for all . Hence . This implies that, . Next let then for all . Hence . That is, .   "
+  "body": "  Let be an real matrix. Recall and , range or columns space of and null or kernel of . Then show that    and     .      Let . Then for all . Hence . This implies that, . Next let then for all . Hence . That is, .    "
 },
 {
   "id": "def-hyperplane",
@@ -3940,16 +3958,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.4",
   "title": "Orthogonal Diagonalizations",
-  "body": " Orthogonal Diagonalizations    Let be an matrix. Then the following are equivalent:  (i) is non-singular and .  (ii) The rows of are orthonormal vectors in .  (iii) The columns of are orthonormal vectors in .      A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .      (i) The matrix is an orthogonal matrix.  (ii) is an orthogonal matrix.      An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.      Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.      Let be an matrix. Then the following are equivalent.  (i) has an orthonormal set of eigenvectors.  (ii) is orthogonally diagonalizable.  (iii) is symmetric.      Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .      For the following matrices find an orthogonal matrix such that is a diagonal matrix.       The following are equivalent for an matrix .      is orthogonal.     for all .     for all .     .        Quadratic Forms and Conic Sections  In this subsection, we give an application of orthogonal diagonalizability to conic sections.  A general second-degree equation in two variables is given by where .  This equation can be written compactly in matrix notation as   Here, is the symmetric matrix associated with the quadratic part .  Since is symmetric, it is orthogonally diagonalizable. That is, there exists an orthogonal matrix such that where are eigenvalues of and is the column matrix of orthogonal eigenbasis.  With the change of variables the quadratic form simplifies to Note that here Thus, the cross term is eliminated by using the orthogonal linear trasformation and the conic aligns with its principal axes, that is along the eigenvectors directions.  Now we have various cases. If we assume that and are positive, then we can complete square and we get for some real number . What is ? It is .  The origin of this quadratic in -coordinates is Hence the orgin in terms of -coordinates is Thus we have converted the original quadratic to This is an ellipse. Here, we have The transformation, is called an affine linear transformation. Here is a orthogonl linear map. Thus an affine linear transformation on is a map of the form ,where is an orthogonal transformation and is a called a translation vector. Such maps are also called isometries.   In case, and both are negative then, we can multiply the whole equation by and we get the a similar expression except, the right hand changes its sign.  In case one of the , say , then the conic tranforms to which is a hyperbola.  In case one of the , say , then the conic tranforms to which is parabola. Here and .  Classification of Conics in two variables  Based on the above discussions, the classification of the above conic section depends on the eigenvalues of .     Ellipse: If both eigenvalues have the same sign, then the quadratic is an ellipe of the form .    Circle: When , then the quadratic is circle.    Hyperbola: If eigenvalues have opposite signs, then the quadratic is a hyperbola of the form     Parabola: If one eigenvalue is zero, then it is a parabola.       Condiser the quadratic . Let us convert this quadrtic into a conic section in canonial form.    The associated symmetric matrix of this quadratic is given by It is easy to check the the eigenvalues of are and with the corresponding eigenvectors and . Hence we have The new coordinates in terms of is Now substituting and in the given quadratic, we get After completing the squares, we get This can be written as an equation of ellipes. Note that here the translation vector is given by   Let us explore this in Sage. Here we plot the orginal quadratic curve along with the transformed coordinates.      Consider the quadratic equation . We wish the classify this as a conic section.  Let us first plot the graph of this curve in Sage.   The symmetric matrix associated with quadratic tem is given by . It is easy to check that he eigenvalues are . Since both the eigenvalues are positive, this quadratic is an ellipse. This is what the graph shows.  Now we give all the steps in Sage to plot the curve along with the now coordinate system.     Consider the quadratic eqation given by . Use Sage to classify this and plot the curve along with the transformed coordinates system.      Consider the quadratic equation and classify this to a conic section.    The matrix associated with the quadratic part of the above equation is . It is easy to check that the eigenvalues of are . Since one of the eigenvalues is 0, this curve is a parabola. Let us draw this curve along with the tranformed orgini and the two new coordinate directions in Sage.      For given quadratic equation , write down the corresponding canonical conics by describing the new orgin , and the new coordinate vectors by codisering different cases in a tabular form.     Classification of Quadratic Surfaces in Three Variables   The classification of quadratic equation in three varibale can be done in a very similar manner as we have seen in case of two variable    A general quadratic equation in three variables is where .  In matrix form, Since is symmetric, there exists an orthogonal matrix such that After an orthogonal change of variables and a translation to eliminate linear terms, the quadratic form reduces to the canonical form .   Classification of Quadrics  Depending on the signs of , we obtain the following surfaces:     Ellipsoid: All eigenvalues positive. .      Hyperboloid of One Sheet: Two positive eigenvalues, one negative.       Hyperboloid of Two Sheets: One positive eigenvalue, two negative.       Elliptic Cone: Two positibve and one negative eigenvalues with no constant term.       Elliptic Paraboloid: (Bowl-shaped surface) Two positive eigenvalues, one zero.       Hyperbolic Paraboloid: (Saddle Surface) One positive eigenvalue, one negative, one zero.       Elliptic Cylinder: Two positive eigenvalues, third zero.       Hyperbolic Cylinder: One positive, one negative, third zero.       Parabolic Cylinder: Only one nonzero eigenvalue.       "
+  "body": " Orthogonal Diagonalizations   Recall the concept of diagonalization of a square matrix. We have seen that an matrix is diagonalizable if there is an eigenbasis of . In this section, we shall explore if we can find an eigenbasis which is also an orthonormal. First of all we shall define what is meaning of an orthogonal matrix.     Let be an matrix. Then the following are equivalent:    is non-singular and .    The rows of are orthonormal vectors in .    The columns of are orthonormal vectors in .       Assume that . This implies . Let the columns of are . Then is linearly independent. It is easy to see that the -th entry of is . Hence we have if and 0 otherwise. This proves rows of and orthogonal and hence columns of are orthogonal. The converse is easy.      A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .         The matrix is an orthogonal matrix.     is an orthogonal matrix.         An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.    It is easy to easy to see that if and are orthgogonal matrices then is also orthogonal. (why?)    Two matrices and are called orthogonally similar if there exists an orthogonal matrix such that is a diagonal matrix.    Thus an orthogonally diangomally matrix is ortghogonally similar to a diagonal matrix.  Suppose a matrix is orthogonally diagonalizable. That is , a digonal matrix. This means . Hence Thus if is orthogonally diagonalizable then must be symmetric.    Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.    We have This implies . Since , we have .    The following therem shows that every real symmetric matrix is orthogonally diagonalizable.    Let be an matrix. Then the following are equivalent.     has an orthonormal set of eigenvectors.     is orthogonally diagonalizable.     is symmetric.        Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .      For the following matrices find an orthogonal matrix such that is a diagonal matrix.       The following are equivalent for an matrix .      is orthogonal.     for all .     for all .     .        Quadratic Forms and Conic Sections  In this subsection, we give an application of orthogonal diagonalizability to conic sections.  A general second-degree equation in two variables is given by where .  This equation can be written compactly in matrix notation as   Here, is the symmetric matrix associated with the quadratic part .  Since is symmetric, it is orthogonally diagonalizable. That is, there exists an orthogonal matrix such that where are eigenvalues of and is the column matrix of orthogonal eigenbasis.  With the change of variables the quadratic form simplifies to Note that here Thus, the cross term is eliminated by using the orthogonal linear trasformation and the conic aligns with its principal axes, that is along the eigenvectors directions.  Now we have various cases. If we assume that and are positive, then we can complete square and we get for some real number . What is ? It is .  The origin of this quadratic in -coordinates is Hence the orgin in terms of -coordinates is Thus we have converted the original quadratic to This is an ellipse. Here, we have The transformation, is called an affine linear transformation. Here is a orthogonl linear map. Thus an affine linear transformation on is a map of the form ,where is an orthogonal transformation and is a called a translation vector. Such maps are also called isometries.   In case, and both are negative then, we can multiply the whole equation by and we get the a similar expression except, the right hand changes its sign.  In case one of the , say , then the conic tranforms to which is a hyperbola.  In case one of the , say , then the conic tranforms to which is parabola. Here and .  Classification of Conics in two variables  Based on the above discussions, the classification of the above conic section depends on the eigenvalues of .     Ellipse: If both eigenvalues have the same sign, then the quadratic is an ellipe of the form .    Circle: When , then the quadratic is circle.    Hyperbola: If eigenvalues have opposite signs, then the quadratic is a hyperbola of the form     Parabola: If one eigenvalue is zero, then it is a parabola.       Condiser the quadratic . Let us convert this quadrtic into a conic section in canonial form.    The associated symmetric matrix of this quadratic is given by It is easy to check the the eigenvalues of are and with the corresponding eigenvectors and . Hence we have The new coordinates in terms of is Now substituting and in the given quadratic, we get After completing the squares, we get This can be written as an equation of ellipes. Note that here the translation vector is given by   Let us explore this in Sage. Here we plot the orginal quadratic curve along with the transformed coordinates.      Consider the quadratic equation . We wish the classify this as a conic section.  Let us first plot the graph of this curve in Sage.   The symmetric matrix associated with quadratic tem is given by . It is easy to check that he eigenvalues are . Since both the eigenvalues are positive, this quadratic is an ellipse. This is what the graph shows.  Now we give all the steps in Sage to plot the curve along with the now coordinate system.     Consider the quadratic eqation given by . Use Sage to classify this and plot the curve along with the transformed coordinates system.      Consider the quadratic equation and classify this to a conic section.    The matrix associated with the quadratic part of the above equation is . It is easy to check that the eigenvalues of are . Since one of the eigenvalues is 0, this curve is a parabola. Let us draw this curve along with the tranformed orgini and the two new coordinate directions in Sage.      For given quadratic equation , write down the corresponding canonical conics by describing the new orgin , and the new coordinate vectors by codisering different cases in a tabular form.     Classification of Quadratic Surfaces in Three Variables   The classification of quadratic equation in three varibale can be done in a very similar manner as we have seen in case of two variable    A general quadratic equation in three variables is where .  In matrix form, Since is symmetric, there exists an orthogonal matrix such that After an orthogonal change of variables and a translation to eliminate linear terms, the quadratic form reduces to the canonical form .   Classification of Quadrics  Depending on the signs of , we obtain the following surfaces:     Ellipsoid: All eigenvalues positive. .      Hyperboloid of One Sheet: Two positive eigenvalues, one negative.       Hyperboloid of Two Sheets: One positive eigenvalue, two negative.       Elliptic Cone: Two positibve and one negative eigenvalues with no constant term.       Elliptic Paraboloid: (Bowl-shaped surface) Two positive eigenvalues, one zero.       Hyperbolic Paraboloid: (Saddle Surface) One positive eigenvalue, one negative, one zero.       Elliptic Cylinder: Two positive eigenvalues, third zero.       Hyperbolic Cylinder: One positive, one negative, third zero.       Parabolic Cylinder: Only one nonzero eigenvalue.       "
 },
 {
-  "id": "orthogonal-ex1",
+  "id": "thm-orthogonal-matrix",
   "level": "2",
-  "url": "sec6-3.html#orthogonal-ex1",
+  "url": "sec6-3.html#thm-orthogonal-matrix",
   "type": "Theorem",
   "number": "6.4.1",
   "title": "",
-  "body": "  Let be an matrix. Then the following are equivalent:  (i) is non-singular and .  (ii) The rows of are orthonormal vectors in .  (iii) The columns of are orthonormal vectors in .   "
+  "body": "  Let be an matrix. Then the following are equivalent:    is non-singular and .    The rows of are orthonormal vectors in .    The columns of are orthonormal vectors in .       Assume that . This implies . Let the columns of are . Then is linearly independent. It is easy to see that the -th entry of is . Hence we have if and 0 otherwise. This proves rows of and orthogonal and hence columns of are orthogonal. The converse is easy.   "
 },
 {
   "id": "def-orthogonal-matrix",
@@ -3961,13 +3979,13 @@ var ptx_lunr_docs = [
   "body": "  A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .   "
 },
 {
-  "id": "sec6-3-4",
+  "id": "sec6-3-5",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-4",
+  "url": "sec6-3.html#sec6-3-5",
   "type": "Example",
   "number": "6.4.3",
   "title": "",
-  "body": "  (i) The matrix is an orthogonal matrix.  (ii) is an orthogonal matrix.   "
+  "body": "     The matrix is an orthogonal matrix.     is an orthogonal matrix.      "
 },
 {
   "id": "def-orthogonally-diagonalizable",
@@ -3979,47 +3997,56 @@ var ptx_lunr_docs = [
   "body": "  An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.   "
 },
 {
-  "id": "sec6-3-6",
+  "id": "def-orthogonally-similar-matrics",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-6",
-  "type": "Example",
+  "url": "sec6-3.html#def-orthogonally-similar-matrics",
+  "type": "Definition",
   "number": "6.4.5",
   "title": "",
-  "body": "  Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.   "
+  "body": "  Two matrices and are called orthogonally similar if there exists an orthogonal matrix such that is a diagonal matrix.   "
 },
 {
-  "id": "sec6-3-7",
+  "id": "lemma-orthogonality-eigenvectors1",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-7",
-  "type": "Theorem",
+  "url": "sec6-3.html#lemma-orthogonality-eigenvectors1",
+  "type": "Lemma",
   "number": "6.4.6",
   "title": "",
-  "body": "  Let be an matrix. Then the following are equivalent.  (i) has an orthonormal set of eigenvectors.  (ii) is orthogonally diagonalizable.  (iii) is symmetric.   "
+  "body": "  Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.    We have This implies . Since , we have .   "
 },
 {
-  "id": "sec6-3-8",
+  "id": "thm-6-4-6",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-8",
-  "type": "Example",
+  "url": "sec6-3.html#thm-6-4-6",
+  "type": "Theorem",
   "number": "6.4.7",
+  "title": "",
+  "body": "  Let be an matrix. Then the following are equivalent.     has an orthonormal set of eigenvectors.     is orthogonally diagonalizable.     is symmetric.     "
+},
+{
+  "id": "sec6-3-14",
+  "level": "2",
+  "url": "sec6-3.html#sec6-3-14",
+  "type": "Example",
+  "number": "6.4.8",
   "title": "",
   "body": "  Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .   "
 },
 {
-  "id": "sec6-3-9",
+  "id": "sec6-3-15",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-9",
+  "url": "sec6-3.html#sec6-3-15",
   "type": "Problem",
-  "number": "6.4.8",
+  "number": "6.4.9",
   "title": "",
   "body": "  For the following matrices find an orthogonal matrix such that is a diagonal matrix.    "
 },
 {
-  "id": "sec6-3-10",
+  "id": "sec6-3-16",
   "level": "2",
-  "url": "sec6-3.html#sec6-3-10",
+  "url": "sec6-3.html#sec6-3-16",
   "type": "Theorem",
-  "number": "6.4.9",
+  "number": "6.4.10",
   "title": "",
   "body": "  The following are equivalent for an matrix .      is orthogonal.     for all .     for all .     .      "
 },
@@ -4028,7 +4055,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-3.html#eg-conic-ellipe1",
   "type": "Example",
-  "number": "6.4.10",
+  "number": "6.4.11",
   "title": "",
   "body": "  Condiser the quadratic . Let us convert this quadrtic into a conic section in canonial form.    The associated symmetric matrix of this quadratic is given by It is easy to check the the eigenvalues of are and with the corresponding eigenvectors and . Hence we have The new coordinates in terms of is Now substituting and in the given quadratic, we get After completing the squares, we get This can be written as an equation of ellipes. Note that here the translation vector is given by   Let us explore this in Sage. Here we plot the orginal quadratic curve along with the transformed coordinates.    "
 },
@@ -4037,7 +4064,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-3.html#subsec-6-3-quadratic-form-17",
   "type": "Example",
-  "number": "6.4.11",
+  "number": "6.4.12",
   "title": "",
   "body": " Consider the quadratic equation . We wish the classify this as a conic section.  Let us first plot the graph of this curve in Sage.   The symmetric matrix associated with quadratic tem is given by . It is easy to check that he eigenvalues are . Since both the eigenvalues are positive, this quadratic is an ellipse. This is what the graph shows.  Now we give all the steps in Sage to plot the curve along with the now coordinate system.   "
 },
@@ -4046,7 +4073,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-3.html#subsec-6-3-quadratic-form-18",
   "type": "Example",
-  "number": "6.4.12",
+  "number": "6.4.13",
   "title": "",
   "body": " Consider the quadratic eqation given by . Use Sage to classify this and plot the curve along with the transformed coordinates system.   "
 },
@@ -4055,7 +4082,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-3.html#subsec-6-3-quadratic-form-19",
   "type": "Example",
-  "number": "6.4.13",
+  "number": "6.4.14",
   "title": "",
   "body": "  Consider the quadratic equation and classify this to a conic section.    The matrix associated with the quadratic part of the above equation is . It is easy to check that the eigenvalues of are . Since one of the eigenvalues is 0, this curve is a parabola. Let us draw this curve along with the tranformed orgini and the two new coordinate directions in Sage.    "
 },
