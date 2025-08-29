@@ -346,7 +346,26 @@
               </p>
             </statement>
           </example>
-
+          <example>
+            <statement>
+              <p>
+                <ol>
+                  <li>
+                    <p>
+                      Suppose <m>A</m> is a diagonal matrix, then eigenvalues of <m>A</m> are 
+                      diagonal entries. 
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Suppose <m>A</m> is an <m>n\times n</m> triangular (upper /lower) matrix, the eigenvalues of 
+                      <m>A</m> are  the main diagonal entries.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+          </example>
           <reading-questions xml:id="rqs-eigenspace-subspace">
             <exercise>
               <statement>
@@ -723,7 +742,7 @@ they have the same eigenvalues.
       where <m>C_k's</m> are matrices with real entries.  Hence by <xref ref="eqn-Caley-Hamilton-eq1"/>, 
       we have 
       <men xml:id="eqn-Caley-Hamilton-eq2">
-        (\lambda I-A) \left(\sum_{k=0}^{n-1} C_k \lambda^k\right) = \sum_{k=0}^n a_k A^k.
+        (\lambda I-A) \left(\sum_{k=0}^{n-1} C_k \lambda^k\right) = A^n+a_{n-1}A^{n-1}+a_1A+a_0I.
       </men>
       Now comparing the coefficients of power of <m>\lambda</m>, we get
       <md>
@@ -976,6 +995,77 @@ they have the same eigenvalues.
         Note that if <m>A</m> is not a symmetric matrix, then the Sylvester's criteria cannot be used to check positive definiteness. For, condider the matrix <m>A=\begin{pmatrix} 1 \amp 0\\-3 \amp 1\end{pmatrix}</m>. It is easy to see that all principal minors of <m>A</m> are positive. For <m>u=\begin{pmatrix}1\\2\end{pmatrix}</m>, <m>u^TAu=-1</m>, however for <m>v=\begin{pmatrix}3\\1\end{pmatrix}</m>, <m>v^TAv=1</m>. 
       </p>
      
+      <reading-questions xml:id="rqs-eigenvalues-poly-space">
+        <exercise>
+          <p>
+            Consider a linear transpfrmation <m>D\colon {\cal P}_n(\R)\to {\cal P}_n(\R)</m> defined 
+          by <m>D(f(x))=f'(x)</m>. Whar are eigenvalues and eigenvector of <m>D</m>?
+
+          </p>        
+        </exercise>
+          
+          <exercise>
+            <p>
+         Consider a linear transpfrmation <m>T\colon {\cal P}_2(\R)\to {\cal P}_n(\R)</m> defined 
+          by <m>T(f(x))=xf'(x)-f(x)</m>. Whar are eigenvalues and eigenvector of <m>T</m>?
+          </p>
+            
+          </exercise>   
+      
+           <exercise>
+           <p>
+             Consider a linear transformation <m>T\colon M_2(\R)\to M_2(\R)</m> defined as 
+            <m>T(A)=A^T</m>. What are eigenvalues and eigenvectors of <m>T</m>?
+            </p>
+          </exercise>   
+
+          <exercise>
+           <p>
+             Consider a linear transformation <m>T\colon M_2(\R)\to M_2(\R)</m> defined as 
+            <m>T(A)=A+A^T</m>. What are eigenvalues and eigenvectors of <m>T</m>?
+            </p>
+          </exercise>   
+
+           <exercise>
+           <p>
+             Consider a linear transformation <m>T\colon M_2(\R)\to M_2(\R)</m> defined as 
+            <m>T(A)=A-A^T</m>. What are eigenvalues and eigenvectors of <m>T</m>?
+            </p>
+          </exercise>
+          <hint>
+            <p>
+              Write matrix of each of the linear transformation with respect to the 
+              standard basis and find the eigenvalues and eigenvectors with respect to 
+              that see what will the corresponding  eigenvalues and eigenvectors  of <m>T</m>.
+            </p>
+          </hint>
+      </reading-questions>
+
+      <reading-questions xml:id="rqs-eigenvalues-function-space">
+        <p>
+        <exercise>
+         <p> 
+          Let <m>V</m> be the set of all twice continuously differentaible functions 
+          from <m>\R</m> to <m>\R</m>. It is easy to check that it is a  vector soace over <m>\R</m>. 
+          Consider the following linear maps:
+          <ol>
+            <li>
+              <p>
+                <m>T(f(x))=f'(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>S(f(x))=f''(x)</m>.
+              </p>
+            </li>
+          </ol>
+          Can you find some eigenvalues and eigenvectors of <m>T</m> and <m>S</m>?
+        </p>
+        </exercise>
+      </p>
+      </reading-questions>
 </subsection>
+
    </section>
      
