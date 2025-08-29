@@ -10,18 +10,18 @@ var ptx_lunr_docs = [
   "body": ""
 },
 {
-  "id": "frontmatter-4",
+  "id": "frontmatter-5",
   "level": "1",
-  "url": "frontmatter-4.html",
+  "url": "frontmatter-5.html",
   "type": "Author Biography",
   "number": "",
   "title": "Author Biography",
   "body": " Ajit Kumar is a Professor of Mathematics at the Department of Mathematics, Institute of Chemical Technology, Mumbai (INDIA).  His main interests are optimization techniques, machine learning algorithms and mathematical pedagogy. He has done his Ph.D. from University of Mumbai. He has initiated a lot of mathematicians into the use of open source mathematics software.  He has been associated with the Mathematics Training and Talent Search (MTTS) Programme aimed at mathematics students at undergraduate and postgraduate levels in Universities in India for more than two decades. This programme has been running in India since 1993.  "
 },
 {
-  "id": "frontmatter-5",
+  "id": "frontmatter-6",
   "level": "1",
-  "url": "frontmatter-5.html",
+  "url": "frontmatter-6.html",
   "type": "Dedication",
   "number": "",
   "title": "Dedication",
@@ -52,7 +52,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Sytem of Linear Equation",
-  "body": " Sytem of Linear Equation   In daily life we often encounter problems where several unknown quantities are related to each other through linear relations. Such problems naturally lead to a system of linear equations. A system of linear equations consists of several linear equations in the same set of variables. Each equation represents a constraint, and the simultaneous solution of all equations corresponds to finding the values of the unknowns that satisfy all the constraints at once.  Studying systems of linear equations is fundamental for several reasons. They arise directly in practical applications—for instance, balancing chemical reactions, analyzing electrical networks, studying forces in equilibrium, or modeling data in statistics. Also they form the backbone of Linear Algebra, since the methods developed for their solution lead naturally to the concepts of vector spaces, linear transformations, and matrix theory.  Before moving to abstract notions of linear algebra, it is important to understand how such systems are represented, how they can be solved.  Let us start with real life a problem.     A person travels from to using a train and a bus. The train runs at a speed of km\/h while the bus runs at km\/h. The total journey takes hours and the total distance covered is km. Find how much time the person spent on the train and on the bus.    Let be the time spent on the train (in hours), and be the time spent on the bus (in hours). Then the problem gives us two conditions:  Total travel time is hours:   Total distance is km:   Thus the system of equations is: How do we solve these equations?  From the first equation, . Substituting into the second equation, we have Simplifying this we get . This implies Hence,   Therefore, the person spent hours on the train and hours on the bus.    The above problem was easy to formaulate and solve. What if the problem involves more variables? Condsider the following situation now.   A traveler goes from to in three legs: by car at km\/h, by train at km\/h, and by ferry at km\/h. The total travel time is hours, and the total distance covered is km. It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.   Let , , and denote the hours spent by car, train, and ferry, respectively. Then the conditions give:  Total time:   Total distance:   Car plus ferry time is equal to train time:   Hence the linear system is   It is easy to solve the above system. It turns out that and . Hence the traveler spends hours by car, hours by train, and hours by ferry.     Balancing Chemical Reaction Equation   The combustion of octane ( ) is a classical example of a hydrocarbon fuel reacting with oxygen to form carbon dioxide and water. The unbalanced reaction is: Balancing this chemical equation can be expressed as solving a system of linear equations. Let us carefully set this up for the combustion of octane: This amounts to finding such that Equating the number of carbons, hydrogen and oxygen atoms on both side gives the following equations. By solving the above equations one of the soltutions is given by . Hence the balanced equation can be written as      Let us consider another example about distribution of taxies at various location in a certain city.    Consider the figure below . Vertices are various locations at which taxies are parked. The edges are directed with labels.     Taxi distributions between 5 locations.  For example arrow going from location 4 to 1 has label . This means of the taxies taken from location comes to location at the end of the day.  Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, taxies and wish to find out how many taxies he\/she should place at various location so that his business runs smoothly. How to formulate this problem?  Suppose denotes the number of taxies to be kept at the locatio . Then we have How many taxies will be there at the location after one day. It is easy to see that it is Similarly the number of taxies at various locations are as follows   Location 1:     Location 2:     Location 3:     Location 4: .   Ideally, the company would want the same number of taxies to come back at each location everyday. How to find these ? It is easy to see that this amount to solving the following system of linear equations The above equations can be written in a matrix form as follows: The above equation can be written as We can write it in compact form as where       In the , suppose we denote by , then is the number of taxies at various locations. What will the the number taxies after two days, three days and in general after days.      Note that the preoblem in involves only 5 depos. What if we have hundreds of depos? How do we solve such problems? In fact, google seach uses millions by million equations. It turns out that solving this problem amounts to finding large power of the coefficient matrix whihc is not an easy task even for poweful computers. This is acheived by notion of diagonalization whihc and numerical computaions of eigenvalues and eigenvectors of a large size matrix. We shall see several such applications in later chapters.    Let us define what is meaning of a system of linear equations involving certain variables. Think about the following questions before making a formal definition of system of linear equations.    How will you write one linear equation involving 20 variables? May be you can name the variables etc  How will you write one linear equation involving as many variables as number of active websites, say on this date?  How will you write linear equations in variables where when and are very large?      A system of linear equations is a finite collection of linear equations. Consider a system of linear equations in -variables . Here for and for . The above system of linear equations can be represented in compact form using the summation notation as follows: .    Next let us define, what is meaning of a solution and the solution set of the system of linear of equations .   A solution of the system of linear equations is an ordered -tuple of the real numbers such that for each satisfies each of the -equations. The set of all solutions of a system is called the solution set . It is a subset of , the Cartesian product of the set of real numbers -times. If we denote the solution set by , then . If the solution set is nonempty then the system is said to be consistent and otherwise it is said to be inconsistent.    The above system of linear equation can be written as a single matrix equation as , where   The matrix is called the coefficient matrix , is called the column matrix of constants or known terms and is called the column matrix of the unknowns.   All the essential data of the system can be gathered in one matrix by inserting the column matrix of the constants to the coefficient matrix as -th column. This matrix is called the augmented or enlarged matrix of the system. Once we know the system, we can get the augmented matrix associated with the system and conversely once we know the augmented matrix, we know the system and start calculating the solutions.  The augmented matrix of the above system is given by     Two systems of linear equations are called equivalent if and only if they have the same set of solutions.    We will define some basic operations by which a system is transformed into an equivalent system.  Geometrically, solving a system of linear equations in two (or three) unknowns\/variables is equivalent to determining whether or not a family of lines (or planes) has a common point of intersection.    Let be real matrix whose columns are and . Then In particular, is a linear combinations of column of . Thus if is a solution of , then is linear combination of columns of . For example, This can be written as    Our goal in this chapter is to find the solution set of a system of equations . Let us first find solution set involving one equation involving one and two variables.   One linear equation in one variable can be written as where, and are real numbers.  How to find the solution set of this equation. We need to find such that the equation holds. Does it mean ? What if ? Thus we need to consider different cases on . If is the solution set of this equation then we have       One linear equation in two variable and can be written as where, and are real numbers. How to find the solution set of this equation?    In this case, we need to consider two cases: (i) and (ii) at least one of is nonzero. If , then the solution depends upon . If , then and if , then , the empty\/null set.  In the second case, the solution set has geometric interpretation, it is that the set of all points on a straight line. For example, if , then the set of solutions is the straight line in the plane through the point and with slope . If , then also the solution set is a straight line. Can you identify it?  Can you write the solution set explicitley by taking all the possible cases?      The solution set of one linear equation , where in two variables is a straight line provides , that is, one of the coefficients or is non-zero.      Write the solution set of ne linear equation in three variables , where .      Let at least one of the , be nonzero, the solution set is a plane in .    "
+  "body": " Sytem of Linear Equation   In daily life we often encounter problems where several unknown quantities are related to each other through linear relations. Such problems naturally lead to a system of linear equations. A system of linear equations consists of several linear equations in the same set of variables. Each equation represents a constraint, and the simultaneous solution of all equations corresponds to finding the values of the unknowns that satisfy all the constraints at once.  Studying systems of linear equations is fundamental for several reasons. They arise directly in practical applications—for instance, balancing chemical reactions, analyzing electrical networks, studying forces in equilibrium, or modeling data in statistics. Also they form the backbone of Linear Algebra, since the methods developed for their solution lead naturally to the concepts of vector spaces, linear transformations, and matrix theory.  Before moving to abstract notions of linear algebra, it is important to understand how such systems are represented, how they can be solved.  Let us start with some real life example.     A person travels from to using a train and a bus. The train runs at a speed of km\/h while the bus runs at km\/h. The total journey takes hours and the total distance covered is km. Find how much time the person spent on the train and on the bus.    Let be the time spent on the train (in hours), and be the time spent on the bus (in hours). Then the problem gives us two conditions:   Total travel time is hours:     Total distance is km:    Thus the system of equations is: How do we solve these equations?  From the first equation, . Substituting into the second equation, we have Simplifying this we get . This implies Hence,   Therefore, the person spent hours on the train and hours on the bus.    The above problem was easy to formaulate and solve. What if the problem involves more variables? Condsider the following situation now.    A traveler goes from to in three legs: by car at km\/h, by train at km\/h, and by ferry at km\/h. The total travel time is hours, and the total distance covered is km. It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.    Let , , and denote the hours spent by car, train, and ferry, respectively. Then the conditions give:  Total time:   Total distance:   Car plus ferry time is equal to train time:   Hence the linear system is   It is easy to solve the above system. It turns out that and . Hence the traveler spends hours by car, hours by train, and hours by ferry.     Balancing Chemical Reaction Equation   The combustion of octane ( ) is a classical example of a hydrocarbon fuel reacting with oxygen to form carbon dioxide and water. The unbalanced reaction is: Balancing this chemical equation can be expressed as solving a system of linear equations. Let us carefully set this up for the combustion of octane:  This amounts to finding such that Equating the number of carbons, hydrogen and oxygen atoms on both side gives the following equations. By solving the above equations one of the soltutions is given by . Hence the balanced equation can be written as     Let us consider another example about distribution of taxies at various location in a certain city.    Consider the figure below . Vertices are various locations at which taxies are parked. The edges are directed with labels.      Taxi distributions between 5 locations.   For example arrow going from location 4 to 1 has label . This means of the taxies taken from location comes to location at the end of the day.  Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, taxies and wish to find out how many taxies he\/she should place at various location so that his business runs smoothly. How to formulate this problem?  Suppose denotes the number of taxies to be kept at the locatio . Then we have How many taxies will be there at the location after one day. It is easy to see that it is Similarly the number of taxies at various locations are as follows:   Location 1:     Location 2:     Location 3:     Location 4: .     Ideally, the company would want the same number of taxies to come back at each location everyday. How to find these ? It is easy to see that this amount to solving the following system of linear equations The above equations can be written in a matrix form as follows: The above equation can be written as We can write it in compact form as where       In the , suppose we denote by , then is the number of taxies at various locations. What will the the number taxies after two days, three days and in general after days.      Note that the preoblem in involves only 5 depos. What if we have hundreds of depos? How do we solve such problems? In fact, google seach uses millions by million equations. It turns out that solving this problem amounts to finding large power of the coefficient matrix whihc is not an easy task even for poweful computers. This is acheived by notion of diagonalization whihc and numerical computaions of eigenvalues and eigenvectors of a large size matrix. We shall see several such applications in later chapters.    Let us define what is meaning of a system of linear equations involving certain variables. Think about the following questions before making a formal definition of system of linear equations.    How will you write one linear equation involving 20 variables? May be you can name the variables etc  How will you write one linear equation involving as many variables as number of active websites, say on this date?  How will you write linear equations in variables where when and are very large?    The above series of questions leads to requirement of double indexing for defining a system of linear equations.   A system of linear equations is a finite collection of linear equations. Consider a system of linear equations in -variables . Here for and for .  The above system of linear equations can be represented in compact form using the summation notation as follows: .   Next let us define, what is meaning of a solution and the solution set of the system of linear of equations .   A solution of the system of linear equations is an ordered -tuple of the real numbers such that for each satisfies each of the -equations. The set of all solutions of a system is called the solution set . It is a subset of , the Cartesian product of the set of real numbers -times. If we denote the solution set by , then . If the solution set is nonempty then the system is said to be consistent and otherwise it is said to be inconsistent.    The above system of linear equation can be written as a single matrix equation as , where   The matrix is called the coefficient matrix , is called the column matrix of constants or known terms and is called the column matrix of the unknowns.   All the essential data of the system can be gathered in one matrix by inserting the column matrix of the constants to the coefficient matrix as -th column. This matrix is called the augmented or enlarged matrix of the system. Once we know the system, we can get the augmented matrix associated with the system and conversely once we know the augmented matrix, we know the system and start calculating the solutions.  The augmented matrix of the above system is given by    Two systems of linear equations are called equivalent if and only if they have the same set of solutions.   We will define some basic operations by which a system is transformed into an equivalent system.  Geometrically, solving a system of linear equations in two (or three) unknowns\/variables is equivalent to determining whether or not a family of lines (or planes) has a common point of intersection.    Let be real matrix whose columns are and . Then In particular, is a linear combinations of column of . Thus if is a solution of , then is linear combination of columns of . For example, This can be written as     Our goal in this chapter is to find the solution set of a system of equations . Let us first find solution set involving one equation involving one and two variables.    One linear equation in one variable can be written as where, and are real numbers.  How to find the solution set of this equation. We need to find such that the equation holds. Does it mean ? What if ? Thus we need to consider different cases on . If is the solution set of this equation then we have       One linear equation in two variable and can be written as where, and are real numbers. How to find the solution set of this equation?    In this case, we need to consider two cases: (i) and (ii) at least one of is nonzero. If , then the solution depends upon . If , then and if , then , the empty\/null set.  In the second case, the solution set has geometric interpretation, it is that the set of all points on a straight line. For example, if , then the set of solutions is the straight line in the plane through the point and with slope . If , then also the solution set is a straight line. Can you identify it?  Can you write the solution set explicitley by taking all the possible cases?      The solution set of one linear equation , where in two variables is a straight line provides , that is, one of the coefficients or is non-zero.      Write the solution set of tne linear equation in three variables , where .      Let at least one of the , be nonzero, the solution set is a plane in .    "
 },
 {
   "id": "sec1-0-eg1",
@@ -61,7 +61,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.1.1",
   "title": "",
-  "body": "  A person travels from to using a train and a bus. The train runs at a speed of km\/h while the bus runs at km\/h. The total journey takes hours and the total distance covered is km. Find how much time the person spent on the train and on the bus.    Let be the time spent on the train (in hours), and be the time spent on the bus (in hours). Then the problem gives us two conditions:  Total travel time is hours:   Total distance is km:   Thus the system of equations is: How do we solve these equations?  From the first equation, . Substituting into the second equation, we have Simplifying this we get . This implies Hence,   Therefore, the person spent hours on the train and hours on the bus.   "
+  "body": "  A person travels from to using a train and a bus. The train runs at a speed of km\/h while the bus runs at km\/h. The total journey takes hours and the total distance covered is km. Find how much time the person spent on the train and on the bus.    Let be the time spent on the train (in hours), and be the time spent on the bus (in hours). Then the problem gives us two conditions:   Total travel time is hours:     Total distance is km:    Thus the system of equations is: How do we solve these equations?  From the first equation, . Substituting into the second equation, we have Simplifying this we get . This implies Hence,   Therefore, the person spent hours on the train and hours on the bus.   "
 },
 {
   "id": "sec1-0-eg2",
@@ -70,7 +70,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.1.2",
   "title": "",
-  "body": " A traveler goes from to in three legs: by car at km\/h, by train at km\/h, and by ferry at km\/h. The total travel time is hours, and the total distance covered is km. It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.   Let , , and denote the hours spent by car, train, and ferry, respectively. Then the conditions give:  Total time:   Total distance:   Car plus ferry time is equal to train time:   Hence the linear system is   It is easy to solve the above system. It turns out that and . Hence the traveler spends hours by car, hours by train, and hours by ferry.   "
+  "body": "  A traveler goes from to in three legs: by car at km\/h, by train at km\/h, and by ferry at km\/h. The total travel time is hours, and the total distance covered is km. It is also known that the time on the train equals the sume of time in the car and in ferry. Formulate this problem and fine the time (in hours) spent on each mode of transport.    Let , , and denote the hours spent by car, train, and ferry, respectively. Then the conditions give:  Total time:   Total distance:   Car plus ferry time is equal to train time:   Hence the linear system is   It is easy to solve the above system. It turns out that and . Hence the traveler spends hours by car, hours by train, and hours by ferry.   "
 },
 {
   "id": "chemical-reaction-eg1",
@@ -79,7 +79,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.1.3",
   "title": "Balancing Chemical Reaction Equation.",
-  "body": " Balancing Chemical Reaction Equation   The combustion of octane ( ) is a classical example of a hydrocarbon fuel reacting with oxygen to form carbon dioxide and water. The unbalanced reaction is: Balancing this chemical equation can be expressed as solving a system of linear equations. Let us carefully set this up for the combustion of octane: This amounts to finding such that Equating the number of carbons, hydrogen and oxygen atoms on both side gives the following equations. By solving the above equations one of the soltutions is given by . Hence the balanced equation can be written as     "
+  "body": " Balancing Chemical Reaction Equation   The combustion of octane ( ) is a classical example of a hydrocarbon fuel reacting with oxygen to form carbon dioxide and water. The unbalanced reaction is: Balancing this chemical equation can be expressed as solving a system of linear equations. Let us carefully set this up for the combustion of octane:  This amounts to finding such that Equating the number of carbons, hydrogen and oxygen atoms on both side gives the following equations. By solving the above equations one of the soltutions is given by . Hence the balanced equation can be written as    "
 },
 {
   "id": "taxi-distribution-eg1",
@@ -88,7 +88,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.1.4",
   "title": "",
-  "body": "  Consider the figure below . Vertices are various locations at which taxies are parked. The edges are directed with labels.     Taxi distributions between 5 locations.  For example arrow going from location 4 to 1 has label . This means of the taxies taken from location comes to location at the end of the day.  Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, taxies and wish to find out how many taxies he\/she should place at various location so that his business runs smoothly. How to formulate this problem?  Suppose denotes the number of taxies to be kept at the locatio . Then we have How many taxies will be there at the location after one day. It is easy to see that it is Similarly the number of taxies at various locations are as follows   Location 1:     Location 2:     Location 3:     Location 4: .   Ideally, the company would want the same number of taxies to come back at each location everyday. How to find these ? It is easy to see that this amount to solving the following system of linear equations The above equations can be written in a matrix form as follows: The above equation can be written as We can write it in compact form as where    "
+  "body": "  Consider the figure below . Vertices are various locations at which taxies are parked. The edges are directed with labels.      Taxi distributions between 5 locations.   For example arrow going from location 4 to 1 has label . This means of the taxies taken from location comes to location at the end of the day.  Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, taxies and wish to find out how many taxies he\/she should place at various location so that his business runs smoothly. How to formulate this problem?  Suppose denotes the number of taxies to be kept at the locatio . Then we have How many taxies will be there at the location after one day. It is easy to see that it is Similarly the number of taxies at various locations are as follows:   Location 1:     Location 2:     Location 3:     Location 4: .     Ideally, the company would want the same number of taxies to come back at each location everyday. How to find these ? It is easy to see that this amount to solving the following system of linear equations The above equations can be written in a matrix form as follows: The above equation can be written as We can write it in compact form as where    "
 },
 {
   "id": "sec1-0-lin-eqns-9",
@@ -100,9 +100,9 @@ var ptx_lunr_docs = [
   "body": "  In the , suppose we denote by , then is the number of taxies at various locations. What will the the number taxies after two days, three days and in general after days.   "
 },
 {
-  "id": "sec1-0-lin-eqns-10",
+  "id": "rem-taxi-examle",
   "level": "2",
-  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-10",
+  "url": "sec1-0-lin-eqns.html#rem-taxi-examle",
   "type": "Remark",
   "number": "1.1.7",
   "title": "",
@@ -124,7 +124,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.1.9",
   "title": "",
-  "body": "  A system of linear equations is a finite collection of linear equations. Consider a system of linear equations in -variables . Here for and for . The above system of linear equations can be represented in compact form using the summation notation as follows: .   "
+  "body": " A system of linear equations is a finite collection of linear equations. Consider a system of linear equations in -variables . Here for and for .  The above system of linear equations can be represented in compact form using the summation notation as follows: .  "
 },
 {
   "id": "def-sol-linear-system",
@@ -142,12 +142,12 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.1.11",
   "title": "",
-  "body": "  Two systems of linear equations are called equivalent if and only if they have the same set of solutions.   "
+  "body": " Two systems of linear equations are called equivalent if and only if they have the same set of solutions.  "
 },
 {
-  "id": "sec1-0-lin-eqns-23",
+  "id": "sec1-0-lin-eqns-24",
   "level": "2",
-  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-23",
+  "url": "sec1-0-lin-eqns.html#sec1-0-lin-eqns-24",
   "type": "Remark",
   "number": "1.1.12",
   "title": "",
@@ -187,7 +187,7 @@ var ptx_lunr_docs = [
   "type": "Question",
   "number": "1.1.16",
   "title": "",
-  "body": "  Write the solution set of ne linear equation in three variables , where .   "
+  "body": "  Write the solution set of tne linear equation in three variables , where .   "
 },
 {
   "id": "sec1-0-lin-eqns-30",
@@ -205,7 +205,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "Elementary Row Operations",
-  "body": " Elementary Row Operations   In this section, we shall defined elementary row operations which is a backbone of all computations in linear algebra.    Elmentary Row Operations  The solution of a system of linear equations is unchanged if the following operations are performed. In fact this is the basis for solving a system of linear equations.     Multiply one of the equations by a nonzero real number. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.    Multiply one of the equations by a real number and add the result to another equation, leaving the original equation unchanged. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row, leaving the original row unchanged.    Interchanging two equations. This is equivalent to interchanging two rows of the augmented matrix of the system.    Bring the equations which are equivalent to to the bottom row. This is equivalent to moving the zero rows (rows with zero entries) of the augmented matrix to the bottom.      If an equation of the system after the avove operations reduces to , where , then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the last column, then the system has no solution.    Elementary row operations   The following operations on a matrix are called elementary row operations.      Interchange of two rows of a matrix;    Multiplication of one row by a non-zero scalar ;    Adding any two rows.   In practice, most often, we combine second and third operations. This is equivalent to multiplying one of the rows by a nonzero real number and adding to another row.      A matrix is said to be equivalent or row equivalent to matrix , in notation , if can be obtained from by performing finite number of elementary row operations.    Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.   Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let be standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:      for each . That is, -th column can be obtained by multiplying by on the right.     for each . That is, -th row can be obtained by multiplying by on the left.     for .    Suppse is a matrix such that exist. Also assume that columns of are . In particular, that is, . Then   Similarly, we have           Now we verify the item 4 of      Let denote an elementary row operation and the result of applying to a . Let be a matrix obtained by applying to the identity matrix. That is, . Then is called the elementary matrix corresponding to the elementary row operation . It is easy to see that an elementary matrix is non singular. (why?)     Elementary Matrix Theorem   Let be an elementary row operation and , the corresponding elementary matrix defined by . Then, for any matrix , .    Follows from          Let be a rectangular matrix of order . Let be a matrix obtained by interchanging 2nd and 3rd rows of . Then where .  What is ?    Let be the matrix obtained by multiplying 2nd row of by a scalar . Then , where . What is ?    Let be the matrix obtained by adding 2 times the 2nd row to the 3rd rows of in place of the 3rd row. Then , where . What is ? It is easy to see that whihc is obtained by adding -2 times the 2nd row to the 3rd rows of .       The above examples suggest the following result.    Let be an elemtray matrix (except multiplying identity matrix by zero), then it is invertible.    Suppose is an elementary matrix obtained by interchanging -th and -th rows of the identity matrix. Let us denote it by . It is easy to see that . Hence is invertible with .  Suppose is an elementary matrix obtained by multiplying the -th row by a non zero scalar denoted by . Then Hence .  Suppose is an elementary matrix obtained by adding the th row of the identity matrix to the -th row. Let us denote it by . Then Hence .  Since any elementary matrix is obtained by a sequence of elemetary matrix, it is a product of intertible matrices and hence invertible.      Two matrices and are row equivalent if and only if there exists a non singular matrix such that .     Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.     Matrix Inversion via Elementary Row Operations  We can use the theorem to find the inverse of a matrix using elementary row operations. If a matrix is non singular and is row equivalent to the identity matrix by a sequence of elementary row operations say , then we have, . This implies . In other words, the sequence of elementary row operations required to turn into also turns into . Thus to find inverse of , we adjoin to on the right to give the augmented matrix , and perform elementary row operations on that successively reduces to the identity matrix and then extract from the right half of the transformed augmented matrix.   Find the inverse of using row operations.          Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.           Sage can directly find the inverse of a matrix.    Sage Exercise: Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.     "
+  "body": " Elementary Row Operations   In this section, we shall defined elementary row operations which is a backbone of all computations in linear algebra.    Elmentary Row Operations  The solution of a system of linear equations is unchanged if the following operations are performed. In fact this is the basis for solving a system of linear equations.    Multiply one of the equations by a nonzero real number. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a non-zero real number.    Multiply one of the equations by a real number and add the result to another equation, leaving the original equation unchanged. This is equivalent to multiplying one of the rows of the augmented matrix of the system by a real number and adding it to another row, leaving the original row unchanged.    Interchanging two equations. This is equivalent to interchanging two rows of the augmented matrix of the system.    Bring the equations which are equivalent to to the bottom row. This is equivalent to moving the zero rows (rows with zero entries) of the augmented matrix to the bottom.     If an equation of the system after the avove operations reduces to , where , then the system has no solution. This is equivalent to if a row of the augmented matrix is composed of zeros except for the last column, then the system has no solution.    Elementary row operations   The following operations on a matrix are called elementary row operations.    Interchange of two rows of a matrix;    Multiplication of one row by a non-zero scalar ;    Adding any two rows.   In practice, most often, we combine second and third operations. This is equivalent to multiplying one of the rows by a nonzero real number and adding to another row.      A matrix is said to be equivalent or row equivalent to matrix , in notation , if can be obtained from by performing finite number of elementary row operations.    Row operations on a matrix can be obtained by matrix multiplication. Before we see this, let us look at the following observations.   Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let be standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:    for each . That is, -th column can be obtained by multiplying by on the right.     for each . That is, -th row can be obtained by multiplying by on the left.     for .    Suppse is a matrix such that exist. Also assume that columns of are . In particular, that is, . Then   Similarly, we have           Now we verify the item 4 of      Let denote an elementary row operation and the result of applying to a . Let be a matrix obtained by applying to the identity matrix. That is, . Then is called the elementary matrix corresponding to the elementary row operation . It is easy to see that an elementary matrix is non singular. (why?)     Elementary Matrix Theorem   Let be an elementary row operation and , the corresponding elementary matrix defined by . Then, for any matrix , .    Follows from          Let be a rectangular matrix of order . Let be a matrix obtained by interchanging 2nd and 3rd rows of . Then where .  What is ?    Let be the matrix obtained by multiplying 2nd row of by a scalar . Then , where . What is ?    Let be the matrix obtained by adding 2 times the 2nd row to the 3rd rows of in place of the 3rd row. Then , where . What is ? It is easy to see that whihc is obtained by adding -2 times the 2nd row to the 3rd rows of .       The above examples suggest the following result.    Let be an elemtray matrix (except multiplying identity matrix by zero), then it is invertible.    Suppose is an elementary matrix obtained by interchanging -th and -th rows of the identity matrix. Let us denote it by . It is easy to see that . Hence is invertible with .  Suppose is an elementary matrix obtained by multiplying the -th row by a non zero scalar denoted by . Then Hence .  Suppose is an elementary matrix obtained by adding the th row of the identity matrix to the -th row. Let us denote it by . Then Hence .  Since any elementary matrix is obtained by a sequence of elemetary matrix, it is a product of intertible matrices and hence invertible.      Two matrices and are row equivalent if and only if there exists a non singular matrix such that .     Since is row equivalent to , there exists elementary row matrices such that write . Define , which is a non singular.     Matrix Inversion via Elementary Row Operations  We can use the theorem to find the inverse of a matrix using elementary row operations. If a matrix is non singular and is row equivalent to the identity matrix by a sequence of elementary row operations say , then we have, . This implies . In other words, the sequence of elementary row operations required to turn into also turns into . Thus to find inverse of , we adjoin to on the right to give the augmented matrix , and perform elementary row operations on that successively reduces to the identity matrix and then extract from the right half of the transformed augmented matrix.    Find the inverse of using row operations.           Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.            Sage can directly find the inverse of a matrix.     Sage Exercise  Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.      "
 },
 {
   "id": "subsec-elmentary-row-operations-4",
@@ -223,7 +223,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.2.2",
   "title": "Elementary row operations.",
-  "body": " Elementary row operations   The following operations on a matrix are called elementary row operations.      Interchange of two rows of a matrix;    Multiplication of one row by a non-zero scalar ;    Adding any two rows.   In practice, most often, we combine second and third operations. This is equivalent to multiplying one of the rows by a nonzero real number and adding to another row.   "
+  "body": " Elementary row operations   The following operations on a matrix are called elementary row operations.    Interchange of two rows of a matrix;    Multiplication of one row by a non-zero scalar ;    Adding any two rows.   In practice, most often, we combine second and third operations. This is equivalent to multiplying one of the rows by a nonzero real number and adding to another row.   "
 },
 {
   "id": "def-equivalent-system",
@@ -241,7 +241,7 @@ var ptx_lunr_docs = [
   "type": "Observation",
   "number": "1.2.4",
   "title": "",
-  "body": " Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let be standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:      for each . That is, -th column can be obtained by multiplying by on the right.     for each . That is, -th row can be obtained by multiplying by on the left.     for .    Suppse is a matrix such that exist. Also assume that columns of are . In particular, that is, . Then   Similarly, we have      "
+  "body": " Let be an matrix of real numbers. Let the columns of are , that is, . Let the rows of are given by , in particular, . Let be standard coordinate vectors in , where is the column matrix (vector) whose -th entry is 1 and rest are zero. That is . Then we have the following:    for each . That is, -th column can be obtained by multiplying by on the right.     for each . That is, -th row can be obtained by multiplying by on the left.     for .    Suppse is a matrix such that exist. Also assume that columns of are . In particular, that is, . Then   Similarly, we have      "
 },
 {
   "id": "def-elementary-row-operation-2",
@@ -304,7 +304,16 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.2.10",
   "title": "",
-  "body": " Find the inverse of using row operations.          Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.           Sage can directly find the inverse of a matrix.   "
+  "body": "  Find the inverse of using row operations.           Hence   Let us solve the abobe problem step by step in Sage. Sage has inbuilt functions to do elementary row operations.            Sage can directly find the inverse of a matrix.    "
+},
+{
+  "id": "subsec-Matrix-inverse-using-rref-4",
+  "level": "2",
+  "url": "sec1-1-elementary-operations.html#subsec-Matrix-inverse-using-rref-4",
+  "type": "Activity",
+  "number": "1.2.1",
+  "title": "Sage Exercise.",
+  "body": "Sage Exercise  Use the Sage to find the inverse of the following matrix using the step by step elementary row operation.    "
 },
 {
   "id": "sec1-2-col-operations",
@@ -313,7 +322,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Elementary Column Operations",
-  "body": " Elementary Column Operations  Elementary column operations are the column analogue of elementary row operations. Their precise properties can be deduced by applying elementary row operations to the transpose of a matrix and then transposing the result. In particular, if is the elementary matrix corresponding to the elementary column operation then . Note that, because transposition changes the order of a product, elementary column operations correspond to post-multiplication by an elementary matrix. Two matrices that are related by a sequence of elementary column operations are said to be column equivalent and two matrices and are column equivalent if and only if there exists a non singular matrix such that .    Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.  Let us look at how we can achieve this in Sage.     "
+  "body": " Elementary Column Operations  Elementary column operations are the column analogue of elementary row operations. Their precise properties can be deduced by applying elementary row operations to the transpose of a matrix and then transposing the result. In particular, if is the elementary matrix corresponding to the elementary column operation then . Note that, because transposition changes the order of a product, elementary column operations correspond to post-multiplication by an elementary matrix.  Two matrices that are related by a sequence of elementary column operations are said to be column equivalent . Two matrices and are column equivalent if and only if there exists a non singular matrix such that .    Let Apply to column operation to find a column equivalent matrix of .     "
 },
 {
   "id": "eg-1-2-1",
@@ -322,7 +331,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.3.1",
   "title": "",
-  "body": "  Use the columns operations to find the inverse of the matrix by appending the identity matrix at the bottom and appyling the columns aperation in Sage.  Let us look at how we can achieve this in Sage.    "
+  "body": "  Let Apply to column operation to find a column equivalent matrix of .    "
 },
 {
   "id": "sec1-3-echelon-form",
@@ -565,7 +574,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.6",
   "title": "Homogeneous System of Linear Equations",
-  "body": " Homogeneous System of Linear Equations     A system of linear equations is called homogeneous if . Otherwise it is called a non homogeneous system.     Observe that any homogeneous system of linear equations has at least one solution, namely the trivial solution ( , for all ). The augmented matrix is got from adding one zero column to . Hence .    A homogeneous system of equations in the same number of unknowns ( unknowns) has a nontrivial solution if and only if is singular, that is , if and only if .    The given homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if , the number of variables ( ). But , if and only if is singular.      A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.   If , then and hence the result follows from thm.~ .   One cam prove directly using induction on m the number of equtions.   Let and be two solutions of the homogeneous system and solutions of the non homogeneous sytem . Then show the following    is a solution of .    for any , is a solution of .     is a solution of .      We would like to get the connection between solutions of a homogeneous system and the solutions of , . These are stated in the following Theorem.    Suppose the non homogeneous system of linear equations has a solution say . All the solutions of this system are of the form where runs through all the solutions of the corresponding homogeneous system .    Let be a solution of . Then . Hence is a solution of .  Suppose is a solution of , i.e. . Then and hence is a solution of and , where .    The above theorem can be written equivalently as    If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.     Let us consider one equation in two variables, . The corresponding homogeneous system is . It is easy see that is set of all solutions of . Let us consider a solution of the non homogeneous system . Let be any solution of . Then it is easy to check that is a solution of . Alternatively, to solve , we can free one of the variable say . That is can take any real value. Let , then . Hence a generic solution of is given by , which can be rewritten as . Thus all solutions of are of the form Notice that tho two lines, and are parallel to each other. Plot the figure in Sage using the following Sage syntax.     Let consider 2 equations in three variables. The corresponding homogeneous system is given by . It is easy to see that the set of all solutions of the homogeneous system is , we get which implies . Now substituting in the second equation of , we get . Here we can take as a free variable, hence any solution of~ is of the form which can be written as . Note that is a solution . Thus set of all solution of is of the form  Geometrically, each equation in the non homogeneous system represents a plane and the solution is the line of intersection of the the two planes. Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax.     "
+  "body": " Homogeneous System of Linear Equations     A system of linear equations is called homogeneous if . Otherwise it is called a non homogeneous system.     Observe that any homogeneous system of linear equations has at least one solution, namely the trivial solution ( , for all ). The augmented matrix is got from adding one zero column to . Hence .    A homogeneous system of equations in the same number of unknowns ( unknowns) has a nontrivial solution if and only if is singular, that is , if and only if .    The given homogeneous system has a nontrivial solution if and only if it has infinitely many solutions, if and only if , the number of variables ( ). But , if and only if is singular.      A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.   If , then and hence the result follows from thm.~ .   One cam prove directly using induction on m the number of equtions.    Let and be two solutions of the homogeneous system and solutions of the non homogeneous sytem . Then show the following    is a solution of .    for any , is a solution of .     is a solution of .       We would like to get the connection between solutions of a homogeneous system and the solutions of , . These are stated in the following Theorem.    Suppose the non homogeneous system of linear equations has a solution say . All the solutions of this system are of the form where runs through all the solutions of the corresponding homogeneous system .    Let be a solution of . Then . Hence is a solution of .  Suppose is a solution of , i.e. . Then and hence is a solution of and , where .    The above theorem can be written equivalently as    If is a solution of a system of linear equations, then the complete solution is given by , where is the general solution of the associated homogeneous system.     Let us consider one equation in two variables, . The corresponding homogeneous system is . It is easy see that is set of all solutions of . Let us consider a solution of the non homogeneous system . Let be any solution of . Then it is easy to check that is a solution of . Alternatively, to solve , we can free one of the variable say . That is can take any real value. Let , then . Hence a generic solution of is given by , which can be rewritten as . Thus all solutions of are of the form Notice that tho two lines, and are parallel to each other. Plot the figure in Sage using the following Sage syntax.     Let consider 2 equations in three variables. The corresponding homogeneous system is given by . It is easy to see that the set of all solutions of the homogeneous system is , we get which implies . Now substituting in the second equation of , we get . Here we can take as a free variable, hence any solution of~ is of the form which can be written as . Note that is a solution . Thus set of all solution of is of the form  Geometrically, each equation in the non homogeneous system represents a plane and the solution is the line of intersection of the the two planes. Similarly, each equation of the corresponding homogeneous system represents a plane passing through the origin and parallel to the corresponding plane of the non homogeneous system. Thus the solution of the corresponsing homogeneosu system in the line of intersection of the the two planes passing through the origin. Thus the solutions of the system and the corresponsing homogeneous system are parallel lines. Visualize this using the following Sage syntax.     "
 },
 {
   "id": "def-homo-system",
@@ -595,13 +604,13 @@ var ptx_lunr_docs = [
   "body": "  A homogeneous system of equations in unknowns, where has infinitely many nontrivial solutions.   If , then and hence the result follows from thm.~ .  "
 },
 {
-  "id": "sec1-5-hom-system-7",
+  "id": "exer-hom-system1",
   "level": "2",
-  "url": "sec1-5-hom-system.html#sec1-5-hom-system-7",
+  "url": "sec1-5-hom-system.html#exer-hom-system1",
   "type": "Checkpoint",
   "number": "1.6.4",
   "title": "",
-  "body": " Let and be two solutions of the homogeneous system and solutions of the non homogeneous sytem . Then show the following    is a solution of .    for any , is a solution of .     is a solution of .     "
+  "body": "  Let and be two solutions of the homogeneous system and solutions of the non homogeneous sytem . Then show the following    is a solution of .    for any , is a solution of .     is a solution of .      "
 },
 {
   "id": "thm-hom-system3",
@@ -1261,18 +1270,18 @@ var ptx_lunr_docs = [
   "body": " Consider two bases  and . Consider a vector . We have First we find and .  Similarly  Now to find the transition matrix , we have  It is easy to verify that . Similarly to find the transition matrix , we have  It is easy to verify that .  "
 },
 {
-  "id": "sec2-3-change-of-basis-6",
+  "id": "exer-subspaces-of-R2",
   "level": "2",
-  "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-6",
+  "url": "sec-2-3-basis-dimension.html#exer-subspaces-of-R2",
   "type": "Checkpoint",
   "number": "2.4.31",
   "title": "",
   "body": "  What are all subspaces of and ?   "
 },
 {
-  "id": "sec2-3-change-of-basis-7",
+  "id": "exser-subspace-as-null-space",
   "level": "2",
-  "url": "sec-2-3-basis-dimension.html#sec2-3-change-of-basis-7",
+  "url": "sec-2-3-basis-dimension.html#exser-subspace-as-null-space",
   "type": "Checkpoint",
   "number": "2.4.32",
   "title": "",
@@ -2260,27 +2269,27 @@ var ptx_lunr_docs = [
   "body": "     Let . Then is the smallest subspace of containing .    Let . Then is the smallest subspace of containing .      "
 },
 {
-  "id": "sec4-3-linspan-VS-14",
+  "id": "exer-linspan-of-line",
   "level": "2",
-  "url": "sec4-3-linspan-VS.html#sec4-3-linspan-VS-14",
+  "url": "sec4-3-linspan-VS.html#exer-linspan-of-line",
   "type": "Checkpoint",
   "number": "4.3.11",
   "title": "",
   "body": "  Suppose is a line in the plane? Then what is ?   "
 },
 {
-  "id": "sec4-3-linspan-VS-15",
+  "id": "exer-smallest-subspace-emptyset",
   "level": "2",
-  "url": "sec4-3-linspan-VS.html#sec4-3-linspan-VS-15",
+  "url": "sec4-3-linspan-VS.html#exer-smallest-subspace-emptyset",
   "type": "Checkpoint",
   "number": "4.3.12",
   "title": "",
   "body": " What is the smallest subspace conatining the empty set ?   It is the zero space .   "
 },
 {
-  "id": "sec4-3-linspan-VS-16",
+  "id": "exer-smallest-subspace-as-intersection",
   "level": "2",
-  "url": "sec4-3-linspan-VS.html#sec4-3-linspan-VS-16",
+  "url": "sec4-3-linspan-VS.html#exer-smallest-subspace-as-intersection",
   "type": "Checkpoint",
   "number": "4.3.13",
   "title": "",
@@ -2485,9 +2494,9 @@ var ptx_lunr_docs = [
   "body": "  We say a vector space is of dimension if it has a basis consisting of elements.   "
 },
 {
-  "id": "subsec-basis-VS-16",
+  "id": "exer-dim-of-zero-space",
   "level": "2",
-  "url": "sec4-5-basis-dim-VS.html#subsec-basis-VS-16",
+  "url": "sec4-5-basis-dim-VS.html#exer-dim-of-zero-space",
   "type": "Checkpoint",
   "number": "4.5.12",
   "title": "",
@@ -2656,9 +2665,9 @@ var ptx_lunr_docs = [
   "body": " Vector space   Let us define the vector space and explore the various concepts in Sage. Define 5 vectors , , , and . Find the linear span of . Check of is a linearly independent set.   "
 },
 {
-  "id": "subsec-Vector-Spaces-Sage-28",
+  "id": "exer-sage-VS1",
   "level": "2",
-  "url": "sec-sec4-5-VS-Sage.html#subsec-Vector-Spaces-Sage-28",
+  "url": "sec-sec4-5-VS-Sage.html#exer-sage-VS1",
   "type": "Checkpoint",
   "number": "4.6.2",
   "title": "",
@@ -2734,7 +2743,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Eigenvalues and Eigenvectors",
-  "body": " Eigenvalues and Eigenvectors   In this section we define the notion of eigenvalues and eigenvectors and look at some of its properties. It has several real life applications. We shall deal with some of them in later sections.  Suppose is a linear map from a vector space to itself. For a given , is a vector in . Look the in which image of vectors under the linear map are shown. Notice that and are parallel, similarly and are parallel.   Image of vectors under . You can also observe that and are parallel, but this this expected as . Similarly and are parallel. Such vectors are called eigenvectors of . In particular, and are parallel, then for some , such a is called the eigenvalue corresonidng to eigenvector . What happens if ?  You can also explore the same while rotating a vector and observing what happens to its image using the interactive diagram below (see ).   Exploration of eigenvectors    These exploration leads to the following definition of eigenvector and eigenvalues.   Eigenvalues and Eigenvectors   Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .      Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.      If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the eiegenvalue 1. The same is true for identity matrix.      Consider the matrix of rotation in anti-clock wise by an angle for . Then it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvectors.     If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .   Let us analyze the notion of eigenvalues and eigenvector. If is a eigenvector corresponding to an eigenvalue . Then . This implies , where is identity matrix. This means that the homogeneous system has a non zero solution, namely . Hence . Notice that is a polynomial (called the characteristic polynomial of ) of degree in . Thus if , then is a root of the the characteristic polynomial . By fundamental theorem of algebra an real matrix can have at most real eigenvalues. The equation is called characteristic equation of .  We can write as . If are roots of the characteristics equation, then using the theory of equations one can show that .  Thus we have the following.    Let be an real matrix. Then (i) the sum of eigenvalues of is the trace of and (ii) the product of eigenvalues is the determeninat of .      Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvector corresponding to the eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?      Let . What are eigenvalues of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .  We can adopt a procedure similar to to show that is an eigenvector corresponding to the eigenvalue . Similarly, are eigenvectors corresponding to the eigenvalue .      Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to       Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.       Let an real matrix and be an eigenvalue of . Then is a subspace of .      is the kernel of .    Eigenspace   Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the geometric multiplicity of .  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .     Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .     The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .      Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of geometric multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.    We list the following properties of eigenvalues and eigenvectors without proof.   Properties of Eigenvalues and Eigenvectors       and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.         Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by          Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.        (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.   In genegarl, let be a polynomial of degree and be an real matrix. Then we can define . If is an eigenvalue of , theh is an eigenvalue of .   Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .      Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by to the equation, , we get , from this we have .  Can you find ?      (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .     Spectral Radius   Let an and for be eigenvalues of then the spectral radius of is define as .      Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .      Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .      Find the spectral radius of and .    Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.      Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.      Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.      If is a positive definite matrix then all its eigenvalues are positive.      If is a negative definite matrix then all its eigenvalues are negative.    We have the following result about positive definite matrices known as Sylvester's criterion . It allows us to determine if a given matrix in positive definite using the leading principal minors of the matrix.  The leading principal minors of a matrix are and the minors obtained by successively removing the last row and the last columns. That is, the leading principal miniors of a matrix are .  Sylvester's Criterion   If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.      Let . For any , we have   Henc e is positive definite.      Let . Show that is positive definite.    Note that if is not a symmetric matrix, then the Sylvester's criteria cannot be used to check positive definiteness. For, condider the matrix . It is easy to see that all principal minors of are positive. For , , however for , .  "
+  "body": " Eigenvalues and Eigenvectors   In this chapter we define the notion of eigenvalues and eigenvectors and look at some of its properties. It has several real life applications. We shall deal with some of them in later sections.  Suppose is a linear map from a vector space to itself. For a given , is a vector in . Look the in which image of vectors under the linear map are shown. Notice that and are parallel, similarly and are parallel.   Image of vectors under . You can also observe that and are parallel, but this this expected as . Similarly and are parallel. Such vectors are called eigenvectors of . In particular, and are parallel, then for some , such a is called the eigenvalue corresonidng to eigenvector . What happens if ?  You can also explore the same while rotating a vector and observing what happens to its image using the interactive diagram below (see ).   Exploration of eigenvectors    These exploration leads to the following definition of eigenvector and eigenvalues.    Eigenvalues and Eigenvectors  Eigenvalues and Eigenvectors   Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .      Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.      If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the eiegenvalue 1. The same is true for identity matrix.      Consider the matrix of rotation in anti-clock wise by an angle for . Then it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvectors.     If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .  If , then    Let us analyze the notion of eigenvalues and eigenvector. If is a eigenvector corresponding to an eigenvalue . Then . This implies , where is identity matrix. This means that the homogeneous system has a non zero solution, namely . Hence . Notice that is a polynomial (called the characteristic polynomial of ) of degree in . Thus if , then is a root of the the characteristic polynomial . By fundamental theorem of algebra an real matrix can have at most real eigenvalues. The equation is called characteristic equation of .  We can write as If are roots of the characteristics equation, then using the theory of equations one can show that .  Thus we have the following.    Let be an real matrix. Then (i) the sum of eigenvalues of is the trace of and (ii) the product of eigenvalues is the determeninat of .      Let . What are eigenvalues and eigenvectors of ?  Note that . This means . Hence is an eigenvalue and is an eigenvectors w.r.t. eigenvalue 3.  Also . Hence is an eigenvalue and is an eigenvector corresponding to the eigenvalue 0. Also, and are also eigenvectors corresponding to the eigenvalue 0.  Note that in this example, we are able to find eigenvalues and eigenvectors by inspection and without going through characteristic polynomials.  What will be generalization of this example?      Let . What are eigenvalues of ?  The trace of is 3. The . Since sum of eigenvalues is 3 and the product of eigenvalues is , it is easy to guess that , are eigenvalues of .  We can adopt a procedure similar to to show that is an eigenvector corresponding to the eigenvalue . Similarly, are eigenvectors corresponding to the eigenvalue .      Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to       Let . Find eigenvalues and corresponding eigenvector of .  The characteristic equation of is given by . Hence eigenvalues of are .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  Now it is easy to see that is an eigenvector of corresponding to . Similarly one can show that is an eigenvector of corresponding to .  Note that in the above example, is a real matrix but its eigenvalues and eigenvectors are complex.       Let an real matrix and be an eigenvalue of . Then is a subspace of .      is the kernel of .    Eigenspace   Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the geometric multiplicity of .  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .    We mention, the following theorem without proof.    Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .      The geometric multiplicity of an eigenvalue is the nullity of which is the dimension of null space of .      Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of algebraic multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.    We list the following properties of eigenvalues and eigenvectors without proof.   Properties of Eigenvalues and Eigenvectors       and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.         Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by          Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.        (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.   In genegarl, let be a polynomial of degree and be an real matrix. Then we can define . If is an eigenvalue of , theh is an eigenvalue of .   Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .      Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by to the equation, , we get , from this we have .  Can you find ?      (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .  (i) Consider the matrix . Show that satisfies its characteristics equation. Hence find .     Spectral Radius   Let an and for be eigenvalues of then the spectral radius of is define as .      Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .      Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .      Find the spectral radius of and .    Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.      Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.      Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.      If is a positive definite matrix then all its eigenvalues are positive.      If is a negative definite matrix then all its eigenvalues are negative.    We have the following result about positive definite matrices known as Sylvester's criterion . It allows us to determine if a given matrix in positive definite using the leading principal minors of the matrix.  The leading principal minors of a matrix are and the minors obtained by successively removing the last row and the last columns. That is, the leading principal miniors of a matrix are .  Sylvester's Criterion   If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.      Let . For any , we have   Henc e is positive definite.      Let . Show that is positive definite.    Note that if is not a symmetric matrix, then the Sylvester's criteria cannot be used to check positive definiteness. For, condider the matrix . It is easy to see that all principal minors of are positive. For , , however for , .   "
 },
 {
   "id": "fig-eigen1",
@@ -2764,40 +2773,40 @@ var ptx_lunr_docs = [
   "body": "Eigenvalues and Eigenvectors   Let be a linear transformation from . A real number (scalar) is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if . That is, if is parallel to .  Thus if , then , where is identity transformation on .  If is an real matrix matrix, then we know that is a linear transformation induced by . We can define eigenvalue of as eigenvalue of . In particular, real number is called an eigenvalue of if there exists a non zero vector (called an eigenvector corresponding to eigenvalue ) if .   "
 },
 {
-  "id": "sec5-1-eigen-intro-4",
+  "id": "subsec-egenvalues-eigencecs-3",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-4",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-3",
   "type": "Example",
   "number": "5.1.4",
   "title": "",
   "body": "  Let . Consider a vector . Then . Hence is an eigenvector and is an eigenvalue.  Consider . Then it is easy to check that . Hence is also an eigenvector and is an eigenvalue.   "
 },
 {
-  "id": "sec5-1-eigen-intro-5",
+  "id": "subsec-egenvalues-eigencecs-4",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-5",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-4",
   "type": "Example",
   "number": "5.1.5",
   "title": "",
   "body": "  If is an identity transformation from , then every nonzero vector is an eigenvector corresponding the eiegenvalue 1. The same is true for identity matrix.   "
 },
 {
-  "id": "sec5-1-eigen-intro-6",
+  "id": "subsec-egenvalues-eigencecs-5",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-6",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-5",
   "type": "Example",
   "number": "5.1.6",
   "title": "",
   "body": "  Consider the matrix of rotation in anti-clock wise by an angle for . Then it is easy to see that does not have an eigenvector. Thus not all square matrices have eigenvectors.   "
 },
 {
-  "id": "sec5-1-eigen-intro-7",
+  "id": "subsec-egenvalues-eigencecs-6",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-7",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-6",
   "type": "Remark",
   "number": "5.1.7",
   "title": "",
-  "body": " If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .  "
+  "body": " If is an eigenvalue of with corresponding eigenvector . Then any scalar multiple of is also an eigenvector corresponding to the same eigenvalue .  If , then   "
 },
 {
   "id": "thm-sum-produc-eiegn",
@@ -2836,9 +2845,9 @@ var ptx_lunr_docs = [
   "body": "  Let . Find eigenvalues and corresponding eigenvector of .  We have . It is easy to see that characteristic polynomial has roots . Thus has eigenvalues .  Let us find eigenvectors with respect to the eigenvalue . Let be an eigenvector corresponding to . Then . That is, .  This gives a system of linear equations   Solving the above system, we get . Thus for is an eigenvector. In particular, is an eigenvector of corresponding to .  Similarly show that is an eigenvector of corresponding to and is an eigenvector of corresponding to    "
 },
 {
-  "id": "sec5-1-eigen-intro-15",
+  "id": "subsec-egenvalues-eigencecs-14",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-15",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-14",
   "type": "Example",
   "number": "5.1.12",
   "title": "",
@@ -2849,7 +2858,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#rqs-eigenspace-subspace-1",
   "type": "Reading Question",
-  "number": "5.1.1",
+  "number": "5.1.1.1",
   "title": "",
   "body": "  Let an real matrix and be an eigenvalue of . Then is a subspace of .   "
 },
@@ -2858,7 +2867,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-1-eigen-intro.html#rqs-eigenspace-subspace-2",
   "type": "Reading Question",
-  "number": "5.1.2",
+  "number": "5.1.1.2",
   "title": "",
   "body": "  is the kernel of .  "
 },
@@ -2872,18 +2881,18 @@ var ptx_lunr_docs = [
   "body": "Eigenspace   Let an real matrix and be an eigenvalue of . Then the collection of all eigenvectors of corresponding to is a subspace of , called the eigenspace of . The dimension of is called the geometric multiplicity of .  Let . Then are eigenvalue of with multiplicity , called the algebraic multiplicity of .   "
 },
 {
-  "id": "sec5-1-eigen-intro-18",
+  "id": "subsec-egenvalues-eigencecs-18",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-18",
-  "type": "Remark",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-18",
+  "type": "Theorem",
   "number": "5.1.14",
   "title": "",
-  "body": " Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .  "
+  "body": "  Geometric multiplicity of an eigenvalue is always less than or equals to its algebraic multiplicity. That is, if is the geometric multiplicity of then .   "
 },
 {
-  "id": "sec5-1-eigen-intro-19",
+  "id": "exer-gem-multiplicity1",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-19",
+  "url": "sec5-1-eigen-intro.html#exer-gem-multiplicity1",
   "type": "Checkpoint",
   "number": "5.1.15",
   "title": "",
@@ -2896,7 +2905,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.1.16",
   "title": "",
-  "body": "  Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of geometric multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.   "
+  "body": "  Consider the matrix . It is easy to check that . That is, has only one eigenvalue of of algebraic multiplicity 3. It is easy to see that is an eigenvector corresponding to . We have . It is easy to see that nullity of is 1. Hence the geometric multiplicity of is 1 where as its algebraic multiplicity is 3.   "
 },
 {
   "id": "eigen-properties",
@@ -2908,54 +2917,54 @@ var ptx_lunr_docs = [
   "body": " Properties of Eigenvalues and Eigenvectors       and have the same eigenvalues.    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of .    If is an eigenvalue of a non singular matrix , then is an eigenvalue of .    If is an eigenvalue of , then is an eigenvalue of for any scalar .    If is an eigenvalue of and is a polynomial in , then is an eigenvalue of .    Two matrices and are called similar if there exists a matrix such that . Similar matrices have same eigenvalues.    If and are distinct eigenvalues of then eigenvectors and corresponding to and are linearly independent. Can you generalize this?    The rank if a matrix a square matrix is is the number of nonzero eigenvalues of .    If is a linear transformation from . Fix a basis of . Let be the matrix of with respect to . Then and have the same eigenvalues. Furthermore, eigenvalues of are independent of the basis.      "
 },
 {
-  "id": "sec5-1-eigen-intro-23",
+  "id": "subsec-egenvalues-eigencecs-23",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-23",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-23",
   "type": "Example",
   "number": "5.1.18",
   "title": "",
   "body": "  Let and . Let us find eigenvalues of .  It is easy to the characteristic polynomial of is given by and . Then eigenvalues of are given by    "
 },
 {
-  "id": "sec5-1-eigen-intro-24",
+  "id": "subsec-egenvalues-eigencecs-24",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-24",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-24",
   "type": "Theorem",
   "number": "5.1.19",
   "title": "",
   "body": "     Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.      "
 },
 {
-  "id": "sec5-1-eigen-intro-25",
+  "id": "subsec-egenvalues-eigencecs-25",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-25",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-25",
   "type": "Proof",
-  "number": "5.1.1",
+  "number": "5.1.1.1",
   "title": "",
   "body": " (a) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  It is easy to see that and are scalars and that is a real number. Hence the behavior of is determined by .  If is a herminitan matrix then , also is scalar, implies . Hence . This implies that is a real number and hence is a real number.  Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.  "
 },
 {
-  "id": "sec5-1-eigen-intro-27",
+  "id": "subsec-egenvalues-eigencecs-27",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-27",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-27",
   "type": "Theorem",
   "number": "5.1.20",
   "title": "Cayley-Hamilton Theorem.",
   "body": " Cayley-Hamilton Theorem   Every square matrix satisfies its characteristic equation. That is, if is characteristic equation of , then .   "
 },
 {
-  "id": "sec5-1-eigen-intro-28",
+  "id": "subsec-egenvalues-eigencecs-28",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-28",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-28",
   "type": "Example",
   "number": "5.1.21",
   "title": "",
   "body": "  Let . From Example , the characteristic polynomial of is given by . We have and . Hence .  Hence satisfies its characteristic equation.  It is easy to check that , hence is non singular. Since , multiplying both sides by its inverse, we get . Hence .  We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by to the equation, , we get , from this we have .  Can you find ?   "
 },
 {
-  "id": "sec5-1-eigen-intro-29",
+  "id": "exer-Cayley-Hamilton1",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-29",
+  "url": "sec5-1-eigen-intro.html#exer-Cayley-Hamilton1",
   "type": "Checkpoint",
   "number": "5.1.22",
   "title": "",
@@ -2971,72 +2980,72 @@ var ptx_lunr_docs = [
   "body": " Spectral Radius   Let an and for be eigenvalues of then the spectral radius of is define as .   "
 },
 {
-  "id": "sec5-1-eigen-intro-31",
+  "id": "subsec-egenvalues-eigencecs-31",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-31",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-31",
   "type": "Example",
   "number": "5.1.24",
   "title": "",
   "body": "  Let . Then the characteristics polynomial of is . Hence are roots of the characteristic polynomial. Hence and are eigenvalues of . Hence .   "
 },
 {
-  "id": "sec5-1-eigen-intro-32",
+  "id": "subsec-egenvalues-eigencecs-32",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-32",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-32",
   "type": "Example",
   "number": "5.1.25",
   "title": "",
   "body": "  Consider the matrix . Then the characteristics polynomial of is . Which has roots, . Hence .   "
 },
 {
-  "id": "sec5-1-eigen-intro-33",
+  "id": "exser-spectral-radius1",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-33",
+  "url": "sec5-1-eigen-intro.html#exser-spectral-radius1",
   "type": "Checkpoint",
   "number": "5.1.26",
   "title": "",
   "body": "  Find the spectral radius of and .   "
 },
 {
-  "id": "sec5-1-eigen-intro-34",
+  "id": "subsec-egenvalues-eigencecs-34",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-34",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-34",
   "type": "Definition",
   "number": "5.1.27",
   "title": "Positive definite matrix.",
   "body": "Positive definite matrix   Let be an symmetric matrix. Then is said to be positive definite if for all and if and only if . is called negative definite if is positive definite.   "
 },
 {
-  "id": "sec5-1-eigen-intro-35",
+  "id": "subsec-egenvalues-eigencecs-35",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-35",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-35",
   "type": "Example",
   "number": "5.1.28",
   "title": "",
   "body": "  Let . Let . Then .  Clearly for all non zero vector and if and only if . Hence is positive definite.   "
 },
 {
-  "id": "sec5-1-eigen-intro-36",
+  "id": "subsec-egenvalues-eigencecs-36",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-36",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-36",
   "type": "Example",
   "number": "5.1.29",
   "title": "",
   "body": "  Let . Let . Then   Thus if then . Hence it is not a positive definite. Its easy to see that is also not negative definite.   "
 },
 {
-  "id": "sec5-1-eigen-intro-37",
+  "id": "exer-eigen-positive-definite",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-37",
+  "url": "sec5-1-eigen-intro.html#exer-eigen-positive-definite",
   "type": "Checkpoint",
   "number": "5.1.30",
   "title": "",
   "body": "  If is a positive definite matrix then all its eigenvalues are positive.   "
 },
 {
-  "id": "sec5-1-eigen-intro-38",
+  "id": "exer-eigen-negative-definite",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-38",
+  "url": "sec5-1-eigen-intro.html#exer-eigen-negative-definite",
   "type": "Checkpoint",
   "number": "5.1.31",
   "title": "",
@@ -3052,18 +3061,18 @@ var ptx_lunr_docs = [
   "body": "Sylvester's Criterion   If is a real symmetric matrix then is positive definite if and only if all leading minor of are positive.   "
 },
 {
-  "id": "sec5-1-eigen-intro-42",
+  "id": "subsec-egenvalues-eigencecs-42",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-42",
+  "url": "sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs-42",
   "type": "Example",
   "number": "5.1.33",
   "title": "",
   "body": "  Let . For any , we have   Henc e is positive definite.   "
 },
 {
-  "id": "sec5-1-eigen-intro-43",
+  "id": "exer-eigen-positive-definite2",
   "level": "2",
-  "url": "sec5-1-eigen-intro.html#sec5-1-eigen-intro-43",
+  "url": "sec5-1-eigen-intro.html#exer-eigen-positive-definite2",
   "type": "Checkpoint",
   "number": "5.1.34",
   "title": "",
@@ -3268,9 +3277,9 @@ var ptx_lunr_docs = [
   "body": " Applications of Eigenvalues and Eigenvectors   In this section we look at several applications of eigenvalues and eigenvectors.    Fibonacci Sequence  Originally the Fibonacci sequence appeared in the solution of the following problem posed by Leonardo of Pisa, popularly known as Fibonacci, in the book Liber Abaci in 1202.  Consider the following problem.   A certain man put a pair of rabbits in a places surrounded on all sides by a wall. How many pairs of rabbits can be produced from that pair in year if it is supposed that every month each pair begets a new pair which from second month becomes productive?   We assume that the number of pairs at the end of the -th year is denoted by . We start with and . Note that the number of pair of rabbits in any given month is the number of pairs in the previous month plus those that are hatched in that month and those are as many as the previous month. This gives gives rise to a recurrence relation  . Let . Then we have   Let . Then we have   This implies   This leads to computation of power of . Therefore, we can invoke diagonalization of the matrix.  Note that is symmetric matrix with characteristic polynomial . The eigenvalues of are and the corresponding eigenvectors are . Since has distinct eigenvalues, is diagonalizable and we have   Let be one of the above eigenvalue of , then . Also it is easy to check that . Now we have Thus we have     Show that   Note that is called the Golden-Ratio which has many application in nature. The approximate value of .    Let . Then we have Now let us approximate Since , we have . This implies, .       Predator-Pray Model  In a certain area, it is observed that every year the number of rabbits is equal to 4 times the number of rabbits less 2 times numbers of weasels in the previous year. The number of weasels is equal to the sum of the number of rabbits number of weasels in the previous year. If the initial population of rabbits and weasels were 100 and 10 respectively, then find the number of each species after years. Let and be the number of rabbits and weasels after years respectively.  Then, as per data give we have with .  Let and . Then the above system is equivalent to . We need to obtain successively . It is easy to check that and are eigenvalues of with corresponding eigenvectors and respectively. We define . It is easy to see that . Also . Using diagonalization, we have Thus . Hence It is easy to check that What does this mean?    Solving System of Linear ODE  In this subsection, we shall deal with use of theory of eigenvalues and eigenvectors to solve system of linear differential equations. Let shall consider a system of first order linear differential equations with constant coefficients. A general form of such system can be given by Here we assume that are constants. The above system can be written as where real matrix and is column matrix.  We want to find a solution of the above system, that is a column vector of of differentiable functions on some interval which satisfies the above system.    Let be the set of all solutions of the linear system ODE's, . Then is an -dimensional vector subspace of the set of differentiable function on .     Left as exercise.   This mean, if are linearly independent functions which are solutions of the above system. Then any solution can be written as a linear combination of .  In case, we are given initial conditions, then there exists a unique solution of the system.  In addition, suppose is diagonalizable, with where , the diagonal matrix of eigenvalues of and is matrix of eigenbasis of .  We define . Then and . Now substituting and in the above system, we get Thus the above system of linear differential equation reduced to In particular, we have .  A general solution of the above system is given by The above equations can be written in matrix form as follows Here is the exponential of the matrix and is the column matrix of constants. From this we get a general solution of the original system as where .  Thus the solution in matrix form is given by The constant can be obtained when we have initila value problem.  Suppose we want to solve the initial value problem with initial condition . Then we have . Hence the solution in matrix form is given by    Steps to solve system of linear differential equations .      Find the matrix corresponding to this linear system and put the equation in matrix form .    Find the eigenvalues and corresponding eigenvectors of . Let be eigenvalues of with corresponding to eigenvectors respectively.    The solution is .       Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is    Solving using Sage    Sage also has inbuilt function desolve_system to solve a system of linear ODE.      Visulization of Slope Fields    Cosider a system of first order linear ODE  Here represnt the velocity vector at each point at time . This can be visualized by drawing velocity vectors at large number of grid points in some domain. This is what is called the slope field. Geometrically, the slope field describes the flow of the system. Any solution curve is tangent to these arrows at every point along its path.  We can vizualize the slope field along with the solution curve in Sage using the function plot_vector_field . Let us demonstrate this for the ODE in    Here we have drawn unit slope vectors are all the points. Along with the slope field Sage provide a way to vizualise the trajecorty or the solution curve with a given starting point using the Sage function streamline_plot .     What will be the solution of with initial conditions ?      Solve the following system ODE.     The eigenvalues of the coefficient matrix are and the corresponding eigenvectors are Hence a general solution of the given system is given by Using the given initial conditions, we get Solving the above equations, yields, . Hence the required solution of the problem is    Using the inbuilt function dessole_system , we have the following.   We can also visualize the slope field and solution curve in Sage using the following Sage syntax.        Solve the following 2nd order differential equations. Consider the system     Substitute and . Then we have The above equations can be written as where The eigenvalues of are and the corresponding eigenvectors are Thus a general solution is given by Hence a general solution of the given problem can be obtained by dropping the dummy variables and . It is given by   Solve the above problem in Sage.     In the next example, we deal with solving a system , in which the coefficient matrix has complex eigenvalues.    Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by   Writing and adjusting the constants, we can write the solution   After using the initial conditions, we have   This we can verify using the Sage inbuilt function.       In case the the coeffcient matrix of the sysstem is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.      Markov Chains  In this subsection, we look at some applications of linear algebra in dealing with matrices that arise from probabilistic systems. We consider chance process in which knowledge of previous outcomes influence prediction of future experiments. Such chance process is called a Markov Chain.   Let consider the following problem and develop the terminologies and methods to solve this problem.    Weather of certain area is classified as \"fair\", \"cloudy\" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?    In the above example, fair, cloudy and rainy day can be thought of as three states, say state 1, state 2 and state 3 respectively. Each day can be thought of as a generation. Let us denote the data given in the example as following table:     Fair  Cloudy  Rainy    Fair  0.60  0.25  0.15    Cloudy  0.40  0.35  0.25    Rainy  0.35  0.40  0.25    Let be the probability of transition from state to state . The matrix is called the transition matrix.     A transition matrix of an stage Markov chain is an matrix having nonnegative entries such that sum of entries in each column is 1. Such a matrix is called a stochastic matrix.     The transition matrix for the is given by   Note that , is the probability of being a cloudy day after fair day. Similarly , represent the probability of being fair day after a rainy day. The transition matrix, represents the change of state from present generation to the next generation.    The powers of a transition matrix have the same property of a transition matrix. That is, all the entries are non negative and sum of entries in any column is 1.      If is a transition matrix of a Markov chain and if denotes the -th entries of , then is the probability of moving to state from state in generations or in time period.    Let us consider of the transition matrix in the  Note that is the probability of rainy day becoming cloudy day after 5 days.  We consider an initial probability vector . This mean current day has 40% chance of being a fair day, 30% chance of being cloudy and 30% of being rainy.  Then , denotes the probability vector after $k$ stages. We are interested in long time behavior of the probability vector. In particular, we want to see if the limit exists.  In general, the above limits does not exists, however, in case the transition matrix is regular, then one can show that limit exists.     A transition matrix is regular if there exists a natural number such all the entries of are positive.    Note that all transition matrix are not regular, for example, identity matrix is a transition matrix but is not regular.  It is easy to see that if is a regular transition matrix matrix such that all the entries of are positive. Then all entries of are positive for non negative integers .  Let us assume that is a transition matrix and that exists. Then we have   Suppose are columns of . Then This means that each column of is an eigenvector of corresponding to eigenvalue 1. Thus we have proved the following result:    If is an regular transition matrix, then converges to a matrix, say, whose columns are eigenvectors of corresponding to eigenvalues 1.    In fact one can show the following.    If is a regular, transition matrix then its eigenvalue has multiplicity 1 and that there is only one eigenvectors associated with . This implies that all columns of are identical.    Now we define a a limiting state distribution vectors or steady state vector of an -state Markov chain as a vector as follows: Thus we have the following equation. Note that all columns of are identical, say, . Let . Then Thus is an eigenvector of with respect to eigenvalue 1 with sum of its components 1.  The gives a way to find the steady state vector.  Let us find the steady state vector of the transition matrix defined in the .  Let be the steady state vector. Then it is an eigenvector of PreTeXt P corresponding to eigenvalue 1. That is and also, . Thus we get the following set of equations which we need to solve.   Solving the avove equations we, get Hence the steady state vector is given by The limiting transition matrix is given by Thus in the long run about 48.74% chance of being a fair day, about 31.13% of being cloudy and about 20.13% chance of being rain day.    We can use diagonalization of the transition matrix to find the steady state vector.      A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.       Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )      132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.      Google Search Engine  Over 900 millions Indian use Internet (as of January 2024) most of them may do Google, a search engine that was designed by Lawrence Page and Sergei Brian in 1998. There are about 200 millions active webpages in the world as on January 2024 and it is growing by seconds. More often than not, google search gives the desired results, users are looking for. Have you ever thought of how does it work? Linear algebra plays an important role in how Google's search algorithm works. Google ranks pages according to their importance.  Success of Google lies behind its PageRank algorithm, which rates the importance of each page on the web and present the user typically most relevant and helpful pages first. PageRank uses link structure of web to determine the importance of webpages.  In this section, we shall explain how Google ranks webpages as a simple application to linear algebra.  Whenever an user or web surfer enters a keyword for searching, Google does three basic things:     Crawl the web and locate all web pages with public access.    Index the data from websites it has crawled, so that it can be searched efficiently for relevant keywords.    Rate the importance of each page in the database.     We shall briefly look at how to rank or rate webpages using Google's PageRank algorith.  An Internet network can be represented by a directed graph in which each website is thought of as a node or vertex and links between pages are edges with arrows. If there is an arrow from note to , them it means that there is link to move from webpage to . If there is a double arrow between and , then there is link from to and also from to .  To every network with -webpages, we assign a matrix , where represents the probability that surfer would visit the webpage from the webpage . If the webpage has links to other webpages then . If there is no link from to , then The matrix is called the hyper matrix of the network.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability .  We have    Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, .  One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.      Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .     The above network can be generate in Sage using DiGraph , directed graph method as follows.   Now let us define the tansition matrix manually.   Now we can find what happens to the initial vector after a large number of iterates (clicks).    From the , it looks like that we can find the stationary distribution vector and hence rank a network after a sufficiently large iterations. However, this is not always true. In case a network has a dangling webpage ( a webpage that does not link to any other page ), or a trapping loop, then we may not be able to rank webpages. In case a surfer come across, dangling node or trapping loop, he can type a new url in the address bar manually. The next two examples demonstrate this.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.     Let us see how to do the previous example in Sage.       Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.     Sage Code for Loop Network  Let use the loop network to find what happens to the initial vector in a long run.   We can find the transition matrix using .adjacency_matrix() method and taking its transpose.    Several improvements have been suggested to tackle dangling and trapping loops.  Page Rank inverters, Page and Bring suggested the a new matrix called the Google matrix which is defined as follows: where is matrix whose all entries are , is called the damping factor and .  If , then it means 90% times the surfer is using the web links and 10% times typing ulr manually in the address bar. In th original paper Page and Brin used as damping factor.  Since any regular stochastic matrix has a stationary vector, that is there exists a vector vector such that . Thus one can always find a stationary probability vector for a network.    The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.      The Google matrix defined in is a regular matrix.     Bigger Example using Google Matrix  In this example, we shall generate a random network, find the adjacency matrix and use Google matrix to find the page rank.       Page-Rank Example (all together)     "
 },
 {
-  "id": "subsec5-3-Fibonacci-Seq-13",
+  "id": "exer-Fibonacci1",
   "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-Fibonacci-Seq-13",
+  "url": "sec5-3-eigen-Appl.html#exer-Fibonacci1",
   "type": "Checkpoint",
   "number": "5.4.1",
   "title": "",
@@ -3304,9 +3313,9 @@ var ptx_lunr_docs = [
   "body": "  Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is    Solving using Sage    Sage also has inbuilt function desolve_system to solve a system of linear ODE.    "
 },
 {
-  "id": "subsec5-3-linear-ode-22",
+  "id": "exer-soln-linear-ode1",
   "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-22",
+  "url": "sec5-3-eigen-Appl.html#exer-soln-linear-ode1",
   "type": "Checkpoint",
   "number": "5.4.4",
   "title": "",
@@ -3430,18 +3439,18 @@ var ptx_lunr_docs = [
   "body": "  A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.    "
 },
 {
-  "id": "subsec5-3-Markov-Chains-33",
+  "id": "exer-diagonalization1",
   "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-33",
+  "url": "sec5-3-eigen-Appl.html#exer-diagonalization1",
   "type": "Checkpoint",
   "number": "5.4.18",
   "title": "",
   "body": "  Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )   "
 },
 {
-  "id": "subsec5-3-Markov-Chains-34",
+  "id": "exer-fishes1",
   "level": "2",
-  "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-34",
+  "url": "sec5-3-eigen-Appl.html#exer-fishes1",
   "type": "Checkpoint",
   "number": "5.4.19",
   "title": "",

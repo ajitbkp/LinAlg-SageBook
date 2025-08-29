@@ -187,8 +187,8 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Author Biography</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-6.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -308,7 +308,10 @@ sagecell.makeSagecell({
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec5-1-eigen-intro.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Reading Questions</span></a></div></li></ul>
+</li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-2-diagonalization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Diagonalization</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
@@ -465,33 +468,33 @@ r(A^*)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><
 </div>
 <div class="autopermalink" data-description="Theorem 1.6.3"><a href="#thm-hom-system2" title="Copy heading and permalink for Theorem 1.6.3" aria-label="Copy heading and permalink for Theorem 1.6.3">🔗</a></div></article><details id="thm-hom-system2-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><span class="process-math">\(m \lt n\text{,}\)</span><span class="process-math">\(r(A) \lt  n\)</span><a href="sec1-4-matrix-rank.html#thm-nosol-rank" class="xref" data-knowl="./knowl/xref/thm-nosol-rank.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.8: Number of Solution of a System">Theorem 1.5.8</a><div class="autopermalink" data-description="Proof 1.6.3.1"><a href="#thm-hom-system2-2" title="Copy heading and permalink for Proof 1.6.3.1" aria-label="Copy heading and permalink for Proof 1.6.3.1">🔗</a></div></article></details><div class="para" id="sec1-5-hom-system-6">One cam prove <a href="sec1-5-hom-system.html#thm-hom-system2" class="xref" data-knowl="./knowl/xref/thm-hom-system2.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.3">Theorem 1.6.3</a> directly using induction on <span class="process-math">\(m\)</span>m the number of equtions.<div class="autopermalink" data-description="Paragraph"><a href="#sec1-5-hom-system-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="exercise exercise-like" id="sec1-5-hom-system-7"><h3 class="heading">
+<article class="exercise exercise-like" id="exer-hom-system1"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="sec1-5-hom-system-7-1">
+<div class="para logical" id="exer-hom-system1-1-1">
 <div class="para">Let <span class="process-math">\(X_1\)</span> and <span class="process-math">\(X_2\)</span> be two solutions of the homogeneous system <span class="process-math">\(AX=0\)</span> and <span class="process-math">\(Y_1, Y_2\)</span> solutions of the non homogeneous sytem <span class="process-math">\(AX=B\text{.}\)</span> Then show the following</div>
-<ol class="decimal" id="sec1-5-hom-system-7-1-6">
-<li id="sec1-5-hom-system-7-1-6-1">
-<div class="para" id="sec1-5-hom-system-7-1-6-1-1">
-<span class="process-math">\(X_1-X_2\)</span> is a solution of <span class="process-math">\(AX=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec1-5-hom-system-7-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<ol class="decimal" id="exer-hom-system1-1-1-6">
+<li id="exer-hom-system1-1-1-6-1">
+<div class="para" id="exer-hom-system1-1-1-6-1-1">
+<span class="process-math">\(X_1-X_2\)</span> is a solution of <span class="process-math">\(AX=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-hom-system1-1-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.6.4.1"><a href="#sec1-5-hom-system-7-1-6-1" title="Copy heading and permalink for Item 1.6.4.1" aria-label="Copy heading and permalink for Item 1.6.4.1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.6.4.1"><a href="#exer-hom-system1-1-1-6-1" title="Copy heading and permalink for Item 1.6.4.1" aria-label="Copy heading and permalink for Item 1.6.4.1">🔗</a></div>
 </li>
-<li id="sec1-5-hom-system-7-1-6-2">
-<div class="para" id="sec1-5-hom-system-7-1-6-2-1">for any <span class="process-math">\(\alpha,\beta\in \R\text{,}\)</span> <span class="process-math">\(\alpha X_1+\beta X_2\)</span> is a solution of <span class="process-math">\(AX=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec1-5-hom-system-7-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="exer-hom-system1-1-1-6-2">
+<div class="para" id="exer-hom-system1-1-1-6-2-1">for any <span class="process-math">\(\alpha,\beta\in \R\text{,}\)</span> <span class="process-math">\(\alpha X_1+\beta X_2\)</span> is a solution of <span class="process-math">\(AX=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-hom-system1-1-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.6.4.2"><a href="#sec1-5-hom-system-7-1-6-2" title="Copy heading and permalink for Item 1.6.4.2" aria-label="Copy heading and permalink for Item 1.6.4.2">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.6.4.2"><a href="#exer-hom-system1-1-1-6-2" title="Copy heading and permalink for Item 1.6.4.2" aria-label="Copy heading and permalink for Item 1.6.4.2">🔗</a></div>
 </li>
-<li id="sec1-5-hom-system-7-1-6-3">
-<div class="para" id="sec1-5-hom-system-7-1-6-3-1">
-<span class="process-math">\(Y_1-X_2\)</span> is a solution of <span class="process-math">\(AX=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec1-5-hom-system-7-1-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="exer-hom-system1-1-1-6-3">
+<div class="para" id="exer-hom-system1-1-1-6-3-1">
+<span class="process-math">\(Y_1-X_2\)</span> is a solution of <span class="process-math">\(AX=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-hom-system1-1-1-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.6.4.3"><a href="#sec1-5-hom-system-7-1-6-3" title="Copy heading and permalink for Item 1.6.4.3" aria-label="Copy heading and permalink for Item 1.6.4.3">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.6.4.3"><a href="#exer-hom-system1-1-1-6-3" title="Copy heading and permalink for Item 1.6.4.3" aria-label="Copy heading and permalink for Item 1.6.4.3">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec1-5-hom-system-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exer-hom-system1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 1.6.4"><a href="#sec1-5-hom-system-7" title="Copy heading and permalink for Checkpoint 1.6.4" aria-label="Copy heading and permalink for Checkpoint 1.6.4">🔗</a></div></article><div class="para" id="sec1-5-hom-system-8">We would like to get the connection between solutions of a homogeneous system <span class="process-math">\(AX = 0\)</span> and  the solutions of <span class="process-math">\(AX = B\text{,}\)</span> <span class="process-math">\(B \neq 0\text{.}\)</span> These are stated in the following Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#sec1-5-hom-system-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Checkpoint 1.6.4"><a href="#exer-hom-system1" title="Copy heading and permalink for Checkpoint 1.6.4" aria-label="Copy heading and permalink for Checkpoint 1.6.4">🔗</a></div></article><div class="para" id="sec1-5-hom-system-8">We would like to get the connection between solutions of a homogeneous system <span class="process-math">\(AX = 0\)</span> and  the solutions of <span class="process-math">\(AX = B\text{,}\)</span> <span class="process-math">\(B \neq 0\text{.}\)</span> These are stated in the following Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#sec1-5-hom-system-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-hom-system3"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.6.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>

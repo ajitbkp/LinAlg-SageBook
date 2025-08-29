@@ -187,8 +187,8 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Author Biography</span></a></div></li>
-<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-6.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
 </li>
@@ -308,7 +308,10 @@ sagecell.makeSagecell({
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec5-1-eigen-intro.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Questions</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec5-1-eigen-intro.html#subsec-egenvalues-eigencecs" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Reading Questions</span></a></div></li></ul>
+</li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-2-diagonalization.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Diagonalization</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec5-5-Eigen-Sage.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Eigenvectors in Sage</span></a></div></li>
@@ -561,10 +564,10 @@ F_n=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}}.
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Fibonacci-Seq-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="exercise exercise-like" id="subsec5-3-Fibonacci-Seq-13"><h4 class="heading">
+<article class="exercise exercise-like" id="exer-Fibonacci1"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para logical" id="subsec5-3-Fibonacci-Seq-13-1-1">
+<div class="para logical" id="exer-Fibonacci1-1-1">
 <div class="para">Show that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -572,11 +575,11 @@ F_n=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}}.
 \infty}\dfrac{F_{n+1}}{F_n}=\frac{1+\sqrt{5}}{2}=\varphi.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Fibonacci-Seq-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec5-3-Fibonacci-Seq-13-1-2">Note that <span class="process-math">\(\varphi\)</span> is called the <em class="emphasis">Golden-Ratio</em> which has many application in nature. The approximate value of <span class="process-math">\(\varphi \approx 1.618025\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Fibonacci-Seq-13-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exer-Fibonacci1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="exer-Fibonacci1-1-2">Note that <span class="process-math">\(\varphi\)</span> is called the <em class="emphasis">Golden-Ratio</em> which has many application in nature. The approximate value of <span class="process-math">\(\varphi \approx 1.618025\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-Fibonacci1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="subsec5-3-Fibonacci-Seq-13-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
-<div class="para logical" id="subsec5-3-Fibonacci-Seq-13-2-1">
+<div class="solutions"><details id="exer-Fibonacci1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para logical" id="exer-Fibonacci1-2-1">
 <div class="para">Let <span class="process-math">\(x_n:=\dfrac{F_{n+1}}{F_n}\text{.}\)</span> Then we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -584,7 +587,7 @@ x_n=\frac{F_n+F_{n-1}}{F_n}=1+\frac{F_{n-1}}{F_n}=1+\frac{1}{x_{n-1}}.
 \end{equation*}
 </div>
 <div class="para">Now let us approximate</div>
-<div class="displaymath process-math" id="subsec5-3-Fibonacci-Seq-13-2-1-3">
+<div class="displaymath process-math" id="exer-Fibonacci1-2-1-3">
 \begin{align*}
 |x_n-\varphi| = \amp \left|\left( 1+\frac{1}{x_{n-1}}\right)-\left(
 1+\frac{1}{\varphi}\right)\right|\\
@@ -598,11 +601,11 @@ $x_{n}\geq 1$.}\\
 \frac{1}{\varphi} \lt 1\text{,}\)</span> we have <span class="process-math">\(\frac{1}{\varphi^n}\to 0\text{.}\)</span> This implies, <span class="process-math">\(x_n\to
 \varphi\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Fibonacci-Seq-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exer-Fibonacci1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 5.4.1.1"><a href="#subsec5-3-Fibonacci-Seq-13-2" title="Copy heading and permalink for Hint 5.4.1.1" aria-label="Copy heading and permalink for Hint 5.4.1.1">🔗</a></div>
+<div class="autopermalink" data-description="Hint 5.4.1.1"><a href="#exer-Fibonacci1-2" title="Copy heading and permalink for Hint 5.4.1.1" aria-label="Copy heading and permalink for Hint 5.4.1.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Checkpoint 5.4.1"><a href="#subsec5-3-Fibonacci-Seq-13" title="Copy heading and permalink for Checkpoint 5.4.1" aria-label="Copy heading and permalink for Checkpoint 5.4.1">🔗</a></div></article><div id="subsec5-3-Fibonacci-Seq-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">n=50 # Change the value on n and see what happens.
+<div class="autopermalink" data-description="Checkpoint 5.4.1"><a href="#exer-Fibonacci1" title="Copy heading and permalink for Checkpoint 5.4.1" aria-label="Copy heading and permalink for Checkpoint 5.4.1">🔗</a></div></article><div id="subsec5-3-Fibonacci-Seq-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">n=50 # Change the value on n and see what happens.
 fibonacci(n+1)/fibonacci(n).n()
 </script></div>
 <div class="autopermalink" data-description="Subsection 5.4.1: Fibonacci Sequence"><a href="#subsec5-3-Fibonacci-Seq" title="Copy heading and permalink for Subsection 5.4.1: Fibonacci Sequence" aria-label="Copy heading and permalink for Subsection 5.4.1: Fibonacci Sequence">🔗</a></div></section><section class="subsection" id="subsec5-3-Predator-Pray"><h3 class="heading hide-type">
@@ -912,21 +915,21 @@ start_points=[(0,1.2),(0,-1.2),(-1,0),(1,0)],color='red')
 
 show(vf+trajectories+sol_curves)
 </script></div>
-<article class="exercise exercise-like" id="subsec5-3-linear-ode-22"><h4 class="heading">
+<article class="exercise exercise-like" id="exer-soln-linear-ode1"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para logical" id="subsec5-3-linear-ode-22-1-1">
+<div class="para logical" id="exer-soln-linear-ode1-1-1">
 <div class="para">What will be the solution of</div>
-<div class="displaymath process-math" id="subsec5-3-linear-ode-22-1-1-1">
+<div class="displaymath process-math" id="exer-soln-linear-ode1-1-1-1">
 \begin{align*}
 x'=\amp -5x+2y\\
 y' = \amp x-4y
 \end{align*}
 </div>
 <div class="para">with initial conditions <span class="process-math">\(x(0)=1, y(0)=-2\)</span> ?</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-linear-ode-22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exer-soln-linear-ode1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 5.4.4"><a href="#subsec5-3-linear-ode-22" title="Copy heading and permalink for Checkpoint 5.4.4" aria-label="Copy heading and permalink for Checkpoint 5.4.4">🔗</a></div></article><article class="example example-like" id="subsec5-3-linear-ode-23"><h4 class="heading">
+<div class="autopermalink" data-description="Checkpoint 5.4.4"><a href="#exer-soln-linear-ode1" title="Copy heading and permalink for Checkpoint 5.4.4" aria-label="Copy heading and permalink for Checkpoint 5.4.4">🔗</a></div></article><article class="example example-like" id="subsec5-3-linear-ode-23"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="subsec5-3-linear-ode-23-1-1">
@@ -1513,23 +1516,23 @@ for large \(n\) }\\
 </div> <div class="para" id="subsec5-3-Markov-Chains-32-1-12">Suppose we define <span class="process-math">\(\pi = \left(\begin{array}{r} \frac{7}{18}\\ \frac{1}{3} \\
 \frac{5}{18} \end{array} \right)\text{.}\)</span> Then it is easy to check that <span class="process-math">\(A\pi=\pi\text{.}\)</span> That is <span class="process-math">\(\pi\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to the eigenvalue 1. This is called the <em class="emphasis">steady state vector.</em><div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Markov-Chains-32-1-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.4.17"><a href="#subsec5-3-Markov-Chains-32" title="Copy heading and permalink for Example 5.4.17" aria-label="Copy heading and permalink for Example 5.4.17">🔗</a></div></article><article class="exercise exercise-like" id="subsec5-3-Markov-Chains-33"><h4 class="heading">
+<div class="autopermalink" data-description="Example 5.4.17"><a href="#subsec5-3-Markov-Chains-32" title="Copy heading and permalink for Example 5.4.17" aria-label="Copy heading and permalink for Example 5.4.17">🔗</a></div></article><article class="exercise exercise-like" id="exer-diagonalization1"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="subsec5-3-Markov-Chains-33-1-1">Suppose <span class="process-math">\(D\)</span> is a diagonal matrix given by <span class="process-math">\(D= \left(\begin{array}{rrr} 1 \amp 0
-\amp 0 \\ 0 \amp 0.3 \amp 0 \\ 0 \amp 0 \amp 0.2 \end{array} \right)\)</span> and <span class="process-math">\(v\in \R^3\text{.}\)</span> What happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(D^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(u_1\)</span> direction.</em>)<div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Markov-Chains-33-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec5-3-Markov-Chains-33-1-2">Next let us consider a matrix which is diagonalizable with eigenvectors <span class="process-math">\(u_1, u_2, u_3\)</span> and corresponding eigenvalues <span class="process-math">\(\lambda_1=1, \lambda_2=0.3\)</span> and <span class="process-math">\(\lambda_3=0.2\)</span> respectively. Then what happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(A^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It makes <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> coordinates very small and it sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(x\)</span>-axis.</em>)<div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Markov-Chains-33-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exer-diagonalization1-1-1">Suppose <span class="process-math">\(D\)</span> is a diagonal matrix given by <span class="process-math">\(D= \left(\begin{array}{rrr} 1 \amp 0
+\amp 0 \\ 0 \amp 0.3 \amp 0 \\ 0 \amp 0 \amp 0.2 \end{array} \right)\)</span> and <span class="process-math">\(v\in \R^3\text{.}\)</span> What happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(D^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(u_1\)</span> direction.</em>)<div class="autopermalink" data-description="Paragraph"><a href="#exer-diagonalization1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="exer-diagonalization1-1-2">Next let us consider a matrix which is diagonalizable with eigenvectors <span class="process-math">\(u_1, u_2, u_3\)</span> and corresponding eigenvalues <span class="process-math">\(\lambda_1=1, \lambda_2=0.3\)</span> and <span class="process-math">\(\lambda_3=0.2\)</span> respectively. Then what happens to the vector <span class="process-math">\(v\)</span> geometrically when we do <span class="process-math">\(A^nv\)</span> for large <span class="process-math">\(n\text{?}\)</span> (<em class="emphasis">It makes <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> coordinates very small and it sucks vector <span class="process-math">\(v\)</span> into <span class="process-math">\(x\)</span>-axis.</em>)<div class="autopermalink" data-description="Paragraph"><a href="#exer-diagonalization1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 5.4.18"><a href="#subsec5-3-Markov-Chains-33" title="Copy heading and permalink for Checkpoint 5.4.18" aria-label="Copy heading and permalink for Checkpoint 5.4.18">🔗</a></div></article><article class="exercise exercise-like" id="subsec5-3-Markov-Chains-34"><h4 class="heading">
+<div class="autopermalink" data-description="Checkpoint 5.4.18"><a href="#exer-diagonalization1" title="Copy heading and permalink for Checkpoint 5.4.18" aria-label="Copy heading and permalink for Checkpoint 5.4.18">🔗</a></div></article><article class="exercise exercise-like" id="exer-fishes1"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="subsec5-3-Markov-Chains-34-1-1">132 fishes are placed in a box with nine rooms. See <a href="sec5-3-eigen-Appl.html#mouse1" class="xref" data-knowl="./knowl/xref/mouse1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.4.20">Figure 5.4.20</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Markov-Chains-34-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exer-fishes1-1-1">132 fishes are placed in a box with nine rooms. See <a href="sec5-3-eigen-Appl.html#mouse1" class="xref" data-knowl="./knowl/xref/mouse1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.4.20">Figure 5.4.20</a>.<div class="autopermalink" data-description="Paragraph"><a href="#exer-fishes1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="mouse1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/images/Fish-Tank.PNG" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Fish Tank<div class="autopermalink" data-description="Figure 5.4.20"><a href="#mouse1" title="Copy heading and permalink for Figure 5.4.20" aria-label="Copy heading and permalink for Figure 5.4.20">🔗</a></div></figcaption></figure> <div class="para" id="subsec5-3-Markov-Chains-34-1-3">Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.<div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Markov-Chains-34-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec5-3-Markov-Chains-34-1-4">Find how many fishes can be found in each room in long run.<div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Markov-Chains-34-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec5-3-Markov-Chains-34-1-5">Solve this problem using a <span class="process-math">\(3 \times 3\)</span> matrix stochastic matrix.<div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Markov-Chains-34-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Fish Tank<div class="autopermalink" data-description="Figure 5.4.20"><a href="#mouse1" title="Copy heading and permalink for Figure 5.4.20" aria-label="Copy heading and permalink for Figure 5.4.20">🔗</a></div></figcaption></figure> <div class="para" id="exer-fishes1-1-3">Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.<div class="autopermalink" data-description="Paragraph"><a href="#exer-fishes1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="exer-fishes1-1-4">Find how many fishes can be found in each room in long run.<div class="autopermalink" data-description="Paragraph"><a href="#exer-fishes1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="exer-fishes1-1-5">Solve this problem using a <span class="process-math">\(3 \times 3\)</span> matrix stochastic matrix.<div class="autopermalink" data-description="Paragraph"><a href="#exer-fishes1-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 5.4.19"><a href="#subsec5-3-Markov-Chains-34" title="Copy heading and permalink for Checkpoint 5.4.19" aria-label="Copy heading and permalink for Checkpoint 5.4.19">🔗</a></div></article><div class="autopermalink" data-description="Subsection 5.4.4: Markov Chains"><a href="#subsec5-3-Markov-Chains" title="Copy heading and permalink for Subsection 5.4.4: Markov Chains" aria-label="Copy heading and permalink for Subsection 5.4.4: Markov Chains">🔗</a></div></section><section class="subsection" id="subsec5-3-Google-Search"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Checkpoint 5.4.19"><a href="#exer-fishes1" title="Copy heading and permalink for Checkpoint 5.4.19" aria-label="Copy heading and permalink for Checkpoint 5.4.19">🔗</a></div></article><div class="autopermalink" data-description="Subsection 5.4.4: Markov Chains"><a href="#subsec5-3-Markov-Chains" title="Copy heading and permalink for Subsection 5.4.4: Markov Chains" aria-label="Copy heading and permalink for Subsection 5.4.4: Markov Chains">🔗</a></div></section><section class="subsection" id="subsec5-3-Google-Search"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Google Search Engine</span>
 </h3>
 <div class="para" id="subsec5-3-Google-Search-2">Over 900 millions Indian use Internet (as of January 2024) most of them may do Google, a search engine that was designed by Lawrence Page and Sergei Brian in 1998. There are about 200 millions active webpages in the world as on January 2024 and it is growing by seconds. More often than not, google search gives the desired results, users are looking for. Have you ever thought of how does it work? Linear algebra plays an important role in how Google’s search algorithm works. Google ranks pages according to their importance.<div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Google-Search-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>

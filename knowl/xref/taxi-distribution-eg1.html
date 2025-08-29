@@ -21,9 +21,10 @@
 <article class="example example-like"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para">Consider the figure below <a href="sec1-0-lin-eqns.html#taxi_fig1" class="xref" data-knowl="./knowl/xref/taxi_fig1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.5">Figure 1.1.5</a>. Vertices are various locations at which taxies are parked. The edges are directed with labels. <figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;grid-template-columns:100%;column-gap:0%;"><div class="sbspanel sbspanel--top top" style=""><img src="external/images/taxi_fig1.png" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Taxi distributions between 5 locations.<div class="autopermalink" data-description="Figure 1.1.5"><a href="#taxi_fig1" title="Copy heading and permalink for Figure 1.1.5" aria-label="Copy heading and permalink for Figure 1.1.5">🔗</a></div></figcaption></figure> For example arrow going from location 4 to 1 has label <span class="process-math">\(7/20\text{.}\)</span> This means <span class="process-math">\(7/20^{th}=35\%\)</span> of the taxies taken from location <span class="process-math">\(4\)</span> comes to location <span class="process-math">\(1\)</span> at the end of the day.<div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para">Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, <span class="process-math">\(N\)</span> taxies and wish to find out how many taxies he/she should place at various location so that his business runs smoothly.  How to formulate this problem?<div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Consider the figure below <a href="sec1-0-lin-eqns.html#taxi_fig1" class="xref" data-knowl="./knowl/xref/taxi_fig1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.5">Figure 1.1.5</a>. Vertices are various locations at which taxies are parked. The edges are directed with labels.<div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;grid-template-columns:100%;column-gap:0%;"><div class="sbspanel sbspanel--top top" style=""><img src="external/images/taxi_fig1.png" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Taxi distributions between 5 locations.<div class="autopermalink" data-description="Figure 1.1.5"><a href="#taxi_fig1" title="Copy heading and permalink for Figure 1.1.5" aria-label="Copy heading and permalink for Figure 1.1.5">🔗</a></div></figcaption></figure> <div class="para">For example arrow going from location 4 to 1 has label <span class="process-math">\(7/20\text{.}\)</span> This means <span class="process-math">\(7/20^{th}=35\%\)</span> of the taxies taken from location <span class="process-math">\(4\)</span> comes to location <span class="process-math">\(1\)</span> at the end of the day.<div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para">Now suppose a company is running this taxi services and has certain number of taxies. The above proportation of distribution has been otained from some past experience. Suppose the comany has a total, <span class="process-math">\(N\)</span> taxies and wish to find out how many taxies he/she should place at various location so that his business runs smoothly.  How to formulate this problem?<div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical">
 <div class="para">Suppose <span class="process-math">\(x_i\)</span> denotes the number of taxies to be kept at the locatio <span class="process-math">\(i\text{.}\)</span> Then we have</div>
 <div class="displaymath process-math">
@@ -37,29 +38,31 @@ x_0+x_1+x_2+x_3+x_4=N.
 1/4x_0 + 1/10x_1 + 3/20x_2 + 1/10x_3 + 3/10x_4.
 \end{equation*}
 </div>
-<div class="para">Similarly the number of taxies at various locations are as follows</div>
-<ul class="disc" id="taxi-distribution-eg1-1-3-6">
+<div class="para">Similarly the number of taxies at various locations are as follows:</div>
+<ul class="disc" id="taxi-distribution-eg1-1-5-6">
 <li>
-<div class="para">Location 1: <span class="process-math">\(1/5x_0 + 1/10x_1 + 1/5x_2 + 1/4x_3\)</span><div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-3-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Location 1: <span class="process-math">\(1/5x_0 + 1/10x_1 + 1/5x_2 + 1/4x_3\)</span><div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-5-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#taxi-distribution-eg1-1-3-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#taxi-distribution-eg1-1-5-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li>
-<div class="para">Location 2: <span class="process-math">\(3/20x_0 + 1/5x_1 + 1/2x_2 + 1/10x_3 + 7/20x_4\)</span><div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-3-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Location 2: <span class="process-math">\(3/20x_0 + 1/5x_1 + 1/2x_2 + 1/10x_3 + 7/20x_4\)</span><div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-5-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#taxi-distribution-eg1-1-3-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#taxi-distribution-eg1-1-5-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li>
-<div class="para">Location 3: <span class="process-math">\(7/20x_0 + 1/4x_1 + 7/20x_3 + 1/10x_4\)</span><div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-3-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Location 3: <span class="process-math">\(7/20x_0 + 1/4x_1 + 7/20x_3 + 1/10x_4\)</span><div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-5-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#taxi-distribution-eg1-1-3-6-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#taxi-distribution-eg1-1-5-6-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li>
-<div class="para">Location 4: <span class="process-math">\(1/20x_0 + 7/20x_1 + 3/20x_2 + 1/5x_3 + 1/4x_4\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-3-6-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Location 4: <span class="process-math">\(1/20x_0 + 7/20x_1 + 3/20x_2 + 1/5x_3 + 1/4x_4\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-5-6-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#taxi-distribution-eg1-1-3-6-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#taxi-distribution-eg1-1-5-6-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical">
 <div class="para">Ideally, the company would want the same number of taxies to come back at each location everyday.  How to find these <span class="process-math">\(x_i's\text{?}\)</span> It is easy to see that this amount to solving the following system of linear equations</div>
 <div class="displaymath process-math">
 \begin{align*}
@@ -117,7 +120,7 @@ x_{0} \\ x_{1} \\ x_{2} \\ x_{3} \\x_{4}
 \end{array}\right).
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#taxi-distribution-eg1-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Example 1.1.4"><a href="#taxi-distribution-eg1" title="Copy heading and permalink for Example 1.1.4" aria-label="Copy heading and permalink for Example 1.1.4">🔗</a></div></article><span class="incontext"><a class="internal" href="sec1-0-lin-eqns.html#taxi-distribution-eg1">in-context</a></span>
 </body>
