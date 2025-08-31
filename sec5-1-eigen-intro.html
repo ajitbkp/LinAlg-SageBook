@@ -302,6 +302,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenspace-subspace" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Reading Questions</span></a></div></li>
 <li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenvalues-poly-space" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Reading Questions</span></a></div></li>
 <li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-eigenvalues-function-space" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Reading Questions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec5-1-eigen-intro.html#rqs-invariant-subspace" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Reading Questions</span></a></div></li>
 </ul>
 </li></ul>
 </li>
@@ -846,55 +847,14 @@ p(A)v=c_0v+c_c\lambda v+c_2\lambda^2v+\cdots c_k\lambda^kv=p(\lambda).
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-28-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.1.19"><a href="#subsec-egenvalues-eigencecs-28" title="Copy heading and permalink for Example 5.1.19" aria-label="Copy heading and permalink for Example 5.1.19">🔗</a></div></article><article class="theorem theorem-like" id="subsec-egenvalues-eigencecs-29"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 5.1.19"><a href="#subsec-egenvalues-eigencecs-28" title="Copy heading and permalink for Example 5.1.19" aria-label="Copy heading and permalink for Example 5.1.19">🔗</a></div></article><div class="para" id="subsec-egenvalues-eigencecs-29">In genegarl, let <span class="process-math">\(f(x)=\alpha_0+\alpha_1 x+\alpha_2 x^2+\cdots+\alpha_kx^k\)</span> be a polynomial of degree <span class="process-math">\(k\)</span> and <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> real matrix. Then  we can define <span class="process-math">\(f(A)=\alpha_0 I+\alpha_1 A+\alpha_2 A^2+\cdots+\alpha_k A^k\text{.}\)</span> If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> theh <span class="process-math">\(f(\lambda)\)</span> is an eigenvalue of <span class="process-math">\(f(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="subsec-egenvalues-eigencecs-30"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cayley-Hamilton Theorem.</span>
 </h4>
-<div class="para logical" id="subsec-egenvalues-eigencecs-29-1-1">
-<ol class="decimal" id="subsec-egenvalues-eigencecs-29-1-1-1">
-<li id="subsec-egenvalues-eigencecs-29-1-1-1-1">
-<div class="para" id="subsec-egenvalues-eigencecs-29-1-1-1-1-1">Eigenvalues of Hermitian (symmetric) matrix are real.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-29-1-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-egenvalues-eigencecs-30-2-1">Every square matrix satisfies its characteristic equation. That is, if <span class="process-math">\(p(x)=0\)</span> is characteristic equation of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(p(A)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-30-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#subsec-egenvalues-eigencecs-29-1-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
-</li>
-<li id="subsec-egenvalues-eigencecs-29-1-1-1-2">
-<div class="para" id="subsec-egenvalues-eigencecs-29-1-1-1-2-1">Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-29-1-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 2"><a href="#subsec-egenvalues-eigencecs-29-1-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
-</li>
-</ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-29-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Theorem 5.1.20"><a href="#subsec-egenvalues-eigencecs-29" title="Copy heading and permalink for Theorem 5.1.20" aria-label="Copy heading and permalink for Theorem 5.1.20">🔗</a></div></article><details id="subsec-egenvalues-eigencecs-30" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-egenvalues-eigencecs-30-1">
-<div class="para">(a) Let <span class="process-math">\(\lambda\)</span> be an eigenvalues of <span class="process-math">\(A\)</span> and <span class="process-math">\(v\text{,}\)</span> the corresponding eigenvector of <span class="process-math">\(A\text{.}\)</span> Then by definition <span class="process-math">\(Av=\lambda v\text{.}\)</span> Multiplying both sides by <span class="process-math">\(\overline{v}^T\)</span> (the conjugate transpose of the vector <span class="process-math">\(v\)</span>), we get</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\overline{v}^TAv=\lambda\overline{v}^Tv \Longrightarrow \lambda=\dfrac{\overline{v}^TAv}{\overline{v}^Tv}\text{.}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-30-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-egenvalues-eigencecs-30-2">It is easy to see that <span class="process-math">\(\overline{v}^TAv\)</span> and <span class="process-math">\(\overline{v}^Tv\)</span> are scalars and that <span class="process-math">\(\overline{v}^Tv\)</span> is a real number. Hence the behavior of <span class="process-math">\(\lambda\)</span> is determined by <span class="process-math">\(\overline{v}^TAv\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-30-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="subsec-egenvalues-eigencecs-30-3">
-<div class="para">If <span class="process-math">\(A\)</span> is a herminitan matrix then <span class="process-math">\(\overline{A}=A^T\text{,}\)</span> also <span class="process-math">\(\overline{v}^TAv\)</span> is scalar, implies <span class="process-math">\((\overline{v}^TAv)^T=\overline{v}^TAv\text{.}\)</span> Hence</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\overline{(\overline{v}^TAv)}=v^T\overline{A}\overline{v}=v^T{A^T}\overline{v}=(\overline{v}^TA{v})^T=v^T{A}\overline{v}\text{.}
-\end{equation*}
-</div>
-<div class="para">This implies that <span class="process-math">\(\overline{v}^TAv\)</span> is a real number and hence <span class="process-math">\(\lambda\)</span> is a real number.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-30-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="subsec-egenvalues-eigencecs-30-4">Now if <span class="process-math">\(A\)</span> is a skew-hermitian matrix, then it is easy to show that <span class="process-math">\(\overline{(\overline{v}^TAv)}=-(\overline{v}^TAv)\text{.}\)</span> Hence <span class="process-math">\(\overline{v}^TAv\)</span> is either purely imaginary or zero. Which show <span class="process-math">\(\lambda\)</span> is either purely imaginary of zero.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-30-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proof 5.1.1.1"><a href="#subsec-egenvalues-eigencecs-30" title="Copy heading and permalink for Proof 5.1.1.1" aria-label="Copy heading and permalink for Proof 5.1.1.1">🔗</a></div></article></details><div class="para" id="subsec-egenvalues-eigencecs-31">In genegarl, let <span class="process-math">\(f(x)=\alpha_0+\alpha_1 x+\alpha_2 x^2+\cdots+\alpha_kx^k\)</span> be a polynomial of degree <span class="process-math">\(k\)</span> and <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> real matrix. Then  we can define <span class="process-math">\(f(A)=\alpha_0 I+\alpha_1 A+\alpha_2 A^2+\cdots+\alpha_k A^k\text{.}\)</span> If <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> theh <span class="process-math">\(f(\lambda)\)</span> is an eigenvalue of <span class="process-math">\(f(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="theorem theorem-like" id="subsec-egenvalues-eigencecs-32"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cayley-Hamilton Theorem.</span>
-</h4>
-<div class="para" id="subsec-egenvalues-eigencecs-32-2-1">Every square matrix satisfies its characteristic equation. That is, if <span class="process-math">\(p(x)=0\)</span> is characteristic equation of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(p(A)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-32-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Theorem 5.1.21: Cayley-Hamilton Theorem"><a href="#subsec-egenvalues-eigencecs-32" title="Copy heading and permalink for Theorem 5.1.21: Cayley-Hamilton Theorem" aria-label="Copy heading and permalink for Theorem 5.1.21: Cayley-Hamilton Theorem">🔗</a></div></article><details id="subsec-egenvalues-eigencecs-32-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-egenvalues-eigencecs-32-3-1">
+<div class="autopermalink" data-description="Theorem 5.1.20: Cayley-Hamilton Theorem"><a href="#subsec-egenvalues-eigencecs-30" title="Copy heading and permalink for Theorem 5.1.20: Cayley-Hamilton Theorem" aria-label="Copy heading and permalink for Theorem 5.1.20: Cayley-Hamilton Theorem">🔗</a></div></article><details id="subsec-egenvalues-eigencecs-30-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-egenvalues-eigencecs-30-3-1">
 <div class="para">The proof is an application of the formula</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -902,9 +862,9 @@ A\text{adj}(A)=\det{(A)}I
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(\det{(A)}\)</span> is the adjugate of a <span class="process-math">\(A\)</span> and is defined as the transpose of its cofactor matrix.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-32-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-30-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-egenvalues-eigencecs-32-3-2">
+<div class="para logical" id="subsec-egenvalues-eigencecs-30-3-2">
 <div class="para">We apply the adjugate formula to the matrix <span class="process-math">\(\lambda I-A\text{.}\)</span> Hence we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Caley-Hamilton-eq1.html" id="eqn-Caley-Hamilton-eq1">
 \begin{equation}
@@ -924,7 +884,7 @@ A\text{adj}(A)=\det{(A)}I
 \end{equation}
 </div>
 <div class="para">Now comparing the coefficients of power of <span class="process-math">\(\lambda\text{,}\)</span> we get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Caley-Hamilton-eq1.html" id="subsec-egenvalues-eigencecs-32-3-2-12">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-Caley-Hamilton-eq1.html" id="subsec-egenvalues-eigencecs-30-3-2-12">
 \begin{align*}
 C_{n-1}\amp = I\\
 C_{n-2}-AC_{n-1}\amp = a_{n-1}I\\
@@ -935,14 +895,14 @@ C_{0}-AC_{1}\amp = a_{1}I\\
 \end{align*}
 </div>
 <div class="para">Multiplying the first equation by <span class="process-math">\(A^n\text{,}\)</span> the second equation by <span class="process-math">\(A^{n-1}\text{,}\)</span> the second last equation by <span class="process-math">\(A\)</span> and the last equation by <span class="process-math">\(I\)</span> and additing, we get the desired result.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-32-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-30-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 5.1.21.1"><a href="#subsec-egenvalues-eigencecs-32-3" title="Copy heading and permalink for Proof 5.1.21.1" aria-label="Copy heading and permalink for Proof 5.1.21.1">🔗</a></div></article></details><article class="example example-like" id="subsec-egenvalues-eigencecs-33"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Proof 5.1.20.1"><a href="#subsec-egenvalues-eigencecs-30-3" title="Copy heading and permalink for Proof 5.1.20.1" aria-label="Copy heading and permalink for Proof 5.1.20.1">🔗</a></div></article></details><article class="example example-like" id="subsec-egenvalues-eigencecs-31"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para logical" id="subsec-egenvalues-eigencecs-33-1-1">
+<div class="para logical" id="subsec-egenvalues-eigencecs-31-1-1">
 <div class="para">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\amp -2\\1\amp 1\amp 1\\1\amp 3\amp -1 \end{pmatrix}\text{.}\)</span> From <a href="sec5-1-eigen-intro.html#eigen_eg1" class="xref" data-knowl="./knowl/xref/eigen_eg1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.1.11">Example 5.1.11</a>, the characteristic polynomial of <span class="process-math">\(A\)</span> is given by <span class="process-math">\(p(x)=\det{x I -A}=x^3-x^2-4x+4\text{.}\)</span> We have <span class="process-math">\(A^2=\left(\begin{array}{rrr} 1 \amp  -2 \amp  2 \\ 3 \amp  6 \amp  -2 \\ 3 \amp  2 \amp  2 \end{array} \right)\)</span> and <span class="process-math">\(A^3=\left(\begin{array}{rrr} 1 \amp  6 \amp  -6 \\ 7 \amp  6 \amp  2 \\ 7 \amp  14 \amp  -6 \end{array} \right)\text{.}\)</span> Hence</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eigen_eg1.html" id="subsec-egenvalues-eigencecs-33-1-1-7">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eigen_eg1.html" id="subsec-egenvalues-eigencecs-31-1-1-7">
 \begin{align*}
 p(A) =\amp A^3-A^2-4A+4I\\
 =\amp  \left(\begin{array}{rrr} 1 \amp  6 \amp  -6 \\ 
@@ -953,77 +913,77 @@ p(A) =\amp A^3-A^2-4A+4I\\
 =\amp  \begin{pmatrix}0\amp 0\amp 0\\0\amp 0\amp 0\\ 0\amp 0\amp 0 \end{pmatrix} \text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-33-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec-egenvalues-eigencecs-33-1-2">Hence <span class="process-math">\(A\)</span> satisfies its characteristic equation.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-33-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="subsec-egenvalues-eigencecs-33-1-3">
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-31-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-egenvalues-eigencecs-31-1-2">Hence <span class="process-math">\(A\)</span> satisfies its characteristic equation.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-31-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="subsec-egenvalues-eigencecs-31-1-3">
 <div class="para">It is easy to check that <span class="process-math">\(\det{(A)}=-4\text{,}\)</span> hence <span class="process-math">\(A\)</span> is non singular. Since <span class="process-math">\(A^3-A^2-4A+4I=0\text{,}\)</span> multiplying both sides by its inverse, we get <span class="process-math">\(A^2-A+4I+4A^{-1}=0\text{.}\)</span> Hence</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A^{-1}=-\frac{-1}{4}A^2+\frac{1}{4}A+I=\left(\begin{array}{rrr} 1 \amp  1 \amp  -1 \\ -\frac{1}{2} \amp  -\frac{1}{4} \amp  \frac{3}{4} \\ -\frac{1}{2} \amp  \frac{1}{4} \amp  \frac{1}{4} \end{array} \right)\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-33-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="subsec-egenvalues-eigencecs-33-1-4">
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-31-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="subsec-egenvalues-eigencecs-31-1-4">
 <div class="para">We can also find higher powers of a matrix, using the Cayley-Hamilton theorem. For example multiplying by <span class="process-math">\(A\)</span> to the equation, <span class="process-math">\(A^3-A^2-4A+4I=0\text{,}\)</span> we get <span class="process-math">\(A^4-A^3-4A^2+4A=0\text{,}\)</span> from this we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A^4 = A^3+4A^2-4A=\left(\begin{array}{rrr} 1 \amp  -10 \amp  10 \\ 15 \amp  26 \amp  -10 \\ 15 \amp  10 \amp  6 \end{array} \right)\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-33-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec-egenvalues-eigencecs-33-1-5">Can you find <span class="process-math">\(A^5\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-33-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-31-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-egenvalues-eigencecs-31-1-5">Can you find <span class="process-math">\(A^5\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-31-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.1.22"><a href="#subsec-egenvalues-eigencecs-33" title="Copy heading and permalink for Example 5.1.22" aria-label="Copy heading and permalink for Example 5.1.22">🔗</a></div></article><article class="exercise exercise-like" id="exer-Cayley-Hamilton1"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 5.1.21"><a href="#subsec-egenvalues-eigencecs-31" title="Copy heading and permalink for Example 5.1.21" aria-label="Copy heading and permalink for Example 5.1.21">🔗</a></div></article><article class="exercise exercise-like" id="exer-Cayley-Hamilton1"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="exer-Cayley-Hamilton1-1-1">(i) Consider the matrix <span class="process-math">\(A = \begin{pmatrix}3 \amp -2 \\-4\amp 3 \end{pmatrix}\text{.}\)</span> Show that <span class="process-math">\(A\)</span> satisfies its characteristics equation. Hence find <span class="process-math">\(A^{-1}, A^3, A^4\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-Cayley-Hamilton1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="exer-Cayley-Hamilton1-1-2">(i) Consider the matrix <span class="process-math">\(A = \begin{pmatrix}1 \amp 0 \amp 0 \\ -4 \amp -3 \amp 4 \\ -2 \amp -2 \amp 3 \end{pmatrix}\text{.}\)</span> Show that <span class="process-math">\(A\)</span> satisfies its characteristics equation. Hence find <span class="process-math">\(A^{-1}, A^4, A^5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-Cayley-Hamilton1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 5.1.23"><a href="#exer-Cayley-Hamilton1" title="Copy heading and permalink for Checkpoint 5.1.23" aria-label="Copy heading and permalink for Checkpoint 5.1.23">🔗</a></div></article><article class="definition definition-like" id="def-spectral-radius"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Spectral Radius.</span>
+<div class="autopermalink" data-description="Checkpoint 5.1.22"><a href="#exer-Cayley-Hamilton1" title="Copy heading and permalink for Checkpoint 5.1.22" aria-label="Copy heading and permalink for Checkpoint 5.1.22">🔗</a></div></article><article class="definition definition-like" id="def-spectral-radius"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Spectral Radius.</span>
 </h4>
 <div class="para" id="def-spectral-radius-2-1">Let <span class="process-math">\(A\)</span> an <span class="process-math">\(n\times n\)</span> and <span class="process-math">\(\lambda_i\)</span> for <span class="process-math">\(1\leq i\leq n\)</span> be eigenvalues of <span class="process-math">\(A\)</span> then the <em class="emphasis">spectral radius</em> of <span class="process-math">\(A\)</span> is define as <span class="process-math">\(\rho(A):=\displaystyle\max_{1\leq i\leq n}\{ |\lambda_i| \}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-spectral-radius-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 5.1.24: Spectral Radius"><a href="#def-spectral-radius" title="Copy heading and permalink for Definition 5.1.24: Spectral Radius" aria-label="Copy heading and permalink for Definition 5.1.24: Spectral Radius">🔗</a></div></article><article class="example example-like" id="subsec-egenvalues-eigencecs-36"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Definition 5.1.23: Spectral Radius"><a href="#def-spectral-radius" title="Copy heading and permalink for Definition 5.1.23: Spectral Radius" aria-label="Copy heading and permalink for Definition 5.1.23: Spectral Radius">🔗</a></div></article><article class="example example-like" id="subsec-egenvalues-eigencecs-34"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para logical" id="subsec-egenvalues-eigencecs-36-1-1">
+<div class="para logical" id="subsec-egenvalues-eigencecs-34-1-1">
 <div class="para">Let <span class="process-math">\(A= \begin{pmatrix}0 \amp  -1\\1 \amp  0 \end{pmatrix}\text{.}\)</span> Then the characteristics polynomial of <span class="process-math">\(A\)</span> is <span class="process-math">\(\det{(xI-A)}=x^2+1\text{.}\)</span> Hence <span class="process-math">\(x=\{i,-i\}\)</span> are roots of the characteristic polynomial. Hence <span class="process-math">\(i\)</span> and <span class="process-math">\(-i\)</span> are eigenvalues of <span class="process-math">\(A\text{.}\)</span> Hence</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \rho(A) = \max\{|i|,|-i|\}=1\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-36-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-34-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.1.25"><a href="#subsec-egenvalues-eigencecs-36" title="Copy heading and permalink for Example 5.1.25" aria-label="Copy heading and permalink for Example 5.1.25">🔗</a></div></article><article class="example example-like" id="subsec-egenvalues-eigencecs-37"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 5.1.24"><a href="#subsec-egenvalues-eigencecs-34" title="Copy heading and permalink for Example 5.1.24" aria-label="Copy heading and permalink for Example 5.1.24">🔗</a></div></article><article class="example example-like" id="subsec-egenvalues-eigencecs-35"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para logical" id="subsec-egenvalues-eigencecs-37-1-1">
+<div class="para logical" id="subsec-egenvalues-eigencecs-35-1-1">
 <div class="para">Consider the matrix <span class="process-math">\(A=\left(\begin{array}{rrr} 4 \amp  -3 \amp  0 \\ 3 \amp  4 \amp  0 \\ 5 \amp  10 \amp  10 \end{array} \right)\text{.}\)</span> Then the characteristics polynomial of <span class="process-math">\(A\)</span> is <span class="process-math">\(\det{xI-A}=x^{3} - 18 x^{2} + 105 x - 250\text{.}\)</span> Which has roots, <span class="process-math">\(10, 3-4i,3+4i\text{.}\)</span> Hence</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \rho(A) = \max\{10,|3-4i|,|3+4i\}=10\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-37-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-35-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.1.26"><a href="#subsec-egenvalues-eigencecs-37" title="Copy heading and permalink for Example 5.1.26" aria-label="Copy heading and permalink for Example 5.1.26">🔗</a></div></article><article class="exercise exercise-like" id="exser-spectral-radius1"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 5.1.25"><a href="#subsec-egenvalues-eigencecs-35" title="Copy heading and permalink for Example 5.1.25" aria-label="Copy heading and permalink for Example 5.1.25">🔗</a></div></article><article class="exercise exercise-like" id="exser-spectral-radius1"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="exser-spectral-radius1-1-1">Find the spectral radius of <span class="process-math">\(\left(\begin{array}{rr} 2 \amp -3 \\ 3 \amp 2 \end{array} \right), \left(\begin{array}{rrr} 2 \amp 3 \amp 1 \\ -3 \amp 2 \amp 2 \\ 0 \amp 0 \amp 2 \end{array} \right)\)</span> and <span class="process-math">\(\left(\begin{array}{rrr} 2 \amp 3 \amp 1 \\ 3 \amp 2 \amp 2 \\ 0 \amp 0 \amp 1 \end{array} \right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exser-spectral-radius1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 5.1.27"><a href="#exser-spectral-radius1" title="Copy heading and permalink for Checkpoint 5.1.27" aria-label="Copy heading and permalink for Checkpoint 5.1.27">🔗</a></div></article><article class="definition definition-like" id="subsec-egenvalues-eigencecs-39"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Positive definite matrix.</span>
+<div class="autopermalink" data-description="Checkpoint 5.1.26"><a href="#exser-spectral-radius1" title="Copy heading and permalink for Checkpoint 5.1.26" aria-label="Copy heading and permalink for Checkpoint 5.1.26">🔗</a></div></article><article class="definition definition-like" id="subsec-egenvalues-eigencecs-37"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Positive definite matrix.</span>
 </h4>
-<div class="para" id="subsec-egenvalues-eigencecs-39-2-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> symmetric matrix. Then <span class="process-math">\(A\)</span> is said to be <em class="emphasis">positive definite</em> if <span class="process-math">\(x^TAx\gt 0\)</span> for all <span class="process-math">\(x\in \R^n\setminus \{0\}\)</span> and <span class="process-math">\(x^TAx=0\)</span> if and only if <span class="process-math">\(x=0\text{.}\)</span> <span class="process-math">\(A\)</span> is called <em class="emphasis">negative definite</em> if <span class="process-math">\(-A\)</span> is positive definite.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-39-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-egenvalues-eigencecs-37-2-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> symmetric matrix. Then <span class="process-math">\(A\)</span> is said to be <em class="emphasis">positive definite</em> if <span class="process-math">\(x^TAx\gt 0\)</span> for all <span class="process-math">\(x\in \R^n\setminus \{0\}\)</span> and <span class="process-math">\(x^TAx=0\)</span> if and only if <span class="process-math">\(x=0\text{.}\)</span> <span class="process-math">\(A\)</span> is called <em class="emphasis">negative definite</em> if <span class="process-math">\(-A\)</span> is positive definite.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-37-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 5.1.28: Positive definite matrix"><a href="#subsec-egenvalues-eigencecs-39" title="Copy heading and permalink for Definition 5.1.28: Positive definite matrix" aria-label="Copy heading and permalink for Definition 5.1.28: Positive definite matrix">🔗</a></div></article><article class="example example-like" id="subsec-egenvalues-eigencecs-40"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Definition 5.1.27: Positive definite matrix"><a href="#subsec-egenvalues-eigencecs-37" title="Copy heading and permalink for Definition 5.1.27: Positive definite matrix" aria-label="Copy heading and permalink for Definition 5.1.27: Positive definite matrix">🔗</a></div></article><article class="example example-like" id="subsec-egenvalues-eigencecs-38"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para logical" id="subsec-egenvalues-eigencecs-40-1-1">
+<div class="para logical" id="subsec-egenvalues-eigencecs-38-1-1">
 <div class="para">Let <span class="process-math">\(A=\begin{pmatrix}1\amp 2\\2\amp 5 \end{pmatrix}\text{.}\)</span> Let <span class="process-math">\(x=\begin{pmatrix}x_1\\x_2 \end{pmatrix}\text{.}\)</span> Then</div>
-<div class="displaymath process-math" id="subsec-egenvalues-eigencecs-40-1-1-3">
+<div class="displaymath process-math" id="subsec-egenvalues-eigencecs-38-1-1-3">
 \begin{align*}
 x^TAx=\amp \begin{pmatrix}x_1\amp x_2 \end{pmatrix} 
 \begin{pmatrix}1\amp 2\\2\amp 5 \end{pmatrix} 
@@ -1033,35 +993,35 @@ x^TAx=\amp \begin{pmatrix}x_1\amp x_2 \end{pmatrix}
 =\amp x_1^2+4x_1x_2+5x_2^2=(x_1+2x_2)^2+x_2^2\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-40-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec-egenvalues-eigencecs-40-1-2">Clearly <span class="process-math">\(x^TAx&gt;0\)</span> for all non zero vector <span class="process-math">\(x\)</span> and <span class="process-math">\(x^TAx=0\)</span> if and only if <span class="process-math">\(x=0\text{.}\)</span> Hence <span class="process-math">\(A\)</span> is positive definite.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-40-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-38-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-egenvalues-eigencecs-38-1-2">Clearly <span class="process-math">\(x^TAx&gt;0\)</span> for all non zero vector <span class="process-math">\(x\)</span> and <span class="process-math">\(x^TAx=0\)</span> if and only if <span class="process-math">\(x=0\text{.}\)</span> Hence <span class="process-math">\(A\)</span> is positive definite.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-38-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.1.29"><a href="#subsec-egenvalues-eigencecs-40" title="Copy heading and permalink for Example 5.1.29" aria-label="Copy heading and permalink for Example 5.1.29">🔗</a></div></article><article class="example example-like" id="subsec-egenvalues-eigencecs-41"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 5.1.28"><a href="#subsec-egenvalues-eigencecs-38" title="Copy heading and permalink for Example 5.1.28" aria-label="Copy heading and permalink for Example 5.1.28">🔗</a></div></article><article class="example example-like" id="subsec-egenvalues-eigencecs-39"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para logical" id="subsec-egenvalues-eigencecs-41-1-1">
+<div class="para logical" id="subsec-egenvalues-eigencecs-39-1-1">
 <div class="para">Let <span class="process-math">\(A=\begin{pmatrix}0\amp 1\\1\amp 0 \end{pmatrix}\text{.}\)</span> Let <span class="process-math">\(x=\begin{pmatrix}x_1\\x_2 \end{pmatrix}\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x^TAx=\begin{pmatrix}x_1\amp x_2 \end{pmatrix} \begin{pmatrix}0\amp 1\\1\amp 0 \end{pmatrix} \begin{pmatrix}x_1\\x_2 \end{pmatrix} = \begin{pmatrix}x_1\amp x_2 \end{pmatrix} \begin{pmatrix}x_2\\x_1 \end{pmatrix} =2x_1x_2
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-41-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec-egenvalues-eigencecs-41-1-2">Thus if <span class="process-math">\(x=\begin{pmatrix}1\\-1 \end{pmatrix}\)</span> then <span class="process-math">\(x^TAx=-2\lt 0\text{.}\)</span> Hence it is not a positive definite. Its easy to see that <span class="process-math">\(A\)</span> is also not negative definite.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-41-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-39-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-egenvalues-eigencecs-39-1-2">Thus if <span class="process-math">\(x=\begin{pmatrix}1\\-1 \end{pmatrix}\)</span> then <span class="process-math">\(x^TAx=-2\lt 0\text{.}\)</span> Hence it is not a positive definite. Its easy to see that <span class="process-math">\(A\)</span> is also not negative definite.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-39-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.1.30"><a href="#subsec-egenvalues-eigencecs-41" title="Copy heading and permalink for Example 5.1.30" aria-label="Copy heading and permalink for Example 5.1.30">🔗</a></div></article><article class="exercise exercise-like" id="exer-eigen-positive-definite"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 5.1.29"><a href="#subsec-egenvalues-eigencecs-39" title="Copy heading and permalink for Example 5.1.29" aria-label="Copy heading and permalink for Example 5.1.29">🔗</a></div></article><article class="exercise exercise-like" id="exer-eigen-positive-definite"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="exer-eigen-positive-definite-1-1">If <span class="process-math">\(A\)</span> is a positive definite matrix then all its eigenvalues are positive.<div class="autopermalink" data-description="Paragraph"><a href="#exer-eigen-positive-definite-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 5.1.31"><a href="#exer-eigen-positive-definite" title="Copy heading and permalink for Checkpoint 5.1.31" aria-label="Copy heading and permalink for Checkpoint 5.1.31">🔗</a></div></article><article class="exercise exercise-like" id="exer-eigen-negative-definite"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Checkpoint 5.1.30"><a href="#exer-eigen-positive-definite" title="Copy heading and permalink for Checkpoint 5.1.30" aria-label="Copy heading and permalink for Checkpoint 5.1.30">🔗</a></div></article><article class="exercise exercise-like" id="exer-eigen-negative-definite"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="exer-eigen-negative-definite-1-1">If <span class="process-math">\(A\)</span> is a negative definite matrix then all its eigenvalues are negative.<div class="autopermalink" data-description="Paragraph"><a href="#exer-eigen-negative-definite-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 5.1.32"><a href="#exer-eigen-negative-definite" title="Copy heading and permalink for Checkpoint 5.1.32" aria-label="Copy heading and permalink for Checkpoint 5.1.32">🔗</a></div></article><div class="para" id="subsec-egenvalues-eigencecs-44">We have the following result about positive definite matrices known as <em class="emphasis">Sylvester’s criterion</em>. It allows us to determine if a given matrix in positive definite using the leading principal minors of the matrix.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-44" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Checkpoint 5.1.31"><a href="#exer-eigen-negative-definite" title="Copy heading and permalink for Checkpoint 5.1.31" aria-label="Copy heading and permalink for Checkpoint 5.1.31">🔗</a></div></article><div class="para" id="subsec-egenvalues-eigencecs-42">We have the following result about positive definite matrices known as <em class="emphasis">Sylvester’s criterion</em>. It allows us to determine if a given matrix in positive definite using the leading principal minors of the matrix.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-42" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="subsec-egenvalues-eigencecs-45">
+<div class="para logical" id="subsec-egenvalues-eigencecs-43">
 <div class="para">The leading principal minors of a matrix <span class="process-math">\(A\)</span> are <span class="process-math">\({\rm det}(A)\)</span> and the minors obtained by successively removing the last row and the last columns. That is, the leading principal miniors of a matrix <span class="process-math">\(A\)</span> are</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1071,32 +1031,32 @@ x^TAx=\begin{pmatrix}x_1\amp x_2 \end{pmatrix} \begin{pmatrix}0\amp 1\\1\amp 0 \
 \cdots, \Delta_n ={\rm det}{(A)}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-45" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-43" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-sylvyster"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.33</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sylvester’s Criterion.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sylvester’s Criterion.</span>
 </h4>
 <div class="para" id="thm-sylvyster-2-1">If <span class="process-math">\(A\)</span> is a real symmetric matrix then <span class="process-math">\(A\)</span> is positive definite if and only if all leading minor of <span class="process-math">\(A\)</span> are positive.<div class="autopermalink" data-description="Paragraph"><a href="#thm-sylvyster-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 5.1.33: Sylvester’s Criterion"><a href="#thm-sylvyster" title="Copy heading and permalink for Theorem 5.1.33: Sylvester’s Criterion" aria-label="Copy heading and permalink for Theorem 5.1.33: Sylvester’s Criterion">🔗</a></div></article><article class="example example-like" id="subsec-egenvalues-eigencecs-47"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Theorem 5.1.32: Sylvester’s Criterion"><a href="#thm-sylvyster" title="Copy heading and permalink for Theorem 5.1.32: Sylvester’s Criterion" aria-label="Copy heading and permalink for Theorem 5.1.32: Sylvester’s Criterion">🔗</a></div></article><article class="example example-like" id="subsec-egenvalues-eigencecs-45"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.33</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para logical" id="subsec-egenvalues-eigencecs-47-1-1">
+<div class="para logical" id="subsec-egenvalues-eigencecs-45-1-1">
 <div class="para">Let <span class="process-math">\(A=\begin{pmatrix}2 \amp  1 \amp 1\\1\amp 2\amp 1\\1\amp 1\amp 2 \end{pmatrix}\text{.}\)</span> For any <span class="process-math">\(x=\begin{pmatrix}x_1\\x_2\\x_2 \end{pmatrix} \in \R^2\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x^TAx=x_1^2+x_2^2+x_3^2+(x_1+x_2+x_3)^2
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-47-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="subsec-egenvalues-eigencecs-47-1-2">Henc e <span class="process-math">\(A\)</span> is positive definite.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-47-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-45-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="subsec-egenvalues-eigencecs-45-1-2">Henc e <span class="process-math">\(A\)</span> is positive definite.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-45-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.1.34"><a href="#subsec-egenvalues-eigencecs-47" title="Copy heading and permalink for Example 5.1.34" aria-label="Copy heading and permalink for Example 5.1.34">🔗</a></div></article><article class="exercise exercise-like" id="exer-eigen-positive-definite2"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.35</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 5.1.33"><a href="#subsec-egenvalues-eigencecs-45" title="Copy heading and permalink for Example 5.1.33" aria-label="Copy heading and permalink for Example 5.1.33">🔗</a></div></article><article class="exercise exercise-like" id="exer-eigen-positive-definite2"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="exer-eigen-positive-definite2-1-1">Let <span class="process-math">\(A=\begin{pmatrix}2 \amp -1 \amp 0\\-1\amp 2\amp -1\\0\amp -1\amp 2 \end{pmatrix}\text{.}\)</span> Show that <span class="process-math">\(A\)</span> is positive definite.<div class="autopermalink" data-description="Paragraph"><a href="#exer-eigen-positive-definite2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 5.1.35"><a href="#exer-eigen-positive-definite2" title="Copy heading and permalink for Checkpoint 5.1.35" aria-label="Copy heading and permalink for Checkpoint 5.1.35">🔗</a></div></article><div class="para" id="subsec-egenvalues-eigencecs-49">Note that if <span class="process-math">\(A\)</span> is not a symmetric matrix, then the Sylvester’s criteria cannot be used to check positive definiteness. For, condider the matrix <span class="process-math">\(A=\begin{pmatrix} 1 \amp 0\\-3 \amp 1\end{pmatrix}\text{.}\)</span> It is easy to see that all principal minors of <span class="process-math">\(A\)</span> are positive. For <span class="process-math">\(u=\begin{pmatrix}1\\2\end{pmatrix}\text{,}\)</span> <span class="process-math">\(u^TAu=-1\text{,}\)</span> however for <span class="process-math">\(v=\begin{pmatrix}3\\1\end{pmatrix}\text{,}\)</span> <span class="process-math">\(v^TAv=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-49" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Checkpoint 5.1.34"><a href="#exer-eigen-positive-definite2" title="Copy heading and permalink for Checkpoint 5.1.34" aria-label="Copy heading and permalink for Checkpoint 5.1.34">🔗</a></div></article><div class="para" id="subsec-egenvalues-eigencecs-47">Note that if <span class="process-math">\(A\)</span> is not a symmetric matrix, then the Sylvester’s criteria cannot be used to check positive definiteness. For, condider the matrix <span class="process-math">\(A=\begin{pmatrix} 1 \amp 0\\-3 \amp 1\end{pmatrix}\text{.}\)</span> It is easy to see that all principal minors of <span class="process-math">\(A\)</span> are positive. For <span class="process-math">\(u=\begin{pmatrix}1\\2\end{pmatrix}\text{,}\)</span> <span class="process-math">\(u^TAu=-1\text{,}\)</span> however for <span class="process-math">\(v=\begin{pmatrix}3\\1\end{pmatrix}\text{,}\)</span> <span class="process-math">\(v^TAv=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-47" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <section class="reading-questions" id="rqs-eigenvalues-poly-space"><h4 class="heading hide-type">
 <span class="type">Reading Questions</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reading Questions</span>
@@ -1147,7 +1107,26 @@ x^TAx=x_1^2+x_2^2+x_3^2+(x_1+x_2+x_3)^2
 </div>
 <div class="autopermalink" data-description="Reading Question 5.1.1.1"><a href="#rqs-eigenvalues-function-space-1-1" title="Copy heading and permalink for Reading Question 5.1.1.1" aria-label="Copy heading and permalink for Reading Question 5.1.1.1">🔗</a></div></article><div class="autopermalink" data-description="Paragraph"><a href="#rqs-eigenvalues-function-space-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Reading Questions 5.1.1"><a href="#rqs-eigenvalues-function-space" title="Copy heading and permalink for Reading Questions 5.1.1" aria-label="Copy heading and permalink for Reading Questions 5.1.1">🔗</a></div></section><div class="autopermalink" data-description="Subsection 5.1.1: Eigenvalues and Eigenvectors"><a href="#subsec-egenvalues-eigencecs" title="Copy heading and permalink for Subsection 5.1.1: Eigenvalues and Eigenvectors" aria-label="Copy heading and permalink for Subsection 5.1.1: Eigenvalues and Eigenvectors">🔗</a></div></section><div class="autopermalink" data-description="Section 5.1: Eigenvalues and Eigenvectors"><a href="#sec5-1-eigen-intro" title="Copy heading and permalink for Section 5.1: Eigenvalues and Eigenvectors" aria-label="Copy heading and permalink for Section 5.1: Eigenvalues and Eigenvectors">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Reading Questions 5.1.1"><a href="#rqs-eigenvalues-function-space" title="Copy heading and permalink for Reading Questions 5.1.1" aria-label="Copy heading and permalink for Reading Questions 5.1.1">🔗</a></div></section><article class="definition definition-like" id="def-invariant-subspace"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.35</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="def-invariant-subspace-1-1">Let <span class="process-math">\(T\colon \R^n\to\R^n\)</span> be a liear map. A subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(\R^n\)</span> is called an <em class="emphasis">invariant</em> under <span class="process-math">\(T\)</span> if <span class="process-math">\(T(w)\in W\)</span> for all <span class="process-math">\(w\in W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-invariant-subspace-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 5.1.35"><a href="#def-invariant-subspace" title="Copy heading and permalink for Definition 5.1.35" aria-label="Copy heading and permalink for Definition 5.1.35">🔗</a></div></article><div class="para" id="subsec-egenvalues-eigencecs-51">It is easy to check that if <span class="process-math">\(T\colon \R^n\to\R^n\)</span> is a linear map then <span class="process-math">\(\{0\}\)</span> and <span class="process-math">\(\R^n\)</span> are invariant subspaces. Furthermore, <span class="process-math">\({\rm ker}(T)\)</span> and <span class="process-math">\({\rm Im}(T)\)</span> are also <span class="process-math">\(T\)</span>-invariant subspaces.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-egenvalues-eigencecs-51" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="reading-questions" id="rqs-invariant-subspace"><h4 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reading Questions</span>
+</h4>
+<div class="para" id="rqs-invariant-subspace-1">
+<article class="exercise exercise-like" id="exer-invarince-eigenspace"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exer-invarince-eigenspace-1">Let <span class="process-math">\(T\colon \R^n\to\R^n\)</span> be a liear map. Then the eigenspace <span class="process-math">\(E_\lambda\)</span> is <span class="process-math">\(T\)</span> invariant.<div class="autopermalink" data-description="Paragraph"><a href="#exer-invarince-eigenspace-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 5.1.1.1"><a href="#exer-invarince-eigenspace" title="Copy heading and permalink for Reading Question 5.1.1.1" aria-label="Copy heading and permalink for Reading Question 5.1.1.1">🔗</a></div></article> <article class="exercise exercise-like" id="rqs-invariant-subspace-1-2"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="rqs-invariant-subspace-1-2-1">Suppose the exist a one dimensional invariant subspace of a linear map <span class="process-math">\(T\colon \R^n\to\R^n\text{,}\)</span> then it has an eigenvector.<div class="autopermalink" data-description="Paragraph"><a href="#rqs-invariant-subspace-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Question 5.1.1.2"><a href="#rqs-invariant-subspace-1-2" title="Copy heading and permalink for Reading Question 5.1.1.2" aria-label="Copy heading and permalink for Reading Question 5.1.1.2">🔗</a></div></article><div class="autopermalink" data-description="Paragraph"><a href="#rqs-invariant-subspace-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Reading Questions 5.1.1"><a href="#rqs-invariant-subspace" title="Copy heading and permalink for Reading Questions 5.1.1" aria-label="Copy heading and permalink for Reading Questions 5.1.1">🔗</a></div></section><div class="autopermalink" data-description="Subsection 5.1.1: Eigenvalues and Eigenvectors"><a href="#subsec-egenvalues-eigencecs" title="Copy heading and permalink for Subsection 5.1.1: Eigenvalues and Eigenvectors" aria-label="Copy heading and permalink for Subsection 5.1.1: Eigenvalues and Eigenvectors">🔗</a></div></section><div class="autopermalink" data-description="Section 5.1: Eigenvalues and Eigenvectors"><a href="#sec5-1-eigen-intro" title="Copy heading and permalink for Section 5.1: Eigenvalues and Eigenvectors" aria-label="Copy heading and permalink for Section 5.1: Eigenvalues and Eigenvectors">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="chap5-Eigen.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec5-2-diagonalization.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
