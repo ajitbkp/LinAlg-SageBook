@@ -647,60 +647,6 @@ they have the same eigenvalues.
           </example>
           
 
-          <theorem>
-            <statement>
-              <p>
-              <ol>
-                <li>
-                  <p>
-                    Eigenvalues of Hermitian (symmetric) matrix are real.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.
-                  </p>
-                </li>
-              </ol>
-            </p>
-            </statement>
-          </theorem>
-
-          <proof>
-            <p>
-              (a) Let <m>\lambda</m> be an eigenvalues of <m>A</m> and <m>v</m>,
-              the corresponding eigenvector of <m>A</m>.
-              Then by definition <m>Av=\lambda v</m>.
-              Multiplying both sides by <m>\overline{v}^T</m>
-              (the conjugate transpose of the vector <m>v</m>),
-              we get
-              <me>
-                \overline{v}^TAv=\lambda\overline{v}^Tv \Longrightarrow \lambda=\dfrac{\overline{v}^TAv}{\overline{v}^Tv}
-              </me>.
-            </p>
-            <p>
-              It is easy to see that <m>\overline{v}^TAv</m> and
-              <m>\overline{v}^Tv</m> are scalars and that <m>\overline{v}^Tv</m> is a real number.
-              Hence the behavior of <m>\lambda</m> is determined by <m>\overline{v}^TAv</m>.
-            </p>
-
-            <p>
-              If <m>A</m> is a herminitan matrix then <m>\overline{A}=A^T</m>,
-              also <m>\overline{v}^TAv</m> is scalar,
-              implies <m>(\overline{v}^TAv)^T=\overline{v}^TAv</m>.
-              Hence
-              <me>
-                \overline{(\overline{v}^TAv)}=v^T\overline{A}\overline{v}=v^T{A^T}\overline{v}=(\overline{v}^TA{v})^T=v^T{A}\overline{v}
-              </me>.
-              This implies that <m>\overline{v}^TAv</m> is a real number and hence <m>\lambda</m> is a real number.
-            </p>
-            <p>
-              Now if <m>A</m> is a skew-hermitian matrix,
-              then it is easy to show that <m>\overline{(\overline{v}^TAv)}=-(\overline{v}^TAv)</m>.
-              Hence <m>\overline{v}^TAv</m> is either purely imaginary or zero.
-              Which show <m>\lambda</m> is either purely imaginary of zero.
-            </p>
-          </proof>
           
           <p>
             In genegarl, let <m> f(x)=\alpha_0+\alpha_1 x+\alpha_2 x^2+\cdots+\alpha_kx^k</m> be a 
@@ -1065,6 +1011,38 @@ they have the same eigenvalues.
         </exercise>
       </p>
       </reading-questions>
+      
+      
+      <definition xml:id="def-invariant-subspace">
+        <statement>
+          <p>
+            Let <m>T\colon \R^n\to\R^n</m> be a liear map. A subspace <m>W</m> of <m>\R^n</m> 
+            is called an <em>invariant </em> under <m>T</m> if <m>T(w)\in W</m> for all <m>w\in W</m>.
+          </p>
+        </statement>
+      </definition>
+    <p>
+      It is easy to check that if <m>T\colon \R^n\to\R^n</m> is a linear map then <m>\{0\}</m> and 
+      <m>\R^n</m> are invariant subspaces. Furthermore, <m>{\rm ker}(T)</m> and <m>{\rm Im}(T)</m> are 
+      also <m>T</m>-invariant subspaces.
+    </p>
+
+    <reading-questions xml:id="rqs-invariant-subspace">
+        <p>
+      <exercise xml:id="exer-invarince-eigenspace">
+      <p>
+        Let <m>T\colon \R^n\to\R^n</m> be a liear map. Then the eigenspace <m>E_\lambda</m> 
+        is <m>T</m> invariant.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Suppose the exist a one dimensional invariant subspace of a linear 
+        map <m>T\colon \R^n\to\R^n</m>, then it has an eigenvector.
+      </p>
+    </exercise>
+  </p>
+  </reading-questions> 
 </subsection>
 
    </section>

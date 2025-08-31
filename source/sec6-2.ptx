@@ -112,6 +112,55 @@
     </hint>
   </exercise>
 
+   <theorem xml:id="thm-sec-6-3-10">
+    <statement>
+      <p>
+        Let <m>W</m> be a subspace of <m>\R^n</m>. Then for <m>x\in \R^n</m>, there exist 
+        unique <m>w\in W</m>  and <m>w'\in W^{\perp}</m> such that <m>x=w+w'</m>. 
+      </p>
+      <p>
+        In particualar <m>\R^n=W+W^{\perp}</m>. Since <m>W\cap W^{\perp}=\{0\}</m>, we have 
+        <m>\R^n=W\oplus W^{\perp}</m>, called the direct sum of <m>W</m> and <m>W^{\perp}</m>.
+      </p>
+      <p>
+        Furthermore 
+        <me>\dim{(W)}+\dim{(W^\perp)}=n.</me>
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Choose an orthonormal basis <m>\{w_1,\ldots,w_k\}</m>. Define <m>w={\rm proj}_W(x)</m>. Define 
+        <m>w'=x-p</m>. We claim that <m>w'\in W^{\perp}</m>.  Hence 
+        <m>x=w+w'</m>.
+      </p>
+      <p>
+        Suppose <m>x=w+w'</m>  and also <m>x=w_1+w_1'</m>  such that <m>w,w_1\in W</m> and 
+        <m>w',w_1'\in W^{\perp}</m>. Then <m>w-w_1=w'-w_1'</m>. This implies 
+      <me>
+        w-w_1,w'-w_1'\in W\cap W^{\perp}=\{0\}.
+      </me>
+      Hence we have <m>w=w_1</m> and <m>w'=w_1'</m>.
+      </p>
+    </proof>
+  </theorem>
+ 
+<exercise>
+  <p>
+    For any subspace <m>W</m> of <m>\R^n</m>, <m>{(W^\perp)}^{\perp}=W</m>. 
+  </p>
+  <hint>
+    <p>
+      Let <m>x\in W</m>, then for all <m>y\in W^\perp</m>, we have 
+      <m>y^Tx=0</m>. That is <m>x\in {(W^\perp)}^{\perp}</m>. Hence <m>W\subset {(W^\perp)}^{\perp}</m>. 
+      To show <m>W={(W^\perp)}^{\perp}</m>, it is enough to show 
+      <m>\dim{(W)}=\dim{({(W^\perp)}^{\perp})}</m>. 
+      <me>
+        \dim{({(W^\perp)}^{\perp})}=n-\dim{(W^\perp)}=n-(n-\dim{(W)})=\dim{(W)}.
+      </me>
+    </p>
+  </hint>
+</exercise>
   <example>
     <statement>
       <p>
@@ -258,10 +307,15 @@ p
         Let <m>A</m> be an <m>n\times n</m> real matrix.  
         Recall <m>{\cal R}(A)</m> and <m>{\cal N}(A)</m>, range or columns space of <m>A</m> 
         and null or kernel of <m>A</m>. Then show that 
-        <ol marker="(i)">
+        <ol>
           <li>
             <p>
-              <m>{\cal R}(A)^\perp={\cal N}(A^T)</m> and 
+              <m>{\cal R}(A)^\perp={\cal N}(A^T)</m> or <m>{\rm Col}(A)^\perp = {\rm null}(A^T)</m>.
+            </p>
+          </li> 
+          <li>
+            <p>
+              <m>{\rm Row}(A)^\perp = {\rm null}(A)</m>.
             </p>
           </li>
           <li>
@@ -269,17 +323,55 @@ p
               <m>{\cal N}(A)^\perp={\cal R}(A^T)</m>.
             </p>
           </li>
+          
         </ol>
       </p>
      <hint>
       <p>
-          Let <m>x \in {\cal R}(A)^\perp</m>. Then <m>y^TA^Tx=(Ay)^Tx=0</m> for all <m>y</m>. Hence <m>x\in {\cal N}(A^T)</m>. This implies that, <m>{\cal R}(A)^\perp\subseteq {\cal N}(A^T)</m>. Next 
-          let <m>x\in {\cal N}(A^T)</m> then <m>(Ay)^Tx=y^TA^Tx=0</m> for all <m>y</m>. Hence <m>x\in {\cal R}(A)^\perp</m>. That is, <m>{\cal N}(A^T) \subseteq {\cal R}(A)^\perp</m>.
+          Let <m>x \in {\cal R}(A)^\perp</m>.  Then for <m>y\in \R^n</m>, <m>Ay\in {\cal R}(A)</m>. 
+          Hence <m>0=(Ay)^Tx=y^TA^Tx</m>. This implies <m>A^Tx=0</m>. Hence <m>x\in {\cal N}(A^T)</m>. 
+          That is, <m>{\cal R}(A)^\perp\subseteq {\cal N}(A^T)</m>. 
+      </p>
+      <p>
+          Next let <m>x\in {\cal N}(A^T)</m> then <m>(Ay)^Tx=y^TA^Tx=0</m> for all <m>y</m>. 
+          Hence <m>x\in {\cal R}(A)^\perp</m>. 
+          That is, <m>{\cal N}(A^T) \subseteq {\cal R}(A)^\perp</m>. Hence 
+          <m>{\cal R}(A)^\perp={\cal N}(A^T)</m>.
+        </p>
+
+        <p>
+       Replacing <m>A</m> by <m>A^T</m>, in (1), we get
+       <me>
+        {{\cal R}(A^T)}^\perp={\cal N}(A).
+       </me>
+       Hence
+       <me>
+        {{\cal N}(A)}^\perp={{{\cal R}(A^T)}^\perp}^\perp={\cal R}(A^T).
+       </me>
+        </p>
+
+        <p>
+          We write rows of <m>A</m> and <m>r_1,\ldots r_m</m> and columns of <m>A</m> as 
+          <m>a_1,\ldots a_n</m>. Then for any <m>x\ijn \R^n</m>, we have
+          <me>
+            Ax=x_1a_1+x_2a_2+\cdots+x_na_n=
+            \begin{bmatrix} r_1\cdot x\\r_2\cdot a\\\vdots \\r_m\cdot x\end{bmatrix}. 
+          </me>
+          Hence if <m>Ax=0</m>, then <m>r_i\cdot x=0</m> for all <m>i</m>. This implies 
+          <m>x\in {\rm Row}(A)^\perp</m>. That is <m>{\rm null}(A)\subset {\rm Row}(A)^\perp </m>. 
+        </p>
+        <p>
+          If <m>y\in {\rm Row}(A)^\perp</m>, then <m>r_i\cdot y=0</m> for all <m>i</m>. Hence 
+          <m>Ay=0</m>. This implies <m>y\in {\rm null}(A)</m>. That is, 
+           <m>{\rm Row}(A)^\perp\subset {\rm null}(A)</m>. Hence 
+            <m>{\rm Row}(A)^\perp = {\rm null}(A)</m>.
         </p>
       </hint>
      
     </statement>
   </exercise>
+
+  
   </subsection>
   <subsection xml:id="subsec-Proj-Ref_HyperPlane">
     <title>Projection and Reflection</title>
