@@ -3277,11 +3277,155 @@ var ptx_lunr_docs = [
   "body": "  In view of theorem , the matrix in the example is not diagonalizable.   "
 },
 {
+  "id": "sec-5-2-1-complex-eigenvalues",
+  "level": "1",
+  "url": "sec-5-2-1-complex-eigenvalues.html",
+  "type": "Section",
+  "number": "5.3",
+  "title": "Complex Eigenvalues",
+  "body": " Complex Eigenvalues    So far we have only considered eigenvalues that are real numbers. However, there are matrices whose characteristic polynomal has no real root. For example the characteritic polynomial of is which does have real root. In this section, we shall consider such matrices. In particular, we shall allow both real and complex numbers as eigenvalues. All the concepts that we have seen in last two sections can be extended to complex eigenvalues as well. We assume that readers are familiar with basic notion of complex numbers and some of its standard properties.     Consider a matrix . It is easy to see that the characteristic polynomila of is whose charateristic roots are .  Let us find eigenvectors corresponding to the eigenvalue . It is natural to expect, eigenvectors will also be vectors with complex entries. Let be an eigenvector corresponding to . Then Solving the above equations, it is easy to see that . Hence one of the solution can be taken as .  Similarly, we can chech that an eigenvector corresponding to the eigenvalue .  Let us define Then and       Let . Let us find the eigenvalues and eigenvector of .    The characteristic polynomial of is Hence the eigenvalues are .  Let us find an eigenvector corresponding to the eigenvalue . We shall find the . Clearly . Hence we can an eigenvalue .  Next we find an eigenvector corresponding to . It is easy to check that is an eigenvector.  Similarly eigenvector corresponding to the eigenvector .  Define Then It is easy to check that       Let . Find the eigenvalues and eigenvectors of and hence diangonalize it.    Diagonalize the matrix .    From the theory of equations, we know that complex roots of a polynomial with real coefficients occur in conjugate pair. That is if is a root of a polynomual , is also a root of . This leads to the following theorem.    Let be a real square matrix with eigenvalue and an associated eigenvector . Then is also an eigenvalue of with associated eigenvector .    Since is real we have , that is conjugate of is same as . Hence          Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.        (1) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  Since is a real number. The behavior of is determined by .  Hence This implies that is a real number and hence is a real number.  (2) Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.     Condsider a matrix . What are eigenvalues of ? What does do to any vector geometrically?    The characteristic polynomial of is . Hence the eigenvalues are . You can check that the corresponding eigenvectors are and respectively.  Define length of each of the column of . Then Hence lies on the unit circle. Therefore, there exists such that . That is, . Thus we have Hence geometrically is rotation by an angle anticlock wise followed by scaling by . Needless to say that first we can scale then rotate as well.  Let us explore this using Sage. You may change the matrix and see what happens to the image of a unit square under .     A matrix of the form is called a rotation-scaling matrix.   Imaginary eigenvalues   Suppose is a matrix with eigenvalue which is imaginary, that is . Assume that be an eigenvector corresponing to . That is, . Then we can write     We claim that are linearly independent.    Suppose are linearly dependent and that for non zero real number . We have On the other hand Comparing the real and imaginary parts we get Now using the assumption in we get This implies , we have . (why?) Further, , we have , a contradiction. This proves that are linearly independent.  From , we get Similarly from , we get Hence we get Define Since are linearly independent, is non singular. Hence we have Note that the matrix is rotation scaling matrix and that .  Thus we have the following result.    Let be a real matrix with complex eigenvalue and let be an eigenvector corresponding to . Then where and . Thus is similar to a rotation-scaling matrix with scaling factor . Note that the matrix is the change of coordinate system.      Let . Find the eigenvalues and the corresponding eigenvector. Hence find the matrix and and show that .    The characteristic polynomial of is . Hence one of eigenvalues is and the corresponding eigenvector is . Hence we have It is easy to check that      Geoemetric transformation of   Let us use Sage to deomostrate how the matrix transforms a home like image in .    Complex eigenvalues of matrices.   Now let us see what happens if we take a real matrix which has a complex eigenvalue say . We know that in this case is another eigenvalue and it has a real eigenvector say . Let and be corresponding eigenvectors of . Since eigenvalues are distinct, this matrix is diagonalizable. In this case it turns out that we can follow a similar procedure to show that where and .    Consider the matrix in . Let us find the matrix and so that .    Let us solve this problem in Sage.   "
+},
+{
+  "id": "complex-eigenvalues-eg1",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#complex-eigenvalues-eg1",
+  "type": "Example",
+  "number": "5.3.1",
+  "title": "",
+  "body": "  Consider a matrix . It is easy to see that the characteristic polynomila of is whose charateristic roots are .  Let us find eigenvectors corresponding to the eigenvalue . It is natural to expect, eigenvectors will also be vectors with complex entries. Let be an eigenvector corresponding to . Then Solving the above equations, it is easy to see that . Hence one of the solution can be taken as .  Similarly, we can chech that an eigenvector corresponding to the eigenvalue .  Let us define Then and    "
+},
+{
+  "id": "complex-eigenvalues-eg2",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#complex-eigenvalues-eg2",
+  "type": "Example",
+  "number": "5.3.2",
+  "title": "",
+  "body": "  Let . Let us find the eigenvalues and eigenvector of .    The characteristic polynomial of is Hence the eigenvalues are .  Let us find an eigenvector corresponding to the eigenvalue . We shall find the . Clearly . Hence we can an eigenvalue .  Next we find an eigenvector corresponding to . It is easy to check that is an eigenvector.  Similarly eigenvector corresponding to the eigenvector .  Define Then It is easy to check that    "
+},
+{
+  "id": "exercises-eigen-complex-eg-1",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#exercises-eigen-complex-eg-1",
+  "type": "Exercise",
+  "number": "5.3.1",
+  "title": "",
+  "body": " Let . Find the eigenvalues and eigenvectors of and hence diangonalize it.  "
+},
+{
+  "id": "exercises-eigen-complex-eg-2",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#exercises-eigen-complex-eg-2",
+  "type": "Exercise",
+  "number": "5.3.2",
+  "title": "",
+  "body": " Diagonalize the matrix .  "
+},
+{
+  "id": "thm-conjugate-eigenvalue",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#thm-conjugate-eigenvalue",
+  "type": "Theorem",
+  "number": "5.3.3",
+  "title": "",
+  "body": "  Let be a real square matrix with eigenvalue and an associated eigenvector . Then is also an eigenvalue of with associated eigenvector .    Since is real we have , that is conjugate of is same as . Hence    "
+},
+{
+  "id": "sec-5-2-1-complex-eigenvalues-8",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#sec-5-2-1-complex-eigenvalues-8",
+  "type": "Theorem",
+  "number": "5.3.4",
+  "title": "",
+  "body": "     Eigenvalues of Hermitian (symmetric) matrix are real.    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.      "
+},
+{
+  "id": "sec-5-2-1-complex-eigenvalues-9",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#sec-5-2-1-complex-eigenvalues-9",
+  "type": "Proof",
+  "number": "5.3.1",
+  "title": "",
+  "body": " (1) Let be an eigenvalues of and , the corresponding eigenvector of . Then by definition . Multiplying both sides by (the conjugate transpose of the vector ), we get .  Since is a real number. The behavior of is determined by .  Hence This implies that is a real number and hence is a real number.  (2) Now if is a skew-hermitian matrix, then it is easy to show that . Hence is either purely imaginary or zero. Which show is either purely imaginary of zero.  "
+},
+{
+  "id": "complex-eigenvalues-eg3",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#complex-eigenvalues-eg3",
+  "type": "Example",
+  "number": "5.3.5",
+  "title": "",
+  "body": "  Condsider a matrix . What are eigenvalues of ? What does do to any vector geometrically?    The characteristic polynomial of is . Hence the eigenvalues are . You can check that the corresponding eigenvectors are and respectively.  Define length of each of the column of . Then Hence lies on the unit circle. Therefore, there exists such that . That is, . Thus we have Hence geometrically is rotation by an angle anticlock wise followed by scaling by . Needless to say that first we can scale then rotate as well.  Let us explore this using Sage. You may change the matrix and see what happens to the image of a unit square under .    "
+},
+{
+  "id": "sec-5-2-1-complex-eigenvalues-12",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#sec-5-2-1-complex-eigenvalues-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Imaginary eigenvalues "
+},
+{
+  "id": "claim-imag-eigenvalue-1",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#claim-imag-eigenvalue-1",
+  "type": "Claim",
+  "number": "5.3.6",
+  "title": "",
+  "body": "  We claim that are linearly independent.   "
+},
+{
+  "id": "thm-imag-eigenvalue",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#thm-imag-eigenvalue",
+  "type": "Theorem",
+  "number": "5.3.7",
+  "title": "",
+  "body": "  Let be a real matrix with complex eigenvalue and let be an eigenvector corresponding to . Then where and . Thus is similar to a rotation-scaling matrix with scaling factor . Note that the matrix is the change of coordinate system.   "
+},
+{
+  "id": "complex-eigenvalues-eg4",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#complex-eigenvalues-eg4",
+  "type": "Example",
+  "number": "5.3.8",
+  "title": "",
+  "body": "  Let . Find the eigenvalues and the corresponding eigenvector. Hence find the matrix and and show that .    The characteristic polynomial of is . Hence one of eigenvalues is and the corresponding eigenvector is . Hence we have It is easy to check that    "
+},
+{
+  "id": "sec-5-2-1-complex-eigenvalues-20",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#sec-5-2-1-complex-eigenvalues-20",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Geoemetric transformation of "
+},
+{
+  "id": "sec-5-2-1-complex-eigenvalues-23",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#sec-5-2-1-complex-eigenvalues-23",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Complex eigenvalues of matrices. "
+},
+{
+  "id": "complex-eigenvalues-eg5",
+  "level": "2",
+  "url": "sec-5-2-1-complex-eigenvalues.html#complex-eigenvalues-eg5",
+  "type": "Example",
+  "number": "5.3.9",
+  "title": "",
+  "body": "  Consider the matrix in . Let us find the matrix and so that .   "
+},
+{
   "id": "sec5-5-Eigen-Sage",
   "level": "1",
   "url": "sec5-5-Eigen-Sage.html",
   "type": "Section",
-  "number": "5.3",
+  "number": "5.4",
   "title": "Eigenvalues and Eigenvectors in Sage",
   "body": " Eigenvalues and Eigenvectors in Sage   In this section, we shall explore computation of eigenvalues and eigenvectors and related concepts in Sage. We shall also look applications of diagonalization in Sage.  Sage can compute eigenvalues and eigenvectors of a matrix and also of linear operator. If is a square marix, then A.eignvalues() returns eigenvalues of the matrix . Simplarly, A.eigenvectors_right() returns the eigenvectors along with the corresponding eigenvalue including the multiplicity of each eigenvalue. Apart from these two coammands, Sage also has A.eigenmatrix_right() which returns diagonal matrix of eigenvalues and the matrix whose columns of eigenvectors. Let us explore some example.    Find the eigenvalues of eigenvectors of .        Sage can also compute eigenvalues and eigenvectors of a symbolic matrix. Let us look at the next example.     Sage can also find the characteristic polynomial of matrix with ease using two matrix method A.charpoly() and A.characteristic_polynomial() Let us look at the next example.   Find the characteristics polynomial of the matrix   We can factorize the characteristic polynomial to find its roots.     Sage can find eigenvalues and eigenvalues of bigsize matriz also. However, the computation is done numerically. Let us look at the next example.   Consider the matrix . Find the characteristics polynomial, eigenvalues and eigenvectors of .   Now let us try to factorize the characteristic polynomial of .   Clearly this polynomial cannot be factorized in the field of rational numbers. However, Sage provide an extended field QQbar in whihc we can find the rots of this polynomial.   These are the eigenvalues that sage can find using A.eigenvalues()    For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and (ii) the product of eigenvalues equals to the determinant.    We can also verify the Cayley-Hamilton thorem for the above matrix.      Consider the matrix . Find the eigenvalues of and verify the Cayley-Hamilton theorem. Also find the sum and product of eigenvalues of and observe that they are the trace and determinant of respectively.     Eigenspaces  Consider a matrix . Find the eigenvalues and eigenvectors of . Also find the eigenspace corresponding to each eigenvalues. Check if the the given matrix is diagonalizable.      This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.  Note that the eigenspace corresponding to the eigenvalue is the and the gemetric multiplicity is the nullity of .   To find the eigenspace with respect to the eigenvalue can be obtained by appplying RREF to the matrix and solving the corresponding system of equations.   Now we can solve the system of equations, to obtaine the eigenspace.   Similarly, we can find the eigenspace with respect to the eigenvalue      Diagonalizability  Consider the same matrix . We shall check the diagonalizability of .    Clearly is diagonalizable. We can also find the matrix of eigenvectors and check if is the diagonal matrix whose diagonal entries are eigenvalues.       Eigenvalues of a linear operator  Consider  the linear tranformation defined by Let us find the eigenvalues of and also show that the eigenvalues are independent of the basis on the domain   We can also find the characteristics polynomial of .   Let us find the matrix of with respect to the standard basis of and find find the eigenvalues of .   Now let us find the matrix of with respect to a basis and find eigenvalues of .   Clearly eigenvalues of , and are same. This is not suprizing as and are similar matrices and similar matrices have the same determinant and eigenvalues.   "
 },
@@ -3290,7 +3434,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-3",
   "type": "Example",
-  "number": "5.3.1",
+  "number": "5.4.1",
   "title": "",
   "body": " Find the eigenvalues of eigenvectors of .       "
 },
@@ -3299,7 +3443,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-5",
   "type": "Example",
-  "number": "5.3.2",
+  "number": "5.4.2",
   "title": "",
   "body": "  "
 },
@@ -3308,7 +3452,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-7",
   "type": "Example",
-  "number": "5.3.3",
+  "number": "5.4.3",
   "title": "",
   "body": " Find the characteristics polynomial of the matrix   We can factorize the characteristic polynomial to find its roots.    "
 },
@@ -3317,7 +3461,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-9",
   "type": "Example",
-  "number": "5.3.4",
+  "number": "5.4.4",
   "title": "",
   "body": " Consider the matrix . Find the characteristics polynomial, eigenvalues and eigenvectors of .   Now let us try to factorize the characteristic polynomial of .   Clearly this polynomial cannot be factorized in the field of rational numbers. However, Sage provide an extended field QQbar in whihc we can find the rots of this polynomial.   These are the eigenvalues that sage can find using A.eigenvalues()    For this example, let us also verify that (i) the sum of eigenvalues equals to the trace and (ii) the product of eigenvalues equals to the determinant.    We can also verify the Cayley-Hamilton thorem for the above matrix.   "
 },
@@ -3326,7 +3470,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-10",
   "type": "Activity",
-  "number": "5.3.1",
+  "number": "5.4.1",
   "title": "",
   "body": "  Consider the matrix . Find the eigenvalues of and verify the Cayley-Hamilton theorem. Also find the sum and product of eigenvalues of and observe that they are the trace and determinant of respectively.   "
 },
@@ -3335,7 +3479,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-11",
   "type": "Example",
-  "number": "5.3.5",
+  "number": "5.4.5",
   "title": "Eigenspaces.",
   "body": " Eigenspaces  Consider a matrix . Find the eigenvalues and eigenvectors of . Also find the eigenspace corresponding to each eigenvalues. Check if the the given matrix is diagonalizable.      This returns the eigenvalues are the corresponding eigenspace of each eigenvalue.  Note that the eigenspace corresponding to the eigenvalue is the and the gemetric multiplicity is the nullity of .   To find the eigenspace with respect to the eigenvalue can be obtained by appplying RREF to the matrix and solving the corresponding system of equations.   Now we can solve the system of equations, to obtaine the eigenspace.   Similarly, we can find the eigenspace with respect to the eigenvalue    "
 },
@@ -3344,7 +3488,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-12",
   "type": "Example",
-  "number": "5.3.6",
+  "number": "5.4.6",
   "title": "Diagonalizability.",
   "body": " Diagonalizability  Consider the same matrix . We shall check the diagonalizability of .    Clearly is diagonalizable. We can also find the matrix of eigenvectors and check if is the diagonal matrix whose diagonal entries are eigenvalues.     "
 },
@@ -3353,7 +3497,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-5-Eigen-Sage.html#sec5-5-Eigen-Sage-13",
   "type": "Example",
-  "number": "5.3.7",
+  "number": "5.4.7",
   "title": "Eigenvalues of a linear operator.",
   "body": " Eigenvalues of a linear operator  Consider  the linear tranformation defined by Let us find the eigenvalues of and also show that the eigenvalues are independent of the basis on the domain   We can also find the characteristics polynomial of .   Let us find the matrix of with respect to the standard basis of and find find the eigenvalues of .   Now let us find the matrix of with respect to a basis and find eigenvalues of .   Clearly eigenvalues of , and are same. This is not suprizing as and are similar matrices and similar matrices have the same determinant and eigenvalues.  "
 },
@@ -3362,7 +3506,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec5-3-eigen-Appl.html",
   "type": "Section",
-  "number": "5.4",
+  "number": "5.5",
   "title": "Applications of Eigenvalues and Eigenvectors",
   "body": " Applications of Eigenvalues and Eigenvectors   In this section we look at several applications of eigenvalues and eigenvectors.    Fibonacci Sequence  Originally the Fibonacci sequence appeared in the solution of the following problem posed by Leonardo of Pisa, popularly known as Fibonacci, in the book Liber Abaci in 1202.  Consider the following problem.   A certain man put a pair of rabbits in a places surrounded on all sides by a wall. How many pairs of rabbits can be produced from that pair in year if it is supposed that every month each pair begets a new pair which from second month becomes productive?   We assume that the number of pairs at the end of the -th year is denoted by . We start with and . Note that the number of pair of rabbits in any given month is the number of pairs in the previous month plus those that are hatched in that month and those are as many as the previous month. This gives gives rise to a recurrence relation  . Let . Then we have   Let . Then we have   This implies   This leads to computation of power of . Therefore, we can invoke diagonalization of the matrix.  Note that is symmetric matrix with characteristic polynomial . The eigenvalues of are and the corresponding eigenvectors are . Since has distinct eigenvalues, is diagonalizable and we have   Let be one of the above eigenvalue of , then . Also it is easy to check that . Now we have Thus we have     Show that   Note that is called the Golden-Ratio which has many application in nature. The approximate value of .    Let . Then we have Now let us approximate Since , we have . This implies, .       Predator-Pray Model  In a certain area, it is observed that every year the number of rabbits is equal to 4 times the number of rabbits less 2 times numbers of weasels in the previous year. The number of weasels is equal to the sum of the number of rabbits number of weasels in the previous year. If the initial population of rabbits and weasels were 100 and 10 respectively, then find the number of each species after years. Let and be the number of rabbits and weasels after years respectively.  Then, as per data give we have with .  Let and . Then the above system is equivalent to . We need to obtain successively . It is easy to check that and are eigenvalues of with corresponding eigenvectors and respectively. We define . It is easy to see that . Also . Using diagonalization, we have Thus . Hence It is easy to check that What does this mean?    Solving System of Linear ODE  In this subsection, we shall deal with use of theory of eigenvalues and eigenvectors to solve system of linear differential equations. Let shall consider a system of first order linear differential equations with constant coefficients. A general form of such system can be given by Here we assume that are constants. The above system can be written as where real matrix and is column matrix.  We want to find a solution of the above system, that is a column vector of of differentiable functions on some interval which satisfies the above system.    Let be the set of all solutions of the linear system ODE's, . Then is an -dimensional vector subspace of the set of differentiable function on .     Left as exercise.   This mean, if are linearly independent functions which are solutions of the above system. Then any solution can be written as a linear combination of .  In case, we are given initial conditions, then there exists a unique solution of the system.  In addition, suppose is diagonalizable, with where , the diagonal matrix of eigenvalues of and is matrix of eigenbasis of .  We define . Then and . Now substituting and in the above system, we get Thus the above system of linear differential equation reduced to In particular, we have .  A general solution of the above system is given by The above equations can be written in matrix form as follows Here is the exponential of the matrix and is the column matrix of constants. From this we get a general solution of the original system as where .  Thus the solution in matrix form is given by The constant can be obtained when we have initila value problem.  Suppose we want to solve the initial value problem with initial condition . Then we have . Hence the solution in matrix form is given by    Steps to solve system of linear differential equations .      Find the matrix corresponding to this linear system and put the equation in matrix form .    Find the eigenvalues and corresponding eigenvectors of . Let be eigenvalues of with corresponding to eigenvectors respectively.    The solution is .       Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is    Solving using Sage    Sage also has inbuilt function desolve_system to solve a system of linear ODE.      Visulization of Slope Fields    Cosider a system of first order linear ODE  Here represnt the velocity vector at each point at time . This can be visualized by drawing velocity vectors at large number of grid points in some domain. This is what is called the slope field. Geometrically, the slope field describes the flow of the system. Any solution curve is tangent to these arrows at every point along its path.  We can vizualize the slope field along with the solution curve in Sage using the function plot_vector_field . Let us demonstrate this for the ODE in    Here we have drawn unit slope vectors are all the points. Along with the slope field Sage provide a way to vizualise the trajecorty or the solution curve with a given starting point using the Sage function streamline_plot .     What will be the solution of with initial conditions ?      Solve the following system ODE.     The eigenvalues of the coefficient matrix are and the corresponding eigenvectors are Hence a general solution of the given system is given by Using the given initial conditions, we get Solving the above equations, yields, . Hence the required solution of the problem is    Using the inbuilt function dessole_system , we have the following.   We can also visualize the slope field and solution curve in Sage using the following Sage syntax.        Solve the following 2nd order differential equations. Consider the system     Substitute and . Then we have The above equations can be written as where The eigenvalues of are and the corresponding eigenvectors are Thus a general solution is given by Hence a general solution of the given problem can be obtained by dropping the dummy variables and . It is given by   Solve the above problem in Sage.     In the next example, we deal with solving a system , in which the coefficient matrix has complex eigenvalues.    Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by   Writing and adjusting the constants, we can write the solution   After using the initial conditions, we have   This we can verify using the Sage inbuilt function.       In case the the coeffcient matrix of the sysstem is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.      Markov Chains  In this subsection, we look at some applications of linear algebra in dealing with matrices that arise from probabilistic systems. We consider chance process in which knowledge of previous outcomes influence prediction of future experiments. Such chance process is called a Markov Chain.   Let consider the following problem and develop the terminologies and methods to solve this problem.    Weather of certain area is classified as \"fair\", \"cloudy\" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?    In the above example, fair, cloudy and rainy day can be thought of as three states, say state 1, state 2 and state 3 respectively. Each day can be thought of as a generation. Let us denote the data given in the example as following table:     Fair  Cloudy  Rainy    Fair  0.60  0.25  0.15    Cloudy  0.40  0.35  0.25    Rainy  0.35  0.40  0.25    Let be the probability of transition from state to state . The matrix is called the transition matrix.     A transition matrix of an stage Markov chain is an matrix having nonnegative entries such that sum of entries in each column is 1. Such a matrix is called a stochastic matrix.     The transition matrix for the is given by   Note that , is the probability of being a cloudy day after fair day. Similarly , represent the probability of being fair day after a rainy day. The transition matrix, represents the change of state from present generation to the next generation.    The powers of a transition matrix have the same property of a transition matrix. That is, all the entries are non negative and sum of entries in any column is 1.      If is a transition matrix of a Markov chain and if denotes the -th entries of , then is the probability of moving to state from state in generations or in time period.    Let us consider of the transition matrix in the  Note that is the probability of rainy day becoming cloudy day after 5 days.  We consider an initial probability vector . This mean current day has 40% chance of being a fair day, 30% chance of being cloudy and 30% of being rainy.  Then , denotes the probability vector after $k$ stages. We are interested in long time behavior of the probability vector. In particular, we want to see if the limit exists.  In general, the above limits does not exists, however, in case the transition matrix is regular, then one can show that limit exists.     A transition matrix is regular if there exists a natural number such all the entries of are positive.    Note that all transition matrix are not regular, for example, identity matrix is a transition matrix but is not regular.  It is easy to see that if is a regular transition matrix matrix such that all the entries of are positive. Then all entries of are positive for non negative integers .  Let us assume that is a transition matrix and that exists. Then we have   Suppose are columns of . Then This means that each column of is an eigenvector of corresponding to eigenvalue 1. Thus we have proved the following result:    If is an regular transition matrix, then converges to a matrix, say, whose columns are eigenvectors of corresponding to eigenvalues 1.    In fact one can show the following.    If is a regular, transition matrix then its eigenvalue has multiplicity 1 and that there is only one eigenvectors associated with . This implies that all columns of are identical.    Now we define a a limiting state distribution vectors or steady state vector of an -state Markov chain as a vector as follows: Thus we have the following equation. Note that all columns of are identical, say, . Let . Then Thus is an eigenvector of with respect to eigenvalue 1 with sum of its components 1.  The gives a way to find the steady state vector.  Let us find the steady state vector of the transition matrix defined in the .  Let be the steady state vector. Then it is an eigenvector of PreTeXt P corresponding to eigenvalue 1. That is and also, . Thus we get the following set of equations which we need to solve.   Solving the avove equations we, get Hence the steady state vector is given by The limiting transition matrix is given by Thus in the long run about 48.74% chance of being a fair day, about 31.13% of being cloudy and about 20.13% chance of being rain day.    We can use diagonalization of the transition matrix to find the steady state vector.      A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.       Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )      132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.      Google Search Engine  Over 900 millions Indian use Internet (as of January 2024) most of them may do Google, a search engine that was designed by Lawrence Page and Sergei Brian in 1998. There are about 200 millions active webpages in the world as on January 2024 and it is growing by seconds. More often than not, google search gives the desired results, users are looking for. Have you ever thought of how does it work? Linear algebra plays an important role in how Google's search algorithm works. Google ranks pages according to their importance.  Success of Google lies behind its PageRank algorithm, which rates the importance of each page on the web and present the user typically most relevant and helpful pages first. PageRank uses link structure of web to determine the importance of webpages.  In this section, we shall explain how Google ranks webpages as a simple application to linear algebra.  Whenever an user or web surfer enters a keyword for searching, Google does three basic things:     Crawl the web and locate all web pages with public access.    Index the data from websites it has crawled, so that it can be searched efficiently for relevant keywords.    Rate the importance of each page in the database.     We shall briefly look at how to rank or rate webpages using Google's PageRank algorith.  An Internet network can be represented by a directed graph in which each website is thought of as a node or vertex and links between pages are edges with arrows. If there is an arrow from note to , them it means that there is link to move from webpage to . If there is a double arrow between and , then there is link from to and also from to .  To every network with -webpages, we assign a matrix , where represents the probability that surfer would visit the webpage from the webpage . If the webpage has links to other webpages then . If there is no link from to , then The matrix is called the hyper matrix of the network.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability .  We have    Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, .  One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.      Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .     The above network can be generate in Sage using DiGraph , directed graph method as follows.   Now let us define the tansition matrix manually.   Now we can find what happens to the initial vector after a large number of iterates (clicks).    From the , it looks like that we can find the stationary distribution vector and hence rank a network after a sufficiently large iterations. However, this is not always true. In case a network has a dangling webpage ( a webpage that does not link to any other page ), or a trapping loop, then we may not be able to rank webpages. In case a surfer come across, dangling node or trapping loop, he can type a new url in the address bar manually. The next two examples demonstrate this.    Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.     Let us see how to do the previous example in Sage.       Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.     Sage Code for Loop Network  Let use the loop network to find what happens to the initial vector in a long run.   We can find the transition matrix using .adjacency_matrix() method and taking its transpose.    Several improvements have been suggested to tackle dangling and trapping loops.  Page Rank inverters, Page and Bring suggested the a new matrix called the Google matrix which is defined as follows: where is matrix whose all entries are , is called the damping factor and .  If , then it means 90% times the surfer is using the web links and 10% times typing ulr manually in the address bar. In th original paper Page and Brin used as damping factor.  Since any regular stochastic matrix has a stationary vector, that is there exists a vector vector such that . Thus one can always find a stationary probability vector for a network.    The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.      The Google matrix defined in is a regular matrix.     Bigger Example using Google Matrix  In this example, we shall generate a random network, find the adjacency matrix and use Google matrix to find the page rank.       Page-Rank Example (all together)     "
 },
@@ -3371,7 +3515,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#exer-Fibonacci1",
   "type": "Checkpoint",
-  "number": "5.4.1",
+  "number": "5.5.1",
   "title": "",
   "body": "  Show that   Note that is called the Golden-Ratio which has many application in nature. The approximate value of .    Let . Then we have Now let us approximate Since , we have . This implies, .   "
 },
@@ -3380,7 +3524,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#thm-solutions-de-subspace",
   "type": "Theorem",
-  "number": "5.4.2",
+  "number": "5.5.2",
   "title": "",
   "body": "  Let be the set of all solutions of the linear system ODE's, . Then is an -dimensional vector subspace of the set of differentiable function on .   "
 },
@@ -3389,7 +3533,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-5",
   "type": "Proof",
-  "number": "5.4.3.1",
+  "number": "5.5.3.1",
   "title": "",
   "body": " Left as exercise.  "
 },
@@ -3398,7 +3542,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#ODE-Sys1",
   "type": "Example",
-  "number": "5.4.3",
+  "number": "5.5.3",
   "title": "",
   "body": "  Solve the following system of linear differential equations The above equations is equivalent to     It is easy to see that the eigenvalues of are and with corresponding eigenvectors and respectively.  Hence the solution of the given system is given by Hence, the solution is    Solving using Sage    Sage also has inbuilt function desolve_system to solve a system of linear ODE.    "
 },
@@ -3407,7 +3551,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#exer-soln-linear-ode1",
   "type": "Checkpoint",
-  "number": "5.4.4",
+  "number": "5.5.4",
   "title": "",
   "body": "  What will be the solution of with initial conditions ?   "
 },
@@ -3416,7 +3560,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-23",
   "type": "Example",
-  "number": "5.4.5",
+  "number": "5.5.5",
   "title": "",
   "body": "  Solve the following system ODE.     The eigenvalues of the coefficient matrix are and the corresponding eigenvectors are Hence a general solution of the given system is given by Using the given initial conditions, we get Solving the above equations, yields, . Hence the required solution of the problem is    Using the inbuilt function dessole_system , we have the following.   We can also visualize the slope field and solution curve in Sage using the following Sage syntax.     "
 },
@@ -3425,7 +3569,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-24",
   "type": "Example",
-  "number": "5.4.6",
+  "number": "5.5.6",
   "title": "",
   "body": "  Solve the following 2nd order differential equations. Consider the system     Substitute and . Then we have The above equations can be written as where The eigenvalues of are and the corresponding eigenvectors are Thus a general solution is given by Hence a general solution of the given problem can be obtained by dropping the dummy variables and . It is given by   Solve the above problem in Sage.    "
 },
@@ -3434,7 +3578,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-26",
   "type": "Example",
-  "number": "5.4.7",
+  "number": "5.5.7",
   "title": "",
   "body": "  Solve the system of linear homogeneous ODE     The given system of ODE is The eigenvalues of are and with eigenvectors and respectively.  Let us define . Then it is easy to see that .  Hence the solution is given by   Writing and adjusting the constants, we can write the solution   After using the initial conditions, we have   This we can verify using the Sage inbuilt function.    "
 },
@@ -3443,7 +3587,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-linear-ode-27",
   "type": "Remark",
-  "number": "5.4.8",
+  "number": "5.5.8",
   "title": "",
   "body": "  In case the the coeffcient matrix of the sysstem is not diagonailizable then one can use the concept of Jordan canonical form to solve the system. However, we shall not discuss this here.   "
 },
@@ -3452,7 +3596,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#eg-markov1",
   "type": "Example",
-  "number": "5.4.9",
+  "number": "5.5.9",
   "title": "",
   "body": "  Weather of certain area is classified as \"fair\", \"cloudy\" and rainy. A fair day is followed by a fair day 60% of the time, and a cloudy day 25% of time. A cloudy day is followed by a cloudy day 35% of the time, and a rainy day 25% of the time. A rainy day is followed by a cloudy day 40% of the time and and by another rainy day 25% of time. What proportion of day are expected to be fair, cloudy and rainy over long period?   "
 },
@@ -3461,7 +3605,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#def-stochastic-matrix",
   "type": "Definition",
-  "number": "5.4.10",
+  "number": "5.5.10",
   "title": "",
   "body": "  A transition matrix of an stage Markov chain is an matrix having nonnegative entries such that sum of entries in each column is 1. Such a matrix is called a stochastic matrix.    "
 },
@@ -3470,7 +3614,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#Markov-remark1",
   "type": "Remark",
-  "number": "5.4.11",
+  "number": "5.5.11",
   "title": "",
   "body": "  The powers of a transition matrix have the same property of a transition matrix. That is, all the entries are non negative and sum of entries in any column is 1.   "
 },
@@ -3479,7 +3623,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#Markov-remark2",
   "type": "Remark",
-  "number": "5.4.12",
+  "number": "5.5.12",
   "title": "",
   "body": "  If is a transition matrix of a Markov chain and if denotes the -th entries of , then is the probability of moving to state from state in generations or in time period.   "
 },
@@ -3488,7 +3632,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#def-regular-matrix",
   "type": "Definition",
-  "number": "5.4.13",
+  "number": "5.5.13",
   "title": "",
   "body": "  A transition matrix is regular if there exists a natural number such all the entries of are positive.   "
 },
@@ -3497,7 +3641,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#thm-Markov1",
   "type": "Theorem",
-  "number": "5.4.14",
+  "number": "5.5.14",
   "title": "",
   "body": "  If is an regular transition matrix, then converges to a matrix, say, whose columns are eigenvectors of corresponding to eigenvalues 1.   "
 },
@@ -3506,7 +3650,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#thm-Markov2",
   "type": "Theorem",
-  "number": "5.4.15",
+  "number": "5.5.15",
   "title": "",
   "body": "  If is a regular, transition matrix then its eigenvalue has multiplicity 1 and that there is only one eigenvectors associated with . This implies that all columns of are identical.   "
 },
@@ -3515,7 +3659,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-31",
   "type": "Remark",
-  "number": "5.4.16",
+  "number": "5.5.16",
   "title": "",
   "body": "  We can use diagonalization of the transition matrix to find the steady state vector.   "
 },
@@ -3524,7 +3668,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-Markov-Chains-32",
   "type": "Example",
-  "number": "5.4.17",
+  "number": "5.5.17",
   "title": "",
   "body": "  A travel company has a fleet of 6000 cars for renting. A car rented at one location can be returned to any of the three locations A, B and C. The various fractions of cars returned to the three locations are given in the table below.          Depots  A  B  C          A  0.3  0.4  0.5    B  0.3  0.4  0.3    C  0.4  0.2  0.2          Suppose on Monday there are 2000 cars at each location A. What will be the approximate distribution of cars on Thursday. How should the company distribute these cars at various locations in order to serve the customers smoothly.  Let the initial distributions of cars at three location be denoted by the vector . The proportion of cars that are returned to various locations can be represented by the matrix , which is stochastic matrix. (Any square matrix with non negative entries with column sum 1 is called columns stochastic or Markov matrix. )  Number of cars at location after one day is   Number of cars at location after one day is   Number of cars at location after one day is   It is easy to see that distribution of cars after day one is .  Similarly after day two it is . Thus on Thursday the car distribution at various location is given by .  After say 100 days the car distribution at various location is given by . In fact after large is constant which is approximately . Thus in long run car distribution is .  The higher power of can be obtained by diagonalizing . In this can eigenvalues of are and the corresponding eigenvectors are . Let us define and . Then . Hence . Here . Hence   Suppose we define . Then it is easy to check that . That is is an eigenvector of corresponding to the eigenvalue 1. This is called the steady state vector.    "
 },
@@ -3533,7 +3677,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#exer-diagonalization1",
   "type": "Checkpoint",
-  "number": "5.4.18",
+  "number": "5.5.18",
   "title": "",
   "body": "  Suppose is a diagonal matrix given by and . What happens to the vector geometrically when we do for large ? ( It sucks vector into direction. )  Next let us consider a matrix which is diagonalizable with eigenvectors and corresponding eigenvalues and respectively. Then what happens to the vector geometrically when we do for large ? ( It makes and coordinates very small and it sucks vector into -axis. )   "
 },
@@ -3542,7 +3686,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#exer-fishes1",
   "type": "Checkpoint",
-  "number": "5.4.19",
+  "number": "5.5.19",
   "title": "",
   "body": "  132 fishes are placed in a box with nine rooms. See Figure .   Fish Tank    Assume that, at regular intervals of time, it is equally likely that fishes will decide to go through any door in the room or stay in the room.  Find how many fishes can be found in each room in long run.  Solve this problem using a matrix stochastic matrix.   "
 },
@@ -3551,7 +3695,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#eg-google_search1",
   "type": "Example",
-  "number": "5.4.21",
+  "number": "5.5.21",
   "title": "",
   "body": "  Let us consider a network with 5 webpages as shown in .    Network with 5 webpages   The hyper matrix of the network is the following:   Note that is a stochastic matrix and sum of each of its row is 1.  If a surfer lands on a page after steps or clicks, then its probability is denoted by .  The vector vector is called the -th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page in long runs. The vector . Thus if the surfer starts from the webpage 3, then the on one click, the surfer reach to webpage 1 with probability or at webpage 5 with probability .  We have    Thus we see that the probability vector seems to converge to a vector which means that, a surfer will visit webpage 1 with probability 0.19047, webpage 2 with probability 0.22222 and so on. Since webpage 4 has highest probability, it will get rank 1. Thus this network will be ranked as, .  One can show that the vector is independent of the initial vector for this particular network. This is called the stationary distribution vector. Thus the stationary distribution vector for any network is if it exists.   "
 },
@@ -3560,7 +3704,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-11",
   "type": "Remark",
-  "number": "5.4.23",
+  "number": "5.5.23",
   "title": "",
   "body": "  Finding the stationary distribution vector for network is nothing but solving a stem of linear equations .   "
 },
@@ -3569,7 +3713,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-12",
   "type": "Activity",
-  "number": "5.4.1",
+  "number": "5.5.1",
   "title": "",
   "body": " The above network can be generate in Sage using DiGraph , directed graph method as follows.   Now let us define the tansition matrix manually.   Now we can find what happens to the initial vector after a large number of iterates (clicks).   "
 },
@@ -3578,7 +3722,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#eg-google_search2",
   "type": "Example",
-  "number": "5.4.24",
+  "number": "5.5.24",
   "title": "",
   "body": "  Let us consider a network with 5 webpages as shown in .    Network with 5 webpages with a dangling node.   In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, . Then and we have From this it seems that approaches to a zero vector. Therefore, we cannot rank the wepages.   "
 },
@@ -3587,7 +3731,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-15",
   "type": "Activity",
-  "number": "5.4.2",
+  "number": "5.5.2",
   "title": "",
   "body": " Let us see how to do the previous example in Sage.    "
 },
@@ -3596,7 +3740,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#eg-google_search3",
   "type": "Example",
-  "number": "5.4.26",
+  "number": "5.5.26",
   "title": "",
   "body": "  Let us consider a network with 5 web pages as shown in . This network has a trapping loop . In long run for any initial vector, , we may get .    Network with Loop.    "
 },
@@ -3605,7 +3749,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-17",
   "type": "Activity",
-  "number": "5.4.3",
+  "number": "5.5.3",
   "title": "Sage Code for Loop Network.",
   "body": "Sage Code for Loop Network  Let use the loop network to find what happens to the initial vector in a long run.   We can find the transition matrix using .adjacency_matrix() method and taking its transpose.   "
 },
@@ -3614,7 +3758,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-22",
   "type": "Remark",
-  "number": "5.4.28",
+  "number": "5.5.28",
   "title": "",
   "body": "  The Google matrix defined in is a stochastic matrix. That is, sum of entries in any column is 1.   "
 },
@@ -3623,7 +3767,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-23",
   "type": "Remark",
-  "number": "5.4.29",
+  "number": "5.5.29",
   "title": "",
   "body": "  The Google matrix defined in is a regular matrix.   "
 },
@@ -3632,7 +3776,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-24",
   "type": "Activity",
-  "number": "5.4.4",
+  "number": "5.5.4",
   "title": "Bigger Example using Google Matrix.",
   "body": " Bigger Example using Google Matrix  In this example, we shall generate a random network, find the adjacency matrix and use Google matrix to find the page rank.     "
 },
@@ -3641,7 +3785,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec5-3-eigen-Appl.html#subsec5-3-Google-Search-25",
   "type": "Activity",
-  "number": "5.4.5",
+  "number": "5.5.5",
   "title": "Page-Rank Example (all together).",
   "body": " Page-Rank Example (all together)   "
 },
@@ -3650,7 +3794,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec5-4-eigen-exer.html",
   "type": "Section",
-  "number": "5.5",
+  "number": "5.6",
   "title": "Exercises on Eigenvalues and Eigenvectors",
   "body": " Exercises on Eigenvalues and Eigenvectors     Find the eigenvalues and corresponding eigenvectors of the following matrices (i)   (ii)      Let . Find the eigenvalues of     Let . Show that satisfies its characteristic equation and hence find . Also find .    Check if the following matrices are positive definite?     Find eigenvalues of and . Can you generalize this?    Find the algebraic and geometric multiplicities of each of the eigenvalues of . Is this matrix diagonalizable?    Consider the matrix . What is ?    Let be a real matrix with eigenvalues and corresponding eigenvectors respectively. Find .    Suppose there are two internet service providers and in a city. At present has 50000 subscriber and has 100000 subscribers. A trend shows that every year 60% of subscriber move to and 40% of move to . After 2 year how many subscribers and will have? What happens in long run?     "
 },
@@ -3958,7 +4102,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.4",
   "title": "Orthogonal Diagonalizations",
-  "body": " Orthogonal Diagonalizations   Recall the concept of diagonalization of a square matrix. We have seen that an matrix is diagonalizable if there is an eigenbasis of . In this section, we shall explore if we can find an eigenbasis which is also an orthonormal. First of all we shall define what is meaning of an orthogonal matrix.     Let be an matrix. Then the following are equivalent:    is non-singular and .    The rows of are orthonormal vectors in .    The columns of are orthonormal vectors in .       Assume that . This implies . Let the columns of are . Then is linearly independent. It is easy to see that the -th entry of is . Hence we have if and 0 otherwise. This proves rows of and orthogonal and hence columns of are orthogonal. The converse is easy.      A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .         The matrix is an orthogonal matrix.     is an orthogonal matrix.         An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.    It is easy to easy to see that if and are orthgogonal matrices then is also orthogonal. (why?)    Two matrices and are called orthogonally similar if there exists an orthogonal matrix such that is a diagonal matrix.    Thus an orthogonally diangomally matrix is ortghogonally similar to a diagonal matrix.  Suppose a matrix is orthogonally diagonalizable. That is , a digonal matrix. This means . Hence Thus if is orthogonally diagonalizable then must be symmetric.    Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.    We have This implies . Since , we have .    The following therem shows that every real symmetric matrix is orthogonally diagonalizable.    Let be an matrix. Then the following are equivalent.     has an orthonormal set of eigenvectors.     is orthogonally diagonalizable.     is symmetric.        Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .      For the following matrices find an orthogonal matrix such that is a diagonal matrix.       The following are equivalent for an matrix .      is orthogonal.     for all .     for all .     .        Quadratic Forms and Conic Sections  In this subsection, we give an application of orthogonal diagonalizability to conic sections.  A general second-degree equation in two variables is given by where .  This equation can be written compactly in matrix notation as   Here, is the symmetric matrix associated with the quadratic part .  Since is symmetric, it is orthogonally diagonalizable. That is, there exists an orthogonal matrix such that where are eigenvalues of and is the column matrix of orthogonal eigenbasis.  With the change of variables the quadratic form simplifies to Note that here Thus, the cross term is eliminated by using the orthogonal linear trasformation and the conic aligns with its principal axes, that is along the eigenvectors directions.  Now we have various cases. If we assume that and are positive, then we can complete square and we get for some real number . What is ? It is .  The origin of this quadratic in -coordinates is Hence the orgin in terms of -coordinates is Thus we have converted the original quadratic to This is an ellipse. Here, we have The transformation, is called an affine linear transformation. Here is a orthogonl linear map. Thus an affine linear transformation on is a map of the form ,where is an orthogonal transformation and is a called a translation vector. Such maps are also called isometries.   In case, and both are negative then, we can multiply the whole equation by and we get the a similar expression except, the right hand changes its sign.  In case one of the , say , then the conic tranforms to which is a hyperbola.  In case one of the , say , then the conic tranforms to which is parabola. Here and .  Classification of Conics in two variables  Based on the above discussions, the classification of the above conic section depends on the eigenvalues of .     Ellipse: If both eigenvalues have the same sign, then the quadratic is an ellipe of the form .    Circle: When , then the quadratic is circle.    Hyperbola: If eigenvalues have opposite signs, then the quadratic is a hyperbola of the form     Parabola: If one eigenvalue is zero, then it is a parabola.       Condiser the quadratic . Let us convert this quadrtic into a conic section in canonial form.    The associated symmetric matrix of this quadratic is given by It is easy to check the the eigenvalues of are and with the corresponding eigenvectors and . Hence we have The new coordinates in terms of is Now substituting and in the given quadratic, we get After completing the squares, we get This can be written as an equation of ellipes. Note that here the translation vector is given by   Let us explore this in Sage. Here we plot the orginal quadratic curve along with the transformed coordinates.      Consider the quadratic equation . We wish the classify this as a conic section.  Let us first plot the graph of this curve in Sage.   The symmetric matrix associated with quadratic tem is given by . It is easy to check that he eigenvalues are . Since both the eigenvalues are positive, this quadratic is an ellipse. This is what the graph shows.  Now we give all the steps in Sage to plot the curve along with the now coordinate system.     Consider the quadratic eqation given by . Use Sage to classify this and plot the curve along with the transformed coordinates system.      Consider the quadratic equation and classify this to a conic section.    The matrix associated with the quadratic part of the above equation is . It is easy to check that the eigenvalues of are . Since one of the eigenvalues is 0, this curve is a parabola. Let us draw this curve along with the tranformed orgini and the two new coordinate directions in Sage.      For given quadratic equation , write down the corresponding canonical conics by describing the new orgin , and the new coordinate vectors by codisering different cases in a tabular form.     Classification of Quadratic Surfaces in Three Variables   The classification of quadratic equation in three varibale can be done in a very similar manner as we have seen in case of two variable    A general quadratic equation in three variables is where .  In matrix form, Since is symmetric, there exists an orthogonal matrix such that After an orthogonal change of variables and a translation to eliminate linear terms, the quadratic form reduces to the canonical form .   Classification of Quadrics  Depending on the signs of , we obtain the following surfaces:     Ellipsoid: All eigenvalues positive. .      Hyperboloid of One Sheet: Two positive eigenvalues, one negative.       Hyperboloid of Two Sheets: One positive eigenvalue, two negative.       Elliptic Cone: Two positibve and one negative eigenvalues with no constant term.       Elliptic Paraboloid: (Bowl-shaped surface) Two positive eigenvalues, one zero.       Hyperbolic Paraboloid: (Saddle Surface) One positive eigenvalue, one negative, one zero.       Elliptic Cylinder: Two positive eigenvalues, third zero.       Hyperbolic Cylinder: One positive, one negative, third zero.       Parabolic Cylinder: Only one nonzero eigenvalue.       "
+  "body": " Orthogonal Diagonalizations   Recall the concept of diagonalization of a square matrix. We have seen that an matrix is diagonalizable if there is an eigenbasis of . In this section, we shall explore if we can find an eigenbasis which is also an orthonormal. First of all we shall define what is meaning of an orthogonal matrix.     Let be an matrix. Then the following are equivalent:    is non-singular and .    The rows of are orthonormal vectors in .    The columns of are orthonormal vectors in .       Assume that . This implies . Let the columns of are . Then is linearly independent. It is easy to see that the -th entry of is . Hence we have if and 0 otherwise. This proves rows of and orthogonal and hence columns of are orthogonal. The converse is easy.      A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .         The matrix is an orthogonal matrix.     is an orthogonal matrix.         An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.    It is easy to easy to see that if and are orthgogonal matrices then is also orthogonal. (why?)    Two matrices and are called orthogonally similar if there exists an orthogonal matrix such that is a diagonal matrix.    Thus an orthogonally diagonally matrix is ortghogonally similar to a diagonal matrix.  Suppose a matrix is orthogonally diagonalizable. That is , a digonal matrix. This means . Hence Thus if is orthogonally diagonalizable then must be symmetric.    Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.    We have This implies . Since , we have .    The following therem shows that every real symmetric matrix is orthogonally diagonalizable.    Let be an real matrix. Then the following are equivalent.     has an orthonormal set of eigenvectors.     is orthogonally diagonalizable.     is symmetric.      Let be orthogonormal eigenvectors of such that . Then is orthogonal. Hence Hence is orthogonally diagonalizable.  If is orthogonally diagonalizable with then Hence is symmetric.      Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then       For the following matrices find an orthogonal matrix such that is a diagonal matrix.       The following are equivalent for an matrix .      is orthogonal.     for all .     for all .     .        Quadratic Forms and Conic Sections  In this subsection, we give an application of orthogonal diagonalizability to conic sections.  A general second-degree equation in two variables is given by where .  This equation can be written compactly in matrix notation as   Here, is the symmetric matrix associated with the quadratic part .  Since is symmetric, it is orthogonally diagonalizable. That is, there exists an orthogonal matrix such that where are eigenvalues of and is the column matrix of orthogonal eigenbasis.  With the change of variables the quadratic form simplifies to Note that here Thus, the cross term is eliminated by using the orthogonal linear trasformation and the conic aligns with its principal axes, that is along the eigenvectors directions.  Now we have various cases. If we assume that and are positive, then we can complete square and we get for some real number . What is ? It is .  The origin of this quadratic in -coordinates is Hence the orgin in terms of -coordinates is Thus we have converted the original quadratic to This is an ellipse. Here, we have The transformation, is called an affine linear transformation. Here is a orthogonl linear map. Thus an affine linear transformation on is a map of the form ,where is an orthogonal transformation and is a called a translation vector. Such maps are also called isometries.   In case, and both are negative then, we can multiply the whole equation by and we get the a similar expression except, the right hand changes its sign.  In case one of the , say , then the conic tranforms to which is a hyperbola.  In case one of the , say , then the conic tranforms to which is parabola. Here and .  Classification of Conics in two variables  Based on the above discussions, the classification of the above conic section depends on the eigenvalues of .     Ellipse: If both eigenvalues have the same sign, then the quadratic is an ellipe of the form .    Circle: When , then the quadratic is circle.    Hyperbola: If eigenvalues have opposite signs, then the quadratic is a hyperbola of the form     Parabola: If one eigenvalue is zero, then it is a parabola.       Condiser the quadratic . Let us convert this quadrtic into a conic section in canonial form.    The associated symmetric matrix of this quadratic is given by It is easy to check the the eigenvalues of are and with the corresponding eigenvectors and . Hence we have The new coordinates in terms of is Now substituting and in the given quadratic, we get After completing the squares, we get This can be written as an equation of ellipes. Note that here the translation vector is given by   Let us explore this in Sage. Here we plot the orginal quadratic curve along with the transformed coordinates.      Consider the quadratic equation . We wish the classify this as a conic section.  Let us first plot the graph of this curve in Sage.   The symmetric matrix associated with quadratic tem is given by . It is easy to check that he eigenvalues are . Since both the eigenvalues are positive, this quadratic is an ellipse. This is what the graph shows.  Now we give all the steps in Sage to plot the curve along with the now coordinate system.     Consider the quadratic eqation given by . Use Sage to classify this and plot the curve along with the transformed coordinates system.      Consider the quadratic equation and classify this to a conic section.    The matrix associated with the quadratic part of the above equation is . It is easy to check that the eigenvalues of are . Since one of the eigenvalues is 0, this curve is a parabola. Let us draw this curve along with the tranformed orgini and the two new coordinate directions in Sage.      For given quadratic equation , write down the corresponding canonical conics by describing the new orgin , and the new coordinate vectors by codisering different cases in a tabular form.     Classification of Quadratic Surfaces in Three Variables   The classification of quadratic equation in three varibale can be done in a very similar manner as we have seen in case of two variable    A general quadratic equation in three variables is where .  In matrix form, Since is symmetric, there exists an orthogonal matrix such that After an orthogonal change of variables and a translation to eliminate linear terms, the quadratic form reduces to the canonical form .   Classification of Quadrics  Depending on the signs of , we obtain the following surfaces:     Ellipsoid: All eigenvalues positive. .      Hyperboloid of One Sheet: Two positive eigenvalues, one negative.       Hyperboloid of Two Sheets: One positive eigenvalue, two negative.       Elliptic Cone: Two positibve and one negative eigenvalues with no constant term.       Elliptic Paraboloid: (Bowl-shaped surface) Two positive eigenvalues, one zero.       Hyperbolic Paraboloid: (Saddle Surface) One positive eigenvalue, one negative, one zero.       Elliptic Cylinder: Two positive eigenvalues, third zero.       Hyperbolic Cylinder: One positive, one negative, third zero.       Parabolic Cylinder: Only one nonzero eigenvalue.       "
 },
 {
   "id": "thm-orthogonal-matrix",
@@ -4021,7 +4165,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "6.4.7",
   "title": "",
-  "body": "  Let be an matrix. Then the following are equivalent.     has an orthonormal set of eigenvectors.     is orthogonally diagonalizable.     is symmetric.     "
+  "body": "  Let be an real matrix. Then the following are equivalent.     has an orthonormal set of eigenvectors.     is orthogonally diagonalizable.     is symmetric.      Let be orthogonormal eigenvectors of such that . Then is orthogonal. Hence Hence is orthogonally diagonalizable.  If is orthogonally diagonalizable with then Hence is symmetric.   "
 },
 {
   "id": "sec6-3-14",
@@ -4030,7 +4174,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.4.8",
   "title": "",
-  "body": "  Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then .   "
+  "body": "  Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then    "
 },
 {
   "id": "sec6-3-15",
