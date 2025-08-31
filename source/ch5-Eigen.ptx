@@ -4,6 +4,7 @@
   
   <xi:include href="sec5-1-eigen-intro.ptx" /> 
 <xi:include href="sec5-2-diagonalization.ptx" />  
+<xi:include href="sec5-2-complex-eigen.ptx"/>  
 <xi:include href="sec5-5-Eigen-Sage.ptx" /> 
 <xi:include href="sec5-3-Applications.ptx" />
 <xi:include href="sec5-4-Eigen-Exer.ptx" /> 

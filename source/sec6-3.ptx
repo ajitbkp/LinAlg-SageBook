@@ -123,7 +123,7 @@
     </definition>
 
 <p>
-  Thus an orthogonally diangomally matrix is ortghogonally similar to a diagonal matrix.
+  Thus an orthogonally diagonally matrix is ortghogonally similar to a diagonal matrix.
 </p>
 
 <p>
@@ -187,11 +187,9 @@
         </p>
       </li>  
       </ol>
-  </statement>
-<proof>
-  <p>
-      <case direction="cycle">
-  </p>
+    </statement>
+
+  <proof>
   <p>
   Let <m>v_1,\ldots, v_n</m> be orthogonormal eigenvectors of <m>A</m> such that 
   <m>Av_i=\lambda_i v_i</m>. Then 
@@ -203,16 +201,15 @@
   </p>
 
   <p>
-         <case direction="cycle">
-  </p>
-  <p>
-    If <m>A</m> is orthogonally diangonalizable with <m>P^TAP=D</m>then 
+    If <m>A</m> is orthogonally diagonalizable with <m>P^TAP=D</m> then 
     <me>
-      A^T=(PDP^T)^T=PDP^T=A.
+      A^T={(PDP^T)}^T=PDP^T=A.
     </me>
-    Henc <m>A</m> is symmetric. 
+    Hence <m>A</m> is symmetric. 
   </p>
+  
 </proof>
+
 </theorem>
 
     <example>
@@ -233,7 +230,7 @@
           Then
           <me>
             P^{-1}AP=\left(\begin{array}{rrr} 0 \amp  0 \amp  0 \\ 0 \amp  9 \amp  0 \\ 0 \amp  0 \amp  9 \end{array} \right)
-          </me>.
+          </me>
         </p>
       </statement>
     </example>

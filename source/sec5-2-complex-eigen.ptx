@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-5-2-1-complex-eigenvalues" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Complex Eigenvalues</title>
+
+  <!-- Intrduction is required only when the section has subsections -->
+  <introduction>
+    <p>
+   So far we have only considered eigenvalues that are real numbers. However, there are matrices 
+   whose characteristic polynomal has no real root. For example the characteritic polynomial 
+   of <m>\begin{pmatrix}0 \amp -1\\1 \amp 0\end{pmatrix}</m> is <m>x^2+1</m> which does have real root. 
+   In this section, we shall consider such matrices. In particular, we shall allow both real and 
+   complex numbers as eigenvalues.  All the concepts that we have seen in last two sections 
+   can be extended to complex eigenvalues as well. We assume that readers are familiar with 
+   basic notion of complex numbers and some of its standard properties. 
+    </p>
+  </introduction>
+<example xml:id="complex-eigenvalues-eg1">
+    <statement>
+        <p>
+            Consider a matrix <m>A =\begin{pmatrix}1 \amp -1 \\1 \amp 1\end{pmatrix}</m>. It is easy to see that 
+            the characteristic polynomila of <m>A</m> is <m>\det{(x I-A)}=x^2-2x+2</m> whose charateristic
+            roots are <m>\lambda_1=1+i, \lambda_2=1-i</m>. 
+        </p>
+        <p>
+            Let us find eigenvectors corresponding to the eigenvalue <m>\lambda=1+i</m>.  It is natural 
+            to expect, eigenvectors will also be vectors with complex entries. Let 
+            <m>v=\begin{pmatrix}z_1\\z_2\end{pmatrix}</m> be an eigenvector corresponding to 
+            <m>\lambda_1=1+i</m>. Then 
+         <me>
+            \begin{pmatrix}1 \amp -1 \\1 \amp 1\end{pmatrix}\begin{pmatrix}z_1\\z_2\end{pmatrix} 
+            = (1+i)\begin{pmatrix}z_1\\z_2\end{pmatrix}.
+         </me>
+          Solving the above equations, it is easy to see that <m>z_2=-iz_1</m>. 
+          Hence  one of the solution can be taken as <m>v_1 =\begin{pmatrix}1\\-i\end{pmatrix}</m>.
+        </p>
+        <p>
+            Similarly, we can chech that an eigenvector corresponding to the eigenvalue 
+            <m>v_2 =\begin{pmatrix}1\\i\end{pmatrix}</m>.
+        </p>
+        <p>
+            Let us define 
+            <me>
+                P = [v_1~v_2]=\begin{pmatrix} 1 \amp 1 \\-i\amp i\end{pmatrix}.
+            </me>
+            Then 
+             <me>
+                P^{-1} =\begin{pmatrix} 1/2 \amp i/2 \\1/2\amp -i/2\end{pmatrix}
+            </me> and 
+             <me>
+                P^{-1}AP =\begin{pmatrix} 1+i \amp 0\\0 \amp 1-i\end{pmatrix}.
+            </me>
+        </p>
+    </statement>
+</example>
+
+<example xml:id="complex-eigenvalues-eg2">
+    <statement>
+        <p>
+            Let <m>A= \left(\begin{array}{rrr}
+-1 \amp -2 \amp 1 \\
+3 \amp 3 \amp 1 \\
+-4 \amp -4 \amp 3
+\end{array}\right)</m>.
+ Let us find the eigenvalues and eigenvector of <m>A</m>. 
+    </p>
+    </statement>
+
+    <solution>
+        <p>
+            The characteristic polynomial of <m>A</m> is 
+            <me>
+                \det{(xI-A)}=x^{3} - 5x^{2} + 17x - 13=(x - 1) \cdot (x^{2} - 4x + 13).
+            </me>
+            Hence the eigenvalues are <m>\lambda_1=1,\lambda_2=2-3i, \lambda_3=2+3i</m>.
+        </p>
+
+        <p>
+    Let us find an eigenvector corresponding to the eigenvalue <m>\lambda_1=1</m>. We shall find the 
+    <m>{\rm ker}(A-\lambda I)</m>.
+    <me>
+        A-I = \left(\begin{array}{rrr}
+-2 \amp -2 \amp 1 \\
+3 \amp 2 \amp 1 \\
+-4 \amp -4 \amp 2
+\end{array}\right) \xrightarrow{
+                \begin{array}{c}
+                    RREF
+            \end{array}}
+            \left(\begin{array}{rrr}
+1 \amp 0 \amp 2 \\
+0 \amp 1 \amp -\frac{5}{2} \\
+0 \amp 0 \amp 0
+\end{array}\right).
+    </me>
+Clearly <m>{\rm ker}(A-I)=\{\alpha(1, -5/4, -1/2):\alpha \in \R\}</m>. Hence we can 
+an eigenvalue <m>v_1=(1, -5/4, -1/2)</m>. 
+</p>
+<p>
+    Next we find an eigenvector corresponding to <m>\lambda_2=2-3i</m>. 
+    <md>
+     <mrow>  A-(2-3i)I \amp  =
+        \left(\begin{array}{rrr}
+3 i - 3 \amp -2 \amp 1 \\
+3 \amp 3 i + 1 \amp 1 \\
+-4 \amp -4 \amp 3 i + 1
+\end{array}\right)
+ </mrow>
+<mrow> \amp \xrightarrow{
+                \begin{array}{c}
+                    RREF
+            \end{array}}
+            \left(\begin{array}{rrr}
+1  \amp 0 \amp -\frac{1}{2} \\
+0 \amp 1 \amp -\frac{3}{4} i + \frac{1}{4} \\
+0 \amp 0 \amp 0
+\end{array}\right). </mrow>
+</md>
+ It is easy to check that <m>v_2=\left(1, - \frac{1}{2}+\frac{3}{2} i,2\right)</m>  is an 
+ eigenvector.   
+</p>
+<p>
+    Similarly <m>v_2=\left(1, - \frac{1}{2}-\frac{3}{2} i,2\right)</m> eigenvector 
+    corresponding to the eigenvector <m>\lambda_3=2+3i</m>.
+</p>
+<p>
+    Define 
+    <me>
+        P=[v_1~v_2~v_3]=\left(\begin{array}{rrr}
+1 \amp 1 \amp 1 \\
+-\frac{5}{4} \amp \frac{3}{2} i - \frac{1}{2} \amp -\frac{3}{2} i - \frac{1}{2} \\
+-\frac{1}{2} \amp 2 \amp 2
+\end{array}\right).
+    </me>
+    Then 
+    <me>
+        P^{-1}=\left(\begin{array}{rrr}
+\frac{4}{5} \amp 0 \amp -\frac{2}{5} \\
+-\frac{11}{30} i + \frac{1}{10} \amp -\frac{1}{3} i \amp \frac{1}{10} i + \frac{1}{5} \\
+\frac{11}{30} i + \frac{1}{10} \amp \frac{1}{3} i \amp -\frac{1}{10} i + \frac{1}{5}
+\end{array}\right).
+    </me>
+  It is easy to check that 
+  <me>
+    P^{-1}AP=\left(\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 2-3 i  \amp 0 \\
+0 \amp 0 \amp 2+3 i 
+\end{array}\right)
+  </me>
+    
+</p>
+    </solution>
+</example>
+
+<exercises xml:id="exercises-eigen-complex-eg">
+<exercise>
+  <p>
+    Let <m>A=\left(\begin{array}{rr}
+3 \amp -1 \\
+4 \amp 3
+\end{array}\right)</m>. Find the eigenvalues and eigenvectors of <m>A</m> and hence 
+diangonalize it.
+  </p>  
+</exercise>
+ <exercise>
+  <p>
+    Diagonalize the matrix <m>A=\left(\begin{array}{rrr}
+-18 \amp -10 \amp 9 \\
+25 \amp 10 \amp 0 \\
+-16 \amp -20 \amp 8
+\end{array}\right)</m>.
+  </p>  
+ </exercise>   
+</exercises>
+<p>
+    From the theory of equations, we know that complex roots of a polynomial with real coefficients 
+    occur in conjugate pair. That is if <m>z=a+ib</m> is a root of a polynomual <m>p(x)</m>,
+        <m>\overline{z}=a-ib</m> is also a root of <m>p(x)</m>. This leads to the following theorem.
+     
+</p>
+<theorem xml:id="thm-conjugate-eigenvalue">
+    <statement>
+        <p>
+        Let <m>A</m>  be a real square matrix with eigenvalue <m>\lambda</m> and an
+        associated eigenvector <m>v</m>. Then <m>\overline{\lambda}</m> is also an 
+        eigenvalue of <m>A</m> with associated eigenvector <m>\overline{v}</m>.
+        </p>
+    </statement>
+    <proof>
+        <p>Since <m>A</m> is real we have <m>\overline{A}=A</m>, that is conjugate of <m>A</m> 
+            is same as <m>A</m>. Hence
+            <me>
+                A\overline{v}=\overline{A}\overline{v}=\overline{Av}=\overline{\lambda v}=
+                \overline{\lambda} \overline{v}.
+            </me>
+            
+        </p>
+    </proof>
+</theorem>
+
+  <theorem>
+            <statement>
+              <p>
+              <ol>
+                <li>
+                  <p>
+                    Eigenvalues of Hermitian (symmetric) matrix are real.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Eigenvalues of skew-Hermitian (skew-symmetric) matrix are zero or purely imaginary.
+                  </p>
+                </li>
+              </ol>
+            </p>
+            </statement>
+          </theorem>
+
+          <proof>
+            <p>
+              (1) Let <m>\lambda</m> be an eigenvalues of <m>A</m> and <m>v</m>,
+              the corresponding eigenvector of <m>A</m>.
+              Then by definition <m>Av=\lambda v</m>.
+              Multiplying both sides by <m>\overline{v}^T</m>
+              (the conjugate transpose of the vector <m>v</m>),
+              we get
+              <me>
+                \overline{v}^TAv=\lambda\overline{v}^Tv 
+                \Longrightarrow \lambda=\dfrac{\overline{v}^TAv}{\overline{v}^Tv}
+              </me>.
+            </p>
+            <p>
+               Since <m>\overline{v}^Tv=\norm{v}^2</m> is a real number.  
+               The behavior of <m>\lambda</m> is determined by <m>\overline{v}^TAv</m>.
+            </p>
+            <p> 
+              Hence
+              <md>
+                <mrow> \overline{\left(\overline{v}^TAv\right)}\amp =v^T\overline{A}\overline{v}</mrow>
+                <mrow> \amp=v^TA\overline{v} \quad \text{ since }A \text{ is real}</mrow>
+                <mrow> \amp=v^TA^T\overline{v} \quad \text{ since } A^T=A</mrow>
+                <mrow> \amp=(Av)^T\overline{v} </mrow>
+                <mrow> \amp=\overline{v}^TAv.</mrow>
+              </md>
+              This implies that <m>\overline{v}^TAv</m> is a real number and hence 
+              <m>\lambda</m> is a real number.
+            </p>
+            <p>
+             (2)  Now if <m>A</m> is a skew-hermitian matrix,
+              then it is easy to show that <m>\overline{(\overline{v}^TAv)}=-(\overline{v}^TAv)</m>.
+              Hence <m>\overline{v}^TAv</m> is either purely imaginary or zero.
+              Which show <m>\lambda</m> is either purely imaginary of zero.
+            </p>
+          </proof>
+        
+          <example xml:id="complex-eigenvalues-eg3">
+            <statement>
+              <p>
+                Condsider a matrix <m>A=\begin{pmatrix}a \amp -b \\b\amp a\end{pmatrix}</m>.  
+                What are eigenvalues of <m>A</m>?  What does <m>A</m> do to any vector 
+                geometrically?
+              </p>
+            </statement>
+            <solution>
+              <p>
+                The characteristic polynomial of <m>A</m> is <m>\lambda^2-2a\lambda+(a^2+b^2)</m>.
+                Hence the eigenvalues are <m>a\pm ib</m>.  You can check that 
+                the corresponding eigenvectors are <m>\begin{pmatrix}1\\-i\end{pmatrix}</m> and 
+                <m>\begin{pmatrix}1\\i\end{pmatrix}</m> respectively.
+              </p>
+              <p>
+                Define <m>r=\sqrt{a^2+b^2}=\sqrt{\det{(A)}}</m> length of each of the column of <m>A</m>.
+                Then 
+                <me>
+                  \left(\frac{a}{r}\right)^2+\left(\frac{b}{r}\right)^2=1.
+                </me>
+                 Hence <m>(a/r,b/r)</m> lies on the unit circle. Therefore, there exists <m>\theta</m> 
+                 such that <m>(a/r,b/r)=(\cos\theta,\sin\theta)</m>. 
+                 That is, <m>(a,b)=r(\cos\theta,\sin\theta)</m>. Thus we have 
+                 <me>
+                  A = r\begin{pmatrix}\frac{a}{r} \amp -\frac{b}{r} \\\frac{b}{r}\amp \frac{a}{r}\end{pmatrix}=
+                  r\begin{pmatrix}\cos\theta \amp -\sin\theta \\\sin\theta\amp \cos\theta\end{pmatrix}
+                  =\begin{pmatrix}r \amp 0\\r\amp 0\end{pmatrix}
+                  \begin{pmatrix}\cos\theta \amp -\sin\theta \\\sin\theta\amp \cos\theta\end{pmatrix}
+                 </me>
+                 Hence geometrically <m>A</m> is rotation by an angle <m>\theta</m> anticlock wise 
+                 followed by scaling by <m>r</m>. Needless to say that first we can scale then rotate 
+                 as well.  
+              </p>
+              <p>
+                Let us explore this using Sage. You may change 
+                the matrix <m>M</m> and see what happens to the image of a unit square 
+                under <m>M</m>.
+              </p>
+              <sage>
+                <input>
+                  M=matrix(QQ,[[1,-1],[1,1]])
+                  X=vector([-1/2,-1/2])
+                  Y=vector([1/2,-1/2])
+                  Z=vector([1/2,1/2])
+                  W=vector([0,1])
+                  T=vector([-1/2,1/2])
+
+                  pol=polygon2d([X,Y,Z,W,T,Z,W,T,X], rgbcolor=(1/8,3/4,1/2),
+                                figsize=3,fill=False)
+                  pol1=polygon2d([M*X,M*Y,M*Z,M*W,M*T,M*Z,M*W,M*T,M*X], 
+                                rgbcolor=(1/8,3/4,1/2),figsize=3,fill=False)
+                  g=graphics_array([pol,pol1])
+                  g.show(aspect_ratio=1)
+                </input>
+                <output>
+                  
+                </output>
+              </sage>
+            </solution>
+          </example>
+
+
+          <p>
+            A matrix of the form <m>\begin{pmatrix}a \amp -b \\b\amp a\end{pmatrix}</m> is 
+            called a <em>rotation-scaling</em> matrix.
+          </p>
+        <p>
+          <term>Imaginary eigenvalues</term>
+        </p>
+
+        <p>
+          Suppose <m>A</m> is a <m>2\times 2</m> matrix with eigenvalue <m>\lambda=a+ib</m> which
+          is imaginary, that is <m>b\neq 0</m>. Assume that 
+          <m>v=\begin{pmatrix} x+iy\\z+iw\end{pmatrix}</m> 
+          be an eigenvector corresponing to <m>\lambda</m>. That is, <m>Av=\lambda v</m>. Then 
+          we can write 
+          <me>
+            v=\begin{pmatrix} x+iy\\z+iw\end{pmatrix}=v=\begin{pmatrix} x\\z \end{pmatrix}
+            +i \begin{pmatrix} y\\w \end{pmatrix}={\rm Re}(v)+i {\rm Im}(v).
+          </me>
+          </p>
+
+          <claim xml:id="claim-imag-eigenvalue-1">
+            <statement>
+              <p>
+                 We claim that <m>{\rm Re}(v), {\rm Im}(v)</m> are linearly independent.
+              </p>
+            </statement>
+          </claim>
+           <p>
+            Suppose <m>{\rm Re}(v), {\rm Im}(v)</m> are linearly dependent and that 
+            <m>{\rm Re}(v)=c{\rm Im}(v)</m> for non zero real number <m>c</m>.   We have 
+           <md>
+            <mrow> Av \amp = A\lambda v </mrow>
+            <mrow> \amp = (a+ib){\rm Re}(v)+i{\rm Im}(v)</mrow>
+            <mrow> \amp=(a {\rm Re}(v)-b {\rm Im}(v)) + i(a {\rm Im}(v)+b {\rm Re}(v))</mrow>
+           </md>
+            On the other hand 
+            <me>
+              Av=A({\rm Re}(v)+i {\rm Im}(v))=A{\rm Re}(v)+i A{\rm Im}(v).
+            </me>
+            Comparing the real and imaginary parts we get
+            <mdn>
+              <mrow xml:id="imag-eigenvalue-eq1"> 
+                A({\rm Re}(v)) \amp= a {\rm Re}(v)-b {\rm Im}(v)</mrow>
+              <mrow xml:id="imag-eigenvalue-eq2"> 
+                A({\rm Im}(v))\amp = a {\rm Im}(v)+b {\rm Re}(v). </mrow>
+            </mdn>
+        Now using the assumption <m>{\rm Re}(v)=c{\rm Im}(v)</m> in  <xref ref="imag-eigenvalue-eq1"/> 
+        we get
+        <md>
+          <mrow> A (c {\rm Im}(v)) \amp =a c {\rm Im}(v) - b {\rm Im}(v)</mrow>
+          <mrow>\implies c(a {\rm Im}(v)+b {\rm Re}(v)) \amp=(ac-b) {\rm Im}(v)</mrow>
+          <mrow> \implies c(a {\rm Im}(v)+bc {\rm Im}(v))  \amp=(ac-b) {\rm Im}(v) </mrow>
+          <mrow>\implies (ac {\rm Im}(v)+bc^2 {\rm Im}(v))  \amp=(ac-b) {\rm Im}(v). </mrow>
+        </md>
+          This implies <m>{\rm Im}(v)\neq 0</m>, we have <m>bc^2=b</m>. (why?) Further, <m>b\neq 0</m>, 
+          we have <m>c^1=-1</m>, a contradiction. 
+          This proves that <m>{\rm Re}(v), {\rm Im}(v)</m> are linearly independent.
+       </p>
+           
+       <p>
+        From <xref ref="imag-eigenvalue-eq1"/>, we get
+        <me>
+          A({\rm Re}(v)) = a {\rm Re}(v)-b {\rm Im}(v)=\begin{pmatrix} ax-by\\az-bw \end{pmatrix}.
+        </me>
+        Similarly from <xref ref="imag-eigenvalue-eq2"/>, we get
+        <me>
+          A({\rm Im}(v)) = a {\rm Im}(v)+b {\rm Re}(v)=
+          \begin{pmatrix} bx+ay\\by+aw\end{pmatrix}.
+        </me>
+        Hence we get
+        <md>
+          <mrow> A [{\rm Re}(v)~~{\rm Im}(v)] \amp = 
+            \begin{pmatrix} ax-by \amp bx+ay \\az-bw \amp by+aw \end{pmatrix}</mrow>
+          <mrow> \amp = \begin{pmatrix} x \amp y \\z \amp w\end{pmatrix}
+            \begin{pmatrix} a \amp b \\-b \amp a\end{pmatrix}.
+          </mrow>
+        </md>
+         Define
+         <me>
+          P: =\begin{pmatrix} x \amp y \\z \amp w\end{pmatrix}
+         </me>
+          Since <m>{\rm Re}(v), {\rm Im}(v)</m> are linearly independent, <m>P</m> is 
+          non singular. Hence we have 
+          <men xml:id="imag-eigenvalue-eq3">
+            A = PBP^{-1}.
+          </men>
+           Note that the matrix <m>B</m> is rotation scaling matrix and 
+           that <m>\det{(B)}=|\lambda|^2</m>.
+       </p>
+
+       <p>
+        Thus we have the following result.
+       </p>
+
+
+<theorem xml:id="thm-imag-eigenvalue">
+  <statement>
+    <p>
+      Let <m>A</m> be a <m>2\times 2</m> real matrix with complex eigenvalue 
+      <m>\lambda=a+ib</m> and let <m>v</m> be an eigenvector corresponding to <m>\lambda</m>. 
+      Then 
+      <me>
+        A= PBP^{-1} 
+      </me>
+      where <m>P = \begin{bmatrix} {\rm Re}(v) \amp {\rm Im}(v)\end{bmatrix}</m>  and 
+      <m>B=\begin{pmatrix} a \amp b \\-b \amp a\end{pmatrix}</m>. Thus <m>A</m> is 
+      similar to a rotation-scaling matrix with scaling factor 
+      <m>|\lambda|=\sqrt{\det{(B)}}</m>. Note that  the matrix <m>P</m> is the 
+      change of coordinate system. 
+    </p>
+  </statement>
+</theorem>
+
+<example xml:id="complex-eigenvalues-eg4">
+  <statement>
+    <p>
+      Let <m>A=\left(\begin{array}{rr}
+-3 \amp -8 \\
+4 \amp 5
+\end{array}\right)</m>. Find the eigenvalues and the corresponding eigenvector. Hence 
+find the matrix <m>P</m> and <m>B</m> and show that <m>A=PBP^{-1}</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      The characteristic polynomial of <m>A</m> is <m>p(x)=x^{2} - 2 x + 17</m>. Hence one of
+      eigenvalues is <m>\lambda=a+ib=1-4i</m> and the corresponding eigenvector is 
+      <m>v=\left(1,-1/2 + 1/2i\right)</m>. Hence we have 
+      <me>
+        B = \begin{pmatrix} a \amp b \\-b \amp a\end{pmatrix}=
+        \left(\begin{array}{rr}
+1 \amp -4 \\
+4 \amp 1
+\end{array}\right),\quad P = 
+\left(\begin{array}{rr}
+1 \amp 0 \\
+-\frac{1}{2} \amp \frac{1}{2}
+\end{array}\right).
+      </me>
+      It is easy to check that 
+      <me>
+        PBP^{-1}=A.
+      </me>
+    </p>
+  </solution>
+</example>
+<p>
+  <term>Geoemetric transformation of <m>A=\left(\begin{array}{rr}
+-3 \amp -8 \\
+4 \amp 5
+\end{array}\right)</m></term>
+</p>
+<p>
+  Let us use Sage to deomostrate how the matrix <m>A=PBP^{-1}</m> transforms a home like 
+  image in <m>\R^2</m>.
+</p>
+<sage>
+  <input>
+    M=matrix(QQ,[[-3,-8],[4,5]])
+    X=vector([-1/2,-1/2])
+    Y=vector([1/2,-1/2])
+    Z=vector([1/2,1/2])
+    W=vector([0,1])
+    T=vector([-1/2,1/2])
+    ev=M.eigenvalues()[0]
+    a, b = ev.real(), ev.imag()
+    z1 = M.eigenvectors_right()[0][1][0][0]
+    z2 = M.eigenvectors_right()[0][1][0][1]
+    x,y=z1.real(),z1.imag()
+    z,w=z2.real(),z2.imag()
+    P = matrix([[x,y],[z,w]])
+    B = matrix([[a,b],[-b,a]])
+    home = [X,Y,Z,W,T,Z,W,T,X]
+    tranformed_home1 = [P.inverse()*home[i] for i in range(len(home))]
+    tranformed_home2 = [B*P.inverse()*home[i] for i in range(len(home))]
+    tranformed_home3 = [P*B*P.inverse()*home[i] for i in range(len(home))]
+
+    pol=polygon2d(home, rgbcolor=(1/8,3/4,1/2),
+                  figsize=3,fill=False,title='orginal')
+    pol1=polygon2d(tranformed_home1, rgbcolor=(1/8,3/4,1/2),
+                  figsize=3,fill=False,title='tranformed by $P^{-1}$')
+    pol2=polygon2d(tranformed_home2,rgbcolor=(1/8,3/4,1/2),
+                  figsize=3,fill=False,title='tranformed by $BP^{-1}$')
+    pol3=polygon2d(tranformed_home3,rgbcolor=(1/8,3/4,1/2),
+                  figsize=3,fill=False,title='tranformed by $PBP^{-1}=A$')
+
+    g=graphics_array([[pol,pol1],[pol2,pol3]])
+    g.show(aspect_ratio=1)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+
+<p>
+  <term>Complex eigenvalues of <m>3\times 3</m> matrices.</term>
+</p>
+<p>
+  Now let us see what happens if we take a <m>3\times 3</m> real matrix which has a complex eigenvalue
+  say <m>\lambda_1=a+ib</m>. We know that in this case <m>\lambda_2=\overline{\lambda_1}=a-ib</m> is another 
+  eigenvalue and it has a real eigenvector say <m>\lambda_3</m>. Let <m>v_1, v_2</m> and <m>v_3</m> 
+  be corresponding eigenvectors of <m>A</m>. Since eigenvalues are distinct, this 
+  matrix is diagonalizable. In this case it turns out that we can follow a similar procedure 
+  to show that <m>A=PBP^{-1}</m> where 
+  <m>P=\begin{bmatrix}{\rm Re}(v_1)\amp {\rm Im}(v_1) \amp v_3\end{bmatrix}</m> and 
+  <m>B = \begin{pmatrix}{\rm Re}(\lambda_1) \amp {\rm Im}(\lambda_1)\amp 0\\
+    -{\rm Im}(\lambda_1) \amp {\rm Re}(\lambda_1)\amp 0\\
+    0 \amp 0 \amp \lambda_1\\
+    \end{pmatrix}</m>.
+</p>
+
+<example xml:id="complex-eigenvalues-eg5">
+  <statement>
+      <p>
+    Consider the matrix <m>A</m> in <xref ref="complex-eigenvalues-eg2"/>. Let us find the 
+    matrix <m>P</m> and <m>B</m> so that <m>A=PBP^{-1}</m>.
+    </p>
+  </statement>
+  </example>
+<p>
+  Let us solve this problem in Sage.
+</p>
+    <sage>
+    <input>
+      A = matrix([[-1,-2,1],[3,3,1],[-4,-4,3]])
+      ev = A.eigenvalues()
+      ev3 = ev[0]
+      ev1 = ev[1]
+      ev2 = ev[2]
+      print('The 1st eigenvalue  of A is')
+      print(ev1)
+      print('The 2nd eigenvalue  of A is')
+      print(ev2)
+      print('The 3rd eigenvalue  of A is')
+      print(ev3)
+
+      v3 = A.eigenvectors_right()[0][1][0]
+      v1 = A.eigenvectors_right()[1][1][0]
+      v2 = A.eigenvectors_right()[2][1][0]
+      z1 = v1[0]
+      z2 = v1[1]
+      z3 = v1[2]
+      print('The 1st eigenvector v1 of  A is ')
+      print(column_matrix(v1.n(digits=1)))
+
+      print('The 2nd eigenvector v1 of  A is ')
+      print(column_matrix(v2.n(digits=1)))
+
+      print('The 3rd eigenvector v1 of  A is ')
+      print(column_matrix(v3.n(digits=1)))
+
+
+      Re_v = vector([z1.real(),z2.real(),z3.real()])
+      Im_v = vector([z1.imag(),z2.imag(),z3.imag()])
+      print('The Re(v) is ')
+      print(column_matrix(Re_v).n(digits=1))
+
+      print('The Im(v) is ')
+      print(column_matrix(Im_v).n(digits=1))
+
+      P = column_matrix([Re_v,Im_v,v3]);
+      B = matrix([[ev1.real(), ev1.imag(),0],
+                  [-ev1.imag(), ev1.real(),0],
+                  [0, 0,ev3]])
+      print('The matrix P is')
+      print(P.n(digits=1))
+      print('The matrix B is')
+      print(B)
+
+      print('The matrix $PBP^{-1}$ is ')
+      print((P*B*P.inverse()).n(digits=2))
+    </input>
+    <output>
+      
+    </output>
+  
+   </sage>
+  
+</section>
+
+<!-- Subsection without numbers-->
