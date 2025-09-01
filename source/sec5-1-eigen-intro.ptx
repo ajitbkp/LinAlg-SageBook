@@ -1027,18 +1027,40 @@ they have the same eigenvalues.
       also <m>T</m>-invariant subspaces.
     </p>
 
+
     <reading-questions xml:id="rqs-invariant-subspace">
-        <p>
+      
       <exercise xml:id="exer-invarince-eigenspace">
       <p>
         Let <m>T\colon \R^n\to\R^n</m> be a liear map. Then the eigenspace <m>E_\lambda</m> 
         is <m>T</m> invariant.
       </p>
     </exercise>
+    <p>
     <exercise>
       <p>
         Suppose the exist a one dimensional invariant subspace of a linear 
         map <m>T\colon \R^n\to\R^n</m>, then it has an eigenvector.
+      </p>
+    </exercise>
+  </p>
+  <p>
+    <exercise>
+      <p>
+      Suppose <m>T,S\colon \R^n \to \R^n</m> be linear maps such that <m>TS=ST</m>, that is they 
+      commute. Then show that <m>{\rm ker}(A)</m> is <m>S</m>-invariant.  
+      </p>
+    </exercise>
+  </p>
+  <p>
+    <exercise>
+      <p>
+      Let <m>T\colon \R^n\to\R^n</m> be a liear map and <m>W_1</m> and <m>W_2</m> are
+       <m>T</m>-invariant suspaces such that <m>V=W_1\oplus W_2</m>. Let 
+       <m>\beta_1=\{u_1,\ldots,u_k\}</m> and <m>\beta_2=\{v_1,\ldots,v_m\}</m> be basis of 
+       <m>W_1</m> and <m>W_2</m> respectively. Then it is easy to check that 
+       <m>\beta=\beta_1\cup \beta_2</m> is a basis of <m>\R^n</m>. What will be the matrix of 
+       <m>T</m> with respect to <m>\beta.</m>
       </p>
     </exercise>
   </p>

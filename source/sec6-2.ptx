@@ -371,7 +371,29 @@ p
     </statement>
   </exercise>
 
-  
+  <exercise xml:id="exer-6-3-12">
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>n\times n</m> real symmetric matrix and <m>W</m>, a <m>A</m>-invariant 
+        subspace of <m>\R^n</m>. Then show that <m>W^\perp</m> is <m>A</m>-invariant.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Let <m>y\in W^\perp</m>.  For <m>x\in W</m>, <m>Ax\in W</m>. This implies <m>y^TAx=0</m>. Hence 
+        <me>
+          A(y)\cdot x=(Ay)^Tx=y^TA^Tx=y^TAx=0,
+        </me>
+        
+      </p>
+    </hint>
+  </exercise>
+  <p>
+    The above result is not true if <m>A</m> is not a symmetric matrix. 
+    Consider <m>A=\begin{pmatrix}1 \amp 1\amp -1\\-1 \amp 1 \amp 0\\0 \amp 0 \amp 1\end{pmatrix}</m>.
+    Then it is easy to check that <m>W</m>, <m>xy</m>-plane is <m>A</m>-invariant and 
+    <m>W^\perp =\R e_3</m>. But <m>W^\perp</m> is not <m>A</m>-invariant.
+  </p>
   </subsection>
   <subsection xml:id="subsec-Proj-Ref_HyperPlane">
     <title>Projection and Reflection</title>

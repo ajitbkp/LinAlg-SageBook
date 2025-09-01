@@ -191,23 +191,37 @@
 
   <proof>
   <p>
-  Let <m>v_1,\ldots, v_n</m> be orthogonormal eigenvectors of <m>A</m> such that 
+    Here we show that <m>(1)\implies (2)\implies (3)\implies (1)</m>
+  </p>
+    <case direction="cycle">
+      <p>
+        Let <m>v_1,\ldots, v_n</m> be orthogonormal eigenvectors of <m>A</m> such that 
   <m>Av_i=\lambda_i v_i</m>. Then 
   <m>P=\begin{bmatrix} v_1\amp v_2\cdots v_n\end{bmatrix}</m> is orthogonal. Hence 
   <me>
     P^TAP={\rm diag}(\lambda_1,\ldots,\lambda_n)=D. 
   </me>
   Hence <m>A</m> is orthogonally diagonalizable. 
-  </p>
+      </p>
+    </case>
 
-  <p>
+    <case direction="cycle">
+      <p>
     If <m>A</m> is orthogonally diagonalizable with <m>P^TAP=D</m> then 
     <me>
       A^T={(PDP^T)}^T=PDP^T=A.
     </me>
     Hence <m>A</m> is symmetric. 
-  </p>
-  
+      </p>
+    </case>
+  <case direction="cycle">
+<p>
+  The proof follows from induction and the fact, that real symmetric matrix 
+  has a real eigenvalue. We shall postpone the proof and prove this for more general 
+  symmetric linear map later.
+</p>
+</case>
+
 </proof>
 
 </theorem>
@@ -249,7 +263,7 @@
       </statement>
     </problem>
 
-  <theorem>
+  <theorem xml:id="thm-6-4-10">
       <statement>
         <p>
           The following are equivalent for an <m>n\times n</m> matrix <m>A</m>.
@@ -263,7 +277,7 @@
             </li>
             <li>
               <p>
-                <m>\norm{Ax}=\norm{A}</m> for all <m>x\in \R^n</m>. 
+                <m>\norm{Ax}=\norm{x}</m> for all <m>x\in \R^n</m>. 
               </p>
             </li>
             <li>
@@ -273,15 +287,102 @@
             </li>
             <li>
               <p>
-                <m>Ax\cdot Ay = (Ay)^TAx=x\cdot y</m>.
+                <m>Ax\cdot Ay = (Ay)^TAx=x\cdot y</m>. This is same as 
+                saying <m>A</m> maps an orthogonal basis to an orthogonal basis. 
               </p>
             </li>
           </ol> 
         </p>
       </statement>
+      <proof>
+        <p>
+          Left as an exercise.
+        </p>
+      </proof>
     </theorem>
       
-  <subsection xml:id="subsec-6-3-quadratic-form">
+    <p>
+      <term>Distance Preserving maps in <m>\R^n.</m></term>
+    </p>
+
+    <p>
+      Suppose <m>f\colon \R^n \to \R^n</m> is a map, that preserves the distance, that 
+      is <m>\norm{f(x)-f(x)}=\norm{x-y}</m> for all <m>x,y\in \R^n</m>. We would like to 
+      study such maps. Let us first look at a spacial case when <m>f</m> fixes the origin.
+    </p>
+    <lemma xml:id="lem-distance-preserving">
+      <statement>
+        <p>
+          Let <m>f\colon \R^n\to \R^n</m> be a map such that 
+          <ol>
+            <li>
+              <p>
+                f(0)=0
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\norm{f(x)-f(x)}=\norm{x-y}</m> for all <m>x,y\in \R^n</m>.
+              </p>
+            </li>
+          </ol>
+          Then <m>f</m> is an orthogonal map.
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          From (1) and (2) we have 
+          <me>
+            \norm{f(x)}=\norm{f(x)=f(0)}=\norm{f(x-0)}}=\norm{f(x)},
+          </me>
+          for all <m>x\in \R^n</m>. Using this we have       
+          <me>
+            \norm{f(x)-f(y)}^2=\norm{x-y}^2.
+          </me>
+          Exanding both sides, we get
+          <me>
+            f(x)\cdot f(y) = x\cdot y
+          </me>
+          for all <m>x,y</m>. That is, <m>f</m> preserves the dot product. This 
+          implies that <m>f</m> maps an orthonormal basis of <m>\R^n</m> to an 
+          orthonormal basis of <m>\R^n</m>. In particulatr, <m>\{f(e_i)\}</m> is 
+          an orthonormal basis of <m>\R^n</m>, where <m>\{e_i\}</m> is the standard 
+          basis. Hence
+
+          <me>
+            f(x)=f(\sum x_i e_i)=\sum f(x)\cdot f(e_i) f(e_i)=\sum x\cdot e_i f(e_i)=\sum x_i f(e_i).
+          </me>
+          This shows that <m>f</m> is a linear map. (why?)
+        </p>
+      </proof>
+    </lemma>
+<p>
+  Now using the abobve <xref ref="lem-distance-preserving"/>, we can identify all 
+  distance preserving maps in <m>\R^n</m>, which is the content of the next theorem.
+</p>
+
+<theorem xml:id="thm-distance-preserving">
+  <statement>
+    <p>
+      Let <m>f\colon \R^n\to \R^n</m> be such that <m>\norm{f(x)-f(y)}=\norm{x-y}</m> for 
+      all <m>x,y\in \R^n</m>. Then there exists a unique vector <m>x_0\in \R^n</m> and 
+      an orthogonal liear map  <m>A</m> such that <m>f(x)=Ax+x_0</m>. In particular <m>f</m> 
+      is an affine linear transformation.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>x_0:=f(0)</m> and <m>g(x)=f(x)-x_0</m>. Then it is easy to check that 
+      <m>g(0)=0</m> and <m>\norm{g(x)-g(y)}=\norm{x-y}</m> for all <m>x,y</m>. Hence by    
+      <xref ref="lem-distance-preserving"/>, <m>g</m> is linear. By <xref ref="thm-6-4-10"/>, 
+      <m>g(x)=Ax</m> for some orthogonal linear transformation <m>A</m>. Hence 
+      <m>f(x)=Ax+x_0.</m>
+    </p>
+  </proof>
+</theorem>
+
+    <subsection xml:id="subsec-6-3-quadratic-form">
     <title>Quadratic Forms and Conic Sections</title>
       <p>
         In this subsection, we give an application of orthogonal diagonalizability  to conic sections.
@@ -1048,3 +1149,29 @@ par_cyl.show(frame=False,axes=True)
 </subsection>
   
 </section>
+<!-- 
+ We prove this result using induction on <m>n</m>.  Let <m>A=[\alpha]</m>. Then  <m>\{1\}</m> 
+  is an orthonormal basis of <m>\R</m> and it is also an eigenvector.
+
+<p>
+  Assume that the result is true for <m>n-1</m>. That is if <m>A</m> is  an <m>(n-1)\times (n-1)</m> 
+  real symmetric matrix then it has an orthonormal set of eigenbasis.
+</p>
+<p>
+  Let us prove the result for <m>n</m>. Let <m>A</m> be an <m>n\times n</m> real symmetric matrix.  
+  By the fundamental theorem of algebra,  we know that every real polynomial of has a root in 
+  <m>\C</m>. Hence the characteristic polynomila of <m>A</m> has a complex characteristics root. By 
+  <xref ref="thm-hermitain-eigenvalues"/>, all eigenvalues of <m>A</m> are real. Thus <m>A</m> has 
+  a real eigenvalue, say, <m>\lambda</m>. Let <m>u</m> be a unit  eigenvector corresponding to 
+  the eigenvalue <m>\lambda</m> and <m>W=\R u</m>. Then <m>W</m> is a one dimensional subspace of 
+  <m>\R^n</m>. Hence <m>W^\perp</m> an <m>(n-1)</m>-dimensional subspace of <m>\R^n</m>. 
+  Also <m>W</m> is <m>A-</m>invariannt. Hence by <xref ref="exer-6-3-12"/>, <m>W^\perp</m> is 
+  <m>A</m>-invariant.   Also <m>\R^n=W\oplus W^\perp</m>.
+</p>
+<p>
+  Define <m>B=A_{\mid_W^\perp}}</m>, the restriction of <m>A</m> onto <m>W^\perp</m>. 
+  Let <m>\{v_1,\ldots,v_{n-1}\}</m> be an orthonormal basis of <m>W^\perp</m>. Then 
+  <m>\beta=\{u, v_1,\ldots,v_{n-1}\}</m> is an orthonormal basis of <m>\R^n</m>.  Define 
+  the 
+</p>
+-->
