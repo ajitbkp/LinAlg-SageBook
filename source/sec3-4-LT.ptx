@@ -19,7 +19,7 @@
           T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}ax\\y \end{bmatrix}
         =\begin{bmatrix}a \amp 0\\0 \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>&gt;1</m>. (Refer to the <xref ref="fig_x-expansion1" />) 
+        where <m>a &gt;1</m>. (Refer to the <xref ref="fig_x-expansion1" />) 
         <figure xml:id="fig_x-expansion1">
           <caption><m>x</m>-expansion for <m>a=2</m></caption>
           <image width="80%" source="images/x-expansion.png" />
@@ -87,7 +87,7 @@
           T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x+ay\\y \end{bmatrix}
         =\begin{bmatrix}1 \amp a\\0 \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>a>0</m>. Refer to <xref ref="fig_x-postive-shear" /> for <m>a=1/4</m>. 
+        where <m>a &gt; 0</m>. Refer to <xref ref="fig_x-postive-shear" /> for <m>a=1/4</m>. 
 
         <figure xml:id="fig_x-postive-shear">
           <caption>Positive <m>x</m>-shear for <m>a=1/4</m></caption>
@@ -124,7 +124,7 @@
           T\left(\begin{bmatrix}x\\ y \end{bmatrix} \right)= \begin{bmatrix}x\\y+ax \end{bmatrix}
         =\begin{bmatrix}1 \amp 0\\a \amp 1 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}
         </me>
-        where <m>a>0</m>. Refer to <xref ref="fig_y-postive-shear" /> for <m>a=1/4</m>.
+        where <m>a &gt; 0</m>. Refer to <xref ref="fig_y-postive-shear" /> for <m>a=1/4</m>.
 
          <figure xml:id="fig_y-postive-shear">
           <caption>Positive <m>y</m>-shear for <m>a=1/4</m></caption>
@@ -158,7 +158,7 @@
     <statement>
       <p> Fix a positive real number <m>a</m> and define <m>D_a\colon \R^n\to \R^n</m> by <m>
         D_a(x)=ax</m>. It is a linear map which is induced by the scalar matrix <m>a I_{n}</m>. ( <m>
-        D_a</m> is called a <em>dilation</em> if <m>a>0</m> and a <em>contraction</em> if <m>a\lt 1</m>.)
+        D_a</m> is called a <em>dilation</em> if <m>a &gt; 0</m> and a <em>contraction</em> if <m>a\lt 1</m>.)
         Refer to <xref ref="fig_dilation" />
     <m>D_a\colon \R^2\to \R^2</m> with <m>a=2</m> and <m>
         a=1/2</m>. 
@@ -179,7 +179,7 @@
         (i) <m>
           T</m> is stretching by a factor <m>a</m> along <m>x</m>-axis and by a factor <m>b</m>
         along <m>
-          y</m>-axis if <m>a,b>1</m> and (ii) <m>T</m> is contraction by a factor <m>a</m> along <m>
+          y</m>-axis if <m>a,b &gt;1</m> and (ii) <m>T</m> is contraction by a factor <m>a</m> along <m>
         x</m>-axis followed by a factor <m>b</m> along <m>y</m>-axis if <m>0\lt a,b\lt 1</m>. Refer
         to <xref
           ref="fig_diag-expansion" /> for stretching along <m>x</m> by 2 and <m>y</m>-axes by 1.5. 
@@ -478,5 +478,126 @@
     </sage>
 
   </example>
+<example>
+  <title>Shear Transformation in 3D</title>
+  <statement>
+    <p>
+      A <term>shear transformation</term> in three dimensions is a type of 
+    <term>linear transformation</term> that shifts one coordinate axis in 
+    proportion to another, while keeping at least one direction fixed. 
+    Unlike scaling (which stretches or compresses) or rotation (which changes orientation), 
+    shear <em>slants the shape</em> without changing its volume (if the determinant 
+    of the shear matrix is 1).
+    </p>
+    <p>
+    In matrix form, a general 3D shear is represented as
+  </p>
 
+  <me>
+    S \;=\;
+    \begin{bmatrix}
+    1 \amp s_{xy} \amp s_{xz} \\
+    s_{yx} \amp 1 \amp s_{yz} \\
+    s_{zx} \amp s_{zy} \amp 1
+    \end{bmatrix}.
+  </me>
+
+  <p>
+    Here each parameter <m>s_{ij}</m> determines how the <m>i</m>-th coordinate 
+    depends on the <m>j</m>-th coordinate:
+  </p>
+
+  <ul>
+    <li><m>s_{xy}</m>: shear of <m>x</m>-coordinate by the <m>y</m>-coordinate</li>
+    <li><m>s_{xz}</m>: shear of <m>x</m>-coordinate by the <m>z</m>-coordinate</li>
+    <li><m>s_{yx}</m>: shear of <m>y</m>-coordinate by the <m>x</m>-coordinate</li>
+    <li><m>s_{yz}</m>: shear of <m>y</m>-coordinate by the <m>z</m>-coordinate</li>
+    <li><m>s_{zx}</m>: shear of <m>z</m>-coordinate by the <m>x</m>-coordinate</li>
+    <li><m>s_{zy}</m>: shear of <m>z</m>-coordinate by the <m>y</m>-coordinate</li>
+  </ul>
+
+  <p>
+    For example, if <m>s_{xy} = 1</m>, then the <m>x</m>-coordinate increases in proportion to 
+    <m>y</m>, creating a slant of the cube in the <m>x</m>-direction depending on how far a point 
+    lies along the <m>y</m>-axis.
+  </p>
+
+  <p>
+    Shearing preserves <term>parallelism</term> of lines (parallelograms remain parallelograms, 
+    cubes become parallelepipeds) but alters angles and lengths.
+  </p>
+
+  <p>
+    In the Sage program:
+  </p>
+
+  <ul>
+    <li>The <c>blue cube</c> shows the original unit cube centered at the origin.</li>
+    <li>The <c>red cube</c> shows the sheared version after applying <m>S</m>.</li>
+    <li>Sliders let you adjust the six shear parameters and see the real-time effect.</li>
+    <li>The coordinate axes are drawn to help you understand the direction of shearing.</li>
+  </ul>
+
+  
+   <figure xml:id="figure-3dshear">
+    <caption>Shear transformation in 3d</caption>
+    <interactive dark-mode-enabled="yes" xml:id="figure-3dshear1" platform="sage" width="100%" aspect="1:1">
+      <slate surface="sage">
+@interact
+def cube_shear_transform(
+    s_xy = slider(-2, 2, 0.1, default=0.0, label="Shear x by y"),
+    s_xz = slider(-2, 2, 0.1, default=0.0, label="Shear x by z"),
+    s_yx = slider(-2, 2, 0.1, default=0.0, label="Shear y by x"),
+    s_yz = slider(-2, 2, 0.1, default=0.0, label="Shear y by z"),
+    s_zx = slider(-2, 2, 0.1, default=0.0, label="Shear z by x"),
+    s_zy = slider(-2, 2, 0.1, default=0.0, label="Shear z by y")
+):
+    # Original cube vertices
+    cube_vertices = [(x,y,z) for x in (-1,1) for y in (-1,1) for z in (-1,1)]
+    
+    # Cube edges
+    edges = []
+    for v in cube_vertices:
+        for w in cube_vertices:
+            if sum(abs(a-b) for a,b in zip(v,w)) == 2:
+                edges.append((v,w))
+    
+    # Shear matrix
+    S = matrix([
+        [1,    s_xy, s_xz],
+        [s_yx, 1,    s_yz],
+        [s_zx, s_zy, 1   ]
+    ])
+    
+    # Apply shear transform
+    transformed_vertices = {v: tuple(S*vector(v)) for v in cube_vertices}
+    
+    # Graphics: original (blue) and sheared (red)
+    G = sum(line3d([v,w], color="blue", thickness=2) for v,w in edges)
+    G += sum(point3d(v, size=30, color="blue") for v in cube_vertices)
+    G += sum(line3d([transformed_vertices[v], transformed_vertices[w]], color="red", thickness=2) for v,w in edges)
+    G += sum(point3d(transformed_vertices[v], size=30, color="red") for v in cube_vertices)
+    
+    # Add axes
+    axis_length = 3
+    G += line3d([(-axis_length,0,0),(axis_length,0,0)], color="black", thickness=2)  # x-axis
+    G += line3d([(0,-axis_length,0),(0,axis_length,0)], color="black", thickness=2)  # y-axis
+    G += line3d([(0,0,-axis_length),(0,0,axis_length)], color="black", thickness=2)  # z-axis
+    
+    show(G, aspect_ratio=1, figsize=6)
+    
+    # Display shear values and matrix (rounded)
+    print("Shear values:")
+    print(f"  s_xy={s_xy:.2f}, s_xz={s_xz:.2f}, s_yx={s_yx:.2f}, s_yz={s_yz:.2f}, s_zx={s_zx:.2f}, s_zy={s_zy:.2f}")
+    
+    print("\nShear matrix S =")
+    print(S.n(digits=2))
+
+
+      </slate>
+  </interactive>
+  </figure>
+
+  </statement>
+</example>
 </section>
