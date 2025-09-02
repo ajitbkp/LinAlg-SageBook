@@ -190,10 +190,9 @@
     </statement>
 
   <proof>
-  <p>
-    Here we show that <m>(1)\implies (2)\implies (3)\implies (1)</m>
-  </p>
-    <case direction="cycle">
+   <p>
+    <term><m>(1\implies 2)</m></term>
+   </p> 
       <p>
         Let <m>v_1,\ldots, v_n</m> be orthogonormal eigenvectors of <m>A</m> such that 
   <m>Av_i=\lambda_i v_i</m>. Then 
@@ -203,9 +202,23 @@
   </me>
   Hence <m>A</m> is orthogonally diagonalizable. 
       </p>
-    </case>
+ 
+       <p>
+    <term><m>(2\implies 1)</m></term>
+   </p> 
+  <p>
+    Suppose there exists an orthogonal matrix <m>P</m> susch that 
+    <m>P^{-1}AP=D</m>. Then
+    <m>AP=PD</m>. Let <m>D={\rm diag}\{\lambda_1,\ldots,\lambda_n\}</m> and 
+    <m>v_1,\ldots, v_n</m> be columns of <m>P</m>, then <m>\{v_1,\ldots, v_n\}</m>
+    is an orthonormal basis of <m>\R^n</m>. Also <m>AP=PD</m> implies <m>Av_i=\lambda_i v_1</m>. 
+    Hence <m>\beta</m> is an orthonormal eigenbasis of <m>A</m>. 
 
-    <case direction="cycle">
+  </p>
+
+   <p>
+    <term><m>(2\implies 3)</m></term>
+   </p> 
       <p>
     If <m>A</m> is orthogonally diagonalizable with <m>P^TAP=D</m> then 
     <me>
@@ -213,17 +226,121 @@
     </me>
     Hence <m>A</m> is symmetric. 
       </p>
-    </case>
-  <case direction="cycle">
+    
+       <p>
+    <term><m>(3\implies 2)</m></term>
+   </p> 
+    <p>
+      We prove this result using induction on <m>n</m>.  For <m> n=1</m>. 
+ Let <m>A=[\alpha]</m>. Then  <m>\{1\}</m> 
+  is an orthonormal basis of <m>\R</m> and it is also an eigenvector.
+    </p>
 <p>
-  The proof follows from induction and the fact, that real symmetric matrix 
-  has a real eigenvalue. We shall postpone the proof and prove this for more general 
-  symmetric linear map later.
+  Assume that the result is true for <m>n-1</m>. That is if <m>A</m> is  an <m>(n-1)\times (n-1)</m> 
+  real symmetric matrix then it is orthogonally diagonalizable. 
 </p>
-</case>
+
+<p>
+  Let us prove the result for <m>n</m>. Let <m>A</m> be an <m>n\times n</m> real symmetric matrix.  
+  By the fundamental theorem of algebra,  we know that every real polynomial of has a root in 
+  <m>\mathbb{C}</m>. Hence the characteristic polynomila of <m>A</m> has a complex characteristics root. By 
+  <xref ref="thm-hermitain-eigenvalues"/>, all eigenvalues of <m>A</m> are real. Thus <m>A</m> has 
+  a real eigenvalue, say, <m>\lambda</m>. Let <m>u</m> be a unit  eigenvector corresponding to 
+  the eigenvalue <m>\lambda</m> and <m>W=\R u</m>. Then <m>W</m> is a one dimensional subspace of 
+  <m>\R^n</m>. Hence <m>W^\perp</m> an <m>(n-1)</m>-dimensional subspace of <m>\R^n</m>. 
+  Also <m>W</m> is <m>A-</m>invariannt. Hence by <xref ref="exer-6-3-12"/>, <m>W^\perp</m> is 
+  <m>A</m>-invariant.   Also <m>\R^n=W\oplus W^\perp</m>.
+</p>
+<p>
+Let <m>\beta = \{u,v_1,\ldots,v_{n-1}\}</m> be an extended orthonormnal basis of <m>A</m>.  
+Let <m>P=[u~v_1~\cdots~v_{n-1}]</m>, the orthogonal matrix whose columns are vectors 
+<m>u,v_1,\ldots,v_{n-1}</m>.  The 
+the matrix <m>M</m> of <m>A</m> with respect to <m>\beta</m> is <m>P^TAP</m> which is 
+of the form
+<me>
+  M=\left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp C
+\end{array}\right]
+</me>, where <m>C</m> is an <m>(n-1)\times (n-1)</m> real symmetric matrix. (why)? 
+Hence by induction, there exists an <m>(n-1)\times (n-1)</m> orthogonal matrix <m>Q</m> 
+such that <m>Q^TCQ=D</m>, a diagonal matrix. Hence 
+<me>
+  M=\left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp Q
+\end{array}\right] \left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp D
+\end{array}\right] \left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp Q^T
+\end{array}\right]
+</me>
+Thus we have 
+<me>
+  P^TAP = M = \left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp Q
+\end{array}\right] \left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp D
+\end{array}\right] \left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp Q^T
+\end{array}\right].
+</me>
+This implies 
+<me>
+  A = P\left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp Q
+\end{array}\right] \left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp D
+\end{array}\right] \left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp Q^T
+\end{array}\right]P^T.
+</me>
+Define  <m>P_1=P\left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp Q
+\end{array}\right]</m> . The <m>P_1</m> is an orthogonal matrix and 
+<me>
+A=P_1   \left[
+\begin{array}{c|c}
+\lambda \amp 0 \\ \hline
+0 \amp D
+\end{array}\right] P_1^T.
+</me>
+</p>
 
 </proof>
 
+</theorem>
+<p>
+  The above theorem is called the spectral throem of real symmetric matrix.  
+</p>
+<theorem xml:id="thm-spectral-symmetric-matrix">
+   <title>Spectal Theorem of Symmetric Matrix</title>
+  <idx><h>Spectal Theorem of Symmetric Matrix</h></idx>
+  <statement>
+    <p> 
+      A matrix with real entries is orthogonally diagonalizable if and only if it is symmetric.      
+    </p>
+  </statement>
 </theorem>
 
     <example>
@@ -233,7 +350,7 @@
           Clearly <m>A</m> is symmetric and hence it is orthogonally diagonalizable.
           The characteristic polynomial of <m>A</m> is
           <me>
-            det(xI-A)=x^3 - 18*x^2 + 81*x=x(x-9)^2
+            \det{(xI-A)}=x^3 - 18x^2 + 81x=x(x-9)^2
           </me>.
         </p>
         <p>
@@ -263,7 +380,7 @@
       </statement>
     </problem>
 
-  <theorem xml:id="thm-6-4-10">
+  <theorem xml:id="thm-6-4-10"> 
       <statement>
         <p>
           The following are equivalent for an <m>n\times n</m> matrix <m>A</m>.
@@ -382,6 +499,451 @@
   </proof>
 </theorem>
 
+<subsection xml:id="subsec-affine-LT-Application">
+  <title>Applications of Affine Linear Map</title>
+  <p>
+    Let us look some applications of affine linear transformation to fractals.
+  </p>
+  <example xml:id="Koch-Curve">
+    <title>Koch Curve</title>
+    <p>
+    The Koch curve is a classic fractal that can be described using the language of
+    <term>affine linear transformations</term>. 
+    </p>
+    
+    <p>
+    The construction of the Koch curve begins with a single line segment 
+    from <m>(0,0)</m> to <m>(1,0)</m> called <term>initiator</term>. 
+  </p>
+  <p>
+    Next we remove the middle third of the line, 
+    and replace it with two lines that each have the same length (1/3 or orgininal) 
+    as the remaining lines on each side. This new form is called the <term>generator</term>, 
+    because it specifies a rule that is used to generate a new form. Note that 
+    length of each seqment is 1/3.  See <xref ref="koch_curve_generator"/>.
+  </p>
+
+          <sidebyside widths="40% 40%">
+            <figure xml:id="koch_curve_initiator">
+               <caption>Initiator</caption>
+              <image source="images/Koch_Initiator.png">
+              </image>
+            </figure>
+            <figure xml:id="koch_curve_generator">
+                  <caption>Generator</caption>
+                   <image source="images/Koch_Generator.png">
+              </image>
+            </figure>
+          </sidebyside>
+  
+<p>
+  Next we repeat the above steps to each of four segments in the generator. 
+  Then we get the cureve as in <xref ref="koch_curve_level2"/>.  Length of each 
+  segment in this case is <m>16/9</m>.  If we apply the generator once again, we ge 
+  the curve as in <xref ref="koch_curve_level3"/>. Length of each 
+  segment in this case is <m>64/27</m>. 
+
+        <sidebyside widths="40% 40%">
+            <figure xml:id="koch_curve_level2">
+               <caption>After 2 iterations</caption>
+              <image source="images/Koch_Level2.png">
+              </image>
+            </figure>
+            <figure xml:id="koch_curve_level3">
+                  <caption>After 3 iterators</caption>
+                   <image source="images/Koch_Level3.png">
+              </image>
+            </figure>
+          </sidebyside>
+  </p>
+  <p>
+    If we keep apply this process, we get what is called the Koch Curve 
+    (named after the mathematician Helge von Koch in 1904). 
+    After applying the 7 iterators  we get the curve as in <xref ref="koch_curve_level7"/>
+
+    <figure xml:id="koch_curve_level7">
+                  <caption>Koch Curve with 7 iterations.</caption>
+                   <image source="images/Koch_Level7.png" width="50%">
+              </image>
+            </figure>
+  </p>
+
+  <p>
+    Now let us construct the Koch curve as an application of affine linear map.
+    The construction begins with a single line segment from <m>(0,0)</m> to <m>(1,0)</m>.
+    At each step, this segment is replaced by four smaller segments:
+  </p>
+
+  <ol>
+    <li>The first third (straight, scaled by <m>1/3</m>).</li>
+    <li>The second third (scaled by <m>1/3</m> and rotated by <m>+60^\circ</m>).</li>
+    <li>The third third (scaled by <m>1/3</m> and rotated by <m>-60^\circ</m>).</li>
+    <li>The last third (straight, shifted).</li>
+  </ol>
+  <p>
+    Each of these pieces is obtained from the original segment by applying one of four affine 
+    linear maps.
+    <md>
+      <mrow>  T_1(z)  \amp= \tfrac{1}{3}z, </mrow>
+      <mrow>  T_2(z)  \amp= \tfrac{1}{3}z + \tfrac{1}{3}, </mrow>
+      <mrow>  T_3(z)  \amp= \tfrac{1}{3} e^{i\pi/3} z + \tfrac{1}{3}, </mrow>
+      <mrow>  T_4(z)  \amp= \tfrac{1}{3}z + \tfrac{2}{3}. </mrow>
+    </md>
+  </p>
+<p>
+    Written in real coordinates, these are of the form <m>T_j(x) = A_j x + b_j</m> with
+    <ul>
+      <li><m>A_1 = \tfrac{1}{3}I, \quad b_1 = (0,0)</m>,</li>
+      <li><m>A_2 = \tfrac{1}{3}I, \quad b_2 = (1/3,0)</m>,</li>
+      <li><m>A_3 = \tfrac{1}{3}R_{60}, \quad b_3 = (1/3,0)</m>,</li>
+      <li><m>A_4 = \tfrac{1}{3}I, \quad b_4 = (2/3,0)</m>,</li>
+    </ul>
+    where <m>R_{60}</m> is the <m>2\times 2</m> rotation matrix for <m>60^\circ</m>.
+  </p>
+<p>
+  We deomontrate this in Sage.
+</p>
+<sage>
+  <input>
+# Define rotation matrix for 60 degrees
+theta = pi/3
+R60  = matrix([[cos(theta), -sin(theta)], [sin(theta), cos(theta)]])
+Rm60 = matrix([[cos(-theta), -sin(-theta)], [sin(-theta), cos(-theta)]])
+
+def koch_subdivide(segment):
+    """Subdivide a line segment into 4 segments of Koch curve"""
+    P, Q = segment
+    v = Q - P
+    P1 = P + v/3
+    P3 = P + 2*v/3
+    P2 = P1 + R60*(v/3)  # peak point
+    return [(P, P1), (P1, P2), (P2, P3), (P3, Q)]
+
+def koch_curve(iterations):
+    """Generate Koch curve segments after given iterations"""
+    segments = [(vector([0,0]), vector([1,0]))]  # initial line
+    for _ in range(iterations):
+        new_segments = []
+        for seg in segments:
+            new_segments.extend(koch_subdivide(seg))
+        segments = new_segments
+    return segments
+
+def draw_koch(iterations, color="blue"):
+    segs = koch_curve(iterations)
+    G = Graphics()
+    for P, Q in segs:
+        G += line([P, Q], color=color,thickness=0.6)
+    return G
+
+# Generating Koch Curve with 4 iterations
+## Do not use more than 7 generation, it may take a lot of time.
+show(draw_koch(4),figsize=4, axes=False,aspect_ratio=1)
+
+  </input>
+  <output>
+    
+  </output>
+</sage>
+</example>
+
+<example xml:id="Sierpinski_Triangle_Affile">
+    <title>Sierpiński Triangle</title>
+    <statement>
+      <p>
+         The <term>Sierpinski triangle</term> (named after the Polish 
+         mathematician Waclaw Sierpinski),
+         also called the Sierpinski gasket,
+        is a self-similar fractal subset <m>S</m> of the plane.
+        It can be obtained by an iterative geometric construction
+        starting from a filled equilateral triangle and applying
+        iterated function system (IFS) consisting of affine maps.
+      </p>
+
+      <p>
+      The construction begins with a filled equilateral triangle (stage 0).
+      At each stage we subdivide and remove parts according to the following rules:
+    </p>
+    <ul>
+      <li>
+        Stage 0: Start with a solid equilateral triangle of side length 1. 
+        See <xref ref="Fig_Sierpinski_Level0"/>.
+      </li>
+      <li>
+        Stage 1: Subdivide the triangle into four smaller equilateral triangles of side length 1/2
+        and remove the central one. See <xref ref="Fig_Sierpinski_Level1"/>.
+      </li>
+      <li>
+        Stage <m>n+1</m>: For each filled triangle from stage <m>n</m>,
+        repeat the same process: divide into four, remove the central one.
+        See <xref ref="Fig_Sierpinski_Level2"/> and  <xref ref="Fig_Sierpinski_Level3"/> 
+        for two and three iterations.
+      </li>
+    </ul>
+    <p>
+      Continuing indefinitely, the limit of this process is the Sierpiński triangle. 
+      See <xref ref="Fig_Sierpinski_Level8"/> after 8 iterations.
+    </p>
+
+       <sidebyside widths="40% 40%">
+            <figure xml:id="Fig_Sierpinski_Level0">
+               <caption>Original Triangle</caption>
+              <image source="images/Sierpinski_Level0.png">
+              </image>
+            </figure>
+            <figure xml:id="Fig_Sierpinski_Level1">
+                  <caption>After One Iteration</caption>
+                   <image source="images/Sierpinski_Level1.png">
+              </image>
+            </figure>
+          </sidebyside>
+ 
+          <sidebyside widths="40% 40%">
+            <figure xml:id="Fig_Sierpinski_Level2">
+               <caption>After Two Iterations</caption>
+              <image source="images/Sierpinski_Level2.png">
+              </image>
+            </figure>
+            <figure xml:id="Fig_Sierpinski_Level3">
+                  <caption>After Three Iterations</caption>
+                   <image source="images/Sierpinski_Level3.png">
+              </image>
+            </figure>
+          </sidebyside>
+
+ <figure xml:id="Fig_Sierpinski_Level8">
+               <caption>Sierpinski Triangle after 8 iterations.</caption>
+              <image source="images/Sierpinski_Level8.png" width="50%">
+              </image>
+            </figure>
+           
+    <p>
+      The Sierpiński triangle arises from three specific affine maps:
+      <md>
+        <mrow>  T_1(x) \amp = \tfrac{1}{2} x, </mrow>
+        <mrow>  T_2(x) \amp= \tfrac{1}{2} x + (1/2, 0), </mrow>
+        <mrow>  T_3(x) \amp= \tfrac{1}{2} x + (1/4, \tfrac{\sqrt{3}}{4})</mrow>
+      </md>
+    </p>
+    <p>
+      Each of these maps scales the plane by a factor of <m>1/2</m> and then translates:
+      <ul>
+        <li><m>T_1</m> shrinks towards the origin.</li>
+        <li><m>T_2</m> shrinks and shifts right to cover the bottom-right subtriangle.</li>
+        <li><m>T_3</m> shrinks and shifts upward to cover the top subtriangle.</li>
+      </ul>
+    </p>
+
+    <p>
+      If <m>S</m> denotes the Sierpiński triangle, then it satisfies the fundamental
+      iterated function system equation:
+      <me>
+        S = T_1(S) \cup T_2(S) \cup T_3(S).
+      </me>
+    </p>
+<p>
+  Now let us see how we can make the Sierspinki triangle in Sage.
+</p>
+<sage>
+  <input>
+## Sierpinki Triangle as affine map
+# Define affine maps
+A  = matrix([[1/2, 0], [0, 1/2]])
+b1 = vector([0, 0])
+b2 = vector([1/2, 0])
+b3 = vector([1/4, sqrt(3)/4])
+
+def apply_affine_to_triangle(A, b, tri):
+    return [(A*p + b) for p in tri]
+
+def subdivide(triangles):
+    """Apply the 3 affine maps to a list of triangles"""
+    out = []
+    for T in triangles:
+        out.append(apply_affine_to_triangle(A, b1, T))
+        out.append(apply_affine_to_triangle(A, b2, T))
+        out.append(apply_affine_to_triangle(A, b3, T))
+    return out
+
+def sierpinski(triangle, layers):
+    """Generate triangles after given number of layers"""
+    tris = [triangle]
+    for _ in range(layers):
+        tris = subdivide(tris)
+    return tris
+
+# Initial triangle
+T0 = [vector([0,0]), 
+      vector([1,0]), 
+      vector([1/2, sqrt(3)/2])]
+
+# Example: 4 layers
+layers = 4
+T_final = sierpinski(T0, layers)
+
+# Draw all triangles
+G = Graphics()
+for tri in T_final:
+    G += polygon(tri, axes=False, color="blue")
+show(G, figsize=4)
+  </input>
+  <output>
+    
+  </output>
+</sage>
+    </statement>  
+  
+</example>
+
+
+<example xml:id="Sierpinski_Carpet_Affile">
+    <title>Sierpinski Carpet</title>
+    <statement>
+  <p>
+    The <term>Sierpinski carpet</term> is the planar fractal obtained by repeatedly
+        removing the open central square from a subdivided unit square. Equivalently,
+        it is the unique nonempty set <m>C</m> satisfying an iterated-function
+        system (IFS) of eight contractive affine maps.
+  </p>
+  <sage>
+    <input>
+# 8 affine transformations for the carpet (scale by 1/3 and shift)
+A = matrix([[1/3, 0], [0, 1/3]])
+translations = [
+    vector([0,0]), vector([1/3,0]), vector([2/3,0]),
+    vector([0,1/3]),                 vector([2/3,1/3]),
+    vector([0,2/3]), vector([1/3,2/3]), vector([2/3,2/3])
+]
+
+def apply_affine_to_square(A, b, sq):
+    """Apply affine transformation to a square"""
+    return [(A*p + b) for p in sq]
+
+def subdivide_squares(squares):
+    """Replace each square by 8 smaller squares"""
+    out = []
+    for S in squares:
+        for b in translations:
+            out.append(apply_affine_to_square(A, b, S))
+    return out
+
+def sierpinski_carpet(square, layers):
+    """Generate Sierpinski carpet squares after given layers"""
+    sqs = [square]
+    for _ in range(layers):
+        sqs = subdivide_squares(sqs)
+    return sqs
+
+# Initial square
+S0 = [vector([0,0]), 
+      vector([1,0]), 
+      vector([1,1]), 
+      vector([0,1])]
+
+# Example: 3 layers
+layers = 3
+S_final = sierpinski_carpet(S0, layers)
+
+# Draw
+G = Graphics()
+for sq in S_final:
+    G += polygon(sq, axes=False, color="blue")
+show(G, figsize=4)
+
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+  </statement>
+</example>
+
+
+<example xml:id="Sierpinski_Pyramid_Affile">
+    <title>Sierpinski Pyramid</title>
+    <statement>
+  <p>
+    The <term>Sierpinski pyramid</term> (also called the <term>Sierpinski tetra-pyramid</term> when based on a triangle, or 
+    <term>Sierpiński square pyramid</term> when based on a square) is a three-dimensional fractal obtained by repeatedly 
+    subdividing a pyramid into smaller self-similar pyramids. It provides a natural extension of the ideas behind the 
+    Sierpiński triangle and Sierpiński carpet to three dimensions. 
+  </p>
+
+  <p>
+    The construction can be described as an application of affine linear maps. 
+    Starting from an initial pyramid <m>P_0</m>, we apply scaling by a factor of <m>\tfrac{1}{2}</m> 
+    followed by translations to position the smaller pyramids. In the square-based case, 
+    four pyramids are placed at the corners of the base, and one is placed on the top near the apex. 
+    This gives a total of five affine maps:
+    <me>
+      P = T_1(P) \cup T_2(P) \cup T_3(P) \cup T_4(P) \cup T_5(P),
+    </me>
+    where each <m>T_j</m> is of the form <m>T_j(x) = A x + b_j</m>, 
+    with <m>A</m> being the scaling matrix and <m>b_j</m> the translation vector.
+  </p>
+
+  
+  <sage>
+    <input>
+# Define base pyramid vertices
+base = [(0,0,0), (1,0,0), (1,1,0), (0,1,0)]
+apex = (0.5, 0.5, 1)
+
+# Initial pyramid
+P0 = base + [apex]
+
+# Function to create a pyramid polygon3d
+def pyramid(points, color='lightblue', opacity=0.8):
+    base = points[:-1]
+    apex = points[-1]
+    faces = []
+    # base face
+    faces.append(base)
+    # side faces
+    for i in range(len(base)):
+        faces.append([base[i], base[(i+1)%len(base)], apex])
+    return sum([polygon3d(f, color=color, opacity=opacity) for f in faces])
+
+# Apply affine transformation to pyramid
+def apply_affine_to_pyramid(A, b, pyramid_vertices):
+    return [(A*vector(p) + b) for p in pyramid_vertices]
+
+# Subdivide pyramid into 5 smaller pyramids (4 base corners + top)
+def subdivide_pyramid(pyramid_vertices):
+    A = matrix([[1/2,0,0],[0,1/2,0],[0,0,1/2]])
+    out = []
+    # 4 base shifts
+    shifts = [vector([0,0,0]), vector([0.5,0,0]), vector([0,0.5,0]), vector([0.5,0.5,0])]
+    for s in shifts:
+        out.append(apply_affine_to_pyramid(A, s, pyramid_vertices))
+    # top shift
+    out.append(apply_affine_to_pyramid(A, vector([0.25,0.25,0.5]), pyramid_vertices))
+    return out
+
+# Generate Sierpinski Pyramid of given depth
+def sierpinski_pyramid(depth=2):
+    pyramids = [P0]
+    for _ in range(depth):
+        new_pyramids = []
+        for P in pyramids:
+            new_pyramids.extend(subdivide_pyramid(P))
+        pyramids = new_pyramids
+    G = sum([pyramid(P, color='lightblue', opacity=0.6) for P in pyramids])
+    return G
+
+# Example: depth = 4
+show(sierpinski_pyramid(4), viewer='threejs', frame=False)
+
+    </input>
+    <output>
+      
+    </output>
+  </sage>
+</statement>
+
+</example>
+  
+</subsection>
     <subsection xml:id="subsec-6-3-quadratic-form">
     <title>Quadratic Forms and Conic Sections</title>
       <p>
@@ -1149,29 +1711,5 @@ par_cyl.show(frame=False,axes=True)
 </subsection>
   
 </section>
-<!-- 
- We prove this result using induction on <m>n</m>.  Let <m>A=[\alpha]</m>. Then  <m>\{1\}</m> 
-  is an orthonormal basis of <m>\R</m> and it is also an eigenvector.
 
-<p>
-  Assume that the result is true for <m>n-1</m>. That is if <m>A</m> is  an <m>(n-1)\times (n-1)</m> 
-  real symmetric matrix then it has an orthonormal set of eigenbasis.
-</p>
-<p>
-  Let us prove the result for <m>n</m>. Let <m>A</m> be an <m>n\times n</m> real symmetric matrix.  
-  By the fundamental theorem of algebra,  we know that every real polynomial of has a root in 
-  <m>\C</m>. Hence the characteristic polynomila of <m>A</m> has a complex characteristics root. By 
-  <xref ref="thm-hermitain-eigenvalues"/>, all eigenvalues of <m>A</m> are real. Thus <m>A</m> has 
-  a real eigenvalue, say, <m>\lambda</m>. Let <m>u</m> be a unit  eigenvector corresponding to 
-  the eigenvalue <m>\lambda</m> and <m>W=\R u</m>. Then <m>W</m> is a one dimensional subspace of 
-  <m>\R^n</m>. Hence <m>W^\perp</m> an <m>(n-1)</m>-dimensional subspace of <m>\R^n</m>. 
-  Also <m>W</m> is <m>A-</m>invariannt. Hence by <xref ref="exer-6-3-12"/>, <m>W^\perp</m> is 
-  <m>A</m>-invariant.   Also <m>\R^n=W\oplus W^\perp</m>.
-</p>
-<p>
-  Define <m>B=A_{\mid_W^\perp}}</m>, the restriction of <m>A</m> onto <m>W^\perp</m>. 
-  Let <m>\{v_1,\ldots,v_{n-1}\}</m> be an orthonormal basis of <m>W^\perp</m>. Then 
-  <m>\beta=\{u, v_1,\ldots,v_{n-1}\}</m> is an orthonormal basis of <m>\R^n</m>.  Define 
-  the 
-</p>
--->
+ 
