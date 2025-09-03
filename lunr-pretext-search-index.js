@@ -4183,7 +4183,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.4",
   "title": "Orthogonal Diagonalizations",
-  "body": " Orthogonal Diagonalizations   Recall the concept of diagonalization of a square matrix. We have seen that an matrix is diagonalizable if there is an eigenbasis of . In this section, we shall explore if we can find an eigenbasis which is also an orthonormal. First of all we shall define what is meaning of an orthogonal matrix.     Let be an matrix. Then the following are equivalent:    is non-singular and .    The rows of are orthonormal vectors in .    The columns of are orthonormal vectors in .       Assume that . This implies . Let the columns of are . Then is linearly independent. It is easy to see that the -th entry of is . Hence we have if and 0 otherwise. This proves rows of and orthogonal and hence columns of are orthogonal. The converse is easy.      A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .         The matrix is an orthogonal matrix.     is an orthogonal matrix.         An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.    It is easy to easy to see that if and are orthgogonal matrices then is also orthogonal. (why?)    Two matrices and are called orthogonally similar if there exists an orthogonal matrix such that is a diagonal matrix.    Thus an orthogonally diagonally matrix is ortghogonally similar to a diagonal matrix.  Suppose a matrix is orthogonally diagonalizable. That is , a digonal matrix. This means . Hence Thus if is orthogonally diagonalizable then must be symmetric.    Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.    We have This implies . Since , we have .    The following therem shows that every real symmetric matrix is orthogonally diagonalizable.    Let be an real matrix. Then the following are equivalent.     has an orthonormal set of eigenvectors.     is orthogonally diagonalizable.     is symmetric.         Let be orthogonormal eigenvectors of such that . Then is orthogonal. Hence Hence is orthogonally diagonalizable.     Suppose there exists an orthogonal matrix susch that . Then . Let and be columns of , then is an orthonormal basis of . Also implies . Hence is an orthonormal eigenbasis of .     If is orthogonally diagonalizable with then Hence is symmetric.     We prove this result using induction on . For . Let . Then is an orthonormal basis of and it is also an eigenvector.  Assume that the result is true for . That is if is an real symmetric matrix then it is orthogonally diagonalizable.  Let us prove the result for . Let be an real symmetric matrix. By the fundamental theorem of algebra, we know that every real polynomial of has a root in . Hence the characteristic polynomila of has a complex characteristics root. By , all eigenvalues of are real. Thus has a real eigenvalue, say, . Let be a unit eigenvector corresponding to the eigenvalue and . Then is a one dimensional subspace of . Hence an -dimensional subspace of . Also is invariannt. Hence by , is -invariant. Also .  Let be an extended orthonormnal basis of . Let , the orthogonal matrix whose columns are vectors . The the matrix of with respect to is which is of the form , where is an real symmetric matrix. (why)? Hence by induction, there exists an orthogonal matrix such that , a diagonal matrix. Hence Thus we have This implies Define . The is an orthogonal matrix and     The above theorem is called the spectral throem of real symmetric matrix.   Spectal Theorem of Symmetric Matrix  Spectal Theorem of Symmetric Matrix   A matrix with real entries is orthogonally diagonalizable if and only if it is symmetric.      Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then       For the following matrices find an orthogonal matrix such that is a diagonal matrix.       The following are equivalent for an matrix .      is orthogonal.     for all .     for all .     . This is same as saying maps an orthogonal basis to an orthogonal basis.       Left as an exercise.     Distance Preserving maps in   Suppose is a map, that preserves the distance, that is for all . We would like to study such maps. Let us first look at a spacial case when fixes the origin.    Let be a map such that   f(0)=0     for all .   Then is an orthogonal map.    From (1) and (2) we have for all . Using this we have Exanding both sides, we get for all . That is, preserves the dot product. This implies that maps an orthonormal basis of to an orthonormal basis of . In particulatr, is an orthonormal basis of , where is the standard basis. Hence This shows that is a linear map. (why?)    Now using the abobve , we can identify all distance preserving maps in , which is the content of the next theorem.    Let be such that for all . Then there exists a unique vector and an orthogonal liear map such that . In particular is an affine linear transformation.    Let and . Then it is easy to check that and for all . Hence by , is linear. By , for some orthogonal linear transformation . Hence      Applications of Affine Linear Map  Let us look some applications of affine linear transformation to fractals.   Koch Curve  The Koch curve is a classic fractal that can be described using the language of affine linear transformations .  The construction of the Koch curve begins with a single line segment from to called initiator .  Next we remove the middle third of the line, and replace it with two lines that each have the same length (1\/3 or orgininal) as the remaining lines on each side. This new form is called the generator , because it specifies a rule that is used to generate a new form. Note that length of each seqment is 1\/3. See .    Initiator      Generator      Next we repeat the above steps to each of four segments in the generator. Then we get the cureve as in . Length of each segment in this case is . If we apply the generator once again, we ge the curve as in . Length of each segment in this case is .   After 2 iterations      After 3 iterators       If we keep apply this process, we get what is called the Koch Curve (named after the mathematician Helge von Koch in 1904). After applying the 7 iterators we get the curve as in   Koch Curve with 7 iterations.      Now let us construct the Koch curve as an application of affine linear map. The construction begins with a single line segment from to . At each step, this segment is replaced by four smaller segments:   The first third (straight, scaled by ).  The second third (scaled by and rotated by ).  The third third (scaled by and rotated by ).  The last third (straight, shifted).   Each of these pieces is obtained from the original segment by applying one of four affine linear maps.   Written in real coordinates, these are of the form with  ,  ,  ,  ,  where is the rotation matrix for .  We deomontrate this in Sage.     Sierpiński Triangle   The Sierpinski triangle (named after the Polish mathematician Waclaw Sierpinski), also called the Sierpinski gasket, is a self-similar fractal subset of the plane. It can be obtained by an iterative geometric construction starting from a filled equilateral triangle and applying iterated function system (IFS) consisting of affine maps.  The construction begins with a filled equilateral triangle (stage 0). At each stage we subdivide and remove parts according to the following rules:   Stage 0: Start with a solid equilateral triangle of side length 1. See .  Stage 1: Subdivide the triangle into four smaller equilateral triangles of side length 1\/2 and remove the central one. See .  Stage : For each filled triangle from stage , repeat the same process: divide into four, remove the central one. See and for two and three iterations.   Continuing indefinitely, the limit of this process is the Sierpiński triangle. See after 8 iterations.    Original Triangle      After One Iteration        After Two Iterations      After Three Iterations       Sierpinski Triangle after 8 iterations.     The Sierpiński triangle arises from three specific affine maps:   Each of these maps scales the plane by a factor of and then translates:  shrinks towards the origin.  shrinks and shifts right to cover the bottom-right subtriangle.  shrinks and shifts upward to cover the top subtriangle.    If denotes the Sierpiński triangle, then it satisfies the fundamental iterated function system equation:   Now let us see how we can make the Sierspinki triangle in Sage.      Sierpinski Carpet   The Sierpinski carpet is the planar fractal obtained by repeatedly removing the open central square from a subdivided unit square. Equivalently, it is the unique nonempty set satisfying an iterated-function system (IFS) of eight contractive affine maps.      Sierpinski Pyramid   The Sierpinski pyramid (also called the Sierpinski tetra-pyramid when based on a triangle, or Sierpiński square pyramid when based on a square) is a three-dimensional fractal obtained by repeatedly subdividing a pyramid into smaller self-similar pyramids. It provides a natural extension of the ideas behind the Sierpiński triangle and Sierpiński carpet to three dimensions.  The construction can be described as an application of affine linear maps. Starting from an initial pyramid , we apply scaling by a factor of followed by translations to position the smaller pyramids. In the square-based case, four pyramids are placed at the corners of the base, and one is placed on the top near the apex. This gives a total of five affine maps: where each is of the form , with being the scaling matrix and the translation vector.       Quadratic Forms and Conic Sections  In this subsection, we give an application of orthogonal diagonalizability to conic sections.  A general second-degree equation in two variables is given by where .  This equation can be written compactly in matrix notation as   Here, is the symmetric matrix associated with the quadratic part .  Since is symmetric, it is orthogonally diagonalizable. That is, there exists an orthogonal matrix such that where are eigenvalues of and is the column matrix of orthogonal eigenbasis.  With the change of variables the quadratic form simplifies to Note that here Thus, the cross term is eliminated by using the orthogonal linear trasformation and the conic aligns with its principal axes, that is along the eigenvectors directions.  Now we have various cases. If we assume that and are positive, then we can complete square and we get for some real number . What is ? It is .  The origin of this quadratic in -coordinates is Hence the orgin in terms of -coordinates is Thus we have converted the original quadratic to This is an ellipse. Here, we have The transformation, is called an affine linear transformation. Here is a orthogonl linear map. Thus an affine linear transformation on is a map of the form ,where is an orthogonal transformation and is a called a translation vector. Such maps are also called isometries.   In case, and both are negative then, we can multiply the whole equation by and we get the a similar expression except, the right hand changes its sign.  In case one of the , say , then the conic tranforms to which is a hyperbola.  In case one of the , say , then the conic tranforms to which is parabola. Here and .  Classification of Conics in two variables  Based on the above discussions, the classification of the above conic section depends on the eigenvalues of .     Ellipse: If both eigenvalues have the same sign, then the quadratic is an ellipe of the form .    Circle: When , then the quadratic is circle.    Hyperbola: If eigenvalues have opposite signs, then the quadratic is a hyperbola of the form     Parabola: If one eigenvalue is zero, then it is a parabola.       Condiser the quadratic . Let us convert this quadrtic into a conic section in canonial form.    The associated symmetric matrix of this quadratic is given by It is easy to check the the eigenvalues of are and with the corresponding eigenvectors and . Hence we have The new coordinates in terms of is Now substituting and in the given quadratic, we get After completing the squares, we get This can be written as an equation of ellipes. Note that here the translation vector is given by   Let us explore this in Sage. Here we plot the orginal quadratic curve along with the transformed coordinates.      Consider the quadratic equation . We wish the classify this as a conic section.  Let us first plot the graph of this curve in Sage.   The symmetric matrix associated with quadratic tem is given by . It is easy to check that he eigenvalues are . Since both the eigenvalues are positive, this quadratic is an ellipse. This is what the graph shows.  Now we give all the steps in Sage to plot the curve along with the now coordinate system.     Consider the quadratic eqation given by . Use Sage to classify this and plot the curve along with the transformed coordinates system.      Consider the quadratic equation and classify this to a conic section.    The matrix associated with the quadratic part of the above equation is . It is easy to check that the eigenvalues of are . Since one of the eigenvalues is 0, this curve is a parabola. Let us draw this curve along with the tranformed orgini and the two new coordinate directions in Sage.      For given quadratic equation , write down the corresponding canonical conics by describing the new orgin , and the new coordinate vectors by codisering different cases in a tabular form.     Classification of Quadratic Surfaces in Three Variables   The classification of quadratic equation in three varibale can be done in a very similar manner as we have seen in case of two variable    A general quadratic equation in three variables is where .  In matrix form, Since is symmetric, there exists an orthogonal matrix such that After an orthogonal change of variables and a translation to eliminate linear terms, the quadratic form reduces to the canonical form .   Classification of Quadrics  Depending on the signs of , we obtain the following surfaces:     Ellipsoid: All eigenvalues positive. .      Hyperboloid of One Sheet: Two positive eigenvalues, one negative.       Hyperboloid of Two Sheets: One positive eigenvalue, two negative.       Elliptic Cone: Two positibve and one negative eigenvalues with no constant term.       Elliptic Paraboloid: (Bowl-shaped surface) Two positive eigenvalues, one zero.       Hyperbolic Paraboloid: (Saddle Surface) One positive eigenvalue, one negative, one zero.       Elliptic Cylinder: Two positive eigenvalues, third zero.       Hyperbolic Cylinder: One positive, one negative, third zero.       Parabolic Cylinder: Only one nonzero eigenvalue.       "
+  "body": " Orthogonal Diagonalizations   Recall the concept of diagonalization of a square matrix. We have seen that an matrix is diagonalizable if there is an eigenbasis of . In this section, we shall explore if we can find an eigenbasis which is also an orthonormal. First of all we shall define what is meaning of an orthogonal matrix.     Let be an matrix. Then the following are equivalent:    is non-singular and .    The rows of are orthonormal vectors in .    The columns of are orthonormal vectors in .       Assume that . This implies . Let the columns of are . Then is linearly independent. It is easy to see that the -th entry of is . Hence we have if and 0 otherwise. This proves rows of and orthogonal and hence columns of are orthogonal. The converse is easy.      A square matrix is called an orthogonal matrix if it satisfies any one (and hence all) the conditions of Theorem .         The matrix is an orthogonal matrix.     is an orthogonal matrix.         An matrix is called orthogonally diagonalizable if there exists an orthogonal matrix such that is a diagonal matrix.    It is easy to easy to see that if and are orthgogonal matrices then is also orthogonal. (why?)    Two matrices and are called orthogonally similar if there exists an orthogonal matrix such that is a diagonal matrix.    Thus an orthogonally diagonally matrix is ortghogonally similar to a diagonal matrix.  Suppose a matrix is orthogonally diagonalizable. That is , a digonal matrix. This means . Hence Thus if is orthogonally diagonalizable then must be symmetric.    Let be a symmetric matrix and and are distinct eigenvalues of . If and are eigenvectors corresponding to and respectively. Then and are orthogonal.    We have This implies . Since , we have .    The following therem shows that every real symmetric matrix is orthogonally diagonalizable.    Let be an real matrix. Then the following are equivalent.     has an orthonormal set of eigenvectors.     is orthogonally diagonalizable.     is symmetric.         Let be orthogonormal eigenvectors of such that . Then is orthogonal. Hence Hence is orthogonally diagonalizable.     Suppose there exists an orthogonal matrix susch that . Then . Let and be columns of , then is an orthonormal basis of . Also implies . Hence is an orthonormal eigenbasis of .     If is orthogonally diagonalizable with then Hence is symmetric.     We prove this result using induction on . For . Let . Then is an orthonormal basis of and it is also an eigenvector.  Assume that the result is true for . That is if is an real symmetric matrix then it is orthogonally diagonalizable.  Let us prove the result for . Let be an real symmetric matrix. By the fundamental theorem of algebra, we know that every real polynomial of has a root in . Hence the characteristic polynomila of has a complex characteristics root. By , all eigenvalues of are real. Thus has a real eigenvalue, say, . Let be a unit eigenvector corresponding to the eigenvalue and . Then is a one dimensional subspace of . Hence an -dimensional subspace of . Also is invariannt. Hence by , is -invariant. Also .  Let be an extended orthonormnal basis of . Let , the orthogonal matrix whose columns are vectors . The the matrix of with respect to is which is of the form , where is an real symmetric matrix. (why)? Hence by induction, there exists an orthogonal matrix such that , a diagonal matrix. Hence Thus we have This implies Define . The is an orthogonal matrix and     The above theorem is called the spectral throem of real symmetric matrix.   Spectal Theorem of Symmetric Matrix  Spectal Theorem of Symmetric Matrix   A matrix with real entries is orthogonally diagonalizable if and only if it is symmetric.      Consider a matrix . Clearly is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of is .  Hence are eigenvalues of . Its is easy to find that is an eigenvector corresponding to the eigenvalue 0. are eigenvectors corresponding to eigenvalue 9. Hence . Then       For the following matrices find an orthogonal matrix such that is a diagonal matrix.       The following are equivalent for an matrix .      is orthogonal.     for all .     for all .     . This is same as saying maps an orthogonal basis to an orthogonal basis.       Left as an exercise.     Distance Preserving maps in   Suppose is a map, that preserves the distance, that is for all . We would like to study such maps. Let us first look at a spacial case when fixes the origin.    Let be a map such that   f(0)=0     for all .   Then is an orthogonal map.    From (1) and (2) we have for all . Using this we have Exanding both sides, we get for all . That is, preserves the dot product. This implies that maps an orthonormal basis of to an orthonormal basis of . In particulatr, is an orthonormal basis of , where is the standard basis. Hence This shows that is a linear map. (why?)    Now using the abobve , we can identify all distance preserving maps in , which is the content of the next theorem.    Let be such that for all . Then there exists a unique vector and an orthogonal liear map such that . In particular is an affine linear transformation.    Let and . Then it is easy to check that and for all . Hence by , is linear. By , for some orthogonal linear transformation . Hence      Let be a symmetric positive definite matrix. A square root of is a matrix such that The unique symmetric positive definite square root of is denoted by .    How to find square root of a symmtric positive definte matrix?    If is symmetric and positive definite, then it admits the unique symmetric positive definite square root where is the spectral decomposition of with .   Since is symmetric, it is orthogonally diagonalizable: with , where all . Define . Then Thus is symmetric and positive definite. Uniqueness follows from the strict positivity of eigenvalues.     Applications of Affine Linear Map  Let us look some applications of affine linear transformation to fractals.   Koch Curve  The Koch curve is a classic fractal that can be described using the language of affine linear transformations .  The construction of the Koch curve begins with a single line segment from to called initiator .  Next we remove the middle third of the line, and replace it with two lines that each have the same length (1\/3 or orgininal) as the remaining lines on each side. This new form is called the generator , because it specifies a rule that is used to generate a new form. Note that length of each seqment is 1\/3. See .    Initiator      Generator      Next we repeat the above steps to each of four segments in the generator. Then we get the cureve as in . Length of each segment in this case is . If we apply the generator once again, we ge the curve as in . Length of each segment in this case is .   After 2 iterations      After 3 iterators       If we keep apply this process, we get what is called the Koch Curve (named after the mathematician Helge von Koch in 1904). After applying the 7 iterators we get the curve as in   Koch Curve with 7 iterations.      Now let us construct the Koch curve as an application of affine linear map. The construction begins with a single line segment from to . At each step, this segment is replaced by four smaller segments:   The first third (straight, scaled by ).  The second third (scaled by and rotated by ).  The third third (scaled by and rotated by ).  The last third (straight, shifted).   Each of these pieces is obtained from the original segment by applying one of four affine linear maps.   Written in real coordinates, these are of the form with  ,  ,  ,  ,  where is the rotation matrix for .  We deomontrate this in Sage.     Sierpiński Triangle   The Sierpinski triangle (named after the Polish mathematician Waclaw Sierpinski), also called the Sierpinski gasket, is a self-similar fractal subset of the plane. It can be obtained by an iterative geometric construction starting from a filled equilateral triangle and applying iterated function system (IFS) consisting of affine maps.  The construction begins with a filled equilateral triangle (stage 0). At each stage we subdivide and remove parts according to the following rules:   Stage 0: Start with a solid equilateral triangle of side length 1. See .  Stage 1: Subdivide the triangle into four smaller equilateral triangles of side length 1\/2 and remove the central one. See .  Stage : For each filled triangle from stage , repeat the same process: divide into four, remove the central one. See and for two and three iterations.   Continuing indefinitely, the limit of this process is the Sierpiński triangle. See after 8 iterations.    Original Triangle      After One Iteration        After Two Iterations      After Three Iterations       Sierpinski Triangle after 8 iterations.     The Sierpiński triangle arises from three specific affine maps:   Each of these maps scales the plane by a factor of and then translates:  shrinks towards the origin.  shrinks and shifts right to cover the bottom-right subtriangle.  shrinks and shifts upward to cover the top subtriangle.    If denotes the Sierpiński triangle, then it satisfies the fundamental iterated function system equation:   Now let us see how we can make the Sierspinki triangle in Sage.      Sierpinski Carpet   The Sierpinski carpet is the planar fractal obtained by repeatedly removing the open central square from a subdivided unit square. Equivalently, it is the unique nonempty set satisfying an iterated-function system (IFS) of eight contractive affine maps.      Sierpinski Pyramid   The Sierpinski pyramid (also called the Sierpinski tetra-pyramid when based on a triangle, or Sierpiński square pyramid when based on a square) is a three-dimensional fractal obtained by repeatedly subdividing a pyramid into smaller self-similar pyramids. It provides a natural extension of the ideas behind the Sierpiński triangle and Sierpiński carpet to three dimensions.  The construction can be described as an application of affine linear maps. Starting from an initial pyramid , we apply scaling by a factor of followed by translations to position the smaller pyramids. In the square-based case, four pyramids are placed at the corners of the base, and one is placed on the top near the apex. This gives a total of five affine maps: where each is of the form , with being the scaling matrix and the translation vector.       Quadratic Forms and Conic Sections  In this subsection, we give an application of orthogonal diagonalizability to conic sections.  A general second-degree equation in two variables is given by where .  This equation can be written compactly in matrix notation as   Here, is the symmetric matrix associated with the quadratic part .  Since is symmetric, it is orthogonally diagonalizable. That is, there exists an orthogonal matrix such that where are eigenvalues of and is the column matrix of orthogonal eigenbasis.  With the change of variables the quadratic form simplifies to Note that here Thus, the cross term is eliminated by using the orthogonal linear trasformation and the conic aligns with its principal axes, that is along the eigenvectors directions.  Now we have various cases. If we assume that and are positive, then we can complete square and we get for some real number . What is ? It is .  The origin of this quadratic in -coordinates is Hence the orgin in terms of -coordinates is Thus we have converted the original quadratic to This is an ellipse. Here, we have The transformation, is called an affine linear transformation. Here is a orthogonl linear map. Thus an affine linear transformation on is a map of the form ,where is an orthogonal transformation and is a called a translation vector. Such maps are also called isometries.   In case, and both are negative then, we can multiply the whole equation by and we get the a similar expression except, the right hand changes its sign.  In case one of the , say , then the conic tranforms to which is a hyperbola.  In case one of the , say , then the conic tranforms to which is parabola. Here and .  Classification of Conics in two variables  Based on the above discussions, the classification of the above conic section depends on the eigenvalues of .     Ellipse: If both eigenvalues have the same sign, then the quadratic is an ellipe of the form .    Circle: When , then the quadratic is circle.    Hyperbola: If eigenvalues have opposite signs, then the quadratic is a hyperbola of the form     Parabola: If one eigenvalue is zero, then it is a parabola.       Condiser the quadratic . Let us convert this quadrtic into a conic section in canonial form.    The associated symmetric matrix of this quadratic is given by It is easy to check the the eigenvalues of are and with the corresponding eigenvectors and . Hence we have The new coordinates in terms of is Now substituting and in the given quadratic, we get After completing the squares, we get This can be written as an equation of ellipes. Note that here the translation vector is given by   Let us explore this in Sage. Here we plot the orginal quadratic curve along with the transformed coordinates.      Consider the quadratic equation . We wish the classify this as a conic section.  Let us first plot the graph of this curve in Sage.   The symmetric matrix associated with quadratic tem is given by . It is easy to check that he eigenvalues are . Since both the eigenvalues are positive, this quadratic is an ellipse. This is what the graph shows.  Now we give all the steps in Sage to plot the curve along with the now coordinate system.     Consider the quadratic eqation given by . Use Sage to classify this and plot the curve along with the transformed coordinates system.      Consider the quadratic equation and classify this to a conic section.    The matrix associated with the quadratic part of the above equation is . It is easy to check that the eigenvalues of are . Since one of the eigenvalues is 0, this curve is a parabola. Let us draw this curve along with the tranformed orgini and the two new coordinate directions in Sage.      For given quadratic equation , write down the corresponding canonical conics by describing the new orgin , and the new coordinate vectors by codisering different cases in a tabular form.     Classification of Quadratic Surfaces in Three Variables   The classification of quadratic equation in three varibale can be done in a very similar manner as we have seen in case of two variable    A general quadratic equation in three variables is where .  In matrix form, Since is symmetric, there exists an orthogonal matrix such that After an orthogonal change of variables and a translation to eliminate linear terms, the quadratic form reduces to the canonical form .   Classification of Quadrics  Depending on the signs of , we obtain the following surfaces:     Ellipsoid: All eigenvalues positive. .      Hyperboloid of One Sheet: Two positive eigenvalues, one negative.       Hyperboloid of Two Sheets: One positive eigenvalue, two negative.       Elliptic Cone: Two positibve and one negative eigenvalues with no constant term.       Elliptic Paraboloid: (Bowl-shaped surface) Two positive eigenvalues, one zero.       Hyperbolic Paraboloid: (Saddle Surface) One positive eigenvalue, one negative, one zero.       Elliptic Cylinder: Two positive eigenvalues, third zero.       Hyperbolic Cylinder: One positive, one negative, third zero.       Parabolic Cylinder: Only one nonzero eigenvalue.       "
 },
 {
   "id": "thm-orthogonal-matrix",
@@ -4312,11 +4312,38 @@ var ptx_lunr_docs = [
   "body": "  Let be such that for all . Then there exists a unique vector and an orthogonal liear map such that . In particular is an affine linear transformation.    Let and . Then it is easy to check that and for all . Hence by , is linear. By , for some orthogonal linear transformation . Hence    "
 },
 {
+  "id": "def-square-root",
+  "level": "2",
+  "url": "sec6-3.html#def-square-root",
+  "type": "Definition",
+  "number": "6.4.14",
+  "title": "",
+  "body": " Let be a symmetric positive definite matrix. A square root of is a matrix such that The unique symmetric positive definite square root of is denoted by .  "
+},
+{
+  "id": "sec6-3-25",
+  "level": "2",
+  "url": "sec6-3.html#sec6-3-25",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "How to find square root of a symmtric positive definte matrix? "
+},
+{
+  "id": "prop-spectral-square-root",
+  "level": "2",
+  "url": "sec6-3.html#prop-spectral-square-root",
+  "type": "Proposition",
+  "number": "6.4.15",
+  "title": "",
+  "body": " If is symmetric and positive definite, then it admits the unique symmetric positive definite square root where is the spectral decomposition of with .   Since is symmetric, it is orthogonally diagonalizable: with , where all . Define . Then Thus is symmetric and positive definite. Uniqueness follows from the strict positivity of eigenvalues.   "
+},
+{
   "id": "Koch-Curve",
   "level": "2",
   "url": "sec6-3.html#Koch-Curve",
   "type": "Example",
-  "number": "6.4.14",
+  "number": "6.4.16",
   "title": "Koch Curve.",
   "body": " Koch Curve  The Koch curve is a classic fractal that can be described using the language of affine linear transformations .  The construction of the Koch curve begins with a single line segment from to called initiator .  Next we remove the middle third of the line, and replace it with two lines that each have the same length (1\/3 or orgininal) as the remaining lines on each side. This new form is called the generator , because it specifies a rule that is used to generate a new form. Note that length of each seqment is 1\/3. See .    Initiator      Generator      Next we repeat the above steps to each of four segments in the generator. Then we get the cureve as in . Length of each segment in this case is . If we apply the generator once again, we ge the curve as in . Length of each segment in this case is .   After 2 iterations      After 3 iterators       If we keep apply this process, we get what is called the Koch Curve (named after the mathematician Helge von Koch in 1904). After applying the 7 iterators we get the curve as in   Koch Curve with 7 iterations.      Now let us construct the Koch curve as an application of affine linear map. The construction begins with a single line segment from to . At each step, this segment is replaced by four smaller segments:   The first third (straight, scaled by ).  The second third (scaled by and rotated by ).  The third third (scaled by and rotated by ).  The last third (straight, shifted).   Each of these pieces is obtained from the original segment by applying one of four affine linear maps.   Written in real coordinates, these are of the form with  ,  ,  ,  ,  where is the rotation matrix for .  We deomontrate this in Sage.   "
 },
@@ -4325,7 +4352,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-3.html#Sierpinski_Triangle_Affile",
   "type": "Example",
-  "number": "6.4.20",
+  "number": "6.4.22",
   "title": "Sierpiński Triangle.",
   "body": " Sierpiński Triangle   The Sierpinski triangle (named after the Polish mathematician Waclaw Sierpinski), also called the Sierpinski gasket, is a self-similar fractal subset of the plane. It can be obtained by an iterative geometric construction starting from a filled equilateral triangle and applying iterated function system (IFS) consisting of affine maps.  The construction begins with a filled equilateral triangle (stage 0). At each stage we subdivide and remove parts according to the following rules:   Stage 0: Start with a solid equilateral triangle of side length 1. See .  Stage 1: Subdivide the triangle into four smaller equilateral triangles of side length 1\/2 and remove the central one. See .  Stage : For each filled triangle from stage , repeat the same process: divide into four, remove the central one. See and for two and three iterations.   Continuing indefinitely, the limit of this process is the Sierpiński triangle. See after 8 iterations.    Original Triangle      After One Iteration        After Two Iterations      After Three Iterations       Sierpinski Triangle after 8 iterations.     The Sierpiński triangle arises from three specific affine maps:   Each of these maps scales the plane by a factor of and then translates:  shrinks towards the origin.  shrinks and shifts right to cover the bottom-right subtriangle.  shrinks and shifts upward to cover the top subtriangle.    If denotes the Sierpiński triangle, then it satisfies the fundamental iterated function system equation:   Now let us see how we can make the Sierspinki triangle in Sage.    "
 },
@@ -4334,7 +4361,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-3.html#Sierpinski_Carpet_Affile",
   "type": "Example",
-  "number": "6.4.26",
+  "number": "6.4.28",
   "title": "Sierpinski Carpet.",
   "body": " Sierpinski Carpet   The Sierpinski carpet is the planar fractal obtained by repeatedly removing the open central square from a subdivided unit square. Equivalently, it is the unique nonempty set satisfying an iterated-function system (IFS) of eight contractive affine maps.    "
 },
@@ -4343,7 +4370,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-3.html#Sierpinski_Pyramid_Affile",
   "type": "Example",
-  "number": "6.4.27",
+  "number": "6.4.29",
   "title": "Sierpinski Pyramid.",
   "body": " Sierpinski Pyramid   The Sierpinski pyramid (also called the Sierpinski tetra-pyramid when based on a triangle, or Sierpiński square pyramid when based on a square) is a three-dimensional fractal obtained by repeatedly subdividing a pyramid into smaller self-similar pyramids. It provides a natural extension of the ideas behind the Sierpiński triangle and Sierpiński carpet to three dimensions.  The construction can be described as an application of affine linear maps. Starting from an initial pyramid , we apply scaling by a factor of followed by translations to position the smaller pyramids. In the square-based case, four pyramids are placed at the corners of the base, and one is placed on the top near the apex. This gives a total of five affine maps: where each is of the form , with being the scaling matrix and the translation vector.    "
 },
@@ -4352,7 +4379,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-3.html#eg-conic-ellipe1",
   "type": "Example",
-  "number": "6.4.28",
+  "number": "6.4.30",
   "title": "",
   "body": "  Condiser the quadratic . Let us convert this quadrtic into a conic section in canonial form.    The associated symmetric matrix of this quadratic is given by It is easy to check the the eigenvalues of are and with the corresponding eigenvectors and . Hence we have The new coordinates in terms of is Now substituting and in the given quadratic, we get After completing the squares, we get This can be written as an equation of ellipes. Note that here the translation vector is given by   Let us explore this in Sage. Here we plot the orginal quadratic curve along with the transformed coordinates.    "
 },
@@ -4361,7 +4388,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-3.html#subsec-6-3-quadratic-form-17",
   "type": "Example",
-  "number": "6.4.29",
+  "number": "6.4.31",
   "title": "",
   "body": " Consider the quadratic equation . We wish the classify this as a conic section.  Let us first plot the graph of this curve in Sage.   The symmetric matrix associated with quadratic tem is given by . It is easy to check that he eigenvalues are . Since both the eigenvalues are positive, this quadratic is an ellipse. This is what the graph shows.  Now we give all the steps in Sage to plot the curve along with the now coordinate system.   "
 },
@@ -4370,7 +4397,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-3.html#subsec-6-3-quadratic-form-18",
   "type": "Example",
-  "number": "6.4.30",
+  "number": "6.4.32",
   "title": "",
   "body": " Consider the quadratic eqation given by . Use Sage to classify this and plot the curve along with the transformed coordinates system.   "
 },
@@ -4379,7 +4406,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec6-3.html#subsec-6-3-quadratic-form-19",
   "type": "Example",
-  "number": "6.4.31",
+  "number": "6.4.33",
   "title": "",
   "body": "  Consider the quadratic equation and classify this to a conic section.    The matrix associated with the quadratic part of the above equation is . It is easy to check that the eigenvalues of are . Since one of the eigenvalues is 0, this curve is a parabola. Let us draw this curve along with the tranformed orgini and the two new coordinate directions in Sage.    "
 },
@@ -4471,7 +4498,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.1",
   "title": "Inner Product",
-  "body": " Inner Product  In the last section we dealt with notion of dot product and geometry in . The dot product and related notion can be generalized to an arbitrary vector space over or . All the notions, we have learned in the last section can be generalized over an inner product space.  Note that the dot product of two vectors in is a scalar, in particular, dot product can be thought of as a function from satisfying the following properties:      for all .     if and only if .     for all .     for all .     .     The notion of dot product on can ve generalized on vector space known as inner product. We have the following definition.  Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in satisfying the following properties.      for all and if and only if .     for all . (Symmetry)     for all .     for all and .     If is real vector space with inner product . Then called in inner product space over .    The last two properties make the inner product linear in the second variable. Using the symmetry property, it can also be shown that the inner product is linear in the first variable as well. That is,   Next we look at several examples of inner procuct on various vector spaces that we have defined in .    On , the standard dot product is an inner product. Thus define   This is also called the Euclidean inner product on .      Let , the set of all matrices over . Define   It is easy to show that this is an inner product on .  Note that this inner product can be thought of as the standard dot product on . The elements of the matrix can be thought of as a vector in . Then . Work with matrices and then try to prove this for matrices.        Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on .        Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)          Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .      mean that has roots, which is not possible unless by the fundamental theorem of algebra.         Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .      Let be an inner product space. Then for any two vectors , show that 1.   2.      The proof follows by looking at and and using the properties of inner product.      If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.    Proof follows from .     Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.     Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.    Let us play with the Cauchy-Schwarz inequality . Suppose and are non zero vectors in , Then   Hence we have .  Thus for any two non zero vectors, and , always lies between and 1. This allows us to define the angle between two non zero vectors. We assign this number to with called the angle between and . Thus, if is the angle between and , then we have   All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.   Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:     for all , and if and only if .    for all and , .    for all , .         Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.    The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them.    Let be a real inner product space. Define (i) orthogonality of two vectors and in , (ii) orthogonal complement of a subset of , (iii) Orthogonal projection of a vector onto a non-zero vector , (iv) orthogonal set and orthonormal sets in and (v) Gram-Schmidt orthogonalization process.      Let be two vectors in an inner product space . Then show that  (i) and are orthogonal if and only if . (what does it mean geometrically?)  (ii) and are orthogonal if and only if .      Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.     Pythagoras Theorem   Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.      Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .      Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .     Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials          Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.           Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.         Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .     Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .     Find the orthogonal projection of vector onto the subspace spanned by three vectors .      Notion of orthogonal projection and reflection in an inner product space.   Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, and reflection can be naturally extended to an inner product space . Explore how these notions generalize in such spaces, and implement solutions to related problems using Sage.   "
+  "body": " Inner Product  In the last chapter, we dealt with notion of dot product and geometry in . The dot product and related notion can be generalized to an arbitrary vector space over or . All the notions, we have learned in the last section can be generalized over an inner product space.  Note that the dot product of two vectors in is a scalar, in particular, dot product can be thought of as a function from satisfying the following properties:      for all .     if and only if .     for all .     for all .     .     The notion of dot product on can ve generalized on vector space known as inner product. We have the following definition.  Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in (that is, a function ) satisfying the following properties.      for all and if and only if .     for all . (Symmetry)     for all .     for all and .     If is real vector space with inner product . Then called in inner product space over .    The last two properties make the inner product linear in the second variable. Using the symmetry property, it can also be shown that the inner product is linear in the first variable as well. That is,   Next we look at several examples of inner procuct on various vector spaces that we have defined in .    On , the standard dot product is an inner product. Thus define   This is also called the Euclidean inner product on .      Let , the set of all matrices over . Define   It is easy to show that this is an inner product on .  Note that this inner product can be thought of as the standard dot product on . The elements of the matrix can be thought of as a vector in . Then . Work with matrices and then try to prove this for matrices.        Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on . (Where do we need to be positive definie?)    Since is symmetric and positive definite matrix such that . We call as positive definite square root of and is denoted by . which shows this inner product is just the usual dot product after the linear change of variables .      Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)          Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .      mean that has roots, which is not possible unless by the fundamental theorem of algebra.         Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .      Let be an inner product space. Then for any two vectors , show that 1.   2.      The proof follows by looking at and and using the properties of inner product.      If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.    Proof follows from .     Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.     Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.    Let us play with the Cauchy-Schwarz inequality . Suppose and are non zero vectors in , Then   Hence we have .  Thus for any two non zero vectors, and , always lies between and 1. This allows us to define the angle between two non zero vectors. We assign this number to with called the angle between and . Thus, if is the angle between and , then we have   All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.   Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:     for all , and if and only if .    for all and , .    for all , .         Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.    The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them.    Let be a real inner product space. Define (i) orthogonality of two vectors and in , (ii) orthogonal complement of a subset of , (iii) Orthogonal projection of a vector onto a non-zero vector , (iv) orthogonal set and orthonormal sets in and (v) Gram-Schmidt orthogonalization process.      Let be two vectors in an inner product space . Then show that  (i) and are orthogonal if and only if . (what does it mean geometrically?)  (ii) and are orthogonal if and only if .      Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.     Pythagoras Theorem   Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.      Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .      Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .     Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials          Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.           Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.         Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .     Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .     Find the orthogonal projection of vector onto the subspace spanned by three vectors .      Notion of orthogonal projection and reflection in an inner product space.   Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, and reflection can be naturally extended to an inner product space . Explore how these notions generalize in such spaces, and implement solutions to related problems using Sage.   "
 },
 {
   "id": "def-inner-product",
@@ -4480,7 +4507,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.1.1",
   "title": "Inner Product.",
-  "body": "Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in satisfying the following properties.      for all and if and only if .     for all . (Symmetry)     for all .     for all and .     If is real vector space with inner product . Then called in inner product space over .   "
+  "body": "Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in (that is, a function ) satisfying the following properties.      for all and if and only if .     for all . (Symmetry)     for all .     for all and .     If is real vector space with inner product . Then called in inner product space over .   "
 },
 {
   "id": "dot-product-as-IP",
@@ -4507,14 +4534,23 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "7.1.4",
   "title": "",
-  "body": "  Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on .   "
+  "body": "  Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on . (Where do we need to be positive definie?)   "
+},
+{
+  "id": "sec7-1-InnerProduct-14",
+  "level": "2",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-14",
+  "type": "Remark",
+  "number": "7.1.5",
+  "title": "",
+  "body": "Since is symmetric and positive definite matrix such that . We call as positive definite square root of and is denoted by . which shows this inner product is just the usual dot product after the linear change of variables . "
 },
 {
   "id": "inner-product-C01",
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inner-product-C01",
   "type": "Example",
-  "number": "7.1.5",
+  "number": "7.1.6",
   "title": "",
   "body": "  Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)   "
 },
@@ -4523,7 +4559,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inner-product-on-polyspace",
   "type": "Example",
-  "number": "7.1.6",
+  "number": "7.1.7",
   "title": "",
   "body": "  Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .      mean that has roots, which is not possible unless by the fundamental theorem of algebra.    "
 },
@@ -4532,7 +4568,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#definition-norm",
   "type": "Definition",
-  "number": "7.1.7",
+  "number": "7.1.8",
   "title": "",
   "body": "  Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .   "
 },
@@ -4541,7 +4577,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-8",
   "type": "Checkpoint",
-  "number": "7.1.8",
+  "number": "7.1.9",
   "title": "",
   "body": "  Let be an inner product space. Then for any two vectors , show that 1.   2.      The proof follows by looking at and and using the properties of inner product.   "
 },
@@ -4550,7 +4586,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-9",
   "type": "Checkpoint",
-  "number": "7.1.9",
+  "number": "7.1.10",
   "title": "",
   "body": "  If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.    Proof follows from .   "
 },
@@ -4559,7 +4595,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-Cauchy-Schwarz-Inequality",
   "type": "Theorem",
-  "number": "7.1.10",
+  "number": "7.1.11",
   "title": "Cauchy-Schwarz Inequality.",
   "body": " Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.   "
 },
@@ -4568,7 +4604,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-Triangle-Inequality",
   "type": "Theorem",
-  "number": "7.1.11",
+  "number": "7.1.12",
   "title": "Triangle Inequality.",
   "body": " Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.   "
 },
@@ -4577,7 +4613,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-norm-properties",
   "type": "Theorem",
-  "number": "7.1.12",
+  "number": "7.1.13",
   "title": "Properties of Norm.",
   "body": " Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:     for all , and if and only if .    for all and , .    for all , .      "
 },
@@ -4586,16 +4622,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#def-normed-lin-space",
   "type": "Definition",
-  "number": "7.1.13",
+  "number": "7.1.14",
   "title": "",
   "body": "  Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.   "
 },
 {
-  "id": "sec7-1-InnerProduct-35",
+  "id": "sec7-1-InnerProduct-36",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-35",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-36",
   "type": "Note",
-  "number": "7.1.14",
+  "number": "7.1.15",
   "title": "",
   "body": "The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them. "
 },
@@ -4604,7 +4640,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-10",
   "type": "Checkpoint",
-  "number": "7.1.15",
+  "number": "7.1.16",
   "title": "",
   "body": "  Let be a real inner product space. Define (i) orthogonality of two vectors and in , (ii) orthogonal complement of a subset of , (iii) Orthogonal projection of a vector onto a non-zero vector , (iv) orthogonal set and orthonormal sets in and (v) Gram-Schmidt orthogonalization process.   "
 },
@@ -4613,7 +4649,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-11",
   "type": "Checkpoint",
-  "number": "7.1.16",
+  "number": "7.1.17",
   "title": "",
   "body": "  Let be two vectors in an inner product space . Then show that  (i) and are orthogonal if and only if . (what does it mean geometrically?)  (ii) and are orthogonal if and only if .   "
 },
@@ -4622,7 +4658,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-12",
   "type": "Checkpoint",
-  "number": "7.1.17",
+  "number": "7.1.18",
   "title": "",
   "body": "  Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.   "
 },
@@ -4631,7 +4667,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-13",
   "type": "Checkpoint",
-  "number": "7.1.18",
+  "number": "7.1.19",
   "title": "Pythagoras Theorem.",
   "body": " Pythagoras Theorem   Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.   "
 },
@@ -4640,7 +4676,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-14",
   "type": "Checkpoint",
-  "number": "7.1.19",
+  "number": "7.1.20",
   "title": "",
   "body": "  Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .   "
 },
@@ -4649,7 +4685,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-15",
   "type": "Checkpoint",
-  "number": "7.1.20",
+  "number": "7.1.21",
   "title": "",
   "body": "  Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .   "
 },
@@ -4658,7 +4694,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#Legendre-poly",
   "type": "Example",
-  "number": "7.1.21",
+  "number": "7.1.22",
   "title": "Legendre Polynomials.",
   "body": " Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials     "
 },
@@ -4667,18 +4703,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-16",
   "type": "Checkpoint",
-  "number": "7.1.23",
-  "title": "",
-  "body": "  Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.        "
-},
-{
-  "id": "sec7-1-InnerProduct-46",
-  "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-46",
-  "type": "Example",
   "number": "7.1.24",
   "title": "",
-  "body": "  Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.       "
+  "body": "  Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.        "
 },
 {
   "id": "sec7-1-InnerProduct-47",
@@ -4686,15 +4713,24 @@ var ptx_lunr_docs = [
   "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-47",
   "type": "Example",
   "number": "7.1.25",
-  "title": "Lagrange Interpolating Polynomials.",
-  "body": " Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .   "
+  "title": "",
+  "body": "  Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.       "
 },
 {
   "id": "sec7-1-InnerProduct-48",
   "level": "2",
   "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-48",
-  "type": "Definition",
+  "type": "Example",
   "number": "7.1.26",
+  "title": "Lagrange Interpolating Polynomials.",
+  "body": " Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .   "
+},
+{
+  "id": "sec7-1-InnerProduct-49",
+  "level": "2",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-49",
+  "type": "Definition",
+  "number": "7.1.27",
   "title": "Projection onto a subspace.",
   "body": " Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .  "
 },
@@ -4703,14 +4739,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-17",
   "type": "Checkpoint",
-  "number": "7.1.27",
+  "number": "7.1.28",
   "title": "",
   "body": "  Find the orthogonal projection of vector onto the subspace spanned by three vectors .   "
 },
 {
-  "id": "sec7-1-InnerProduct-50",
+  "id": "sec7-1-InnerProduct-51",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-50",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-51",
   "type": "Activity",
   "number": "7.1.1",
   "title": "",
