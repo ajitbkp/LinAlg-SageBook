@@ -5,11 +5,10 @@
 
 
   <p>
-      In the last section we  dealt with notion of dot product and geometry in <m>\R^n</m>.
+      In the last chapter,  we  dealt with notion of dot product and geometry in <m>\R^n</m>.
       The dot product and related notion can be generalized to an arbitrary vector space over 
       <m>\R</m> or <m>\mathbb{C}</m>.
-      All the notions,
-      we have learned in the last section can be generalized over an inner product space.
+      All the notions, we have learned in the last section can be generalized over an inner product space.
     </p>
 
 <p>
@@ -58,7 +57,8 @@ Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
         <p>
           Let <m>V</m> be a vector space over <m>\R</m>.
           An inner product on <m>V</m> is a function that assigns a real number
-          <m>\langle x, y\rangle</m> to every pair <m>x,y</m> of vectors in <m>V</m> satisfying the following properties. 
+          <m>\langle x, y\rangle</m> to every pair <m>x,y</m> of vectors in <m>V</m> 
+          (that is, a function <m>\langle \cdot, \cdot\rangle\colon V \times V \to \R</m>) satisfying the following properties. 
         </p>
 
           <p>
@@ -182,11 +182,24 @@ inpMnR(A,B)
           </me>
         </p>
         <p>
-          Then this is an inner product on <m>\R^n</m>. 
+          Then this is an inner product on <m>\R^n</m>.  
+          (Where do we need <m>A</m> to be positive definie?)
          
         </p>
       </statement>
+
     </example>
+
+  <remark>
+      Since <m>A</m> is symmetric and positive definite matrix <m>B</m>  such that <m>B^2=A</m>. We call 
+      <m>B</m> as positive definite square root of <m>A</m> and is denoted by <m>A^{1/2}</m>.  
+    
+      <me>
+        \langle x,y\rangle = x^T A y = (A^{1/2}x)\cdot(A^{1/2}y),
+      </me>
+      which shows this inner product is just the usual dot product after the linear change of 
+      variables <m>x\mapsto A^{1/2}x</m>.
+    </remark>
 <sage>
   <input>
 def inner_product_PD(M,u,v):

@@ -417,7 +417,7 @@ A=P_1   \left[
         </p>
       </proof>
     </theorem>
-      
+   
     <p>
       <term>Distance Preserving maps in <m>\R^n.</m></term>
     </p>
@@ -498,6 +498,52 @@ A=P_1   \left[
     </p>
   </proof>
 </theorem>
+
+
+   
+    <definition xml:id="def-square-root">
+    <statement>
+      Let <m>A</m> be a symmetric positive definite matrix.  
+      A <em>square root</em> of <m>A</m> is a matrix <m>B</m> such that
+      <me>
+        B^2 = A.
+      </me>
+      The unique <em>symmetric positive definite</em> square root of <m>A</m> 
+      is denoted by <m>A^{1/2}</m>.
+    </statement>
+  </definition>
+
+<p>
+ <term> How to find square root of a symmtric positive definte matrix?</term>
+</p>
+
+<proposition xml:id="prop-spectral-square-root">
+    <statement>
+      If <m>A</m> is symmetric and positive definite, then it admits the unique symmetric positive definite square root
+      <me>
+        A^{1/2} = Q \,\mathrm{diag}(\sqrt{\lambda_1}, \dots, \sqrt{\lambda_n})\, Q^T,
+      </me>
+      where <m>A = Q \,\mathrm{diag}(\lambda_1,\dots,\lambda_n) Q^T</m> is the spectral decomposition of <m>A</m> with <m>\lambda_i &gt; 0</m>.
+    </statement>
+    <proof>
+      <p>
+        Since <m>A</m> is symmetric, it is orthogonally diagonalizable:  
+        <me>
+          A = Q DQ^T,
+        </me>
+        with <m>D= \mathrm{diag}(\lambda_1,\dots,\lambda_n)</m>, where all <m>\lambda_i&gt;0</m>.  
+        Define <m>D^{1/2} = \mathrm{diag}(\sqrt{\lambda_1},\dots,\sqrt{\lambda_n})</m>.  
+        Then
+        <me>
+          (Q D^{1/2} Q^T)^2 = Q D^{1/2} Q^T Q D^{1/2} Q^T 
+          = Q DQ^T = A.
+        </me>
+        Thus <m>A^{1/2} = QD^{1/2}Q^T</m> is symmetric and positive definite.  
+        Uniqueness follows from the strict positivity of eigenvalues.
+      </p>
+    </proof>
+  </proposition>
+
 
 <subsection xml:id="subsec-affine-LT-Application">
   <title>Applications of Affine Linear Map</title>
@@ -1489,7 +1535,7 @@ A = \begin{bmatrix} a \amp d \amp f \\ d \amp b \amp e \\ f \amp e \amp c \end{b
 
 Since <m>A</m> is symmetric, there exists an orthogonal matrix <m>P</m> such that 
 <me>
-P^T A P = \Lambda = \operatorname{diag}(\lambda_1,\lambda_2,\lambda_3).
+P^T A P = D= \operatorname{diag}(\lambda_1,\lambda_2,\lambda_3).
 </me>
 After an orthogonal change of variables <m>\mathbf{x} = P\mathbf{u}</m> and a translation 
 to eliminate linear terms, the quadratic form reduces to the <em>canonical form</em>.
