@@ -99,8 +99,10 @@
 
           <p>
             The above two examples,
-            geometrically explains the essence of PCA. The idea is to project the original high dimensional data to a new coordinate system and choose only first we coordinates axes also called principal components.
-            How many principal component to be taken depends upon how much variation we wish to capture.
+            geometrically explains the essence of PCA. The idea is to project the original high dimensional 
+            data to a new coordinate system and choose only first few coordinates axes also called 
+            principal components. How many principal components to be taken depends upon how much 
+            variation we wish to capture.
           </p>
         
      </subsection>  
@@ -108,8 +110,9 @@
         <subsection>
           <title>Mathematics behind PCA</title>
           <p>
-            Let us assume that we have a data which has <m>d</m> features and there are <m>n</m> of them.
-            This data can be represented by a
+           
+           Let us assume that  we have a dataset with <m>n</m> samples and each sample has <m>d</m> features.
+                       This data can be represented by a
             <m>n\times d</m> matrix, say <m>X</m>.
             Thus
             <me>
@@ -127,11 +130,11 @@
             let us look at what is meaning of projection of data in 2 dimension
             (that is in <m>\R^2</m>)
             on an unit vector.
-            Suppose <m>u=(a,b)</m> is an unit vector ad
+            Suppose <m>u=(a,b)</m> is an unit vector and
             <m>p_1=(x_1,y_1)</m> be a point/vector in <m>\R^2</m>.
             Then
             <me>
-              \proj_u(p_1)=\frac{p_1\cdot u}{\norm{u}^2}u=(x_1a+x_2b)u
+              \proj_u(p_1)=\frac{p_1\cdot u}{\norm{u}^2}u=(x_1a+y_1b)u
             </me>.
           </p>
 
@@ -146,9 +149,9 @@
 
           <p>
             Thus in general the projection of data <m>X</m> which is
-            <m>n\times p</m> matrix onto a unit vector <m>u_1=\begin{bmatrix}u_{11}\amp  u_{12}\amp \cdots \amp  u_{1d} \end{bmatrix} ^T</m> is
+            <m>n\times d</m> matrix onto a unit vector <m>u_1=\begin{bmatrix}u_{11}\amp  u_{12}\amp \cdots \amp  u_{1d} \end{bmatrix} ^T</m> is
             <me>
-              X = \begin{bmatrix}x_{11} \amp  x_{12} \amp  \cdots \amp  x_{1d}\\ x_{21} \amp  x_{22} \amp  \cdots \amp  x_{2d}\\ \vdots \amp  \vdots \amp  \ddots \amp  \vdots\\ x_{n1} \amp  x_{n2} \amp  \cdots \amp  x_{nd} \end{bmatrix} \begin{bmatrix}u_{11}\\ u_{12}\\\vdots \\u_{1d} \end{bmatrix} =Xu_1
+              \begin{bmatrix}x_{11} \amp  x_{12} \amp  \cdots \amp  x_{1d}\\ x_{21} \amp  x_{22} \amp  \cdots \amp  x_{2d}\\ \vdots \amp  \vdots \amp  \ddots \amp  \vdots\\ x_{n1} \amp  x_{n2} \amp  \cdots \amp  x_{nd} \end{bmatrix} \begin{bmatrix}u_{11}\\ u_{12}\\\vdots \\u_{1d} \end{bmatrix} =Xu_1
             </me>.
           </p>
 
@@ -596,7 +599,7 @@ eigenvalues[1]/(sum(eigenvalues))*100
               </p>
               
               <p>
-                 The mean of each feature are <m>\overline{x_1}=8.96, \overline{x_2}=7.081,\overline{x_2}=3.6</m>.
+                 The mean of each feature are <m>\overline{x_1}=8.96, \overline{x_2}=7.081,\overline{x_3}=3.6</m>.
                 We have
                 <me>
                   X= \left(\begin{array}{rrr} 24 \amp  13 \amp  38 \\ 8 \amp  3 \amp  17 \\\vdots \amp  \vdots \amp  \vdots \\ 5 \amp  6 \amp  7 \end{array} \right), X -\overline{X} = \left(\begin{array}{rrr} 15.04 \amp  5.92 \amp  24.4 \\ -0.96 \amp  -4.08 \amp  3.4 \\\vdots \amp  \vdots \amp \vdots\\ -3.96 \amp  -1.08 \amp  -6.6 \end{array} \right)

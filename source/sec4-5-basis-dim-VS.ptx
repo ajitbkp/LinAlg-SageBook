@@ -12,7 +12,7 @@
           <title>Basis of a Vector Space</title>
           
              <p>
-        We can defined basis of a vector space similar to basis of subspaces in <m>\R^n</m>.
+        We can define basis of a vector space similar to basis of subspaces in <m>\R^n</m>.
       </p>
 
       <definition xml:id="def-basis-VS">
@@ -21,7 +21,7 @@
           <p>
             Let <m>V</m> be a vector space over <m>\R</m>.
             A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}\subset V</m> is called a basis of <m>V</m> if every vector
-            <m>v\in \R^n</m> can be expressed uniquely as linear combinations of <m>v_1,v_2,\ldots,v_n</m>.
+            <m>v\in V</m> can be expressed uniquely as linear combinations of <m>v_1,v_2,\ldots,v_n</m>.
           </p>
           <p>
             Thus <m>\beta</m> is basis of <m>V</m> if

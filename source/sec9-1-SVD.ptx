@@ -100,7 +100,7 @@
         </me>
         This implies
         <men xml:id="eq_svd3">
-          U(A^TA)U^T =
+          U^T(AA^T)U =
           \left[\begin{array}{ccc|ccc}
           \sigma_1^2   \amp \cdots     \amp  0        \amp  0      \amp  \cdots \amp  0      \\
           \vdots     \amp  \ddots    \amp \vdots    \amp  \vdots \amp  \ddots \amp  \vdots      \\

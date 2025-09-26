@@ -499,51 +499,168 @@ A=P_1   \left[
   </proof>
 </theorem>
 
+<definition xml:id="def-simultaneous-diagonalizable">
+  <statement>
+    <p>
+      Two <m>n\times n</m> matrices are called simultaneously diagonalizable if 
+      there exist a snon singular matrix <m>P</m> such that <m>P^{-1}AP</m> and <m>P^{-1}BP</m> 
+      are diagonal.
+    </p>
+  </statement>
+</definition>
 
-   
-    <definition xml:id="def-square-root">
-    <statement>
-      Let <m>A</m> be a symmetric positive definite matrix.  
-      A <em>square root</em> of <m>A</m> is a matrix <m>B</m> such that
-      <me>
-        B^2 = A.
-      </me>
-      The unique <em>symmetric positive definite</em> square root of <m>A</m> 
-      is denoted by <m>A^{1/2}</m>.
-    </statement>
-  </definition>
+<exercise>
+  <statement>
+    <p>
+      If <m>A</m> and <m>B</m> are simultaneously diagonalizable, then they commute. 
+    </p>
+  </statement>
+</exercise>
 
 <p>
- <term> How to find square root of a symmtric positive definte matrix?</term>
+  Consider two matrices
+<me>
+        A=\begin{pmatrix}
+          1 \amp 0 \amp 0\\
+          0 \amp 1 \amp 0\\
+          0 \amp 0 \amp 2
+        \end{pmatrix},
+        \qquad
+        B=\begin{pmatrix}
+          1 \amp 1 \amp 0\\
+          0 \amp 1 \amp 0\\
+          0 \amp 0 \amp 2
+        \end{pmatrix}.
+</me>
+It is easy to check that <m>AB=BA</m>. Also <m>A</m> is diagonalizable, however, 
+<m>B</m> is not diagonalizable.  In addition, let us assume that <m>A</m> and <m>B</m> are symmetric 
+matrices and commute. Can we say that they are simultaneosuly diagonalizable?
 </p>
 
-<proposition xml:id="prop-spectral-square-root">
-    <statement>
-      If <m>A</m> is symmetric and positive definite, then it admits the unique symmetric positive definite square root
+<lemma xml:id="lem-def-simultaneous-diagonalizable">
+  <statement>
+    <p>
+      Let <m>A</m> and <m>B</m> be two <m>n\times n</m> symmetric matrices such that 
+      <m>AB=BA</m>. Then <m>A</m> and <m>B</m> are simultaneously diagonalizable.
+    </p>
+  </statement>
+
+  <proof>
+    <p>
+      Since <m>A</m> is symmetric, it is orthogonally diogonalizable. Let <m>Q^TAQ=D</m>, 
+      where <m>D={\rm diag}(\lambda_1,\ldots, \lambda_n)</m> and <m>Q=[v_1,\ldots,v_n</m>. That 
+      is, <m>Av_i=\lambda_i v_i</m> and <m>v_i^Tv_j=\delta_{ij}</m>. 
+    </p>
+  
+    <p> Suppose <m>v</m> is an eigenvector of <m>A</m> and <m>Av=\lambda v</m>. Then 
       <me>
-        A^{1/2} = Q \,\mathrm{diag}(\sqrt{\lambda_1}, \dots, \sqrt{\lambda_n})\, Q^T,
+        B(Av)=B(Av)=\lambda Bv.
       </me>
-      where <m>A = Q \,\mathrm{diag}(\lambda_1,\dots,\lambda_n) Q^T</m> is the spectral decomposition of <m>A</m> with <m>\lambda_i &gt; 0</m>.
+      Hence <m>Bv</m> is also an eigenvector of <m>A</m> with the same eigenvalue. This implies that 
+      the eigenspacce <m>E_\lambda</m> is <m>B</m>-invariant. Also <m>{B_{\mid}}_{E_\lambda}</m>, the 
+     restriction of <m>B</m> on <m>E_\lambda</m> is symmetric and hence <m>{B_{\mid}}_{E_\lambda}</m>
+      has an orthonormal basis of <m>E_\lambda</m>.  Thus we can construct eigenbasis on 
+      each of distinct eigenspace of <m>A</m>. Since different eigenspaces are mutuatlly orthogonal, 
+      by taking the union of all these eigenbases and we get an eigenbasis of <m>\R^n</m> of <m>B</m>. 
+      It is easy to see that this is a common eigenbasis of <m>A</m> and <m>B</m>.
+    </p>
+  </proof>
+</lemma>
+<p>
+  <term>Steps to simultaneosuly diagonalize syymetric commuting matrices</term>
+</p>
+<p>
+  Let <m>A</m> and <m>B</m> be two <m>n\times n</m> symmetric matrices such that 
+      <m>AB=BA</m>.
+</p>
+    <p><step>1.</step> Since <m>A</m> is symmetric, it admits an orthogonal diagonalization:
+      <me>A = Q \Lambda Q^T,</me>
+      where <m>\Lambda</m> is diagonal and the columns of <m>Q</m> form an 
+      orthonormal basis of eigenvectors of <m>A</m>.
+    </p>
+
+    <p><step>2.</step> Consider the eigenvalue multiplicities of <m>A</m>:
+      <ul>
+        <li>If all eigenvalues of <m>A</m> are distinct, then each eigenspace is one-dimensional.
+            Because <m>AB=BA</m>, the eigenspaces of <m>A</m> are invariant under <m>B</m>. 
+            Hence <m>B</m> must already be diagonal in this basis.</li>
+        <li>If some eigenvalues of <m>A</m> are repeated, then the corresponding eigenspace <m>E_\lambda</m> 
+          has dimension greater than one. In this case, <m>B</m> preserves <m>E_\lambda</m> and the 
+          restriction <m>B|_{E_\lambda}</m> is symmetric, so it can be orthogonally diagonalized within 
+          <m>E_\lambda</m>.</li>
+      </ul>
+    </p>
+
+    <p><step>3.</step> Replace, in each repeated eigenspace <m>E_\lambda</m>, the basis vectors of <m>A</m> 
+      by the orthonormal eigenvectors of <m>B|_{E_\lambda}</m>. 
+      This yields a common orthonormal eigenbasis for both <m>A</m> and <m>B</m>.
+    </p>
+
+    <p><step>4.</step> Let <m>P</m> be the orthogonal matrix formed from these common eigenvectors 
+      as columns. Then
+      <me>
+        P^T A P = D_A, \qquad P^T B P = D_B,
+      </me>
+      where <m>D_A</m> and <m>D_B</m> are diagonal matrices. 
+    </p>
+
+    <p>
+      Thus, <m>A</m> and <m>B</m> are simultaneously orthogonally diagonalizable.
+    </p>
+  
+
+<proposition xml:id="prop-spectral-square-root">
+  <title>Existence of square root of symmetric postive definite matrices</title> 
+    <statement>
+      Let  <m>A</m> be a real symmetric and semi-positive definite, there exists a unique real symmetric 
+      semi positive definite matrix <m>B</m> such that <m>B^2=A</m>. The matrix <m>B</m> is called the 
+      square root of <m>A</m> and is denoted by <m>A^{\frac{1}{2}}</m>.
     </statement>
     <proof>
       <p>
-        Since <m>A</m> is symmetric, it is orthogonally diagonalizable:  
+        <term>Existence:</term>
+      </p>
+      <p>
+        Since <m>A</m> is a real symmetric matrix, it is orthogonally diagonalizable. Let
         <me>
-          A = Q DQ^T,
+          A = QDQ^T,
         </me>
-        with <m>D= \mathrm{diag}(\lambda_1,\dots,\lambda_n)</m>, where all <m>\lambda_i&gt;0</m>.  
-        Define <m>D^{1/2} = \mathrm{diag}(\sqrt{\lambda_1},\dots,\sqrt{\lambda_n})</m>.  
-        Then
+        with <m>D= \mathrm{diag}(\lambda_1,\dots,\lambda_n)</m>. Sicne <m>A</m> is semi-positive 
+        definite, all its eigenvalues are positive.  That is,  <m>\lambda_i \geq 0</m> for 
+        all <m>i</m>.   
+        Define <m>C: = \mathrm{diag}(\sqrt{\lambda_1},\dots,\sqrt{\lambda_n})</m>, where we take 
+        non negative square roots of <m>\lambda_i</m>. 
+        Now define
         <me>
-          (Q D^{1/2} Q^T)^2 = Q D^{1/2} Q^T Q D^{1/2} Q^T 
-          = Q DQ^T = A.
+          B: = Q C Q^T.
         </me>
-        Thus <m>A^{1/2} = QD^{1/2}Q^T</m> is symmetric and positive definite.  
-        Uniqueness follows from the strict positivity of eigenvalues.
+        Then 
+        <me>
+          B^2 = (Q C Q^T)(Q C Q^T)=QC^2Q^T=QDQ^T=A.
+        </me>
+        Since <m>C</m> is symmetric and semi-positive definite,  <m>B</m> is symmetric and semi-positve definite. 
+        This proves the existence.
+      </p>
+      <p>
+        <term>Uniqueness:</term>
+      </p>
+      <p>
+      Suppose, there exist a symmetric semi-positive definite matrces <m>B</m> and <m>B_1</m> such that 
+      <m>B^2=A=B_1^2</m>.  
+      <claim xml:id="claim-uniquness-sqrt">
+        <statement>
+          <p>
+            We claim that <m>B_1=B.</m>
+          </p>
+        </statement>
+      </claim> 
       </p>
     </proof>
   </proposition>
-
+<p>
+  The <xref ref="prop-spectral-square-root"/> is way to construct the square root of a real symmetric 
+  positive matrices.
+</p>
 
 <subsection xml:id="subsec-affine-LT-Application">
   <title>Applications of Affine Linear Map</title>
