@@ -8,7 +8,9 @@
       In the last chapter,  we  dealt with notion of dot product and geometry in <m>\R^n</m>.
       The dot product and related notion can be generalized to an arbitrary vector space over 
       <m>\R</m> or <m>\mathbb{C}</m>.
-      All the notions, we have learned in the last section can be generalized over an inner product space.
+      All the notions, we have learned in the last section can be generalized over an inner product space. 
+      In this chapter we, shall introduce inner product on a vector space <m>V</m> over <m>\mathbb{R}</m> and 
+      define extend the results studied in the last chapter on <m>V</m>.
     </p>
 
 <p>
