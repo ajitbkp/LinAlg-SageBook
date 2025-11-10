@@ -4516,7 +4516,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.1",
   "title": "Inner Product",
-  "body": " Inner Product  In the last chapter, we dealt with notion of dot product and geometry in . The dot product and related notion can be generalized to an arbitrary vector space over or . All the notions, we have learned in the last section can be generalized over an inner product space. In this chapter we, shall introduce inner product on a vector space over and define extend the results studied in the last chapter on .  Note that the dot product of two vectors in is a scalar, in particular, dot product can be thought of as a function from satisfying the following properties:      for all .     if and only if .     for all .     for all .     .     The notion of dot product on can ve generalized on vector space known as inner product. We have the following definition.  Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in (that is, a function ) satisfying the following properties.      for all and if and only if .     for all . (Symmetry)     for all .     for all and .     If is real vector space with inner product . Then called in inner product space over .    The last two properties make the inner product linear in the second variable. Using the symmetry property, it can also be shown that the inner product is linear in the first variable as well. That is,   Next we look at several examples of inner procuct on various vector spaces that we have defined in .    On , the standard dot product is an inner product. Thus define   This is also called the Euclidean inner product on .      Let , the set of all matrices over . Define   It is easy to show that this is an inner product on .  Note that this inner product can be thought of as the standard dot product on . The elements of the matrix can be thought of as a vector in . Then . Work with matrices and then try to prove this for matrices.        Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on . (Where do we need to be positive definie?)      Since is symmetric and positive definite matrix, there exists a matrix such that . We call as positive definite square root of and is denoted by .   which shows this inner product is just the usual dot product after the linear change of variables .      Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)          Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .      mean that has roots, which is not possible unless by the fundamental theorem of algebra.         Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .      Let be an inner product space. Then for any two vectors , show that 1.   2.      The proof follows by looking at and and using the properties of inner product.      If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is twice the sum of the squares of the side lengths.    Proof follows from .      Let be three positive real numbers and , be vectors in . Define Show that this is an inner product on . Also what are the unit vectors with respect to this inner product on ?     Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.    If or , then . Also either or . Hence the result follows.  First we consider the case when . Then This gives  Similarly, Thus implies . From these two together we have   We now prove the statement for equality. Let This implies either or If , from the above chain of inequalities we deduce that or If , we see that Thus the equality holds if and only if   Next suppose and are nonzero (not necessarily of unit length). Then we can write and are of unit length. Hence by the previous case, This implies, thus we get   If and are nonzero, then the equality from the earlier case means or . Let us look at one of the case. The other case is similar.   2nd Proof.   Fix and in . If , then the result is obviously true. Without loss of generality assume that . Consider the real-valued function defined as . We shall use calclus and investigate the minimum value of to prove the inequality. Note that this is a differentiabke function of . Differentiating with respect to , we get Setting , we get the critical point at Since , this critical point is a minimum. Thus Substituting for in the expression for , we get This completes the 2nd proof of the Cauchy-Schwarz inequality.     Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.    Let us play with the Cauchy-Schwarz inequality . Suppose and are non zero vectors in , Then   Hence we have .  Thus for any two non zero vectors, and , always lies between and 1. This allows us to define the angle between two non zero vectors. We assign this number to with called the angle between and . Thus, if is the angle between and , then we have   All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.   Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:     for all , and if and only if .    for all and , .    for all , .         Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.      The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them.      Let be a real inner product space. Define   orthogonality of two vectors and in ,    orthogonal complement of a subset of ,    Orthogonal projection of a vector onto a non-zero vector ,    orthogonal set and orthonormal sets in and    Gram-Schmidt orthogonalization process.         Let be two vectors in an inner product space . Then show that    and are orthogonal if and only if . (what does it mean geometrically?)     and are orthogonal if and only if .         Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.     Pythagoras Theorem   Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.      Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .      Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .     Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials          Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.           Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.         Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .     Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .     Find the orthogonal projection of vector onto the subspace spanned by three vectors .      Notion of orthogonal projection and reflection in an inner product space.   Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, and reflection can be naturally extended to an inner product space . Explore how these notions generalize in such spaces, and implement solutions to related problems using Sage.   "
+  "body": " Inner Product  In the last chapter, we dealt with notion of dot product and geometry in . The dot product and related notion can be generalized to an arbitrary vector space over or . All the notions, we have learned in the last section can be generalized over an inner product space. In this chapter we, shall introduce inner product on a vector space over and define extend the results studied in the last chapter on .  Note that the dot product of two vectors in is a scalar, in particular, dot product can be thought of as a function from satisfying the following properties:      for all .     if and only if .     for all .     for all .     .     The notion of dot product on can ve generalized on vector space known as inner product. We have the following definition.  Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in (that is, a function ) satisfying the following properties.      for all and if and only if .     for all . (Symmetry)     for all .     for all and .     If is real vector space with inner product . Then called in inner product space over .    The last two properties make the inner product linear in the second variable. Using the symmetry property, it can also be shown that the inner product is linear in the first variable as well. That is,   Next we look at several examples of inner procuct on various vector spaces that we have defined in .    On , the standard dot product is an inner product. Thus define   This is also called the Euclidean inner product on .      Let , the set of all matrices over . Define   It is easy to show that this is an inner product on .  Note that this inner product can be thought of as the standard dot product on . The elements of the matrix can be thought of as a vector in . Then . Work with matrices and then try to prove this for matrices.        Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on . (Where do we need to be positive definie?)        Since is symmetric and positive definite matrix, there exists a matrix such that . We call as positive definite square root of and is denoted by .  which shows this inner product is just the usual dot product after the linear change of variables .     We have defined an inner product on using a symmetric positive definite matrix . In fact any inner product on can be obtained in this way.  Let be an inner product on . Let be the standard basis of . For with we have, Let us define . Then it is easy to see that where is a symmetric positive definite matrix.(why?)      Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)          Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .      mean that has roots, which is not possible unless by the fundamental theorem of algebra.         Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .      Let be an inner product space. Then for any two vectors , show that 1.   2.      The proof follows by looking at and and using the properties of inner product.      If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is twice the sum of the squares of the side lengths.    Proof follows from .      Let be three positive real numbers and , be vectors in . Define Show that this is an inner product on . Also what are the unit vectors with respect to this inner product on ?     Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.    If or , then . Also either or . Hence the result follows.  First we consider the case when . Then This gives  Similarly, Thus implies . From these two together we have   We now prove the statement for equality. Let This implies either or If , from the above chain of inequalities we deduce that or If , we see that Thus the equality holds if and only if   Next suppose and are nonzero (not necessarily of unit length). Then we can write and are of unit length. Hence by the previous case, This implies, thus we get   If and are nonzero, then the equality from the earlier case means or . Let us look at one of the case. The other case is similar.   2nd Proof.   Fix and in . If , then the result is obviously true. Without loss of generality assume that . Consider the real-valued function defined as . We shall use calclus and investigate the minimum value of to prove the inequality. Note that this is a differentiabke function of . Differentiating with respect to , we get Setting , we get the critical point at Since , this critical point is a minimum. Thus Substituting for in the expression for , we get This completes the 2nd proof of the Cauchy-Schwarz inequality.     Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.    Let us play with the Cauchy-Schwarz inequality . Suppose and are non zero vectors in , Then   Hence we have .  Thus for any two non zero vectors, and , always lies between and 1. This allows us to define the angle between two non zero vectors. We assign this number to with called the angle between and . Thus, if is the angle between and , then we have   All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.   Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:     for all , and if and only if .    for all and , .    for all , .         Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.      The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them.      Let be a real inner product space. Define   orthogonality of two vectors and in ,    orthogonal complement of a subset of ,    Orthogonal projection of a vector onto a non-zero vector ,    orthogonal set and orthonormal sets in and    Gram-Schmidt orthogonalization process.         Let be two vectors in an inner product space . Then show that    and are orthogonal if and only if . (what does it mean geometrically?)     and are orthogonal if and only if .         Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.     Pythagoras Theorem   Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.    Is the converse of the Pythagoras theorem true? Consider and . It is easy to check that that  ar not orthogonal to each other.    Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .    If the statement is trivial (all direction cosines are zero). Assume . Since is an orthogonal basis we can expand uniquely as Taking norms squared and using orthogonality of the gives By definition of the angle between and we have Using the relation substitute into the norm identity to obtain Dividing by (which is positive because ) yields as required.      Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .     Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials          Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.           Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.         Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .     Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .     Find the orthogonal projection of vector onto the subspace spanned by three vectors .      Notion of orthogonal projection and reflection in an inner product space.   Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, and reflection can be naturally extended to an inner product space . Explore how these notions generalize in such spaces, and implement solutions to related problems using Sage.   "
 },
 {
   "id": "def-inner-product",
@@ -4555,20 +4555,29 @@ var ptx_lunr_docs = [
   "body": "  Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on . (Where do we need to be positive definie?)   "
 },
 {
-  "id": "sec7-1-InnerProduct-14",
+  "id": "sec7-1-InnerProduct-16",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-14",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-16",
   "type": "Remark",
   "number": "7.1.5",
   "title": "",
-  "body": "  Since is symmetric and positive definite matrix, there exists a matrix such that . We call as positive definite square root of and is denoted by .   which shows this inner product is just the usual dot product after the linear change of variables . "
+  "body": "  Since is symmetric and positive definite matrix, there exists a matrix such that . We call as positive definite square root of and is denoted by .  which shows this inner product is just the usual dot product after the linear change of variables .  "
+},
+{
+  "id": "sec7-1-InnerProduct-17",
+  "level": "2",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-17",
+  "type": "Remark",
+  "number": "7.1.6",
+  "title": "",
+  "body": "  We have defined an inner product on using a symmetric positive definite matrix . In fact any inner product on can be obtained in this way.  Let be an inner product on . Let be the standard basis of . For with we have, Let us define . Then it is easy to see that where is a symmetric positive definite matrix.(why?)   "
 },
 {
   "id": "inner-product-C01",
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inner-product-C01",
   "type": "Example",
-  "number": "7.1.6",
+  "number": "7.1.7",
   "title": "",
   "body": "  Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)   "
 },
@@ -4577,7 +4586,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inner-product-on-polyspace",
   "type": "Example",
-  "number": "7.1.7",
+  "number": "7.1.8",
   "title": "",
   "body": "  Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space .  Here are nothing special. Instead, we can use any distinct real numbers, .      mean that has roots, which is not possible unless by the fundamental theorem of algebra.    "
 },
@@ -4586,7 +4595,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#definition-norm",
   "type": "Definition",
-  "number": "7.1.8",
+  "number": "7.1.9",
   "title": "",
   "body": "  Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .   "
 },
@@ -4595,7 +4604,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-8",
   "type": "Checkpoint",
-  "number": "7.1.9",
+  "number": "7.1.10",
   "title": "",
   "body": "  Let be an inner product space. Then for any two vectors , show that 1.   2.      The proof follows by looking at and and using the properties of inner product.   "
 },
@@ -4604,16 +4613,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-9",
   "type": "Checkpoint",
-  "number": "7.1.10",
+  "number": "7.1.11",
   "title": "",
   "body": "  If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is twice the sum of the squares of the side lengths.    Proof follows from .   "
 },
 {
-  "id": "sec7-1-InnerProduct-28",
+  "id": "sec7-1-InnerProduct-29",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-28",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-29",
   "type": "Checkpoint",
-  "number": "7.1.11",
+  "number": "7.1.12",
   "title": "",
   "body": "  Let be three positive real numbers and , be vectors in . Define Show that this is an inner product on . Also what are the unit vectors with respect to this inner product on ?   "
 },
@@ -4622,7 +4631,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-Cauchy-Schwarz-Inequality",
   "type": "Theorem",
-  "number": "7.1.12",
+  "number": "7.1.13",
   "title": "Cauchy-Schwarz Inequality.",
   "body": " Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.    If or , then . Also either or . Hence the result follows.  First we consider the case when . Then This gives  Similarly, Thus implies . From these two together we have   We now prove the statement for equality. Let This implies either or If , from the above chain of inequalities we deduce that or If , we see that Thus the equality holds if and only if   Next suppose and are nonzero (not necessarily of unit length). Then we can write and are of unit length. Hence by the previous case, This implies, thus we get   If and are nonzero, then the equality from the earlier case means or . Let us look at one of the case. The other case is similar.   2nd Proof.   Fix and in . If , then the result is obviously true. Without loss of generality assume that . Consider the real-valued function defined as . We shall use calclus and investigate the minimum value of to prove the inequality. Note that this is a differentiabke function of . Differentiating with respect to , we get Setting , we get the critical point at Since , this critical point is a minimum. Thus Substituting for in the expression for , we get This completes the 2nd proof of the Cauchy-Schwarz inequality.   "
 },
@@ -4631,7 +4640,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-Triangle-Inequality",
   "type": "Theorem",
-  "number": "7.1.13",
+  "number": "7.1.14",
   "title": "Triangle Inequality.",
   "body": " Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.   "
 },
@@ -4640,7 +4649,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-norm-properties",
   "type": "Theorem",
-  "number": "7.1.14",
+  "number": "7.1.15",
   "title": "Properties of Norm.",
   "body": " Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:     for all , and if and only if .    for all and , .    for all , .      "
 },
@@ -4649,16 +4658,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#def-normed-lin-space",
   "type": "Definition",
-  "number": "7.1.15",
+  "number": "7.1.16",
   "title": "",
   "body": "  Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.   "
 },
 {
-  "id": "sec7-1-InnerProduct-37",
+  "id": "sec7-1-InnerProduct-38",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-37",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-38",
   "type": "Note",
-  "number": "7.1.16",
+  "number": "7.1.17",
   "title": "",
   "body": "  The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them.   "
 },
@@ -4667,7 +4676,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-10",
   "type": "Checkpoint",
-  "number": "7.1.17",
+  "number": "7.1.18",
   "title": "",
   "body": "  Let be a real inner product space. Define   orthogonality of two vectors and in ,    orthogonal complement of a subset of ,    Orthogonal projection of a vector onto a non-zero vector ,    orthogonal set and orthonormal sets in and    Gram-Schmidt orthogonalization process.      "
 },
@@ -4676,7 +4685,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-11",
   "type": "Checkpoint",
-  "number": "7.1.18",
+  "number": "7.1.19",
   "title": "",
   "body": "  Let be two vectors in an inner product space . Then show that    and are orthogonal if and only if . (what does it mean geometrically?)     and are orthogonal if and only if .      "
 },
@@ -4685,7 +4694,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-12",
   "type": "Checkpoint",
-  "number": "7.1.19",
+  "number": "7.1.20",
   "title": "",
   "body": "  Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.   "
 },
@@ -4694,7 +4703,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-13",
   "type": "Checkpoint",
-  "number": "7.1.20",
+  "number": "7.1.21",
   "title": "Pythagoras Theorem.",
   "body": " Pythagoras Theorem   Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.   "
 },
@@ -4703,16 +4712,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-14",
   "type": "Checkpoint",
-  "number": "7.1.21",
+  "number": "7.1.22",
   "title": "",
-  "body": "  Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .   "
+  "body": "  Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .    If the statement is trivial (all direction cosines are zero). Assume . Since is an orthogonal basis we can expand uniquely as Taking norms squared and using orthogonality of the gives By definition of the angle between and we have Using the relation substitute into the norm identity to obtain Dividing by (which is positive because ) yields as required.   "
 },
 {
   "id": "inp-7-1-15",
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-15",
   "type": "Checkpoint",
-  "number": "7.1.22",
+  "number": "7.1.23",
   "title": "",
   "body": "  Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .   "
 },
@@ -4721,7 +4730,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#Legendre-poly",
   "type": "Example",
-  "number": "7.1.23",
+  "number": "7.1.24",
   "title": "Legendre Polynomials.",
   "body": " Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials     "
 },
@@ -4730,34 +4739,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-16",
   "type": "Checkpoint",
-  "number": "7.1.25",
-  "title": "",
-  "body": "  Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.        "
-},
-{
-  "id": "sec7-1-InnerProduct-48",
-  "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-48",
-  "type": "Example",
   "number": "7.1.26",
   "title": "",
-  "body": "  Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.       "
-},
-{
-  "id": "sec7-1-InnerProduct-49",
-  "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-49",
-  "type": "Example",
-  "number": "7.1.27",
-  "title": "Lagrange Interpolating Polynomials.",
-  "body": " Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .   "
+  "body": "  Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.        "
 },
 {
   "id": "sec7-1-InnerProduct-50",
   "level": "2",
   "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-50",
-  "type": "Definition",
+  "type": "Example",
+  "number": "7.1.27",
+  "title": "",
+  "body": "  Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.       "
+},
+{
+  "id": "sec7-1-InnerProduct-51",
+  "level": "2",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-51",
+  "type": "Example",
   "number": "7.1.28",
+  "title": "Lagrange Interpolating Polynomials.",
+  "body": " Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .   "
+},
+{
+  "id": "sec7-1-InnerProduct-52",
+  "level": "2",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-52",
+  "type": "Definition",
+  "number": "7.1.29",
   "title": "Projection onto a subspace.",
   "body": " Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .  "
 },
@@ -4766,14 +4775,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-17",
   "type": "Checkpoint",
-  "number": "7.1.29",
+  "number": "7.1.30",
   "title": "",
   "body": "  Find the orthogonal projection of vector onto the subspace spanned by three vectors .   "
 },
 {
-  "id": "sec7-1-InnerProduct-52",
+  "id": "sec7-1-InnerProduct-54",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-52",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-54",
   "type": "Activity",
   "number": "7.1.1",
   "title": "",
@@ -4786,7 +4795,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.2",
   "title": "Exercise Set",
-  "body": " Exercise Set   Problem set on orthogonality and inner Product      Let be an orthogonal set of vectors in . Let and define , Then (i) for all (ii) If , then and is an orthogonal set.    If is orthogonal set then it is linearly independent.    Find the coordinates of the vector with respect to an orthonormal basis of .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say, of starting with a basis . Define , the column matrix whose columns are . Show that .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say, of the subspace with basis . Define , the column matrix whose columns are . Show that . Suppose . Find and check that it is an upper triangular matrix with positive diagonal matrix. If we write , then called the -factorization of .    The following are equivalent for an matrix . (i) is orthogonal (ii) for all . (iii) for all . (iv) . {Hint: A matrix is orthogonal if if it satisfies any one of the above conditions.}    For the following matrices find an orthogonal matrix such that is a diagonal matrix.     Find the QR-factorization of the following matrices:     Let be an inner product space. Then for any two vectors , show that     If are two vectors in an inner product space with inner product . Then show that . This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonal is 2 the sum of the squares of the side lengths.    Let be a real inner product space. Let be orthogonal vectors in . Then show that . This is an extension of the Pythagoras Theorem.    Let be an orthogonal basis of an inner product space . Let and between and , respectively. Then . Here are called the direction cosines of corresponding to .    Find the orthogonal projection of vector onto the subspace spanned by three vectors .    Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process. (Hint: replace dot product in the Gram-SChmidt process by the inner product.)    Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.    (i) Define where . Show that is an inner product on . Hence show that (ii) Show that is an orthogonal basis of with respect to this inner product. (iii) Consider a basis of . Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of with respect to the inner product defined in (i).     "
+  "body": " Exercise Set   Problem set on orthogonality and inner Product      Let be an orthogonal set of vectors in . Let and define , Then (i) for all (ii) If , then and is an orthogonal set.    If is orthogonal set then it is linearly independent.    Find the coordinates of the vector with respect to an orthonormal basis of .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say, of starting with a basis . Define , the column matrix whose columns are . Show that .    Use the Gram-Schmidt orthogonalization process to find an orthonormal basis, say, of the subspace with basis . Define , the column matrix whose columns are . Show that . Suppose . Find and check that it is an upper triangular matrix with positive diagonal matrix. If we write , then called the -factorization of .    The following are equivalent for an matrix . (i) is orthogonal (ii) for all . (iii) for all . (iv) . {Hint: A matrix is orthogonal if if it satisfies any one of the above conditions.}    For the following matrices find an orthogonal matrix such that is a diagonal matrix.     Find the QR-factorization of the following matrices:     Let be an inner product space. Then for any two vectors , show that     If are two vectors in an inner product space with inner product . Then show that . This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonal is 2 the sum of the squares of the side lengths.    Let be a real inner product space. Let be orthogonal vectors in . Then show that . This is an extension of the Pythagoras Theorem.    Let be an orthogonal basis of an inner product space . Let and between and , respectively. Then . Here are called the direction cosines of corresponding to .    Find the orthogonal projection of vector onto the subspace spanned by three vectors .    Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process. (Hint: replace dot product in the Gram-SChmidt process by the inner product.)    Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.    (i) Define where . Show that is an inner product on . Hence show that (ii) Show that is an orthogonal basis of with respect to this inner product.  (ii) Consider a basis of . Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of with respect to the inner product defined in (i).     "
 },
 {
   "id": "sec8-1-LSTSQ",
