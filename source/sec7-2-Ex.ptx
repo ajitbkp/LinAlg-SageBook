@@ -155,7 +155,9 @@
       Show that <m>\inner{.}{.}</m> is an inner product on <m>\R^4</m>.
       Hence show that (ii) Show that
       <me>\left\{\begin{bmatrix}2 \\-1\\0 \end{bmatrix} , \begin{bmatrix}0 \\1\\1 \end{bmatrix} , \begin{bmatrix}0 \\-1\\2 \end{bmatrix} \right\}</me> 
-      is an orthogonal basis of <m>\R^3</m> with respect to this inner product. (iii) Consider a basis <m>\beta=\{(1,1,1),(-1,1,1),(-1,0,1)\}</m> of <m>R^3</m>.
+      is an orthogonal basis of <m>\R^3</m> with respect to this inner product. 
+    </p>
+      <p>(ii) Consider a basis <m>\beta=\{(1,1,1),(-1,1,1),(-1,0,1)\}</m> of <m>R^3</m>.
       Use the Gram-Schmidt orthogonalization process to find an orthonormal basis of <m>\R^3</m> with respect to the inner product defined in (i).
     </p>
   </li>

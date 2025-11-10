@@ -174,6 +174,7 @@ inpMnR(A,B)
     
   </output>
 </sage>
+
     <example xml:id="inner-product-by-matrix">
       <statement>
         <p>
@@ -192,21 +193,7 @@ inpMnR(A,B)
 
     </example>
 
-  <remark>
-     <statement>
-      <p>
-         Since <m>A</m> is symmetric and positive definite matrix, there exists a matrix <m>B</m>  
-      such that <m>B^2=A</m>. We call 
-    <m>B</m> as positive definite square root of <m>A</m> and is denoted by <m>A^{1/2}</m>.  
-    
-      </p>
-     </statement>
-      <me>
-        \langle x,y\rangle = x^T A y = (A^{1/2}x)\cdot(A^{1/2}y),
-      </me>
-      which shows this inner product is just the usual dot product after the linear change of 
-      variables <m>x\mapsto A^{1/2}x</m>.
-    </remark>
+  
 <sage>
   <input>
 def inner_product_PD(M,u,v):
@@ -241,6 +228,53 @@ inner_product_PD(A,e1,e2)
     
   </output>
 </sage>
+
+<remark>
+     <statement>
+      <p>
+         Since <m>A</m> is symmetric and positive definite matrix, there exists a matrix <m>B</m>  
+      such that <m>B^2=A</m>. We call 
+    <m>B</m> as positive definite square root of <m>A</m> and is denoted by <m>A^{1/2}</m>.  
+      </p>
+      <me>
+        \langle x,y\rangle = x^T A y = (A^{1/2}x)\cdot(A^{1/2}y),
+      </me>
+      which shows this inner product is just the usual dot product after the linear change of 
+      variables <m>x\mapsto A^{1/2}x</m>.
+           </statement>
+
+
+    </remark>
+
+    <remark>
+      <statement>
+        <p>
+          We have defined an inner product on <m>\R^n</m> using 
+           a symmetric positive definite matrix <m>A</m>. In 
+           fact any inner product on <m>\R^n</m> can be obtained in this way.
+        </p>
+
+        <p>
+          Let <m>\innprod{x}{y}</m> be an inner product on  <m>\R^n</m>. 
+          Let <m>e_1, e_2, \ldots, e_n</m> be the standard basis of <m>\R^n</m>. 
+          For <m>x,y\in \R^n</m> with 
+          <me>x=\sum x_i e_i, \quad y= \sum y_j e_j.</me>
+          we have,  
+          <me>
+            \innprod{x}{y}=\sum_{i}\sum_j x_i\innprod{e_i}{e_j}y_j.
+          </me>
+          Let us define <m>a_{ij}=\innprod{e_i}{e_j}y_j</m>. Then it is easy to see that
+          <me>
+            \innprod{x}{y}=\begin{bmatrix} x_1 \amp x_2 \amp \cdots \amp x_n \end{bmatrix}
+            A \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}=x^TAy,
+          </me>
+          where <m>A=[a_{ij}]</m> is a symmetric positive definite matrix.(why?)
+        </p>
+   
+
+      </statement>
+    </remark>
+
 <example xml:id="inner-product-C01">
       <statement>
         <p>
@@ -748,6 +782,14 @@ inner product.  We encourage  readers to define each one of them.
       </statement>
     </exercise>
 
+  <p>
+    Is the converse of the Pythagoras theorem true?
+    Consider <m>u=v=(1,1)</m> and <m>w=(0,-1)</m>. It is easy to check that that 
+    <me>
+     \norm{u+v+w}^2=\norm{u}^2+\norm{v}^2+\norm{w}^2,
+    </me>
+    <m>u,v, w</m> ar not orthogonal to each other.
+  </p>
     <exercise xml:id="inp-7-1-14">
       <statement>
         <p>
@@ -763,6 +805,40 @@ inner product.  We encourage  readers to define each one of them.
           Here <m>\cos\theta_i</m> are called the direction cosines of <m>v</m> corresponding to <m>\beta</m>.
         </p>
       </statement>
+ <hint>
+        <p>
+      If <m>v=0</m> the statement is trivial (all direction cosines are zero). Assume
+    <m>v\neq 0</m>. Since <m>\beta</m> is an orthogonal basis we can expand <m>v</m> uniquely as
+  <me>
+  v = \sum_{i=1}^{n} \frac{\innprod{v}{u_{i}}}{\innprod{u_{i}}{u_{i}}}\, u_{i}.
+  </me>
+    Taking norms squared and using orthogonality of the <m>u_{i}</m> gives
+  <me>
+      \norm{v}^{2}
+      = \sum_{i=1}^{n} \frac{\lvert\innprod{v}{u_{i}}\rvert^{2}}{\innprod{u_{i}}{u_{i}}}.
+   </me>
+    By definition of the angle <m>\theta_{i}</m> between <m>v</m> and <m>u_{i}</m> we have
+  <me>
+  \cos\theta_{i} = \dfrac{\innprod{v}{u_{i}}}{\norm{v}\,\norm{u_{i}}}.
+  </me>
+    Using the relation
+  <me>
+\dfrac{\lvert\innprod{v}{u_{i}}\rvert^{2}}{\innprod{u_{i}}{u_{i}}}
+       = \norm{v}^{2}\,\dfrac{\lvert\innprod{v}{u_{i}}\rvert^{2}}{\norm{v}^{2}\,\norm{u_{i}}^{2}}
+       = \norm{v}^{2}\,\cos^{2}\theta_{i},
+  </me>
+    substitute into the norm identity to obtain 
+     <me>
+    \norm{v}^{2} = \sum_{i=1}^{n} \norm{v}^{2}\,\cos^{2}\theta_{i} = \norm{v}^{2}
+      \sum_{i=1}^{n} \cos^{2}\theta_{i}.
+  </me>
+    Dividing by <m>\norm{v}^{2}</m> (which is positive because <m>v\neq 0</m>) yields
+  <me>
+  \sum_{i=1}^{n}\cos^{2}\theta_{i}=1,
+  </me>
+    as required.
+  </p>
+    </hint>
     </exercise>
 
     <exercise xml:id="inp-7-1-15">
