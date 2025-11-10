@@ -16,8 +16,7 @@
 <p>
 Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
       in particular, dot product can be thought of as a function from
-
-      <m>'\cdot' \colon \R^n\times \R^n \to\R</m> satisfying the following properties:
+      <m>`\cdot' \colon \R^n\times \R^n \to\R</m> satisfying the following properties:
 </p>
 <p>
       <ol>
@@ -110,7 +109,8 @@ Then <m>(V, \langle . , .\rangle)</m> called in inner product space over <m>\R</
     </p>
 
       <p>
-        Next we look at several examples of inner procuct on various vector spaces that we have defined in <xref ref="chap4-Vector-Space"/>.
+        Next we look at several examples of inner procuct on various vector spaces that we have defined in 
+        <xref ref="chap4-Vector-Space"/>.
       </p>
 
 
@@ -193,8 +193,9 @@ inpMnR(A,B)
     </example>
 
   <remark>
-      Since <m>A</m> is symmetric and positive definite matrix <m>B</m>  such that <m>B^2=A</m>. We call 
-      <m>B</m> as positive definite square root of <m>A</m> and is denoted by <m>A^{1/2}</m>.  
+      Since <m>A</m> is symmetric and positive definite matrix, there exists a matrix <m>B</m>  
+      such that <m>B^2=A</m>. We call 
+    <m>B</m> as positive definite square root of <m>A</m> and is denoted by <m>A^{1/2}</m>.  
     
       <me>
         \langle x,y\rangle = x^T A y = (A^{1/2}x)\cdot(A^{1/2}y),
@@ -246,7 +247,7 @@ inner_product_PD(A,e1,e2)
           </me>.
         </p>
         <p>
-          This is an inner product on <m>V</m>.  (You may need real analysis to conclude that <m>\int_0^1 f(t)f(t)dt=</m> then <m>f=0</m>.)
+          This is an inner product on <m>V</m>.  (You may need real analysis to conclude that <m>\int_0^1 f(t)f(t)dt=0</m> then <m>f=0</m>.)
         </p>
       </statement>
     </example>
@@ -393,7 +394,7 @@ inpPol(f,f,3)
         <p>
           This is called the <alert>parallelogram identity.</alert>
           Geometrically, in a parallelogram,
-          the sum of square of the diagonals is 2 times the sum of the squares of the side lengths.
+          the sum of square of the diagonals is twice the sum of the squares of the side lengths.
         </p>
       </statement>
       <hint>
@@ -417,6 +418,114 @@ inpPol(f,f,3)
           The equality holds if and only if <m>x</m> and <m>y</m> are linearly dependent.
         </p>
       </statement>
+
+      <proof>
+  <p>
+    If <m>x = 0</m> or <m>y = 0</m>, then <m>\innprod{x}{y} = 0</m>. Also either
+    <m>\innprod{x}{x} = 0</m> or <m>\innprod{y}{y} = 0</m>. Hence the result follows.
+  </p>
+
+  <p>
+    First we consider the case when <m>\norm{x} = \norm{y} = 1</m> . 
+    Then
+   <md>
+    <mrow>0 \leq  \amp\innprod{x - y}{x - y}</mrow>
+    <mrow>= \amp\innprod{x}{x} + \innprod{y}{y} - 2\innprod{x}{y}</mrow>
+    <mrow>= \amp 2 - 2\innprod{x}{y}</mrow>
+  </md>
+
+  This gives <m>\innprod{x}{y} \leq 1=\norm{x}\norm{y}.</m></p>
+  <p>
+    Similarly, 
+    <md>
+    <mrow>0 \leq  \amp\innprod{x + y}{x + y}</mrow>
+    <mrow>= \amp\innprod{x}{x} + \innprod{y}{y} + 2\innprod{x}{y}</mrow>
+    <mrow>= \amp 2 + 2\innprod{x}{y}.</mrow>
+  </md>
+
+   Thus  <m>\innprod{x + y}{x + y} \geq 0</m> implies
+    <m>-\innprod{x}{y} \leq 1</m>.   From these two together we have 
+
+  </p>
+
+  <me>
+  |\innprod{x}{y}|\leq 1 = \norm{x} \norm{y}.
+  </me>
+
+    <p>
+    We now prove the statement for equality.
+    Let <m>\mod{\innprod{x}{y}} = 1.</m> This implies either
+    <m>\innprod{x}{y} = 1</m> or <m>\innprod{x}{y} = -1.</m>
+    If <m>\innprod{x}{y} = 1</m>, from the above chain of inequalities we deduce
+    that <m>\innprod{x - y}{x - y} = 0</m> or <m>x = y.</m>
+    If <m>\innprod{x}{y} = -1</m>, we see that <m>x = -y.</m>
+    Thus the equality holds if and only if <m>x = \pm y.</m>
+  </p>
+
+  <p>
+    Next suppose <m>x</m> and <m>y</m> are nonzero (not necessarily of unit
+    length). Then we can write <m>u = \frac{x}{\norm{x}}</m> and
+    <m>v = \frac{y}{\norm{y}}</m> are of unit length. Hence by the previous case,
+    <m>\mod{\innprod{u}{v}} \leq 1.</m> This implies,
+    <me>
+      \mod{\innprod{\frac{x}{\norm{x}}}{\frac{y}{\norm{y}}}} =
+      \mod{\frac{1}{\norm{x}} \frac{1}{\norm{y}} \innprod{x}{y}} \leq 1.
+  </me>
+  thus we get <m>\mod{\innprod{x}{y}} \leq \norm{x} \norm{y}.</m>
+  </p>
+
+  <p>
+    If <m>x</m> and <m>y</m> are nonzero, then the equality  from the earlier case means
+    <m>\innprod{x}{y} = \norm{x} \norm{y}</m> or
+    <m>-\innprod{x}{y} = \norm{x} \norm{y}</m>.  Let us look at one of the case.
+
+  <md>
+    <mrow>\amp \innprod{x}{y} =  \norm{x} \norm{y}</mrow>
+    <mrow>\amp \Longleftrightarrow \innprod{\frac{x}{\norm{x}}}{\frac{y}{\norm{y}}} = 1 </mrow>
+    <mrow>\amp \Longleftrightarrow \frac{x}{\norm{x}} = \frac{y}{\norm{y}}</mrow>
+    <mrow>\amp \Longleftrightarrow x  = \frac{\norm{x}}{\norm{y}} y.</mrow>
+    </md>
+
+  The other case is similar. 
+    </p>
+
+  <p>
+   <em>2nd Proof.</em> 
+  </p>  
+
+  <p>
+    Fix <m>x</m> and <m>y</m> in <m>V</m>. If <m>y = 0</m>, then the result is
+    obviously true. Without loss of generality  assume that <m>y \neq 0</m>. Consider the real-valued
+    function <m>\varphi\colon \R \to \R</m>
+   defined as    <me>\varphi(t) := \innprod{x + t y}{x + t y}</me>. 
+   We shall use calclus and investigate the minimum value of <m>\varphi(t)</m> to prove the inequality. 
+  <md>
+    <mrow>\varphi(t) \amp= \amp\innprod{x + t y}{x + t y}</mrow>
+    <mrow>\amp= \amp\innprod{x}{x} + 2 t \innprod{x}{y} + t^{2} \innprod{y}{y}.</mrow>
+  </md>
+Note that this is a differentiabke function of <m>t</m>. Differentiating <m>\varphi(t)</m> 
+with respect to <m>t</m>, we get
+
+  <me>
+    \varphi'(t) = 2 \innprod{x}{y} + 2 t \innprod{y}{y}.
+  </me>
+  Setting <m>\varphi'(t) = 0</m>, we get the critical point at
+  <me>
+    t = -\frac{\innprod{x}{y}}{\innprod{y}{y}}.
+  </me>
+  Since <m>\varphi''(t) =\innprod{y}{y} \gt 0</m>, this critical point is a minimum. Thus
+  <me>
+    \varphi\left(-\frac{\innprod{x}{y}}{\innprod{y}{y}}\right) \geq 0.
+  </me>
+  Substituting for <m>t</m> in the expression for <m>\varphi(t)</m>, we get
+  <md>
+    <mrow>0 \amp\leq \innprod{x}{x} - \frac{\innprod{x}{y}^{2}}{\innprod{y}{y}}</mrow>
+    <mrow>\Longleftrightarrow \innprod{x}{y}^{2} \amp\leq \innprod{x}{x} \innprod{y}{y}</mrow>
+    <mrow>\Longleftrightarrow |\innprod{x}{y}| \amp\leq \norm{x} \norm{y}.</mrow>
+  </md>
+  This completes the 2nd proof of the Cauchy-Schwarz inequality.
+  </p>
+</proof>
     </theorem>
 
     <theorem xml:id="thm-Triangle-Inequality">
@@ -516,19 +625,51 @@ inpPol(f,f,3)
 </definition>
 
     <note>
-  The concepts such as orthogonality, orthogonal projection, orthogonal complement of 
+      <statement>
+        <p>
+          The concepts such as orthogonality, orthogonal projection, orthogonal complement of 
 any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we 
 defined and dealt with in the previuos chapter with respect to the dot product on <m>\R^n</m> can be 
 defined on an inner product space. All we need to do is to replace the dot product by the corresponding 
 inner product.  We encourage  readers to define each one of them. 
-</note>
+
+        </p>
+      </statement>
+  </note>
 
     <exercise xml:id="inp-7-1-10">
       <statement>
         <p>
           Let <m>(V, \inner{.}{.})</m> be a real inner product space.
-          Define (i) orthogonality of two vectors <m>x</m>  and <m>y</m> in <m>V</m>, (ii) orthogonal complement of a subset <m>U</m> of <m>V</m>, (iii) Orthogonal projection of a vector <m>v</m> onto a non-zero 
-          vector <m>u</m>, (iv) orthogonal set and orthonormal sets in <m>V</m> and  (v) Gram-Schmidt orthogonalization process.
+          Define 
+          <ol>
+            <li>
+              <p>
+                orthogonality of two vectors <m>x</m>  and <m>y</m> in <m>V</m>,
+              </p>
+            </li>
+            <li>
+              <p>
+                orthogonal complement of a subset <m>U</m> of <m>V</m>,
+              </p>
+            </li>
+            <li>
+              <p>
+                Orthogonal projection of a vector <m>v</m> onto a non-zero 
+          vector <m>u</m>,
+              </p>
+            </li>
+            <li>
+              <p>
+                orthogonal set and orthonormal sets in <m>V</m> and 
+              </p>
+            </li>
+            <li>
+              <p>
+                Gram-Schmidt orthogonalization process.
+              </p>
+            </li>
+          </ol>   
         </p>
       </statement>
     </exercise>
@@ -538,13 +679,20 @@ inner product.  We encourage  readers to define each one of them.
         <p>
           Let <m>x, y</m> be two vectors in an inner product space <m>V</m>.
           Then show that
-        </p>
-        <p>
-          (i) <m>x</m> and <m>y</m> are orthogonal if and only if
+       <ol>
+        <li>
+          <p>
+            <m>x</m> and <m>y</m> are orthogonal if and only if
           <m>\norm{x+y}=\norm{x-y}</m>. (what does it mean geometrically?)
-        </p>
-        <p>
-          (ii) <m>x+y</m> and <m>x-y</m> are orthogonal if and only if <m>\norm{x}=\norm{y}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x+y</m> and <m>x-y</m> are orthogonal if and only if <m>\norm{x}=\norm{y}</m>.
+          </p>
+        </li>
+       </ol>        
+          
         </p>
       </statement>
     </exercise>

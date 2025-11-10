@@ -29,7 +29,8 @@
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\normx}[1]{\left\Vert#1\right\Vert}
 \newcommand{\partd}[2]{\dfrac{\partial #1}{\partial #2}}
-\newcommand{\innprod}[2]{\left\lt #1,#2\right>}
+\newcommand{\innprod}[2]{\left\lt #1,#2\right \gt}
+\newcommand{\mod}[1]{\left\lvert #1 \right\rvert}
 \def\rank{{ rank\,}}
 \newcommand{\ds}{\displaystyle}
 
