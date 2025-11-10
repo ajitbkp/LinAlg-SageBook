@@ -193,10 +193,14 @@ inpMnR(A,B)
     </example>
 
   <remark>
-      Since <m>A</m> is symmetric and positive definite matrix, there exists a matrix <m>B</m>  
+     <statement>
+      <p>
+         Since <m>A</m> is symmetric and positive definite matrix, there exists a matrix <m>B</m>  
       such that <m>B^2=A</m>. We call 
     <m>B</m> as positive definite square root of <m>A</m> and is denoted by <m>A^{1/2}</m>.  
     
+      </p>
+     </statement>
       <me>
         \langle x,y\rangle = x^T A y = (A^{1/2}x)\cdot(A^{1/2}y),
       </me>
@@ -404,6 +408,20 @@ inpPol(f,f,3)
       </hint>
     </exercise>
 
+    <exercise>
+    <statement>
+      <p>
+        Let <m>a,b,c</m> be three positive real numbers and ,<m>x=(x_1,x_2,x_3), 
+          y=(y_1,y_2,y_3)</m> be vectors in <m>\R^3</m>. Define
+          <me>
+          \langle x, y\rangle:=\frac{x_1y_1}{a^2}+\frac{x_2y_2}{b^2}+\frac{x_3y_3}{c^2}.
+          </me>
+         Show that this is an inner product on <m>\R^3</m>. Also what are the unit vectors with 
+         respect to this inner product on <m>\R^3</m>?  
+      </p>
+    </statement>  
+    </exercise>
+    
     <theorem xml:id="thm-Cauchy-Schwarz-Inequality">
       <title>Cauchy-Schwarz Inequality</title>
       <statement>
@@ -718,7 +736,7 @@ inner product.  We encourage  readers to define each one of them.
       <statement>
         <p>
           Let <m>(V, \inner{.}{.})</m> be a real inner product space.
-          Let <m>x_1,x_2\,x_n</m> be <m>n</m> orthogonal vectors in <m>V</m>.
+          Let <m>x_1, x_2, \ldots x_n</m> be <m>n</m> orthogonal vectors in <m>V</m>.
           Then
           <me>
             \norm{x_1+x_2+\cdots+x_n}^2=\norm{x_1}^2+\norm{x_2}^2+\cdots+\norm{x_n}^2
