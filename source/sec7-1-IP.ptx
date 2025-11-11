@@ -341,6 +341,7 @@ fnorm(g,inp)
 
         <p>
           It is easy to see that <m>\langle p,q \rangle</m> defined inner product on the vector space <m>{\cal P}_n(R)</m>.
+        This inner product is called the discrete inner product on <m>{\cal P}_n(\mathbb{R})</m>.
         </p>
 
         <p>
@@ -726,6 +727,35 @@ inner product.  We encourage  readers to define each one of them.
       </statement>
     </exercise>
 
+    <p>
+      As mentioned earlier all the notions related to orthogonality can be defined in a similar manner 
+      on an inner product space and the results that we proved in the previous chapter hold true in 
+      this more general setting. However, let us state some of the definitions and results here for 
+      completeness. 
+    </p>
+
+<definition xml:id="def-inp-orthogonality">
+  <statement>
+    <p>
+      Let <m>(V,\innprod{.}{.})</m> be an inner product space. 
+      Two vectors <m>x,y\in V</m> are said to be <em>orthogonal</em> if <m>\innprod{x}{y}=0.</m>
+    </p>
+  </statement>
+</definition>
+
+<definition xml:id="def-inp-orthogonal-set">
+  <statement>
+    <p>
+      Let <m>(V,\innprod{.}{.})</m> be an inner product space. 
+      A set of vectors  <m>\{v_1,\ldots,v_k\}</m> is  said to be <em>orthogonal set</em>     if <m>\innprod{v_i}{v_j}=0</m> for <m>i\neq j</m>.
+    </p>
+    <p>
+      In addition, if each vector in the set is of unit norm, i.e., <m>\norm{v_i}=1</m> for all <m>i=1,2,\ldots,k</m>,
+      then the set is called an <em>orthonormal set.</em>
+    </p>
+  </statement>
+</definition>
+
     <exercise xml:id="inp-7-1-11">
       <statement>
         <p>
@@ -793,8 +823,7 @@ inner product.  We encourage  readers to define each one of them.
     <exercise xml:id="inp-7-1-14">
       <statement>
         <p>
-          Let <m>\beta=\{u_1,\ldots,
-          u_n\}</m> be an orthogonal basis of an inner product space <m>V</m>.
+          Let <m>\beta=\{u_1,\ldots, u_n\}</m> be an orthogonal basis of an inner product space <m>V</m>.
           Let <m>v\in V</m> and <m>\theta_1,\ldots, \theta_n</m> be the angle between <m>v</m> and <m>u_1,\ldots, u_n</m>,  respectively.
           Then
           <me>
@@ -840,6 +869,234 @@ inner product.  We encourage  readers to define each one of them.
   </p>
     </hint>
     </exercise>
+ <definition xml:id="def-inp-orthonormal-basis">
+      <statement>
+        <p>
+  A basis <m>\{v_1, \ldots, v_n\}</m> of an inner product space <m>V</m> is said to be
+<em>orthonormal basis</em> if we have <m>\innprod{v_i}{v_j}=\delta_{ij}</m> for 
+<m> 1 \leq i,j \leq n</m>.
+        </p>
+      </statement>
+    </definition>
+   
+    <p>
+  Let us assume that <m>\{v_i\}</m> is an orthonormal basis of <m>V</m>.
+  Write <m>v = \sum_i \alpha_i v_i</m>. Taking the inner product of both sides
+  with the vector <m>v_j</m>, and using the orthonormal properties of the basis, we get
+
+  <md>
+  <mrow>  \innprod{v}{v_j} \amp = \innprod{\sum_i \alpha_i v_i}{v_j}</mrow>
+   <mrow> \amp =\sum_i \innprod{\alpha_i v_i}{v_j}</mrow>    
+    <mrow> \amp = \sum_i \alpha_i \innprod{v_i}{v_j} </mrow>
+      <mrow> \amp= \sum_i \alpha_i \delta_{ij} =\alpha_j</mrow>
+  </md>
+  Thus <m>\alpha_j = \innprod{v}{v_j}</m>. In particular, we have
+  <me>
+    v = \sum_i \innprod{v}{v_i}v_i.
+  </me>
+</p>
+ <p>   
+Next we turn our attention to finding an orthogonal basis in an inner product space using the Gram-Schmidt process.
+The process is exactly same as before, we just need to replace the dot product by the given inner product.
+Let <m>(V, \inner{.}{.})</m> be an inner product space.
+Let <m>\{v_1, v_2, \ldots, v_n\}</m> be a basis of <m>V</m>.
+We construct an orthogonal basis <m>\{u_1, u_2, \ldots, u_n\}</m> as follows:
+<ol>
+  <li>
+    <p>
+      Set <m>u_1 = v_1</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      For <m>2 \leq k \leq n</m>, set
+      <me>
+        u_k = v_k - \sum_{j=1}^{k-1} \frac{\inner{v_k}{u_j}}{\norm{u_j}^2} u_j.
+      </me>
+    </p>
+  </li>
+</ol>   
+</p>
+<p>
+  Thus we have the following result.
+</p>
+
+<theorem xml:id="thm-inp-gram-schmidt">
+    <title>Gram–Schmidt Orthogonalization Theorem</title>
+    <p>
+      Let <m>\{v_1, v_2, \ldots, v_n\}</m> be a linearly independent set in an inner product space <m>V</m>.
+      Then there exists an orthogonal set <m>\{u_1, u_2, \ldots, u_n\}</m> such that
+    </p>
+
+    <me>
+      \text{span}\{u_1, u_2, \ldots, u_k\}
+      = \text{span}\{v_1, v_2, \ldots, v_k\}, \quad 1 \leq k \leq n.
+    </me>
+
+    <p>
+      The vectors <m>u_1, u_2, \ldots, u_n</m> are defined recursively as follows:
+    </p>
+<md>
+        <mrow>     u_1 \amp:= v_1, </mrow>
+        <mrow> u_2 \amp:= v_2 - \frac{\innprod{v_2}{u_1}}{\innprod{u_1}{u_1}} u_1, </mrow>
+        <mrow> u_3 \amp:= v_3 - \frac{\innprod{v_3}{u_1}}{\innprod{u_1}{u_1}} u_1 
+                     - \frac{\innprod{v_3}{u_2}}{\innprod{u_2}{u_2}} u_2, </mrow>
+        <mrow> \amp\ \vdots </mrow>
+        <mrow> u_k \amp:= v_k - \sum_{j=1}^{k-1}
+                     \frac{\innprod{v_k}{u_j}}{\innprod{u_j}{u_j}} u_j,
+                     \quad 2 \leq k \leq n. </mrow>
+        </md>
+
+    <p>
+      The resulting set <m>\{u_1, u_2, \ldots, u_n\}</m> is orthogonal.
+      To obtain an <em>orthonormal</em> set, define
+    </p>
+
+    <me>
+      e_i: = \frac{u_i}{\norm{u_i}}, \quad 1 \leq i \leq n.
+    </me>
+
+    <p>
+      Then <m>\{e_1, e_2, \ldots, e_n\}</m> is an orthonormal basis of the subspace
+      <m>\text{span}\{v_1, v_2, \ldots, v_n\}</m>.
+    </p>
+
+      </theorem>
+
+        <proof>
+    <p>
+      The proof proceeds by induction on <m>k</m>.
+      For <m>k = 1</m>, set <m>u_1 = v_1</m>, which is nonzero since <m>v_1</m>
+      is linearly independent.
+      Suppose <m>u_1, \ldots, u_{k-1}</m> have been constructed such that they are
+      mutually orthogonal and
+      <m>\operatorname{span}\{u_1, \ldots, u_{k-1}\}
+      = \operatorname{span}\{v_1, \ldots, v_{k-1}\}</m>.
+    </p>
+
+    <p>
+      Define
+      <m>
+        u_k = v_k - \sum_{j=1}^{k-1}
+        \frac{\innprod{v_k}{u_j}}{\innprod{u_j}{u_j}} u_j.
+      </m>
+      Then for each <m>i &lt; k</m>,
+    </p>
+
+    <md>   
+      <mrow> \innprod{u_k}{u_i}
+       \amp = \innprod{v_k}{u_i}
+        - \sum_{j=1}^{k-1}
+        \frac{\innprod{v_k}{u_j}}{\innprod{u_j}{u_j}} \innprod{u_j}{u_i}</mrow>
+      <mrow> \amp= \innprod{v_k}{u_i}
+        - \frac{\innprod{v_k}{u_i}}{\innprod{u_i}{u_i}}\innprod{u_i}{u_i}
+      = 0.</mrow>
+     </md>
+
+    <p>
+      Hence, <m>u_k</m> is orthogonal to all previous <m>u_i</m>.
+      This completes the inductive step, and the result follows.
+    </p>
+  </proof>
+<remark>
+  <statement>
+    <p>
+         The Gram–Schmidt process provides an explicit algorithm for transforming any
+      linearly independent set into an orthonormal one.
+      It is a fundamental tool in numerical linear algebra, functional analysis,
+      and the construction of orthogonal polynomials.
+    </p>
+  </statement>
+   </remark>
+
+   <example>
+    <p>
+    Let <m>V=\mathcal{P}_2(\mathbb{R})</m> and define for
+    <m>p,q \in V</m>
+  <me>
+\innprod{p}{q} := p(0)q(0) + p(1)q(1) + p(2)q(2).
+  </me>
+    Apply Gram–Schmidt to the linearly independent set
+    <m>\{v_{1},v_{2},v_{3}\} = \{1,x,x^{2}\}</m>.
+</p>
+
+<p> 
+<m>u_{1}=v_{1}=1</m>.
+
+  <me>
+  \innprod{u_{1}}{u_{1}} = 1^2 + 1^2 + 1^2 = 3.
+  </me>
+</p>
+
+<p>
+  <me>
+      u_{2}
+      = v_{2} - \dfrac{\innprod{v_{2}}{u_{1}}}{\innprod{u_{1}}{u_{1}}}\,u_{1}
+      = x - \dfrac{x(0)+x(1)+x(2)}{3}\cdot 1= x - 1.
+  </me>
+
+  <me>
+    \innprod{u_{2}}{u_{2}} = ( -1)^2 + 0^2 + 1^2 = 1+0+1 = 2.
+  </me>
+</p>
+
+
+  <p>
+  <me>
+      u_{3}
+      = v_{3}
+        - \dfrac{\innprod{v_{3}}{u_{1}}}{\innprod{u_{1}}{u_{1}}}\,u_{1}
+        - \dfrac{\innprod{v_{3}}{u_{2}}}{\innprod{u_{2}}{u_{2}}}\,u_{2}.
+  </me>
+
+  <me>
+      \innprod{v_{3}}{u_{1}} = x^{2}(0)+x^{2}(1)+x^{2}(2) = 0 + 1 + 4 = 5.
+  </me>
+
+  <md>
+     <mrow>  \innprod{v_{3}}{u_{2}} \amp =
+     = \innprod{x^{2}}{x-1}</mrow>
+      = \bigl(x^{2}(0)(x-1)(0)\bigr)+\bigl(x^{2}(1)(x-1)(1)\bigr)+\bigl(x^{2}(2)(x-1)(2)\bigr)
+     <mrow> \amp  = 0\cdot(-1)+1\cdot 0 + 4\cdot 1 = 4. </mrow>
+  </md>
+Hence
+  <me>
+     u_{3}
+      = x^{2} - \dfrac{5}{3}\cdot 1 - \dfrac{4}{2}\,(x-1)
+      = x^{2} - \dfrac{5}{3} - 2x + 2
+      = x^{2} - 2x + \dfrac{1}{3}.
+  </me>
+
+  <me>
+    <m>\innprod{u_{3}}{u_{3}} = \dfrac{2}{3}.</m>
+  </me>
+    Thus we have produced an <em>orthogonal</em> set
+    <m>\{u_{1},u_{2},u_{3}\}</m> where
+  <me>
+      u_{1} = 1,\qquad
+      u_{2} = x - 1,\qquad
+      u_{3} = x^{2} - 2x + \tfrac{1}{3}.
+  </me>
+  It is easy to see that 
+      <me>\innprod{u_{3}}{u_{3}} = \dfrac{2}{3}.</me>
+Since 
+  <me>
+      \norm{u_{1}} = \sqrt{3},\quad
+      \norm{u_{2}} = \sqrt{2},\quad
+      \norm{u_{3}} = \sqrt{\tfrac{2}{3}},
+  </me>
+we have 
+  <me>
+      e_{1} = \dfrac{1}{\sqrt{3}},\quad
+      e_{2} = \dfrac{x-1}{\sqrt{2}},\quad
+      e_{3} = \dfrac{x^{2}-2x+\tfrac{1}{3}}{\sqrt{2/3}}
+            = \sqrt{\tfrac{3}{2}}\bigl(x^{2}-2x+\tfrac{1}{3}\bigr).
+  </me>
+    The set <m>\{e_{1},e_{2},e_{3}\}</m> is an orthonormal basis of
+    <m>\operatorname{span}\{1,x,x^{2}\}=\mathcal{P}_2(\mathbb{R})</m> (with respect to the discrete inner product above).
+  </p>
+
+   </example>
 
     <exercise xml:id="inp-7-1-15">
       <statement>
@@ -1049,7 +1306,8 @@ print(q1,q2,q3)
           Fix any <m>n+1</m> distinct real numbers,
           <m>c_0,c_1,\ldots, c_n</m> and define
           <me>
-            \langle p,q \rangle := p(c_0)q(c_0)+p(c_1)q(c_1)+\cdots +p(c_n)q(c_n)
+            \langle p,q \rangle := p(c_0)q(c_0)+p(c_1)q(c_1)+\cdots +p(c_n)q(c_n)=
+            \sum_{j=0}^n p(c_j)q(c_j)
           </me>
           an inner product on <m>{\cal P}_n(\R)</m>.
         </p>
@@ -1063,7 +1321,7 @@ print(q1,q2,q3)
         <p>
           Then
           <me>
-            \inner{\ell_i}{\ell_j}=\sum_{j=0}^n \ell_i(c_j)\ell_j(c_j)=\delta_{ij}
+            \inner{\ell_i}{\ell_j}=\sum_{k=0}^n \ell_i(c_k)\ell_j(c_k)=\delta_{ij}.
           </me>
         </p>
         <p>
@@ -1121,4 +1379,42 @@ print(q1,q2,q3)
             </p>
     </activity>
 
+<subsection xml:id="subsec-linear-functionals">
+  <title>Linear Functionals</title>
+  <p>
+    Let <m>\innprod{.}{.}</m> be an inner product space over <m>\R</m>. Fix a vector <m>a\in V</m> and 
+    define <m>f_a\colon V\to \R</m> as <m>f_a(x)=\innprod{x}{a}</m>. It follows from from properties of 
+    inner product that <m>f_a</m> is a linear map. (why?) 
+  </p>
+<definition xml:id="def-linear-functional">
+  <statement>
+    <p>
+      Let <m>\innprod{.}{.}</m> be an inner product space over <m>\R</m>. Any liear map 
+      <m>f\colon V \to \R</m> is called a <em>linear function.</em>
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Recall that we have characterized all linear maps from <m>\R^n\to \R</m>. 
+In particular, if <m>T\colon \R^n\to \R</m> 
+is a linear map, them there exist a vector <m>a=(a_1,\ldots, a_n)</m> such that 
+<me>
+  T(x)=\sum a_ix_i=x \cdot a.
+</me>
+ The question is can we characterize linear functionals on an inner product space. 
+</p>
+
+<theorem xml:id="thm-riesz">
+  <title>Riesz Representation Theorem</title> 
+  <statement>
+    <p>
+      Let <m>\innprod{.}{.}</m> be an inner product space over <m>\R</m>. 
+      Given a linear map <m>f\colon V \to \R</m>, there exists a unique <m>y
+\in V</m> such that <m>f(x) = \innprod{x}{y}</m> for all <m>x \in V</m>.
+    </p>
+  </statement>
+</theorem>
+
+</subsection>
 </section>
