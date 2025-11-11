@@ -1095,7 +1095,38 @@ we have
     The set <m>\{e_{1},e_{2},e_{3}\}</m> is an orthonormal basis of
     <m>\operatorname{span}\{1,x,x^{2}\}=\mathcal{P}_2(\mathbb{R})</m> (with respect to the discrete inner product above).
   </p>
+<p>
+  Let us do this using SageMath as well by on <m>\mathcal{P}_4(\mathbb{R})</m>
+</p>
+  <sage>
+    <input>
+    def inpPol(f,g,n):
+        a = sum([f(x=i)*g(x=i) for i in range(n+1)])
+        return a
 
+    f1(x)=1
+    f2(x)=x
+    f3(x)=x^2
+    f4(x)=x^3
+    f5(x)=x^4
+
+    g1 = f1
+    g2 = f2 - inpPol(f2,g1,4)/inpPol(g1,g1,4)*g1
+    g3 = f3 -inpPol(f3,g1,4)/inpPol(g1,g1,4)*g1-inpPol(f3,g2,4)/inpPol(g2,g2,4)*g2
+    g4 = f4- inpPol(f4,g1,4)/inpPol(g1,g1,4)*g1-\
+            inpPol(f4,g2,4)/inpPol(g2,g2,4)*g2-inpPol(f4,g3,4)/inpPol(g3,g3,4)*g3
+    g5 = f5-inpPol(f5,g1,4)/inpPol(g1,g1,4)*g1-inpPol(f5,g2,4)/inpPol(g2,g2,4)*g2-\
+            inpPol(f5,g3,4)/inpPol(g3,g3,4)*g3-inpPol(f5,g4,4)/inpPol(g4,g4,4)*g4
+    show(g1(x))
+    show(g2(x))
+    show(g3(x))
+    show(g4(x))
+    show(g5(x))
+    </input>
+    <output>
+      
+    </output>
+  </sage>
    </example>
 
     <exercise xml:id="inp-7-1-15">
@@ -1341,8 +1372,48 @@ print(q1,q2,q3)
         </p>
       </statement>
     </example>
+<p>
+  How will you define the othogonal projection of a vector onto another vector
+  in an inner product space?
+</p>
 
-  <definition>
+ <activity>
+      <p>
+        <em>Notion of orthogonal projection and reflection in an inner product space.</em>
+      </p>
+      <p>
+        Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, 
+        and reflection can be naturally extended to an inner product space 
+        <m>(V, \langle \cdot, \cdot \rangle)</m>. 
+        Explore how these notions generalize in such spaces, and implement 
+        solutions to related problems using Sage.
+            </p>
+    </activity>
+
+<definition xml:id="def-inp-orthogonal-projection">
+  <statement>
+    <p>
+    Let <m>(V,\innprod{.}{.})</m> be an inner product space. Suppose <m>u,v\in V</m> with 
+    <m>u\neq 0</m>. Then the <em>orthogonal projection</em> of <m>v</m> onto <m>u</m> is defined as
+    <me>
+      \proj_u(v):= \frac{\inner{v}{u}}{\inner{u}{u}}u.
+    </me>
+    </p>
+  </statement>
+  </definition>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>V=\mathcal{P}_2(\R)</m> with inner product
+        <m>\inner{p}{q}=\int_0^1 p(x)q(x)dx</m>.
+        Find the orthogonal projection of
+        <m>p(x)=x^2</m> onto <m>u(x)=x+1</m>.
+      </p>
+    </statement>
+  </exercise>
+
+  
+  <definition xml:id="def-inp-orthogonal-projection-onto-subspace">
     <title>Projection onto a subspace</title>
     <p>
       Let <m>V</m> be an inner product space and <m>W\leq V</m>,
@@ -1366,23 +1437,153 @@ print(q1,q2,q3)
       </statement>
     </exercise>
  
-    <activity>
+  <definition xml:id="def-inp-set-perp">
+    <statement>
       <p>
-        <em>Notion of orthogonal projection and reflection in an inner product space.</em>
+     Let <m>(V,\innprod{.}{.})</m> be an inner product space over <m>\R</m> and 
+     <m>U\subset V</m>. The <em>orthogonal complement</em> of <m>U</m> is defined as
+     <me>
+       U^{\perp}=\{v\in V: \innprod{u}{v}=0 \text{ for all } u\in U\}.
+     </me>   
       </p>
+    </statement>
+  </definition> 
+  <exercise xml:id="ex1-inp-set-perp">
+    <p>
+   Let <m>(V,\innprod{.}{.})</m> be an inner product space over <m>\R</m> and 
+     <m>U\subset V</m>. Show that <m>U^{\perp}</m> is a subspace of <m>V</m>.   
+    </p>
+  </exercise>
+  <example>
+    <statement>
       <p>
-        Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, 
-        and reflection can be naturally extended to an inner product space 
-        <m>(V, \langle \cdot, \cdot \rangle)</m>. 
-        Explore how these notions generalize in such spaces, and implement 
-        solutions to related problems using Sage.
+        Let <m>A</m> be a symmetric <m>n\times n</m> and positive definite matrix.
+        Define an inner product on <m>\R^n</m> as <m>\innprod{u}{v}=v^TAu</m>. Let <m>U=\{e_1\}</m>. 
+        Then 
+        <me>
+          U^{\perp}=\{v\in \R^n: \innprod{e_1}{v}=0\}=\{v\in \R^n: v^TAe_1=0\}.
+        </me> 
+        Since <m>e_1=(1,0,\ldots,0)^T</m>, <m>Ae_1</m> is the first column of <m>A</m>. This implies that
+       <m>U^{\perp}</m> is the set of vector orthogonal to the first column of <m>A</m> 
+       with respect to the standard inner product.
+      Since the first column of <m>A</m> is nonzero, <m>\dim(U^{\perp})=n-1</m>.  
+        It is easy to see that <m>U^{\perp}</m> is the set of vector orthogonal to the first column of <m>A</m> 
+       with respect to the standard inner product.
+      </p>
+    </statement>
+  </example>
+  <exercise>
+    <p>
+      Let <m>{\cal P}_2(\R)</m> with discrete inner product 
+      <me>\innprod{p}{q}=p(0)q(0)+p(1)q(1)+p(2)q(2).</me>
+      Find <m>\{1\}^{\perp}</m> and <m>\{x\}^{\perp}</m>.    
+    </p> 
+  </exercise>
+
+  <theorem xml:id="thm-inp-orthogonal-complement">
+    <statement>
+      <p>
+        Let <m>(V,\innprod{.}{.})</m> be an inner product space over <m>\R</m> and 
+        <m>W\leq V</m> be a finite dimensional subspace of <m>V</m>. Then
+        <ol>
+          <li>
+            <p>
+              <m>W^{\perp}</m> is a subspace of <m>V</m> and <m>V=W\oplus W^{\perp}</m>.
             </p>
-    </activity>
+          </li>
+          <li>
+            <p>
+              If <m>V</m> is finite dimensional, then <m>\dim(V)=\dim(W)+\dim(W^{\perp})</m>
+            </p>
+          </li>
+          <li>
+            <p>
+            If <m>\dim{V}=n</m>, then <m>{W^{\perp}}^{\perp}=W</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+  
+  <proof>
+    <p>
+      (1) <m> W^{\perp}</m> is subspace follows from 
+      <xref ref="ex1-inp-set-perp"/>. 
+    </p>
+    <p>
+       Let <m>u\in W\cap  W^{\perp}</m>. Then <m>\innprod{u}{u}=0</m>.
+      Hence the only vector in both <m>W</m> and <m>W^{\perp}</m> is the zero vector.
+      Let <m>x\in V</m>. We need to show that there exist <m>w\in W</m> and <m>v\in W^{\perp}</m>
+      such that <m>x=w+v</m>.
+      Let <m>\{u_1,\ldots, u_k\}</m> be an orthonormal basis of <m>W</m>.
+      Define
+      <me>
+        w = \innprod{x}{u_1}u_1+\innprod{x}{u_2}u_2+\cdots +\innprod{x}{u_k}u_k.
+      </me>
+      Now define <m>v=x-w</m>.
+      For each <m>i=1,2,\ldots, k</m>, we have
+      <md>
+        <mrow>\innprod{v}{u_i} \amp = \innprod{x-w}{u_i} </mrow>
+        <mrow>\amp = \innprod{x}{u_i}-\innprod{w}{u_i} </mrow>
+        <mrow>\amp = \innprod{x}{u_i}-\inner{x}{u_i}\underbrace{\innprod{u_i}{u_i}}_{1} - \sum_{j\neq i}\inner{x}{u_j}\underbrace{\innprod{u_j}{u_i}}_{0} </mrow>
+        <mrow>\amp = 0. </mrow>
+      </md>
+      Hence <m>v\in W^{\perp}</m> and the result follows.
+    </p>
+    <p>
+      (2) Follows from (1).
+    </p>
+    <p>
+      (3) Let <m>W^{\perp} =U</m>. Then by (2), we have
+      <me>
+        \dim(V)=\dim(W)+\dim(U).
+      </me>
+      Similarly,
+      <me>
+        \dim(V)=\dim(U^{\perp})+\dim(U).
+      </me>
+      Hence <m>\dim(W)=\dim(U^{\perp})</m>.
+      It remains to show that <m>W\subseteq U^{\perp}</m> and <m>U^{\perp}\subseteq W</m>.
+      Let <m>w\in W</m> and <m>u\in U</m>. Then <m>\innprod{w}{u}=0</m> since <m>U=W^{\perp}</m>.
+      This shows that <m>W\subseteq U^{\perp}</m>.
+      Now let <m>y\in U^{\perp}</m>.
+      We need to show that <m>y\in W</m>.
+      By (1), there exist <m>w\in W</m> and <m>u\in U</m> such that <m>y=w+u</m>.
+    </p>
+  </proof>
+
+  <theorem xml:id="thm-inp-approximation">
+    <title>Approximation Theorem</title>
+    
+    
+    <statement>
+      <p>
+        Let <m>(V,\innprod{.}{.})</m> be an inner product space over <m>\R</m> and 
+        <m>W\leq V</m> be a finite dimensional subspace of <m>V</m>. 
+        Given <m>x\in V</m>, let <m>w=\proj_W(x)</m>.
+        Then for all <m>u\in W</m>, <m>\norm{x-w}\leq \norm{x-u}</m>.
+      </p>
+    </statement>
+  </theorem>
+  
+  <proof>
+    <p>
+      Let <m>u\in W</m>. Then <m>u-w\in W</m>.
+      Since <m>x-w\in W^{\perp}</m>, we have <m>\innprod{x-w}{u-w}=0</m>.
+      Hence by the Pythagorean theorem,
+      <md>
+        <mrow> \norm{x-u}^2\amp =\norm{(x-w)+(w-u)}^2</mrow>
+        <mrow> \amp =\norm{x-w}^2+\norm{u-w}^2\geq \norm{x-w}^2.</mrow>
+      </md>
+      The result follows.
+    </p>
+  </proof>
 
 <subsection xml:id="subsec-linear-functionals">
   <title>Linear Functionals</title>
   <p>
-    Let <m>\innprod{.}{.}</m> be an inner product space over <m>\R</m>. Fix a vector <m>a\in V</m> and 
+    Let <m>(V,\innprod{.}{.})</m> be an inner product space over <m>\R</m>. Fix a vector <m>a\in V</m> and 
     define <m>f_a\colon V\to \R</m> as <m>f_a(x)=\innprod{x}{a}</m>. It follows from from properties of 
     inner product that <m>f_a</m> is a linear map. (why?) 
   </p>
@@ -1415,6 +1616,40 @@ is a linear map, them there exist a vector <m>a=(a_1,\ldots, a_n)</m> such that
     </p>
   </statement>
 </theorem>
-
+<proof>
+  <p>
+    Let <m>\{u_1,\ldots, u_n\}</m> be an orthonormal basis of <m>V</m>.
+    Define 
+    <me>
+      y = f(u_1)u_1+f(u_2)u_2+\cdots +f(u_n)u_n.
+    </me>
+    For any <m>x\in V</m>, we can write <m>x=c_1u_1+c_2u_2+\cdots +c_nu_n</m>.
+    Hence
+    <md>
+      <mrow>\innprod{x}{y} \amp = \innprod{c_1u_1+c_2u_2+\cdots +c_nu_n}{f(u_1)u_1+f(u_2)u_2+\cdots +f(u_n)u_n} </mrow>
+      <mrow>\amp = c_1f(u_1)\underbrace{\innprod{u_1}{u_1}}_{1}+c_2f(u_2)\underbrace{\innprod{u_2}{u_2}}_{1}+\cdots +c_nf(u_n)\underbrace{\innprod{u_n}{u_n}}_{1} </mrow>
+      <mrow>\amp = c_1f(u_1)+c_2f(u_2)+\cdots +c_nf(u_n). </mrow>
+    </md>
+    Since <m>f</m> is linear, we have
+    <md>
+      <mrow> f(x) \amp =f(c_1u_1+c_2u_2+\cdots +c_nu_n)</mrow>
+      <mrow> \amp =c_1f(u_1)+c_2f(u_2)+\cdots +c_nf(u_n).</mrow>
+    </md>
+    Hence <m>f(x)=\innprod{x}{y}</m>.
+  </p>
+  <p>
+    To show uniqueness, suppose there exists <m>z\in V</m> such that 
+    <m>f(x)=\innprod{x}{z}</m> for all <m>x\in V</m>. Then for each <m>i=1,2,\ldots, n</m>, we have
+    <me>
+      f(u_i)=\innprod{u_i}{y}=\innprod{u_i}{z}.
+    </me>
+    Hence
+    <me>
+      \innprod{u_i}{y-z}=0
+    </me>
+    for all <m>i=1,2,\ldots, n</m>.
+    Since <m>\{u_1,\ldots, u_n\}</m> is a basis of <m>V</m>, we have <m>y-z=0</m> or <m>y=z</m>.  
+  </p>
+</proof>
 </subsection>
 </section>
