@@ -46,7 +46,7 @@
     it is sufficient to know component <m>T_i\colon \R^n\to \R</m> for each <m>i</m>.
   </p>
 
-  <example><title>Linear map from <m>\R^n</m> to <m>\R</m></title>
+  <example xml:id="eg-linearmapfromRntoR"><title>Linear map from <m>\R^n</m> to <m>\R</m></title>
     <statement>
       <p>
         Suppose <m>T\colon \R^n\to \R</m> is a linear map.

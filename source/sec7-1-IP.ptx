@@ -1441,7 +1441,7 @@ print(q1,q2,q3)
     <statement>
       <p>
      Let <m>(V,\innprod{.}{.})</m> be an inner product space over <m>\R</m> and 
-     <m>U\subset V</m>. The <em>orthogonal complement</em> of <m>U</m> is defined as
+     <m>U\subset V</m>. The the <em>orthogonal complement</em> of <m>U</m> in <m>V</m> is defined as
      <me>
        U^{\perp}=\{v\in V: \innprod{u}{v}=0 \text{ for all } u\in U\}.
      </me>   
@@ -1552,11 +1552,26 @@ print(q1,q2,q3)
       By (1), there exist <m>w\in W</m> and <m>u\in U</m> such that <m>y=w+u</m>.
     </p>
   </proof>
+<p>
+  If <m>W</m> is a finite dimensional subspace of an inner product space <m>V</m>. Then the subspace 
+  <m>W^{\perp}</m> is called the <em>orthogonal complement</em> of <m>W</m> in <m>V</m>. 
+  Since <m>V=W\oplus W^{\perp}</m>, every vector <m>x\in V</m> can be uniquely written as 
+  <m>x=w+v</m> with <m>w\in W</m> and <m>v\in W^{\perp}</m>. The vector <m>w</m> is called the 
+  <em>orthogonal projection</em> of <m>x</m> onto <m>W</m> and is denoted by <m>\proj_W(x)</m>. 
 
+</p>
+<p>
+  Futhermore, if <m>\{u_1,\ldots, u_k\}</m> is an orthonormal basis of <m>W</m>, then
+  <me>
+    \proj_W(x)=\innprod{x}{u_1}u_1+\innprod{x}{u_2}u_2+\cdots +\innprod{x}{u_k}u_k.
+  </me>
+</p>
+<p>
+  The following theorem shows that the orthogonal projection is the best approximation of 
+  a vector in <m>V</m> by a vector in <m>W</m>.
+</p>
   <theorem xml:id="thm-inp-approximation">
     <title>Approximation Theorem</title>
-    
-    
     <statement>
       <p>
         Let <m>(V,\innprod{.}{.})</m> be an inner product space over <m>\R</m> and 
@@ -1579,8 +1594,58 @@ print(q1,q2,q3)
       The result follows.
     </p>
   </proof>
+<p>
+  The Approximation Theorem shows that the orthogonal projection of a vector <m>x</m> onto a 
+  subspace <m>W</m> is the best approximation of <m>x</m> by a vector in <m>W</m>. This result 
+  has important applications in numerical analysis and scientific computing. 
+</p>
 
-<subsection xml:id="subsec-linear-functionals">
+  <example xml:id="eg-inp-fourier">
+    <title>Fouries Coefficients</title>
+      <statement>
+      <p> 
+        Let us explore one such application from Fourier analysis. Define an inner product on
+  the space of continuous real-valued functions on <m>[-\pi, \pi]</m> as
+  <me>
+    \innprod{f}{g}=\frac{1}{\pi}\int_{-\pi}^{\pi} f(x)g(x) dx.
+  </me>  
+  Consider the subspace 
+  <me>F_n=\text{span}\{1, \cos x, \sin x, \cos 2x, \sin 2x, \ldots, \cos nx, \sin nx\}.</me> 
+  It is easy to check that the set <m>F_n</m> is orthgonal with respect to the above inner product.
+  Also 
+  <md>
+    <mrow> \norm{1}^2\amp =\innprod{1}{1}=2\pi,</mrow>
+    <mrow> \norm{\cos kx}^2\amp =\frac{1}{\pi}\int_{-\pi}^{\pi} \cos^2{kx}\,dx=\pi,</mrow>
+    <mrow> \norm{\sin kx}^2\amp =\frac{1}{\pi}\int_{-\pi}^{\pi} \sin^2{kx}\,dx=\pi,</mrow>
+  </md>
+for <m>k=1,\ldots, n</m>.
+  Hence an orthonormal basis of <m>F_n</m> is given by
+  <me>
+    \left\{\frac{1}{\sqrt{2\pi}}, \frac{\cos x}{\sqrt{\pi}}, \frac{\sin x}{\sqrt{\pi}}, \ldots, 
+    \frac{\cos nx}{\sqrt{\pi}}, \frac{\sin nx}{\sqrt{\pi}}\right\}.
+  </me>
+  Given a continuous function <m>f\colon [-\pi, \pi]\to \R</m>, 
+  we want to find the best approximation of <m>f</m>. Define 
+  <md>
+    <mrow>a_0 \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\,dx</mrow>
+    <mrow>a_k \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\cos kx \,dx</mrow>
+    <mrow>b_k \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\sin kx \,dx</mrow>
+  </md>
+  Then by the Approximation Theorem, the orthogonal projection of <m>f</m> onto <m>F_n</m> is given by
+  <me>
+    \proj_{F_n}(f)=a_0+\sum_{k=1}^n \left(a_k \cos kx + b_k \sin kx\right).   
+  </me>
+  The coefficients <m>a_0, a_k, b_k</m> are called the <em>Fourier coefficients</em> of <m>f</m>. Thus 
+  we have shown that the Fourier coefficients give the best approximation of a function 
+  by a trigonometric polynomial of degree at most <m>n</m> 
+  <me>
+    f(x)\approx a_0+\sum_{k=1}^n \left(a_k \cos kx + b_k \sin kx\right)
+  </me>
+</p>
+  </statement>
+  </example>
+  
+  <subsection xml:id="subsec-linear-functionals">
   <title>Linear Functionals</title>
   <p>
     Let <m>(V,\innprod{.}{.})</m> be an inner product space over <m>\R</m>. Fix a vector <m>a\in V</m> and 
@@ -1651,5 +1716,236 @@ is a linear map, them there exist a vector <m>a=(a_1,\ldots, a_n)</m> such that
     Since <m>\{u_1,\ldots, u_n\}</m> is a basis of <m>V</m>, we have <m>y-z=0</m> or <m>y=z</m>.  
   </p>
 </proof>
+
+<p>
+  Can we characterize linear maps from a finite dimesional inner product space <m>V</m> 
+  to a finite dimensional inner product space <m>W</m>?
+</p>
+
+<theorem xml:id="thm-inp-linear-map-characterization">
+  <statement>
+    <p>
+      Let <m>(V,\innprod{.}{.})</m> and <m>(W,\innprod{.}{.})</m> be finite dimenional inner 
+      product spaces over <m>\R</m>. Let <m>T\colon V\to W</m> be a linear map. 
+      Let <m>\alpha=\{u_1,\ldots, u_n\}</m> be an orthonormal basis of <m>V</m> and 
+      <m>\beta =\{v_1,\ldots, v_m\}</m> an orthonormal basis of  <m>W</m>. Then the matrix of <m>T</m>
+      with respect to these bases is given by  
+      <me>
+        [T]_\alpha^\beta=\begin{bmatrix}
+          \innprod{T(u_1)}{v_1} \amp \innprod{T(u_2)}{v_1} \amp \cdots \amp \innprod{T(u_n)}{v_1} \\
+          \innprod{T(u_1)}{v_2} \amp \innprod{T(u_2)}{v_2} \amp \cdots \amp \innprod{T(u_n)}{v_2} \\
+          \vdots \amp \vdots \amp \ddots \amp \vdots \\
+          \innprod{T(u_1)}{v_m} \amp \innprod{T(u_2)}{v_m} \amp \cdots \amp \innprod{T(u_n)}{v_m}
+          \end{bmatrix}.
+      </me>
+    </p>
+  </statement>
+</theorem>
+<proof>
+  <p>
+    Sine <m>\alpha=\{u_1,\ldots,u_n\}</m> is an orthonormal basis of <m>V</m>,
+    <me>
+      T(u_j)=\sum_i\innprod{T(u_i)}{v_i}v_i.
+    </me>
+    This shows that the <m>j</m>-th column of <m>[T]_\alpha^\beta</m> is
+    <me>
+      \begin{bmatrix}
+        \innprod{T(u_j)}{v_1} \\
+        \innprod{T(u_j)}{v_2} \\
+        \vdots \\
+        \innprod{T(u_j)}{v_m}
+      \end{bmatrix}.
+    </me>
+    In paticular, the <m>(i,j)</m>-th entry of <m>[T]_\alpha^\beta</m> is
+    <me>
+      \innprod{T(u_j)}{v_i}.
+    </me>     
+  </p>
+</proof>
+<p>
+  The above theorem shows that a linear map between two finite dimensional inner product spaces 
+  is completely determined by the images of an orthonormal basis of the domain space.
+</p>
+<p>
+  Now suppose <m>W=V</m> in <xref ref="thm-inp-linear-map-characterization"/> and <m>T\colon V\to V</m> be a linear map on <m>V</m>.
+  Let <m>\alpha=\{u_1,\ldots, u_n\}</m> be an orthonormal basis of <m>V</m>.
+  Then the matrix of <m>T</m> with respect to this basis is given by  
+  <me>
+     [T]_\alpha=\begin{bmatrix}
+          \innprod{T(u_1)}{u_1} \amp \innprod{T(u_2)}{u_1} \amp \cdots \amp \innprod{T(u_n)}{u_1} \\
+          \innprod{T(u_1)}{u_2} \amp \innprod{T(u_2)}{u_2} \amp \cdots \amp \innprod{T(u_n)}{u_2} \\
+          \vdots \amp \vdots \amp \ddots \amp \vdots \\
+          \innprod{T(u_1)}{u_n} \amp \innprod{T(u_2)}{u_n} \amp \cdots \amp \innprod{T(u_n)}{u_n}
+          \end{bmatrix}.
+  </me>    
+</p>
+<p>
+  Using the properties of inner product, it is easy to see that <m>[T]_\alpha</m> is a symmetric matrix
+if and only if 
+<me>\innprod{T(u_i)}{u_j}=\innprod{T(u_j)}{u_i}=\innprod{u_i}{T(u_j)}</me> for all <m>i,j</m>.
+This motivates the following definition.
+</p>
+<definition xml:id="def-inp-symmetric-LT">
+  <statement>
+    <p>
+     A linear map <m>T\colon V\to V</m> on an inner product space <m>(V,\innprod{.}{.})</m> is called
+     <em>symmetric</em> if
+     <me>
+       \innprod{T(u)}{v}=\innprod{u}{T(v)}
+     </me>
+     for all <m>u,v\in V</m>.  
+    </p>
+  </statement>
+</definition>
+<p>
+  Recall that we defined a linear map <m>T\colon \R^n\to \R^n</m> assocciated with an <m>n\times n</m> real 
+  matrix <m>A</m> as <m>T_A(x)=Ax</m>. Also the matrix of <m>T_A</m> with respect to the standard basis is 
+  <m>A</m>.   This we can define an <m>n\times n</m> matrix <m>A</m> to be symmetric if the linear map
+  <m>T_A\colon \R^n\to \R^n</m> is symmetric with respect to the standard inner product (dot product) on <m>\R^n</m>.
+</p>
+<p>
+  It is easy to see that an <m>n\times n</m> real matrix <m>A</m> is symmetric in the usual sense
+  (i.e., <m>A=A^T</m>) if and only if the linear map <m>T_A\colon \R^n\to \R^n</m> is 
+  symmetric with respect to the standard inner product on <m>\R^n</m>.
+</p>
+
+<p>
+  Next we revist the orthogonal linear transformation defined defined in the last chapter and 
+  give an equivalent definition using inner products. We have the following equivalent definition.
+</p>
+<definition xml:id="def-inp-orthogonal-maps">
+  <statement>
+    <p>
+      Let <m>(V,\innprod{.}{.})</m> be a finite dimensional inner product space over <m>\R</m>.
+      A linear map <m>T\colon V\to V</m> is an <em>orthogonal linear transformation</em> if and only if
+      <me>
+        \innprod{T(u)}{T(v)}=\innprod{u}{v}
+      </me>
+      for all <m>u,v\in V</m>.  
+    </p>
+  </statement>
+</definition>
+<p>
+  In particular orthogonal linear transformations are precisely those linear maps that 
+  preserve the inner product. It is easy to see that a linear map 
+  <m>T\colon V\to V</m> is an orthogonal  linear transformation if and only if
+  <me>
+    \norm{T(u)}=\norm{u}.
+  </me>
+We have the following equivalent characterization of orthogonal linear transformations.
+</p>   
+
+<theorem xml:id="thm-inp-orthogonal-maps">
+  <statement>
+    <p>
+      Let <m>(V,\innprod{.}{.})</m> be a finite dimensional inner product space over <m>\R</m>.  
+    and <m>T\colon V\to V</m> be a linear map. 
+    Then the following are equivalent.
+    <ol>
+      <li>
+        <p>
+          <m>T</m> is an orthogonal linear transformation.        
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>\norm{T(x)}=\norm{x}</m> for all <m>x\in V</m>.
+    </p>
+  </li>
+    <li>
+      <p>
+        <m>T</m> maps every orthonormal basis of <m>V</m> to an orthonormal basis of <m>V</m>. That is,
+        if <m>\{u_1,\ldots, u_n\}</m> is an orthonormal basis of <m>V</m>, then 
+        <m>\{T(u_1),\ldots, T(u_n)\}</m> is also an orthonormal basis of <m>V</m>.
+      </p>
+    </li>
+  </ol>
+</p>
+  </statement>
+</theorem>
+<proof>
+  <p>
+    (1) <m>\Rightarrow</m> (2): Follows from the definition of orthogonal linear transformation.  
+  </p>
+  <p>
+    (2) <m>\Rightarrow</m> (3): Let <m>\{u_1,\ldots, u_n\}</m> be an orthonormal basis of <m>V</m>.
+    For each <m>i,j=1,2,\ldots, n</m>, we have
+    <md>
+      <mrow>\innprod{T(u_i)}{T(u_j)} \amp = \frac{1}{2}(\norm{T(u_i)+T(u_j)}^2-\norm{T(u_i)}^2-\norm{T(u_j)}^2) </mrow>
+      <mrow>\amp = \frac{1}{2}(\norm{u_i+u_j}^2-\norm{u_i}^2-\norm{u_j}^2) </mrow>
+      <mrow>\amp = \innprod{u_i}{u_j} </mrow>
+    </md>
+    This shows that <m>\{T(u_1),\ldots, T(u_n)\}</m> is an orthonormal set.
+    Since <m>T</m> is a linear map, 
+    <m>\{T(u_1),\ldots, T(u_n)\}</m> spans <m>\im(T)</m>. Also <m>\{T(u_1),\ldots, T(u_n)\}</m> is 
+    linearly independent. Hence 
+    <me>n=\dim(\im(T))\leq \dim(V)=n.</me> This implies 
+    <m>\im(T)=V</m>.
+    This shows that <m>\{T(u_1),\ldots, T(u_n)\}</m> is an orthonormal basis of <m>V</m>.
+  </p>
+  <p>
+    (3) <m>\Rightarrow</m> (1): Let <m>u,v\in V</m>. 
+    Since <m>\{u_1,\ldots, u_n\}</m> is an orthonormal basis of <m>V</m>, we can write
+    <m>u=c_1u_1+c_2 u_2+\cdots +c_nu_n</m> and
+    <m>v=d_1u_1+d_2 u_2+\cdots +d_nu_n</m>. Then it is easy to see that   
+    <me>
+      \innprod{u}{v}=\sum c_j d_i.
+    </me>
+    
+    Hence
+    <md>
+      <mrow>\innprod{T(u)}{T(v)} \amp = \innprod{\sum c_iT(u_i)}{\sum d_jT(u_j)} </mrow>
+      <mrow>\amp = \sum_i\sum_j c_id_j\innprod{T(u_i)}{T(u_j)} </mrow>
+      <mrow>\amp = \sum c_id_i=\innprod{u}{v}.</mrow>
+    </md>
+  </p>      
+</proof>
+
+<p>
+  Now let us see what happens to the matrix of an orthogonal linear transformation with 
+  respect to an orthonormal basis. Let <m>T\colon V\to V</m> be an orthogonal linear 
+  transformation on a finite dimensional inner product space <m>(V,\innprod{.}{.})</m>.
+  Let <m>\alpha=\{u_1,\ldots, u_n\}</m> be an orthonormal basis of <m>V</m>.
+  Then the matrix of <m>T</m> with respect to this basis is given by  
+  <me>
+     [T]_\alpha=\begin{bmatrix}
+          \innprod{T(u_1)}{u_1} \amp \innprod{T(u_2)}{u_1} \amp \cdots \amp \innprod{T(u_n)}{u_1} \\
+          \innprod{T(u_1)}{u_2} \amp \innprod{T(u_2)}{u_2} \amp \cdots \amp \innprod{T(u_n)}{u_2} \\
+          \vdots \amp \vdots \amp \ddots \amp \vdots \\
+          \innprod{T(u_1)}{u_n} \amp \innprod{T(u_2)}{u_n} \amp \cdots \amp \innprod{T(u_n)}{u_n}
+          \end{bmatrix}=\begin{bmatrix}
+          a_{11} \amp a_{21} \amp \cdots \amp a_{n1} \\
+          a_{21} \amp a_{22} \amp \cdots \amp a_{21} \\
+          \vdots \amp \vdots \amp \ddots \amp \vdots \\
+          a_{n1} \amp a_{n2}\amp \cdots \amp a_{nn}
+          \end{bmatrix} =A.
+  </me>   
+  Let us write the columns of <m>A</m> as <m>A=[c_1 \; c_2 \; \cdots \; c_n]</m>.
+    Since <m>\{T(u_1),\ldots, T(u_n)\}</m> is an orthonormal basis of <m>V</m>, it follows that
+ <md>
+    <mrow> \delta_{ij} \amp=\innprod{T(u_i)}{T(u_j)} </mrow>
+    <mrow>\amp=\innprod{\sum_k a_{ki}u_k}{\sum_s a_{sj}u_s} </mrow>
+    <mrow>\amp=\sum_k\sum_s a_{ki}a_{sj}=c_i\cdot c_j </mrow>
+  </md>
+  the dot product of <m>c_i</m> and <m>c_j</m>.
+  This shows that the columns of <m>A</m> form an orthonormal set in <m>\R^n</m>.
+  This suggest the following definition  
+  of an othogonal matrix.
+</p>
+
+<definition xml:id="def-inp-orthogonal-matrix">
+  <statement>
+    <p>
+      A real <m>n\times n</m> matrix <m>A</m> is called an <em>orthogonal matrix</em> if
+      its columns form an orthonormal set in <m>\R^n</m>. This is, if <m>A=[c_1 \; c_2 \; \cdots \; c_n]</m>, then
+      <me>
+        c_i \cdot c_j = \delta_{ij}
+      </me>
+      for all <m>i,j=1,2,\ldots, n</m>. Equivalently, <m>A</m> is an orthogonal matrix if <m>A^TA=I_n</m>. 
+    </p>
+  </statement>
+</definition>
+ 
+
 </subsection>
 </section>

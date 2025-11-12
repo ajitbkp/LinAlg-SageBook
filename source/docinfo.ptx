@@ -36,6 +36,8 @@
 
 \def\diag{{ diag\,}}
 \def\proj{{ proj\,}}
+\def\im{{ {\rm Im}\,}}
+
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
