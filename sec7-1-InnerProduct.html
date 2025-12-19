@@ -119,15 +119,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.9.18';
+eBookConfig.runestone_version = '7.11.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.cefb0224014f3333.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c50cdcad467c8d3e.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.557d81b04b3ec0e4.css">
+<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
@@ -460,7 +460,7 @@ sagecell.makeSagecell({
 </h2>
 <div class="para" id="sec7-1-InnerProduct-2">In the last chapter,  we  dealt with notion of dot product and geometry in <span class="process-math">\(\R^n\text{.}\)</span> The dot product and related notion can be generalized to an arbitrary vector space over <span class="process-math">\(\R\)</span> or <span class="process-math">\(\mathbb{C}\text{.}\)</span> All the notions, we have learned in the last section can be generalized over an inner product space. In this chapter we, shall introduce inner product on a vector space <span class="process-math">\(V\)</span> over <span class="process-math">\(\mathbb{R}\)</span> and define extend the results studied in the last chapter on <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec7-1-InnerProduct-3">Note that the dot product of two vectors in <span class="process-math">\(\R^n\)</span> is a scalar, in particular, dot product can be thought of as a function from <span class="process-math">\(`\cdot' \colon \R^n\times \R^n \to\R\)</span> satisfying the following properties:<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec7-1-InnerProduct-3">Note that the dot product of two vectors in <span class="process-math">\(\R^n\)</span> is a scalar, in particular, dot product can be thought of as a function from <span class="process-math">\(\cdot \colon \R^n\times \R^n \to\R\)</span> satisfying the following properties:<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec7-1-InnerProduct-4">
 <ol class="decimal" id="sec7-1-InnerProduct-4-1">
@@ -1163,33 +1163,68 @@ v = \sum_i \innprod{v}{v_i}v_i.
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-49" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec7-1-InnerProduct-50">
-<div class="para">Next we turn our attention to finding an orthogonal basis in an inner product space using the Gram-Schmidt process. The process is exactly same as before, we just need to replace the dot product by the given inner product. Let <span class="process-math">\((V, \inner{.}{.})\)</span> be an inner product space. Let <span class="process-math">\(\{v_1, v_2, \ldots, v_n\}\)</span> be a basis of <span class="process-math">\(V\text{.}\)</span> We construct an orthogonal basis <span class="process-math">\(\{u_1, u_2, \ldots, u_n\}\)</span> as follows:</div>
-<ol class="decimal" id="sec7-1-InnerProduct-50-5">
-<li id="sec7-1-InnerProduct-50-5-1">
-<div class="para" id="sec7-1-InnerProduct-50-5-1-1">Set <span class="process-math">\(u_1 = v_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-50-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="exercise exercise-like" id="sec7-1-InnerProduct-50"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec7-1-InnerProduct-50-1-1">
+<div class="para">Let <span class="process-math">\(\{u_1,u_2\}\)</span> be an orthonormal basis of <span class="process-math">\(\R^2\text{.}\)</span> Let <span class="process-math">\(v\in\R^2\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v = \alpha_1 u_1+\alpha_2u_2.
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#sec7-1-InnerProduct-50-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<div class="para">Let <span class="process-math">\(\theta\)</span> be the angle between <span class="process-math">\(v\)</span> and <span class="process-math">\(u_1\text{.}\)</span> Show that</div>
+<ol class="decimal" id="sec7-1-InnerProduct-50-1-1-8">
+<li id="sec7-1-InnerProduct-50-1-1-8-1">
+<div class="para" id="sec7-1-InnerProduct-50-1-1-8-1-1">
+<span class="process-math">\(\cos\theta=\frac{\alpha_1}{\sqrt{\alpha_1^2+\alpha_2^2}}=
+\frac{\alpha_1}{\norm{v}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-50-1-1-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.26.1"><a href="#sec7-1-InnerProduct-50-1-1-8-1" title="Copy heading and permalink for Item 7.1.26.1" aria-label="Copy heading and permalink for Item 7.1.26.1">🔗</a></div>
 </li>
-<li id="sec7-1-InnerProduct-50-5-2">
-<div class="para logical" id="sec7-1-InnerProduct-50-5-2-1">
+<li id="sec7-1-InnerProduct-50-1-1-8-2">
+<div class="para" id="sec7-1-InnerProduct-50-1-1-8-2-1">
+<span class="process-math">\(\sin\theta=\frac{\alpha_2}{\sqrt{\alpha_1^2+\alpha_2^2}}=
+\frac{\alpha_2}{\norm{v}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-50-1-1-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.26.2"><a href="#sec7-1-InnerProduct-50-1-1-8-2" title="Copy heading and permalink for Item 7.1.26.2" aria-label="Copy heading and permalink for Item 7.1.26.2">🔗</a></div>
+</li>
+<li id="sec7-1-InnerProduct-50-1-1-8-3">
+<div class="para" id="sec7-1-InnerProduct-50-1-1-8-3-1">
+<span class="process-math">\(\displaystyle \norm{v}^2=\alpha_1^2+\alpha_2^2.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-50-1-1-8-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.26.3"><a href="#sec7-1-InnerProduct-50-1-1-8-3" title="Copy heading and permalink for Item 7.1.26.3" aria-label="Copy heading and permalink for Item 7.1.26.3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-50-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 7.1.26"><a href="#sec7-1-InnerProduct-50" title="Copy heading and permalink for Checkpoint 7.1.26" aria-label="Copy heading and permalink for Checkpoint 7.1.26">🔗</a></div></article><div class="para logical" id="sec7-1-InnerProduct-51">
+<div class="para">Next we turn our attention to finding an orthogonal basis in an inner product space using the Gram-Schmidt process. The process is exactly same as before, we just need to replace the dot product by the given inner product. Let <span class="process-math">\((V, \inner{.}{.})\)</span> be an inner product space. Let <span class="process-math">\(\{v_1, v_2, \ldots, v_n\}\)</span> be a basis of <span class="process-math">\(V\text{.}\)</span> We construct an orthogonal basis <span class="process-math">\(\{u_1, u_2, \ldots, u_n\}\)</span> as follows:</div>
+<ol class="decimal" id="sec7-1-InnerProduct-51-5">
+<li id="sec7-1-InnerProduct-51-5-1">
+<div class="para" id="sec7-1-InnerProduct-51-5-1-1">Set <span class="process-math">\(u_1 = v_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-51-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec7-1-InnerProduct-51-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec7-1-InnerProduct-51-5-2">
+<div class="para logical" id="sec7-1-InnerProduct-51-5-2-1">
 <div class="para">For <span class="process-math">\(2 \leq k \leq n\text{,}\)</span> set</div>
 <div class="displaymath process-math">
 \begin{equation*}
 u_k = v_k - \sum_{j=1}^{k-1} \frac{\inner{v_k}{u_j}}{\norm{u_j}^2} u_j.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-50-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-51-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#sec7-1-InnerProduct-50-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec7-1-InnerProduct-51-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-50" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-51" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec7-1-InnerProduct-51">Thus we have the following result.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-51" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec7-1-InnerProduct-52">Thus we have the following result.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-52" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-inp-gram-schmidt"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gram–Schmidt Orthogonalization Theorem.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gram–Schmidt Orthogonalization Theorem.</span>
 </h3>
 <div class="para" id="thm-inp-gram-schmidt-2">Let <span class="process-math">\(\{v_1, v_2, \ldots, v_n\}\)</span> be a linearly independent set in an inner product space <span class="process-math">\(V\text{.}\)</span> Then there exists an orthogonal set <span class="process-math">\(\{u_1, u_2, \ldots, u_n\}\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#thm-inp-gram-schmidt-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -1222,13 +1257,13 @@ e_i: = \frac{u_i}{\norm{u_i}}, \quad 1 \leq i \leq n.
 </div>
 <div class="para" id="thm-inp-gram-schmidt-8">Then <span class="process-math">\(\{e_1, e_2, \ldots, e_n\}\)</span> is an orthonormal basis of the subspace <span class="process-math">\(\text{span}\{v_1, v_2, \ldots, v_n\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-inp-gram-schmidt-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.1.26: Gram–Schmidt Orthogonalization Theorem"><a href="#thm-inp-gram-schmidt" title="Copy heading and permalink for Theorem 7.1.26: Gram–Schmidt Orthogonalization Theorem" aria-label="Copy heading and permalink for Theorem 7.1.26: Gram–Schmidt Orthogonalization Theorem">🔗</a></div></article><details id="sec7-1-InnerProduct-53" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec7-1-InnerProduct-53-1">The proof proceeds by induction on <span class="process-math">\(k\text{.}\)</span> For <span class="process-math">\(k = 1\text{,}\)</span> set <span class="process-math">\(u_1 = v_1\text{,}\)</span> which is nonzero since <span class="process-math">\(v_1\)</span> is linearly independent. Suppose <span class="process-math">\(u_1, \ldots, u_{k-1}\)</span> have been constructed such that they are mutually orthogonal and <span class="process-math">\(\operatorname{span}\{u_1, \ldots, u_{k-1}\}
-= \operatorname{span}\{v_1, \ldots, v_{k-1}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-53-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 7.1.27: Gram–Schmidt Orthogonalization Theorem"><a href="#thm-inp-gram-schmidt" title="Copy heading and permalink for Theorem 7.1.27: Gram–Schmidt Orthogonalization Theorem" aria-label="Copy heading and permalink for Theorem 7.1.27: Gram–Schmidt Orthogonalization Theorem">🔗</a></div></article><details id="sec7-1-InnerProduct-54" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec7-1-InnerProduct-54-1">The proof proceeds by induction on <span class="process-math">\(k\text{.}\)</span> For <span class="process-math">\(k = 1\text{,}\)</span> set <span class="process-math">\(u_1 = v_1\text{,}\)</span> which is nonzero since <span class="process-math">\(v_1\)</span> is linearly independent. Suppose <span class="process-math">\(u_1, \ldots, u_{k-1}\)</span> have been constructed such that they are mutually orthogonal and <span class="process-math">\(\operatorname{span}\{u_1, \ldots, u_{k-1}\}
+= \operatorname{span}\{v_1, \ldots, v_{k-1}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-54-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec7-1-InnerProduct-53-2">Define <span class="process-math">\(u_k = v_k - \sum_{j=1}^{k-1}
-\frac{\innprod{v_k}{u_j}}{\innprod{u_j}{u_j}} u_j.\)</span> Then for each <span class="process-math">\(i &lt; k\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-53-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec7-1-InnerProduct-54-2">Define <span class="process-math">\(u_k = v_k - \sum_{j=1}^{k-1}
+\frac{\innprod{v_k}{u_j}}{\innprod{u_j}{u_j}} u_j.\)</span> Then for each <span class="process-math">\(i &lt; k\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-54-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="sec7-1-InnerProduct-53-3">
+<div class="displaymath process-math" id="sec7-1-InnerProduct-54-3">
 \begin{align*}
 \innprod{u_k}{u_i}
 \amp = \innprod{v_k}{u_i}
@@ -1239,17 +1274,17 @@ e_i: = \frac{u_i}{\norm{u_i}}, \quad 1 \leq i \leq n.
 = 0.
 \end{align*}
 </div>
-<div class="para" id="sec7-1-InnerProduct-53-4">Hence, <span class="process-math">\(u_k\)</span> is orthogonal to all previous <span class="process-math">\(u_i\text{.}\)</span> This completes the inductive step, and the result follows.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-53-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec7-1-InnerProduct-54-4">Hence, <span class="process-math">\(u_k\)</span> is orthogonal to all previous <span class="process-math">\(u_i\text{.}\)</span> This completes the inductive step, and the result follows.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-54-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.1.1"><a href="#sec7-1-InnerProduct-53" title="Copy heading and permalink for Proof 7.1.1" aria-label="Copy heading and permalink for Proof 7.1.1">🔗</a></div></article></details><article class="remark remark-like" id="sec7-1-InnerProduct-54"><h3 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Proof 7.1.1"><a href="#sec7-1-InnerProduct-54" title="Copy heading and permalink for Proof 7.1.1" aria-label="Copy heading and permalink for Proof 7.1.1">🔗</a></div></article></details><article class="remark remark-like" id="sec7-1-InnerProduct-55"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec7-1-InnerProduct-54-1-1">The Gram–Schmidt process provides an explicit algorithm for transforming any linearly independent set into an orthonormal one. It is a fundamental tool in numerical linear algebra, functional analysis, and the construction of orthogonal polynomials.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-54-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec7-1-InnerProduct-55-1-1">The Gram–Schmidt process provides an explicit algorithm for transforming any linearly independent set into an orthonormal one. It is a fundamental tool in numerical linear algebra, functional analysis, and the construction of orthogonal polynomials.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-55-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 7.1.27"><a href="#sec7-1-InnerProduct-54" title="Copy heading and permalink for Remark 7.1.27" aria-label="Copy heading and permalink for Remark 7.1.27">🔗</a></div></article><article class="example example-like" id="sec7-1-InnerProduct-55"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Remark 7.1.28"><a href="#sec7-1-InnerProduct-55" title="Copy heading and permalink for Remark 7.1.28" aria-label="Copy heading and permalink for Remark 7.1.28">🔗</a></div></article><article class="example example-like" id="sec7-1-InnerProduct-56"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="sec7-1-InnerProduct-55-1">
+<div class="para logical" id="sec7-1-InnerProduct-56-1">
 <div class="para">Let <span class="process-math">\(V=\mathcal{P}_2(\mathbb{R})\)</span> and define for <span class="process-math">\(p,q \in V\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1259,18 +1294,18 @@ e_i: = \frac{u_i}{\norm{u_i}}, \quad 1 \leq i \leq n.
 </div>
 <div class="para">Apply Gram–Schmidt to the linearly independent set <span class="process-math">\(\{v_{1},v_{2},v_{3}\} = \{1,x,x^{2}\}\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-55-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-56-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec7-1-InnerProduct-55-2">
+<div class="para logical" id="sec7-1-InnerProduct-56-2">
 <div class="para"><span class="process-math">\(u_{1}=v_{1}=1\text{.}\)</span></div>
 <div class="displaymath process-math">
 \begin{equation*}
 \innprod{u_{1}}{u_{1}} = 1^2 + 1^2 + 1^2 = 3.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-55-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-56-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec7-1-InnerProduct-55-3">
+<div class="para logical" id="sec7-1-InnerProduct-56-3">
 <div class="displaymath process-math">
 \begin{equation*}
 u_{2}
@@ -1283,9 +1318,9 @@ u_{2}
 \innprod{u_{2}}{u_{2}} = ( -1)^2 + 0^2 + 1^2 = 1+0+1 = 2.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-55-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-56-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec7-1-InnerProduct-55-4">
+<div class="para logical" id="sec7-1-InnerProduct-56-4">
 <div class="displaymath process-math">
 \begin{equation*}
 u_{3}
@@ -1299,7 +1334,7 @@ u_{3}
 \innprod{v_{3}}{u_{1}} = x^{2}(0)+x^{2}(1)+x^{2}(2) = 0 + 1 + 4 = 5.
 \end{equation*}
 </div>
-<div class="displaymath process-math" id="sec7-1-InnerProduct-55-4-3">
+<div class="displaymath process-math" id="sec7-1-InnerProduct-56-4-3">
 \begin{align*}
 \innprod{v_{3}}{u_{2}} \amp =
 = \innprod{x^{2}}{x-1}\\
@@ -1352,11 +1387,11 @@ e_{3} = \dfrac{x^{2}-2x+\tfrac{1}{3}}{\sqrt{2/3}}
 \end{equation*}
 </div>
 <div class="para">The set <span class="process-math">\(\{e_{1},e_{2},e_{3}\}\)</span> is an orthonormal basis of <span class="process-math">\(\operatorname{span}\{1,x,x^{2}\}=\mathcal{P}_2(\mathbb{R})\)</span> (with respect to the discrete inner product above).</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-55-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-56-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec7-1-InnerProduct-55-5">Let us do this using SageMath as well by on <span class="process-math">\(\mathcal{P}_4(\mathbb{R})\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-55-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec7-1-InnerProduct-56-5">Let us do this using SageMath as well by on <span class="process-math">\(\mathcal{P}_4(\mathbb{R})\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-56-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div id="sec7-1-InnerProduct-55-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def inpPol(f,g,n):
+<div id="sec7-1-InnerProduct-56-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def inpPol(f,g,n):
     a = sum([f(x=i)*g(x=i) for i in range(n+1)])
     return a
 
@@ -1379,8 +1414,8 @@ show(g3(x))
 show(g4(x))
 show(g5(x))
 </script></div>
-<div class="autopermalink" data-description="Example 7.1.28"><a href="#sec7-1-InnerProduct-55" title="Copy heading and permalink for Example 7.1.28" aria-label="Copy heading and permalink for Example 7.1.28">🔗</a></div></article><article class="exercise exercise-like" id="inp-7-1-15"><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 7.1.29"><a href="#sec7-1-InnerProduct-56" title="Copy heading and permalink for Example 7.1.29" aria-label="Copy heading and permalink for Example 7.1.29">🔗</a></div></article><article class="exercise exercise-like" id="inp-7-1-15"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="inp-7-1-15-1-1">
 <div class="para">Let <span class="process-math">\(\beta=\{u_1,\ldots,
@@ -1398,8 +1433,8 @@ u_n\}\)</span> be an orthogonal basis of an inner product space <span class="pro
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#inp-7-1-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 7.1.29"><a href="#inp-7-1-15" title="Copy heading and permalink for Checkpoint 7.1.29" aria-label="Copy heading and permalink for Checkpoint 7.1.29">🔗</a></div></article><article class="example example-like" id="Legendre-poly"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Legendre Polynomials.</span>
+<div class="autopermalink" data-description="Checkpoint 7.1.30"><a href="#inp-7-1-15" title="Copy heading and permalink for Checkpoint 7.1.30" aria-label="Copy heading and permalink for Checkpoint 7.1.30">🔗</a></div></article><article class="example example-like" id="Legendre-poly"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Legendre Polynomials.</span>
 </h3>
 <div class="para" id="Legendre-poly-2-1">Consider <span class="process-math">\(V ={\cal P}_3(\R)\)</span> with inner product <span class="process-math">\(\inner{p}{q}:=\int_{-1}^1 p(x)q(x)\,dx\text{.}\)</span> Use the standard basis <span class="process-math">\(\beta =\{v_1,v_2,v_3,v_4\} = \{1,x,x^2,x^3\}\)</span> to find an orthogonal basis of <span class="process-math">\({\cal P}_3(\R)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Legendre-poly-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="Legendre-poly-2-2">First of all notice that <span class="process-math">\(\beta\)</span> is not an orthogonal basis. For <span class="process-math">\(\inner{v_1}{v_3}=\inner{1}{x^2} = \int_{-1}^1 x^2 dx = \frac23\text{,}\)</span> <span class="process-math">\(\inner{v_2}{v_4}=\int_{-1}^1 x^4 dx = \frac25\text{.}\)</span> Also note that <span class="process-math">\(\inner{v_1}{v_2}=\int_{-1}^1 xdx = 0\text{.}\)</span> <span class="process-math">\(\inner{v_2}{v_3}=\int_{-1}^1 x^3dx = 0\text{.}\)</span> <span class="process-math">\(\inner{v_1}{v_4}=\int_{-1}^1 x^3 dx = 0\text{.}\)</span> <span class="process-math">\(\inner{v_3}{v_4}=\int_{-1}^1 x^5dx = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Legendre-poly-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1447,7 +1482,7 @@ u_4 \amp =  u_4-\inner{v_4}{u_1}/\norm{u_1}^1u_1-\inner{v_4}{u_2}/\norm{u_2}^1u_
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Legendre-poly-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="fig_legendrepoly"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/Legendre_poly.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.31<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Graph of Legendre polynomials<div class="autopermalink" data-description="Figure 7.1.31"><a href="#fig_legendrepoly" title="Copy heading and permalink for Figure 7.1.31" aria-label="Copy heading and permalink for Figure 7.1.31">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 7.1.30: Legendre Polynomials"><a href="#Legendre-poly" title="Copy heading and permalink for Example 7.1.30: Legendre Polynomials" aria-label="Copy heading and permalink for Example 7.1.30: Legendre Polynomials">🔗</a></div></article><div id="sec7-1-InnerProduct-58" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('x')
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.32<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Graph of Legendre polynomials<div class="autopermalink" data-description="Figure 7.1.32"><a href="#fig_legendrepoly" title="Copy heading and permalink for Figure 7.1.32" aria-label="Copy heading and permalink for Figure 7.1.32">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 7.1.31: Legendre Polynomials"><a href="#Legendre-poly" title="Copy heading and permalink for Example 7.1.31: Legendre Polynomials" aria-label="Copy heading and permalink for Example 7.1.31: Legendre Polynomials">🔗</a></div></article><div id="sec7-1-InnerProduct-59" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">var('x')
 f1(x) = 1
 f2(x) = x
 f3(x) = x^2
@@ -1459,7 +1494,7 @@ def inp(f,g):
 def inp_norm(f):
     return sqrt(integral(f(x)*f(x),x,-1,1))
 </script></div>
-<div id="sec7-1-InnerProduct-59" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">g1(x) = f1(x)/inp_norm(f1);g1(x)
+<div id="sec7-1-InnerProduct-60" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">g1(x) = f1(x)/inp_norm(f1);g1(x)
 h(x) = f2(x)-inp(f2,g1)*g1(x)
 g2(x) = h(x)/inp_norm(h);g2(x)
 h(x) = f3(x)-inp(f3,g1)*g1(x)-inp(f3,g2)*g2(x)
@@ -1472,7 +1507,7 @@ plot(g1(x),(x,-1,1))+plot(g2(x),(x,-1,1),color='red')+\
 plot(g3(x),(x,-1,1),color='green')+plot(g4(x),(x,-1,1),color='pink')
 </script></div>
 <article class="exercise exercise-like" id="inp-7-1-16"><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.33</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="inp-7-1-16-1-1">Consider the standard basis <span class="process-math">\(\beta=\{1,x,x^2,x^3\}\)</span> of <span class="process-math">\({\cal P}_3(\R)\)</span> with inner product <span class="process-math">\(\inner{f}{g}:=\int_0^1 f(x)g(x)\,dx\text{.}\)</span> Find an orthonormal basis starting with <span class="process-math">\(\beta\)</span> using the Gram-Schmidt orthogonalization process.<div class="autopermalink" data-description="Paragraph"><a href="#inp-7-1-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="inp-7-1-16-1-2">
@@ -1499,13 +1534,13 @@ show(p(x))
 <div class="autopermalink" data-description="Hint 1"><a href="#inp-7-1-16-1-2-1" title="Copy heading and permalink for Hint 1" aria-label="Copy heading and permalink for Hint 1">🔗</a></div>
 </div></details><div class="autopermalink" data-description="Paragraph"><a href="#inp-7-1-16-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 7.1.32"><a href="#inp-7-1-16" title="Copy heading and permalink for Checkpoint 7.1.32" aria-label="Copy heading and permalink for Checkpoint 7.1.32">🔗</a></div></article><article class="example example-like" id="sec7-1-InnerProduct-61"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.33</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Checkpoint 7.1.33"><a href="#inp-7-1-16" title="Copy heading and permalink for Checkpoint 7.1.33" aria-label="Copy heading and permalink for Checkpoint 7.1.33">🔗</a></div></article><article class="example example-like" id="sec7-1-InnerProduct-62"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec7-1-InnerProduct-61-1-1">Let <span class="process-math">\(A=\left(\begin{array}{rrr}2 \amp -1 \amp 0 \\-1 \amp 2 \amp -1 \\0 \amp -1 \amp 2 \end{array} \right)\text{.}\)</span> It is easy to check that <span class="process-math">\(A\)</span> is a symmetric and positive definite matrix. (why?) Define an inner product on <span class="process-math">\(\mathbb{R}^3\)</span> as <span class="process-math">\(\inner{u}{v}:=v^TAu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-61-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sec7-1-InnerProduct-61-1-2">
+<div class="para" id="sec7-1-InnerProduct-62-1-1">Let <span class="process-math">\(A=\left(\begin{array}{rrr}2 \amp -1 \amp 0 \\-1 \amp 2 \amp -1 \\0 \amp -1 \amp 2 \end{array} \right)\text{.}\)</span> It is easy to check that <span class="process-math">\(A\)</span> is a symmetric and positive definite matrix. (why?) Define an inner product on <span class="process-math">\(\mathbb{R}^3\)</span> as <span class="process-math">\(\inner{u}{v}:=v^TAu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-62-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec7-1-InnerProduct-62-1-2">
 <div class="para">Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors <span class="process-math">\(\beta=\{e_1, e_2, e_3\}\)</span> with respect to the above inner product.</div>
-<div class="displaymath process-math" id="sec7-1-InnerProduct-61-1-2-2">
+<div class="displaymath process-math" id="sec7-1-InnerProduct-62-1-2-2">
 \begin{align*}
 u_1:  =\amp (1,0,0)\\
 u_2: =\amp  e_2-\frac{\inner{u_2\cdot e_2}{u_1}}{\norm{u_1}^2}u_1=(0,1,0)-\frac{-1}{2}(1,0,0)=(1/2,1,0)\\
@@ -1513,10 +1548,10 @@ u_3: =\amp  e_3 -\frac{\inner{e_3}{u_1}}{\norm{u_1}^2}u_1-\frac{\inner{e_3}{u_1}
 = \amp  (0,0,1)-\frac{0}{2}(1,0,0)-\frac{-1}{3/2}(1/2,1,0)=(1/3, 2/3, 1)
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-61-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-62-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec7-1-InnerProduct-61-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
-<div id="sec7-1-InnerProduct-61-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix([[2,-1,0],[-1,2,-1],[0,-1,2]])
+<div class="solutions"><details id="sec7-1-InnerProduct-62-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div id="sec7-1-InnerProduct-62-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix([[2,-1,0],[-1,2,-1],[0,-1,2]])
 A.is_positive_definite()
 def inpA(u,v):
     return v.dot_product(A*u)
@@ -1531,12 +1566,12 @@ q2 = u2/sqrt(inpA(u2,u2))
 q3 = u3/sqrt(inpA(u3,u3))
 print(q1,q2,q3)
 </script></div>
-<div class="autopermalink" data-description="Hint 7.1.33.1"><a href="#sec7-1-InnerProduct-61-2" title="Copy heading and permalink for Hint 7.1.33.1" aria-label="Copy heading and permalink for Hint 7.1.33.1">🔗</a></div>
+<div class="autopermalink" data-description="Hint 7.1.34.1"><a href="#sec7-1-InnerProduct-62-2" title="Copy heading and permalink for Hint 7.1.34.1" aria-label="Copy heading and permalink for Hint 7.1.34.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 7.1.33"><a href="#sec7-1-InnerProduct-61" title="Copy heading and permalink for Example 7.1.33" aria-label="Copy heading and permalink for Example 7.1.33">🔗</a></div></article><article class="example example-like" id="sec7-1-InnerProduct-62"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lagrange Interpolating Polynomials.</span>
+<div class="autopermalink" data-description="Example 7.1.34"><a href="#sec7-1-InnerProduct-62" title="Copy heading and permalink for Example 7.1.34" aria-label="Copy heading and permalink for Example 7.1.34">🔗</a></div></article><article class="example example-like" id="sec7-1-InnerProduct-63"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.35</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lagrange Interpolating Polynomials.</span>
 </h3>
-<div class="para logical" id="sec7-1-InnerProduct-62-2-1">
+<div class="para logical" id="sec7-1-InnerProduct-63-2-1">
 <div class="para">Fix any <span class="process-math">\(n+1\)</span> distinct real numbers, <span class="process-math">\(c_0,c_1,\ldots, c_n\)</span> and define</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1546,25 +1581,25 @@ print(q1,q2,q3)
 </div>
 <div class="para">an inner product on <span class="process-math">\({\cal P}_n(\R)\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-62-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sec7-1-InnerProduct-62-2-2">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-63-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec7-1-InnerProduct-63-2-2">
 <div class="para">Recall the Lagrange Polynomial defined (Eqn. <a href="sec4-5-basis-dim-VS.html#lagrange-eq1" class="xref" data-knowl="./knowl/xref/lagrange-eq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.5.1">(4.5.1)</a>).</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lagrange-eq1.html">
 \begin{equation*}
 \ell_i(x)=\prod_{j=0,j\neq i}^{n}\frac{x-c_j}{c_i-c_j}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-62-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sec7-1-InnerProduct-62-2-3">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-63-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec7-1-InnerProduct-63-2-3">
 <div class="para">Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \inner{\ell_i}{\ell_j}=\sum_{k=0}^n \ell_i(c_k)\ell_j(c_k)=\delta_{ij}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-62-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sec7-1-InnerProduct-62-2-4">Hence <span class="process-math">\(\{\ell_i\}\)</span> is an orthonormal basis of <span class="process-math">\({\cal P}_n(\R)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-62-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sec7-1-InnerProduct-62-2-5">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-63-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec7-1-InnerProduct-63-2-4">Hence <span class="process-math">\(\{\ell_i\}\)</span> is an orthonormal basis of <span class="process-math">\({\cal P}_n(\R)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-63-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec7-1-InnerProduct-63-2-5">
 <div class="para">Let <span class="process-math">\(p(x)\in {\cal P}_n(\R)\)</span> be any polynomial, then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1572,7 +1607,7 @@ print(q1,q2,q3)
 \end{equation*}
 </div>
 <div class="para">Since <span class="process-math">\(\{\ell_i\}\)</span> is an orthonormal basis of <span class="process-math">\({\cal P}_n(\R)\text{,}\)</span> we have</div>
-<div class="displaymath process-math" id="sec7-1-InnerProduct-62-2-5-5">
+<div class="displaymath process-math" id="sec7-1-InnerProduct-63-2-5-5">
 \begin{gather*}
 p(x)  = \inner{p(x)}{\ell_0(x)}\ell_0(x)+\inner{p(x)}{\ell_1(x)}\ell_1(x)+\cdots +\inner{p(x)}{\ell_n(x)}\ell_n(x)\\
 =  p(c_0)\ell_0(x)+p(c_1)\ell_1(x)+p(c_2)\ell_2(x)+\cdots +p(c_n)\ell_n(x)
@@ -1580,20 +1615,20 @@ p(x)  = \inner{p(x)}{\ell_0(x)}\ell_0(x)+\inner{p(x)}{\ell_1(x)}\ell_1(x)+\cdots
 </div>
 <div class="para">which is the Lagrange interpolation expansion of <span class="process-math">\(p(x)\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-62-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-63-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 7.1.34: Lagrange Interpolating Polynomials"><a href="#sec7-1-InnerProduct-62" title="Copy heading and permalink for Example 7.1.34: Lagrange Interpolating Polynomials" aria-label="Copy heading and permalink for Example 7.1.34: Lagrange Interpolating Polynomials">🔗</a></div></article><div class="para" id="sec7-1-InnerProduct-63">How will you define the othogonal projection of a vector onto another vector in an inner product space?<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-63" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 7.1.35: Lagrange Interpolating Polynomials"><a href="#sec7-1-InnerProduct-63" title="Copy heading and permalink for Example 7.1.35: Lagrange Interpolating Polynomials" aria-label="Copy heading and permalink for Example 7.1.35: Lagrange Interpolating Polynomials">🔗</a></div></article><div class="para" id="sec7-1-InnerProduct-64">How will you define the othogonal projection of a vector onto another vector in an inner product space?<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-64" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="activity project-like" id="sec7-1-InnerProduct-64"><h3 class="heading">
+<article class="activity project-like" id="sec7-1-InnerProduct-65"><h3 class="heading">
 <span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec7-1-InnerProduct-64-1">
-<em class="emphasis">Notion of orthogonal projection and reflection in an inner product space.</em><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-64-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec7-1-InnerProduct-65-1">
+<em class="emphasis">Notion of orthogonal projection and reflection in an inner product space.</em><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-65-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec7-1-InnerProduct-64-2">Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, and reflection can be naturally extended to an inner product space <span class="process-math">\((V, \langle \cdot, \cdot \rangle)\text{.}\)</span> Explore how these notions generalize in such spaces, and implement solutions to related problems using Sage.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-64-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec7-1-InnerProduct-65-2">Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, and reflection can be naturally extended to an inner product space <span class="process-math">\((V, \langle \cdot, \cdot \rangle)\text{.}\)</span> Explore how these notions generalize in such spaces, and implement solutions to related problems using Sage.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-65-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Activity 7.1.1"><a href="#sec7-1-InnerProduct-64" title="Copy heading and permalink for Activity 7.1.1" aria-label="Copy heading and permalink for Activity 7.1.1">🔗</a></div></article><article class="definition definition-like" id="def-inp-orthogonal-projection"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.35</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Activity 7.1.1"><a href="#sec7-1-InnerProduct-65" title="Copy heading and permalink for Activity 7.1.1" aria-label="Copy heading and permalink for Activity 7.1.1">🔗</a></div></article><article class="definition definition-like" id="def-inp-orthogonal-projection"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.36</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="def-inp-orthogonal-projection-1-1">
 <div class="para">Let <span class="process-math">\((V,\innprod{.}{.})\)</span> be an inner product space. Suppose <span class="process-math">\(u,v\in V\)</span> with <span class="process-math">\(u\neq 0\text{.}\)</span> Then the <em class="emphasis">orthogonal projection</em> of <span class="process-math">\(v\)</span> onto <span class="process-math">\(u\)</span> is defined as</div>
@@ -1604,13 +1639,66 @@ p(x)  = \inner{p(x)}{\ell_0(x)}\ell_0(x)+\inner{p(x)}{\ell_1(x)}\ell_1(x)+\cdots
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-inp-orthogonal-projection-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 7.1.35"><a href="#def-inp-orthogonal-projection" title="Copy heading and permalink for Definition 7.1.35" aria-label="Copy heading and permalink for Definition 7.1.35">🔗</a></div></article><article class="exercise exercise-like" id="sec7-1-InnerProduct-66"><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.36</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Definition 7.1.36"><a href="#def-inp-orthogonal-projection" title="Copy heading and permalink for Definition 7.1.36" aria-label="Copy heading and permalink for Definition 7.1.36">🔗</a></div></article><article class="exercise exercise-like" id="sec7-1-InnerProduct-67"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.37</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec7-1-InnerProduct-66-1-1">Let <span class="process-math">\(V=\mathcal{P}_2(\R)\)</span> with inner product <span class="process-math">\(\inner{p}{q}=\int_0^1 p(x)q(x)dx\text{.}\)</span> Find the orthogonal projection of <span class="process-math">\(p(x)=x^2\)</span> onto <span class="process-math">\(u(x)=x+1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-66-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec7-1-InnerProduct-67-1-1">Let <span class="process-math">\(V=\mathcal{P}_2(\R)\)</span> with inner product <span class="process-math">\(\inner{p}{q}=\int_0^1 p(x)q(x)dx\text{.}\)</span> Find the orthogonal projection of <span class="process-math">\(p(x)=x^2\)</span> onto <span class="process-math">\(u(x)=x+1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-67-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 7.1.36"><a href="#sec7-1-InnerProduct-66" title="Copy heading and permalink for Checkpoint 7.1.36" aria-label="Copy heading and permalink for Checkpoint 7.1.36">🔗</a></div></article><article class="definition definition-like" id="def-inp-orthogonal-projection-onto-subspace"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.37</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Projection onto a subspace.</span>
+<div class="autopermalink" data-description="Checkpoint 7.1.37"><a href="#sec7-1-InnerProduct-67" title="Copy heading and permalink for Checkpoint 7.1.37" aria-label="Copy heading and permalink for Checkpoint 7.1.37">🔗</a></div></article><article class="exercise exercise-like" id="sec7-1-InnerProduct-68"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.38</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec7-1-InnerProduct-68-1-1">
+<div class="para">Let <span class="process-math">\(\ell_1\)</span> and <span class="process-math">\(\ell_2\)</span> be two parallel lines in <span class="process-math">\(\R^2\text{.}\)</span> Suppose <span class="process-math">\(t\)</span> be a transversal line.  Let <span class="process-math">\(\theta_1\)</span> and <span class="process-math">\(\theta_2\)</span> be the angles between <span class="process-math">\(\ell_1\)</span> and <span class="process-math">\(t\text{,}\)</span> and <span class="process-math">\(\ell_2\)</span> and <span class="process-math">\(t\text{,}\)</span> respectively. Show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\theta_1=\theta_2.
+\end{equation*}
+</div>
+<div class="para">Also prove the converse of this result.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-68-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec7-1-InnerProduct-68-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para logical" id="sec7-1-InnerProduct-68-2-1">
+<div class="para">Let <span class="process-math">\(u_1\)</span> and <span class="process-math">\(u_2\)</span> be the direction vectors of the lines <span class="process-math">\(\ell_1\)</span> and <span class="process-math">\(\ell_2\text{,}\)</span> respectively. Since the lines are parallel, we have <span class="process-math">\(u_1=k u_2\)</span> for some non zero scalar <span class="process-math">\(k\text{.}\)</span> Let <span class="process-math">\(v\)</span> be the direction vector of the transversal line <span class="process-math">\(t\text{.}\)</span> Then by definition of angle between two vectors, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cos\theta_1=\frac{\inner{u_1}{v}}{\norm{u_1}\norm{v}}, \quad
+\cos\theta_2=\frac{\inner{u_2}{v}}{\norm{u_2}\norm{v}}.
+\end{equation*}
+</div>
+<div class="para">Using the relation <span class="process-math">\(u_1=k u_2\text{,}\)</span> we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cos\theta_1=\frac{\inner{ku_2}{v}}{\norm{ku_2}\norm{v}}
+=\frac{k\inner{u_2}{v}}{|k|\norm{u_2}\norm{v}}=\frac{\inner{u_2}{v}}{\norm{u_2}\norm{v}}=\cos\theta_2.
+\end{equation*}
+</div>
+<div class="para">This proves <span class="process-math">\(\theta_1=\theta_2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-68-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec7-1-InnerProduct-68-2-2">
+<div class="para">To prove the converse, assume that <span class="process-math">\(\theta_1=\theta_2\text{.}\)</span> Then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\inner{u_1}{v}}{\norm{u_1}\norm{v}}=
+\frac{\inner{u_2}{v}}{\norm{u_2}\norm{v}}.
+\end{equation*}
+</div>
+<div class="para">This implies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\inner{u_1}{v}}{\norm{u_1}}=
+\frac{\inner{u_2}{v}}{\norm{u_2}}.
+\end{equation*}
+</div>
+<div class="para">This means that the projections of <span class="process-math">\(u_1\)</span> and <span class="process-math">\(u_2\)</span> onto <span class="process-math">\(v\)</span> are equal. This is possible only if <span class="process-math">\(u_1\)</span> and <span class="process-math">\(u_2\)</span> are linearly dependent, i.e., the lines <span class="process-math">\(\ell_1\)</span> and <span class="process-math">\(\ell_2\)</span> are parallel.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-68-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 7.1.38.1"><a href="#sec7-1-InnerProduct-68-2" title="Copy heading and permalink for Hint 7.1.38.1" aria-label="Copy heading and permalink for Hint 7.1.38.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Checkpoint 7.1.38"><a href="#sec7-1-InnerProduct-68" title="Copy heading and permalink for Checkpoint 7.1.38" aria-label="Copy heading and permalink for Checkpoint 7.1.38">🔗</a></div></article><article class="definition definition-like" id="def-inp-orthogonal-projection-onto-subspace"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.39</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Projection onto a subspace.</span>
 </h3>
 <div class="para logical" id="def-inp-orthogonal-projection-onto-subspace-2">
 <div class="para">Let <span class="process-math">\(V\)</span> be an inner product space and <span class="process-math">\(W\leq V\text{,}\)</span> a finite dimensional subspace of <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(\{u_1,\ldots, u_k\}\)</span> be an orthonormal basis of <span class="process-math">\(W\text{.}\)</span> Suppose <span class="process-math">\(v\in V\text{.}\)</span> Similar to <a href="sec6-2.html#subspace-projection1" class="xref" data-knowl="./knowl/xref/subspace-projection1.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.3.5">definition 6.3.5</a>, we can define the orthogonal projection of <span class="process-math">\(v\)</span> onto <span class="process-math">\(W\)</span> as</div>
@@ -1621,13 +1709,13 @@ p(x)  = \inner{p(x)}{\ell_0(x)}\ell_0(x)+\inner{p(x)}{\ell_1(x)}\ell_1(x)+\cdots
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-inp-orthogonal-projection-onto-subspace-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 7.1.37: Projection onto a subspace"><a href="#def-inp-orthogonal-projection-onto-subspace" title="Copy heading and permalink for Definition 7.1.37: Projection onto a subspace" aria-label="Copy heading and permalink for Definition 7.1.37: Projection onto a subspace">🔗</a></div></article><article class="exercise exercise-like" id="inp-7-1-17"><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.38</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Definition 7.1.39: Projection onto a subspace"><a href="#def-inp-orthogonal-projection-onto-subspace" title="Copy heading and permalink for Definition 7.1.39: Projection onto a subspace" aria-label="Copy heading and permalink for Definition 7.1.39: Projection onto a subspace">🔗</a></div></article><article class="exercise exercise-like" id="inp-7-1-17"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.40</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="inp-7-1-17-1-1">Find the orthogonal projection of vector <span class="process-math">\(b=\begin{bmatrix}1\\2\\3\\4 \end{bmatrix}\)</span> onto the subspace spanned by three vectors <span class="process-math">\(\left\{\begin{bmatrix}1\\-1\\0\\1 \end{bmatrix} , \begin{bmatrix}0\\1\\1\\-1 \end{bmatrix} , \begin{bmatrix}1\\1\\-1\\0 \end{bmatrix} \right\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#inp-7-1-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 7.1.38"><a href="#inp-7-1-17" title="Copy heading and permalink for Checkpoint 7.1.38" aria-label="Copy heading and permalink for Checkpoint 7.1.38">🔗</a></div></article><article class="definition definition-like" id="def-inp-set-perp"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.39</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Checkpoint 7.1.40"><a href="#inp-7-1-17" title="Copy heading and permalink for Checkpoint 7.1.40" aria-label="Copy heading and permalink for Checkpoint 7.1.40">🔗</a></div></article><article class="definition definition-like" id="def-inp-set-perp"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.41</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="def-inp-set-perp-1-1">
 <div class="para">Let <span class="process-math">\((V,\innprod{.}{.})\)</span> be an inner product space over <span class="process-math">\(\R\)</span> and <span class="process-math">\(U\subset V\text{.}\)</span> The the <em class="emphasis">orthogonal complement</em> of <span class="process-math">\(U\)</span> in <span class="process-math">\(V\)</span> is defined as</div>
@@ -1638,15 +1726,15 @@ U^{\perp}=\{v\in V: \innprod{u}{v}=0 \text{ for all } u\in U\}.
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-inp-set-perp-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 7.1.39"><a href="#def-inp-set-perp" title="Copy heading and permalink for Definition 7.1.39" aria-label="Copy heading and permalink for Definition 7.1.39">🔗</a></div></article><article class="exercise exercise-like" id="ex1-inp-set-perp"><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.40</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Definition 7.1.41"><a href="#def-inp-set-perp" title="Copy heading and permalink for Definition 7.1.41" aria-label="Copy heading and permalink for Definition 7.1.41">🔗</a></div></article><article class="exercise exercise-like" id="ex1-inp-set-perp"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.42</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="ex1-inp-set-perp-1">Let <span class="process-math">\((V,\innprod{.}{.})\)</span> be an inner product space over <span class="process-math">\(\R\)</span> and <span class="process-math">\(U\subset V\text{.}\)</span> Show that <span class="process-math">\(U^{\perp}\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex1-inp-set-perp-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 7.1.40"><a href="#ex1-inp-set-perp" title="Copy heading and permalink for Checkpoint 7.1.40" aria-label="Copy heading and permalink for Checkpoint 7.1.40">🔗</a></div></article><article class="example example-like" id="sec7-1-InnerProduct-71"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.41</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Checkpoint 7.1.42"><a href="#ex1-inp-set-perp" title="Copy heading and permalink for Checkpoint 7.1.42" aria-label="Copy heading and permalink for Checkpoint 7.1.42">🔗</a></div></article><article class="example example-like" id="sec7-1-InnerProduct-73"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.43</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="sec7-1-InnerProduct-71-1-1">
+<div class="para logical" id="sec7-1-InnerProduct-73-1-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be a symmetric <span class="process-math">\(n\times n\)</span> and positive definite matrix. Define an inner product on <span class="process-math">\(\R^n\)</span> as <span class="process-math">\(\innprod{u}{v}=v^TAu\text{.}\)</span> Let <span class="process-math">\(U=\{e_1\}\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1654,12 +1742,12 @@ U^{\perp}=\{v\in \R^n: \innprod{e_1}{v}=0\}=\{v\in \R^n: v^TAe_1=0\}.
 \end{equation*}
 </div>
 <div class="para">Since <span class="process-math">\(e_1=(1,0,\ldots,0)^T\text{,}\)</span> <span class="process-math">\(Ae_1\)</span> is the first column of <span class="process-math">\(A\text{.}\)</span> This implies that <span class="process-math">\(U^{\perp}\)</span> is the set of vector orthogonal to the first column of <span class="process-math">\(A\)</span> with respect to the standard inner product. Since the first column of <span class="process-math">\(A\)</span> is nonzero, <span class="process-math">\(\dim(U^{\perp})=n-1\text{.}\)</span> It is easy to see that <span class="process-math">\(U^{\perp}\)</span> is the set of vector orthogonal to the first column of <span class="process-math">\(A\)</span> with respect to the standard inner product.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-71-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-73-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 7.1.41"><a href="#sec7-1-InnerProduct-71" title="Copy heading and permalink for Example 7.1.41" aria-label="Copy heading and permalink for Example 7.1.41">🔗</a></div></article><article class="exercise exercise-like" id="sec7-1-InnerProduct-72"><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.42</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 7.1.43"><a href="#sec7-1-InnerProduct-73" title="Copy heading and permalink for Example 7.1.43" aria-label="Copy heading and permalink for Example 7.1.43">🔗</a></div></article><article class="exercise exercise-like" id="sec7-1-InnerProduct-74"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.44</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="sec7-1-InnerProduct-72-1">
+<div class="para logical" id="sec7-1-InnerProduct-74-1">
 <div class="para">Let <span class="process-math">\({\cal P}_2(\R)\)</span> with discrete inner product</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1668,10 +1756,10 @@ U^{\perp}=\{v\in \R^n: \innprod{e_1}{v}=0\}=\{v\in \R^n: v^TAe_1=0\}.
 </div>
 <div class="para">Find <span class="process-math">\(\{1\}^{\perp}\)</span> and <span class="process-math">\(\{x\}^{\perp}\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-72-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-74-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 7.1.42"><a href="#sec7-1-InnerProduct-72" title="Copy heading and permalink for Checkpoint 7.1.42" aria-label="Copy heading and permalink for Checkpoint 7.1.42">🔗</a></div></article><article class="theorem theorem-like" id="thm-inp-orthogonal-complement"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.43</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Checkpoint 7.1.44"><a href="#sec7-1-InnerProduct-74" title="Copy heading and permalink for Checkpoint 7.1.44" aria-label="Copy heading and permalink for Checkpoint 7.1.44">🔗</a></div></article><article class="theorem theorem-like" id="thm-inp-orthogonal-complement"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.45</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="thm-inp-orthogonal-complement-1-1">
 <div class="para">Let <span class="process-math">\((V,\innprod{.}{.})\)</span> be an inner product space over <span class="process-math">\(\R\)</span> and <span class="process-math">\(W\leq V\)</span> be a finite dimensional subspace of <span class="process-math">\(V\text{.}\)</span> Then</div>
@@ -1695,9 +1783,9 @@ U^{\perp}=\{v\in \R^n: \innprod{e_1}{v}=0\}=\{v\in \R^n: v^TAe_1=0\}.
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-inp-orthogonal-complement-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.1.43"><a href="#thm-inp-orthogonal-complement" title="Copy heading and permalink for Theorem 7.1.43" aria-label="Copy heading and permalink for Theorem 7.1.43">🔗</a></div></article><details id="sec7-1-InnerProduct-74" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec7-1-InnerProduct-74-1">(1) <span class="process-math">\(W^{\perp}\)</span> is subspace follows from <a href="sec7-1-InnerProduct.html#ex1-inp-set-perp" class="xref" data-knowl="./knowl/xref/ex1-inp-set-perp.html" data-reveal-label="Reveal" data-close-label="Close" title="Checkpoint 7.1.40">Checkpoint 7.1.40</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-74-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 7.1.45"><a href="#thm-inp-orthogonal-complement" title="Copy heading and permalink for Theorem 7.1.45" aria-label="Copy heading and permalink for Theorem 7.1.45">🔗</a></div></article><details id="sec7-1-InnerProduct-76" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec7-1-InnerProduct-76-1">(1) <span class="process-math">\(W^{\perp}\)</span> is subspace follows from <a href="sec7-1-InnerProduct.html#ex1-inp-set-perp" class="xref" data-knowl="./knowl/xref/ex1-inp-set-perp.html" data-reveal-label="Reveal" data-close-label="Close" title="Checkpoint 7.1.42">Checkpoint 7.1.42</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-76-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec7-1-InnerProduct-74-2">
+<div class="para logical" id="sec7-1-InnerProduct-76-2">
 <div class="para">Let <span class="process-math">\(u\in W\cap  W^{\perp}\text{.}\)</span> Then <span class="process-math">\(\innprod{u}{u}=0\text{.}\)</span> Hence the only vector in both <span class="process-math">\(W\)</span> and <span class="process-math">\(W^{\perp}\)</span> is the zero vector. Let <span class="process-math">\(x\in V\text{.}\)</span> We need to show that there exist <span class="process-math">\(w\in W\)</span> and <span class="process-math">\(v\in W^{\perp}\)</span> such that <span class="process-math">\(x=w+v\text{.}\)</span> Let <span class="process-math">\(\{u_1,\ldots, u_k\}\)</span> be an orthonormal basis of <span class="process-math">\(W\text{.}\)</span> Define</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1705,7 +1793,7 @@ w = \innprod{x}{u_1}u_1+\innprod{x}{u_2}u_2+\cdots +\innprod{x}{u_k}u_k.
 \end{equation*}
 </div>
 <div class="para">Now define <span class="process-math">\(v=x-w\text{.}\)</span> For each <span class="process-math">\(i=1,2,\ldots, k\text{,}\)</span> we have</div>
-<div class="displaymath process-math" id="sec7-1-InnerProduct-74-2-14">
+<div class="displaymath process-math" id="sec7-1-InnerProduct-76-2-14">
 \begin{align*}
 \innprod{v}{u_i} \amp = \innprod{x-w}{u_i} \\
 \amp = \innprod{x}{u_i}-\innprod{w}{u_i} \\
@@ -1714,11 +1802,11 @@ w = \innprod{x}{u_1}u_1+\innprod{x}{u_2}u_2+\cdots +\innprod{x}{u_k}u_k.
 \end{align*}
 </div>
 <div class="para">Hence <span class="process-math">\(v\in W^{\perp}\)</span> and the result follows.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-74-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-76-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec7-1-InnerProduct-74-3">(2) Follows from (1).<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-74-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec7-1-InnerProduct-76-3">(2) Follows from (1).<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-76-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec7-1-InnerProduct-74-4">
+<div class="para logical" id="sec7-1-InnerProduct-76-4">
 <div class="para">(3) Let <span class="process-math">\(W^{\perp} =U\text{.}\)</span> Then by (2), we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1733,41 +1821,41 @@ w = \innprod{x}{u_1}u_1+\innprod{x}{u_2}u_2+\cdots +\innprod{x}{u_k}u_k.
 </div>
 <div class="para">Hence <span class="process-math">\(\dim(W)=\dim(U^{\perp})\text{.}\)</span> It remains to show that <span class="process-math">\(W\subseteq U^{\perp}\)</span> and <span class="process-math">\(U^{\perp}\subseteq W\text{.}\)</span> Let <span class="process-math">\(w\in W\)</span> and <span class="process-math">\(u\in U\text{.}\)</span> Then <span class="process-math">\(\innprod{w}{u}=0\)</span> since <span class="process-math">\(U=W^{\perp}\text{.}\)</span> This shows that <span class="process-math">\(W\subseteq U^{\perp}\text{.}\)</span> Now let <span class="process-math">\(y\in U^{\perp}\text{.}\)</span> We need to show that <span class="process-math">\(y\in W\text{.}\)</span> By (1), there exist <span class="process-math">\(w\in W\)</span> and <span class="process-math">\(u\in U\)</span> such that <span class="process-math">\(y=w+u\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-74-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-76-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.1.2"><a href="#sec7-1-InnerProduct-74" title="Copy heading and permalink for Proof 7.1.2" aria-label="Copy heading and permalink for Proof 7.1.2">🔗</a></div></article></details><div class="para" id="sec7-1-InnerProduct-75">If <span class="process-math">\(W\)</span> is a finite dimensional subspace of an inner product space <span class="process-math">\(V\text{.}\)</span> Then the subspace <span class="process-math">\(W^{\perp}\)</span> is called the <em class="emphasis">orthogonal complement</em> of <span class="process-math">\(W\)</span> in <span class="process-math">\(V\text{.}\)</span> Since <span class="process-math">\(V=W\oplus W^{\perp}\text{,}\)</span> every vector <span class="process-math">\(x\in V\)</span> can be uniquely written as <span class="process-math">\(x=w+v\)</span> with <span class="process-math">\(w\in W\)</span> and <span class="process-math">\(v\in W^{\perp}\text{.}\)</span> The vector <span class="process-math">\(w\)</span> is called the <em class="emphasis">orthogonal projection</em> of <span class="process-math">\(x\)</span> onto <span class="process-math">\(W\)</span> and is denoted by <span class="process-math">\(\proj_W(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-75" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 7.1.2"><a href="#sec7-1-InnerProduct-76" title="Copy heading and permalink for Proof 7.1.2" aria-label="Copy heading and permalink for Proof 7.1.2">🔗</a></div></article></details><div class="para" id="sec7-1-InnerProduct-77">If <span class="process-math">\(W\)</span> is a finite dimensional subspace of an inner product space <span class="process-math">\(V\text{.}\)</span> Then the subspace <span class="process-math">\(W^{\perp}\)</span> is called the <em class="emphasis">orthogonal complement</em> of <span class="process-math">\(W\)</span> in <span class="process-math">\(V\text{.}\)</span> Since <span class="process-math">\(V=W\oplus W^{\perp}\text{,}\)</span> every vector <span class="process-math">\(x\in V\)</span> can be uniquely written as <span class="process-math">\(x=w+v\)</span> with <span class="process-math">\(w\in W\)</span> and <span class="process-math">\(v\in W^{\perp}\text{.}\)</span> The vector <span class="process-math">\(w\)</span> is called the <em class="emphasis">orthogonal projection</em> of <span class="process-math">\(x\)</span> onto <span class="process-math">\(W\)</span> and is denoted by <span class="process-math">\(\proj_W(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-77" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec7-1-InnerProduct-76">
+<div class="para logical" id="sec7-1-InnerProduct-78">
 <div class="para">Futhermore, if <span class="process-math">\(\{u_1,\ldots, u_k\}\)</span> is an orthonormal basis of <span class="process-math">\(W\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \proj_W(x)=\innprod{x}{u_1}u_1+\innprod{x}{u_2}u_2+\cdots +\innprod{x}{u_k}u_k.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-76" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-78" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec7-1-InnerProduct-77">The following theorem shows that the orthogonal projection is the best approximation of a vector in <span class="process-math">\(V\)</span> by a vector in <span class="process-math">\(W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-77" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec7-1-InnerProduct-79">The following theorem shows that the orthogonal projection is the best approximation of a vector in <span class="process-math">\(V\)</span> by a vector in <span class="process-math">\(W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-79" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-inp-approximation"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.44</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Approximation Theorem.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.46</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Approximation Theorem.</span>
 </h3>
 <div class="para" id="thm-inp-approximation-2-1">Let <span class="process-math">\((V,\innprod{.}{.})\)</span> be an inner product space over <span class="process-math">\(\R\)</span> and <span class="process-math">\(W\leq V\)</span> be a finite dimensional subspace of <span class="process-math">\(V\text{.}\)</span> Given <span class="process-math">\(x\in V\text{,}\)</span> let <span class="process-math">\(w=\proj_W(x)\text{.}\)</span> Then for all <span class="process-math">\(u\in W\text{,}\)</span> <span class="process-math">\(\norm{x-w}\leq \norm{x-u}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-inp-approximation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.1.44: Approximation Theorem"><a href="#thm-inp-approximation" title="Copy heading and permalink for Theorem 7.1.44: Approximation Theorem" aria-label="Copy heading and permalink for Theorem 7.1.44: Approximation Theorem">🔗</a></div></article><details id="sec7-1-InnerProduct-79" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec7-1-InnerProduct-79-1">
+<div class="autopermalink" data-description="Theorem 7.1.46: Approximation Theorem"><a href="#thm-inp-approximation" title="Copy heading and permalink for Theorem 7.1.46: Approximation Theorem" aria-label="Copy heading and permalink for Theorem 7.1.46: Approximation Theorem">🔗</a></div></article><details id="sec7-1-InnerProduct-81" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec7-1-InnerProduct-81-1">
 <div class="para">Let <span class="process-math">\(u\in W\text{.}\)</span> Then <span class="process-math">\(u-w\in W\text{.}\)</span> Since <span class="process-math">\(x-w\in W^{\perp}\text{,}\)</span> we have <span class="process-math">\(\innprod{x-w}{u-w}=0\text{.}\)</span> Hence by the Pythagorean theorem,</div>
-<div class="displaymath process-math" id="sec7-1-InnerProduct-79-1-5">
+<div class="displaymath process-math" id="sec7-1-InnerProduct-81-1-5">
 \begin{align*}
 \norm{x-u}^2\amp =\norm{(x-w)+(w-u)}^2\\
 \amp =\norm{x-w}^2+\norm{u-w}^2\geq \norm{x-w}^2.
 \end{align*}
 </div>
 <div class="para">The result follows.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-79-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-81-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.1.3"><a href="#sec7-1-InnerProduct-79" title="Copy heading and permalink for Proof 7.1.3" aria-label="Copy heading and permalink for Proof 7.1.3">🔗</a></div></article></details><div class="para" id="sec7-1-InnerProduct-80">The Approximation Theorem shows that the orthogonal projection of a vector <span class="process-math">\(x\)</span> onto a subspace <span class="process-math">\(W\)</span> is the best approximation of <span class="process-math">\(x\)</span> by a vector in <span class="process-math">\(W\text{.}\)</span> This result has important applications in numerical analysis and scientific computing.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-80" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 7.1.3"><a href="#sec7-1-InnerProduct-81" title="Copy heading and permalink for Proof 7.1.3" aria-label="Copy heading and permalink for Proof 7.1.3">🔗</a></div></article></details><div class="para" id="sec7-1-InnerProduct-82">The Approximation Theorem shows that the orthogonal projection of a vector <span class="process-math">\(x\)</span> onto a subspace <span class="process-math">\(W\)</span> is the best approximation of <span class="process-math">\(x\)</span> by a vector in <span class="process-math">\(W\text{.}\)</span> This result has important applications in numerical analysis and scientific computing.<div class="autopermalink" data-description="Paragraph"><a href="#sec7-1-InnerProduct-82" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="eg-inp-fourier"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.45</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fouries Coefficients.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.47</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fouries Coefficients.</span>
 </h3>
 <div class="para logical" id="eg-inp-fourier-2-1">
 <div class="para">Let us explore one such application from Fourier analysis. Define an inner product on the space of continuous real-valued functions on <span class="process-math">\([-\pi, \pi]\)</span> as</div>
@@ -1800,12 +1888,12 @@ F_n=\text{span}\{1, \cos x, \sin x, \cos 2x, \sin 2x, \ldots, \cos nx, \sin nx\}
 <div class="para">Given a continuous function <span class="process-math">\(f\colon [-\pi, \pi]\to \R\text{,}\)</span> we want to find the best approximation of <span class="process-math">\(f\text{.}\)</span> Define</div>
 <div class="displaymath process-math" id="eg-inp-fourier-2-1-11">
 \begin{align*}
-a_0 \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\,dx\\
-a_k \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\cos kx \,dx\\
-b_k \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\sin kx \,dx
+a_0 \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\,dx,\\
+a_k \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\cos kx \,dx,\\
+b_k \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\sin kx \,dx,
 \end{align*}
 </div>
-<div class="para">Then by the Approximation Theorem, the orthogonal projection of <span class="process-math">\(f\)</span> onto <span class="process-math">\(F_n\)</span> is given by</div>
+<div class="para">for <span class="process-math">\(k=1,2,\ldots, n\text{.}\)</span> Then by the Approximation Theorem, the orthogonal projection of <span class="process-math">\(f\)</span> onto <span class="process-math">\(F_n\)</span> is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \proj_{F_n}(f)=a_0+\sum_{k=1}^n \left(a_k \cos kx + b_k \sin kx\right).   
@@ -1820,17 +1908,17 @@ f(x)\approx a_0+\sum_{k=1}^n \left(a_k \cos kx + b_k \sin kx\right)
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#eg-inp-fourier-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 7.1.45: Fouries Coefficients"><a href="#eg-inp-fourier" title="Copy heading and permalink for Example 7.1.45: Fouries Coefficients" aria-label="Copy heading and permalink for Example 7.1.45: Fouries Coefficients">🔗</a></div></article><section class="subsection" id="subsec-linear-functionals"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 7.1.47: Fouries Coefficients"><a href="#eg-inp-fourier" title="Copy heading and permalink for Example 7.1.47: Fouries Coefficients" aria-label="Copy heading and permalink for Example 7.1.47: Fouries Coefficients">🔗</a></div></article><section class="subsection" id="subsec-linear-functionals"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linear Functionals</span>
 </h3>
 <div class="para" id="subsec-linear-functionals-2">Let <span class="process-math">\((V,\innprod{.}{.})\)</span> be an inner product space over <span class="process-math">\(\R\text{.}\)</span> Fix a vector <span class="process-math">\(a\in V\)</span> and define <span class="process-math">\(f_a\colon V\to \R\)</span> as <span class="process-math">\(f_a(x)=\innprod{x}{a}\text{.}\)</span> It follows from from properties of inner product that <span class="process-math">\(f_a\)</span> is a linear map. (why?)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-linear-functional"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.46</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.48</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="def-linear-functional-1-1">Let <span class="process-math">\(\innprod{.}{.}\)</span> be an inner product space over <span class="process-math">\(\R\text{.}\)</span> Any liear map <span class="process-math">\(f\colon V \to \R\)</span> is called a <em class="emphasis">linear function.</em><div class="autopermalink" data-description="Paragraph"><a href="#def-linear-functional-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 7.1.46"><a href="#def-linear-functional" title="Copy heading and permalink for Definition 7.1.46" aria-label="Copy heading and permalink for Definition 7.1.46">🔗</a></div></article><div class="para logical" id="subsec-linear-functionals-4">
+<div class="autopermalink" data-description="Definition 7.1.48"><a href="#def-linear-functional" title="Copy heading and permalink for Definition 7.1.48" aria-label="Copy heading and permalink for Definition 7.1.48">🔗</a></div></article><div class="para logical" id="subsec-linear-functionals-4">
 <div class="para">Recall that we have characterized all linear maps from <span class="process-math">\(\R^n\to \R\text{.}\)</span> In particular, if <span class="process-math">\(T\colon \R^n\to \R\)</span> is a linear map, them there exist a vector <span class="process-math">\(a=(a_1,\ldots, a_n)\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1841,12 +1929,12 @@ T(x)=\sum a_ix_i=x \cdot a.
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-riesz"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.47</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Riesz Representation Theorem.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.49</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Riesz Representation Theorem.</span>
 </h4>
 <div class="para" id="thm-riesz-2-1">Let <span class="process-math">\(\innprod{.}{.}\)</span> be an inner product space over <span class="process-math">\(\R\text{.}\)</span> Given a linear map <span class="process-math">\(f\colon V \to \R\text{,}\)</span> there exists a unique <span class="process-math">\(y
 \in V\)</span> such that <span class="process-math">\(f(x) = \innprod{x}{y}\)</span> for all <span class="process-math">\(x \in V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-riesz-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.1.47: Riesz Representation Theorem"><a href="#thm-riesz" title="Copy heading and permalink for Theorem 7.1.47: Riesz Representation Theorem" aria-label="Copy heading and permalink for Theorem 7.1.47: Riesz Representation Theorem">🔗</a></div></article><details id="subsec-linear-functionals-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-linear-functionals-6-1">
+<div class="autopermalink" data-description="Theorem 7.1.49: Riesz Representation Theorem"><a href="#thm-riesz" title="Copy heading and permalink for Theorem 7.1.49: Riesz Representation Theorem" aria-label="Copy heading and permalink for Theorem 7.1.49: Riesz Representation Theorem">🔗</a></div></article><details id="subsec-linear-functionals-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-linear-functionals-6-1">
 <div class="para">Let <span class="process-math">\(\{u_1,\ldots, u_n\}\)</span> be an orthonormal basis of <span class="process-math">\(V\text{.}\)</span> Define</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1892,7 +1980,7 @@ f(u_i)=\innprod{u_i}{y}=\innprod{u_i}{z}.
 <div class="autopermalink" data-description="Proof 7.1.1.1"><a href="#subsec-linear-functionals-6" title="Copy heading and permalink for Proof 7.1.1.1" aria-label="Copy heading and permalink for Proof 7.1.1.1">🔗</a></div></article></details><div class="para" id="subsec-linear-functionals-7">Can we characterize linear maps from a finite dimesional inner product space <span class="process-math">\(V\)</span> to a finite dimensional inner product space <span class="process-math">\(W\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-inp-linear-map-characterization"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.48</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.50</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="thm-inp-linear-map-characterization-1-1">
 <div class="para">Let <span class="process-math">\((V,\innprod{.}{.})\)</span> and <span class="process-math">\((W,\innprod{.}{.})\)</span> be finite dimenional inner product spaces over <span class="process-math">\(\R\text{.}\)</span> Let <span class="process-math">\(T\colon V\to W\)</span> be a linear map. Let <span class="process-math">\(\alpha=\{u_1,\ldots, u_n\}\)</span> be an orthonormal basis of <span class="process-math">\(V\)</span> and <span class="process-math">\(\beta =\{v_1,\ldots, v_m\}\)</span> an orthonormal basis of  <span class="process-math">\(W\text{.}\)</span> Then the matrix of <span class="process-math">\(T\)</span> with respect to these bases is given by</div>
@@ -1908,7 +1996,7 @@ f(u_i)=\innprod{u_i}{y}=\innprod{u_i}{z}.
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-inp-linear-map-characterization-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.1.48"><a href="#thm-inp-linear-map-characterization" title="Copy heading and permalink for Theorem 7.1.48" aria-label="Copy heading and permalink for Theorem 7.1.48">🔗</a></div></article><details id="subsec-linear-functionals-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-linear-functionals-9-1">
+<div class="autopermalink" data-description="Theorem 7.1.50"><a href="#thm-inp-linear-map-characterization" title="Copy heading and permalink for Theorem 7.1.50" aria-label="Copy heading and permalink for Theorem 7.1.50">🔗</a></div></article><details id="subsec-linear-functionals-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-linear-functionals-9-1">
 <div class="para">Sine <span class="process-math">\(\alpha=\{u_1,\ldots,u_n\}\)</span> is an orthonormal basis of <span class="process-math">\(V\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1938,7 +2026,7 @@ T(u_j)=\sum_i\innprod{T(u_i)}{v_i}v_i.
 <div class="autopermalink" data-description="Proof 7.1.1.2"><a href="#subsec-linear-functionals-9" title="Copy heading and permalink for Proof 7.1.1.2" aria-label="Copy heading and permalink for Proof 7.1.1.2">🔗</a></div></article></details><div class="para" id="subsec-linear-functionals-10">The above theorem shows that a linear map between two finite dimensional inner product spaces is completely determined by the images of an orthonormal basis of the domain space.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-linear-functionals-11">
-<div class="para">Now suppose <span class="process-math">\(W=V\)</span> in <a href="sec7-1-InnerProduct.html#thm-inp-linear-map-characterization" class="xref" data-knowl="./knowl/xref/thm-inp-linear-map-characterization.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.48">Theorem 7.1.48</a> and <span class="process-math">\(T\colon V\to V\)</span> be a linear map on <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(\alpha=\{u_1,\ldots, u_n\}\)</span> be an orthonormal basis of <span class="process-math">\(V\text{.}\)</span> Then the matrix of <span class="process-math">\(T\)</span> with respect to this basis is given by</div>
+<div class="para">Now suppose <span class="process-math">\(W=V\)</span> in <a href="sec7-1-InnerProduct.html#thm-inp-linear-map-characterization" class="xref" data-knowl="./knowl/xref/thm-inp-linear-map-characterization.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.50">Theorem 7.1.50</a> and <span class="process-math">\(T\colon V\to V\)</span> be a linear map on <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(\alpha=\{u_1,\ldots, u_n\}\)</span> be an orthonormal basis of <span class="process-math">\(V\text{.}\)</span> Then the matrix of <span class="process-math">\(T\)</span> with respect to this basis is given by</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-inp-linear-map-characterization.html">
 \begin{equation*}
 [T]_\alpha=\begin{bmatrix}
@@ -1962,7 +2050,7 @@ T(u_j)=\sum_i\innprod{T(u_i)}{v_i}v_i.
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-inp-symmetric-LT"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.49</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.51</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="def-inp-symmetric-LT-1-1">
 <div class="para">A linear map <span class="process-math">\(T\colon V\to V\)</span> on an inner product space <span class="process-math">\((V,\innprod{.}{.})\)</span> is called <em class="emphasis">symmetric</em> if</div>
@@ -1975,14 +2063,14 @@ T(u_j)=\sum_i\innprod{T(u_i)}{v_i}v_i.
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-inp-symmetric-LT-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 7.1.49"><a href="#def-inp-symmetric-LT" title="Copy heading and permalink for Definition 7.1.49" aria-label="Copy heading and permalink for Definition 7.1.49">🔗</a></div></article><div class="para" id="subsec-linear-functionals-14">Recall that we defined a linear map <span class="process-math">\(T\colon \R^n\to \R^n\)</span> assocciated with an <span class="process-math">\(n\times n\)</span> real matrix <span class="process-math">\(A\)</span> as <span class="process-math">\(T_A(x)=Ax\text{.}\)</span> Also the matrix of <span class="process-math">\(T_A\)</span> with respect to the standard basis is <span class="process-math">\(A\text{.}\)</span>   This we can define an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> to be symmetric if the linear map <span class="process-math">\(T_A\colon \R^n\to \R^n\)</span> is symmetric with respect to the standard inner product (dot product) on <span class="process-math">\(\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 7.1.51"><a href="#def-inp-symmetric-LT" title="Copy heading and permalink for Definition 7.1.51" aria-label="Copy heading and permalink for Definition 7.1.51">🔗</a></div></article><div class="para" id="subsec-linear-functionals-14">Recall that we defined a linear map <span class="process-math">\(T\colon \R^n\to \R^n\)</span> assocciated with an <span class="process-math">\(n\times n\)</span> real matrix <span class="process-math">\(A\)</span> as <span class="process-math">\(T_A(x)=Ax\text{.}\)</span> Also the matrix of <span class="process-math">\(T_A\)</span> with respect to the standard basis is <span class="process-math">\(A\text{.}\)</span>   This we can define an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> to be symmetric if the linear map <span class="process-math">\(T_A\colon \R^n\to \R^n\)</span> is symmetric with respect to the standard inner product (dot product) on <span class="process-math">\(\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-linear-functionals-15">It is easy to see that an <span class="process-math">\(n\times n\)</span> real matrix <span class="process-math">\(A\)</span> is symmetric in the usual sense (i.e., <span class="process-math">\(A=A^T\)</span>) if and only if the linear map <span class="process-math">\(T_A\colon \R^n\to \R^n\)</span> is symmetric with respect to the standard inner product on <span class="process-math">\(\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-linear-functionals-16">Next we revist the orthogonal linear transformation defined defined in the last chapter and give an equivalent definition using inner products. We have the following equivalent definition.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-inp-orthogonal-maps"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.50</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.52</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="def-inp-orthogonal-maps-1-1">
 <div class="para">Let <span class="process-math">\((V,\innprod{.}{.})\)</span> be a finite dimensional inner product space over <span class="process-math">\(\R\text{.}\)</span> A linear map <span class="process-math">\(T\colon V\to V\)</span> is an <em class="emphasis">orthogonal linear transformation</em> if and only if</div>
@@ -1995,7 +2083,7 @@ T(u_j)=\sum_i\innprod{T(u_i)}{v_i}v_i.
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-inp-orthogonal-maps-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 7.1.50"><a href="#def-inp-orthogonal-maps" title="Copy heading and permalink for Definition 7.1.50" aria-label="Copy heading and permalink for Definition 7.1.50">🔗</a></div></article><div class="para logical" id="subsec-linear-functionals-18">
+<div class="autopermalink" data-description="Definition 7.1.52"><a href="#def-inp-orthogonal-maps" title="Copy heading and permalink for Definition 7.1.52" aria-label="Copy heading and permalink for Definition 7.1.52">🔗</a></div></article><div class="para logical" id="subsec-linear-functionals-18">
 <div class="para">In particular orthogonal linear transformations are precisely those linear maps that preserve the inner product. It is easy to see that a linear map <span class="process-math">\(T\colon V\to V\)</span> is an orthogonal  linear transformation if and only if</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2006,7 +2094,7 @@ T(u_j)=\sum_i\innprod{T(u_i)}{v_i}v_i.
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-inp-orthogonal-maps"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.51</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.53</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="thm-inp-orthogonal-maps-1-1">
 <div class="para">Let <span class="process-math">\((V,\innprod{.}{.})\)</span> be a finite dimensional inner product space over <span class="process-math">\(\R\text{.}\)</span> and <span class="process-math">\(T\colon V\to V\)</span> be a linear map. Then the following are equivalent.</div>
@@ -2032,7 +2120,7 @@ T(u_j)=\sum_i\innprod{T(u_i)}{v_i}v_i.
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-inp-orthogonal-maps-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.1.51"><a href="#thm-inp-orthogonal-maps" title="Copy heading and permalink for Theorem 7.1.51" aria-label="Copy heading and permalink for Theorem 7.1.51">🔗</a></div></article><details id="subsec-linear-functionals-20" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-linear-functionals-20-1">(1) <span class="process-math">\(\Rightarrow\)</span> (2): Follows from the definition of orthogonal linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-20-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 7.1.53"><a href="#thm-inp-orthogonal-maps" title="Copy heading and permalink for Theorem 7.1.53" aria-label="Copy heading and permalink for Theorem 7.1.53">🔗</a></div></article><details id="subsec-linear-functionals-20" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-linear-functionals-20-1">(1) <span class="process-math">\(\Rightarrow\)</span> (2): Follows from the definition of orthogonal linear transformation.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-20-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-linear-functionals-20-2">
 <div class="para">(2) <span class="process-math">\(\Rightarrow\)</span> (3): Let <span class="process-math">\(\{u_1,\ldots, u_n\}\)</span> be an orthonormal basis of <span class="process-math">\(V\text{.}\)</span> For each <span class="process-math">\(i,j=1,2,\ldots, n\text{,}\)</span> we have</div>
@@ -2072,20 +2160,21 @@ n=\dim(\im(T))\leq \dim(V)=n.
 </div>
 <div class="autopermalink" data-description="Proof 7.1.1.3"><a href="#subsec-linear-functionals-20" title="Copy heading and permalink for Proof 7.1.1.3" aria-label="Copy heading and permalink for Proof 7.1.1.3">🔗</a></div></article></details><div class="para logical" id="subsec-linear-functionals-21">
 <div class="para">Now let us see what happens to the matrix of an orthogonal linear transformation with respect to an orthonormal basis. Let <span class="process-math">\(T\colon V\to V\)</span> be an orthogonal linear transformation on a finite dimensional inner product space <span class="process-math">\((V,\innprod{.}{.})\text{.}\)</span> Let <span class="process-math">\(\alpha=\{u_1,\ldots, u_n\}\)</span> be an orthonormal basis of <span class="process-math">\(V\text{.}\)</span> Then the matrix of <span class="process-math">\(T\)</span> with respect to this basis is given by</div>
-<div class="displaymath process-math">
-\begin{equation*}
-[T]_\alpha=\begin{bmatrix}
+<div class="displaymath process-math" id="subsec-linear-functionals-21-6">
+\begin{align*}
+[T]_\alpha\amp=\begin{bmatrix}
 \innprod{T(u_1)}{u_1} \amp \innprod{T(u_2)}{u_1} \amp \cdots \amp \innprod{T(u_n)}{u_1} \\
 \innprod{T(u_1)}{u_2} \amp \innprod{T(u_2)}{u_2} \amp \cdots \amp \innprod{T(u_n)}{u_2} \\
 \vdots \amp \vdots \amp \ddots \amp \vdots \\
 \innprod{T(u_1)}{u_n} \amp \innprod{T(u_2)}{u_n} \amp \cdots \amp \innprod{T(u_n)}{u_n}
-\end{bmatrix}=\begin{bmatrix}
+\end{bmatrix}    \\
+\amp =  \begin{bmatrix}
 a_{11} \amp a_{21} \amp \cdots \amp a_{n1} \\
 a_{21} \amp a_{22} \amp \cdots \amp a_{21} \\
 \vdots \amp \vdots \amp \ddots \amp \vdots \\
 a_{n1} \amp a_{n2}\amp \cdots \amp a_{nn}
-\end{bmatrix} =A.
-\end{equation*}
+\end{bmatrix} =A 
+\end{align*}
 </div>
 <div class="para">Let us write the columns of <span class="process-math">\(A\)</span> as <span class="process-math">\(A=[c_1 \; c_2 \; \cdots \; c_n]\text{.}\)</span> Since <span class="process-math">\(\{T(u_1),\ldots, T(u_n)\}\)</span> is an orthonormal basis of <span class="process-math">\(V\text{,}\)</span> it follows that</div>
 <div class="displaymath process-math" id="subsec-linear-functionals-21-11">
@@ -2099,7 +2188,7 @@ a_{n1} \amp a_{n2}\amp \cdots \amp a_{nn}
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-linear-functionals-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-inp-orthogonal-matrix"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.52</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.54</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para logical" id="def-inp-orthogonal-matrix-1-1">
 <div class="para">A real <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is called an <em class="emphasis">orthogonal matrix</em> if its columns form an orthonormal set in <span class="process-math">\(\R^n\text{.}\)</span> This is, if <span class="process-math">\(A=[c_1 \; c_2 \; \cdots \; c_n]\text{,}\)</span> then</div>
@@ -2112,7 +2201,7 @@ c_i \cdot c_j = \delta_{ij}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-inp-orthogonal-matrix-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 7.1.52"><a href="#def-inp-orthogonal-matrix" title="Copy heading and permalink for Definition 7.1.52" aria-label="Copy heading and permalink for Definition 7.1.52">🔗</a></div></article><div class="autopermalink" data-description="Subsection 7.1.1: Linear Functionals"><a href="#subsec-linear-functionals" title="Copy heading and permalink for Subsection 7.1.1: Linear Functionals" aria-label="Copy heading and permalink for Subsection 7.1.1: Linear Functionals">🔗</a></div></section><div class="autopermalink" data-description="Section 7.1: Inner Product"><a href="#sec7-1-InnerProduct" title="Copy heading and permalink for Section 7.1: Inner Product" aria-label="Copy heading and permalink for Section 7.1: Inner Product">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Definition 7.1.54"><a href="#def-inp-orthogonal-matrix" title="Copy heading and permalink for Definition 7.1.54" aria-label="Copy heading and permalink for Definition 7.1.54">🔗</a></div></article><div class="autopermalink" data-description="Subsection 7.1.1: Linear Functionals"><a href="#subsec-linear-functionals" title="Copy heading and permalink for Subsection 7.1.1: Linear Functionals" aria-label="Copy heading and permalink for Subsection 7.1.1: Linear Functionals">🔗</a></div></section><div class="autopermalink" data-description="Section 7.1: Inner Product"><a href="#sec7-1-InnerProduct" title="Copy heading and permalink for Section 7.1: Inner Product" aria-label="Copy heading and permalink for Section 7.1: Inner Product">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="chap7-inner-product.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec7-2-Exer.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

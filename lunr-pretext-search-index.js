@@ -1825,7 +1825,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.5",
   "title": "Sage Computations",
-  "body": " Sage Computations   In this section we explain how Sage can be used to explore linear transformations and deal with various concepts related to linear transformations that we have learned in this chapter.  Sage has a construction linear_transformation() to define a linear transformation. We can define a linear transformation in Sage using the following four different ways.      linear_transformation(A, side='left') defines a linear transformation as a matrix transformation defined by the matrix . Domain and the codomain and the base space are inferred by the dimension of the matrix and base ring (the ring from on matrix is defined). Side is the keyword that can be taken as 'left' or 'right', the default value is 'left'.     linear_transformation(D, C, A, side='left') , this is same as before, however, here domain is taken as and codomain is taken as .     linear_transformation(D, C, f) , in this case is the function that is defined on on a basis element of the domain and it produces the elements of the codomain. The linear tranformation is the unique linear transformation that is extended linearly on the domain .     linear_transformation(D, C, images) , where 'images' is a list or a touple of vectors of the codmain, whihc is equal to the size of the basis. Each element of th basis is mapped to the corresponding element of the image.       Linear transformaation defined by a matrix  Let us define a linear tarnsformatrion defined by a matrix over a rational numbers. from .   Clearly, here is the matrix tranformatrion defined from to . We can find, the domain, codmain, parent, images, kernel, that is null space etc using the dot methods. Let us explore some of them.      T.matrix() returns a basis matrix of the image along with the dimension of the image space. By default, it takes option side=\"left\" . In our case, we need to give option side=\"right\" .    We can find image of any vector using the following Sage syntax.   The kernel of a linear transoformation can be obtained using T.kernel() .   If we take a vector in the range space of , we can find a representative of the .   Note that the same linear transformation, we can also define as follows.      Define a matrix and define a linear transformation by . Now define two vectors and . Check that lie in the image space of . Let and . Show that are linearly independent in . Can you generalize this result and prove the same?       Let us define a linear transformation given by and explore this in Sage to find various concept associated with .     Next we find the matrix of with respect to a bases on the domain and a basis on the codomain.    Now we define a subspace of with B as a basis and a subspace of with C as a basis. After that we rectrict T on to on its domain and on its codomain. We call this restriction as . The matrix of is the matrix of with respect to on domain and on codmain, that is .   Note that the matrix can also be obtained by defining a column matrix whose columns are , then applying RREF and extracting the last four columns.   The image of can also be obtained by using RREF of the matrix whose rows are vectors .   Note that the first three rows of this is sage as what we get using T.image() .   Reshufling the basis elements.   Let us see what happens to the matrix of a linear transformation when we reshuffle the elemnts of a basis on domain and codomain. Let us find the matrix of the abobe linear transformation with resepect the basis of the domain and of the codomain. Here we have interchanged 2nd and 3rd basis elements of . You may also explore with other interchanges.   Clearly in this case 2nd and 3rd columns of are interchanged.   Clearly in this case 2nd and 3rd rows of are interchanged.    Thus we have the following result.    Let be a linear transformation. Let and be bases of and respective. Let . Suppose is a basis obtained by permuting elements of . Then is the matrix obtained by applying same permutaions to columns of . Simlarly if is a basis obtained by permuting elements of . Then is the matrix obtained by applying same permutaions to rows of .     Reflection about a line   Find the reflection of about the line . Also plot the point and the line and the point point obtained by reflection.        Find the projection of about the line . Plot the point, the line and the point of proection.        Write a Sage routine to find the matrix of reflection about the plane . Hence use this routine to find the reflection of a point about the plane . Also plot the point, the plane and the point of reflection.        Write a Sage routine to find the matrix of projection of a point on to the plane . Hence use this routine to find the projection of point on to the plane . Also plot the point, the plane and the point projected.      "
+  "body": " Sage Computations   In this section we explain how Sage can be used to explore linear transformations and deal with various concepts related to linear transformations that we have learned in this chapter.  Sage has a construction linear_transformation() to define a linear transformation. We can define a linear transformation in Sage using the following four different ways.      linear_transformation(A, side='left') defines a linear transformation as a matrix transformation defined by the matrix . Domain and the codomain and the base space are inferred by the dimension of the matrix and base ring (the ring from on matrix is defined). Side is the keyword that can be taken as 'left' or 'right', the default value is 'left'.     linear_transformation(D, C, A, side='left') , this is same as before, however, here domain is taken as and codomain is taken as .     linear_transformation(D, C, f) , in this case is the function that is defined on on a basis element of the domain and it produces the elements of the codomain. The linear tranformation is the unique linear transformation that is extended linearly on the domain .     linear_transformation(D, C, images) , where 'images' is a list or a touple of vectors of the codmain, whihc is equal to the size of the basis. Each element of th basis is mapped to the corresponding element of the image.       Linear transformaation defined by a matrix  Let us define a linear tarnsformatrion defined by a matrix over a rational numbers. from .   Clearly, here is the matrix tranformatrion defined from to . We can find, the domain, codmain, parent, images, kernel, that is null space etc using the dot methods. Let us explore some of them.      T.matrix() returns a basis matrix of the image along with the dimension of the image space. By default, it takes option side=\"left\" . In our case, we need to give option side=\"right\" .    We can find image of any vector using the following Sage syntax.   The kernel of a linear transoformation can be obtained using T.kernel() .   If we take a vector in the range space of , we can find a representative of the .   Note that the same linear transformation, we can also define as follows.      Define a matrix and define a linear transformation by . Now define two vectors and . Check that lie in the image space of . Let and . Show that are linearly independent in . Can you generalize this result and prove the same?       Let us define a linear transformation given by and explore this in Sage to find various concept associated with .     Next we find the matrix of with respect to a bases on the domain and a basis on the codomain.    Now we define a subspace of with B as a basis and a subspace of with C as a basis. After that we rectrict T on to on its domain and on its codomain. We call this restriction as . The matrix of is the matrix of with respect to on domain and on codmain, that is .   Note that the matrix can also be obtained by defining a column matrix whose columns are , then applying RREF and extracting the last four columns.   The image of can also be obtained by using RREF of the matrix whose rows are vectors .   Note that the first three rows of this is sage as what we get using T.image() .   Reshufling the basis elements.   Let us see what happens to the matrix of a linear transformation when we reshuffle the elemnts of a basis on domain and codomain. Let us find the matrix of the abobe linear transformation with resepect the basis of the domain and of the codomain. Here we have interchanged 2nd and 3rd basis elements of . You may also explore with other interchanges.   Clearly in this case 2nd and 3rd columns of are interchanged.   Clearly in this case 2nd and 3rd rows of are interchanged.    Thus we have the following result.    Let be a linear transformation. Let and be bases of and respective. Let . Suppose is a basis obtained by permuting elements of . Then is the matrix obtained by applying same permutaions to columns of . Simlarly if is a basis obtained by permuting elements of . Then is the matrix obtained by applying same permutaions to rows of .     Reflection about a line   Find the reflection of about the line . Also plot the point and the line and the point point obtained by reflection.        Find the projection of about the line . Plot the point, the line and the point of proection.        Write a Sage routine to find the matrix of reflection about the plane . Hence use this routine to find the reflection of a point about the plane . Also plot the point, the plane and the point of reflection.       Linear transformation defined by its action on a basis   Suppose is a linear transformation from to .  Fix a basis of and four vectors in such that for .  Assume and   Find the linear transformation explicitly.    First we define the vector spaces and in Sage. Next we define the basis elements of and the images in .  We define the the subspace of with basis . Also the standard basis of  Let us also define a vector and the matrix whose columns the coordinates of with respect to the basis . Using the , the map can be defined as follows. The same can be obtained as follows (justification is left to the reader). Let us verify that for .       Let be the matrix of the linear transformation with respect to the basis of and of , where and    Find .    Find .    Find the formula for .         Write a Sage routine to find the matrix of projection of a point on to the plane . Hence use this routine to find the projection of point on to the plane . Also plot the point, the plane and the point projected.      "
 },
 {
   "id": "sec-sec3-5-LT-Sage-3",
@@ -1891,11 +1891,29 @@ var ptx_lunr_docs = [
   "body": "  Write a Sage routine to find the matrix of reflection about the plane . Hence use this routine to find the reflection of a point about the plane . Also plot the point, the plane and the point of reflection.     "
 },
 {
-  "id": "sec-sec3-5-LT-Sage-11",
+  "id": "lt-defined-by-basis-eg1",
   "level": "2",
-  "url": "sec-sec3-5-LT-Sage.html#sec-sec3-5-LT-Sage-11",
+  "url": "sec-sec3-5-LT-Sage.html#lt-defined-by-basis-eg1",
+  "type": "Example",
+  "number": "3.5.6",
+  "title": "Linear transformation defined by its action on a basis.",
+  "body": " Linear transformation defined by its action on a basis   Suppose is a linear transformation from to .  Fix a basis of and four vectors in such that for .  Assume and   Find the linear transformation explicitly.    First we define the vector spaces and in Sage. Next we define the basis elements of and the images in .  We define the the subspace of with basis . Also the standard basis of  Let us also define a vector and the matrix whose columns the coordinates of with respect to the basis . Using the , the map can be defined as follows. The same can be obtained as follows (justification is left to the reader). Let us verify that for .    "
+},
+{
+  "id": "sec-sec3-5-LT-Sage-12",
+  "level": "2",
+  "url": "sec-sec3-5-LT-Sage.html#sec-sec3-5-LT-Sage-12",
   "type": "Activity",
   "number": "3.5.3",
+  "title": "",
+  "body": "  Let be the matrix of the linear transformation with respect to the basis of and of , where and    Find .    Find .    Find the formula for .      "
+},
+{
+  "id": "sec-sec3-5-LT-Sage-13",
+  "level": "2",
+  "url": "sec-sec3-5-LT-Sage.html#sec-sec3-5-LT-Sage-13",
+  "type": "Activity",
+  "number": "3.5.4",
   "title": "",
   "body": "  Write a Sage routine to find the matrix of projection of a point on to the plane . Hence use this routine to find the projection of point on to the plane . Also plot the point, the plane and the point projected.     "
 },
@@ -4516,7 +4534,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.1",
   "title": "Inner Product",
-  "body": " Inner Product  In the last chapter, we dealt with notion of dot product and geometry in . The dot product and related notion can be generalized to an arbitrary vector space over or . All the notions, we have learned in the last section can be generalized over an inner product space. In this chapter we, shall introduce inner product on a vector space over and define extend the results studied in the last chapter on .  Note that the dot product of two vectors in is a scalar, in particular, dot product can be thought of as a function from satisfying the following properties:      for all .     if and only if .     for all .     for all .     .     The notion of dot product on can ve generalized on vector space known as inner product. We have the following definition.  Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in (that is, a function ) satisfying the following properties.      for all and if and only if .     for all . (Symmetry)     for all .     for all and .     If is real vector space with inner product . Then called in inner product space over .    The last two properties make the inner product linear in the second variable. Using the symmetry property, it can also be shown that the inner product is linear in the first variable as well. That is,   Next we look at several examples of inner procuct on various vector spaces that we have defined in .    On , the standard dot product is an inner product. Thus define   This is also called the Euclidean inner product on .      Let , the set of all matrices over . Define   It is easy to show that this is an inner product on .  Note that this inner product can be thought of as the standard dot product on . The elements of the matrix can be thought of as a vector in . Then . Work with matrices and then try to prove this for matrices.        Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on . (Where do we need to be positive definie?)        Since is symmetric and positive definite matrix, there exists a matrix such that . We call as positive definite square root of and is denoted by .  which shows this inner product is just the usual dot product after the linear change of variables .     We have defined an inner product on using a symmetric positive definite matrix . In fact any inner product on can be obtained in this way.  Let be an inner product on . Let be the standard basis of . For with we have, Let us define . Then it is easy to see that where is a symmetric positive definite matrix.(why?)      Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)          Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space . This inner product is called the discrete inner product on .  Here are nothing special. Instead, we can use any distinct real numbers, .      mean that has roots, which is not possible unless by the fundamental theorem of algebra.         Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .      Let be an inner product space. Then for any two vectors , show that 1.   2.      The proof follows by looking at and and using the properties of inner product.      If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is twice the sum of the squares of the side lengths.    Proof follows from .      Let be three positive real numbers and , be vectors in . Define Show that this is an inner product on . Also what are the unit vectors with respect to this inner product on ?     Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.    If or , then . Also either or . Hence the result follows.  First we consider the case when . Then This gives  Similarly, Thus implies . From these two together we have   We now prove the statement for equality. Let This implies either or If , from the above chain of inequalities we deduce that or If , we see that Thus the equality holds if and only if   Next suppose and are nonzero (not necessarily of unit length). Then we can write and are of unit length. Hence by the previous case, This implies, thus we get   If and are nonzero, then the equality from the earlier case means or . Let us look at one of the case. The other case is similar.   2nd Proof.   Fix and in . If , then the result is obviously true. Without loss of generality assume that . Consider the real-valued function defined as . We shall use calclus and investigate the minimum value of to prove the inequality. Note that this is a differentiabke function of . Differentiating with respect to , we get Setting , we get the critical point at Since , this critical point is a minimum. Thus Substituting for in the expression for , we get This completes the 2nd proof of the Cauchy-Schwarz inequality.     Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.    Let us play with the Cauchy-Schwarz inequality . Suppose and are non zero vectors in , Then   Hence we have .  Thus for any two non zero vectors, and , always lies between and 1. This allows us to define the angle between two non zero vectors. We assign this number to with called the angle between and . Thus, if is the angle between and , then we have   All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.   Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:     for all , and if and only if .    for all and , .    for all , .         Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.      The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them.      Let be a real inner product space. Define   orthogonality of two vectors and in ,    orthogonal complement of a subset of ,    Orthogonal projection of a vector onto a non-zero vector ,    orthogonal set and orthonormal sets in and    Gram-Schmidt orthogonalization process.       As mentioned earlier all the notions related to orthogonality can be defined in a similar manner on an inner product space and the results that we proved in the previous chapter hold true in this more general setting. However, let us state some of the definitions and results here for completeness.    Let be an inner product space. Two vectors are said to be orthogonal if       Let be an inner product space. A set of vectors is said to be orthogonal set if for .  In addition, if each vector in the set is of unit norm, i.e., for all , then the set is called an orthonormal set.       Let be two vectors in an inner product space . Then show that    and are orthogonal if and only if . (what does it mean geometrically?)     and are orthogonal if and only if .         Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.     Pythagoras Theorem   Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.    Is the converse of the Pythagoras theorem true? Consider and . It is easy to check that that  ar not orthogonal to each other.    Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .    If the statement is trivial (all direction cosines are zero). Assume . Since is an orthogonal basis we can expand uniquely as Taking norms squared and using orthogonality of the gives By definition of the angle between and we have Using the relation substitute into the norm identity to obtain Dividing by (which is positive because ) yields as required.      A basis of an inner product space is said to be orthonormal basis if we have for .    Let us assume that is an orthonormal basis of . Write . Taking the inner product of both sides with the vector , and using the orthonormal properties of the basis, we get Thus . In particular, we have   Next we turn our attention to finding an orthogonal basis in an inner product space using the Gram-Schmidt process. The process is exactly same as before, we just need to replace the dot product by the given inner product. Let be an inner product space. Let be a basis of . We construct an orthogonal basis as follows:   Set .    For , set      Thus we have the following result.   Gram–Schmidt Orthogonalization Theorem  Let be a linearly independent set in an inner product space . Then there exists an orthogonal set such that   The vectors are defined recursively as follows:   The resulting set is orthogonal. To obtain an orthonormal set, define   Then is an orthonormal basis of the subspace .    The proof proceeds by induction on . For , set , which is nonzero since is linearly independent. Suppose have been constructed such that they are mutually orthogonal and .  Define Then for each ,   Hence, is orthogonal to all previous . This completes the inductive step, and the result follows.     The Gram–Schmidt process provides an explicit algorithm for transforming any linearly independent set into an orthonormal one. It is a fundamental tool in numerical linear algebra, functional analysis, and the construction of orthogonal polynomials.     Let and define for  Apply Gram–Schmidt to the linearly independent set .   .          Hence  Thus we have produced an orthogonal set where It is easy to see that Since we have The set is an orthonormal basis of (with respect to the discrete inner product above).  Let us do this using SageMath as well by on       Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .     Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials          Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.           Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.         Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .    How will you define the othogonal projection of a vector onto another vector in an inner product space?    Notion of orthogonal projection and reflection in an inner product space.   Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, and reflection can be naturally extended to an inner product space . Explore how these notions generalize in such spaces, and implement solutions to related problems using Sage.     Let be an inner product space. Suppose with . Then the orthogonal projection of onto is defined as       Let with inner product . Find the orthogonal projection of onto .     Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .     Find the orthogonal projection of vector onto the subspace spanned by three vectors .      Let be an inner product space over and . The the orthogonal complement of in is defined as      Let be an inner product space over and . Show that is a subspace of .     Let be a symmetric and positive definite matrix. Define an inner product on as . Let . Then Since , is the first column of . This implies that is the set of vector orthogonal to the first column of with respect to the standard inner product. Since the first column of is nonzero, . It is easy to see that is the set of vector orthogonal to the first column of with respect to the standard inner product.     Let with discrete inner product Find and .     Let be an inner product space over and be a finite dimensional subspace of . Then    is a subspace of and .    If is finite dimensional, then     If , then .        (1) is subspace follows from .  Let . Then . Hence the only vector in both and is the zero vector. Let . We need to show that there exist and such that . Let be an orthonormal basis of . Define Now define . For each , we have Hence and the result follows.  (2) Follows from (1).  (3) Let . Then by (2), we have Similarly, Hence . It remains to show that and . Let and . Then since . This shows that . Now let . We need to show that . By (1), there exist and such that .   If is a finite dimensional subspace of an inner product space . Then the subspace is called the orthogonal complement of in . Since , every vector can be uniquely written as with and . The vector is called the orthogonal projection of onto and is denoted by .  Futhermore, if is an orthonormal basis of , then   The following theorem shows that the orthogonal projection is the best approximation of a vector in by a vector in .   Approximation Theorem   Let be an inner product space over and be a finite dimensional subspace of . Given , let . Then for all , .     Let . Then . Since , we have . Hence by the Pythagorean theorem, The result follows.   The Approximation Theorem shows that the orthogonal projection of a vector onto a subspace is the best approximation of by a vector in . This result has important applications in numerical analysis and scientific computing.   Fouries Coefficients   Let us explore one such application from Fourier analysis. Define an inner product on the space of continuous real-valued functions on as Consider the subspace It is easy to check that the set is orthgonal with respect to the above inner product. Also for . Hence an orthonormal basis of is given by Given a continuous function , we want to find the best approximation of . Define Then by the Approximation Theorem, the orthogonal projection of onto is given by The coefficients are called the Fourier coefficients of . Thus we have shown that the Fourier coefficients give the best approximation of a function by a trigonometric polynomial of degree at most       Linear Functionals  Let be an inner product space over . Fix a vector and define as . It follows from from properties of inner product that is a linear map. (why?)    Let be an inner product space over . Any liear map is called a linear function.     Recall that we have characterized all linear maps from . In particular, if is a linear map, them there exist a vector such that The question is can we characterize linear functionals on an inner product space.   Riesz Representation Theorem   Let be an inner product space over . Given a linear map , there exists a unique such that for all .     Let be an orthonormal basis of . Define For any , we can write . Hence Since is linear, we have Hence .  To show uniqueness, suppose there exists such that for all . Then for each , we have Hence for all . Since is a basis of , we have or .   Can we characterize linear maps from a finite dimesional inner product space to a finite dimensional inner product space ?    Let and be finite dimenional inner product spaces over . Let be a linear map. Let be an orthonormal basis of and an orthonormal basis of . Then the matrix of with respect to these bases is given by      Sine is an orthonormal basis of , This shows that the -th column of is In paticular, the -th entry of is    The above theorem shows that a linear map between two finite dimensional inner product spaces is completely determined by the images of an orthonormal basis of the domain space.  Now suppose in and be a linear map on . Let be an orthonormal basis of . Then the matrix of with respect to this basis is given by   Using the properties of inner product, it is easy to see that is a symmetric matrix if and only if for all . This motivates the following definition.    A linear map on an inner product space is called symmetric if for all .    Recall that we defined a linear map assocciated with an real matrix as . Also the matrix of with respect to the standard basis is . This we can define an matrix to be symmetric if the linear map is symmetric with respect to the standard inner product (dot product) on .  It is easy to see that an real matrix is symmetric in the usual sense (i.e., ) if and only if the linear map is symmetric with respect to the standard inner product on .  Next we revist the orthogonal linear transformation defined defined in the last chapter and give an equivalent definition using inner products. We have the following equivalent definition.    Let be a finite dimensional inner product space over . A linear map is an orthogonal linear transformation if and only if for all .    In particular orthogonal linear transformations are precisely those linear maps that preserve the inner product. It is easy to see that a linear map is an orthogonal linear transformation if and only if We have the following equivalent characterization of orthogonal linear transformations.    Let be a finite dimensional inner product space over . and be a linear map. Then the following are equivalent.    is an orthogonal linear transformation.     for all .     maps every orthonormal basis of to an orthonormal basis of . That is, if is an orthonormal basis of , then is also an orthonormal basis of .        (1) (2): Follows from the definition of orthogonal linear transformation.  (2) (3): Let be an orthonormal basis of . For each , we have This shows that is an orthonormal set. Since is a linear map, spans . Also is linearly independent. Hence This implies . This shows that is an orthonormal basis of .  (3) (1): Let . Since is an orthonormal basis of , we can write and . Then it is easy to see that Hence    Now let us see what happens to the matrix of an orthogonal linear transformation with respect to an orthonormal basis. Let be an orthogonal linear transformation on a finite dimensional inner product space . Let be an orthonormal basis of . Then the matrix of with respect to this basis is given by Let us write the columns of as . Since is an orthonormal basis of , it follows that the dot product of and . This shows that the columns of form an orthonormal set in . This suggest the following definition of an othogonal matrix.    A real matrix is called an orthogonal matrix if its columns form an orthonormal set in . This is, if , then for all . Equivalently, is an orthogonal matrix if .     "
+  "body": " Inner Product  In the last chapter, we dealt with notion of dot product and geometry in . The dot product and related notion can be generalized to an arbitrary vector space over or . All the notions, we have learned in the last section can be generalized over an inner product space. In this chapter we, shall introduce inner product on a vector space over and define extend the results studied in the last chapter on .  Note that the dot product of two vectors in is a scalar, in particular, dot product can be thought of as a function from satisfying the following properties:      for all .     if and only if .     for all .     for all .     .     The notion of dot product on can ve generalized on vector space known as inner product. We have the following definition.  Inner Product   Let be a vector space over . An inner product on is a function that assigns a real number to every pair of vectors in (that is, a function ) satisfying the following properties.      for all and if and only if .     for all . (Symmetry)     for all .     for all and .     If is real vector space with inner product . Then called in inner product space over .    The last two properties make the inner product linear in the second variable. Using the symmetry property, it can also be shown that the inner product is linear in the first variable as well. That is,   Next we look at several examples of inner procuct on various vector spaces that we have defined in .    On , the standard dot product is an inner product. Thus define   This is also called the Euclidean inner product on .      Let , the set of all matrices over . Define   It is easy to show that this is an inner product on .  Note that this inner product can be thought of as the standard dot product on . The elements of the matrix can be thought of as a vector in . Then . Work with matrices and then try to prove this for matrices.        Let be an symmetric and positive definite matrix. On , define   Then this is an inner product on . (Where do we need to be positive definie?)        Since is symmetric and positive definite matrix, there exists a matrix such that . We call as positive definite square root of and is denoted by .  which shows this inner product is just the usual dot product after the linear change of variables .     We have defined an inner product on using a symmetric positive definite matrix . In fact any inner product on can be obtained in this way.  Let be an inner product on . Let be the standard basis of . For with we have, Let us define . Then it is easy to see that where is a symmetric positive definite matrix.(why?)      Let the set of all continuous function from to . Define .  This is an inner product on . (You may need real analysis to conclude that then .)          Let and be two polynomials in . Then define .  It is easy to see that defined inner product on the vector space . This inner product is called the discrete inner product on .  Here are nothing special. Instead, we can use any distinct real numbers, .      mean that has roots, which is not possible unless by the fundamental theorem of algebra.         Let be a real inner product space. Then norm of any vector corresponding to the inner product is defined as . The distance between twp vectors and is defined as .      Let be an inner product space. Then for any two vectors , show that 1.   2.      The proof follows by looking at and and using the properties of inner product.      If are two vectors in an inner product space with inner product . Then show that .  This is called the parallelogram identity. Geometrically, in a parallelogram, the sum of square of the diagonals is twice the sum of the squares of the side lengths.    Proof follows from .      Let be three positive real numbers and , be vectors in . Define Show that this is an inner product on . Also what are the unit vectors with respect to this inner product on ?     Cauchy-Schwarz Inequality   Let be an inner product space. The for any two vectors , we have   The equality holds if and only if and are linearly dependent.    If or , then . Also either or . Hence the result follows.  First we consider the case when . Then This gives  Similarly, Thus implies . From these two together we have   We now prove the statement for equality. Let This implies either or If , from the above chain of inequalities we deduce that or If , we see that Thus the equality holds if and only if   Next suppose and are nonzero (not necessarily of unit length). Then we can write and are of unit length. Hence by the previous case, This implies, thus we get   If and are nonzero, then the equality from the earlier case means or . Let us look at one of the case. The other case is similar.   2nd Proof.   Fix and in . If , then the result is obviously true. Without loss of generality assume that . Consider the real-valued function defined as . We shall use calclus and investigate the minimum value of to prove the inequality. Note that this is a differentiabke function of . Differentiating with respect to , we get Setting , we get the critical point at Since , this critical point is a minimum. Thus Substituting for in the expression for , we get This completes the 2nd proof of the Cauchy-Schwarz inequality.     Triangle Inequality   Let and be two vectors in an inner product space . Then   Hence for all , we have is called the triangle inequality.    Let us play with the Cauchy-Schwarz inequality . Suppose and are non zero vectors in , Then   Hence we have .  Thus for any two non zero vectors, and , always lies between and 1. This allows us to define the angle between two non zero vectors. We assign this number to with called the angle between and . Thus, if is the angle between and , then we have   All the notions that we defined for dot product, namely, orthogonality, orthogonal projection, Gram-Schmidt orthogonalization process can we defined in a similar manner. All we need to do is, replace the dot product by the given inner product.   Properties of Norm   Let be an innepr product space. The norm defined as has the following properties:     for all , and if and only if .    for all and , .    for all , .         Any vector space over with a function which satisfies all the properties mentioned in is called a normed linear space. . Thus any inner product space is also a normed linear space.      The concepts such as orthogonality, orthogonal projection, orthogonal complement of any subset, orthogonal and orthonormal sets and Gram-Schmidt orthogonalization process etc that we defined and dealt with in the previuos chapter with respect to the dot product on can be defined on an inner product space. All we need to do is to replace the dot product by the corresponding inner product. We encourage readers to define each one of them.      Let be a real inner product space. Define   orthogonality of two vectors and in ,    orthogonal complement of a subset of ,    Orthogonal projection of a vector onto a non-zero vector ,    orthogonal set and orthonormal sets in and    Gram-Schmidt orthogonalization process.       As mentioned earlier all the notions related to orthogonality can be defined in a similar manner on an inner product space and the results that we proved in the previous chapter hold true in this more general setting. However, let us state some of the definitions and results here for completeness.    Let be an inner product space. Two vectors are said to be orthogonal if       Let be an inner product space. A set of vectors is said to be orthogonal set if for .  In addition, if each vector in the set is of unit norm, i.e., for all , then the set is called an orthonormal set.       Let be two vectors in an inner product space . Then show that    and are orthogonal if and only if . (what does it mean geometrically?)     and are orthogonal if and only if .         Let be the vectors space of set of continuous functions from to . Define the inner product on as .  Show that under this inner product is an orthogonal set.     Pythagoras Theorem   Let be a real inner product space. Let be orthogonal vectors in . Then .  This is called the Pythagoras theorem.    Is the converse of the Pythagoras theorem true? Consider and . It is easy to check that that  ar not orthogonal to each other.    Let be an orthogonal basis of an inner product space . Let and be the angle between and , respectively. Then .  Here are called the direction cosines of corresponding to .    If the statement is trivial (all direction cosines are zero). Assume . Since is an orthogonal basis we can expand uniquely as Taking norms squared and using orthogonality of the gives By definition of the angle between and we have Using the relation substitute into the norm identity to obtain Dividing by (which is positive because ) yields as required.      A basis of an inner product space is said to be orthonormal basis if we have for .    Let us assume that is an orthonormal basis of . Write . Taking the inner product of both sides with the vector , and using the orthonormal properties of the basis, we get Thus . In particular, we have     Let be an orthonormal basis of . Let and Let be the angle between and . Show that    .     .            Next we turn our attention to finding an orthogonal basis in an inner product space using the Gram-Schmidt process. The process is exactly same as before, we just need to replace the dot product by the given inner product. Let be an inner product space. Let be a basis of . We construct an orthogonal basis as follows:   Set .    For , set      Thus we have the following result.   Gram–Schmidt Orthogonalization Theorem  Let be a linearly independent set in an inner product space . Then there exists an orthogonal set such that   The vectors are defined recursively as follows:   The resulting set is orthogonal. To obtain an orthonormal set, define   Then is an orthonormal basis of the subspace .    The proof proceeds by induction on . For , set , which is nonzero since is linearly independent. Suppose have been constructed such that they are mutually orthogonal and .  Define Then for each ,   Hence, is orthogonal to all previous . This completes the inductive step, and the result follows.     The Gram–Schmidt process provides an explicit algorithm for transforming any linearly independent set into an orthonormal one. It is a fundamental tool in numerical linear algebra, functional analysis, and the construction of orthogonal polynomials.     Let and define for  Apply Gram–Schmidt to the linearly independent set .   .          Hence  Thus we have produced an orthogonal set where It is easy to see that Since we have The set is an orthonormal basis of (with respect to the discrete inner product above).  Let us do this using SageMath as well by on       Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .     Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials          Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.           Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.         Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .    How will you define the othogonal projection of a vector onto another vector in an inner product space?    Notion of orthogonal projection and reflection in an inner product space.   Note that the concepts of Gram–Schmidt orthogonalization, orthogonal projection, and reflection can be naturally extended to an inner product space . Explore how these notions generalize in such spaces, and implement solutions to related problems using Sage.     Let be an inner product space. Suppose with . Then the orthogonal projection of onto is defined as       Let with inner product . Find the orthogonal projection of onto .      Let and be two parallel lines in . Suppose be a transversal line. Let and be the angles between and , and and , respectively. Show that Also prove the converse of this result.    Let and be the direction vectors of the lines and , respectively. Since the lines are parallel, we have for some non zero scalar . Let be the direction vector of the transversal line . Then by definition of angle between two vectors, we have Using the relation , we get This proves .  To prove the converse, assume that . Then we have This implies This means that the projections of and onto are equal. This is possible only if and are linearly dependent, i.e., the lines and are parallel.     Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .     Find the orthogonal projection of vector onto the subspace spanned by three vectors .      Let be an inner product space over and . The the orthogonal complement of in is defined as      Let be an inner product space over and . Show that is a subspace of .     Let be a symmetric and positive definite matrix. Define an inner product on as . Let . Then Since , is the first column of . This implies that is the set of vector orthogonal to the first column of with respect to the standard inner product. Since the first column of is nonzero, . It is easy to see that is the set of vector orthogonal to the first column of with respect to the standard inner product.     Let with discrete inner product Find and .     Let be an inner product space over and be a finite dimensional subspace of . Then    is a subspace of and .    If is finite dimensional, then     If , then .        (1) is subspace follows from .  Let . Then . Hence the only vector in both and is the zero vector. Let . We need to show that there exist and such that . Let be an orthonormal basis of . Define Now define . For each , we have Hence and the result follows.  (2) Follows from (1).  (3) Let . Then by (2), we have Similarly, Hence . It remains to show that and . Let and . Then since . This shows that . Now let . We need to show that . By (1), there exist and such that .   If is a finite dimensional subspace of an inner product space . Then the subspace is called the orthogonal complement of in . Since , every vector can be uniquely written as with and . The vector is called the orthogonal projection of onto and is denoted by .  Futhermore, if is an orthonormal basis of , then   The following theorem shows that the orthogonal projection is the best approximation of a vector in by a vector in .   Approximation Theorem   Let be an inner product space over and be a finite dimensional subspace of . Given , let . Then for all , .     Let . Then . Since , we have . Hence by the Pythagorean theorem, The result follows.   The Approximation Theorem shows that the orthogonal projection of a vector onto a subspace is the best approximation of by a vector in . This result has important applications in numerical analysis and scientific computing.   Fouries Coefficients   Let us explore one such application from Fourier analysis. Define an inner product on the space of continuous real-valued functions on as Consider the subspace It is easy to check that the set is orthgonal with respect to the above inner product. Also for . Hence an orthonormal basis of is given by Given a continuous function , we want to find the best approximation of . Define for . Then by the Approximation Theorem, the orthogonal projection of onto is given by The coefficients are called the Fourier coefficients of . Thus we have shown that the Fourier coefficients give the best approximation of a function by a trigonometric polynomial of degree at most       Linear Functionals  Let be an inner product space over . Fix a vector and define as . It follows from from properties of inner product that is a linear map. (why?)    Let be an inner product space over . Any liear map is called a linear function.     Recall that we have characterized all linear maps from . In particular, if is a linear map, them there exist a vector such that The question is can we characterize linear functionals on an inner product space.   Riesz Representation Theorem   Let be an inner product space over . Given a linear map , there exists a unique such that for all .     Let be an orthonormal basis of . Define For any , we can write . Hence Since is linear, we have Hence .  To show uniqueness, suppose there exists such that for all . Then for each , we have Hence for all . Since is a basis of , we have or .   Can we characterize linear maps from a finite dimesional inner product space to a finite dimensional inner product space ?    Let and be finite dimenional inner product spaces over . Let be a linear map. Let be an orthonormal basis of and an orthonormal basis of . Then the matrix of with respect to these bases is given by      Sine is an orthonormal basis of , This shows that the -th column of is In paticular, the -th entry of is    The above theorem shows that a linear map between two finite dimensional inner product spaces is completely determined by the images of an orthonormal basis of the domain space.  Now suppose in and be a linear map on . Let be an orthonormal basis of . Then the matrix of with respect to this basis is given by   Using the properties of inner product, it is easy to see that is a symmetric matrix if and only if for all . This motivates the following definition.    A linear map on an inner product space is called symmetric if for all .    Recall that we defined a linear map assocciated with an real matrix as . Also the matrix of with respect to the standard basis is . This we can define an matrix to be symmetric if the linear map is symmetric with respect to the standard inner product (dot product) on .  It is easy to see that an real matrix is symmetric in the usual sense (i.e., ) if and only if the linear map is symmetric with respect to the standard inner product on .  Next we revist the orthogonal linear transformation defined defined in the last chapter and give an equivalent definition using inner products. We have the following equivalent definition.    Let be a finite dimensional inner product space over . A linear map is an orthogonal linear transformation if and only if for all .    In particular orthogonal linear transformations are precisely those linear maps that preserve the inner product. It is easy to see that a linear map is an orthogonal linear transformation if and only if We have the following equivalent characterization of orthogonal linear transformations.    Let be a finite dimensional inner product space over . and be a linear map. Then the following are equivalent.    is an orthogonal linear transformation.     for all .     maps every orthonormal basis of to an orthonormal basis of . That is, if is an orthonormal basis of , then is also an orthonormal basis of .        (1) (2): Follows from the definition of orthogonal linear transformation.  (2) (3): Let be an orthonormal basis of . For each , we have This shows that is an orthonormal set. Since is a linear map, spans . Also is linearly independent. Hence This implies . This shows that is an orthonormal basis of .  (3) (1): Let . Since is an orthonormal basis of , we can write and . Then it is easy to see that Hence    Now let us see what happens to the matrix of an orthogonal linear transformation with respect to an orthonormal basis. Let be an orthogonal linear transformation on a finite dimensional inner product space . Let be an orthonormal basis of . Then the matrix of with respect to this basis is given by Let us write the columns of as . Since is an orthonormal basis of , it follows that the dot product of and . This shows that the columns of form an orthonormal set in . This suggest the following definition of an othogonal matrix.    A real matrix is called an orthogonal matrix if its columns form an orthonormal set in . This is, if , then for all . Equivalently, is an orthogonal matrix if .     "
 },
 {
   "id": "def-inner-product",
@@ -4744,38 +4762,47 @@ var ptx_lunr_docs = [
   "body": "  A basis of an inner product space is said to be orthonormal basis if we have for .   "
 },
 {
+  "id": "sec7-1-InnerProduct-50",
+  "level": "2",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-50",
+  "type": "Checkpoint",
+  "number": "7.1.26",
+  "title": "",
+  "body": "  Let be an orthonormal basis of . Let and Let be the angle between and . Show that    .     .           "
+},
+{
   "id": "thm-inp-gram-schmidt",
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-inp-gram-schmidt",
   "type": "Theorem",
-  "number": "7.1.26",
+  "number": "7.1.27",
   "title": "Gram–Schmidt Orthogonalization Theorem.",
   "body": " Gram–Schmidt Orthogonalization Theorem  Let be a linearly independent set in an inner product space . Then there exists an orthogonal set such that   The vectors are defined recursively as follows:   The resulting set is orthogonal. To obtain an orthonormal set, define   Then is an orthonormal basis of the subspace .  "
 },
 {
-  "id": "sec7-1-InnerProduct-53",
+  "id": "sec7-1-InnerProduct-54",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-53",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-54",
   "type": "Proof",
   "number": "7.1.1",
   "title": "",
   "body": " The proof proceeds by induction on . For , set , which is nonzero since is linearly independent. Suppose have been constructed such that they are mutually orthogonal and .  Define Then for each ,   Hence, is orthogonal to all previous . This completes the inductive step, and the result follows.  "
 },
 {
-  "id": "sec7-1-InnerProduct-54",
+  "id": "sec7-1-InnerProduct-55",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-54",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-55",
   "type": "Remark",
-  "number": "7.1.27",
+  "number": "7.1.28",
   "title": "",
   "body": "  The Gram–Schmidt process provides an explicit algorithm for transforming any linearly independent set into an orthonormal one. It is a fundamental tool in numerical linear algebra, functional analysis, and the construction of orthogonal polynomials.   "
 },
 {
-  "id": "sec7-1-InnerProduct-55",
+  "id": "sec7-1-InnerProduct-56",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-55",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-56",
   "type": "Example",
-  "number": "7.1.28",
+  "number": "7.1.29",
   "title": "",
   "body": " Let and define for  Apply Gram–Schmidt to the linearly independent set .   .          Hence  Thus we have produced an orthogonal set where It is easy to see that Since we have The set is an orthonormal basis of (with respect to the discrete inner product above).  Let us do this using SageMath as well by on    "
 },
@@ -4784,7 +4811,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-15",
   "type": "Checkpoint",
-  "number": "7.1.29",
+  "number": "7.1.30",
   "title": "",
   "body": "  Let be an orthogonal basis of an inner product space . Let and be two vectors such that and . Then and .   "
 },
@@ -4793,7 +4820,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#Legendre-poly",
   "type": "Example",
-  "number": "7.1.30",
+  "number": "7.1.31",
   "title": "Legendre Polynomials.",
   "body": " Legendre Polynomials   Consider with inner product . Use the standard basis to find an orthogonal basis of .  First of all notice that is not an orthogonal basis. For , . Also note that . . . .  Since and are already orthogonal, we can choose and in the Gram-Schmidt process. Next .  We have .  Hence .  Next .  Hence an orthogonal basis is . These are the first four Legendre polynomials.   After normalizing the vectors, we get an orthonormal basis .   Graph of Legendre polynomials     "
 },
@@ -4802,18 +4829,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-16",
   "type": "Checkpoint",
-  "number": "7.1.32",
-  "title": "",
-  "body": "  Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.        "
-},
-{
-  "id": "sec7-1-InnerProduct-61",
-  "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-61",
-  "type": "Example",
   "number": "7.1.33",
   "title": "",
-  "body": "  Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.       "
+  "body": "  Consider the standard basis of with inner product . Find an orthonormal basis starting with using the Gram-Schmidt orthogonalization process.        "
 },
 {
   "id": "sec7-1-InnerProduct-62",
@@ -4821,13 +4839,22 @@ var ptx_lunr_docs = [
   "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-62",
   "type": "Example",
   "number": "7.1.34",
+  "title": "",
+  "body": "  Let . It is easy to check that is a symmetric and positive definite matrix. (why?) Define an inner product on as .  Use the the Gram-Schmidt orthogonalization process to find an orthonormal basis of from the standard basis vectors with respect to the above inner product.       "
+},
+{
+  "id": "sec7-1-InnerProduct-63",
+  "level": "2",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-63",
+  "type": "Example",
+  "number": "7.1.35",
   "title": "Lagrange Interpolating Polynomials.",
   "body": " Lagrange Interpolating Polynomials   Fix any distinct real numbers, and define an inner product on .  Recall the Lagrange Polynomial defined (Eqn. ). .  Then   Hence is an orthonormal basis of .  Let be any polynomial, then . Since is an orthonormal basis of , we have which is the Lagrange interpolation expansion of .   "
 },
 {
-  "id": "sec7-1-InnerProduct-64",
+  "id": "sec7-1-InnerProduct-65",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-64",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-65",
   "type": "Activity",
   "number": "7.1.1",
   "title": "",
@@ -4838,25 +4865,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#def-inp-orthogonal-projection",
   "type": "Definition",
-  "number": "7.1.35",
+  "number": "7.1.36",
   "title": "",
   "body": "  Let be an inner product space. Suppose with . Then the orthogonal projection of onto is defined as    "
 },
 {
-  "id": "sec7-1-InnerProduct-66",
+  "id": "sec7-1-InnerProduct-67",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-66",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-67",
   "type": "Checkpoint",
-  "number": "7.1.36",
+  "number": "7.1.37",
   "title": "",
   "body": "  Let with inner product . Find the orthogonal projection of onto .   "
+},
+{
+  "id": "sec7-1-InnerProduct-68",
+  "level": "2",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-68",
+  "type": "Checkpoint",
+  "number": "7.1.38",
+  "title": "",
+  "body": "  Let and be two parallel lines in . Suppose be a transversal line. Let and be the angles between and , and and , respectively. Show that Also prove the converse of this result.    Let and be the direction vectors of the lines and , respectively. Since the lines are parallel, we have for some non zero scalar . Let be the direction vector of the transversal line . Then by definition of angle between two vectors, we have Using the relation , we get This proves .  To prove the converse, assume that . Then we have This implies This means that the projections of and onto are equal. This is possible only if and are linearly dependent, i.e., the lines and are parallel.   "
 },
 {
   "id": "def-inp-orthogonal-projection-onto-subspace",
   "level": "2",
   "url": "sec7-1-InnerProduct.html#def-inp-orthogonal-projection-onto-subspace",
   "type": "Definition",
-  "number": "7.1.37",
+  "number": "7.1.39",
   "title": "Projection onto a subspace.",
   "body": " Projection onto a subspace  Let be an inner product space and , a finite dimensional subspace of . Let be an orthonormal basis of . Suppose . Similar to definition , we can define the orthogonal projection of onto as .  "
 },
@@ -4865,7 +4901,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#inp-7-1-17",
   "type": "Checkpoint",
-  "number": "7.1.38",
+  "number": "7.1.40",
   "title": "",
   "body": "  Find the orthogonal projection of vector onto the subspace spanned by three vectors .   "
 },
@@ -4874,7 +4910,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#def-inp-set-perp",
   "type": "Definition",
-  "number": "7.1.39",
+  "number": "7.1.41",
   "title": "",
   "body": "  Let be an inner product space over and . The the orthogonal complement of in is defined as    "
 },
@@ -4883,25 +4919,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#ex1-inp-set-perp",
   "type": "Checkpoint",
-  "number": "7.1.40",
+  "number": "7.1.42",
   "title": "",
   "body": " Let be an inner product space over and . Show that is a subspace of .  "
 },
 {
-  "id": "sec7-1-InnerProduct-71",
+  "id": "sec7-1-InnerProduct-73",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-71",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-73",
   "type": "Example",
-  "number": "7.1.41",
+  "number": "7.1.43",
   "title": "",
   "body": "  Let be a symmetric and positive definite matrix. Define an inner product on as . Let . Then Since , is the first column of . This implies that is the set of vector orthogonal to the first column of with respect to the standard inner product. Since the first column of is nonzero, . It is easy to see that is the set of vector orthogonal to the first column of with respect to the standard inner product.   "
 },
 {
-  "id": "sec7-1-InnerProduct-72",
+  "id": "sec7-1-InnerProduct-74",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-72",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-74",
   "type": "Checkpoint",
-  "number": "7.1.42",
+  "number": "7.1.44",
   "title": "",
   "body": " Let with discrete inner product Find and .  "
 },
@@ -4910,14 +4946,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-inp-orthogonal-complement",
   "type": "Theorem",
-  "number": "7.1.43",
+  "number": "7.1.45",
   "title": "",
   "body": "  Let be an inner product space over and be a finite dimensional subspace of . Then    is a subspace of and .    If is finite dimensional, then     If , then .      "
 },
 {
-  "id": "sec7-1-InnerProduct-74",
+  "id": "sec7-1-InnerProduct-76",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-74",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-76",
   "type": "Proof",
   "number": "7.1.2",
   "title": "",
@@ -4928,14 +4964,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-inp-approximation",
   "type": "Theorem",
-  "number": "7.1.44",
+  "number": "7.1.46",
   "title": "Approximation Theorem.",
   "body": " Approximation Theorem   Let be an inner product space over and be a finite dimensional subspace of . Given , let . Then for all , .   "
 },
 {
-  "id": "sec7-1-InnerProduct-79",
+  "id": "sec7-1-InnerProduct-81",
   "level": "2",
-  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-79",
+  "url": "sec7-1-InnerProduct.html#sec7-1-InnerProduct-81",
   "type": "Proof",
   "number": "7.1.3",
   "title": "",
@@ -4946,16 +4982,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#eg-inp-fourier",
   "type": "Example",
-  "number": "7.1.45",
+  "number": "7.1.47",
   "title": "Fouries Coefficients.",
-  "body": " Fouries Coefficients   Let us explore one such application from Fourier analysis. Define an inner product on the space of continuous real-valued functions on as Consider the subspace It is easy to check that the set is orthgonal with respect to the above inner product. Also for . Hence an orthonormal basis of is given by Given a continuous function , we want to find the best approximation of . Define Then by the Approximation Theorem, the orthogonal projection of onto is given by The coefficients are called the Fourier coefficients of . Thus we have shown that the Fourier coefficients give the best approximation of a function by a trigonometric polynomial of degree at most     "
+  "body": " Fouries Coefficients   Let us explore one such application from Fourier analysis. Define an inner product on the space of continuous real-valued functions on as Consider the subspace It is easy to check that the set is orthgonal with respect to the above inner product. Also for . Hence an orthonormal basis of is given by Given a continuous function , we want to find the best approximation of . Define for . Then by the Approximation Theorem, the orthogonal projection of onto is given by The coefficients are called the Fourier coefficients of . Thus we have shown that the Fourier coefficients give the best approximation of a function by a trigonometric polynomial of degree at most     "
 },
 {
   "id": "def-linear-functional",
   "level": "2",
   "url": "sec7-1-InnerProduct.html#def-linear-functional",
   "type": "Definition",
-  "number": "7.1.46",
+  "number": "7.1.48",
   "title": "",
   "body": "  Let be an inner product space over . Any liear map is called a linear function.    "
 },
@@ -4964,7 +5000,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-riesz",
   "type": "Theorem",
-  "number": "7.1.47",
+  "number": "7.1.49",
   "title": "Riesz Representation Theorem.",
   "body": " Riesz Representation Theorem   Let be an inner product space over . Given a linear map , there exists a unique such that for all .   "
 },
@@ -4982,7 +5018,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-inp-linear-map-characterization",
   "type": "Theorem",
-  "number": "7.1.48",
+  "number": "7.1.50",
   "title": "",
   "body": "  Let and be finite dimenional inner product spaces over . Let be a linear map. Let be an orthonormal basis of and an orthonormal basis of . Then the matrix of with respect to these bases is given by    "
 },
@@ -5000,7 +5036,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#def-inp-symmetric-LT",
   "type": "Definition",
-  "number": "7.1.49",
+  "number": "7.1.51",
   "title": "",
   "body": "  A linear map on an inner product space is called symmetric if for all .   "
 },
@@ -5009,7 +5045,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#def-inp-orthogonal-maps",
   "type": "Definition",
-  "number": "7.1.50",
+  "number": "7.1.52",
   "title": "",
   "body": "  Let be a finite dimensional inner product space over . A linear map is an orthogonal linear transformation if and only if for all .   "
 },
@@ -5018,7 +5054,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#thm-inp-orthogonal-maps",
   "type": "Theorem",
-  "number": "7.1.51",
+  "number": "7.1.53",
   "title": "",
   "body": "  Let be a finite dimensional inner product space over . and be a linear map. Then the following are equivalent.    is an orthogonal linear transformation.     for all .     maps every orthonormal basis of to an orthonormal basis of . That is, if is an orthonormal basis of , then is also an orthonormal basis of .      "
 },
@@ -5036,7 +5072,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec7-1-InnerProduct.html#def-inp-orthogonal-matrix",
   "type": "Definition",
-  "number": "7.1.52",
+  "number": "7.1.54",
   "title": "",
   "body": "  A real matrix is called an orthogonal matrix if its columns form an orthonormal set in . This is, if , then for all . Equivalently, is an orthogonal matrix if .   "
 },
