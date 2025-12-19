@@ -435,7 +435,7 @@ By default, it takes option <c>side="left"</c>. In our case, we need to give opt
 <theorem xml:id="thm-basis-reshuffle-LT">
     <statement>
         <p>
-    Let <m>T\R^n\to \R^m</m> be a linear transformation. Let <m>\beta=\{v_i\}</m> and 
+    Let <m>T\colon \R^n\to \R^m</m> be a linear transformation. Let <m>\beta=\{v_i\}</m> and 
     <m>\gamma=\{w_j\}</m> be bases of <m>\R^n</m> and <m>\R^m</m> respective. Let 
     <m>A=[T]_\beta^\gamma</m>. Suppose <m>\beta'</m> is a basis obtained by permuting 
     elements of <m>\beta</m>. Then <m>[T]_{\beta'}^\gamma</m> is the matrix obtained by 
@@ -548,6 +548,200 @@ show(line+point+Ppoint+vecP+vecPv+ll,figsize=5)
         </sage>
     </statement>
 </activity>
+
+<example xml:id="lt-defined-by-basis-eg1">
+ <title>Linear transformation defined by its action on a basis</title>
+  <statement>
+    <p>
+      Suppose <m>T</m> is a linear transformation from
+      <m>V=\mathbb{Q}^4</m> to <m>W=\mathbb{Q}^3</m>.
+    </p>
+
+    <p>
+      Fix a basis <m>\beta=\{v_1,v_2,v_3,v_4\}</m> of <m>V</m> and four vectors
+      <m>w_1,w_2,w_3,w_4</m> in <m>W</m> such that
+      <m>T(v_i)=w_i</m> for <m>1\le i\le 4</m>.
+    </p>
+
+    <p>
+      Assume
+    
+    <me>
+      v_1=(1,-3,2,-1), 
+      v_2=(0,1,0,1), 
+      v_3=(-1,2,-1,-1), 
+      v_4=(2,-8,4,-3),
+    </me>
+      and
+
+
+    <me>
+      w_1=(-2,-2,16), 
+      w_2=(1,4,-4), 
+      w_3=(-3,-4,-9), 
+      w_4=(-4,-9,39).
+    </me>
+</p>
+    <p>
+      Find the linear transformation <m>T</m> explicitly.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+        First we define the vector spaces <m>V</m> and <m>W</m> in Sage.
+
+        <sage>
+            <input>
+                V = QQ^4
+                W = QQ^3
+            </input>
+            <output>
+                
+            </output>
+        </sage>
+        Next we define the basis elements of <m>V</m> and the images in <m>W</m>.
+       <sage>
+        <input>
+            v1 = vector(QQ, [ 1, -3,  2, -1])
+v2 = vector(QQ, [ 0,  1,  0,  1])
+v3 = vector(QQ, [-1,  2, -1, -1])
+v4 = vector(QQ, [ 2, -8,  4, -3])
+B = [v1, v2, v3, v4]
+V.linear_dependence(B)
+        </input>
+        <output>
+            []
+        </output>
+       </sage> 
+
+       <sage>
+        <input>
+            w1= vector(QQ, [ -2,-2,16])
+w2 = vector(QQ, [1,  4, -4])
+w3 = vector(QQ, [ -3, -4,  -9])
+w4 = vector(QQ, [-4,-9,39])
+D = [w1, w2, w3,w4]
+        </input>
+        <output>
+            
+        </output>
+       </sage>
+       We define the the subspace <m>V_1</m> of <m>V</m> with basis <m>\beta</m>. Also 
+       the standard basis of <m>V</m> 
+       
+       <sage>
+        <input>
+            V1 = V.subspace_with_basis(B)
+e1 = vector(QQ,[1,0,0,0])
+e2= vector(QQ, [ 0,  1, 0,0])
+e3 = vector(QQ, [0,0,1,0])
+e4 = vector(QQ, [ 0,0,0,1])
+E = [e1,e2,e3,e4]
+        </input>
+        <output>
+            
+        </output>
+       </sage>
+       Let us also define a vector <m>X=(x,y,z,w)</m> and the matrix <m>A</m> 
+       whose columns the coordinates of <m>e_i</m> with respect to the basis <m>\beta</m>.
+       <sage>
+        <input>
+            var('x,y,z,w')
+X = vector([x,y,z,w])
+## Coordinates of e_i w.r. t. B
+A = [V1.coordinates(E[i]) for i in range(4)] 
+show(A)
+        </input>
+        <output>
+            
+        </output>
+       </sage>
+       Using the <xref ref="linalg-engg-eg40"/>, the map <m>T</m> can be defined as follows. 
+       <sage>
+        <input>
+            T = sum([sum([A[j][i]*D[i] for i in range(4)])*X[j] for j in range(4)])
+show(T)
+
+        </input>
+        <output>
+            
+        </output>
+       </sage>
+       The same can be obtained as follows (justification is left to the reader).
+       <sage>
+        <input>
+U = column_matrix(D)
+A = column_matrix(A) 
+M = (A.T*U.T).T
+show(M*X)
+        </input>
+        <output>
+            
+        </output>
+       </sage>
+       Let us verify that <m>T(v_i)=w_i</m> for <m>1\le i\le 4</m>.
+    <sage>
+        <input>
+            var('x0,x1,x2,x3')
+output(x0,x1,x2,x3)  = [x0 - x1 - 2*x2 + 2*x3, 2*x0 + x1 + x2 + 3*x3, 2*x0 - 3*x1 + 2*x2 - x3]
+V = QQ^4
+W= QQ^3
+S = linear_transformation(V,W,output)
+[S(B[i])==D[i] for i in range(4)]
+
+        </input>
+        <output>
+            
+        </output>
+    </sage>   
+    </p>
+  </solution>
+</example>
+
+<activity>
+    <statement>
+        <p>
+         Let <m>A = \begin{pmatrix}
+3 \amp -2 \amp 1 \amp -1 \\
+1 \amp 5 \amp 2 \amp 1 \\
+-3 \amp 1 \amp 3 \amp 1
+\end{pmatrix}</m>
+be the matrix of the linear transformation
+<m>T: \mathbb{R}^4 \to \mathbb{R}^3</m>
+with respect to the basis
+<m>B=\{v_1, v_2, v_3, v_4\}</m>
+of <m>\mathbb{R}^4</m> and
+<m>B'=\{w_1, w_2, w_3\}</m>
+of <m>\mathbb{R}^3</m>, where   
+      <me>
+v_1 = \begin{pmatrix}0 \\ 1 \\ 1 \\ 1\end{pmatrix},\quad
+v_2 = \begin{pmatrix}2 \\ 1 \\ -1 \\ -1\end{pmatrix},\quad
+v_3 = \begin{pmatrix}1 \\ 4 \\ -1 \\ 2\end{pmatrix},\quad
+v_4 = \begin{pmatrix}6 \\ 9 \\ 4 \\ 2\end{pmatrix}
+</me>
+and 
+<me>
+w_1 = \begin{pmatrix}0 \\ 8 \\ 8\end{pmatrix},\quad
+w_2 = \begin{pmatrix}-7 \\ 8 \ 1\end{pmatrix},\quad
+w_3 = \begin{pmatrix}-6 \\ 9 \\ 1\end{pmatrix}.
+</me>
+
+<ol>
+<li>
+    <p>Find <m>[T(v_1)]_{B'}, [T(v_2)]_{B'}, [T(v_3)]_{B'}, [T(v_4)]_{B'}</m>.</p>
+</li>
+<li>
+   <p> Find <m>T(v_1), T(v_2), T(v_3), T(v_4)</m>.</p>
+</li>
+<li>
+    <p>Find the formula for <m>T(x_1, x_2, x_3, x_4)</m>.</p>
+</li>
+</ol>
+  </p>
+    </statement>
+</activity>
+
 
 
 <activity>

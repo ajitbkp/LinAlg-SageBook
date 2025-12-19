@@ -16,7 +16,7 @@
 <p>
 Note that the dot product of two vectors in <m>\R^n</m> is a scalar,
       in particular, dot product can be thought of as a function from
-      <m>`\cdot' \colon \R^n\times \R^n \to\R</m> satisfying the following properties:
+      <m>\cdot \colon \R^n\times \R^n \to\R</m> satisfying the following properties:
 </p>
 <p>
       <ol>
@@ -895,6 +895,38 @@ inner product.  We encourage  readers to define each one of them.
     v = \sum_i \innprod{v}{v_i}v_i.
   </me>
 </p>
+ <exercise>
+    <statement>
+      <p>
+        Let <m>\{u_1,u_2\}</m> be an orthonormal basis of <m>\R^2</m>. Let <m>v\in\R^2</m> and 
+        <me>
+          v = \alpha_1 u_1+\alpha_2u_2.
+        </me>
+        Let <m>\theta</m> be the angle between <m>v</m> and <m>u_1</m>.
+        Show that 
+        <ol>
+          <li>
+            <p>
+               <m>\cos\theta=\frac{\alpha_1}{\sqrt{\alpha_1^2+\alpha_2^2}}=
+          \frac{\alpha_1}{\norm{v}}</m>.
+                  </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin\theta=\frac{\alpha_2}{\sqrt{\alpha_1^2+\alpha_2^2}}=
+          \frac{\alpha_2}{\norm{v}}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\norm{v}^2=\alpha_1^2+\alpha_2^2.</m>
+            </p>
+          </li>
+        </ol>
+       </p>
+    </statement>
+  </exercise>
+ 
  <p>   
 Next we turn our attention to finding an orthogonal basis in an inner product space using the Gram-Schmidt process.
 The process is exactly same as before, we just need to replace the dot product by the given inner product.
@@ -1413,6 +1445,54 @@ print(q1,q2,q3)
   </exercise>
 
   
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\ell_1</m> and <m>\ell_2</m> be two parallel lines in <m>\R^2</m>. Suppose <m>t</m> 
+        be a transversal line.  Let <m>\theta_1</m> and <m>\theta_2</m> be the angles between
+        <m>\ell_1</m> and <m>t</m>, and <m>\ell_2</m> and <m>t</m>, respectively. Show that 
+        <me>
+          \theta_1=\theta_2.
+        </me>
+        Also prove the converse of this result.
+        </p>
+    </statement>
+  
+  <hint>
+    <p>
+      Let <m>u_1</m> and <m>u_2</m> be the direction vectors of the lines <m>\ell_1</m> and <m>\ell_2</m>, respectively.
+      Since the lines are parallel, we have <m>u_1=k u_2</m> for some non zero scalar <m>k</m>.
+      Let <m>v</m> be the direction vector of the transversal line <m>t</m>.
+      Then by definition of angle between two vectors, we have
+      <me>
+        \cos\theta_1=\frac{\inner{u_1}{v}}{\norm{u_1}\norm{v}}, \quad
+        \cos\theta_2=\frac{\inner{u_2}{v}}{\norm{u_2}\norm{v}}.
+      </me>
+      Using the relation <m>u_1=k u_2</m>, we get
+      <me>
+        \cos\theta_1=\frac{\inner{ku_2}{v}}{\norm{ku_2}\norm{v}}
+        =\frac{k\inner{u_2}{v}}{|k|\norm{u_2}\norm{v}}=\frac{\inner{u_2}{v}}{\norm{u_2}\norm{v}}=\cos\theta_2.
+      </me>
+      This proves <m>\theta_1=\theta_2</m>. 
+    </p>
+    <p>
+      To prove the converse, assume that <m>\theta_1=\theta_2</m>.
+      Then we have
+      <me>
+        \frac{\inner{u_1}{v}}{\norm{u_1}\norm{v}}=
+        \frac{\inner{u_2}{v}}{\norm{u_2}\norm{v}}.
+      </me>
+      This implies
+      <me>
+        \frac{\inner{u_1}{v}}{\norm{u_1}}=
+        \frac{\inner{u_2}{v}}{\norm{u_2}}.
+      </me>
+      This means that the projections of <m>u_1</m> and <m>u_2</m> onto <m>v</m> are equal.
+      This is possible only if <m>u_1</m> and <m>u_2</m> are linearly dependent, i.e., the lines <m>\ell_1</m> and <m>\ell_2</m> are parallel.
+    </p>
+  </hint>
+  </exercise>
+
   <definition xml:id="def-inp-orthogonal-projection-onto-subspace">
     <title>Projection onto a subspace</title>
     <p>
@@ -1627,10 +1707,11 @@ for <m>k=1,\ldots, n</m>.
   Given a continuous function <m>f\colon [-\pi, \pi]\to \R</m>, 
   we want to find the best approximation of <m>f</m>. Define 
   <md>
-    <mrow>a_0 \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\,dx</mrow>
-    <mrow>a_k \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\cos kx \,dx</mrow>
-    <mrow>b_k \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\sin kx \,dx</mrow>
+    <mrow>a_0 \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\,dx,</mrow>
+    <mrow>a_k \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\cos kx \,dx,</mrow>
+    <mrow>b_k \amp =\frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)\sin kx \,dx,</mrow>
   </md>
+  for <m>k=1,2,\ldots, n</m>. 
   Then by the Approximation Theorem, the orthogonal projection of <m>f</m> onto <m>F_n</m> is given by
   <me>
     \proj_{F_n}(f)=a_0+\sum_{k=1}^n \left(a_k \cos kx + b_k \sin kx\right).   
@@ -1907,19 +1988,20 @@ We have the following equivalent characterization of orthogonal linear transform
   transformation on a finite dimensional inner product space <m>(V,\innprod{.}{.})</m>.
   Let <m>\alpha=\{u_1,\ldots, u_n\}</m> be an orthonormal basis of <m>V</m>.
   Then the matrix of <m>T</m> with respect to this basis is given by  
-  <me>
-     [T]_\alpha=\begin{bmatrix}
+  <md>
+      <mrow> [T]_\alpha\amp=\begin{bmatrix}
           \innprod{T(u_1)}{u_1} \amp \innprod{T(u_2)}{u_1} \amp \cdots \amp \innprod{T(u_n)}{u_1} \\
           \innprod{T(u_1)}{u_2} \amp \innprod{T(u_2)}{u_2} \amp \cdots \amp \innprod{T(u_n)}{u_2} \\
           \vdots \amp \vdots \amp \ddots \amp \vdots \\
           \innprod{T(u_1)}{u_n} \amp \innprod{T(u_2)}{u_n} \amp \cdots \amp \innprod{T(u_n)}{u_n}
-          \end{bmatrix}=\begin{bmatrix}
+          \end{bmatrix}    </mrow>  
+      <mrow> \amp =  \begin{bmatrix}
           a_{11} \amp a_{21} \amp \cdots \amp a_{n1} \\
           a_{21} \amp a_{22} \amp \cdots \amp a_{21} \\
           \vdots \amp \vdots \amp \ddots \amp \vdots \\
           a_{n1} \amp a_{n2}\amp \cdots \amp a_{nn}
-          \end{bmatrix} =A.
-  </me>   
+          \end{bmatrix} =A </mrow>
+          </md>   
   Let us write the columns of <m>A</m> as <m>A=[c_1 \; c_2 \; \cdots \; c_n]</m>.
     Since <m>\{T(u_1),\ldots, T(u_n)\}</m> is an orthonormal basis of <m>V</m>, it follows that
  <md>
