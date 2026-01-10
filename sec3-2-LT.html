@@ -119,15 +119,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.2';
+eBookConfig.runestone_version = '7.11.8';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -452,7 +452,7 @@ eBookConfig.enable_chatcodes =  false;
 </h3>
 <div class="para logical" id="sec3-2-LT-RntoRm-2">
 <div class="para">We want to find a linear map from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\text{.}\)</span> Suppose <span class="process-math">\(T\colon \R^n\to \R^m\)</span> is a linear map. Then for <span class="process-math">\(x\in \R^n\text{,}\)</span> <span class="process-math">\(T(x)\in \R^m\text{.}\)</span> In particular, <span class="process-math">\(T(x)\)</span> has <span class="process-math">\(m\)</span> components. Let us write these components as <span class="process-math">\(T_1(x),\ldots, T_m(x)\text{.}\)</span> Thus <span class="process-math">\(T\)</span> is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec3-2-LT-RntoRm-2-10">
 \begin{equation*}
 T(x)=\begin{bmatrix}T_1(x)\\T_2(x)\\\vdots\\T_m(x) \end{bmatrix}\text{.}
 \end{equation*}
@@ -483,7 +483,7 @@ T(x)=\amp T(x_1e_1+x_2e_2+\cdots+x_n e_n)\\
 <div class="autopermalink" data-description="Paragraph"><a href="#eg-linearmapfromRntoR-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eg-linearmapfromRntoR-2-2">
 <div class="para">Define <span class="process-math">\(T(e_1):=a_1, T(e_2):=a_2,\ldots, T(e_n):=a_n\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-linearmapfromRntoR-2-2-2">
 \begin{equation*}
 T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n\text{.}
 \end{equation*}
@@ -492,7 +492,7 @@ T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n\text{.}
 </div> <div class="para" id="eg-linearmapfromRntoR-2-3">Thus, if <span class="process-math">\(T\colon \R^n\to \R\)</span> is a linear map, there there exist scalars, <span class="process-math">\(a_1,a_2,\ldots,a_n\)</span> such that <span class="process-math">\(T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n\text{.}\)</span> Here we have <span class="process-math">\(a_i=T(e_i)\)</span> for <span class="process-math">\(i=1,\ldots,n\text{.}\)</span> It is clear that to know <span class="process-math">\(T\)</span> it is good enough to know <span class="process-math">\(T(e_1),\ldots, T(e_n)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg-linearmapfromRntoR-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eg-linearmapfromRntoR-2-4">
 <div class="para">What we have proved is, any linear map <span class="process-math">\(T\)</span> from <span class="process-math">\(\R^n\to \R\)</span> is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-linearmapfromRntoR-2-4-3">
 \begin{equation*}
 T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n
 \end{equation*}
@@ -504,7 +504,7 @@ T(x)=a_1x_1+a_2x_2+\cdots+a_nx_n
 </div>
 <div class="autopermalink" data-description="Example 3.2.2: Linear map from \R^n to \R"><a href="#eg-linearmapfromRntoR" title="Copy heading and permalink for Example 3.2.2: Linear map from \R^n to \R" aria-label="Copy heading and permalink for Example 3.2.2: Linear map from \R^n to \R">🔗</a></div></article><div class="para logical" id="sec3-2-LT-RntoRm-7">
 <div class="para">Let us come back to the linear map <span class="process-math">\(T(x)=\begin{bmatrix}T_1(x)\\T_2(x)\\\vdots\\T_m(x) \end{bmatrix}\text{.}\)</span> Since for each <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(T_i\)</span> is linear, there exist scalars, <span class="process-math">\(a_{i1},a_{i2},\ldots,a_{in}\in \R\)</span> such that <span class="process-math">\(T_i(x)=a_{i1}x_1+a_{i2}x_2+\cdots+a_{i_n}x_n\text{.}\)</span> Thus</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec3-2-LT-RntoRm-7-6">
 \begin{equation*}
 T(x)=\begin{bmatrix}a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n\\ a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n\\\vdots\\ a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n \end{bmatrix} = \begin{bmatrix}a_{11}\amp a_{12}\amp \cdots\amp a_{1n}\\ a_{21}\amp a_{22}\amp \cdots\amp a_{2n}\\ \vdots \amp \vdots\amp \ddots\amp \vdots\\ a_{m1}\amp a_{m2}\amp \cdots\amp a_{mn} \end{bmatrix}  \begin{bmatrix}x_1\\x_2\\\vdots \\x_n \end{bmatrix}\text{.}
 \end{equation*}
@@ -555,7 +555,7 @@ A =
 <div class="autopermalink" data-description="Paragraph"><a href="#ling-engg-eg33-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="ling-engg-eg33-1-2">
 <div class="para">Hence</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ling-engg-eg33-1-2-1">
 \begin{equation*}
 [T]_\beta=\left[\begin{array}{rrr} \frac{3}{2} \amp  \frac{3}{2} \amp  -\frac{3}{2} \\ \frac{1}{2} \amp  \frac{9}{2} \amp  -\frac{3}{2} \\ 2 \amp  2 \amp  -1 \end{array} \right]\text{.}
 \end{equation*}
@@ -576,7 +576,7 @@ A =
 </div>
 <div class="para logical" id="sec3-2-LT-composition-3">
 <div class="para">Suppose <span class="process-math">\(T(x)=Ax\)</span> and <span class="process-math">\(S(y)=By\)</span> are matrices transformations. Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec3-2-LT-composition-3-3">
 \begin{equation*}
 S(T(x))=S(Ax)=B(Ax)=(BA)x\text{.}
 \end{equation*}
@@ -590,14 +590,14 @@ S(T(x))=S(Ax)=B(Ax)=(BA)x\text{.}
 </h4>
 <div class="para logical" id="linalg-engg-eg34-1-1">
 <div class="para">Let <span class="process-math">\(T\colon \R^4\to \R^3\)</span> and <span class="process-math">\(S\colon \R^3\to \R^4\)</span> defined by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="linalg-engg-eg34-1-1-3">
 \begin{equation*}
 T\left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix} \right):= 
 \begin{bmatrix}x_{1} + x_{3} + x_{4} \\ x_{1} + x_{2} + 2  x_{3} - x_{4} \\ 2  x_{1} + x_{2} + 3  x_{3} - 2  x_{4} \end{bmatrix} 
 \end{equation*}
 </div>
 <div class="para">and</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="linalg-engg-eg34-1-1-4">
 \begin{equation*}
 S\left(\begin{bmatrix}y_1\\y_2\\y_3 \end{bmatrix} \right):= \begin{bmatrix}y_{1} + y_{3} \\ y_{1} + 3  y_{2} + 2  y_{3} \\ 2  y_{1} - y_{2} + 3  y_{3} \\ y_{2} - y_{3} \end{bmatrix}
 \end{equation*}
@@ -612,13 +612,13 @@ u_3=\left(-1,2,-1,-1\right), u_4=\left(2,-8,4,-3\right)
 \end{gather*}
 </div>
 <div class="para">and define a basis <span class="process-math">\(\beta = \left\{u_1,u_2,u_3,u_4\right\}\)</span> of <span class="process-math">\(\R^4\text{.}\)</span> We take a basis</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="linalg-engg-eg34-1-2-4">
 \begin{equation*}
 \gamma = \left\{v_1=\left(-1,1,1\right), v_2=\left(3,1,3\right), v_3=\left(2,-1,1\right)\right\}
 \end{equation*}
 </div>
 <div class="para">of <span class="process-math">\(\R^3\text{.}\)</span> Let <span class="process-math">\(A=[T]_\beta^\gamma\text{,}\)</span> <span class="process-math">\(B=[S]_\gamma^\beta\)</span> and <span class="process-math">\(C=[S\circ T]_\beta^\beta\text{.}\)</span> Then we shall show that <span class="process-math">\(C=BA\text{.}\)</span> Note that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="linalg-engg-eg34-1-2-10">
 \begin{equation*}
 S\circ T \left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix} \right) := \begin{bmatrix}3  x_{1} + x_{2} + 4  x_{3} - x_{4}\\ 8  x_{1} + 5  x_{2} + 13  x_{3} - 6  x_{4}\\ 7  x_{1} + 2  x_{2} + 9  x_{3} - 3  x_{4}\\ -x_{1} - x_{3} + x_{4} \end{bmatrix}\text{.}
 \end{equation*}
@@ -656,7 +656,7 @@ S\circ T \left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix} \right) := \begin
 <div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg34-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="linalg-engg-eg34-1-5">
 <div class="para">Hence <span class="process-math">\(B=\left[ \begin{array}{rrr} 8 \amp  56 \amp  19 \\ -4 \amp  -16 \amp  -2 \\ 0 \amp  2 \amp  2 \\ -4 \amp  -24 \amp  -7 \end{array} \right]\text{.}\)</span> It is easy to check that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="linalg-engg-eg34-1-5-2">
 \begin{equation*}
 BA= \left[\begin{array}{rrrr} 99 \amp -3 \amp -31 \amp 186 \\ 
 -30 \amp 0 \amp 8 \amp -54 \\ 
@@ -691,7 +691,7 @@ BA= \left[\begin{array}{rrrr} 99 \amp -3 \amp -31 \amp 186 \\
 </div>
 <div class="para" id="sec3-2-LT-basis-change-3">Now let us consider what happens to the matrix of a linear transformation <span class="process-math">\(T\colon \R^n\to \R^m\)</span> when we change the basis on domain and codoamin. Let <span class="process-math">\(\beta=\{u_1,u_2\ldots,u_n\}\)</span> and <span class="process-math">\(\gamma=\{v_1,v_2\ldots,v_m\}\)</span> be bases of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\)</span> respectively. Let <span class="process-math">\(A =[T]_\beta^\gamma\)</span> be the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta\)</span> and <span class="process-math">\(\gamma\text{.}\)</span> Let <span class="process-math">\(\beta'=\{u_1',u_2'\ldots,u_n'\}\)</span> and <span class="process-math">\(\gamma'=\{v_1',v_2'\ldots,v_m'\}\)</span> be another bases of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\)</span> respectively. Let <span class="process-math">\(B =[T]_{\beta'}^{\gamma'}\)</span> be the matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(\beta'\)</span> and <span class="process-math">\(\gamma'\text{.}\)</span> How are <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> related? The relation is given by the following commutative diagram.<div class="autopermalink" data-description="Paragraph"><a href="#sec3-2-LT-basis-change-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/linalg-engg-eg34.html ./knowl/xref/linalg-engg-eg34.html ./knowl/xref/rem-defining-LT.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/linalg-engg-eg34.html ./knowl/xref/linalg-engg-eg34.html ./knowl/xref/rem-defining-LT.html" id="sec3-2-LT-basis-change-4">
 \begin{equation*}
 \begin{CD}
 (\R^n,\beta) @&gt;A=[T]_\beta^\gamma&gt;&gt; (\R^m,\gamma)\\
@@ -702,7 +702,7 @@ BA= \left[\begin{array}{rrrr} 99 \amp -3 \amp -31 \amp 186 \\
 </div>
 <div class="para logical" id="sec3-2-LT-basis-change-5">
 <div class="para">From the above commutative diagram, we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec3-2-LT-basis-change-5-1">
 \begin{equation*}
 \tau A = B\rho \implies B = \tau A \rho^{-1} \text{ or }  A = \tau^{-1}B\rho\text{.}
 \end{equation*}
@@ -721,7 +721,7 @@ u_3=\left(-1,2,-1,-1\right),\amp  u_4=\left(2,-8,4,-3\right)
 \end{align*}
 </div>
 <div class="para">of <span class="process-math">\(\R^4\)</span> and a basis</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/linalg-engg-eg34.html ./knowl/xref/linalg-engg-eg34.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/linalg-engg-eg34.html ./knowl/xref/linalg-engg-eg34.html" id="linalg-engg-eg35-1-1-6">
 \begin{equation*}
 \gamma = \left\{v_1=\left(-1,1,1\right), v_2=\left(3,1,3\right), v_3=\left(2,-1,1\right)\right\}
 \end{equation*}
@@ -734,7 +734,7 @@ u_3'=\left(1,-1,1,1\right), u_4'=\left(-1,1,1,1\right)
 \end{align*}
 </div>
 <div class="para">be another basis of <span class="process-math">\(\R^4\text{.}\)</span> Let</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/linalg-engg-eg34.html ./knowl/xref/linalg-engg-eg34.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/linalg-engg-eg34.html ./knowl/xref/linalg-engg-eg34.html" id="linalg-engg-eg35-1-1-13">
 \begin{equation*}
 \gamma'=\{\left(0,1,1\right), \left(1,0,1\right), \left(1,1,0\right)\}
 \end{equation*}
@@ -774,7 +774,7 @@ v_n\}\)</span> be a basis of <span class="process-math">\(\R^n\text{.}\)</span> 
 <div class="para" id="linalg-engg-eg40-1-1">Fix a basis <span class="process-math">\(\beta =\{ (1,1,-1),(1,-1,1),(-1,1,1)\}\)</span> of <span class="process-math">\(\R^3\text{.}\)</span> Define a linear map <span class="process-math">\(T\colon \R^3\to \R^3\)</span> such that <span class="process-math">\(T(1,1,-1)=(1,1,0), T(1,-1,1)=(1,0,1), T(-1,1,1)=(0,1,1)\text{.}\)</span> Find <span class="process-math">\(T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg40-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="linalg-engg-eg40-1-2">
 <div class="para">We have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="linalg-engg-eg40-1-2-1">
 \begin{equation*}
 T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)=T(x_1e_1+x_2e_2+x_3e_3)=x_1T(e_1)+x_2T(e_2)+x_3T(e_3)\text{.}
 \end{equation*}
@@ -797,7 +797,7 @@ T\left(\begin{bmatrix}x_1\\ x_2\\ x_3 \end{bmatrix} \right)=T(x_1e_1+x_2e_2+x_3e
 <div class="autopermalink" data-description="Paragraph"><a href="#linalg-engg-eg40-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="linalg-engg-eg40-1-4">
 <div class="para">We have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="linalg-engg-eg40-1-4-1">
 \begin{equation*}
 \begin{aligned} e_1 = 1/2 v_1+1/2v_2 \implies   T(e_1)=1/2 w_1+1/2 w_2=(1, 1/2, 1/2).\\ 
 e_2 = 1/2 v_1+1/2v_3 \implies   T(e_2)=1/2 w_1+1/2 w_3=(1/2, 1, 1/2).\\ 

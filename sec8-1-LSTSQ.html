@@ -119,15 +119,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.2';
+eBookConfig.runestone_version = '7.11.8';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
@@ -466,7 +466,7 @@ sagecell.makeSagecell({
 </div>
 <div class="para logical" id="sec-linear-lstsq-3">
 <div class="para">The answer to the above question is “yes”. In order to find this, we consider</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-3-2">
 \begin{equation*}
 W={\cal R}(A)=\{Ax:x\in \R^n\}\text{.}
 \end{equation*}
@@ -475,7 +475,7 @@ W={\cal R}(A)=\{Ax:x\in \R^n\}\text{.}
 </div>
 <div class="para logical" id="sec-linear-lstsq-4">
 <div class="para">Note that <span class="process-math">\(W\)</span> is subspace of <span class="process-math">\(\R^m\text{.}\)</span> We are looking for <span class="process-math">\(z\)</span> which is at the smallest distance from <span class="process-math">\(b\text{,}\)</span> which is nothing but the orthogonal projection of <span class="process-math">\(b\)</span> onto <span class="process-math">\(W\text{.}\)</span> Suppose we assume that columns of <span class="process-math">\(A\)</span> are linearly independent. Then <span class="process-math">\(W\)</span> is the column space of. Hence by the Eq. <a href="sec6-2.html#orth-Proj-W" class="xref" data-knowl="./knowl/xref/orth-Proj-W.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.2">(6.3.2)</a>, orthogonal projection is given by</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/orth-Proj-W.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/orth-Proj-W.html" id="sec-linear-lstsq-4-10">
 \begin{equation*}
 z = A(A^TA)^{-1}A^Tb\text{.}
 \end{equation*}
@@ -486,7 +486,7 @@ z = A(A^TA)^{-1}A^Tb\text{.}
 </div>
 <div class="para logical" id="sec-linear-lstsq-6">
 <div class="para">For the system <span class="process-math">\(Ax=b\text{,}\)</span> after multiplying both sides by <span class="process-math">\(A^T\text{,}\)</span> we get</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-6-3">
 \begin{equation*}
 A^TAx=A^Tb
 \end{equation*}
@@ -522,7 +522,7 @@ x^*=(A^TA)^{-1}A^Tb\tag{8.1.1}
 </h4>
 <div class="para logical" id="sec-linear-lstsq-10-1-1">
 <div class="para">Consider the inner product space <span class="process-math">\({\cal C}[-1,1]\)</span> equipped with inner product</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-10-1-1-2">
 \begin{equation*}
 \inner{f}{g}=\int_{-1}^1 f(x)g(x)\text{.}
 \end{equation*}
@@ -531,13 +531,13 @@ x^*=(A^TA)^{-1}A^Tb\tag{8.1.1}
 </div> <div class="para" id="sec-linear-lstsq-10-1-2">Find the polynomial of degree at most 2 which is closest to the function <span class="process-math">\(f(x)=|x|\text{.}\)</span> Here we consider the subspace <span class="process-math">\(W={\cal P}_2(\R)\text{.}\)</span> We need the find the orthogonal projection of <span class="process-math">\(f(x)\)</span> onto <span class="process-math">\(W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-lstsq-10-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-linear-lstsq-10-1-3">
 <div class="para">From <a href="sec7-1-InnerProduct.html#Legendre-poly" class="xref" data-knowl="./knowl/xref/Legendre-poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.1.31: Legendre Polynomials">Example 7.1.31</a>, we know that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Legendre-poly.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Legendre-poly.html" id="sec-linear-lstsq-10-1-3-2">
 \begin{equation*}
 \left\{u_1 = \frac{1}{\sqrt{2}}, u_2 = \frac{\sqrt{6}}{2}x, u_3=\frac{3\sqrt{10}}{4}\left(x^2-\frac13\right)\right\}
 \end{equation*}
 </div>
 <div class="para">is an orthonormal basis of <span class="process-math">\(W\text{.}\)</span> Hence the orthogonal projection <span class="process-math">\(p\)</span> of <span class="process-math">\(f\)</span> onto <span class="process-math">\(W\)</span> is give by</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Legendre-poly.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Legendre-poly.html" id="sec-linear-lstsq-10-1-3-7">
 \begin{equation*}
 p(x)=\inner{f}{u_1}u_1+\inner{f}{u_2}u_2+\inner{f}{u_2}u_3\text{.}
 \end{equation*}
@@ -550,7 +550,7 @@ p(x)=\inner{f}{u_1}u_1+\inner{f}{u_2}u_2+\inner{f}{u_2}u_3\text{.}
 </h4>
 <div class="para logical" id="exer-8-1-2-1-1">
 <div class="para">Consider the inner product space <span class="process-math">\({\cal C}[-1,1]\)</span> equipped with inner product</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="exer-8-1-2-1-1-2">
 \begin{equation*}
 \inner{f}{g}=\int_{-1}^1 f(x)g(x)\text{.}
 \end{equation*}
@@ -563,7 +563,7 @@ p(x)=\inner{f}{u_1}u_1+\inner{f}{u_2}u_2+\inner{f}{u_2}u_3\text{.}
 </h4>
 <div class="para logical" id="sec-linear-lstsq-12-1-1">
 <div class="para">Consider a system of linear equations <span class="process-math">\(Ax=b\)</span> where</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-12-1-1-2">
 \begin{equation*}
 A= \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp  1 \\ -2 \amp  3 \end{array} \right),\qquad b = \begin{pmatrix}-1\\3\\5\\1 \end{pmatrix}
 \end{equation*}
@@ -575,7 +575,7 @@ A= \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp  1 \\ -2 \amp  3 \e
 </div> <div class="para logical" id="sec-linear-lstsq-12-1-5">
 <div class="para">
 <em class="emphasis">Solution:</em> It is easy to see that the columns of <span class="process-math">\(A\)</span> are linearly independent, hence the least square solution exists. We have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-12-1-5-3">
 \begin{equation*}
 A^TA = \left(\begin{array}{rr} 10 \amp  -4 \\ -4 \amp  12 \end{array} \right),\text{ and }  A^Tb=\left(\begin{array}{rr}10\\12 \end{array} \right)\text{.}
 \end{equation*}
@@ -584,7 +584,7 @@ A^TA = \left(\begin{array}{rr} 10 \amp  -4 \\ -4 \amp  12 \end{array} \right),\t
 </div> <div class="para" id="sec-linear-lstsq-12-1-6">Hence the least square solution of <span class="process-math">\(Ax=b\)</span> is the solution of the normal equation <span class="process-math">\(A^TAx=A^Tb\)</span> which is <span class="process-math">\(x^*=\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)\text{.}\)</span> The same can obtained as <span class="process-math">\(x^* =(A^TA)^{-1}A^Tb\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-lstsq-12-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-linear-lstsq-12-1-7">
 <div class="para">(b) The orthogonal projection of <span class="process-math">\(b\)</span> onto <span class="process-math">\(W\)</span> is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-12-1-7-3">
 \begin{equation*}
 w = A(A^TA)^{-1}A^Tb = \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp  1 \\ -2 \amp  3 \end{array} \right)\left(\begin{array}{rr}21/13\\20/13 \end{array} \right)=\left(\begin{array}{r} \frac{1}{13} \\ \frac{41}{13} \\ \frac{62}{13} \\ \frac{18}{13} \end{array} \right)\text{.}
 \end{equation*}
@@ -592,7 +592,7 @@ w = A(A^TA)^{-1}A^Tb = \left(\begin{array}{rr} 1 \amp  -1 \\ 1 \amp  1 \\ 2 \amp
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-lstsq-12-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-linear-lstsq-12-1-8">
 <div class="para">(b) Since we have found <span class="process-math">\(w\text{,}\)</span> <span class="process-math">\(u\)</span> is given by <span class="process-math">\(b-w=\left(\begin{array}{r} -\frac{14}{13} \\ -\frac{2}{13} \\ \frac{3}{13} \\ -\frac{5}{13} \end{array} \right)\text{.}\)</span> Hence</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-12-1-8-4">
 \begin{equation*}
 b = \begin{pmatrix}-1\\3\\5\\1 \end{pmatrix} =w+u=\left(\begin{array}{r} \frac{1}{13} \\ \frac{41}{13} \\ \frac{62}{13} \\ \frac{18}{13} \end{array} \right)+\left(\begin{array}{r} -\frac{14}{13} \\ -\frac{2}{13} \\ \frac{3}{13} \\ -\frac{5}{13} \end{array} \right)\text{.}
 \end{equation*}
@@ -618,7 +618,7 @@ print(u)
 <article class="exercise exercise-like" id="exer-8-1-3"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
 <div class="para logical" id="exer-8-1-3-1-1">
 <div class="para">(i) Find the best approximation (least square solution) of the system of linear equations</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="exer-8-1-3-1-1-1">
 \begin{equation*}
 3x-y = 4,  x+2y=0, 2x+y = 1
 \end{equation*}
@@ -835,13 +835,13 @@ print(u)
 </div> <figure class="figure figure-like" id="fig_mumtempplot"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/images/mum_temp_plot.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 8.1.5"><a href="#fig_mumtempplot" title="Copy heading and permalink for Figure 8.1.5" aria-label="Copy heading and permalink for Figure 8.1.5">🔗</a></div></figcaption></figure> <div class="para logical" id="sec-linear-lstsq-14-1-6">
 <div class="para">We wish to find the best fit line to the given set of data. Suppose the line is given by <span class="process-math">\(y=c+mx\text{,}\)</span> then we wish to find <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> such that the line <span class="process-math">\(y=c+mx\)</span> is best fit. Now what is meaning of "best fit". Suppose we consider the point <span class="process-math">\((x_i,y_i)\text{,}\)</span> if it lies on <span class="process-math">\(c+mx\text{,}\)</span> then <span class="process-math">\(y=c+mx_i\text{,}\)</span> other wise <span class="process-math">\(|(c+mx_i)-y_i|\)</span> is the error. We need to minimize this error for all the points. That is achieved by minimizing the sum of errors. Which is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-14-1-6-9">
 \begin{equation*}
 \sum_{i=1}^n [(c+mx_i)-y_i]^2
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(n\)</span> is the number of points. Note that the sum of error squares can be written as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-14-1-6-11">
 \begin{equation*}
 \sum_{i=1}^n [(c+mx_i)-y_i]^2 = \norm{\begin{bmatrix}1 \amp  x_1 \\1 \amp  x_2 \\\vdots \amp  \vdots \\ 1 \amp x_n \end{bmatrix}  \begin{bmatrix}c\\m \end{bmatrix}  -\begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix} }=\norm{Ax-b}\text{.}
 \end{equation*}
@@ -849,7 +849,7 @@ print(u)
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-lstsq-14-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-linear-lstsq-14-1-7">
 <div class="para">Here</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-14-1-7-1">
 \begin{equation*}
 A = \begin{bmatrix}1 \amp  x_1 \\1 \amp  x_2 \\\vdots \amp  \vdots \\ 1 \amp x_n \end{bmatrix}  x= \begin{bmatrix}c\\m \end{bmatrix} ,b = \begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix}
 \end{equation*}
@@ -857,7 +857,7 @@ A = \begin{bmatrix}1 \amp  x_1 \\1 \amp  x_2 \\\vdots \amp  \vdots \\ 1 \amp x_n
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-lstsq-14-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-linear-lstsq-14-1-8">
 <div class="para">Thus finding <span class="process-math">\(m,c\)</span> amount to finding the least square solution of <span class="process-math">\(Ax=b\text{,}\)</span> which is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-14-1-8-3">
 \begin{equation*}
 x^*=\begin{bmatrix}c\\m \end{bmatrix} =(A^TA)^{-1}A^Tb
 \end{equation*}
@@ -865,7 +865,7 @@ x^*=\begin{bmatrix}c\\m \end{bmatrix} =(A^TA)^{-1}A^Tb
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-lstsq-14-1-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-linear-lstsq-14-1-9">
 <div class="para">For the given problem, we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-14-1-9-1">
 \begin{equation*}
 A = \begin{bmatrix}1 \amp  1990 \\1 \amp  1991 \\\vdots \amp  \vdots \\ 1 \amp 2021 \end{bmatrix} , b = \begin{bmatrix}27.07\\26.93\\\vdots\\28.48 \end{bmatrix}
 \end{equation*}
@@ -873,12 +873,12 @@ A = \begin{bmatrix}1 \amp  1990 \\1 \amp  1991 \\\vdots \amp  \vdots \\ 1 \amp 2
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-lstsq-14-1-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-linear-lstsq-14-1-10">
 <div class="para">We have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-14-1-10-1">
 \begin{equation*}
 A^T = \left(\begin{array}{rr} 32 \amp  64176 \\ 64176 \amp  128707696 \end{array} \right), A^Tb =\left(\begin{array}{r} 888.050000000000 \\ 1.78111456000000 \times 10^{6} \end{array} \right)
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-14-1-10-2">
 \begin{equation*}
 (A^TA)^{-1}=\left(\begin{array}{rr} \frac{8044231}{5456} \amp  -\frac{4011}{5456} \\ -\frac{4011}{5456} \amp  \frac{1}{2728} \end{array} \right)\text{.}
 \end{equation*}
@@ -886,7 +886,7 @@ A^T = \left(\begin{array}{rr} 32 \amp  64176 \\ 64176 \amp  128707696 \end{array
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-lstsq-14-1-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-linear-lstsq-14-1-11">
 <div class="para">Hence</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-linear-lstsq-14-1-11-1">
 \begin{equation*}
 x^*=\begin{bmatrix}c\\m \end{bmatrix} =(A^TA)^{-1}A^Tb = \left(\begin{array}{r} -68.0279710416216 \\ 0.0477584310854127 \end{array} \right)
 \end{equation*}
@@ -925,7 +925,7 @@ print(fit)
 </h3>
 <div class="para logical" id="sec8-1-LSTSQ-4-2">
 <div class="para">Suppose we are given a set of <span class="process-math">\(n\)</span>-data points <span class="process-math">\((x_i y_i)\)</span> and we wish to find the best fit polynomial curve of degree <span class="process-math">\(p\text{,}\)</span> say, <span class="process-math">\(y=a_0+a_1x+a_2x^2+\cdots +a_px^p\text{,}\)</span> with <span class="process-math">\(a_p\neq 0\text{.}\)</span> In this case, the error term for <span class="process-math">\((x_i,y_i)\)</span> from the the the curve <span class="process-math">\(y\)</span> is <span class="process-math">\(|(a_0+a_1x_i+a_2x_i^2+\cdots +a_px_i^p)-y_i|\text{.}\)</span> Thus the sum of the error square is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec8-1-LSTSQ-4-2-9">
 \begin{equation*}
 \sum_i^n [(a_0+a_1x_i+a_2x_i^2+\cdots +a_px_i^p)-y_i]^2
 \end{equation*}
@@ -934,13 +934,13 @@ print(fit)
 </div>
 <div class="para logical" id="sec8-1-LSTSQ-4-3">
 <div class="para">The sum of error square can be written as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec8-1-LSTSQ-4-3-1">
 \begin{equation*}
 \sum_i^n [y_i-(a_0+a_1x_i+a_2x_i^2+\cdots +a_px_i^p)]^2=\norm{Ax-b}^2\text{,}
 \end{equation*}
 </div>
 <div class="para">where</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec8-1-LSTSQ-4-3-2">
 \begin{equation*}
 A = \begin{bmatrix}1 \amp  x_1 \amp  x_1^2 \amp  \cdots \amp  x_1^p\\ 1 \amp  x_2 \amp  x_2^2 \amp  \cdots \amp x_2^p\\ \vdots \amp  \vdots \amp  \cdots \amp  \ddots \amp  \vdots\\ 1 \amp  x_n \amp  x_n^2 \amp  \cdots \amp x_n^p \end{bmatrix} ,  b = \begin{bmatrix}y_1\\y_2\\\vdots\\y_n \end{bmatrix} , x = \begin{bmatrix}a_0\\a_1\\a_2\\\vdots\\a_p \end{bmatrix}
 \end{equation*}
@@ -1047,7 +1047,7 @@ A = \begin{bmatrix}1 \amp  x_1 \amp  x_1^2 \amp  \cdots \amp  x_1^p\\ 1 \amp  x_
 </tr>
 </table></div> <div class="para logical" id="lst-sq-eg814-1-3">
 <div class="para">Thus we need to find the least square solution of <span class="process-math">\(Ax=b\text{,}\)</span> where</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lst-sq-eg814-1-3-2">
 \begin{equation*}
 A = \left(\begin{array}{rrrr} 1.00 \amp  -3.00 \amp  9.00 \amp  -27.00\\ 1.0 \amp  -2.80 \amp  7.84\amp  -21.952\\ 1.00 \amp  -2.500\amp  6.250 \amp  -15.625\\ \vdots \amp  \vdots\amp  \vdots \amp  \vdots \\ 1.00 \amp  1.80\amp  3.240 \amp  5.832 \end{array} \right),  b = \left(\begin{array}{r} 1.1\\ 4.0 \\ 7.3\\ \vdots\\ 12.0 \end{array} \right)
 \end{equation*}
@@ -1055,12 +1055,12 @@ A = \left(\begin{array}{rrrr} 1.00 \amp  -3.00 \amp  9.00 \amp  -27.00\\ 1.0 \am
 <div class="autopermalink" data-description="Paragraph"><a href="#lst-sq-eg814-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="lst-sq-eg814-1-4">
 <div class="para">We have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lst-sq-eg814-1-4-1">
 \begin{equation*}
 A^TA = \left(\begin{array}{rrrr} 20.0 \amp  -12.5\amp  49.54 \amp  -83.225\\ -12.5\amp  49.54\amp  -83.225 \amp  258.986725 \\ 49.54 \amp  -83.225\amp  258.986725 \amp  -596.29625 \\ -83.225 \amp  258.986725\amp  -596.29625 \amp  1731.57619431250 \end{array} \right)
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lst-sq-eg814-1-4-2">
 \begin{equation*}
 A^Tb = \left(\begin{array}{r} 131.6 \\ -62.235 \\ 307.14775 \\ -352.6518375 \end{array} \right)
 \end{equation*}
@@ -1068,7 +1068,7 @@ A^Tb = \left(\begin{array}{r} 131.6 \\ -62.235 \\ 307.14775 \\ -352.6518375 \end
 <div class="autopermalink" data-description="Paragraph"><a href="#lst-sq-eg814-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="lst-sq-eg814-1-5">
 <div class="para">Hence the least square solution</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lst-sq-eg814-1-5-1">
 \begin{equation*}
 x^* = (A^TA)^{-1}A^Tb=\begin{bmatrix}a_0 \\a_1\\a_2\\a_3 \end{bmatrix}  = \begin{bmatrix}4.82641673699866 \\ -1.84149774223300 \\ 1.78790889783526 \\ 0.919436026634361 \end{bmatrix}
 \end{equation*}
@@ -1176,7 +1176,7 @@ print(fit)
 </div>
 <div class="para logical" id="sec-weigheted-lstsq-3">
 <div class="para">Consider the overdetermined system <span class="process-math">\(A\mathbf{x} \approx \mathbf{b}\text{,}\)</span> where <span class="process-math">\(A \in \mathbb{R}^{m \times n}\)</span> is the design matrix, <span class="process-math">\(\mathbf{x} \in \mathbb{R}^n\)</span> is the vector of unknowns, and <span class="process-math">\(\mathbf{b} \in \mathbb{R}^m\)</span> contains the observations. If the <span class="process-math">\(i\)</span>-th observation has variance <span class="process-math">\(\sigma_i^2\text{,}\)</span> the corresponding weight is <span class="process-math">\(w_i = \frac{1}{\sigma_i^2}\text{.}\)</span> We define the diagonal weight matrix:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-weigheted-lstsq-3-8">
 \begin{equation*}
 W = \mathrm{diag}(w_1, w_2, \dots, w_m).
 \end{equation*}
@@ -1185,19 +1185,19 @@ W = \mathrm{diag}(w_1, w_2, \dots, w_m).
 </div>
 <div class="para logical" id="sec-weigheted-lstsq-4">
 <div class="para">The WLS problem minimizes the weighted squared residuals:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-weigheted-lstsq-4-1">
 \begin{equation*}
 \min_{\mathbf{x}} \| W^{1/2} (A\mathbf{x} - \mathbf{b}) \|_2^2
 \end{equation*}
 </div>
 <div class="para">leading to the <dfn class="terminology">normal equations</dfn>:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-weigheted-lstsq-4-3">
 \begin{equation*}
 A^\mathsf{T} W A \mathbf{x} = A^\mathsf{T} W \mathbf{b}.
 \end{equation*}
 </div>
 <div class="para">If <span class="process-math">\(A^\mathsf{T} W A\)</span> is invertible, the solution is:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-weigheted-lstsq-4-5">
 \begin{equation*}
 \mathbf{x} = (A^\mathsf{T} W A)^{-1} A^\mathsf{T} W \mathbf{b}.
 \end{equation*}
@@ -1206,7 +1206,7 @@ A^\mathsf{T} W A \mathbf{x} = A^\mathsf{T} W \mathbf{b}.
 </div>
 <div class="para logical" id="sec-weigheted-lstsq-5">
 <div class="para">Geometrically, this is equivalent to projecting <span class="process-math">\(\mathbf{b}\)</span> onto the column space of <span class="process-math">\(A\)</span> using the <span class="process-math">\(W\)</span>-weighted inner product:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-weigheted-lstsq-5-4">
 \begin{equation*}
 \langle \mathbf{u}, \mathbf{v} \rangle_W = \mathbf{u}^\mathsf{T} W \mathbf{v}.
 \end{equation*}

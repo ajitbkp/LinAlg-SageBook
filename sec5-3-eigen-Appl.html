@@ -119,15 +119,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.2';
+eBookConfig.runestone_version = '7.11.8';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
@@ -473,7 +473,7 @@ sagecell.makeSagecell({
 </blockquote>
 <div class="para" id="subsec5-3-Fibonacci-Seq-5">We assume that the number of pairs at the end of the <span class="process-math">\(n\)</span>-th year is denoted by <span class="process-math">\(F_n\text{.}\)</span> We start with <span class="process-math">\(F_0=0\)</span> and <span class="process-math">\(F_1=1\text{.}\)</span> Note that the number of pair of rabbits in any given month is the number of pairs in the previous month plus those that are hatched in that month and those are as many as the previous month. This gives gives rise to a recurrence relation<div class="autopermalink" data-description="Paragraph"><a href="#subsec5-3-Fibonacci-Seq-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Fibonacci-Seq-6">
 \begin{equation*}
 F_{n+1}=F_n+F_{n-1},
 \qquad \text{with } F_0=0, F_1=1\text{.}
@@ -481,7 +481,7 @@ F_{n+1}=F_n+F_{n-1},
 </div>
 <div class="para logical" id="subsec5-3-Fibonacci-Seq-7">
 <div class="para">Let <span class="process-math">\(X_{n}=\begin{pmatrix}F_n\\F_{n-1}\end{pmatrix}\text{.}\)</span> Then we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Fibonacci-Seq-7-2">
 \begin{equation*}
 X_{n+1}=\begin{pmatrix}F_{n+1}\\F_{n}\end{pmatrix}=
 \begin{pmatrix}F_{n}+F_{n-1}\\F_{n}\end{pmatrix}=
@@ -492,7 +492,7 @@ X_{n+1}=\begin{pmatrix}F_{n+1}\\F_{n}\end{pmatrix}=
 </div>
 <div class="para logical" id="subsec5-3-Fibonacci-Seq-8">
 <div class="para">Let <span class="process-math">\(M=\begin{pmatrix}1 \amp 1\\1\amp 0\end{pmatrix}\text{.}\)</span> Then we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Fibonacci-Seq-8-2">
 \begin{equation*}
 X_{n+1}=MX_n.
 \end{equation*}
@@ -501,7 +501,7 @@ X_{n+1}=MX_n.
 </div>
 <div class="para logical" id="subsec5-3-Fibonacci-Seq-9">
 <div class="para">This implies</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Fibonacci-Seq-9-1">
 \begin{equation*}
 X_{n+1}=M^nX_1.
 \end{equation*}
@@ -514,7 +514,7 @@ X_{n+1}=M^nX_1.
 <div class="para">Note that <span class="process-math">\(M\)</span> is symmetric matrix with characteristic polynomial <span class="process-math">\(\lambda^2-\lambda-1\text{.}\)</span> The eigenvalues of <span class="process-math">\(M\)</span> are <span class="process-math">\(\frac{1\pm
 \sqrt{5}}{2}\)</span> and the corresponding eigenvectors are <span class="process-math">\(\begin{pmatrix}\frac{1\pm
 \sqrt{5}}{2} \\1\end{pmatrix}\text{.}\)</span> Since <span class="process-math">\(M\)</span> has distinct eigenvalues, <span class="process-math">\(M\)</span> is diagonalizable and we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Fibonacci-Seq-11-8">
 \begin{equation*}
 M=PDP^{-1} \text{ where }
 P= \begin{pmatrix}
@@ -572,7 +572,7 @@ X_{n+1} =\amp M^nX_1\\
 \end{align*}
 </div>
 <div class="para">Thus we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Fibonacci-Seq-12-6">
 \begin{equation*}
 F_n=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}}.
 \end{equation*}
@@ -584,7 +584,7 @@ F_n=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}}.
 </h4>
 <div class="para logical" id="exer-Fibonacci1-1-1">
 <div class="para">Show that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="exer-Fibonacci1-1-1-1">
 \begin{equation*}
 \displaystyle\lim_{n\to
 \infty}\dfrac{F_{n+1}}{F_n}=\frac{1+\sqrt{5}}{2}=\varphi.
@@ -596,7 +596,7 @@ F_n=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}}.
 <div class="solutions"><details id="exer-Fibonacci1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
 <div class="para logical" id="exer-Fibonacci1-2-1">
 <div class="para">Let <span class="process-math">\(x_n:=\dfrac{F_{n+1}}{F_n}\text{.}\)</span> Then we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="exer-Fibonacci1-2-1-2">
 \begin{equation*}
 x_n=\frac{F_n+F_{n-1}}{F_n}=1+\frac{F_{n-1}}{F_n}=1+\frac{1}{x_{n-1}}.
 \end{equation*}
@@ -643,13 +643,13 @@ w_{n+1}=\amp r_n+w_n
 <div class="para logical" id="subsec5-3-Predator-Pray-4">
 <div class="para">Let <span class="process-math">\(X_n=\begin{pmatrix}r_n\\w_n\end{pmatrix}\)</span> and <span class="process-math">\(A=\begin{pmatrix}4 \amp -2 \\
 1\amp 1 \end{pmatrix}\text{.}\)</span> Then the above system is equivalent to</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Predator-Pray-4-3">
 \begin{equation*}
 X_{n+1}=AX_n\quad \text{ with } \quad X_0=\begin{pmatrix}100\\10\end{pmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">We need to obtain successively</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Predator-Pray-4-4">
 \begin{equation*}
 X_1=AX_0, X_2=A^2X_0, \ldots, X_n=A^n X_0\text{.}
 \end{equation*}
@@ -657,7 +657,7 @@ X_1=AX_0, X_2=A^2X_0, \ldots, X_n=A^n X_0\text{.}
 <div class="para">It is easy to check that <span class="process-math">\(\lambda_1=2\)</span> and <span class="process-math">\(\lambda_2=3\)</span> are eigenvalues of <span class="process-math">\(A\)</span> with corresponding eigenvectors <span class="process-math">\(v_1=\begin{pmatrix}1\\1\end{pmatrix}\)</span> and <span class="process-math">\(v_1=\begin{pmatrix}2\\1\end{pmatrix}\)</span> respectively. We define <span class="process-math">\(P = \begin{pmatrix}1 \amp
 2\\1 \amp 1\end{pmatrix}\text{.}\)</span> It is easy to see that <span class="process-math">\(P^{-1}=\begin{pmatrix}-1 \amp 2\\1
 \amp -1\end{pmatrix} \text{.}\)</span> Also <span class="process-math">\(D=\begin{pmatrix}2 \amp 0\\0 \amp 3\end{pmatrix}\text{.}\)</span> Using diagonalization, we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Predator-Pray-4-13">
 \begin{equation*}
 A^n=\begin{pmatrix}1 \amp 2\\1 \amp 1\end{pmatrix}
 \begin{pmatrix}2^n \amp 0\\0 \amp 3^n\end{pmatrix}
@@ -669,20 +669,20 @@ A^n=\begin{pmatrix}1 \amp 2\\1 \amp 1\end{pmatrix}
 \end{equation*}
 </div>
 <div class="para">Thus</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Predator-Pray-4-14">
 \begin{equation*}
 X_n=A^nX_0=\begin{pmatrix}180\times 3^n-80\times 2^n \\90\times 3^n-80\times
 2^n\end{pmatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">Hence</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Predator-Pray-4-15">
 \begin{equation*}
 r_n=180\times 3^n-80\times 2^n \text{ and } w_n=90\times 3^n-80\times 2^n
 \end{equation*}
 </div>
 <div class="para">It is easy to check that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Predator-Pray-4-16">
 \begin{equation*}
 \lim_{n\to \infty} \frac{r_n}{w_n}=2.
 \end{equation*}
@@ -704,7 +704,7 @@ x_n'=\frac{dx_n}{dt}=\amp a_{n1}x_1+a_{n2}x_2+\cdots + a_{nn}x_n
 \end{align*}
 </div>
 <div class="para">Here we assume that <span class="process-math">\(a_{ij}\in \R\)</span> are constants. The above system can be written as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-2-3">
 \begin{equation*}
 x'=\frac{dx}{dt}=Ax
 \end{equation*}
@@ -734,7 +734,7 @@ diag}(\lambda_1,\ldots,\lambda_n)\text{,}\)</span> the diagonal matrix of eigenv
 </div>
 <div class="para logical" id="subsec5-3-linear-ode-9">
 <div class="para">We define <span class="process-math">\(u=P^{-1}x\text{.}\)</span> Then <span class="process-math">\(x=Pu\)</span> and <span class="process-math">\(x'=Pu'\text{.}\)</span> Now substituting <span class="process-math">\(x\)</span> and <span class="process-math">\(x'\)</span> in the above system, we get</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-9-6">
 \begin{equation*}
 Pu'=APu \implies u'=P^{-1}APu=Du.
 \end{equation*}
@@ -754,7 +754,7 @@ u_n' = \amp \lambda_n u_n
 </div>
 <div class="para logical" id="subsec5-3-linear-ode-10">
 <div class="para">A general solution of the above system is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-10-1">
 \begin{equation*}
 u_1=c_1e^{\lambda_1 t},
 u_2=c_2e^{\lambda_2 t},\ldots, u_n=c_ne^{\lambda_n t}.
@@ -772,7 +772,7 @@ u=\begin{bmatrix}u_1\\u_2\\\vdots\\u_2\end{bmatrix} =\amp
 \end{align*}
 </div>
 <div class="para">Here <span class="process-math">\(e^{tD}\)</span> is the exponential of the matrix <span class="process-math">\(tD\)</span> and <span class="process-math">\(c\)</span> is the column matrix of constants. From this we get a general solution of the original system as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-10-6">
 \begin{equation*}
 x_i=\sum_{j=1}^n p_{ij}u_j=\sum_{j=1}^n p_{ij}c_je^{\lambda_j t}
 \end{equation*}
@@ -782,7 +782,7 @@ x_i=\sum_{j=1}^n p_{ij}u_j=\sum_{j=1}^n p_{ij}c_je^{\lambda_j t}
 </div>
 <div class="para logical" id="subsec5-3-linear-ode-11">
 <div class="para">Thus the solution in matrix form is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-11-1">
 \begin{equation*}
 x(t)=Pe^{tD}c.
 \end{equation*}
@@ -792,7 +792,7 @@ x(t)=Pe^{tD}c.
 </div>
 <div class="para logical" id="subsec5-3-linear-ode-12">
 <div class="para">Suppose we want to solve the initial value problem <span class="process-math">\(x'(t)=Ax(t)\)</span> with initial condition <span class="process-math">\(x(0)=x_0\text{.}\)</span> Then we have <span class="process-math">\(c=P^{-1}x_0\text{.}\)</span> Hence the solution in matrix form is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-12-4">
 \begin{equation*}
 x(t)=Pe^{tD}P^{-1}x_0.
 \end{equation*}
@@ -835,7 +835,7 @@ y' = \amp x-4y
 \end{align*}
 </div>
 <div class="para">The above equations is equivalent to</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ODE-Sys1-1-1-2">
 \begin{equation*}
 X'=AX \text{ where } X=\begin{pmatrix}x\\y\end{pmatrix},
 A=\begin{pmatrix}-5 \amp 2\\1 \amp -4\end{pmatrix}.
@@ -848,7 +848,7 @@ A=\begin{pmatrix}-5 \amp 2\\1 \amp -4\end{pmatrix}.
 </div>
 <div class="para logical" id="ODE-Sys1-2-2">
 <div class="para">Hence the solution of the given system is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ODE-Sys1-2-2-1">
 \begin{equation*}
 X=c_1e^{-3t}\begin{pmatrix}1\\1\end{pmatrix}+c_2e^{-6t}
 \begin{pmatrix}2\\-1\end{pmatrix}=\begin{pmatrix}
@@ -856,7 +856,7 @@ c_1e^{-3t}+2c_2e^{-6t}\\c_1e^{-3t}-c_2e^{-6t}\end{pmatrix}.
 \end{equation*}
 </div>
 <div class="para">Hence, the solution is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ODE-Sys1-2-2-2">
 \begin{equation*}
 x(t)=c_1e^{-3t}+2c_2e^{-6t}, y(t)=c_1e^{-3t}-c_2e^{-6t}.
 \end{equation*}
@@ -895,7 +895,7 @@ sol
 <div class="para" id="subsec5-3-linear-ode-17">
 <div class="para logical" id="subsec5-3-linear-ode-17-1">
 <div class="para">Cosider a system of first order linear ODE</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-17-1-1">
 \begin{equation*}
 \begin{pmatrix}\frac{dx_1}{dt}\\\frac{dx_2}{dt}\end{pmatrix}
 = \begin{pmatrix}f_1(x_1,x_2)\\f_2(x_1,x_2)\end{pmatrix}.
@@ -949,7 +949,7 @@ y' = \amp x-4y
 </h4>
 <div class="para logical" id="subsec5-3-linear-ode-23-1-1">
 <div class="para">Solve the following system ODE.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-23-1-1-1">
 \begin{equation*}
 x'(t)=\begin{pmatrix}
 1 \amp 1 \amp 4 \\
@@ -965,14 +965,14 @@ x'(t)=\begin{pmatrix}
 <div class="solutions"><details id="subsec5-3-linear-ode-23-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="subsec5-3-linear-ode-23-2-1">
 <div class="para">The eigenvalues of the coefficient matrix <span class="process-math">\(A\)</span> are</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-23-2-1-2">
 \begin{equation*}
 \lambda_1=3,
 \lambda_2=2,\lambda_3=1
 \end{equation*}
 </div>
 <div class="para">and the corresponding eigenvectors are</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-23-2-1-3">
 \begin{equation*}
 v_1=\begin{pmatrix} 1\\0\\1/2\end{pmatrix},
 v_2=\begin{pmatrix} 1\\1\\0\end{pmatrix},
@@ -988,7 +988,7 @@ c_3e^{3t}\begin{pmatrix} 0\\1\\-1/4\end{pmatrix}
 \end{align*}
 </div>
 <div class="para">Using the given initial conditions, we get</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-23-2-1-5">
 \begin{equation*}
 \left(\begin{array}{rrr}
 1 \amp 1 \amp 0 \\
@@ -1002,7 +1002,7 @@ c_1\\c_2\\c_3
 \end{equation*}
 </div>
 <div class="para">Solving the above equations, yields, <span class="process-math">\(c_1=-3, c_2=3,c_3=-2\text{.}\)</span> Hence the required solution of the problem is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-23-2-1-7">
 \begin{equation*}
 x(t)=-3e^t\begin{pmatrix} 1\\0\\\frac{1}{2}\end{pmatrix}+
 3e^{2t}\begin{pmatrix} 1\\1\\0\end{pmatrix}
@@ -1082,7 +1082,7 @@ x_4'(t) =\amp 2x_3+x_4+x_2-x_1
 \end{align*}
 </div>
 <div class="para">The above equations can be written as <span class="process-math">\(x'(t)=Ax(t)\)</span> where</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-24-2-1-5">
 \begin{equation*}
 x(t)=\begin{pmatrix}
 x_1(t)\\x_2(t)\\x_3(t)\\x_4(t)
@@ -1098,7 +1098,7 @@ A=\begin{pmatrix}
 <div class="para">The eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda_1=1, \lambda_2=-2,
 \lambda_3=\frac{3-\sqrt{5}}{2},
 \lambda_4=\frac{3+\sqrt{5}}{2}\)</span> and the corresponding eigenvectors are</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-24-2-1-8">
 \begin{equation*}
 v_1=\begin{pmatrix}
 1\\ -1\\ 1\\ -1
@@ -1115,7 +1115,7 @@ v_4=\begin{pmatrix}
 \end{equation*}
 </div>
 <div class="para">Thus a general solution is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-24-2-1-9">
 \begin{equation*}
 x(t)=c_1e^{t}v_1+c_2e^{-2t}v_2+c_3e^{\frac{3-\sqrt{5}}{2}t}v_3+c_4e^{\frac{3+\sqrt{5}}{2}t}v_4.
 \end{equation*}
@@ -1154,7 +1154,7 @@ x'(t)=\amp x(t)+y(t),\quad y'(t)=-x+y, \text{ with } x(0)=y(0)=1
 <div class="solutions"><details id="subsec5-3-linear-ode-26-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="subsec5-3-linear-ode-26-2-1">
 <div class="para">The given system of ODE is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-26-2-1-1">
 \begin{equation*}
 x'(t)=Ax(t), \quad \text{ where } A = \begin{pmatrix} 1 \amp 1\\-1 \amp 1\end{pmatrix}.
 \end{equation*}
@@ -1184,7 +1184,7 @@ e^{it}\begin{pmatrix} 1\\ i \end{pmatrix}
 <div class="para logical" id="subsec5-3-linear-ode-26-2-4">
 <div class="para">Writing <span class="process-math">\(e^{it}=\cos
 t+i\sin t, e^{-it}=\cos t-i\sin t\)</span> and adjusting the constants, we can write the solution</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-26-2-4-2">
 \begin{equation*}
 x_1(t)=e^t(d_1\cos t +d_2\sin t), x_2(t)=e^{t}(d_1\cos t + d_2\sin t).
 \end{equation*}
@@ -1193,7 +1193,7 @@ x_1(t)=e^t(d_1\cos t +d_2\sin t), x_2(t)=e^{t}(d_1\cos t + d_2\sin t).
 </div>
 <div class="para logical" id="subsec5-3-linear-ode-26-2-5">
 <div class="para">After using the initial conditions, we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-linear-ode-26-2-5-1">
 \begin{equation*}
 x(t) = (\cos(t) + \sin(t)) e^t, y(t) = (\cos(t) - \sin(t))*e^t
 \end{equation*}
@@ -1268,7 +1268,7 @@ print(sol)
 </div>
 <div class="autopermalink" data-description="Definition 5.5.10"><a href="#def-stochastic-matrix" title="Copy heading and permalink for Definition 5.5.10" aria-label="Copy heading and permalink for Definition 5.5.10">🔗</a></div></article><div class="para logical" id="subsec5-3-Markov-Chains-9">
 <div class="para">The transition matrix for the <a href="sec5-3-eigen-Appl.html#eg-markov1" class="xref" data-knowl="./knowl/xref/eg-markov1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.5.9">Example 5.5.9</a> is given by</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-markov1.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-markov1.html" id="subsec5-3-Markov-Chains-9-2">
 \begin{equation*}
 P=
 \begin{pmatrix}
@@ -1295,7 +1295,7 @@ P=
 <div class="autopermalink" data-description="Remark 5.5.12"><a href="#Markov-remark2" title="Copy heading and permalink for Remark 5.5.12" aria-label="Copy heading and permalink for Remark 5.5.12">🔗</a></div></article><div class="para logical" id="subsec5-3-Markov-Chains-13">
 <div class="para">Let us consider <span class="process-math">\(P^5\)</span> of the transition matrix in the <a href="sec5-3-eigen-Appl.html#eg-markov1" class="xref" data-knowl="./knowl/xref/eg-markov1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.5.9">Example 5.5.9</a>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-markov1.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-markov1.html" id="subsec5-3-Markov-Chains-13-3">
 \begin{equation*}
 P^5=
 \left(\begin{array}{lll}
@@ -1331,7 +1331,7 @@ P^100*x0
 <div class="para logical" id="subsec5-3-Markov-Chains-21">
 <div class="para">Let us assume that <span class="process-math">\(P\)</span> is a transition matrix and that <span class="process-math">\(Q=\displaystyle\lim_{n\to
 \infty} P^n\)</span> exists. Then we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Markov-Chains-21-3">
 \begin{equation*}
 Q=\displaystyle\lim_{n\to \infty} P^n=P \displaystyle\lim_{n\to \infty} P^{n-1}=PQ.
 \end{equation*}
@@ -1340,7 +1340,7 @@ Q=\displaystyle\lim_{n\to \infty} P^n=P \displaystyle\lim_{n\to \infty} P^{n-1}=
 </div>
 <div class="para logical" id="subsec5-3-Markov-Chains-22">
 <div class="para">Suppose <span class="process-math">\(q_1,\ldots, q_n\)</span> are columns of <span class="process-math">\(Q\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Markov-Chains-22-3">
 \begin{equation*}
 Q=[q_1~q_2~\cdots~
 q_n]=P[q_1~q_1~\cdots~ q_n]=[Pq_1~Pq_2~\cdots~ Pq_n].
@@ -1363,7 +1363,7 @@ q_n]=P[q_1~q_1~\cdots~ q_n]=[Pq_1~Pq_2~\cdots~ Pq_n].
 </div>
 <div class="autopermalink" data-description="Theorem 5.5.15"><a href="#thm-Markov2" title="Copy heading and permalink for Theorem 5.5.15" aria-label="Copy heading and permalink for Theorem 5.5.15">🔗</a></div></article><div class="para logical" id="subsec5-3-Markov-Chains-26">
 <div class="para">Now we define a a <em class="emphasis">limiting state distribution vectors or steady state vector</em> of an <span class="process-math">\(n\)</span>-state Markov chain as a vector <span class="process-math">\(x^{(\infty)}\)</span> as follows:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Markov-Chains-26-4">
 \begin{equation*}
 x^{(\infty)}=\lim_{n\to \infty}x_n=\lim_{n\to \infty}P^nx^{(0)}
 =\left(\lim_{n\to \infty}P^n\right)x^{(0)}=Qx^{(0)}.
@@ -1404,20 +1404,20 @@ x+y+z=\amp 0
 </div>
 <div class="para logical" id="subsec5-3-Markov-Chains-30">
 <div class="para">Solving the avove equations we, get</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Markov-Chains-30-1">
 \begin{equation*}
 x=0.487421383647799, y=0.311320754716981, z=0.201257861635220.
 \end{equation*}
 </div>
 <div class="para">Hence the steady state vector is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Markov-Chains-30-2">
 \begin{equation*}
 x^{(\infty)}=\begin{pmatrix}0.487421383647799\\
 0.311320754716981\\0.201257861635220\end{pmatrix}.
 \end{equation*}
 </div>
 <div class="para">The limiting transition matrix <span class="process-math">\(Q \)</span> is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec5-3-Markov-Chains-30-4">
 \begin{equation*}
 Q=\begin{pmatrix}
 0.487421383647799 \amp 0.487421383647799 \amp 0.487421383647799\\
@@ -1591,7 +1591,7 @@ for large \(n\) }\\
 </div> <figure class="figure figure-like" id="Page_Rank_Fig1"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/images/Page_Rank_Fig1.PNG" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.22<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Network with 5 webpages<div class="autopermalink" data-description="Figure 5.5.22"><a href="#Page_Rank_Fig1" title="Copy heading and permalink for Figure 5.5.22" aria-label="Copy heading and permalink for Figure 5.5.22">🔗</a></div></figcaption></figure> <div class="para logical" id="eg-google_search1-1-3">
 <div class="para">The hyper matrix of the network <a href="sec5-3-eigen-Appl.html#Page_Rank_Fig1" class="xref" data-knowl="./knowl/xref/Page_Rank_Fig1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.5.22">Figure 5.5.22</a> is the following:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Page_Rank_Fig1.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Page_Rank_Fig1.html" id="eg-google_search1-1-3-2">
 \begin{equation*}
 H=\begin{pmatrix}
 0 \amp 0 \amp \frac{1}{2} \amp \frac{1}{2} \amp 0\\[1mm]
@@ -1607,21 +1607,21 @@ H=\begin{pmatrix}
 </div> <div class="para" id="eg-google_search1-1-5">If a surfer lands on a page after <span class="process-math">\(i\)</span> steps or clicks, then its probability is denoted by <span class="process-math">\(p_k(j)=p{ij}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg-google_search1-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eg-google_search1-1-6">
 <div class="para">The vector vector</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-google_search1-1-6-1">
 \begin{equation*}
 p_i=\begin{pmatrix}
 p_{i1}\\p_{i2}\\\vdots\\p_{in}\end{pmatrix}
 \end{equation*}
 </div>
 <div class="para">is called the <span class="process-math">\(i\)</span>-th probability vector. Suppose, the surfer start from the webpage 3, then the initial probability vector is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-google_search1-1-6-3">
 \begin{equation*}
 p_0=\begin{pmatrix}
 0\\0\\1\\0 \\0 \end{pmatrix}.
 \end{equation*}
 </div>
 <div class="para">We wish to determine the long term behaviour of the surfer. In particular, we wish to find the probability of a surfer being on page <span class="process-math">\(i\)</span> in long runs. The vector</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-google_search1-1-6-5">
 \begin{equation*}
 p_1=Hp_0=
 \left(\begin{array}{r}
@@ -1638,7 +1638,7 @@ p_1=Hp_0=
 <div class="autopermalink" data-description="Paragraph"><a href="#eg-google_search1-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eg-google_search1-1-7">
 <div class="para">We have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-google_search1-1-7-1">
 \begin{equation*}
 p_2=H^2p_0=\left(\begin{array}{r}
 0 \\
@@ -1656,7 +1656,7 @@ p_2=H^2p_0=\left(\begin{array}{r}
 \end{array}\right)
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-google_search1-1-7-2">
 \begin{equation*}
 p_{20}=\left(\begin{array}{r}
 0.19048 \\
@@ -1684,7 +1684,7 @@ p_{50}=\left(\begin{array}{r}
 <div class="autopermalink" data-description="Paragraph"><a href="#eg-google_search1-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="eg-google_search1-1-8">
 <div class="para">Thus we see that the probability vector seems to converge to a vector</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-google_search1-1-8-1">
 \begin{equation*}
 \pi=\left(\begin{array}{r}
 0.19047 \\
@@ -1742,7 +1742,7 @@ show(p)
 </div> <figure class="figure figure-like" id="Page_Rank_Fig2"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/images/Page_Rank_Fig2.PNG" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5.25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Network with 5 webpages with a dangling node.<div class="autopermalink" data-description="Figure 5.5.25"><a href="#Page_Rank_Fig2" title="Copy heading and permalink for Figure 5.5.25" aria-label="Copy heading and permalink for Figure 5.5.25">🔗</a></div></figcaption></figure> <div class="para logical" id="eg-google_search2-1-3">
 <div class="para">In this network, webpage 3 is dangling as it does not have any outgoing link to any page. The hyper matrix of associated to this network is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-google_search2-1-3-1">
 \begin{equation*}
 H=\begin{pmatrix}
 0 \amp 0 \amp 0 \amp \frac{1}{3} \amp 0\\[1mm]
@@ -1754,7 +1754,7 @@ H=\begin{pmatrix}
 \end{equation*}
 </div>
 <div class="para">Note that the column corresponding to the dangling node is a zero column. If the initial probability vector, <span class="process-math">\(p_0=\begin{pmatrix}0\\0\\1\\0 \\0 \end{pmatrix}\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-google_search2-1-3-3">
 \begin{equation*}
 p_1=Hp_0=
 \left(\begin{array}{r}
@@ -1767,7 +1767,7 @@ p_1=Hp_0=
 \end{equation*}
 </div>
 <div class="para">and we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-google_search2-1-3-4">
 \begin{equation*}
 p_5=
 \left(\begin{array}{r}

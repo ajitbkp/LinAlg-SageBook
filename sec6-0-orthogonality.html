@@ -119,15 +119,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.2';
+eBookConfig.runestone_version = '7.11.8';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
@@ -469,13 +469,13 @@ v_k,v_{k+1}\}\)</span> is linearly independent subset of <span class="process-ma
 <div class="para logical" id="def-orthogonal-set-1-1">
 <div class="para">A set of non zero vectors <span class="process-math">\(\{v_1,\ldots,
 v_k\}\)</span> is called <em class="emphasis">orthogonal</em> if</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-orthogonal-set-1-1-3">
 \begin{equation*}
 v_i\cdot v_j = 0 \text{ if } i\neq j
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(u \cdot v \)</span> represents the standard dot product in <span class="process-math">\(\mathbb{R}^n.\)</span> More precisely for <span class="process-math">\(x=(x_1,\ldots,x_n),y=(y_1,\ldots, y_n)\in \R^n\text{,}\)</span> we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-orthogonal-set-1-1-7">
 \begin{equation*}
 x\cdot y = x_1y_1+\cdots+x_ny_n=\sum x_i y_i.
 \end{equation*}
@@ -492,7 +492,7 @@ x\cdot y = x_1y_1+\cdots+x_ny_n=\sum x_i y_i.
 <details id="orth-ex1-0-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
 <div class="para logical" id="orth-ex1-0-2-1">
 <div class="para">Let <span class="process-math">\(\{u_1,\ldots, u_n\}\)</span> be an orthogonal set. Let</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="orth-ex1-0-2-1-2">
 \begin{equation*}
 \alpha_1 u_1+\cdots+\alpha_n u_n=0.
 \end{equation*}
@@ -590,13 +590,13 @@ print(u.norm())
 </script></div>
 <div class="para logical" id="sec6-0-orthogonality-13-4">
 <div class="para">Consider a set of vectors</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec6-0-orthogonality-13-4-1">
 \begin{equation*}
 u_1=(1,1,1,1), u_2=(1,2,-1,-2),u_3=(-7,5,1,1) \in \mathbb{R}^4  
 \end{equation*}
 </div>
 <div class="para">Let us check that <span class="process-math">\(u_1,u_2,u_3\)</span> are orthogonal. Let <span class="process-math">\(u=(1,2,3,4)\in \mathbb{R}^4\text{.}\)</span> Define</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec6-0-orthogonality-13-4-4">
 \begin{equation*}
 u_4:=u-\frac{u_1\cdot u}{\norm{u_1}^2}u_1-\frac{u_2\cdot u}{\norm{u_2}^2}u_2-\frac{u_3\cdot u}{\norm{u_k}^2}u_3.
 \end{equation*}

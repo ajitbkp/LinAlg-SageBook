@@ -119,15 +119,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.2';
+eBookConfig.runestone_version = '7.11.8';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
@@ -495,7 +495,7 @@ sagecell.makeSagecell({
 </h3>
 <div class="para logical" id="sec-sec3-5-LT-Sage-3-2">
 <div class="para">Let us define a linear tarnsformatrion defined by a matrix <span class="process-math">\(A\)</span> over a rational numbers.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-sec3-5-LT-Sage-3-2-2">
 \begin{equation*}
 A = \begin{pmatrix} 2\amp -1\amp3\\-2\amp 3\amp 5\end{pmatrix} 
 \end{equation*}
@@ -562,7 +562,7 @@ w2 = vector(QQ,[1, -1/2, -1, 11/6])
 </h3>
 <div class="para logical" id="sec-sec3-5-LT-Sage-5-1-1">
 <div class="para">Let us define a linear transformation <span class="process-math">\(T:\Q^4\to\Q^4\)</span> given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-sec3-5-LT-Sage-5-1-1-2">
 \begin{equation*}
 T(x_1,x_2,x_3,x_4)=\left(\begin{array}{r}
 -x_{1} + 2 \, x_{3} - x_{4} \\
@@ -692,7 +692,7 @@ show(line+point+Ppoint+vecP+vecPv+ll,figsize=5)
 </div> <div class="para" id="lt-defined-by-basis-eg1-2-2">Fix a basis <span class="process-math">\(\beta=\{v_1,v_2,v_3,v_4\}\)</span> of <span class="process-math">\(V\)</span> and four vectors <span class="process-math">\(w_1,w_2,w_3,w_4\)</span> in <span class="process-math">\(W\)</span> such that <span class="process-math">\(T(v_i)=w_i\)</span> for <span class="process-math">\(1\le i\le 4\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lt-defined-by-basis-eg1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="lt-defined-by-basis-eg1-2-3">
 <div class="para">Assume</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lt-defined-by-basis-eg1-2-3-1">
 \begin{equation*}
 v_1=(1,-3,2,-1), 
 v_2=(0,1,0,1), 
@@ -701,7 +701,7 @@ v_4=(2,-8,4,-3),
 \end{equation*}
 </div>
 <div class="para">and</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lt-defined-by-basis-eg1-2-3-2">
 \begin{equation*}
 w_1=(-2,-2,16), 
 w_2=(1,4,-4), 
@@ -763,7 +763,7 @@ S = linear_transformation(V,W,output)
 1 \amp 5 \amp 2 \amp 1 \\
 -3 \amp 1 \amp 3 \amp 1
 \end{pmatrix}\)</span> be the matrix of the linear transformation <span class="process-math">\(T: \mathbb{R}^4 \to \mathbb{R}^3\)</span> with respect to the basis <span class="process-math">\(B=\{v_1, v_2, v_3, v_4\}\)</span> of <span class="process-math">\(\mathbb{R}^4\)</span> and <span class="process-math">\(B'=\{w_1, w_2, w_3\}\)</span> of <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> where</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-sec3-5-LT-Sage-12-1-1-7">
 \begin{equation*}
 v_1 = \begin{pmatrix}0 \\ 1 \\ 1 \\ 1\end{pmatrix},\quad
 v_2 = \begin{pmatrix}2 \\ 1 \\ -1 \\ -1\end{pmatrix},\quad
@@ -772,7 +772,7 @@ v_4 = \begin{pmatrix}6 \\ 9 \\ 4 \\ 2\end{pmatrix}
 \end{equation*}
 </div>
 <div class="para">and</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec-sec3-5-LT-Sage-12-1-1-8">
 \begin{equation*}
 w_1 = \begin{pmatrix}0 \\ 8 \\ 8\end{pmatrix},\quad
 w_2 = \begin{pmatrix}-7 \\ 8 \ 1\end{pmatrix},\quad

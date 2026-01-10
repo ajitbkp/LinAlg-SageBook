@@ -119,15 +119,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.2';
+eBookConfig.runestone_version = '7.11.8';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -454,7 +454,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para logical" id="def-linear-span-2-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space over <span class="process-math">\(\R\text{.}\)</span> Let <span class="process-math">\(S=\{v_1,\ldots, v_k\}\)</span> be a set of vectors in <span class="process-math">\(V\text{.}\)</span> Then a vector <span class="process-math">\(v\)</span> is called a linear combination of <span class="process-math">\(v_1,\ldots,
 v_k\)</span> if there exist scalars <span class="process-math">\(\alpha_1,\ldots, \alpha_k\)</span> such that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-linear-span-2-1-8">
 \begin{equation*}
 v = \alpha_1 v_1+\cdots+\alpha_kv_k\text{.}
 \end{equation*}
@@ -462,7 +462,7 @@ v = \alpha_1 v_1+\cdots+\alpha_kv_k\text{.}
 <div class="autopermalink" data-description="Paragraph"><a href="#def-linear-span-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="def-linear-span-2-2">
 <div class="para">The set</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def-linear-span-2-2-1">
 \begin{equation*}
 L(S):=\{\alpha_1 v_1+\cdots+\alpha_kv_k:\alpha_1,\ldots,\alpha_k\in \R\}
 \end{equation*}
@@ -486,7 +486,7 @@ L(S):=\{\alpha_1 v_1+\cdots+\alpha_kv_k:\alpha_1,\ldots,\alpha_k\in \R\}
 </div> <div class="para" id="sec4-3-linspan-VS-6-1-3">Suppose, we do not want to use the above concept to find <span class="process-math">\((a,b,c)\text{,}\)</span> then what do we do?<div class="autopermalink" data-description="Paragraph"><a href="#sec4-3-linspan-VS-6-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec4-3-linspan-VS-6-1-4">
 <div class="para">Suppose <span class="process-math">\((x,y,z)\in W\text{,}\)</span> Then there exists scalars <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\)</span> such that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec4-3-linspan-VS-6-1-4-4">
 \begin{equation*}
 \begin{pmatrix}x\\y\\z \end{pmatrix}  =\alpha \begin{pmatrix}1\\2\\-1 \end{pmatrix} +\beta \begin{pmatrix}3\\1\\2 \end{pmatrix}  = \begin{pmatrix}1 \amp  3\\2 \amp  1 \\-1 \amp  2 \end{pmatrix} \begin{pmatrix}\alpha\\\beta \end{pmatrix}\text{.}
 \end{equation*}
@@ -495,7 +495,7 @@ L(S):=\{\alpha_1 v_1+\cdots+\alpha_kv_k:\alpha_1,\ldots,\alpha_k\in \R\}
 </div> <div class="para" id="sec4-3-linspan-VS-6-1-5">In particular, <span class="process-math">\(W\)</span> is the image space of <span class="process-math">\(\begin{pmatrix}1 \amp 3\\2 \amp 1 \\-1 \amp 2 \end{pmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec4-3-linspan-VS-6-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec4-3-linspan-VS-6-1-6">
 <div class="para">We need to find <span class="process-math">\((a,b,c)\)</span> such that <span class="process-math">\(ax+by+cz=0\)</span> for any <span class="process-math">\((x,y,z)\in W\text{.}\)</span> In particular, we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec4-3-linspan-VS-6-1-6-4">
 \begin{equation*}
 a(\alpha+2\beta)+b(2\alpha+\beta)+c(-\alpha+2\beta)=0
 \end{equation*}
@@ -512,7 +512,7 @@ a+2b-c \amp  = \amp  0, \text{ for \(\alpha=1,\beta=0\) }\\
 </div> <div class="para" id="sec4-3-linspan-VS-6-1-7">This is same say substituting <span class="process-math">\(v_1,v_2\)</span> in the equation <span class="process-math">\(ax=by=cz=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec4-3-linspan-VS-6-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec4-3-linspan-VS-6-1-8">
 <div class="para">In particular, we have <span class="process-math">\(a,b,c\)</span> such that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec4-3-linspan-VS-6-1-8-2">
 \begin{equation*}
 \begin{pmatrix}1 \amp  2 \amp  -1\\ 3 \amp  1 \amp  2 \end{pmatrix} \begin{pmatrix}a\\b\\c \end{pmatrix} =0\text{.}
 \end{equation*}
@@ -526,7 +526,7 @@ a+2b-c \amp  = \amp  0, \text{ for \(\alpha=1,\beta=0\) }\\
 </h3>
 <div class="para logical" id="sec4-3-linspan-VS-7-1-1">
 <div class="para">Let <span class="process-math">\(V=M_2(\R)\)</span> with usual addition and scalar multiplication</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec4-3-linspan-VS-7-1-1-2">
 \begin{equation*}
 S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  1 \\1 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\0 \amp  1 \end{bmatrix} \right\}\text{.}
 \end{equation*}
@@ -539,7 +539,7 @@ S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 
 </h3>
 <div class="para logical" id="sec4-3-linspan-VS-8-1-1">
 <div class="para">Let <span class="process-math">\(V=M_2(\R)\)</span> with usual addition and scalar multiplication</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec4-3-linspan-VS-8-1-1-2">
 \begin{equation*}
 S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  1 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\1 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\0 \amp  1 \end{bmatrix} \right\}\text{.}
 \end{equation*}
@@ -606,13 +606,13 @@ S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 
 </h3>
 <div class="para logical" id="exer-smallest-subspace-as-intersection-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space over <span class="process-math">\(\R\)</span> and <span class="process-math">\(S\subset V\text{.}\)</span> Let <span class="process-math">\({\cal S}\)</span> be the set of all subspaces of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\text{.}\)</span> That is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="exer-smallest-subspace-as-intersection-1-7">
 \begin{equation*}
 {\cal S}:=\{W:W \text {is a subspace of } V \text{ and } S\subset W\}.
 \end{equation*}
 </div>
 <div class="para">Then show that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="exer-smallest-subspace-as-intersection-1-8">
 \begin{equation*}
 \langle S \rangle=\cap_{W\in {\cal S}} W.
 \end{equation*}

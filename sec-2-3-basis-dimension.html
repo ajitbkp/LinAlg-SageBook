@@ -119,15 +119,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.2';
+eBookConfig.runestone_version = '7.11.8';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -522,7 +522,7 @@ eBookConfig.enable_chatcodes =  false;
 </h4>
 <div class="para logical" id="subsec-basis-intro-7-1">
 <div class="para">Consider the plane <span class="process-math">\(W=\{(x_1,x_2,x_3)\in \R^3:x_1+2x_2-x_3=0\}\text{.}\)</span> Note that, here <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> can be thought of as free variables. Any point <span class="process-math">\((x_1,x_2,x_3)\in W\text{,}\)</span> we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-basis-intro-7-1-5">
 \begin{equation*}
 (x_1,x_2,x_3)=(x_1,x_2,x_1+2x_2)=(\alpha,\beta,\alpha+2\beta)=\alpha(1,0,1)+\beta(0,1,2).
 \end{equation*}
@@ -551,7 +551,7 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation}
 </div>
 <div class="para">Since <span class="process-math">\(\beta\)</span> is a basis of <span class="process-math">\(W\text{,}\)</span> for each <span class="process-math">\(i=1,2,\ldots, k+1\text{,}\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec2-3-eq1.html ./knowl/xref/sec2-3-eq2.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec2-3-eq1.html ./knowl/xref/sec2-3-eq2.html" id="subsec-basis-intro-11-1-6">
 \begin{equation*}
 v_i = \sum_{j=1}^k a_{ij}u_j
 \end{equation*}
@@ -643,7 +643,7 @@ v_i = \sum_{j=1}^k a_{ij}u_j
 </div>
 <div class="para logical" id="subsec-dimension-intro-7-2">
 <div class="para">We construct the matrix <span class="process-math">\(A\)</span> whose rows are <span class="process-math">\(\{v_1,v_2,v_3,v_4,v_5\}\)</span> and apply RREF.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-7-2-3">
 \begin{equation*}
 RREF\left(\left[\begin{array}{rrrrrr}
 1 \amp  -1 \amp  2 \amp  3 \amp  1 \amp  4 \\
@@ -661,7 +661,7 @@ RREF\left(\left[\begin{array}{rrrrrr}
 \end{equation*}
 </div>
 <div class="para">Thus <span class="process-math">\(W\)</span> has a basis consisting of three non zero rows of <span class="process-math">\(RREF(A)\text{.}\)</span> That is,</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-7-2-6">
 \begin{equation*}
 \beta = \left\{\left(1 , 0 , 0 , 1 , -\frac{5}{4} , \frac{3}{4}\right),
 \left(0 , 1 , 0 , 0 , -\frac{1}{2} , -\frac{1}{2}\right),
@@ -671,7 +671,7 @@ RREF\left(\left[\begin{array}{rrrrrr}
 <div class="para">is basis of <span class="process-math">\(W\)</span> and it is a 3 dimensional subspace of <span class="process-math">\(\R^6\text{.}\)</span> Note that <span class="process-math">\(W\)</span> is also the row space of <span class="process-math">\(A\text{.}\)</span> <div class="para" id="subsec-dimension-intro-7-2-11">Note that each column of <span class="process-math">\(A\)</span> is a vector in <span class="process-math">\(\R^5\text{.}\)</span> Let us find the column space of <span class="process-math">\(A\text{.}\)</span> Thus to find the <span class="process-math">\({\rm col}(A)\text{,}\)</span> we take the transpose of <span class="process-math">\(A\)</span> and apply the RREF.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-dimension-intro-7-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-7-2-12">
 \begin{equation*}
 RREF\left(\left[\begin{array}{rrrrr}
 1 \amp  2 \amp  -4 \amp  -1 \amp  -2 \\
@@ -692,7 +692,7 @@ RREF\left(\left[\begin{array}{rrrrr}
 \end{equation*}
 </div>
 <div class="para">Thus the basis <span class="process-math">\(\gamma\)</span> of  <span class="process-math">\({\rm col}(A)\)</span> consists of three non-zero rows of <span class="process-math">\(RREF(A^T)\text{.}\)</span> Thus</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-7-2-16">
 \begin{equation*}
 \gamma=\{(1,0,2,0,1),(0,1,-3,0,-1),(0,0,0,1,1)\}
 \end{equation*}
@@ -763,7 +763,7 @@ x_1+2x_3+x_5=0, x_2-3x_3-x_5=0,x_4+x_5=0
 </div>
 <div class="para">Thus <span class="process-math">\(\dim{{\cal N}(A)}=2\)</span> and <span class="process-math">\(\delta =\{(1,0,1,3,-3),(0,1,1,2,-2)\}\)</span> is a basis of <span class="process-math">\({\cal N}(A)\text{.}\)</span> <div class="para logical" id="subsec-dimension-intro-10-1-9">
 <div class="para">The <span class="process-math">\(\dim{{\cal N}(A)}\)</span> is called the nullity of <span class="process-math">\(A\text{.}\)</span> Notice that for this matrix</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-10-1-9-3">
 \begin{equation*}
 {\rm nullity}(A)+{\rm rank}(A)=\text{ number of columns of }A.
 \end{equation*}
@@ -786,7 +786,7 @@ x_1+2x_3+x_5=0, x_2-3x_3-x_5=0,x_4+x_5=0
 -1 \amp  0 \amp  2 \amp  1 \amp  3 \amp  2 \\
 -2 \amp  -2 \amp  4 \amp  2 \amp  7 \amp  5
 \end{array}\right]\text{.}\)</span> Let us find the image space, <span class="process-math">\({\cal R}(A)\)</span> of <span class="process-math">\(A\text{.}\)</span> Let <span class="process-math">\(b = \begin{bmatrix} b_1\\b_2\\b_3\\b_4\\b_5\end{bmatrix}\in {\cal R}(A)\)</span> lies in then there exists <span class="process-math">\(x\in\R^6\)</span> such that <span class="process-math">\(Ax=b\text{,}\)</span> In particular <span class="process-math">\(Ax=b\)</span> has a solution. Thus to find a solution we apply the RREF to the augmented matrix <span class="process-math">\([A|b]\text{.}\)</span> It is easy to see that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-11-1-9">
 \begin{equation*}
 RREF(A)=
 \left[\begin{array}{rrrrrrr}
@@ -799,7 +799,7 @@ RREF(A)=
 \end{equation*}
 </div>
 <div class="para">This means that <span class="process-math">\(Ax=b\)</span> has a solution iff</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-11-1-11">
 \begin{equation*}
 -2 b_{1} + 3 b_{2} + b_{3}=0 \text{ and }-b_{1} + b_{2} - b_{4} + b_{5}=0\text{.}
 \end{equation*}
@@ -819,7 +819,7 @@ b_4\begin{bmatrix}0\\0\\0\\1\\1\end{bmatrix}:b_1,b_2,b_4\in \R\right\}
 \end{align*}
 </div>
 <div class="para">Thus</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-11-1-13">
 \begin{equation*}
 \left\{\begin{bmatrix}1\\0\\2\\0\\1\end{bmatrix},
 \begin{bmatrix}0\\1\\-3\\0\\-1\end{bmatrix},
@@ -836,7 +836,7 @@ b_4\begin{bmatrix}0\\0\\0\\1\\1\end{bmatrix}:b_1,b_2,b_4\in \R\right\}
 </h4>
 <div class="para logical" id="sec2-3-thm-rank-nullity-1-1">
 <div class="para">Let <span class="process-math">\(A \)</span> be <span class="process-math">\(m\times n\)</span> real matrix. Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-thm-rank-nullity-1-1-3">
 \begin{equation*}
 {\rm rank}(A)+{\rm nullity}(A)=n\text{.}
 \end{equation*}
@@ -880,7 +880,7 @@ b_4\begin{bmatrix}0\\0\\0\\1\\1\end{bmatrix}:b_1,b_2,b_4\in \R\right\}
 </div>
 <div class="para logical" id="subsec-dimension-intro-23">
 <div class="para">Suppose <span class="process-math">\(\beta=\{v_1,v_2,\ldots, v_n\}\)</span> be a basis of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(v\in \R^n\text{.}\)</span> How to find the coordinates of <span class="process-math">\(v\)</span> with respect to <span class="process-math">\(\beta\text{?}\)</span> Let <span class="process-math">\(v =x_1v_1+x_2v_2+\cdots+x_nv_n\text{.}\)</span> We need to find <span class="process-math">\(x_1,\cdots, x_n\text{.}\)</span> Note that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-23-8">
 \begin{equation*}
 v = x_1v_1+x_2v_2+\cdots+x_nv_n=
 \begin{bmatrix} v_1\amp  v_2\cdots\amp v_n\end{bmatrix}
@@ -900,7 +900,7 @@ v = x_1v_1+x_2v_2+\cdots+x_nv_n=
 </h4>
 <div class="para logical" id="subsec-dimension-intro-25-1">
 <div class="para">Consider a basis <span class="process-math">\(\beta=\{(1,-1),(2,1)\}\text{.}\)</span> Find the coordinates of <span class="process-math">\(v=(2,3)\)</span> with respect to <span class="process-math">\(\beta\text{.}\)</span>  In order to find the coordinates of <span class="process-math">\(v\)</span> with respect to <span class="process-math">\(\beta\text{,}\)</span> we solve the system <span class="process-math">\(Ax=b\)</span> where <span class="process-math">\(A=\begin{bmatrix} 1 \amp  2\\-1\amp  1\end{bmatrix}\)</span> and <span class="process-math">\(b = \begin{bmatrix} 2\\3\end{bmatrix}\text{.}\)</span> Using RREF</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-25-1-9">
 \begin{equation*}
 [A~|~b]\xrightarrow{RREF} \left[\begin{array}{rr|r}
 1 \amp  0 \amp  -\frac{4}{3} \\
@@ -917,7 +917,7 @@ v = x_1v_1+x_2v_2+\cdots+x_nv_n=
 </h4>
 <div class="para logical" id="subsec-dimension-intro-26-1">
 <div class="para">Find the coordinates of the vector <span class="process-math">\((1,2,3)\)</span> with respect to a basis <span class="process-math">\(\beta=\{(1,-1,1),(1,1,-1),(-1,1,1)\}\)</span> of <span class="process-math">\(\R^3\text{.}\)</span> Using the RREF we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-26-1-4">
 \begin{equation*}
 \left[\begin{array}{rrr|r}
 1 \amp  1 \amp  -1 \amp  1 \\
@@ -940,7 +940,7 @@ v = x_1v_1+x_2v_2+\cdots+x_nv_n=
 </h4>
 <div class="para logical" id="subsec-dimension-intro-27-1">
 <div class="para">Find the coordinates of the vector <span class="process-math">\((1,2,3,4)\)</span> with respect to a basis <span class="process-math">\(\beta=\{(1,-1,1,1),(1,1,-1,1),(1,1,-1,1),(-1,1,1,1)\}\)</span> of <span class="process-math">\(\R^4\text{.}\)</span> Using the RREF we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-dimension-intro-27-1-4">
 \begin{equation*}
 \left[\begin{array}{rrrr|r}
 1 \amp  1 \amp  1 \amp  -1 \amp  1\\
@@ -966,7 +966,7 @@ v = x_1v_1+x_2v_2+\cdots+x_nv_n=
 </h3>
 <div class="para logical" id="sec2-3-change-of-basis-2">
 <div class="para">Let <span class="process-math">\(\beta=\{u_1,u_2\ldots,u_n\}\)</span> and <span class="process-math">\(\gamma=\{v_1,v_2\ldots,v_n\}\)</span> be two bases of <span class="process-math">\(\R^n\text{.}\)</span> Fix a vector <span class="process-math">\(x\in \R^n\text{.}\)</span>  Let <span class="process-math">\(x_\beta=\begin{bmatrix}c_1\\\vdots \\c_n\end{bmatrix}\)</span>   and <span class="process-math">\(x_\gamma=\begin{bmatrix}d_1\\\vdots \\d_n\end{bmatrix}\)</span>  be the coordinates of <span class="process-math">\(x\)</span> with respect to <span class="process-math">\(\beta\)</span> and <span class="process-math">\(\gamma\)</span> respectively. Then we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-2-10">
 \begin{equation*}
 x = \begin{bmatrix}u_1\amp \cdots \amp  u_n\end{bmatrix}\begin{bmatrix}c_1\\\vdots \\c_n\end{bmatrix}=Ax_\beta.
 \end{equation*}
@@ -975,13 +975,13 @@ x = \begin{bmatrix}u_1\amp \cdots \amp  u_n\end{bmatrix}\begin{bmatrix}c_1\\\vdo
 </div>
 <div class="para logical" id="sec2-3-change-of-basis-3">
 <div class="para">Similarly</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-3-1">
 \begin{equation*}
 x = \begin{bmatrix}v_1\amp \cdots \amp  v_n\end{bmatrix}\begin{bmatrix}d_1\\\vdots \\d_n\end{bmatrix}=Bx_\gamma.
 \end{equation*}
 </div>
 <div class="para">Thus we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-3-2">
 \begin{equation*}
 Ax_\beta=Bx_\gamma\implies x_\beta = A^{-1}B x_\gamma \text{ and } x_\gamma = B^{-1}Ax_\beta.
 \end{equation*}
@@ -998,7 +998,7 @@ Ax_\beta=Bx_\gamma\implies x_\beta = A^{-1}B x_\gamma \text{ and } x_\gamma = B^
 <div class="para logical" id="sec2-3-change-of-basis-5-1">
 <div class="para">Consider  two bases   <span class="process-math">\(\R^3\)</span> <span class="process-math">\(\beta = \left\{\left(2,-1,3\right), \left(3,1,2\right), \left(1,1,1\right)\right\}\)</span> and <span class="process-math">\(\gamma = \left\{\left(1,-1,1\right), \left(1,1,-1\right), \left(-1,1,1\right)\right\}
 \text{.}\)</span>  Consider a vector <span class="process-math">\(x=(1,2,3)\text{.}\)</span>  We have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-5-1-5">
 \begin{equation*}
 A = \left(\begin{array}{rrr}
 2 \amp  3 \amp  1 \\
@@ -1013,7 +1013,7 @@ A = \left(\begin{array}{rrr}
 </div>
 <div class="para">First we find <span class="process-math">\(x_\beta\)</span> and <span class="process-math">\(x_\gamma\text{.}\)</span>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-5-1-8">
 \begin{equation*}
 \left(\begin{array}{rrr|r}
 2 \amp  3 \amp  1 \amp  1 \\
@@ -1028,13 +1028,13 @@ A = \left(\begin{array}{rrr}
 \end{array}\right)
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-5-1-9">
 \begin{equation*}
 \implies x_\beta =\begin{pmatrix} 3/5\\7/5\\4\end{pmatrix}.
 \end{equation*}
 </div>
 <div class="para">Similarly</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-5-1-10">
 \begin{equation*}
 \left(\begin{array}{rrr|r}
 1 \amp  1 \amp  -1 \amp  1 \\
@@ -1048,13 +1048,13 @@ A = \left(\begin{array}{rrr}
 \end{array}\right)
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-5-1-11">
 \begin{equation*}
 \implies x_\gamma =\begin{pmatrix} 2\\3/2\\5/2\end{pmatrix}.
 \end{equation*}
 </div>
 <div class="para">Now to find the transition matrix <span class="process-math">\([I]_\gamma^\beta\text{,}\)</span> we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-5-1-13">
 \begin{equation*}
 [A~|~B]\xrightarrow{RREF} \left(\begin{array}{rrr|rrr}
 1 \amp  0 \amp  0 \amp  \frac{2}{5} \amp  -\frac{4}{5} \amp  \frac{2}{5} \\
@@ -1063,7 +1063,7 @@ A = \left(\begin{array}{rrr}
 \end{array}\right) 
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-5-1-14">
 \begin{equation*}
 \implies [I]_\gamma^\beta =
 \left(\begin{array}{rrr}
@@ -1074,7 +1074,7 @@ A = \left(\begin{array}{rrr}
 \end{equation*}
 </div>
 <div class="para">It is easy to verify that <span class="process-math">\(x_\beta = [I]_\gamma^\beta x_\gamma\text{.}\)</span> Similarly to find the transition matrix <span class="process-math">\([I]_\beta\gamma\text{,}\)</span> we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-5-1-17">
 \begin{equation*}
 [B~|~A]\xrightarrow{RREF} \left(\begin{array}{rrr|rrr}
 1 \amp  0 \amp  0 \amp  \frac{5}{2} \amp  \frac{5}{2} \amp  1 \\
@@ -1083,7 +1083,7 @@ A = \left(\begin{array}{rrr}
 \end{array}\right)
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-5-1-18">
 \begin{equation*}
 \implies [I]_\beta^\gamma =\left(\begin{array}{rrr}
 \frac{5}{2} \amp  \frac{5}{2} \amp  1 \\
@@ -1114,7 +1114,7 @@ A = \left(\begin{array}{rrr}
 <div class="para logical" id="sec2-3-change-of-basis-9-1">
 <div class="para">Consider a set of 7 vectors <span class="process-math">\(v_1,\ldots, v_7\in \R^7\text{.}\)</span>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-9-1-2">
 \begin{equation*}
 v_1=\left(\begin{array}{r}
 1 \\
@@ -1163,7 +1163,7 @@ v_5=\left(\begin{array}{r}
 \end{array}\right),
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-9-1-3">
 \begin{equation*}
 v_6=\left(\begin{array}{r}
 -13 \\
@@ -1187,7 +1187,7 @@ v_7=\left(\begin{array}{r}
 </div>
 <div class="para">Define the matrix <span class="process-math">\(A\)</span> whose columns are <span class="process-math">\(v_1,\ldots, v_7\)</span> and apply RREF to <span class="process-math">\(A\text{.}\)</span>
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-9-1-7">
 \begin{equation*}
 A=\left(\begin{array}{rrrrrrr}
 1 \amp  2 \amp  -1 \amp  0 \amp  4 \amp  -13 \amp  -2 \\
@@ -1200,7 +1200,7 @@ A=\left(\begin{array}{rrrrrrr}
 \end{array}\right)
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec2-3-change-of-basis-9-1-8">
 \begin{equation*}
 RREF(A)=\left(\begin{array}{rrrrrrr}
 1 \amp  0 \amp  3 \amp  0 \amp  0 \amp  9 \amp  0 \\

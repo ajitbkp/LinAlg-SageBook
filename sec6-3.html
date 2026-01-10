@@ -119,15 +119,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.2';
+eBookConfig.runestone_version = '7.11.8';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.8afc9108798b9170.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
@@ -529,7 +529,7 @@ sagecell.makeSagecell({
 </div>
 <div class="para logical" id="sec6-3-10">
 <div class="para">Suppose a matrix <span class="process-math">\(A\)</span> is orthogonally diagonalizable. That is <span class="process-math">\(P^TAP=D\text{,}\)</span> a digonal matrix. This means <span class="process-math">\(A=PDP^T\text{.}\)</span> Hence</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec6-3-10-4">
 \begin{equation*}
 A^T=(PDP^T)^T=PD^TP^T=PDP^T=A.
 \end{equation*}
@@ -544,7 +544,7 @@ A^T=(PDP^T)^T=PD^TP^T=PDP^T=A.
 </div>
 <div class="autopermalink" data-description="Lemma 6.4.6"><a href="#lemma-orthogonality-eigenvectors1" title="Copy heading and permalink for Lemma 6.4.6" aria-label="Copy heading and permalink for Lemma 6.4.6">🔗</a></div></article><details id="lemma-orthogonality-eigenvectors1-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="lemma-orthogonality-eigenvectors1-2-1">
 <div class="para">We have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lemma-orthogonality-eigenvectors1-2-1-1">
 \begin{equation*}
 (\lambda_1 v_1)\cdot v_2 = (Av_1) \cdot (v_2)=
 {(Av_1)}^T(v_2)=v_1^T A^Tv_2=v_1^T(\lambda_2 v_2).
@@ -585,7 +585,7 @@ A^T=(PDP^T)^T=PD^TP^T=PDP^T=A.
 </div>
 <div class="para logical" id="thm-6-4-6-2-2">
 <div class="para">Let <span class="process-math">\(v_1,\ldots, v_n\)</span> be orthogonormal eigenvectors of <span class="process-math">\(A\)</span> such that <span class="process-math">\(Av_i=\lambda_i v_i\text{.}\)</span> Then <span class="process-math">\(P=\begin{bmatrix} v_1\amp v_2\cdots v_n\end{bmatrix}\)</span> is orthogonal. Hence</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-6-4-6-2-2-5">
 \begin{equation*}
 P^TAP={\rm diag}(\lambda_1,\ldots,\lambda_n)=D. 
 \end{equation*}
@@ -603,7 +603,7 @@ P^TAP={\rm diag}(\lambda_1,\ldots,\lambda_n)=D.
 </div>
 <div class="para logical" id="thm-6-4-6-2-6">
 <div class="para">If <span class="process-math">\(A\)</span> is orthogonally diagonalizable with <span class="process-math">\(P^TAP=D\)</span> then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-6-4-6-2-6-3">
 \begin{equation*}
 A^T={(PDP^T)}^T=PDP^T=A.
 \end{equation*}
@@ -622,7 +622,7 @@ A^T={(PDP^T)}^T=PDP^T=A.
 </div>
 <div class="para logical" id="thm-6-4-6-2-11">
 <div class="para">Let <span class="process-math">\(\beta = \{u,v_1,\ldots,v_{n-1}\}\)</span> be an extended orthonormnal basis of <span class="process-math">\(A\text{.}\)</span> Let <span class="process-math">\(P=[u~v_1~\cdots~v_{n-1}]\text{,}\)</span> the orthogonal matrix whose columns are vectors <span class="process-math">\(u,v_1,\ldots,v_{n-1}\text{.}\)</span>  The the matrix <span class="process-math">\(M\)</span> of <span class="process-math">\(A\)</span> with respect to <span class="process-math">\(\beta\)</span> is <span class="process-math">\(P^TAP\)</span> which is of the form</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-6-4-6-2-11-9">
 \begin{equation*}
 M=\left[
 \begin{array}{c|c}
@@ -632,7 +632,7 @@ M=\left[
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(C\)</span> is an <span class="process-math">\((n-1)\times (n-1)\)</span> real symmetric matrix. (why)? Hence by induction, there exists an <span class="process-math">\((n-1)\times (n-1)\)</span> orthogonal matrix <span class="process-math">\(Q\)</span> such that <span class="process-math">\(Q^TCQ=D\text{,}\)</span> a diagonal matrix. Hence</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-6-4-6-2-11-15">
 \begin{equation*}
 M=\left[
 \begin{array}{c|c}
@@ -650,7 +650,7 @@ M=\left[
 \end{equation*}
 </div>
 <div class="para">Thus we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-6-4-6-2-11-16">
 \begin{equation*}
 P^TAP = M = \left[
 \begin{array}{c|c}
@@ -668,7 +668,7 @@ P^TAP = M = \left[
 \end{equation*}
 </div>
 <div class="para">This implies</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-6-4-6-2-11-17">
 \begin{equation*}
 A = P\left[
 \begin{array}{c|c}
@@ -690,7 +690,7 @@ A = P\left[
 \lambda \amp 0 \\ \hline
 0 \amp Q
 \end{array}\right]\)</span> . The <span class="process-math">\(P_1\)</span> is an orthogonal matrix and</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm-6-4-6-2-11-20">
 \begin{equation*}
 A=P_1   \left[
 \begin{array}{c|c}
@@ -713,7 +713,7 @@ A=P_1   \left[
 </h3>
 <div class="para logical" id="sec6-3-16-1-1">
 <div class="para">Consider a matrix <span class="process-math">\(A=\left(\begin{array}{rrr} 5 \amp  -2 \amp  -4 \\ -2 \amp  8 \amp  -2 \\ -4 \amp  -2 \amp  5 \end{array} \right)\text{.}\)</span> Clearly <span class="process-math">\(A\)</span> is symmetric and hence it is orthogonally diagonalizable. The characteristic polynomial of <span class="process-math">\(A\)</span> is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec6-3-16-1-1-4">
 \begin{equation*}
 \det{(xI-A)}=x^3 - 18x^2 + 81x=x(x-9)^2\text{.}
 \end{equation*}
@@ -721,7 +721,7 @@ A=P_1   \left[
 <div class="autopermalink" data-description="Paragraph"><a href="#sec6-3-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec6-3-16-1-2">
 <div class="para">Hence <span class="process-math">\(0, 9, 9\)</span> are eigenvalues of <span class="process-math">\(A\text{.}\)</span> Its is easy to find that <span class="process-math">\(v_1=(1, 1/2, 1)\)</span> is an eigenvector corresponding to the eigenvalue 0. <span class="process-math">\(v_2=(1, 0, -1), v_2=(0, 1, -1/2)\)</span> are eigenvectors corresponding to eigenvalue 9. Hence <span class="process-math">\(P:=\left(\begin{array}{rrr} 1 \amp  1 \amp  0 \\ \frac{1}{2} \amp  0 \amp  1 \\ 1 \amp  -1 \amp  -\frac{1}{2} \end{array} \right)\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec6-3-16-1-2-6">
 \begin{equation*}
 P^{-1}AP=\left(\begin{array}{rrr} 0 \amp  0 \amp  0 \\ 0 \amp  9 \amp  0 \\ 0 \amp  0 \amp  9 \end{array} \right)
 \end{equation*}
@@ -733,7 +733,7 @@ P^{-1}AP=\left(\begin{array}{rrr} 0 \amp  0 \amp  0 \\ 0 \amp  9 \amp  0 \\ 0 \a
 </h3>
 <div class="para logical" id="sec6-3-17-1-1">
 <div class="para">For the following matrices find an orthogonal matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(P^{-1}AP\)</span> is a diagonal matrix.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec6-3-17-1-1-3">
 \begin{equation*}
 \begin{pmatrix}2 \amp  -1 \\-1 \amp  1 \end{pmatrix} , \begin{pmatrix}1 \amp  0 \amp  -1\\0 \amp  1 \amp  2\\-1 \amp  2 \amp  5 \end{pmatrix}
 \end{equation*}
@@ -803,25 +803,25 @@ P^{-1}AP=\left(\begin{array}{rrr} 0 \amp  0 \amp  0 \\ 0 \amp  9 \amp  0 \\ 0 \a
 </div>
 <div class="autopermalink" data-description="Lemma 6.4.12"><a href="#lem-distance-preserving" title="Copy heading and permalink for Lemma 6.4.12" aria-label="Copy heading and permalink for Lemma 6.4.12">🔗</a></div></article><details id="lem-distance-preserving-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="lem-distance-preserving-2-1">
 <div class="para">From (1) and (2) we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lem-distance-preserving-2-1-1">
 \begin{equation*}
 \norm{f(x)}=\norm{f(x)=f(0)}=\norm{f(x-0)}}=\norm{f(x)},
 \end{equation*}
 </div>
 <div class="para">for all <span class="process-math">\(x\in \R^n\text{.}\)</span> Using this we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lem-distance-preserving-2-1-3">
 \begin{equation*}
 \norm{f(x)-f(y)}^2=\norm{x-y}^2.
 \end{equation*}
 </div>
 <div class="para">Exanding both sides, we get</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lem-distance-preserving-2-1-4">
 \begin{equation*}
 f(x)\cdot f(y) = x\cdot y
 \end{equation*}
 </div>
 <div class="para">for all <span class="process-math">\(x,y\text{.}\)</span> That is, <span class="process-math">\(f\)</span> preserves the dot product. This implies that <span class="process-math">\(f\)</span> maps an orthonormal basis of <span class="process-math">\(\R^n\)</span> to an orthonormal basis of <span class="process-math">\(\R^n\text{.}\)</span> In particulatr, <span class="process-math">\(\{f(e_i)\}\)</span> is an orthonormal basis of <span class="process-math">\(\R^n\text{,}\)</span> where <span class="process-math">\(\{e_i\}\)</span> is the standard basis. Hence</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lem-distance-preserving-2-1-13">
 \begin{equation*}
 f(x)=f(\sum x_i e_i)=\sum f(x)\cdot f(e_i) f(e_i)=\sum x\cdot e_i f(e_i)=\sum x_i f(e_i).
 \end{equation*}
@@ -850,7 +850,7 @@ f(x)=f(\sum x_i e_i)=\sum f(x)\cdot f(e_i) f(e_i)=\sum x\cdot e_i f(e_i)=\sum x_
 </div>
 <div class="autopermalink" data-description="Checkpoint 6.4.15"><a href="#sec6-3-25" title="Copy heading and permalink for Checkpoint 6.4.15" aria-label="Copy heading and permalink for Checkpoint 6.4.15">🔗</a></div></article><div class="para logical" id="sec6-3-26">
 <div class="para">Consider two matrices</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec6-3-26-1">
 \begin{equation*}
 A=\begin{pmatrix}
 1 \amp 0 \amp 0\\
@@ -877,7 +877,7 @@ B=\begin{pmatrix}
 </div>
 <div class="para logical" id="lem-def-simultaneous-diagonalizable-2-2">
 <div class="para">Suppose <span class="process-math">\(v\)</span> is an eigenvector of <span class="process-math">\(A\)</span> and <span class="process-math">\(Av=\lambda v\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="lem-def-simultaneous-diagonalizable-2-2-4">
 \begin{equation*}
 B(Av)=B(Av)=\lambda Bv.
 \end{equation*}
@@ -893,7 +893,7 @@ B(Av)=B(Av)=\lambda Bv.
 </div>
 <div class="para logical" id="sec6-3-30">
 <div class="para">1. Since <span class="process-math">\(A\)</span> is symmetric, it admits an orthogonal diagonalization:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec6-3-30-3">
 \begin{equation*}
 A = Q \Lambda Q^T,
 \end{equation*}
@@ -922,7 +922,7 @@ A = Q \Lambda Q^T,
 </div>
 <div class="para logical" id="sec6-3-33">
 <div class="para">4. Let <span class="process-math">\(P\)</span> be the orthogonal matrix formed from these common eigenvectors as columns. Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec6-3-33-3">
 \begin{equation*}
 P^T A P = D_A, \qquad P^T B P = D_B,
 \end{equation*}
@@ -939,19 +939,19 @@ P^T A P = D_A, \qquad P^T B P = D_B,
 </div>
 <div class="para logical" id="prop-spectral-square-root-3-2">
 <div class="para">Since <span class="process-math">\(A\)</span> is a real symmetric matrix, it is orthogonally diagonalizable. Let</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="prop-spectral-square-root-3-2-2">
 \begin{equation*}
 A = QDQ^T,
 \end{equation*}
 </div>
 <div class="para">with <span class="process-math">\(D= \mathrm{diag}(\lambda_1,\dots,\lambda_n)\text{.}\)</span> Sicne <span class="process-math">\(A\)</span> is semi-positive definite, all its eigenvalues are positive.  That is,  <span class="process-math">\(\lambda_i \geq 0\)</span> for all <span class="process-math">\(i\text{.}\)</span> Define <span class="process-math">\(C: = \mathrm{diag}(\sqrt{\lambda_1},\dots,\sqrt{\lambda_n})\text{,}\)</span> where we take non negative square roots of <span class="process-math">\(\lambda_i\text{.}\)</span> Now define</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="prop-spectral-square-root-3-2-9">
 \begin{equation*}
 B: = Q C Q^T.
 \end{equation*}
 </div>
 <div class="para">Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="prop-spectral-square-root-3-2-10">
 \begin{equation*}
 B^2 = (Q C Q^T)(Q C Q^T)=QC^2Q^T=QDQ^T=A.
 \end{equation*}
@@ -1149,7 +1149,7 @@ T_3(x) \amp= \tfrac{1}{2} x + (1/4, \tfrac{\sqrt{3}}{4})
 <div class="autopermalink" data-description="Paragraph"><a href="#Sierpinski_Triangle_Affile-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="Sierpinski_Triangle_Affile-2-10">
 <div class="para">If <span class="process-math">\(S\)</span> denotes the Sierpiński triangle, then it satisfies the fundamental iterated function system equation:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="Sierpinski_Triangle_Affile-2-10-2">
 \begin{equation*}
 S = T_1(S) \cup T_2(S) \cup T_3(S).
 \end{equation*}
@@ -1250,7 +1250,7 @@ show(G, figsize=4)
 <div class="para" id="Sierpinski_Pyramid_Affile-2-1">The <dfn class="terminology">Sierpinski pyramid</dfn> (also called the <dfn class="terminology">Sierpinski tetra-pyramid</dfn> when based on a triangle, or <dfn class="terminology">Sierpiński square pyramid</dfn> when based on a square) is a three-dimensional fractal obtained by repeatedly subdividing a pyramid into smaller self-similar pyramids. It provides a natural extension of the ideas behind the Sierpiński triangle and Sierpiński carpet to three dimensions.<div class="autopermalink" data-description="Paragraph"><a href="#Sierpinski_Pyramid_Affile-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="Sierpinski_Pyramid_Affile-2-2">
 <div class="para">The construction can be described as an application of affine linear maps. Starting from an initial pyramid <span class="process-math">\(P_0\text{,}\)</span> we apply scaling by a factor of <span class="process-math">\(\tfrac{1}{2}\)</span> followed by translations to position the smaller pyramids. In the square-based case, four pyramids are placed at the corners of the base, and one is placed on the top near the apex. This gives a total of five affine maps:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="Sierpinski_Pyramid_Affile-2-2-3">
 \begin{equation*}
 P = T_1(P) \cup T_2(P) \cup T_3(P) \cup T_4(P) \cup T_5(P),
 \end{equation*}
@@ -1313,7 +1313,7 @@ show(sierpinski_pyramid(4), viewer='threejs', frame=False)
 </div>
 <div class="para logical" id="subsec-6-3-quadratic-form-3">
 <div class="para">A general second-degree equation in two variables is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-3-1">
 \begin{equation*}
 Q(x,y) = ax^2 + 2bxy + cy^2 + dx + ey + f = 0,
 \end{equation*}
@@ -1324,7 +1324,7 @@ Q(x,y) = ax^2 + 2bxy + cy^2 + dx + ey + f = 0,
 </div>
 <div class="para logical" id="subsec-6-3-quadratic-form-4">
 <div class="para">This equation can be written compactly in matrix notation as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-4-1">
 \begin{equation*}
 Q(x,y) =
 \begin{bmatrix}x \amp y\end{bmatrix} 
@@ -1337,7 +1337,7 @@ Q(x,y) =
 </div>
 <div class="para logical" id="subsec-6-3-quadratic-form-5">
 <div class="para">Here,</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-5-1">
 \begin{equation*}
 A = \begin{bmatrix} a \amp b \\ b  \amp c \end{bmatrix}
 \end{equation*}
@@ -1348,7 +1348,7 @@ A = \begin{bmatrix} a \amp b \\ b  \amp c \end{bmatrix}
 </div>
 <div class="para logical" id="subsec-6-3-quadratic-form-6">
 <div class="para">Since <span class="process-math">\(A\)</span> is symmetric, it is orthogonally diagonalizable. That is, there exists an orthogonal matrix <span class="process-math">\(P\)</span> such that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-6-3">
 \begin{equation*}
 P^TAP = D = \begin{pmatrix} \lambda_1 \amp 0\\ 0 \amp \lambda_2\end{pmatrix},
 \end{equation*}
@@ -1358,19 +1358,19 @@ P^TAP = D = \begin{pmatrix} \lambda_1 \amp 0\\ 0 \amp \lambda_2\end{pmatrix},
 </div>
 <div class="para logical" id="subsec-6-3-quadratic-form-7">
 <div class="para">With the change of variables</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-7-1">
 \begin{equation*}
 \begin{bmatrix} x \\ y \end{bmatrix} = P \begin{bmatrix} u \\ v \end{bmatrix},
 \end{equation*}
 </div>
 <div class="para">the quadratic form simplifies to</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-7-2">
 \begin{equation*}
 Q(u,v) = \lambda_1 u^2 + \lambda_2 v^2 + \alpha u+\beta v + f = 0.
 \end{equation*}
 </div>
 <div class="para">Note that here</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-7-3">
 \begin{equation*}
 \begin{bmatrix}\alpha\\\beta\end{bmatrix} =\begin{bmatrix}d\amp e\end{bmatrix}P. 
 \end{equation*}
@@ -1380,7 +1380,7 @@ Q(u,v) = \lambda_1 u^2 + \lambda_2 v^2 + \alpha u+\beta v + f = 0.
 </div>
 <div class="para logical" id="subsec-6-3-quadratic-form-8">
 <div class="para">Now we have various cases. If we assume that <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> are positive,  then we can complete square and we get</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-8-3">
 \begin{equation*}
 Q(u,v) = \lambda_1\left(u+\frac{\alpha}{2\lambda_1}\right)^2+
 \lambda_2\left(v+\frac{\beta}{2\lambda_2}\right)^2-g,
@@ -1393,28 +1393,28 @@ Q(u,v) = \lambda_1\left(u+\frac{\alpha}{2\lambda_1}\right)^2+
 </div>
 <div class="para logical" id="subsec-6-3-quadratic-form-9">
 <div class="para">The origin of this quadratic in <span class="process-math">\(uv\)</span>-coordinates is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-9-2">
 \begin{equation*}
 \begin{bmatrix} u_0\\v_0\end{bmatrix}=
 \begin{bmatrix}-\frac{\alpha}{2\lambda_1}\\-\frac{\beta}{2\lambda_2}\end{bmatrix}.
 \end{equation*}
 </div>
 <div class="para">Hence the orgin in terms of <span class="process-math">\(xy\)</span>-coordinates is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-9-4">
 \begin{equation*}
 \begin{bmatrix} x_0\\y_0\end{bmatrix}=
 P\begin{bmatrix}-\frac{\alpha}{2\lambda_1}\\-\frac{\beta}{2\lambda_2}\end{bmatrix}.
 \end{equation*}
 </div>
 <div class="para">Thus we have converted the original quadratic <span class="process-math">\(Q(x,y)\)</span> to</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-9-6">
 \begin{equation*}
 Q(\tilde{x},\tilde{y})=\lambda_1\tilde{x}^2+\lambda_2\tilde{y}^2-g =
 \frac{\tilde{x}^2}{\left(\frac{g}{\lambda_1}\right)^2}+\frac{\tilde{y}^2}{\left(\frac{g}{\lambda_1}\right)^2}-1.
 \end{equation*}
 </div>
 <div class="para">This is an ellipse. Here,  we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-9-7">
 \begin{equation*}
 \begin{pmatrix}
 \tilde{x}\\ \tilde{y}
@@ -1433,7 +1433,7 @@ P^{-1}\begin{pmatrix}x\\y
 </div>
 <div class="para logical" id="subsec-6-3-quadratic-form-11">
 <div class="para">In case one of the <span class="process-math">\(\lambda's\text{,}\)</span> say <span class="process-math">\(\lambda_2&lt;0\text{,}\)</span> then the conic tranforms to</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-11-3">
 \begin{equation*}
 Q(\tilde{x},\tilde{y})=\lambda_1\tilde{x}^2-\lambda_2\tilde{y}^2-g, 
 \end{equation*}
@@ -1443,7 +1443,7 @@ Q(\tilde{x},\tilde{y})=\lambda_1\tilde{x}^2-\lambda_2\tilde{y}^2-g,
 </div>
 <div class="para logical" id="subsec-6-3-quadratic-form-12">
 <div class="para">In case one of the <span class="process-math">\(\lambda's\text{,}\)</span> say <span class="process-math">\(\lambda_2=0\text{,}\)</span> then the conic tranforms to</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-12-3">
 \begin{equation*}
 Q(\tilde{x},\tilde{y})=\lambda_1\tilde{x}^2+\beta \tilde{y} -g, 
 \end{equation*}
@@ -1475,7 +1475,7 @@ Q(\tilde{x},\tilde{y})=\lambda_1\tilde{x}^2+\beta \tilde{y} -g,
 <div class="para logical" id="subsec-6-3-quadratic-form-15-1-3-1">
 <div class="para">
 <em class="emphasis">Hyperbola:</em> If eigenvalues have opposite signs, then the quadratic is a hyperbola of the form</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-15-1-3-1-2">
 \begin{equation*}
 x^2/a^2 -y^2/b^2= 1.
 \end{equation*}
@@ -1501,13 +1501,13 @@ x^2/a^2 -y^2/b^2= 1.
 <div class="solutions"><details id="eg-conic-ellipe1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="eg-conic-ellipe1-2-1">
 <div class="para">The associated symmetric matrix of this quadratic <span class="process-math">\(A\)</span> is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-conic-ellipe1-2-1-2">
 \begin{equation*}
 A = \begin{pmatrix} 7 \amp -3 \\-3 \amp 7\end{pmatrix}.
 \end{equation*}
 </div>
 <div class="para">It is easy to check the the eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda_1=10\)</span> and <span class="process-math">\(\lambda_2=4\)</span> with the corresponding eigenvectors <span class="process-math">\(v_1 = \left(\frac{1}{2} \, \sqrt{2},\,-\frac{1}{2} \, \sqrt{2}\right)\)</span> and <span class="process-math">\(v_2=\left(\frac{1}{2} \, \sqrt{2},\,\frac{1}{2} \, \sqrt{2}\right)\text{.}\)</span> Hence we have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-conic-ellipe1-2-1-8">
 \begin{equation*}
 D= \left(\begin{array}{rr}
 10 \amp 0 \\
@@ -1519,7 +1519,7 @@ D= \left(\begin{array}{rr}
 \end{equation*}
 </div>
 <div class="para">The new coordinates in terms of <span class="process-math">\(uv\)</span> is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-conic-ellipe1-2-1-10">
 \begin{equation*}
 \begin{bmatrix} x \\ y \end{bmatrix} = P \begin{bmatrix} u \\ v \end{bmatrix}=\left(\begin{array}{rr}
 \frac{1}{\sqrt{2}} u + \frac{1}{\sqrt{2}}  v \\ -\frac{1}{\sqrt{2}}  u + \frac{1}{\sqrt{2}v} 
@@ -1527,19 +1527,19 @@ D= \left(\begin{array}{rr}
 \end{equation*}
 </div>
 <div class="para">Now substituting <span class="process-math">\(x=\frac{1}{\sqrt{2}} u + \frac{1}{\sqrt{2}}  v\)</span> and <span class="process-math">\(y=-\frac{1}{\sqrt{2}} u + \frac{1}{\sqrt{2}} v \)</span> in the given quadratic, we get</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-conic-ellipe1-2-1-13">
 \begin{equation*}
 Q(u,v)=10 \, u^{2} + 4 \, v^{2} - 7 \, \sqrt{2} u + \sqrt{2} v - 56.
 \end{equation*}
 </div>
 <div class="para">After completing the squares, we get</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-conic-ellipe1-2-1-14">
 \begin{equation*}
 Q(u,v)=10 \left(u- \frac{7\sqrt{2}}{20}\right)^2+ 4 \left(v+ \frac{\sqrt{2}}{8}\right)^2 - 2343/40.
 \end{equation*}
 </div>
 <div class="para">This can be written as an equation of ellipes. Note that here the translation vector is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="eg-conic-ellipe1-2-1-15">
 \begin{equation*}
 \begin{pmatrix}x_0\\y_0\end{pmatrix}=P\begin{pmatrix} \frac{7\sqrt{2}}{20}\\\frac{-\sqrt{2}}{8}\end{pmatrix}=
 \begin{pmatrix}\frac{9}{40}\\ -\frac{19}{40}\end{pmatrix}.
@@ -1620,7 +1620,7 @@ show(curve+xaxis+yaxis)
 </script></div>
 <div class="para logical" id="subsec-6-3-quadratic-form-17-4">
 <div class="para">The symmetric matrix associated with quadratic tem is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-6-3-quadratic-form-17-4-1">
 \begin{equation*}
 A = \begin{pmatrix}3 \amp 2 \\ 2 \amp 2 \end{pmatrix}\text{.}
 \end{equation*}
@@ -1817,7 +1817,7 @@ show(curve+neworigin+newxaxis+newyaxis+xaxis+yaxis,aspect_ratio=1)
 <section class="introduction" id="subsec-conic-suraces-3variables-2"><div class="para" id="subsec-conic-suraces-3variables-2-1">The classification of quadratic equation in three varibale can be done in a very similar manner as we have seen in case of two variable <a href="sec6-3.html#subsec-6-3-quadratic-form" class="internal" title="Subsection 6.4.2: Quadratic Forms and Conic Sections">Subsection 6.4.2</a><div class="autopermalink" data-description="Paragraph"><a href="#subsec-conic-suraces-3variables-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section><div class="para logical" id="subsec-conic-suraces-3variables-3">
 <div class="para">A general quadratic equation in three variables is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-3-1">
 \begin{equation*}
 Q(x,y,z) = ax^2 + by^2 + cz^2 + 2dxy + 2eyz + 2fzx + gx + hy + iz + j=0
 \end{equation*}
@@ -1828,7 +1828,7 @@ Q(x,y,z) = ax^2 + by^2 + cz^2 + 2dxy + 2eyz + 2fzx + gx + hy + iz + j=0
 </div>
 <div class="para logical" id="subsec-conic-suraces-3variables-4">
 <div class="para">In matrix form,</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-4-1">
 \begin{equation*}
 Q(\mathbf{x}) = \mathbf{x}^T A \mathbf{x} +  \mathbf{b}^T \mathbf{x} + j,
 \quad 
@@ -1838,13 +1838,13 @@ A = \begin{bmatrix} a \amp d \amp f \\ d \amp b \amp e \\ f \amp e \amp c \end{b
 \end{equation*}
 </div>
 <div class="para">Since <span class="process-math">\(A\)</span> is symmetric, there exists an orthogonal matrix <span class="process-math">\(P\)</span> such that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-4-4">
 \begin{equation*}
 P^T A P = D= \operatorname{diag}(\lambda_1,\lambda_2,\lambda_3).
 \end{equation*}
 </div>
 <div class="para">After an orthogonal change of variables <span class="process-math">\(\mathbf{x} = P\mathbf{u}\)</span> and a translation to eliminate linear terms, the quadratic form reduces to the <em class="emphasis">canonical form</em>.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-4-7">
 \begin{equation*}
 Q(u,v,w) = \lambda_1 u^2 + \lambda_2 v^2 + \lambda_3 w^2 + j = 0.
 \end{equation*}
@@ -1861,7 +1861,7 @@ Q(u,v,w) = \lambda_1 u^2 + \lambda_2 v^2 + \lambda_3 w^2 + j = 0.
 <div class="para logical" id="subsec-conic-suraces-3variables-7-1-1">
 <div class="para">
 <em class="emphasis">Ellipsoid:</em> All eigenvalues positive.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-7-1-1-2">
 \begin{equation*}
 \frac{u^2}{a^2} + \frac{v^2}{b^2} + \frac{w^2}{c^2} = 1, a,b,c &gt; 0\text{.}
 \end{equation*}
@@ -1883,7 +1883,7 @@ ellipsoid.show(frame=False,axes=True)
 <div class="para logical" id="subsec-conic-suraces-3variables-7-2-1">
 <div class="para">
 <em class="emphasis">Hyperboloid of One Sheet:</em> Two positive eigenvalues, one negative.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-7-2-1-2">
 \begin{equation*}
 \frac{u^2}{a^2} + \frac{v^2}{b^2} - \frac{w^2}{c^2} = 1.
 \end{equation*}
@@ -1904,7 +1904,7 @@ hyperboloid1.show(frame=False,axes=True,title='Hyperboloid of One Sheets')
 <div class="para logical" id="subsec-conic-suraces-3variables-7-3-1">
 <div class="para">
 <em class="emphasis">Hyperboloid of Two Sheets:</em> One positive eigenvalue, two negative.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-7-3-1-2">
 \begin{equation*}
 -\frac{u^2}{a^2} - \frac{v^2}{b^2} + \frac{w^2}{c^2} = 1.
 \end{equation*}
@@ -1925,7 +1925,7 @@ hyperboloid2.show(frame=False,axes=True)
 <div class="para logical" id="subsec-conic-suraces-3variables-7-4-1">
 <div class="para">
 <em class="emphasis">Elliptic Cone:</em> Two positibve and one negative eigenvalues with no constant term.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-7-4-1-2">
 \begin{equation*}
 \frac{u^2}{a^2} + \frac{v^2}{b^2} - \frac{w^2}{c^2} = 0.
 \end{equation*}
@@ -1946,7 +1946,7 @@ elliptic_cone.show(frame=False,axes=True)
 <div class="para logical" id="subsec-conic-suraces-3variables-7-5-1">
 <div class="para">
 <em class="emphasis">Elliptic Paraboloid: (Bowl-shaped surface)</em> Two positive eigenvalues, one zero.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-7-5-1-2">
 \begin{equation*}
 \frac{u^2}{a^2} + \frac{v^2}{b^2} = \frac{w}{c}.
 \end{equation*}
@@ -1967,7 +1967,7 @@ bowl.show(frame=False,axes=True)
 <div class="para logical" id="subsec-conic-suraces-3variables-7-6-1">
 <div class="para">
 <em class="emphasis">Hyperbolic Paraboloid: (Saddle Surface)</em> One positive eigenvalue, one negative, one zero.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-7-6-1-2">
 \begin{equation*}
 \frac{u^2}{a^2} - \frac{v^2}{b^2} = \frac{w}{c}.
 \end{equation*}
@@ -1988,7 +1988,7 @@ saddle.show(frame=False,axes=True)
 <div class="para logical" id="subsec-conic-suraces-3variables-7-7-1">
 <div class="para">
 <em class="emphasis">Elliptic Cylinder:</em> Two positive eigenvalues, third zero.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-7-7-1-2">
 \begin{equation*}
 \frac{u^2}{a^2} + \frac{v^2}{b^2} = 1.
 \end{equation*}
@@ -2009,7 +2009,7 @@ ell_cyl.show(frame=False,axes=True)
 <div class="para logical" id="subsec-conic-suraces-3variables-7-8-1">
 <div class="para">
 <em class="emphasis">Hyperbolic Cylinder:</em> One positive, one negative, third zero.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-7-8-1-2">
 \begin{equation*}
 \frac{u^2}{a^2} - \frac{v^2}{b^2} = 1.
 \end{equation*}
@@ -2030,7 +2030,7 @@ hyp_cyl.show(frame=False,axes=True)
 <div class="para logical" id="subsec-conic-suraces-3variables-7-9-1">
 <div class="para">
 <em class="emphasis">Parabolic Cylinder:</em> Only one  nonzero eigenvalue.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec-conic-suraces-3variables-7-9-1-2">
 \begin{equation*}
 \frac{u^2}{a^2} = \frac{v}{b}.
 \end{equation*}
