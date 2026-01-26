@@ -1,0 +1,1347 @@
+<section>
+  <title>Vector Space</title>
+  <introduction>
+    <p>
+      Recall the properties (eight) of operation addition and scalar multiplication in <m>\R^n</m> in the <xref ref="vector-space-prop">Exercise</xref>.
+      Any non-empty set with two operations,
+      addition and scalar multiplication satisfying the eight properties is known as vector space.
+      More precisely we have the following definition.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>V</m> be a nonempty set with two operations
+          <m>+\colon V\times V\to V</m> defined by <m>+(x,y):=x+y</m> and multiplication
+          <m>\cdot \colon \R\times V\to V</m> defined by <m>\cdot(\alpha,x):=\alpha \cdot x</m>.
+          Satisfying the following properties:
+          <ol>
+            <li>
+              <title>A1</title>
+              <p>
+                for all <m>x,y\in V</m>, <m>x+y=y+x</m>.
+              </p>
+            </li>
+            <li>
+              <title>A2</title>
+              <p>
+                for all <m>x,y,z\in V</m>, <m>x+(y+z)=(x+y)+z</m>.
+              </p>
+            </li>
+            <li>
+              <title>A3</title>
+              <p>
+                There exists <m>\overline{0}\in V</m> such that for all <m>x\in V</m>,
+                <m>\overline{0}=x+\overline{0}</m>.
+                This <m>\overline{0}</m> is called an additive identity.
+              </p>
+            </li>
+            <li>
+              <title>A4</title>
+              <p>
+                for each <m>x\in V</m>, there is a vector <m>x'\in V</m>,
+                such that <m>x+x'=x'+x=\overline{0}</m>.
+                This <m>x'</m> is called an additive inverse of <m>x</m>.
+              </p>
+            </li>
+            <li>
+              <title>S1</title>
+              <p>
+                for all <m>\alpha\in \R</m> and <m>x,y \in V</m>,
+                <m>\alpha(x+y)=\alpha x+\alpha y</m>.
+              </p>
+            </li>
+            <li>
+              <title>S2</title>
+              <p>
+                for all <m>\alpha,\beta \in \R</m> and <m>x \in V</m>,
+                <m>(\alpha+\beta) x=\alpha x+\beta y</m>.
+              </p>
+            </li>
+            <li>
+              <title>S3</title>
+              <p>
+                for all <m>\alpha,\beta \in \R</m> and <m>x \in V</m>,
+                <m>(\alpha\beta) x=\alpha (\beta x)y=\beta(\alpha x)</m>.
+              </p>
+            </li>
+            <li>
+              <title>S4</title>
+              <p>
+                for all <m>x\in V</m>, <m>1\cdot x=x</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          The set <m>V</m> with <m>`+'</m> and <m>`\cdot'</m> is called a vector space over <m>\R</m>.
+          Elements of <m>V</m> are called vectors.
+        </p>
+      </statement>
+    </definition>
+    <example xml:id="eg-Rn-vs">
+      <statement>
+        <p>
+          <m>\R^n</m> with usual addition and scalar multiplication defined in the Section<nbsp/><xref ref="sec-Rn-vs"/> is a vector space over <m>\R</m>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg-matix-vs">
+      <statement>
+        <p>
+          The set <m>M_{mn}(\R)</m>,
+          the set of all <m>m\times n</m> real matrices with usual matrix addition and scalar multiplication by a real number is a vector space over <m>\R</m>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg-poly-vs">
+      <statement>
+        <p>
+          Fix a natural number <m>n</m>.
+          The set <m>{\cal P}_n(R)</m>,
+          the set of all polynomials of degree less than equal <m>n</m>,
+          with usual polynomial addition and scalar multiplication by a real number is a vector space over <m>\R</m>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg-ralvaluesfun-vs">
+      <statement>
+        <p>
+          Let <m>V</m> be the set of real-valued functions defined on an interval <m>[a, b]</m>.
+          For all <m>f</m> and <m>g</m> in <m>V</m> and <m>\alpha\in \R</m>,
+          define addition and scalar multiplication, respectively, by
+          <me>
+            (f+g)(x):=f(x)+g(x) \text{ and }  (\alpha f)(x):=\alpha f(x)
+          </me>.
+          <m>V</m> is a vector space over <m>\R</m>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg-complex-vs">
+      <statement>
+        <p>
+          The set of complex numbers <m>\mathbb{C}:=\{a+ib:a,b\in \R\}</m>,
+          where <m>i^2=-1</m>, with addition and multiplication defined as
+          <me>
+            (a_1+ib_1)+(a_2+ib_2):=(a_1+a_2)+i(b_1+b_2),  \alpha (a+ib)=(\alpha a)+i(\alpha b)
+          </me>.
+        </p>
+        <p>
+          The set <m>(\mathbb{C},+,\cdot)</m> is a vector space over <m>\R</m>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg-function-vs">
+      <statement>
+        <p>
+          Let <m>X</m> be any nonempty set and define <m>{\cal F}(X,\R):=\{f\colon X\to \R\}</m>,
+          the set of all functions from <m>X</m> to <m>\R</m>.
+          Define addition and scalar multiplication, respectively, by
+          <me>
+            (f+g)(x):=f(x)+g(x) \text{ and }  (\alpha f)(x):=\alpha f(x)
+          </me>.
+          Then <m>({\cal F}(X,\R),+,\cdot)</m> is a vector space over <m>\R</m>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg-rationals-vs">
+      <statement>
+        <p>
+          (i) The set of rational numbers
+          <m>\mathbb{Q}</m> with usual addition and multiplication is a vector space over <m>\mathbb{Q}</m>.
+          However, <m>Q</m> is not a vector space over <m>\R</m>.
+        </p>
+        <p>
+          (ii) <m>\R</m> is a vector space over <m>\mathbb{Q}</m>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg-bijection-vs">
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space over <m>\R</m> and <m>X</m> is a nonempty set.
+          Let <m>\varphi\colon X\to V</m> be a bijection.
+          We define addition and scalar multiplication on <m>X</m> as follows:
+          <me>
+            \text{ for }  x_1,x_2\in X, x_1+x_2:=\varphi(x_1)+\varphi(x_2) \text{ and for }  \alpha \in \R, x\in X \alpha\cdot x=\alpha\cdot \varphi(x)
+          </me>.
+        </p>
+        <p>
+          It is easy to check that <m>X</m> with above addition and scalar multiplication is a vector space over <m>\R</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let <m>V=(0,\infty)</m>.
+          Define addition and scalar multiplication on <m>(0,\infty)</m> as follows:
+          <me>
+            x+y:=xy \text{ and }  \alpha \cdot x:= x^\alpha
+          </me>.
+        </p>
+        <p>
+          Check that <m>(0,\infty)</m> under this addition and scalar multiplication is a vector space over <m>\R</m>.
+          Contrast this example with Example<nbsp/><xref ref="eg-bijection-vs"/>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>L=\{(x,y):y-x=1\}=\{(t,1+t):t\in \R\}</m>.
+          Define addition and scalar multiplication on <m>L</m> by
+          <me>
+            (t_1,1+t_1)+(t_2,1+t_2):=(t_1+t_2,1+t_1+t_2),  \alpha (t,1+t):=(\alpha t,1+\alpha t)
+          </me>.
+        </p>
+        <p>
+          Check that <m>L</m> under this addition and scalar multiplication is a vector space over <m>\R</m>.
+          Contrast this example with Example<nbsp/><xref ref="eg-bijection-vs"/>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>V=\{\bigstar\}</m> be a singleton set.
+          Define addition and scalar multiplication by
+          <me>
+            \bigstar +\bigstar:=\bigstar \text{ and }  \alpha \cdot \bigstar:= \bigstar , \alpha \in \R
+          </me>.
+        </p>
+        <p>
+          Check that <m>V</m> is a vector space over <m>\R</m> under the addition and scalar multiplication defined above.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>V=\R^2</m>.
+          Define addition and scalar multiplication on <m>\R^2</m> as
+          <me>
+            (x_1,x_2)\oplus (y_1,y_2):=(x_1+x_2+1,y_1+y_2+1) \text{ and }  \alpha \odot (x_1,x_2):= (\alpha x_1+c-1,\alpha x_2+c-1)
+          </me>.
+        </p>
+        <p>
+          Check that <m>\R^2,\oplus,\odot)</m> is a vector space over <m>\R</m>.
+          Find the bijection <m>\varphi\colon \R^2\to \R^2</m> is used to covert <m>\R^2</m> into a vector space using these operations.
+          Find additive identity and the additive inverse of
+          <m>(x_1,x_2)</m> in <m>\R^2</m> corresponding to <m>\oplus</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the unit circle <m>S=\{(x_1,x_2):x_1^2+x_2^2=1\}=\{(\cos t,\sin t):t\in \R\}</m>.
+          Define the addition and scalar multiplications by
+          <me>
+            (\cos t,\sin t)+(\cos s,\sin s):=(\cos (t+s),\sin (t+s)),  \alpha \cdot (\cos t,\sin t):= (\cos (\alpha t),\sin (\alpha t))
+          </me>.
+        </p>
+        <p>
+          Show that <m>S</m> is a vector space over <m>\R</m> with respect to the addition and scalar multiplication defined above.
+          Find the additive identity and additive inverse.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>GL_n(\R)</m> denote the set of all
+          <m>n\times n</m> non singular real matrices.
+          Define
+          <me>
+            A\oplus B:=AB, \alpha\odot A:=\alpha A
+          </me>
+          where <m>AB</m> is the usual matrix multiplication,
+          and <m>\alpha A</m> is the usual scalar multiplication.
+          Show that <m>GL_n(\R)</m> is a vector space over <m>\R</m>.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      Next we list the some properties in a vector space <m>V</m> over <m>\R</m>.
+      These properties are easy to prove.
+      Readers are encouraged to prove these properties.
+    </p>
+    <theorem xml:id="thm-vs-prop">
+      <title>Properties</title>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space over <m>\R</m>.
+          Then we have the following properties:
+        </p>
+        <p>
+          (i) Additive identity in <m>V</m> is unique.
+        </p>
+        <p>
+          (ii) Additive inverse in <m>V</m> is unique.
+        </p>
+        <p>
+          (iii) <m>0\cdot v=0</m> for any <m>v\in V</m>.
+        </p>
+        <p>
+          (iv) <m>(-1)\cdot v=-v</m> for all <m>v\in V</m>.
+        </p>
+        <p>
+          (v) <m>-(-v) =v</m> for all <m>v\in V</m>.
+        </p>
+        <p>
+          (vi) If <m>\alpha \cdot v=0</m> then either <m>\alpha=0</m> or <m>v=0</m>.
+        </p>
+        <p>
+          (vii) If <m>v+u=u</m>, then <m>v=0</m>,
+          called the right cancellation.
+          Similarly, we have left cancellation.
+        </p>
+        <p>
+          (viii) If <m>\alpha v=\beta v</m> and <m>v\neq 0</m>, then <m>\alpha=\beta</m>.
+        </p>
+        <p>
+          (ix ) <m>\alpha v=\alpha u</m> and <m>\alpha\neq 0</m>,
+          then <m>u=v</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      In view of these, properties, here onward we will write
+      <q>the additive identity</q>
+      and
+      <q>the additive inverse</q>.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Vector Subspaces</title>
+    <definition>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space over <m>\R</m> and <m>W</m> a nonempty subset of <m>V</m>.
+          The <m>W</m> is called a subspace of <m>V</m>,
+          if <m>W</m> itself is a vector space under the inherited vector addition and scalar multiplication on <m>V</m>.
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <statement>
+        <p>
+          If <m>V</m> is a vector space over <m>\R</m>,
+          then <m>\{0\}</m> and <m>V</m> are two trivial subspaces of <m>V</m>.
+        </p>
+      </statement>
+    </example>
+    <p>
+      Let <m>V</m> be a vector space over <m>\R</m> and <m>W</m> a nonempty subset of <m>V</m>.
+      Assume that <m>W</m> is closed under addition and scalar multiplication on <m>V</m>.
+      For <m>W</m> to be a subspace of <m>V</m>,
+      we need to show that all the eight properties in definition of vector space must be satisfied for elements in <m>W</m>.
+      Fortunately,
+      our task is simplified as most of these properties are inherited from the vector space <m>V</m>.
+      Let <m>w\in W</m>, the <m>0\cdots w=0\in W</m>.
+      Note that we require <m>W\neq \emptyset</m> for this property.
+      Also for <m>w\in W</m>, <m>(-1)w=-w\in W</m>.
+      Thus <m>W</m> contains the additive identity and additive inverse.
+      Remaining conditions are true as elements in <m>V</m> and hence are also true as elements of <m>W</m>.
+      This show that if <m>W</m> nonempty subset of <m>V</m> which is closed under addition and scalar multiplication,
+      then it is subspace of <m>V</m>.
+    </p>
+    <p>
+      If <m>W</m> itself is a vector space under the addition and scalar multiplication on <m>V</m>,
+      then <m>W</m> is closed under addition and scalar multiplication.
+      Thus we have the following result.
+    </p>
+    <theorem xml:id="thm-subspace1">
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space over <m>\R</m> and <m>W</m> a nonempty subset of <m>V</m>.
+          Then <m>W</m> is a subspace of <m>V</m> if and only if <m>W</m> is closed under addition and scalar multiplication.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Thus in order to check that if a nonempty subset <m>W\subset V</m> is a subspace,
+      all we need to check that it is closed under addition and scalar multiplication inherited from <m>V</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>V=\R^2</m> with usual addition and scalar multiplication.
+        </p>
+        <p>
+          (i) Any line in <m>\R^2</m> passing through the origin is a subspace of <m>\R^2</m>.
+        </p>
+        <p>
+          (ii) The line <m>L=\{(t,1-t)\}</m> is not a subspace of <m>\R^2</m>,
+          as it does not contain the origin.
+        </p>
+        <p>
+          (iii) The <m>W_1=\{(x,y):x\geq 0,y\geq 0\}</m>,
+          the first quadrant is not a subspace as it is not closed under scalar multiplication
+          (why?).
+          However, it is closed under addition.
+        </p>
+        <p>
+          (iv) The <m>W_2=\{(x,y):xy\geq 0\}</m>,
+          the the union of first and third quadrant is not a subspace as it is not closed addition
+          (why?).
+          However it is closed under scalar multiplication.
+        </p>
+        <p>
+          In fact, <m>\{0\}, \R^2</m> and any line passing through origin are only subspaces of <m>\R^2</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let <m>V=\R^3</m> with usual addition and scalar multiplication.
+        </p>
+        <p>
+          (i) Any line in <m>\R^3</m> passing through the origin is a subspace of <m>\R^3</m>.
+        </p>
+        <p>
+          (ii) Any plane in <m>\R^3</m> passing through the origin is a subspace of <m>\R^3</m>.
+        </p>
+        <p>
+          (iii) If <m>W</m> is a subspace of <m>\R^3</m>,
+          then <m>W</m> is one of the following:
+          <m>\{0\}</m>, <m>\R^3</m>,
+          a line passing through origin,
+          a plane passing through origin.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="fundamentalsubspaces">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m\times n</m> real matrix.
+          Then we have the following subspaces associated to <m>A</m>.
+        </p>
+        <p>
+          (i) <m>{ Null}(A)={\cal N}(A)={ ker}(A)</m> is subspace of <m>\R^n</m>
+        </p>
+        <p>
+          (ii) <m>{Row}(A)</m> is subspace of <m>\R^n</m>
+        </p>
+        <p>
+          (iii) <m>{ Col}(A)={ Im}(A)={\cal R}(A)</m> is subspace of <m>\R^m</m>
+        </p>
+        <p>
+          (iv) <m>{\cal L}(A)={ Null}(A^T)</m> is subspace of <m>\R^m</m>.
+        </p>
+        <p>
+          The above four subspaces are called
+          <em>fundamental subspaces</em> associated to <m>A</m>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="matrix-subspaces">
+      <statement>
+        <p>
+          Let <m>V = M_n(\R)</m>, the set of all
+          <m>n\times n</m> real matrices with usual matrix addition and scalar multiplication.
+        </p>
+        <p>
+          (i) <m>S=\{A\in M_n(\R): A=A^T\}</m> is a subspace of <m>V</m>.
+        </p>
+        <p>
+          (ii) <m>K=\{A\in M_n(\R): A+A^T=0\}</m> is a subspace of <m>V</m>.
+        </p>
+        <p>
+          (iii) <m>W=\{A\in M_n(\R): { trace}(A)=0\}</m> is a subspace of <m>V</m>.
+        </p>
+        <p>
+          (iv) <m>G_n(\R)</m> is not a subspace of <m>V</m>.
+        </p>
+        <p>
+          (v) <m>\{A\in V: { det}(A)=0\}</m> is not a subspace of <m>V</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Fix a matrix <m>P\in M_n(\R)</m>.
+          Define <m>W=\{A\in M_n(\R):AP=PA\}</m>.
+          Show that <m>W</m> is a subspace of <m>M_n(\R)</m>.
+        </p>
+      </statement>
+    </exercise>
+    <example>
+      <statement>
+        <p>
+          Let <m>V=\{f\colon \R\to \R\}={\cal F}(\R,\R)</m> set of all functions from
+          <m>\R\to \R</m> with addition and scalar multiplication defined as in <xref ref="eg-function-vs">Example</xref>.
+          Let us look at some of the subspaces of <m>V</m>.
+        </p>
+        <p>
+          (i) <m>B(\R)</m>,
+          the set of all bounded functions from <m>\R</m> to <m>\R</m> is a subspace of <m>V</m>.
+        </p>
+        <p>
+          (ii) <m>{\cal C}(\R)</m>,
+          the set of all continuous functions from <m>\R</m> to <m>\R</m> is a subspace of <m>V</m>.
+        </p>
+        <p>
+          (iii) <m>{\cal D}(\R)</m>,
+          the set of all differentiable functions from <m>\R</m> to <m>\R</m> is a subspace of <m>V</m>.
+        </p>
+        <p>
+          (iv) Fix <m>a\in \R</m> and
+          <m>W=\{f\colon \R\to \R: f(a)=0\}</m> is a subspace of <m>V</m>.
+          (What if we take all functions vanishing at finitely many points.)
+        </p>
+        <p>
+          (iv) <m>W</m> is the set of even functions from
+          <m>\R\to \R</m> is a subspace of <m>V</m>.
+          What about set of odd functions?
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space over <m>\R</m>.
+          Let <m>W_1</m> and <m>W_2</m> be two subspaces of <m>V</m>.
+          Then
+        </p>
+        <p>
+          (i) <m>W_1\cap W_2</m> is a subspace of <m>V</m>.
+          What about <m>W_1\cup W_2</m>?
+        </p>
+        <p>
+          (ii) <m>W_1+W_2=\{w_1+w_2:w_1\in W_2,w_2\in W_2\}</m> is a subspace of <m>V</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space over <m>\R</m>.
+          Let <m>S=\{v_1,\ldots, v_k\}</m> be a subset of <m>V</m>.
+          Then the linear span defined as
+          <me>
+            L(S):=\{\alpha_1 v_1+\cdots+\alpha_kv_k:\alpha_1,\ldots,\alpha_k\in \R\}
+          </me>
+          is a subspace of <m>V</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Linear Span</title>
+    <p>
+      We have already defined linear combinations linear span of a set of vectors in <m>\R^n</m>.
+      The same one can defined in any vector space.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space over <m>\R</m>.
+          Let <m>S=\{v_1,\ldots, v_k\}</m> be a set of vectors in <m>V</m>.
+          Then a vector <m>v</m> is called a linear combination of
+          <m>v_1,\ldots,
+          v_k</m> if there exist scalars <m>\alpha_1,\ldots, \alpha_k</m> such that
+          <me>
+            v = \alpha_1 v_1+\cdots+\alpha_kv_k
+          </me>.
+        </p>
+        <p>
+          The set
+          <me>
+            L(S):=\{\alpha_1 v_1+\cdots+\alpha_kv_k:\alpha_1,\ldots,\alpha_k\in \R\}
+          </me>
+          is called the linear span or spanning set of <m>v_1,\ldots, v_k</m>.
+          We know that <m>L(S)</m> is a vector space of <m>V</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      If <m>S</m> is any subset of <m>V</m>
+      (may be infinite),
+      then <m>L(S)</m> is the set of all finite linear combinations of elements from <m>S</m>.
+      In particular,
+      <m>v\in L(S)</m> if there exits <m>k\in \N</m> and scalars
+      <m>\alpha_1,\ldots,\alpha_k\in \R</m> such that <m>v = \alpha_1 v_1+\cdots+\alpha_kv_k</m>.
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          For any subset <m>S\subset V</m>,
+          <m>L(S)</m> is a subspace of <m>V</m>.
+        </p>
+      </statement>
+    </exercise>
+    <example>
+      <statement>
+        <p>
+          Let <m>v_1=(1,2,-1)</m> and
+          <m>v_2=(3,1,2)</m> and <m>W = \{\alpha_1v_1+\alpha_2v_2:\alpha_1,\alpha_2\in \R\}</m>.
+          What is <m>W</m>?
+          Can identify it geometrically?
+          Yes, it is a plane passing through the origin.
+          That the <m>W</m> can be written as
+          <m>W=\{(x,y,z):ax+by+cz=0\}</m> for some <m>(a,b,c)\neq (0,0,0)</m>?
+          Can you find what are <m>a,b,c</m>.
+        </p>
+        <p>
+          From the concept of dot product,
+          it easy to identify <m>(a,b,c)</m> as a vector which is orthogonal/perpendicular to both <m>v_1</m> and <m>v_2</m>.
+          In particular,
+          we can find <m>(a,b,c)</m> and <m>v_1\times v_2</m>,
+          the cross product of <m>v_1</m> and <m>v_2</m>.
+        </p>
+        <p>
+          Suppose, we do not want to use the above concept to find <m>(a,b,c)</m>,
+          then what do we do?
+        </p>
+        <p>
+          Suppose <m>(x,y,z)\in W</m>, Then there exists scalars <m>\alpha</m> and <m>\beta</m> such that
+          <me>
+            \begin{pmatrix}x\\y\\z \end{pmatrix}  =\alpha \begin{pmatrix}1\\2\\-1 \end{pmatrix} +\beta \begin{pmatrix}3\\1\\2 \end{pmatrix}  = \begin{pmatrix}1 \amp  3\\2 \amp  1 \\-1 \amp  2 \end{pmatrix} \begin{pmatrix}\alpha\\\beta \end{pmatrix}
+          </me>.
+        </p>
+        <p>
+          In particular,
+          <m>W</m> is the image space of <m>\begin{pmatrix}1 \amp 3\\2 \amp 1 \\-1 \amp 2 \end{pmatrix}</m>.
+        </p>
+        <p>
+          We need to find <m>(a,b,c)</m> such that
+          <m>ax+by+cz=0</m> for any <m>(x,y,z)\in W</m>.
+          In particular, we have
+          <me>
+            a(\alpha+2\beta)+b(2\alpha+\beta)+c(-\alpha+2\beta)=0
+          </me>
+          for any <m>\alpha,\beta\in \R</m>.
+          Note that <m>\alpha,\beta</m> is our choice and we can choose conveniently to find <m>a,
+          b, c</m>.
+          It is easy to see that
+          <md>
+            <mrow>a+2b-c \amp  = \amp  0, \text{ for \(\alpha=1,\beta=0\) }</mrow>
+            <mrow>3a+b+2c \amp  = \amp  0, \text{ for \(\alpha=0,\beta=1\) }</mrow>
+          </md>
+        </p>
+        <p>
+          This is same say substituting <m>v_1,v_2</m> in the equation <m>ax=by=cz=0</m>.
+        </p>
+        <p>
+          In particular, we have <m>a,b,c</m> such that
+          <me>
+            \begin{pmatrix}1 \amp  2 \amp  -1\\ 3 \amp  1 \amp  2 \end{pmatrix} \begin{pmatrix}a\\b\\c \end{pmatrix} =0
+          </me>.
+        </p>
+        <p>
+          Thus <m>(a,b,c)</m> is the kernel of
+          <m>B=\begin{pmatrix}1 \amp 2 \amp -1\\ 3 \amp 1 \amp 2 \end{pmatrix}</m> and <m>W</m> is the orthogonal complement of kernel of <m>B</m>.
+        </p>
+        <p>
+          Solving the above equations,
+          we can find <m>a=1,b=-1,c=-1</m> as one of the choices.
+          This implies <m>W</m> is the plane <m>x-y+z=0</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>V=M_2(\R)</m> with usual addition and scalar multiplication
+          <me>
+            S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  1 \\1 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\0 \amp  1 \end{bmatrix} \right\}
+          </me>.
+        </p>
+        <p>
+          Then <m>L(S)</m> is the set of <m>2\times 2</m> symmetric matrices.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>V=M_2(\R)</m> with usual addition and scalar multiplication
+          <me>
+            S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  1 \\0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\1 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\0 \amp  1 \end{bmatrix} \right\}
+          </me>.
+        </p>
+        <p>
+          Then <m>L(S)=M_2(\R)</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>S =\{1,x,x^2,\ldots, x^n\}</m>.
+          Then <m>L(S)</m> is the set of all polynomials of degree less than or equals to <m>n</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>S_1,S_2\subset V</m> such that <m>S_1\subset S_2</m>.
+          Then show that <m>L(S_1)</m> is a subspace of <m>L(S_2)</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>u,v\in V</m>.
+          Then show that <m>L(\{u,v\})=L(\{u-v,2u+3v\})</m>.
+        </p>
+      </statement>
+    </exercise>
+    <definition xml:id="smallest-subspace">
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space and <m>S\subset V</m>.
+          A subspace <m>W</m> of <m>V</m> is called the smallest subspace of <m>V</m> containing <m>S</m> if (i) <m>W</m> is subspace of <m>V</m> with <m>S\subset W</m>,
+          and (ii) if <m>W'</m> is subspace of <m>V</m> with
+          <m>S\subset W'</m>, then <m>W\subset W'</m>.
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <statement>
+        <p>
+          (i) Let <m>v\in V</m>.
+          Then <m>\R v=L(\{v\})</m> is the smallest subspace of <m>V</m> containing <m>v</m>.
+        </p>
+        <p>
+          (ii) Let <m>S=\{v_1,\ldots,v_k\}\subset V</m>.
+          Then <m>L(S)</m> is the smallest subspace of <m>V</m> containing <m>S</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>L</m> is a line in the plane?
+          Then what is <m>L(S)</m>?
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection xml:id="def-dim-VS">
+    <title>Linear dependence and independence</title>
+    <p>
+      Linear dependence and linear independence set of vectors are defined exactly in a same way as we defined in <m>\R^n</m>. (See Definition.
+      <xref ref="LD-LI-Rn"></xref>)
+    </p>
+    <definition xml:id="LD-VS">
+      <statement>
+        <p>
+          A set of vectors <m>\{v_1,v_2,\ldots,
+          v_k\}\subset V</m> is said to be linearly dependent if there exists scalars
+          <m>\alpha_1,\alpha_2,\ldots \alpha_k</m> not all zero such that <m>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0</m>.
+        </p>
+        <p>
+          It is easy to see that <m>S=\{v_1,v_2,\ldots,
+          v_k\}\subset V</m> is linearly dependent if there exists
+          <m>i=\{1,\ldots,k\}</m> such that <m>v_i\in L(S\setminus \{v_i\})</m>.
+        </p>
+      </statement>
+    </definition>
+    <definition xml:id="LI-VS">
+      <statement>
+        <p>
+          A set of vectors <m>S=\{v_1,v_2,\ldots,
+          v_k\}\subset V</m> is said to be linearly independent if it is not linearly dependent.
+        </p>
+        <p>
+          Let us understand this notion in order to get a working definition.
+          Let us write the linearly dependent definition using quantifiers.
+        </p>
+        <p>
+          A set <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly dependent if
+          <me>
+            \exists (\alpha_1,\ldots,\alpha_k)\in \R^n\{0\} (\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k=0)
+          </me>.
+        </p>
+        <p>
+          <m>S</m> is linearly independent is same as negating the above statement.
+          Thus
+        </p>
+        <p>
+          A set <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly independent if
+          <me>
+            \forall(\alpha_1,\ldots,\alpha_k)\in \R^n\{0\}(\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k\neq 0)
+          </me>.
+        </p>
+        <p>
+          The contra positive of the above statement state that A set
+          <m>S=\{v_1,v_2,\ldots,
+          v_k\}\subset V</m> is linearly independent whenever
+          <m>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_k v_k\neq 0</m> implies <m>\alpha_1=\cdots=\alpha_k=0</m>.
+        </p>
+      </statement>
+    </definition>
+    <exercise>
+      <statement>
+        <p>
+          If <m>0\in S</m>, then <m>S</m> is linearly dependent.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          (i) If <m>0\neq v\in V</m>, then <m>\{v\}</m> is linearly independent.
+        </p>
+        <p>
+          (iv) <m>\{u,v\}\subset V</m> is linearly dependent if one is scalar multiple of the other.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          (i) Let <m>V={\cal P}_n(\R)</m>.
+          The set <m>\{1,x,x^2,\ldots, x^n\}</m> is linearly independent.
+        </p>
+        <p>
+          (ii) Check if <m>\{1+x+x^2+x^3,x+x^3,x^2+x^3,x^3\}</m> is linearly independent in <m>{\cal P}_3(\R)</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>A\in M_n({\R})</m> such that <m>A^k=0</m> and <m>A^{k-1}\neq 0</m>.
+          Then show that
+          <me>
+            \{I, A, A^2,\ldots, A^{k-1}\}
+          </me>
+          is linearly independent in <m>M_n(\R)</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>S=\{v_1,v_2,\ldots, v_k\}\subset V</m> is linearly independent set.
+          Suppose <m>v\in V</m> such that
+          <me>
+            v=\alpha_1 v_1+\cdots \alpha_k v_k=\beta_1 v_1+\cdots \beta_k v_k
+          </me>
+          for scalars, <m>\alpha_i</m>'s and <m>\beta_j</m>'s.
+          Then <m>\alpha_1\beta_1=\cdots=\alpha_k=\beta_k</m>.
+          In other words,
+          every vector in <m>V</m> can be written in a unique way as a linear combination of the elements from <m>S</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>u,v,w</m> be three vectors in <m>V</m>.
+          Show that <m>\{u,v,w\}</m> is linearly independent if and only if
+          <m>\{u+v,u+w,v+w\}</m> is linearly independent.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      We can defined basis of a vector space similar to <xref ref="def-basis-Rn">Definition</xref>.
+    </p>
+    <definition xml:id="def-basis-VS">
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space over <m>\R</m>.
+          A set of vectors <m>\beta=\{v_1,v_2,\ldots,v_n\}\subset V</m> is called a basis of <m>V</m> if every vector
+          <m>v\in \R^n</m> can be expressed uniquely as linear combinations of <m>v_1,v_2,\ldots,v_n</m>.
+        </p>
+        <p>
+          Thus <m>\beta</m> is basis of <m>V</m> if (i) <m>L(\beta)=\R^n</m>,
+          that every vector <m>v\in \R^n</m> can be expressed as linear combinations of <m>v_1,v_2,\ldots,v_n</m>.
+        </p>
+        <p>
+          (ii) If <m>v=\alpha_1v_1+\alpha_2v_2+\cdots +\alpha_nv_n</m> and <m>v=\beta_1v_1+\beta_2v_2+\cdots +\beta_nv_n</m>,
+          then <m>\alpha_1=\beta_1, \alpha_2=\beta_2=\cdots,\alpha_n=\beta_n</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We have already seen several examples of bases in <m>\R^n</m> and some subspaces of <m>\R^n</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>V={\cal P}_n(\R)</m>.
+          The set <m>\{1,x,x^2,\ldots,
+          x^n\}</m> is basis of <m>V</m>,
+          called the standard basis.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          <m>\{1,i\}</m> is a basis of
+          <m>\mathbb{C}</m> as a vector space over <m>\R</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <me>
+          S=\left\{ \begin{bmatrix}1 \amp  0 \\0 \amp  0
+          \end{bmatrix} ,
+          \begin{bmatrix}0 \amp  1 \\0 \amp  0
+          \end{bmatrix} , \begin{bmatrix}0 \amp  0 \\1 \amp  0
+          \end{bmatrix} ,
+          \begin{bmatrix}0 \amp  0 \\0 \amp  1
+          \end{bmatrix} \right\}
+        </me>.
+        <p>
+          is a basis <m>M_2(\R)</m>, called the standard basis.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Any <m>n</m> linearly independent set of vectors forms a basis of <m>\R^n</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise xml:id="Invariance-Thm">
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space over <m>R</m>.
+          Let <m>\beta=\{v_1,\ldots,
+          v_n \}</m> and <m>\gamma=\{u_1,\ldots,
+          u_m\}</m> be two bases of <m>V</m>.
+          Then <m>m=n</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="exer-basis-93">
+      <statement>
+        <p>
+          If a vector space <m>V</m> has a basis of consisting <m>n</m> elements then any set of <m>n + 1</m> vectors is linearly dependent.
+        </p>
+      </statement>
+    </exercise>
+    <definition xml:id="def-finite-dim-VS">
+      <statement>
+        <p>
+          A vector space <m>V</m> is called
+          <em>finite dimensional</em>
+          if there exists a finite subset <m>S</m> of <m>V</m> such that <m>L(S)</m>.
+        </p>
+        <p>
+          A vector space which is not finite dimensional is called an infinite dimensional.
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          We say a vector space <m>V</m> is of dimension <m>n</m> if it has a basis <m>\beta</m> consisting of <m>n</m> elements.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      What is the dimension of <m>V=\{0\}</m>, the zero space?
+    </p>
+    <example>
+      <statement>
+        <p>
+          (i) <m>\R^n</m> is a <m>n</m> dimensional vectors space over <m>\R</m>.
+        </p>
+        <p>
+          (ii) <m>M_n(\R)</m> is a <m>n^2</m>-dimensional vector space over <m>\R</m>.
+        </p>
+        <p>
+          (iii) <m>{\cal P}_n(\R)</m> is <m>(n+1)</m>-dimensional vector space over <m>\R</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let <m>W</m> be the set of all
+          <m>3\times 3</m> real symmetric matrices.
+          The set
+          <me>
+            \beta=\left\{\begin{bmatrix}1 \amp  0 \amp  0 \\0 \amp  0 \amp  0 \amp  \\ 0 \amp  0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \amp  0 \\0 \amp  1 \amp  0 \amp  \\ 0 \amp  0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \amp  0 \\0 \amp  0 \amp  0 \amp  \\ 0 \amp  0 \amp  1 \end{bmatrix} , \begin{bmatrix}0 \amp  1 \amp  0 \\1 \amp  0 \amp  0  \\ 0 \amp  0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \amp  1 \\0 \amp  0 \amp   0 \\ 1 \amp  0 \amp  0 \end{bmatrix} , \begin{bmatrix}0 \amp  0 \amp  0 \\0 \amp  0 \amp  1 \amp  \\ 0 \amp  1 \amp  0 \end{bmatrix} \right\}
+          </me>
+          is a basis of <m>W</m>.
+          That is <m>W</m> is 6 dimensional vector space over <m>\R</m>.
+          What is dimension of the set of
+          <m>n\times n</m> real symmetric matrices.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>W</m> be the set of all
+          <m>3\times 3</m> real skew-symmetric matrices.
+          Find a basis and hence the dimension of <m>W</m>.
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>How to find a basis of a finite dimensional vector space?</title>
+    <p>
+      First let us look at the following result.
+    </p>
+    <exercise xml:id="exer97">
+      <statement>
+        <p>
+          Let <m>\{v_1,\ldots,
+          v_k\}</m> be a linearly independent set of vectors.
+          Suppose <m>v\notin { span}(\{v_1,\ldots, v_k\})</m>.
+          Then <m>\{v,v_1,\ldots, v_k\}</m> is linearly independent.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="exer97">
+      <statement>
+        <p>
+          Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
+          Then any linearly independent set
+          <m>S =\{v_1,\ldots,
+          v_k\}</m> can be extended to a basis of <m>V</m>.
+          More precisely, there exists vectors,
+          <m>u_1,\ldots,
+          u_{n-k}</m> where <m>n={ dim}(V)</m> such that
+          <m>\beta=\{v_1,\ldots,
+          v_k,u_1,\ldots, u_{n-k}\}</m> is a basis of <m>V</m>.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      This exercise give a way to find a basis of a finite dimensional vector space starting with a nonzero vector in <m>V</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Complete the set <m>S=\{v_1=(1, 2, 1, 0),
+          v_2=(2, 2, 1, 0)\}</m> to a basis of <m>\R^4</m>.
+          One way of achieving this to find <m>v_3\notin L(S)</m>.
+          Then Chose <m>v_4\notin L(\{v_3\}\cup S)</m>.
+          Then in view of <xref ref="exer97">Exercise</xref>,
+          <m>\beta=\{v_1,v_2,v_3,v_4\}</m> is linearly independent.
+          Since <m>\dim(\R^4)=4</m>, <m>\beta</m> is a basis of <m>\R^4</m>.
+        </p>
+        <p>
+          Another way to achieve this is to look at the standard basis vectors <m>e_i</m> not in <m>L(S)</m>.
+          In particular, <m>v_3,v_4\in\{e_1,e_2,e_3,e_4\}</m>.
+          In order to find this we can apply RREF to the matrix
+          <m>\begin{bmatrix}v_1\amp  v_2 \amp  e_2 \amp  e_2 \amp  e_3 \amp  e_4 \end{bmatrix}</m> and choose columns corresponding to the pivots.
+          We have
+          <me>
+            \left[\begin{array}{rrrrrr} 1 \amp  2 \amp  1 \amp  0 \amp  0 \amp  0 \\ 2 \amp  2 \amp  0 \amp  1 \amp  0 \amp  0 \\ 1 \amp  1 \amp  0 \amp  0 \amp  1 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  1 \end{array} \right]\xrightarrow{RREF} \left[ \begin{array}{rrrrrr} 1 \amp  0 \amp  -1 \amp  0 \amp  2 \amp  0 \\ 0 \amp  1 \amp  1 \amp  0 \amp  -1 \amp  0 \\ 0 \amp  0 \amp  0 \amp  1 \amp  -2 \amp  0 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  1 \end{array} \right]
+          </me>.
+        </p>
+        <p>
+          Clearly pivot columns are 1,2,4,6, which corresponds to vector <m>v_1,v_2,v_2, v_4</m>.
+          Thus <m>\{v_1,v_2,e_2,e_4\}</m> is an extended basis of <m>\R^4</m>.
+        </p>
+      </statement>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
+          Suppose <m>S</m> is a finite set such that <m>L(S)=V</m>.
+          Then there exists a subset
+          <m>S'\subset S</m> such that <m>S'</m> is a basis of <m>V</m>.
+        </p>
+      </statement>
+    </exercise>
+    <example>
+      <statement>
+        <p>
+          Consider <m>v_1,\ldots, v_8</m> in <m>\R^5</m>, where
+          <me>
+            \begin{split} v_1=(2, -3, 4, -5, -2), v_2=(-6, 9, -12, 15, -6), v_3=(3, -2, 7, -9, 1), v_4=(2, -8, 2, -2, 6),\\ v_5=(-1, 1, 2, 1, -3), v_6=(0, -3, -18, 9, 12), v_7=(1, 0, -2, 3, -2), v_8=(2, -1, 1, -9, 7) \end{split}
+          </me>
+        </p>
+        <p>
+          We wish to find a subset of
+          <m>\{v_1,\ldots,
+          v_8\}</m> which is a basis of <m>\R^5</m>.
+          We can achieve this by applying RREF to the column matrix <m>\begin{bmatrix}v_1\amp  v_2\amp \cdots \amp  v_8 \end{bmatrix}</m>.
+          Thus
+          <me>
+            \left[\begin{array}{rrrrrrrr} 2 \amp  -6 \amp  3 \amp  2 \amp  -1 \amp  0 \amp  1 \amp  2 \\ -3 \amp  9 \amp  -2 \amp  -8 \amp  1 \amp  -3 \amp  0 \amp  -1 \\ 4 \amp  -12 \amp  7 \amp  2 \amp  2 \amp  -18 \amp  -2 \amp  1 \\ -5 \amp  15 \amp  -9 \amp  -2 \amp  1 \amp  9 \amp  3 \amp  -9 \\ -2 \amp  -6 \amp  1 \amp  6 \amp  -3 \amp  12 \amp  -2 \amp  7 \end{array} \right]\xrightarrow{RREF} \left[\begin{array}{rrrrrrrr} 1 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \\ 0 \amp  1 \amp  0 \amp  -\frac{4}{3} \amp  0 \amp  -\frac{1}{3} \amp  0 \amp  \frac{1}{3} \\ 0 \amp  0 \amp  1 \amp  -2 \amp  0 \amp  -2 \amp  0 \amp  1 \\ 0 \amp  0 \amp  0 \amp  0 \amp  1 \amp  -4 \amp  0 \amp  -2 \\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  0 \amp  1 \amp  -1 \end{array} \right]
+          </me>
+        </p>
+        <p>
+          Clearly pivot columns are 1, 2, 3, 5, 7.
+          Hence <m>\{v_1,v_2,v_3,v_5,v_7\}</m> is basis of <m>\R^5</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Lagrange Interpolation</title>
+    <p>
+      Consider the vector space <m>{\cal P}_n(\R)</m>.
+      Fix <m>n+1</m> distinct real numbers <m>c_0,c_1,\ldots, c_n</m>.
+      Define polynomials
+      <men xml:id="lagrange-eq1">
+        \ell_i(x)=\frac{(x-c_0)\cdots (x-c_{i-1})(x-c_{i+1})\cdots(x-c_n)}{(c_i-c_0)\cdots (c_i-c_{i-1})(c_i-c_{i+1})\cdots(c_i-c_n)}=\prod_{j=0,j\neq i}^{n}\frac{x-c_j}{c_i-c_j}
+      </men>.
+    </p>
+    <p>
+      It is easy to see that <m>\ell_i(c_j)=1</m> if <m>j=i</m> and 0 otherwise.
+      We claim that <m>\{\ell_i\}_{i=0}^n</m> is a linearly independent subset of <m>{\cal P}_n(\R)</m>.
+      For
+      <men xml:id="lagrange-eq2">
+        \alpha_0\ell_0 + \alpha_1\ell_1+\cdots+\alpha_n\ell_n=\sum\alpha_i\ell_i=0
+      </men>.
+    </p>
+    <p>
+      Here the right hand side is the zero polynomial.
+      This implies <m>\sum\alpha_i\ell_i(c_j)=0</m> for all <m>j=0,\ldots, n</m>.
+      Since <m>\sum\alpha_i\ell_i(c_j)=\alpha_j</m>,
+      it implies that <m>\alpha_j=0</m> for all <m>j=0,\ldots, n</m>.
+      Hence the claim.
+    </p>
+    <p>
+      Since <m>{\cal P}_n(\R)</m> is <m>(n+1)</m>-dimensional vector space,
+      the set <m>\{\ell_i\}_{i=0}^n</m> is a basis.
+      Hence every <m>n</m>-th degree polynomial can be expressed uniquely as linear combination of <m>\ell_i</m>.
+      Suppose <m>g</m> is polynomial passing through points
+      <m>\{(x_i,y_i)\}_{i=0}^n</m>, (that is <m>g(x_i)=y_i)</m>) where
+      <m>x_0,\ldots,x_n</m> are <m>n</m> distinct real numbers.
+      This unique polynomial is given by
+      <men xml:id="lagrange-eq3">
+        g(x)=\sum_{i=0}^n \ell_i(x)y_i
+      </men>
+      called the <em>Lagrange interpolation</em>
+      polynomial passing through <m>\{(x_i,y_i)\}_{i=0}^n</m>.
+    </p>
+    <p>
+      In the following theorem we mention the equivalent condition for a set to be a basis of a finite dimensional vector space.
+    </p>
+    <definition xml:id="maxLI">
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space.
+          A set of vectors <m>S</m> of <m>V</m> is called a maximal linearly independent set if
+          <m>S\cup \{v\}</m> is linearly dependent for any vector <m>v\in V</m>.
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <statement>
+        <p>
+          (i) Any set <m>S</m> with two linearly independent set of vectors in <m>\R^2</m> is a maximal linearly independent set.
+        </p>
+        <p>
+          (ii) Any set <m>S</m> with three linearly independent set of vectors in <m>\R^3</m> is a maximal linearly independent set.
+        </p>
+      </statement>
+    </example>
+    <definition xml:id="minimalgenerator">
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space.
+          A set of vectors <m>S</m> of <m>V</m> is called a minimal set of generators if (i) <m>L(S)=V</m> and (ii) for any <m>u\in S</m>,
+          <m>L(S\setminus \{u\})\neq V</m>.
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <statement>
+        <p>
+          (i) Any set <m>S</m> with two linearly independent set of vectors in <m>\R^2</m> is a minimal set of generators.
+        </p>
+        <p>
+          (ii) Any set <m>S</m> with three linearly independent set of vectors in <m>\R^3</m> is a minimal set of generators.
+        </p>
+      </statement>
+    </example>
+    <theorem xml:id="thm-basis-equiv">
+      <statement>
+        <p>
+          Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
+          Then the following are equivalent.
+          <ol>
+            <li>
+              <p>
+                <m>\beta=\{v_1,\ldots,v_n\}</m> is a basis of <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>L(\beta)=V</m> and <m>\beta</m> is linearly independent.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\beta</m> is maximal linearly independent set.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\beta</m> is minimal set of generators.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+  </subsection>
+  <subsection>
+    <title>Dimension Formula</title>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>V</m> be a finite dimensional vector space over <m>\R</m>.
+          Let <m>W_1</m> and <m>W_2</m> be subspaces of <m>V</m>.
+          Then
+          <me>
+            W_1+W_2:= \{x+y:x\in W_2,y\in W_2\}
+          </me>.
+        </p>
+        <p>
+          It is easy to check that <m>W_1+W_2</m> is a subspace of <m>V</m>.
+          Moreover
+          <md>
+            <mrow xml:id="dimension-formula" number="yes">\dim{(W_1+W_2)}=\dim{(W_1)}+\dim{(W_2)}-\dim{(W_1\cap W_2)}</mrow>
+          </md>
+        </p>
+      </statement>
+    </exercise>
+    <example>
+      <statement>
+        <p>
+          Let <m>V=\R^3</m>.
+          Consider subspaces <m>W_1=\{(x_1,x_2,x_3):x_1+x_2+x_3=0\}</m> and <m>W_2=\{(x_1,x_2,x_3):x_1+x_2-x_3=0\}</m>.
+          Clearly <m>W_1</m> and <m>W_2</m> are subspaces of <m>V</m> each of dimension 2.
+          What is <m>W_1\cap W_2</m>?
+          It is the line of intersection of the two planes,
+          <m>x_1+x_2+x_3=0</m> and <m>x_1+x_2-x_3=0</m>.
+          Thus <m>\dim{(W_1\cap W_2)}=1</m>.
+          It is easy to see that
+          <me>
+            W_2\cap W_2=\{\alpha(1,-1,0):\alpha\in\R\}
+          </me>
+        </p>
+        <p>
+          What is <m>W_1+W_2</m>?
+          One can easily show that <m>W_1+W_2=\R^3=V</m>.
+          However by dimension formula
+          <me>
+            \dim{(W_1+W_2)}=\dim{(W_1)}+\dim{(W_2)}-\dim{(W_1\cap W_2)}=2+2-1=3
+          </me>.
+        </p>
+        <p>
+          Since <m>W_1+W_2</m> is a 3 dimensional subspace of <m>\R^3</m>,
+          it is in fact <m>\R^3</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Exercise Set</title>
+    <ol>
+      <li>
+        <p>
+          Check if the following set of vectors are linearly independent or dependent. (i) <m>\{(1,0,1,2), (0,1,1,2),(1,1,1,3)\}</m> (ii)
+          <m>\left\{\begin{bmatrix}1 \amp 0 \\3 \amp 2 \end{bmatrix} , \begin{bmatrix}-1 \amp 2 \\3 \amp 2 \end{bmatrix} , \begin{bmatrix}5 \amp -6 \\-3 \amp -2 \end{bmatrix} \right\}</m>. (iii) <m>\{(1,0,3),(1,2,4),(1,4,5)\}</m>. (iv)
+          <m>\{(1, 0, -2, 5), (2, 1, 0, -1), (1, 1, 2, 1)\}</m>. (v) <m>\{(1, 1, 0, 0), (1, 0, 1, 0), (0, 0, 1, 1), (0, 1, 0, 1)\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Show that (i) <m>\{(1,-1),(2,1)\}</m> is a basis of <m>\R^2</m>. (ii)
+          <m>\{(1,1,-1),(-1,1,1),(1,-1,1)\}</m> is a basis of <m>\R^3</m>. (iii)
+          <m>\{(1,-1,1,2),(-1,1,1,2),(1,-1,2,1),(-1,1,2,1)\}</m> is a basis of <m>\R^4</m>. (iv) Show that any <m>n+1</m> vectors in <m>\R^n</m> are linearly independent.
+          State the result clearly that is used.
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider the plane <m>W=\{(x_1,x_2,x_3)\in \R^3:x_1-2x_2+x_3=0\}</m>.
+          Find a basis of <m>W</m> and hence find the dimension of <m>W</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the dimensions of the following subspaces. (i)
+          <m>W:=\{(x_1,\ldots,x_n):x_1+\cdots+x_n=0\}</m> and (ii) <m>W=\{(x_1,x_2,x_3,x_4)\in \R^4:x_1=x_3,x_2=x_4\}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider bases <m>\beta=\{(1,-1),(1,2)\}</m> and <m>\gamma =\{(2,3),(1,3)\}</m> of <m>\R^2</m>.
+          Let <m>x=(5,7)</m>.
+          Find the coordinates <m>x_\beta</m> and
+          <m>x_\gamma</m> of <m>x</m> with respect to <m>\beta</m> and <m>\gamma</m> respectively.
+          Also find the matrix of change of basis <m>[I]_\beta^\gamma</m>.
+          Hence show that <m>x_\gamma = [I]_\beta^\gamma x_\beta</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider bases <m>\beta=\{(1,-1,1),(1,1,-1),(-1,1,1)\}</m> and <m>\gamma =\{(1,2,3),(1,3,2),(2,3,1)\}</m> of <m>\R^3</m>.
+          Let <m>x=(5,7,11)</m>.
+          Find the coordinates <m>x_\beta</m> and
+          <m>x_\gamma</m> of <m>x</m> with respect to <m>\beta</m> and <m>\gamma</m> respectively.
+          Also find the matrix of change of basis <m>[I]_\beta^\gamma</m>.
+          Hence show that <m>x_\gamma = [I]_\beta^\gamma x_\beta</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider a linear map <m>T\colon \R^3\to \R^2</m> defined by <m>T\left(\begin{bmatrix}x_1\\x_2\\x_3 \end{bmatrix} \right)=\begin{bmatrix}2x_1-x_2+x_3\\x_1+x_2-x_3 \end{bmatrix}</m>.
+          Let us consider a basis <m>\beta =\{v_1=(1,1,-1),v_2=(1,-1,1),v_3=(-1,1,1)\}</m> of the domain and the standard basis <m>\gamma=\{(1,-1),(1,1)\}</m> on the codomain.
+          Find the matrix of <m>T</m> with respect to the basis <m>\beta</m> and <m>\gamma</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>T\colon \R^4\to \R^3</m> and <m>S\colon \R^3\to \R^4</m> defined by
+          <me>
+            T\left(\begin{bmatrix}x_1\\x_2\\x_3\\x_4 \end{bmatrix} \right):= \begin{bmatrix}x_{1} + x_{3} + x_{4} \\ x_{1} + x_{2} + 2  x_{3} - x_{4} \\ 2  x_{1} + x_{2} + 3  x_{3} - 2  x_{4} \end{bmatrix} \text{ and } S\left(\begin{bmatrix}y_1\\y_2\\y_3 \end{bmatrix} \right):= \begin{bmatrix}y_{1} + y_{3} \\ y_{1} + 3  y_{2} + 2  y_{3} \\ 2  y_{1} - y_{2} + 3  y_{3} \\ y_{2} - y_{3} \end{bmatrix}
+          </me>
+          Find the composition <m>S\circ T</m>.
+          Find th matrix <m>A</m> of <m>T</m>,
+          <m>B</m> of <m>S</m> and <m>C</m> of
+          <m>S\circ T</m> with respect to the standard bases.
+          Show that <m>C=BA</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>T,S\colon \R^n\to \R^m</m> be two linear maps.
+          Then show that <m>T+S</m> is a linear map.
+          Furthermore,
+          the matrix of <m>T+S</m> is the sum of matrices of <m>T</m> and <m>S</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For the following linear transformation <m>T\colon \R^2\to \R^2</m>.
+          Show that <m>T</m> is induced by a matrix and hence find the matrix. (i) <m>T</m> is reflection about <m>y</m> axis. (ii) <m>T</m> is reflection about the line <m>y=x</m> (iii) <m>T</m> is reflection about the line <m>y=-x</m> (iv) <m>T</m> is a clockwise rotation by an angle <m>\pi/2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          (i) Let <m>T\colon \R^3\to \R^3</m> be a linear transformation which is reflection about the <m>xy</m> plane.
+          Write <m>T</m> explicitly and hence show that it is induced by a matrix. (ii) Let
+          <m>T\colon \R^3\to \R^3</m> be a linear transformation which is reflection about the <m>yz</m> plane.
+          Write <m>T</m> explicitly and hence show that it is induced by a matrix.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>W_1</m> is a set of all
+          <m>n\times n</m> real symmetric matrices and <m>W_2</m>,
+          the set of all <m>n\times n</m> real skew-symmetric matrices.
+          Then what is <m>W_1+W_2</m>?
+          Justify your answer.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>
