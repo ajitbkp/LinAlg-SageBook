@@ -92,22 +92,22 @@
       <p>
         A traveler goes from <m>City\;A</m> to <m>City\;B</m> in three legs:
         by car at <m>50</m> km/h, by train at <m>80</m> km/h, and by ferry at <m>20</m> km/h.
-        The total travel time is <m>10</m> hours, and the total distance covered is <m>520</m> km.
-        It is also known that the time on the train equals the sume of time in the car and in ferry. 
-        Formulate this problem and fine the time (in hours) spent on each mode of transport.
+        The total travel time is <m>10</m> hours, and the total distance covered is <m>560</m> km.
+        It is also known that the time on the train equals the sum of time in the car and in ferry. 
+        Formulate this problem and find the time (in hours) spent on each mode of transport.
       </p>
   </statement>
 
   <solution>
     <p>
-        Let <m>x</m>, <m>y</m>, and <m>z</m> denote the hours spent by car, train, and ferry, 
+        Let <m>x</m>, <m>y</m> and <m>z</m> denote the hours spent by car, train, and ferry, 
         respectively. Then the conditions give:
     <ol>
       <li>Total time:
-        <me>x + y + z = 6.</me>
+        <me>x + y + z = 10.</me>
       </li>
       <li>Total distance:
-        <me>50x + 80y + 20z = 520.</me>
+        <me>50x + 80y + 20z = 560.</me>
       </li>
       <li> Car plus ferry time is equal to train time:
         <me>x+z = y.</me>
@@ -116,8 +116,8 @@
     Hence the linear system is
     <me>
       \begin{cases}
-        x + y + z = 6,\\
-        50x + 80y + 20z = 520,\\
+        x + y + z = 10,\\
+        50x + 80y + 20z = 560,\\
         x-y+z = 0.
       \end{cases}
     </me>
